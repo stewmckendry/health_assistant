@@ -14,23 +14,30 @@ logger = get_logger(__name__)
 class SessionLogger:
     """Session-specific logger that tracks the complete flow of a request."""
     
-    def __init__(self, session_id: str, log_dir: str = "logs/sessions"):
+    def __init__(self, session_id: str, log_dir: str = "logs/sessions", save_json: bool = True):
         """
         Initialize session logger.
         
         Args:
             session_id: Unique session identifier
             log_dir: Directory for session-specific logs
+            save_json: Also save as regular .json file for easy viewing
         """
         self.session_id = session_id
         self.log_dir = Path(log_dir)
         self.log_dir.mkdir(parents=True, exist_ok=True)
+        self.save_json = save_json
         
-        # Create session-specific log file
-        self.log_file = self.log_dir / f"session_{session_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jsonl"
+        # Create session-specific log files
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        self.log_file = self.log_dir / f"session_{session_id}_{timestamp}.jsonl"
+        self.json_file = self.log_dir / f"session_{session_id}_{timestamp}.json" if save_json else None
         
         # Track sequence number for ordering
         self.sequence = 0
+        
+        # Track all entries for JSON export
+        self.all_entries = [] if save_json else None
         
         # Initialize session metadata
         self.metadata = {
@@ -49,9 +56,14 @@ class SessionLogger:
         
     def _write_log(self, entry: Dict[str, Any]) -> None:
         """Write a log entry to the session file."""
+        # Write to JSONL file
         with open(self.log_file, 'a') as f:
             json.dump(entry, f)
             f.write('\n')
+        
+        # Track for JSON export
+        if self.all_entries is not None:
+            self.all_entries.append(entry)
     
     def _next_sequence(self) -> int:
         """Get the next sequence number."""
@@ -382,6 +394,15 @@ class SessionLogger:
             "timestamp": datetime.now().isoformat(),
             "metadata": self.metadata
         })
+        
+        # Save as regular JSON file if enabled
+        if self.json_file and self.all_entries:
+            with open(self.json_file, 'w') as f:
+                json.dump({
+                    "session": self.metadata,
+                    "entries": self.all_entries
+                }, f, indent=2)
+            logger.info(f"Session saved to {self.json_file}")
         
         logger.info(
             "Final response sent",
