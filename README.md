@@ -64,31 +64,46 @@ python scripts/test_assistant.py -s
 ```
 PatientAssistant
       ↓
+LLMGuardrails (input checking)
+      ↓
 BaseAssistant (Anthropic API calls)
       ↓
-ResponseGuardrails (safety filters)
+LLMGuardrails (output checking)
       ↓
-Settings (configuration management)
+ResponseGuardrails (regex fallback)
+      ↓
+SessionLogger (request tracking)
 ```
 
 ### Key Components
 
-1. **BaseAssistant**: Core Anthropic API integration with web_fetch tool
+1. **BaseAssistant**: Core Anthropic API integration with web_search + web_fetch tools
 2. **PatientAssistant**: Patient-specific safety checks and disclaimers
-3. **ResponseGuardrails**: Multi-layer safety filtering system
-4. **Configuration**: YAML-based settings management
+3. **LLMGuardrails**: Intelligent LLM-based safety checks (tripwires)
+4. **ResponseGuardrails**: Regex-based fallback safety system
+5. **SessionLogger**: Complete request flow tracking and inspection
+6. **Configuration**: YAML-based settings management
 
 ## 🔒 Safety Features
 
-### Pre-Query Checks
-- **Emergency Detection**: Chest pain, breathing issues, stroke symptoms → 911 redirect
-- **Mental Health Crisis**: Suicidal ideation, self-harm → 988 resources
+### Three-Layer Guardrail System
+
+#### 1. Input Guardrails (Pre-API)
+- **LLM Analysis**: Intelligent detection of emergencies/crises
+- **Emergency Detection**: Chest pain, breathing issues → 911 redirect
+- **Mental Health Crisis**: Suicidal ideation → 988 resources
 - **No API Call**: Critical situations bypass API entirely
 
-### Post-Response Guardrails
-- **Forbidden Phrases**: Removes diagnostic/treatment language
-- **Disclaimers**: Adds medical disclaimers automatically
-- **Citation Support**: Includes sources from trusted domains
+#### 2. Output Guardrails (Post-API)
+- **Source Verification**: Ensures trusted medical sources cited
+- **LLM Review**: Checks for diagnosis/treatment language
+- **Content Modification**: Removes unsafe medical advice
+- **Disclaimer Addition**: Adds appropriate warnings
+
+#### 3. Guardrail Modes
+- **LLM Mode**: Intelligent context-aware checking
+- **Regex Mode**: Fast pattern-based checking
+- **Hybrid Mode** (default): LLM with regex fallback
 
 ### Trusted Domains
 - mayoclinic.org
@@ -106,7 +121,7 @@ Settings (configuration management)
 ANTHROPIC_API_KEY=sk-ant-api03-...
 
 # Optional (defaults shown)
-PRIMARY_MODEL=claude-3-opus-20240229
+PRIMARY_MODEL=claude-3-5-sonnet-latest
 ASSISTANT_MODE=patient
 ENABLE_GUARDRAILS=true
 ENABLE_WEB_FETCH=true
@@ -118,7 +133,8 @@ TEMPERATURE=0.7
 
 - `src/config/prompts.yaml` - System prompts for different modes
 - `src/config/disclaimers.yaml` - Medical disclaimers and emergency resources
-- `src/config/domains.yaml` - Trusted medical domains for web_fetch
+- `src/config/domains.yaml` - 97 trusted medical domains for web_fetch
+- `src/config/guardrail_prompts.yaml` - LLM guardrail checking prompts
 
 ## 🧪 Testing
 
@@ -143,6 +159,41 @@ pytest --cov=src --cov-report=html
 - **Integration Tests**: Anthropic API interaction mocking
 - **E2E Tests**: 5 critical scenarios including emergency detection
 
+## 📊 Session Logging
+
+The system includes comprehensive session logging that tracks every request through all processing stages:
+
+### Viewing Session Logs
+
+```bash
+# List all sessions
+python scripts/view_session_log.py --list
+
+# View latest session
+python scripts/view_session_log.py --latest
+
+# View specific session
+python scripts/view_session_log.py <session_id>
+
+# Extract specific data
+python scripts/view_session_log.py <session_id> --extract citations
+```
+
+### Log Formats
+- **`.jsonl`** - Line-by-line JSON for programmatic processing
+- **`.json`** - Pretty-printed JSON that opens in browsers/editors
+
+### Tracked Stages
+1. Original query
+2. Input guardrail check
+3. API call to Anthropic
+4. Web search/fetch tool usage
+5. Citations extracted
+6. Output guardrail check
+7. Final response
+
+Complete logging documentation in [`docs/session_logging.md`](docs/session_logging.md)
+
 ## 📚 API Documentation
 
 Complete API documentation available in [`docs/api_specification.md`](docs/api_specification.md)
@@ -152,8 +203,8 @@ Complete API documentation available in [`docs/api_specification.md`](docs/api_s
 ```python
 from src.assistants.patient import PatientAssistant
 
-# Initialize assistant
-assistant = PatientAssistant()
+# Initialize assistant with guardrail mode
+assistant = PatientAssistant(guardrail_mode="hybrid")  # or "llm" or "regex"
 
 # Make a query
 response = assistant.query(
