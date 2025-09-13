@@ -49,17 +49,18 @@ class TestBaseAssistant:
                 BaseAssistant(config=assistant_config)
     
     def test_build_messages(self, assistant_config):
-        """Test message building with system prompt."""
+        """Test message building (system prompt handled separately)."""
         with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key"}):
             assistant = BaseAssistant(config=assistant_config)
             
             messages = assistant._build_messages("What is diabetes?")
             
-            assert len(messages) == 2
-            assert messages[0]["role"] == "system"
-            assert messages[0]["content"] == "You are a helpful assistant."
-            assert messages[1]["role"] == "user"
-            assert messages[1]["content"] == "What is diabetes?"
+            # System prompt is now a separate parameter, not in messages
+            assert len(messages) == 1
+            assert messages[0]["role"] == "user"
+            assert messages[0]["content"] == "What is diabetes?"
+            # System prompt is stored in config
+            assert assistant.config.system_prompt == "You are a helpful assistant."
     
     def test_build_tools_with_web_fetch(self, assistant_config):
         """Test that web_fetch tool is configured correctly."""
@@ -73,7 +74,7 @@ class TestBaseAssistant:
             assert tools[0]["name"] == "web_fetch"
             assert tools[0]["allowed_domains"] == ["mayoclinic.org", "cdc.gov", "pubmed.ncbi.nlm.nih.gov"]
             assert tools[0]["max_uses"] == 5
-            assert tools[0]["citations"] is True
+            assert tools[0]["citations"] == {"enabled": True}
     
     def test_build_tools_without_web_fetch(self, assistant_config):
         """Test that no tools are returned when web_fetch is disabled."""

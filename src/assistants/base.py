@@ -81,10 +81,9 @@ class BaseAssistant:
             query: User query
         
         Returns:
-            List of message dictionaries
+            List of message dictionaries (user messages only, system prompt handled separately)
         """
         messages = [
-            {"role": "system", "content": self.config.system_prompt},
             {"role": "user", "content": query}
         ]
         return messages
@@ -101,11 +100,16 @@ class BaseAssistant:
         
         tools = [
             {
+                "type": "web_search_20250305",
+                "name": "web_search",
+                "max_uses": 3  # Use search to find URLs first
+            },
+            {
                 "type": "web_fetch_20250910",
                 "name": "web_fetch",
                 "allowed_domains": self.trusted_domains,
                 "max_uses": self.config.max_web_fetch_uses,
-                "citations": self.config.citations_enabled
+                "citations": {"enabled": self.config.citations_enabled}
             }
         ]
         return tools
@@ -124,10 +128,18 @@ class BaseAssistant:
         for content_block in response.content:
             if hasattr(content_block, 'citations') and content_block.citations:
                 for citation in content_block.citations:
-                    citations.append({
-                        "url": citation.get("url", ""),
-                        "title": citation.get("title", "")
-                    })
+                    # Handle different citation formats
+                    if isinstance(citation, dict):
+                        citations.append({
+                            "url": citation.get("url", ""),
+                            "title": citation.get("title", "")
+                        })
+                    elif hasattr(citation, 'url'):
+                        # Handle object-based citations
+                        citations.append({
+                            "url": getattr(citation, 'url', ''),
+                            "title": getattr(citation, 'title', 'Source')
+                        })
         return citations
     
     def _format_response_with_citations(
@@ -194,13 +206,17 @@ class BaseAssistant:
                 "model": self.model,
                 "max_tokens": self.config.max_tokens,
                 "temperature": self.config.temperature,
+                "system": self.config.system_prompt,  # System prompt as parameter
                 "messages": messages
             }
             
             # Add tools if configured
             if tools:
                 api_kwargs["tools"] = tools
-                api_kwargs["extra_headers"] = {"web-fetch-2025-09-10": "true"}
+                # Include both web search and web fetch betas
+                api_kwargs["extra_headers"] = {
+                    "anthropic-beta": "web-search-2025-03-05,web-fetch-2025-09-10"
+                }
             
             # Make API call
             response = self.client.messages.create(**api_kwargs)
@@ -208,8 +224,8 @@ class BaseAssistant:
             # Extract content from response
             content = ""
             for content_block in response.content:
-                if hasattr(content_block, 'text'):
-                    content += content_block.text
+                if hasattr(content_block, 'text') and content_block.text is not None:
+                    content += str(content_block.text)
             
             # Extract citations if available
             citations = self._extract_citations(response) if self.config.citations_enabled else []

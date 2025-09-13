@@ -1,55 +1,188 @@
-# Trusted medical domains for web_fetch tool
+# Trusted Medical Domains Configuration
+# These domains are allowed for the web_fetch tool to retrieve medical information
 
-medical:
-  government:
-    - cdc.gov
-    - nih.gov
-    - fda.gov
-    - who.int
-    - medlineplus.gov
-    - healthfinder.gov
-    - cms.gov
-    - ahrq.gov
+trusted_domains:
+  # Ontario & Canadian Public Health Authorities
+  - ontario.ca
+  - publichealthontario.ca
+  - hqontario.ca
+  - ontariohealth.ca
+  - cpso.on.ca
+  - cihi.ca
+  - canada.ca
+  - phac-aspc.gc.ca
+  - blood.ca
+  - choosingwiselycanada.org
+  - cma.ca
+  - cmaj.ca
+  - uhn.ca
+  - sickkids.ca
+  - sunnybrook.ca
+  - stmichaelshospital.com
+  - hamiltonhealthsciences.ca
+  - theottawahospital.on.ca
+  - kingstonhsc.ca
+  - lhsc.on.ca
   
-  academic:
+  # Other Canadian Provincial/Territorial Services
+  - healthlinkbc.ca
+  - ahs.ca
+  - saskhealthauthority.ca
+  - manitoba.ca
+  - gouv.qc.ca
+  - nshealth.ca
+  - nbhealth.ca
+  - pei.ca
+  - gov.nl.ca
+  - yukon.ca
+  - gov.nt.ca
+  - nunavut.ca
+  
+  # Canadian Disease-Specific & Specialty Organizations
+  - diabetes.ca
+  - heartandstroke.ca
+  - cancer.ca
+  - alzheimer.ca
+  - arthritis.ca
+  - lung.ca
+  - parkinson.ca
+  - crohnsandcolitis.ca
+  - sogc.org
+  - ccs.ca
+  - cps.ca
+  
+  # U.S. Academic & Professional Organizations
+  - aamc.org
+  - ama-assn.org
+  - aafp.org
+  - acc.org
+  - acog.org
+  - aacr.org
+  - diabetes.org
+  - rheumatology.org
+  - idsociety.org
+  
+  # U.S. Major Academic Health Systems
+  - mayoclinic.org
+  - mayo.edu
+  - hopkinsmedicine.org
+  - clevelandclinic.org
+  - massgeneral.org
+  - brighamandwomens.org
+  - stanfordhealthcare.org
+  - med.stanford.edu
+  - ucsfhealth.org
+  - dukehealth.org
+  - cuimc.columbia.edu
+  - columbiamedicine.org
+  - uchicagomedicine.org
+  - nyulangone.org
+  - uofmhealth.org
+  - yalemedicine.org
+  - mountsinai.org
+  - nm.org
+  - bcm.edu
+  - pennmedicine.org
+  - vumc.org
+  - chop.edu
+  - mdanderson.org
+  
+  # First-Rank Medical Journals & Databases
+  - pubmed.ncbi.nlm.nih.gov
+  - nejm.org
+  - thelancet.com
+  - jamanetwork.com
+  - bmj.com
+  - nature.com
+  - sciencemag.org
+  - annals.org
+  - elsevier.com
+  
+  # Global Health Authorities
+  - who.int
+  - cdc.gov
+  - nih.gov
+  - nhs.uk
+  - ema.europa.eu
+  - fda.gov
+  
+  # Evidence Summaries & Guideline Repositories
+  - uptodate.com
+  - cochranelibrary.com
+  - guidelines.gov
+  - clinicaltrials.gov
+  
+  # Patient Education Sites
+  - medlineplus.gov
+  - healthline.com
+  - webmd.com
+
+# Categories for easier management
+categories:
+  canadian_authorities:
+    - ontario.ca
+    - publichealthontario.ca
+    - hqontario.ca
+    - ontariohealth.ca
+    - cpso.on.ca
+    - cihi.ca
+    - canada.ca
+    - phac-aspc.gc.ca
+    - cma.ca
+    - cmaj.ca
+    
+  canadian_hospitals:
+    - uhn.ca
+    - sickkids.ca
+    - sunnybrook.ca
+    - stmichaelshospital.com
+    - hamiltonhealthsciences.ca
+    - theottawahospital.on.ca
+    - kingstonhsc.ca
+    - lhsc.on.ca
+    
+  canadian_disease_organizations:
+    - diabetes.ca
+    - heartandstroke.ca
+    - cancer.ca
+    - alzheimer.ca
+    - arthritis.ca
+    - lung.ca
+    - parkinson.ca
+    - crohnsandcolitis.ca
+    
+  us_academic_centers:
+    - mayoclinic.org
+    - mayo.edu
+    - hopkinsmedicine.org
+    - clevelandclinic.org
+    - massgeneral.org
+    - brighamandwomens.org
+    - stanfordhealthcare.org
+    - med.stanford.edu
+    - ucsfhealth.org
+    - dukehealth.org
+    
+  medical_journals:
     - pubmed.ncbi.nlm.nih.gov
-    - cochrane.org
-    - uptodate.com
     - nejm.org
+    - thelancet.com
     - jamanetwork.com
     - bmj.com
-    - thelancet.com
-    - nature.com/nm
-    - sciencedirect.com
-  
-  clinical:
-    - mayoclinic.org
-    - clevelandclinic.org
-    - hopkinsmedicine.org
-    - massgeneral.org
-    - stanfordhealthcare.org
-    - uclahealth.org
-    - nyulangone.org
-    - cedars-sinai.org
-  
-  professional_organizations:
-    - ama-assn.org
-    - acc.org
-    - heart.org
-    - cancer.org
-    - diabetes.org
-    - arthritis.org
-    - lung.org
-    - kidney.org
-  
-  patient_education:
-    - webmd.com
-    - healthline.com
-    - medicalnewstoday.com
-    - verywellhealth.com
-    - health.harvard.edu
-    - patientinfo.org
-    - familydoctor.org
-
-# Organization-specific domains (can be customized per deployment)
-organization_specific: []
+    - nature.com
+    - sciencemag.org
+    - annals.org
+    
+  global_authorities:
+    - who.int
+    - cdc.gov
+    - nih.gov
+    - nhs.uk
+    - ema.europa.eu
+    - fda.gov
+    
+  evidence_based:
+    - uptodate.com
+    - cochranelibrary.com
+    - guidelines.gov
+    - clinicaltrials.gov

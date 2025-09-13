@@ -56,8 +56,11 @@ class TestPatientAssistant:
                 assistant = PatientAssistant()
                 messages = assistant._build_messages("What is diabetes?")
                 
-                assert len(messages) == 2
-                assert "educational health information to patients" in messages[0]["content"]
+                assert len(messages) == 1
+                assert messages[0]["role"] == "user"
+                assert messages[0]["content"] == "What is diabetes?"
+                # System prompt is now handled separately, check config
+                assert "educational health information to patients" in assistant.config.system_prompt
     
     @patch('src.assistants.patient.ResponseGuardrails')
     def test_patient_assistant_applies_guardrails(self, mock_guardrails_class):

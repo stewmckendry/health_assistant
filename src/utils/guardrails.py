@@ -63,13 +63,39 @@ def detect_emergency_content(text: str) -> bool:
     """
     text_lower = text.lower()
     
+    # Check if this is educational content about complications/risks
+    # These phrases indicate discussion of risks, not actual emergencies
+    educational_context = [
+        "complications", "risk of", "may lead to", "can lead to", 
+        "symptoms include", "symptoms of", "signs of", "information about",
+        "educational", "if not managed", "if untreated", "long-term",
+        "over time", "potential for", "increase risk"
+    ]
+    
     for keyword in EMERGENCY_KEYWORDS:
         if keyword in text_lower:
-            logger.warning(
-                "Emergency content detected",
-                extra={"keyword": keyword, "text_snippet": text[:100]}
-            )
-            return True
+            # Check context around the keyword
+            keyword_index = text_lower.find(keyword)
+            context_start = max(0, keyword_index - 100)
+            context_end = min(len(text_lower), keyword_index + 100)
+            context = text_lower[context_start:context_end]
+            
+            # Skip if in educational context
+            if any(edu_phrase in context for edu_phrase in educational_context):
+                logger.debug(
+                    f"Skipping emergency keyword '{keyword}' in educational context",
+                    extra={"keyword": keyword, "context": context[:50]}
+                )
+                continue
+            
+            # Check if user is describing their current symptoms
+            current_symptom_phrases = ["i have", "i'm having", "i am having", "i feel", "my chest", "my head"]
+            if any(phrase in context for phrase in current_symptom_phrases):
+                logger.warning(
+                    "Emergency content detected",
+                    extra={"keyword": keyword, "text_snippet": text[:100]}
+                )
+                return True
     
     return False
 

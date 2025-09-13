@@ -26,12 +26,12 @@ class Settings(BaseSettings):
     
     # Model Configuration
     primary_model: str = Field(
-        default="claude-3-opus-20240229",
+        default="claude-3-5-sonnet-20241022",
         env="PRIMARY_MODEL",
         description="Primary Claude model to use"
     )
     fallback_model: str = Field(
-        default="claude-3-sonnet-20240229",
+        default="claude-3-5-haiku-20241022",
         env="FALLBACK_MODEL",
         description="Fallback model if primary fails"
     )
@@ -250,6 +250,13 @@ class Settings(BaseSettings):
     @property
     def trusted_domains(self) -> List[str]:
         """Get list of all trusted domains."""
+        # First check if there's a direct trusted_domains list
+        if "trusted_domains" in self.domains:
+            domains_list = self.domains.get("trusted_domains", [])
+            if domains_list:
+                return domains_list
+        
+        # Fall back to the medical categories structure
         domains_list = []
         medical_domains = self.domains.get("medical", {})
         
