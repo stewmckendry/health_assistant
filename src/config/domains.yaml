@@ -1,0 +1,55 @@
+# Trusted medical domains for web_fetch tool
+
+medical:
+  government:
+    - cdc.gov
+    - nih.gov
+    - fda.gov
+    - who.int
+    - medlineplus.gov
+    - healthfinder.gov
+    - cms.gov
+    - ahrq.gov
+  
+  academic:
+    - pubmed.ncbi.nlm.nih.gov
+    - cochrane.org
+    - uptodate.com
+    - nejm.org
+    - jamanetwork.com
+    - bmj.com
+    - thelancet.com
+    - nature.com/nm
+    - sciencedirect.com
+  
+  clinical:
+    - mayoclinic.org
+    - clevelandclinic.org
+    - hopkinsmedicine.org
+    - massgeneral.org
+    - stanfordhealthcare.org
+    - uclahealth.org
+    - nyulangone.org
+    - cedars-sinai.org
+  
+  professional_organizations:
+    - ama-assn.org
+    - acc.org
+    - heart.org
+    - cancer.org
+    - diabetes.org
+    - arthritis.org
+    - lung.org
+    - kidney.org
+  
+  patient_education:
+    - webmd.com
+    - healthline.com
+    - medicalnewstoday.com
+    - verywellhealth.com
+    - health.harvard.edu
+    - patientinfo.org
+    - familydoctor.org
+
+# Organization-specific domains (can be customized per deployment)
+organization_specific: []

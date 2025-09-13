@@ -1,0 +1,35 @@
+# Medical disclaimers for different contexts
+
+patient:
+  start: |
+    ⚠️ **Medical Disclaimer**: This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+  
+  end: |
+    💡 **Remember**: This information is educational only. Please consult with a healthcare provider for personalized medical advice. If you are experiencing a medical emergency, call 911 or your local emergency number immediately.
+
+physician:
+  start: ""  # No start disclaimer for physician mode
+  
+  end: |
+    📋 **Clinical Note**: This information is intended for healthcare professionals and should be used in conjunction with clinical judgment and patient-specific factors.
+
+emergency:
+  resources: |
+    **Emergency Resources:**
+    • Medical Emergency: Call 911 (US) or your local emergency number
+    • Poison Control: 1-800-222-1222 (US)
+    • Mental Health Crisis: 988 (US Suicide & Crisis Lifeline)
+    • Domestic Violence: 1-800-799-7233 (US National Hotline)
+  
+  mental_health: |
+    **Mental Health Support:**
+    • National Suicide Prevention Lifeline: 988 or 1-800-273-8255
+    • Crisis Text Line: Text HOME to 741741
+    • SAMHSA National Helpline: 1-800-662-4357
+    • Veterans Crisis Line: 1-800-273-8255, Press 1
+  
+  redirect: |
+    🚨 **This appears to be a medical emergency.** Please:
+    1. Call 911 or your local emergency number immediately
+    2. Go to the nearest emergency room
+    3. Do not delay seeking immediate medical attention
