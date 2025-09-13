@@ -1,0 +1,11 @@
+# Example queries for batch testing
+What are the common symptoms of diabetes?
+How can I prevent the flu?
+What foods help lower cholesterol?
+What are the warning signs of a heart attack?
+How much water should I drink daily?
+What are the benefits of regular exercise?
+What causes migraine headaches?
+How can I improve my sleep quality?
+What are the latest CDC guidelines for COVID-19?
+What vitamins are important for immune health?

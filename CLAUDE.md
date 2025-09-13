@@ -17,44 +17,54 @@ health_assistant/
 │   ├── assistants/      # Core assistant implementations
 │   │   ├── base.py       # Base assistant class
 │   │   ├── patient.py    # Patient-focused assistant
-│   │   ├── physician.py  # Physician-focused assistant
+│   │   ├── physician.py  # Physician-focused assistant (Phase 5)
 │   │   └── orchestrator.py # MAI-DxO orchestrator (Phase 6)
-│   ├── evaluation/       # Evaluation framework
+│   ├── evaluation/       # Evaluation framework (Phase 2)
 │   │   ├── evaluator.py  # LLM-as-judge implementation
 │   │   └── metrics.py    # Performance metrics
 │   ├── web/             # Web application (Phase 3)
 │   │   └── api/         # FastAPI endpoints
 │   ├── config/          # Configuration management
 │   │   ├── settings.py  # Pydantic settings
-│   │   └── domains.yaml # Trusted domains config
+│   │   ├── prompts.yaml # System prompts
+│   │   ├── disclaimers.yaml # Medical disclaimers
+│   │   ├── domains.yaml # 97 trusted domains
+│   │   └── guardrail_prompts.yaml # LLM guardrail prompts
 │   └── utils/           # Shared utilities
 │       ├── logging.py   # Logging configuration
-│       ├── guardrails.py # Response guardrails
-│       └── sources.py   # Source management
+│       ├── session_logging.py # Session tracking
+│       ├── guardrails.py # Regex-based guardrails
+│       └── llm_guardrails.py # LLM-based guardrails
 ├── tests/
-│   ├── unit/           # Unit tests
-│   ├── integration/    # Integration tests
-│   └── e2e/           # End-to-end tests
-├── data/
-│   ├── prompts/       # Test prompts
-│   └── responses/     # Response logs (gitignored)
-├── logs/              # Application logs (gitignored)
+│   ├── unit/           # Unit tests (54 tests)
+│   ├── integration/    # Integration tests (11 tests)
+│   └── e2e/           # End-to-end tests (7 tests)
+├── logs/
+│   └── sessions/      # Session logs (.jsonl + .json)
 ├── scripts/           # Utility scripts
+│   ├── test_assistant.py # CLI interface
+│   └── view_session_log.py # Log viewer
 └── docs/             # Documentation
+    ├── api_specification.md
+    ├── session_logging.md
+    └── project_plan.md
 ```
 
 ## Technology Stack
 
-### Core Dependencies
+### Core Dependencies (Phase 1 Complete)
 - **Python 3.11+** - Primary language
-- **Anthropic SDK** - Claude API integration
-- **OpenAI SDK** - GPT models and Agents framework (Phase 6)
-- **ref-tools SDK** - Documentation retrieval (MCP)
-- **Exa SDK** - Web search capabilities (MCP)
-- **FastAPI** - Web API framework
-- **Langfuse** - Evaluation and monitoring
-- **pytest** - Testing framework
+- **Anthropic SDK v0.67.0+** - Claude API integration with web tools
+- **pytest** - Testing framework (72 tests)
 - **pydantic** - Data validation and settings
+- **pyyaml** - Configuration file management
+- **python-json-logger** - Structured JSON logging
+- **python-dotenv** - Environment variable management
+
+### Future Phases
+- **OpenAI SDK** - GPT models and Agents framework (Phase 6)
+- **FastAPI** - Web API framework (Phase 3)
+- **Langfuse** - Evaluation and monitoring (Phase 2)
 
 ### Environment Setup
 ```bash
@@ -230,17 +240,17 @@ When working on any phase:
 # Run tests
 pytest tests/
 
-# Run specific assistant
-python -m src.assistants.patient
+# Run CLI assistant
+python scripts/test_assistant.py
+
+# View session logs
+python scripts/view_session_log.py --latest
 
 # Start web server (Phase 3+)
 uvicorn src.web.api.main:app --reload
 
-# Run evaluation
+# Run evaluation (Phase 2+)
 python -m src.evaluation.evaluator
-
-# Check logs
-tail -f logs/health_assistant.log
 ```
 
 ## Important Notes
@@ -252,10 +262,39 @@ tail -f logs/health_assistant.log
 5. **SDKs**: Research and use ref-tools and Exa before building custom
 6. **Configuration**: Make everything configurable for different organizations
 
+## Troubleshooting Common Issues
+
+### 1. API Key Not Loading
+```bash
+# Add to script or use dotenv
+from dotenv import load_dotenv
+load_dotenv()
+```
+
+### 2. Model Not Found
+```bash
+# Use latest Anthropic models (as of September 2025)
+PRIMARY_MODEL=claude-3-5-sonnet-latest
+```
+
+### 3. Web Fetch Not Working
+- Ensure both web_search and web_fetch tools are enabled
+- Check anthropic-beta headers are set correctly
+- Verify trusted domains in domains.yaml
+
+### 4. Session Logs Not Opening
+- .jsonl files: Right-click → Open With → TextEdit
+- .json files: Double-click to open in browser
+- Or use: `python scripts/view_session_log.py <session_id>`
+
+### 5. Emergency False Positives
+- Use hybrid guardrail mode for context-aware checking
+- LLM guardrails understand educational vs actual emergencies
+
 ## Code Review Checklist
 - [ ] Tests written and passing?
-- [ ] Logging implemented?
+- [ ] Session logging implemented?
 - [ ] Configuration options added?
-- [ ] SDKs used where applicable?
-- [ ] Guardrails applied?
+- [ ] Guardrails applied (input + output)?
+- [ ] Citations deduplicated?
 - [ ] Documentation updated?
