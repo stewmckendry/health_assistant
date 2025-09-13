@@ -1,4 +1,5 @@
 """Patient-focused medical education assistant."""
+import time
 from typing import Dict, Any, Optional
 
 from src.assistants.base import BaseAssistant, AssistantConfig
@@ -10,6 +11,7 @@ from src.utils.guardrails import (
 )
 from src.utils.llm_guardrails import LLMGuardrails
 from src.utils.logging import get_logger, log_decision
+from src.utils.session_logging import SessionLogger
 from src.config.settings import settings
 
 
@@ -81,6 +83,15 @@ class PatientAssistant(BaseAssistant):
         Returns:
             Response dictionary with educational content and metadata
         """
+        # Track processing time
+        start_time = time.time()
+        
+        # Initialize session logger
+        session_logger = SessionLogger(session_id or "default")
+        
+        # Log original query
+        session_logger.log_original_query(query, self.mode)
+        
         logger.info(
             "Patient query received",
             extra={
@@ -94,6 +105,9 @@ class PatientAssistant(BaseAssistant):
         if self.guardrail_mode in ["llm", "hybrid"]:
             input_check = self.llm_guardrails.check_input(query, session_id)
             
+            # Log input guardrail check
+            session_logger.log_input_guardrail(input_check, self.guardrail_mode)
+            
             if input_check["requires_intervention"]:
                 logger.warning(
                     f"{input_check['intervention_type']} detected in query",
@@ -102,76 +116,95 @@ class PatientAssistant(BaseAssistant):
                 
                 # Return appropriate response based on intervention type
                 if input_check["intervention_type"] == "emergency":
-                    return {
+                    response = {
                         "content": settings.emergency_redirect,
                         "emergency_detected": True,
                         "guardrails_applied": True,
                         "session_id": session_id,
                         "mode": self.mode
                     }
+                    # Log final response
+                    session_logger.log_final_response(response, time.time() - start_time)
+                    return response
                 elif input_check["intervention_type"] == "mental_health_crisis":
-                    return {
+                    response = {
                         "content": settings.mental_health_resources,
                         "mental_health_crisis": True,
                         "guardrails_applied": True,
                         "session_id": session_id,
                         "mode": self.mode
                     }
+                    # Log final response
+                    session_logger.log_final_response(response, time.time() - start_time)
+                    return response
         
         # Fallback to regex if not using LLM or for regex mode
         elif self.guardrail_mode == "regex":
             # Check for emergency content in the query BEFORE sending to API
-            if detect_emergency_content(query):
-                logger.warning(
-                    "Emergency content detected in query",
-                    extra={"session_id": session_id}
-                )
-                
-                log_decision(
-                    logger,
-                    decision_type="emergency_redirect",
-                    decision="Redirecting to emergency services",
-                    reason="Emergency keywords detected in query",
-                    session_id=session_id
-                )
-                
-                return {
-                    "content": settings.emergency_redirect,
-                    "emergency_detected": True,
-                    "guardrails_applied": True,
-                    "session_id": session_id,
-                    "mode": self.mode
-                }
+            input_check = {
+                "requires_intervention": False,
+                "intervention_type": "none",
+                "explanation": "",
+                "should_block": False
+            }
             
-            # Check for mental health crisis in the query BEFORE sending to API
-            if detect_mental_health_crisis(query):
+            if detect_emergency_content(query):
+                input_check["requires_intervention"] = True
+                input_check["intervention_type"] = "emergency"
+                input_check["explanation"] = "Emergency keywords detected"
+                input_check["should_block"] = True
+            elif detect_mental_health_crisis(query):
+                input_check["requires_intervention"] = True
+                input_check["intervention_type"] = "mental_health_crisis"
+                input_check["explanation"] = "Crisis keywords detected"
+                input_check["should_block"] = True
+            
+            # Log input guardrail check
+            session_logger.log_input_guardrail(input_check, self.guardrail_mode)
+            
+            if input_check["requires_intervention"]:
                 logger.warning(
-                    "Mental health crisis detected in query",
+                    f"{input_check['intervention_type']} detected in query",
                     extra={"session_id": session_id}
                 )
                 
                 log_decision(
                     logger,
-                    decision_type="mental_health_redirect",
-                    decision="Providing mental health resources",
-                    reason="Crisis keywords detected in query",
+                    decision_type=f"{input_check['intervention_type']}_redirect",
+                    decision=f"Redirecting due to {input_check['intervention_type']}",
+                    reason=input_check["explanation"],
                     session_id=session_id
                 )
                 
-                return {
-                    "content": settings.mental_health_resources,
-                    "mental_health_crisis": True,
-                    "guardrails_applied": True,
-                    "session_id": session_id,
-                    "mode": self.mode
-                }
+                if input_check["intervention_type"] == "emergency":
+                    response = {
+                        "content": settings.emergency_redirect,
+                        "emergency_detected": True,
+                        "guardrails_applied": True,
+                        "session_id": session_id,
+                        "mode": self.mode
+                    }
+                else:
+                    response = {
+                        "content": settings.mental_health_resources,
+                        "mental_health_crisis": True,
+                        "guardrails_applied": True,
+                        "session_id": session_id,
+                        "mode": self.mode
+                    }
+                
+                # Log final response
+                session_logger.log_final_response(response, time.time() - start_time)
+                return response
         
         try:
             # Call the parent class query method which makes the actual Anthropic API call
             # This is where the request goes to Claude (in base.py line 206)
-            api_response = super().query(query, session_id)
+            api_response = super().query(query, session_id, session_logger)
             
             # Apply output guardrails based on mode
+            original_response = api_response["content"]
+            
             if settings.enable_guardrails:
                 if self.guardrail_mode in ["llm", "hybrid"]:
                     # Use LLM guardrails for output checking
@@ -182,10 +215,20 @@ class PatientAssistant(BaseAssistant):
                         api_response.get("tool_calls", [])
                     )
                     
+                    # Log output guardrail check
+                    session_logger.log_output_guardrail(
+                        output_check,
+                        self.guardrail_mode,
+                        original_response,
+                        output_check["modified_response"]
+                    )
+                    
                     # Update response based on LLM guardrail results
                     api_response["content"] = output_check["modified_response"]
                     api_response["guardrails_applied"] = not output_check["passes_guardrails"]
                     api_response["violations"] = output_check.get("violations", [])
+                    api_response["web_search_performed"] = output_check.get("web_search_performed", False)
+                    api_response["has_trusted_citations"] = output_check.get("has_trusted_citations", False)
                     
                     if not output_check["passes_guardrails"]:
                         logger.info(
@@ -202,6 +245,22 @@ class PatientAssistant(BaseAssistant):
                     guardrails_result = self.regex_guardrails.apply(
                         api_response["content"],
                         session_id=session_id
+                    )
+                    
+                    # Log output guardrail check
+                    output_check = {
+                        "passes_guardrails": not guardrails_result["guardrails_triggered"],
+                        "violations": guardrails_result.get("violations", []),
+                        "explanation": "Regex pattern matching",
+                        "suggested_action": "modify" if guardrails_result["guardrails_triggered"] else "pass",
+                        "web_search_performed": len(api_response.get("tool_calls", [])) > 0,
+                        "has_trusted_citations": len(api_response.get("citations", [])) > 0
+                    }
+                    session_logger.log_output_guardrail(
+                        output_check,
+                        self.guardrail_mode,
+                        original_response,
+                        guardrails_result["content"]
                     )
                     
                     # Update response with guardrails result
@@ -229,6 +288,10 @@ class PatientAssistant(BaseAssistant):
             # Add patient mode indicator
             api_response["mode"] = self.mode
             
+            # Log final response
+            processing_time = time.time() - start_time
+            session_logger.log_final_response(api_response, processing_time)
+            
             # Log successful response
             logger.info(
                 "Patient query completed",
@@ -236,7 +299,8 @@ class PatientAssistant(BaseAssistant):
                     "session_id": session_id,
                     "response_length": len(api_response["content"]),
                     "guardrails_applied": api_response.get("guardrails_applied", False),
-                    "citations_count": len(api_response.get("citations", []))
+                    "citations_count": len(api_response.get("citations", [])),
+                    "processing_time": processing_time
                 }
             )
             
@@ -253,7 +317,7 @@ class PatientAssistant(BaseAssistant):
             )
             
             # Return a safe error message for patients
-            return {
+            error_response = {
                 "content": (
                     "I apologize, but I'm unable to process your request at the moment. "
                     "Please try again or consult with a healthcare provider directly. "
@@ -263,3 +327,8 @@ class PatientAssistant(BaseAssistant):
                 "session_id": session_id,
                 "mode": self.mode
             }
+            
+            # Log final response even for errors
+            session_logger.log_final_response(error_response, time.time() - start_time)
+            
+            return error_response

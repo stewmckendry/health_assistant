@@ -171,7 +171,8 @@ class BaseAssistant:
     def query(
         self,
         query: str,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        session_logger: Optional[Any] = None  # SessionLogger instance
     ) -> Dict[str, Any]:
         """
         Send a query to the Anthropic API.
@@ -218,6 +219,15 @@ class BaseAssistant:
                     "anthropic-beta": "web-search-2025-03-05,web-fetch-2025-09-10"
                 }
             
+            # Log API call if session logger provided
+            if session_logger:
+                session_logger.log_api_call(
+                    model=self.model,
+                    messages=messages,
+                    tools=tools,
+                    system_prompt=self.config.system_prompt
+                )
+            
             # Make API call
             response = self.client.messages.create(**api_kwargs)
             
@@ -248,6 +258,29 @@ class BaseAssistant:
             # Format response with citations
             if citations:
                 content = self._format_response_with_citations(content, citations)
+            
+            # Log API response if session logger provided
+            if session_logger:
+                session_logger.log_api_response(
+                    response_text=content,
+                    usage={
+                        "input_tokens": response.usage.input_tokens,
+                        "output_tokens": response.usage.output_tokens
+                    },
+                    tool_calls=tool_calls
+                )
+                
+                # Log individual tool calls
+                for tool_call in tool_calls:
+                    session_logger.log_tool_call(
+                        tool_name=tool_call.get("name", "unknown"),
+                        tool_type=tool_call.get("type", "unknown"),
+                        tool_input=tool_call
+                    )
+                
+                # Log citations if any
+                if citations:
+                    session_logger.log_citations(citations)
             
             # Log successful response
             self.logger.info(
