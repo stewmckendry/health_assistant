@@ -1,7 +1,7 @@
 # Health Assistant API Specification
 
 ## Overview
-The Health Assistant system provides AI-powered medical education and information through a modular architecture with strict safety guardrails. The system uses Anthropic's Claude API with web_fetch capabilities to provide evidence-based medical information from trusted sources.
+The Health Assistant system provides AI-powered medical education and information through a modular architecture with strict safety guardrails. The system uses Anthropic's Claude API with web_search and web_fetch capabilities to provide evidence-based medical information from trusted sources.
 
 ## Architecture
 
@@ -10,7 +10,9 @@ PatientAssistant
       ↓
 BaseAssistant (handles Anthropic API calls)
       ↓
-ResponseGuardrails (applies safety filters)
+LLMGuardrails (intelligent safety checks)
+      ↓
+ResponseGuardrails (regex fallback)
       ↓
 Settings (configuration management)
 ```
@@ -31,11 +33,11 @@ BaseAssistant(config: Optional[AssistantConfig] = None)
 - `config`: Optional configuration object. If not provided, uses default settings.
 
 **Configuration (AssistantConfig):**
-- `model`: Claude model to use (default: "claude-3-opus-20240229")
+- `model`: Claude model to use (default: "claude-3-5-sonnet-latest")
 - `max_tokens`: Maximum response tokens (default: 1500)
 - `temperature`: Model temperature 0.0-1.0 (default: 0.7)
 - `system_prompt`: System instruction for the model
-- `trusted_domains`: List of allowed domains for web_fetch
+- `trusted_domains`: List of allowed domains for web_fetch (97 medical domains)
 - `enable_web_fetch`: Enable/disable web fetching (default: True)
 - `citations_enabled`: Include citations in responses (default: True)
 - `max_web_fetch_uses`: Max web fetches per query (default: 5)
@@ -59,6 +61,7 @@ Send a query to the Anthropic API.
         "output_tokens": int  # Output token count
     },
     "citations": List[Dict],  # List of citations from web_fetch
+    "tool_calls": List[Dict], # Tool calls made (web_search, web_fetch)
     "session_id": str         # Session identifier
 }
 ```
@@ -73,7 +76,7 @@ Send a query to the Anthropic API.
 Constructs the message list for the API request.
 
 ##### `_build_tools() -> Optional[List[Dict[str, Any]]]`
-Configures the web_fetch tool with allowed domains.
+Configures the web_search and web_fetch tools with allowed domains.
 
 ##### `_extract_citations(response: Message) -> List[Dict[str, str]]`
 Extracts citations from the API response.
@@ -90,8 +93,11 @@ Specialized assistant for patient education with enhanced safety features.
 
 #### Constructor
 ```python
-PatientAssistant()
+PatientAssistant(guardrail_mode: str = "hybrid")
 ```
+
+**Parameters:**
+- `guardrail_mode`: Guardrail checking mode - "llm", "regex", or "hybrid" (default: "hybrid")
 
 Automatically configures itself using patient-specific settings from configuration files.
 
@@ -136,12 +142,75 @@ Process a patient query with safety checks and guardrails.
    - Returns safe error messages
    - Includes emergency contact information
 
+## LLMGuardrails
+
+### Class: `LLMGuardrails`
+**Location:** `src/utils/llm_guardrails.py`
+
+Intelligent LLM-based guardrails that act as tripwires before and after the main LLM call.
+
+#### Constructor
+```python
+LLMGuardrails(mode: str = "llm", model: str = "claude-3-5-haiku-latest")
+```
+
+**Parameters:**
+- `mode`: Checking mode - "llm", "regex", or "hybrid"
+- `model`: Model to use for guardrail checks (faster/cheaper model recommended)
+
+#### Methods
+
+##### `check_input(query: str, session_id: Optional[str] = None) -> Dict[str, Any]`
+Check user input for emergencies or crises before main LLM call.
+
+**Returns:**
+```python
+{
+    "requires_intervention": bool,       # True if emergency/crisis detected
+    "intervention_type": str,           # "emergency", "mental_health_crisis", or "none"
+    "explanation": str,                  # LLM's reasoning for decision
+    "should_block": bool                # Whether to block the query
+}
+```
+
+##### `check_output(response: str, citations: List[Dict], session_id: Optional[str], tool_calls: List[Dict]) -> Dict[str, Any]`
+Check assistant output for quality and safety after main LLM call.
+
+**Returns:**
+```python
+{
+    "passes_guardrails": bool,          # True if response is safe
+    "violations": List[str],            # List of violations found
+    "explanation": str,                  # Explanation of issues
+    "suggested_action": str,             # Action to take
+    "modified_response": str,            # Modified safe response
+    "web_search_performed": bool,       # Whether web search was used
+    "has_trusted_citations": bool       # Whether citations are from trusted domains
+}
+```
+
+**Key Features:**
+1. **Code-based verification**: Checks that web_search/web_fetch tools were called
+2. **Trusted domain validation**: Ensures citations come from 97 whitelisted medical domains
+3. **Medical content detection**: Identifies responses requiring sources
+4. **LLM review**: Intelligent analysis for diagnosis, treatment advice, disclaimers
+5. **Hybrid mode**: Falls back to regex patterns if LLM fails
+
+**Violation Types:**
+- `DIAGNOSIS`: Response suggests specific diagnosis
+- `TREATMENT`: Recommends specific treatments or medications
+- `MEDICAL_ADVICE`: Provides personalized medical advice
+- `MISSING_DISCLAIMER`: Lacks appropriate medical disclaimers
+- `UNTRUSTED_SOURCES`: Cites non-trusted domains
+- `NO_CITATIONS`: Makes medical claims without citations
+- `NO_TRUSTED_SOURCES`: Medical info without trusted citations
+
 ## ResponseGuardrails
 
 ### Class: `ResponseGuardrails`
 **Location:** `src/utils/guardrails.py`
 
-Applies safety filters and modifications to AI responses.
+Regex-based safety filters and modifications to AI responses (fallback system).
 
 #### Methods
 
@@ -189,9 +258,10 @@ Adds appropriate medical disclaimers.
 
 The system uses Pydantic settings with YAML configuration files:
 
-- **prompts.yaml**: System prompts for different modes
+- **prompts.yaml**: System prompts for different modes (patient/physician)
 - **disclaimers.yaml**: Medical disclaimers and emergency resources
-- **domains.yaml**: Trusted medical domains for web_fetch
+- **domains.yaml**: 97 trusted medical domains for web_fetch
+- **guardrail_prompts.yaml**: LLM prompts for input/output guardrails
 
 ### Environment Variables
 ```bash
@@ -207,20 +277,132 @@ ENABLE_WEB_FETCH=true               # Enable web search
 ```mermaid
 graph TD
     A[User Query] --> B[PatientAssistant.query]
-    B --> C{Emergency Check}
-    C -->|Emergency| D[Return Emergency Resources]
-    C -->|Crisis| E[Return Mental Health Resources]
-    C -->|Safe| F[BaseAssistant.query]
-    F --> G[Build Messages + Tools]
-    G --> H[Anthropic API Call]
-    H --> I[Extract Response + Citations]
-    I --> J[ResponseGuardrails.apply]
-    J --> K{Guardrails Check}
-    K -->|Violations| L[Sanitize Response]
-    K -->|Clean| M[Add Disclaimers]
-    L --> M
-    M --> N[Return Safe Response]
+    B --> C[LLMGuardrails.check_input]
+    C --> D{Input Guardrail Check}
+    D -->|Emergency| E[Return Emergency Resources]
+    D -->|Crisis| F[Return Mental Health Resources]
+    D -->|Safe| G[BaseAssistant.query]
+    G --> H[Build Messages + Tools]
+    H --> I[Anthropic API Call with web_search/web_fetch]
+    I --> J[Extract Response + Citations + Tool Calls]
+    J --> K[LLMGuardrails.check_output]
+    K --> L{Output Guardrail Check}
+    L -->|No Trusted Sources| M[Add Warning + Modify Response]
+    L -->|Violations| N[Apply Suggested Action]
+    L -->|Pass| O[Add Disclaimers if Needed]
+    M --> P[Return Modified Response]
+    N --> P
+    O --> Q[Return Safe Response]
 ```
+
+## Guardrail Behavior
+
+### Input Guardrail Triggers
+
+When the input guardrail detects an emergency or crisis:
+
+1. **Emergency Detection** (e.g., "I'm having chest pain right now"):
+   - The LLM guardrail immediately blocks the query
+   - No API call is made to the main assistant
+   - **User receives this message:**
+     ```
+     🚨 **MEDICAL EMERGENCY DETECTED**
+     
+     Your symptoms may require immediate medical attention.
+     
+     **CALL 911 IMMEDIATELY** or go to your nearest emergency room if you are experiencing:
+     - Chest pain or pressure
+     - Difficulty breathing
+     - Severe bleeding
+     - Loss of consciousness
+     - Stroke symptoms
+     - Severe allergic reaction
+     
+     **Emergency Resources:**
+     - 📞 Emergency Services: 911
+     - 📞 Poison Control: 1-800-222-1222
+     - 📍 Find nearest ER: https://www.medicare.gov/hospitalcompare/search.html
+     
+     This AI assistant cannot provide emergency medical assistance. Please seek immediate professional help.
+     ```
+
+2. **Mental Health Crisis** (e.g., "I want to end my life"):
+   - Query is blocked before processing
+   - **User receives this message:**
+     ```
+     💚 **We're Here to Help**
+     
+     If you're experiencing thoughts of suicide or self-harm, please know that you're not alone 
+     and help is available right now.
+     
+     **Immediate Support:**
+     - 📞 **988 Suicide & Crisis Lifeline**: Call or text 988 (Available 24/7)
+     - 📞 **Crisis Text Line**: Text HOME to 741741
+     - 📞 **International Crisis Lines**: https://findahelpline.com
+     
+     **Additional Resources:**
+     - 🌐 Online Chat: https://988lifeline.org/chat
+     - 🌐 Veterans Crisis Line: 1-800-273-8255, Press 1
+     - 🌐 LGBTQ+ Support: 1-866-488-7386
+     - 🌐 SAMHSA National Helpline: 1-800-662-4357
+     
+     **For immediate danger, call 911**
+     
+     This AI assistant cannot provide crisis counseling. Please reach out to these professional 
+     resources who have trained counselors ready to help you.
+     ```
+
+### Output Guardrail Triggers
+
+When the output guardrail detects violations:
+
+1. **No Trusted Sources** (medical info without citations):
+   - Adds warning wrapper to response
+   - **User receives modified message:**
+     ```
+     ⚠️ **Note**: The following information needs to be verified with trusted medical sources.
+     
+     [Original response content about medical topic]
+     
+     ⚠️ **Important**: Please consult verified medical sources or healthcare providers for accurate information.
+     ```
+
+2. **Diagnosis Detected** (e.g., response contains "You have diabetes"):
+   - If severe violation, **user receives:**
+     ```
+     I apologize, but I cannot provide that information as it may contain medical advice 
+     that should only come from a healthcare provider. Please consult with a medical 
+     professional for personalized guidance.
+     ```
+   - If mild violation, diagnostic language is replaced:
+     - "you have" → "this may indicate"
+     - "your symptoms" → "these symptoms"
+     - User sees the modified educational content
+
+3. **Missing Disclaimer**:
+   - **User receives response with added disclaimers:**
+     ```
+     ⚠️ **Medical Disclaimer**: This information is for educational purposes only 
+     and is not a substitute for professional medical advice.
+     
+     [Original response content]
+     
+     💡 **Remember**: Please consult with a healthcare provider for personalized medical advice.
+     ```
+
+4. **Treatment Recommendations** (e.g., "Take 2 aspirin daily"):
+   - Specific advice is removed
+   - **User receives generalized message:**
+     ```
+     ⚠️ **Medical Disclaimer**: This information is for educational purposes only 
+     and is not a substitute for professional medical advice.
+     
+     Common treatments for this condition are typically prescribed by healthcare providers 
+     based on individual patient needs. These may include various medications and therapies 
+     that should be discussed with your doctor.
+     
+     💡 **Remember**: Please consult with a healthcare provider for personalized medical advice.
+     ```
 
 ## Usage Examples
 
@@ -238,7 +420,7 @@ print(response["content"])
 # Output includes educational information with disclaimers
 ```
 
-### Emergency Detection
+### Emergency Detection (Input Guardrail Triggered)
 ```python
 response = assistant.query(
     "I'm having severe chest pain and can't breathe",
@@ -246,7 +428,33 @@ response = assistant.query(
 )
 
 print(response["emergency_detected"])  # True
-print(response["content"])  # Emergency redirect message
+print(response["content"])  # Emergency redirect message - no API call made
+```
+
+### Different Guardrail Modes
+```python
+# LLM-only mode (most intelligent)
+assistant = PatientAssistant(guardrail_mode="llm")
+
+# Regex-only mode (fastest, pattern-based)
+assistant = PatientAssistant(guardrail_mode="regex")
+
+# Hybrid mode (default - LLM with regex fallback)
+assistant = PatientAssistant(guardrail_mode="hybrid")
+```
+
+### Response with Violations (Output Guardrail Triggered)
+```python
+# If the API returns diagnostic content
+response = assistant.query(
+    "Based on my symptoms, what condition do I have?",
+    session_id="user-123"
+)
+
+# Output guardrail will modify the response
+print(response["guardrails_applied"])  # True
+print(response["violations"])  # ["DIAGNOSIS", "MISSING_DISCLAIMER"]
+print(response["content"])  # Modified safe response with disclaimers
 ```
 
 ### With Citations
