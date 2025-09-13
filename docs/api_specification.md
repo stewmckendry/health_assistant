@@ -101,6 +101,43 @@ PatientAssistant(guardrail_mode: str = "hybrid")
 
 Automatically configures itself using patient-specific settings from configuration files.
 
+#### Enhanced System Prompt Features
+
+The patient assistant uses a comprehensive 4.7KB system prompt with:
+
+**Core Boundaries:**
+- Never diagnose, prescribe, or provide treatment plans
+- Cite at least one trusted source for every medical claim
+- State disagreements between sources and advise clinical follow-up
+
+**Geographic Prioritization:**
+- Prefers Canadian/Ontario health guidance when relevant
+- Falls back to US CDC/NIH, WHO, major academic centers
+- Acknowledges geographic limitations for region-specific queries
+
+**Emergency Detection (Immediate 911 Redirect):**
+- Chest pain or crushing pressure
+- Difficulty breathing or shortness of breath  
+- Stroke symptoms (FAST protocol)
+- Severe abdominal pain with fever/vomiting
+- Signs of anaphylaxis or sepsis
+- Suicidal ideation or self-harm
+- Severe bleeding or traumatic injury
+- Loss of consciousness
+
+**Out of Scope Handling:**
+- Diagnosis requests
+- Medication dosing or adjustments
+- Controlled substances guidance
+- Personal lab/imaging interpretation
+- Prior authorization or disability letters
+
+**Special Modes:**
+- **Chronic Conditions**: Acknowledges user's likely familiarity
+- **Information Currency**: Prefers sources <5 years old
+- **Pressed Beyond Scope**: Requires explicit user acknowledgment
+- **Multilingual Support**: 7 languages (EN, FR, ES, ZH, AR, HI, PT)
+
 #### Methods
 
 ##### `query(query: str, session_id: Optional[str] = None) -> Dict[str, Any]`
@@ -127,20 +164,35 @@ Process a patient query with safety checks and guardrails.
 ```
 
 **Safety Features:**
-1. **Pre-query checks:**
-   - Emergency detection (chest pain, breathing issues, etc.)
+1. **Pre-query checks (Input Guardrails):**
+   - Emergency detection with severity levels (critical/high/medium/low)
    - Mental health crisis detection (suicide, self-harm)
+   - Out-of-scope request detection
    - Returns appropriate resources without querying API
 
-2. **Post-response guardrails:**
-   - Removes diagnostic language
-   - Removes treatment recommendations
-   - Adds medical disclaimers
-   - Sanitizes forbidden phrases
+2. **Post-response guardrails (Output Guardrails):**
+   - **Critical Violations** (block response):
+     - Diagnosis suggestions
+     - Treatment recommendations
+     - Medication dosing
+     - Lab interpretation
+     - Emergency downplaying
+   - **Moderate Violations** (modify response):
+     - Personalized medical advice
+     - Missing disclaimers
+     - No citations
+     - Untrusted sources
+     - Outdated information (>5 years)
+   - **Quality Issues** (enhance response):
+     - Complex medical jargon
+     - Speculation without evidence
+     - Missing safety guidance
+     - Regional assumptions
 
 3. **Error handling:**
    - Returns safe error messages
    - Includes emergency contact information
+   - Maintains session continuity
 
 ## LLMGuardrails
 
@@ -161,14 +213,15 @@ LLMGuardrails(mode: str = "llm", model: str = "claude-3-5-haiku-latest")
 #### Methods
 
 ##### `check_input(query: str, session_id: Optional[str] = None) -> Dict[str, Any]`
-Check user input for emergencies or crises before main LLM call.
+Check user input for emergencies, crises, or out-of-scope requests before main LLM call.
 
 **Returns:**
 ```python
 {
-    "requires_intervention": bool,       # True if emergency/crisis detected
-    "intervention_type": str,           # "emergency", "mental_health_crisis", or "none"
+    "requires_intervention": bool,       # True if emergency/crisis/out-of-scope detected
+    "intervention_type": str,           # "emergency", "mental_health_crisis", "out_of_scope", or "none"
     "explanation": str,                  # LLM's reasoning for decision
+    "severity": str,                    # "critical", "high", "medium", or "low"
     "should_block": bool                # Whether to block the query
 }
 ```
@@ -179,10 +232,12 @@ Check assistant output for quality and safety after main LLM call.
 **Returns:**
 ```python
 {
-    "passes_guardrails": bool,          # True if response is safe
-    "violations": List[str],            # List of violations found
+    "passes_guardrails": bool,          # False if any critical violations
+    "violations": List[str],            # List of violations found (14 types)
+    "severity": str,                    # "critical", "moderate", "minor", or "none"
     "explanation": str,                  # Explanation of issues
-    "suggested_action": str,             # Action to take
+    "suggested_action": str,             # "block_response", "remove_content", "add_disclaimer", "enhance_citations", or "pass"
+    "specific_fixes": List[str],        # Specific content to remove/modify
     "modified_response": str,            # Modified safe response
     "web_search_performed": bool,       # Whether web search was used
     "has_trusted_citations": bool       # Whether citations are from trusted domains
@@ -196,14 +251,27 @@ Check assistant output for quality and safety after main LLM call.
 4. **LLM review**: Intelligent analysis for diagnosis, treatment advice, disclaimers
 5. **Hybrid mode**: Falls back to regex patterns if LLM fails
 
-**Violation Types:**
+**Violation Types (14 categories):**
+
+**Critical Violations:**
 - `DIAGNOSIS`: Response suggests specific diagnosis
 - `TREATMENT`: Recommends specific treatments or medications
-- `MEDICAL_ADVICE`: Provides personalized medical advice
+- `DOSING`: Provides medication dosing or adjustment advice
+- `LAB_INTERPRETATION`: Interprets personal lab results or imaging
+- `CONTRADICTS_EMERGENCY`: Downplays potential emergency symptoms
+
+**Moderate Violations:**
+- `MEDICAL_ADVICE`: Provides personalized advice vs general education
 - `MISSING_DISCLAIMER`: Lacks appropriate medical disclaimers
-- `UNTRUSTED_SOURCES`: Cites non-trusted domains
 - `NO_CITATIONS`: Makes medical claims without citations
-- `NO_TRUSTED_SOURCES`: Medical info without trusted citations
+- `UNTRUSTED_SOURCES`: Cites non-trusted domains
+- `OUTDATED_INFO`: Uses information >5 years old without noting age
+
+**Quality Issues:**
+- `UNCLEAR_LANGUAGE`: Uses complex medical jargon without explanation
+- `SPECULATION`: Makes probability statements without evidence
+- `INCOMPLETE_SAFETY`: Doesn't mention when to seek medical care
+- `REGIONAL_ASSUMPTION`: Assumes US/Canada context without checking
 
 ## ResponseGuardrails
 
@@ -258,10 +326,22 @@ Adds appropriate medical disclaimers.
 
 The system uses Pydantic settings with YAML configuration files:
 
-- **prompts.yaml**: System prompts for different modes (patient/physician)
+- **prompts.yaml**: Comprehensive system prompts for different modes
+  - Patient prompt: 4.7KB with 9 major sections
+  - Includes decision flow priority and escalation handling
 - **disclaimers.yaml**: Medical disclaimers and emergency resources
+  - Multilingual support (7 languages)
+  - Chronic condition acknowledgments
+  - Out-of-scope and pressed-beyond-scope templates
+  - Canadian and US emergency numbers
 - **domains.yaml**: 97 trusted medical domains for web_fetch
-- **guardrail_prompts.yaml**: LLM prompts for input/output guardrails
+  - Government health sites (.gov)
+  - Major medical institutions
+  - Academic medical centers
+- **guardrail_prompts.yaml**: Enhanced LLM prompts for guardrails
+  - Input guardrail with severity levels
+  - Output guardrail with 14 violation types
+  - Critical/moderate/minor categorization
 
 ### Environment Variables
 ```bash
@@ -302,32 +382,26 @@ graph TD
 When the input guardrail detects an emergency or crisis:
 
 1. **Emergency Detection** (e.g., "I'm having chest pain right now"):
-   - The LLM guardrail immediately blocks the query
+   - The LLM guardrail immediately blocks the query (severity: critical)
    - No API call is made to the main assistant
    - **User receives this message:**
      ```
-     🚨 **MEDICAL EMERGENCY DETECTED**
+     🚨 I can't safely evaluate those symptoms. They may be an emergency.
      
-     Your symptoms may require immediate medical attention.
+     **Please call 911 or go to the nearest emergency department immediately.**
      
-     **CALL 911 IMMEDIATELY** or go to your nearest emergency room if you are experiencing:
-     - Chest pain or pressure
-     - Difficulty breathing
-     - Severe bleeding
-     - Loss of consciousness
-     - Stroke symptoms
-     - Severe allergic reaction
+     Do not delay seeking immediate medical attention.
      
      **Emergency Resources:**
-     - 📞 Emergency Services: 911
-     - 📞 Poison Control: 1-800-222-1222
-     - 📍 Find nearest ER: https://www.medicare.gov/hospitalcompare/search.html
+     • Medical Emergency: Call 911 (US/Canada) or your local emergency number
+     • Poison Control: 1-800-222-1222 (US) | 1-844-764-7669 (Canada)
+     • Mental Health Crisis: 988 (US) | Talk Suicide Canada: 1-833-456-4566
      
-     This AI assistant cannot provide emergency medical assistance. Please seek immediate professional help.
+     This AI assistant cannot provide emergency medical assistance.
      ```
 
 2. **Mental Health Crisis** (e.g., "I want to end my life"):
-   - Query is blocked before processing
+   - Query is blocked before processing (severity: critical)
    - **User receives this message:**
      ```
      💚 **We're Here to Help**
@@ -336,20 +410,29 @@ When the input guardrail detects an emergency or crisis:
      and help is available right now.
      
      **Immediate Support:**
-     - 📞 **988 Suicide & Crisis Lifeline**: Call or text 988 (Available 24/7)
-     - 📞 **Crisis Text Line**: Text HOME to 741741
-     - 📞 **International Crisis Lines**: https://findahelpline.com
-     
-     **Additional Resources:**
-     - 🌐 Online Chat: https://988lifeline.org/chat
-     - 🌐 Veterans Crisis Line: 1-800-273-8255, Press 1
-     - 🌐 LGBTQ+ Support: 1-866-488-7386
-     - 🌐 SAMHSA National Helpline: 1-800-662-4357
+     • National Suicide Prevention Lifeline: 988 or 1-800-273-8255 (US)
+     • Talk Suicide Canada: 1-833-456-4566 or text 45645
+     • Crisis Text Line: Text HOME to 741741 (US) | Text TALK to 686868 (Canada)
+     • SAMHSA National Helpline: 1-800-662-4357
+     • Veterans Crisis Line: 1-800-273-8255, Press 1
      
      **For immediate danger, call 911**
      
      This AI assistant cannot provide crisis counseling. Please reach out to these professional 
      resources who have trained counselors ready to help you.
+     ```
+
+3. **Out-of-Scope Request** (e.g., "What medication dose should I take?"):
+   - Query is blocked (severity: medium)
+   - **User receives this message:**
+     ```
+     ⚠️ I can't provide that safely. This requires a licensed clinician who knows your medical history.
+     
+     For general educational context about this topic, I can share that medication dosing 
+     is determined by healthcare providers based on individual factors including medical 
+     history, other medications, and specific conditions.
+     
+     Please consult with your healthcare provider for personalized guidance.
      ```
 
 ### Output Guardrail Triggers
@@ -383,11 +466,38 @@ When the output guardrail detects violations:
    - **User receives response with added disclaimers:**
      ```
      ⚠️ **Medical Disclaimer**: This information is for educational purposes only 
-     and is not a substitute for professional medical advice.
+     and is not a substitute for professional medical advice, diagnosis, or treatment. 
+     Always seek the advice of your physician or other qualified health provider.
      
      [Original response content]
      
-     💡 **Remember**: Please consult with a healthcare provider for personalized medical advice.
+     💡 **Remember**: This information is educational only. Please consult with a 
+     healthcare provider for personalized medical advice. If you are experiencing 
+     a medical emergency, call 911 or your local emergency number immediately.
+     ```
+
+5. **Chronic Condition Context** (e.g., "I've had diabetes for 10 years..."):
+   - Response acknowledges user's experience:
+     ```
+     📝 You may already be aware of this information given your experience with 
+     this condition, but from vetted medical sources:
+     
+     [Educational content about diabetes management]
+     
+     Please confirm any changes to your management plan with your healthcare provider.
+     ```
+
+6. **Pressed Beyond Scope** (user insists after initial decline):
+   - Requires explicit acknowledgment:
+     ```
+     🛑 **Important Acknowledgment Required**:
+     You are asking me to go beyond my safe boundaries. I can provide general 
+     educational information, but you must acknowledge that:
+     • This is NOT personalized medical advice
+     • You MUST review this with a qualified healthcare provider  
+     • This is for educational purposes only
+     
+     Do you acknowledge and accept these limitations?
      ```
 
 4. **Treatment Recommendations** (e.g., "Take 2 aspirin daily"):
@@ -529,8 +639,9 @@ pytest tests/e2e/
 
 ## Future Enhancements
 
-1. **Physician Mode**: Technical language and extended sources
-2. **Multi-Agent Orchestration**: MAI-DxO pattern for complex queries
-3. **Batch Processing**: Handle multiple queries efficiently
-4. **Analytics**: Track usage patterns and safety metrics
-5. **Internationalization**: Multi-language support
+1. **Physician Mode (Phase 5)**: Technical language and extended sources
+2. **Multi-Agent Orchestration (Phase 6)**: MAI-DxO pattern for complex queries
+3. **Evaluation Framework (Phase 2)**: Langfuse integration for quality metrics
+4. **Web Application (Phase 3)**: FastAPI/Next.js interface
+5. **Advanced Configuration (Phase 4)**: Runtime configuration switching
+6. **Internationalization**: Expanded from current 7 languages

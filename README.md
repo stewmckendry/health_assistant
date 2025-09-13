@@ -12,6 +12,7 @@ AI-powered medical education assistant providing safe, educational health inform
 - 54 unit tests passing
 - 11 integration tests passing  
 - 7 end-to-end tests implemented
+- Enhanced system prompts (4.7KB comprehensive safety)
 - Full documentation available
 
 ## 🚀 Quick Start
@@ -78,27 +79,41 @@ SessionLogger (request tracking)
 ### Key Components
 
 1. **BaseAssistant**: Core Anthropic API integration with web_search + web_fetch tools
-2. **PatientAssistant**: Patient-specific safety checks and disclaimers
+2. **PatientAssistant**: Patient-specific safety with enhanced 4.7KB system prompt
 3. **LLMGuardrails**: Intelligent LLM-based safety checks (tripwires)
 4. **ResponseGuardrails**: Regex-based fallback safety system
 5. **SessionLogger**: Complete request flow tracking and inspection
 6. **Configuration**: YAML-based settings management
+
+### Enhanced System Prompt Features
+- **Geographic Prioritization**: Canada/Ontario preference, then US/WHO
+- **Chronic Condition Handling**: Acknowledges user's experience
+- **Information Currency**: Prefers sources <5 years old
+- **Pressed Beyond Scope**: Requires explicit user acknowledgment
+- **Multilingual Support**: 7 languages (EN, FR, ES, ZH, AR, HI, PT)
+- **Decision Flow Priority**: Structured safety evaluation
 
 ## 🔒 Safety Features
 
 ### Three-Layer Guardrail System
 
 #### 1. Input Guardrails (Pre-API)
-- **LLM Analysis**: Intelligent detection of emergencies/crises
-- **Emergency Detection**: Chest pain, breathing issues → 911 redirect
-- **Mental Health Crisis**: Suicidal ideation → 988 resources
+- **LLM Analysis**: Intelligent detection with severity levels (critical/high/medium/low)
+- **Emergency Detection**: Comprehensive symptom list → 911 redirect
+  - Chest pain, breathing issues, stroke symptoms (FAST)
+  - Anaphylaxis, sepsis, severe bleeding, loss of consciousness
+- **Mental Health Crisis**: Suicidal ideation → 988 (US) / 1-833-456-4566 (Canada)
+- **Out-of-Scope Detection**: Diagnosis requests, dosing advice → Safe decline
 - **No API Call**: Critical situations bypass API entirely
 
-#### 2. Output Guardrails (Post-API)
-- **Source Verification**: Ensures trusted medical sources cited
-- **LLM Review**: Checks for diagnosis/treatment language
+#### 2. Output Guardrails (Post-API) 
+- **14 Violation Categories**:
+  - Critical: Diagnosis, treatment, dosing, lab interpretation
+  - Moderate: Missing disclaimers, no citations, untrusted sources
+  - Quality: Jargon, speculation, incomplete safety info
+- **Source Verification**: Ensures 97 trusted medical domains
 - **Content Modification**: Removes unsafe medical advice
-- **Disclaimer Addition**: Adds appropriate warnings
+- **Smart Actions**: Block, remove content, add disclaimers, enhance citations
 
 #### 3. Guardrail Modes
 - **LLM Mode**: Intelligent context-aware checking
@@ -131,10 +146,10 @@ TEMPERATURE=0.7
 
 ### Configuration Files
 
-- `src/config/prompts.yaml` - System prompts for different modes
-- `src/config/disclaimers.yaml` - Medical disclaimers and emergency resources
+- `src/config/prompts.yaml` - Enhanced system prompts (4.7KB patient prompt)
+- `src/config/disclaimers.yaml` - Multilingual disclaimers and emergency resources
 - `src/config/domains.yaml` - 97 trusted medical domains for web_fetch
-- `src/config/guardrail_prompts.yaml` - LLM guardrail checking prompts
+- `src/config/guardrail_prompts.yaml` - Enhanced guardrail prompts with 14 violation types
 
 ## 🧪 Testing
 
@@ -242,19 +257,28 @@ Logs automatically rotate at 10MB with 5 backup files kept.
 
 The system immediately detects and redirects:
 
-**Medical Emergencies**:
-- Chest pain, heart attack symptoms
-- Breathing difficulties
-- Stroke symptoms
-- Severe bleeding
-- Loss of consciousness
+**Medical Emergencies (Severity: Critical)**:
+- Chest pain, crushing pressure, or pain radiating to arm/jaw
+- Difficulty breathing or severe shortness of breath
+- Stroke symptoms (FAST: Face drooping, Arm weakness, Speech difficulty, Time)
+- Severe abdominal pain with fever/vomiting
+- Signs of anaphylaxis or severe allergic reaction
+- Signs of sepsis (high fever, confusion, rapid heart rate)
+- Severe bleeding or traumatic injury
+- Loss of consciousness or altered mental state
 
-**Mental Health Crises**:
-- Suicidal ideation
+**Mental Health Crises (Severity: Critical)**:
+- Suicidal ideation or plans
 - Self-harm intentions
-- Harm to others
+- Threats to harm others
 
-These queries bypass the API and return appropriate emergency resources.
+**Out-of-Scope Requests (Severity: Medium)**:
+- Direct diagnosis requests
+- Medication dosing or adjustments
+- Controlled substances guidance
+- Personal lab/imaging interpretation
+
+These queries bypass the API and return appropriate resources with US/Canada numbers.
 
 ## 🔧 Development
 
