@@ -6,6 +6,29 @@ patient:
   
   end: |
     💡 **Remember**: This information is educational only. Please consult with a healthcare provider for personalized medical advice. If you are experiencing a medical emergency, call 911 or your local emergency number immediately.
+  
+  multilingual:
+    fr: |
+      ⚠️ **Avis médical**: Ces informations sont générales et éducatives et ne remplacent pas l'avis d'un professionnel de santé.
+    es: |
+      ⚠️ **Aviso médico**: Esta información es general y educativa y no sustituye el consejo médico profesional.
+    zh-Hans: |
+      ⚠️ **医疗声明**: 本信息为一般性教育内容，不能替代专业医疗建议。
+  
+  chronic_condition: |
+    📝 You may already be aware of this information given your experience with this condition, but from vetted medical sources:
+  
+  out_of_scope: |
+    ⚠️ I can't provide that safely. This requires a licensed clinician who knows your medical history.
+  
+  pressed_beyond_scope: |
+    🛑 **Important Acknowledgment Required**:
+    You are asking me to go beyond my safe boundaries. I can provide general educational information, but you must acknowledge that:
+    • This is NOT personalized medical advice
+    • You MUST review this with a qualified healthcare provider  
+    • This is for educational purposes only
+    
+    Do you acknowledge and accept these limitations?
 
 physician:
   start: ""  # No start disclaimer for physician mode
@@ -16,20 +39,33 @@ physician:
 emergency:
   resources: |
     **Emergency Resources:**
-    • Medical Emergency: Call 911 (US) or your local emergency number
-    • Poison Control: 1-800-222-1222 (US)
-    • Mental Health Crisis: 988 (US Suicide & Crisis Lifeline)
+    • Medical Emergency: Call 911 (US/Canada) or your local emergency number
+    • Poison Control: 1-800-222-1222 (US) | 1-844-764-7669 (Canada)
+    • Mental Health Crisis: 988 (US Suicide & Crisis Lifeline) | Talk Suicide Canada: 1-833-456-4566
     • Domestic Violence: 1-800-799-7233 (US National Hotline)
   
   mental_health: |
     **Mental Health Support:**
-    • National Suicide Prevention Lifeline: 988 or 1-800-273-8255
-    • Crisis Text Line: Text HOME to 741741
+    • National Suicide Prevention Lifeline: 988 or 1-800-273-8255 (US)
+    • Talk Suicide Canada: 1-833-456-4566 or text 45645
+    • Crisis Text Line: Text HOME to 741741 (US) | Text TALK to 686868 (Canada)
     • SAMHSA National Helpline: 1-800-662-4357
     • Veterans Crisis Line: 1-800-273-8255, Press 1
   
   redirect: |
-    🚨 **This appears to be a medical emergency.** Please:
-    1. Call 911 or your local emergency number immediately
-    2. Go to the nearest emergency room
-    3. Do not delay seeking immediate medical attention
+    🚨 I can't safely evaluate those symptoms. They may be an emergency.
+    
+    **Please call 911 or go to the nearest emergency department immediately.**
+    
+    Do not delay seeking immediate medical attention.
+  
+  red_flags:
+    - "chest pain or crushing pressure"
+    - "difficulty breathing or shortness of breath"
+    - "stroke symptoms (face drooping, arm weakness, speech difficulty)"
+    - "severe abdominal pain with fever/vomiting"
+    - "signs of anaphylaxis"
+    - "suicidal thoughts or self-harm"
+    - "signs of sepsis"
+    - "severe bleeding"
+    - "loss of consciousness"
