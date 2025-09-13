@@ -122,24 +122,43 @@ class BaseAssistant:
             response: Anthropic API response
         
         Returns:
-            List of citation dictionaries
+            List of unique citation dictionaries
         """
         citations = []
+        seen_urls = set()  # Track URLs to avoid duplicates
+        duplicate_count = 0
+        
         for content_block in response.content:
             if hasattr(content_block, 'citations') and content_block.citations:
                 for citation in content_block.citations:
                     # Handle different citation formats
                     if isinstance(citation, dict):
-                        citations.append({
-                            "url": citation.get("url", ""),
-                            "title": citation.get("title", "")
-                        })
+                        url = citation.get("url", "")
+                        title = citation.get("title", "")
                     elif hasattr(citation, 'url'):
                         # Handle object-based citations
-                        citations.append({
-                            "url": getattr(citation, 'url', ''),
-                            "title": getattr(citation, 'title', 'Source')
-                        })
+                        url = getattr(citation, 'url', '')
+                        title = getattr(citation, 'title', 'Source')
+                    else:
+                        continue
+                    
+                    # Only add if URL hasn't been seen before
+                    if url:
+                        if url not in seen_urls:
+                            citations.append({
+                                "url": url,
+                                "title": title
+                            })
+                            seen_urls.add(url)
+                        else:
+                            duplicate_count += 1
+        
+        if duplicate_count > 0:
+            self.logger.info(
+                f"Removed {duplicate_count} duplicate citations",
+                extra={"unique_citations": len(citations), "duplicates_removed": duplicate_count}
+            )
+                        
         return citations
     
     def _format_response_with_citations(
