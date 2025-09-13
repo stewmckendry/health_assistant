@@ -221,11 +221,26 @@ class BaseAssistant:
             # Make API call
             response = self.client.messages.create(**api_kwargs)
             
-            # Extract content from response
+            # Extract content and track tool calls
             content = ""
+            tool_calls = []
+            
             for content_block in response.content:
                 if hasattr(content_block, 'text') and content_block.text is not None:
                     content += str(content_block.text)
+                
+                # Track tool usage
+                if hasattr(content_block, 'type'):
+                    if content_block.type in ['server_tool_use', 'tool_use']:
+                        tool_calls.append({
+                            "type": content_block.type,
+                            "name": getattr(content_block, 'name', 'unknown')
+                        })
+                    elif content_block.type == 'web_fetch_tool_result':
+                        tool_calls.append({
+                            "type": "web_fetch_result",
+                            "url": getattr(content_block, 'url', None)
+                        })
             
             # Extract citations if available
             citations = self._extract_citations(response) if self.config.citations_enabled else []
@@ -242,7 +257,8 @@ class BaseAssistant:
                     "model": response.model,
                     "input_tokens": response.usage.input_tokens,
                     "output_tokens": response.usage.output_tokens,
-                    "citations_count": len(citations)
+                    "citations_count": len(citations),
+                    "tool_calls_count": len(tool_calls)
                 }
             )
             
@@ -254,6 +270,7 @@ class BaseAssistant:
                     "output_tokens": response.usage.output_tokens
                 },
                 "citations": citations,
+                "tool_calls": tool_calls,
                 "session_id": session_id
             }
             

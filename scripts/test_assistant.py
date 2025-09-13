@@ -266,6 +266,12 @@ def main():
         action="store_true",
         help="Disable guardrails (testing only)"
     )
+    parser.add_argument(
+        "--guardrail-mode",
+        choices=["llm", "regex", "hybrid"],
+        default="hybrid",
+        help="Guardrail mode: llm (LLM-based), regex (pattern matching), hybrid (both)"
+    )
     
     args = parser.parse_args()
     
@@ -277,7 +283,9 @@ def main():
     # Initialize assistant
     try:
         if args.mode == "patient":
-            assistant = PatientAssistant()
+            assistant = PatientAssistant(guardrail_mode=args.guardrail_mode)
+            if not args.no_guardrails:
+                print(f"🛡️  Guardrail mode: {args.guardrail_mode.upper()}")
         else:
             # Base assistant for testing without guardrails
             config = AssistantConfig(
