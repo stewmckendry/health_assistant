@@ -3,6 +3,7 @@ import json
 import logging
 from typing import Dict, Any, List, Optional
 from anthropic import Anthropic
+from langfuse import get_client, observe
 import yaml
 from pathlib import Path
 
@@ -17,6 +18,15 @@ from src.utils.guardrails import (
 )
 
 logger = get_logger(__name__)
+
+# Initialize Langfuse client
+if settings.langfuse_enabled:
+    try:
+        langfuse = get_client()
+    except Exception:
+        langfuse = None
+else:
+    langfuse = None
 
 
 class LLMGuardrails:
@@ -53,6 +63,7 @@ class LLMGuardrails:
         with open(prompts_file, 'r') as f:
             return yaml.safe_load(f)
     
+    @observe(name="input_guardrail_check", capture_input=True, capture_output=True)
     def check_input(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
         """
         Check user input for emergencies or crises before main LLM call.
@@ -155,6 +166,7 @@ class LLMGuardrails:
             logger.error(f"Failed to parse LLM response: {response_text}")
             raise
     
+    @observe(name="output_guardrail_check", capture_input=True, capture_output=True)
     def check_output(
         self, 
         response: str, 
@@ -309,18 +321,51 @@ class LLMGuardrails:
             if hasattr(block, 'text') and block.text:
                 response_text += str(block.text)
         
+        # First try to extract just the JSON part
+        import re
+        json_text = response_text.strip()
+        
+        # Look for JSON object pattern and extract just that part
+        json_match = re.search(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', json_text)
+        if json_match:
+            json_text = json_match.group()
+        
         try:
             # Parse JSON response
-            result = json.loads(response_text)
+            result = json.loads(json_text)
             return {
                 "passes_guardrails": result.get("passes_guardrails", True),
                 "violations": result.get("violations", []),
                 "explanation": result.get("explanation", ""),
-                "suggested_action": result.get("suggested_action", "pass")
+                "suggested_action": result.get("suggested_action", "pass"),
+                "specific_fixes": result.get("specific_fixes", [])
             }
-        except json.JSONDecodeError:
-            logger.error(f"Failed to parse LLM response: {response_text}")
-            raise
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse LLM response: {response_text[:500]}")
+            
+            # Try to repair common JSON issues
+            try:
+                # Fix common issues like unquoted values
+                json_str = re.sub(r':\s*([a-zA-Z_]\w*)\s*([,}])', r': "\1"\2', json_text)
+                # Remove trailing commas
+                json_str = re.sub(r',\s*}', '}', json_str)
+                json_str = re.sub(r',\s*]', ']', json_str)
+                
+                # Try parsing again
+                result = json.loads(json_str)
+                logger.info("Successfully repaired JSON response")
+                return {
+                    "passes_guardrails": result.get("passes_guardrails", True),
+                    "violations": result.get("violations", []),
+                    "explanation": result.get("explanation", ""),
+                    "suggested_action": result.get("suggested_action", "pass"),
+                    "specific_fixes": result.get("specific_fixes", [])
+                }
+            except Exception as repair_error:
+                logger.debug(f"JSON repair failed: {repair_error}")
+            
+            # If repair fails, raise original error
+            raise e
     
     def _apply_suggested_action(
         self, 

@@ -2,6 +2,7 @@
 import time
 from typing import Dict, Any, Optional
 
+from langfuse import get_client, observe
 from src.assistants.base import BaseAssistant, AssistantConfig
 from src.utils.guardrails import (
     ResponseGuardrails,
@@ -16,6 +17,17 @@ from src.config.settings import settings
 
 
 logger = get_logger(__name__)
+
+# Initialize Langfuse client
+if settings.langfuse_enabled:
+    try:
+        langfuse = get_client()
+        logger.info("Langfuse client initialized for observability")
+    except Exception as e:
+        logger.warning(f"Failed to initialize Langfuse: {e}")
+        langfuse = None
+else:
+    langfuse = None
 
 
 class PatientAssistant(BaseAssistant):
@@ -67,6 +79,7 @@ class PatientAssistant(BaseAssistant):
             }
         )
     
+    @observe(name="patient_query", capture_input=True, capture_output=True)
     def query(
         self,
         query: str,
@@ -91,6 +104,21 @@ class PatientAssistant(BaseAssistant):
         
         # Log original query
         session_logger.log_original_query(query, self.mode)
+        
+        # Update Langfuse trace with metadata
+        if langfuse and settings.langfuse_enabled:
+            try:
+                langfuse.update_current_trace(
+                    input={"query": query, "mode": self.mode},
+                    metadata={
+                        "session_id": session_id or "default",
+                        "guardrail_mode": self.guardrail_mode,
+                        "assistant_mode": self.mode
+                    },
+                    tags=["patient_assistant", f"guardrail_{self.guardrail_mode}"]
+                )
+            except Exception as e:
+                logger.debug(f"Failed to update Langfuse trace: {e}")
         
         logger.info(
             "Patient query received",

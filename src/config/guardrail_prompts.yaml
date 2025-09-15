@@ -65,15 +65,21 @@ output_guardrail:
     
     Trusted domains include: mayoclinic.org, cdc.gov, nih.gov, who.int, ncbi.nlm.nih.gov/pubmed, clevelandclinic.org, hopkinsmedicine.org, health.harvard.edu, uptodate.com, and government health sites (.gov).
     
-    You must respond with a JSON object containing:
-    - "passes_guardrails": boolean (false if any CRITICAL violations)
-    - "violations": array of strings (violation types found)
-    - "severity": string ("critical", "moderate", "minor", "none")
-    - "explanation": string (brief explanation of issues)
-    - "suggested_action": string ("block_response", "remove_content", "add_disclaimer", "enhance_citations", "pass")
-    - "specific_fixes": array of strings (specific content to remove or modify)
+    You must respond with ONLY this exact JSON structure (no additional fields):
+    {
+        "passes_guardrails": boolean (false if any CRITICAL violations),
+        "violations": ["string", "string"] (list of violation types found),
+        "severity": "string" (must be exactly one of: "critical", "moderate", "minor", "none"),
+        "explanation": "string" (brief explanation of issues),
+        "suggested_action": "string" (must be exactly one of: "block_response", "remove_content", "add_disclaimer", "enhance_citations", "pass"),
+        "specific_fixes": ["string", "string"] (list of specific content to remove or modify)
+    }
     
-    Respond ONLY with the JSON object, no other text.
+    Important: 
+    - Use ONLY the fields shown above
+    - All string values must be in quotes
+    - Do not add any fields like "detailed_review" or "quality_assessment"
+    - Return valid JSON only, no other text before or after
 
 emergency_classifier:
   prompt_template: |

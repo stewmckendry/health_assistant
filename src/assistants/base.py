@@ -6,14 +6,25 @@ import logging
 
 from anthropic import Anthropic
 from anthropic.types import Message
+from langfuse import get_client, observe
 
 from src.utils.logging import get_logger, log_api_call
+from src.config.settings import settings
+
+# Initialize Langfuse client
+if settings.langfuse_enabled:
+    try:
+        langfuse = get_client()
+    except Exception:
+        langfuse = None
+else:
+    langfuse = None
 
 
 @dataclass
 class AssistantConfig:
     """Configuration for the assistant."""
-    model: str = "claude-3-opus-20240229"
+    model: str = "claude-3-5-haiku-latest"  # Updated to working model
     max_tokens: int = 1500
     temperature: float = 0.7
     system_prompt: str = "You are a helpful assistant."
@@ -187,6 +198,7 @@ class BaseAssistant:
         
         return formatted
     
+    @observe(name="llm_call", as_type="generation", capture_input=True, capture_output=True)
     def query(
         self,
         query: str,
@@ -250,26 +262,60 @@ class BaseAssistant:
             # Make API call
             response = self.client.messages.create(**api_kwargs)
             
+            # Update Langfuse generation with model details
+            if langfuse and settings.langfuse_enabled:
+                try:
+                    langfuse.update_current_observation(
+                        model=self.model,
+                        input=messages,
+                        metadata={
+                            "system_prompt": self.config.system_prompt[:200],  # First 200 chars
+                            "tools_enabled": tools is not None,
+                            "trusted_domains_count": len(self.trusted_domains) if tools else 0
+                        },
+                        usage={
+                            "input_tokens": response.usage.input_tokens,
+                            "output_tokens": response.usage.output_tokens,
+                            "total_tokens": response.usage.input_tokens + response.usage.output_tokens
+                        }
+                    )
+                except Exception as e:
+                    self.logger.debug(f"Failed to update Langfuse observation: {e}")
+            
             # Extract content and track tool calls
             content = ""
             tool_calls = []
+            web_fetches_count = 0
             
             for content_block in response.content:
                 if hasattr(content_block, 'text') and content_block.text is not None:
                     content += str(content_block.text)
+                    
+                    # Count web fetches by checking citations in text blocks
+                    if hasattr(content_block, 'citations') and content_block.citations:
+                        web_fetches_count += len(content_block.citations)
                 
                 # Track tool usage
                 if hasattr(content_block, 'type'):
-                    if content_block.type in ['server_tool_use', 'tool_use']:
+                    if content_block.type == 'server_tool_use':
                         tool_calls.append({
-                            "type": content_block.type,
-                            "name": getattr(content_block, 'name', 'unknown')
+                            "type": "tool_use",
+                            "name": getattr(content_block, 'name', 'unknown'),
+                            "input": getattr(content_block, 'input', {})
                         })
-                    elif content_block.type == 'web_fetch_tool_result':
+                    elif content_block.type == 'web_search_tool_result':
                         tool_calls.append({
-                            "type": "web_fetch_result",
-                            "url": getattr(content_block, 'url', None)
+                            "type": "web_search_result",
+                            "name": "web_search"
                         })
+            
+            # Add web_fetch summary if citations were found
+            if web_fetches_count > 0:
+                tool_calls.append({
+                    "type": "web_fetch_summary",
+                    "name": "web_fetch",
+                    "fetch_count": web_fetches_count
+                })
             
             # Extract citations if available
             citations = self._extract_citations(response) if self.config.citations_enabled else []
