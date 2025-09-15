@@ -24,6 +24,38 @@ class Settings(BaseSettings):
         description="Anthropic API key for Claude"
     )
     
+    # Langfuse Configuration
+    langfuse_public_key: str = Field(
+        default="",
+        env="LANGFUSE_PUBLIC_KEY",
+        description="Langfuse public API key"
+    )
+    langfuse_secret_key: str = Field(
+        default="",
+        env="LANGFUSE_SECRET_KEY",
+        description="Langfuse secret API key"
+    )
+    langfuse_host: str = Field(
+        default="https://cloud.langfuse.com",
+        env="LANGFUSE_HOST",
+        description="Langfuse API host"
+    )
+    langfuse_enabled: bool = Field(
+        default=True,
+        env="LANGFUSE_ENABLED",
+        description="Enable Langfuse observability"
+    )
+    langfuse_debug: bool = Field(
+        default=False,
+        env="LANGFUSE_DEBUG",
+        description="Enable Langfuse debug mode"
+    )
+    langfuse_flush_interval: int = Field(
+        default=5,
+        env="LANGFUSE_FLUSH_INTERVAL",
+        description="Langfuse flush interval in seconds"
+    )
+    
     # Model Configuration
     primary_model: str = Field(
         default="claude-3-5-sonnet-20241022",

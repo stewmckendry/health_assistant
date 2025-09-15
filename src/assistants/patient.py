@@ -2,6 +2,7 @@
 import time
 from typing import Dict, Any, Optional
 
+from langfuse import get_client, observe
 from src.assistants.base import BaseAssistant, AssistantConfig
 from src.utils.guardrails import (
     ResponseGuardrails,
@@ -16,6 +17,17 @@ from src.config.settings import settings
 
 
 logger = get_logger(__name__)
+
+# Initialize Langfuse client
+if settings.langfuse_enabled:
+    try:
+        langfuse = get_client()
+        logger.info("Langfuse client initialized for observability")
+    except Exception as e:
+        logger.warning(f"Failed to initialize Langfuse: {e}")
+        langfuse = None
+else:
+    langfuse = None
 
 
 class PatientAssistant(BaseAssistant):
@@ -67,10 +79,12 @@ class PatientAssistant(BaseAssistant):
             }
         )
     
+    @observe(name="patient_query", capture_input=True, capture_output=True)
     def query(
         self,
         query: str,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        user_id: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Process a patient query with appropriate guardrails and disclaimers.
@@ -79,6 +93,7 @@ class PatientAssistant(BaseAssistant):
         Args:
             query: Patient's question or concern
             session_id: Session identifier for logging
+            user_id: User identifier for tracking
         
         Returns:
             Response dictionary with educational content and metadata
@@ -91,6 +106,29 @@ class PatientAssistant(BaseAssistant):
         
         # Log original query
         session_logger.log_original_query(query, self.mode)
+        
+        # Update Langfuse trace with metadata
+        if langfuse and settings.langfuse_enabled:
+            try:
+                langfuse.update_current_trace(
+                    input={"query": query, "mode": self.mode},
+                    metadata={
+                        "session_id": session_id or "default",
+                        "user_id": user_id or "anon",
+                        "guardrail_mode": self.guardrail_mode,
+                        "assistant_mode": self.mode
+                    },
+                    session_id=session_id,
+                    user_id=user_id,
+                    tags=["patient_assistant", f"guardrail_{self.guardrail_mode}"]
+                )
+                # Add session/user tags for filtering
+                if session_id:
+                    langfuse.update_current_trace(tags=[f"session:{session_id[:8]}"])
+                if user_id:
+                    langfuse.update_current_trace(tags=[f"user:{user_id}"])
+            except Exception as e:
+                logger.debug(f"Failed to update Langfuse trace: {e}")
         
         logger.info(
             "Patient query received",
@@ -200,7 +238,7 @@ class PatientAssistant(BaseAssistant):
         try:
             # Call the parent class query method which makes the actual Anthropic API call
             # This is where the request goes to Claude (in base.py line 206)
-            api_response = super().query(query, session_id, session_logger)
+            api_response = super().query(query, session_id, user_id, session_logger)
             
             # Apply output guardrails based on mode
             original_response = api_response["content"]
