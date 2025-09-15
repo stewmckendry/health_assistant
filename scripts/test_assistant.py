@@ -128,10 +128,13 @@ def save_conversation(session_id: str, query: str, response: dict):
         f.write(json.dumps(entry) + "\n")
 
 
-def run_interactive_mode(assistant, verbose: bool = False, save: bool = False):
+def run_interactive_mode(assistant, verbose: bool = False, save: bool = False, 
+                        session_id: Optional[str] = None, user_id: str = "anon"):
     """Run the interactive CLI loop."""
-    session_id = str(uuid.uuid4())[:8]
+    if not session_id:
+        session_id = str(uuid.uuid4())[:8]
     print(f"\n🔑 Session ID: {session_id}")
+    print(f"👤 User ID: {user_id}")
     
     while True:
         try:
@@ -167,7 +170,7 @@ def run_interactive_mode(assistant, verbose: bool = False, save: bool = False):
             print("\n⏳ Processing your question...")
             
             try:
-                response = assistant.query(query, session_id=session_id)
+                response = assistant.query(query, session_id=session_id, user_id=user_id)
                 print_response(response, verbose)
                 
                 # Save if requested
@@ -183,10 +186,13 @@ def run_interactive_mode(assistant, verbose: bool = False, save: bool = False):
             break
 
 
-def run_batch_mode(assistant, queries: list, verbose: bool = False):
+def run_batch_mode(assistant, queries: list, verbose: bool = False, 
+                  session_id: Optional[str] = None, user_id: str = "anon"):
     """Run batch queries from a file or list."""
-    session_id = str(uuid.uuid4())[:8]
+    if not session_id:
+        session_id = str(uuid.uuid4())[:8]
     print(f"\n🔑 Session ID: {session_id}")
+    print(f"👤 User ID: {user_id}")
     print(f"📋 Processing {len(queries)} queries...\n")
     
     results = []
@@ -194,7 +200,7 @@ def run_batch_mode(assistant, queries: list, verbose: bool = False):
         print(f"\n[{i}/{len(queries)}] Query: {query[:50]}...")
         
         try:
-            response = assistant.query(query, session_id=f"{session_id}-{i}")
+            response = assistant.query(query, session_id=f"{session_id}-{i}", user_id=user_id)
             results.append({
                 "query": query,
                 "response": response,
@@ -272,6 +278,17 @@ def main():
         default="hybrid",
         help="Guardrail mode: llm (LLM-based), regex (pattern matching), hybrid (both)"
     )
+    parser.add_argument(
+        "--session-id",
+        type=str,
+        help="Session ID for tracking multi-turn conversations (auto-generated if not provided)"
+    )
+    parser.add_argument(
+        "--user-id",
+        type=str,
+        default="anon",
+        help="User ID for tracking user-specific interactions (default: anon)"
+    )
     
     args = parser.parse_args()
     
@@ -308,7 +325,9 @@ def main():
         print(f"💬 Query: {args.query}\n")
         print("⏳ Processing...")
         
-        response = assistant.query(args.query, session_id="cli-single")
+        # Use provided session_id or generate one
+        session_id = args.session_id or f"cli-single-{uuid.uuid4().hex[:8]}"
+        response = assistant.query(args.query, session_id=session_id, user_id=args.user_id)
         print_response(response, args.verbose)
         
     elif args.batch:
@@ -322,12 +341,12 @@ def main():
         with open(args.batch, "r") as f:
             queries = [line.strip() for line in f if line.strip()]
         
-        run_batch_mode(assistant, queries, args.verbose)
+        run_batch_mode(assistant, queries, args.verbose, args.session_id, args.user_id)
         
     else:
         # Interactive mode
         print_header()
-        run_interactive_mode(assistant, args.verbose, args.save)
+        run_interactive_mode(assistant, args.verbose, args.save, args.session_id, args.user_id)
 
 
 if __name__ == "__main__":

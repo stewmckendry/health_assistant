@@ -83,7 +83,8 @@ class PatientAssistant(BaseAssistant):
     def query(
         self,
         query: str,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        user_id: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Process a patient query with appropriate guardrails and disclaimers.
@@ -92,6 +93,7 @@ class PatientAssistant(BaseAssistant):
         Args:
             query: Patient's question or concern
             session_id: Session identifier for logging
+            user_id: User identifier for tracking
         
         Returns:
             Response dictionary with educational content and metadata
@@ -112,11 +114,19 @@ class PatientAssistant(BaseAssistant):
                     input={"query": query, "mode": self.mode},
                     metadata={
                         "session_id": session_id or "default",
+                        "user_id": user_id or "anon",
                         "guardrail_mode": self.guardrail_mode,
                         "assistant_mode": self.mode
                     },
+                    session_id=session_id,
+                    user_id=user_id,
                     tags=["patient_assistant", f"guardrail_{self.guardrail_mode}"]
                 )
+                # Add session/user tags for filtering
+                if session_id:
+                    langfuse.update_current_trace(tags=[f"session:{session_id[:8]}"])
+                if user_id:
+                    langfuse.update_current_trace(tags=[f"user:{user_id}"])
             except Exception as e:
                 logger.debug(f"Failed to update Langfuse trace: {e}")
         
@@ -228,7 +238,7 @@ class PatientAssistant(BaseAssistant):
         try:
             # Call the parent class query method which makes the actual Anthropic API call
             # This is where the request goes to Claude (in base.py line 206)
-            api_response = super().query(query, session_id, session_logger)
+            api_response = super().query(query, session_id, user_id, session_logger)
             
             # Apply output guardrails based on mode
             original_response = api_response["content"]

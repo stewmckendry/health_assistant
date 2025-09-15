@@ -4,6 +4,7 @@
 import os
 import yaml
 import json
+import time
 from typing import Dict, Any, List, Optional, Tuple
 from pathlib import Path
 from datetime import datetime
@@ -19,6 +20,57 @@ from src.utils.logging import get_logger
 load_dotenv()
 
 logger = get_logger(__name__)
+
+# Helper functions for tool observations
+SENSITIVE_KEYS = {"authorization", "api_key", "cookie", "token", "password", "secret"}
+
+def sanitize_tool_input(d: dict, limit=2000) -> dict:
+    """Sanitize and truncate tool input for logging."""
+    if not d:
+        return {}
+    out = {}
+    for k, v in d.items():
+        if k.lower() in SENSITIVE_KEYS:
+            out[k] = "[redacted]"
+        elif isinstance(v, str) and len(v) > limit:
+            out[k] = v[:limit] + f"... [truncated {len(v)-limit} chars]"
+        else:
+            out[k] = v
+    return out
+
+def summarize_output(obj, limit=4000) -> str:
+    """Summarize tool output for logging."""
+    if obj is None:
+        return ""
+    try:
+        s = obj if isinstance(obj, str) else json.dumps(obj, ensure_ascii=False)
+    except Exception:
+        s = str(obj)
+    return s if len(s) <= limit else s[:limit] + f"... [truncated {len(s)-limit} chars]"
+
+def make_tool_metadata(name: str, args: dict = None, result=None, tool_id: str = None) -> dict:
+    """Create metadata for tool observations."""
+    meta = {"tool_name": name}
+    if tool_id:
+        meta["tool_id"] = tool_id
+    
+    if name == "web_search" and args:
+        meta.update({
+            "query": args.get("query"),
+            "domains": args.get("domains"),
+        })
+    elif name == "web_fetch":
+        if args:
+            meta["url"] = args.get("url")
+        if result and isinstance(result, dict):
+            meta.update({
+                "status": result.get("status"),
+                "title": result.get("title"),
+            })
+        elif isinstance(result, list):
+            meta["fetch_count"] = len(result)
+    
+    return meta
 
 
 class DatasetEvaluator:
@@ -105,7 +157,8 @@ class DatasetEvaluator:
         dataset_name: str = "health-assistant-eval-v1",
         run_name: Optional[str] = None,
         limit: Optional[int] = None,
-        description: Optional[str] = None
+        description: Optional[str] = None,
+        user_id: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Run evaluation on a Langfuse dataset.
@@ -119,6 +172,7 @@ class DatasetEvaluator:
             run_name: Name for this evaluation run (auto-generated if None)
             limit: Maximum number of items to evaluate
             description: Description of this evaluation run
+            user_id: Optional user ID for tracking (default: "eval_user")
             
         Returns:
             Evaluation run summary
@@ -128,6 +182,9 @@ class DatasetEvaluator:
         
         if description is None:
             description = f"Automated evaluation run on {dataset_name}"
+        
+        if user_id is None:
+            user_id = "eval_user"
         
         print(f"\n{'='*60}")
         print(f"🚀 RUNNING DATASET EVALUATION")
@@ -178,33 +235,51 @@ class DatasetEvaluator:
             
             try:
                 # Use the dataset item's run() context manager for automatic trace linking
+                # Create a session_id for this evaluation item
+                session_id = f"{run_name}-item{i}"
+                
                 with item.run(
                     run_name=run_name,
                     run_description=description,
                     run_metadata={
                         "category": metadata.get("category"),
                         "assistant_mode": "patient",
-                        "guardrail_mode": "hybrid"
-                    }
+                        "guardrail_mode": "hybrid",
+                        "session_id": session_id,
+                        "user_id": user_id
+                    },
+                    tags=["eval", f"session:{session_id[:8]}", f"user:{user_id}"]
                 ) as root_span:
+                    # Update root span with session/user
+                    root_span.update(
+                        metadata={
+                            "session_id": session_id,
+                            "user_id": user_id
+                        }
+                    )
                     # Run the assistant with retry logic for overload errors
                     max_retries = 3
                     retry_delay = 5
                     response = None
                     
+                    # The assistant.query() method already has @observe decorator that creates
+                    # an "llm_call" generation span, so we don't need to create another one
                     for attempt in range(max_retries):
                         try:
-                            # Use the trace ID from root_span for session tracking
+                            # Call the assistant - this will create its own llm_call generation
+                            # and handle all the tool tracking internally
                             response = self.assistant.query(
                                 query=query,
-                                session_id=root_span.trace_id
+                                session_id=session_id,
+                                user_id=user_id
                             )
+                            
                             break  # Success, exit retry loop
+                            
                         except Exception as api_error:
                             if "529" in str(api_error) or "overloaded" in str(api_error).lower():
                                 if attempt < max_retries - 1:
                                     print(f"    ⚠️ API overloaded, retrying in {retry_delay}s (attempt {attempt + 1}/{max_retries})...")
-                                    import time
                                     time.sleep(retry_delay)
                                     retry_delay *= 2  # Exponential backoff
                                 else:
@@ -214,6 +289,9 @@ class DatasetEvaluator:
                     
                     if response is None:
                         raise Exception("Failed to get response after retries")
+                    
+                    # Output guardrail check (if implemented in assistant)
+                    # These would be logged internally by the assistant as sibling spans
                     
                     # For LLM-as-Judge evaluators to work, we need to set the trace input/output
                     # The evaluator will map {{query}} and {{response}} variables
@@ -493,6 +571,257 @@ class DatasetEvaluator:
             "citation_quality": 0.80
         }
         return targets.get(eval_name, 0.70)
+    
+    def get_session_traces(self, session_id: str, limit: int = 100) -> List[Dict[str, Any]]:
+        """
+        Retrieve all traces for a specific session using native Langfuse API.
+        
+        Args:
+            session_id: The session ID to search for
+            limit: Maximum number of traces to return
+            
+        Returns:
+            List of trace summaries for the session
+        """
+        try:
+            # Use native Langfuse API to fetch traces with session_id filter
+            # This is the official way to query traces by session
+            traces = []
+            page = 1
+            
+            while True:
+                # Fetch traces filtered by session_id
+                response = self.langfuse.fetch_traces(
+                    session_id=session_id,
+                    limit=min(limit, 50),  # API typically limits to 50 per page
+                    page=page
+                )
+                
+                if not response.data:
+                    break
+                    
+                for trace in response.data:
+                    traces.append({
+                        "trace_id": trace.id,
+                        "session_id": trace.session_id,
+                        "user_id": trace.user_id,
+                        "timestamp": trace.timestamp.isoformat() if trace.timestamp else None,
+                        "input": trace.input,
+                        "output": trace.output,
+                        "metadata": trace.metadata,
+                        "tags": trace.tags if hasattr(trace, 'tags') else [],
+                        "name": trace.name if hasattr(trace, 'name') else None
+                    })
+                
+                if len(traces) >= limit or len(response.data) < 50:
+                    break
+                    
+                page += 1
+            
+            return traces[:limit]
+            
+        except Exception as e:
+            logger.error(f"Failed to get session traces for {session_id}: {e}")
+            return []
+    
+    def get_user_traces(self, user_id: str, limit: int = 100) -> List[Dict[str, Any]]:
+        """
+        Retrieve all traces for a specific user using native Langfuse API.
+        
+        Args:
+            user_id: The user ID to search for
+            limit: Maximum number of traces to return
+            
+        Returns:
+            List of trace summaries for the user
+        """
+        try:
+            # Use native Langfuse API to fetch traces with user_id filter
+            traces = []
+            page = 1
+            
+            while True:
+                # Fetch traces filtered by user_id
+                response = self.langfuse.fetch_traces(
+                    user_id=user_id,
+                    limit=min(limit, 50),  # API typically limits to 50 per page
+                    page=page
+                )
+                
+                if not response.data:
+                    break
+                    
+                for trace in response.data:
+                    trace_data = {
+                        "trace_id": trace.id,
+                        "session_id": trace.session_id,
+                        "user_id": trace.user_id,
+                        "timestamp": trace.timestamp.isoformat() if trace.timestamp else None,
+                        "input": trace.input,
+                        "output": trace.output,
+                        "metadata": trace.metadata,
+                        "tags": trace.tags if hasattr(trace, 'tags') else [],
+                        "name": trace.name if hasattr(trace, 'name') else None,
+                        "scores": []
+                    }
+                    
+                    # Add scores if available
+                    if hasattr(trace, 'scores') and trace.scores:
+                        trace_data["scores"] = [
+                            {"name": s.name, "value": s.value}
+                            for s in trace.scores
+                        ]
+                    
+                    traces.append(trace_data)
+                
+                if len(traces) >= limit or len(response.data) < 50:
+                    break
+                    
+                page += 1
+            
+            return traces[:limit]
+            
+        except Exception as e:
+            logger.error(f"Failed to get user traces for {user_id}: {e}")
+            return []
+    
+    def get_session_info(self, session_id: str) -> Dict[str, Any]:
+        """
+        Get aggregated information about a session.
+        
+        Args:
+            session_id: The session ID to analyze
+            
+        Returns:
+            Dictionary with session statistics and trace list
+        """
+        try:
+            # Fetch session using native API
+            session = self.langfuse.fetch_session(session_id)
+            
+            # Get all traces for this session
+            traces = self.get_session_traces(session_id, limit=1000)
+            
+            # Aggregate metrics
+            total_input_tokens = 0
+            total_output_tokens = 0
+            tool_usage_count = 0
+            
+            for trace in traces:
+                if trace.get("metadata"):
+                    usage = trace["metadata"].get("usage", {})
+                    total_input_tokens += usage.get("input_tokens", 0)
+                    total_output_tokens += usage.get("output_tokens", 0)
+                    tool_usage_count += trace["metadata"].get("tool_calls_count", 0)
+            
+            return {
+                "session_id": session_id,
+                "trace_count": len(traces),
+                "user_ids": list(set(t.get("user_id") for t in traces if t.get("user_id"))),
+                "first_trace": traces[0]["timestamp"] if traces else None,
+                "last_trace": traces[-1]["timestamp"] if traces else None,
+                "total_input_tokens": total_input_tokens,
+                "total_output_tokens": total_output_tokens,
+                "total_tool_calls": tool_usage_count,
+                "traces": traces
+            }
+            
+        except Exception as e:
+            logger.error(f"Failed to get session info for {session_id}: {e}")
+            # Fallback to just trace data if session fetch fails
+            traces = self.get_session_traces(session_id, limit=1000)
+            return {
+                "session_id": session_id,
+                "trace_count": len(traces),
+                "traces": traces,
+                "error": str(e)
+            }
+    
+    def get_trace_details(self, trace_id: str) -> Dict[str, Any]:
+        """
+        Retrieve detailed trace information from Langfuse.
+        
+        Args:
+            trace_id: The trace ID to look up
+            
+        Returns:
+            Dictionary with trace details including observations
+        """
+        try:
+            # Fetch trace using API client
+            trace = self.langfuse.api.trace.get(trace_id)
+            
+            # Extract observations with hierarchy
+            observations = []
+            tool_usage = {}
+            
+            for obs in trace.observations:
+                obs_data = {
+                    "id": obs.id,
+                    "name": obs.name,
+                    "type": obs.type,  # SPAN, GENERATION, etc.
+                    "parent_id": obs.parent_observation_id,
+                    "input": obs.input,
+                    "output": obs.output,
+                    "metadata": obs.metadata,
+                    "start_time": obs.start_time.isoformat() if obs.start_time else None,
+                    "end_time": obs.end_time.isoformat() if obs.end_time else None
+                }
+                observations.append(obs_data)
+                
+                # Track tool usage
+                if obs.name and obs.name.startswith("tool:"):
+                    tool_name = obs.name.replace("tool:", "")
+                    if tool_name not in tool_usage:
+                        tool_usage[tool_name] = {"count": 0, "calls": []}
+                    tool_usage[tool_name]["count"] += 1
+                    tool_usage[tool_name]["calls"].append({
+                        "input": obs.input,
+                        "output": obs.output[:200] if obs.output else None,  # Truncate for display
+                        "metadata": obs.metadata
+                    })
+            
+            # Build hierarchy tree
+            root_obs = [o for o in observations if not o["parent_id"]]
+            
+            def build_tree(parent_id):
+                children = [o for o in observations if o["parent_id"] == parent_id]
+                for child in children:
+                    child["children"] = build_tree(child["id"])
+                return children
+            
+            for root in root_obs:
+                root["children"] = build_tree(root["id"])
+            
+            # Summarize tool usage
+            tool_summary = []
+            for tool_name, data in tool_usage.items():
+                tool_summary.append({
+                    "name": tool_name,
+                    "count": data["count"],
+                    "sample_calls": data["calls"][:2]  # First 2 examples
+                })
+            
+            return {
+                "trace_id": trace.id,
+                "input": trace.input,
+                "output": trace.output,
+                "metadata": trace.metadata,
+                "tags": trace.tags if hasattr(trace, 'tags') else [],
+                "observation_count": len(observations),
+                "observations": observations,
+                "hierarchy": root_obs,
+                "tool_usage": tool_summary,
+                "created_at": trace.timestamp.isoformat() if trace.timestamp else None
+            }
+            
+        except Exception as e:
+            logger.error(f"Failed to get trace details for {trace_id}: {e}")
+            return {
+                "error": str(e),
+                "trace_id": trace_id,
+                "message": "Failed to retrieve trace details"
+            }
     
     def run_baseline_evaluation(self, limit: int = 10) -> Tuple[Dict[str, Any], bool]:
         """

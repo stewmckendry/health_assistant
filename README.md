@@ -1,6 +1,6 @@
-# Health Assistant - Phase 1: Basic Patient Assistant
+# Health Assistant - AI-Powered Medical Education Platform
 
-AI-powered medical education assistant providing safe, educational health information (NOT diagnosis) with strict guardrails using Anthropic's Claude API.
+AI-powered medical education assistant providing safe, educational health information (NOT diagnosis) with strict guardrails, comprehensive evaluation framework, and advanced observability using Anthropic's Claude API and Langfuse.
 
 ## ⚠️ Medical Disclaimer
 
@@ -14,6 +14,14 @@ AI-powered medical education assistant providing safe, educational health inform
 - 7 end-to-end tests implemented
 - Enhanced system prompts (4.7KB comprehensive safety)
 - Full documentation available
+
+**Phase 2: Evaluation Framework ✅ COMPLETE**
+- Langfuse SDK integration for observability
+- LLM-as-Judge evaluation system (6 metrics)
+- Granular observation tracking (LLM calls, tool usage)
+- Session and user tracking for multi-turn conversations
+- 91 test cases in evaluation dataset
+- Helper functions for trace/session/user analysis
 
 ## 🚀 Quick Start
 
@@ -93,6 +101,81 @@ SessionLogger (request tracking)
 - **Multilingual Support**: 7 languages (EN, FR, ES, ZH, AR, HI, PT)
 - **Decision Flow Priority**: Structured safety evaluation
 
+## 📊 Evaluation Framework (Phase 2)
+
+### Langfuse Observability
+
+The system integrates with Langfuse for comprehensive observability and evaluation:
+
+#### Granular Observation Tracking
+```
+Dataset run: <run_name> (SPAN)
+└── patient_query (SPAN) [@observe decorator]
+    ├── input_guardrail_check (SPAN)
+    ├── llm_call (GENERATION) [@observe decorator]
+    │   ├── tool:web_search (SPAN) [nested via context manager]
+    │   └── tool:web_fetch (SPAN) [multiple, nested via context manager]
+    └── output_guardrail_check (SPAN)
+```
+
+#### Session & User Tracking
+```bash
+# CLI with session/user tracking
+python scripts/test_assistant.py \
+    --query "What are symptoms of flu?" \
+    --session-id "conv-2024-001" \
+    --user-id "user-123"
+
+# Programmatic usage
+response = assistant.query(
+    query="What are symptoms of flu?",
+    session_id="conv-2024-001",
+    user_id="user-123"
+)
+```
+
+### LLM-as-Judge Evaluation Metrics
+
+| Metric | Weight | Pass Threshold | Description |
+|--------|--------|----------------|-------------|
+| Safety Compliance | 30% | 0.99 | No diagnosis, treatments, or medication advice |
+| Medical Accuracy | 25% | 0.90 | Factually correct medical information |
+| Citation Quality | 20% | 0.80 | Citations from trusted medical domains |
+| Response Helpfulness | 15% | 0.70 | Practical value and clarity |
+| Emergency Handling | 5% | 0.99 | Correct emergency detection and response |
+| Disclaimer Presence | 5% | 0.95 | Required disclaimers included |
+
+### Running Evaluations
+
+```python
+from src.evaluation.evaluator import DatasetEvaluator
+
+evaluator = DatasetEvaluator()
+
+# Run full evaluation
+results = evaluator.run_dataset_evaluation(
+    dataset_name="health-assistant-eval-v1",
+    user_id="eval-user-456"
+)
+
+# Retrieve session traces
+session_traces = evaluator.get_session_traces("conv-2024-001")
+
+# Get user activity
+user_traces = evaluator.get_user_traces("user-123")
+
+# Analyze specific trace
+trace_details = evaluator.get_trace_details("trace-id-here")
+```
+
+### Phase 2 Success Metrics
+- ✅ Safety Compliance: >99% pass rate
+- ✅ Medical Accuracy: >90% average score  
+- ✅ Citation Quality: >80% from trusted sources
+- ✅ Overall Quality: >85% weighted average
+- ✅ Emergency Detection: 100% correct identification
+- ✅ Response Time: <5 seconds p95
+
 ## 🔒 Safety Features
 
 ### Three-Layer Guardrail System
@@ -135,6 +218,11 @@ SessionLogger (request tracking)
 # Required
 ANTHROPIC_API_KEY=sk-ant-api03-...
 
+# Required for Phase 2 (Evaluation)
+LANGFUSE_PUBLIC_KEY=pk-lf-...
+LANGFUSE_SECRET_KEY=sk-lf-...
+LANGFUSE_HOST=https://cloud.langfuse.com
+
 # Optional (defaults shown)
 PRIMARY_MODEL=claude-3-5-sonnet-latest
 ASSISTANT_MODE=patient
@@ -142,6 +230,7 @@ ENABLE_GUARDRAILS=true
 ENABLE_WEB_FETCH=true
 MAX_TOKENS=1500
 TEMPERATURE=0.7
+LANGFUSE_ENABLED=true
 ```
 
 ### Configuration Files

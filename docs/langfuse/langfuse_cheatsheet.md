@@ -114,37 +114,90 @@ def call_llm(prompt: str, model: str = "claude-3-opus") -> str:
     return response
 ```
 
+### Creating Nested Tool Spans (SDK v3)
+```python
+# IMPORTANT: Use context manager pattern for proper nesting
+from langfuse import get_client
+from time import perf_counter
+
+langfuse = get_client()
+
+@observe(name="llm_call", as_type="generation")
+def call_with_tools(query: str):
+    # Process response blocks
+    for block in response.content:
+        if block.type == "server_tool_use":
+            # Create tool span as child of llm_call
+            span_context = langfuse.start_as_current_span(
+                name=f"tool:{block.name}"
+            )
+            span = span_context.__enter__()  # Get actual span object
+            
+            # Update span with input/output/metadata
+            span.update(
+                input={"query": block.input.get("query")},
+                metadata={
+                    "tool_name": block.name,
+                    "session_id": session_id,
+                    "duration_ms": duration
+                }
+            )
+            
+            # Close span properly
+            span.end()
+            span_context.__exit__(None, None, None)
+```
+
 ### Tracing Full Chain with Context Managers
 ```python
-# Method 1: Span-based tracing
+# Complete pattern with tool spans
 with langfuse.start_as_current_span(name="patient_query") as span:
-    # Guardrail check
-    with langfuse.start_as_current_span(name="input_guardrail"):
+    # Input guardrail check
+    with langfuse.start_as_current_span(name="input_guardrail") as guard_span:
         guardrail_result = check_input(query)
+        guard_span.update(
+            input=query,
+            output=guardrail_result,
+            metadata={"guardrail_mode": "hybrid"}
+        )
     
-    # Web search
-    with langfuse.start_as_current_span(name="web_search") as search_span:
-        search_results = search_medical_info(query)
-        search_span.update(metadata={"sources_found": len(search_results)})
-    
-    # LLM generation
+    # LLM generation with tools
     with langfuse.start_as_current_generation(
-        name="response_generation",
-        model="claude-3-opus",
-        input={"query": query, "context": search_results}
+        name="llm_call",
+        model="claude-3-5-sonnet",
+        input=messages
     ) as gen:
-        response = generate_response(query, search_results)
-        gen.update(output=response)
+        response = call_claude_api(messages)
+        
+        # Create tool spans during response processing
+        for tool_call in response.tool_calls:
+            tool_context = langfuse.start_as_current_span(
+                name=f"tool:{tool_call.name}"
+            )
+            tool_span = tool_context.__enter__()
+            
+            tool_span.update(
+                input=tool_call.input,
+                output=tool_call.result,
+                metadata={
+                    "tool_type": tool_call.type,
+                    "duration_ms": tool_call.duration
+                }
+            )
+            
+            tool_span.end()
+            tool_context.__exit__(None, None, None)
+        
+        gen.update(output=response.content)
     
     # Output guardrail
-    with langfuse.start_as_current_span(name="output_guardrail"):
+    with langfuse.start_as_current_span(name="output_guardrail") as out_span:
         final_response = apply_guardrails(response)
-    
-    # Update trace with final input/output
-    span.update_trace(
-        input={"query": query},
-        output={"response": final_response}
-    )
+        out_span.update(
+            input=response,
+            output=final_response,
+            metadata={"modifications_made": response != final_response}
+        )
 ```
 
 ### Adding Custom Metadata
@@ -162,7 +215,350 @@ def process_with_metadata(query: str):
     )
 ```
 
-## 3. Creating Datasets
+## 3. Span Specifications & Best Practices
+
+### Span Hierarchy Structure
+```
+Dataset run: <run_name> (SPAN)
+└── patient_query (SPAN) [@observe decorator]
+    ├── input_guardrail_check (SPAN)
+    ├── llm_call (GENERATION) [@observe decorator]
+    │   ├── tool:web_search (SPAN) [nested via context manager]
+    │   └── tool:web_fetch (SPAN) [multiple, nested via context manager]
+    └── output_guardrail_check (SPAN)
+```
+
+### Span Input/Output Specifications
+
+#### Tool: web_search
+```python
+# Input format
+span_input = {
+    "query": "search query string"
+}
+
+# Output format (enhanced)
+span_output = f"""Found {len(results)} search results:
+1. Title One (https://example.com/1)
+2. Title Two (https://example.com/2)
+...
+"""
+
+# Metadata
+span_metadata = {
+    "session_id": "xyz",
+    "tool_name": "web_search",
+    "query": "search query",
+    "result_count": 10,
+    "duration_ms": 250
+}
+```
+
+#### Tool: web_fetch
+```python
+# Input format
+span_input = {
+    "url": "https://example.com/page"
+}
+
+# Output format (enhanced with content preview)
+span_output = f"""Fetched {len(content)} characters:
+{content[:500]}...
+"""
+
+# Metadata
+span_metadata = {
+    "session_id": "xyz",
+    "tool_name": "web_fetch",
+    "url": "https://example.com/page",
+    "title": "Page Title",
+    "content_length": 5000,
+    "citation_index": 1,
+    "duration_ms": 450
+}
+```
+
+### Troubleshooting Nested Spans
+
+#### Problem: Spans Not Nesting Properly
+```python
+# ❌ Wrong - Creates sibling spans
+with langfuse.span(name="tool:web_search") as span:
+    span.update(input=data)  # Won't work
+
+# ✅ Correct - Creates child spans with proper context
+span_context = langfuse.start_as_current_span(name="tool:web_search")
+span = span_context.__enter__()
+try:
+    span.update(input=data, metadata=metadata)
+    # Process tool
+    span.update(output=output)
+    span.end()
+finally:
+    span_context.__exit__(None, None, None)
+```
+
+#### Problem: Missing Input/Output Data
+```python
+# ❌ Wrong - Updating after span ends
+span.end()
+span.update(output=result)  # Too late!
+
+# ✅ Correct - Update before ending
+span.update(output=result)
+span.end()
+```
+
+#### Problem: Context Manager Not Working
+```python
+# ❌ Wrong - Using span directly
+span = langfuse.start_as_current_span(name="my_span")
+span.update(...)  # Error: '_AgnosticContextManager' has no attribute 'update'
+
+# ✅ Correct - Enter context to get span
+span_context = langfuse.start_as_current_span(name="my_span")
+span = span_context.__enter__()  # Get actual span object
+span.update(...)
+```
+
+#### Problem: Tool Spans Appearing as Siblings
+```python
+# ❌ Wrong - Creating spans outside of parent context
+@observe(name="llm_call")
+def process():
+    response = call_api()
+    # Tool spans created here become siblings!
+    for tool in tools:
+        with langfuse.start_as_current_span(name=f"tool:{tool}"):
+            pass
+
+# ✅ Correct - Create tool spans DURING response processing
+@observe(name="llm_call")
+def process():
+    # Process response blocks while still in llm_call context
+    for block in response.content:
+        if block.type == "server_tool_use":
+            # Now creates as child of llm_call
+            span_context = langfuse.start_as_current_span(name=f"tool:{block.name}")
+            span = span_context.__enter__()
+            # ... process tool ...
+            span.end()
+            span_context.__exit__(None, None, None)
+```
+
+### Retrieving Trace Details
+
+```python
+# Get trace details programmatically
+def get_trace_details(trace_id: str):
+    """
+    Retrieve detailed trace information from Langfuse.
+    
+    Args:
+        trace_id: The trace ID to look up
+        
+    Returns:
+        Dictionary with trace details including observations
+    """
+    from langfuse import get_client
+    
+    langfuse = get_client()
+    
+    # Fetch trace using API client
+    trace = langfuse.api.trace.get(trace_id)
+    
+    # Extract observations with hierarchy
+    observations = []
+    for obs in trace.observations:
+        observations.append({
+            "id": obs.id,
+            "name": obs.name,
+            "type": obs.type,  # SPAN, GENERATION, etc.
+            "parent_id": obs.parent_observation_id,
+            "input": obs.input,
+            "output": obs.output,
+            "metadata": obs.metadata,
+            "start_time": obs.start_time,
+            "end_time": obs.end_time
+        })
+    
+    # Build hierarchy tree
+    root_obs = [o for o in observations if not o["parent_id"]]
+    for root in root_obs:
+        root["children"] = [o for o in observations if o["parent_id"] == root["id"]]
+    
+    return {
+        "trace_id": trace.id,
+        "input": trace.input,
+        "output": trace.output,
+        "metadata": trace.metadata,
+        "observations": observations,
+        "hierarchy": root_obs
+    }
+```
+
+## 4. Session and User Tracking
+
+### Setting Session and User IDs
+
+#### Python SDK - Trace Level
+```python
+# When creating/updating a trace
+langfuse.update_current_trace(
+    session_id="session-123",
+    user_id="user-456",
+    tags=["session:session-123", "user:user-456"]
+)
+
+# In decorator context
+@observe()
+def process_request(query: str):
+    langfuse.update_current_trace(
+        session_id="session-123",
+        user_id="user-456"
+    )
+```
+
+#### Python SDK - Span/Observation Level
+```python
+# Add to specific observations
+langfuse.update_current_observation(
+    metadata={
+        "session_id": "session-123",
+        "user_id": "user-456"
+    }
+)
+
+# In dataset runs
+with item.run(
+    run_name="eval_run",
+    run_metadata={
+        "session_id": "session-123",
+        "user_id": "user-456"
+    },
+    tags=["session:session-123", "user:user-456"]
+) as root_span:
+    root_span.update(
+        metadata={"session_id": "session-123", "user_id": "user-456"}
+    )
+```
+
+### Retrieving Session and User Data
+
+#### Native API Methods
+```python
+# Fetch traces by session_id
+traces = langfuse.fetch_traces(
+    session_id="session-123",
+    limit=50,
+    page=1
+)
+
+# Fetch traces by user_id
+traces = langfuse.fetch_traces(
+    user_id="user-456",
+    limit=50,
+    page=1
+)
+
+# Fetch session information
+session = langfuse.fetch_session("session-123")
+
+# Fetch sessions for pagination
+sessions = langfuse.fetch_sessions(
+    limit=50,
+    page=1
+)
+```
+
+#### JavaScript/TypeScript SDK
+```javascript
+// Fetch traces by session
+const traces = await langfuse.fetchTraces({
+    sessionId: "session-123",
+    limit: 50
+});
+
+// Fetch traces by user
+const traces = await langfuse.fetchTraces({
+    userId: "user-456",
+    limit: 50
+});
+```
+
+### Best Practices for Session/User Tracking
+
+1. **Session ID Format**:
+   - Use short, readable identifiers (12-16 chars)
+   - Include timestamp or sequence for ordering
+   - Example: `conv-2024-001`, `chat-abc123def456`
+
+2. **User ID Format**:
+   - Use stable, non-PII identifiers when possible
+   - Hash emails or use UUIDs
+   - Example: `user-abc123`, hash of email
+
+3. **Tag Convention**:
+   - Add tags for easy filtering: `session:xxx`, `user:yyy`
+   - Use first 8 chars of session_id for tag brevity
+   - Keep tags consistent across traces
+
+4. **Multi-turn Conversations**:
+   - Reuse same session_id across all turns
+   - Increment turn counter in metadata if needed
+   - Track conversation state in metadata
+
+5. **Evaluation Runs**:
+   - Create synthetic session_ids for eval items
+   - Use pattern: `{run_name}-item{i}`
+   - Track eval user separately from real users
+
+### Helper Functions Example
+
+```python
+class SessionTracker:
+    """Helper for consistent session/user tracking."""
+    
+    def __init__(self, langfuse_client):
+        self.langfuse = langfuse_client
+    
+    def start_session(self, session_id: str, user_id: str):
+        """Initialize a new session."""
+        self.session_id = session_id
+        self.user_id = user_id
+        
+        # Update current trace
+        self.langfuse.update_current_trace(
+            session_id=session_id,
+            user_id=user_id,
+            tags=[f"session:{session_id[:8]}", f"user:{user_id}"]
+        )
+    
+    def get_session_history(self, session_id: str, limit: int = 100):
+        """Retrieve all traces for a session."""
+        traces = []
+        page = 1
+        
+        while True:
+            response = self.langfuse.fetch_traces(
+                session_id=session_id,
+                limit=min(limit, 50),
+                page=page
+            )
+            
+            if not response.data:
+                break
+                
+            traces.extend(response.data)
+            
+            if len(traces) >= limit or len(response.data) < 50:
+                break
+            page += 1
+        
+        return traces[:limit]
+```
+
+## 5. Creating Datasets
 
 ### Create Dataset and Add Items
 ```python
