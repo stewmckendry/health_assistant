@@ -4,7 +4,7 @@ import { pythonBackend } from '@/lib/python-backend';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { query, sessionId, userId } = body;
+    const { query, sessionId, userId, mode = 'patient' } = body;
 
     // Validate required fields
     if (!query || !sessionId) {
@@ -14,11 +14,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Validate mode
+    if (mode && !['patient', 'provider'].includes(mode)) {
+      return NextResponse.json(
+        { error: 'Invalid mode. Must be "patient" or "provider"' },
+        { status: 400 }
+      );
+    }
+
     // Call Python backend (which handles all Langfuse tracing)
     const response = await pythonBackend.chat({
       query,
       sessionId,
       userId,
+      mode,  // Pass mode to backend
     });
 
     return NextResponse.json(response);

@@ -186,3 +186,81 @@ categories:
     - cochranelibrary.com
     - guidelines.gov
     - clinicaltrials.gov
+
+# Provider-specific domains (medical journals and clinical databases)
+provider_domains:
+  # Additional Medical Journals
+  - cell.com
+  - springer.com
+  - wiley.com
+  - oup.com
+  - plos.org
+  - frontiersin.org
+  - mdpi.com
+  - biomedcentral.com
+  
+  # Specialty Journals
+  - ahajournals.org
+  - diabetesjournals.org
+  - cancerres.aacrjournals.org
+  - neurology.org
+  - gastrojournal.org
+  - kidney.org
+  - respiratory-research.biomedcentral.com
+  - arthritis-research.biomedcentral.com
+  
+  # Clinical Practice Resources
+  - dynamed.com
+  - clinicalkey.com
+  - epocrates.com
+  - lexicomp.com
+  - micromedex.com
+  
+  # Medical Society Guidelines
+  - acc.org
+  - acog.org
+  - aafp.org
+  - aap.org
+  - asahq.org
+  - sccm.org
+  - ashp.org
+  
+  # Radiology & Imaging
+  - radiopaedia.org
+  - rsna.org
+  - acr.org
+  
+  # Laboratory Medicine
+  - labcorp.com
+  - questdiagnostics.com
+  - aacc.org
+  
+  # Drug Information
+  - rxlist.com
+  - drugs.com
+  - goodrx.com
+  - accessdata.fda.gov
+  
+  # Medical Education
+  - medscape.com
+  - emedicine.medscape.com
+  - teachmeanatomy.info
+  - kenhub.com
+  
+  # Research Repositories
+  - biorxiv.org
+  - medrxiv.org
+  - arxiv.org
+  - researchgate.net
+  - scholar.google.com
+  
+  # International Clinical Guidelines
+  - nice.org.uk
+  - sign.ac.uk
+  - racgp.org.au
+  - rnzcgp.org.nz
+  
+  # Systematic Reviews
+  - epistemonikos.org
+  - campbellcollaboration.org
+  - joannabriggs.org

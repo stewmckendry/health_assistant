@@ -32,6 +32,15 @@ AI-powered medical education assistant providing safe, educational health inform
 - Feedback collection with Langfuse integration
 - Responsive design with shadcn/ui components
 
+**Phase 5: Provider Assistant ✅ COMPLETE**
+- Dual-mode system: Patient and Provider modes
+- ProviderAssistant class extending BaseAssistant
+- 169 trusted medical domains (119 + 76 provider-specific)
+- Relaxed guardrails for healthcare professionals
+- Mode toggle in web application with localStorage persistence
+- Enhanced markdown formatting for clinical communication
+- Mode-specific Langfuse observability tags
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -100,13 +109,13 @@ npm run dev
 ## 🏗️ Architecture
 
 ```
-PatientAssistant
+PatientAssistant / ProviderAssistant
       ↓
 LLMGuardrails (input checking)
       ↓
 BaseAssistant (Anthropic API calls)
       ↓
-LLMGuardrails (output checking)
+LLMGuardrails (output checking - relaxed for providers)
       ↓
 ResponseGuardrails (regex fallback)
       ↓
@@ -117,10 +126,11 @@ SessionLogger (request tracking)
 
 1. **BaseAssistant**: Core Anthropic API integration with web_search + web_fetch tools
 2. **PatientAssistant**: Patient-specific safety with enhanced 4.7KB system prompt
-3. **LLMGuardrails**: Intelligent LLM-based safety checks (tripwires)
-4. **ResponseGuardrails**: Regex-based fallback safety system
-5. **SessionLogger**: Complete request flow tracking and inspection
-6. **Configuration**: YAML-based settings management
+3. **ProviderAssistant**: Healthcare professional mode with relaxed guardrails and extended sources
+4. **LLMGuardrails**: Intelligent LLM-based safety checks (tripwires)
+5. **ResponseGuardrails**: Regex-based fallback safety system
+6. **SessionLogger**: Complete request flow tracking and inspection
+7. **Configuration**: YAML-based settings management
 
 ### Enhanced System Prompt Features
 - **Geographic Prioritization**: Canada/Ontario preference, then US/WHO
@@ -233,12 +243,27 @@ trace_details = evaluator.get_trace_details("trace-id-here")
 - **Hybrid Mode** (default): LLM with regex fallback
 
 ### Trusted Domains
+
+#### Patient Mode (119 domains)
 - mayoclinic.org
 - cdc.gov
 - pubmed.ncbi.nlm.nih.gov
 - who.int
 - nih.gov
 - medlineplus.gov
+
+#### Provider Mode (169 domains)
+All patient domains plus 76 additional professional sources:
+- nejm.org (New England Journal of Medicine)
+- jamanetwork.com (JAMA Network)
+- thelancet.com (The Lancet)
+- bmj.com (British Medical Journal)
+- uptodate.com (UpToDate)
+- dynamed.com (DynaMed)
+- clinicalkey.com (ClinicalKey)
+- epocrates.com (Epocrates)
+- lexicomp.com (Lexicomp)
+- micromedex.com (Micromedex)
 
 ## ⚙️ Configuration
 
@@ -443,14 +468,19 @@ The web application provides a modern interface for interacting with the Health 
 ### API Endpoints
 
 #### POST /chat
-Process a chat message with conversation history
+Process a chat message with conversation history and mode selection
 ```json
 {
   "query": "What are flu symptoms?",
   "sessionId": "uuid",
-  "userId": "user_uuid"
+  "userId": "user_uuid",
+  "mode": "patient"
 }
 ```
+
+**Mode Options:**
+- `"patient"` (default): Patient-friendly responses with strict guardrails
+- `"provider"`: Healthcare professional responses with technical terminology
 
 #### POST /feedback
 Submit user feedback for interactions
@@ -481,7 +511,6 @@ messages = [
 ## 🔮 Future Phases
 
 - **Phase 4**: Advanced Configuration System
-- **Phase 5**: Physician Mode
 - **Phase 6**: Multi-Agent Orchestration (MAI-DxO)
 
 ## 📝 License

@@ -98,21 +98,26 @@ export function Message({ message, onFeedback }: MessageProps) {
               <ReactMarkdown 
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({children}) => <p className="mb-3">{children}</p>,
-                  ul: ({children}) => <ul className="list-disc ml-4 mb-3">{children}</ul>,
-                  ol: ({children}) => <ol className="list-decimal ml-4 mb-3">{children}</ol>,
-                  li: ({children}) => <li className="mb-1">{children}</li>,
-                  h1: ({children}) => <h1 className="text-xl font-bold mb-3">{children}</h1>,
-                  h2: ({children}) => <h2 className="text-lg font-bold mb-2">{children}</h2>,
-                  h3: ({children}) => <h3 className="text-base font-bold mb-2">{children}</h3>,
+                  p: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
+                  ul: ({children}) => <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>,
+                  ol: ({children}) => <ol className="list-decimal pl-6 mb-4 space-y-2">{children}</ol>,
+                  li: ({children}) => <li className="leading-relaxed">{children}</li>,
+                  h1: ({children}) => <h1 className="text-xl font-bold mb-4 mt-6 first:mt-0">{children}</h1>,
+                  h2: ({children}) => <h2 className="text-lg font-bold mb-3 mt-5 first:mt-0">{children}</h2>,
+                  h3: ({children}) => <h3 className="text-base font-bold mb-2 mt-4 first:mt-0">{children}</h3>,
+                  h4: ({children}) => <h4 className="text-sm font-bold mb-2 mt-3 first:mt-0">{children}</h4>,
                   code: ({inline, children}) => 
                     inline 
-                      ? <code className="px-1 py-0.5 bg-muted rounded text-sm">{children}</code>
-                      : <pre className="bg-muted p-3 rounded overflow-x-auto"><code>{children}</code></pre>,
+                      ? <code className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-sm font-mono">{children}</code>
+                      : <pre className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto my-4"><code className="font-mono text-sm">{children}</code></pre>,
                   blockquote: ({children}) => 
-                    <blockquote className="border-l-4 border-primary/20 pl-4 italic">{children}</blockquote>,
-                  strong: ({children}) => <strong className="font-semibold">{children}</strong>,
-                  em: ({children}) => <em className="italic">{children}</em>,
+                    <blockquote className="border-l-4 border-blue-200 dark:border-blue-800 pl-4 italic my-4 bg-blue-50 dark:bg-blue-950/20 py-2 rounded-r">{children}</blockquote>,
+                  strong: ({children}) => <strong className="font-bold text-slate-900 dark:text-slate-100">{children}</strong>,
+                  em: ({children}) => <em className="italic text-slate-700 dark:text-slate-300">{children}</em>,
+                  table: ({children}) => <table className="w-full border-collapse border border-slate-300 dark:border-slate-700 my-4">{children}</table>,
+                  th: ({children}) => <th className="border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-left font-semibold">{children}</th>,
+                  td: ({children}) => <td className="border border-slate-300 dark:border-slate-700 px-3 py-2">{children}</td>,
+                  hr: () => <hr className="my-6 border-slate-200 dark:border-slate-700" />,
                 }}
               >
                 {message.content}
