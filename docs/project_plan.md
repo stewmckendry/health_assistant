@@ -83,7 +83,21 @@ A comprehensive AI-powered health assistant system designed to provide personali
 - ✅ Comprehensive API endpoints (chat, feedback, sessions)
 - ✅ Error handling and loading states
 
-### Phase 4: Configuration System
+### Phase 4: Cloud Deployment
+- **Frontend (Vercel)**:
+  - Deploy Next.js app
+  - Environment variable for backend URL
+  - GitHub integration for auto-deploy
+- **Backend (Railway)**:
+  - Deploy FastAPI Python app
+  - Environment variables (API keys)
+  - Public URL for frontend to connect
+- **Minimal Changes**:
+  - Keep in-memory session storage
+  - Use existing Langfuse cloud
+  - No additional infrastructure
+
+### Phase 6: Configuration System
 - **Configurable AI Models**:
   - Model selection (Anthropic, OpenAI, Gemini)
   - Model parameters (temperature, max tokens)
@@ -260,35 +274,31 @@ GET /api/metrics
 - [x] Run end-to-end tests
 - [x] Deploy locally for demo (ports 3000/8000)
 
-### Phase 4: Configuration System (Week 8)
-**Build on Phase 1 Foundation:**
-- Extend existing YAML configuration files
-- Enhance AssistantConfig dataclass
-- Build on 97 trusted domains list
-- Extend guardrail mode configuration
+### Phase 4: Cloud Deployment (Week 8)
+**Deploy to Production:**
+- Make app accessible to external testers
+- Minimal infrastructure changes
+- Keep existing functionality intact
 
 **ToDos:**
-- [ ] Write tests for configuration management
-- [ ] Design configuration schema:
-  - [ ] Extend existing prompts.yaml structure
-  - [ ] Build on domains.yaml (97 domains)
-  - [ ] Enhance guardrail_prompts.yaml
-- [ ] Implement model configuration interface:
-  - [ ] Extend AssistantConfig class
-  - [ ] Add model fallback logic
-  - [ ] Support temperature/token overrides
-- [ ] Create trusted sources configuration:
-  - [ ] Build UI for domains.yaml management
-  - [ ] Organization-specific domain lists
-  - [ ] Source priority/weighting system
-- [ ] Build response parameter configuration:
-  - [ ] Extend disclaimer templates
-  - [ ] Configure guardrail sensitivity
-  - [ ] Adjust citation formatting
-- [ ] Implement runtime configuration API
-- [ ] Create configuration validation
-- [ ] Test configuration switching
-- [ ] Document configuration options
+- [ ] Frontend (Vercel):
+  - [ ] Create Vercel account and project
+  - [ ] Add NEXT_PUBLIC_BACKEND_URL environment variable
+  - [ ] Connect GitHub repository
+  - [ ] Deploy and test frontend
+- [ ] Backend (Railway):
+  - [ ] Create Railway account and project
+  - [ ] Add environment variables (ANTHROPIC_API_KEY, LANGFUSE keys)
+  - [ ] Deploy FastAPI app
+  - [ ] Get public URL for frontend
+- [ ] Integration:
+  - [ ] Update frontend to use Railway backend URL
+  - [ ] Test end-to-end functionality
+  - [ ] Update CORS settings for production domains
+- [ ] Documentation:
+  - [ ] Document deployment steps
+  - [ ] Create .env.example files
+  - [ ] Update README with live demo link
 
 ### Phase 5: Provider Assistant ✅ COMPLETE (Week 9)
 **Successfully Built on Phase 1-3 Foundation:**
@@ -333,7 +343,7 @@ GET /api/metrics
 - [x] Validate against healthcare provider requirements
 - [x] Document professional use guidelines (docs/provider_assistant.md)
 
-### Phase 6: Medical Decision Support (Weeks 10-12)
+### Phase 7: Medical Decision Support (Weeks 10-12)
 **Build on Phase 1-5 Foundation:**
 - Orchestrate multiple assistant instances
 - Aggregate session logs for consensus building
