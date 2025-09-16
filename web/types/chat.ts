@@ -13,6 +13,7 @@ export interface Message {
   traceId?: string;
   guardrailTriggered?: boolean;
   error?: boolean;
+  mode?: 'patient' | 'provider';  // Track mode for each message
 }
 
 export interface ChatSession {

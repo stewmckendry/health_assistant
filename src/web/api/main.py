@@ -26,6 +26,7 @@ import uvicorn
 sys.path.insert(0, str(project_root))
 
 from assistants.patient import PatientAssistant
+from assistants.provider import ProviderAssistant
 from utils.session_logging import SessionLogger
 from langfuse import Langfuse
 
@@ -46,14 +47,31 @@ app.add_middleware(
 )
 
 # Initialize services - delay initialization to avoid import issues
-assistant = None
+patient_assistant = None
+provider_assistant = None
 langfuse = None
 
-def get_assistant():
-    global assistant
-    if assistant is None:
-        assistant = PatientAssistant()
-    return assistant
+def get_assistant(mode: str = "patient"):
+    """
+    Get the appropriate assistant based on mode.
+    
+    Args:
+        mode: Either "patient" or "provider"
+    
+    Returns:
+        PatientAssistant or ProviderAssistant instance
+    """
+    global patient_assistant, provider_assistant
+    
+    if mode == "provider":
+        if provider_assistant is None:
+            provider_assistant = ProviderAssistant()
+        return provider_assistant
+    else:
+        # Default to patient mode
+        if patient_assistant is None:
+            patient_assistant = PatientAssistant()
+        return patient_assistant
 
 def get_langfuse():
     global langfuse
@@ -74,6 +92,7 @@ class ChatRequest(BaseModel):
     query: str
     sessionId: str
     userId: Optional[str] = None
+    mode: Optional[str] = "patient"  # New field for mode switching
 
 
 class Citation(BaseModel):
@@ -89,6 +108,7 @@ class ChatResponse(BaseModel):
     sessionId: str
     guardrailTriggered: Optional[bool] = False
     toolCalls: Optional[List[Dict[str, Any]]] = None
+    mode: Optional[str] = "patient"  # Include mode in response
 
 
 class FeedbackRequest(BaseModel):
@@ -116,11 +136,11 @@ async def health_check():
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     """
-    Process a chat request using the PatientAssistant.
+    Process a chat request using the appropriate assistant based on mode.
     """
     try:
-        # Get services
-        assistant = get_assistant()
+        # Get services - use mode from request
+        assistant = get_assistant(request.mode)
         langfuse_client = get_langfuse()
         
         # Retrieve conversation history for this session
@@ -145,15 +165,17 @@ async def chat(request: ChatRequest):
         if isinstance(response, dict):
             response_content = response.get('content', str(response))
             response_citations = response.get('citations', [])
-            guardrail_triggered = response.get('guardrail_triggered', False)
+            guardrail_triggered = response.get('guardrails_applied', False)  # Fixed key name
             tool_calls = response.get('tool_calls', None)
-            # Get trace_id from response (added by PatientAssistant)
+            response_mode = response.get('mode', 'patient')
+            # Get trace_id from response (added by assistant)
             trace_id = response.get('trace_id')
         else:
             response_content = getattr(response, 'content', str(response))
             response_citations = getattr(response, 'citations', [])
-            guardrail_triggered = getattr(response, 'guardrail_triggered', False)
+            guardrail_triggered = getattr(response, 'guardrails_applied', False)
             tool_calls = getattr(response, 'tool_calls', None)
+            response_mode = getattr(response, 'mode', 'patient')
             trace_id = getattr(response, 'trace_id', None)
         
         # Generate a fallback trace ID if we didn't get one
@@ -185,13 +207,15 @@ async def chat(request: ChatRequest):
             {
                 "role": "user",
                 "content": request.query,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
+                "mode": request.mode  # Track mode per message
             },
             {
                 "role": "assistant",
                 "content": response_content,
                 "timestamp": datetime.now().isoformat(),
-                "citations": citations
+                "citations": citations,
+                "mode": response_mode  # Track mode in response
             }
         ])
         
@@ -204,7 +228,8 @@ async def chat(request: ChatRequest):
             traceId=trace_id,
             sessionId=request.sessionId,
             guardrailTriggered=guardrail_triggered,
-            toolCalls=tool_calls
+            toolCalls=tool_calls,
+            mode=response_mode  # Include mode in response
         )
         
     except Exception as e:

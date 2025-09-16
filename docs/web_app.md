@@ -84,6 +84,87 @@ The application supports full multi-turn conversations using Anthropic's native 
    - User: 'health_assistant_user'
 ```
 
+## Mode Selection System
+
+### Assistant Mode Toggle
+The web application supports switching between two assistant modes:
+
+#### Patient Mode (Default)
+- **Target Audience**: General public, patients, caregivers
+- **Content Style**: Patient-friendly language, educational focus
+- **Guardrails**: Strict safety measures, emergency detection
+- **Sources**: 119 trusted medical domains
+- **Features**: Comprehensive disclaimers, emergency redirects
+
+#### Provider Mode
+- **Target Audience**: Healthcare professionals, clinicians
+- **Content Style**: Technical medical terminology, clinical details
+- **Guardrails**: Relaxed safety measures for professional context
+- **Sources**: 169 trusted domains (119 + 76 provider-specific)
+- **Features**: Clinical decision support, professional formatting
+
+### Mode Toggle Implementation
+
+#### Frontend Components
+1. **ModeToggle Component** (`web/components/ModeToggle.tsx`)
+   ```typescript
+   interface ModeToggleProps {
+     onModeChange?: (mode: AssistantMode) => void;
+     defaultMode?: AssistantMode;
+   }
+   
+   type AssistantMode = 'patient' | 'provider';
+   ```
+
+2. **Persistent Storage**
+   - Mode preference stored in localStorage
+   - Key: `'assistantMode'`
+   - Restored on page reload
+   - Defaults to 'patient' mode
+
+3. **UI Design**
+   - Toggle switch with clear mode labels
+   - Visual indicators for current mode
+   - Accessible design with proper ARIA labels
+
+#### Backend Integration
+The mode selection affects assistant instantiation:
+
+```python
+# src/web/api/main.py
+def get_assistant(mode: str = "patient"):
+    global patient_assistant, provider_assistant
+    
+    if mode == "provider":
+        if provider_assistant is None:
+            provider_assistant = ProviderAssistant()
+        return provider_assistant
+    else:
+        if patient_assistant is None:
+            patient_assistant = PatientAssistant()
+        return patient_assistant
+```
+
+### API Updates
+
+#### Request Format
+The chat request now includes mode selection:
+```json
+{
+  "query": "What are current AHA guidelines for AFib anticoagulation?",
+  "sessionId": "uuid",
+  "userId": "user_uuid",
+  "mode": "provider"
+}
+```
+
+#### Response Enhancements
+Provider mode responses include:
+- Enhanced markdown formatting
+- Technical medical terminology
+- Extended citation sources
+- Professional disclaimers
+
 ## API Endpoints
 
 ### Backend (FastAPI - Port 8000)
@@ -95,7 +176,8 @@ Request:
 {
   "query": "What are flu symptoms?",
   "sessionId": "uuid",
-  "userId": "user_uuid"
+  "userId": "user_uuid",
+  "mode": "patient"
 }
 
 Response:
@@ -105,7 +187,8 @@ Response:
   "traceId": "langfuse-trace-id",
   "sessionId": "uuid",
   "guardrailTriggered": false,
-  "toolCalls": [...]
+  "toolCalls": [...],
+  "mode": "patient"
 }
 ```
 
@@ -152,12 +235,25 @@ Retrieve session information and message history.
 
 ### Trace Architecture
 ```
-patient_query (Main Trace) - Created by @observe decorator
+patient_query/provider_query (Main Trace) - Created by @observe decorator
 ├── llm_call (Generation) - BaseAssistant API call
 ├── web_search (Span) - If web search performed
 ├── web_fetch (Span) - If URLs fetched
-└── guardrails (Span) - Output validation
+└── guardrails (Span) - Output validation (patient mode only)
 ```
+
+### Mode-Specific Tagging
+The system includes mode-specific tags for observability:
+
+**Patient Mode Tags:**
+- `mode:patient` - Identifies patient assistant queries
+- `patient_assistant` - Assistant type tag
+- `guardrail_hybrid` - Guardrail mode applied
+
+**Provider Mode Tags:**
+- `mode:provider` - Identifies provider assistant queries  
+- `provider_assistant` - Assistant type tag
+- `guardrail_hybrid` - Guardrail mode (minimal for providers)
 
 ### Key Implementation Details
 

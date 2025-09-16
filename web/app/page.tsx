@@ -1,14 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { ChatInterface } from '@/components/chat/ChatInterface';
 import { useSession } from '@/hooks/useSession';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { ModeToggle, AssistantMode } from '@/components/ModeToggle';
 import { Loader2, RefreshCw } from 'lucide-react';
 
 export default function Home() {
   const { sessionId, userId, isLoading, createNewSession } = useSession();
+  const [mode, setMode] = useState<AssistantMode>('patient');
 
   if (isLoading || !sessionId) {
     return (
@@ -31,10 +34,14 @@ export default function Home() {
             <div>
               <h1 className="text-2xl font-bold">Health Assistant</h1>
               <p className="text-sm text-muted-foreground">
-                AI-powered medical education platform
+                {mode === 'patient' 
+                  ? 'AI-powered medical education platform'
+                  : 'Clinical decision support for healthcare providers'
+                }
               </p>
             </div>
             <div className="flex items-center gap-2">
+              <ModeToggle onModeChange={setMode} defaultMode={mode} />
               <ThemeToggle />
               <Button
                 variant="outline"
@@ -51,7 +58,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-8 flex-1 flex flex-col">
-        <ChatInterface sessionId={sessionId} userId={userId} />
+        <ChatInterface sessionId={sessionId} userId={userId} mode={mode} />
       </main>
     </div>
   );

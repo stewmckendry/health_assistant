@@ -111,6 +111,13 @@ class PatientAssistant(BaseAssistant):
         # Update Langfuse trace with metadata
         if langfuse and settings.langfuse_enabled:
             try:
+                # Build complete tag list
+                all_tags = ["patient_assistant", f"guardrail_{self.guardrail_mode}", "mode:patient"]
+                if session_id:
+                    all_tags.append(f"session:{session_id[:8]}")
+                if user_id:
+                    all_tags.append(f"user:{user_id}")
+                
                 langfuse.update_current_trace(
                     input={"query": query, "mode": self.mode},
                     metadata={
@@ -121,13 +128,8 @@ class PatientAssistant(BaseAssistant):
                     },
                     session_id=session_id,
                     user_id=user_id,
-                    tags=["patient_assistant", f"guardrail_{self.guardrail_mode}"]
+                    tags=all_tags
                 )
-                # Add session/user tags for filtering
-                if session_id:
-                    langfuse.update_current_trace(tags=[f"session:{session_id[:8]}"])
-                if user_id:
-                    langfuse.update_current_trace(tags=[f"user:{user_id}"])
             except Exception as e:
                 logger.debug(f"Failed to update Langfuse trace: {e}")
         

@@ -15,9 +15,10 @@ import { v4 as uuidv4 } from 'uuid';
 interface ChatInterfaceProps {
   sessionId: string;
   userId?: string;
+  mode?: 'patient' | 'provider';
 }
 
-export function ChatInterface({ sessionId, userId }: ChatInterfaceProps) {
+export function ChatInterface({ sessionId, userId, mode = 'patient' }: ChatInterfaceProps) {
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -30,17 +31,22 @@ export function ChatInterface({ sessionId, userId }: ChatInterfaceProps) {
     }
   }, [messages]);
 
-  // Add initial system message
+  // Add initial system message based on mode
   useEffect(() => {
+    const systemMessage = mode === 'provider' 
+      ? 'Welcome to the AI Health Assistant - Provider Mode. I can provide evidence-based clinical information, treatment guidelines, and decision support for healthcare professionals. How can I assist you today?'
+      : 'Welcome to the AI Health Assistant. I can provide educational health information to help you better understand medical topics. Please note that this information is for educational purposes only and is not a substitute for professional medical advice. How can I help you today?';
+    
     setMessages([
       {
         id: uuidv4(),
         role: 'system',
-        content: 'Welcome to the AI Health Assistant. I can provide educational health information to help you better understand medical topics. Please note that this information is for educational purposes only and is not a substitute for professional medical advice. How can I help you today?',
+        content: systemMessage,
         timestamp: new Date().toISOString(),
+        mode,
       },
     ]);
-  }, []);
+  }, [mode]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +57,7 @@ export function ChatInterface({ sessionId, userId }: ChatInterfaceProps) {
       role: 'user',
       content: input.trim(),
       timestamp: new Date().toISOString(),
+      mode,
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -67,6 +74,7 @@ export function ChatInterface({ sessionId, userId }: ChatInterfaceProps) {
           query: userMessage.content,
           sessionId,
           userId,
+          mode,  // Include mode in API request
         }),
       });
 
@@ -84,6 +92,7 @@ export function ChatInterface({ sessionId, userId }: ChatInterfaceProps) {
         timestamp: new Date().toISOString(),
         traceId: data.traceId,
         guardrailTriggered: data.guardrailTriggered,
+        mode: data.mode || mode,  // Use response mode or fallback
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
@@ -124,15 +133,26 @@ export function ChatInterface({ sessionId, userId }: ChatInterfaceProps) {
       <div className="border-b p-4 flex-shrink-0">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-semibold">AI Health Assistant</h2>
+            <h2 className="text-lg font-semibold">
+              AI Health Assistant {mode === 'provider' && '- Provider Mode'}
+            </h2>
             <p className="text-sm text-muted-foreground">
-              Educational health information powered by trusted medical sources
+              {mode === 'provider' 
+                ? 'Evidence-based clinical information for healthcare professionals'
+                : 'Educational health information powered by trusted medical sources'
+              }
             </p>
           </div>
-          <Badge variant="outline" className="flex items-center gap-1">
-            <AlertTriangle className="h-3 w-3" />
-            Not Medical Advice
-          </Badge>
+          {mode === 'patient' ? (
+            <Badge variant="outline" className="flex items-center gap-1">
+              <AlertTriangle className="h-3 w-3" />
+              Not Medical Advice
+            </Badge>
+          ) : (
+            <Badge variant="secondary" className="flex items-center gap-1">
+              🔬 Professional Use
+            </Badge>
+          )}
         </div>
       </div>
 
