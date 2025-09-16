@@ -288,36 +288,41 @@ GET /api/metrics
 - [ ] Test configuration switching
 - [ ] Document configuration options
 
-### Phase 5: Physician Mode (Week 9)
-**Build on Phase 1 Foundation:**
-- Create PhysicianAssistant extending PatientAssistant
-- Reuse guardrail infrastructure with physician-specific rules
+### Phase 5: Provider Assistant (Week 9)
+**Build on Phase 1-3 Foundation:**
+- Create ProviderAssistant extending BaseAssistant
+- Reuse guardrail infrastructure with provider-specific rules
 - Leverage existing web_search/web_fetch tools
-- Extend session logging for physician context
+- Extend session logging for provider context
+- Integrate with web app for mode switching
 
 **ToDos:**
-- [ ] Write physician-specific test cases
-- [ ] Create PhysicianAssistant class:
+- [ ] Write provider-specific test cases
+- [ ] Create ProviderAssistant class:
   - [ ] Inherit from BaseAssistant
-  - [ ] Adapt guardrail thresholds
-  - [ ] Allow technical terminology
-- [ ] Adapt system prompts for medical professionals:
-  - [ ] Extend prompts.yaml with physician mode
-  - [ ] Adjust disclaimer language
-  - [ ] Enable differential information
+  - [ ] Adapt guardrail thresholds for clinical use
+  - [ ] Allow technical/medical terminology
+- [ ] Adapt system prompts for healthcare providers:
+  - [ ] Create provider-specific prompts in prompts.yaml
+  - [ ] Adjust disclaimer language for professional use
+  - [ ] Enable evidence-based information retrieval
 - [ ] Configure extended source access:
-  - [ ] Add medical journal domains
+  - [ ] Add medical journal domains (PubMed, NEJM, JAMA)
   - [ ] Include clinical trial databases
-  - [ ] Enable UpToDate/DynaMed access
-- [ ] Implement mode switching logic:
-  - [ ] Reuse guardrail_mode pattern
-  - [ ] Add physician verification stub
-- [ ] Add physician-specific logging:
-  - [ ] Track clinical reasoning steps
-  - [ ] Log evidence quality scores
-- [ ] Run evaluation on physician responses
-- [ ] Validate against physician requirements
-- [ ] Document clinical use guidelines
+  - [ ] Enable professional medical resources
+- [ ] Implement mode switching in web app:
+  - [ ] Add provider/patient toggle in UI
+  - [ ] Update API to handle mode parameter
+  - [ ] Maintain session continuity across modes
+- [ ] Add provider-specific logging:
+  - [ ] Track evidence quality scores
+  - [ ] Log source credibility metrics
+- [ ] Integrate with Langfuse infrastructure:
+  - [ ] Use same trace/session/user patterns
+  - [ ] Add provider-specific tags
+- [ ] Run evaluation on provider responses
+- [ ] Validate against healthcare provider requirements
+- [ ] Document professional use guidelines
 
 ### Phase 6: Medical Decision Support (Weeks 10-12)
 **Build on Phase 1-5 Foundation:**
