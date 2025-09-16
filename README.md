@@ -23,6 +23,15 @@ AI-powered medical education assistant providing safe, educational health inform
 - 91 test cases in evaluation dataset
 - Helper functions for trace/session/user analysis
 
+**Phase 3: Web Application ✅ COMPLETE**
+- Next.js 14 with TypeScript and App Router
+- Multi-turn conversation support using Anthropic native features
+- Real-time chat interface with markdown rendering
+- Session persistence (24-hour localStorage)
+- User tracking across multiple sessions
+- Feedback collection with Langfuse integration
+- Responsive design with shadcn/ui components
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -51,6 +60,7 @@ echo "ANTHROPIC_API_KEY=sk-ant-api03-..." > .env
 
 ### Running the Assistant
 
+#### CLI Mode
 ```bash
 # Interactive CLI mode
 python scripts/test_assistant.py
@@ -66,6 +76,25 @@ python scripts/test_assistant.py -v
 
 # Save conversation history
 python scripts/test_assistant.py -s
+```
+
+#### Web Application (Phase 3)
+```bash
+# Start the backend API server
+source ~/spacy_env/bin/activate
+python scripts/start_backend.py
+# Or directly:
+uvicorn src.web.api.main:app --port 8000
+
+# In a new terminal, start the web frontend
+cd web
+npm install
+npm run dev
+
+# Access the application
+# Frontend: http://localhost:3000
+# Backend API: http://localhost:8000
+# API Docs: http://localhost:8000/docs
 ```
 
 ## 🏗️ Architecture
@@ -399,10 +428,58 @@ health_assistant_phase1/
 - **Web Fetch**: Max 5 fetches per query (configurable)
 - **Rate Limiting**: Handled gracefully with user-friendly errors
 
+## 🌐 Web Application (Phase 3)
+
+The web application provides a modern interface for interacting with the Health Assistant:
+
+### Features
+- **Multi-turn Conversations**: Native Anthropic message history support
+- **Session Management**: 24-hour session persistence with localStorage
+- **User Tracking**: Persistent user IDs across multiple sessions
+- **Real-time Chat**: Responsive interface with markdown rendering
+- **Feedback System**: Integrated rating and feedback collection
+- **Langfuse Integration**: Single trace per conversation turn for observability
+
+### API Endpoints
+
+#### POST /chat
+Process a chat message with conversation history
+```json
+{
+  "query": "What are flu symptoms?",
+  "sessionId": "uuid",
+  "userId": "user_uuid"
+}
+```
+
+#### POST /feedback
+Submit user feedback for interactions
+```json
+{
+  "traceId": "langfuse-trace-id",
+  "sessionId": "uuid",
+  "userId": "user_uuid",
+  "rating": 5,
+  "thumbsUp": true,
+  "comment": "Helpful response"
+}
+```
+
+#### POST /sessions
+Create or retrieve session information
+
+### Multi-turn Conversation Support
+The system now properly maintains conversation context using Anthropic's native message format:
+```python
+messages = [
+    {"role": "user", "content": "What are flu symptoms?"},
+    {"role": "assistant", "content": "Flu symptoms include..."},
+    {"role": "user", "content": "How long do they last?"}  # Context preserved
+]
+```
+
 ## 🔮 Future Phases
 
-- **Phase 2**: Evaluation Framework (Langfuse integration)
-- **Phase 3**: Web Application (FastAPI)
 - **Phase 4**: Advanced Configuration System
 - **Phase 5**: Physician Mode
 - **Phase 6**: Multi-Agent Orchestration (MAI-DxO)
