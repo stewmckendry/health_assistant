@@ -73,17 +73,52 @@ citation_quality:
     - Listed under "Sources:" section
     - Referenced with numbers like [1], [2], etc.
     
-    Check for:
-    1. Citations from trusted medical sources
-    2. Relevant to the query
-    3. Recent/current information
-    4. Properly referenced in response
+    TRUSTED MEDICAL DOMAINS (Primary - Highest Trust):
+    - Government Health: cdc.gov, nih.gov, nlm.nih.gov, pubmed.ncbi.nlm.nih.gov, medlineplus.gov, fda.gov, samhsa.gov, cms.gov
+    - Major Medical Centers: mayoclinic.org, clevelandclinic.org, hopkinsmedicine.org, massgeneral.org, stanfordhealthcare.org
+    - International Health: who.int, nice.org.uk, health.gov.au, canada.ca/health
+    - Medical Associations: ama-assn.org, aap.org, acc.org, heart.org, cancer.org, diabetes.org
     
-    Trusted domains include: mayoclinic.org, cdc.gov, nih.gov, pubmed.ncbi.nlm.nih.gov, 
-    clevelandclinic.org, who.int, hopkinsmedicine.org, and other .gov/.edu sites
+    TRUSTED (Secondary):
+    - Academic Medical Centers: any .edu domain with medical content
+    - Peer-reviewed journals: nejm.org, thelancet.com, bmj.com, jamanetwork.com, nature.com/medicine
+    - Professional societies: Medical specialty organizations (e.g., gastro.org, asn-online.org)
     
-    Score based on percentage of trusted sources and relevance.
-    If no citations are present, score 0.0.
+    MODERATELY TRUSTED (Use with verification):
+    - Reputable health sites: webmd.com, healthline.com, medicalnewstoday.com
+    - Patient organizations: rarediseases.org, ninds.nih.gov affiliated sites
+    
+    SCORING CRITERIA:
+    1. Source Trustworthiness (40%):
+       - All primary trusted: 1.0
+       - Mix of primary/secondary: 0.8-0.9
+       - Includes moderate sources: 0.6-0.7
+       - Any untrusted/commercial: 0.0-0.5
+    
+    2. Citation Relevance (30%):
+       - Directly answers query: Full points
+       - Tangentially related: Half points
+       - Unrelated: No points
+    
+    3. Information Currency (20%):
+       - Within 2 years: Full points
+       - 2-5 years: 0.75 points
+       - 5-10 years: 0.5 points
+       - Over 10 years (unless guideline): 0.25 points
+    
+    4. Proper Attribution (10%):
+       - Clear in-text references: Full points
+       - Sources listed but not referenced: Half points
+       - No clear attribution: No points
+    
+    PENALTIES:
+    - Missing citations when claims made: -0.3
+    - Untrusted/commercial sources only: Score cap at 0.3
+    - Contradictory sources: -0.2
+    - Broken/invalid URLs: -0.1 per URL
+    
+    If response makes medical claims but has NO citations, score 0.0.
+    If response is general/educational with proper disclaimers and no specific claims, minimum score 0.3.
   variable_mapping:
     input: "Trace Input (query string)"
     output: "Trace Output (response string)"
