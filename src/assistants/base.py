@@ -147,19 +147,27 @@ class BaseAssistant:
             }
         )
     
-    def _build_messages(self, query: str) -> List[Dict[str, str]]:
+    def _build_messages(self, query: str, message_history: Optional[List[Dict[str, str]]] = None) -> List[Dict[str, str]]:
         """
-        Build messages for the API request.
+        Build messages for the API request, including conversation history.
         
         Args:
             query: User query
+            message_history: Optional conversation history (alternating user/assistant messages)
         
         Returns:
-            List of message dictionaries (user messages only, system prompt handled separately)
+            List of message dictionaries for multi-turn conversation
         """
-        messages = [
-            {"role": "user", "content": query}
-        ]
+        messages = []
+        
+        # Add conversation history if provided
+        if message_history:
+            # Include previous messages for context
+            messages.extend(message_history)
+        
+        # Add current query
+        messages.append({"role": "user", "content": query})
+        
         return messages
     
     def _build_tools(self) -> Optional[List[Dict[str, Any]]]:
@@ -267,15 +275,18 @@ class BaseAssistant:
         query: str,
         session_id: Optional[str] = None,
         user_id: Optional[str] = None,
-        session_logger: Optional[Any] = None  # SessionLogger instance
+        session_logger: Optional[Any] = None,  # SessionLogger instance
+        message_history: Optional[List[Dict[str, str]]] = None
     ) -> Dict[str, Any]:
         """
-        Send a query to the Anthropic API.
+        Send a query to the Anthropic API with support for multi-turn conversations.
         
         Args:
             query: User query
             session_id: Optional session identifier for logging
             user_id: Optional user identifier for tracking
+            session_logger: Optional SessionLogger instance
+            message_history: Optional conversation history for multi-turn support
         
         Returns:
             Response dictionary with content, model, usage, session_id, and user_id
@@ -284,8 +295,8 @@ class BaseAssistant:
             Exception: If API call fails
         """
         try:
-            # Build request components
-            messages = self._build_messages(query)
+            # Build request components with conversation history
+            messages = self._build_messages(query, message_history)
             tools = self._build_tools()
             
             # Log the API call
@@ -323,6 +334,12 @@ class BaseAssistant:
                     tools=tools,
                     system_prompt=self.config.system_prompt
                 )
+                # Log conversation context
+                if message_history:
+                    self.logger.info(
+                        f"Using conversation history with {len(message_history)} previous messages",
+                        extra={"session_id": session_id, "history_size": len(message_history)}
+                    )
             
             # Update Langfuse with session metadata before the API call
             if langfuse and settings.langfuse_enabled:

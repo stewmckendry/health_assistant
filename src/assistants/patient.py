@@ -84,7 +84,8 @@ class PatientAssistant(BaseAssistant):
         self,
         query: str,
         session_id: Optional[str] = None,
-        user_id: Optional[str] = None
+        user_id: Optional[str] = None,
+        message_history: Optional[list] = None
     ) -> Dict[str, Any]:
         """
         Process a patient query with appropriate guardrails and disclaimers.
@@ -238,7 +239,7 @@ class PatientAssistant(BaseAssistant):
         try:
             # Call the parent class query method which makes the actual Anthropic API call
             # This is where the request goes to Claude (in base.py line 206)
-            api_response = super().query(query, session_id, user_id, session_logger)
+            api_response = super().query(query, session_id, user_id, session_logger, message_history)
             
             # Apply output guardrails based on mode
             original_response = api_response["content"]
@@ -325,6 +326,18 @@ class PatientAssistant(BaseAssistant):
             
             # Add patient mode indicator
             api_response["mode"] = self.mode
+            
+            # Add trace ID from current context (we're inside @observe)
+            if langfuse and settings.langfuse_enabled:
+                try:
+                    trace_id = langfuse.get_current_trace_id()
+                    if trace_id:
+                        api_response["trace_id"] = trace_id
+                except Exception as e:
+                    logger.debug(f"Failed to get trace ID: {e}")
+                    api_response["trace_id"] = None
+            else:
+                api_response["trace_id"] = None
             
             # Log final response
             processing_time = time.time() - start_time

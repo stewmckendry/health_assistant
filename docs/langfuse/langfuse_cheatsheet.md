@@ -1,5 +1,96 @@
 # Langfuse SDK Cheatsheet for Health Assistant Evaluation
 
+## Phase 3 Web App Integration - Key Learnings
+
+### Multi-Turn Conversation Architecture (SOLVED)
+
+**Problem**: Backend stored conversation history but didn't use it for context
+
+**Solution**: Pass message history through entire chain
+```python
+# main.py - Retrieve and pass history
+message_history = []
+if request.sessionId in sessions:
+    for msg in sessions[request.sessionId]["messages"]:
+        message_history.append({
+            "role": msg["role"],
+            "content": msg["content"]
+        })
+
+response = assistant.query(
+    query=request.query,
+    session_id=request.sessionId,
+    user_id=request.userId,
+    message_history=message_history  # Pass conversation history
+)
+
+# BaseAssistant - Use Anthropic native format
+def _build_messages(self, query: str, message_history: Optional[List] = None):
+    messages = []
+    if message_history:
+        messages.extend(message_history)  # Include previous turns
+    messages.append({"role": "user", "content": query})
+    return messages
+```
+
+### Session & User ID Management (SOLVED)
+
+**Problem**: Understanding session vs user ID lifecycle
+
+**Solution**: 
+- **Session ID**: 24-hour localStorage, expires and rotates
+- **User ID**: Persistent localStorage, tracks user across sessions
+- **Format**: Session uses UUID, User uses `user_${UUID}`
+
+```typescript
+// useSession.ts
+const SESSION_STORAGE_KEY = 'health_assistant_session';  // 24-hour expiry
+const USER_STORAGE_KEY = 'health_assistant_user';        // No expiry
+
+// Session expires after 24 hours
+if (sessionAge < 24 * 60 * 60 * 1000) {
+    setSessionData(parsedSession);
+}
+```
+
+### Langfuse Trace ID Flow (SOLVED)
+
+**Problem**: Getting trace ID from PatientAssistant to web response
+
+**Solution**: Single trace per turn, ID passed through response
+```python
+# PatientAssistant.query() - Inside @observe context
+trace_id = langfuse.get_current_trace_id()
+api_response["trace_id"] = trace_id
+
+# main.py - Outside @observe context
+trace_id = response.get('trace_id')  # From PatientAssistant
+if not trace_id:
+    trace_id = str(uuid.uuid4())  # Fallback
+
+# Frontend - Attach feedback to trace
+langfuse_client.create_score(
+    trace_id=request.traceId,
+    name="user-rating",
+    value=float(request.rating)
+)
+```
+
+### CORS Configuration for Web App
+
+**Problem**: Frontend couldn't reach backend API
+
+**Solution**: Proper CORS setup in FastAPI
+```python
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+```
+
 ## Key Learnings & Troubleshooting
 
 ### Variable Mapping Issues (SOLVED)

@@ -44,12 +44,15 @@ BaseAssistant(config: Optional[AssistantConfig] = None)
 
 #### Methods
 
-##### `query(query: str, session_id: Optional[str] = None) -> Dict[str, Any]`
-Send a query to the Anthropic API.
+##### `query(query: str, session_id: Optional[str] = None, user_id: Optional[str] = None, session_logger: Optional[Any] = None, message_history: Optional[List[Dict[str, str]]] = None) -> Dict[str, Any]`
+Send a query to the Anthropic API with support for multi-turn conversations.
 
 **Parameters:**
 - `query`: User's question or query text
 - `session_id`: Optional session identifier for logging
+- `user_id`: Optional user identifier for tracking
+- `session_logger`: Optional SessionLogger instance for detailed logging
+- `message_history`: Optional conversation history for multi-turn support (list of alternating user/assistant messages)
 
 **Returns:**
 ```python
@@ -62,8 +65,20 @@ Send a query to the Anthropic API.
     },
     "citations": List[Dict],  # List of citations from web_fetch
     "tool_calls": List[Dict], # Tool calls made (web_search, web_fetch)
-    "session_id": str         # Session identifier
+    "session_id": str,        # Session identifier
+    "user_id": str            # User identifier
 }
+```
+
+**Multi-Turn Conversation Support:**
+The `message_history` parameter enables Claude to maintain context across multiple conversation turns:
+```python
+# Example message history format
+message_history = [
+    {"role": "user", "content": "What are flu symptoms?"},
+    {"role": "assistant", "content": "Flu symptoms include fever, cough..."},
+    {"role": "user", "content": "How long do they last?"}  # Claude understands "they" = flu symptoms
+]
 ```
 
 **Raises:**
@@ -72,8 +87,8 @@ Send a query to the Anthropic API.
 
 #### Internal Methods
 
-##### `_build_messages(query: str) -> List[Dict[str, str]]`
-Constructs the message list for the API request.
+##### `_build_messages(query: str, message_history: Optional[List[Dict[str, str]]] = None) -> List[Dict[str, str]]`
+Constructs the message list for the API request, including conversation history for multi-turn support.
 
 ##### `_build_tools() -> Optional[List[Dict[str, Any]]]`
 Configures the web_search and web_fetch tools with allowed domains.
