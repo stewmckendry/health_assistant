@@ -40,7 +40,15 @@ app = FastAPI(
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://health-assistant.vercel.app",  # Production Vercel URL
+        "https://health-assistant-*.vercel.app",  # Allow health-assistant deployments
+        "https://health-assistant-stewart-mckendrys-projects.vercel.app",  # Project-specific URL
+        "https://health-assistant-*-stewart-mckendrys-projects.vercel.app",  # Branch deployments
+        "https://*.vercel.app"  # Allow Vercel preview deployments
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
