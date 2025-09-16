@@ -106,10 +106,12 @@ export function Message({ message, onFeedback }: MessageProps) {
                   h2: ({children}) => <h2 className="text-lg font-bold mb-3 mt-5 first:mt-0">{children}</h2>,
                   h3: ({children}) => <h3 className="text-base font-bold mb-2 mt-4 first:mt-0">{children}</h3>,
                   h4: ({children}) => <h4 className="text-sm font-bold mb-2 mt-3 first:mt-0">{children}</h4>,
-                  code: ({inline, children}) => 
-                    inline 
+                  code: ({children, className}) => {
+                    const isInline = !className;
+                    return isInline 
                       ? <code className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-sm font-mono">{children}</code>
-                      : <pre className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto my-4"><code className="font-mono text-sm">{children}</code></pre>,
+                      : <pre className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto my-4"><code className="font-mono text-sm">{children}</code></pre>;
+                  },
                   blockquote: ({children}) => 
                     <blockquote className="border-l-4 border-blue-200 dark:border-blue-800 pl-4 italic my-4 bg-blue-50 dark:bg-blue-950/20 py-2 rounded-r">{children}</blockquote>,
                   strong: ({children}) => <strong className="font-bold text-slate-900 dark:text-slate-100">{children}</strong>,
