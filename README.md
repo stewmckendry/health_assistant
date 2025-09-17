@@ -46,6 +46,7 @@ AI-powered medical education assistant providing safe, educational health inform
 ### Prerequisites
 
 - Python 3.11+
+- Node.js 18+ and npm
 - Anthropic API key
 - Virtual environment (recommended)
 
@@ -54,22 +55,47 @@ AI-powered medical education assistant providing safe, educational health inform
 ```bash
 # Clone the repository
 git clone https://github.com/stewmckendry/health_assistant.git
-cd health_assistant_phase1
+cd health_assistant
 
-# Create and activate virtual environment
+# Create and activate virtual environment (recommended)
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# Install Python dependencies
 pip install -r requirements.txt
 
+# Install Node.js dependencies
+cd web && npm install && cd ..
+
 # Set up environment variables
-echo "ANTHROPIC_API_KEY=sk-ant-api03-..." > .env
+cp .env.example .env
+# Edit .env and add your API keys:
+# ANTHROPIC_API_KEY=sk-ant-api03-...
+# LANGFUSE_PUBLIC_KEY=pk-lf-... (optional)
+# LANGFUSE_SECRET_KEY=sk-lf-... (optional)
 ```
 
-### Running the Assistant
+### 🚀 Start the Application (One Command!)
 
-#### CLI Mode
+```bash
+# Start everything with a single command
+./start.sh
+```
+
+The startup script will:
+- ✅ Verify all dependencies and environment variables
+- ✅ Start the FastAPI backend server (port 8000)  
+- ✅ Start the Next.js frontend server (port 3000)
+- ✅ Provide helpful status updates and error messages
+- ✅ Handle graceful shutdown with Ctrl+C
+
+**Application URLs:**
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:8000  
+- **API Documentation:** http://localhost:8000/docs
+
+### Alternative: CLI Mode
+
 ```bash
 # Interactive CLI mode
 python scripts/test_assistant.py
@@ -79,31 +105,6 @@ python scripts/test_assistant.py -q "What are the symptoms of diabetes?"
 
 # Batch queries from file
 python scripts/test_assistant.py -b scripts/example_queries.txt
-
-# With verbose output
-python scripts/test_assistant.py -v
-
-# Save conversation history
-python scripts/test_assistant.py -s
-```
-
-#### Web Application (Phase 3)
-```bash
-# Start the backend API server
-source ~/spacy_env/bin/activate
-python scripts/start_backend.py
-# Or directly:
-uvicorn src.web.api.main:app --port 8000
-
-# In a new terminal, start the web frontend
-cd web
-npm install
-npm run dev
-
-# Access the application
-# Frontend: http://localhost:3000
-# Backend API: http://localhost:8000
-# API Docs: http://localhost:8000/docs
 ```
 
 ## 🏗️ Architecture
