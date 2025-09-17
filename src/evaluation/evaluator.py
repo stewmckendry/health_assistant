@@ -76,8 +76,15 @@ def make_tool_metadata(name: str, args: dict = None, result=None, tool_id: str =
 class DatasetEvaluator:
     """Run dataset evaluations using Langfuse SDK."""
     
-    def __init__(self):
-        """Initialize Langfuse client and load evaluation configurations."""
+    def __init__(self, mode: str = 'patient', web_tools: bool = True, domain_filter: Optional[str] = None):
+        """
+        Initialize Langfuse client and load evaluation configurations.
+        
+        Args:
+            mode: 'patient' or 'provider' mode for the assistant
+            web_tools: Enable/disable web search and fetch tools
+            domain_filter: Filter trusted domains ('all', 'government', 'academic', or None)
+        """
         self.langfuse = Langfuse(
             public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
             secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
@@ -87,10 +94,61 @@ class DatasetEvaluator:
         # Load evaluation prompts (source of truth)
         self.eval_configs = self._load_evaluation_prompts()
         
-        # Initialize patient assistant for running queries
-        self.assistant = PatientAssistant(guardrail_mode="hybrid")
+        # Store configuration
+        self.mode = mode
+        self.web_tools = web_tools
+        self.domain_filter = domain_filter
         
-        logger.info("Initialized dataset evaluator with %d evaluation configs", len(self.eval_configs))
+        # Initialize appropriate assistant
+        if mode == 'provider':
+            from src.assistants.provider import ProviderAssistant
+            self.assistant = ProviderAssistant(guardrail_mode="hybrid")
+        else:
+            self.assistant = PatientAssistant(guardrail_mode="hybrid")
+        
+        # Configure web tools
+        if not web_tools:
+            # Disable web tools by modifying the assistant's configuration
+            if hasattr(self.assistant, 'enable_web_fetch'):
+                self.assistant.enable_web_fetch = False
+            if hasattr(self.assistant, 'enable_web_search'):
+                self.assistant.enable_web_search = False
+        
+        # Configure domain filtering
+        if domain_filter and domain_filter != 'all':
+            self._apply_domain_filter(domain_filter)
+        
+        logger.info(
+            "Initialized dataset evaluator with mode=%s, web_tools=%s, domain_filter=%s, %d evaluation configs",
+            mode, web_tools, domain_filter, len(self.eval_configs)
+        )
+    
+    def _apply_domain_filter(self, filter_type: str):
+        """Apply domain filtering to the assistant's trusted domains."""
+        if not hasattr(self.assistant, 'trusted_domains'):
+            logger.warning("Assistant does not have trusted_domains attribute")
+            return
+        
+        # Define domain filters
+        government_domains = [
+            "cdc.gov", "nih.gov", "fda.gov", "hhs.gov", "cms.gov",
+            "pubmed.ncbi.nlm.nih.gov", "ncbi.nlm.nih.gov", "clinicaltrials.gov"
+        ]
+        
+        academic_domains = [
+            "mayoclinic.org", "hopkinsmedicine.org", "clevelandclinic.org",
+            "stanfordhealthcare.org", "uclahealth.org", "medicine.yale.edu",
+            "massgeneral.org", "pennmedicine.org", "medicine.uchicago.edu"
+        ]
+        
+        if filter_type == 'government':
+            self.assistant.trusted_domains = government_domains
+            logger.info("Applied government domain filter: %s", government_domains)
+        elif filter_type == 'academic':
+            self.assistant.trusted_domains = academic_domains
+            logger.info("Applied academic domain filter: %s", academic_domains)
+        else:
+            logger.warning("Unknown domain filter type: %s", filter_type)
     
     def _load_evaluation_prompts(self) -> Dict[str, Any]:
         """Load evaluation prompts from YAML configuration (source of truth)."""
@@ -192,6 +250,7 @@ class DatasetEvaluator:
         print(f"Dataset: {dataset_name}")
         print(f"Run Name: {run_name}")
         print(f"Description: {description}")
+        print(f"Configuration: mode={self.mode}, web_tools={self.web_tools}, domain_filter={self.domain_filter}")
         
         # Get dataset
         dataset = self.langfuse.get_dataset(name=dataset_name)
@@ -207,6 +266,11 @@ class DatasetEvaluator:
         results = {
             "run_name": run_name,
             "dataset": dataset_name,
+            "configuration": {
+                "mode": self.mode,
+                "web_tools": self.web_tools,
+                "domain_filter": self.domain_filter
+            },
             "total_items": len(items),
             "successful": 0,
             "failed": 0,
@@ -243,12 +307,14 @@ class DatasetEvaluator:
                     run_description=description,
                     run_metadata={
                         "category": metadata.get("category"),
-                        "assistant_mode": "patient",
+                        "assistant_mode": self.mode,
                         "guardrail_mode": "hybrid",
+                        "web_tools_enabled": self.web_tools,
+                        "domain_filter": self.domain_filter,
                         "session_id": session_id,
                         "user_id": user_id
                     },
-                    tags=["eval", f"session:{session_id[:8]}", f"user:{user_id}"]
+                    tags=["eval", f"mode:{self.mode}", f"session:{session_id[:8]}", f"user:{user_id}"]
                 ) as root_span:
                     # Update root span with session/user
                     root_span.update(
