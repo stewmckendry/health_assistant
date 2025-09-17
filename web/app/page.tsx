@@ -7,11 +7,14 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { ModeToggle, AssistantMode } from '@/components/ModeToggle';
-import { Loader2, RefreshCw } from 'lucide-react';
+import { SettingsPanel } from '@/components/settings/SettingsPanel';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Loader2, RefreshCw, Settings } from 'lucide-react';
 
 export default function Home() {
   const { sessionId, userId, isLoading, createNewSession } = useSession();
   const [mode, setMode] = useState<AssistantMode>('patient');
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   if (isLoading || !sessionId) {
     return (
@@ -42,6 +45,15 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <ModeToggle onModeChange={setMode} defaultMode={mode} />
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setSettingsOpen(true)}
+                className="gap-2"
+              >
+                <Settings className="h-4 w-4" />
+                Settings
+              </Button>
               <ThemeToggle />
               <Button
                 variant="outline"
@@ -60,6 +72,16 @@ export default function Home() {
       <main className="container mx-auto px-4 py-8 flex-1 flex flex-col">
         <ChatInterface sessionId={sessionId} userId={userId} mode={mode} />
       </main>
+
+      {/* Settings Dialog */}
+      <Dialog open={settingsOpen} onOpenChange={setSettingsOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Settings</DialogTitle>
+          </DialogHeader>
+          <SettingsPanel sessionId={sessionId} />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

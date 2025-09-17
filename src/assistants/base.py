@@ -5,6 +5,7 @@ from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 import logging
 from time import perf_counter
+from pathlib import Path
 
 from anthropic import Anthropic
 from anthropic.types import Message
@@ -12,6 +13,7 @@ from langfuse import get_client, observe
 
 from src.utils.logging import get_logger, log_api_call
 from src.config.settings import settings
+# Removed StreamingMixin - functionality moved directly into BaseAssistant
 
 # Initialize Langfuse client
 if settings.langfuse_enabled:
@@ -184,7 +186,8 @@ class BaseAssistant:
             {
                 "type": "web_search_20250305",
                 "name": "web_search",
-                "max_uses": 3  # Use search to find URLs first
+                "max_uses": 1,  # Limit searches to reduce available URLs
+                "allowed_domains": self.trusted_domains  # Filter search results to trusted domains only
             },
             {
                 "type": "web_fetch_20250910",
@@ -364,8 +367,65 @@ class BaseAssistant:
                 except Exception as e:
                     self.logger.debug(f"Failed to update observation metadata: {e}")
             
+            # Track timing for performance metrics
+            api_start_time = perf_counter()
+            
             # Make API call
             response = self.client.messages.create(**api_kwargs)
+            
+            # Calculate API call duration
+            api_duration = perf_counter() - api_start_time
+            
+            # Debug: Log raw response
+            import json
+            try:
+                # Try to get the raw response data
+                debug_file = Path(__file__).parent.parent.parent / "logs" / "debug_raw_response.json"
+                debug_file.parent.mkdir(exist_ok=True)
+                
+                # Use model_dump() to get the raw dictionary representation
+                if hasattr(response, 'model_dump'):
+                    raw_data = response.model_dump()
+                elif hasattr(response, 'dict'):
+                    raw_data = response.dict()
+                else:
+                    # Fallback to manual extraction
+                    raw_data = {
+                        "id": response.id,
+                        "type": getattr(response, 'type', 'message'),
+                        "role": response.role,
+                        "model": response.model,
+                        "content": [],
+                        "stop_reason": response.stop_reason,
+                        "stop_sequence": getattr(response, 'stop_sequence', None),
+                        "usage": {
+                            "input_tokens": response.usage.input_tokens,
+                            "output_tokens": response.usage.output_tokens,
+                            "cache_creation_input_tokens": getattr(response.usage, 'cache_creation_input_tokens', None),
+                            "cache_read_input_tokens": getattr(response.usage, 'cache_read_input_tokens', None)
+                        }
+                    }
+                    
+                    # Extract content blocks with all their data
+                    for block in response.content:
+                        if hasattr(block, 'model_dump'):
+                            raw_data["content"].append(block.model_dump())
+                        elif hasattr(block, 'dict'):
+                            raw_data["content"].append(block.dict())
+                        else:
+                            # Manual extraction
+                            block_data = {"type": getattr(block, 'type', 'unknown')}
+                            for attr in ['text', 'id', 'name', 'input', 'citations', 'content', 'tool_use_id', 'is_error']:
+                                if hasattr(block, attr):
+                                    block_data[attr] = getattr(block, attr)
+                            raw_data["content"].append(block_data)
+                
+                with open(debug_file, 'w') as f:
+                    json.dump(raw_data, f, indent=2, default=str)
+                
+                self.logger.info(f"Debug: Raw response written to {debug_file}")
+            except Exception as e:
+                self.logger.error(f"Failed to log raw response: {e}")
             
             # Process response and create tool spans as blocks arrive
             content_text = ""
@@ -468,7 +528,12 @@ class BaseAssistant:
                             self.logger.error(f"Failed to create {tool_name} span: {e}")
                     
                     # Keep record for response
-                    tool_calls.append({"type": "server_tool_use", "name": tool_name, "input": tool_args})
+                    tool_calls.append({
+                        "type": "server_tool_use", 
+                        "name": tool_name, 
+                        "input": tool_args,
+                        "timestamp": perf_counter()  # Track when tool was called
+                    })
                 
                 # CLIENT TOOL USE: Handle traditional tool_use blocks
                 elif getattr(block, "type", None) == "tool_use":
@@ -586,8 +651,19 @@ class BaseAssistant:
                                 # Extract content info from web_fetch result
                                 content_length = 0
                                 content_preview = ""
+                                retrieved_at = None
+                                fetch_url = None
                                 
                                 if result_payload:
+                                    # Extract retrieved_at timestamp if available
+                                    if hasattr(result_payload, "retrieved_at"):
+                                        retrieved_at = getattr(result_payload, "retrieved_at", None)
+                                        self.logger.info(f"web_fetch retrieved_at: {retrieved_at}")
+                                    
+                                    # Extract URL if available
+                                    if hasattr(result_payload, "url"):
+                                        fetch_url = getattr(result_payload, "url", None)
+                                    
                                     # Try to get content string
                                     content_str = ""
                                     if hasattr(result_payload, "content"):
@@ -609,7 +685,11 @@ class BaseAssistant:
                                 if content_preview:
                                     output_text += f":\n{content_preview}"
                                 
-                                extra_metadata = {"content_length": content_length}
+                                extra_metadata = {
+                                    "content_length": content_length,
+                                    "retrieved_at": retrieved_at,
+                                    "fetch_url": fetch_url
+                                }
                             
                             # Update span with results
                             info["span"].update(
@@ -736,9 +816,11 @@ class BaseAssistant:
                         metadata={
                             "session_id": session_id,
                             "user_id": user_id,
+                            "streaming": False,  # Explicitly mark as non-streaming
                             "system_prompt": self.config.system_prompt[:200],  # First 200 chars
                             "tools_enabled": tools is not None,
                             "trusted_domains_count": len(self.trusted_domains) if tools else 0,
+                            "api_duration": api_duration,  # Time for the API call
                             "tool_calls_count": len(tool_calls),
                             "citations_count": len(all_citations),
                             "tool_calls": [
@@ -813,3 +895,203 @@ class BaseAssistant:
                 }
             )
             raise
+    
+    # Note: No @observe decorator here because streaming traces are handled manually in subclasses
+    def query_stream(
+        self,
+        query: str,
+        session_id: Optional[str] = None,
+        user_id: Optional[str] = None,
+        session_logger: Optional[Any] = None,
+        message_history: Optional[List[Dict[str, str]]] = None
+    ):
+        """
+        Stream a query response from the Anthropic API.
+        
+        Yields:
+            Dict events with keys:
+            - type: "start", "text", "tool_use", "citation", "error", "complete"
+            - content: The content for this event
+            - metadata: Additional metadata (timing, tool names, etc.)
+        """
+        from typing import Iterator
+        
+        try:
+            # Build request components
+            messages = self._build_messages(query, message_history)
+            tools = self._build_tools()
+            
+            # Track timing
+            start_time = perf_counter()
+            first_token_time = None
+            
+            # Track accumulated content
+            accumulated_text = ""
+            citations = []
+            tool_calls = []
+            
+            # Prepare API call kwargs
+            api_kwargs = {
+                "model": self.model,
+                "max_tokens": self.config.max_tokens,
+                "temperature": self.config.temperature,
+                "system": self.config.system_prompt,
+                "messages": messages
+            }
+            
+            # Add tools if configured
+            if tools:
+                api_kwargs["tools"] = tools
+                api_kwargs["extra_headers"] = {
+                    "anthropic-beta": "web-search-2025-03-05,web-fetch-2025-09-10"
+                }
+            
+            # Yield start event
+            yield {
+                "type": "start",
+                "content": None,
+                "metadata": {
+                    "session_id": session_id,
+                    "user_id": user_id,
+                    "model": self.model,
+                    "timestamp": perf_counter() - start_time
+                }
+            }
+            
+            # Start streaming
+            with self.client.messages.stream(**api_kwargs) as stream:
+                for event in stream:
+                    current_time = perf_counter() - start_time
+                    
+                    if event.type == "content_block_start":
+                        block_type = getattr(event.content_block, 'type', None)
+                        
+                        # Handle tool use
+                        if block_type == "server_tool_use":
+                            tool_name = getattr(event.content_block, 'name', 'unknown')
+                            tool_input = getattr(event.content_block, 'input', {})
+                            
+                            tool_calls.append({
+                                "name": tool_name,
+                                "input": tool_input,
+                                "timestamp": current_time
+                            })
+                            
+                            yield {
+                                "type": "tool_use",
+                                "content": {
+                                    "name": tool_name,
+                                    "input": tool_input
+                                },
+                                "metadata": {
+                                    "timestamp": current_time
+                                }
+                            }
+                    
+                    elif event.type == "content_block_delta":
+                        # Stream text as it arrives
+                        if hasattr(event.delta, 'text'):
+                            text_chunk = event.delta.text
+                            
+                            if first_token_time is None:
+                                first_token_time = current_time
+                            
+                            accumulated_text += text_chunk
+                            
+                            yield {
+                                "type": "text",
+                                "content": text_chunk,
+                                "metadata": {
+                                    "timestamp": current_time,
+                                    "total_length": len(accumulated_text),
+                                    "is_first_token": first_token_time == current_time
+                                }
+                            }
+                
+                # Get final message for citations and usage
+                final_message = stream.get_final_message()
+                
+                # Extract citations from final message
+                for block in final_message.content:
+                    if hasattr(block, 'citations') and block.citations:
+                        for citation in block.citations:
+                            citation_dict = {
+                                "url": getattr(citation, 'url', ''),
+                                "title": getattr(citation, 'title', 'Source')
+                            }
+                            if citation_dict['url'] and citation_dict not in citations:
+                                citations.append(citation_dict)
+                                
+                                yield {
+                                    "type": "citation",
+                                    "content": citation_dict,
+                                    "metadata": {
+                                        "timestamp": perf_counter() - start_time,
+                                        "total_citations": len(citations)
+                                    }
+                                }
+                
+                # Update Langfuse with final details
+                if langfuse and settings.langfuse_enabled:
+                    try:
+                        langfuse.update_current_observation(
+                            model=self.model,
+                            input=messages,
+                            output=accumulated_text,
+                            metadata={
+                                "session_id": session_id,
+                                "user_id": user_id,
+                                "streaming": True,
+                                "system_prompt": self.config.system_prompt[:200],
+                                "tools_enabled": tools is not None,
+                                "trusted_domains_count": len(self.trusted_domains) if tools else 0,
+                                "time_to_first_token": first_token_time,
+                                "total_time": perf_counter() - start_time,
+                                "citations_count": len(citations),
+                                "tool_calls_count": len(tool_calls),
+                                "tool_calls": [
+                                    {"name": tc.get("name"), "timestamp": tc.get("timestamp")}
+                                    for tc in tool_calls
+                                ] if tool_calls else []
+                            },
+                            usage={
+                                "input_tokens": final_message.usage.input_tokens,
+                                "output_tokens": final_message.usage.output_tokens,
+                                "total_tokens": final_message.usage.input_tokens + final_message.usage.output_tokens
+                            }
+                        )
+                    except Exception as e:
+                        self.logger.debug(f"Failed to update Langfuse: {e}")
+                
+                # Yield complete event with final stats
+                yield {
+                    "type": "complete",
+                    "content": {
+                        "total_text": accumulated_text,
+                        "citations": citations,
+                        "tool_calls": tool_calls
+                    },
+                    "metadata": {
+                        "total_time": perf_counter() - start_time,
+                        "time_to_first_token": first_token_time,
+                        "usage": {
+                            "input_tokens": final_message.usage.input_tokens,
+                            "output_tokens": final_message.usage.output_tokens,
+                            "total_tokens": final_message.usage.input_tokens + final_message.usage.output_tokens
+                        },
+                        "citations_count": len(citations),
+                        "tool_calls_count": len(tool_calls),
+                        "session_id": session_id,
+                        "user_id": user_id
+                    }
+                }
+                
+        except Exception as e:
+            self.logger.error(f"Streaming query failed: {e}", exc_info=True)
+            yield {
+                "type": "error",
+                "content": str(e),
+                "metadata": {
+                    "timestamp": perf_counter() - start_time if 'start_time' in locals() else 0
+                }
+            }

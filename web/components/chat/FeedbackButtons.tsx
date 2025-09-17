@@ -1,20 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import {
-  ThumbsUp,
-  ThumbsDown,
-  MessageSquare,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from '@/components/ui/dialog';
+import {
   Star,
   Send,
+  Check,
 } from 'lucide-react';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
 interface FeedbackButtonsProps {
@@ -28,134 +29,151 @@ export function FeedbackButtons({
   sessionId,
   onFeedback,
 }: FeedbackButtonsProps) {
-  const [thumbsUp, setThumbsUp] = useState<boolean | null>(null);
   const [rating, setRating] = useState<number | null>(null);
+  const [hoveredRating, setHoveredRating] = useState<number | null>(null);
   const [comment, setComment] = useState('');
-  const [showComment, setShowComment] = useState(false);
-
-  const handleThumbsFeedback = (isPositive: boolean) => {
-    const newValue = thumbsUp === isPositive ? null : isPositive;
-    setThumbsUp(newValue);
-    
-    if (newValue !== null) {
-      onFeedback({
-        traceId,
-        sessionId,
-        thumbsUp: newValue,
-      });
-    }
-  };
+  const [showCommentDialog, setShowCommentDialog] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [tempRating, setTempRating] = useState<number | null>(null);
 
   const handleRating = (value: number) => {
-    const newRating = rating === value ? null : value;
-    setRating(newRating);
-    
-    if (newRating !== null) {
-      onFeedback({
-        traceId,
-        sessionId,
-        rating: newRating,
-      });
-    }
+    setTempRating(value);
+    setShowCommentDialog(true);
   };
 
   const handleCommentSubmit = () => {
-    if (comment.trim()) {
+    if (tempRating !== null) {
+      setRating(tempRating);
       onFeedback({
         traceId,
         sessionId,
-        comment: comment.trim(),
-        rating,
-        thumbsUp,
+        rating: tempRating,
+        comment: comment.trim() || null,
       });
       setComment('');
-      setShowComment(false);
+      setShowCommentDialog(false);
+      setSubmitted(true);
+      
+      // Show confirmation for 3 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
     }
   };
 
-  return (
-    <div className="flex items-center gap-2 mt-2">
-      {/* Thumbs up/down */}
-      <div className="flex gap-1">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => handleThumbsFeedback(true)}
-          className={cn(
-            'h-8 w-8 p-0',
-            thumbsUp === true && 'text-green-600 bg-green-100 hover:bg-green-200'
-          )}
-        >
-          <ThumbsUp className="h-4 w-4" />
-        </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => handleThumbsFeedback(false)}
-          className={cn(
-            'h-8 w-8 p-0',
-            thumbsUp === false && 'text-red-600 bg-red-100 hover:bg-red-200'
-          )}
-        >
-          <ThumbsDown className="h-4 w-4" />
-        </Button>
-      </div>
+  const handleSkip = () => {
+    if (tempRating !== null) {
+      setRating(tempRating);
+      onFeedback({
+        traceId,
+        sessionId,
+        rating: tempRating,
+        comment: null,
+      });
+      setShowCommentDialog(false);
+      setSubmitted(true);
+      
+      // Show confirmation for 3 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    }
+  };
 
-      {/* Star rating */}
-      <div className="flex gap-1 border-l pl-2">
-        {[1, 2, 3, 4, 5].map((value) => (
-          <Button
-            key={value}
-            variant="ghost"
-            size="sm"
-            onClick={() => handleRating(value)}
-            className="h-8 w-8 p-0"
-          >
+  // If feedback has been submitted, show confirmation
+  if (submitted) {
+    return (
+      <div className="flex items-center gap-2 mt-2 text-sm text-green-600">
+        <Check className="h-4 w-4" />
+        <span>Thank you for your feedback!</span>
+      </div>
+    );
+  }
+
+  // If rating has been given, show the selected rating (read-only)
+  if (rating !== null && !submitted) {
+    return (
+      <div className="flex items-center gap-2 mt-2">
+        <span className="text-xs text-muted-foreground">Your rating:</span>
+        <div className="flex gap-0.5">
+          {[1, 2, 3, 4, 5].map((value) => (
             <Star
+              key={value}
               className={cn(
                 'h-4 w-4',
-                rating && value <= rating
+                value <= rating
                   ? 'fill-yellow-500 text-yellow-500'
-                  : 'text-muted-foreground'
+                  : 'text-muted-foreground/30'
               )}
             />
-          </Button>
-        ))}
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="flex items-center gap-2 mt-2">
+        <span className="text-xs text-muted-foreground">Rate this response:</span>
+        <div className="flex gap-0.5">
+          {[1, 2, 3, 4, 5].map((value) => (
+            <Button
+              key={value}
+              variant="ghost"
+              size="sm"
+              onClick={() => handleRating(value)}
+              onMouseEnter={() => setHoveredRating(value)}
+              onMouseLeave={() => setHoveredRating(null)}
+              className="h-7 w-7 p-0 hover:bg-transparent"
+            >
+              <Star
+                className={cn(
+                  'h-4 w-4 transition-colors',
+                  (hoveredRating !== null && value <= hoveredRating) ||
+                  (rating !== null && value <= rating)
+                    ? 'fill-yellow-500 text-yellow-500'
+                    : 'text-muted-foreground hover:text-yellow-500'
+                )}
+              />
+            </Button>
+          ))}
+        </div>
       </div>
 
-      {/* Comment button */}
-      <Popover open={showComment} onOpenChange={setShowComment}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-8 gap-1"
-          >
-            <MessageSquare className="h-4 w-4" />
-            <span className="text-xs">Comment</span>
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-80">
-          <div className="space-y-2">
-            <h4 className="font-medium text-sm">Add a comment</h4>
+      <Dialog open={showCommentDialog} onOpenChange={setShowCommentDialog}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Thank you for your feedback!</DialogTitle>
+            <DialogDescription>
+              You rated this response {tempRating} out of 5 stars. 
+              Would you like to add any additional comments?
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
             <Textarea
-              placeholder="Share your feedback..."
+              placeholder="Share any specific feedback about this response... (optional)"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              className="min-h-[80px]"
+              className="min-h-[100px]"
             />
+          </div>
+          <DialogFooter className="flex gap-2">
+            <Button
+              variant="outline"
+              onClick={handleSkip}
+            >
+              Skip
+            </Button>
             <Button
               onClick={handleCommentSubmit}
-              disabled={!comment.trim()}
-              size="sm"
-              className="w-full"
             >
               <Send className="h-4 w-4 mr-1" />
-              Send Feedback
+              Submit Feedback
             </Button>
-          </div>
-        </PopoverContent>
-      </Popover>
-    </div>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }

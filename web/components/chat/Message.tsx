@@ -3,7 +3,7 @@
 import { Message as MessageType, Citation } from '@/types/chat';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { User, Bot, AlertCircle, ExternalLink } from 'lucide-react';
+import { User, Bot, AlertCircle, ExternalLink, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -11,6 +11,7 @@ import remarkGfm from 'remark-gfm';
 interface MessageProps {
   message: MessageType;
   onFeedback?: (traceId: string, feedback: any) => void;
+  isStreaming?: boolean;
 }
 
 function CitationsList({ citations }: { citations: Citation[] }) {
@@ -46,7 +47,7 @@ function CitationsList({ citations }: { citations: Citation[] }) {
   );
 }
 
-export function Message({ message, onFeedback }: MessageProps) {
+export function Message({ message, onFeedback, isStreaming }: MessageProps) {
   const isUser = message.role === 'user';
   const isError = message.error;
 
@@ -62,6 +63,8 @@ export function Message({ message, onFeedback }: MessageProps) {
           <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
             {isError ? (
               <AlertCircle className="h-5 w-5 text-destructive" />
+            ) : isStreaming ? (
+              <Loader2 className="h-5 w-5 text-primary animate-spin" />
             ) : (
               <Bot className="h-5 w-5 text-primary" />
             )}
@@ -135,6 +138,12 @@ export function Message({ message, onFeedback }: MessageProps) {
             <span className="text-xs text-muted-foreground">
               {new Date(message.timestamp).toLocaleTimeString()}
             </span>
+            {isStreaming && !isUser && (
+              <span className="text-xs text-primary flex items-center gap-1">
+                <Loader2 className="h-3 w-3 animate-spin" />
+                Processing...
+              </span>
+            )}
           </div>
         </Card>
       </div>
