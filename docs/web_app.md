@@ -1,7 +1,15 @@
 # Health Assistant Web Application
 
 ## Overview
-The Health Assistant web application provides a modern, responsive interface for interacting with the AI-powered medical education platform. Built with Next.js 14 and TypeScript, it features real-time chat, multi-turn conversations, and comprehensive observability through Langfuse.
+The Health Assistant web application provides a modern, responsive interface for interacting with the AI-powered medical education platform. Built with Next.js 14 and TypeScript, it features real-time chat, multi-turn conversations, streaming responses, and comprehensive observability through Langfuse.
+
+### Recent Enhancements (Performance Optimization Update)
+- **Streaming Responses**: Real-time message streaming with SSE for faster perceived performance
+- **Message Regeneration**: Re-generate last assistant response while preserving conversation context
+- **Enhanced Feedback System**: 5-star rating with optional comments replacing thumbs up/down
+- **Provider Mode Security**: Password-protected access to provider mode
+- **Settings Panel**: Read-only configuration viewer for transparency
+- **UI/UX Improvements**: Contextual input placeholders, improved button layouts, and research disclaimer
 
 ## Architecture
 
@@ -102,6 +110,10 @@ The web application supports switching between two assistant modes:
 - **Guardrails**: Relaxed safety measures for professional context
 - **Sources**: 169 trusted domains (119 + 76 provider-specific)
 - **Features**: Clinical decision support, professional formatting
+- **Access Control**: Password-protected (password: `iunderstandthisisaresearchproject`)
+  - Password dialog with visibility toggle
+  - Access persisted in localStorage after authentication
+  - Clear research project disclaimer
 
 ### Mode Toggle Implementation
 
@@ -226,21 +238,30 @@ Response:
 Retrieve session information and message history.
 
 #### POST /chat/stream
-Stream chat responses using Server-Sent Events (SSE).
+Stream chat responses using Server-Sent Events (SSE) for real-time response delivery.
 ```
 Request:
 {
   "query": "What are symptoms of the flu?",
   "sessionId": "uuid",
-  "mode": "patient"
+  "mode": "patient",
+  "messages": [...]  // Full conversation history for context
 }
 
 Response: text/event-stream
-data: {"type": "start", "metadata": {...}}
+data: {"type": "start", "traceId": "..."}
 data: {"type": "text", "content": "Influenza..."}
+data: {"type": "text", "content": " symptoms include..."}
 data: {"type": "citation", "content": {...}}
-data: {"type": "complete", "content": "...", "traceId": "..."}
+data: {"type": "end", "guardrailTriggered": false}
 ```
+
+**Streaming Implementation Details**:
+- Chunks are sent as they're generated
+- Frontend updates message in real-time
+- Citations collected and displayed at end
+- Trace ID included for Langfuse integration
+- Graceful fallback to non-streaming if disabled
 
 #### GET /sessions/{session_id}/settings
 Get current settings for a session.
@@ -354,22 +375,66 @@ The system includes mode-specific tags for observability:
 Main chat component handling:
 - Message display with markdown rendering
 - Input handling and submission
-- Loading states
+- Loading states with streaming support
 - Feedback integration
 - Auto-scrolling
+- **New Features**:
+  - Message regeneration button
+  - Start new session button
+  - Contextual input placeholders
+  - Research project disclaimer banner
+  - Conversation history preservation
 
 ### Message Component
 - Markdown rendering with react-markdown
-- Citation display
+- Citation display with deduplication
 - Role-based styling (user/assistant/system)
 - Timestamp display
 - Error state handling
+- Streaming text support
 
-### FeedbackButtons
-- Thumbs up/down quick feedback
-- Rating modal (1-5 stars)
-- Comment submission
-- Direct Langfuse integration
+### FeedbackButtons (Enhanced)
+- **5-star rating system** (replaced thumbs up/down)
+- **Comment dialog** that appears after rating selection
+- **Skip option** for rating without comment
+- **Visual feedback** with "Thank you" confirmation
+- **Hover effects** on star ratings
+- Direct Langfuse integration with structured feedback
+
+### Action Buttons
+Located below assistant messages:
+- **Regenerate Button**: Re-generates last assistant response
+  - Preserves full conversation history
+  - Removes only the last assistant message
+  - Maintains context for follow-up
+- **Start New Session**: Clears chat and starts fresh
+  - Resets to initial system message
+  - Creates new session ID
+  - Maintains user ID
+
+### Settings Panel (Read-Only)
+Comprehensive settings viewer with four tabs:
+- **Safety Tab**:
+  - Input/Output guardrails status
+  - Guardrail mode (regex/LLM/hybrid)
+  - Trusted domains configuration
+  - Custom domain management (view only)
+- **Performance Tab**:
+  - Streaming enable/disable status
+  - Web search limits
+  - Response timeout settings
+  - Detail level configuration
+- **Model Tab**:
+  - AI model selection display
+  - Temperature settings
+  - Max token limits
+  - Confidence score visibility
+- **Display Tab**:
+  - Tool call visibility
+  - Response timing display
+  - Markdown rendering options
+
+**Note**: All settings are read-only with "View Only" badge to indicate configuration is controlled by administrators
 
 ## Styling & Responsiveness
 

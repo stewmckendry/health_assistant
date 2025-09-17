@@ -20,6 +20,7 @@ interface SettingsPanelProps {
 }
 
 export function SettingsPanel({ sessionId }: SettingsPanelProps) {
+  const readonly = true; // Set to true to make all settings read-only
   const [defaultTrustedDomains, setDefaultTrustedDomains] = useState<string[]>([]);
   const [settings, setSettings] = useState({
     // Safety Settings
@@ -145,48 +146,31 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
-          <span>Session Settings</span>
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={resetToDefaults}
-            >
-              <RotateCcw className="h-4 w-4 mr-2" />
-              Reset
-            </Button>
-            <Button
-              size="sm"
-              onClick={saveSettings}
-              disabled={!isDirty}
-            >
-              <Save className="h-4 w-4 mr-2" />
-              Save Settings
-            </Button>
-          </div>
+          <span>Session Settings (Read-Only)</span>
+          <Badge variant="secondary">View Only</Badge>
         </CardTitle>
         <CardDescription>
-          Customize how the AI assistant responds to your queries
+          Current configuration for the AI assistant (settings are controlled by administrators)
         </CardDescription>
       </CardHeader>
       
       <CardContent>
         <Tabs defaultValue="safety" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="safety">
-              <Shield className="h-4 w-4 mr-2" />
+          <TabsList className="flex w-full">
+            <TabsTrigger value="safety" className="flex-1">
+              <Shield className="h-4 w-4 mr-1" />
               Safety
             </TabsTrigger>
-            <TabsTrigger value="performance">
-              <Zap className="h-4 w-4 mr-2" />
+            <TabsTrigger value="performance" className="flex-1">
+              <Zap className="h-4 w-4 mr-1" />
               Performance
             </TabsTrigger>
-            <TabsTrigger value="model">
-              <Brain className="h-4 w-4 mr-2" />
+            <TabsTrigger value="model" className="flex-1">
+              <Brain className="h-4 w-4 mr-1" />
               Model
             </TabsTrigger>
-            <TabsTrigger value="display">
-              <Eye className="h-4 w-4 mr-2" />
+            <TabsTrigger value="display" className="flex-1">
+              <Eye className="h-4 w-4 mr-1" />
               Display
             </TabsTrigger>
           </TabsList>
@@ -204,6 +188,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="input-guardrails"
                   checked={settings.enable_input_guardrails}
                   onCheckedChange={(checked) => updateSetting('enable_input_guardrails', checked)}
+                  disabled={readonly}
                 />
               </div>
 
@@ -218,6 +203,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="output-guardrails"
                   checked={settings.enable_output_guardrails}
                   onCheckedChange={(checked) => updateSetting('enable_output_guardrails', checked)}
+                  disabled={readonly}
                 />
               </div>
 
@@ -234,7 +220,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
 
               <div>
                 <Label htmlFor="guardrail-mode">Guardrail Mode</Label>
-                <Select value={settings.guardrail_mode} onValueChange={(value) => updateSetting('guardrail_mode', value)}>
+                <Select value={settings.guardrail_mode} onValueChange={(value) => updateSetting('guardrail_mode', value)} disabled={readonly}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>
@@ -255,6 +241,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   <Switch
                     checked={settings.enable_trusted_domains}
                     onCheckedChange={(checked) => updateSetting('enable_trusted_domains', checked)}
+                    disabled={readonly}
                   />
                 </div>
                 {settings.enable_trusted_domains && (
@@ -267,6 +254,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                         value={domainSearchQuery}
                         onChange={(e) => setDomainSearchQuery(e.target.value)}
                         className="pl-8"
+                        disabled={readonly}
                       />
                     </div>
                     
@@ -316,6 +304,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                                       <Checkbox
                                         id={`domain-${domain}`}
                                         checked={!isBlocked}
+                                        disabled={readonly}
                                         onCheckedChange={(checked) => {
                                           if (checked) {
                                             // Remove from blocked list
@@ -356,8 +345,9 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                           value={customDomain}
                           onChange={(e) => setCustomDomain(e.target.value)}
                           onKeyDown={(e) => e.key === 'Enter' && addCustomDomain()}
+                          disabled={readonly}
                         />
-                        <Button size="sm" onClick={addCustomDomain}>Add</Button>
+                        <Button size="sm" onClick={addCustomDomain} disabled={readonly}>Add</Button>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {settings.custom_trusted_domains.map((domain) => (
@@ -407,7 +397,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="streaming"
                   checked={settings.enable_streaming}
                   onCheckedChange={(checked) => updateSetting('enable_streaming', checked)}
-                  disabled={settings.enable_output_guardrails}
+                  disabled={readonly || settings.enable_output_guardrails}
                 />
               </div>
 
@@ -421,6 +411,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   value={[settings.max_web_searches]}
                   onValueChange={([value]) => updateSetting('max_web_searches', value)}
                   className="mt-2"
+                  disabled={readonly}
                 />
                 <p className="text-sm text-muted-foreground mt-1">
                   Number of web searches per query (fewer = faster)
@@ -437,6 +428,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   value={[settings.max_web_fetches]}
                   onValueChange={([value]) => updateSetting('max_web_fetches', value)}
                   className="mt-2"
+                  disabled={readonly}
                 />
                 <p className="text-sm text-muted-foreground mt-1">
                   Number of pages to fetch per query
@@ -453,12 +445,13 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   value={[settings.response_timeout]}
                   onValueChange={([value]) => updateSetting('response_timeout', value)}
                   className="mt-2"
+                  disabled={readonly}
                 />
               </div>
 
               <div>
                 <Label htmlFor="detail-level">Response Detail Level</Label>
-                <Select value={settings.response_detail_level} onValueChange={(value) => updateSetting('response_detail_level', value)}>
+                <Select value={settings.response_detail_level} onValueChange={(value) => updateSetting('response_detail_level', value)} disabled={readonly}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>
@@ -472,7 +465,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
 
               <div>
                 <Label htmlFor="citations">Include Citations</Label>
-                <Select value={settings.include_citations} onValueChange={(value) => updateSetting('include_citations', value)}>
+                <Select value={settings.include_citations} onValueChange={(value) => updateSetting('include_citations', value)} disabled={readonly}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>
@@ -490,7 +483,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
             <div className="space-y-4">
               <div>
                 <Label htmlFor="model">AI Model</Label>
-                <Select value={settings.model} onValueChange={(value) => updateSetting('model', value)}>
+                <Select value={settings.model} onValueChange={(value) => updateSetting('model', value)} disabled={readonly}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>
@@ -515,6 +508,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   value={[settings.temperature]}
                   onValueChange={([value]) => updateSetting('temperature', value)}
                   className="mt-2"
+                  disabled={readonly}
                 />
                 <p className="text-sm text-muted-foreground mt-1">
                   Lower = more focused, Higher = more creative
@@ -531,6 +525,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   value={[settings.max_tokens]}
                   onValueChange={([value]) => updateSetting('max_tokens', value)}
                   className="mt-2"
+                  disabled={readonly}
                 />
                 <p className="text-sm text-muted-foreground mt-1">
                   Maximum tokens in response
@@ -548,6 +543,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="confidence"
                   checked={settings.show_confidence_scores}
                   onCheckedChange={(checked) => updateSetting('show_confidence_scores', checked)}
+                  disabled={readonly}
                 />
               </div>
             </div>
@@ -566,6 +562,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="tool-calls"
                   checked={settings.show_tool_calls}
                   onCheckedChange={(checked) => updateSetting('show_tool_calls', checked)}
+                  disabled={readonly}
                 />
               </div>
 
@@ -580,6 +577,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="timing"
                   checked={settings.show_response_timing}
                   onCheckedChange={(checked) => updateSetting('show_response_timing', checked)}
+                  disabled={readonly}
                 />
               </div>
 
@@ -594,6 +592,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                   id="markdown"
                   checked={settings.markdown_rendering}
                   onCheckedChange={(checked) => updateSetting('markdown_rendering', checked)}
+                  disabled={readonly}
                 />
               </div>
             </div>
