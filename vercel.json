@@ -1,18 +1,7 @@
 {
-  "name": "health-assistant",
   "buildCommand": "cd web && npm run build",
   "outputDirectory": "web/.next",
   "installCommand": "cd web && npm install",
   "devCommand": "cd web && npm run dev",
-  "framework": "nextjs",
-  "functions": {
-    "web/app/api/*/route.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "env": {
-    "NEXT_PUBLIC_LANGFUSE_PUBLIC_KEY": "@langfuse_public_key",
-    "NEXT_PUBLIC_APP_URL": "https://health-assistant-web.vercel.app",
-    "PYTHON_BACKEND_URL": "@python_backend_url"
-  }
+  "framework": "nextjs"
 }
