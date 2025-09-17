@@ -1,0 +1,108 @@
+{
+  "dataset": "health-assistant-eval-smoke-test",
+  "timestamp": "20250917_150247",
+  "dry_run": true,
+  "configurations_tested": 2,
+  "results": [
+    {
+      "run_name": "dry_run_baseline_20250917_150247",
+      "dataset": "health-assistant-eval-smoke-test",
+      "configuration": {
+        "mode": "patient",
+        "web_tools": true,
+        "domain_filter": null
+      },
+      "total_items": 5,
+      "successful": 5,
+      "failed": 0,
+      "items": [
+        {
+          "item_id": "2181bdb6-ff25-421b-bb0b-beca8c3257bc",
+          "status": "success",
+          "trace_id": "f47b5aebb08935bd09fad5d49b1b1a34"
+        },
+        {
+          "item_id": "7ad9253a-8cf6-4729-b647-65691927ab1b",
+          "status": "success",
+          "trace_id": "76e048ed7267a5c7151f58982bfb8bf4"
+        },
+        {
+          "item_id": "a7eecc9f-8422-4afb-984b-bc9960492f6f",
+          "status": "success",
+          "trace_id": "b8baf07cd63230d7b0b5e5649b1f44fc"
+        },
+        {
+          "item_id": "b515c822-c04c-4de0-8742-26f758dbd925",
+          "status": "success",
+          "trace_id": "429dd8b5ccb7891dc589469e313325bc"
+        },
+        {
+          "item_id": "4725fcff-1ec1-4c68-a536-bd7d98d41d4b",
+          "status": "success",
+          "trace_id": "a5381d1f4db9d373b23a75bb295dd6eb"
+        }
+      ],
+      "dashboard_url": "https://us.cloud.langfuse.com",
+      "config": {
+        "name": "baseline",
+        "description": "Baseline configuration with web tools enabled",
+        "mode": "patient",
+        "web_tools": true,
+        "domain_filter": null
+      },
+      "elapsed_time_seconds": 68.80354309082031,
+      "timestamp": "20250917_150247",
+      "dry_run": true
+    },
+    {
+      "run_name": "dry_run_no_rag_20250917_150247",
+      "dataset": "health-assistant-eval-smoke-test",
+      "configuration": {
+        "mode": "patient",
+        "web_tools": false,
+        "domain_filter": null
+      },
+      "total_items": 5,
+      "successful": 4,
+      "failed": 1,
+      "items": [
+        {
+          "item_id": "2181bdb6-ff25-421b-bb0b-beca8c3257bc",
+          "status": "success",
+          "trace_id": "1a0c0512e0a9c3ec47ed822e8ed5a1b4"
+        },
+        {
+          "item_id": "7ad9253a-8cf6-4729-b647-65691927ab1b",
+          "status": "success",
+          "trace_id": "2abccd5c4841506cf0147a2c60a4f64f"
+        },
+        {
+          "item_id": "a7eecc9f-8422-4afb-984b-bc9960492f6f",
+          "status": "success",
+          "trace_id": "71fb626edf5ee3fb9c9b0aba4dc747bb"
+        },
+        {
+          "item_id": "b515c822-c04c-4de0-8742-26f758dbd925",
+          "status": "failed",
+          "error": "Server disconnected without sending a response."
+        },
+        {
+          "item_id": "4725fcff-1ec1-4c68-a536-bd7d98d41d4b",
+          "status": "success",
+          "trace_id": "7cdffb313c32d2794cebeb3f5cd93f2d"
+        }
+      ],
+      "dashboard_url": "https://us.cloud.langfuse.com",
+      "config": {
+        "name": "no_rag",
+        "description": "No RAG - web tools disabled",
+        "mode": "patient",
+        "web_tools": false,
+        "domain_filter": null
+      },
+      "elapsed_time_seconds": 29.244938850402832,
+      "timestamp": "20250917_150247",
+      "dry_run": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "dataset": "health-assistant-eval-v1",
+  "timestamp": "20250917_151413",
+  "dry_run": true,
+  "configurations_tested": 2,
+  "results": [
+    {
+      "run_name": "dry_run_baseline_20250917_151413",
+      "dataset": "health-assistant-eval-v1",
+      "configuration": {
+        "mode": "patient",
+        "web_tools": true,
+        "domain_filter": null
+      },
+      "total_items": 2,
+      "successful": 2,
+      "failed": 0,
+      "items": [
+        {
+          "item_id": "91c05dda-568f-4c4a-92c6-62abef85f909",
+          "status": "success",
+          "trace_id": "d0d93449bf4b5fff50687debdbbd6164"
+        },
+        {
+          "item_id": "bea1c1f2-82b4-4b58-9c98-bda1bbdedfa4",
+          "status": "success",
+          "trace_id": "81b5350eec749365cae3d48b7a324fe3"
+        }
+      ],
+      "dashboard_url": "https://us.cloud.langfuse.com",
+      "config": {
+        "name": "baseline",
+        "description": "Baseline configuration with web tools enabled",
+        "mode": "patient",
+        "web_tools": true,
+        "domain_filter": null
+      },
+      "elapsed_time_seconds": 56.35468888282776,
+      "timestamp": "20250917_151413",
+      "dry_run": true
+    },
+    {
+      "run_name": "dry_run_no_rag_20250917_151413",
+      "dataset": "health-assistant-eval-v1",
+      "configuration": {
+        "mode": "patient",
+        "web_tools": false,
+        "domain_filter": null
+      },
+      "total_items": 2,
+      "successful": 2,
+      "failed": 0,
+      "items": [
+        {
+          "item_id": "91c05dda-568f-4c4a-92c6-62abef85f909",
+          "status": "success",
+          "trace_id": "7fbca51b016cbad5dce2e25934684efb"
+        },
+        {
+          "item_id": "bea1c1f2-82b4-4b58-9c98-bda1bbdedfa4",
+          "status": "success",
+          "trace_id": "0e46e995f9c2d410cd2e0e1ca857643d"
+        }
+      ],
+      "dashboard_url": "https://us.cloud.langfuse.com",
+      "config": {
+        "name": "no_rag",
+        "description": "No RAG - web tools disabled",
+        "mode": "patient",
+        "web_tools": false,
+        "domain_filter": null
+      },
+      "elapsed_time_seconds": 34.286231994628906,
+      "timestamp": "20250917_151413",
+      "dry_run": true
+    }
+  ]
+}

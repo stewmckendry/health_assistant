@@ -284,7 +284,7 @@ class DatasetEvaluator:
             # Add delay between API calls to avoid overloading
             if i > 1:
                 import time
-                delay = 2  # 2 second delay between items
+                delay = 15  # 15 second delay between items to avoid rate limits
                 print(f"  ⏳ Waiting {delay}s to avoid API overload...")
                 time.sleep(delay)
             
@@ -312,9 +312,9 @@ class DatasetEvaluator:
                         "web_tools_enabled": self.web_tools,
                         "domain_filter": self.domain_filter,
                         "session_id": session_id,
-                        "user_id": user_id
-                    },
-                    tags=["eval", f"mode:{self.mode}", f"session:{session_id[:8]}", f"user:{user_id}"]
+                        "user_id": user_id,
+                        "tags": ["eval", f"mode:{self.mode}", f"session:{session_id[:8]}", f"user:{user_id}"]
+                    }
                 ) as root_span:
                     # Update root span with session/user
                     root_span.update(
