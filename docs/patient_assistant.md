@@ -100,6 +100,9 @@ Process a patient query with safety checks and guardrails.
 **Parameters:**
 - `query`: Patient's medical question or concern
 - `session_id`: Optional session identifier for logging
+- `user_id`: Optional user identifier for tracking
+- `session_logger`: Optional session logger instance
+- `message_history`: Optional conversation history for multi-turn
 
 **Returns:**
 ```python
@@ -116,6 +119,34 @@ Process a patient query with safety checks and guardrails.
     "session_id": str                  # Session identifier
 }
 ```
+
+### `query_stream(query: str, session_id: Optional[str] = None) -> Iterator[Dict[str, Any]]`
+
+Stream a patient query response with real-time safety checks.
+
+**Parameters:**
+- `query`: Patient's medical question or concern
+- `session_id`: Optional session identifier for logging
+- `user_id`: Optional user identifier for tracking
+- `session_logger`: Optional session logger instance
+- `message_history`: Optional conversation history
+
+**Yields:**
+Event dictionaries with structure:
+```python
+{
+    "type": str,       # "start", "text", "tool_use", "citation", "complete", "error"
+    "content": Any,    # Event-specific content
+    "metadata": Dict   # Additional metadata (timing, etc.)
+}
+```
+
+**Streaming Behavior:**
+- Input guardrails are checked before streaming begins
+- If emergency/crisis detected, returns safety resources immediately
+- Output guardrails are NOT applied during streaming (technical limitation)
+- Complete trace is logged to Langfuse after streaming completes
+- Time to first token (TTFT) typically < 1 second
 
 ## Safety Features
 

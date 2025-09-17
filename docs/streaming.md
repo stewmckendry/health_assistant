@@ -6,20 +6,19 @@ The Health Assistant implements streaming responses using Server-Sent Events (SS
 
 ## Architecture
 
-### Streaming Mixin
+### Direct Implementation in BaseAssistant
 
-The streaming capability is implemented as a mixin class in `src/assistants/streaming_mixin.py`:
+The streaming capability is now implemented directly in the `BaseAssistant` class in `src/assistants/base.py`:
 
 ```python
-class StreamingMixin:
-    """Mixin to add streaming support to assistant classes."""
+class BaseAssistant:
+    """Base assistant class for medical information queries."""
     
-    @observe(name="llm_call_stream", as_type="generation", capture_input=True)
     def query_stream(self, query: str, ...) -> Iterator[Dict[str, Any]]:
         """Stream a query response from the Anthropic API."""
 ```
 
-This mixin can be added to any assistant class to provide streaming capabilities.
+The streaming functionality has been moved from a separate mixin class directly into the base assistant, simplifying the architecture while maintaining all streaming capabilities.
 
 ### Event Types
 

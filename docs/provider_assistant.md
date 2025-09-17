@@ -83,6 +83,22 @@ def query(self, query: str, session_id: Optional[str] = None,
     # 5. Return professional response
 ```
 
+### Streaming Support
+```python
+def query_stream(self, query: str, session_id: Optional[str] = None,
+                user_id: Optional[str] = None, message_history: Optional[list] = None):
+    # Stream responses with professional context
+    # No input guardrails - providers can handle all medical content
+    # Complete trace logged to Langfuse after streaming
+    # Returns SSE events: start, text, tool_use, citation, complete
+```
+
+**Streaming Characteristics:**
+- **No Input Guardrails**: Providers can discuss emergencies, complex cases
+- **Real-time Response**: TTFT typically < 1 second
+- **Professional Context**: Maintains clinical tone throughout stream
+- **Complete Tracing**: Full Langfuse trace after stream completes
+
 ## Configuration Files
 
 ### 1. System Prompt (`src/config/prompts.yaml`)

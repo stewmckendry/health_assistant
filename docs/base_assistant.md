@@ -30,7 +30,7 @@ BaseAssistant(config: Optional[AssistantConfig] = None)
 - `config`: Optional configuration object. If not provided, uses default settings.
 
 **Configuration (AssistantConfig):**
-- `model`: Claude model to use (default: "claude-3-5-sonnet-latest")
+- `model`: Claude model to use (default: "claude-3-5-haiku-latest")
 - `max_tokens`: Maximum response tokens (default: 1500)
 - `temperature`: Model temperature 0.0-1.0 (default: 0.7)
 - `system_prompt`: System instruction for the model
@@ -82,6 +82,44 @@ message_history = [
 **Raises:**
 - `ValueError`: If ANTHROPIC_API_KEY is not set
 - `Exception`: If API call fails
+
+#### `query_stream(query: str, session_id: Optional[str] = None, user_id: Optional[str] = None, session_logger: Optional[Any] = None, message_history: Optional[List[Dict[str, str]]] = None) -> Iterator[Dict[str, Any]]`
+
+Stream a query response using Server-Sent Events for real-time feedback.
+
+**Parameters:**
+- `query`: User's question or query text
+- `session_id`: Optional session identifier for logging
+- `user_id`: Optional user identifier for tracking
+- `session_logger`: Optional SessionLogger instance for detailed logging
+- `message_history`: Optional conversation history for multi-turn support
+
+**Yields:**
+Event dictionaries with the following structure:
+```python
+{
+    "type": str,       # Event type: "start", "text", "tool_use", "citation", "complete", "error"
+    "content": Any,    # Event-specific content (text chunk, tool info, citation data, etc.)
+    "metadata": Dict   # Additional metadata (timing, tool names, etc.)
+}
+```
+
+**Event Types:**
+- `start`: Streaming session initialized
+- `text`: Text chunk from the LLM
+- `tool_use`: Tool invocation (web_search or web_fetch)
+- `citation`: Source citation found
+- `complete`: Response finished with full text and citations
+- `error`: Error occurred during streaming
+
+**Key Features:**
+- **Real-time streaming**: Text appears as it's generated
+- **Time to First Token (TTFT)**: Typically < 1 second
+- **Tool visibility**: See web searches and fetches as they happen
+- **Progressive citations**: Citations appear as they're found
+- **Error resilience**: Graceful error handling with error events
+
+**Note:** The streaming implementation is built directly into BaseAssistant (no longer uses a separate mixin class).
 
 ### Internal Methods
 
