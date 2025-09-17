@@ -200,7 +200,7 @@ export function ChatInterface({ sessionId, userId, mode = 'patient' }: ChatInter
 
   const handleStreamingResponse = async (userMessage: MessageType) => {
     let accumulatedText = '';
-    let citations: any[] = [];
+    const citations: any[] = [];
     let traceId = '';
     const assistantMessageId = uuidv4();
 

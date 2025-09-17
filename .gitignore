@@ -75,3 +75,4 @@ credentials.json
 tmp/
 temp/
 *.tmp
+.vercel

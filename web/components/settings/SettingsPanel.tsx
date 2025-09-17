@@ -390,7 +390,7 @@ export function SettingsPanel({ sessionId }: SettingsPanelProps) {
                 <div>
                   <Label htmlFor="streaming">Enable Streaming</Label>
                   <p className="text-sm text-muted-foreground">
-                    Show responses as they're generated (faster perceived speed)
+                    Show responses as they&apos;re generated (faster perceived speed)
                   </p>
                 </div>
                 <Switch

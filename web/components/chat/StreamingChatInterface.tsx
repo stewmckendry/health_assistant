@@ -58,9 +58,9 @@ export function StreamingChatInterface({
 
   const handleStreamingResponse = async (userMessage: MessageType) => {
     let accumulatedText = '';
-    let citations: any[] = [];
+    const citations: any[] = [];
     let traceId = '';
-    let assistantMessageId = uuidv4();
+    const assistantMessageId = uuidv4();
 
     try {
       const response = await fetch('/api/chat/stream', {
