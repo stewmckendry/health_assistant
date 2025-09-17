@@ -225,6 +225,65 @@ Response:
 #### GET /sessions/{session_id}
 Retrieve session information and message history.
 
+#### POST /chat/stream
+Stream chat responses using Server-Sent Events (SSE).
+```
+Request:
+{
+  "query": "What are symptoms of the flu?",
+  "sessionId": "uuid",
+  "mode": "patient"
+}
+
+Response: text/event-stream
+data: {"type": "start", "metadata": {...}}
+data: {"type": "text", "content": "Influenza..."}
+data: {"type": "citation", "content": {...}}
+data: {"type": "complete", "content": "...", "traceId": "..."}
+```
+
+#### GET /sessions/{session_id}/settings
+Get current settings for a session.
+```json
+Response:
+{
+  "enable_input_guardrails": true,
+  "enable_output_guardrails": false,
+  "enable_streaming": true,
+  "enable_web_search": true,
+  "max_web_fetches": 2,
+  "blocked_domains": [],
+  "custom_trusted_domains": []
+}
+```
+
+#### PUT /sessions/{session_id}/settings
+Update settings for a session.
+```json
+Request:
+{
+  "enable_output_guardrails": true,
+  "enable_streaming": false
+}
+
+Response:
+{
+  "sessionId": "uuid",
+  "settings": {...},
+  "success": true
+}
+```
+
+#### GET /settings/trusted-domains
+Get list of default trusted medical domains.
+```json
+Response:
+{
+  "trusted_domains": ["pubmed.ncbi.nlm.nih.gov", ...],
+  "count": 97
+}
+```
+
 ### Frontend API Routes (Next.js - Port 3000)
 
 - `/api/chat` - Proxy to backend chat endpoint

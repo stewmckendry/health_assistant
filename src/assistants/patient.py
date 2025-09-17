@@ -33,13 +33,31 @@ else:
 class PatientAssistant(BaseAssistant):
     """Assistant specialized for patient education and information."""
     
-    def __init__(self, guardrail_mode: str = "hybrid"):
+    def __init__(self, guardrail_mode: str = "hybrid", session_settings: Optional[Dict] = None):
         """
         Initialize patient assistant with patient-specific configuration.
         
         Args:
             guardrail_mode: "llm", "regex", or "hybrid" for guardrail checking
+            session_settings: Optional session-specific settings to override defaults
         """
+        # Store session settings
+        self.session_settings = session_settings or {}
+        
+        # Extract settings with defaults (handle both dict and SessionSettings object)
+        if hasattr(self.session_settings, 'enable_input_guardrails'):
+            # It's a SessionSettings object
+            self.enable_input_guardrails = self.session_settings.enable_input_guardrails
+            self.enable_output_guardrails = self.session_settings.enable_output_guardrails
+            if hasattr(self.session_settings, 'guardrail_mode') and self.session_settings.guardrail_mode:
+                guardrail_mode = self.session_settings.guardrail_mode
+        else:
+            # It's a dictionary
+            self.enable_input_guardrails = self.session_settings.get('enable_input_guardrails', True)
+            self.enable_output_guardrails = self.session_settings.get('enable_output_guardrails', False)
+            if 'guardrail_mode' in self.session_settings:
+                guardrail_mode = self.session_settings['guardrail_mode']
+        
         # Ensure we're in patient mode
         if settings.assistant_mode != "patient":
             logger.warning(
@@ -142,8 +160,8 @@ class PatientAssistant(BaseAssistant):
             }
         )
         
-        # Use LLM guardrails for input checking if configured
-        if self.guardrail_mode in ["llm", "hybrid"]:
+        # Use LLM guardrails for input checking if configured AND enabled
+        if self.enable_input_guardrails and self.guardrail_mode in ["llm", "hybrid"]:
             input_check = self.llm_guardrails.check_input(query, session_id)
             
             # Log input guardrail check
@@ -180,7 +198,7 @@ class PatientAssistant(BaseAssistant):
                     return response
         
         # Fallback to regex if not using LLM or for regex mode
-        elif self.guardrail_mode == "regex":
+        elif self.enable_input_guardrails and self.guardrail_mode == "regex":
             # Check for emergency content in the query BEFORE sending to API
             input_check = {
                 "requires_intervention": False,
@@ -246,7 +264,7 @@ class PatientAssistant(BaseAssistant):
             # Apply output guardrails based on mode
             original_response = api_response["content"]
             
-            if settings.enable_guardrails:
+            if self.enable_output_guardrails and settings.enable_guardrails:
                 if self.guardrail_mode in ["llm", "hybrid"]:
                     # Use LLM guardrails for output checking
                     output_check = self.llm_guardrails.check_output(

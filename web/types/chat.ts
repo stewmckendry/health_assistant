@@ -14,6 +14,8 @@ export interface Message {
   guardrailTriggered?: boolean;
   error?: boolean;
   mode?: 'patient' | 'provider';  // Track mode for each message
+  isStreaming?: boolean;  // Track streaming state
+  metadata?: any;  // Additional metadata from streaming
 }
 
 export interface ChatSession {

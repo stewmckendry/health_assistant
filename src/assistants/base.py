@@ -5,6 +5,7 @@ from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 import logging
 from time import perf_counter
+from pathlib import Path
 
 from anthropic import Anthropic
 from anthropic.types import Message
@@ -12,6 +13,7 @@ from langfuse import get_client, observe
 
 from src.utils.logging import get_logger, log_api_call
 from src.config.settings import settings
+from src.assistants.streaming_mixin import StreamingMixin
 
 # Initialize Langfuse client
 if settings.langfuse_enabled:
@@ -110,7 +112,7 @@ class AssistantConfig:
             ]
 
 
-class BaseAssistant:
+class BaseAssistant(StreamingMixin):
     """Base assistant class for medical information queries."""
     
     def __init__(self, config: Optional[AssistantConfig] = None):
@@ -184,7 +186,8 @@ class BaseAssistant:
             {
                 "type": "web_search_20250305",
                 "name": "web_search",
-                "max_uses": 3  # Use search to find URLs first
+                "max_uses": 1,  # Limit searches to reduce available URLs
+                "allowed_domains": self.trusted_domains  # Filter search results to trusted domains only
             },
             {
                 "type": "web_fetch_20250910",
@@ -364,8 +367,65 @@ class BaseAssistant:
                 except Exception as e:
                     self.logger.debug(f"Failed to update observation metadata: {e}")
             
+            # Track timing for performance metrics
+            api_start_time = perf_counter()
+            
             # Make API call
             response = self.client.messages.create(**api_kwargs)
+            
+            # Calculate API call duration
+            api_duration = perf_counter() - api_start_time
+            
+            # Debug: Log raw response
+            import json
+            try:
+                # Try to get the raw response data
+                debug_file = Path(__file__).parent.parent.parent / "logs" / "debug_raw_response.json"
+                debug_file.parent.mkdir(exist_ok=True)
+                
+                # Use model_dump() to get the raw dictionary representation
+                if hasattr(response, 'model_dump'):
+                    raw_data = response.model_dump()
+                elif hasattr(response, 'dict'):
+                    raw_data = response.dict()
+                else:
+                    # Fallback to manual extraction
+                    raw_data = {
+                        "id": response.id,
+                        "type": getattr(response, 'type', 'message'),
+                        "role": response.role,
+                        "model": response.model,
+                        "content": [],
+                        "stop_reason": response.stop_reason,
+                        "stop_sequence": getattr(response, 'stop_sequence', None),
+                        "usage": {
+                            "input_tokens": response.usage.input_tokens,
+                            "output_tokens": response.usage.output_tokens,
+                            "cache_creation_input_tokens": getattr(response.usage, 'cache_creation_input_tokens', None),
+                            "cache_read_input_tokens": getattr(response.usage, 'cache_read_input_tokens', None)
+                        }
+                    }
+                    
+                    # Extract content blocks with all their data
+                    for block in response.content:
+                        if hasattr(block, 'model_dump'):
+                            raw_data["content"].append(block.model_dump())
+                        elif hasattr(block, 'dict'):
+                            raw_data["content"].append(block.dict())
+                        else:
+                            # Manual extraction
+                            block_data = {"type": getattr(block, 'type', 'unknown')}
+                            for attr in ['text', 'id', 'name', 'input', 'citations', 'content', 'tool_use_id', 'is_error']:
+                                if hasattr(block, attr):
+                                    block_data[attr] = getattr(block, attr)
+                            raw_data["content"].append(block_data)
+                
+                with open(debug_file, 'w') as f:
+                    json.dump(raw_data, f, indent=2, default=str)
+                
+                self.logger.info(f"Debug: Raw response written to {debug_file}")
+            except Exception as e:
+                self.logger.error(f"Failed to log raw response: {e}")
             
             # Process response and create tool spans as blocks arrive
             content_text = ""
@@ -468,7 +528,12 @@ class BaseAssistant:
                             self.logger.error(f"Failed to create {tool_name} span: {e}")
                     
                     # Keep record for response
-                    tool_calls.append({"type": "server_tool_use", "name": tool_name, "input": tool_args})
+                    tool_calls.append({
+                        "type": "server_tool_use", 
+                        "name": tool_name, 
+                        "input": tool_args,
+                        "timestamp": perf_counter()  # Track when tool was called
+                    })
                 
                 # CLIENT TOOL USE: Handle traditional tool_use blocks
                 elif getattr(block, "type", None) == "tool_use":
@@ -586,8 +651,19 @@ class BaseAssistant:
                                 # Extract content info from web_fetch result
                                 content_length = 0
                                 content_preview = ""
+                                retrieved_at = None
+                                fetch_url = None
                                 
                                 if result_payload:
+                                    # Extract retrieved_at timestamp if available
+                                    if hasattr(result_payload, "retrieved_at"):
+                                        retrieved_at = getattr(result_payload, "retrieved_at", None)
+                                        self.logger.info(f"web_fetch retrieved_at: {retrieved_at}")
+                                    
+                                    # Extract URL if available
+                                    if hasattr(result_payload, "url"):
+                                        fetch_url = getattr(result_payload, "url", None)
+                                    
                                     # Try to get content string
                                     content_str = ""
                                     if hasattr(result_payload, "content"):
@@ -609,7 +685,11 @@ class BaseAssistant:
                                 if content_preview:
                                     output_text += f":\n{content_preview}"
                                 
-                                extra_metadata = {"content_length": content_length}
+                                extra_metadata = {
+                                    "content_length": content_length,
+                                    "retrieved_at": retrieved_at,
+                                    "fetch_url": fetch_url
+                                }
                             
                             # Update span with results
                             info["span"].update(
@@ -736,9 +816,11 @@ class BaseAssistant:
                         metadata={
                             "session_id": session_id,
                             "user_id": user_id,
+                            "streaming": False,  # Explicitly mark as non-streaming
                             "system_prompt": self.config.system_prompt[:200],  # First 200 chars
                             "tools_enabled": tools is not None,
                             "trusted_domains_count": len(self.trusted_domains) if tools else 0,
+                            "api_duration": api_duration,  # Time for the API call
                             "tool_calls_count": len(tool_calls),
                             "citations_count": len(all_citations),
                             "tool_calls": [

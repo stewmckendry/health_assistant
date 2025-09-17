@@ -85,7 +85,7 @@ class Settings(BaseSettings):
         description="Enable web fetch tool for Claude"
     )
     max_web_fetch_uses: int = Field(
-        default=5,
+        default=2,
         env="MAX_WEB_FETCH_USES",
         description="Maximum web fetches per query"
     )

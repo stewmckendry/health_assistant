@@ -19,8 +19,11 @@ load_dotenv(env_path)
 # Now import FastAPI and other modules
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import uvicorn
+import json
+import asyncio
 
 # Add src directory to path to import modules
 sys.path.insert(0, str(project_root))
@@ -93,6 +96,8 @@ def get_langfuse():
 
 # In-memory session store (for demo purposes)
 sessions: Dict[str, Dict[str, Any]] = {}
+# Session settings store
+session_settings: Dict[str, Dict[str, Any]] = {}
 
 
 # Request/Response models
@@ -135,6 +140,37 @@ class SessionResponse(BaseModel):
     messages: List[Dict[str, Any]]
 
 
+class SessionSettingsRequest(BaseModel):
+    # Safety Settings
+    enable_input_guardrails: Optional[bool] = True
+    enable_output_guardrails: Optional[bool] = False
+    guardrail_mode: Optional[str] = "llm"
+    
+    # Performance Settings
+    enable_streaming: Optional[bool] = True
+    max_web_searches: Optional[int] = 1
+    max_web_fetches: Optional[int] = 2
+    response_timeout: Optional[int] = 30
+    
+    # Content Settings
+    enable_trusted_domains: Optional[bool] = True
+    custom_trusted_domains: Optional[List[str]] = []
+    blocked_domains: Optional[List[str]] = []
+    include_citations: Optional[str] = "always"
+    response_detail_level: Optional[str] = "standard"
+    show_confidence_scores: Optional[bool] = False
+    
+    # Model Settings
+    model: Optional[str] = "claude-3-5-sonnet-20241022"
+    temperature: Optional[float] = 0.3
+    max_tokens: Optional[int] = 1000
+    
+    # Display Settings
+    show_tool_calls: Optional[bool] = False
+    show_response_timing: Optional[bool] = False
+    markdown_rendering: Optional[bool] = True
+
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""
@@ -147,8 +183,30 @@ async def chat(request: ChatRequest):
     Process a chat request using the appropriate assistant based on mode.
     """
     try:
+        # Get session settings or use defaults
+        settings_dict = session_settings.get(request.sessionId, {})
+        
+        # Determine if we should use streaming
+        use_streaming = settings_dict.get('enable_streaming', True)
+        output_guardrails = settings_dict.get('enable_output_guardrails', False)
+        
+        # If output guardrails are enabled, can't use streaming
+        if output_guardrails:
+            use_streaming = False
+        
+        # If streaming is requested and possible, redirect to streaming endpoint
+        if use_streaming:
+            # Call the streaming version internally
+            return await chat_stream(request)
+        
         # Get services - use mode from request
         assistant = get_assistant(request.mode)
+        # Pass session settings to assistant
+        if hasattr(assistant, 'session_settings'):
+            assistant.session_settings = settings_dict
+            assistant.enable_input_guardrails = settings_dict.get('enable_input_guardrails', True)
+            assistant.enable_output_guardrails = settings_dict.get('enable_output_guardrails', False)
+        
         langfuse_client = get_langfuse()
         
         # Retrieve conversation history for this session
@@ -252,6 +310,152 @@ async def chat(request: ChatRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.post("/chat/stream")
+async def chat_stream(request: ChatRequest):
+    """
+    Process a chat request with streaming response using Server-Sent Events.
+    """
+    async def event_generator():
+        try:
+            # Get session settings
+            settings_dict = session_settings.get(request.sessionId, {})
+            
+            # Get services - use mode from request
+            assistant = get_assistant(request.mode)
+            # Pass session settings to assistant
+            if hasattr(assistant, 'session_settings'):
+                assistant.session_settings = settings_dict
+                assistant.enable_input_guardrails = settings_dict.get('enable_input_guardrails', True)
+                assistant.enable_output_guardrails = settings_dict.get('enable_output_guardrails', False)
+            
+            # Retrieve conversation history for this session
+            message_history = []
+            if request.sessionId in sessions:
+                # Convert session messages to Anthropic format (only content, not metadata)
+                for msg in sessions[request.sessionId]["messages"]:
+                    message_history.append({
+                        "role": msg["role"],
+                        "content": msg["content"]
+                    })
+            
+            # Variables to accumulate response data
+            accumulated_text = ""
+            citations = []
+            tool_calls = []
+            trace_id = str(uuid.uuid4())
+            
+            # Stream the response
+            for event in assistant.query_stream(
+                query=request.query,
+                session_id=request.sessionId,
+                user_id=request.userId,
+                message_history=message_history
+            ):
+                # Convert event to SSE format
+                if event["type"] == "start":
+                    # Send initial event with metadata
+                    sse_data = {
+                        "type": "start",
+                        "sessionId": request.sessionId,
+                        "traceId": trace_id,
+                        "mode": request.mode
+                    }
+                    yield f"data: {json.dumps(sse_data)}\n\n"
+                
+                elif event["type"] == "text":
+                    # Stream text chunks
+                    accumulated_text += event["content"]
+                    sse_data = {
+                        "type": "text",
+                        "content": event["content"],
+                        "metadata": event.get("metadata", {})
+                    }
+                    yield f"data: {json.dumps(sse_data)}\n\n"
+                
+                elif event["type"] == "tool_use":
+                    # Send tool use events
+                    tool_calls.append(event["content"])
+                    sse_data = {
+                        "type": "tool_use",
+                        "content": event["content"]
+                    }
+                    yield f"data: {json.dumps(sse_data)}\n\n"
+                
+                elif event["type"] == "citation":
+                    # Send citation events
+                    citations.append(event["content"])
+                    sse_data = {
+                        "type": "citation",
+                        "content": event["content"]
+                    }
+                    yield f"data: {json.dumps(sse_data)}\n\n"
+                
+                elif event["type"] == "complete":
+                    # Send final event with all data
+                    # Store message in session
+                    if request.sessionId not in sessions:
+                        sessions[request.sessionId] = {
+                            "id": request.sessionId,
+                            "userId": request.userId or "anonymous",
+                            "createdAt": datetime.now().isoformat(),
+                            "messages": []
+                        }
+                    
+                    sessions[request.sessionId]["messages"].extend([
+                        {
+                            "role": "user",
+                            "content": request.query,
+                            "timestamp": datetime.now().isoformat(),
+                            "mode": request.mode
+                        },
+                        {
+                            "role": "assistant",
+                            "content": accumulated_text,
+                            "timestamp": datetime.now().isoformat(),
+                            "citations": citations,
+                            "mode": request.mode
+                        }
+                    ])
+                    
+                    sse_data = {
+                        "type": "complete",
+                        "content": accumulated_text,
+                        "citations": citations,
+                        "toolCalls": tool_calls,
+                        "metadata": event.get("metadata", {}),
+                        "traceId": trace_id
+                    }
+                    yield f"data: {json.dumps(sse_data)}\n\n"
+                
+                elif event["type"] == "error":
+                    # Send error event
+                    sse_data = {
+                        "type": "error",
+                        "error": event["content"]
+                    }
+                    yield f"data: {json.dumps(sse_data)}\n\n"
+                
+                # Small delay to prevent overwhelming the client
+                await asyncio.sleep(0.01)
+            
+        except Exception as e:
+            # Send error event
+            sse_data = {
+                "type": "error",
+                "error": str(e)
+            }
+            yield f"data: {json.dumps(sse_data)}\n\n"
+    
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",  # Disable Nginx buffering
+        }
+    )
+
+
 @app.post("/feedback")
 async def submit_feedback(request: FeedbackRequest):
     """
@@ -313,6 +517,49 @@ async def get_session(session_id: str):
         createdAt=session["createdAt"],
         messages=session["messages"]
     )
+
+
+@app.get("/settings/trusted-domains")
+async def get_trusted_domains():
+    """
+    Get the default list of trusted medical domains from configuration.
+    """
+    from src.config.settings import settings
+    return {
+        "trusted_domains": settings.trusted_domains,
+        "count": len(settings.trusted_domains)
+    }
+
+
+@app.get("/sessions/{session_id}/settings")
+async def get_session_settings(session_id: str):
+    """
+    Get settings for a specific session.
+    """
+    settings_dict = session_settings.get(session_id, {})
+    # Also include default trusted domains for reference
+    from src.config.settings import settings
+    return {
+        "sessionId": session_id,
+        "settings": settings_dict,
+        "default_trusted_domains": settings.trusted_domains
+    }
+
+
+@app.put("/sessions/{session_id}/settings")
+async def update_session_settings(session_id: str, request: SessionSettingsRequest):
+    """
+    Update settings for a specific session.
+    """
+    # Convert request to dict and store
+    settings_dict = request.dict(exclude_unset=True)
+    session_settings[session_id] = settings_dict
+    
+    return {
+        "sessionId": session_id,
+        "settings": settings_dict,
+        "success": True
+    }
 
 
 @app.post("/sessions")
