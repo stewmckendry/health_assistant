@@ -194,10 +194,9 @@ async def chat(request: ChatRequest):
         if output_guardrails:
             use_streaming = False
         
-        # If streaming is requested and possible, redirect to streaming endpoint
-        if use_streaming:
-            # Call the streaming version internally
-            return await chat_stream(request)
+        # Note: We don't redirect to streaming here anymore
+        # The /chat endpoint should always use non-streaming for proper Langfuse traces
+        # Users should explicitly call /chat/stream if they want streaming
         
         # Get services - use mode from request
         assistant = get_assistant(request.mode)
@@ -342,7 +341,7 @@ async def chat_stream(request: ChatRequest):
             accumulated_text = ""
             citations = []
             tool_calls = []
-            trace_id = str(uuid.uuid4())
+            trace_id = None  # Will be set from assistant's response
             
             # Stream the response
             for event in assistant.query_stream(
@@ -351,13 +350,15 @@ async def chat_stream(request: ChatRequest):
                 user_id=request.userId,
                 message_history=message_history
             ):
+                print(f"DEBUG: Received event type: {event.get('type')}, metadata: {event.get('metadata', {})}")
                 # Convert event to SSE format
                 if event["type"] == "start":
+                    # Don't set trace_id here - it's not available until complete event
                     # Send initial event with metadata
                     sse_data = {
                         "type": "start",
                         "sessionId": request.sessionId,
-                        "traceId": trace_id,
+                        "traceId": None,  # Will be set in complete event
                         "mode": request.mode
                     }
                     yield f"data: {json.dumps(sse_data)}\n\n"
@@ -391,6 +392,17 @@ async def chat_stream(request: ChatRequest):
                     yield f"data: {json.dumps(sse_data)}\n\n"
                 
                 elif event["type"] == "complete":
+                    # Extract the actual Langfuse trace ID from the complete event
+                    # The patient assistant includes this in the metadata after creating the trace
+                    complete_metadata = event.get("metadata", {})
+                    actual_trace_id = complete_metadata.get("trace_id")
+                    print(f"DEBUG: Complete event metadata: {complete_metadata}")
+                    print(f"DEBUG: Extracted trace_id: {actual_trace_id}")
+                    if actual_trace_id:
+                        trace_id = actual_trace_id
+                    # Don't use a fallback UUID - if we don't have a real trace ID,
+                    # we won't show feedback buttons (better than logging to wrong trace)
+                    
                     # Send final event with all data
                     # Store message in session
                     if request.sessionId not in sessions:
@@ -423,7 +435,7 @@ async def chat_stream(request: ChatRequest):
                         "citations": citations,
                         "toolCalls": tool_calls,
                         "metadata": event.get("metadata", {}),
-                        "traceId": trace_id
+                        "traceId": trace_id  # Will be None if no real trace ID
                     }
                     yield f"data: {json.dumps(sse_data)}\n\n"
                 

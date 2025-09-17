@@ -1,6 +1,6 @@
 """Provider-focused medical information assistant for healthcare professionals."""
 import time
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 from langfuse import get_client, observe
 from src.assistants.base import BaseAssistant, AssistantConfig
@@ -271,3 +271,201 @@ class ProviderAssistant(BaseAssistant):
             session_logger.log_final_response(error_response, time.time() - start_time)
             
             return error_response
+    
+    def query_stream(
+        self,
+        query: str,
+        session_id: Optional[str] = None,
+        user_id: Optional[str] = None,
+        session_logger: Optional[Any] = None,
+        message_history: Optional[List[Dict[str, str]]] = None
+    ):
+        """
+        Stream a provider query response with appropriate professional context.
+        Collects streaming data and logs complete trace after stream completes.
+        """
+        import time
+        from langfuse import Langfuse
+        
+        # Initialize session logger if not provided
+        if not session_logger:
+            session_logger = SessionLogger(session_id or "default")
+        
+        # Log original query
+        session_logger.log_original_query(query, self.mode)
+        
+        # Track streaming start time
+        stream_start_time = time.time()
+        
+        # Initialize trace data collection
+        trace_data = {
+            "query": query,
+            "mode": self.mode,
+            "session_id": session_id,
+            "user_id": user_id,
+            "guardrail_mode": self.guardrail_mode,
+            "start_time": stream_start_time,
+            "ttft": None,
+            "full_response": "",
+            "citations": [],
+            "tool_calls": [],
+            "input_guardrail_result": None  # Providers don't have input guardrails
+        }
+        
+        # Note: Provider mode doesn't apply input guardrails
+        # Providers can handle all medical queries including emergencies
+        
+        # Call the parent class streaming method
+        generator = super().query_stream(
+            query, session_id, user_id, session_logger, message_history
+        )
+        
+        # Track if we've received first token
+        first_token_received = False
+        
+        # Yield all events from the generator and collect data
+        for event in generator:
+            # Track time to first token
+            if not first_token_received and event.get("type") == "text":
+                trace_data["ttft"] = time.time() - stream_start_time
+                first_token_received = True
+            
+            # Accumulate data for trace
+            if event.get("type") == "text":
+                trace_data["full_response"] += event.get("content", "")
+            elif event.get("type") == "citation":
+                trace_data["citations"].append(event.get("content"))
+            elif event.get("type") == "tool_use":
+                trace_data["tool_calls"].append(event.get("content"))
+            elif event.get("type") == "complete":
+                # Don't yield the BaseAssistant's complete event
+                # We'll yield our own with the trace_id below
+                continue
+            
+            yield event
+        
+        # Calculate total duration
+        trace_data["duration"] = time.time() - stream_start_time
+        
+        # Get the trace ID before logging (we need to create the span first)
+        trace_id_to_return = None
+        logger.info(f"Langfuse enabled: {settings.langfuse_enabled}, langfuse module: {langfuse is not None}")
+        if langfuse and settings.langfuse_enabled:
+            try:
+                # Create the trace now to get the ID
+                from langfuse import Langfuse
+                lf_client = Langfuse()
+                root_span = lf_client.start_span(
+                    name="provider_query_streaming",
+                    input={"query": trace_data["query"], "mode": trace_data["mode"]}
+                )
+                trace_id_to_return = root_span.trace_id
+                trace_data["trace_id"] = trace_id_to_return
+                # Store the span to end it later
+                trace_data["_root_span"] = root_span
+                trace_data["_lf_client"] = lf_client
+                logger.info(f"Created Langfuse trace with ID: {trace_id_to_return}")
+            except Exception as e:
+                logger.error(f"Failed to create trace: {e}", exc_info=True)
+        
+        # Yield our own complete event with trace ID
+        yield {
+            "type": "complete",
+            "content": {"total_text": trace_data["full_response"]},
+            "metadata": {
+                "citations": trace_data["citations"],
+                "tool_calls": trace_data["tool_calls"],
+                "trace_id": trace_id_to_return
+            }
+        }
+        
+        # Log the complete trace to Langfuse after streaming completes
+        if langfuse and settings.langfuse_enabled:
+            try:
+                self._log_streaming_trace(trace_data)
+            except Exception as e:
+                logger.error(f"Failed to log streaming trace: {e}")
+    
+    def _log_streaming_trace(self, trace_data: Dict[str, Any]):
+        """Log the complete streaming trace to Langfuse after streaming completes."""
+        from langfuse import Langfuse
+        
+        # Check if we already created the span (for trace ID)
+        if "_root_span" in trace_data and "_lf_client" in trace_data:
+            root_span = trace_data["_root_span"]
+            lf_client = trace_data["_lf_client"]
+        else:
+            # Create a new Langfuse client instance for direct trace creation
+            lf_client = Langfuse()
+            
+            # Create a root span (which creates a new trace when no context exists)
+            root_span = lf_client.start_span(
+                name="provider_query_streaming",
+                input={"query": trace_data["query"], "mode": trace_data["mode"]}
+            )
+        
+        try:
+            # Update the span with metadata
+            root_span.update(
+                metadata={
+                    "session_id": trace_data.get("session_id", "default"),
+                    "user_id": trace_data.get("user_id", "anon"),
+                    "guardrail_mode": trace_data["guardrail_mode"],
+                    "assistant_mode": trace_data["mode"],
+                    "streaming": True,
+                    "ttft": trace_data.get("ttft"),
+                    "duration": trace_data.get("duration")
+                }
+            )
+            
+            # Update trace-level attributes
+            root_span.update_trace(
+                name="provider_query_streaming",
+                session_id=trace_data.get("session_id"),
+                user_id=trace_data.get("user_id"),
+                tags=["provider_assistant", f"guardrail_{trace_data['guardrail_mode']}", "mode:provider", "streaming"],
+                input={"query": trace_data["query"], "mode": trace_data["mode"]},
+                output={
+                    "response": trace_data["full_response"],
+                    "citations": trace_data["citations"],
+                    "tool_calls": trace_data["tool_calls"],
+                    "response_length": len(trace_data["full_response"]),
+                    "citations_count": len(trace_data["citations"]),
+                    "tool_calls_count": len(trace_data["tool_calls"]),
+                    "ttft": trace_data.get("ttft"),
+                    "duration": trace_data.get("duration")
+                }
+            )
+            
+            # Add LLM generation child span
+            llm_span = root_span.start_span(
+                name="llm_stream",
+                metadata={
+                    "model": self.config.model,
+                    "ttft": trace_data.get("ttft"),
+                    "duration": trace_data.get("duration")
+                },
+                input={"messages": [{"role": "user", "content": trace_data["query"]}]},
+                output=trace_data["full_response"]
+            )
+            llm_span.end()
+            
+            # End the root span
+            root_span.end()
+            
+            # Store the trace ID for reference
+            if hasattr(root_span, 'trace_id'):
+                trace_data["trace_id"] = root_span.trace_id
+            
+            logger.info(
+                "Provider streaming trace logged successfully",
+                extra={
+                    "trace_id": trace_data.get("trace_id"),
+                    "ttft": trace_data.get("ttft"),
+                    "duration": trace_data.get("duration"),
+                    "response_length": len(trace_data["full_response"])
+                }
+            )
+            
+        except Exception as e:
+            logger.error(f"Failed to create Langfuse streaming trace: {e}")

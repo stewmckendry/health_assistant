@@ -63,14 +63,17 @@ class LLMGuardrails:
         with open(prompts_file, 'r') as f:
             return yaml.safe_load(f)
     
-    @observe(name="input_guardrail_check", capture_input=True, capture_output=True)
-    def check_input(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+    def check_input(self, query: str, session_id: Optional[str] = None, create_span: bool = True) -> Dict[str, Any]:
         """
         Check user input for emergencies or crises before main LLM call.
+        
+        The create_span parameter controls whether to create a Langfuse span.
+        Set to False when calling from streaming mode to avoid creating separate traces.
         
         Args:
             query: User's input query
             session_id: Optional session ID for logging
+            create_span: Whether to create a Langfuse span (default: True)
             
         Returns:
             Dictionary with:
@@ -79,6 +82,19 @@ class LLMGuardrails:
                 - explanation: str
                 - should_block: bool
         """
+        # Conditionally create span based on parameter
+        if create_span:
+            return self._check_input_with_span(query, session_id)
+        else:
+            return self._check_input_internal(query, session_id)
+    
+    @observe(name="input_guardrail_check", capture_input=True, capture_output=True)
+    def _check_input_with_span(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+        """Check input with Langfuse span creation (for non-streaming)."""
+        return self._check_input_internal(query, session_id)
+    
+    def _check_input_internal(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+        """Internal input checking logic without span creation."""
         result = {
             "requires_intervention": False,
             "intervention_type": "none",
