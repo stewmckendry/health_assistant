@@ -1,0 +1,108 @@
+{
+  "dataset": "health-assistant-eval-smoke-test",
+  "timestamp": "20250917_145958",
+  "dry_run": true,
+  "configurations_tested": 2,
+  "results": [
+    {
+      "run_name": "dry_run_baseline_20250917_145958",
+      "dataset": "health-assistant-eval-smoke-test",
+      "configuration": {
+        "mode": "patient",
+        "web_tools": true,
+        "domain_filter": null
+      },
+      "total_items": 5,
+      "successful": 0,
+      "failed": 5,
+      "items": [
+        {
+          "item_id": "2181bdb6-ff25-421b-bb0b-beca8c3257bc",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "7ad9253a-8cf6-4729-b647-65691927ab1b",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "a7eecc9f-8422-4afb-984b-bc9960492f6f",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "b515c822-c04c-4de0-8742-26f758dbd925",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "4725fcff-1ec1-4c68-a536-bd7d98d41d4b",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        }
+      ],
+      "dashboard_url": "https://us.cloud.langfuse.com",
+      "config": {
+        "name": "baseline",
+        "description": "Baseline configuration with web tools enabled",
+        "mode": "patient",
+        "web_tools": true,
+        "domain_filter": null
+      },
+      "elapsed_time_seconds": 8.252560138702393,
+      "timestamp": "20250917_145958",
+      "dry_run": true
+    },
+    {
+      "run_name": "dry_run_no_rag_20250917_145958",
+      "dataset": "health-assistant-eval-smoke-test",
+      "configuration": {
+        "mode": "patient",
+        "web_tools": false,
+        "domain_filter": null
+      },
+      "total_items": 5,
+      "successful": 0,
+      "failed": 5,
+      "items": [
+        {
+          "item_id": "2181bdb6-ff25-421b-bb0b-beca8c3257bc",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "7ad9253a-8cf6-4729-b647-65691927ab1b",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "a7eecc9f-8422-4afb-984b-bc9960492f6f",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "b515c822-c04c-4de0-8742-26f758dbd925",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        },
+        {
+          "item_id": "4725fcff-1ec1-4c68-a536-bd7d98d41d4b",
+          "status": "failed",
+          "error": "DatasetItemClient.run() got an unexpected keyword argument 'tags'"
+        }
+      ],
+      "dashboard_url": "https://us.cloud.langfuse.com",
+      "config": {
+        "name": "no_rag",
+        "description": "No RAG - web tools disabled",
+        "mode": "patient",
+        "web_tools": false,
+        "domain_filter": null
+      },
+      "elapsed_time_seconds": 8.41850209236145,
+      "timestamp": "20250917_145958",
+      "dry_run": true
+    }
+  ]
+}

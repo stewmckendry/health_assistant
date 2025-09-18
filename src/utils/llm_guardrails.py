@@ -399,16 +399,9 @@ class LLMGuardrails:
             )
         
         elif action == "add_disclaimer" and "MISSING_DISCLAIMER" in violations:
-            if not response.startswith("⚠️"):
-                response = (
-                    "⚠️ **Medical Disclaimer**: This information is for educational purposes only "
-                    "and is not a substitute for professional medical advice.\n\n" + response
-                )
-            if not response.endswith("professional."):
-                response += (
-                    "\n\n💡 **Remember**: Please consult with a healthcare provider "
-                    "for personalized medical advice."
-                )
+            # Note: Disclaimers are now handled centrally in patient.py
+            # We no longer add them here to prevent duplicates
+            pass
         
         elif action == "remove_diagnosis" and "DIAGNOSIS" in violations:
             # Remove diagnostic language

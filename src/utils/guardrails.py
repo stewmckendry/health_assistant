@@ -160,6 +160,7 @@ def sanitize_response(response: str) -> str:
 def apply_disclaimers(response: str) -> str:
     """
     Add appropriate disclaimers to response.
+    Checks for existing disclaimers to prevent duplication.
     
     Args:
         response: Response content
@@ -169,13 +170,17 @@ def apply_disclaimers(response: str) -> str:
     """
     result = response
     
-    # Add start disclaimer if configured
+    # Add start disclaimer if configured and not already present
     if settings.disclaimer_start:
-        result = settings.disclaimer_start + "\n" + result
+        # Check if disclaimer already exists at the start
+        if not result.startswith(settings.disclaimer_start) and "⚠️ **Medical Disclaimer**" not in result[:200]:
+            result = settings.disclaimer_start + "\n" + result
     
-    # Add end disclaimer if configured
+    # Add end disclaimer if configured and not already present
     if settings.disclaimer_end:
-        result = result + "\n" + settings.disclaimer_end
+        # Check if disclaimer already exists at the end
+        if not result.endswith(settings.disclaimer_end) and "💡 **Remember**" not in result[-200:]:
+            result = result + "\n" + settings.disclaimer_end
     
     return result
 
@@ -270,10 +275,8 @@ class ResponseGuardrails:
                 violations=violations
             )
         
-        # Apply disclaimers (only if not emergency or crisis)
-        if not result["emergency_detected"] and not result["mental_health_crisis"]:
-            if settings.assistant_mode == "patient" or settings.assistant_mode == "physician":
-                result["content"] = apply_disclaimers(result["content"])
+        # Note: Disclaimers are now applied in patient.py after all guardrail processing
+        # This prevents duplicate disclaimers from different processing paths
         
         # Log summary
         if result["guardrails_triggered"]:

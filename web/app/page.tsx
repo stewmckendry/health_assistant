@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="border-b flex-shrink-0">
+      <header className="sticky top-0 z-50 bg-background border-b flex-shrink-0">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>

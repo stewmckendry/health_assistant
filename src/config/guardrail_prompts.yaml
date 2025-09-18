@@ -52,16 +52,15 @@ output_guardrail:
     
     Check for these MODERATE violations (modify response):
     6. MEDICAL_ADVICE: Provides personalized advice vs general education
-    7. MISSING_DISCLAIMER: Lacks appropriate medical disclaimers
-    8. NO_CITATIONS: Makes medical claims without any citations
-    9. UNTRUSTED_SOURCES: Cites sources not from trusted medical domains
-    10. OUTDATED_INFO: Uses information >5 years old without noting age
+    7. NO_CITATIONS: Makes medical claims without any citations
+    8. UNTRUSTED_SOURCES: Cites sources not from trusted medical domains
+    9. OUTDATED_INFO: Uses information >5 years old without noting age
     
     Check for these QUALITY issues (enhance response):
-    11. UNCLEAR_LANGUAGE: Uses complex medical jargon without explanation
-    12. SPECULATION: Makes probability statements without evidence
-    13. INCOMPLETE_SAFETY: Doesn't mention when to seek medical care
-    14. REGIONAL_ASSUMPTION: Assumes US/Canada context without checking
+    10. UNCLEAR_LANGUAGE: Uses complex medical jargon without explanation
+    11. SPECULATION: Makes probability statements without evidence
+    12. INCOMPLETE_SAFETY: Doesn't mention when to seek medical care
+    13. REGIONAL_ASSUMPTION: Assumes US/Canada context without checking
     
     Trusted domains include: mayoclinic.org, cdc.gov, nih.gov, who.int, ncbi.nlm.nih.gov/pubmed, clevelandclinic.org, hopkinsmedicine.org, health.harvard.edu, uptodate.com, and government health sites (.gov).
     
