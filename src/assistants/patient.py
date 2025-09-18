@@ -341,9 +341,12 @@ class PatientAssistant(BaseAssistant):
                             }
                         )
             else:
-                # If guardrails are disabled, still apply disclaimers
-                api_response["content"] = apply_disclaimers(api_response["content"])
+                # If guardrails are disabled, set the flag
                 api_response["guardrails_applied"] = False
+            
+            # Always apply disclaimers at the end (after all guardrail processing)
+            # This ensures consistent disclaimer placement regardless of guardrail mode
+            api_response["content"] = apply_disclaimers(api_response["content"])
             
             # Add patient mode indicator
             api_response["mode"] = self.mode
@@ -572,15 +575,21 @@ class PatientAssistant(BaseAssistant):
                     except Exception as e:
                         logger.error(f"Failed to create trace: {e}", exc_info=True)
                 
-                # Yield final complete event with trace ID
+                # Apply disclaimers to the full response before sending complete event
+                final_response_with_disclaimers = apply_disclaimers(trace_data["full_response"])
+                
+                # Yield final complete event with trace ID and disclaimers
                 yield {
                     "type": "complete",
-                    "content": {"total_text": trace_data["full_response"]},
+                    "content": final_response_with_disclaimers,
+                    "citations": trace_data["citations"],
+                    "toolCalls": trace_data["tool_calls"],
                     "metadata": {
                         "citations": trace_data["citations"],
                         "tool_calls": trace_data["tool_calls"],
                         "trace_id": trace_id_to_return
-                    }
+                    },
+                    "traceId": trace_id_to_return
                 }
                 
             except Exception as e:
