@@ -1,0 +1,199 @@
+# Canadian Triage and Acuity Scale (CTAS) Configuration
+# Reference: https://caep.ca/wp-content/uploads/2017/06/module_1_slides_v2.5.pdf
+
+ctas_levels:
+  1:
+    name: "Resuscitation"
+    description: "Conditions that are threats to life or limb requiring immediate aggressive interventions"
+    target_time: "Immediate"
+    color: "blue"
+    examples:
+      - "Cardiac arrest"
+      - "Major trauma with altered vital signs"
+      - "Unconscious/unresponsive"
+      - "Severe respiratory distress"
+      - "Active seizure"
+    red_flags:
+      - "No pulse or breathing"
+      - "GCS < 9"
+      - "Systolic BP < 80"
+      - "SpO2 < 90% on oxygen"
+      - "Respiratory rate < 10 or > 36"
+      
+  2:
+    name: "Emergent"
+    description: "Conditions that are potential threats to life, limb or function requiring rapid medical intervention"
+    target_time: "15 minutes"
+    color: "red"
+    examples:
+      - "Chest pain (cardiac features)"
+      - "Severe trauma"
+      - "Altered mental status"
+      - "Severe dyspnea"
+      - "GI bleeding with hemodynamic changes"
+    red_flags:
+      - "Chest pain with cardiac features"
+      - "Signs of stroke"
+      - "Severe pain (8-10/10)"
+      - "Temperature > 40°C or < 35°C"
+      - "Heart rate > 150 or < 40"
+      
+  3:
+    name: "Urgent"
+    description: "Conditions that could potentially progress to serious problem requiring emergency intervention"
+    target_time: "30 minutes"
+    color: "yellow"
+    examples:
+      - "Moderate trauma"
+      - "Asthma (mild-moderate)"
+      - "Moderate pain (4-7/10)"
+      - "Vomiting and dehydration"
+      - "Acute psychosis"
+    indicators:
+      - "Moderate pain"
+      - "Mild respiratory distress"
+      - "Temperature 38.5-40°C"
+      - "Heart rate 100-150"
+      
+  4:
+    name: "Less Urgent"
+    description: "Conditions related to patient age, distress, or potential for deterioration"
+    target_time: "60 minutes"
+    color: "green"
+    examples:
+      - "Minor trauma"
+      - "Headache (non-severe)"
+      - "Mild pain (1-3/10)"
+      - "Corneal foreign body"
+      - "Chronic back pain"
+    indicators:
+      - "Mild pain"
+      - "Stable vital signs"
+      - "Low risk of deterioration"
+      
+  5:
+    name: "Non-Urgent"
+    description: "Conditions that may be acute but non-urgent or chronic problems"
+    target_time: "120 minutes"
+    color: "white"
+    examples:
+      - "Minor complaints"
+      - "Prescription refills"
+      - "Chronic stable conditions"
+      - "Minor wounds requiring dressing"
+      - "Scheduled reassessment"
+    indicators:
+      - "No pain or minimal discomfort"
+      - "Stable chronic condition"
+      - "Administrative needs"
+
+# Red flag symptoms requiring immediate escalation
+critical_symptoms:
+  cardiovascular:
+    - "Chest pain with radiation to jaw/arm"
+    - "Crushing chest pressure"
+    - "Syncope with palpitations"
+    - "Severe dyspnea with chest pain"
+    
+  neurological:
+    - "Sudden severe headache (thunderclap)"
+    - "Facial droop"
+    - "Slurred speech"
+    - "Unilateral weakness"
+    - "Sudden vision loss"
+    
+  respiratory:
+    - "Stridor"
+    - "Unable to speak in full sentences"
+    - "Use of accessory muscles"
+    - "Cyanosis"
+    
+  general:
+    - "Altered level of consciousness"
+    - "Active bleeding not controlled"
+    - "Signs of shock"
+    - "Severe allergic reaction"
+
+# Initial workup suggestions by presentation
+initial_workup:
+  chest_pain:
+    basic:
+      - "ECG"
+      - "Troponin"
+      - "CBC"
+      - "Basic metabolic panel"
+    additional:
+      - "Chest X-ray"
+      - "D-dimer (if PE suspected)"
+      
+  abdominal_pain:
+    basic:
+      - "CBC with differential"
+      - "Basic metabolic panel"
+      - "Liver enzymes"
+      - "Lipase"
+      - "Urinalysis"
+    additional:
+      - "Pregnancy test (if applicable)"
+      - "Abdominal imaging (US/CT)"
+      
+  respiratory_distress:
+    basic:
+      - "ABG or VBG"
+      - "Chest X-ray"
+      - "CBC"
+      - "BNP"
+    additional:
+      - "D-dimer"
+      - "CT chest (if PE suspected)"
+      
+  altered_mental_status:
+    basic:
+      - "Blood glucose"
+      - "CBC"
+      - "Basic metabolic panel"
+      - "Urinalysis"
+    additional:
+      - "Head CT"
+      - "Toxicology screen"
+      - "Blood cultures"
+      
+  trauma:
+    basic:
+      - "CBC"
+      - "Type and screen"
+      - "Basic metabolic panel"
+    additional:
+      - "X-rays of affected areas"
+      - "CT as indicated"
+      - "FAST exam"
+
+# OHIP billing codes for common ED procedures (Ontario)
+ohip_codes:
+  assessment:
+    A135: "Emergency department assessment"
+    A777: "Comprehensive emergency assessment"
+    
+  procedures:
+    G372: "ECG interpretation"
+    G310: "Suturing - simple"
+    G311: "Suturing - intermediate"
+    Z401: "Casting - simple"
+    
+  imaging:
+    X090: "Chest X-ray interpretation"
+    X091: "Abdominal series interpretation"
+
+# Time-based modifiers
+time_modifiers:
+  increase_acuity:
+    - "Sudden onset"
+    - "Rapidly worsening"
+    - "New symptom"
+    - "Failed outpatient treatment"
+    
+  consider_lower_acuity:
+    - "Chronic stable"
+    - "Improving symptoms"
+    - "Known condition"
+    - "Follow-up visit"
