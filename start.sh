@@ -131,7 +131,15 @@ print_success "Pre-flight checks completed"
 print_status "Starting Python FastAPI backend server..."
 
 # Load environment variables and start backend
-export $(grep -v '^#' .env | xargs)
+if [ -f .env ]; then
+    print_status "Loading environment variables from .env"
+    set -a  # Mark all new variables for export
+    source .env
+    set +a  # Turn off automatic export
+else
+    print_error ".env file not found in current directory"
+    exit 1
+fi
 
 # Verify API key is loaded
 if [ -z "$ANTHROPIC_API_KEY" ]; then
