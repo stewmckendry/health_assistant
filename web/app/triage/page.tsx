@@ -660,7 +660,7 @@ export default function TriagePage() {
                 </Card>
 
                 {/* Red Flags */}
-                {response.red_flags_identified && response.red_flags_identified.length > 0 && (
+                {response.red_flags && response.red_flags.length > 0 && (
                   <Card>
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
@@ -670,7 +670,7 @@ export default function TriagePage() {
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
-                        {response.red_flags_identified.map((flag, i) => (
+                        {response.red_flags.map((flag, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <ChevronRight className="h-4 w-4 mt-0.5 text-red-500 flex-shrink-0" />
                             <span className="text-sm">{flag}</span>
