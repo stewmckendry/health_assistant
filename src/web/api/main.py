@@ -39,7 +39,7 @@ import json
 import asyncio
 
 # Add src directory to path to import modules
-sys.path.insert(0, str(project_root))
+sys.path.insert(0, str(project_root / "src"))
 
 from assistants.patient import PatientAssistant
 from assistants.provider import ProviderAssistant
