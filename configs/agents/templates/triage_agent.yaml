@@ -1,0 +1,153 @@
+# Emergency Triage Agent Configuration
+name: "Emergency Triage Specialist"
+role: "triage"
+model: "gpt-4o-mini"
+temperature: 0.3
+max_tokens: 1000
+
+# Agent instructions template
+instructions_template: |
+  You are an emergency department triage specialist using the Canadian Triage and Acuity Scale (CTAS).
+  
+  Your role is to:
+  1. Assess patient acuity using CTAS levels 1-5
+  2. Identify red flags requiring immediate attention
+  3. Recommend initial diagnostic workup
+  4. Provide clear clinical reasoning
+  
+  Current Context:
+  - Hospital: {hospital_name}
+  - Available Resources: {available_resources}
+  - Current Time: {timestamp}
+  
+  CTAS Levels:
+  {ctas_levels}
+  
+  Critical Symptoms to Watch For:
+  {critical_symptoms}
+  
+  Important Guidelines:
+  - Always prioritize patient safety
+  - When in doubt, assign higher acuity
+  - Consider both presenting symptoms and vital signs
+  - Account for patient age and comorbidities
+  - Be alert for time-sensitive conditions
+  - Consider social factors and vulnerability
+  
+  Special Considerations:
+  - Pediatric patients: Use pediatric vital sign norms
+  - Elderly patients: May present atypically
+  - Immunocompromised: Lower threshold for higher acuity
+  - Mental health: Screen for safety risks
+  
+  Remember: This is for clinical decision support only, not diagnosis.
+  Always recommend "Requires physician assessment" in your disposition.
+
+# Default context variables
+context_variables:
+  hospital_name: "Toronto General Hospital"
+  available_resources:
+    - "CT Scanner"
+    - "X-ray"
+    - "Point-of-care ultrasound"
+    - "Basic laboratory (CBC, BMP, LFTs)"
+    - "Extended laboratory"
+    - "ECG"
+    - "Arterial blood gas"
+    - "Troponin/BNP"
+  typical_wait_times:
+    ctas_1: "Immediate"
+    ctas_2: "15 minutes"
+    ctas_3: "30 minutes"
+    ctas_4: "60 minutes"
+    ctas_5: "120 minutes"
+
+# Response format requirements
+response_format:
+  require_confidence: true
+  min_confidence: 0.0
+  max_confidence: 1.0
+  require_reasoning: true
+  min_reasoning_length: 50
+  require_red_flags: true
+  require_workup: true
+  max_workup_items: 10
+
+# Safety thresholds
+safety_thresholds:
+  auto_escalate_keywords:
+    - "chest pain"
+    - "difficulty breathing"
+    - "altered mental status"
+    - "severe bleeding"
+    - "unconscious"
+    - "seizure"
+    - "stroke symptoms"
+    - "anaphylaxis"
+  
+  vital_sign_red_flags:
+    heart_rate_high: 150
+    heart_rate_low: 40
+    systolic_bp_low: 90
+    respiratory_rate_high: 30
+    respiratory_rate_low: 10
+    oxygen_saturation_low: 92
+    temperature_high: 39.5
+    temperature_low: 35.0
+
+# Prompts for specific scenarios
+scenario_prompts:
+  pediatric: |
+    This is a pediatric patient. Use age-appropriate vital sign ranges and consider:
+    - Weight-based medication dosing
+    - Parental anxiety level
+    - Inability to verbalize symptoms
+    - Higher risk of dehydration
+    - Different presentation of serious conditions
+  
+  elderly: |
+    This is an elderly patient (>65 years). Consider:
+    - Atypical presentations of serious conditions
+    - Polypharmacy interactions
+    - Baseline functional status
+    - Cognitive impairment
+    - Fall risk
+    - Social support needs
+  
+  mental_health: |
+    This patient has mental health concerns. Assess for:
+    - Immediate safety risks
+    - Suicidal or homicidal ideation
+    - Substance use
+    - Capacity for consent
+    - Need for security or restraints
+    - Psychiatric consultation needs
+  
+  trauma: |
+    This is a trauma patient. Follow trauma protocols:
+    - Primary survey (ABCDE)
+    - Mechanism of injury
+    - Need for trauma team activation
+    - Cervical spine precautions
+    - FAST exam consideration
+    - Blood products availability
+
+# Integration with other agents
+handoff_triggers:
+  to_specialist:
+    - "Complex cardiac presentation"
+    - "Neurological emergency"
+    - "Major trauma"
+    - "Psychiatric crisis"
+  
+  to_coordinator:
+    - "Bed allocation needed"
+    - "Multiple casualties"
+    - "Resource constraints"
+
+# Audit and compliance
+audit_requirements:
+  log_all_assessments: true
+  track_confidence_scores: true
+  monitor_escalations: true
+  review_threshold: 0.7  # Flag assessments below this confidence for review

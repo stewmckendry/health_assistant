@@ -33,6 +33,10 @@ from assistants.provider import ProviderAssistant
 from utils.session_logging import SessionLogger
 from langfuse import Langfuse
 
+# Import triage endpoints
+from src.web.api.triage_endpoint import register_triage_endpoint
+from src.web.api.triage_streaming_endpoint import register_streaming_endpoint
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Health Assistant API",
@@ -46,6 +50,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:3001",
+        "http://localhost:3002",  # Next.js dev server on alternate port
         "https://health-assistant.vercel.app",  # Production Vercel URL
         "https://health-assistant-*.vercel.app",  # Allow health-assistant deployments
         "https://health-assistant-stewart-mckendrys-projects.vercel.app",  # Project-specific URL
@@ -98,6 +103,10 @@ def get_langfuse():
 sessions: Dict[str, Dict[str, Any]] = {}
 # Session settings store
 session_settings: Dict[str, Dict[str, Any]] = {}
+
+# Register triage endpoints
+register_triage_endpoint(app)
+register_streaming_endpoint(app)
 
 
 # Request/Response models
