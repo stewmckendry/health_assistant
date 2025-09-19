@@ -9,12 +9,17 @@ from pathlib import Path
 from typing import Dict, Any, Optional, List
 from datetime import datetime
 import uuid
+import logging
 
 # Load environment variables FIRST, before any other imports
 from dotenv import load_dotenv
 project_root = Path(__file__).parent.parent.parent
 env_path = project_root / ".env"
 load_dotenv(env_path)
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Now import FastAPI and other modules
 from fastapi import FastAPI, HTTPException
@@ -79,14 +84,19 @@ def get_assistant(mode: str = "patient"):
     """
     global patient_assistant, provider_assistant
     
+    # Log which mode is being requested
+    logger.info(f"get_assistant called with mode: '{mode}'")
+    
     if mode == "provider":
         if provider_assistant is None:
             provider_assistant = ProviderAssistant()
+        logger.info("Returning ProviderAssistant instance")
         return provider_assistant
     else:
         # Default to patient mode
         if patient_assistant is None:
             patient_assistant = PatientAssistant()
+        logger.info("Returning PatientAssistant instance")
         return patient_assistant
 
 def get_langfuse():
@@ -327,6 +337,9 @@ async def chat_stream(request: ChatRequest):
         try:
             # Get session settings
             settings_dict = session_settings.get(request.sessionId, {})
+            
+            # Log the incoming request mode
+            logger.info(f"chat_stream received request with mode: '{request.mode}' for session: {request.sessionId}")
             
             # Get services - use mode from request
             assistant = get_assistant(request.mode)

@@ -46,6 +46,16 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <ModeToggle onModeChange={setMode} defaultMode={mode} />
+              <Link href="/triage">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                >
+                  <Activity className="h-4 w-4" />
+                  ED Triage
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="sm"
