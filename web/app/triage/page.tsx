@@ -91,7 +91,7 @@ export default function TriagePage() {
     setProgress([]);
     setCurrentProgress(0);
 
-    const request = {
+    const request: TriageRequest = {
       age: parseInt(age),
       sex: sex || undefined,
       chief_complaint: chiefComplaint,
@@ -112,7 +112,7 @@ export default function TriagePage() {
     };
 
     // Remove empty vitals object if no vitals provided
-    if (!Object.values(request.vitals!).some(v => v !== undefined)) {
+    if (request.vitals && !Object.values(request.vitals).some(v => v !== undefined)) {
       delete request.vitals;
     }
 
