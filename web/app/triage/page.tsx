@@ -58,6 +58,11 @@ interface StreamingUpdate {
   message?: string;
   progress?: number;
   result?: TriageResponse;
+  data?: {
+    summary?: string;
+    [key: string]: any;
+  };
+  timestamp?: string;
 }
 
 export default function TriagePage() {
