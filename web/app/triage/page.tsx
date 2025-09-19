@@ -58,6 +58,11 @@ interface StreamingUpdate {
   message?: string;
   progress?: number;
   result?: TriageResponse;
+  data?: {
+    summary?: string;
+    [key: string]: any;
+  };
+  timestamp?: string;
 }
 
 export default function TriagePage() {
@@ -91,7 +96,7 @@ export default function TriagePage() {
     setProgress([]);
     setCurrentProgress(0);
 
-    const request = {
+    const request: TriageRequest = {
       age: parseInt(age),
       sex: sex || undefined,
       chief_complaint: chiefComplaint,
@@ -112,14 +117,14 @@ export default function TriagePage() {
     };
 
     // Remove empty vitals object if no vitals provided
-    if (!Object.values(request.vitals!).some(v => v !== undefined)) {
+    if (request.vitals && !Object.values(request.vitals).some(v => v !== undefined)) {
       delete request.vitals;
     }
 
     try {
       if (useStreaming) {
-        // Use streaming endpoint
-        const res = await fetch('http://localhost:8001/api/agents/triage/stream', {
+        // Use streaming endpoint - using relative URL like main page
+        const res = await fetch('/api/agents/triage/stream', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -177,8 +182,8 @@ export default function TriagePage() {
           }
         }
       } else {
-        // Use regular endpoint
-        const res = await fetch('http://localhost:8001/api/agents/triage', {
+        // Use regular endpoint - using relative URL like main page
+        const res = await fetch('/api/agents/triage', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -655,7 +660,7 @@ export default function TriagePage() {
                 </Card>
 
                 {/* Red Flags */}
-                {response.red_flags_identified && response.red_flags_identified.length > 0 && (
+                {response.red_flags && response.red_flags.length > 0 && (
                   <Card>
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
@@ -665,7 +670,7 @@ export default function TriagePage() {
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
-                        {response.red_flags_identified.map((flag, i) => (
+                        {response.red_flags.map((flag, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <ChevronRight className="h-4 w-4 mt-0.5 text-red-500 flex-shrink-0" />
                             <span className="text-sm">{flag}</span>
