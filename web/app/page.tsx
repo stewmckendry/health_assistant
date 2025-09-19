@@ -9,13 +9,23 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { ModeToggle, AssistantMode } from '@/components/ModeToggle';
 import { SettingsPanel } from '@/components/settings/SettingsPanel';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Loader2, RefreshCw, Settings, Activity } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Loader2, RefreshCw, Settings, Activity, Stethoscope, Search, Pill } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const { sessionId, userId, isLoading, createNewSession } = useSession();
   const [mode, setMode] = useState<AssistantMode>('patient');
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const router = useRouter();
 
   if (isLoading || !sessionId) {
     return (
@@ -44,47 +54,68 @@ export default function Home() {
                 }
               </p>
             </div>
-            <div className="flex items-center gap-2">
-              <ModeToggle onModeChange={setMode} defaultMode={mode} />
-              <Link href="/triage">
+            <div className="flex items-center gap-4">
+              {/* Chat Controls Group */}
+              <div className="flex items-center gap-2 border-r pr-4">
+                <span className="text-sm text-muted-foreground mr-2">Chat Mode:</span>
+                <ModeToggle onModeChange={setMode} defaultMode={mode} />
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={() => setSettingsOpen(true)}
                   className="gap-2"
                 >
-                  <Activity className="h-4 w-4" />
-                  ED Triage
+                  <Settings className="h-4 w-4" />
+                  Settings
                 </Button>
-              </Link>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setSettingsOpen(true)}
-                className="gap-2"
-              >
-                <Settings className="h-4 w-4" />
-                Settings
-              </Button>
-              <ThemeToggle />
-              <Link href="/triage">
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={createNewSession}
                   className="gap-2"
                 >
-                  <Activity className="h-4 w-4" />
-                  ED Triage
+                  <RefreshCw className="h-4 w-4" />
+                  New Session
                 </Button>
-              </Link>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={createNewSession}
-                className="gap-2"
-              >
-                <RefreshCw className="h-4 w-4" />
-                New Session
-              </Button>
+              </div>
+              
+              {/* Clinical Tools Group */}
+              <div className="flex items-center gap-2">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2"
+                    >
+                      <Stethoscope className="h-4 w-4" />
+                      Clinical Agents
+                      <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-primary/10 text-primary rounded">
+                        ALPHA
+                      </span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56">
+                    <DropdownMenuLabel>Diagnostic AI Agents</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={() => router.push('/triage')}>
+                      <Activity className="h-4 w-4 mr-2" />
+                      ED Triage Assessment
+                    </DropdownMenuItem>
+                    <DropdownMenuItem disabled>
+                      <Search className="h-4 w-4 mr-2" />
+                      Symptom Analyzer
+                      <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem disabled>
+                      <Pill className="h-4 w-4 mr-2" />
+                      Drug Interactions
+                      <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>
