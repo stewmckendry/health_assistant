@@ -124,7 +124,8 @@ export default function TriagePage() {
     try {
       if (useStreaming) {
         // Use streaming endpoint
-        const res = await fetch('http://localhost:8001/api/agents/triage/stream', {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
+        const res = await fetch(`${apiUrl}/api/agents/triage/stream`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -183,7 +184,8 @@ export default function TriagePage() {
         }
       } else {
         // Use regular endpoint
-        const res = await fetch('http://localhost:8001/api/agents/triage', {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
+        const res = await fetch(`${apiUrl}/api/agents/triage`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
