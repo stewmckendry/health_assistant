@@ -50,6 +50,7 @@ interface TriageResponse {
   assessment_id: string;
   timestamp: string;
   warnings: string[];
+  session_id?: string;
 }
 
 interface StreamingUpdate {
