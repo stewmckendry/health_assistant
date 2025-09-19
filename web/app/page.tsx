@@ -9,7 +9,8 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { ModeToggle, AssistantMode } from '@/components/ModeToggle';
 import { SettingsPanel } from '@/components/settings/SettingsPanel';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Loader2, RefreshCw, Settings } from 'lucide-react';
+import { Loader2, RefreshCw, Settings, Activity } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   const { sessionId, userId, isLoading, createNewSession } = useSession();
@@ -55,6 +56,16 @@ export default function Home() {
                 Settings
               </Button>
               <ThemeToggle />
+              <Link href="/triage">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                >
+                  <Activity className="h-4 w-4" />
+                  ED Triage
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="sm"

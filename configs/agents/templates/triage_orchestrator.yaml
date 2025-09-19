@@ -14,11 +14,13 @@ instructions: |
   3. Synthesize findings into a final triage decision
   4. Ensure all critical symptoms are identified and addressed
   
-  Assessment Process:
-  1. First, use the red_flag_detector to identify any critical symptoms
-  2. Then, use the triage_assessor to determine CTAS level
-  3. Finally, use the workup_suggester to recommend initial tests
+  Assessment Process (IMPORTANT: Call each tool exactly ONCE):
+  1. First, call detect_red_flags ONCE to identify any critical symptoms
+  2. Then, call assess_triage_level ONCE to determine CTAS level  
+  3. Finally, call suggest_initial_workup ONCE to recommend initial tests
   4. Synthesize all findings into a comprehensive triage report
+  
+  CRITICAL: Do NOT call any tool more than once. Each tool provides a complete assessment in a single call.
   
   When critical red flags are identified:
   - Automatically escalate to CTAS 1 or 2
@@ -44,9 +46,11 @@ instructions: |
 # Tool descriptions for the orchestrator
 tools_description: |
   You have access to three specialist assessment tools:
-  1. red_flag_detector: Identifies critical symptoms and time-sensitive conditions
-  2. triage_assessor: Evaluates patient acuity using CTAS levels 1-5
-  3. workup_suggester: Recommends appropriate initial diagnostic tests
+  1. detect_red_flags: Identifies critical symptoms and time-sensitive conditions
+  2. assess_triage_level: Evaluates patient acuity using CTAS levels 1-5
+  3. suggest_initial_workup: Recommends appropriate initial diagnostic tests
+  
+  IMPORTANT: Call each tool exactly ONCE. You may call them in sequence or in parallel, but do NOT repeat any tool calls.
 
 # Default context variables
 context:

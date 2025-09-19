@@ -62,6 +62,6 @@ def create_red_flag_detector() -> Agent:
         name=config['name'],
         model=config['model'],
         instructions=instructions,
-        output_type=RedFlagAssessment,
-        temperature=config.get('temperature', 0.2)
+        output_type=RedFlagAssessment
+        # Note: temperature would be set via model_kwargs if needed
     )

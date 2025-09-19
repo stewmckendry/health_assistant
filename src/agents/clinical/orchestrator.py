@@ -128,8 +128,8 @@ def create_triage_orchestrator(
         model=config['model'],
         instructions=instructions,
         tools=tools,  # Specialist agents as tools via as_tool()
-        output_type=TriageDecision,  # Structured final output
-        temperature=config.get('temperature', 0.3)
+        output_type=TriageDecision  # Structured final output
+        # Note: temperature would be set via model_kwargs if needed
     )
 
 
@@ -137,7 +137,8 @@ async def run_triage_assessment(
     patient_data: Dict[str, Any],
     session_id: Optional[str] = None,
     trace_id: Optional[str] = None,
-    langfuse_enabled: bool = True
+    langfuse_enabled: bool = True,
+    streaming: bool = False
 ) -> TriageDecision:
     """
     Run a complete triage assessment using the orchestrator and specialist agents.
@@ -193,7 +194,7 @@ async def run_triage_assessment(
         result = await Runner.run(
             orchestrator,
             input=patient_info,
-            max_turns=10  # Allow multiple tool calls to specialists
+            max_turns=4  # 3 tool calls (one per specialist) + 1 final response
         )
         
         # Update Langfuse trace with results if available

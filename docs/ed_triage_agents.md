@@ -8,10 +8,12 @@ The Emergency Department (ED) Triage system implements a multi-agent clinical de
 
 ### Core Components
 - `src/agents/clinical/orchestrator.py` - Main triage orchestration logic
+- `src/agents/clinical/orchestrator_streaming.py` - Streaming version with real-time updates
 - `src/agents/clinical/red_flag_detector.py` - Critical symptom detection
 - `src/agents/clinical/triage_assessor.py` - CTAS level assessment
 - `src/agents/clinical/workup_suggester.py` - Diagnostic test recommendations
 - `src/web/api/triage_endpoint.py` - REST API endpoint for triage
+- `src/web/api/triage_streaming_endpoint.py` - SSE streaming endpoint
 
 ### Configuration
 - `configs/agents/templates/ctas_config.yaml` - CTAS levels and guidelines
@@ -271,6 +273,77 @@ The system adjusts recommendations based on:
 - Current ED census and wait times
 - Specialist availability
 - Time of day/week considerations
+
+## Streaming Capabilities
+
+### Real-Time Progress Updates
+
+The system now supports streaming responses for real-time feedback during triage assessment, providing transparency into the multi-agent decision process.
+
+**Streaming Endpoint (`src/web/api/triage_streaming_endpoint.py`):**
+```python
+@app.post("/api/agents/triage/stream")
+async def triage_assessment_stream(request: StreamingTriageRequest):
+    """
+    Emergency Triage Assessment Endpoint (Streaming)
+    
+    Returns Server-Sent Events (SSE) with assessment progress and results.
+    """
+    return StreamingResponse(
+        process_triage_stream(request),
+        media_type="text/event-stream"
+    )
+```
+
+### Event Stream Format
+
+**Progressive Updates**:
+```javascript
+// Tool call event - shows which specialist is being consulted
+data: {"type": "tool_call", "tool": "Red Flag Detector", "message": "Analyzing with Red Flag Detector", "progress": 30}
+
+// Tool result event - shows findings with human-readable summary
+data: {"type": "tool_result", "data": {"summary": "⚠️ Red flags detected: Chest pain with cardiac features"}, "progress": 40}
+
+// Final result event - complete triage decision
+data: {"type": "final", "result": {...full TriageDecision...}, "progress": 100}
+```
+
+### UI Integration
+
+**Visual Progress Indicators**:
+- **Blue activity icon**: Tool being called (analyzing)
+- **Green checkmark**: Tool completed with summary
+- **Purple text**: Agent changes
+- **Progress bar**: Overall completion percentage
+
+**Real-time Updates Display**:
+```typescript
+// Shows last 5 updates with color-coded status
+if (update.type === 'tool_call') {
+  // Blue icon with "Red Flag Detector analyzing..."
+} else if (update.type === 'tool_result') {
+  // Green checkmark with "✓ No red flags identified"
+}
+```
+
+### Performance Optimizations
+
+**Single-Call Pattern**:
+- Each specialist agent called exactly once
+- Max turns limited to 4 (3 tools + 1 synthesis)
+- Unique tool tracking prevents duplicate calls
+- Streamlined from 10 turns to 4 turns total
+
+**Progress Calculation**:
+```python
+# Track unique tools called
+tools_called = set()  
+total_tools = 3
+
+# Calculate progress based on unique tools
+progress = (len(tools_called) / total_tools) * 90
+```
 
 ## Implementation Examples
 

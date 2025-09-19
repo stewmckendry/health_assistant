@@ -297,6 +297,73 @@ class TriageDecision(BaseModel):
     confidence: float = Field(description="Overall confidence in the assessment", ge=0.0, le=1.0)
 ```
 
+## Streaming Capabilities
+
+### Real-Time Progress Updates
+
+The system supports streaming responses using Server-Sent Events (SSE) for real-time progress updates during triage assessment.
+
+**Streaming Orchestrator (`src/agents/clinical/orchestrator_streaming.py`):**
+```python
+async def run_triage_assessment_streaming(
+    patient_data: Dict[str, Any],
+    session_id: Optional[str] = None,
+    trace_id: Optional[str] = None,
+    langfuse_enabled: bool = True
+) -> AsyncGenerator[StreamingUpdate, None]:
+    """
+    Run a triage assessment with streaming progress updates.
+    
+    Yields StreamingUpdate objects with progress information as the assessment proceeds.
+    """
+```
+
+### StreamingUpdate Model
+```python
+class StreamingUpdate(BaseModel):
+    """A streaming update from the triage assessment."""
+    type: str = Field(description="Type of update: agent_change, tool_call, tool_result, progress, final")
+    agent: Optional[str] = Field(default=None, description="Current agent name")
+    tool: Optional[str] = Field(default=None, description="Tool being called")
+    message: Optional[str] = Field(default=None, description="Update message")
+    data: Optional[Dict[str, Any]] = Field(default=None, description="Additional data")
+    progress: Optional[float] = Field(default=None, description="Progress percentage (0-100)")
+```
+
+### Event Types
+1. **agent_change**: Switching between agents
+2. **tool_call**: Invoking a specialist agent
+3. **tool_result**: Results from specialist with human-readable summaries
+4. **progress**: General progress updates
+5. **final**: Complete assessment result
+
+### Stream Processing
+**Event Handling (`orchestrator_streaming.py:138-276`):**
+```python
+async for event in result.stream_events():
+    if event.type == "agent_updated_stream_event":
+        # Agent switch event
+        current_agent = event.new_agent.name
+        
+    elif event.type == "run_item_stream_event":
+        if event.item.type == "tool_call_item":
+            # Extract tool name and track progress
+            tool_name = event.item.raw_item.name
+            
+        elif event.item.type == "tool_call_output_item":
+            # Parse tool output and create human-readable summary
+            parsed = json.loads(event.item.output)
+            if 'has_red_flags' in parsed:
+                summary = f"⚠️ Red flags detected: {', '.join(parsed.get('red_flags', []))}"
+            elif 'ctas_level' in parsed:
+                summary = f"CTAS Level {parsed.get('ctas_level')}: {parsed.get('urgency', '')}"
+```
+
+### Tool Call Optimization
+- **Single-Call Pattern**: Each specialist agent called exactly once
+- **Max Turns**: Limited to 4 (3 tool calls + 1 synthesis)
+- **Progress Tracking**: Uses set() to track unique tools called
+
 ## Integration Features
 
 ### 1. Tracing & Observability

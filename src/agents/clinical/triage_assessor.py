@@ -72,6 +72,6 @@ def create_triage_assessor(
         name=config['name'],
         model=config['model'],
         instructions=instructions,
-        output_type=CTASAssessment,
-        temperature=config.get('temperature', 0.3)
+        output_type=CTASAssessment
+        # Note: temperature would be set via model_kwargs if needed
     )

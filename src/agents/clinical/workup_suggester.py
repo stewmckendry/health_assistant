@@ -84,6 +84,6 @@ def create_workup_suggester(
         name=config['name'],
         model=config['model'],
         instructions=instructions,
-        output_type=WorkupPlan,
-        temperature=config.get('temperature', 0.4)
+        output_type=WorkupPlan
+        # Note: temperature would be set via model_kwargs if needed
     )
