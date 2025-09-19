@@ -200,6 +200,181 @@ quality_metrics = {
 }
 ```
 
+## Clinical Agents Tracing (OpenAI Agents SDK)
+
+The emergency triage orchestrator uses OpenAI Agents SDK v0.3.1+ with Langfuse integration for comprehensive tracing of clinical agent interactions.
+
+### Integration Approach
+
+The clinical agents use a direct Langfuse SDK integration rather than OpenTelemetry/Logfire due to compatibility and simplicity:
+
+```python
+# src/agents/clinical/orchestrator_streaming.py
+from langfuse import Langfuse
+
+# Direct SDK initialization
+langfuse_client = Langfuse(
+    public_key=os.getenv('LANGFUSE_PUBLIC_KEY'),
+    secret_key=os.getenv('LANGFUSE_SECRET_KEY'),
+    host=os.getenv('LANGFUSE_HOST', 'https://us.cloud.langfuse.com')
+)
+
+# Authentication verification
+if langfuse_client.auth_check():
+    print("✅ Langfuse client authenticated successfully")
+```
+
+### Trace Creation for Clinical Assessments
+
+```python
+async def run_triage_assessment_streaming(...):
+    # Create trace for the entire assessment
+    langfuse_trace = langfuse_client.start_span(
+        name="emergency-triage-assessment",
+        input={
+            "patient_data": patient_data,
+            "session_id": session_id
+        },
+        metadata={
+            "service": "emergency-triage-orchestrator",
+            "agents": ["triageNurse", "registrationClerk", "provider"],
+            "streaming": True
+        }
+    )
+    
+    # Track agent interactions
+    for event in runner_stream:
+        if isinstance(event, AgentUpdatedStreamEvent):
+            # Log agent state changes
+            langfuse_trace.event(
+                name=f"agent_{event.agent_name}_updated",
+                metadata={"state": event.state}
+            )
+    
+    # Complete trace with decision
+    langfuse_trace.end(
+        output=triage_decision.dict(),
+        metadata={
+            "acuity_level": triage_decision.acuity_level,
+            "recommended_department": triage_decision.recommended_department
+        }
+    )
+```
+
+### Streaming Integration
+
+The orchestrator provides real-time updates with trace IDs for feedback correlation:
+
+```python
+class StreamingUpdate(BaseModel):
+    type: str  # "progress", "agent_update", "tool_call", "final"
+    agent: Optional[str]  # Which agent is active
+    tool: Optional[str]  # Tool being used
+    message: Optional[str]  # Update message
+    trace_id: Optional[str]  # Langfuse trace ID for feedback
+    
+# Stream updates with trace ID
+yield StreamingUpdate(
+    type="agent_update",
+    agent="triageNurse",
+    message="Assessing symptoms",
+    trace_id=langfuse_trace.trace_id
+)
+```
+
+### Agent-Specific Tracing
+
+Each clinical agent has specialized trace metadata:
+
+| Agent | Traced Data | Key Metrics |
+|-------|------------|--------------|
+| **Triage Nurse** | - Vital signs analysis<br>- Symptom severity<br>- Chief complaint | - Acuity level<br>- Risk factors<br>- Urgency indicators |
+| **Registration Clerk** | - Patient demographics<br>- Insurance verification<br>- Medical history | - Registration completeness<br>- Data quality<br>- Processing time |
+| **Provider** | - Clinical assessment<br>- Department routing<br>- Treatment urgency | - Decision accuracy<br>- Department match<br>- Escalation rate |
+
+### Feedback Integration
+
+User feedback on triage assessments is linked via trace ID:
+
+```python
+# Frontend captures trace_id from streaming updates
+const [traceId, setTraceId] = useState<string | null>(null);
+
+// Submit feedback with trace correlation
+await fetch('/api/feedback', {
+    method: 'POST',
+    body: JSON.stringify({
+        traceId: traceId,
+        sessionId: sessionId,
+        rating: rating,
+        comment: comment
+    })
+});
+```
+
+### Environment Setup
+
+```bash
+# Required for clinical agents tracing
+LANGFUSE_PUBLIC_KEY=your_public_key
+LANGFUSE_SECRET_KEY=your_secret_key
+LANGFUSE_HOST=https://us.cloud.langfuse.com
+
+# OpenAI for agents
+OPENAI_API_KEY=your_openai_key
+
+# Optional: Logfire integration (future)
+# LOGFIRE_TOKEN=your_logfire_token
+```
+
+### Monitoring Clinical Decisions
+
+Key metrics for clinical agent monitoring:
+
+```python
+clinical_metrics = {
+    # Performance
+    "total_assessment_time": 12.5,  # Seconds
+    "agents_consulted": 3,          # Number of agents
+    "tools_used": ["vital_analysis", "risk_assessment"],
+    
+    # Clinical Quality
+    "acuity_level": 2,              # ESI 1-5
+    "confidence_score": 0.92,       # Decision confidence
+    "risk_factors_identified": 3,    # Count
+    
+    # Routing
+    "recommended_department": "emergency",
+    "alternative_departments": ["urgent_care"],
+    "wait_time_estimate": "15-30 minutes"
+}
+```
+
+### Debugging Agent Orchestration
+
+Common trace patterns to investigate:
+
+1. **Agent Disagreement**
+   ```
+   Filter: metadata.agent_consensus = false
+   Review: Individual agent assessments
+   Action: Refine agent prompts or decision logic
+   ```
+
+2. **High Acuity Misses**
+   ```
+   Filter: user_rating < 3 AND metadata.acuity_level > 3
+   Review: Symptom assessment accuracy
+   Action: Enhance critical symptom detection
+   ```
+
+3. **Routing Errors**
+   ```
+   Filter: metadata.department_changed = true
+   Review: Initial vs actual department
+   Action: Improve department matching logic
+   ```
+
 ## User Feedback Integration
 
 User feedback is captured as scores in Langfuse:

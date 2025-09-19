@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Loader2, AlertCircle, Activity, Clock, FileText, ChevronRight, Home, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import { FeedbackButtons } from '@/components/chat/FeedbackButtons';
 
 interface VitalSigns {
   blood_pressure?: string;
@@ -72,6 +73,7 @@ export default function TriagePage() {
   const [progress, setProgress] = useState<StreamingUpdate[]>([]);
   const [currentProgress, setCurrentProgress] = useState(0);
   const [useStreaming, setUseStreaming] = useState(true);
+  const [traceId, setTraceId] = useState<string | null>(null);
   
   // Form state
   const [age, setAge] = useState('');
@@ -95,6 +97,7 @@ export default function TriagePage() {
     setResponse(null);
     setProgress([]);
     setCurrentProgress(0);
+    setTraceId(null);
 
     const request: TriageRequest = {
       age: parseInt(age),
@@ -152,6 +155,11 @@ export default function TriagePage() {
                 try {
                   const data = JSON.parse(line.slice(6));
                   console.log('Streaming data received:', data); // Debug logging
+                  
+                  // Capture trace_id from any update that has it
+                  if (data.trace_id && !traceId) {
+                    setTraceId(data.trace_id);
+                  }
                   
                   if (data.type === 'final' && data.result) {
                     // Final result
@@ -264,6 +272,31 @@ export default function TriagePage() {
       case 4: return 'bg-green-500';
       case 5: return 'bg-blue-500';
       default: return 'bg-gray-500';
+    }
+  };
+
+  const handleFeedback = async (feedback: any) => {
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          traceId: feedback.traceId,
+          sessionId: feedback.sessionId,
+          rating: feedback.rating,
+          comment: feedback.comment,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit feedback');
+      }
+
+      console.log('Feedback submitted successfully');
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
     }
   };
 
@@ -729,6 +762,20 @@ export default function TriagePage() {
                     </ul>
                   </AlertDescription>
                 </Alert>
+
+                {/* Feedback Section */}
+                {traceId && (
+                  <Card>
+                    <CardContent className="pt-4">
+                      <FeedbackButtons
+                        traceId={traceId}
+                        sessionId={response.session_id || `triage_${Date.now()}`}
+                        onFeedback={handleFeedback}
+                        context="triage"
+                      />
+                    </CardContent>
+                  </Card>
+                )}
               </>
             )}
           </div>

@@ -1,17 +1,72 @@
 """
 Streaming version of the Emergency Triage Orchestrator.
 Provides real-time progress updates as agents process the assessment.
+Uses logfire for OpenTelemetry-based tracing that integrates with Langfuse.
 """
 
 from typing import Optional, Dict, Any, AsyncGenerator
 from pydantic import BaseModel, Field
 import json
+import os
+import nest_asyncio
+
+# Load environment variables first
+from dotenv import load_dotenv
+from pathlib import Path
+project_root = Path(__file__).parent.parent.parent.parent
+load_dotenv(project_root / ".env")
+
+# Apply nest_asyncio only if not running under uvloop
+import asyncio
+try:
+    # Check if we're running under uvloop
+    if not isinstance(asyncio.get_event_loop(), type(asyncio.new_event_loop())):
+        # Only apply nest_asyncio for non-uvloop event loops
+        nest_asyncio.apply()
+except:
+    # If we can't determine the loop type, try to apply it anyway
+    try:
+        nest_asyncio.apply()
+    except ValueError:
+        # Ignore if it fails (likely uvloop)
+        pass
+
+# Langfuse integration using direct SDK
+try:
+    from langfuse import Langfuse
+    
+    langfuse_host = os.getenv('LANGFUSE_HOST', 'https://us.cloud.langfuse.com')
+    langfuse_public_key = os.getenv('LANGFUSE_PUBLIC_KEY')
+    langfuse_secret_key = os.getenv('LANGFUSE_SECRET_KEY')
+    
+    if langfuse_public_key and langfuse_secret_key:
+        langfuse_client = Langfuse(
+            public_key=langfuse_public_key,
+            secret_key=langfuse_secret_key,
+            host=langfuse_host
+        )
+        
+        if langfuse_client.auth_check():
+            print("✅ Langfuse client authenticated successfully")
+            USE_LANGFUSE = True
+        else:
+            print("❌ Langfuse authentication failed")
+            USE_LANGFUSE = False
+            langfuse_client = None
+    else:
+        print("Langfuse environment variables not set - tracing disabled")
+        USE_LANGFUSE = False
+        langfuse_client = None
+        
+except ImportError:
+    print("Langfuse not available")
+    USE_LANGFUSE = False
+    langfuse_client = None
 
 try:
     from agents import Agent, Runner, ItemHelpers
     from agents.stream_events import StreamEvent, RunItemStreamEvent, AgentUpdatedStreamEvent, RawResponsesStreamEvent
     from openai.types.responses import ResponseTextDeltaEvent
-    from langfuse import Langfuse
 except ImportError:
     # Fallback for development
     Agent = None
@@ -22,7 +77,6 @@ except ImportError:
     AgentUpdatedStreamEvent = None
     RawResponsesStreamEvent = None
     ResponseTextDeltaEvent = None
-    Langfuse = None
 
 from .orchestrator import TriageDecision, create_triage_orchestrator, _format_patient_data
 
@@ -35,6 +89,7 @@ class StreamingUpdate(BaseModel):
     message: Optional[str] = Field(default=None, description="Update message")
     data: Optional[Dict[str, Any]] = Field(default=None, description="Additional data")
     progress: Optional[float] = Field(default=None, description="Progress percentage (0-100)")
+    trace_id: Optional[str] = Field(default=None, description="Trace ID for debugging")
 
 
 async def run_triage_assessment_streaming(
@@ -44,7 +99,7 @@ async def run_triage_assessment_streaming(
     langfuse_enabled: bool = True
 ) -> AsyncGenerator[StreamingUpdate, None]:
     """
-    Run a triage assessment with streaming progress updates.
+    Run a triage assessment with streaming progress updates and Logfire/Langfuse tracing.
     
     Yields StreamingUpdate objects with progress information as the assessment proceeds.
     The final yield will be a StreamingUpdate with type="final" containing the TriageDecision.
@@ -59,23 +114,29 @@ async def run_triage_assessment_streaming(
         StreamingUpdate objects with progress information
     """
     
-    # Initialize Langfuse if enabled
+    # Create Langfuse trace
     langfuse_trace = None
-    if langfuse_enabled and Langfuse:
+    actual_trace_id = trace_id
+    
+    if USE_LANGFUSE and langfuse_enabled and langfuse_client:
         try:
-            langfuse = Langfuse()
-            langfuse_trace = langfuse.trace(
-                name="triage_assessment_streaming",
-                id=trace_id,
+            langfuse_trace = langfuse_client.start_span(
+                name="emergency-triage-assessment",
+                input={
+                    "patient_data": patient_data,
+                    "session_id": session_id
+                },
                 metadata={
-                    "session_id": session_id,
-                    "chief_complaint": patient_data.get("chief_complaint"),
-                    "age": patient_data.get("age"),
-                    "streaming": True
+                    "service": "emergency-triage-orchestrator",
+                    "session_id": session_id
                 }
             )
+            actual_trace_id = langfuse_trace.trace_id
+            print(f"✅ Created Langfuse trace: {actual_trace_id}")
+            print(f"🔗 View at: {langfuse_host}/trace/{actual_trace_id}")
         except Exception as e:
-            print(f"Failed to initialize Langfuse: {e}")
+            print(f"❌ Error creating Langfuse trace: {e}")
+            langfuse_trace = None
     
     try:
         # Create the orchestrator
@@ -89,7 +150,8 @@ async def run_triage_assessment_streaming(
             yield StreamingUpdate(
                 type="progress",
                 message="Development mode - returning mock assessment",
-                progress=0
+                progress=0,
+                trace_id=actual_trace_id
             )
             
             yield StreamingUpdate(
@@ -105,11 +167,13 @@ async def run_triage_assessment_streaming(
                     "clinical_summary": "Mock triage assessment in development mode",
                     "confidence": 0.0
                 },
-                progress=100
+                progress=100,
+                trace_id=actual_trace_id
             )
             return
         
         # Run the orchestrator with streaming
+        # Logfire will automatically trace this if configured
         result = Runner.run_streamed(
             orchestrator,
             input=patient_info,
@@ -122,17 +186,14 @@ async def run_triage_assessment_streaming(
         total_tools = 3  # We have 3 specialist agents
         
         # Initial update
-        try:
-            initial_update = StreamingUpdate(
-                type="progress",
-                agent=current_agent,
-                message="Starting triage assessment",
-                progress=0
-            )
-            yield initial_update
-        except Exception as e:
-            print(f"ERROR creating initial StreamingUpdate: {e}")
-            raise
+        initial_update = StreamingUpdate(
+            type="progress",
+            agent=current_agent,
+            message="Starting triage assessment",
+            progress=0,
+            trace_id=actual_trace_id
+        )
+        yield initial_update
         
         # Stream events
         async for event in result.stream_events():
@@ -147,7 +208,8 @@ async def run_triage_assessment_streaming(
                         type="agent_change",
                         agent=current_agent,
                         message=f"Processing with {current_agent}",
-                        progress=progress
+                        progress=progress,
+                        trace_id=actual_trace_id
                     )
                     yield update
                 except Exception as e:
@@ -187,7 +249,8 @@ async def run_triage_assessment_streaming(
                         agent=current_agent,
                         tool=friendly_tool,
                         message=f"Analyzing with {friendly_tool}",
-                        progress=progress
+                        progress=progress,
+                        trace_id=actual_trace_id
                     )
                 
                 elif event.item.type == "tool_call_output_item":
@@ -235,7 +298,8 @@ async def run_triage_assessment_streaming(
                             agent=current_agent,
                             message=f"Completed analysis",
                             data={"summary": summary} if summary else None,
-                            progress=progress
+                            progress=progress,
+                            trace_id=actual_trace_id
                         )
                     except Exception as e:
                         pass
@@ -263,7 +327,8 @@ async def run_triage_assessment_streaming(
                             agent=current_agent,
                             message="Synthesizing assessment results",
                             data={"preview": preview} if preview else None,
-                            progress=95
+                            progress=95,
+                            trace_id=actual_trace_id
                         )
                     except Exception as e:
                         pass
@@ -277,16 +342,19 @@ async def run_triage_assessment_streaming(
         # Get the final result
         final_result = result.final_output
         
-        # Update Langfuse trace with results if available
+        # Complete the Langfuse trace with the result
         if langfuse_trace:
-            langfuse_trace.update(
-                output=final_result.model_dump() if hasattr(final_result, 'model_dump') else str(final_result),
-                metadata={
-                    "ctas_level": getattr(final_result, 'final_ctas_level', None),
-                    "confidence": getattr(final_result, 'confidence', None),
-                    "red_flags_count": len(getattr(final_result, 'red_flags_identified', [])),
-                }
-            )
+            try:
+                if isinstance(final_result, TriageDecision):
+                    langfuse_trace.update(
+                        output=final_result.model_dump(),
+                        metadata={"assessment_completed": True}
+                    )
+                langfuse_trace.end()
+                langfuse_client.flush()
+                print(f"✅ Completed Langfuse trace: {actual_trace_id}")
+            except Exception as e:
+                print(f"❌ Error completing Langfuse trace: {e}")
         
         # Yield the final result
         if isinstance(final_result, TriageDecision):
@@ -294,7 +362,8 @@ async def run_triage_assessment_streaming(
                 type="final",
                 message="Assessment complete",
                 data=final_result.model_dump(),
-                progress=100
+                progress=100,
+                trace_id=actual_trace_id
             )
         else:
             # Fallback if output isn't properly structured
@@ -312,7 +381,8 @@ async def run_triage_assessment_streaming(
                     "clinical_summary": "Assessment incomplete - defaulting to high acuity for safety",
                     "confidence": 0.0
                 },
-                progress=100
+                progress=100,
+                trace_id=actual_trace_id
             )
         
     except Exception as e:
@@ -322,13 +392,6 @@ async def run_triage_assessment_streaming(
         # Log detailed error
         print(f"ERROR in run_triage_assessment_streaming: {str(e)}")
         print(f"Full traceback:\n{error_details}")
-        
-        # Log error to Langfuse if available
-        if langfuse_trace:
-            langfuse_trace.update(
-                level="ERROR",
-                status_message=f"{str(e)}\n{error_details}"
-            )
         
         # Yield error as final update
         yield StreamingUpdate(
@@ -345,14 +408,6 @@ async def run_triage_assessment_streaming(
                 "clinical_summary": f"System error during assessment - defaulting to highest acuity",
                 "confidence": 0.0
             },
-            progress=100
+            progress=100,
+            trace_id=actual_trace_id
         )
-    
-    finally:
-        # Ensure Langfuse flushes
-        if langfuse_enabled and Langfuse:
-            try:
-                langfuse = Langfuse()
-                langfuse.flush()
-            except:
-                pass
