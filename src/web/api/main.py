@@ -13,9 +13,17 @@ import logging
 
 # Load environment variables FIRST, before any other imports
 from dotenv import load_dotenv
-project_root = Path(__file__).parent.parent.parent
+# Go up to the actual project root (health_assistant_triage)
+project_root = Path(__file__).parent.parent.parent.parent
 env_path = project_root / ".env"
 load_dotenv(env_path)
+
+# Debug: Print environment variables
+import os
+print(f"Loading .env from: {env_path}")
+print(f"LANGFUSE_PUBLIC_KEY: {os.getenv('LANGFUSE_PUBLIC_KEY', 'NOT SET')[:20]}..." if os.getenv('LANGFUSE_PUBLIC_KEY') else "LANGFUSE_PUBLIC_KEY: NOT SET")
+print(f"LANGFUSE_SECRET_KEY: {'SET' if os.getenv('LANGFUSE_SECRET_KEY') else 'NOT SET'}")
+print(f"LANGFUSE_HOST: {os.getenv('LANGFUSE_HOST', 'NOT SET')}")
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

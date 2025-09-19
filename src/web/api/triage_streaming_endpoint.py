@@ -89,7 +89,7 @@ async def process_triage_stream(request: StreamingTriageRequest):
             patient_data=patient_data,
             session_id=request.session_id or assessment_id,
             trace_id=assessment_id,
-            langfuse_enabled=False  # Disable Langfuse for now
+            langfuse_enabled=True  # Enable Langfuse tracing
         ):
             # Format as Server-Sent Event
             event_data = {
@@ -98,7 +98,8 @@ async def process_triage_stream(request: StreamingTriageRequest):
                 "tool": update.tool,
                 "message": update.message,
                 "progress": update.progress,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
+                "trace_id": update.trace_id
             }
             
             # Include data field for all updates that have it (not just final)

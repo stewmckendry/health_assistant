@@ -22,12 +22,14 @@ interface FeedbackButtonsProps {
   traceId: string;
   sessionId: string;
   onFeedback: (feedback: any) => void;
+  context?: 'chat' | 'triage';
 }
 
 export function FeedbackButtons({
   traceId,
   sessionId,
   onFeedback,
+  context = 'chat',
 }: FeedbackButtonsProps) {
   const [rating, setRating] = useState<number | null>(null);
   const [hoveredRating, setHoveredRating] = useState<number | null>(null);
@@ -115,7 +117,9 @@ export function FeedbackButtons({
   return (
     <>
       <div className="flex items-center gap-2 mt-2">
-        <span className="text-xs text-muted-foreground">Rate this response:</span>
+        <span className="text-xs text-muted-foreground">
+          Rate this {context === 'triage' ? 'assessment' : 'response'}:
+        </span>
         <div className="flex gap-0.5">
           {[1, 2, 3, 4, 5].map((value) => (
             <Button
@@ -146,13 +150,17 @@ export function FeedbackButtons({
           <DialogHeader>
             <DialogTitle>Thank you for your feedback!</DialogTitle>
             <DialogDescription>
-              You rated this response {tempRating} out of 5 stars. 
-              Would you like to add any additional comments?
+              You rated this {context === 'triage' ? 'assessment' : 'response'} {tempRating} out of 5 stars. 
+              Would you like to add any additional comments{context === 'triage' ? ' about the triage assessment' : ''}?
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <Textarea
-              placeholder="Share any specific feedback about this response... (optional)"
+              placeholder={
+                context === 'triage' 
+                  ? "Share feedback about the accuracy, usefulness, or any concerns... (optional)"
+                  : "Share any specific feedback about this response... (optional)"
+              }
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               className="min-h-[100px]"
