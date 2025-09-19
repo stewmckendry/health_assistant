@@ -446,6 +446,114 @@ except Exception as e:
 - **Token Management**: Structured outputs to minimize tokens
 - **Rate Limiting**: Built-in handling for API limits
 
+## Observability and Tracing
+
+The base agents system integrates with Langfuse for comprehensive observability of all agent interactions, decisions, and tool usage. This enables monitoring of clinical decision quality, performance optimization, and debugging of agent orchestration.
+
+### Tracing Architecture
+
+#### Direct Langfuse SDK Integration
+The clinical agents use direct Langfuse SDK integration for simplicity and compatibility with OpenAI Agents SDK:
+
+```python
+# src/agents/clinical/orchestrator_streaming.py
+from langfuse import Langfuse
+
+langfuse_client = Langfuse(
+    public_key=os.getenv('LANGFUSE_PUBLIC_KEY'),
+    secret_key=os.getenv('LANGFUSE_SECRET_KEY'),
+    host=os.getenv('LANGFUSE_HOST')
+)
+```
+
+#### Trace Hierarchy for Agent Orchestration
+```
+Trace (Triage Assessment)
+├── Span (Orchestrator)
+│   ├── Event (Agent: Red Flag Detector)
+│   │   └── Tool Call (analyze_symptoms)
+│   ├── Event (Agent: Triage Assessor)
+│   │   └── Tool Call (calculate_ctas_level)
+│   └── Event (Agent: Workup Suggester)
+│       └── Tool Call (recommend_tests)
+└── Metadata (Decision Summary)
+```
+
+### Agent-Specific Tracing
+
+Each specialist agent contributes traced metadata to the overall assessment:
+
+| Agent | Traced Elements | Key Metrics |
+|-------|-----------------|-------------|
+| **Orchestrator** | Coordination logic, decision synthesis | Total time, agents consulted |
+| **Red Flag Detector** | Critical symptoms, time-sensitive conditions | Red flags found, urgency level |
+| **Triage Assessor** | CTAS level calculation, acuity factors | CTAS score, confidence level |
+| **Workup Suggester** | Test recommendations, resource usage | Tests suggested, resource availability |
+
+### Streaming Traces
+
+The streaming orchestrator provides real-time trace updates:
+
+```python
+# Track agent state changes during streaming
+async for event in runner_stream:
+    if isinstance(event, AgentUpdatedStreamEvent):
+        yield StreamingUpdate(
+            type="agent_update",
+            agent=event.agent_name,
+            message=f"Agent {event.agent_name} processing",
+            trace_id=langfuse_trace.trace_id
+        )
+```
+
+### Trace Metadata
+
+Rich metadata enables detailed analysis:
+
+```python
+trace_metadata = {
+    # Agent Orchestration
+    "agents_consulted": ["red_flag_detector", "triage_assessor", "workup_suggester"],
+    "orchestration_time": 3.2,
+    
+    # Clinical Decision
+    "ctas_level": 3,
+    "red_flags_detected": 1,
+    "workup_items": 4,
+    "confidence_score": 0.85,
+    
+    # Context
+    "hospital_name": "General Hospital",
+    "available_resources": ["CT", "X-ray", "Lab"],
+    "session_id": "abc123"
+}
+```
+
+### Performance Monitoring
+
+Key performance indicators tracked:
+
+- **Latency**: Time per agent, total orchestration time
+- **Accuracy**: Confidence scores, consensus levels
+- **Resource Usage**: Token consumption, API calls
+- **Clinical Quality**: Red flag detection rate, appropriate triage levels
+
+### Debugging Agent Interactions
+
+Common trace patterns for investigation:
+
+1. **Agent Timeout**
+   - Filter: `metadata.agent_timeout = true`
+   - Review: Which agent, frequency, correlation with complexity
+
+2. **Low Confidence Decisions**
+   - Filter: `metadata.confidence_score < 0.7`
+   - Review: Agent disagreement patterns, ambiguous cases
+
+3. **Resource Constraints**
+   - Filter: `metadata.resource_limited = true`
+   - Review: Impact on recommendations, alternative pathways
+
 ## Future Architecture Enhancements
 
 ### Planned Extensions

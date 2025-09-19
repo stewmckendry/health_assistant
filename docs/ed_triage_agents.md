@@ -513,6 +513,116 @@ if langfuse_trace:
 - Real-time bed management
 - Automated reassessment scheduling
 
+## Observability and Tracing
+
+The ED triage agents leverage Langfuse for comprehensive monitoring and quality assurance of all triage assessments.
+
+### Tracing Implementation
+
+#### Real-Time Streaming with Trace IDs
+The streaming orchestrator provides trace IDs for feedback correlation:
+
+```python
+# src/agents/clinical/orchestrator_streaming.py
+async def run_triage_assessment_streaming(...):
+    # Create Langfuse trace
+    langfuse_trace = langfuse_client.start_span(
+        name="emergency-triage-assessment",
+        input={"patient_data": patient_data},
+        metadata={
+            "service": "ed-triage",
+            "session_id": session_id
+        }
+    )
+    
+    # Stream updates with trace ID
+    yield StreamingUpdate(
+        type="progress",
+        message="Triage assessment in progress",
+        trace_id=langfuse_trace.trace_id
+    )
+```
+
+#### User Feedback Integration
+Feedback is captured and linked to specific assessments:
+
+```typescript
+// web/app/triage/page.tsx
+const handleFeedback = async (feedback) => {
+    await fetch('/api/feedback', {
+        method: 'POST',
+        body: JSON.stringify({
+            traceId: traceId,  // From streaming updates
+            sessionId: sessionId,
+            rating: rating,
+            comment: comment
+        })
+    });
+};
+```
+
+### Clinical Quality Metrics
+
+Langfuse tracks critical triage quality indicators:
+
+```python
+quality_metrics = {
+    # Triage Accuracy
+    "ctas_level_assigned": 3,
+    "nurse_agreement_rate": 0.85,
+    "physician_override_rate": 0.12,
+    
+    # Safety Metrics
+    "red_flags_detected": ["chest_pain", "respiratory_distress"],
+    "critical_miss_rate": 0.02,
+    "escalation_accuracy": 0.94,
+    
+    # Efficiency
+    "assessment_time": 4.2,  # seconds
+    "questions_asked": 8,
+    "confidence_score": 0.88
+}
+```
+
+### Dashboard Views for ED Operations
+
+#### Triage Performance Dashboard
+- **Metrics**: CTAS distribution, average assessment time
+- **Filters**: By shift, triage nurse, time of day
+- **Alerts**: High acuity surges, unusual patterns
+
+#### Safety Monitoring
+- **Red Flag Detection**: Success rate, false positives
+- **Critical Conditions**: Response time for ESI 1-2
+- **Feedback Analysis**: Low-rated assessments review
+
+#### Operational Insights
+- **Volume Tracking**: Assessments per hour/day
+- **Resource Impact**: Correlation with ED wait times
+- **Staff Adoption**: Usage rates by department
+
+### Debugging Triage Decisions
+
+Common investigation patterns:
+
+1. **Undertriage Cases**
+   ```
+   Filter: user_rating < 3 AND metadata.ctas_level > 3
+   Review: Symptom assessment, red flag detection
+   ```
+
+2. **Overtriage Cases**
+   ```
+   Filter: metadata.physician_override = "lower_acuity"
+   Review: Conservative decision patterns
+   ```
+
+3. **Long Assessment Times**
+   ```
+   Filter: metadata.assessment_time > 10
+   Review: Complex presentations, system delays
+   ```
+
 ## Performance Metrics
 
 ### Current Performance
