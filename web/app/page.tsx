@@ -53,6 +53,9 @@ export default function Home() {
                   : 'Clinical decision support for healthcare providers'
                 }
               </p>
+              <p className="text-xs text-muted-foreground italic">
+                Prerelease for interested parties v0.7 - Not ready for production
+              </p>
             </div>
             <div className="flex items-center gap-4">
               {/* Chat Controls Group */}
@@ -98,9 +101,10 @@ export default function Home() {
                   <DropdownMenuContent align="end" className="w-56">
                     <DropdownMenuLabel>Diagnostic AI Agents</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => router.push('/triage')}>
+                    <DropdownMenuItem disabled>
                       <Activity className="h-4 w-4 mr-2" />
                       ED Triage Assessment
+                      <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
                     </DropdownMenuItem>
                     <DropdownMenuItem disabled>
                       <Search className="h-4 w-4 mr-2" />
