@@ -1,45 +1,41 @@
-# Dr. OFF: Ontario Finance & Formulary AI Agent
+# Dr. OFF (Ontario Funding Finder) - Clinical Decision Support Agent
 
-## Mission
+## 🎯 What is Dr. OFF?
 
-Dr. OFF is an AI agent designed to answer Ontario clinicians' questions about healthcare coverage and formulary information. It provides structured, evidence-based answers about drug coverage, billing codes, and assistive device funding from authoritative Ontario government sources.
+Dr. OFF is an AI-powered clinical decision support agent designed to help Ontario physicians and healthcare administrators quickly navigate complex funding and billing rules. It provides instant, accurate answers with citations from official government sources.
 
-**Key Value Proposition**: Dr. OFF bridges the gap between complex government documents and real-time clinical decision-making by providing instant, accurate, and cited answers to coverage questions.
+**Key Value Proposition**: Transforms hours of manual document searching into seconds of AI-assisted precision, enabling clinicians to focus on patient care rather than administrative complexity.
 
-## Questions Dr. OFF Can Answer
+## 👥 Target Users & Clinical Scenarios
 
-### ODB (Ontario Drug Benefit) Queries
-- "Is [drug name] covered by ODB?"
-- "What are the interchangeable options for [drug]?"
-- "What's the lowest-cost product in this group?"
-- "What's the patient co-pay for [drug]?"
-- "Are there any special authorization requirements?"
+### Primary Users
+- **Physicians**: Quick billing guidance during/after patient encounters
+- **Medical Administrators**: Coverage verification before prescribing/ordering
+- **Hospital Discharge Planners**: Device funding for patient transitions
+- **Clinic Staff**: Pre-authorization and eligibility checking
 
-### OHIP (Ontario Health Insurance Plan) Queries
-- "Can I bill OHIP for [procedure/service]?"
-- "What fee code applies for [procedure]?"
-- "What's the billing amount for code [X]?"
-- "What are the requirements for billing [service]?"
+### Real-World Questions Dr. OFF Answers
 
-### ADP (Assistive Devices Program) Queries
-- "Is [device] funded by ADP?"
-- "What percentage does ADP cover for [mobility device]?"
-- "What forms are required for [device category]?"
-- "What are the eligibility criteria for [device]?"
+#### Complex Discharge Scenarios
+- "My 75yo patient is being discharged after 3 days. Can I bill C124 as MRP? Also needs a walker - what's covered?"
+- "Patient admitted Monday 2pm, discharged Thursday 10am - which discharge codes apply?"
 
-## Use Cases
+#### Drug Coverage & Alternatives
+- "Is Januvia covered for my T2DM patient? Any cheaper alternatives?"
+- "Ozempic for obesity vs diabetes - different coverage?"
+- "What's the cheapest statin that's covered without LU?"
 
-### For Clinicians (Direct Use)
-- **Prescribing Decisions**: Check drug coverage before prescribing
-- **Billing Support**: Verify OHIP codes and requirements
-- **Patient Advocacy**: Understand ADP funding options for patients
+#### Device Funding & Eligibility
+- "Patient with MS needs power wheelchair. Income $19,000 - CEP eligible?"
+- "3-year-old scooter needs batteries and motor repair - what's covered?"
+- "AAC device for ALS patient - funding percentage and forms?"
 
-### For Patients (Indirect Use)
-- **Coverage Verification**: Clinicians can quickly verify coverage for patients
-- **Cost Planning**: Understanding co-pays and funding percentages
-- **Alternative Options**: Finding interchangeable, lower-cost medications
+#### OHIP Billing Complexities
+- "Can I bill consultation in ER as internist?"
+- "House call for elderly patient - what premiums apply?"
+- "Virtual care follow-up - which codes are valid?"
 
-## Scope: Data Sources Coverage
+## 📚 Trusted Data Sources (Ground Truth Only)
 
 ### ODB (Ontario Drug Benefit)
 - **Coverage**: 8,401+ drugs across therapeutic classes
@@ -60,29 +56,50 @@ Dr. OFF is an AI agent designed to answer Ontario clinicians' questions about he
 - **Exclusions**: 27+ documented exclusions and limitations
 - **Data Sources**: ADP manuals for Communication Aids and Mobility Devices
 
+## 🛡️ Key Principles & Guardrails
+
+1. **Accuracy Over Speed**: Better to say "needs more info" than guess
+2. **Always Cite Sources**: Every answer includes page/section references
+3. **Dual Verification**: SQL for structured data + Vector for context (always both)
+4. **Surface Conflicts**: If SQL and documents disagree, show both
+5. **No Medical Advice**: Only billing/funding guidance, not clinical decisions
+
+## ⚠️ What Dr. OFF Does NOT Do
+
+- Provide clinical treatment recommendations
+- Make diagnosis suggestions
+- Recommend off-label drug use
+- Access patient records or PHI
+- Make coverage determinations (only provides information)
+
 ## Architecture Overview
 
-Dr. OFF follows a hybrid architecture combining structured data storage with semantic search:
+Dr. OFF uses a **dual-path retrieval** architecture that always combines structured and semantic data:
 
 ```mermaid
 graph TD
-    A[User Query] --> B[Query Router]
-    B --> C[MCP Tools Layer]
-    C --> D[SQL Database]
-    C --> E[Vector Store]
-    D --> F[Structured Data]
-    E --> G[Document Chunks]
-    F --> H[Response Formatter]
-    G --> H
-    H --> I[Answer Card with Citations]
+    A[Clinician Query] --> B[coverage.answer Orchestrator]
+    B --> C[Intent Classification]
+    C --> D[Parallel Retrieval]
+    D --> E[SQL Query<br/>300-500ms timeout]
+    D --> F[Vector Search<br/>≤1s timeout]
+    E --> G[Structured Data<br/>fees, DINs, percentages]
+    F --> H[Context & Citations<br/>eligibility, documentation]
+    G --> I[Result Merger]
+    H --> I
+    I --> J[Confidence Scoring]
+    J --> K[Answer with Provenance]
 ```
 
-### Key Components
+### MCP Tool Architecture (5 Tools Only)
 
-1. **SQL Database**: Fast lookups for structured data (drug prices, fee codes)
-2. **Vector Store**: Semantic search for policy context and citations
-3. **MCP Tools**: Standardized functions for different query types
-4. **Answer Cards**: Structured responses with decisions, data, and citations
+| Tool | Purpose | Always Returns |
+|------|---------|----------------|
+| `coverage.answer` | Main orchestrator - routes 80% of queries | decision, summary, citations, confidence |
+| `schedule.get` | OHIP billing dual-path | provenance, items[], citations[] |
+| `adp.get` | Device funding dual-path | eligibility, exclusions, funding, citations |
+| `odb.get` | Drug formulary dual-path | coverage, interchangeable, lowest_cost |
+| `source.passages` | Direct chunk retrieval | exact text for "show source" |
 
 ## Implementation Status
 
