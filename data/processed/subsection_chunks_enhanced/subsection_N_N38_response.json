@@ -1,0 +1,503 @@
+{
+  "subsection_title": "Pelvis and Hip",
+  "parent_section": "N",
+  "page_ref": "N38",
+  "pages_processed": "602-606",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "R631",
+      "description": "Hemipelvectomy - hindquarter",
+      "fee": 796.2,
+      "units": 10
+    },
+    {
+      "code": "R630",
+      "description": "Hip disarticulation",
+      "fee": 514.8,
+      "units": 10
+    },
+    {
+      "code": "R469",
+      "description": "Sacro-iliac joint",
+      "fee": 395.25,
+      "units": 6
+    },
+    {
+      "code": "R514",
+      "description": "Symphysis pubis",
+      "fee": 387.0,
+      "units": 6
+    },
+    {
+      "code": "R470",
+      "description": "Hip",
+      "fee": 703.45,
+      "units": 6
+    },
+    {
+      "code": "R439",
+      "description": "Unipolar",
+      "fee": 490.95,
+      "units": 6
+    },
+    {
+      "code": "R440",
+      "description": "Total hip replacement - acetabulum and femur",
+      "fee": 708.7,
+      "units": 8
+    },
+    {
+      "code": "R553",
+      "description": "Total hip replacement with take down of fusion",
+      "fee": 972.9,
+      "units": 8
+    },
+    {
+      "code": "R241",
+      "description": "Revision total arthroplasty hip - one or both components - acetabular or femoral",
+      "fee": 1304.8,
+      "units": 9
+    },
+    {
+      "code": "E589",
+      "description": "bone graft to acetabulum",
+      "fee": 101.25,
+      "conditions": "add"
+    },
+    {
+      "code": "E593",
+      "description": "acetabular reconstruction (extensive, including bone grafts)",
+      "fee": 194.0,
+      "conditions": "add"
+    },
+    {
+      "code": "R481",
+      "description": "Reattachment of greater trochanter (late)",
+      "fee": 290.55,
+      "units": 6
+    },
+    {
+      "code": "R443",
+      "description": "non-cemented",
+      "fee": 447.3,
+      "units": 6
+    },
+    {
+      "code": "R488",
+      "description": "cemented",
+      "fee": 557.75,
+      "units": 6
+    },
+    {
+      "code": "R491",
+      "description": "Replacement acetabular liner and/or femoral head",
+      "fee": 353.25,
+      "units": 8
+    },
+    {
+      "code": "R686",
+      "description": "Hip arthroscopy set up, includes when rendered debridement, synovectomy, removal of loose body(ies) and/or screw, drilling of defect, microfracture, abrasion arthroplasty, and/or synovial biopsy",
+      "fee": 669.8,
+      "units": 6
+    },
+    {
+      "code": "E487",
+      "description": "Resection of labrum, to R686",
+      "fee": 240.0,
+      "conditions": "add"
+    },
+    {
+      "code": "E488",
+      "description": "Repair of labrum, to R686",
+      "fee": 350.0,
+      "conditions": "add"
+    },
+    {
+      "code": "E482",
+      "description": "Soft tissue capsular release without bone procedure, to R686",
+      "fee": 251.55,
+      "conditions": "add"
+    },
+    {
+      "code": "E490",
+      "description": "Osteochondroplasty (extensive bone and arthrofibrotic tissue removal requiring a minimum of 2 hours to resect), to R686",
+      "fee": 500.0,
+      "conditions": "add"
+    },
+    {
+      "code": "R547",
+      "description": "Sacro-iliac joint",
+      "fee": 290.55,
+      "units": 6
+    },
+    {
+      "code": "R415",
+      "description": "Hip - with removal of loose body",
+      "fee": 301.6,
+      "units": 6
+    },
+    {
+      "code": "Z290",
+      "description": "Hip - infant or child, under general anaesthesia",
+      "fee": 63.95,
+      "units": 6
+    },
+    {
+      "code": "Z212",
+      "description": "punch needle",
+      "fee": 89.7
+    },
+    {
+      "code": "Z217",
+      "description": "under general anaesthetic",
+      "fee": 72.35,
+      "units": 7
+    },
+    {
+      "code": "Z214",
+      "description": "open",
+      "fee": 144.8,
+      "units": 6
+    },
+    {
+      "code": "Z228",
+      "description": "open",
+      "fee": 97.35,
+      "units": 6
+    },
+    {
+      "code": "Z219",
+      "description": "Muscle needle biopsy, soft tissue, per site",
+      "fee": 31.2
+    },
+    {
+      "code": "N188",
+      "description": "minor nerve - including digital, cutaneous or lateral femoral cutaneous nerve",
+      "fee": 153.7,
+      "units": 6
+    },
+    {
+      "code": "N285",
+      "description": "major nerve - excluding carpal tunnel or ulnar nerve at elbow",
+      "fee": 256.15,
+      "units": 7
+    },
+    {
+      "code": "N177",
+      "description": "Sciatic nerve in buttock",
+      "fee": 430.75,
+      "units": 7
+    },
+    {
+      "code": "R427",
+      "description": "Denervation of hip",
+      "fee": 387.0,
+      "units": 6
+    },
+    {
+      "code": "R269",
+      "description": "Bone",
+      "fee": 290.55,
+      "units": 6
+    },
+    {
+      "code": "Z226",
+      "description": "Bursae/soft tissue",
+      "fee": 97.35,
+      "units": 7
+    },
+    {
+      "code": "R249",
+      "description": "Sequestrectomy",
+      "fee": 379.5,
+      "units": 7
+    },
+    {
+      "code": "R250",
+      "description": "Saucerization and bone graft",
+      "fee": 627.3,
+      "units": 6
+    },
+    {
+      "code": "Z252",
+      "description": "Manipulation - under general anaesthetic",
+      "fee": 39.0,
+      "units": 6
+    },
+    {
+      "code": "R639",
+      "description": "Simple cyst, etc",
+      "fee": 338.75,
+      "units": 6
+    },
+    {
+      "code": "R330",
+      "description": "Major resection tumour",
+      "fee": 629.65,
+      "units": 6
+    },
+    {
+      "code": "R216",
+      "description": "Radical resection tumour",
+      "fee": 1007.35,
+      "units": 8
+    },
+    {
+      "code": "F115",
+      "description": "Coccyx",
+      "fee": 208.8,
+      "units": 6
+    },
+    {
+      "code": "R315",
+      "description": "Head and neck, femur",
+      "fee": 452.9,
+      "units": 6
+    },
+    {
+      "code": "R522",
+      "description": "simple",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R523",
+      "description": "complex",
+      "fee": 484.35,
+      "units": 7
+    },
+    {
+      "code": "R524",
+      "description": "myositis",
+      "fee": 289.5,
+      "units": 7
+    },
+    {
+      "code": "R423",
+      "description": "Synovectomy/debridement",
+      "fee": 470.5,
+      "units": 7
+    },
+    {
+      "code": "R590",
+      "description": "GT trochanteric/ischial",
+      "fee": 201.4,
+      "units": 7
+    },
+    {
+      "code": "R364",
+      "description": "Pelvis",
+      "fee": 580.9,
+      "units": 8
+    },
+    {
+      "code": "R328",
+      "description": "Hip",
+      "fee": 872.65,
+      "units": 6
+    },
+    {
+      "code": "R265",
+      "description": "infant",
+      "fee": 399.0,
+      "units": 8
+    },
+    {
+      "code": "R273",
+      "description": "other",
+      "fee": 623.35,
+      "units": 8
+    },
+    {
+      "code": "R263",
+      "description": "Hip",
+      "fee": 578.55,
+      "units": 7
+    },
+    {
+      "code": "R521",
+      "description": "Muscle release",
+      "fee": 314.6,
+      "units": 7
+    },
+    {
+      "code": "Z232",
+      "description": "closed adductors",
+      "fee": 49.2,
+      "units": 6
+    },
+    {
+      "code": "Z233",
+      "description": "open adductors",
+      "fee": 97.35,
+      "units": 7
+    },
+    {
+      "code": "R545",
+      "description": "iliopsoas",
+      "fee": 266.35,
+      "units": 6
+    },
+    {
+      "code": "R570",
+      "description": "Iliopsoas",
+      "fee": 520.6,
+      "units": 7
+    },
+    {
+      "code": "R569",
+      "description": "Abductor",
+      "fee": 339.65,
+      "units": 6
+    },
+    {
+      "code": "F134",
+      "description": "closed reduction",
+      "fee": 442.45,
+      "units": 6
+    },
+    {
+      "code": "F135",
+      "description": "open reduction",
+      "fee": 680.3,
+      "units": 8
+    },
+    {
+      "code": "F098",
+      "description": "closed reduction/traction",
+      "fee": 426.9,
+      "units": 6
+    },
+    {
+      "code": "F099",
+      "description": "open reduction - pin only",
+      "fee": 408.3,
+      "units": 8
+    },
+    {
+      "code": "F100",
+      "description": "open reduction - pin and plate/screws (cannulated included)",
+      "fee": 659.45,
+      "units": 10
+    },
+    {
+      "code": "F101",
+      "description": "open reduction - primary prosthesis, femur only (includes Moore, Thompson, Unipolar, Bipolar)",
+      "fee": 669.6,
+      "units": 10
+    },
+    {
+      "code": "R600",
+      "description": "delayed/staged graft",
+      "fee": 289.5,
+      "units": 8
+    },
+    {
+      "code": "R607",
+      "description": "closed reduction/traction",
+      "fee": 387.0,
+      "units": 8
+    },
+    {
+      "code": "R642",
+      "description": "closed reduction/internal fixation",
+      "fee": 387.0,
+      "units": 8
+    },
+    {
+      "code": "R627",
+      "description": "open reduction/fixation",
+      "fee": 580.9,
+      "units": 8
+    },
+    {
+      "code": "D052",
+      "description": "open reduction - lips",
+      "fee": 612.45,
+      "units": 7
+    },
+    {
+      "code": "D046",
+      "description": "open reduction - one pillar",
+      "fee": 967.9,
+      "units": 6
+    },
+    {
+      "code": "D047",
+      "description": "open reduction - two pillars",
+      "fee": 1451.45,
+      "units": 8
+    },
+    {
+      "code": "D042",
+      "description": "closed reduction",
+      "fee": 268.25,
+      "units": 6
+    },
+    {
+      "code": "D043",
+      "description": "open reduction",
+      "fee": 406.45,
+      "units": 7
+    },
+    {
+      "code": "R628",
+      "description": "late, after four weeks - open",
+      "fee": 774.9,
+      "units": 10
+    },
+    {
+      "code": "D059",
+      "description": "closed, traction, spica, etc.",
+      "fee": 428.5,
+      "units": 6
+    },
+    {
+      "code": "D060",
+      "description": "open reduction",
+      "fee": 593.0,
+      "units": 6
+    },
+    {
+      "code": "D061",
+      "description": "open, removal of coccyx",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R404",
+      "description": "closed reduction (includes tenotomy and cast)",
+      "fee": 190.2,
+      "units": 7
+    },
+    {
+      "code": "R405",
+      "description": "repeat (includes cast)",
+      "fee": 131.8,
+      "units": 6
+    },
+    {
+      "code": "R406",
+      "description": "open reduction (includes tenotomy and arthrotomy)",
+      "fee": 472.35,
+      "units": 7
+    },
+    {
+      "code": "Z291",
+      "description": "Application Pavlik Harness or C.D.H. Splint",
+      "fee": 24.1
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

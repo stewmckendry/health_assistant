@@ -1,0 +1,158 @@
+{
+  "subsection_title": "Critical Care Medicine (11)",
+  "parent_section": "A",
+  "page_ref": "A85",
+  "pages_processed": "213-214",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A715",
+      "description": "Consultation",
+      "fee": 175.55,
+      "units": "minimum of seventy-five (75) minutes of direct contact"
+    },
+    {
+      "code": "A710",
+      "description": "Comprehensive critical care medicine consultation",
+      "fee": 310.45,
+      "conditions": "The start and stop times must be recorded in the patient\u2019s permanent medical record."
+    },
+    {
+      "code": "A915",
+      "description": "Limited consultation",
+      "fee": 108.95
+    },
+    {
+      "code": "A116",
+      "description": "Repeat consultation",
+      "fee": 108.95
+    },
+    {
+      "code": "A713",
+      "description": "Medical specific assessment",
+      "fee": 87.6
+    },
+    {
+      "code": "A114",
+      "description": "Medical specific re-assessment",
+      "fee": 65.9
+    },
+    {
+      "code": "A111",
+      "description": "Complex medical specific re-assessment",
+      "fee": 76.3
+    },
+    {
+      "code": "A118",
+      "description": "Partial assessment",
+      "fee": 39.6
+    },
+    {
+      "code": "C715",
+      "description": "Consultation",
+      "fee": 175.55
+    },
+    {
+      "code": "C710",
+      "description": "Comprehensive critical care medicine consultation - subject to the same conditions as A710",
+      "fee": 310.45
+    },
+    {
+      "code": "C915",
+      "description": "Limited consultation",
+      "fee": 108.95
+    },
+    {
+      "code": "C116",
+      "description": "Repeat consultation",
+      "fee": 108.95
+    },
+    {
+      "code": "C713",
+      "description": "Medical specific assessment",
+      "fee": 87.6
+    },
+    {
+      "code": "C114",
+      "description": "Medical specific re-assessment",
+      "fee": 65.9
+    },
+    {
+      "code": "C111",
+      "description": "Complex medical specific re-assessment",
+      "fee": 76.3
+    },
+    {
+      "code": "C112",
+      "description": "first five weeks",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C117",
+      "description": "sixth to thirteenth week inclusive (maximum 3 per patient per week)",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C119",
+      "description": "after thirteenth week (maximum 6 per patient per month)",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C122",
+      "description": "day following the hospital admission assessment",
+      "fee": 61.15
+    },
+    {
+      "code": "C123",
+      "description": "second day following the hospital assessment",
+      "fee": 61.15
+    },
+    {
+      "code": "C124",
+      "description": "day of discharge",
+      "fee": 61.15
+    },
+    {
+      "code": "C142",
+      "description": "first subsequent visit by the MRP following transfer from an Intensive Care Area",
+      "fee": 61.15
+    },
+    {
+      "code": "C143",
+      "description": "second subsequent visit by the MRP following transfer from an Intensive Care Area",
+      "fee": 61.15
+    },
+    {
+      "code": "C121",
+      "description": "Additional visits due to intercurrent illness (see General Preamble GP43)",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C118",
+      "description": "Concurrent care",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C982",
+      "description": "Palliative care (see General Preamble GP50)",
+      "fee": 34.1,
+      "units": "per visit"
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

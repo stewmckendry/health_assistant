@@ -1,0 +1,602 @@
+{
+  "subsection_title": "Preamble",
+  "parent_section": "H",
+  "page_ref": "H1",
+  "pages_processed": "395-400",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        83,
+        "75)...................................................................................... 9.85 7.85"
+      ],
+      [
+        84,
+        "J324 - repeat after bronchodilator............................................... 2.97 4.20"
+      ],
+      [
+        88,
+        "loop may include derivation of FEV 1 , VC, V 50 , V 25 ............ 19.60 11.55"
+      ],
+      [
+        89,
+        "J327 - repeat after bronchodilator............................................... 2.97 6.90"
+      ],
+      [
+        122,
+        "J311 - by gas dilution method ....................................................... 16.30 18.90"
+      ],
+      [
+        123,
+        "J307 - by body plethysmography .................................................. 17.50 19.20"
+      ],
+      [
+        127,
+        "to FRC)............................................................................... 51.95 48.15"
+      ],
+      [
+        129,
+        "oesophageal catheter......................................................... 16.20 17.25"
+      ],
+      [
+        130,
+        "J303 Extra pulmonary airways resistance by plethysmography...... 16.20 16.05"
+      ],
+      [
+        131,
+        "J340 Maximum inspiratory and expiratory pressures...................... 2.81 3.43"
+      ],
+      [
+        132,
+        "J310 Carbon monoxide diffusing capacity by single breath method 21.40 19.40"
+      ],
+      [
+        133,
+        "J308 Carbon dioxide ventilatory response ...................................... 19.90 14.60"
+      ],
+      [
+        137,
+        "each workload) ................................................................... 62.45 50.75"
+      ],
+      [
+        138,
+        "E450 - J315 plus J301 or J304 before and/or after exercise. add 13.30 8.05"
+      ],
+      [
+        141,
+        "post exercise.............................................................. add 18.10 25.05"
+      ],
+      [
+        148,
+        "recovery) ............................................................................ 90.00 65.40"
+      ],
+      [
+        152,
+        "exercise)............................................................................. 33.35 24.50"
+      ],
+      [
+        158,
+        "sampling mixed expired gas and using alveolar air equation 27.55 12.85"
+      ],
+      [
+        159,
+        "J331 Estimate of shunt (Qs/Qt) breathing pure oxygen .................. 27.55 16.05"
+      ],
+      [
+        160,
+        "J313 Mixed venous PCO 2 , by the rebreathing method ................... 11.25 4.70"
+      ],
+      [
+        169,
+        "without O 2 ........................................................................... 17.60 11.35"
+      ],
+      [
+        170,
+        "J334 - J332 with at least two levels of supplemental O 2 ............... 30.55 16.85"
+      ],
+      [
+        172,
+        "with supplemental oxygen.................................................. 30.55 16.85"
+      ],
+      [
+        187,
+        "J322 Standard O 2 consumption and CO 2 production...................... 5.30 6.45"
+      ],
+      [
+        189,
+        "methacholine, thermal challenge) ...................................... 48.25 37.35"
+      ],
+      [
+        190,
+        "J335 Antigen challenge test ............................................................ 51.85 30.95"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J301",
+      "description": "Volume versus Time Study - must include Vital capacity, FEV1, FEV1/FVC, and may include calculation of MMEFR(FEF25-75)",
+      "fee": 9.85,
+      "h_fee": 7.85,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J324",
+      "description": "repeat after bronchodilator",
+      "fee": 2.97,
+      "h_fee": 4.2,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J304",
+      "description": "Volume versus Flow Study - from which an expiratory limb, and inspiratory limb if indicated, are generated. A flow volume loop may include derivation of FEV1, VC, V50, V25",
+      "fee": 19.6,
+      "h_fee": 11.55,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J327",
+      "description": "repeat after bronchodilator",
+      "fee": 2.97,
+      "h_fee": 6.9,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J311",
+      "description": "by gas dilution method",
+      "fee": 16.3,
+      "h_fee": 18.9,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J307",
+      "description": "by body plethysmography",
+      "fee": 17.5,
+      "h_fee": 19.2,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J305",
+      "description": "Lung compliance (pressure volume curve of the lung from TLC to FRC)",
+      "fee": 51.95,
+      "h_fee": 48.15,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J306",
+      "description": "Airways resistance by plethysmography or estimated using oesophageal catheter",
+      "fee": 16.2,
+      "h_fee": 17.25,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J303",
+      "description": "Extra pulmonary airways resistance by plethysmography",
+      "fee": 16.2,
+      "h_fee": 16.05,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J340",
+      "description": "Maximum inspiratory and expiratory pressures",
+      "fee": 2.81,
+      "h_fee": 3.43,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J310",
+      "description": "Carbon monoxide diffusing capacity by single breath method",
+      "fee": 21.4,
+      "h_fee": 19.4,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J308",
+      "description": "Carbon dioxide ventilatory response",
+      "fee": 19.9,
+      "h_fee": 14.6,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J315",
+      "description": "Graded exercise to maximum tolerance (exercise must include continuous heart rate, oximetry and ventilation at rest and at each workload)",
+      "fee": 62.45,
+      "h_fee": 50.75,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E450",
+      "description": "J315 plus J301 or J304 before and/or after exercise.",
+      "fee": 13.3,
+      "h_fee": 8.05,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E451",
+      "description": "J315 plus 12 lead E.C.G. done at rest, used for monitoring during the exercise and followed for at least 5 minutes post exercise",
+      "fee": 18.1,
+      "h_fee": 25.05,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J316",
+      "description": "Repeated steady state graded exercise (must include heart rate, oximetry, ventilation, VO2, VCO2, BP, ECG, end tidal and mixed Venous CO2 at rest, 3 levels of exercise and recovery)",
+      "fee": 90.0,
+      "h_fee": 65.4,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J330",
+      "description": "Assessment of exercise induced asthma (workload sufficient to achieve heart rate 85% of predicted maximum; performance of J301 or J304 before exercise and 5-10 minutes post exercise)",
+      "fee": 33.35,
+      "h_fee": 24.5,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J319",
+      "description": "Blood gas analysis - pH, PO2, PCO2, bicarbonate and base excess",
+      "fee": 11.25,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J318",
+      "description": "Arterialized venous blood sample collection (e.g. ear lobe)",
+      "fee": 3.79,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J320",
+      "description": "A-a oxygen gradient requiring measurement of RQ by sampling mixed expired gas and using alveolar air equation",
+      "fee": 27.55,
+      "h_fee": 12.85,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J331",
+      "description": "Estimate of shunt (Qs/Qt) breathing pure oxygen",
+      "fee": 27.55,
+      "h_fee": 16.05,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J313",
+      "description": "Mixed venous PCO2, by the rebreathing method",
+      "fee": 11.25,
+      "h_fee": 4.7,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J323",
+      "description": "by oximetry at rest, with or without O2",
+      "fee": 4.2,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J332",
+      "description": "by oximetry at rest and exercise, or during sleep with or without O2",
+      "fee": 17.6,
+      "h_fee": 11.35,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J334",
+      "description": "J332 with at least two levels of supplemental O2",
+      "fee": 30.55,
+      "h_fee": 16.85,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J336",
+      "description": "with single blind assessment of exercise on room air and with supplemental oxygen",
+      "fee": 30.55,
+      "h_fee": 16.85,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J322",
+      "description": "Standard O2 consumption and CO2 production",
+      "fee": 5.3,
+      "h_fee": 6.45,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J333",
+      "description": "Non-specific bronchial provocative test (histamine, methacholine, thermal challenge)",
+      "fee": 48.25,
+      "h_fee": 37.35,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J335",
+      "description": "Antigen challenge test",
+      "fee": 51.85,
+      "h_fee": 30.95,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z459",
+      "description": "Arterial puncture for blood gas analysis",
+      "fee": 10.2,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "J301",
+      "context": "not payable with",
+      "description": "not eligible for payment same patient same day as J304 or J327",
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J324",
+      "context": "not payable with",
+      "description": "not eligible for payment same patient same day as J304 or J327",
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J304",
+      "context": "only eligible for payment for a study that meets all of the following requirements",
+      "description": "a. There is a permanent record that includes a written interpretation by the physician; b. The permanent record includes constituent graph(s), tracing(s) and measurements with a scale on the tracing or graph of: i. at least 5 mm per litre per second for flow; and ii. 10 mm per litre for volume.",
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J327",
+      "context": "only eligible for payment for a study that meets all of the following requirements",
+      "description": "a. There is a permanent record that includes a written interpretation by the physician; b. The permanent record includes constituent graph(s), tracing(s) and measurements with a scale on the tracing or graph of: i. at least 5 mm per litre per second for flow; and ii. 10 mm per litre for volume.",
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J311",
+      "context": "not to be claimed same patient same day as J307",
+      "description": null,
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J323",
+      "context": "not eligible for payment when rendered with",
+      "description": "J332, J315, J316, G315, G319, G111, G112, G570, G571, G582, G583, G574, G575 or any overnight sleep study.",
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J332",
+      "context": "not eligible for payment when rendered with",
+      "description": "J315, J316, G315, G319, G111, G112, G570, G571, G582, G583, G574, G575 or any overnight sleep study.",
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    },
+    {
+      "code": "J336",
+      "context": "only eligible for payment for evaluation of a patient to determine eligibility for funding under the Ontario Home Oxygen Program",
+      "description": null,
+      "source_subsection": "Preamble",
+      "source_page": "H1"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

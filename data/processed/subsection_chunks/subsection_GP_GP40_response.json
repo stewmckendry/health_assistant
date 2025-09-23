@@ -1,0 +1,101 @@
+{
+  "subsection_title": "Hospital and Institutional Consultations and Assessments",
+  "parent_section": "GP",
+  "page_ref": "GP40",
+  "fee_codes": [
+    {
+      "code": "E082",
+      "description": "Admission assessment by the MRP, to admission assessment",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "add 30%",
+      "conditions": "Eligible for payment once per patient per hospital admission; must not receive remuneration from a hospital for in-patient clinical services.",
+      "special_prefix": null
+    },
+    {
+      "code": "C004",
+      "description": "Admission assessment when a patient has been assessed by an emergency physician and subsequently admitted to hospital.",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Eligible for payment in addition to the initial assessment if both services are rendered separately.",
+      "special_prefix": null
+    },
+    {
+      "code": "C933",
+      "description": "Admission assessment by General and Family Practitioners.",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Not eligible for payment for an elective surgery patient when a pre-operative assessment has been rendered within 30 days.",
+      "special_prefix": null
+    },
+    {
+      "code": "C003",
+      "description": "Admission assessment by General and Family Practitioners.",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Not eligible for payment for an elective surgery patient when a pre-operative assessment has been rendered within 30 days.",
+      "special_prefix": null
+    },
+    {
+      "code": "C262",
+      "description": "Pediatric subsequent visits.",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "limited to one per patient, per day for the duration of the admission.",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C121",
+      "description": "Additional visit due to intercurrent illness.",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "no limits apply for additional visits due to intercurrent illness.",
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "rules": [
+    "Subsequent visits are limited to one per patient, per day for the first 5 weeks after admission.",
+    "3 visits per week from 6 to 13 weeks after admission.",
+    "6 visits per month after 13 weeks."
+  ],
+  "notes": [
+    "An admission assessment is the initial assessment of the patient rendered for the purpose of admitting a patient to hospital.",
+    "Payment rules apply based on previous assessments within specified time frames."
+  ],
+  "pages_processed": "54-67"
+}

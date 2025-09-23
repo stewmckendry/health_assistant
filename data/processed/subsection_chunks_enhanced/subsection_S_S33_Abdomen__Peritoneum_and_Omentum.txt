@@ -1,0 +1,197 @@
+Subsection: Abdomen, Peritoneum and Omentum
+Parent Section: S
+Page Reference: S33
+Pages: 701 to 706
+Text chunks: 1
+Total text length: 11102 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 701 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+ABDOMEN, PERITONEUM AND OMENTUM
+PREAMBLE
+1. Unless otherwise specified, when the laparoscope is used as a means of entrance to perform
+an intra-abdominal procedure, the laparoscopy is not eligible for payment.
+2. When a diagnostic laparoscopy is performed prior to laparotomy, the initial procedure should be
+claimed as E860.
+3. When an exploratory laparotomy is performed followed by a colostomy through another incision
+in the abdomen, the colostomy fee should be claimed at 100% and the laparotomy at 85% of the
+listed fee.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S33 Amd 12 Draft 1
+
+--- PAGE 702 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+ABDOMEN, PERITONEUM AND OMENTUM
+Asst Surg Anae
+PARACENTESIS
+Aspiration
+Z590 - for diagnostic sample ......................................................... 31.30
+Z591 - with therapeutic drainage with or without diagnostic sample 57.65 6
+E724 - administration of chemotherapy or sclerosing agent . add 23.25
+Z763 Paracentesis with lavage for diagnosis................................... 38.70 6
+E542 - when performed outside hospital, to Z590, Z591 or Z763
+................................................................................... add 11.55
+INCISION
+# Z563 Needle biopsy of peritoneum.................................................. 48.00
+# Z564 Open lavage of peritoneal cavity for diagnosis without manual
+exploration of peritoneal cavity........................................... 73.60 7
+# S312 Laparotomy, with or without biopsy or for Hirschsprung’s
+disease (except biopsies of stomach, liver, pancreas and
+multiple para-aortic lymph nodes) ...................................... 6 485.25 7
+Note:
+1.S312 - use for division or removal of adhesions, if no other abdominal surgery performed -
+may not be claimed with other intra-abdominal procedures (except for IOP).
+2.Omentectomy for tumour debulking - professional assessment by the Ministry of Health
+Medical Consultant is available and may be requested.
+# E745 - insertion of tubes and post-operative continuous peritoneal
+lavage when combined with any other abdominal
+procedure................................................................... add 94.85
+Laparotomy
+# S321 - for acute trauma ................................................................. 6 587.10 6
+# E733 - with repair of intestine - single ................................... add 142.40
+# E734 - multiple and/or with resection .................................... add 211.15
+# E735 - with splenectomy (partial or complete) ...................... add 4 284.75
+# E736 - with repair of lacerated liver ....................................... add 4 187.90
+# E739 - with repair of diaphragm ............................................ add 4 122.05
+# E723 - with repair of lacerated spleen ................................... add 4 284.80
+# E693 - with repair of ruptured bladder................................... add 4 -
+# E694 - with nephrectomy....................................................... add 4 -
+Amd 12 Draft 1 S34 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 703 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+ABDOMEN, PERITONEUM AND OMENTUM
+Asst Surg Anae
+INCISION
+Peritoneal abscess
+# S313 - subphrenic.......................................................................... 7 370.95 7
+# S314 - abdominal........................................................................... 6 264.45 7
+# Z569 Pelvic abscess, incision and drainage - rectal or vaginal
+approach ............................................................................ 122.05 7
+# Z594 Percutaneous abdominal abscess drainage including daily
+supervision, for one or more abscesses within the same
+abdominal quadrant or the pelvis ....................................... 331.90
+# E686 - within each other abdominal quadrant, or the pelvis (if the
+initial abscess was not in the pelvis).......................... add 144.10
+Z595 Replacement of drainage catheter in abdominal abscess...... 54.05
+# Z574 Removal of infected sutures from abdominal wall or re-
+exploration of wound for bleeding - general anaesthetic.... 6 94.85 7
+# S311 Umbilical vein intra-abdominal dissection and catheterization 6 232.50 6
+Note:
+For vascular newborn - see Diagnostic & Therapeutic Procedures - Vascular Cannulation.
+# S320 Insertion of antabuse into abdominal wall............................... 58.15
+Insertion of peritoneo-jugular shunt for ascites
+# S203 - primary ............................................................................... 7 281.85 7
+# S209 - revision............................................................................... 7 208.15 7
+# S310 Insertion of intraperitoneal chemotherapy port by laparotomy
+or laparoscopy.................................................................... 6 215.10 6
+# S315 Removal of intraperitoneal chemotherapy port by laparotomy
+or laparoscopy.................................................................... 6 215.10 6
+Payment rules:
+S310 or S315 are not eligible for payment in addition to any open or laparoscopic abdominal
+procedure.
+EXCISION
+# S316 Excision of full thickness abdominal wall tumour and primary
+closure (see General Preamble GP12) .............................. I.C 7
+# S317 Umbilectomy - plastic.............................................................. 6 111.45 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S35 Amd 12 Draft 1
+
+--- PAGE 704 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+ABDOMEN, PERITONEUM AND OMENTUM
+Asst Surg Anae
+Panniculectomy
+# S318 Panniculectomy, including any necessary diastasis repair ..... 6 500.00 6
+# E748 - with repair of umbilical hernia, to S318...................... add 122.05
+# E809 - excision of pannus that extends beyond the mid thigh, to
+S318........................................................................... add 250.00
+Note:
+1.Panniculectomy is only insured in those circumstances described in Appendix D of this
+Schedule. Prior authorization of payment from the MOH is required.
+2.S318 is not eligible for payment when performed in conjunction with abdominal or pelvic
+procedures unless the payment requirements for panniculectomy are separately fulfilled.
+[Commentary:
+1.In circumstances where the proposed panniculectomy surgery may include excision of a
+pannus that extends below the mid thigh, the requesting physician must provide sufficient
+information with the request for prior authorization of payment.
+2.Abdominoplasty is not an insured service.]
+# S319 Mesenteric cyst....................................................................... 6 335.15 6
+Amd 12 Draft 1 S36 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 705 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+ABDOMEN, PERITONEUM AND OMENTUM
+Asst Surg Anae
+ENDOSCOPY
+Peritoneoscopy, culdoscopy or laparoscopy
+# Z552 - without biopsy..................................................................... 6 149.65 6
+# Z553 - with biopsy and/or lysis of adhesions and/or removal of
+foreign body and/or cautery of endometrial implants ......... 6 196.65 6
+REPAIR
+# S325 Omentopexy - as sole operative procedure............................ 6 305.05 7
+HERNIOTOMY
+# E725 - recurrent - all types of hernia, except oesophageal... add 4 130.00
+Inguinal and/or femoral
+# S322 - infants................................................................................. 6 487.50 7
+# S326 - children............................................................................... 6 412.50 6
+# S323 - adolescents and adults....................................................... 6 357.80 7
+Unilateral with exploration of other side
+# S328 - infants and children ............................................................ 6 458.40 7
+Strangulated or incarcerated
+# S329 - without resection of bowel .................................................. 6 425.00 7
+# S330 - with resection of bowel ....................................................... 6 660.50 7
+# S345 Massive sliding inguinal hernia............................................... 6 431.35 7
+E726 - repeat recurrent inguinal hernia (more than 2 repairs), to
+S322, S323, S326, S329 or S330.............................. add 4 226.00
+Umbilical
+# S332 - adolescent or adult ............................................................. 6 300.00 6
+# S333 - child (operative).................................................................. 6 222.75 6
+# E764 - umbilical hernia repair when done in conjunction with
+other abdominal surgery, to other surgery ................. add 24.20
+# E756 - with resection of strangulated contents...................... add 24.50
+# E757 - without resection of strangulated contents................. add 55.25
+Payment rules:
+1.E764 is only eligible for payment for services related to a pre-existing umbilical hernia that is
+documented in the patient’s permanent medical record prior to the service being provided.
+Ventral or Incisional hernia
+# S340 Hernia fascial defect (diameter < 5 cm) OR any size repaired
+with primary closure ........................................................... 6 370.95 7
+# S344 Hernia fascial defect (diameter 5 cm or greater) repaired with
+mesh closure ...................................................................... 6 500.00 7
+# E829 - repair of defect (5-10 cm) with component separation, to
+S344........................................................................... add 300.00
+# E827 - repair of defect (> 10 cm) with component separation, to
+S344........................................................................... add 600.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S37 Amd 12 Draft 1
+
+--- PAGE 706 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+ABDOMEN, PERITONEUM AND OMENTUM
+Asst Surg Anae
+Omphalocele and gastroschisis
+# S348 Primary or first stage repair .................................................... 7 1112.35 7
+# E691 - requiring mobilization of abdominal wall musculature, to
+S348........................................................................... add 178.40
+# S349 Second or subsequent stage repair........................................ 7 1408.35 7
+Congenital diaphragmatic hernia
+# S346 Primary or first stage repair .................................................... 9 1300.55 13
+# S347 Second or subsequent stage repair........................................ 9 472.15 13
+# E793 - laparoscopic or laparoscopic assisted, to S344. add 25%
+# E726 - repeat recurrent inguinal hernia (more than 2 repairs), to
+S322, S323, S326, S329 or S330.............................. add 4 226.00
+# S342 Epigastric ................................................................................ 6 239.20 6
+# E727 - hydrocele - extra - applicable to adults only............... add 65.90
+SUTURE
+# S343 Secondary closure for evisceration - sole operative procedure
+in abdomen......................................................................... 6 350.00 7
+Amd 12 Draft 1 S38 February 14 , 2 025 (e ffective M arch 3, 2025)

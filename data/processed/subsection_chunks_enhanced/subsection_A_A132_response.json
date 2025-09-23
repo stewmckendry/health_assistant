@@ -1,0 +1,316 @@
+{
+  "subsection_title": "Neurology (18)",
+  "parent_section": "A",
+  "page_ref": "A132",
+  "pages_processed": "260-263",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A185",
+      "description": "Consultation",
+      "fee": 184.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A180",
+      "description": "Special neurology consultation",
+      "fee": 310.45,
+      "units": null,
+      "conditions": "Medical record requirements: The service is only eligible for payment if start and stop times of the service are recorded in the patient's permanent medical record.",
+      "special_prefix": null
+    },
+    {
+      "code": "A682",
+      "description": "Extended special neurology consultation",
+      "fee": 401.3,
+      "units": null,
+      "conditions": "Medical record requirements: The service is only eligible for payment if start and stop times of the service are recorded in the patient's permanent medical record.",
+      "special_prefix": null
+    },
+    {
+      "code": "A385",
+      "description": "Limited consultation",
+      "fee": 87.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A186",
+      "description": "Repeat consultation",
+      "fee": 87.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A183",
+      "description": "Medical specific assessment",
+      "fee": 82.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A184",
+      "description": "Medical specific re-assessment",
+      "fee": 64.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A181",
+      "description": "Complex medical specific re-assessment",
+      "fee": 75.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A188",
+      "description": "Partial assessment",
+      "fee": 39.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E078",
+      "description": "chronic disease assessment premium (see General Preamble GP25)",
+      "fee": null,
+      "units": null,
+      "conditions": "add 50%",
+      "special_prefix": null
+    },
+    {
+      "code": "A113",
+      "description": "Complex neuromuscular assessment",
+      "fee": 93.95,
+      "units": null,
+      "conditions": "Payment rules: 1. A complex neuromuscular assessment must include the elements of a medical specific re-assessment, or the amount payable will be adjusted to lesser assessment fee. 2. This service is not eligible for payment to a physician for the initial evaluation of the patient by that physician. 3. Complex neuromuscular assessments are limited to 6 per patient, per physician, per 12 month period. Services in excess of this limit will be adjusted to a lesser assessment fee. 4. E078 is not eligible for payment with A113.",
+      "special_prefix": null
+    },
+    {
+      "code": "A384",
+      "description": "Consultation and Management for ACVS",
+      "fee": 200.0,
+      "units": null,
+      "conditions": "Medical record requirements: Consultation and Management for ACVS is only eligible for payment if start and stop times of the services and the time of onset of symptoms are recorded in the patient's permanent medical record.",
+      "special_prefix": null
+    },
+    {
+      "code": "K181",
+      "description": "after first 30 minutes, must include intravenous thrombolysis therapy and monitoring, per 30 minute unit (or major part thereof)",
+      "fee": 90.0,
+      "units": null,
+      "conditions": "Payment rules: 1. A384 and K181 are only eligible for payment for patients seen within the timeframe for eligibility for intravenous thrombolysis therapy as defined by the Canadian Stroke Best Practices. 2. A384 and K181 must be rendered in a hospital with CT or MRI facilities onsite. 3. A384 and K181 are only eligible for payment to a specialist in Neurology (18). 4. A384 and K181 are only eligible for payment if the physician remains in constant attendance with the patient. 5. G521, G522, G523, or G391 are not eligible for payment with A384 or K181. 6. K181 is only eligible for payment for patients treated with intravenous thrombolysis therapy as defined by the Canadian Stroke Best Practices. 7. K181 is limited to a maximum of 6 units per patient per day.",
+      "special_prefix": null
+    },
+    {
+      "code": "C185",
+      "description": "Consultation",
+      "fee": 184.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C180",
+      "description": "Special neurology consultation - subject to the same conditions as A180",
+      "fee": 310.45,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C682",
+      "description": "Extended special neurology consultation - subject to the same conditions as A682",
+      "fee": 401.3,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C384",
+      "description": "Consultation and Management for ACVS - subject to the same conditions as A384",
+      "fee": 200.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C385",
+      "description": "Limited consultation",
+      "fee": 87.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C186",
+      "description": "Repeat consultation",
+      "fee": 87.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C183",
+      "description": "Medical specific assessment",
+      "fee": 82.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C184",
+      "description": "Medical specific re-assessment",
+      "fee": 64.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C181",
+      "description": "Complex medical specific re-assessment",
+      "fee": 75.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C113",
+      "description": "Complex neuromuscular assessment - subject to the same conditions as A113",
+      "fee": 93.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W185",
+      "description": "Consultation",
+      "fee": 184.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W180",
+      "description": "Special neurology consultation - subject to the same conditions as A180",
+      "fee": 310.45,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W682",
+      "description": "Extended special neurology consultation - subject to the same conditions as A682",
+      "fee": 401.3,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W385",
+      "description": "Limited consultation",
+      "fee": 87.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W186",
+      "description": "Repeat consultation",
+      "fee": 87.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W113",
+      "description": "Complex neuromuscular assessment - subject to the same conditions as A113",
+      "fee": 93.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W184",
+      "description": "General re-assessment of patient in nursing home (as per the Nursing Homes Act)",
+      "fee": 20.6,
+      "units": null,
+      "conditions": "May only be claimed 6 months after Periodic health visit (as per the Nursing Homes Act).",
+      "special_prefix": null
+    },
+    {
+      "code": "W182",
+      "description": "first 4 subsequent visits per patient per month",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W181",
+      "description": "additional subsequent visits (maximum of 6 per patient per month)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W982",
+      "description": "palliative care (see General Preamble GP50)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W183",
+      "description": "first 2 subsequent visits per patient per month",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W188",
+      "description": "subsequent visits per month (maximum of 3 per patient per month)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W972",
+      "description": "palliative care (see General Preamble GP50)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "W121",
+      "description": "Additional visits due to intercurrent illness (see General Preamble GP49)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

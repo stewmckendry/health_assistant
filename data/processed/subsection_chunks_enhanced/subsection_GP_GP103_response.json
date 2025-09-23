@@ -1,0 +1,665 @@
+{
+  "subsection_title": "Other Premiums",
+  "parent_section": "GP",
+  "page_ref": "GP103",
+  "pages_processed": "117-123",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "C101",
+      "description": "For each patient seen on a visit to ICU or CCU (subject to the exceptions set out below)",
+      "fee": 9.1,
+      "units": null,
+      "conditions": "C101 is not eligible for payment with Supportive Care or with Critical Care, Ventilatory Care, Comprehensive Care, Acquired Brain Injury Management or Neonatal Intensive Care where team fees are claimed."
+    },
+    {
+      "code": "E406",
+      "description": "Evenings (17:00h - 24:00h) Monday to Friday",
+      "fee": 60.0,
+      "units": null,
+      "conditions": "Applicable for urgent CT/MRI interpretation."
+    },
+    {
+      "code": "E407",
+      "description": "Saturdays, Sundays or Holidays daytime and evenings (07:00h - 24:00h)",
+      "fee": 75.0,
+      "units": null,
+      "conditions": "Applicable for urgent CT/MRI interpretation."
+    },
+    {
+      "code": "E408",
+      "description": "Nights (00:00h - 07:00h)",
+      "fee": 100.0,
+      "units": null,
+      "conditions": "Applicable for urgent CT/MRI interpretation."
+    },
+    {
+      "code": "E420",
+      "description": "Trauma premium",
+      "fee": null,
+      "units": null,
+      "conditions": "Applicable for trauma patients age 16 or more who have an Injury Severity Score (ISS) of greater than 15, or for patients less than age 16 who have an ISS of greater than 12."
+    },
+    {
+      "code": "C102",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": null,
+      "conditions": "Applicable for non-elective diagnostic services."
+    },
+    {
+      "code": "C109",
+      "description": "First person seen premium (Evenings)",
+      "fee": 60.0,
+      "units": null,
+      "conditions": "Applicable for non-elective diagnostic services."
+    },
+    {
+      "code": "C108",
+      "description": "First person seen premium (Nights)",
+      "fee": 100.0,
+      "units": null,
+      "conditions": "Applicable for non-elective diagnostic services."
+    },
+    {
+      "code": "C105",
+      "description": "Additional person(s) seen premium (Evenings)",
+      "fee": 60.0,
+      "units": null,
+      "conditions": "Applicable for non-elective diagnostic services."
+    },
+    {
+      "code": "C106",
+      "description": "Additional person(s) seen premium (Nights)",
+      "fee": 100.0,
+      "units": null,
+      "conditions": "Applicable for non-elective diagnostic services."
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "A133",
+      "context": "Qualifying services for Internal Medicine Office Assessment Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "A134",
+      "context": "Qualifying services for Internal Medicine Office Assessment Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "A131",
+      "context": "Qualifying services for Internal Medicine Office Assessment Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "A138",
+      "context": "Qualifying services for Internal Medicine Office Assessment Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "E082",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C122",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C123",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C124",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C002",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C007",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C009",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C132",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C137",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C139",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C142",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C143",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "A/C933",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "C882/C982",
+      "context": "Qualifying services for Hospitalist Premium",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "K101",
+      "context": "Ground Ambulance Transfer",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "K111",
+      "context": "Air Ambulance Transfer",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "K102",
+      "context": "Transport of Donor Organs",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "K112",
+      "context": "Return Trip",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G060",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G061",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G062",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G065",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G066",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G067",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G068",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G082",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G083",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G085",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G090",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G099",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G117",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G118",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G119",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G125",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G176",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G177",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G178",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G179",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G211",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G224",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G246",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G248",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G249",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G260",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G261",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G262",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G263",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G268",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G269",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G275",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G277",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G279",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G280",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G282",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G287",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G288",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G290",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G297",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G298",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G303",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G309",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G322",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G323",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G324",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G330",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G331",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G336",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G347",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G348",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G349",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G356",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G376",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G379",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G380",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "G509",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "J001",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "J068",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    },
+    {
+      "code": "X112",
+      "context": "Major Invasive Procedures",
+      "description": null,
+      "source_subsection": "Other Premiums",
+      "source_page": "GP103"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,1397 @@
+{
+  "sections": [
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "100",
+      "title": "Purpose of the Manual 7",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:100",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "105",
+      "title": "Protecting Personal Health Information 8",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:105",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "110",
+      "title": "Roles & Responsibilities 8",
+      "raw_text": "Part 2: Devices Covered 12",
+      "policy_uid": "adp:mobility:110",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "200",
+      "title": "Devices Covered 12",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:200",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "205",
+      "title": "Ambulation Aids 12",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:205",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "210",
+      "title": "Wheelchairs 13",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:210",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "215",
+      "title": "Positioning Devices (Seating) 13",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:215",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "220",
+      "title": "Options 14",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:220",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "225",
+      "title": "Repairs/Batteries 14",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:225",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "230",
+      "title": "Modifications to Wheelchairs Not Funded by ADP 14",
+      "raw_text": "Part 3: Applicant Eligibility Criteria for Mobility Devices 17",
+      "policy_uid": "adp:mobility:230",
+      "topics": [
+        "eligibility"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "300",
+      "title": "Functional Status 17",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:300",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "305",
+      "title": "Basic Mobility Requirements 17",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:305",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "310",
+      "title": "Non-Eligible Mobility Requirements 18",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:310",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "315",
+      "title": "Individual Identified Ineligible by Authorizer 18",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:315",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "320",
+      "title": "Applicant Identified Ineligible by the ADP 19",
+      "raw_text": "Part 4: Confirmation of Eligibility for Device Required 21",
+      "policy_uid": "adp:mobility:320",
+      "topics": [
+        "eligibility",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "400",
+      "title": "Ambulation Aid 21",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:400",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "405",
+      "title": "Manual Wheelchair Mobility 21",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:405",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "410",
+      "title": "Power Mobility 24",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:410",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "415",
+      "title": "Funding for Both a Wheelchair and a Lower Extremity Prosthesis 25",
+      "raw_text": "Mobility Devices Policy and Administration Manual 2\nJuly 2023\n\n--- Page 3 ---\nPart 5: Central Equipment Pool for High Technology Wheelchairs (CEP) 27",
+      "policy_uid": "adp:mobility:415",
+      "topics": [],
+      "funding": [
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "Mobility Devices Policy and Administration Manual 2\nJuly 2023\n\n--- Page 3 ---\nPart 5: Central Equipment Pool for High Technology Wheelchairs (CEP) 27"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "500",
+      "title": "Definition of High Technology Wheelchair 27",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:500",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "505",
+      "title": "The Central Equipment Pool (CEP) 27",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:505",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "510",
+      "title": "Contact 28",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:510",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "515",
+      "title": "Policy 28",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:515",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "520",
+      "title": "Procedure 28",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:520",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "525",
+      "title": "Eligibility Criteria for Power Dynamic Positioning Devices 29",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:525",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "530",
+      "title": "Guidelines for Completing Justification for Funding Chart 30",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:530",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "535",
+      "title": "Power Dynamic Positioning Devices - Justification for Funding Chart 32",
+      "raw_text": "Part 6: Device Eligibility 34",
+      "policy_uid": "adp:mobility:535",
+      "topics": [
+        "eligibility"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "600",
+      "title": "Number of Devices Funded & Funding Periods 34",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:600",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "605",
+      "title": "Requests for a Replacement Device 35",
+      "raw_text": "Part 7: Funding and Payment 38",
+      "policy_uid": "adp:mobility:605",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "7",
+      "section_id": "700",
+      "title": "Policies 38",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:700",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "7",
+      "section_id": "705",
+      "title": "Funding Amount for ADP Clients 38",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:705",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "7",
+      "section_id": "710",
+      "title": "Funding for Ministry of Children, Community and Social Services Benefits",
+      "raw_text": "(MCCSS) Recipients 39\nPart 8: Invoicing Procedures 41",
+      "policy_uid": "adp:mobility:710",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "800",
+      "title": "Invoicing Procedures 41",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:800",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "805",
+      "title": "ADP Processing Errors 41",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:805",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "810",
+      "title": "Authorizer Prescription Errors & Omissions 41",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:810",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "815",
+      "title": "Client Refusal of Delivered Device 42",
+      "raw_text": "Part 9: Authorizers 44",
+      "policy_uid": "adp:mobility:815",
+      "topics": [
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "9",
+      "section_id": "900",
+      "title": "Authorizer Status 44",
+      "raw_text": "",
+      "policy_uid": "adp:mobility:900",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "9",
+      "section_id": "905",
+      "title": "General Authorizer Policies 44",
+      "raw_text": "Part 10: Vendors 46\n1000 Vendor Status 46\n1005 General Vendor Policies 46\n1010 Relationships of Long-Term Care Homes and Registered Vendors 48\nMobility Devices Policy and Administration Manual 3\nJuly 2023\n\n--- Page 4 ---\n1015 Payment for Mobility Assessments 48\n1020 Delivery of Device 49\nPart 11: Contact Information 51\n1100 Program Addresses 51\nAppendix A 54\nMobility Devices Policy and Administration Manual 4\nJuly 2023\n\n--- Page 5 ---\nTable of Amendments\nThis page will list all substantive changes to policies and procedures listed in the Manual.\nSection Change Date\nMobility Devices Policy and Administration Manual 5\nJuly 2023\n\n--- Page 6 ---\nIntroduction\n1\nMobility Devices Policy and Administration Manual 6\nJuly 2023\n\n--- Page 7 ---\nPart 1: Introduction Mobility Devices\nPolicy and Administration Manual",
+      "policy_uid": "adp:mobility:905",
+      "topics": [
+        "funding",
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "100",
+      "title": "Purpose of the Manual",
+      "raw_text": "The purpose of this Manual is to present the policies and procedures for\nthe funding of Mobility Devices (Wheelchair, Positioning (Seating) and\nAmbulation Aids) in one document. This Manual is intended to\ncomplement the Policy and Procedures Manual for the Assistive Devices\nProgram (ADP Manual).\nThis Manual forms part of the agreement between the Ministry of Health\nand the Vendor, and the agreement between the Ministry of Health and\nthe Authorizer. The Ministry reserves the right to revise this Manual.\nCapitalized terms used in this Policy and Procedures Manual shall have\nthe meaning associated with them as set out in the ADP Manual.",
+      "policy_uid": "adp:mobility:100",
+      "topics": [
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "100.01",
+      "title": "Intended Target Audience",
+      "raw_text": "This Manual is intended to be used by Authorizers and Vendors who have\nan agreement with the Assistive Devices Program (ADP) to provide\nDevices and services related to Ambulation Aids, Wheelchairs, and\nPositioning Devices for Mobility (Seating).\nMobility Devices Policy and Administration Manual 7\nJuly 2023\n\n--- Page 8 ---",
+      "policy_uid": "adp:mobility:100.01",
+      "topics": [
+        "warranty",
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 7
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "105",
+      "title": "Protecting Personal Health Information",
+      "raw_text": "•\nAuthorizers and Vendors must comply with all applicable privacy\nlaws governing information regarding their Clients.\n•\nSee the ADP Manual, Policy 700, Protection of Personal Information\nand Personal Health Information.",
+      "policy_uid": "adp:mobility:105",
+      "topics": [
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "110",
+      "title": "Roles & Responsibilities",
+      "raw_text": "In the process of confirming eligibility for funding assistance, the\nApplicant/Client, the Authorizer and the Vendor have a specific role and\ncertain rights and responsibilities. Additional information may be found in\nthe Program Manual, the Authorizer Agreement, and the Vendor\nAgreement.",
+      "policy_uid": "adp:mobility:110",
+      "topics": [
+        "eligibility",
+        "funding",
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "110.01",
+      "title": "Roles and Responsibilities of the Applicant/Client and/or Agent:",
+      "raw_text": "•\nUsing information provided by the Authorizer and the Vendor during\nthe mobility assessment and the ADP application process, will make\nan informed decision including but not limited to, whether or not to\nproceed with an application for ADP funding assistance, choice of\nVendor and choice of make and model of Device.\n•\nShould carefully review all the information on the Application Form\n“Applicant’s Consent and Signature” prior to signing this section.\n•\nHas the right to seek a second opinion if the individual disagrees with\nthe Authorizer’s assessment of their mobility equipment needs.\n•\nIs responsible for paying the Client portion (25 percent) of the ADP\napproved price for the mobility Device directly to the Vendor.\nMobility Devices Policy and Administration Manual 8\nJuly 2023\n\n--- Page 9 ---",
+      "policy_uid": "adp:mobility:110.01",
+      "topics": [
+        "funding",
+        "roles"
+      ],
+      "funding": [
+        {
+          "scenario": "purchase",
+          "client_share_percent": null,
+          "details": "•\nIs responsible for paying the Client portion (25 percent) of the ADP\napproved price for the mobility Device directly to the Vendor"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 8
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "110.02",
+      "title": "Roles and Responsibilities of the Authorizer:",
+      "raw_text": "•\nIs the gatekeeper to the Program and assumes the leadership role in\nthe assessment process, confirmation of the Applicant’s eligibility,\nand completion of the Application Form in a timely fashion.\n•\nWill provide the Applicant with accurate information about ADP\npolicies and procedures, eligibility criteria and the estimated cost to\npurchase the Authorized Device.\n•\nWill provide the Applicant with the applicant information sheet.\n•\nWill provide the Applicant with a list of Vendors serving their\ncommunity and advise Applicants to consider more than one Vendor\nto compare options, service plans and if relevant, prices. Lists are\navailable on the ADP website.\n•\nMaintains current knowledge of the Devices that the Authorizer is\nregistered to authorize.\n•\nWill identify the need for mobility equipment as part of the client\nassessment process, work with the Client’s Vendor to ensure\nappropriate assessment and trial equipment is obtained and\nauthorize the Device that meets the Client’s functional requirements\nand the ADP eligibility criteria.\n•\nWill work with the Client’s Vendor to enhance their own knowledge\nof funded Devices by discussing the Client’s equipment needs and\ntechnical support requirements with the Vendor.\n•\nMust follow-up with the Client once the ADP funding has been\napproved to ensure the correct Device has been delivered and that\nthe Client’s functional status for the Device continues to be met.\nMobility Devices Policy and Administration Manual 9\nJuly 2023\n\n--- Page 10 ---\n•\nMust not submit an application for funding assistance to the Program\nfor an individual who does not meet the ADP eligibility criteria.\n•\nMust continue to meet all conditions specified in the executed\nAuthorizer Agreement and all applicable Manuals.",
+      "policy_uid": "adp:mobility:110.02",
+      "topics": [
+        "eligibility",
+        "funding",
+        "warranty",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [
+        {
+          "phrase": "education/work/recreation only",
+          "applies_to": "mobility"
+        }
+      ],
+      "page_num": 9
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "1",
+      "section_id": "110.03",
+      "title": "Roles and Responsibilities of the Vendor:",
+      "raw_text": "•\nIs an essential resource for the Applicant/Client and/or Agent and\nthe Authorizer regarding the Devices available and the amount of\ntechnical support that may be required.\n•\nMust provide a variety of assessment and trial equipment requested\nby the Authorizer (a reasonable variety and for a reasonable length\nof time).\n•\nWill work cooperatively with the Applicant/Client and the Authorizer\nto ensure that the choice of Device is appropriate to meet the\nindividual’s basic mobility requirements and provide quotes to the\nClient and/or their Agent and the ADP as required.\n•\nMust notify the Authorizer when the Device has been delivered to\nthe ADP Client to ensure appropriate follow-up is completed by the\nAuthorizer.\n•\nMust maintain a current knowledge of the mobility Devices listed by\nthe ADP, keep an adequate stock of the Devices which the Vendor is\nauthorized to sell to ADP Clients, honour manufacturer warranties,\nand provide after sale service.\n•\nMust continue to meet all conditions specified in their executed\nVendor Agreement and the Manuals.\nMobility Devices Policy and Administration Manual 10\nJuly 2023\n\n--- Page 11 ---\nDevices Covered\n2\nMobility Devices Policy and Administration Manual 11\nJuly 2023\n\n--- Page 12 ---\nPart 2: Devices Covered",
+      "policy_uid": "adp:mobility:110.03",
+      "topics": [
+        "warranty",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [
+        {
+          "phrase": "education/work/recreation only",
+          "applies_to": "mobility"
+        }
+      ],
+      "page_num": 10
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "200",
+      "title": "Devices Covered",
+      "raw_text": "Mobility Devices approved for ADP funding are listed in the Product Manual –\nMobility Devices. There are three types of Devices:\n1. Ambulation Aids\n2. Wheelchairs\n3. Positioning Devices (Seating)\nIn order to list devices with the Program the manufacturers/distributor\nresponsible for the product in Ontario must warranty the product for a\nminimum of 2 years from the date the Device is delivered to the Client.\nFor all generic Mobility Devices funded by the Program, the Vendor may only\nprovide Devices that have a minimum 2-year warranty. The warranty period\nis determined from the date the Device is delivered to the Client.\nThe Device Listing Package for manufacturers/distributors to apply for ADP\napproval of a new and/or updated product is available on the ADP website.",
+      "policy_uid": "adp:mobility:200",
+      "topics": [
+        "funding",
+        "warranty",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "205",
+      "title": "Ambulation Aids",
+      "raw_text": "•\nForearm crutches\n•\nWheeled walkers (two, three and four wheels)\nMobility Devices Policy and Administration Manual 12\nJuly 2023\n\n--- Page 13 ---\n•\nPaediatric specific standing frames\n•\nApproved options for ambulation aids",
+      "policy_uid": "adp:mobility:205",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "210",
+      "title": "Wheelchairs",
+      "raw_text": "•\nManual wheelchairs\n•\nPaediatric dependent wheeled bases\n•\nPower wheelchairs, power bases, power add-on devices, power\nscooters\n•\nApproved options for manual and power wheelchairs",
+      "policy_uid": "adp:mobility:210",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "215",
+      "title": "Positioning Devices (Seating)",
+      "raw_text": "All positioning Devices funded by the ADP must be required to support\nposture and/or provide pressure relief in a wheelchair specifically to\nfacilitate mobility. The Program does not provide funding assistance only to\nfacilitate non- mobility related activities including, but not limited to feeding,\nsleeping, motor vehicle transportation, and/or transfers.\nTypes of positioning products funded by ADP include:\n•\nModular/commercially available and custom fabricated devices to\nsupport the head, neck, trunk, pelvis and extremities in a wheelchair;\nand\n•\nPower dynamic seating systems (tilt/recline/elevating leg rests)\nMobility Devices Policy and Administration Manual 13\nJuly 2023\n\n--- Page 14 ---\nNOTE: Where incontinence is identified as a medical condition on Page 1 of\nthe Application for Mobility Devices form, funding assistance is available for a\nsecond seat cushion cover.",
+      "policy_uid": "adp:mobility:215",
+      "topics": [
+        "funding",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "220",
+      "title": "Options",
+      "raw_text": "ADP funding assistance is available for the options listed in the appropriate\nOptions Chart found in the Product Manual, including Ambulation Aids\nOptions, Manual Wheelchair Options Chart and/or the Power Wheelchair\nOptions.\nNOTE: The Applicant must pay the Vendor directly for any non-ADP funded\nitems the individual may choose to purchase.",
+      "policy_uid": "adp:mobility:220",
+      "topics": [
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "225",
+      "title": "Repairs/Batteries",
+      "raw_text": "ADP does not provide funding towards the cost of repairs and/or\nmaintenance and/or batteries for any Device.\nNOTE: See Part 5 for policies specific to the Central Equipment Pool (CEP)\nfor High Technology Wheelchairs.",
+      "policy_uid": "adp:mobility:225",
+      "topics": [
+        "funding",
+        "warranty"
+      ],
+      "funding": [
+        {
+          "scenario": "repair",
+          "client_share_percent": null,
+          "details": "ADP does not provide funding towards the cost of repairs and/or\nmaintenance and/or batteries for any Device"
+        },
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "NOTE: See Part 5 for policies specific to the Central Equipment Pool (CEP)\nfor High Technology Wheelchairs."
+        }
+      ],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "2",
+      "section_id": "230",
+      "title": "Modifications to Wheelchairs Not Funded by",
+      "raw_text": "ADP\nIndividuals may request funding assistance for modifications and/or the\naddition of seating for a wheelchair that they have purchased privately or\nhave acquired as a donation for their sole use.\nMobility Devices Policy and Administration Manual 14\nJuly 2023\n\n--- Page 15 ---\nThe Authorizer must confirm and document during the assessment that:\n•\nThe wheelchair (make and model) is on the approved list of ADP\ndevices; and\n•\nThe wheelchair is in good working order; and\n•\nWith the modifications requested, the wheelchair will suit the\nApplicant’s basic mobility requirements as defined by the ADP for\nfunding purposes.\nMobility Devices Policy and Administration Manual 15\nJuly 2023\n\n--- Page 16 ---\nApplicant Eligibility Criteria\nfor Mobility Devices\n3\nMobility Devices Policy and Administration Manual 16\nJuly 2023\n\n--- Page 17 ---\nPart 3: Applicant Eligibility Criteria for\nMobility Devices",
+      "policy_uid": "adp:mobility:230",
+      "topics": [
+        "eligibility",
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [
+        {
+          "phrase": "education/work/recreation only",
+          "applies_to": "mobility"
+        }
+      ],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "300",
+      "title": "Functional Status",
+      "raw_text": "Ambulation Aids: The Applicant must be able to operate the Device\nindependently.\nManual Wheelchairs: The Applicant may or may not be able to propel the\nDevice independently.\nPower Wheelchairs: The Applicant must be able to operate the Device\nindependently.\nPositioning Systems (Seating): The Applicant must require the Device to\nsupport posture in order to facilitate mobility.",
+      "policy_uid": "adp:mobility:300",
+      "topics": [
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "305",
+      "title": "Basic Mobility Requirements",
+      "raw_text": "Funding is restricted to those Devices that meet the Applicant's basic mobility\nrequirements as defined by the ADP for funding purposes:\nThe Device must be used on an ongoing daily basis.\nThe required and intended use of the Device must be to provide mobility on\nan ongoing daily basis within the Applicant’s place of residence and to gain\nentry/exit from the Applicant’s place of residence.\nMobility Devices Policy and Administration Manual 17\nJuly 2023\n\n--- Page 18 ---\nAn Applicant’s place of residence may be a home, apartment building, long-\nterm care home, chronic care facility etc.",
+      "policy_uid": "adp:mobility:305",
+      "topics": [
+        "funding",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "310",
+      "title": "Non-Eligible Mobility Requirements",
+      "raw_text": "The Program does not provide funding for equipment used intermittently or\nas an alternative means of transportation (e.g. substitution for car, taxi or bus).\nFunding is not provided for mobility devices, including components, used\nsolely for:\n•\nTravelling to and from destinations in the community\n•\nPost-operative needs\n•\nPain management\n•\nTraining, exercise or therapeutic purposes\n•\nRecreation and social activities\n•\nWork\n•\nSchool\n•\nSports\n•\nFeeding, sleeping and other non-mobility related activities.",
+      "policy_uid": "adp:mobility:310",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [
+        {
+          "phrase": "training/exercise/therapy only",
+          "applies_to": "mobility"
+        },
+        {
+          "phrase": "education/work/recreation only",
+          "applies_to": "mobility"
+        }
+      ],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "315",
+      "title": "Individual Identified Ineligible by Authorizer",
+      "raw_text": "Mobility Devices Policy and Administration Manual 18\nJuly 2023\n\n--- Page 19 ---\nAn Application for Mobility Devices form, requesting ADP funding assistance,\nmust not be submitted to ADP if, after assessing the mobility requirements of\nthe Client, the Authorizer confirms that the individual does not meet ADP\neligibility criteria.",
+      "policy_uid": "adp:mobility:315",
+      "topics": [
+        "eligibility",
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "3",
+      "section_id": "320",
+      "title": "Applicant Identified Ineligible by the ADP",
+      "raw_text": "An Applicant may be deemed ineligible if the criteria for their access to the\nProgram are not met or where information supplied in connection with an\nApplication Form is insufficient, incomplete and/or inaccurate.\nIn cases of denial, the Vendor, the Authorizer and the Applicant will be\nadvised of the reason.\nMobility Devices Policy and Administration Manual 19\nJuly 2023\n\n--- Page 20 ---\nConfirmation of Eligibility\nfor Device Required\n4\nMobility Devices Policy and Administration Manual 20\nJuly 2023\n\n--- Page 21 ---\nPart 4: Confirmation of Eligibility for\nDevice Required\nIn order to determine what Device is clinically required and basic for ADP\nfunding purposes, the Authorizer must complete a comprehensive\nfunctional assessment. Device trials should be provided from the most basic\nto the more complex, taking the individual’s medical condition and all\nenvironmental and safety issues into consideration. Once the assessment\nhas been completed and the Authorizer confirms eligibility for ADP funding\nassistance the Application for Mobility Devices form may be completed. The\nAuthorizer must provide the medical diagnosis in the appropriate section on\nthe application form and avoid including a list of symptoms. Further details\nrelated to the need for the device must be provided within the functional\nmobility section of the form using precise language to confirm eligibility.",
+      "policy_uid": "adp:mobility:320",
+      "topics": [
+        "eligibility",
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "400",
+      "title": "Ambulation Aid",
+      "raw_text": "If the individual can ambulate, the Authorizer must determine what Devices,\nif any, can be used safely and independently in order to meet the ADP\neligibility criteria.\nNOTE: Factors that will influence the prescription details include the\nApplicant's medical condition and prognosis, and ambulation needs now and\nin the foreseeable future.",
+      "policy_uid": "adp:mobility:400",
+      "topics": [
+        "eligibility",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "405",
+      "title": "Manual Wheelchair Mobility",
+      "raw_text": "Mobility Devices Policy and Administration Manual 21\nJuly 2023\n\n--- Page 22 ---\nWhere independent ambulation is not possible, a manual wheelchair may\nbe clinically required and basic for ADP funding purposes.\nIn order to receive funding assistance, the individual must require the use of\npersonalized postural support and/or pressure relief (seating) in order to\nmaintain a functional sitting position in the wheelchair.\nThe Authorizer must confirm that the individual’s basic mobility requirements\ncannot be met by the use of a generic/transport chair.\nThe individual's ability to propel a manual wheelchair is not a specific\neligibility requirement for ADP funding.\nNOTE: Factors that will influence the prescription details include the\nApplicant's medical condition and prognosis, and seating needs now and in\nthe foreseeable future.",
+      "policy_uid": "adp:mobility:405",
+      "topics": [
+        "eligibility",
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "405.01",
+      "title": "Manual Wheelchair with Manual Dynamic Tilt System",
+      "raw_text": "Manual dynamic tilt systems are funded by the ADP as an integral\ncomponent of a manual wheelchair or as a separate system interfaced with\na manual wheelchair.\nA request for funding assistance towards the purchase of a manual dynamic\ntilt system will only be considered where the clinical assessment findings\nand Device trial results indicate that the Device prescribed is the minimum\nDevice required to achieve one or more of the following goals:\n•\nIncrease sitting tolerance where there is risk of tissue trauma due to\nunrelieved pressure and inability to weight shift independently and/or\nthere is an inability to maintain a functional postural position where\nabnormal tone is a factor. In both of these situations, it must be\ndemonstrated that fixed seating alone is not an adequate solution.\nMobility Devices Policy and Administration Manual 22\nJuly 2023\n\n--- Page 23 ---\n•\nMaintain skin integrity where there is past/present history of tissue\ntrauma, inability to weight shift independently and fixed seating alone is\nnot an adequate solution.\nThe goals will only be achieved where there is an attendant available to\nregularly alter the angle of tilt in space.\nAn application for funding assistance towards the purchase of manual\ndynamic tilt should not be considered where the purpose is solely for non-\nmobility related activities including, but not limited to pain management,\nfacilitation of transfers, feeding, toilet activities, and/or rest.\nNOTE: Factors that will influence the prescription details include the\nApplicant's medical condition and prognosis, and seating needs now and in\nthe foreseeable future.",
+      "policy_uid": "adp:mobility:405.01",
+      "topics": [
+        "funding",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 22
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "405.02",
+      "title": "Power Add-On Device",
+      "raw_text": "A power add-on device is attached to a manual wheelchair to assist the\nApplicant meet their basic mobility requirements as defined by the ADP for\nfunding purposes.\nA power add-on device may be authorized only when it is not anticipated\nthat the Applicant will require the use of a power wheelchair to meet their\nlong-term basic mobility requirements.\nThese Devices are not funded as a substitute for a power wheelchair. The\nApplicant must be able to operate a manual wheelchair independently and\nrequire continual or intermittent use of manual and power mobility to meet\ntheir basic mobility requirements as defined by the ADP for funding\npurposes.\nThe manual wheelchair must be in good condition and be suitable for\nmounting of the power add on device.\nMobility Devices Policy and Administration Manual 23\nJuly 2023\n\n--- Page 24 ---\nNOTE: Factors that will influence the prescription details include the\nApplicant's medical condition and prognosis, and seating needs now and in\nthe foreseeable future.",
+      "policy_uid": "adp:mobility:405.02",
+      "topics": [
+        "funding",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [
+        {
+          "phrase": "alternative transport / intermittent use",
+          "applies_to": "mobility"
+        }
+      ],
+      "page_num": 23
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "410",
+      "title": "Power Mobility",
+      "raw_text": "Where manual mobility is precluded because the individual cannot propel a\nmanual wheelchair independently to meet their basic mobility requirements\nas defined by ADP for funding purposes, then power mobility through the\nuse of a power mobility Device may be explored.\nIf a power mobility Device is the basic requirement for the individual the\nAuthorizer may prescribe a power wheelchair/base, a power add-on device,\nor a scooter.\nOnly a prescription for the most basic and essential Device required by the\nApplicant and defined by the ADP for funding purposes may be submitted.\nNOTE: Factors that will influence the prescription details include the\nApplicant's medical condition and prognosis, and seating needs now and in\nthe foreseeable future.",
+      "policy_uid": "adp:mobility:410",
+      "topics": [
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "410.01",
+      "title": "Power Scooter",
+      "raw_text": "ADP funding should only be requested for a power scooter when:\n•\nPower mobility is basic as defined by the ADP for Funding purposes;\n•\nThe Applicant does not have seating requirements now or in the\nforeseeable future;\n•\nThe scooter is not intended to be a replacement for a car or another\ntransportation modality; and\nMobility Devices Policy and Administration Manual 24\nJuly 2023\n\n--- Page 25 ---\n•\nThe Applicant can transfer independently on to and off the scooter\nNOTE: There must be no application submitted for ADP funding when the\nscooter is recognized to be a benefit but not a basic mobility requirement as\ndefined by the ADP for funding purposes.",
+      "policy_uid": "adp:mobility:410.01",
+      "topics": [
+        "funding",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 24
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "4",
+      "section_id": "415",
+      "title": "Funding for Both a Wheelchair and a Lower",
+      "raw_text": "Extremity Prosthesis\nA wheelchair should not be authorized until both the individual's ambulatory\nstatus using the prosthesis and their permanent residence has been\nestablished.\nAs part of the assessment process, the Authorizer must ensure and\ndocument that the authorization of the wheelchair is not contradictory to any\ngoals the amputee team may have established with the individual.\nMobility Devices Policy and Administration Manual 25\nJuly 2023\n\n--- Page 26 ---\nCentral Equipment Pool for High\nTechnology Wheelchairs (CEP)\n5\nMobility Devices Policy and Administration Manual 26\nJuly 2023\n\n--- Page 27 ---\nPart 5: Central Equipment Pool for High\nTechnology Wheelchairs (CEP)",
+      "policy_uid": "adp:mobility:415",
+      "topics": [
+        "roles",
+        "requirements"
+      ],
+      "funding": [
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "Mobility Devices Policy and Administration Manual 25\nJuly 2023\n\n--- Page 26 ---\nCentral Equipment Pool for High\nTechnology Wheelchairs (CEP)\n5\nMobility Devices Policy and Administration Manual 26\nJuly"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 2
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "500",
+      "title": "Definition of High Technology Wheelchair",
+      "raw_text": "For the purpose of ADP funding assistance, a high technology wheelchair is\ndefined as a power wheelchair and/or power base that includes a power\ndynamic positioning device - tilt and/or recline – as a component.",
+      "policy_uid": "adp:mobility:500",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "505",
+      "title": "The Central Equipment Pool (CEP)",
+      "raw_text": "The Central Equipment Pool (CEP) for High Technology Wheelchairs provides\nADP Clients throughout Ontario with new and recycled high technology\nwheelchairs at discounted prices and provides a rebate on the Client's costs\nonce the Device is returned to the pool. A consistent level of service to ADP\nClients across the province is provided, regardless of their location. Clients\nare provided with quality reconditioned equipment that meets their individual\nrequirements when available. Technical support, assessment/loaner\nequipment, a province wide on call emergency service, and limited warranty\nrepairs and preventative maintenance are also provided at no cost to the\nClient.\nMobility Devices Policy and Administration Manual 27\nJuly 2023\n\n--- Page 28 ---",
+      "policy_uid": "adp:mobility:505",
+      "topics": [
+        "funding",
+        "warranty"
+      ],
+      "funding": [
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "The Central Equipment Pool (CEP) for High Technology Wheelchairs provides\nADP Clients throughout Ontario with new and recycled high technology\nwheelchairs at discounted prices and provides a rebate on"
+        },
+        {
+          "scenario": "repair",
+          "client_share_percent": null,
+          "details": "Technical support, assessment/loaner\nequipment, a province wide on call emergency service, and limited warranty\nrepairs and preventative maintenance are also provided at no cost to the\nClient"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "510",
+      "title": "Contact",
+      "raw_text": "The Central Equipment Pool (CEP) for High Technology Wheelchairs is\noperated by Motion Specialties. Contact numbers for CEP are 416-701-1351 or\n1-800-395-6661.",
+      "policy_uid": "adp:mobility:510",
+      "topics": [],
+      "funding": [
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "The Central Equipment Pool (CEP) for High Technology Wheelchairs is\noperated by Motion Specialties"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "515",
+      "title": "Policy",
+      "raw_text": "All individuals who meet the ADP eligibility criteria for power tilt and/or\nrecline as a basic requirement for mobility (see Part 4) and who wish to apply\nfor ADP funding assistance, must apply through CEP. All the components of\nthe system, power wheelchair/base, positioning devices (seating), and the\npower positioning devices (tilt and /or recline) must go through CEP.\nRequests for the addition of power dynamic tilt and/or recline to an existing\npower wheelchair/base must also go through CEP.",
+      "policy_uid": "adp:mobility:515",
+      "topics": [
+        "eligibility",
+        "funding",
+        "requirements"
+      ],
+      "funding": [
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "All individuals who meet the ADP eligibility criteria for power tilt and/or\nrecline as a basic requirement for mobility (see Part 4) and who wish to apply\nfor ADP funding assistance, must apply throug"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "520",
+      "title": "Procedure",
+      "raw_text": "The ADP Authorizer must provide a complete prescription that includes all\nthe components of the system (power wheelchair/base, positioning devices\n(seating)), and the power positioning devices (tilt and /or recline) that the\nClient requires and that meet the ADP eligibility criteria.\nThe application submitted to the ADP must include the Application for\nFunding Mobility Devices form and applicable attachments and the\nJustification for Funding Chart.\nOnly CEP is authorized to provide service and modifications to CEP\nequipment.\nMobility Devices Policy and Administration Manual 28\nJuly 2023\n\n--- Page 29 ---",
+      "policy_uid": "adp:mobility:520",
+      "topics": [
+        "eligibility",
+        "funding",
+        "warranty",
+        "roles",
+        "requirements"
+      ],
+      "funding": [
+        {
+          "scenario": "lease",
+          "client_share_percent": null,
+          "details": "Only CEP is authorized to provide service and modifications to CEP\nequipment"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "525",
+      "title": "Eligibility Criteria for Power Dynamic",
+      "raw_text": "Positioning Devices\nFunding assistance towards the purchase of power tilt, power recline, power\nelevating leg rests or any combination thereof either as an integral\ncomponent or as a separate system interfaced with a power\nwheelchair/base, will be considered for individuals who meet the ADP\neligibility criteria, have no ongoing caregiver support that effectively\nachieves the goals listed below, and for whom the clinical assessment\nfindings and Device trial results indicate that the Device is basic to achieve\nthe following goals:",
+      "policy_uid": "adp:mobility:525",
+      "topics": [
+        "eligibility",
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "525.01",
+      "title": "Power Tilt or Power Recline",
+      "raw_text": "1. Maintain skin integrity where there is a high risk of tissue trauma and a\nloss of ability to effectively weight shift independently;\n2. Maximize respiratory function where there are measurable limitations,\nand objective data can be provided to show improvements with power\ntilt/power recline;\n3. Maintain independent mobility through increased sitting tolerance,\nwhere there is an inability to maintain a functional sitting position due to\nabnormal tone/reflex activity, postural instability, and/or joint/spinal\ncontractures/deformities.",
+      "policy_uid": "adp:mobility:525.01",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 29
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "525.02",
+      "title": "Power Tilt and Power Recline",
+      "raw_text": "Clinical assessment results demonstrate that power tilt or power recline\nalone is not an adequate solution to achieve goals 1), 2), and 3) above.\nMobility Devices Policy and Administration Manual 29\nJuly 2023\n\n--- Page 30 ---",
+      "policy_uid": "adp:mobility:525.02",
+      "topics": [],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 29
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "525.03",
+      "title": "Power Elevating Leg Rests",
+      "raw_text": "1. Decrease in swelling due to chronic edema in the lower extremities,\nwhere power tilts and/or reclines is prescribed. Objective trial data\nmust be provided.\n2. Repositioning of the lower extremities where power reclines is\nprescribed and self-elevating leg rests are not effective to regain a\nfunctional position.\nAssistance towards the purchase of power tilt, power recline and/or power\nelevating leg rests should not be considered where the purpose is solely for\npain management, to facilitate transfers, toilet activities, swallowing, and/or\nrest.",
+      "policy_uid": "adp:mobility:525.03",
+      "topics": [
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 30
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "530",
+      "title": "Guidelines for Completing Justification for",
+      "raw_text": "Funding Chart\nThe information provided on the Justification for Funding Chart will enable\nthe Authorizer to confirm the Applicant’s eligibility for ADP funding assistance\nfor power tilt and/or recline and power elevating leg rests. The Authorizer\nwill document under each of the following headings, the impact of the\nDevice set- up(s) on the Applicant’s ability to achieve functional independent\nmobility.\n1. Description of Trial Device Set-up: Clinical judgment is used to\ndetermine which Device set-ups should be considered for assessment.\nTrials should progress from the most basic and economical, to more\ncomplex and costly. Documentation should include reference to those\nset-ups that were not considered due to medical and/or safety\nconcerns/limitations.\nMobility Devices Policy and Administration Manual 30\nJuly 2023\n\n--- Page 31 ---\n2. Skin Integrity (Tissue Trauma): May include documentation of reddened\nareas, results of pressure mapping etc.\n3. Respiratory Function: Objective information and/or clinical observation\nthat describes Applicant’s respiratory function.\n4. Positioning (Postural Alignment): Factors affecting the Client’s ability to\nachieve functional positioning for mobility. May include the presence of\nabnormal tone/reflex activity, postural instability, weak musculature,\njoint/spinal contractures/deformities, and/or the effect of gravity.\n5. Maximum Sitting Tolerance: Maximum times (specify) tolerated and\nreasons for any limitations.\n6. Level of Independent Mobility: Information provided will describe the\nimpact of the Device set-up on the Client’s ability to drive the wheelchair\nsafely and independently. Environmental restrictions should also be\nnoted.\n7. Lower Extremity Edema: Findings may include objective data (e.g.\ncircumferential measurements) and/or clinical observations.\n8. Caregiver Availability and Requirements: Includes the availability and\nlimitations of the caregiver to consistently meet the Applicant’s needs in\nthe areas of skin integrity, respiratory function, and postural alignment.\nMobility Devices Policy and Administration Manual 31\nJuly 2023\n\n--- Page 32 ---",
+      "policy_uid": "adp:mobility:530",
+      "topics": [
+        "eligibility",
+        "funding",
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "5",
+      "section_id": "535",
+      "title": "Power Dynamic Positioning Devices -",
+      "raw_text": "Justification for Funding Chart\nThe chart, attached as APPENDIX A, must be completed in full and submitted\nwith the Application Form when power tilt and/or power recline and/or\npower dynamic leg rests have been authorized.\nMobility Devices Policy and Administration Manual 32\nJuly 2023\n\n--- Page 33 ---\nDevice Eligibility\n6\nMobility Devices Policy and Administration Manual 33\nJuly 2023\n\n--- Page 34 ---\nPart 6: Device Eligibility",
+      "policy_uid": "adp:mobility:535",
+      "topics": [
+        "eligibility",
+        "funding",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "600",
+      "title": "Number of Devices Funded & Funding",
+      "raw_text": "Periods\nBased on the Authorizer's clinical assessment findings, the Applicant may\nrequire more than one Device.\nADP funding assistance may be requested for up to:\n•\nOne wheelchair (manual, power, power add-on system, scooter)\n•\nOne positioning (seating) system for the wheelchair; and\n•\nTwo different ambulation aids (e.g. walker and pair of forearm crutches).\nApplicants may not request ADP funding assistance for an Adult Wheeled\nWalker Type 3 and a wheelchair.\nApplicants who require seating to provide postural support or pressure relief\nare not eligible for ADP funding assistance for a scooter.\nDesignated Funding Period\nThis is a minimum period of time that a Device is expected to remain useful.\nDesignated Funding Periods:\n1. Ambulation Aids - 5 years\n2. Wheelchairs - 5 years\nMobility Devices Policy and Administration Manual 34\nJuly 2023\n\n--- Page 35 ---\n3. Power Dynamic Positioning Devices - 5 years\n4. Positioning Devices (Seating) - 2 years.",
+      "policy_uid": "adp:mobility:600",
+      "topics": [
+        "eligibility",
+        "exclusions",
+        "funding",
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [
+        {
+          "phrase": "general",
+          "applies_to": null
+        }
+      ],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "605",
+      "title": "Requests for a Replacement Device",
+      "raw_text": "If during or following the designated funding period, the Device previously\nfunded:\n1. Can no longer be used at all;\n2. Continues to be used on a regular basis but no longer meets the Client's\nbasic mobility requirements as defined by the ADP for funding\npurposes; or\n3. Will only be used as a back-up if the new Device(s) breaks down\nThe client may re-apply for funding assistance by submitting a completed\nApplication for Funding Mobility Devices form with the appropriate\nattachments.",
+      "policy_uid": "adp:mobility:605",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "605.01",
+      "title": "Change in Functional Mobility Status and/or Body Size",
+      "raw_text": "If during or following the designated funding period, a change in functional\nmobility status or body size leaves the Applicant unable to use the\npreviously funded Device, the Program will consider full contribution\ntowards the cost of a replacement Device.\nIf instead of replacing the Device, the existing Device requires modifications\nand/or adjustments to meet the Client’s mobility requirements, the Program\nwill consider full contribution towards the cost of the modifications and/or\nadjustments.",
+      "policy_uid": "adp:mobility:605.01",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 35
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "605.02",
+      "title": "Device in Use But Not Meeting Client's Basic Needs",
+      "raw_text": "Mobility Devices Policy and Administration Manual 35\nJuly 2023\n\n--- Page 36 ---\nIf during or following the designated funding period, the Authorizer\ndetermines that the previously funded Device no longer meets the\nApplicant's total needs but is still useful to the Applicant on a regular basis,\nthe ADP may consider partial contribution towards the cost of the primary\nmobility device.\nIf approved, the ADP contribution will be determined by deducting a pro-\nrated amount from the ADP share of the cost of the new Device now being\nrequested. The pro-rated amount will be based on the age and designated\nfunding period of the original Device.",
+      "policy_uid": "adp:mobility:605.02",
+      "topics": [
+        "funding",
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 35
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "605.03",
+      "title": "Original Device in Use Only as a Back-Up",
+      "raw_text": "If during or following the designated funding period, the Device previously\nfunded by the ADP is no longer meeting the Client's needs and once\nreplaced will be used only in the case of emergency when and if the new\nDevice breaks down, the Program may waive the deduction when\ncalculating the contribution towards the cost of the new Device.",
+      "policy_uid": "adp:mobility:605.03",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 36
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "6",
+      "section_id": "605.04",
+      "title": "Damage Beyond Repair",
+      "raw_text": "If, during or following the designated funding period, the Device previously\nfunded is irreparably damaged through normal use, or where past and\ncurrent costs of repairs are in excess of one third of the original purchase\nprice, the Program will consider a pro-rated contribution towards the cost of\nreplacing the Device.\nIf approved, funding assistance will be a pro-rated contribution based on the\nage and designated funding period of the original Device.\nADP Funding is not available during the period of time in which the\nmanufacturer's warranty for a particular Device remains in effect.\nMobility Devices Policy and Administration Manual 36\nJuly 2023\n\n--- Page 37 ---\nFunding and Payment\n7\nMobility Devices Policy and Administration Manual 37\nJuly 2023\n\n--- Page 38 ---\nPart 7: Funding and Payment",
+      "policy_uid": "adp:mobility:605.04",
+      "topics": [
+        "funding",
+        "warranty"
+      ],
+      "funding": [
+        {
+          "scenario": "repair",
+          "client_share_percent": null,
+          "details": "If, during or following the designated funding period, the Device previously\nfunded is irreparably damaged through normal use, or where past and\ncurrent costs of repairs are in excess of one third of"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 36
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "7",
+      "section_id": "700",
+      "title": "Policies",
+      "raw_text": "Detailed information about payment is found in the ADP Manual, Part 9,\nInvoice Processing and Payment.",
+      "policy_uid": "adp:mobility:700",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "7",
+      "section_id": "705",
+      "title": "Funding Amount for ADP Clients",
+      "raw_text": "The Program will pay 75 percent (75%) of the Approved Price for Mobility\nDevices listed in the Product Manual.\nVendors may not bill the Client more than the Approved Price for the\napproved device.\nVendors may charge the Client less than the Approved Price.\nThe Vendor must charge the Client 25 percent (25%) of the Approved Price\nand bill ADP for 75 percent (75%) of the Approved Price.\nNOTE: Should the Vendor charge the Client less than the maximum\nApproved Price or provide a rebate or discount to the Client for their device,\nboth the Client portion (25%) and the ADP portion (75%) must be adjusted\naccordingly.\nMobility Devices Policy and Administration Manual 38\nJuly 2023\n\n--- Page 39 ---",
+      "policy_uid": "adp:mobility:705",
+      "topics": [
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [
+        {
+          "scenario": "purchase",
+          "client_share_percent": null,
+          "details": "The Program will pay 75 percent (75%) of the Approved Price for Mobility\nDevices listed in the Product Manual"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "7",
+      "section_id": "710",
+      "title": "Funding for Ministry of Children, Community",
+      "raw_text": "and Social Services Benefits (MCCSS)\nRecipients\nCo-payment for Clients receiving Social Assistance Benefits:\n•\nOntario Works (OW)\n•\nOntario Disability Support Program (ODSP)\n•\nAssistance for Children with Severe Disabilities (ACSD)\nFor Clients receiving social assistance benefits through OW, ODSP or ACSD\nas of the date reviewed and approved by an Authorizer, the ADP will pay 100\npercent (100%) of the Approved Price for Mobility Devices listed in the\nProduct Manual.\nMobility Devices Policy and Administration Manual 39\nJuly 2023\n\n--- Page 40 ---\nInvoicing\n8\nMobility Devices Policy and Administration Manual 40\nJuly 2023\n\n--- Page 41 ---\nPart 8: Invoicing Procedures",
+      "policy_uid": "adp:mobility:710",
+      "topics": [
+        "funding",
+        "warranty",
+        "roles"
+      ],
+      "funding": [
+        {
+          "scenario": "purchase",
+          "client_share_percent": null,
+          "details": "and Social Services Benefits (MCCSS)\nRecipients\nCo-payment for Clients receiving Social Assistance Benefits:\n•\nOntario Works (OW)\n•\nOntario Disability Support Program (ODSP)\n•\nAssistance for Children"
+        }
+      ],
+      "exclusions": [
+        {
+          "phrase": "education/work/recreation only",
+          "applies_to": "mobility"
+        }
+      ],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "800",
+      "title": "Invoicing Procedures",
+      "raw_text": "Refer to the ADP Manual, Part 9, Invoice Processing and Payment for details.",
+      "policy_uid": "adp:mobility:800",
+      "topics": [
+        "funding"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "805",
+      "title": "ADP Processing Errors",
+      "raw_text": "In the event of an ADP processing error being identified following funding\napproval, the ADP will co-operate with the Authorizer and Client to make any\nnecessary corrections.\nThe Authorizer must notify the ADP in writing of the error(s) along with a\nrequest for the approval to be amended.",
+      "policy_uid": "adp:mobility:805",
+      "topics": [
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "810",
+      "title": "Authorizer Prescription Errors & Omissions",
+      "raw_text": "In the event of an Authorizer prescription error and/or omission being\nidentified following funding approval, the ADP will co-operate with the\nAuthorizer to make any necessary corrections.\nThe Authorizer must return a copy of the page of the Application Form to the\nADP with the errors highlighted along with a request for the approval to be\namended.\nMobility Devices Policy and Administration Manual 41\nJuly 2023\n\n--- Page 42 ---",
+      "policy_uid": "adp:mobility:810",
+      "topics": [
+        "funding",
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "8",
+      "section_id": "815",
+      "title": "Client Refusal of Delivered Device",
+      "raw_text": "In the event of Client refusal, either at the time of delivery or immediately\nthereafter, the ADP will co-operate with the Client, Authorizer and Vendor to\nresolve the situation.\nMobility Devices Policy and Administration Manual 42\nJuly 2023\n\n--- Page 43 ---\nAuthorizers\n9\nMobility Devices Policy and Administration Manual 43\nJuly 2023\n\n--- Page 44 ---\nPart 9: Authorizers",
+      "policy_uid": "adp:mobility:815",
+      "topics": [
+        "roles"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "9",
+      "section_id": "900",
+      "title": "Authorizer Status",
+      "raw_text": "Occupational Therapists and Physiotherapists who hold a valid certificate of\nregistration from the College of Occupational Therapy of Ontario or the\nCollege of Physiotherapists of Ontario, respectively, licensed to practice in\nOntario and has a minimum of two (2) years post-graduate clinical\nexperience, requesting to be able to authorize wheelchairs, positioning\ndevices for mobility and/or ambulation aids must be registered as\nAuthorizers in the respective device category. Registered Authorizers for\nwheelchairs must also be registered Authorizers for positioning devices\n(seating).",
+      "policy_uid": "adp:mobility:900",
+      "topics": [
+        "roles",
+        "requirements"
+      ],
+      "funding": [],
+      "exclusions": [],
+      "page_num": 3
+    },
+    {
+      "adp_doc": "mobility",
+      "part": "9",
+      "section_id": "905",
+      "title": "General Authorizer Policies",
+      "raw_text": "Detailed information about Authorizer registration, policies and procedures,\nare found in the Policies and Procedures Manual for the Assistive Devices\nProgram Part 4 General Authorizer and Vendor Policies, and Part 5\nAuthorizers.\nMobility Devices Policy and Administration Manual 44\nJuly 2023\n\n--- Page 45 ---\nVendors\n10\nMobility Devices Policy and Administration Manual 45\nJuly 2023\n\n--- Page 46 ---\nPart 10: Vendors\n1000 Vendor Status\nVendors wishing to submit a request for funding to the Ministry for\nwheelchairs, positioning devices for mobility and/or ambulation aids must\nbe registered in the device category. Registered Vendors for wheelchairs\nmust also be registered Vendors for positioning devices (seating).\nVendors applying for registration status for wheelchairs, positioning devices\n(seating) and/or ambulation aids must provide a letter from each of the\nmanufacturers whose products they intend to sell through the ADP,\nconfirming that they are an authorized dealer. Registered Vendors must be\nauthorized dealers for at least two product lines in each device category\nthat they wish to vend for the ADP.\nVendors applying for registration status must submit the names of staff\nmembers who have professional qualifications to fabricate and/or fit\nparticular devices and proof of such qualifications. Vendors who do not\nprovide repair services on their premises must submit a copy of all service\nagreements.\n1005 General Vendor Policies\nDetailed information about Vendor registration and policies and procedures\nis found in the ADP Manual in the following areas:\n•\nPart 4, General Authorizer and Vendor Policies;\nMobility Devices Policy and Administration Manual 46\nJuly 2023\n\n--- Page 47 ---\n•\nPart 6, Vendors;\n•\nPart 7, Personal Health Information, and\n•\nPart 9, Invoice Processing and Payment.\nNote in Particular:\ni. Policy 405, Conflict of Interest\nii. Policy 415, Advertising\niii. Policy 420, Referrals\niv. Policy 600, Applying for Registration – New Vendor\nv. Policy 601, Applying for Registration – Additional Vendor Location or\nAdditional Category of Devices\nvi. Policy 602, Maintaining Registration as a Vendor\nvii. Policy 615, Relationships of Hospitals and Vendors\nviii. Policy 620, Vendors Sharing Proceeds with Long-Term Care Homes\nix. Policy 640, Informing Persons of the Program\nx. Policy 660, Refusal to Supply for Safety Reasons\nxi. Policy 665, Warranties of Purchased Devices\nxii. Policy 670, Repairs of Purchased Devices\nxiii. Policy 700, Protection of Personal and Personal Health information\nxiv. Policy 905, Rebates\nMobility Devices Policy and Administration Manual 47\nJuly 2023\n\n--- Page 48 ---\nThe ADP Manual is available at:\nhttps://www.ontario.ca/document/assistive-devices-program-health-\ncare-professionals/policies-procedures-administration-and\n1010 Relationships of Long-Term Care Homes\nand Registered Vendors\nA Vendor may enter into agreement with a Long-term care (LTC) home.\nThe registered Authorizer and registered Vendor must adhere to ADP\npolicies and ...",
+      "policy_uid": "adp:mobility:905",
+      "topics": [
+        "funding",
+        "warranty",
+        "roles",
+        "requirements"
+      ],
+      "funding": [
+        {
+          "scenario": "repair",
+          "client_share_percent": null,
+          "details": "Vendors who do not\nprovide repair services on their premises must submit a copy of all service\nagreements"
+        }
+      ],
+      "exclusions": [],
+      "page_num": 3
+    }
+  ],
+  "metadata": {
+    "total_sections": 90,
+    "unique_parts": 9,
+    "topics_coverage": [
+      "requirements",
+      "roles",
+      "warranty",
+      "eligibility",
+      "exclusions",
+      "funding"
+    ],
+    "funding_rules_count": 14,
+    "exclusions_count": 8
+  }
+}

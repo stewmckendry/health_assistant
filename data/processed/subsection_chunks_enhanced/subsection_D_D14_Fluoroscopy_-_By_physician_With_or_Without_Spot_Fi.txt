@@ -1,0 +1,43 @@
+Subsection: Fluoroscopy - By physician With or Without Spot Films
+Parent Section: D
+Page Reference: D14
+Pages: 362 to 362
+Text chunks: 1
+Total text length: 639 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      4,
+      "X195 Chest ...................................................................................... 9.25 14.20"
+    ],
+    [
+      5,
+      "X196 Skeleton.................................................................................. 9.25 14.20"
+    ],
+    [
+      6,
+      "X197 Abdomen ................................................................................ 9.25 14.20"
+    ],
+    [
+      8,
+      "physician per \u00bc hour .......................................................... 7.30 23.75"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 362 ---
+DIAGNOSTIC RADIOLOGY
+FLUOROSCOPY - BY PHYSICIAN WITH OR WITHOUT SPOT FILMS
+H P
+X195 Chest ...................................................................................... 9.25 14.20
+X196 Skeleton.................................................................................. 9.25 14.20
+X197 Abdomen ................................................................................ 9.25 14.20
+X189 Fluoroscopic control of clinical procedures done by another
+physician per ¼ hour .......................................................... 7.30 23.75
+Amd 12 Draft 1 D14 February 14 , 2 025 (e ffective M arch 3, 2025)

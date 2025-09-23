@@ -1,0 +1,133 @@
+{
+  "subsection_title": "Pregnancy",
+  "parent_section": "G",
+  "page_ref": "G5",
+  "pages_processed": "387-387",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        6,
+        "pregnancy) ......................................................................... 48.75 33.80"
+      ],
+      [
+        7,
+        "J160 - for high risk pregnancy or complications of pregnancy ...... 48.75 32.25"
+      ],
+      [
+        8,
+        "J166 - multiple gestation, for each additional fetus, to J160 add 41.45 22.10"
+      ],
+      [
+        11,
+        "pregnancy) ......................................................................... 32.10 17.55"
+      ],
+      [
+        13,
+        "J158 - for high risk pregnancy or complications of pregnancy ...... 32.10 17.55"
+      ],
+      [
+        15,
+        "ductus venosus, to J160 or J158 ............................... add 32.10 30.00"
+      ],
+      [
+        25,
+        "(maximum one per pregnancy) .......................................... 39.00 20.85"
+      ],
+      [
+        26,
+        "J169 - multiple gestation, for each additional fetus, to J168. add 33.15 16.35"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J159",
+      "description": "Complete - on or after 16 weeks gestation (maximum one per normal pregnancy)",
+      "fee": 48.75,
+      "h_fee": 48.75,
+      "p_fee": 33.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J160",
+      "description": "Complete - for high risk pregnancy or complications of pregnancy",
+      "fee": 48.75,
+      "h_fee": 48.75,
+      "p_fee": 32.25,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J166",
+      "description": "Complete - multiple gestation, for each additional fetus, to J160 add",
+      "fee": 41.45,
+      "h_fee": 41.45,
+      "p_fee": 22.1,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J157",
+      "description": "Gestational age for Maternal Serum Screening Program - before 16 weeks gestation (maximum one per normal pregnancy)",
+      "fee": 32.1,
+      "h_fee": 32.1,
+      "p_fee": 17.55,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J158",
+      "description": "Limited - for high risk pregnancy or complications of pregnancy",
+      "fee": 32.1,
+      "h_fee": 32.1,
+      "p_fee": 17.55,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J167",
+      "description": "Limited - fetal Doppler evaluation of middle cerebral artery and/or ductus venosus, to J160 or J158 add",
+      "fee": 32.1,
+      "h_fee": 32.1,
+      "p_fee": 30.0,
+      "units": null,
+      "conditions": "J167 is only eligible for payment when rendered by a physician for assessment of: a. fetal anemia, or b. intrauterine growth retardation i. with estimated fetal weight OR abdominal circumference measuring below the 10th percentile, or ii. >=30 percentile decrease in estimated fetal weight since previous imaging, or c. in high-risk pregnancies.",
+      "special_prefix": null
+    },
+    {
+      "code": "J168",
+      "description": "Nuchal translucency for Prenatal Genetic Screening (maximum one per pregnancy)",
+      "fee": 39.0,
+      "h_fee": 39.0,
+      "p_fee": 20.85,
+      "units": null,
+      "conditions": "Ultrasound services listed under the headings 'Abdomen and Retroperitoneum' or 'Pelvis' or 'Pregnancy' rendered on the same day to the same patient by any physician as J168 are not eligible for payment.",
+      "special_prefix": null
+    },
+    {
+      "code": "J169",
+      "description": "Multiple gestation, for each additional fetus, to J168 add",
+      "fee": 33.15,
+      "h_fee": 33.15,
+      "p_fee": 16.35,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

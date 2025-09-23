@@ -1,0 +1,64 @@
+Subsection: Genitourinary System
+Parent Section: B
+Page Reference: B6
+Pages: 330 to 330
+Text chunks: 1
+Total text length: 975 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      4,
+      "J834 Dynamic renal imaging ........................................................... 96.25 32.60"
+    ],
+    [
+      6,
+      "J835 - includes first transit............................................................. 131.70 57.80"
+    ],
+    [
+      7,
+      "J880 - repeat after pharmacological intervention .......................... 44.85 17.80"
+    ],
+    [
+      8,
+      "J836 Static renal scintigraphy.......................................................... 33.25 40.30"
+    ],
+    [
+      9,
+      "J837 ERPF by blood sample method.............................................. 40.15 10.35"
+    ],
+    [
+      10,
+      "J838 GFR by blood sample method................................................ 40.15 10.35"
+    ],
+    [
+      11,
+      "J839 Cystography for vesicoureteric reflux ..................................... 120.55 40.30"
+    ],
+    [
+      13,
+      "J840 - includes first transit............................................................. 82.45 40.30"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 330 ---
+NUCLEAR MEDICINE - IN VIVO
+GENITOURINARY SYSTEM
+H P
+J834 Dynamic renal imaging ........................................................... 96.25 32.60
+Computer assessed renal function
+J835 - includes first transit............................................................. 131.70 57.80
+J880 - repeat after pharmacological intervention .......................... 44.85 17.80
+J836 Static renal scintigraphy.......................................................... 33.25 40.30
+J837 ERPF by blood sample method.............................................. 40.15 10.35
+J838 GFR by blood sample method................................................ 40.15 10.35
+J839 Cystography for vesicoureteric reflux ..................................... 120.55 40.30
+Testicular and scrotal scintigraphy
+J840 - includes first transit............................................................. 82.45 40.30
+Amd 12 Draft 1 B6 February 14 , 2 025 (e ffective M arch 3, 2025)

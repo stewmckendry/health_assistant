@@ -1,0 +1,283 @@
+{
+  "source": "data/ontario/ohip/health-insurance-act.doc",
+  "extracted_at": "2025-09-23T17:37:25.838904Z",
+  "total_sections": 10,
+  "normalized_sections": 10,
+  "sections": [
+    {
+      "section_ref": "2.1",
+      "topic_section": "HEALTH CARD",
+      "title": "REVOKED:",
+      "raw_text": " 2.1\u00a0\u00a0REVOKED: O.\u00a0Reg. 172/98, s.\u00a01.",
+      "line_range": "L279-L279",
+      "effect": "This section has been revoked and is no longer in effect.",
+      "notes": "No current provisions or requirements are established under this section.",
+      "topics": [
+        "health_card"
+      ]
+    },
+    {
+      "section_ref": "2.2",
+      "topic_section": "HEALTH CARD",
+      "title": "The following information is prescribed as personal information that may be collected",
+      "raw_text": " 2.2\u00a0\u00a0The following information is prescribed as personal information that may be collected, used or disclosed under clause 2 (3) (b) of the Act:\n 1. A photograph of the insured person.\n 2. A copy of an insured person\u2019s signature. O.\u00a0Reg. 177/95, s.\u00a02.",
+      "line_range": "L280-L282",
+      "effect": "Establishes the types of personal information that may be collected, used, or disclosed under the Act.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [
+        "insured_person"
+      ],
+      "notes": "Includes a photograph and signature of the insured person.",
+      "topics": [
+        "health_card"
+      ]
+    },
+    {
+      "section_ref": "2.2(2)",
+      "topic_section": "ESTABLISHING STATUS",
+      "title": "An insured person who intends to surrender a card under subsection (1) by mailing it or by delive...",
+      "raw_text": " (2)\u00a0\u00a0An insured person who intends to surrender a card under subsection (1) by mailing it or by delivering it to the General Manager in a way other than by personal delivery shall deface the card in the manner approved by the General Manager before mailing or otherwise delivering the card. O.\u00a0Reg. 218/95, s.\u00a01.\nESTABLISHING STATUS\n 3.\u00a0\u00a0(1)\u00a0\u00a0Where any one asserts that he or she is a resident, or is entitled to any exemption from the requirements to be recognized as a resident, or in any other way is entitled to payment from the Plan, it is the obligation of the person making the assertion to prove to the General Manager that he or she meets the requirements to be an insured person. O.\u00a0Reg. 133/09, s.\u00a03.",
+      "line_range": "L284-L286",
+      "effect": "Establishes the requirement for an insured person to deface their health card before surrendering it.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [
+        "insured_person",
+        "General_Manager"
+      ],
+      "notes": "The card must be defaced in a manner approved by the General Manager before surrender.",
+      "topics": [
+        "billing",
+        "eligibility",
+        "exemption",
+        "health_card",
+        "residency"
+      ]
+    },
+    {
+      "section_ref": "2.2(2)",
+      "topic_section": "ESTABLISHING STATUS",
+      "title": "The General Manager may require a person to submit any information, evidence or documents that th...",
+      "raw_text": " (2)\u00a0\u00a0The General Manager may require a person to submit any information, evidence or documents that the General Manager considers necessary to make a decision, whether the person is applying to be an insured person for the first time or seeking to re-establish coverage, and may either require the submission of original material, or permit the submission of copies. O.\u00a0Reg. 133/09, s.\u00a03.",
+      "line_range": "L287-L287",
+      "effect": "The General Manager may require submission of information or documents to determine insured person status.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [
+        "insured_person"
+      ],
+      "notes": "The General Manager can request original documents or allow copies.",
+      "topics": [
+        "eligibility"
+      ]
+    },
+    {
+      "section_ref": "2.2(2)",
+      "topic_section": "APPLICATION",
+      "title": "An application described in subsection (1) shall be submitted in the manner specified by the Gene...",
+      "raw_text": " (2)\u00a0\u00a0An application described in subsection (1) shall be submitted in the manner specified by the General Manager, who may require a person to attend in person to submit the application. O. Reg. 223/17, s. 1 (1)",
+      "line_range": "L291-L291",
+      "effect": "Establishes the requirement for submitting an application in a specified manner.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [
+        "applicant",
+        "General Manager"
+      ],
+      "notes": "The General Manager may require in-person attendance for application submission.",
+      "topics": []
+    },
+    {
+      "section_ref": "2.2(3)",
+      "topic_section": "APPLICATION",
+      "title": "The following are the rules about submitting an application on someone else\u2019s behalf:",
+      "raw_text": " (3)\u00a0\u00a0The following are the rules about submitting an application on someone else\u2019s behalf:\n 1. If a person is under 16 years old, a parent who has legal custody, a children\u2019s aid society, or anyone else who is legally authorized to act for the person may submit an application.\n 2. If there are reasonable grounds to believe that a person is incapable of consenting to the collection, use and disclosure of personal health information under the Personal Health Information Protection Act, 2004, a person who would be able to act for the person under section 26 of that Act may submit an application, and the rules of that section apply for the purposes of making the application, subject to any necessary modification.\n 3. In the case of a dead person, the person\u2019s estate trustee may submit an application, or, if there is no estate trustee, the person who has assumed the responsibility for looking after the estate may submit the application.\n 4. A person who is legally authorized to act for another person for this purpose under a law of Ontario or Canada may submit an application.\n 5. The General Manager may require a person who is applying on someone else\u2019s behalf to submit anything a person applying on their own behalf would have been required to submit. O.\u00a0Reg. 133/09, s.\u00a03; O. Reg. 223/17, s. 1 (2).",
+      "line_range": "L292-L297",
+      "effect": "Establishes rules for submitting health insurance applications on behalf of another person.",
+      "conditions": [
+        {
+          "key": "age",
+          "op": "<",
+          "value": 16
+        },
+        {
+          "key": "incapacity",
+          "op": "exists",
+          "value": "true"
+        },
+        {
+          "key": "deceased",
+          "op": "exists",
+          "value": "true"
+        },
+        {
+          "key": "legal_authorization",
+          "op": "exists",
+          "value": "true"
+        }
+      ],
+      "actors": [
+        "parent",
+        "children's_aid_society",
+        "estate_trustee",
+        "authorized_person"
+      ],
+      "notes": "The General Manager may require additional documentation from the applicant.",
+      "topics": [
+        "dependant"
+      ]
+    },
+    {
+      "section_ref": "2.2(4)",
+      "topic_section": "INSURED HOSPITAL SERVICES IN CANADA",
+      "title": "REVOKED:",
+      "raw_text": " (4)\u00a0\u00a0REVOKED: O.\u00a0Reg. 223/17, s. 1 (3).\n 5.-6.3\u00a0\u00a0REVOKED: O. Reg. 67/20, s. 3.\nINSURED HOSPITAL SERVICES IN CANADA\n 7.\u00a0\u00a0Subject to section 10, the in-patient services to which an insured person is entitled without charge are all of the following services:\n 1. Accommodation and meals at the standard or public ward level.\n 2. Necessary nursing service, except for the services of a private duty nurse who is not engaged and paid by the hospital.\n 3. Laboratory, radiological and other diagnostic procedures, together with the necessary interpretations for the purpose of maintaining health, preventing disease and assisting in the diagnosis and treatment of any injury, illness or disability.\n 4. Drugs, biologicals and related preparations that are prescribed by an attending physician, oral and maxillofacial surgeon, midwife or registered nurse in the extended class in accordance with accepted practice and administered in a hospital, but not\u2002including any proprietary medicine as defined from time to time by the regulations made under the Food and Drugs Act (Canada).\n 5. Use of operating room, obstetrical delivery room and anaesthetic facilities, including necessary equipment and supplies. R.R.O. 1990, Reg. 552, s.\u00a07; O.\u00a0Reg. 794/93, s.\u00a02; O.\u00a0Reg. 345/01, s.\u00a02; O.\u00a0Reg. 217/11, s.\u00a02.\n 8.\u00a0\u00a0(1)\u00a0\u00a0The out-patient services to which an insured person is entitled without charge are all of the following services:\n 1. Laboratory, radiological and other diagnostic procedures, together with the necessary interpretations.\n 2. The use of radiotherapy facilities where available in a hospital in Canada when prescribed by a physician.",
+      "line_range": "L298-L309",
+      "effect": "Establishes the in-patient and out-patient hospital services that an insured person is entitled to without charge.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [
+        "insured_person"
+      ],
+      "notes": "Services include accommodation, nursing, diagnostic procedures, prescribed drugs, and use of operating facilities. Proprietary medicines are excluded.",
+      "topics": [
+        "billing",
+        "eligibility",
+        "hospital"
+      ]
+    },
+    {
+      "section_ref": "7.1",
+      "topic_section": "INSURED HOSPITAL SERVICES IN CANADA",
+      "title": "Use of home hyperalimentation equipment and supplies where available in a hospital in Ontario and...",
+      "raw_text": " 7.1 Use of home hyperalimentation equipment and supplies where available in a hospital in Ontario and prescribed by a physician on the medical staff of that hospital or by a registered nurse in the extended class on the extended class nursing staff of that hospital.\n 8. The provision to haemophiliac patients, for use in the home, of equipment and supplies for the emergency treatment of, or the prevention of, haemorrhage where the equipment and supplies are available in a hospital in Ontario and prescribed by a physician on the medical staff of that hospital.",
+      "line_range": "L321-L322",
+      "effect": "Allows the use of home hyperalimentation equipment and supplies in Ontario hospitals when prescribed by authorized medical staff.",
+      "conditions": [
+        {
+          "key": "equipment_availability",
+          "op": "exists",
+          "value": "hospital in Ontario"
+        },
+        {
+          "key": "prescription",
+          "op": "required",
+          "value": "physician or registered nurse in extended class"
+        }
+      ],
+      "actors": [
+        "insured_person",
+        "physician",
+        "registered_nurse"
+      ],
+      "notes": "Equipment and supplies must be available in the hospital and prescribed by qualified personnel.",
+      "topics": [
+        "ambulance",
+        "hospital"
+      ]
+    },
+    {
+      "section_ref": "8.1",
+      "topic_section": "INSURED HOSPITAL SERVICES IN CANADA",
+      "title": "The provision to haemophiliac patients, for use in the home, of equipment and supplies other than...",
+      "raw_text": " 8.1 The provision to haemophiliac patients, for use in the home, of equipment and supplies other than blood products where the equipment and supplies are available in a hospital in Ontario and prescribed by a registered nurse in the extended class on the extended class nursing staff of that hospital.\n 9.-16. REVOKED: O.\u00a0Reg. 175/95, s.\u00a01\u00a0(2).\nR.R.O. 1990, Reg. 552, s.\u00a08; O.\u00a0Reg. 794/93, s.\u00a03; O.\u00a0Reg. 175/95, s.\u00a01\u00a0(1,\u00a02); O.\u00a0Reg. 345/01, s.\u00a03; O.\u00a0Reg. 62/03, s.\u00a02\u00a0(1-6).\n (1.1), (1.2)\u00a0\u00a0REVOKED: O. Reg. 144/23, s. 2.\n (1.3)\u00a0\u00a0REVOKED: O.\u00a0Reg. 62/03, s. 2\u00a0(8).\n (2)\u00a0\u00a0Despite subparagraph ii of paragraph 5 of subsection (1), the provision of a medication listed in Column 1 of the Table to this subsection to an out-patient, for use in the home, is an out-patient service to which an insured person is entitled without charge if the medication is provided in the circumstances described in Column 2 of the Table:\nTABLE\n\nItem\nColumn 1\u2028Medication Provided\nColumn 2\u2028Condition of Insured Service\n1.\nA medication for the emergency treatment of, or the prevention of, a haemorrhage\n 1. The medication must be available in a hospital in Ontario.\n 2. The medication must be prescribed by a physician on the medical staff of that hospital.\n 3. The medication must be provided to a patient with haemophilia.\n2.\u0007cyclosporine\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group O hospital. \n 2. The medication must be provided to a solid organ or bone marrow transplant patient.\n3.\nzidovudine, commonly called \u201cAZT\u201d\n 1. The medication must be prescribed by a physician. \n 2. The medication must be provided to a patient with HIV infection.\n4.\u0007A biosynthetic human growth hormone\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group S hospital. \n 2. The medication must be provided to a patient with endogenous growth hormone deficiency.\n5.\u0007A medication for treatment of cystic fibrosis that is listed in Schedule 17\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group T hospital. \n6.\u0007A medication for the treatment of thalassemia that is listed in Schedule 18\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group U hospital.\n7.\nerythropoietin\n 1. The medication must be prescribed by a physician on the medical staff of a hospital.\n 2. The medication must be provided to a patient with anaemia of end-stage renal disease.\n8.\nalglucerase\n 1. The medication must be prescribed by a physician.\n 2. The use of the medication must be recommended by the Gaucher Disease Review Committee.\n 3. The medication must be provided to a patient with Gaucher disease.\n9.\nclozapine\n 1. The medication must be prescribed by a physician on the medical staff of a hospital.\n 2. The use of the medication must be recommended by a regional co-ordinator of a provincial psychiatric hospital.\n 3. The medication must be provided to a patient with treatment-resistant schizophrenia.\n10.\ndidanosine, commonly called \u201cddI\u201d\n 1. The medication must be prescribed by a physician.\n 2. The medication must be provided to a patient with HIV infection.\n11.\nzalcitabine, commonly called \u201cddC\u201d\n 1. The medication must be prescribed by a physician.\n 2. The medication must be provided to a patient with HIV infection.\n12.\npentamidine\n 1. The medication must be prescribed by a physician.\n 2. The medication must be provided to a patient with HIV infection.\nO.\u00a0Reg. 175/95, s.\u00a01\u00a0(3); O.\u00a0Reg. 253/00, s.\u00a01; O.\u00a0Reg. 322/01, s.\u00a01.\n (2.1)\u00a0\u00a0Despite subparagraph 5 ii of subsection (1), the provision of verteporfin to an out-patient on or after June 15, 2002, for use in the home, is an out-patient service to which an insured person is entitled without charge if the verteporfin is provided in the following circumstances:\n 1. The verteporfin is provided in the course of ocular photodynamic therapy for the treatment of predominantly classic subfoveal choroidal neovascularization secondary to age-related macular degeneration or pathologic myopia.\n 2. The area of classic subfoveal choroidal neovascularization is equal to or greater than 50 per cent of the total lesion, as determined by fluorescein angiography.\n 3. The first treatment is commenced within 30 months after the initial diagnosis of predominantly classic subfoveal choroidal neovascularization secondary to age-related macular degeneration or pathologic myopia.\n 4. The patient\u2019s visual acuity is 20/40 or worse. O.\u00a0Reg. 169/02, s.\u00a02.\n (3)\u00a0\u00a0Despite subparagraph iv of paragraph 5 of subsection (1), the following visits to a hospital are out-patient services to which an insured person is entitled without charge:\n 1. A visit that is solely for the administration of a rabies vaccine.\n 2. A visit that is solely for the administration of a medication listed in Column 1 of the Table to subsection (2) if the conditions listed in Column 2 of the Table are satisfied. O.\u00a0Reg. 175/95, s.\u00a01\u00a0(3).\n 8.1\u00a0\u00a0Despite paragraph 3 of section 7 and paragraph 1 of subsection 8 (1), a laboratory, radiological or other diagnostic procedure ordered by an oral and maxillofacial surgeon and rendered in a hospital is not an in-patient or out-patient service to which an insured person is entitled without charge unless it is rendered,\n (a) in connection with a dental surgical procedure provided by an oral and maxillofacial surgeon in a hospital and it is medically necessary for the person to receive the dental surgical procedure in a hospital; or\n (b) on the order of an oral and maxillofacial surgeon who has reasonable grounds to believe that a dental surgical procedure, performed by an oral and maxillofacial surgeon, will be required in connection with the laboratory, radiological or other diagnostic procedure and that it will be medically necessary for the person to receive the dental surgical procedure in a hospital. O. Reg. 144/23, s. 3.\n 9.\u00a0\u00a0(1)\u00a0\u00a0Subject to section 10 and subsection 11 (1), an insured person is entitled to in-patient services and out-patient services in the following hospitals, without paying any charge to the hospital for such services:\n 1. A hospital listed in Schedule 2.\n 2. A hospital graded, under the Public Hospitals Act, as a Group A, B, C, E, F, G, J or R hospital.\n 3. REVOKED: O.\u00a0Reg. 322/01, s.\u00a02\u00a0(1).\nO.\u00a0Reg. 253/00, s.\u00a02\u00a0(1); O.\u00a0Reg. 322/01, s.\u00a02\u00a0(1).\n (2)\u00a0\u00a0Subject to section 10 and subsection 11 (1), an insured person is entitled to receive, in a hospital listed in Schedule 1, without paying any charge to the hospital,\n (a) such in-patient and out-patient services as are available in the hospital; and\n (b) in conjunction with insured in-patient services, accommodation and meals at the standard or public ward level. O. Reg. 119/18, s. 1 (1).\n (3)\u00a0\u00a0Subject to section 10, where the attending physician, oral and maxillofacial surgeon or midwife certifies in writing that an insured person\u2019s condition is such that the person requires immediate admission as an in-patient, and standard ward accommodation in an approved hospital is not available because all such accommodation is occupied or where the attending physician, oral and maxillofacial surgeon or midwife certifies in writing that an insured person\u2019s condition is such that for the person\u2019s own good or for the good of other patients it is necessary that the person be supplied with private or semi-private accommodation, the person shall be provided by the hospital with private or semi-private accommodation without paying any charge to the hospital for such services. R.R.O. 1990, Reg. 552, s.\u00a09\u00a0(3); O.\u00a0Reg. 794/93, s. 4; O.\u00a0Reg. 496/96, s.\u00a02; O.\u00a0Reg. 345/01, s.\u00a05.\n (3.1)\u00a0\u00a0Subject to section 10, where an insured person is receiving in-patient services in a hospital listed in Schedule 1 and standard ward accommodation in the hospital is not available for any reason, the person shall be provided by the hospital with private or semi-private accommodation without paying any charge to the hospital for such services. O. Reg. 119/18, s. 1 (2).\n (4)\u00a0\u00a0Subject to section 10 and to subsection 11 (1), an insured person is entitled to receive, in a hospital listed in Schedule 4, those insured services that are in accordance with the type of care and treatment designated in the Schedule for that hospital without paying any charge for such services. R.R.O. 1990, Reg. 552, s.\u00a09\u00a0(4); O.\u00a0Reg. 111/98, s.\u00a01.\n (5)\u00a0\u00a0Subject to subsection 11 (2), an insured person is entitled to receive, as an out-patient in a rehabilitation centre or crippled children\u2019s centre listed in Schedule 6, the insured services indicated in the Schedule without paying any charge to the centre for such services. R.R.O. 1990, Reg. 552, s.\u00a09\u00a0(5).\n (6)\u00a0\u00a0Subject to subsection 11 (1), an insured person is entitled to receive computerized axial tomography scanning services in a hospital graded, under the Public Hospitals Act, as a Group M hospital without paying any charge to the hospital for such services. O.\u00a0Reg. 322/01, s.\u00a02\u00a0(2).\n (7)\u00a0\u00a0REVOKED: O.\u00a0Reg. 253/00, s.\u00a02\u00a0(3).\n (8)\u00a0\u00a0It is a condition of payment by the Plan to a hospital for the performance of a computerized axial tomography scan that the scan be performed by and on the premises of a hospital graded, under the Public Hospitals Act, as a Group M hospital. O.\u00a0Reg. 322/01, s.\u00a02\u00a0(3).\n 10.\u00a0\u00a0(1)\u00a0\u00a0A co-payment for accommodation and meals that are insured services shall be made by or on behalf of an insured person who, in the opinion of the attending physician, requires chronic care and is more or less permanently resident in a hospital or other institution. O.\u00a0Reg. 496/96, s.\u00a03.\n (2)\u00a0\u00a0This section applies only with respect to an insured person receiving,\n (a) insured in-patient services provided in a hospital listed in Part II of Schedule 1, Part II of Schedule 2 or Part II of Schedule 4 or a hospital graded, under the Public Hospitals Act, as a Group F, G or R hospital; or\n (b) insured in-patient services provided in a hospital graded, under the Public Hospitals Act, as a Group A, B or C hospital if the insured person is awaiting placement in a hospital referred to in clause (a) or another institution. O.\u00a0Reg. 322/01, s.\u00a03.\n (3)\u00a0\u00a0Co-payments shall be paid to the hospital providing the services. O.\u00a0Reg. 496/96, s.\u00a03.\n (4)\u00a0\u00a0The amount of the co-payment is the amount charged by the hospital subject to the following restrictions:\n 1. The amount charged may not exceed the maximum amount of the co-payment under subsections (6) to (9).\n 2. The amount charged may not be increased unless the hospital has given the insured person at least 30 days written notice of the increase. O.\u00a0Reg. 496/96, s.\u00a03.\n (5)\u00a0\u00a0Paragraph 2 of subsection (4) does not apply to an increase in the amount of a co-payment that was reduced pursuant to an application under subsection (7), if the increase results from,\n (a) a determination under subsection (8) pursuant to a reapplication under subsection (7); or\n (b) a failure to reapply under subsection (7) at the end of the period for which the reduction was in effect. O.\u00a0Reg. 496/96, s.\u00a03.\n (6)\u00a0\u00a0Subject to subsections (6.1) to (9), the maximum amount of the co-payment is,\n (a) for each day, other than a day that is part of a month referred to in clause (b), that services are received by a person in a category set out in Column 1 of the Table to this section, the amount prescribed opposite in Column 3; and\n (b) for each calendar month that services are received on every day of the month by a person in a category set out in Column 1 of the Table to this section, the amount prescribed opposite in Column 4. O. Reg. 146/17, s. 1 (1, 2).\n (6.1)\u00a0\u00a0If the maximum amount of the co-payment determined under subsection (6) is a negative number, the maximum amount of the co-payment is deemed to be zero. O. Reg. 146/17, s. 1 (1).\n (7)\u00a0\u00a0The insured person or the insured person\u2019s spouse may make an application to the hospital for a reduction in the maximum amount of the co-payment if,\n (a) the insured person has a spouse who was cohabiting with the insured person immediately before the insured person was admitted to the hospital where he or she is receiving insured in-patient services or, if the insured person has been in more than one hospital or institution continuously, immediately before the insured person was first admitted to such a hospital or institution;\n (b) the spouse is receiving benefits under the Old Age Security Act (Canada) or the Ontario Guaranteed Annual Income Act; and\n (c) the spouse lives outside a long-term care home or a hospital or other facility that is government-funded. O.\u00a0Reg. 496/96, s.\u00a03; O.\u00a0Reg. 67/00, s.\u00a04 (1); O.\u00a0Reg. 328/05, s.\u00a04 (1-4); O.\u00a0Reg. 100/10, s.\u00a03.\n (8)\u00a0\u00a0If an application is made under subsection (7), the amount of the reduction shall be determined in accordance with the Application for Reduction of Assessed Co-Payment Fees dated June 2008 and published by and available from the Ministry of Health and Long-Term Care. O.\u00a0Reg. 496/96, s.\u00a03; O.\u00a0Reg. 67/00, s.\u00a04\u00a0(2); O.\u00a0Reg. 314/06, s.\u00a01; O.\u00a0Reg. 209/07, s.\u00a01 (1); O.\u00a0Reg. 192/09, s.\u00a01.\n (9)\u00a0\u00a0A reduction determined under subsection (8) shall take effect on the first day of the month in which the application for the reduction was made and ends on the earliest of the following dates:\n 1. The first June 30 following the first day of the month in which the application for the reduction was made.\n 2. The last day of the month immediately preceding the month in which the next application is made under subsection (7) in respect of the same insured person. O.\u00a0Reg. 496/96, s.\u00a03.\n (10)\u00a0\u00a0This section does not apply with respect to,\n (a) a child who is under 18 years of age;\n (b) a person who was receiving benefits under the General Welfare Assistance Act or the Family Benefits Act, income support under the Ontario Disability Support Program Act, 1997, or income assistance under the Ontario Works Act, 1997 on the day before the insured person was admitted to the hospital where they are receiving insured in-patient services. O.\u00a0Reg. 496/96, s.\u00a03; O.\u00a0Reg. 221/03, s.\u00a02.\n (11)\u00a0\u00a0In this section, and in the Table to this section,\n\u201cdependant\u201d means,\n (a) a spouse who is not receiving benefits under the Old Age Security Act (Canada) or the Ontario Guaranteed Annual Income Act and who was cohabiting with the insured person immediately before the insured person was admitted to the hospital where they are receiving insured in-patient services or, if the insured person has been in more than one hospital or institution continuously, immediately before they were first admitted to such a hospital or institution, or\n (b) a child who is under 18 years of age;\n\u201cestimated income\u201d means the average monthly income of any nature or kind whatsoever, so long as it is taxable under the Income Tax Act (Canada), of an insured person or of a dependant of an insured person, as estimated by the insured person or the insured person\u2019s representative, and including,\n (a) payments made under an Act of the Parliament of Canada, except for payments made under the Canada Disability Benefit Act or the Universal Child Care Benefit Act (Canada), \n (a.1) payments made by Ontario,\n (b) income from salaries and wages,\n (c) income from an interest in or operation of a business, less expenses incurred in earning such gross income, and\n (d) income from investments, less expenses incurred in earning such income.\n\u201cthreshold income amount\u201d means, in respect of an Item in the Table to this section, the threshold income amount determined under Column 2 of the Item. O.\u00a0Reg. 496/96, s.\u00a03; O.\u00a0Reg. 197/97, s.\u00a01; O.\u00a0Reg. 67/00, s.\u00a04 (3, 4); O.\u00a0Reg. 328/05, s.\u00a04 (5); O.\u00a0Reg. 209/07, s.\u00a01 (2); O. Reg. 146/17, s. 1 (3, 4); O. Reg. 136/25, s. 1.\n (12)\u00a0\u00a0Despite the definition of \u201cestimated income\u201d in subsection (11), payments from a registered disability savings plan, as defined in subsection 146.4 (1) of the Income Tax Act (Canada), shall not be included in estimated income. O.\u00a0Reg. 131/09, s.\u00a01.\n (13)\u00a0\u00a0Beginning on July 1, 2018, and on every July 1 thereafter, the maximum daily co-payment amount set out in Column 3 of Item 1 of the Table to this section and the threshold income amounts set out in Column 2 of the Table to this section shall be adjusted in accordance with the following rules:\n 1. Subject to paragraphs 2 and 3, the amounts that applied immediately before the applicable July 1 date shall be adjusted by the percentage change between,\n i. the Consumer Price Index for the previous calendar year, and\n ii. the Consumer Price Index for the calendar year immediately preceding the previous calendar year.\n 2. If the percentage change described in paragraph 1 is greater than 2.5 per cent, the amounts shall instead be adjusted by 2.5 per cent.\n 3. If the percentage change described in paragraph 1 is negative, the amounts shall instead not be adjusted. O. Reg. 146/17, s. 1 (5).\n(13.1)\u00a0\u00a0The adjustments under subsection (13) that would otherwise have taken effect on July 1, 2020 and July 1, 2021 shall not take effect. O. Reg. 817/21, s. 1.\n(13.2)\u00a0\u00a0The adjustment under subsection (13) that would otherwise take effect on July 1, 2022 shall instead take effect on October 1, 2022, but shall be calculated with reference to the calendar years that would otherwise apply. O. Reg. 817/21, s. 1.\n (14)\u00a0\u00a0For the purposes of subsection (13), the Consumer Price Index for a calendar year is the Consumer Price Index for Canada (All-items) for the calendar year, as reported by Statistics Canada under the authority of the Statistics Act (Canada). O. Reg. 146/17, s. 1 (5).\n (15)\u00a0\u00a0The Minister may publish the adjusted amounts on a government website. O. Reg. 146/17, s. 1 (5).\nTABLE\u2028MAXIMUM CO-PAYMENT AMOUNTS ON OR AFTER JULY 1, 2018\nItem\nColumn 1\nPersons Receiving Chronic Care Services\nColumn 2\nThreshold Income Amount\nColumn 3\nMaximum Daily Co-payment\nColumn 4\nMaximum Monthly Co-Payment\n1.\nPerson not referred to elsewhere in this Table\nNot applicable\n$59.82, subject to the annual adjustment set out in subsection (13) and rounded to the nearest cent\nTake the daily co-payment determined under Column 3 and multiply it by 30.4167, then round it to the nearest cent\n2.\u0007Person with no dependants \u2013 maximum estimated income equal to the maximum monthly co-payment (Column 4, Item 1) plus the amount set out in paragraph 1 of subsection 32 (1) of Ontario Regulation 222/98 (General) made under the Ontario Disability Support Program Act, 1997, rounded to the nearest cent\u0007Not applicable\u0007Take the estimated income and subtract the amount set out in paragraph 1 of subsection 32 (1) of Ontario Regulation 222/98 (General) made under the Ontario Disability Support Program Act, 1997, then divide the result by 30.4167 and round it to the nearest cent\u0007Take the estimated income and subtract the amount set out in paragraph 1 of subsection 32 (1) of Ontario Regulation 222/98 (General) made under the Ontario Disability Support Program Act, 1997, then round it to the nearest cent\n3.\nPerson with one dependant \u2013 maximum aggregate estimated incomes equal to the sum of one dollar, the threshold income amount (Column 2 of this Item) and three times the maximum monthly co-payment (Column 4, Item 1), rounded to the nearest dollar\n$4,023.00, subject to the annual adjustment set out in subsection (13) and rounded to the nearest dollar\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 91.2 and round it to the nearest cent\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 3 and round it to the nearest cent\n4.\nPerson with two dependants \u2013 maximum aggregate estimated incomes equal to the sum of one dollar, the threshold income amount (Column 2 of this Item) and three times the maximum monthly co-payment (Column 4, Item 1), rounded to the nearest dollar\n$4,596.00, subject to the annual adjustment set out in subsection (13) and rounded to the nearest dollar\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 91.2 and round it to the nearest cent\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 3 and round it to the nearest cent\n5.\nPerson with three dependants \u2013 maximum aggregate estimated incomes equal to the sum of one dollar, the threshold income amount (Column 2 of this Item) and three times the maximum monthly co-payment (Column 4, Item 1), rounded to the nearest dollar\n$5,122.00, subject to the annual adjustment set out in subsection (13) and rounded to the nearest dollar\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 91.2 and round it to the nearest cent\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 3 and round it to the nearest cent\n6.\nPerson with four or more dependants \u2013 maximum aggregate estimated incomes equal to the sum of one dollar, the threshold income amount (Column 2 of this Item) and three times the maximum monthly co-payment (Column 4, Item 1), rounded to the nearest dollar\n$5,589.00, subject to the annual adjustment set out in subsection (13) and rounded to the nearest dollar\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 91.2 and round it to the nearest cent\nTake the aggregate estimated incomes and subtract the threshold income amount (Column 2 of this Item), then divide the result by 3 and round it to the nearest cent\nO. Reg. 146/17, s. 1 (7).\n 11.\u00a0\u00a0(1)\u00a0\u00a0An insured person is not entitled to insured services in a hospital unless the person has been,\n (a) admitted as an in-patient on the order of a physician or a registered nurse in the extended class;\n (b) received in the hospital and examined as an out-patient by a physician and treated as an out-patient, if necessary;\n (c) referred to the hospital as an out-patient by,\n (i) a physician, for any of the services designated in section 8, or\n (ii) REVOKED: O. Reg. 259/19, s. 2.\n (iii) an oral and maxillofacial surgeon, for any laboratory, radiological or diagnostic procedure described in section 8.1;\n (c.1) admitted as an in-patient or registered as an out-patient on the order or under the authority of an oral and maxillofacial surgeon;\n (d) admitted as an in-patient or registered as an out-patient on the order or under the authority of a midwife; or\n (e) registered as an out-patient on the order or under the authority of a registered nurse in the extended class. R.R.O. 1990, Reg. 552, s.\u00a011\u00a0(1); O.\u00a0Reg. 794/93, s.\u00a05; O.\u00a0Reg. 44/98, s.\u00a03; O.\u00a0Reg. 345/01, s.\u00a06; O.\u00a0Reg. 62/03, s.\u00a03; O.\u00a0Reg. 352/04, s.\u00a02; O.\u00a0Reg. 217/11, s.\u00a04; O. Reg. 259/19, s. 2.\n (2)\u00a0\u00a0An insured person is not entitled to receive insured services in a centre listed in Schedule 6 unless he or she has been,\n (a) received in the centre, and examined as an out-patient by a physician; or\n (b) referred to the centre as an out-patient by a physician. R.R.O. 1990, Reg. 552, s.\u00a011\u00a0(2).\n 12.\u00a0\u00a0REVOKED: O.\u00a0Reg. 375/93, s.\u00a03.\n 13.\u00a0\u00a0REVOKED: O.\u00a0Reg. 253/09, s.\u00a04.\n 14.\u00a0\u00a0REVOKED: O.\u00a0Reg. 493/00, s.\u00a01.\nINSURED AMBULANCE SERVICES\n 15.\u00a0\u00a0(1)\u00a0\u00a0Subject to section 15.1, ambulance services are insured services if,\n (a) the ambulance services are provided to an insured person by an ambulance service operator that holds a certificate issued by the certifying authority in accordance with the Ambulance Act;\n (b) the ambulance crew of the operator transports the insured person to or from a hospital as defined in the Public Hospitals Act or a private hospital as defined in the Private Hospitals Act; and\n (c) the insured person pays a co-payment of $45 to the hospital. O.\u00a0Reg. 528/10, s.\u00a01; O. Reg. 365/19, s. 1.\n (2)\u00a0\u00a0Where ambulance services are provided by air or by rail, including where applicable any ambulance service required to connect with the air or rail facilities, an insured person shall pay as his or her share of the ambulance charges an amount of $45 a trip by way of co-payment. R.R.O. 1990, Reg. 552, s.\u00a015\u00a0(2); O.\u00a0Reg. 329/92, s.\u00a01\u00a0(2).\n (3)\u00a0\u00a0An ambulance service is not an insured service if it is not medically necessary. O.\u00a0Reg. 329/92, s.\u00a01\u00a0(3).\n (4), (5)\u00a0\u00a0REVOKED: O.\u00a0Reg. 329/92, s.\u00a01\u00a0(4).\n (6)\u00a0\u00a0The co-payment prescribed in subsections (1) and (2) does not apply to a person,\n (a) who receives benefits under the Family Benefits Act, income support under the Ontario Disability Support Program Act, 1997, or income assistance under the Ontario Works Act, 1997;\n (b) who is transferred from a hospital to another hospital;\n (c) who is transferred from a hospital to a facility listed in Schedule 6;\n (d) who is transferred from a hospital to a facility listed in Schedule 8;\n (e) who is transferred from a hospital to a medical laboratory licensed under the Laboratory and Specimen Collection Centre Licensing Act;\n (f) who is transferred from a hospital to a facility registered under the Healing Arts Radiation Protection Act for the purpose of radiological examination or treatment;\n (g) who is transferred from one part of a hospital to any other part of the same hospital;\n (h) who is receiving a professional service within the meaning of Ontario Regulation 187/22 (Home and Community Care Services) made under the Connecting Care Act, 2019 that is provided or arranged by a health service provider or an Ontario Health Team funded to provide the service under that Act, other than training;\n (h.1) who is receiving a service that is substantially equivalent to a service described in clause (h) and that is provided by an Indigenous organization that has entered into an agreement pursuant to paragraph 4.1 of subsection 6 (1) of the Ministry of Health and Long-Term Care Act;\n (i) who is admitted to a psychiatric facility designated under the Mental Health Act;\n (j) who is a resident of a home for special care licensed under the Homes for Special Care Act; or\n (k) who is a resident of a long-term care home.\n (l), (m) REVOKED: O.\u00a0Reg. 100/10, s.\u00a04\u00a0(3).\nR.R.O. 1990, Reg. 552, s.\u00a015\u00a0(6); O.\u00a0Reg. 375/93, s.\u00a05; O.\u00a0Reg. 221/03, s.\u00a03; O.\u00a0Reg. 253/09, s.\u00a05; O.\u00a0Reg. 100/10, s.\u00a04; O. Reg. 116/17, s. 1; O. Reg. 190/22, s. 1; O. Reg. 242/24, s. 1.",
+      "line_range": "L323-L525",
+      "effect": "Provides haemophiliac patients with home-use equipment and supplies prescribed by a registered nurse, and outlines conditions for outpatient medication entitlement.",
+      "conditions": [
+        {
+          "key": "equipment_availability",
+          "op": "equals",
+          "value": "hospital in Ontario"
+        },
+        {
+          "key": "prescription",
+          "op": "from",
+          "value": "registered nurse in extended class"
+        },
+        {
+          "key": "medication_availability",
+          "op": "equals",
+          "value": "hospital in Ontario"
+        },
+        {
+          "key": "medication_prescription",
+          "op": "from",
+          "value": "physician on medical staff"
+        },
+        {
+          "key": "patient_condition",
+          "op": "equals",
+          "value": "haemophilia"
+        }
+      ],
+      "prerequisites": {
+        "prior_presence_days": 0
+      },
+      "actors": [
+        "haemophiliac_patient",
+        "registered_nurse",
+        "physician"
+      ],
+      "notes": "Outpatient medications must be prescribed by a physician and provided under specific conditions related to the patient's health status.",
+      "topics": [
+        "ambulance",
+        "billing",
+        "dependant",
+        "eligibility",
+        "exemption",
+        "hospital",
+        "residency",
+        "spouse"
+      ]
+    },
+    {
+      "section_ref": "8.1(2)",
+      "topic_section": "INSURED HOSPITAL SERVICES IN CANADA",
+      "title": "Despite subparagraph ii of paragraph 5 of subsection (1)",
+      "raw_text": " (2)\u00a0\u00a0Despite subparagraph ii of paragraph 5 of subsection (1), the provision of a medication listed in Column 1 of the Table to this subsection to an out-patient, for use in the home, is an out-patient service to which an insured person is entitled without charge if the medication is provided in the circumstances described in Column 2 of the Table:\nTABLE\n\nItem\nColumn 1\u2028Medication Provided\nColumn 2\u2028Condition of Insured Service\n1.\nA medication for the emergency treatment of, or the prevention of, a haemorrhage\n 1. The medication must be available in a hospital in Ontario.\n 2. The medication must be prescribed by a physician on the medical staff of that hospital.\n 3. The medication must be provided to a patient with haemophilia.\n2.\u0007cyclosporine\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group O hospital. \n 2. The medication must be provided to a solid organ or bone marrow transplant patient.\n3.\nzidovudine, commonly called \u201cAZT\u201d\n 1. The medication must be prescribed by a physician. \n 2. The medication must be provided to a patient with HIV infection.\n4.\u0007A biosynthetic human growth hormone\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group S hospital. \n 2. The medication must be provided to a patient with endogenous growth hormone deficiency.\n5.\u0007A medication for treatment of cystic fibrosis that is listed in Schedule 17\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group T hospital. \n6.\u0007A medication for the treatment of thalassemia that is listed in Schedule 18\u0007 1. The medication must be prescribed by a physician on the medical staff of a hospital graded, under the Public Hospitals Act, as a Group U hospital.\n7.\nerythropoietin\n 1. The medication must be prescribed by a physician on the medical staff of a hospital.\n 2. The medication must be provided to a patient with anaemia of end-stage renal disease.\n8.\nalglucerase\n 1. The medication must be prescribed by a physician.\n 2. The use of the medication must be recommended by the Gaucher Disease Review Committee.\n 3. The medication must be provided to a patient with Gaucher disease.\n9.\nclozapine\n 1. The medication must be prescribed by a physician on the medical staff of a hospital.\n 2. The use of the medication must be recommended by a regional co-ordinator of a provincial psychiatric hospital.\n 3. The medication must be provided to a patient with treatment-resistant schizophrenia.\n10.\ndidanosine, commonly called \u201cddI\u201d\n 1. The medication must be prescribed by a physician.\n 2. The medication must be provided to a patient with HIV infection.\n11.\nzalcitabine, commonly called \u201cddC\u201d\n 1. The medication must be prescribed by a physician.\n 2. The medication must be provided to a patient with HIV infection.\n12.\npentamidine\n 1. The medication must be prescribed by a physician.\n 2. The medication must be provided to a patient with HIV infection.\nO.\u00a0Reg. 175/95, s.\u00a01\u00a0(3); O.\u00a0Reg. 253/00, s.\u00a01; O.\u00a0Reg. 322/01, s.\u00a01.\n (2.1)\u00a0\u00a0Despite subparagraph 5 ii of subsection (1), the provision of verteporfin to an out-patient on or after June 15, 2002, for use in the home, is an out-patient service to which an insured person is entitled without charge if the verteporfin is provided in the following circumstances:\n 1. The verteporfin is provided in the course of ocular photodynamic therapy for the treatment of predominantly classic subfoveal choroidal neovascularization secondary to age-related macular degeneration or pathologic myopia.\n 2. The area of classic subfoveal choroidal neovascularization is equal to or greater than 50 per cent of the total lesion, as determined by fluorescein angiography.\n 3. The first treatment is commenced within 30 months after the initial diagnosis of predominantly classic subfoveal choroidal neovascularization secondary to age-related macular degeneration or pathologic myopia.\n 4. The patient\u2019s visual acuity is 20/40 or worse. O.\u00a0Reg. 169/02, s.\u00a02.",
+      "line_range": "L328-L380",
+      "effect": "Out-patient services for specific medications are provided to insured persons without charge under certain conditions.",
+      "conditions": [
+        {
+          "key": "medication",
+          "op": "is",
+          "value": "listed in Column 1 of the Table"
+        },
+        {
+          "key": "prescription",
+          "op": "is",
+          "value": "by a physician on the medical staff of the hospital"
+        },
+        {
+          "key": "hospital_location",
+          "op": "is",
+          "value": "in Ontario"
+        },
+        {
+          "key": "patient_condition",
+          "op": "is",
+          "value": "specific medical condition as described in Column 2 of the Table"
+        }
+      ],
+      "actors": [
+        "insured_person",
+        "physician",
+        "hospital"
+      ],
+      "notes": "Medications covered include those for emergency treatment of haemorrhage, cyclosporine for transplant patients, zidovudine for HIV patients, biosynthetic human growth hormone for growth hormone deficiency, and medications for cystic fibrosis and thalassemia.",
+      "topics": [
+        "ambulance",
+        "billing",
+        "eligibility",
+        "exemption",
+        "hospital"
+      ]
+    }
+  ]
+}

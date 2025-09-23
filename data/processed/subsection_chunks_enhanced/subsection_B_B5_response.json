@@ -1,0 +1,219 @@
+{
+  "subsection_title": "Gastrointestinal System",
+  "parent_section": "B",
+  "page_ref": "B5",
+  "pages_processed": "329-329",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        5,
+        "J821 - single isotope ..................................................................... 44.65 11.40"
+      ],
+      [
+        6,
+        "J823 - dual isotope ........................................................................ 48.15 9.70"
+      ],
+      [
+        9,
+        "- with C substrate............................................................... 57.30 10.35"
+      ],
+      [
+        10,
+        "J873 - with whole body counting ................................................... 137.70 14.25"
+      ],
+      [
+        12,
+        "J825 - protein loss ......................................................................... 82.45 9.75"
+      ],
+      [
+        14,
+        "- blood loss using - Cr ....................................................... 61.90 9.70"
+      ],
+      [
+        15,
+        "J829 - transit.................................................................................. 103.10 40.30"
+      ],
+      [
+        18,
+        "- Ca .................................................................................... 61.90 9.95"
+      ],
+      [
+        20,
+        "- Calcium absorption/excretion.......................................... 253.10 31.00"
+      ],
+      [
+        21,
+        "J827 - Oesophageal motility studies - one or more....................... 118.90 40.30"
+      ],
+      [
+        23,
+        "J876 - reflux................................................................................... 56.70 40.30"
+      ],
+      [
+        24,
+        "J877 - aspiration............................................................................ 40.15 40.30"
+      ],
+      [
+        27,
+        "- Tc99m sulphur colloid or Tc ............................................. 87.00 40.30"
+      ],
+      [
+        28,
+        "J878 - labelled RBCs..................................................................... 143.20 40.30"
+      ],
+      [
+        29,
+        "J879 - LeVeen shunt patency........................................................ 66.30 38.70"
+      ],
+      [
+        30,
+        "J831 Biliary scintigraphy.................................................................. 114.50 40.30"
+      ],
+      [
+        31,
+        "J832 Liver/spleen scintigraphy ........................................................ 80.10 40.30"
+      ],
+      [
+        32,
+        "J833 Salivary gland scintigraphy..................................................... 96.25 40.30"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J821",
+      "description": "single isotope",
+      "fee": 44.65,
+      "h_fee": 44.65,
+      "p_fee": 11.4
+    },
+    {
+      "code": "J823",
+      "description": "dual isotope",
+      "fee": 48.15,
+      "h_fee": 48.15,
+      "p_fee": 9.7
+    },
+    {
+      "code": "J824",
+      "description": "with C substrate",
+      "fee": 57.3,
+      "h_fee": 57.3,
+      "p_fee": 10.35
+    },
+    {
+      "code": "J873",
+      "description": "with whole body counting",
+      "fee": 137.7,
+      "h_fee": 137.7,
+      "p_fee": 14.25
+    },
+    {
+      "code": "J825",
+      "description": "protein loss",
+      "fee": 82.45,
+      "h_fee": 82.45,
+      "p_fee": 9.75
+    },
+    {
+      "code": "J874",
+      "description": "blood loss using - Cr",
+      "fee": 61.9,
+      "h_fee": 61.9,
+      "p_fee": 9.7
+    },
+    {
+      "code": "J829",
+      "description": "transit",
+      "fee": 103.1,
+      "h_fee": 103.1,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J826",
+      "description": "Ca",
+      "fee": 61.9,
+      "h_fee": 61.9,
+      "p_fee": 9.95
+    },
+    {
+      "code": "J875",
+      "description": "Calcium absorption/excretion",
+      "fee": 253.1,
+      "h_fee": 253.1,
+      "p_fee": 31.0
+    },
+    {
+      "code": "J827",
+      "description": "Oesophageal motility studies - one or more",
+      "fee": 118.9,
+      "h_fee": 118.9,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J876",
+      "description": "reflux",
+      "fee": 56.7,
+      "h_fee": 56.7,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J877",
+      "description": "aspiration",
+      "fee": 40.15,
+      "h_fee": 40.15,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J830",
+      "description": "Tc99m sulphur colloid or Tc",
+      "fee": 87.0,
+      "h_fee": 87.0,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J878",
+      "description": "labelled RBCs",
+      "fee": 143.2,
+      "h_fee": 143.2,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J879",
+      "description": "LeVeen shunt patency",
+      "fee": 66.3,
+      "h_fee": 66.3,
+      "p_fee": 38.7
+    },
+    {
+      "code": "J831",
+      "description": "Biliary scintigraphy",
+      "fee": 114.5,
+      "h_fee": 114.5,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J832",
+      "description": "Liver/spleen scintigraphy",
+      "fee": 80.1,
+      "h_fee": 80.1,
+      "p_fee": 40.3
+    },
+    {
+      "code": "J833",
+      "description": "Salivary gland scintigraphy",
+      "fee": 96.25,
+      "h_fee": 96.25,
+      "p_fee": 40.3
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

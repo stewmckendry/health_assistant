@@ -1,0 +1,227 @@
+Subsection: Genetics (22)
+Parent Section: A
+Page Reference: A106
+Pages: 234 to 239
+Text chunks: 1
+Total text length: 13449 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 234 ---
+CONSULTATIONS AND VISITS
+GENETICS (22)
+These listings may also be used by specialists with FCCMG designation (Fellow of the
+Canadian College of Medical Geneticists).
+GENERAL LISTINGS
+A225 Consultation* .......................................................................... 167.90
+Special genetic consultation
+Special genetic consultation is a consultation in which the physician provides all the elements
+of a consultation (A225) and spends a minimum of 75 minutes of direct contact with the patient
+with or without family.
+A220 Special genetic consultation* ................................................. 310.45
+Medical record requirements:
+The service is eligible for payment only if start and stop times of the service are recorded in the
+patient's permanent medical record.
+Extended special genetic consultation
+Extended special genetic consultation is a consultation in which the physician provides all the
+elements of a consultation (A225) and spends a minimum of 90 minutes of direct contact with
+the patient with or without family.
+A223 Extended special genetic consultation* .................................. 401.30
+Medical record requirements:
+The service is eligible for payment only if start and stop times of the service are recorded in the
+patient's permanent medical record.
+A325 Limited consultation................................................................ 105.25
+A226 Repeat consultation................................................................ 105.25
+A221 Genetic minor assessment ..................................................... 38.05
+Genetic assessment
+A Genetic Assessment is a time based service that requires interviewing the appropriate family
+members, collection and assessment of adequate clinical and genetic data to make a
+diagnosis, construction/revision of a pedigree, and assessment of the risk to persons seeking
+advice. It also includes sharing this information and any options with the appropriate family
+members. Time units are calculated based on the duration of direct contact between the
+physician and the patient or family. Unit means ½ hour or major part thereof - see General
+Preamble GP7, GP55 for definitions and time-keeping requirements.
+K016 Genetic assessment, patient or family........................ per unit 74.05
+Payment rules:
+This service is limited to 4 units per patient per day.
+Amd 12 Draft 1 A106 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 235 ---
+CONSULTATIONS AND VISITS
+GENETICS (22)
+Midwife or Aboriginal Midwife-requested genetic assessment
+This service is the assessment of a patient provided by a geneticist upon the written request of
+a midwife or aboriginal midwife because of the complex, obscure or serious nature of the
+patient’s problem. The midwife or aboriginal midwife-requested genetic assessment includes
+the common and specific elements of an assessment.
+A800 Midwife or Aboriginal Midwife-requested genetic assessment 167.35
+Payment rules:
+1.This service is limited to one per patient, per physician, per 12 month period.
+2.The geneticist must submit his/her findings, opinions and recommendations in writing to both
+the midwife or aboriginal midwife and the patient’s primary care physician, if applicable, or
+the amount payable for the service will be reduced to a lesser fee.
+Medical record requirements:
+The written request from the midwife or aboriginal midwife must be retained on the patient’s
+permanent medical record, or the amount payable for the service will be reduced to a lesser
+fee.
+Comprehensive midwife or aboriginal midwife-requested genetic assessment
+This service is an assessment provided by a geneticist upon the written request of a midwife or
+aboriginal midwife because of the complex, obscure or serious nature of the patient’s problem.
+This service includes the specific elements of an assessment and the physician must spend a
+minimum of 75 minutes of direct contact with the patient.
+A801 Comprehensive midwife or aboriginal midwife-requested
+genetic assessment............................................................ 300.70
+Medical record requirements:
+1.The service is eligible for payment only if start and stop times of the service are recorded in
+the patient's permanent medical record.
+2.The written request from the midwife or aboriginal midwife must be retained on the patient’s
+permanent medical record, or the amount payable for the service will be reduced to a lesser
+fee.
+Extended midwife or aboriginal midwife-requested genetic assessment
+This service is the assessment provided by a geneticist upon the written request of a midwife or
+aboriginal midwife because of the complex, obscure or serious nature of the patient’s problem.
+This service includes the specific elements of an assessment and the physician must spend a
+minimum of 90 minutes of direct contact with the patient.
+A802 Extended midwife or aboriginal midwife-requested genetic
+assessment ........................................................................ 401.30
+Medical record requirements:
+1.The service is eligible for payment only if start and stop times of the service are recorded in
+the patient's permanent medical record.
+2.The written request from the midwife or aboriginal midwife must be retained on the patient’s
+permanent medical record, or the amount payable for the service will be reduced to a lesser
+fee.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A107 Amd 12 Draft 1
+
+--- PAGE 236 ---
+CONSULTATIONS AND VISITS
+GENETICS (22)
+Genetic care
+Genetic care is a time based service payable for rendering a genetic assessment. Time units
+are calculated based on the duration of direct contact between the physician and the patient or
+family. Unit means ½ hour or major part thereof - see General Preamble GP7, GP55 for
+definitions and time-keeping requirements.
+K222 Genetic care, patient or family.................................... per unit 79.30
+Payment rules:
+This service is limited to 4 units per patient, per day.
+Clinical interpretation by a geneticist
+Clinical interpretation by a Geneticist requires interpretation of pertinent pedigrees (which must
+contain a comprehensive ancestral history), and/or cytogenetic, biochemical, or molecular
+genetic reports. The service must be requested in writing by a physician who is participating in
+the patient’s care and the geneticist must submit his/her findings, opinions, and
+recommendations in writing to the referring physician.
+K223 Clinical interpretation .............................................................. 40.00
+Payment rules:
+This service is not eligible for payment when rendered in association with a consultation on the
+same patient.
+Clinical interpretation by a geneticist requested by a midwife or aboriginal midwife
+This service is the interpretation of pertinent pedigrees (which must contain a comprehensive
+ancestral history), and/or cytogenetic, biochemical, or molecular genetic reports. The service
+must be requested in writing by a midwife or aboriginal midwife who is participating in the
+patient’s care and the geneticist must submit his/her findings, opinions, and recommendations
+in writing to both the midwife or aboriginal midwife and the patient’s primary care physician, if
+applicable, or the amount payable for the service will be reduced to a lesser fee.
+K224 Clinical interpretation requested by a midwife or aboriginal
+midwife ............................................................................... 38.20
+Complex Genetic Test Interpretation
+Complex genetic test interpretation is a time-based service only eligible for payment for
+interpretation of complex genetic tests done in association with a consultation or genetic care
+service.
+K229 Complex genetic test interpretation ............................ per unit 65.85
+Payment rules:
+1.Complex genetic test interpretation includes interpretation done for any genetic testing where
+the laboratory report does not clearly explain the patient’s phenotype or requires additional
+review to understand the implications of the result.
+2.Unit means ½ hour or major part thereof - see General Preamble GP7, GP54 and GP55 for
+definitions and time-keeping requirements.
+3.Time units are calculated based on the duration of time spent exclusively interpreting the
+complex genetic tests.
+4.Maximum of 2 units per patient, per physician, per 12 month period.
+Amd 12 Draft 1 A108 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 237 ---
+CONSULTATIONS AND VISITS
+GENETICS (22)
+Genetic family counselling
+Genetic family counselling is counselling dedicated to an educational dialogue between the
+physician and one or more family members, guardians of a genetic patient or patient's
+representative for the purpose of providing information regarding treatment options and
+prognosis. The claim is submitted under the genetic patient’s health number.
+K044 Genetic family counselling.......................................... per unit 62.75
+Note:
+Unit means ½ hour or major part thereof - see General Preamble GP7, GP55 for definitions
+and time keeping requirements.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A109 Amd 12 Draft 1
+
+--- PAGE 238 ---
+CONSULTATIONS AND VISITS
+GENETICS (22)
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patients in the
+Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C225 Consultation* .......................................................................... 167.90
+C220 Special genetic consultation* - subject to the same conditions
+as A220 .............................................................................. 310.45
+C223 Extended special genetic consultation* - subject to the same
+conditions as A223 ............................................................. 401.30
+C325 Limited consultation................................................................ 105.25
+C226 Repeat consultation................................................................ 105.25
+C800 Midwife or Aboriginal Midwife-requested genetic assessment –
+subject to the same conditions as A800 ............................. 167.35
+C801 Comprehensive midwife or aboriginal midwife-requested
+genetic assessment – subject to the same conditions as
+A801 ................................................................................... 300.70
+C802 Extended midwife or aboriginal midwife-requested genetic
+assessment – subject to the same conditions as A802...... 401.30
+Subsequent visits
+C222 - first five weeks........................................................per visit 34.10
+C227 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 34.10
+C229 - after thirteenth week (maximum 6 per patient per month)
+............................................................................... per visit 34.10
+NON-EMERGENCY LONG-TERM CARE IN-PATIENT SERVICES
+Non-Emergency Long-Term Care In-Patient Services includes Chronic Care Hospitals,
+Convalescent Hospitals, Nursing Homes, Homes for the Aged, designated chronic or
+convalescent care beds in hospitals and nursing homes or homes for the aged, other than
+patients in designated palliative care beds. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+W225 Consultation* .......................................................................... 167.90
+W220 Special genetic consultation* - subject to the same conditions
+as A220 .............................................................................. 310.45
+W223 Extended special genetic consultation* - subject to the same
+conditions as A223 ............................................................. 401.30
+W325 Limited consultation................................................................ 105.25
+W226 Repeat consultation................................................................ 105.25
+Note:
+*A consultation is payable at nil if a genetic assessment (K016) or genetic care (K222) has
+previously been claimed by the same physician.
+Amd 12 Draft 1 A110 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 239 ---
+CONSULTATIONS AND VISITS
+GENETICS (22)
+Subsequent visits (see General Preamble GP49)
+Chronic care or convalescent hospital
+W222 - first 4 subsequent visits per patient per month.......per visit 34.10
+W221 - additional subsequent visits (maximum of 6 per patient per
+month) ....................................................................per visit 34.10
+W982 - palliative care (see General Preamble GP50)........per visit 34.10
+Nursing home or home for the aged
+W224 - first 2 subsequent visits per patient per month.......per visit 34.10
+W228 - subsequent visits per month (maximum of 3 per patient per
+month .....................................................................per visit 34.10
+W972 - palliative care (see General Preamble GP50)........per visit 34.10
+W121 Additional visits due to intercurrent illness (see General
+Preamble GP49)..................................................... per visit 34.10
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A111 Amd 12 Draft 1

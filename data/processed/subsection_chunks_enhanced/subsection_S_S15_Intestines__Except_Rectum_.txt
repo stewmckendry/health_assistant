@@ -1,0 +1,336 @@
+Subsection: Intestines (Except Rectum)
+Parent Section: S
+Page Reference: S15
+Pages: 683 to 690
+Text chunks: 1
+Total text length: 18986 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 683 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+ENDOSCOPY
+# Z560 Duodenoscopy (not to be claimed if Z399 and/or Z400
+performed on same patient within 3 months) ..................... 92.10 4
+# Z749 Subsequent procedure (within three months following previous
+endoscopic procedure)....................................................... 72.55 4
+# E629 - endoscopic placement of stent in duodenum............. add 137.05
+# Z584 Small bowel push enteroscopy............................................... 185.15
+Note:
+Z292 rendered in association with duodenoscopy and small bowel push enteroscopy services
+is not eligible for payment unless the laryngoscopy service is rendered for suspicion of disease
+of the larynx. Claims for Z292 in these circumstances are assessed by a medical consultant on
+a manual review basis and require the submission of a written explanation.
+[Commentary:
+Manual review is not required for Z293, Z322 and Z323 rendered in association with
+duodenoscopy and small bowel push enteroscopy services.]
+# Z512 Endoscopy of ileostomy or colostomy, or reduction of
+obstructed Koch ileostomy ................................................. 36.80 4
+# E747 - to cecum .................................................................... add 31.15
+# Z514 - with biopsy.......................................................................... 44.55 4
+SIGMOIDOSCOPY
+# Z580 Sigmoidoscopy (using 60 cm. flexible endoscope)................. nil 57.70 5
+Note:
+1.Z580 is not eligible for payment with Z491, Z492, Z493, Z494, Z495, Z496, Z497, Z498, Z499
+or Z555 same patient same day.
+2.For sigmoidoscopy with rigid scope, see Z535 (Rectum).
+3.Time units and anaesthesia extra units listed on GP97 are not eligible for payment with
+anaesthesia services for Z580C.
+4.E003C is not payable for anaesthesia services rendered for Z580.
+COLONOSCOPY
+Colonoscopy for Risk Evaluation
+# Z497 Confirmatory colonoscopy - sigmoid to descending colon...... nil 51.95 5
+Payment rules:
+Z497 is eligible for payment for a colonoscopy rendered for a patient with a positive:
+1.faecal occult blood test(s) or faecal immunochemical test(s) (FIT);
+2.sigmoidoscopy;
+3.barium enema; or
+4.CT abdomen/pelvis or CT colonography examination(s).
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S15 Amd 12 Draft 1
+
+--- PAGE 684 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+# Z499 Absence of signs or symptoms, family history associated with
+an increased risk of malignancy (e.g. a first degree relative
+or at least two second degree relatives with colorectal
+cancer or a premalignant lesion) – sigmoid to descending
+colon................................................................................... nil 51.95 5
+Payment rules:
+Z499 is only insured for a patient 40 years of age or older or 10 years younger than the earliest
+age of diagnosis of the youngest affected relative.
+# Z492 Five year follow up of normal colonoscopy (Z499), absence of
+intervening signs or symptoms - sigmoid to descending.... nil 51.95 5
+# Z493 Ten year follow up of normal colonoscopy (Z497, Z555),
+absence of intervening signs or symptoms - sigmoid to
+descending ......................................................................... nil 51.95 5
+[Commentary:
+1.Z492 and Z493 are eligible for payment for a colonoscopy rendered to a patient following a
+prior normal colonoscopy who has remained asymptomatic.
+2.A colonoscopy is considered normal if there were either no polyps or only small (<1 cm)
+hyperplastic polyps present.
+3.An exception to #1 above is a patient with hyperplastic polyposis syndrome who are at
+increased risk for adenomas and colorectal cancer and need to be identified for more
+intensive follow-up evaluation. See Z494.
+4.A patient with sessile adenomas that may have only been partially removed or adenomatous
+polyps that are removed piecemeal should be considered for follow-up evaluation at short
+intervals (2–6 months) to verify complete removal. See Z491.]
+Payment rules:
+1.Z492 is an uninsured service for the same patient in the five year period following Z499.
+2.Z493 is an uninsured service for the same patient in the ten year period following Z497 and
+Z555.
+Amd 12 Draft 1 S16 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 685 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+Colonoscopy - For diagnosis or ongoing management
+# Z496 Presence of signs or symptoms - sigmoid to descending colon nil 51.95 5
+# Z494 Hereditary (e.g. Familial adenomatous Polyposis or Hereditary
+Non-Polyposis Colorectal Cancer) or other bowel disorders
+(e.g. inflammatory bowel disease) associated with
+increased risk of malignancy .............................................. nil 51.95 5
+Payment rules:
+Z494 is eligible for payment when rendered at the age and frequency of follow up in
+accordance with generally accepted clinical practice guidelines.
+# Z498 Follow up of abnormal colonoscopy - sigmoid to descending
+colon................................................................................... nil 51.95 5
+Payment rules:
+1.Z498 is eligible for payment for a colonoscopy rendered for the follow-up of a patient with a
+previous malignancy(ies) in accordance with current guidelines.
+2.Z498 is eligible for payment when rendered for follow up of adenomatous polyps:
+a.after 5 years if 1-2 small (<1 cm) tubular adenomas with low grade dysplasia;
+b.after 3 years if polyp(s) removed completely and 3-10 adenomas, or any large adenoma
+(>1 cm), or villous features, or high grade dysplasia, or right-sided sessile serrated
+adenoma;
+c.after less than 3 years if > 10 adenomas.
+# Z495 Follow up of unsatisfactory colonoscopy ................................ nil 51.95 5
+Payment rules:
+Z495 is only eligible for payment for a technically unsatisfactory colonoscopy due to poor
+preparation, failure to intubate the cecum or inability to complete the examination
+# Z491 Follow up of incomplete polyp resection................................. nil 51.95 5
+Payment rules:
+1.Z491 is only eligible for payment for:
+a.Sessile polyps that were only partially removed; or
+b.Adenomatous polyps that were removed piecemeal or contained high grade dysplasia.
+2.Z491 is not eligible for payment if performed more than six months following the initial
+colonoscopy.
+# Z555 Absence of signs or symptoms or risk factors, 50 years of age
+or older - sigmoid to descending colon............................... nil 51.95 5
+Payment rules:
+Z555 is an uninsured service for the same patient in the 10 year period following the previous
+Z555.
+Note:
+1.Only one of Z491, Z492, Z493, Z494, Z495, Z496, Z497, Z498, Z499 or Z555 is eligible for
+payment per patient per day.
+2.Time units and anaesthesia extra units listed on GP97 are not eligible for payment with
+anaesthesia services for Z491C, Z492C, Z493C, Z494C, Z495C, Z496C, Z497C, Z498C,
+Z499C or Z555C.
+3.E003C is not payable for anaesthesia services rendered for Z491, Z492, Z493, Z494, Z495,
+Z496, Z497, Z498, Z499 or Z555.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S17 Amd 12 Draft 1
+
+--- PAGE 686 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+4.Colonoscopy to investigate chronic constipation is only insured when:
+a.patients are aged 50 years or older;
+b.patients have family history associated with an increased risk of malignancy (e.g. a first
+degree relative or at least two second degree relatives with colorectal cancer or a
+premalignant lesion); or
+c.it is necessary to exclude organic disease for patients with alarm features, such as
+bleeding, abdominal pain and new onset symptoms.
+[Commentary:
+The Choosing Wisely Canada Recommendation to avoid performing colonoscopy for
+constipation in those under the age of 50 years without family history of colon cancer or alarm
+features may be found at the following internet link: https://choosingwiselycanada.org/
+gastroenterology/.]
+# E740 - to splenic flexure, to Z491, Z492, Z493, Z494, Z495, Z496,
+Z497, Z498, Z499 or Z555......................................... add nil 51.75
+# E741 - to hepatic flexure, to Z491, Z492, Z493, Z494, Z495, Z496,
+Z497, Z498, Z499 or Z555......................................... add nil 31.15
+# E747 - to cecum, to Z491, Z492, Z493, Z494, Z495, Z496, Z497,
+Z498, Z499 or Z555 ................................................... add nil 31.15
+# E705 - into terminal ileum, to Z491, Z492, Z493, Z494, Z495,
+Z496, Z497, Z498, Z499 or Z555............................... add 30.30
+# E630 - endoscopic placement of stent in colon, to Z491, Z492,
+Z493, Z494, Z495, Z496, Z497, Z498, Z499 or Z555 add 137.05
+# E717 - if biopsy and/or coagulation of angiodysplastic lesion(s)
+(one or more), to Z491, Z492, Z493, Z494, Z495, Z496,
+Z497, Z498, Z499, Z555 or Z580............................... add 27.05
+# E785 - multiple screening biopsies (> 34 sites) for malignant
+changes in ulcerative colitis, to Z491, Z492, Z493, Z494,
+Z495, Z496, Z497, Z498, Z499 or Z555..................... add 54.25
+# E797 - management of uncomplicated upper or lower
+gastrointestinal bleeding, by any technique (e.g. laser,
+injection, diathermy, banding etc.) to Z496 or Z497... add 46.30
+E749 - when Z491, Z492, Z493, Z494, Z495, Z496, Z497, Z498,
+Z499, Z512, Z555 or Z580 rendered in private office add 22.35
+[Commentary:
+E749 is not eligible for payment in a hospital.
+Note:
+1.E717 rendered in conjunction with E785 is not eligible for payment.
+2.For sigmoidoscopy with rigid scope, see Z535 (Rectum).
+[Commentary:
+For assessments claimed same day as colonoscopy by Internal Medicine (13) or
+Gastroenterology (41) see A120.]
+Amd 12 Draft 1 S18 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 687 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+# Z513 Hydrostatic - Pneumatic dilatation of colon stricture(s) through
+colonoscope ....................................................................... 107.50
+# Z571 Excision of first polyp (3 mm to 5mm)..................................... nil 150.15 4
+# E720 - each additional polyp (3 mm - 5 mm)......................... add 77.50
+# Z518 Excision of first polyp (6 mm to 9 mm).................................... nil 150.15 4
+# E520 - each additional polyp (6 mm to 9 mm)...................... add 77.50
+# Z517 Excision of first polyp (10 mm to 19 mm)................................ nil 150.15 4
+# E519 - each additional polyp (10 mm to 19 mm................... add 77.50
+# Z516 Excision of first polyp (20 mm to 29 mm)................................ nil 150.15 4
+# E518 - each additional polyp (20 mm to 29 mm).................. add 77.50
+Payment rules:
+1.Only one of Z571, Z518, Z517 or Z516 is eligible for payment per patient per day.
+2.A maximum of 2 services of any combination of E720, E520, E519, or E518 are eligible for
+payment per patient per day.
+3.Excision of polyps <3mm is not eligible for payment.
+Claims submission instructions:
+The largest polyp excised should be used to determine the appropriate fee code to claim for the
+first polyp (Z571, Z518, Z517 or Z516).
+Note:
+Z497, Z499, Z492, Z493, Z496, Z494, Z498, Z495, Z491, and Z555 include fulguration, if
+performed.
+# E685 Total excision of very large sessile polyp (> 3 cm) through
+colonoscope, and may include fulguration, each ............... 227.65
+Excision of obstructive tumour or stricture through colonoscopy
+# Z764 - less than 2 cm. ................................................................... 69.80
+# Z765 - 2 cm or greater ................................................................... 131.75
+# E687 - with laser debulking ................................................... add 69.80
+INCISION
+Enterotomy
+# S149 Ileostomy ................................................................................ 6 470.65 7
+# S150 Small intestine - including excision of polyps or biopsy.......... 6 406.85 7
+# S151 Insertion of feeding enterostomy ............................................ 6 356.50 7
+# E737 - when done with another intra-abdominal procedure.. add 82.35
+# S154 Large intestine - including excision of polyps ......................... 6 406.85 7
+# S155 Colonoscopy with laparotomy................................................. 6 387.40 7
+# S156 Exteriorization of intestine (Mickulicz)..................................... 6 406.85 6
+# S157 Colostomy............................................................................... 6 470.65 7
+# S158 Cecostomy.............................................................................. 6 387.40 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S19 Amd 12 Draft 1
+
+--- PAGE 688 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+# S160 Entero-enterostomy ................................................................ 6 470.65 7
+# E793 - laparoscopic or laparoscopic assisted, to S149 or
+S157…… .......................................................... .add 25%
+EXCISION
+# E714 - repair of entero-cutaneous fistula in conjunction with bowel
+resection .................................................................... add 82.35
+# S162 Local excision of lesion of intestine ........................................ 6 528.85 7
+# Z750 Resection of exteriorized intestine.......................................... 6 82.35 7
+Resection with anastomosis
+Small intestine
+# S164 - duodenum .......................................................................... 6 1015.15 7
+# S165 - other ................................................................................... 6 741.45 7
+# S166 Small and large intestine terminal ileum, cecum and ascending
+colon (right hemicolectomy) ............................................... 7 899.85 7
+# S167 Large intestine - any portion ................................................... 7 877.95 7
+# E796 - with mobilization of splenic flexure, to S167 .............. add 102.40
+# S169 Total colectomy with ileo-rectal anastomosis.......................... 9 1313.65 9
+# S172 Total colectomy with mucosal proctectomy with ileal pouch,
+ileoanal anastomosis and loop ileostomy........................... 9 2247.70 10
+# S171 Left hemicolectomy with anterior resection or
+proctosigmoidectomy (anastomosis below peritoneal
+reflection & mobilization of splenic flexure) ........................ 7 1128.10 8
+# E808 - neo-rectal pouch formation, to S169 or S171 ............ add 150.00
+# E793 - laparoscopic or laparoscopic assisted, to S165, S166,
+S167, S169, S171 or S172 ................................ add 25%
+Ileostomy
+# S168 - subtotal colectomy.............................................................. 7 1260.40 7
+# S170 - plus total colectomy plus abdomino-perineal resection...... 9 2183.65 10
+# E793 - laparoscopic or laparoscopic assisted, to S168 or S170
+.......................................................................... add 25%
+Two-surgeon team
+# S173 - abdominal........................................................................... 9 1812.00 10
+# S174 - perineal............................................................................... 533.80
+# E738 - with continent ileostomy, to either S168, S169, S170, S173
+or S174 ...................................................................... add 387.40
+E718 - bowel resection following previous resection with
+anastomosis, or following S217, S213, S214 or S215
+................................................................................... add 142.40
+Note:
+E718 is not to be added to S181, S182, S185, S191, S192 or S193.
+Amd 12 Draft 1 S20 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 689 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+# S188 Bowel resection without anastomosis (colostomy and mucous
+fistula)................................................................................. 6 770.55 6
+# S189 Intestinal bypass for morbid obesity ....................................... 7 951.20 10
+# E793 - laparoscopic or laparoscopic assisted, to S189 add 25%
+Note:
+1.S189 is an insured service only when all of the conditions set out in the Surgical Preamble
+are satisfied.
+2.Mini-gastric bypass (loop gastric bypass) does not constitute intestinal bypass for the
+purpose of S189.
+Intestinal obstruction (mechanical)
+One stage
+# S175 - without resection ................................................................ 6 712.35 7
+# S176 - with entero-enterostomy..................................................... 6 894.85 7
+# S177 - with resection ..................................................................... 6 1055.25 7
+# S180 - with enterotomy .................................................................. 6 824.80 7
+Note:
+If staged procedure, refer to Surgical Preamble SP3.
+# S178 Intestinal atresia (newborn) .................................................... 6 1512.75 7
+# S179 Meconium ileus....................................................................... 6 1512.75 7
+REPAIR
+Revision of ileostomy or colostomy
+# S181 - skin level............................................................................. 6 131.75 7
+# S182 - full thickness....................................................................... 6 467.90 7
+# S192 Simple revision of continent ileostomy pouch......................... 6 387.40 7
+# S191 Complete reconstruction of continent ileostomy to include
+valve repair......................................................................... 6 951.20 7
+# S193 Revision of standard ileostomy into continent ileostomy pouch 6 793.50 7
+# S183 Cecopexy or sigmoidopexy (as sole procedure)..................... 6 314.80 6
+SUTURE
+# S184 Suture of intestine................................................................... 6 314.80 7
+# E721 - with choledochotomy ................................................. add 122.05
+# S185 Closure of colostomy or enterostomy - with or without
+resection and/or anastomosis ............................................ 6 504.70 7
+# S187 Plication of small intestine for adhesions................................ 6 528.85 7
+Note:
+For division or removal of adhesions only, use S312.
+MANIPULATION
+# Z538 Reduction of prolapse............................................................. 25.25 6
+# Z539 Dilation of gastrostomy, enterostomy, colostomy, etc. ............ 25.25 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S21 Amd 12 Draft 1
+
+--- PAGE 690 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+INTESTINES (EXCEPT RECTUM)
+Asst Surg Anae
+Intubation of small intestine (therapeutic or diagnostic)
+# Z540 - with or without fluoroscopy ................................................. 79.80
+# E732 - with biopsy ................................................................. add 29.10
+Amd 12 Draft 1 S22 February 14 , 2 025 (e ffective M arch 3, 2025)

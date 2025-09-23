@@ -1,0 +1,72 @@
+Subsection: Clinical Immunology (62)
+Parent Section: A
+Page Reference: A79
+Pages: 207 to 208
+Text chunks: 1
+Total text length: 3784 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 207 ---
+CONSULTATIONS AND VISITS
+CLINICAL IMMUNOLOGY (62)
+For Services not listed, refer to Internal Medicine Section.
+GENERAL LISTINGS
+A625 Consultation............................................................................ 159.00
+A765 Consultation, patient 16 years of age and under.................... 165.50
+A525 Limited consultation................................................................ 105.25
+A626 Repeat consultation................................................................ 105.25
+A623 Medical specific assessment .................................................. 80.90
+A624 Medical specific re-assessment.............................................. 62.05
+A621 Complex medical specific re-assessment............................... 71.80
+A628 Partial assessment ................................................................. 38.55
+E078 - chronic disease assessment premium (see General
+Preamble GP25) ................................................ add 50%
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patients in the
+Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C625 Consultation............................................................................ 159.00
+C765 Consultation, patient 16 years of age and under.................... 165.50
+C525 Limited consultation................................................................ 105.25
+C626 Repeat consultation................................................................ 105.25
+C623 Medical specific assessment .................................................. 80.90
+C624 Medical specific re-assessment.............................................. 62.05
+C621 Complex medical specific re-assessment............................... 71.80
+Subsequent visits
+C622 - first five weeks ....................................................... per visit 34.10
+C627 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 34.10
+C629 - after thirteenth week (maximum 6 per patient per month)
+.............................................................................. per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge................................................................. 61.15
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A79 Amd 12 Draft 1
+
+--- PAGE 208 ---
+CONSULTATIONS AND VISITS
+CLINICAL IMMUNOLOGY (62)
+Subsequent visits by the MRP following transfer from an intensive care area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................ 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an intensive care area ........................................................ 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43) .................................................... per visit 34.10
+C628 Concurrent care..........................................................per visit 34.10
+C982 Palliative care (see General Preamble GP50)............per visit 34.10
+Amd 12 Draft 1 A80 February 14 , 2 025 (e ffective M arch 3, 2025)

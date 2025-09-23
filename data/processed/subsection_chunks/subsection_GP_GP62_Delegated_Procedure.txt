@@ -1,0 +1,41 @@
+Subsection: Delegated Procedure
+Parent Section: GP
+Page Reference: GP62
+Pages: 76 to 76
+Extracted text length: 2341 characters
+============================================================
+
+--- PAGE 76 ---
+GENERAL PREAMBLE
+DELEGATED PROCEDURE
+Definition:
+The term “procedure” as it is used in this section does not include services such as assessments,
+consultations, psychotherapy, counselling etc.
+Payment rules:
+1. Where a procedure is performed by a physician’s employee(s) in the physician’s office, the
+service remains insured using the existing fee codes if all the following requirements are met:
+a. the procedure is one which is generally and historically accepted as a procedure which may
+be carried out by the nurse or other medical assistant in the employ of the physician; and
+b. subject to the exceptions set out below, at all times during the procedure, the physician
+(although he or she may be otherwise occupied), is:
+i. physically present in the office or clinic at which the service is rendered in order to
+ensure that procedures are being performed competently; and
+ii. available immediately to approve, modify or otherwise intervene in a procedure, as
+required, in the best interests of the patient.
+2. Exceptions to the requirement for physician presence during the delegated procedure.
+Where all of the following conditions are met, the simple office procedures listed in the table
+below remain insured despite the physician not being physically present:
+a. the non-physician performing the procedure is properly trained to perform the procedure, he/
+she reports to the physician, and the procedure is rendered in accordance with accepted
+professional standards and practice;
+b. the procedure is performed only on the physician’s own patient, as evidenced by either an
+ongoing physician/patient relationship or a consultation/assessment rendered by the
+physician to the patient on the same day as the procedure is performed; and
+c. the same medical record requirements must be met as if the physician personally had
+rendered the service. The record must be dated, identify the non-physician performing the
+service, and contain a brief note on the procedure performed by the non-physician.
+Claims submission instruction:
+A locum tenens replacing an absent physician in the absent physician’s office may submit claims for
+delegated procedures under either his/her own billing number or the billing number of the physician
+he/she is replacing.
+Amd 12 Draft 1 GP62 February 14 , 2 025 (e ffective M arch 3, 2025)

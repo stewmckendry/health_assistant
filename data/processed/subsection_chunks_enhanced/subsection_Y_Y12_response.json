@@ -1,0 +1,99 @@
+{
+  "subsection_title": "Lacrimal tract",
+  "parent_section": "Y",
+  "page_ref": "Y12",
+  "pages_processed": "766-766",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z862",
+      "description": "Dacryocystotomy - general anaesthetic",
+      "fee": 52.4,
+      "units": 6
+    },
+    {
+      "code": "Z917",
+      "description": "Three \u201cSnip\u201d punctum procedure - per punctum - maximum 4 per patient",
+      "fee": 65.7,
+      "units": 6
+    },
+    {
+      "code": "E215",
+      "description": "Dacryocystectomy",
+      "fee": 496.0,
+      "units": 6
+    },
+    {
+      "code": "E216",
+      "description": "immediate repair of lacerated canaliculus",
+      "fee": 350.0,
+      "units": 6
+    },
+    {
+      "code": "E217",
+      "description": "delayed repair of lacerated canaliculus",
+      "fee": 411.2,
+      "units": 6
+    },
+    {
+      "code": "E218",
+      "description": "Dacryocystorhinostomy",
+      "fee": 542.0,
+      "units": 6
+    },
+    {
+      "code": "E939",
+      "description": "repeat procedure by second surgeon",
+      "fee": 150.0
+    },
+    {
+      "code": "E954",
+      "description": "with lacrimal bypass procedure (e.g. Lester Jones) or canalicular reconstruction",
+      "fee": 80.9
+    },
+    {
+      "code": "E219",
+      "description": "Lacrimal bypass procedure (e.g. Lester Jones) when sole procedure (both stages)",
+      "fee": 250.0,
+      "units": 6
+    },
+    {
+      "code": "Z901",
+      "description": "Irrigation of nasolacrimal system - unilateral or bilateral",
+      "fee": 27.0
+    },
+    {
+      "code": "Z902",
+      "description": "Probing and dilation of duct, initial or repeat - unilateral (Local anaesthetic)",
+      "fee": 27.0
+    },
+    {
+      "code": "Z864",
+      "description": "Probing and dilation of duct, initial or repeat - unilateral or bilateral (General anaesthetic)",
+      "fee": 200.0,
+      "units": 6
+    },
+    {
+      "code": "Z865",
+      "description": "Probing and dilation of duct, initial or repeat - with insertion of inlying tube or filament",
+      "fee": 250.0,
+      "units": 6
+    },
+    {
+      "code": "Z918",
+      "description": "Re-insertion of Lester Jones tube",
+      "fee": 52.4
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

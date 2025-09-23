@@ -1,0 +1,345 @@
+Subsection: Skull and Mandible
+Parent Section: N
+Page Reference: N28
+Pages: 592 to 601
+Text chunks: 1
+Total text length: 20816 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 592 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+ARTHROPLASTY
+# R433 Temporomandibular joint - unilateral....................................... 6 349.30 10
+BIOPSY
+Bone
+# Z869 - punch, simple ..................................................................... 48.50 7
+# Z870 - punch, x-ray control............................................................ 120.70 6
+# Z242 - open ................................................................................... 6 193.00 7
+INCISION AND DRAINAGE
+# Z234 Mandibular sequestrectomy.................................................... 7 281.25 7
+EXCISION
+# R272 Bone - tumour (see General Preamble GP12) ....................... I.C I.C I.C
+# R278 Maxilla, with exenteration of orbit and skin graft..................... 6 532.95 7
+# R279 Maxilla advancement.............................................................. 6 440.15 8
+# R280 Mandible ................................................................................. 6 353.10 7
+# R284 Mandibular condyle................................................................. 6 276.55 7
+# R428 Temporomandibular meniscectomy........................................ 6 249.75 7
+RECONSTRUCTION
+Facial paralysis
+# R531 - static slings......................................................................... 6 307.15 6
+# R532 - dynamic slings.................................................................... 6 399.00 6
+# R533 Composite repair for facial paralysis, plication of paralyzed
+muscles, and resection for paralysis of over active muscles 6 511.90 7
+# E597 - with meloplasty .......................................................... add 87.05
+Note:
+Claims for R533 will be assessed by the Medical Consultant.
+Amd 12 Draft 1 N28 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 593 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+ORTHOGNATHIC SURGERY
+Anterior dento-alveolar osteotomy, maxilla or mandible
+# R382 - one segment....................................................................... 6 803.80 15
+# R383 - two segments ..................................................................... 6 932.10 15
+Posterior dento-alveolar osteotomy, maxilla
+# R349 - one side.............................................................................. 6 803.80 15
+# R351 - both sides, single segment................................................. 6 932.10 15
+# R385 - both sides, separate segments .......................................... 6 1187.50 15
+Posterior dento-alveolar osteotomy, mandible
+# R462 - one side.............................................................................. 6 803.80 15
+# R463 - both sides ........................................................................... 6 1187.50 15
+Total U dento-alveolar osteotomy
+# R502 - mandible............................................................................. 6 1228.70 15
+# R507 - maxilla ................................................................................ 6 1315.70 15
+# R511 Mandibular or maxillary visor osteotomy for alveolar
+hypoplasia .......................................................................... 6 1146.40 15
+Genioplasty
+# R386 - one segment....................................................................... 6 384.60 10
+# R387 - two segments, or for laterognathia ..................................... 6 575.45 10
+# R388 - three segments................................................................... 6 767.85 10
+Mandibular osteotomies for prognathism
+# R480 - subcondylar ........................................................................ 6 420.10 7
+# R384 - vertical ramus ..................................................................... 6 932.10 15
+# R518 - sagittal split......................................................................... 6 932.10 15
+Mandibular osteotomies for retrognathia, any technique
+# R520 - advancement - up to 10 mm............................................... 6 932.10 15
+# R529 - advancement - 10 to 20 mm, inclusive............................... 6 1058.40 15
+# R535 - advancement - greater than 20 mm ................................... 6 1356.90 15
+# E588 - for apertognathia or laterognathia.............................. add 256.40
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N29 Amd 12 Draft 1
+
+--- PAGE 594 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+ORTHOGNATHIC SURGERY
+LeFort I advancement
+# R379 - in one segment................................................................... 10 803.80 20
+# E961 - in two segments ......................................................... add 296.60
+# E962 - in three segments ...................................................... add 594.20
+LeFort I intrusion
+# R538 - in one segment................................................................... 10 1059.35 20
+# E963 - in two segments ......................................................... add 296.60
+# E964 - in three segment ........................................................ add 594.20
+LeFort I extrusion
+# R567 - in one segment* ................................................................. 10 1315.70 20
+# E965 - in two segments ......................................................... add 296.60
+# E966 - in three segments ...................................................... add 594.20
+LeFort I cleft palate
+# R580 - in one segment* ................................................................. 10 1525.30 20
+# E967 - in two segments......................................................... add 256.40
+# E968 - in three segments ...................................................... add 511.90
+# E969 - with SMR.................................................................... add 204.80
+# E970 - with pharyngoplasty ................................................... add 307.15
+# E971 - with closure alveolar fistula with or without bone graft add 383.65
+# E972 - with closure hard palate fistula with or without bone graft
+................................................................................... add 511.90
+# R588 Naso-maxillary osteotomy without LeFort I* ........................... 6 803.80 15
+# R389 LeFort II maxillary osteotomy and advancement* .................. 10 1443.95 20
+# R395 Construction glenoid fossa and zygomatic arch* (Obwegeser
+technique)........................................................................... 10 1402.75 20
+# R396 Construction absent condyle and ascending ramus*.............. 6 803.80 10
+# R609 Combined LeFort I and LeFort III osteotomy in hemifacial
+microsomia ......................................................................... 10 1586.20 20
+# R145 Mandibular condylotomy......................................................... 6 204.80 7
+# R618 Coronoidotomy ....................................................................... 6 204.80 7
+# R644 Coronoidectomy...................................................................... 6 307.15 6
+Note:
+* Includes harvesting and grafting of bone or cartilage grafts.
+Amd 12 Draft 1 N30 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 595 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+ORTHOGNATHIC SURGERY
+Reconstruction mandible with bone grafts* and/or plate or prosthesis.
+Unilateral
+# R334 - partial.................................................................................. 6 409.55 15
+# R335 - complete............................................................................. 6 819.15 15
+Bilateral
+# R645 - partial.................................................................................. 6 819.15 15
+# R646 - complete............................................................................. 6 1023.95 15
+Oral vestibuloplasty
+# R647 - with secondary epithelization ............................................. 6 204.80 6
+# R648 - with skin graft ..................................................................... 6 307.15 6
+Temporomandibular ankylosis
+# R649 - excision bone or fibrous block ............................................ 6 461.30 7
+# R650 - with insertion of prosthetic device or muscle flap ............... 6 511.90 13
+# R651 - with construction of condyle and ascending ramus* .......... 6 666.00 15
+Onlay bone grafts or alloplastic reconstruction to face when not part of standard
+osteotomy for reconstruction
+Mandible
+# Z253 - unilateral............................................................................. 394.80
+# Z254 - bilateral............................................................................... 507.45
+Maxilla
+# Z255 - unilateral............................................................................. 394.80
+# Z256 - bilateral............................................................................... 507.45
+l
+Zygoma
+# Z257 - unilateral............................................................................. 337.85
+# Z258 - bilateral............................................................................... 450.50
+Temporal
+# Z259 - unilateral............................................................................. 450.50
+# Z260 - bilateral............................................................................... 563.10
+Frontal
+# Z261 - unilateral............................................................................. 450.50
+# Z262 - bilateral............................................................................... 563.10
+Note:
+For Z253 to Z262, services described as harvesting and/or use of homogenous bone grafts
+may be claimed in addition. See page N3 for the appropriate listing(s).
+[Commentary:
+Alloplastic materials include high density polyethylene, titanium mesh, resorbable mesh plus
+composites, calcium phosphate bone cements and other materials.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N31 Amd 12 Draft 1
+
+--- PAGE 596 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+Application of dental arch bars, or splint, for facial osteotomy
+# Z239 - one arch bar ....................................................................... 6 133.00 6
+# Z240 - two arch bars...................................................................... 6 204.80 7
+# R354 Interdental wiring for temporomandibular joint disorder.......... 6 154.00 7
+# R652 - Removal intermaxillary fixation devices under general
+anaesthesia - as sole procedure ........................................ 102.35 6
+Note:
+* Includes harvesting and grafting of bone or cartilage grafts.
+Amd 12 Draft 1 N32 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 597 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+ORBITO-CRANIAL SURGERY
+Bilateral periorbital correction Treacher-Collins Syndrome
+# R390 - with or without bone grafts* (extra-cranial)......................... 10 1699.45 20
+# R653 - with skull and muscle transpositions* (includes skull
+reconstruction) (intracranial)............................................... 10 2196.35 25
+Pericranial flap to orbit or face
+# R654 - unilateral............................................................................. 307.15 6
+E973 - when in conjunction with coronal approach for main
+operation.................................................................... add 178.90
+# R655 - bilateral............................................................................... 409.55 7
+# E974 - when in conjunction with coronal approach for main
+operation.................................................................... add 297.55
+# R378 LeFort III total maxillary advancement* .................................. 12 2037.35 25
+# R656 LeFort III and subcranial hypertelorism correction* ................ 12 2590.35 25
+# R657 LeFort III and LeFort I maxillary advancement*...................... 12 2334.85 25
+# R658 LeFort II, subcranial hypertelorism correction Le Fort I
+maxillary advancement* ..................................................... 12 2928.10 25
+Upper LeFort III advancement without occlusal change*
+# R659 - unilateral............................................................................. 6 932.10 10
+# R675 - bilateral............................................................................... 12 1443.95 25
+Forehead advancement (bone grafts not included)
+# R676 - unilateral............................................................................. 12 1187.50 25
+# R393 - bilateral............................................................................... 12 1443.95 25
+# R394 Cranial vault reshaping* - anterior or posterior half ................ 10 1525.30 20
+# R677 Total cranial vault reshaping*.................................................. 12 2078.35 25
+Medial transnasal canthopexy
+# R398 - unilateral............................................................................. 6 414.30 6
+# E557 - when done in conjunction with another procedure..... add 154.00
+Note:
+* Includes harvesting and grafting of bone or cartilage grafts.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N33 Amd 12 Draft 1
+
+--- PAGE 598 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+ORBITO-CRANIAL SURGERY
+Lateral canthoplasty
+# R399 unilateral ................................................................................. 6 204.80 6
+# E930 - when done in conjunction with another procedure..... add 102.35
+Hypertelorism correction
+# R376 - intracranial approach* ........................................................ 12 2334.85 25
+# R377 - subcranial U osteotomies*.................................................. 12 1950.15 25
+# R678 - medial orbital wall osteotomies*......................................... 10 1228.70 20
+# R679 - medial and lateral orbital wall osteotomies* ....................... 10 1612.30 20
+Orbital dystopia*
+# R391 - intracranial approach.......................................................... 12 1950.15 25
+# R392 - extracranial approach......................................................... 10 1485.10 20
+Orbital cranial osteotomy*
+# R380 - intracranial approach.......................................................... 12 1495.50 25
+Note:
+Claims for R380 with N153 rendered for the same patient should be submitted using the
+manual review indicator and accompanied by supporting documentation.
+# R381 - extracranial approach......................................................... 10 1121.50 20
+Late correction traumatic enophthalmos
+Tessier Technique - total periorbital stripping and bone grafts.
+# R680 - intracranial.......................................................................... 12 1997.05 25
+# R681 - extracranial......................................................................... 10 1443.95 20
+Harvesting of bone graft when not included
+# Z263 Iliac bone graft ........................................................................ 102.35
+Rib graft
+# Z264 - one rib ................................................................................ 154.00
+# E975 - each subsequent rib................................................... add 76.50
+Costochondral or chondral graft
+# Z265 - one rib ................................................................................ 230.65
+# E976 - each subsequent rib................................................... add 154.00
+# Z266 - split cranial graft ................................................................. 204.80
+Note:
+* Includes harvesting and grafting of bone or cartilage grafts.
+Amd 12 Draft 1 N34 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 599 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+SURGERY FOR CORRECTION OF DOWN'S SYNDROME FACIAL STIGMATA
+Augmentation of zygoma (bilateral)
+# Z267 - with prosthetic implant........................................................ 184.60
+# Z268 - with autogenous bone or cartilage* .................................... 230.65
+Augmentation of chin
+# Z269 - with prosthetic implant........................................................ 154.00
+# Z270 - with autogenous bone or cartilage* .................................... 189.45
+# Z271 Horizontal resection, red lower lip........................................... 184.60
+Note:
+* Includes harvesting and grafting of bone or cartilage grafts.
+Bicoronal flaps
+R347 Bicoronal flaps ........................................................................ 200.00
+Note:
+R347 requires elevation of bicoronal flaps with exposure of the upper half facial skeleton and
+subsequent closure and re-suspension of soft tissues.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N35 Amd 12 Draft 1
+
+--- PAGE 600 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+REDUCTION
+Fractures
+Orbit - open reduction rim/wall fracture
+# E173 Zygomatic fracture dislocation................................................ 6 594.70 7
+# E933 - with miniplate(s)**, per major fracture line ................. add 99.85
+# E934 - with primary bone graft (separate site) ...................... add 204.80
+Orbit
+# E174 - blowout fracture of floor...................................................... 6 667.00 7
+# E934 - with primary bone graft (separate site) ...................... add 204.80
+Nasal bones - to include manipulation of nasal septum
+# F136 - closed reduction ................................................................. 102.35 6
+# F137 - open reduction.................................................................... 316.35 10
+# E825 - with miniplate(s)**, per major fracture line ................. add 63.95
+Orbit with maxilla
+# F150 - closed reduction and dental wiring ..................................... 256.40 7
+# F142 - with wiring and local fixation............................................... 6 685.20 7
+# E830 - with miniplate(s)**, per major fracture line ................. add 107.20
+# E932 - unilateral .................................................................... add 205.00
+# E935 - bilateral ...................................................................... add 307.70
+Note:
+E932, E934, and E935 are not to be billed with Z263, Z264, Z265, Z266, E975, or E976.
+Midface fractures
+Application of craniofacial suspension wires and external fixation devices (not to be billed in
+addition to maxillary repair).
+# F143 - middle ¼ facial ................................................................... 6 577.65 8
+# E830 - with mini-plate(s)**, per major fracture line................ add 107.20
+# F144 - cranial-facial separation ..................................................... 6 1594.90 10
+# E830 - with mini-plate(s)**, per major fracture line................ add 107.20
+Note:
+** Where mini-plate(s) are used, one mini-plate fee per each major fracture line (e.g.
+infraorbital, malar-zygomatic, nasal-frontal, LeFort I, LeFort II and III) (per major fracture line
+per side) should be billed.
+Amd 12 Draft 1 N36 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 601 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+SKULL AND MANDIBLE
+Asst Surg Anae
+Mandible
+UVC - no reduction........................................................................ visit fee
+# F138 - closed reduction, includes maxillary-mandibular fixation ... 6 350.00 7
+Note:
+Maxillary-mandibular fixation includes any external fixation technique.
+# F139 - open reduction, per fracture, to include intermaxillary
+fixation ................................................................................ 6 575.00 6
+# E828 - rigid internal fixation, any method, to F139................ add 104.00
+Note:
+Rigid internal fixation may include the use of a miniplate(s), or other internal fixation device(s).
+Payment rules:
+1.E828 is limited to one service for each major fracture line (e.g. infraorbital, malar zygomatic,
+nasal-frontal, LeFort I, LeFort II and III) when a mini-plate is used.
+2.Z239, Z240, R652 or D062 are not eligible for payment in addition to F138 or F139.
+# F140 - removal of intermaxillary fixation device(s) ........................ 100.00
+Payment rules:
+1.A maximum of one F140 is eligible for payment per patient per day.
+2.F140 is not eligible for payment in addition to F138 or F139.
+[Commentary:
+For removal of intermaxillary fixation devices under general anaesthesia, see R652.]
+# F146 - complicated (see General Preamble GP12)....................... I.C I.C I.C
+Dislocations
+Temporomandibular joint
+# D062 - closed reduction ................................................................. 51.65 6
+# D063 - open reduction.................................................................... 6 256.40 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N37 Amd 12 Draft 1

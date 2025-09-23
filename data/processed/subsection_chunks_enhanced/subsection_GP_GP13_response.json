@@ -1,0 +1,19 @@
+{
+  "subsection_title": "Constituent and Common Elements of Insured Services",
+  "parent_section": "GP",
+  "page_ref": "GP13",
+  "pages_processed": "27-28",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

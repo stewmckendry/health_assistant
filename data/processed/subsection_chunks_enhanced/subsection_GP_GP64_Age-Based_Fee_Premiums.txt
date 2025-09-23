@@ -1,0 +1,60 @@
+Subsection: Age-Based Fee Premiums
+Parent Section: GP
+Page Reference: GP64
+Pages: 78 to 78
+Text chunks: 1
+Total text length: 1843 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 78 ---
+GENERAL PREAMBLE
+AGE-BASED FEE PREMIUMS
+1. Despite any other provision in this Schedule, the amount payable for the following services to
+an insured person who falls into the age group described in the Age Group column of the
+following Age Premium Table is increased by the percentage specified in Percentage Increase
+column opposite the Age Group:
+a. A consultation, limited consultation or repeat consultation rendered by a specialist, as those
+services are defined in this Schedule.
+b. A surgical procedure listed in Parts K to Z inclusive of this Schedule.
+c. Basic and time unit surgical assistant services listed in Parts K to Z inclusive of this
+Schedule.
+d. Clinical Procedures associated with Diagnostic Radiological Examinations.
+e. A specific assessment or a partial assessment rendered by a specialist in ophthalmology
+(23) (A233 or A234).
+age premium table
+Percentage
+Item Age Group
+Increase
+1 Less than 30 days of 30%
+age
+2 At least 30 days but 25%
+less than one year of
+age
+3 At least one year but 20%
+less than two years of
+age
+4 At least two years but 15%
+less than five years of
+age
+5 At least five years but 10%
+less than 16 years of
+age
+2. Despite any other provision in this Schedule, the amount payable for the following services to
+an insured person who is at least 65 years of age, as those services are defined in this
+Schedule, is increased by 15 per cent:
+a. A general assessment (A003, C003, C903, W102, W109 or W903);
+b. A general re-assessment (A004, C004, W004);
+c. An intermediate assessment (A007);
+d. A focused practice assessment (A917, A927, A937, A947, A957 or A967);
+e. A periodic health visit (K132).
+f. Comprehensive assessment and care (H102, H122, H132, H152)
+g. A multiple systems assessment (H103, H123, H133, H153)
+Amd 12 Draft 1 GP64 February 14 , 2 025 (e ffective M arch 3, 2025)

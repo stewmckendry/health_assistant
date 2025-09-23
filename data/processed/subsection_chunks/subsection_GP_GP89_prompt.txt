@@ -1,0 +1,125 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Surgical Assistants’ Services
+Parent Section: GP
+Page Reference: GP89
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Surgical Assistants’ Services",
+  "parent_section": "GP",
+  "page_ref": "GP89",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 103 ---
+GENERAL PREAMBLE
+SURGICAL ASSISTANTS’ SERVICES
+SPECIAL VISIT PREMIUM TABLE - SURGICAL ASSISTANT SERVICES
+Surgical Assistant Services
+Evenings
+Sat., Sun.
+Weekdays (17:00-
+Sacrifice of and Nights
+Daytime 24:00)
+Office Holidays (00:00-
+(07:00- Monday
+Hours (07:00- 07:00)
+17:00) through
+24:00)
+Friday
+$0.00 $76.40 $67.05 $85.60 $117.65
+C988B C998B C983B C999B
+(max. 1 per (max. 2 per (max. 6 per (no max. per
+time period) time period) time period) time period)
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP89 Amd 12 Draft 1
+
+--- PAGE 104 ---
+GENERAL PREAMBLE
+SURGICAL ASSISTANTS’ SERVICES
+CANCELLED SURGERY – ASSISTANT SERVICES
+Payment rules:
+1. If the procedure is cancelled prior to induction of anaesthesia, the service constitutes a
+subsequent hospital visit.
+2. When an anaesthetic has begun but the operation is cancelled due to a complication prior to
+commencement of surgery and the assistant has scrubbed but is not required to do anything
+further, the service is payable as E006B with the actual number of time units added to 6 basic
+units for this service.
+[Commentary:
+If the operation is cancelled after surgery has commenced, the amount payable is calculated
+by adding the listed procedural basic units plus time units and multiplying the total by the unit
+fee listed at the start of this section.]
+SECOND ASSISTANT
+Payment rules:
+When more than one assistant was required for a surgical procedure, unless the service is listed
+below, the second assistant’s service is only eligible for payment following authorization by a medical
+consultant and requires submission of a letter from the surgeon outlining the reason the second
+assistant was required. The amount payable for the second assistant is calculated in the same
+manner as the amount payable for the first assistant.
+Services where a second assistant's services are payable and authorization is not required:
+E645, M111, M112, M117, M134, M142, P042, P051, P052, P056, P059, R008, R009, R013, R014,
+R015, R016, R055, R056, R064, R065, R067, R069, R134, R135, R136, R140, R182, R240, R241,
+R244, R326, R327, R334, R393, R438, R440, R441, R483, R487, R545, R553, R568, R593, R594,
+R617, R645, R701, R702, R704, R712, R713, R714, R715, R718, R726, R727, R728, R729, R733,
+R734, R735, R737, R738, R742, R743, R746, R747, R749, R764, R770, R771, R772, R785, R786,
+R799, R800, R801, R802, R803, R804, R811, R815, R817, R818, R830, R832, R858, R863, R870,
+R872, R874, R876, R877, R927, R929, R920, R930, S005, S007, S079, S090, S091, S092, S096,
+S098, S099, S120, S125, S189, S213, S214, S267, S270, S271, S274, S275, S294, S295, S298,
+S300, S321, S416, S429, S440, S441, S453, S454, S462, S484, S750, S758, S759, S816
+[Commentary:
+E003B is not eligible for payment for second assistant services.]
+SURGICAL ASSISTANT STANDBY
+Definition/Required elements of service:
+E101B is a time-based service limited to one surgical case per physician per day payable for standby
+as a surgical assistant following a minimum of 30 minutes of unforeseen delay beyond the scheduled
+start time for surgery. The physician must be physically present in the operating room suite for the
+period between the scheduled and actual surgical start time.
+Payment rules:
+1. For calculation of time units, the start time for this service commences 30 minutes after the
+scheduled surgical start time and ends when the surgery actually commences as recorded in
+the hospital’s operating suite records. There are no basic units.
+Amd 12 Draft 1 GP90 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 105 ---
+GENERAL PREAMBLE
+SURGICAL ASSISTANTS’ SERVICES
+2. E101B is not eligible for payment if during the standby time for which E101B would otherwise
+be eligible for payment, other insured services are rendered for which payment is made by
+OHIP.
+[Commentary:
+E101B is payable with after hours premiums.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP91 Amd 12 Draft 1

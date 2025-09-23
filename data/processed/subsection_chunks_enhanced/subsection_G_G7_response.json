@@ -1,0 +1,278 @@
+{
+  "subsection_title": "Vascular System",
+  "parent_section": "G",
+  "page_ref": "G7",
+  "pages_processed": "389-390",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        16,
+        "analysis, if rendered ........................................................... 42.65 17.10"
+      ],
+      [
+        18,
+        "and frequency/spectral analysis ......................................... 55.05 24.65"
+      ],
+      [
+        25,
+        "analysis, if rendered, unilateral........................................... 22.05 14.30"
+      ],
+      [
+        27,
+        "and frequency/spectral analysis, unilateral ........................ 28.50 16.60"
+      ],
+      [
+        33,
+        "manoeuvres and permanent record ................................... 7.40 9.90"
+      ],
+      [
+        37,
+        "J205 - arterial and/or venous......................................................... 22.05 14.20"
+      ],
+      [
+        47,
+        "veins and hepatic arteries .................................................. 22.05 14.20"
+      ],
+      [
+        52,
+        "vascular shunts .................................................................. 22.05 14.20"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J189",
+      "description": "Transcranial doppler assessment of intracranial circulation",
+      "fee": 23.65,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J186",
+      "description": "assessment with power mode doppler",
+      "fee": 32.5,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J187",
+      "description": "prolonged study requiring at least 50 minutes",
+      "fee": 32.5,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "50 minutes",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J188",
+      "description": "follow-up study within 4 weeks of J186 or J187 requiring at least 50 minutes",
+      "fee": 22.9,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "50 minutes",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J190",
+      "description": "doppler scan or B scan, includes frequency/spectral analysis, if rendered",
+      "fee": 42.65,
+      "h_fee": 17.1,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J201",
+      "description": "duplex scan i.e. simultaneous real time, B-mode imaging and frequency/spectral analysis",
+      "fee": 55.05,
+      "h_fee": 24.65,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J193",
+      "description": "doppler scan or B scan, includes frequency/spectral analysis, if rendered, unilateral",
+      "fee": 22.05,
+      "h_fee": 14.3,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J202",
+      "description": "duplex scan i.e. simultaneous real time, B-mode imaging and frequency/spectral analysis, unilateral",
+      "fee": 28.5,
+      "h_fee": 16.6,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J198",
+      "description": "bilateral - includes assessment of femoral, popliteal and posterior or tibial veins with appropriate functional manoeuvres and permanent record",
+      "fee": 7.4,
+      "h_fee": 9.9,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Not to be claimed during surgery or during patient\u2019s post-operative stay in hospital.",
+      "special_prefix": null
+    },
+    {
+      "code": "J205",
+      "description": "arterial and/or venous",
+      "fee": 22.05,
+      "h_fee": 14.2,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J206",
+      "description": "must include doppler interrogation and documentation of superior mesenteric vein, splenic vein, portal veins, hepatic veins and hepatic arteries",
+      "fee": 22.05,
+      "h_fee": 14.2,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Not to be billed unless study specifically requested by referring provider.",
+      "special_prefix": null
+    },
+    {
+      "code": "J207",
+      "description": "must include doppler interrogation and documentation of vascular shunts",
+      "fee": 22.05,
+      "h_fee": 14.2,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Not to be billed unless study specifically requested by referring provider.",
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "J189",
+      "context": "not payable with",
+      "description": "J186, J187 or J188 same patient same day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J186",
+      "context": "not payable with",
+      "description": "J189 same patient, same physician, same day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J187",
+      "context": "not payable with",
+      "description": "J189 same patient, same physician, same day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J188",
+      "context": "not payable with",
+      "description": "J189 same patient, same physician, same day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J190",
+      "context": "only one of",
+      "description": "J190 or J201 is eligible for payment per patient per day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J201",
+      "context": "only one of",
+      "description": "J190 or J201 is eligible for payment per patient per day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J193",
+      "context": "not to be billed routinely with",
+      "description": "J190.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    },
+    {
+      "code": "J202",
+      "context": "only one of",
+      "description": "J193 or J202 is eligible for payment per extremity per patient per day.",
+      "source_subsection": "Vascular System",
+      "source_page": "G7"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,360 @@
+{
+  "subsection_title": "Bladder",
+  "parent_section": "T",
+  "page_ref": "T9",
+  "pages_processed": "715-717",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z606",
+      "description": "Diagnostic with or without urethroscopy",
+      "fee": 71.85,
+      "units": 5
+    },
+    {
+      "code": "Z607",
+      "description": "Repeat within 30 days",
+      "fee": 35.5,
+      "units": 5
+    },
+    {
+      "code": "E775",
+      "description": "with catheterization of the ureter and collection of the ureteral specimen, unilateral",
+      "fee": 15.35
+    },
+    {
+      "code": "E817",
+      "description": "with catheterization of the ureter and retrograde injection of opaque media, unilateral",
+      "fee": 15.35
+    },
+    {
+      "code": "E776",
+      "description": "with unilateral brush biopsy of renal pelvis and/or ureter, and/or transurethral biopsy of bladder",
+      "fee": 24.9
+    },
+    {
+      "code": "E818",
+      "description": "with insertion of ureteric stent, unilateral",
+      "fee": 24.9
+    },
+    {
+      "code": "E777",
+      "description": "with cystometrogram (to include urethral pressure profile if necessary)",
+      "fee": 11.5
+    },
+    {
+      "code": "E780",
+      "description": "with needle biopsy of prostate",
+      "fee": 32.6
+    },
+    {
+      "code": "E783",
+      "description": "with secondary surgical evacuation of bladder clots and control of haemorrhage",
+      "fee": 99.65
+    },
+    {
+      "code": "E784",
+      "description": "with hydrodistention of bladder - general anaesthetic",
+      "fee": 49.85
+    },
+    {
+      "code": "E824",
+      "description": "with bladder biopsy - general anaesthetic",
+      "fee": 49.85
+    },
+    {
+      "code": "E773",
+      "description": "with placement of ureteric stent past obstructing lesion (unilateral)",
+      "fee": 49.9
+    },
+    {
+      "code": "E791",
+      "description": "with periurethral injection of bulking agents",
+      "fee": 26.0
+    },
+    {
+      "code": "E781",
+      "description": "with electrocoagulation - tumour(s)",
+      "fee": 49.9
+    },
+    {
+      "code": "E782",
+      "description": "with electrocoagulation - Hunner ulcer",
+      "fee": 49.9
+    },
+    {
+      "code": "E786",
+      "description": "with resection or incision bladder neck, female",
+      "fee": 99.7
+    },
+    {
+      "code": "E787",
+      "description": "with resection or incision bladder neck, male",
+      "fee": 260.4
+    },
+    {
+      "code": "E788",
+      "description": "with ureteral meatotomy, by any means",
+      "fee": 99.7
+    },
+    {
+      "code": "E789",
+      "description": "with removal foreign body or calculus",
+      "fee": 99.7
+    },
+    {
+      "code": "E790",
+      "description": "with removal of ureteric catheter",
+      "fee": 8.8
+    },
+    {
+      "code": "E751",
+      "description": "with insertion of chemotherapeutic agent(s)",
+      "fee": 54.7
+    },
+    {
+      "code": "Z632",
+      "description": "single tumour 1 to 2 cm diameter",
+      "fee": 271.35,
+      "units": 6
+    },
+    {
+      "code": "Z633",
+      "description": "single tumour over 2 cm diameter",
+      "fee": 437.2,
+      "units": 6
+    },
+    {
+      "code": "Z634",
+      "description": "multiple tumours",
+      "fee": 437.2,
+      "units": 6
+    },
+    {
+      "code": "Z602",
+      "description": "office",
+      "fee": 8.55
+    },
+    {
+      "code": "Z603",
+      "description": "home",
+      "fee": 16.25
+    },
+    {
+      "code": "Z611",
+      "description": "hospital",
+      "fee": 8.55
+    },
+    {
+      "code": "Z608",
+      "description": "Manual catheter declotting and irrigation of bladder",
+      "fee": 58.65
+    },
+    {
+      "code": "Z610",
+      "description": "Intravesical instillation of BCG or immunotherapeutic agent or chemotherapeutic agent for the treatment of bladder cancer",
+      "fee": 25.65
+    },
+    {
+      "code": "Z605",
+      "description": "Aspiration",
+      "fee": 12.5
+    },
+    {
+      "code": "S478",
+      "description": "Cystotomy or cystostomy",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "Z480",
+      "description": "Cystotomy with trochar and cannula and insertion of tube",
+      "fee": 85.3,
+      "units": 6
+    },
+    {
+      "code": "E750",
+      "description": "when done in conjunction with another procedure",
+      "fee": 26.05
+    },
+    {
+      "code": "S481",
+      "description": "Cystolithotomy - when sole operative procedure",
+      "fee": 260.65,
+      "units": 7
+    },
+    {
+      "code": "E792",
+      "description": "when performed laparoscopically, to S481",
+      "fee": "add 25%"
+    },
+    {
+      "code": "S476",
+      "description": "Cutaneous vesicostomy",
+      "fee": 437.2,
+      "units": 6
+    },
+    {
+      "code": "S482",
+      "description": "partial for tumour or diverticulum (single or multiple)",
+      "fee": 381.6,
+      "units": 6
+    },
+    {
+      "code": "S483",
+      "description": "with reimplantation of ureter",
+      "fee": 552.3,
+      "units": 7
+    },
+    {
+      "code": "S490",
+      "description": "with reimplantation of ureters",
+      "fee": 733.5,
+      "units": 7
+    },
+    {
+      "code": "S484",
+      "description": "complete cystectomy, without transplant",
+      "fee": 791.85,
+      "units": 10
+    },
+    {
+      "code": "S485",
+      "description": "with ureterointestinal transplant",
+      "fee": 984.65,
+      "units": 13
+    },
+    {
+      "code": "S453",
+      "description": "with ureteroileal conduit",
+      "fee": 1250.3,
+      "units": 15
+    },
+    {
+      "code": "S440",
+      "description": "with continent urinary diversion",
+      "fee": 1475.7,
+      "units": 15
+    },
+    {
+      "code": "S438",
+      "description": "Retroperitoneal lymph node dissection for bladder cancer, specimen must include obturator, internal iliac and external iliac nodes as a minimum to the level of the iliac bifurcation, bilateral",
+      "fee": 630.0,
+      "units": 7
+    },
+    {
+      "code": "S441",
+      "description": "Creation of continent urinary diversion",
+      "fee": 1013.45,
+      "units": 15
+    },
+    {
+      "code": "S471",
+      "description": "Excision of urachal cyst or sinus with or without umbilical hernia repair",
+      "fee": 296.3,
+      "units": 6
+    },
+    {
+      "code": "S488",
+      "description": "inclusive of graft",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "S491",
+      "description": "Plastic repair of extrophy using bladder and including skin flaps",
+      "fee": 657.75,
+      "units": 6
+    },
+    {
+      "code": "S512",
+      "description": "Repair of ruptured bladder",
+      "fee": 346.45,
+      "units": 6
+    },
+    {
+      "code": "S513",
+      "description": "Cystoplasty, using intestine",
+      "fee": 692.85,
+      "units": 9
+    },
+    {
+      "code": "S518",
+      "description": "Plastic repair of bladder neck - child",
+      "fee": 494.9,
+      "units": 6
+    },
+    {
+      "code": "S519",
+      "description": "Plastic repair of bladder neck - adolescent or adult",
+      "fee": 437.2,
+      "units": 7
+    },
+    {
+      "code": "S521",
+      "description": "Litholapaxy and removal of fragments",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "S522",
+      "description": "External, suprapubic closure of fistula",
+      "fee": 260.85,
+      "units": 7
+    },
+    {
+      "code": "S523",
+      "description": "vaginal approach closure of fistula",
+      "fee": 791.85,
+      "units": 6
+    },
+    {
+      "code": "S524",
+      "description": "transvesical approach (with or without omental flap) closure of fistula",
+      "fee": 544.4,
+      "units": 6
+    },
+    {
+      "code": "S525",
+      "description": "Vesicorectal or vesicosigmoid closure of fistula",
+      "fee": 446.9,
+      "units": 7
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E003C",
+      "context": "not payable for anaesthesia services rendered for Z606 or Z607",
+      "source_subsection": "Bladder",
+      "source_page": "T9"
+    },
+    {
+      "code": "Z603",
+      "context": "not eligible for payment in addition to Z610",
+      "source_subsection": "Bladder",
+      "source_page": "T9"
+    },
+    {
+      "code": "Z611",
+      "context": "not eligible for payment in conjunction with any surgical procedure",
+      "source_subsection": "Bladder",
+      "source_page": "T9"
+    },
+    {
+      "code": "E792",
+      "context": "when performed laparoscopically, to S481",
+      "source_subsection": "Bladder",
+      "source_page": "T9"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

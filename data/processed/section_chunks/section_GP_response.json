@@ -1,0 +1,16 @@
+{
+  "section_code": "GP",
+  "section_title": "General Preamble",
+  "fee_codes": [],
+  "rules": [
+    "The General Preamble provides details about billing requirements for all physicians.",
+    "Definitions of key terms and phrases are italicized for cross-reference.",
+    "Services rendered on a holiday are eligible for payment only if listed as a holiday premium or service."
+  ],
+  "subcategories": [],
+  "notes": [
+    "The Schedule lists services insured by OHIP and includes various sections applicable to all specialties.",
+    "The information provided in the General Information Section is foundational for the remainder of the General Preamble."
+  ],
+  "pages_processed": "15-126"
+}

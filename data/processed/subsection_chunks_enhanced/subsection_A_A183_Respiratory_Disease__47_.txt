@@ -1,0 +1,119 @@
+Subsection: Respiratory Disease (47)
+Parent Section: A
+Page Reference: A183
+Pages: 311 to 313
+Text chunks: 1
+Total text length: 6653 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 311 ---
+CONSULTATIONS AND VISITS
+RESPIRATORY DISEASE (47)
+For Services not listed, refer to Internal Medicine Section.
+GENERAL LISTINGS
+A475 Consultation............................................................................ 175.55
+A765 Consultation, patient 16 years of age and under .................... 165.50
+Comprehensive respiratory disease consultation
+This service is a consultation rendered by a specialist in respiratory disease who provides all
+the appropriate elements of a consultation and spends a minimum of seventy-five (75) minutes
+of direct contact with the patient exclusive of time spent rendering any other separately billable
+intervention to the patient.
+A470 Comprehensive respiratory disease consultation................... 310.45
+Medical record requirements:
+The start and stop times must be recorded in the patient’s permanent medical record or the
+amount payable for the service will be adjusted to a lesser paying fee.
+[Commentary:
+1.A470 must satisfy all the elements of a consultation (see page GP16).
+2.The calculation of the 75 minute minimum time for comprehensive respiratory diseases
+consultations excludes time devoted to any other service or procedure for which an amount
+is payable in addition to the consultation.]
+A575 Limited consultation................................................................ 108.95
+A476 Repeat consultation................................................................ 108.95
+A473 Medical specific assessment .................................................. 87.60
+A474 Medical specific re-assessment.............................................. 65.90
+A471 Complex medical specific re-assessment............................... 76.30
+A478 Partial assessment ................................................................. 39.60
+E078 - chronic disease assessment premium (see General
+Preamble GP25) ................................................ add 50%
+Complex respiratory assessment
+This service is an assessment for the ongoing management of the following conditions of the
+respiratory system where the complexity of the condition requires the continuing management
+by a respirology specialist (47):
+a. chronic respiratory failure (i.e. a symptomatic patient with a PaO2 <60mmHg and/or or a
+PaCO2 >50mmHg);
+b. bronchiectasis with frequent infections;
+c. cystic fibrosis;
+d. active pulmonary or extrapulmonary disease due to mycobacterial tuberculosis complex
+(latent tuberculosis infection is excluded); or
+e. active pulmonary or extrapulmonary non-tuberculous mycobacterial disease (airway or
+tissue colonization without disease is excluded).
+A570 Complex respiratory assessment ........................................... 93.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A183 Amd 12 Draft 1
+
+--- PAGE 312 ---
+CONSULTATIONS AND VISITS
+RESPIRATORY DISEASE (47)
+Payment rules:
+1.A570 must include the elements of a medical specific re-assessment, or the amount payable
+will be adjusted to a lesser assessment fee.
+2.A570 is limited to 6 per patient, per physician, per 12 month period. Services in excess of this
+limit will be adjusted to a lesser assessment fee.
+3.E078 is not eligible for payment same patient same day as A570.
+[Commentary:
+A570 is not intended for the evaluation and/or management of uncomplicated respiratory
+disorders. For example, the applicable assessment service from the general listings should be
+claimed for assessment of patients for routine follow-up of uncomplicated chronic obstructive
+pulmonary disease (e.g. emphysema, chronic bronchitis).]
+Amd 12 Draft 1 A184 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 313 ---
+CONSULTATIONS AND VISITS
+RESPIRATORY DISEASE (47)
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patient(s) in
+the Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C475 Consultation............................................................................ 169.65
+C765 Consultation, patient 16 years of age and under ................... 165.50
+C470 Comprehensive respiratory disease consultation - subject to
+the same conditions as A470 ............................................. 310.45
+C575 Limited consultation ................................................................ 105.25
+C476 Repeat consultation ................................................................ 105.25
+C473 Medical specific assessment .................................................. 84.65
+C474 Medical specific re-assessment.............................................. 63.70
+C471 Complex medical specific re-assessment............................... 73.75
+C570 Complex respiratory assessment – subject to the same
+conditions as A570 ............................................................. 89.85
+Subsequent visits
+C472 - first five weeks........................................................per visit 34.10
+C477 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 34.10
+C479 - after thirteenth week (maximum 6 per patient per month)
+............................................................................... per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge ................................................................. 61.15
+Subsequent visits by the MRP following transfer from an Intensive Care Area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................ 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an Intensive Care Area....................................................... 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43)..................................................... per visit 34.10
+C478 Concurrent care .......................................................... per visit 34.10
+C982 Palliative care (see General Preamble GP50)............per visit 34.10
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A185 Amd 12 Draft 1

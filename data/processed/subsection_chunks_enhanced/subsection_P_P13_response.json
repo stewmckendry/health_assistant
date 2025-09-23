@@ -1,0 +1,312 @@
+{
+  "subsection_title": "Lungs and Pleura",
+  "parent_section": "P",
+  "page_ref": "P13",
+  "pages_processed": "643-646",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z331",
+      "description": "Aspiration for diagnostic sample",
+      "fee": 37.35
+    },
+    {
+      "code": "Z332",
+      "description": "Aspiration with therapeutic drainage with or without diagnostic sample",
+      "fee": 68.1,
+      "units": 6
+    },
+    {
+      "code": "E542",
+      "description": "when performed outside hospital",
+      "fee": 11.55
+    },
+    {
+      "code": "Z349",
+      "description": "Intrapleural administration of chemotherapy or sclerosing agent - by any method",
+      "fee": 23.25
+    },
+    {
+      "code": "Z334",
+      "description": "Total unilateral lung lavage with or without bronchoscopy using Double Lumen Tube and single lung anaesthesia",
+      "fee": 304.6,
+      "units": 13
+    },
+    {
+      "code": "Z335",
+      "description": "Thoracoscopy (pleuroscopy) with or without pleural biopsy, suction, etc.",
+      "fee": 242.35,
+      "units": 7
+    },
+    {
+      "code": "Z340",
+      "description": "Biopsy of lung, needle",
+      "fee": 158.7,
+      "units": 7
+    },
+    {
+      "code": "Z336",
+      "description": "Biopsy of pleura, needle - including diagnostic aspiration",
+      "fee": 59.15,
+      "units": 6
+    },
+    {
+      "code": "Z341",
+      "description": "Tube thoracostomy for closed drainage (chest tube)",
+      "fee": 76.8,
+      "units": 6
+    },
+    {
+      "code": "Z352",
+      "description": "Intrapleural administration of thrombolytic or fibrinolytic agent via thoracostomy tube (chest tube)",
+      "fee": 50.0
+    },
+    {
+      "code": "Z363",
+      "description": "Removal of thoracostomy tube (chest tube)",
+      "fee": 20.0
+    },
+    {
+      "code": "Z361",
+      "description": "Insertion of indwelling catheter",
+      "fee": 200.0
+    },
+    {
+      "code": "Z362",
+      "description": "Removal of indwelling catheter",
+      "fee": 200.0
+    },
+    {
+      "code": "Z338",
+      "description": "Biopsy of pleura or lung - with limited thoracotomy",
+      "fee": 202.8,
+      "units": 13
+    },
+    {
+      "code": "M138",
+      "description": "Hilar lymph node or lung biopsy with full thoracotomy",
+      "fee": 534.1,
+      "units": 13
+    },
+    {
+      "code": "M142",
+      "description": "Pneumonectomy, may include radical mediastinal node dissection, sampling or pericardial resection requiring repair",
+      "fee": 1700.0,
+      "units": 14
+    },
+    {
+      "code": "M143",
+      "description": "Lobectomy, may include radical mediastinal node dissection or sampling",
+      "fee": 1402.6,
+      "units": 13
+    },
+    {
+      "code": "M144",
+      "description": "Segmental resection, including segmental bronchus and artery",
+      "fee": 1441.75,
+      "units": 13
+    },
+    {
+      "code": "M145",
+      "description": "Wedge resection of lung",
+      "fee": 843.4,
+      "units": 13
+    },
+    {
+      "code": "M151",
+      "description": "Bullectomy for major bullous disease",
+      "fee": 725.0,
+      "units": 13
+    },
+    {
+      "code": "M149",
+      "description": "Pleurectomy, and/or apical bullectomy for pneumothorax",
+      "fee": 525.0,
+      "units": 13
+    },
+    {
+      "code": "M155",
+      "description": "Lung transplant (one lung)",
+      "fee": 2054.25,
+      "units": 40
+    },
+    {
+      "code": "M156",
+      "description": "Repeat lung transplant (one lung)",
+      "fee": 2670.55,
+      "units": 40
+    },
+    {
+      "code": "M157",
+      "description": "Donor Heart - Lung removal",
+      "fee": 906.45,
+      "units": 8
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z363",
+      "context": "Payment rules",
+      "description": "not eligible for payment for the same patient on the same day as Z341",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E609",
+      "context": "additional fee",
+      "description": "with intercostal muscle bundle, pericardium, Azygos vein, or pericardial fat pad, to M130",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E610",
+      "context": "additional fee",
+      "description": "with myovascular flap (pectoralis major, latissimus dorsi, rectus abdominus)",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E644",
+      "context": "additional fee",
+      "description": "radical mediastinal node dissection following preoperative chemotherapy and/or radiotherapy, to M142, M143, S089 or S090",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E683",
+      "context": "additional fee",
+      "description": "when performed thorascopically, by video-assisted thoracic surgery (VATS), by robotic-assisted surgery, or by uniportal approach, to M142 or M143",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E612",
+      "context": "additional fee",
+      "description": "total extra-pleural pneumonectomy",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E613",
+      "context": "additional fee",
+      "description": "sleeve pneumonectomy",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E614",
+      "context": "additional fee",
+      "description": "omental graft",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E615",
+      "context": "additional fee",
+      "description": "intra-pericardial dissection",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E611",
+      "context": "additional fee",
+      "description": "with resection of diaphragm and direct suture closure",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E849",
+      "context": "additional fee",
+      "description": "with resection of diaphragm and reconstruction requiring repair with mesh or equivalent synthetic material",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E848",
+      "context": "additional fee",
+      "description": "with reconstruction of pericardium requiring repair with synthetic graft material",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E616",
+      "context": "additional fee",
+      "description": "bi-lobectomy on right side",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E617",
+      "context": "additional fee",
+      "description": "with pleural tent",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E618",
+      "context": "additional fee",
+      "description": "with decortication of remaining lobe(s)",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E619",
+      "context": "additional fee",
+      "description": "sleeve lobectomy",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E620",
+      "context": "additional fee",
+      "description": "with wedge bronchoplasty",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E621",
+      "context": "additional fee",
+      "description": "with diagnostic wedge resection",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E624",
+      "context": "additional fee",
+      "description": "with completion pneumonectomy for positive resection margin",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E625",
+      "context": "additional fee",
+      "description": "with sleeve resection of pulmonary artery",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E608",
+      "context": "additional fee",
+      "description": "each additional wedge resection of lung (to a maximum of 3)",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    },
+    {
+      "code": "E607",
+      "context": "additional fee",
+      "description": "re-operation more than 30 days subsequent to previous excision, to appropriate excision fee",
+      "source_subsection": "Lungs and Pleura",
+      "source_page": "P13"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

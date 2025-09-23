@@ -1,0 +1,234 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Supervision Of Postgraduate Medical Trainees
+Parent Section: GP
+Page Reference: GP79
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Supervision Of Postgraduate Medical Trainees",
+  "parent_section": "GP",
+  "page_ref": "GP79",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 93 ---
+GENERAL PREAMBLE
+SUPERVISION OF POSTGRADUATE MEDICAL TRAINEES
+[Commentary:
+1.A physician who supervises a medical trainee who renders an insured service is eligible to
+be paid for the insured service as if the supervising physician performed the service
+personally, subject to any terms, conditions and limitations found in this section.
+2.The sole purpose of the terms and conditions described in this section is to define when a
+service is payable by OHIP. These terms and conditions do not alter the College of
+Physicians and Surgeons of Ontario Professional Responsibilities in Postgraduate Medical
+Education requirements or any requirements of the institutions responsible for postgraduate
+medical education.]
+Note:
+Unless otherwise specified in this section, all other payment requirements in the Schedule
+related to any service that is performed by a Medical Trainee are applicable.
+DEFINITIONS:
+For the purposes of this section of the Schedule only, the following Definitions apply:
+Supervision: Supervision is performed by the Supervising Physician and includes the
+responsibility to guide, observe and assess the educational activities of
+the Medical Trainee and assures the quality of an insured service while
+being rendered by the Medical Trainee.
+Supervision is only performed:
+a. in person, by telephone, or videoconference, the method being consistent with the acuity of
+the service being rendered by the Medical Trainee as well as the Medical Trainee’s level of
+competence;
+b. when the service is provided within a setting approved by the educational institution where
+the Medical Trainee is registered; and
+c. when the service is within the scope and oversight of the postgraduate medical training
+program in which the Medical Trainee is registered.
+[Commentary:
+The Supervising Physician and the Medical Trainee must be physically present in Ontario.]
+Supervising The Supervising Physician is a physician who performs Supervision of a
+Physician Medical Trainee who renders an insured service to an insured person.
+The Supervising Physician must hold an academic appointment with the
+educational institution where the Medical Trainee is registered. The
+Supervising Physician of a Medical Trainee involved in the care of a
+patient may or may not be the most responsible physician for that
+patient.
+Medical Trainee A Medical Trainee is a physician who is registered in a postgraduate
+training program as a Resident or Clinical Fellow at the time he/she
+performs an insured service.
+Resident A Resident is registered in an accredited postgraduate training program
+that leads to certification for practice in Canada as a specialist or
+subspecialist by the Royal College of Physicians and Surgeons of
+Canada or to certification by the College of Family Physicians of Canada
+for practice in Canada as a family physician.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP79 Amd 12 Draft 1
+
+--- PAGE 94 ---
+GENERAL PREAMBLE
+SUPERVISION OF POSTGRADUATE MEDICAL TRAINEES
+Clinical Fellow A Clinical Fellow is registered with a postgraduate training program that
+is approved by a university postgraduate medical education office in
+Ontario. The Clinical Fellow must have a Certificate of Registration with
+the College of Physicians and Surgeons of Ontario.
+[Commentary:
+An undergraduate is not a physician and does not meet the definition of a Medical Trainee]
+Procedure A Procedure is an insured service that has anaesthesia base units listed
+in the column headed with “Anae” and includes anaesthesia services
+provided by Anaesthesiologists.
+Non-Procedure A Non-Procedure Service is an insured service, other than Procedures
+and Time-Based Services.
+Time-Based A Time-Based Service is an insured service described as
+Services Psychotherapy, Psychiatric and Counselling, Interviews, Hypnotherapy,
+Psychiatric Care and Primary Mental Health Care.
+Amd 12 Draft 1 GP80 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 95 ---
+GENERAL PREAMBLE
+SUPERVISION OF POSTGRADUATE MEDICAL TRAINEES
+Payment Rules
+A. GENERAL
+1. A service rendered by a Medical Trainee is only eligible for payment to the Supervising
+Physician where Supervision is provided as defined above and subject to the specific
+requirements below.
+2. Where a Resident with an OHIP billing number is providing insured services independently and
+outside their training program, the insured service is not eligible for payment to a Supervising
+Physician as there is no Supervision provided.
+[Commentary:
+In the scenario described above the Resident is not performing the service as a Medical
+Trainee. In this scenario, the Resident would bill OHIP for the service provided.]
+3. Where a Clinical Fellow with an OHIP billing number is providing insured services
+independently and outside their training program, the insured service is not eligible for payment
+to a Supervising Physician as there is no Supervision provided.
+[Commentary:
+In the scenario described above the Clinical Fellow is not performing the services as a Medical
+Trainee. In this scenario, the Clinical Fellow would bill OHIP for the services provided. For
+example, an orthopedic surgeon may be enrolled in a sarcoma surgery clinical fellowship but
+has privileges as a general orthopedic surgeon and may perform, and be eligible for payment,
+for rendering a service such as an open reduction of a fracture that is not being supervised by
+a Supervising Physician.]
+4. Special Visit premiums are not eligible for payment to the Supervising Physician unless the
+Supervising Physician personally satisfies the payment requirements for a special visit
+premium.
+5. The following services are not eligible for payment to the Supervising Physician when rendered
+by a Medical Trainee:
+a. Case Conferences;
+b. Multidisciplinary Cancer Conferences;
+c. Provider-to-provider services, including:
+i. Telephone Consultations;
+ii. E-Consultations; and
+iii. E-Assessments.
+d. Virtual Care Services when provided to hospital inpatients or patients in an emergency
+department.
+B. PROCEDURE SERVICES
+1. A Procedure rendered by a Resident is only eligible for payment to the Supervising Physician
+when the Supervising Physician:
+a. is aware the Resident will render the service; and
+b. is physically present in the clinical facility at the time the service is rendered; and
+c. is immediately available to personally attend the patient when requested by the Resident or
+other health care professional.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP81 Amd 12 Draft 1
+
+--- PAGE 96 ---
+GENERAL PREAMBLE
+SUPERVISION OF POSTGRADUATE MEDICAL TRAINEES
+2. A Procedure rendered by a Clinical Fellow is only eligible for payment to the Supervising
+Physician when the Supervising Physician:
+a. is aware the Clinical Fellow will render the service; and
+b. is available to personally attend the patient when requested by the Clinical Fellow or other
+health care professional in a timely manner consistent with the acuity of the clinical
+scenario.
+Note:
+Payment rule 2(b) above is not applicable in circumstances where a Supervising Physician
+supervises Procedures rendered by a Clinical Fellow for the purpose of procurement of organs
+or tissues to be used in transplantation.
+3. Where a Procedure is rendered by a Clinical Fellow with an OHIP billing number under the
+supervision of a Supervising Physician, the Procedure is eligible for payment to the Clinical
+Fellow as a surgical assistant if the Procedure has basic units listed in the column headed with
+“Asst”.
+[Commentary:
+1.The Supervising Physician should submit a claim as the operating surgeon in this situation
+(“A” suffix).
+2.The Clinical Fellow should submit a claim as the assistant (“B” suffix).]
+C. TIME-BASED SERVICES
+1. A Time-Based Service rendered by a Medical Trainee is only eligible for payment to the
+Supervising Physician when the Supervising Physician is aware the Medical Trainee will render
+the service.
+2. The number of time units payable is the time spent by the Medical Trainee providing the service
+to the patient subject to limits set out below:
+Note:
+1.Any time taken in discussion with the Medical Trainee about the case is not eligible for
+payment.
+2.The maximum number of time units payable for a Time-Based service rendered by the
+Medical Trainee(s) to an individual patient is two units.
+3.The maximum number of time units payable for a Time-Based service rendered by the
+Medical Trainee(s) to a group of two or more patients is four units.
+[Commentary:
+1.Where there is more than one Medical Trainee participating in the rendering of a time-based
+service concurrently, only the time units rendered by one Medical Trainee are eligible for
+payment to the same Supervising Physician.]
+D. NUMBER OF MEDICAL TRAINEES
+The following table describes the maximum number of services that are payable for services rendered
+concurrently by Medical Trainee(s) and the Supervising Physician.
+Amd 12 Draft 1 GP82 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 97 ---
+GENERAL PREAMBLE
+SUPERVISION OF POSTGRADUATE MEDICAL TRAINEES
+Maximum number of insured
+Location Where services eligible for payment
+Type of Insured Service Insured Services when rendered concurrently
+are Rendered by the Medical Trainee(s) and
+the Supervising Physician
+Procedures Only Any 2
+Procedures with any Any 2
+combination of Non-
+Procedures or Time-
+Based Services
+Any Combination of Non- Any 3
+Procedures or Time-
+Based Services
+Any Combination of Non- Specialized Clinic 4
+Procedures or Time- in a Quaternary
+Based Services Hospital
+Any Combination of Non- Emergency No Limit
+Procedures or Time- Department
+Based Services
+Any Combination of Non- Hospital Inpatient No Limit
+Procedures or Time-
+Based Services
+Note:
+1.Maximum number of services rendered concurrently include all services rendered by both
+the Medical Trainee(s) and the Supervising Physician.
+2.With respect to the maximum number of services eligible for payment in Specialized Clinics
+located at a Quaternary hospital, the following is applicabl

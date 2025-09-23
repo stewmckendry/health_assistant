@@ -1,0 +1,185 @@
+Subsection: Psychotherapy, Psychiatric and Counselling Services
+Parent Section: GP
+Page Reference: GP55
+Pages: 69 to 74
+Extracted text length: 10214 characters
+============================================================
+
+--- PAGE 69 ---
+GENERAL PREAMBLE
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+# Units Minimum Time with Patient
+1 unit 20 minutes
+2 units 46 minutes
+3 units 76 minutes [1h 16m]
+4 units 106 minutes [1h 46m]
+5 units 136 minutes [2h 16m]
+6 units 166 minutes [2h 46m]
+7 units 196 minutes [3h 16m]
+8 units 226 minutes [3h 46m]
+2. Except for in-patient individual psychotherapy by a psychiatrist or in-patient individual
+psychiatric care for which the time can be consecutive or non-consecutive, for all other services
+in this section the time units must be calculated based upon consecutive time spent rendering
+the service.
+3. Psychotherapy performed outside a hospital, psychiatric care, primary mental health care, or
+hypnotherapy rendered the same day as a consultation or other assessment by the same
+physician to the same patient is not eligible for payment unless there are clearly defined
+different diagnoses for the two services.
+[Commentary:
+Except as noted in payment rule #2 (where non-consecutive services can be cumulated),
+services less than 20 minutes do not constitute any of the services defined in this section and
+constitute the type of assessment rendered in the circumstances.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP55 Amd 12 Draft 1
+
+--- PAGE 70 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+PSYCHOTHERAPY/FAMILY PSYCHOTHERAPY
+Definition:
+Psychotherapy is any form of treatment for mental illness, behavioural maladaptations, and/or other
+problems that are assumed to be of an emotional nature, where a physician deliberately establishes a
+professional relationship with a patient with the purpose of removing, modifying or retarding existing
+symptoms, or attenuating or reversing disturbed patterns of behaviour, and of promoting positive
+personality growth and development.
+Family psychotherapy is psychotherapy rendered to the patient in the presence of one or more
+members of the patient’s household.
+Payment rules:
+1. Psychotherapy is not eligible for payment when rendered on the same day to the same patient
+by the same physician as obstetrical delivery.
+2. Subsequent visits rendered by the same psychiatrist to the same patient on the same day as in-
+patient individual psychotherapy are not eligible for payment.
+PSYCHIATRIC CARE/FAMILY PSYCHIATRIC CARE/PRIMARY MENTAL HEALTH CARE
+Definition:
+Psychiatric care/family psychiatric care/primary mental health care are services encompassing any
+combination or form of assessment and treatment by a physician for mental illness, behavioural
+maladaptations, and/or other problems that are assumed to be of an emotional nature, where there is
+consideration of the patient’s biological and psychosocial functioning.
+Family psychiatric care is psychiatric care of the patient carried out by the physician in the presence of
+one or more family members or in the presence of professional caregivers not on staff at the facility
+where the patient is receiving the care.
+Payment rules:
+Subsequent visits rendered by the same psychiatrist to the same patient on the same day as
+individual in-patient psychiatric care are not eligible for payment.
+FOCUSED PRACTICE PSYCHOTHERAPY PREMIUM
+The focused practice psychotherapy premium is payable automatically to an eligible physician subject
+to the definitions and rules described below.
+Definitions:
+"Qualifying services" means K004A, K006A, K007A, K010A, K012A, K019A, K020A, K024A K025A,
+K122A and K123A.
+"Fiscal year" means April 1 - March 31st.
+"Qualifying year" means the fiscal year preceding the date of determination of eligibility.
+"Date of determination of eligibility" means the date upon which the General Manager determines that
+the conditions for payment in (1) or (2) below, have been met.
+"All payments" means all payments made to the physician for insured services listed in this Schedule
+other than payments made for insured services listed in this Schedule for which a technical fee is
+payable.
+Amd 12 Draft 1 GP56 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 71 ---
+GENERAL PREAMBLE
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+Payment rules:
+For the 12 month period following the date of determination of eligibility for the premium, the amount
+payable to a physician shall be automatically increased by 17% for each of the following services
+rendered by the physician: K004, K006, K007, K010, K012, K019, K020, K024, and K025, in the
+following circumstances:
+1. when the sum of all payments made to the physician for the qualifying services rendered in the
+qualifying year exceeds 50% of the sum of all payments made to the physician in the qualifying
+year; or
+2. when the sum of all payments made to the physician for the qualifying services rendered in the
+qualifying year is at least 40% but not more than 49% of the sum of all payments made to the
+physician in the qualifying year and the requirements set out in (1.) were met by the physician in
+respect of the fiscal year preceding the qualifying year.
+[Commentary:
+While K122 and K123 are qualifying services for the purpose of determining eligibility for the
+focused practice psychotherapy premium, the premium is not payable for K122 and K123.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP57 Amd 12 Draft 1
+
+--- PAGE 72 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+HYPNOTHERAPY
+Definition:
+Hypnotherapy is a form of treatment that has the same goals as psychotherapy but is rendered with
+the patient under hypnosis.
+Payment rules:
+Hypnotherapy is not eligible for payment when rendered on the same day to the same patient by the
+same physician as obstetrical delivery.
+COUNSELLING
+Definition/Required elements of service:
+Counselling is a patient visit dedicated solely to an educational dialogue with a physician. This service
+is rendered for the purpose of developing awareness of the patient’s problems or situation and of
+modalities for prevention and/or treatment, and to provide advice and information in respect of
+diagnosis, treatment, health maintenance and prevention.
+[Commentary:
+1.Advice given to a patient that would ordinarily constitute part of a consultation, assessment,
+or other treatment, is included as a common or constituent element of the other service, and
+does not constitute counselling.
+2.Detention time may be payable following a consultation or assessment when a physician is
+required to spend considerable extra time in treatment or monitoring of the patient. See
+GP29 for further information.]
+Payment rules:
+1. With the exception of the codes listed in the below, no other services are eligible for payment
+when rendered by the same physician the same day as any type of counselling service:
+E080, G010, G039, G040, G041, G042, G043, G202, G205, G365, G372, G384, G385, G394,
+G462, G480, G489, G482, G538, G590, G593, G840, G841, G842, G843, G844, G845, G846,
+G847, G848, H313, K002, K003, K008, K014, K015, K031, K035, K036, K038, K682, K683,
+K684, K730
+2. Individual and group counselling services are limited to 3 units per patient per physician per
+year at the higher fee (K013 or K040 respectively); the amount payable for services rendered in
+excess of this limit will be adjusted to a lesser fee (K033 or K041 respectively).
+3. If the patient does not have a pre-booked appointment, the amount payable for this service will
+be adjusted to a lesser assessment fee.
+A. Individual Counselling
+Definition:
+Individual counselling is counselling rendered to a single patient.
+B. Group Counselling
+Definition:
+Group Counselling is counselling rendered to two or more patients with a similar medical condition or
+situation.
+Payment rules:
+1. Group counselling is only eligible for payment when all of the following conditions are fulfilled:
+Amd 12 Draft 1 GP58 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 73 ---
+GENERAL PREAMBLE
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+a. The group counselling is pre-booked; and
+b. When there is an ongoing physician-patient relationship.
+2. In addition to meeting the usual medical record requirements for the service, the physician must
+also maintain a separate record (independent of the patient’s medical record) of the names and
+health numbers of all persons in attendance at each group counselling session or the service is
+not eligible for payment.
+Claims submission instruction:
+The claim must be submitted under the health number of the group member for whom, when the
+service was rendered, the largest number of counselling units had previously been claimed by the
+physician during the year in which the service is rendered.
+[Commentary:
+Group counselling does not apply to lectures.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP59 Amd 12 Draft 1
+
+--- PAGE 74 ---
+GENERAL PREAMBLE
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+C. Transplant Counselling
+Definition/Required elements of service:
+Transplant counselling is payable in circumstances where transplant or donation is imminent, for the
+purpose of providing the recipient, donor or family member with adequate information and clinical data
+to enable that person to make an informed decision regarding organ transplantation.
+Claims submission instruction:
+The claim must be submitted under the health number of the recipient or donor.
+D. Counselling of Relatives on Behalf of a Catastrophically or Terminally Ill Patient
+Definition:
+Counselling of relatives on behalf of a catastrophically or terminally ill patient is counselling rendered
+to a relative or relatives or representative of a catastrophically or terminally ill patient, for the purpose
+of developing an awareness of modalities for treatment of the patient and/or his or her prognosis.
+Claims submission instruction:
+The claim must be submitted under the health number of the patient who is catastrophically or
+terminally ill.
+E. Rehabilitation Counselling
+Definition:
+Rehabilitation counselling is counselling rendered for the purpose of developing an awareness of the
+modalities for treatment of the patient and/or his or her prognosis.
+Amd 12 Draft 1 GP60 February 14 , 2 025 (e ffective M arch 3, 2025)

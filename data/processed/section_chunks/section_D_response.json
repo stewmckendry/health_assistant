@@ -1,0 +1,74 @@
+{
+  "section_code": "D",
+  "section_title": "Diagnostic Radiology",
+  "fee_codes": [
+    {
+      "code": "X106",
+      "description": "Pharynx and oesophagus - cine or videotape",
+      "fee": "",
+      "h_fee": "",
+      "p_fee": "",
+      "t_fee": "",
+      "asst_fee": "",
+      "surg_fee": "",
+      "anae_fee": "",
+      "units": "",
+      "conditions": "Should not be claimed routinely with X108 and X109 but only when specifically indicated.",
+      "special_prefix": ""
+    },
+    {
+      "code": "X108",
+      "description": "Oesophagus, stomach and duodenum - double contrast",
+      "fee": "",
+      "h_fee": "",
+      "p_fee": "",
+      "t_fee": "",
+      "asst_fee": "",
+      "surg_fee": "",
+      "anae_fee": "",
+      "units": "",
+      "conditions": "Presupposes the introduction of gas, the use of antifoam agent and a suitable barium mixture.",
+      "special_prefix": ""
+    },
+    {
+      "code": "X109",
+      "description": "Oesophagus, stomach and duodenum - single contrast",
+      "fee": "",
+      "h_fee": "",
+      "p_fee": "",
+      "t_fee": "",
+      "asst_fee": "",
+      "surg_fee": "",
+      "anae_fee": "",
+      "units": "",
+      "conditions": "",
+      "special_prefix": ""
+    },
+    {
+      "code": "X028",
+      "description": "Lumbar or lumbosacral spine",
+      "fee": "",
+      "h_fee": "",
+      "p_fee": "",
+      "t_fee": "",
+      "asst_fee": "",
+      "surg_fee": "",
+      "anae_fee": "",
+      "units": "",
+      "conditions": "Does not include the entire sacrum. An x-ray of the sacrum may be carried out and claimed for only when specifically indicated.",
+      "special_prefix": ""
+    }
+  ],
+  "rules": [
+    "Professional and technical components are claimed separately.",
+    "Claims for technical component H are submitted using the listed fee code with suffix B.",
+    "Claims for professional component P are submitted using the listed fee code with suffix C.",
+    "For services rendered outside a hospital setting, the only fees billable under the Health Insurance Act are listed under the column P (use suffix C)."
+  ],
+  "subcategories": [],
+  "notes": [
+    "Diagnostic Radiology procedures are divided into a professional component listed in the column headed with a 'P', and a technical component listed in the column headed with an 'H'.",
+    "The technical component of the procedures subject to the conditions stated under 'Diagnostic Services Rendered at a Hospital' is eligible for payment only if the service is rendered at a hospital or an off-site premise operated by a hospital corporation."
+  ],
+  "pages_processed": "349-372"
+}

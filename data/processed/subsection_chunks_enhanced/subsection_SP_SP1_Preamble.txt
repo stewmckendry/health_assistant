@@ -1,0 +1,352 @@
+Subsection: Preamble
+Parent Section: SP
+Page Reference: SP1
+Pages: 529 to 536
+Text chunks: 1
+Total text length: 23174 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 529 ---
+SURGICAL PREAMBLE
+Surgical PreambleMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, all surgical services include the following specific elements.
+A. Supervising the preparation of and/or preparing the patient for the procedure(s).
+B. Performing the procedure(s), by any method, or assisting another physician in the performance of
+the procedure and carrying out appropriate recovery room procedures, being responsible for the
+transfer of the patient to the recovery room, ongoing monitoring and detention during the immediate
+post-operative and recovery period.
+C. Making arrangements for any related assessments or procedures, including obtaining any
+specimens from the patient and interpreting the results where appropriate.
+D. Where indicated, making or supervising the making of arrangements for follow-up care, and post-
+procedure monitoring of the patient’s condition, including intervening, until the first post-operative
+visit.
+E. Discussion with, providing any advice and information, including prescribing therapy, to the patient
+or patient’s representative, whether by telephone or otherwise, on matters related to the service.
+F. Providing premises, equipment, supplies and personnel for the specific elements:
+a. for services not identified with prefix #, for all elements; or
+b. for services identified with prefix #, for any aspect(s) of A, C, D and E that is(are) performed
+in a place other than the place in which the surgical procedure(s) is performed.
+SURGICAL SERVICES WHICH ARE NOT LISTED AS A "Z" CODE
+In addition to the above, the fee for this service includes the following:
+1. Pre-operative Care and Visits
+Pre-operative hospital visits which take place 1 or 2 days prior to surgery.
+2. Post-operative Care and Visits
+Post-operative care and visits associated with the procedure for up to two weeks post-
+operatively, and making arrangements for discharge, to a hospital in-patient except for:
+a. the first and second post-operative visits in hospital (payable at the specialty specific
+subsequent visit fee); and
+b. subsequent visit by the Most Responsible Physician (MRP) - day of discharge (C124).
+The specific elements for pre- and post-operative visits are those for assessments.
+[Commentary:
+For surgical services not listed with a “Z” code, C122 or C123 (subsequent visit by the MRP -
+day following, or second day following the hospital admission assessment) and C142 or C143
+(first and second subsequent visits by the MRP following transfer from an Intensive Care Area/
+Neonatal Intensive Care) are not eligible for payment to the surgeon for visits rendered either 1
+or 2 days prior to surgery or in the first two weeks following surgery.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) SP1 Amd 12 Draft 1
+
+--- PAGE 530 ---
+SURGICAL PREAMBLE
+PREAMBLE
+OTHER TERMS AND DEFINITIONS
+FOR DEFINITION OF THE ROLE OF THE SURGICAL ASSISTANT - SEE GENERAL
+PREAMBLE GP85.
+FOR DEFINITION OF THE ROLES OF THE ANAESTHESIOLOGIST - SEE GENERAL
+PREAMBLE GP92.
+With the exception of the listings in the “Consultations and Visits” section, all references to surgeon in
+this Schedule are references to any physician performing the surgical procedure.
+1. If the surgeon is required to perform a service(s) not usually associated with the original surgical
+procedure, he/she may claim for these on a fee-for-service basis.
+If special visits to hospital are required at any time post-operatively, the surgeon may claim the
+minimum special visit premiums even if the basic hospital visit fees may not be claimed (under
+these circumstances the hospital visits should be claimed on an N/C ($00.00) basis).
+The surgical benefit as noted above does not include the major pre-operative visit - i.e. the
+consultation or assessment fee which may be claimed when the decision to operate is made
+and the operation is scheduled, regardless of the time interval between the major pre-operative
+visit and surgery.
+The hospital or day care admission assessment (consultation, repeat consultation, general or
+specific assessment or re-assessment, partial assessment) may not be claimed by the surgeon
+unless it happens to be the major pre-operative visit as defined above.
+Routine subsequent hospital visits may be claimed for visits rendered more than two days prior
+to surgery. Other visits (excluding admission assessments) prior to admission may be claimed
+for in addition to the surgical fee.
+Because the number of hospital visits is limited to three per week after the fifth week of
+hospitalization and six per month after the thirteenth week of hospitalization, the starting point
+for calculating the number of hospital visits is based on the date of admission if the operating
+surgeon has admitted the patient or the date of referral if the patient has been referred to the
+operating surgeon while in hospital.
+The listed benefit for a procedure normally includes repair of any iatrogenic complications
+occurring during the course of the surgery performed by the same surgeon. Other major
+interventions should be handled on an individual basis. The surgical benefit includes the
+generally accepted surgical components of the procedure.
+2. When a physician makes a special visit to perform a non-elective surgical procedure, he/she
+may claim the following benefits for procedures commencing:
+a. 07:00h -17:00h - Monday to Friday
+A consultation (if the case is referred) or the appropriate assessment, the appropriate
+special visit premium plus the procedural benefit.
+b. 17:00h - 07:00h - Any night or on Saturdays/Sundays or Holidays
+A consultation or assessment, the appropriate special visit premium, the procedural benefit
+plus the surgical premium E409 or E410.
+(see General Preamble GP65 to GP78 and GP104).
+Amd 12 Draft 1 SP2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 531 ---
+SURGICAL PREAMBLE
+PREAMBLE
+3. When more than one procedure is carried out by a surgeon under the same anaesthesia or
+within 14 days during the same hospitalization for the same condition, the full benefit applies to
+the major procedure and 85% of the listed benefit(s) applies to the other procedure(s)
+performed unless otherwise stated in the Preamble(s) or Schedule. The above statement
+applies to staged or bilateral procedures but does not apply when a normal appendix or simple
+ovarian or para-ovarian cyst is removed incidentally during an operation, for which no claim
+should be made.
+4. When a subsequent operation becomes necessary for the same condition because of a
+complication or for a new condition, the full benefit should apply for each procedure.
+5. When a subsequent non-elective procedure is done for a new condition by the same surgeon,
+the full benefit will apply to each procedure. When a subsequent elective procedure is done for
+a different condition within 14 days during the same hospitalization by the same surgeon, the
+benefit for the lesser procedure shall be reduced by 15%.
+6. When different operative procedures are done by two different surgeons under the same
+anaesthesia for different conditions, the benefit will be 100% of the listed benefit for each
+condition. Under these circumstances, the basic assistant’s benefit should not be claimed by
+either operating surgeon; however time units may be claimed.
+7. As a general rule, when elective bilateral procedures are performed by two surgeons at the
+same time, one surgeon should claim for the surgical procedures and the other surgeon should
+claim the assistant’s benefit.
+8. Where two surgeons are working together in surgery in which neither a team fee nor other
+method of billing is set out in the benefit schedule, the surgeon should identify him/herself as
+the operating surgeon and claim accordingly; the surgeon who is assisting the operating
+surgeon should identify him/herself as such and claim the assistant’s benefit.
+Where the second or assistant surgeon is brought into the case on a consultation basis, he/she
+may, when indicated, claim a consultation as well but should be prepared to justify it on an IC
+basis.
+Except where otherwise provided in this Schedule, if the nature or complexity of a procedure
+requires more than one operating surgeon, each providing a separate service in his/her own
+specialized field, e.g. one surgeon carries out the ablative part and another surgeon the
+reconstructive part of the procedure, then each surgeon should claim the listed benefit for his/
+her services. This statement applies when the additional procedure(s) are not the usual
+components of the main procedure. If one surgeon, in addition to performing a specialized
+portion of a procedure, acts as an assistant during the remainder of the procedure, he/she may
+also claim time units for assisting.
+When surgical procedures are rendered to trauma patients who have an Injury Severity Score
+(ISS) of greater than 15 for individuals age 16 or more, or an Injury Severity Score (ISS) of
+greater than 12 for individuals less than age 16, and it is required that two surgeons perform
+components of the same procedure, the full surgical fee for that procedure is payable to each
+surgeon.
+[Commentary:
+The full surgical fee is payable to each surgeon for surgical procedures rendered either on the
+day of the trauma or within 24 hours of the trauma.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) SP3 Amd 12 Draft 1
+
+--- PAGE 532 ---
+SURGICAL PREAMBLE
+PREAMBLE
+9. Unless otherwise stated, the listed benefits are for unilateral procedures only.
+10.When a procedure is performed, a procedural benefit, if listed, should be claimed. Substitution
+of consultation and/or visit benefits for procedural benefits (except as in paragraph 11), is not in
+keeping with the intent of the benefit schedule.
+11. When a surgical benefit (non-IOP, Complete Care, Fracture or Dislocation) is less than the
+surgical consultation benefit, and the case is referred, a physician may claim a surgical
+consultation benefit instead of the surgical benefit. However, to avoid the consultation being
+counted as such under the Ministry of Health limitation rules on the number of consultations
+allowed per year, the physician should claim the consultation fee under the surgical procedure
+nomenclature or code. Since the consultation is replacing a procedural benefit which includes
+the pre- and post-operative and surgical care, no additional claims beyond the consultation
+should be made.
+12.If a physician performs a minor surgical procedure and during the same visit assesses and
+treats the patient for another completely unrelated and significant problem involving another
+body system, the physician should claim for the procedure as well as the appropriate
+assessment.
+13.Where a procedure is listed with a “Z” code, the procedure is an “Independent Operative
+Procedure (IOP)”. If the major pre-operative visit is rendered in the previous 12-month period
+prior to the IOP service by the same physician, only the following assessment services are
+eligible for payment on the same day prior to the IOP service:
+a. a minor assessment if rendered by a General and Family Physician; or
+b. a partial assessment if rendered by a specialist.
+When the major preoperative assessment is rendered on the same day as the IOP, no other
+consultation or assessment is eligible for payment if rendered prior to the IOP service by the
+same physician on the same day.
+When multiple or bilateral IOP are performed at the same time by the same physician, the
+listed procedural benefits should be claimed in full but the pre- and post-operative benefits
+should be claimed as if only one procedure had been performed.
+When an IOP service is rendered on the same day as a non-IOP service by the same
+physician, the terms and conditions for payment as described in the ‘Surgical Services which
+are not listed as a "Z" code’ section of this Schedule are also applicable to the IOP service(s).
+14.When procedures are specifically listed under Surgical Procedures, surgeons should use these
+listings rather than applying one of the plastic surgery listed fees under Skin and Subcutaneous
+Tissue in the Integumentary System Surgical Procedures section of this Schedule.
+15.For excision of tumours not specifically listed in this Schedule, claims should be made on an IC
+basis (code R993). Independent Consideration also will be given (under code R990) to claims
+for other unusual but generally accepted surgical procedures which are not listed specifically in
+the Schedule (excluding non-major variations of listed procedures). In submitting claims,
+physicians should relate the service rendered to comparable listed procedures in terms of
+scope and difficulty (see General Preamble GP12).
+Amd 12 Draft 1 SP4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 533 ---
+SURGICAL PREAMBLE
+PREAMBLE
+16.Cosmetic or esthetic surgery: means a service to enhance appearance without being
+medically necessary. These services are not insured benefits (see Appendix D.)
+17.Reconstructive surgery: is surgery to improve appearance and/or function to any area altered
+by disease, trauma or congenital deformity. Although surgery solely to restore appearance may
+be included in this definition under certain limited conditions, emotional, psychological or
+psychiatric grounds normally are not considered sufficient additional reason for coverage of
+such surgery. Appendix D of this Schedule describes the conditions under which surgery for
+alteration of appearance only may be a benefit. Physicians should submit requests to their
+regional OHIP Office for authorization of any proposed surgery which may fall outside of
+Ministry of Health coverage. (See Appendix D.)
+18.Additional claims for biopsies performed when a surgeon is operating in the abdominal or
+thoracic cavity will be given Independent Consideration.
+19.When a listed procedure is performed and no anaesthetic is required, the procedure should be
+claimed under the “local anaesthetic” listing.
+20.Except as described in the paragraph below, when a physician administers an anaesthetic,
+nerve block and/or other medication prior to, during, immediately after or otherwise in
+conjunction with a diagnostic, therapeutic or surgical procedure which the physician performs
+on the same patient, the administration of the anaesthetic, nerve block and/or other medication
+is not eligible for payment.
+A major or minor peripheral nerve block, major plexus block, neuraxial injection (with or without
+catheter) or intrapleural block (with or without catheter) for post-operative pain control (with a
+duration of action more than 4 hours) is eligible for payment as G224 when rendered in
+conjunction with a procedure which the physician performs on the same patient.
+[Commentary:
+For additional information, refer to the Nerve Blocks - Acute Pain Management, Nerve Blocks -
+Interventional Pain Injections or Nerve Blocks - Peripheral/Other sections of the Schedule.]
+21.If claims are being submitted in coded form, the surgeon should add the suffix A to the listed
+procedural code, the surgical assistant should add the suffix B to the listed procedural code and
+the anaesthetist should add the suffix C to the listed procedural code.
+22.When Z222/Z223 is claimed for a patient for whom the physician submits a claim for rendering
+another insured service on the same day, the amount payable for Z222/Z223 is reduced to nil.
+23.When a surgical procedure is attempted laparoscopically in the digestive system or the female
+genital system, but requires conversion to a laparotomy, unless otherwise specified, the
+diagnostic laparoscopic fee E860 is payable in addition to the procedural fee.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) SP5 Amd 12 Draft 1
+
+--- PAGE 534 ---
+SURGICAL PREAMBLE
+PREAMBLE
+24.Morbidly obese patients
+E676 is eligible for payment once per patient per physician in addition to the amount eligible for
+payment for the major surgical procedure(s) where a morbidly obese patient undergoes major
+surgery to the neck, thorax, peritoneal cavity, retroperitoneum, pelvis, or hip and:
+a. the patient has a Body Mass Index (BMI) greater than 40 for major surgery on the thorax,
+peritoneal cavity, retroperitoneum, pelvis, or hip, or a BMI greater than 45 for major surgery
+on the neck;
+b. the surgery is rendered under general anaesthesia using either an open technique for the
+neck, thorax, or hip, or an open or laparoscopic technique for the peritoneal cavity, pelvis,
+retroperitoneum; and
+c. the principal surgical technique is neither aspiration, core or fine needle biopsy, dilation,
+endoscopy, mediastinoscopy, thoracoscopy, cautery, ablation nor catheterization.
+E676A Morbidly obese patient, surgeon, to procedural fee(s)...... add 25%
+E676B Morbidly obese patient, surgical assistant, to major procedure
+add 6 units
+Note:
+E676A/B is only payable with the following procedures: D043, D046, D047, D052, E090, E499,
+E500, E589, E593, E626, E627, E655, E664, E673, E686, E697, E704, E706, E707, E708,
+E709, E711, E712, E713, E714, E718, E721, E722, E725, E728, E729, E731, E733, E734,
+E735, E736, E737, E738, E739, E743, E745, E748, E752, E754, E756, E757, E762, E764,
+E765, E766, E767, E768, E769, E771, E794, E796, E852, E853, E854, E855, E857, E860,
+E880, E882, E883, E884, E885, F098, F099, F100, F101, F135, M081, M082, M084, M090,
+M099, M100, M142, M143, M144, P018, P041, P042, P050, P055, P056, P057, P058, P059,
+P060, R216, R241, R269, R330, R423, R439, R440, R443, R470, R481, R488, R491, R553,
+R569, R590, R627, R628, R639, R686, R783, R784, R785, R786, R800, R802, R803, R805,
+R806, R807, R811, R814, R815, R817, R823, R825, R826, R834, R839, R852, R855, R856,
+R858, R860, R861, R910, R877, R885, R905, R915, R932, R933, R934, R935, R936, R937,
+S089, S090, S114, S115, S116, S117, S118, S120, S121, S122, S123, S124, S125, S128,
+S129, S131, S132, S133, S134, S137, S138, S139, S140, S149, S150, S154, S157, S158,
+S159, S160, S162, S164, S165, S166, S167, S168, S169, S170, S171, S172, S173, S175,
+S176, S177, S180, S182, S183, S184, S185, S187, S188, S189, S191, S192, S193, S194,
+S195, S196, S197, S199, S204, S207, S213, S214, S215, S217, S218, S222, S227, S265,
+S266, S267, S269, S270, S271, S274, S275, S276, S278, S280, S281, S282, S285, S287,
+S291, S292, S294, S295, S297, S298, S299, S300, S301, S302, S303, S304, S305, S306,
+S307, S308, S309, S310, S311, S312, S313, S314, S315, S318, S319, S321, S323, S325,
+S329, S332, S340, S342, S343, S344, S345, S402, S403, S405, S408, S410, S411, S412,
+S413, S415, S416, S420, S422, S423, S424, S427, S428, S430, S431, S432, S433, S434,
+S435, S436, S437, S438, S440, S441, S445, S446, S447, S448, S449, S450, S451, S452,
+S453, S454, S455, S457, S460, S461, S462, S465, S466, S467, S468, S471, S482, S483,
+S488, S490, S491, S512, S513, S546, S549, S561, S590, S647, S650, S651, S652, S653,
+S710, S714, S727, S728, S729, S731, S733, S735, S736, S738, S739, S740, S741, S743,
+S745, S747, S748, S750, S751, S757, S758, S759, S760, S761, S763, S764, S766, S775,
+S776, S778, S780, S781, S782, S784, S788, S789, S790, S792, S793, S795, S798, S799,
+S800, S813, Z526, Z552, Z553, Z564, Z569, Z577, Z594, Z737, Z738
+Amd 12 Draft 1 SP6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 535 ---
+SURGICAL PREAMBLE
+PREAMBLE
+Medical record requirements:
+E676 is only eligible for payment when the BMI is recorded in the patient's permanent medical
+record.
+[Commentary:
+E676 is not eligible for payment if the surgery is rendered under local anaesthesia.]
+25.Lysis of extensive intra-abdominal adhesions and/or scarring e.g. post radiation
+E673 is payable to the surgeon in addition to the fee for the major intra-abdominal procedure
+only when lysis requires at least 60 minutes beyond the average duration of the major
+procedure. E673 less than 60 minutes in duration or rendered in conjunction with E718 is an
+insured service payable at nil.
+# E673 Lysis of extensive intra-abdominal adhesions .................. add 62.05
+26.Payment for all surgical procedures includes payment for any intraoperative monitoring of the
+patient, if rendered.
+27.Cancelled surgery – surgical services
+a. If the procedure is cancelled prior to induction of anaesthesia, the service constitutes a
+subsequent hospital visit.
+b. When an anaesthetic has begun but the operation is cancelled due to a complication prior to
+commencement of surgery and the surgeon has scrubbed but is not required to do anything
+further, the service constitutes E006A and the amount payable is calculated by adding the
+time units to 6 basic units and multiplying by the surgical assistant’s unit fee.
+c. If the operation is cancelled after surgery has commenced but prior to its completion, the
+service is eligible for payment under independent consideration (R990).
+[Commentary:
+Submit claim for R990 by adding the time units to the listed procedural basic units and
+multiplying by the surgical assistant’s unit fee and attach a copy of the operative report for
+review by a medical consultant.]
+Note:
+For the purpose of cancelled surgery, time units for the surgeon are calculated in the same way
+as time units for the surgical assistant (see General Preamble GP85).
+28.Bariatric surgery
+S120 (gastric bypass or partition), S189 (intestinal bypass) and S114 (sleeve gastrectomy) are
+insured services only when all of the following four criteria are satisfied:
+1.Presence of morbid obesity that has persisted for at least the preceding 2 years, defined as:
+a.Body mass index (BMI) exceeding 40; or
+b.BMI greater than 35 in conjunction with any of the following severe co-morbidities:
+i. Coronary heart disease;
+ii. Diabetes mellitus;
+iii. Clinically significant obstructive sleep apnea (i.e. patient meets the criteria for
+treatment of obstructive sleep apnea); or
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) SP7 Amd 12 Draft 1
+
+--- PAGE 536 ---
+SURGICAL PREAMBLE
+PREAMBLE
+iv. Medically refractory hypertension (blood pressure greater than 140 mmHg systolic
+and/or 90 mmHg diastolic despite optimal medical management);
+2.The patient's bone growth is completed (18 years of age or documentation of completion of
+bone growth);
+3.The patient has attempted weight loss in the past without successful long-term weight
+reduction; and
+4.The patient must be recommended for the surgery by a multidisciplinary team at a Regional
+Assessment and Treatment Centre in Ontario.
+29.Transplant surgery
+Claims submission instructions:
+Transplant recipient: Submit claims using the transplant recipient’s Ontario health insurance
+number only.
+If the recipient is from out-of-province, submit claims using the recipient’s provincial health
+insurance number.
+Transplant donor: Submit claims using the transplant donor’s Ontario health insurance
+number.
+For a donor with a health insurance number from another province or for a donor from another
+country, submit claims using the Ontario recipient’s health insurance number.
+In circumstances where the donor is an Ontario resident but the health insurance number
+cannot be obtained despite reasonable efforts to do so, use the recipient’s Ontario health
+insurance number.
+Amd 12 Draft 1 SP8 February 14 , 2 025 (e ffective M arch 3, 2025)

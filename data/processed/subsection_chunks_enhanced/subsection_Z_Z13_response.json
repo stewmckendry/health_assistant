@@ -1,0 +1,278 @@
+{
+  "subsection_title": "Revision Procedures for Spinal Surgery",
+  "parent_section": "Z",
+  "page_ref": "Z13",
+  "pages_processed": "785-785",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "N568",
+      "description": "Removal of anterior instrumentation",
+      "fee": 306.0,
+      "asst_fee": 8,
+      "surg_fee": 8
+    },
+    {
+      "code": "N541",
+      "description": "Removal of posterior instrumentation",
+      "fee": 255.0,
+      "asst_fee": 8,
+      "surg_fee": 8
+    },
+    {
+      "code": "E373",
+      "description": "for repeat decompression",
+      "fee": null,
+      "conditions": "add 30% (only applies to major 'N' prefix decompressive procedures)"
+    },
+    {
+      "code": "E375",
+      "description": "for repeat fusion",
+      "fee": null,
+      "conditions": "add 30% (only applies to major fusion 'E' or 'N' prefix codes)"
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "N500",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N501",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N502",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N503",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N504",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N505",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N506",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N507",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N508",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N579",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N509",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N510",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N511",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N512",
+      "context": "repeat decompression premium applies",
+      "description": "Major 'N' prefix decompressive procedure",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "E363",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "E365",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "E367",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N516",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N517",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N518",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N559",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N580",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "E369",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "E384",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "E370",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N528",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N513",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N519",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N514",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N581",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N532",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N515",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    },
+    {
+      "code": "N582",
+      "context": "repeat fusion premium applies",
+      "description": "Major fusion 'E' or 'N' prefix code",
+      "source_subsection": "Revision Procedures for Spinal Surgery",
+      "source_page": "Z13"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,129 @@
+{
+  "subsection_title": "Head and Neck",
+  "parent_section": "G",
+  "page_ref": "G3",
+  "pages_processed": "385-385",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        5,
+        "J122 - complete, B-mode .............................................................. 47.20 23.70"
+      ],
+      [
+        7,
+        "J102 - quantitative, A-mode........................................................... 22.40 28.50"
+      ],
+      [
+        8,
+        "J103 - B-scan immersion............................................................... 43.95 38.05"
+      ],
+      [
+        9,
+        "J107 - B-scan contact.................................................................... 21.75 18.85"
+      ],
+      [
+        10,
+        "J108 - biometry (Axial length - A-mode) ........................................ 22.80 19.70"
+      ],
+      [
+        12,
+        "J105 - excluding vascular study .................................................... 47.30 23.70"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J122",
+      "description": "complete, B-mode",
+      "fee": 47.2,
+      "h_fee": 47.2,
+      "p_fee": 23.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J102",
+      "description": "quantitative, A-mode",
+      "fee": 22.4,
+      "h_fee": 22.4,
+      "p_fee": 28.5,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J103",
+      "description": "B-scan immersion",
+      "fee": 43.95,
+      "h_fee": 43.95,
+      "p_fee": 38.05,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J107",
+      "description": "B-scan contact",
+      "fee": 21.75,
+      "h_fee": 21.75,
+      "p_fee": 18.85,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J108",
+      "description": "biometry (Axial length - A-mode)",
+      "fee": 22.8,
+      "h_fee": 22.8,
+      "p_fee": 19.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J105",
+      "description": "excluding vascular study",
+      "fee": 47.3,
+      "h_fee": 47.3,
+      "p_fee": 23.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "J105 is not eligible for payment when rendered for ultrasound imaging of the sinus(es).",
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

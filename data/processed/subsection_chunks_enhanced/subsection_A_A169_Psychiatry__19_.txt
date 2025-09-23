@@ -1,0 +1,321 @@
+Subsection: Psychiatry (19)
+Parent Section: A
+Page Reference: A169
+Pages: 297 to 305
+Text chunks: 1
+Total text length: 18292 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 297 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+GENERAL LISTINGS
+A195 Consultation............................................................................ 222.50
+A895 Consultation in association with special visit to a hospital
+in-patient, long-term care in-patient or emergency
+department patient ............................................................. 259.90
+Claims submission instructions:
+Submit claim using A895 and the appropriate special visit premium beginning with "C" prefix for
+a hospital in-patient, “W” prefix for a long-term care in-patient or “K” prefix for an emergency
+department patient.
+Special psychiatric consultation
+Special psychiatric consultation is a consultation in which the physician provides all the
+elements of a consultation (A195) and spends a minimum of 75 minutes of direct contact with
+the patient.
+A190 Special psychiatric consultation.............................................. 310.45
+Medical record requirements:
+The service is eligible for payment only if start and stop times of the service are recorded in the
+patient’s permanent medical record.
+Geriatric psychiatric consultation
+Geriatric psychiatric consultation is payable to a psychiatrist for a patient aged 75 years or older
+and must include all the elements of A195 and a minimum of 75 minutes of direct contact with
+the patient exclusive of discussion with caregivers or any separately payable services. The
+consultation must be scheduled a minimum of 24 hours prior to the visit. The start and stop
+time must be recorded in the patient’s permanent medical record. Maximum one per patient per
+physician every 5 years. Geriatric psychiatric consultations that do not conform with the above
+or are delegated in a clinic teaching unit to an intern, resident or fellow are payable as a lesser
+consultation or visit.
+A795 Geriatric psychiatric consultation............................................ 310.45
+Neurodevelopmental consultation
+Neurodevelopmental consultation is payable when the physician provides all the elements of
+A195 for an adult with complex neurodevelopmental conditions e.g. autism, global
+developmental disorders etc., and must include a minimum of 90 minutes of direct contact with
+the patient and caregiver. The start and stop times must be recorded in the patient’s permanent
+medical record. Maximum one per patient per physician every 5 years.
+A695 Neurodevelopmental consultation .......................................... 414.35
+Note:
+Neurodevelopmental consultations for children or adolescents or for less complex conditions
+e.g. attention deficit disorder are payable at a lesser fee.
+A395 Limited consultation................................................................ 105.25
+A196 Repeat consultation................................................................ 105.25
+A193 Specific assessment............................................................... 86.35
+A194 Partial assessment ................................................................. 41.15
+Consultative interview on behalf of disturbed patient (including report)
+A197 - consultative interview with parent(s) or patient
+representative(s) of patient less than age 22 ..................... 237.45
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A169 Amd 12 Draft 1
+
+--- PAGE 298 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+A198 - consultative interview with patient less than age 22........... 237.45
+A191 - consultative interview with caregiver(s) of a patient at least
+65 years of age, or a patient less than 65 years of age with a
+diagnosis of dementia ........................................................ 237.45
+A192 - consultative interview with patient at least 65 years of age,
+or a patient less than 65 years of age with a diagnosis of
+dementia............................................................................. 237.45
+Note:
+1.A191, A192, A197 and A198 are consultations.
+2.A191, A192, A197, A198 are not eligible for payment for the same patient, same day as
+family psychiatric care or family psychotherapy (K191, K193, K195, K196).
+[Commentary:
+For psychiatric consultation extension with parents or caregivers, see K630.]
+Amd 12 Draft 1 A170 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 299 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+Psychiatric consultation extension
+This service is eligible for payment for an extension to the consultations listed in the table
+below when the physician is required to spend an additional period of consecutive or non-
+consecutive time on the same day with the patient and/or patient's relative(s), patient’s
+representative or other caregivers.
+Note:
+The time unit measured excludes time spent on separately billable interventions.
+K630 Psychiatric consultation extension.............................. per unit 117.40
+Payment rules:
+1.K630 is a time based service. Time is calculated based on units - Unit means ½ hour or
+major part thereof - see General Preamble GP7 for definitions and time-keeping
+requirements.
+2.K630 is limited to a maximum of six units per patient per physician per day.
+3.K630 is payable in accordance with the following rules:
+[Commentary:
+Minimum time Minimum time
+Minimum time
+with the patient required for
+required for
+before the start consultation
+Consultation consultation
+time for the service + 1 unit
+service + 2
+first unit of of K630 to be
+units of K630
+K630 payable
+to be payable
+A190, C190, W190 90 minutes 106 minutes 136 minutes
+A195 60 min 76 min 106 min
+A197 – sole service 60 min 76 min 106 min
+A198 – sole service 60 min 76 min 106 min
+A197 + A198 same 120 min 136 min 166 min
+patient same day
+A695, C695, W695 120 min 136 min 166 min
+A795, C795, W795 90 min 106 min 136 min
+A895, C895, W895 60 min 76 min 106 min
+A191 60 min 76 min 106 min
+A192 60 min 76 min 106 min
+A191+ A192 same 120 min 136 min 166 min]
+patient same day
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A171 Amd 12 Draft 1
+
+--- PAGE 300 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+EMERGENCY OR OUT-PATIENT DEPARTMENT (ODP)
+Physician in hospital but not on duty in the Emergency Department when seeing patient(s) in
+the Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to n-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C895 Consultation............................................................................ 259.90
+C190 Special psychiatric consultation - subject to the same
+conditions as A190 ............................................................. 310.45
+C395 Limited consultation ................................................................ 105.25
+C196 Repeat consultation ................................................................ 105.25
+C795 Geriatric psychiatric consultation - subject to same conditions
+as A795 .............................................................................. 310.45
+C695 Neurodevelopmental consultation - subject to same conditions
+as A695 .............................................................................. 414.35
+C193 Specific assessment ............................................................... 86.35
+C194 Specific re-assessment........................................................... 66.25
+Subsequent visits
+C192 - first five weeks........................................................per visit 34.10
+C197 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 34.10
+C199 - after thirteenth week (maximum 6 per patient per month)
+............................................................................... per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge ................................................................. 61.15
+Subsequent visits by the MRP following transfer from an Intensive Care Area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................ 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an Intensive Care Area....................................................... 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43)..................................................... per visit 34.10
+C198 Concurrent care .......................................................... per visit 34.10
+C982 Palliative care (see General Preamble GP50)............per visit 34.10
+Amd 12 Draft 1 A172 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 301 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+NON-EMERGENCY LONG-TERM CARE IN-PATIENT SERVICES
+Non-Emergency Long-Term Care In-Patient Services includes Chronic Care Hospitals,
+Convalescent Hospitals, Nursing Homes, Homes for the Aged, designated chronic or
+convalescent care beds in hospitals and nursing homes or homes for the aged, other than
+patients in designated palliative care beds. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+W895 Consultation............................................................................ 259.90
+W190 Special psychiatric consultation - subject to the same
+conditions as A190 ............................................................ 310.45
+W795 Geriatric psychiatric consultation - subject to same conditions
+as A795 .............................................................................. 310.45
+W695 Neurodevelopmental consultation - subject to same conditions
+as A695 .............................................................................. 414.35
+W395 Limited consultation ................................................................ 105.25
+W196 Repeat consultation ................................................................ 105.25
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A173 Amd 12 Draft 1
+
+--- PAGE 302 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+PSYCHIATRIC CLINICAL PRACTICE MODIFIERS/PREMIUMS
+Acute post-discharge community psychiatric care
+Acute post-discharge community psychiatric care is a premium for a service that occurs during
+the (4) week period immediately following discharge where the patient was a hospital in-patient
+for treatment of a psychiatric condition. The premium is only applicable to K195, K196, K197 or
+K198.
+K187 Acute post-discharge community psychiatric care, to K195,
+K196, K197 or K198.............................................add 15%
+High risk community psychiatric care
+High risk community psychiatric care is a premium for a service that occurs during the six (6)
+month period following a suicide attempt. For the purposes of this premium, suicide attempts
+include self-harm attempts with intent to commit suicide or high lethality self-harm attempts, but
+do not include self harm attempts of low lethality with no intent to commit suicide. The premium
+is applicable to A190, A191, A192, A195, A197, A198, A695, A795, K195, K196, K197 and
+K198.
+K188 High risk community psychiatric care, to A190, A191, A192,
+A195, A197, A198, A695, A795, K195, K196, K197 or K198
+............................................................................. add 15%
+Payment rules:
+1.K187 or K188 are both payable with K195, K196, K197 or K198 when rendered during the
+first four (4) week period following discharge where the patient was a hospital in-patient for
+treatment of a psychiatric condition and the requirements for both K187 and K188 are met.
+2.K188 is not eligible for payment in addition to K189 on the same patient same day.
+K189 Urgent community psychiatric follow-up, to A190, A195, A192,
+A198, A695 or A795 ..................................................... add 216.30
+Payment rules:
+1.K189 is only eligible for payment when the psychiatrist providing the urgent community
+psychiatric follow-up:
+a.renders a service described by A190, A195, A192, A198, A695 or A795 to an out-patient
+on an urgent basis during the four (4) week period immediately following discharge where
+the patient was a hospital in-patient for treatment of a psychiatric condition;
+b.did not provide services to the same patient during the same psychiatric hospital
+admission; and
+c.will continue appropriate care of the out-patient for a minimum of six (6) months as
+required.
+2.K189 is limited to a maximum of one per physician per patient per 12 month period.
+Amd 12 Draft 1 A174 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 303 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+Assessments under the Mental Health Act
+See General Preamble GP34 for definitions and conditions.
+Consultation for involuntary psychiatric treatment
+Consultation for involuntary psychiatric treatment in accordance with the Mental Health Act.
+Unit means ½ hour or major part thereof - see General Preamble GP7, GP55 for definitions
+and time-keeping requirements.
+K620 Consultation for involuntary psychiatric treatment...... per unit 94.95
+Form 1
+Application for psychiatric assessment, in accordance with the Mental Health Act includes
+necessary history, examination, notification of the patient, family and relevant authorities and
+completion of form.
+K623 Application for psychiatric assessment................................... 117.05
+Form 3
+Certification of involuntary admission in accordance with the Mental Health Act includes
+necessary history, examination, notification of the patient, family and relevant authorities and
+completion of form.
+K624 Certification of involuntary admission ..................................... 144.15
+K629 All other re-certification(s) of involuntary admission including
+completion of appropriate forms......................................... 42.70
+Note:
+1.A completed Form 1 Application by a Physician For Psychiatric Assessment retained on the
+patient’s medical record is sufficient documentation to indicate that a consultation for
+involuntary psychiatric treatment has been requested by the referring physician.
+2.Consultations or assessments claimed in addition to certification or re-certification same day
+are payable at nil.
+3.Interviews with relatives on behalf of a patient, Children’s Aid Society (CAS) staff or legal
+guardian, etc. - see listings in Family Practice & Practice In General.
+4.Certification of incompetence (financial) including assessment to determine incompetence is
+not an insured benefit.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A175 Amd 12 Draft 1
+
+--- PAGE 304 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+PSYCHOTHERAPY, FAMILY PSYCHOTHERAPY, HYPNOTHERAPY AND PSYCHIATRIC
+CARE
+Note:
+1.For conditions and definitions - see General Preamble GP54 to GP61.
+2.For electroconvulsive therapy fees, see Diagnostic and Therapeutic Procedures.
+3.When claiming group therapy only services rendered to one group are payable at the same
+time
+4.Unit means ½ hour or major part thereof - see General Preamble GP7, GP55 for definitions
+and time-keeping requirements.
+Psychiatric care
+K198 - out-patient .............................................................. per unit 89.70
+K199 - in-patient................................................................. per unit 103.40
+Family psychiatric care
+K196 - out-patient .............................................................. per unit 101.75
+K191 - in-patient................................................................. per unit 117.40
+Note:
+Family psychotherapy is claimed against the patient’s health number and diagnosis.
+Psychotherapy
+K197 Individual out-patient psychotherapy .......................... per unit 89.70
+K190 Individual in-patient psychotherapy ............................ per unit 93.95
+K195 Family psychotherapy - out-patients (two or more members)
+............................................................................... per unit 101.75
+K193 Family psychotherapy - in-patients (two or more members)
+............................................................................... per unit 106.60
+Group psychotherapy, out-patients - per member - first 12 units per day
+K208 - 2 people.................................................................. per unit 44.85
+K209 - 3 people.................................................................. per unit 29.90
+K203 - 4 people.................................................................. per unit 22.45
+K204 - 5 people.................................................................. per unit 17.90
+K205 - 6 to 12 people......................................................... per unit 16.15
+K206 - additional units - per member (maximum 6 per patient per
+day) ........................................................................ per unit 14.35
+Group psychotherapy, in-patients - per member - first 12 units per day
+K210 - 2 people.................................................................. per unit 47.05
+K211 - 3 people.................................................................. per unit 31.35
+K200 - 4 people.................................................................. per unit 23.45
+K201 - 5 people.................................................................. per unit 18.75
+K202 - 6 to 12 people......................................................... per unit 16.95
+K207 - additional units - per member (maximum 6 per patient per
+day) ........................................................................ per unit 14.35
+Amd 12 Draft 1 A176 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 305 ---
+CONSULTATIONS AND VISITS
+PSYCHIATRY (19)
+Hypnotherapy
+K192 Individual..................................................................... per unit 89.70
+K194 Group - for induction and training for hypnosis - per member
+(maximum eight people)......................................... per unit 16.30
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A177 Amd 12 Draft 1

@@ -1,0 +1,36 @@
+Subsection: Salivary Glands and Ducts
+Parent Section: S
+Page Reference: S4
+Pages: 672 to 672
+Text chunks: 1
+Total text length: 1251 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 672 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+SALIVARY GLANDS AND DUCTS
+Asst Surg Anae
+INCISION
+# Z500 Sialolithotomy ......................................................................... 30.65
+# Z521 - requiring general anaesthesia ............................................ 6 103.60 6
+EXCISION
+# S042 Submandibular gland or sublingual gland............................... 6 391.05 7
+Parotid gland
+# S043 - total (with preservation of facial nerve)............................... 6 885.75 10
+# S044 - total (without preservation of facial nerve).......................... 6 593.00 10
+# S045 - subtotal (with preservation of facial nerve)......................... 6 752.10 10
+# S047 - repeat subtotal (with preservation of facial nerve).............. 6 774.50 10
+# Z522 Excision small tumour............................................................. 6 51.25 7
+RECONSTRUCTION
+# S049 Plastic repair of duct ............................................................... 6 202.25 7
+Z511 Dilation and/or probing of duct................................................ 43.15 6
+# S057 Submandibular duct relocation ............................................... 6 360.75 7
+Amd 12 Draft 1 S4 February 14 , 2 025 (e ffective M arch 3, 2025)

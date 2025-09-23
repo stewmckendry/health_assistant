@@ -1,0 +1,619 @@
+Subsection: Assessments
+Parent Section: GP
+Page Reference: GP21
+Pages: 35 to 53
+Extracted text length: 34932 characters
+============================================================
+
+--- PAGE 35 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+ASSESSMENTS
+Specific requirements for assessments listed in the “Consultations and Visits” section of the Schedule
+are set out below:
+GENERAL ASSESSMENT
+Definition/Required elements of service:
+A general assessment is a service, rendered at a place other than in a patient’s home that requires a
+full history (the elements of which must include a history of the presenting complaint, family medical
+history, past medical history, social history, and a functional inquiry into all body parts and systems),
+and, except for breast, genital or rectal examination where not medically indicated or refused, an
+examination of all body parts and systems, and may include a detailed examination of one or more
+parts or systems.
+Payment rules:
+General assessments are limited to one per patient per physician per 12 month period unless either of
+the following circumstances is met in which case the limit is increased to two per 12 month period:
+1. the patient presents a second time with a complaint for which the diagnosis is clearly different
+and unrelated to the diagnosis made at the time of the first general assessment; or
+2. at least 90 days have elapsed since the date of the last general assessment and the second
+assessment is a hospital admission assessment.
+The amount payable for general assessments in excess of these limits will be adjusted to a lesser
+assessment fee.
+PERIODIC HEALTH VISIT
+Definition: A periodic health visit (including a primary or secondary school examination) is performed
+on a patient, after their second birthday, who presents and reveals no apparent acute physical or
+mental illness. The service must include an intermediate assessment, a level 2 paediatric assessment
+or a partial assessment focusing on age and gender appropriate history, physical examination, health
+screening and relevant counselling.
+Payment rules:
+Periodic health visit is limited to one per patient per 12 month period per physician.
+[Commentary:
+Periodic health visits in excess of the limit are not insured.]
+Claims submission instruction:
+Submit claims for periodic health visits using the fee codes listed below.
+No diagnostic code is required unless otherwise specifically listed.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP21 Amd 12 Draft 1
+
+--- PAGE 36 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Family Practice & Practice in General
+Code Description
+K017 child
+K130 adolescent
+K131 adult age 18 to 64 inclusive
+K132 adult 65 years of age and older
+K133 adult with Intellectual and Developmental
+Disability (IDD)
+Paediatrics
+Code Description
+K269 12 to 17 years
+K267 2 to 11 years
+GENERAL RE-ASSESSMENT
+Definition/Required elements of service:
+A general re-assessment includes all the services listed for a general assessment, with the exception
+of the patient’s history, which need not include all the details already obtained in the original
+assessment.
+Payment rules:
+With the exception of general re-assessments rendered for hospital admissions, general re-
+assessments are limited to two per 12 month period, per patient per physician. The amount payable
+for general re-assessments in excess of this limit will be adjusted to a lesser assessment fee.
+Amd 12 Draft 1 GP22 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 37 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+ASSESSMENTS
+PRE-DENTAL/PRE-OPERATIVE ASSESSMENTS
+[Commentary:
+For Definition and terms and conditions see page A4.]
+SPECIFIC ASSESSMENT AND MEDICAL SPECIFIC ASSESSMENT
+Definition/Required elements of service:
+Specific assessment and medical specific assessment are services rendered by specialists, in a place
+other than a patient’s home, and require a full history of the presenting complaint and detailed
+examination of the affected part(s), region(s), or system(s) needed to make a diagnosis, and/or
+exclude disease, and/or assess function.
+Payment rules:
+Specific assessments or medical specific assessments are limited to one per patient per physician per
+12 month period unless either of the following circumstances are met in which case the limit is
+increased to two per patient per physician per 12 month period:
+1. the patient presents a second time with a complaint for which a clearly different diagnosis is
+made, unrelated to the diagnosis made at the time of the first specific assessment in that 12
+month period; or
+2. in the case of a medical specific assessment, at least 90 days have elapsed since the date of
+the last specific assessment and the second assessment is a hospital admission assessment.
+The amount payable for specific or medical specific assessments in excess of this limit will be
+adjusted to a lesser assessment fee.
+In addition, any combination of medical specific assessments and complex medical specific re-
+assessments (see below) are limited to 4 per patient per physician per 12 month period. The amount
+payable for these services in excess of this limit will be adjusted to a lesser assessment fee.
+SPECIFIC RE-ASSESSMENT AND MEDICAL SPECIFIC RE-ASSESSMENT
+Definition/Required elements of service:
+Specific re-assessment and medical specific re-assessment are services rendered by specialists and
+require a full, relevant history and physical examination of one or more systems.
+[Commentary:
+As outlined on page GP40, admission assessments are deemed to be a specific re-
+assessment or medical specific re-assessment under either of the following circumstances:
+1.for those procedures prefixed with a “Z” or noted as an IOP, by a surgical specialist who has
+assessed the patient prior to admission in respect of the same illness; or
+2.for those patients who have been assessed by a physician and subsequently admitted to the
+hospital for the same illness by the same physician.]
+Payment rules:
+Specific re-assessments or medical specific re-assessments are limited to two per patient per
+physician per consecutive 12 month period except for specific re-assessments rendered for hospital
+admissions. The amount payable for specific or medical specific re-assessments in excess of this limit
+will be adjusted to a lesser assessment fee.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP23 Amd 12 Draft 1
+
+--- PAGE 38 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+COMPLEX MEDICAL SPECIFIC RE-ASSESSMENT
+Definition/ Required elements of service:
+A complex medical specific re-assessment is a re-assessment of a patient because of the complexity,
+obscurity, or seriousness of the patient’s condition and includes all the requirements of a medical
+specific re-assessment. The physician must report his/her findings, opinions, or recommendations in
+writing to the patient’s primary care physician or the amount payable for the service will be adjusted to
+a lesser assessment fee.
+Payment rules:
+Complex medical specific re-assessments are limited to 4 per patient per physician per 12 month
+period. The amount payable for complex medical specific re-assessments in excess of this limit will be
+adjusted to a lesser assessment fee.
+In addition, any combination of medical specific assessments and complex medical specific re-
+assessments are limited to 4 per patient per physician per 12 month period. The amount payable for
+these services in excess of this limit will be adjusted to a lesser assessment fee.
+Amd 12 Draft 1 GP24 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 39 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+PARTIAL ASSESSMENT
+Definition/ Required elements of service:
+A partial assessment is the limited service that constitutes a history of the presenting complaint, the
+necessary physical examination, advice to the patient and appropriate record.
+Chronic Disease Assessment Premium
+Definition/ Required elements of service:
+Chronic disease assessment premium is payable in addition to the amount payable for an
+assessment when all of the following criteria are met:
+a. The assessment is a
+i. medical specific assessment;
+ii. medical specific re-assessment;
+iii. complex medical specific re-assessment;
+iv. partial assessment; or
+v. level 2 paediatric assessment
+b. The service is rendered by a physician registered with OHIP as having one of the following
+specialty designations:
+07(Geriatrics), 15(Endocrinology & Metabolism), 18(Neurology), 26(Paediatrics),
+28(Pathology), 31(Physical Medicine), 34(Therapeutic Radiology), 44(Medical Oncology),
+46(Infectious Disease), 47(Respiratory Disease), 48(Rheumatology), 61(Haematology),
+62(Clinical Immunology).
+c. The assessment is rendered in an office setting or an out-patient clinic located in a hospital,
+other than an emergency department.
+[Commentary:
+The chronic disease assessment premium is not payable for assessments rendered to in-
+patients of any hospital, patients seen in a long-term care facility or patients seen in an
+emergency department.]
+d. The patient has an established diagnosis of a chronic disease, documented in the patient’s
+medical record.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP25 Amd 12 Draft 1
+
+--- PAGE 40 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Payment rules:
+The following is a list of the diagnostic codes as specified by OHIP that must accompany the claim for
+payment purposes:
+Diagnostic
+Description
+Code
+042 AIDS
+043 AIDS-related complex
+044 Other human immunodeficiency virus infection
+250 Diabetes mellitus, including complications
+286 Coagulation defects (e.g. haemophilia, other factor deficiencies)
+282 Hereditary hemolytic anemia (e.g., thalassemia, sickle-cell anemia)
+287 Purpura, thrombocytopenia, other haemorrhagic conditions
+290 Senile dementia, presenile dementia
+299 Child psychoses or autism
+313 Behavioural disorders of childhood and adolescence
+315 Specified delays in development (e.g. dyslexia, dyslalia, motor retardation)
+332 Parkinson's Disease
+340 Multiple Sclerosis
+343 Cerebral Palsy
+345 Epilepsy
+402 Hypertensive Heart Disease
+428 Congestive Heart Failure
+491 Chronic Bronchitis
+492 Emphysema
+493 Asthma, Allergic Bronchitis
+515 Pulmonary Fibrosis
+555 Regional Enteritis, Crohn's Disease
+556 Ulcerative Colitis
+571 Cirrhosis of the Liver
+585 Chronic Renal Failure, Uremia
+710 Disseminated Lupus Erythaematosus, Generalized Scleroderma, Dermatomyositis
+714 Rheumatoid Arthritis, Still's Disease
+720 Ankylosing Spondylitis
+721 Other seronegative spondyloarthropathies
+758 Chromosomal Anomalies
+765 Prematurity, low-birthweight infant
+902 Educational problems
+[Commentary:
+The chronic disease assessment premium is not payable in situations where the diagnosis has
+not been established.]
+Amd 12 Draft 1 GP26 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 41 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+LEVEL 1 PAEDIATRIC ASSESSMENT
+Definition/Required elements of service:
+A Level 1 paediatric assessment includes one or both of the following:
+a. a brief history and examination of the affected part or region or related to a mental or
+emotional disorder; or
+b. brief advice or information regarding health maintenance, diagnosis, treatment and/or
+prognosis.
+LEVEL 2 PAEDIATRIC ASSESSMENT
+Definition/Required elements of service:
+A Level 2 paediatric assessment is a paediatric service that requires a more extensive examination
+than a level 1 paediatric assessment. It requires a history of the presenting complaint(s), inquiry
+concerning, and examination of the affected part(s), region(s), system(s), or mental or emotional
+disorder as needed to make a diagnosis, exclude disease, and/or assess function.
+A Level 2 paediatric assessment also includes well baby care, which is a periodic assessment of a
+well newborn/infant during the first two years of life including complete examination with weight and
+measurements, and instructions to the parent(s) or patient’s representative regarding health care.
+INTERMEDIATE ASSESSMENT
+Definition/Required elements of service:
+An intermediate assessment is a primary care general practice service that requires a more extensive
+examination than a minor assessment. It requires a history of the presenting complaint(s), inquiry
+concerning, and examination of the affected part(s), region(s), system(s), or mental or emotional
+disorder as needed to make a diagnosis, exclude disease, and/or assess function.
+INTERMEDIATE ASSESSMENT – PRONOUNCEMENT OF DEATH
+Definition/Required elements of service:
+Intermediate assessment – pronouncement of death is the service of pronouncing a patient dead in a
+location other than in the patient’s home. This service may include any counselling of relatives that is
+rendered during the same visit, and completion of the death certificate.
+[Commentary:
+1.For pronouncement of death in the home, see house call assessments (page A4 of the
+Schedule).
+2.Submit the claim for this service using the diagnostic code for the underlying cause of death,
+as recorded on the death certificate, rather than the immediate cause of death.]
+MINOR ASSESSMENT
+Definition/Required elements of service:
+A minor assessment includes one or both of the following:
+a. a brief history and examination of the affected part or region or related to a mental or
+emotional disorder; or
+b. brief advice or information regarding health maintenance, diagnosis, treatment and/or
+prognosis.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP27 Amd 12 Draft 1
+
+--- PAGE 42 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+PERIODIC OCULO-VISUAL ASSESSMENT
+Definition/Required elements of service:
+A periodic oculo-visual assessment is an examination of the eye and vision system rendered primarily
+to determine if a patient has a simple refractive error (defined as myopia, hypermetropia, presbyopia,
+anisometropia or astigmatism) for patients aged 19 or less or aged 65 or more. This service includes
+all components required to perform the assessment (ordinarily a history of the presenting complaint,
+past medical history, visual acuity examination, ocular mobility examination, slit lamp examination of
+the anterior segment, ophthalmoscopy, tonometry) advice and/or instruction to the patient and
+provision of a written refractive prescription if required.
+Payment rules:
+1. This service is limited to one per patient per 12 month period regardless of whether the first
+claim is or has been submitted for a service rendered by an optometrist or physician. Services
+in excess of this limit or to patients aged 20 to 64 are not insured services.
+2. Any other insured service rendered by the same physician (other than an ophthalmologist) to
+the same patient the same day as a periodic oculo-visual assessment is not eligible for
+payment.
+[Commentary:
+1.Other consultation and visit codes are not to be used as a substitute for this service when the
+limit is reached.
+2.Re-assessment following a periodic oculo-visual assessment is to be claimed using a lesser
+assessment fee code and diagnostic code 367.]
+FIRST VISIT BY PRIMARY CARE PHYSICIAN AFTER HOSPITAL DISCHARGE
+E080 First visit after hospital discharge premium, to other service
+listed in payment rule 5 below ..................................... add 25.25
+Payment rules:
+1.Subject to payment rules 2 through 5, E080 is only eligible for payment for a visit with the
+patient's primary care physician in the physician’s office or the patient’s home within two
+weeks of discharge following in-patient admission to an acute care hospital.
+[Commentary:
+This premium is not payable for visits rendered to patients in locations other than the
+physician's office or patient's home. As such, the premium is not payable for services rendered
+in places such as Nursing Homes, Homes for the Aged, chronic care hospitals, etc.]
+2.E080 is not eligible for payment if the admission to hospital was for the purpose of obstetrical
+delivery unless the mother required admission to an ICU during the hospital stay.
+3.E080 is not eligible for payment if the admission to hospital was for the purpose of newborn
+care unless the infant required admission to a NICU during the hospital stay.
+4.E080 is not eligible for payment if the admission to hospital was for the purpose of performing
+day surgery.
+5.E080 is only eligible for payment when rendered with the following services:
+A001, A003, A004, A007, A008, A261, A262, A263, A264, A888, A900, K004–K008, K013,
+K014, K022, K023, K028-K030, K032, K033, K037, K623, P003, P004, P008.
+Amd 12 Draft 1 GP28 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 43 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+DETENTION
+Definition/Required elements of service:
+Detention is payable following another insured service when a physician is required to spend
+considerable extra time in active treatment and/or monitoring of the patient to the exclusion of all other
+work and in this section is based on full 15-minute time units. The specific elements are those for
+assessments.
+K001 Detention – per full quarter hour............................................. 21.10
+Payment rules:
+1. Detention is payable under the following circumstances:
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP29 Amd 12 Draft 1
+
+--- PAGE 44 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Minimum time required in
+Service delivery of service before
+detention is payable
+minor, partial, multiple systems assessment, level 1 and level 2 30 minutes
+paediatric assessment, intermediate assessment, focused practice
+assessment or subsequent hospital visit
+specific or general re-assessment 40 minutes
+consultation, repeat consultation, specific or general assessment, 60 minutes
+complex dermatology assessment, complex endocrine neoplastic
+disease assessment, complex neuromuscular assessment,
+complex physiatry assessment, complex respiratory assessment,
+enhanced 18 month well baby visit, midwife or aboriginal midwife-
+requested anaesthesia assessment, midwife or aboriginal midwife-
+requested assessment, midwife or aboriginal midwife-requested
+genetic assessment or optometrist-requested assessment
+initial assessment-substance abuse, special community medicine 90 minutes
+consultation, special family and general practice consultation,
+special optometrist-requested assessment, special palliative care
+consultation, special surgical consultation or midwife or aboriginal
+midwife-requested special assessment
+comprehensive cardiology consultation, comprehensive community 120 minutes
+medicine consultation, comprehensive endocrinology consultation,
+comprehensive family and general practice consultation,
+comprehensive geriatric consultation, comprehensive infectious
+disease consultation, comprehensive internal medicine
+consultation, comprehensive midwife or aboriginal midwife-
+requested genetic assessment, comprehensive nephrology
+consultation, comprehensive respiratory disease consultation,
+comprehensive physical medicine and rehabilitation consultation,
+comprehensive rheumatology consultation, special paediatric
+consultation, special genetic consultation or special neurology
+consultation
+extended comprehensive geriatric consultation, extended midwife 180 minutes
+or aboriginal midwife-requested genetic assessment, extended
+special genetic consultation, extended special paediatric
+consultation, or paediatric neurodevelopmental consultation
+2. Detention is not eligible for payment in conjunction with diagnostic procedures, obstetrics, and
+those therapeutic procedures where the fee includes an assessment (e.g. non-IOP surgery).
+3. Detention is not eligible for payment for time spent waiting.
+4. For the purposes of calculation of time units payable for detention, the start time commences
+after the minimum time required for the assessment or consultation listed in the table has
+passed.
+Amd 12 Draft 1 GP30 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 45 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+5. K001 is not eligible for payment for same patient same day as A190, A191, A192 A195, A197,
+A198, A695, A795 or A895.
+Claims submission instructions:
+Claims for detention are assessed by a medical consultant on an IC basis and require the
+submission of a written explanation.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP31 Amd 12 Draft 1
+
+--- PAGE 46 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+DETENTION-IN-AMBULANCE
+Definition/Required elements of service:
+Detention-in-Ambulance is payable for constant attendance with a patient in an ambulance, to provide
+all aspects of care to the patient. Time is calculated only for that period during which the physician is
+in constant attendance with the patient in the ambulance. The service includes an initial examination
+and ongoing monitoring of the patient’s condition and all interventions, except in those circumstances
+in which the Schedule provides for separate or additional payment for the intervention.
+K101 Ground ambulance transfer with patient per quarter hour or
+part thereof ......................................................................... 42.10
+K111 Air ambulance transfer with patient per quarter hour or part
+thereof ................................................................................ 126.40
+K112 Return trip without patient to place of origin following air or
+ground ambulance transfer, per half hour or major part
+thereof ................................................................................ 25.05
+Claims submission instruction:
+Claims for Detention-in-Ambulance are assessed by a medical consultant on an IC basis and require
+the submission of a written explanation.
+[Commentary:
+K101 is not applicable to attendance in a vehicle other than an ambulance, in which case K001
+may apply.]
+DETENTION FOR THE TRANSPORT OF DONOR ORGANS
+Definition/Required elements of service:
+Detention for the Transport of Donor Organs is payable for time travelling to and from a donor centre
+(excluding time spent in the donor centre) for the purpose of collecting and transporting to the
+recipient hospital (a) donor organ(s), including fresh bone being harvested.
+K102 Per quarter hour or part thereof (not eligible for payment with
+K001).................................................................................. 20.20
+Claims submission instruction:
+Claims for Detention for the Transport of Donor Organs are assessed by a medical consultant on an
+IC basis and require the submission of a written explanation.
+[Commentary:
+Claims will be adjudicated on the basis of the most time-efficient means of travel to and from a
+donor centre.]
+NEWBORN CARE
+Definition/Required elements of service:
+Newborn care is the routine care of a well newborn for up to the first ten days of life in hospital or
+home and includes an initial general assessment and subsequent assessments, as may be indicated,
+and instructions to the caregiver(s) regarding the newborn's health care.
+Amd 12 Draft 1 GP32 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 47 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Payment rules:
+1. Newborn care is limited to a maximum of one per patient except when a well baby is transferred
+to another hospital in which case the fee for newborn care may be payable to a physician at
+both hospitals.
+[Commentary:
+An example where this is possible is if the transfer occurred because of the state of health of
+the mother.]
+2. Despite the requirement that to be eligible for a special visit premium the call be non-elective
+(see GP65), a special visit premium is payable in addition to this service if a physician is
+required to make an additional visit to the hospital outside of his or her normally scheduled
+hospital rounds to facilitate discharge of the newborn the same day as the visit.
+LOW BIRTH WEIGHT BABY CARE
+Definition:
+Low birth weight baby care is any assessment of a well newborn/infant weighing less than 2.5
+kilograms at birth.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP33 Amd 12 Draft 1
+
+--- PAGE 48 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+WELL BABY CARE
+Definition/Required elements of service:
+Well baby care is a periodic assessment of a well newborn/infant during the first two years of life
+including complete examination with weight and measurements, and instructions to the parent(s) or
+patient’s representative regarding health care.
+ENHANCED 18 MONTH WELL BABY VISIT
+Definition/Required elements of service:
+Enhanced 18 month well baby visit is the service rendered when a physician performs all of the
+following in respect of a child from 17-24 months of age:
+a. Those services defined as “well baby care”;
+b. An 18 month age-appropriate developmental screen; and
+c. Review with the patient’s parent/guardian, legal representative or other caregiver of a brief
+standardized tool (completed by the patient’s parent/guardian, legal representative or other
+caregiver) that aids the identification of children at risk of a developmental disorder.
+Medical record requirements:
+This service is eligible for payment only when, in addition to the medical record requirements
+for well baby care, an 18 month age-appropriate developmental screen and concerns identified
+from the review of the brief standardized tool with the parent/guardian, legal representative or
+other caregiver are recorded in the patient’s permanent medical record.
+[Commentary:
+An example of an 18 month age-appropriate developmental screen would be that outlined in
+the Rourke Baby Record and an example of a brief standardized tool completed by the parent/
+guardian, legal representative or other caregiver that aids the identification of children at risk of
+a developmental disorder would be the Nipissing District Developmental Screen or similar
+parental questionnaire.]
+PSYCHIATRIC ASSESSMENT UNDER THE MENTAL HEALTH ACT
+Definition/Required elements of service:
+A psychiatric assessment under the Mental Health Act (K620, K623, K624, and K629) includes such
+psychiatric history, inquiry, and examination of the patient, as is appropriate, to enable the physician to
+complete, and includes completing, the relevant forms and to notify the patient, family, patient
+representative and relevant authorities under the Mental Health Act, where appropriate.
+Amd 12 Draft 1 GP34 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 49 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+E-Assessments
+Definition/Required elements of service:
+An e-assessment is a service performed by a specialist when a primary care physician or nurse
+practitioner requests an opinion and/or recommendations from the specialist for management of a
+specific patient by providing information electronically through a secure server (e.g. secure
+messaging, EMR). The specialist is required to review all relevant data provided by the primary care
+physician or nurse practitioner, including the review of any additional information that may be
+submitted subsequent to the initial request. For the purpose of this service, “relevant data” may
+include family/patient history, history of the presenting complaint, laboratory and diagnostic tests, and
+visual images where indicated.
+In addition to the Common Elements, E-assessments include the specific elements of assessments,
+as listed in the General Preamble, except for paragraphs A and B.
+Payment rules:
+1.E-assessments are only eligible for payment if the specialist has provided an opinion and/or
+recommendations for patient management to the primary care physician or nurse practitioner
+within 30 days from the date of the request. Where a service is requested by a nurse
+practitioner the consultant shall provide the report to the nurse practitioner and the patient’s
+primary care provider, if applicable.
+2.E-assessments are not eligible for payment to the specialist in the following circumstances
+a.when the purpose of the electronic communication is to arrange for transfer of the
+patient’s care to any physician; or
+b.when rendered in whole or in part to arrange for a consultation, a different assessment,
+visit, or K-prefix time-based services, procedure(s), or diagnostic investigation(s); or
+c.when the specialist renders a K-prefix time-based service for the same patient within 30
+days following the request for the specialist e-assessment; or
+d.in circumstances where the primary care physician or specialist receives compensation,
+other than by fee-for service under this Schedule, for participation in the e-assessment.
+3.A consultation, a different assessment or visit rendered by the specialist for the same patient
+for the same diagnosis within 60 days following the request for the specialist e-assessment is
+only payable as a specific or partial assessment, as appropriate to the service rendered.
+4.K738 is eligible for payment to the primary care physician when this physician is required to
+collect additional data (for example dermatology or ophthalmology images not present in the
+primary care physician’s records) to support the specialist’s e-assessment. K738 is not
+eligible for payment where existing data is already available in the primary care physician’s
+records for submission to the specialist.
+[Commentary:
+1.Following the primary care physician’s request, the specialist decides whether an e-
+assessment is the most appropriate service in the circumstances. In some cases, direct
+patient contact or a consultation by videoconference may be more appropriate.
+2.Payment, other than by fee-for-service, includes compensation where the physician receives
+remuneration under a salary, primary care, stipend, APP or AFP model.
+3.Physicians who receive compensation other than by fee-for-service under this Schedule
+should consult their contract for guidance on shadow-billing.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP35 Amd 12 Draft 1
+
+--- PAGE 50 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Medical record requirements:
+An e-assessment is only eligible for payment if all of the following elements are included in the
+patient’s permanent medical record of the specialist:
+1.patient’s name and health number;
+2.name of the primary care physician or nurse practitioner;
+3.date of, and reason for, the request; and
+4.opinion, diagnosis, advice and/or recommendations of the specialist.
+Claims submission instructions:
+An e-assessment is only eligible for payment if the specialist includes the primary care
+physician’s or nurse practitioner’s provider number with the claim.
+Amd 12 Draft 1 GP36 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 51 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Initial E-ASSESSMENT
+Definition/Required elements of service:
+Initial e-assessment is the first e-assessment performed by a particular specialist that is requested by
+the primary care physician or nurse practitioner for a specific patient and diagnosis where the
+specialist must review all relevant data provided by the primary care physician and provide a written
+opinion that includes a diagnosis and/or management advice to the primary care physician or nurse
+practitioner.
+[Commentary:
+The time and intensity of this service is the same as a regular consultation. The specialist may
+choose to return their opinion by phone, however, a written opinion must be provided
+electronically or by mail.]
+Payment rules:
+Initial e-assessments are limited to a maximum of one per patient per specialist per 12 month
+period unless the primary care physician or nurse practitioner makes a second request in
+relation to a complaint for which a clearly different diagnosis is made, unrelated to the
+diagnosis made at the time of the first e-assessment in that same 12 month period, in which
+case the limit is increased to a maximum of two per patient per specialist per 12 month period.
+[Commentary:
+If a subsequent e-assessment is related to the diagnosis made at the time of the initial e-
+assessment, then this service is payable as a repeat e-assessment, follow-up e-assessment or
+minor e-assessment as appropriate to the service rendered.]
+repeat E-ASSESSMENT
+Definition/ Required elements of service:
+Repeat e-assessment is the first e-assessment performed by a particular specialist following an initial
+e-assessment or consultation by that specialist that is requested by the primary care physician or
+nurse practitioner for the same diagnosis where the specialist must review all relevant data provided
+by the primary care physician or nurse practitioner and provide an opinion that includes management
+advice to the primary care physician or nurse practitioner.
+[Commentary:
+The time and intensity of this service is the same as a specific assessment. The specialist may
+choose to return their opinion by phone.]
+Payment rules:
+Repeat e-assessments are limited to a maximum of one per patient per physician per 12 month
+period unless the primary care physician or nurse practitioner makes a second request in
+relation to a complaint for which a clearly different diagnosis is made, unrelated to the
+diagnosis made at the time of the first e- assessment in that same 12 month period, in which
+case the limit is increased to a maximum of two per patient per physician per 12 month period.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP37 Amd 12 Draft 1
+
+--- PAGE 52 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+Follow-up E-ASSESSMENT
+Definition/ Required elements of service:
+A follow-up e-assessment is the limited e-assessment rendered for follow-up by the specialist who
+has previously rendered any insured service to the patient for the same diagnosis. The specialist must
+review all relevant information submitted and provide an opinion and/or management advice to the
+primary care physician or nurse practitioner.
+[Commentary:
+The time and intensity of the service is the same as a partial assessment. The specialist may
+choose to return their opinion by phone.]
+Payment rules:
+Follow-up e-assessment is limited to a maximum of:
+1.one (1) service per patient per day, same physician;
+2.four (4) services per patient same physician per 12 month period; and
+3.one thousand (1000) services per physician per 12 month period.
+Amd 12 Draft 1 GP38 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 53 ---
+GENERAL PREAMBLE
+ASSESSMENTS
+MINOR E-ASSESSMENT
+Definition/ Required elements of service:
+A minor e-assessment is a brief e-assessment rendered by the specialist. The specialist must review
+all relevant information submitted and provide an answer to the primary care physician’s or nurse
+practitioner’s specific clinical question.
+Payment rules:
+Minor e-assessment is limited to a maximum of:
+1.one (1) service per patient per day, same physician;
+2.twelve (12) services per patient same physician per 12 month period; and
+3.two thousand (2000) services per physician per 12 month period.
+[Commentary:
+A minor e-assessment is where the primary care physician or nurse practitioner may ask a
+specific question related to the patient where the information provided is limited and the
+question asked is very specific. An example is where the primary care physician has initiated a
+treatment recommended by the specialist, and the primary care physician requests a brief
+email response related to proper dosing adjustments. One service may include multiple emails.
+The specialist may choose to return their opinion by phone.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP39 Amd 12 Draft 1

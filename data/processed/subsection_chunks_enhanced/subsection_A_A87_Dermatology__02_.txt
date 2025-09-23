@@ -1,0 +1,179 @@
+Subsection: Dermatology (02)
+Parent Section: A
+Page Reference: A87
+Pages: 215 to 219
+Text chunks: 1
+Total text length: 9321 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 215 ---
+CONSULTATIONS AND VISITS
+March 4, 2024 (effective April 1, 2024)
+DERMATOLOGY (02)
+GENERAL LISTINGS
+A025 Consultation............................................................................ 72.15
+A027 Consultation in association with special visit to a hospital in-
+patient, long-term care in-patient or emergency department
+patient................................................................................. 147.30
+Claims submission instructions:
+Submit claim using A027 and the appropriate special visit premium beginning with "C" prefix for
+a hospital in-patient, “W” prefix for a long-term care in-patient or “K” prefix for an emergency
+department patient.
+A026 Repeat consultation................................................................ 44.45
+A023 Specific assessment............................................................... 43.00
+A024 Partial assessment ................................................................. 21.90
+U025 Initial e-assessment................................................................ 44.45
+U023 Repeat e-assessment............................................................. 29.00
+U026 Follow-up e-assessment......................................................... 21.90
+U021 Minor e-assessment ............................................................... 11.00
+Advanced Dermatology Consultation
+This service is a consultation for the investigation, diagnosis, and management of any of the
+following diseases of the integumentary system where the complexity of the condition requires
+the medical expertise of a specialist in Dermatology (02).
+a. Complex systemic disease with skin manifestations for at least one of the following:
+i. sarcoidosis;
+ii. systemic lupus erythematosus;
+iii. dermatomyositis;
+iv. scleroderma;
+v. relapsing polychondritis;
+vi. inflammatory bowel disease related diseases (i.e. pyoderma gangrenosum, Sweet's
+syndrome, erythema nodosum);
+vii. porphyria;
+viii. autoimmune blistering diseases (e.g. pemphigus, pemphigoid, linear IgA);
+ix. paraneoplastic syndromes involving the skin;
+x. vasculitis (including Behcet's disease); or
+xi. cutaneous lymphomas (including lymphomatoid papulosis). or
+b. Chronic pruritus with or without skin manifestations (i.e. prurigo nodularis).
+or
+c. Complex systemic drug reactions for at least one of the following:
+i. drug hypersensitivity syndrome;
+ii. erythema multiforme major; or
+iii. toxic epidermal necrolysis.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A87 Amd 12 Draft 1
+
+--- PAGE 216 ---
+CONSULTATIONS AND VISITS
+DERMATOLOGY (02)
+or
+d. "Complex psoriasis" or "complex dermatitis" as defined by at least one of the following
+criteria:
+i. involvement of body surface area of greater than 30%;
+ii. treatment with systemic therapy (e.g. methotrexate, acitretin, cyclosporine, biologics); or
+iii. a visit that requires at least 30 minutes of direct patient encounter time.
+A021 Advanced Dermatology Consultation ..................................... 164.90
+Amd 12 Draft 1 A88 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 217 ---
+CONSULTATIONS AND VISITS
+DERMATOLOGY (02)
+Complex dermatology assessment
+This service is an assessment for the ongoing management of any of the following diseases
+where the complexity of the condition requires the continuing management by a dermatology
+specialist.
+a. Complex systemic disease with skin manifestations for at least one of the following:
+i. sarcoidosis;
+ii. systemic lupus erythematosus;
+iii. dermatomyositis;
+iv. scleroderma;
+v. relapsing polychondritis;
+vi. inflammatory bowel disease related diseases (i.e. pyoderma gangrenosum, Sweet's
+syndrome, erythema nodosum);
+vii. porphyria;
+viii. autoimmune blistering diseases (e.g. pemphigus, pemphigoid, linear IgA);
+ix. paraneoplastic syndromes involving the skin;
+x. vasculitis (including Behcet's disease); or
+xi. cutaneous lymphomas (including lymphomatoid papulosis).
+or
+b. Chronic pruritus with or without skin manifestations (i.e. prurigo nodularis).
+or
+c. Complex systemic drug reactions for at least one of the following:
+i. drug hypersensitivity syndrome;
+ii. erythema multifome major; or
+iii. toxic epidermal necrolysis.
+or
+d. "Complex psoriasis" or "complex dermatitis" as defined by at least one of the following
+criteria:
+i. involvement of body surface area of greater than 30%;
+ii. treatment with systemic therapy (e.g. methotrexate, acitretin, cyclosporine, biologics); or
+iii. a visit that requires at least 15 minutes of direct patient encounter time.
+A020 Complex dermatology assessment......................................... 60.00
+Payment rules:
+1.A complex dermatology assessment must include all the elements of a specific assessment
+or the amount payable will be adjusted to lesser assessment fee.
+2.Complex dermatology assessments are limited to 6 per patient, per physician, per 12 month
+period. Services in excess of this limit will be adjusted to a lesser assessment fee.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A89 Amd 12 Draft 1
+
+--- PAGE 218 ---
+CONSULTATIONS AND VISITS
+DERMATOLOGY (02)
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patient(s) in
+the Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C025 Consultation............................................................................ 147.30
+C026 Repeat consultation................................................................ 44.45
+C023 Specific assessment............................................................... 43.00
+C024 Specific re-assessment........................................................... 25.40
+C020 Complex dermatology assessment - subject to same
+conditions as A020 ............................................................. 60.00
+Subsequent visits
+C022 - first five weeks........................................................per visit 34.10
+C027 - sixth to thirteenth week (maximum 3 per patient per week)
+............................................................................... per visit 34.10
+C029 - after thirteenth week (maximum 6 per patient per month)
+.............................................................................. per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge ................................................................. 61.15
+Subsequent visits by the MRP following transfer from an intensive care area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................ 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an intensive care area ........................................................ 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43)..................................................... per visit 34.10
+C028 Concurrent care..........................................................per visit 34.10
+C982 Palliative care (see General Preamble GP50)............per visit 34.10
+NON-EMERGENCY LONG-TERM CARE IN-PATIENT SERVICES
+Non-Emergency Long-Term Care In-Patient Services includes Chronic Care Hospitals,
+Convalescent Hospitals, Nursing Homes, Homes for the Aged, designated chronic or
+convalescent care beds in hospitals and nursing homes or homes for the aged, other than
+patients in designated palliative care beds. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78
+W025 Consultation............................................................................ 147.30
+W026 Repeat consultation................................................................ 44.45
+Amd 12 Draft 1 A90 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 219 ---
+CONSULTATIONS AND VISITS
+DERMATOLOGY (02)
+Subsequent visits (see General Preamble GP49)
+Chronic care or convalescent hospital
+W022 - first 4 subsequent visits per patient per month.......per visit 34.10
+W021 - additional subsequent visits (maximum 6 per patient per
+month) .................................................................... per visit 34.10
+W982 - palliative care (see General Preamble GP50)........per visit 34.10
+Nursing home or home for the aged
+W023 - first 2 subsequent visits per patient per month.......per visit 34.10
+W028 - additional subsequent visits (maximum 3 per patient per
+month) ................................................................... per visit 34.10
+W972 - palliative care (see General Preamble GP50)........per visit 34.10
+W121 Additional visits due to intercurrent illness (see General
+Preamble GP49)..................................................... per visit 34.10
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A91 Amd 12 Draft 1

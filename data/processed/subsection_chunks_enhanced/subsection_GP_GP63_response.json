@@ -1,0 +1,300 @@
+{
+  "subsection_title": "Delegated Procedure",
+  "parent_section": "GP",
+  "page_ref": "GP63",
+  "pages_processed": "77-77",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [],
+  "referenced_codes": [
+    {
+      "code": "G480",
+      "context": "delegated procedure",
+      "description": "Venipuncture",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G482",
+      "context": "delegated procedure",
+      "description": "Venipuncture",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G489",
+      "context": "delegated procedure",
+      "description": "Venipuncture",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G372",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G373",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G538",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G590",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G593",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G840",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G841",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G842",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G843",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G844",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G845",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G846",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G847",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G848",
+      "context": "delegated procedure",
+      "description": "Injections and immunizations",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G470",
+      "context": "delegated procedure",
+      "description": "Ultraviolet light therapy",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G462",
+      "context": "delegated procedure",
+      "description": "Administration of oral polio vaccine",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G001",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G002",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G004",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G005",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G009",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G010",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G011",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G012",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G014",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G481",
+      "context": "delegated procedure",
+      "description": "Simple office laboratory procedures",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G420",
+      "context": "delegated procedure",
+      "description": "Ear syringing, curetting or debridement",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "G369",
+      "context": "delegated procedure",
+      "description": "B.C.G. inoculation",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "J301",
+      "context": "delegated procedure",
+      "description": "Simple Spirometry and Flow Volume Loop",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "J324",
+      "context": "delegated procedure",
+      "description": "Simple Spirometry and Flow Volume Loop",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "J304",
+      "context": "delegated procedure",
+      "description": "Simple Spirometry and Flow Volume Loop",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "J327",
+      "context": "delegated procedure",
+      "description": "Simple Spirometry and Flow Volume Loop",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "Z198-Z209",
+      "context": "delegated procedure",
+      "description": "Casts",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "Z211",
+      "context": "delegated procedure",
+      "description": "Casts",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "Z213",
+      "context": "delegated procedure",
+      "description": "Casts",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "Z216",
+      "context": "delegated procedure",
+      "description": "Casts",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    },
+    {
+      "code": "Z873",
+      "context": "delegated procedure",
+      "description": "Casts",
+      "source_subsection": "Delegated Procedure",
+      "source_page": "GP63"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

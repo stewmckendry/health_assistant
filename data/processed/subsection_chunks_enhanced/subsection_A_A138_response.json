@@ -1,0 +1,83 @@
+{
+  "subsection_title": "Nuclear Medicine (63)",
+  "parent_section": "A",
+  "page_ref": "A138",
+  "pages_processed": "266-267",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A635",
+      "description": "Consultation",
+      "fee": 157.0,
+      "units": "75 minutes of direct contact"
+    },
+    {
+      "code": "A835",
+      "description": "Comprehensive nuclear medicine consultation",
+      "fee": 310.45,
+      "units": "75 minutes of direct contact"
+    },
+    {
+      "code": "A735",
+      "description": "Diagnostic consultation",
+      "fee": 67.4,
+      "conditions": "Not eligible for payment when studies rendered in a different institution or facility are used for comparison purposes."
+    },
+    {
+      "code": "A636",
+      "description": "Repeat consultation",
+      "fee": 70.0
+    },
+    {
+      "code": "A633",
+      "description": "Specific assessment",
+      "fee": 60.0
+    },
+    {
+      "code": "A638",
+      "description": "Partial assessment",
+      "fee": 40.0
+    },
+    {
+      "code": "A631",
+      "description": "Minor assessment (cancellation or deferral)",
+      "fee": 17.75
+    },
+    {
+      "code": "A632",
+      "description": "Minor assessment (advisability of procedure)",
+      "fee": 17.75
+    },
+    {
+      "code": "C635",
+      "description": "Consultation",
+      "fee": 157.0
+    },
+    {
+      "code": "C835",
+      "description": "Comprehensive nuclear medicine consultation - subject to the same conditions of A835",
+      "fee": 310.45
+    },
+    {
+      "code": "C735",
+      "description": "Diagnostic consultation - subject to the same conditions as A735",
+      "fee": 67.4
+    },
+    {
+      "code": "C636",
+      "description": "Repeat consultation",
+      "fee": 70.0
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

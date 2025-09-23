@@ -1,0 +1,119 @@
+{
+  "subsection_title": "Musculoskeletal System",
+  "parent_section": "B",
+  "page_ref": "B8",
+  "pages_processed": "332-332",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        5,
+        "J850 - general survey.................................................................... 103.70 49.70"
+      ],
+      [
+        6,
+        "J851 - single site ........................................................................... 84.85 40.30"
+      ],
+      [
+        8,
+        "J852 - general survey.................................................................... 177.55 49.70"
+      ],
+      [
+        9,
+        "J853 - single survey ...................................................................... 123.70 40.30"
+      ],
+      [
+        13,
+        "................................................................................... add 43.50 24.65"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J850",
+      "description": "Bone scintigraphy - general survey",
+      "fee": 103.7,
+      "h_fee": 103.7,
+      "p_fee": 49.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J851",
+      "description": "Bone scintigraphy - single site",
+      "fee": 84.85,
+      "h_fee": 84.85,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J852",
+      "description": "Gallium scintigraphy - general survey",
+      "fee": 177.55,
+      "h_fee": 177.55,
+      "p_fee": 49.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J853",
+      "description": "Gallium scintigraphy - single survey",
+      "fee": 123.7,
+      "h_fee": 123.7,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J819",
+      "description": "Application of tomography (SPECT) - where each SPECT image represents a different organ or body area, to J852, maximum 3 images per examination",
+      "fee": 43.5,
+      "h_fee": 43.5,
+      "p_fee": 24.65,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "J804",
+      "context": "not payable with",
+      "description": "may be claimed in addition to J850 or J851 for blood pool study",
+      "source_subsection": "Musculoskeletal System",
+      "source_page": "B8"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}
