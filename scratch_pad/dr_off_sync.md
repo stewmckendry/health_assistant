@@ -45,13 +45,17 @@
 
 #### Files Created/Modified:
 ```
-src/agents/clinical/dr_off/ingestion/
+src/agents/ontario_orchestrator/ingestion/
   ├── __init__.py ✅
   ├── database.py ✅
   ├── base_ingester.py ✅
-  ├── ingest_odb.py ✅
-  ├── ingest_ohip.py ✅ (partial - ingestion pipeline working)
-  └── ingest_adp.py ✅ (V1 complete)
+  ├── ingesters/
+  │   ├── odb_ingester.py ✅
+  │   ├── ohip_ingester.py ✅ (partial - ingestion pipeline working)
+  │   └── adp_ingester.py ✅ (V1 complete)
+  └── extractors/
+      ├── ohip_extractor.py ✅
+      └── act_extractor.py ✅
 
 # OHIP Schedule Extraction & Processing Files:
 extract_subsections_enhanced.py ✅ (main extraction script)
@@ -111,33 +115,122 @@ data/
 
 ---
 
-### Session 2: MCP Tools & Query Interface
-**Owner**: [Session 2]
-**Status**: Not Started
+### 🆕 Session 2: MCP Tools & Query Interface (Revised - FastMCP)
+**Status**: Starting Now - Split into 3 parallel sessions
+**Approach**: Dual-path retrieval (SQL + Vector always), 5 tools total
 
-#### Tasks:
-- [ ] Implement MCP tool functions
-  - [ ] `formulary_lookup()`
-  - [ ] `interchangeability_context()`
-  - [ ] `ohip_fee_lookup()`
-  - [ ] `coverage_rule_lookup()`
-  - [ ] `adp_device_lookup()`
-  - [ ] `adp_forms()`
-- [ ] Build query router/dispatcher
-- [ ] Create structured Answer Card response format
-- [ ] Implement tool registration
+---
 
-#### Files Created/Modified:
+#### Session 2A: Core Infrastructure & Orchestrator
+**Owner**: [Session 2A]
+**Focus**: FastMCP server setup, coverage.answer orchestrator, models
+
+##### Tasks:
+- [ ] Set up FastMCP server (`server.py`)
+  - [ ] Install fastmcp package
+  - [ ] Configure server with 5 tool registrations
+  - [ ] Set up async handlers with timeout support
+- [ ] Implement `coverage.answer` orchestrator
+  - [ ] Intent classification (billing/device/drug)
+  - [ ] Internal routing logic to domain tools
+  - [ ] Result merging from multiple tools
+  - [ ] Conflict detection and resolution
+- [ ] Create Pydantic models
+  - [ ] Request schemas (CoverageRequest, ScheduleRequest, etc.)
+  - [ ] Response schemas with provenance, confidence, citations
+  - [ ] Citation and Highlight models
+- [ ] Implement confidence scoring system
+  - [ ] Base SQL confidence (0.9)
+  - [ ] Vector corroboration bonus (+0.03 per match)
+  - [ ] Conflict penalty (-0.1)
+
+##### Files to Create:
 ```
-src/agents/clinical/dr_off/tools/
-  ├── __init__.py
-  ├── formulary_tools.py
-  ├── ohip_tools.py
-  ├── adp_tools.py
-  └── router.py
+src/agents/ontario_orchestrator/mcp/
+  ├── server.py              # FastMCP server registration
+  ├── tools/
+  │   └── coverage.py        # coverage.answer orchestrator
+  ├── models/
+  │   ├── request.py         # All request schemas
+  │   └── response.py        # All response schemas
+  └── utils/
+      ├── confidence.py      # Confidence scoring logic
+      └── conflicts.py       # Conflict detection
+```
 
-src/agents/clinical/dr_off/
-  └── response_models.py
+---
+
+#### Session 2B: Domain Tools (Schedule & ADP)
+**Owner**: [Session 2B]
+**Focus**: schedule.get and adp.get dual-path implementations
+
+##### Tasks:
+- [ ] Implement `schedule.get` tool
+  - [ ] SQL query for ohip_fee_schedule (4,166 codes)
+  - [ ] Vector search in ohip_chunks collection
+  - [ ] Parallel execution with asyncio.gather()
+  - [ ] Result merging with provenance tracking
+- [ ] Implement `adp.get` tool  
+  - [ ] SQL queries for adp_funding_rule & adp_exclusion
+  - [ ] Vector search in adp_v1 collection (199 chunks)
+  - [ ] CEP routing logic
+  - [ ] Eligibility and exclusion synthesis
+- [ ] Create SQL client wrapper
+  - [ ] Connection pooling to SQLite
+  - [ ] Prepared statements for safety
+  - [ ] Query timeout handling (300-500ms)
+- [ ] Create Chroma client wrapper
+  - [ ] Collection management
+  - [ ] Similarity search with metadata filters
+  - [ ] Timeout handling (≤1s)
+
+##### Files to Create:
+```
+src/agents/ontario_orchestrator/mcp/
+  ├── tools/
+  │   ├── schedule.py        # OHIP schedule dual-path
+  │   └── adp.py            # ADP dual-path
+  └── retrieval/
+      ├── sql_client.py     # SQLite wrapper with timeouts
+      └── vector_client.py  # Chroma wrapper with timeouts
+```
+
+---
+
+#### Session 2C: ODB Tool & Testing Framework
+**Owner**: [Session 2C]  
+**Focus**: odb.get tool, source.passages, golden QA tests
+
+##### Tasks:
+- [ ] Implement `odb.get` tool
+  - [ ] SQL queries for odb_drugs & interchangeable_groups
+  - [ ] Vector search in odb_documents collection
+  - [ ] Lowest-cost drug identification
+  - [ ] LU/EA criteria handling
+- [ ] Implement `source.passages` tool
+  - [ ] Direct Chroma chunk retrieval by IDs
+  - [ ] Formatting for UI display
+  - [ ] Metadata preservation
+- [ ] Create result merger utility
+  - [ ] Combine SQL + vector evidence
+  - [ ] Detect conflicts between sources
+  - [ ] Generate unified response
+- [ ] Build golden QA test suite
+  - [ ] Test cases: C124 billing, scooter eligibility, drug LU
+  - [ ] Verify dual-path always runs
+  - [ ] Validate confidence scores
+  - [ ] Check citation accuracy
+
+##### Files to Create:
+```
+src/agents/ontario_orchestrator/mcp/
+  ├── tools/
+  │   ├── odb.py            # ODB dual-path
+  │   └── source.py         # Passage fetcher
+  ├── retrieval/
+  │   └── merger.py         # Result synthesis
+  └── tests/
+      └── golden_qa.py      # Golden test cases
 ```
 
 ---
@@ -168,7 +261,7 @@ src/agents/clinical/dr_off/
 ```
 configs/agents/dr_off.yaml
 
-src/agents/clinical/dr_off/
+src/agents/ontario_orchestrator/ai_agents/dr_off/
   ├── __init__.py
   ├── agent.py (main OpenAI agent implementation)
   └── prompts.py
@@ -209,7 +302,7 @@ tests/integration/dr_off/
 
 #### Files Created/Modified:
 ```
-src/agents/clinical/dr_off/evaluation/
+src/agents/ontario_orchestrator/evaluation/
   ├── scores.py
   └── runner.py
 
