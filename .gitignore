@@ -76,3 +76,9 @@ tmp/
 temp/
 *.tmp
 .vercel
+
+# ChromaDB vector stores
+.chroma/
+**/chroma/
+data/.chroma/
+data/processed/dr_off/chroma/
