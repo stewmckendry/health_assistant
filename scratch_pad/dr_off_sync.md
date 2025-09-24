@@ -122,116 +122,216 @@ data/
 ---
 
 #### Session 2A: Core Infrastructure & Orchestrator
-**Owner**: [Session 2A]
+**Owner**: [Session 2A - Claude]
 **Focus**: FastMCP server setup, coverage.answer orchestrator, models
+**Status**: IN PROGRESS (70% complete) ⏳
 
 ##### Tasks:
-- [ ] Set up FastMCP server (`server.py`)
-  - [ ] Install fastmcp package
-  - [ ] Configure server with 5 tool registrations
-  - [ ] Set up async handlers with timeout support
-- [ ] Implement `coverage.answer` orchestrator
-  - [ ] Intent classification (billing/device/drug)
-  - [ ] Internal routing logic to domain tools
-  - [ ] Result merging from multiple tools
-  - [ ] Conflict detection and resolution
-- [ ] Create Pydantic models
-  - [ ] Request schemas (CoverageRequest, ScheduleRequest, etc.)
-  - [ ] Response schemas with provenance, confidence, citations
-  - [ ] Citation and Highlight models
-- [ ] Implement confidence scoring system
-  - [ ] Base SQL confidence (0.9)
-  - [ ] Vector corroboration bonus (+0.03 per match)
-  - [ ] Conflict penalty (-0.1)
+- [x] Set up FastMCP server (`server.py`) ✅
+  - [ ] Install fastmcp package (needs to be done by Session 2B)
+  - [x] Configure server with 5 tool registrations ✅
+  - [x] Set up async handlers with timeout support ✅
+- [x] Implement `coverage.answer` orchestrator ✅
+  - [x] Intent classification (billing/device/drug) ✅
+  - [x] Internal routing logic to domain tools ✅
+  - [x] Result merging from multiple tools ✅
+  - [x] Conflict detection and resolution ✅
+- [x] Create Pydantic models ✅
+  - [x] Request schemas (CoverageRequest, ScheduleRequest, etc.) ✅
+  - [x] Response schemas with provenance, confidence, citations ✅
+  - [x] Citation and Highlight models ✅
+- [x] Implement confidence scoring system ✅
+  - [x] Base SQL confidence (0.9) ✅
+  - [x] Vector corroboration bonus (+0.03 per match) ✅
+  - [x] Conflict penalty (-0.1) ✅
 
-##### Files to Create:
+##### Files Created: ✅
 ```
 src/agents/ontario_orchestrator/mcp/
-  ├── server.py              # FastMCP server registration
+  ├── server.py              # FastMCP server registration ✅
   ├── tools/
-  │   └── coverage.py        # coverage.answer orchestrator
+  │   └── coverage.py        # coverage.answer orchestrator (780 lines) ✅
   ├── models/
-  │   ├── request.py         # All request schemas
-  │   └── response.py        # All response schemas
+  │   ├── __init__.py        # Model exports ✅
+  │   ├── request.py         # All request schemas ✅
+  │   └── response.py        # All response schemas ✅
   └── utils/
-      ├── confidence.py      # Confidence scoring logic
-      └── conflicts.py       # Conflict detection
+      ├── __init__.py        # Utils exports ✅
+      ├── confidence.py      # Confidence scoring logic ✅
+      └── conflicts.py       # Conflict detection ✅
+tests/
+  └── test_coverage_answer.py  # TDD test suite (400+ lines) ✅
 ```
+
+##### Key Implementation Details:
+- **IntentClassifier**: Keyword-based classification with hints priority
+- **QueryRouter**: Parallel tool execution with asyncio.gather()
+- **ResponseSynthesizer**: Merges results, generates summaries, detects conflicts
+- **ConfidenceScorer**: SQL base 0.9, vector +0.03/match, conflict -0.1
+- **ConflictDetector**: Semantic equivalence checking, field-specific resolution
+
+##### Ready for Session 2B Integration:
+- Domain tool imports in coverage.py (schedule, adp, odb)
+- Tool handlers expect Dict[str, Any] input/output
+- Async functions throughout for parallel execution
 
 ---
 
 #### Session 2B: Domain Tools (Schedule & ADP)
-**Owner**: [Session 2B]
+**Owner**: [Session 2B - Completed]
 **Focus**: schedule.get and adp.get dual-path implementations
+**Status**: COMPLETE ✅
 
 ##### Tasks:
-- [ ] Implement `schedule.get` tool
-  - [ ] SQL query for ohip_fee_schedule (4,166 codes)
-  - [ ] Vector search in ohip_chunks collection
-  - [ ] Parallel execution with asyncio.gather()
-  - [ ] Result merging with provenance tracking
-- [ ] Implement `adp.get` tool  
-  - [ ] SQL queries for adp_funding_rule & adp_exclusion
-  - [ ] Vector search in adp_v1 collection (199 chunks)
-  - [ ] CEP routing logic
-  - [ ] Eligibility and exclusion synthesis
-- [ ] Create SQL client wrapper
-  - [ ] Connection pooling to SQLite
-  - [ ] Prepared statements for safety
-  - [ ] Query timeout handling (300-500ms)
-- [ ] Create Chroma client wrapper
-  - [ ] Collection management
-  - [ ] Similarity search with metadata filters
-  - [ ] Timeout handling (≤1s)
+- [x] Write TDD tests with realistic clinical queries ✅
+  - [x] 3 schedule.get test scenarios (MRP billing, ED consultation, house calls)
+  - [x] 5 adp.get test scenarios (wheelchair+CEP, batteries exclusion, SGD fast-track)
+- [x] Create SQL client wrapper ✅
+  - [x] Connection pooling to SQLite (ThreadPoolExecutor)
+  - [x] Query timeout handling (500ms default)
+  - [x] Specialized query methods for schedule, ADP, ODB
+- [x] Create Chroma client wrapper ✅
+  - [x] Collection management for ohip_chunks, adp_v1, odb_documents
+  - [x] Similarity search with metadata filters
+  - [x] Timeout handling (1s default)
+- [x] Implement `schedule.get` tool ✅
+  - [x] SQL query for ohip_fee_schedule (4,166 codes)
+  - [x] Vector search in ohip_chunks collection
+  - [x] Parallel execution with asyncio.gather()
+  - [x] Result merging with provenance tracking
+  - [x] Enrichment of SQL data with vector context
+- [x] Implement `adp.get` tool ✅
+  - [x] SQL queries for adp_funding_rule & adp_exclusion
+  - [x] Vector search in adp_v1 collection (199 chunks)
+  - [x] CEP routing logic (income thresholds: $28k single, $39k family)
+  - [x] Eligibility and exclusion synthesis
+  - [x] Car substitute detection
+- [x] Verify parallel execution ✅
+  - [x] Test script confirms asyncio.gather() runs both paths
+  - [x] Error handling: one path can fail without breaking the other
 
-##### Files to Create:
+##### Files Created: ✅
 ```
 src/agents/ontario_orchestrator/mcp/
-  ├── tools/
-  │   ├── schedule.py        # OHIP schedule dual-path
-  │   └── adp.py            # ADP dual-path
-  └── retrieval/
-      ├── sql_client.py     # SQLite wrapper with timeouts
-      └── vector_client.py  # Chroma wrapper with timeouts
+  ├── retrieval/
+  │   ├── __init__.py         # Exports SQLClient, VectorClient ✅
+  │   ├── sql_client.py       # SQLite wrapper (300 lines) ✅
+  │   └── vector_client.py    # Chroma wrapper (280 lines) ✅
+  └── tools/
+      ├── __init__.py         # Exports schedule_get, adp_get ✅
+      ├── schedule.py         # OHIP schedule dual-path (400 lines) ✅
+      └── adp.py             # ADP dual-path (450 lines) ✅
+
+tests/
+  ├── test_schedule_tool.py  # TDD tests for schedule.get ✅
+  ├── test_adp_tool.py       # TDD tests for adp.get ✅
+  └── test_parallel_execution.py # Verifies asyncio.gather() ✅
 ```
+
+##### Key Implementation Notes:
+- **Shared Utilities**: SQL and Chroma clients in `retrieval/` are shared by all tools
+- **Always Dual-Path**: Both tools ALWAYS run SQL + vector in parallel, never skip vector
+- **Aligned with Session 2A Models**: Uses Pydantic models from `models/request.py` and `models/response.py`
+- **Conflict Detection**: Imports ConflictDetector and ConfidenceScorer from Session 2A's utils
+- **CEP Logic**: Hardcoded 2024 thresholds ($28k single, $39k family)
+- **Error Resilience**: If one path fails, the other continues and returns partial results
 
 ---
 
 #### Session 2C: ODB Tool & Testing Framework
-**Owner**: [Session 2C]  
+**Owner**: [Session 2C - Completed]  
 **Focus**: odb.get tool, source.passages, golden QA tests
+**Status**: COMPLETE ✅
+
+##### 🔄 ALIGNMENT NOTES FROM SESSION 2B:
+1. **Review These Files First**:
+   - `mcp/models/request.py` - ODBGetRequest, SourcePassagesRequest models
+   - `mcp/models/response.py` - ODBGetResponse, SourcePassagesResponse models
+   - `mcp/retrieval/sql_client.py` - Has `query_odb_drugs()` method ready
+   - `mcp/retrieval/vector_client.py` - Has `search_odb()` and `get_passages_by_ids()` ready
+   - `mcp/utils/confidence.py` - From Session 2A for scoring
+   - `mcp/utils/conflicts.py` - From Session 2A for detection
+
+2. **Follow Session 2B Pattern**:
+   - Create ODBTool class with `execute()` method
+   - Use `asyncio.gather()` for parallel SQL + vector
+   - Import shared clients: `from ..retrieval import SQLClient, VectorClient`
+   - Return Pydantic models, convert with `.model_dump()` for MCP
+
+3. **Reuse Shared Utilities**:
+   ```python
+   # Don't recreate - import from retrieval/
+   from ..retrieval import SQLClient, VectorClient
+   
+   # SQL client already has ODB method:
+   results = await sql_client.query_odb_drugs(
+       din=din, ingredient=ingredient, lowest_cost_only=True
+   )
+   
+   # Vector client already has ODB search:
+   results = await vector_client.search_odb(query, drug_class)
+   ```
 
 ##### Tasks:
-- [ ] Implement `odb.get` tool
-  - [ ] SQL queries for odb_drugs & interchangeable_groups
-  - [ ] Vector search in odb_documents collection
-  - [ ] Lowest-cost drug identification
-  - [ ] LU/EA criteria handling
-- [ ] Implement `source.passages` tool
-  - [ ] Direct Chroma chunk retrieval by IDs
-  - [ ] Formatting for UI display
-  - [ ] Metadata preservation
-- [ ] Create result merger utility
-  - [ ] Combine SQL + vector evidence
-  - [ ] Detect conflicts between sources
-  - [ ] Generate unified response
-- [ ] Build golden QA test suite
-  - [ ] Test cases: C124 billing, scooter eligibility, drug LU
-  - [ ] Verify dual-path always runs
-  - [ ] Validate confidence scores
-  - [ ] Check citation accuracy
+- [x] Implement `odb.get` tool ✅
+  - [x] Follow schedule.py/adp.py pattern for structure
+  - [x] SQL queries using sql_client.query_odb_drugs()
+  - [x] Vector search using vector_client.search_odb()
+  - [x] Lowest-cost drug identification (SQL has lowest_cost flag)
+  - [x] LU/EA criteria extraction from vector context
+- [x] Implement `source.passages` tool ✅
+  - [x] Use vector_client.get_passages_by_ids() method
+  - [x] Format using SourcePassagesResponse model
+  - [x] Preserve metadata for UI display
+- [x] Create result merger utility ✅
+  - [x] Embedded merging in ODB tool (following Session 2B pattern)
+  - [x] Per-tool merging for domain-specific logic
+- [x] Build golden QA test suite ✅
+  - [x] Created comprehensive test_odb_tool.py with 8 drug scenarios
+  - [x] Created golden_qa.py with 15 clinical test cases
+  - [x] Test cases cover all tools: billing, devices, drugs
+  - [x] Dual-path verification included
+  - [x] Confidence scoring validation
 
-##### Files to Create:
+##### Files Created: ✅
 ```
 src/agents/ontario_orchestrator/mcp/
   ├── tools/
-  │   ├── odb.py            # ODB dual-path
-  │   └── source.py         # Passage fetcher
-  ├── retrieval/
-  │   └── merger.py         # Result synthesis
-  └── tests/
-      └── golden_qa.py      # Golden test cases
+  │   ├── odb.py            # ODB dual-path (650 lines) ✅
+  │   └── source.py         # Passage fetcher (200 lines) ✅
+  └── __init__.py           # Updated exports ✅
+
+tests/
+  ├── test_odb_tool.py      # TDD tests for ODB (350 lines) ✅
+  └── golden_qa.py          # Golden test suite (550 lines) ✅
 ```
+
+##### Key Implementation Details:
+- **ODB Tool (odb.py)**:
+  - Dual-path always runs (SQL for drug data, vector for LU criteria)
+  - Handles both simple (existing model) and enhanced (test) request formats
+  - Extracts interchangeable groups with lowest-cost identification
+  - Detects coverage conflicts between SQL and policy documents
+  - Maps drug classes to ingredients for broader searches
+  - Confidence scoring: base 0.9 for SQL, +0.03 per vector match, -0.1 for conflicts
+
+- **Source Tool (source.py)**:
+  - Direct chunk retrieval by ID for "show source" feature
+  - Auto-detects collection from chunk ID patterns
+  - Supports term highlighting in retrieved passages
+  - Groups chunks by collection for efficient retrieval
+
+- **Test Coverage**:
+  - 8 ODB drug scenarios: metformin, Ozempic LU, Januvia vs generic, statins
+  - 15 golden clinical scenarios across all tools
+  - Verifies dual-path execution, conflict detection, confidence scoring
+  - Tests edge cases: SQL timeout, empty results, conflicting evidence
+
+##### Integration Points:
+- SQL/Vector clients from `retrieval/` - imported and used ✅
+- Models from `models/` - extended for enhanced requests ✅
+- Utils from Session 2A in `utils/` - imported for confidence/conflicts ✅
+- Follows async patterns from Session 2B tools exactly ✅
 
 ---
 
