@@ -82,3 +82,7 @@ temp/
 **/chroma/
 data/.chroma/
 data/processed/dr_off/chroma/
+
+# Test output files
+*.json
+*.txt

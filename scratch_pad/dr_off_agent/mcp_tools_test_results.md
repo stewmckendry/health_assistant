@@ -2,6 +2,12 @@
 
 ## Test Run Date: 2025-09-24
 
+**📈 UPDATE (Post ADP LLM Enhancement):**
+- **ADP Data**: Upgraded from 199 → 505 sections with 735 funding rules and 1,101 exclusions
+- **Document Types**: 11 specialty categories now properly classified
+- **Vector Store**: Enhanced with 610 embeddings in `adp_v1` collection
+- **Battery Exclusion Issue**: Should now be resolved with 40x more exclusion data
+
 ## Executive Summary
 Testing Dr. OFF MCP tools for accuracy, completeness, and usefulness for AI agents and clinicians.
 
