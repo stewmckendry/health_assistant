@@ -72,15 +72,25 @@ src/agents/dr_opa_agent/ingestion/
 │   ├── extractor.py          # Tool navigation extractor
 │   ├── ingester.py           # CEP ingestion with lightweight indexing
 │   └── run_full_pipeline.py  # Complete CEP pipeline
-└── pho/                      # PHO IPAC implementation (if exists)
+└── pho/                      # PHO IPAC implementation ✅
+    ├── __init__.py
+    ├── pho_extractor.py      # PDF extraction logic
+    └── pho_ingester.py       # PHO ingestion with parent-child chunking
 
 data/dr_opa_agent/
-├── opa.db                    # SQLite database
-├── chroma/                   # Vector embeddings
-├── raw/                      # Raw HTML files
-│   └── cpso/
+├── chroma/                   # Vector embeddings (consolidated)
+│   ├── opa_cpso_corpus       # CPSO documents (366 vectors)
+│   ├── opa_cep_corpus        # CEP tools (57 vectors)
+│   └── opa_pho_corpus        # PHO IPAC guidance (132 vectors)
+├── raw/                      # Raw source files
+│   ├── cpso/                 # CPSO HTML files
+│   └── pho/                  # PHO PDF files
 └── processed/                # Extracted JSON documents
-    └── cpso/
+    ├── cpso/                 # CPSO structured data
+    └── pho/                  # PHO structured data
+
+data/processed/dr_opa/
+└── opa.db                    # SQLite database (structured metadata & full-text search)
 ```
 
 ## Database Schema
@@ -291,8 +301,24 @@ python src/agents/dr_opa_agent/ingestion/run_ingestion.py \
 - **Ingestion Time**: ~1 minute
 - **Storage**:
   - SQLite: 65 documents, 373 sections
-  - Chroma: 28 embeddings (with OpenAI API)
+  - Chroma: 366 embeddings (with OpenAI API)
 - **Chunks**: 74 parents, 299 children
+
+### PHO IPAC Implementation Results
+- **Documents**: 1 comprehensive PDF (116 pages)
+- **Extraction Time**: ~2 seconds (PDF processing)
+- **Ingestion Time**: ~8 seconds (including embeddings)
+- **Storage**:
+  - SQLite: 1 document, 132 sections
+  - Chroma: 132 embeddings (with OpenAI API)
+- **Chunks**: 26 parents, 136 children
+- **Topics**: infection-prevention, IPAC, clinical-office, sterilization, PPE, hand-hygiene
+
+### CEP Clinical Tools Results
+- **Documents**: 46 clinical tools and algorithms
+- **Storage**:
+  - Chroma: 57 embeddings (with OpenAI API)
+- **Topics**: clinical-pathways, evidence-based-care, primary-care-tools
 
 ## Advanced Features
 
@@ -344,15 +370,16 @@ python src/agents/dr_opa_agent/ingestion/cpso/batch_ingest.py \
 
 ## Future Roadmap
 
-### Phase 1 (Current)
-- ✅ CPSO policies and advice
+### Phase 1 (Completed)
+- ✅ CPSO policies and advice (366 vectors)
+- ✅ CEP clinical tools (57 vectors) 
+- ✅ PHO IPAC guidance (132 vectors)
 - ✅ Parent-child chunking
-- ✅ Dual-path storage
+- ✅ Dual-path storage (SQL + vector)
 
 ### Phase 2 (Next)
-- ⏳ Ontario Health guidelines
-- ⏳ Centre for Effective Practice tools
-- ⏳ Public Health Ontario resources
+- ⏳ Ontario Health screening guidelines
+- ⏳ MOH InfoBulletins and fee schedules
 
 ### Phase 3 (Future)
 - ⏸️ Incremental updates via RSS
