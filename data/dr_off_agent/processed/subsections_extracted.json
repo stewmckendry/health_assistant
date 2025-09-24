@@ -1,0 +1,602 @@
+{
+  "source_pdf": "data/ontario/ohip/moh-schedule-benefit-2024-03-04.pdf",
+  "toc_file": "data/processed/toc_extracted.json",
+  "subsections_processed": 10,
+  "extraction_time": 33.893852949142456,
+  "subsections": [
+    {
+      "subsection_title": "Introduction",
+      "parent_section": "GP",
+      "page_ref": "GP1",
+      "fee_codes": [],
+      "rules": [
+        "The Schedule lists services insured by OHIP and includes the General Preamble which impacts all physicians.",
+        "The initial Definitions Section (GP2) begins with general definitions of key terms and phrases used in the Schedule.",
+        "The information provided in the General Information Section (GP8) is the foundation for the remainder of the General Preamble."
+      ],
+      "notes": [
+        "The General Preamble provides details about billing requirements for all physicians.",
+        "A variety of subjects are reviewed as detailed in the table of contents."
+      ],
+      "pages_processed": "15-15"
+    },
+    {
+      "subsection_title": "Definitions",
+      "parent_section": "GP",
+      "page_ref": "GP2",
+      "fee_codes": [],
+      "rules": [
+        "The words, phrases, and abbreviations defined below are italicized throughout the General Preamble for cross-reference.",
+        "Unless otherwise specified, the following terms and expressions have the following meanings."
+      ],
+      "notes": [
+        "Definitions include age definitions, time definitions, and other relevant terms related to medical billing."
+      ],
+      "pages_processed": "16-21"
+    },
+    {
+      "subsection_title": "General Information",
+      "parent_section": "GP",
+      "page_ref": "GP8",
+      "fee_codes": [],
+      "rules": [
+        "Claims for payment must be submitted to OHIP in the form and by the medium as set out in sections 38.3 to 38.5 of regulation 552 under the Act.",
+        "Claims must be submitted within three months of the date the service was rendered, except in extenuating circumstances.",
+        "The fee is payable only to the physician who rendered the service personally, or by the physician whose delegate rendered the service where delegation is authorized.",
+        "Where more than one physician renders different components of a listed service, only one fee is payable for that service.",
+        "When a service rendered by a specialist does not fall within the scope of the specialist\u2019s practice, the service is only eligible for payment when the claim is submitted using the appropriate code from the Family Practice & Practice in General listings."
+      ],
+      "notes": [
+        "The technical component of diagnostic services is not eligible for payment if the service is rendered to a patient who is an in-patient of a hospital or attends a hospital where he or she receives an insured diagnostic service.",
+        "The technical component may be listed as either 'technical component' or in a column headed 'H' or 'T'. The professional component may be listed as either 'professional component' or in a column headed 'P'."
+      ],
+      "pages_processed": "22-26"
+    },
+    {
+      "subsection_title": "Constituent and Common Elements of Insured Services",
+      "parent_section": "GP",
+      "page_ref": "GP13",
+      "fee_codes": [],
+      "rules": [
+        "All insured services include the skill, time, and responsibility involved in performing, including when delegated to a non-physician.",
+        "Patients cannot be charged for the premises, equipment, supplies, and personnel for services denoted with the prefix '#' rendered outside of a hospital or ICHSC.",
+        "Unless otherwise specifically listed in the Schedule, the common elements apply to all insured services."
+      ],
+      "notes": [
+        "No charges may be made (except to OHIP) for an insured service rendered to an insured person.",
+        "For services denoted with the prefix '#', the premises, equipment, supplies, and personnel used to perform all elements of the service are funded by the hospital global budget."
+      ],
+      "pages_processed": "27-28"
+    },
+    {
+      "subsection_title": "Specific Elements of Assessments",
+      "parent_section": "GP",
+      "page_ref": "GP15",
+      "fee_codes": [],
+      "rules": [
+        "All services described as assessments include specific elements such as direct physical encounters, inquiries, and follow-up care.",
+        "Procedures performed during the same encounter as the physical examination are included unless separately listed."
+      ],
+      "notes": [
+        "No specific fee codes or billing information were provided in the text."
+      ],
+      "pages_processed": "29-29"
+    },
+    {
+      "subsection_title": "Consultations",
+      "parent_section": "GP",
+      "page_ref": "GP16",
+      "fee_codes": [
+        {
+          "code": "H055",
+          "description": "Consultation by an ER Physician (specialist in emergency medicine)",
+          "fee": "adjusted to a lesser assessment fee",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "",
+          "conditions": "The amount payable will be adjusted if the patient is referred by another ER physician in the same hospital or if the service is rendered in any location other than the emergency department.",
+          "special_prefix": ""
+        },
+        {
+          "code": "H065",
+          "description": "Consultation by an ER Physician (all other physicians)",
+          "fee": "adjusted to a lesser assessment fee",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "",
+          "conditions": "The amount payable will be adjusted if the patient is referred by another ER physician in the same hospital or if the service is rendered in any location other than the emergency department.",
+          "special_prefix": ""
+        },
+        {
+          "code": "A935",
+          "description": "Special surgical consultation",
+          "fee": "consultation fee for 50 minutes",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "50 minutes",
+          "conditions": "Requires at least fifty minutes exclusively for the consultation.",
+          "special_prefix": ""
+        },
+        {
+          "code": "C935",
+          "description": "Special surgical consultation",
+          "fee": "consultation fee for 50 minutes",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "50 minutes",
+          "conditions": "Requires at least fifty minutes exclusively for the consultation.",
+          "special_prefix": ""
+        }
+      ],
+      "rules": [
+        "Consultations rendered to the same patient by the same physician for the same diagnosis are limited to one service per two consecutive 12 month periods.",
+        "Consultations rendered to the same patient by the same consultant with a clearly defined unrelated diagnosis are limited to one service every 12 months.",
+        "The amount payable for consultations will be adjusted to the amount payable for a general or specific assessment depending upon the specialty of the consultant."
+      ],
+      "notes": [
+        "The above limits are applicable to all consultations, including time-based and age-specific consultation services.",
+        "In the preoperative preparation of a patient undergoing low risk elective surgical procedures, a preoperative consultation is only eligible for payment where the medical record demonstrates the consultation is medically necessary."
+      ],
+      "pages_processed": "30-34"
+    },
+    {
+      "subsection_title": "Assessments",
+      "parent_section": "GP",
+      "page_ref": "GP21",
+      "fee_codes": [
+        {
+          "code": "K017",
+          "description": "child",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "K130",
+          "description": "adolescent",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "K131",
+          "description": "adult age 18 to 64 inclusive",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "K132",
+          "description": "adult 65 years of age and older",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "K133",
+          "description": "adult with Intellectual and Developmental Disability (IDD)",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "K269",
+          "description": "12 to 17 years",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "K267",
+          "description": "2 to 11 years",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "rules": [
+        "General assessments are limited to one per patient per physician per 12 month period unless specific circumstances are met.",
+        "Periodic health visits are limited to one per patient per 12 month period per physician.",
+        "Specific assessments or medical specific assessments are limited to one per patient per physician per 12 month period unless specific circumstances are met."
+      ],
+      "notes": [
+        "The amount payable for assessments in excess of limits will be adjusted to a lesser assessment fee.",
+        "Chronic disease assessment premium is payable in addition to the amount payable for an assessment when specific criteria are met."
+      ],
+      "pages_processed": "35-53"
+    },
+    {
+      "subsection_title": "Hospital and Institutional Consultations and Assessments",
+      "parent_section": "GP",
+      "page_ref": "GP40",
+      "fee_codes": [
+        {
+          "code": "E082",
+          "description": "Admission assessment by the MRP, to admission assessment",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "add 30%",
+          "conditions": "Eligible for payment once per patient per hospital admission, subject to specific remuneration conditions.",
+          "special_prefix": null
+        },
+        {
+          "code": "C004",
+          "description": "Admission assessment payable in addition to initial assessment if rendered separately",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Applicable when the admission assessment is performed after an initial assessment.",
+          "special_prefix": null
+        },
+        {
+          "code": "C262",
+          "description": "Pediatric subsequent visits",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "limited to one per patient, per day for the duration of the admission",
+          "conditions": "Specific to pediatric patients.",
+          "special_prefix": null
+        },
+        {
+          "code": "C121",
+          "description": "Additional visit due to intercurrent illness",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "not subject to weekly or monthly limits",
+          "conditions": "Applicable after 5 weeks of hospitalization for acute intercurrent illness.",
+          "special_prefix": null
+        },
+        {
+          "code": "A933",
+          "description": "Admission assessment for elective surgery patients",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not eligible for payment if a pre-operative assessment has been rendered within 30 days.",
+          "special_prefix": null
+        },
+        {
+          "code": "C933",
+          "description": "Admission assessment for elective surgery patients",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not eligible for payment if a pre-operative assessment has been rendered within 30 days.",
+          "special_prefix": null
+        },
+        {
+          "code": "C003",
+          "description": "Admission assessment for elective surgery patients",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not eligible for payment if a pre-operative assessment has been rendered within 30 days.",
+          "special_prefix": null
+        },
+        {
+          "code": "C004",
+          "description": "Admission assessment for elective surgery patients",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not eligible for payment if a pre-operative assessment has been rendered within 30 days.",
+          "special_prefix": null
+        }
+      ],
+      "rules": [
+        "Subsequent visits are limited to one per patient, per day for the first 5 weeks after admission.",
+        "3 visits per week from 6 to 13 weeks after admission.",
+        "6 visits per month after 13 weeks."
+      ],
+      "notes": [
+        "An admission assessment constitutes a consultation if the patient has not been assessed for the same illness within 90 days.",
+        "Only one consultation or assessment is eligible for payment per patient admission when transferred between physicians."
+      ],
+      "pages_processed": "54-67"
+    },
+    {
+      "subsection_title": "Psychotherapy, Psychiatric and Counselling Services",
+      "parent_section": "GP",
+      "page_ref": "GP54",
+      "fee_codes": [
+        {
+          "code": "K014",
+          "description": "Psychotherapy with patient\u2019s relative(s) or representative",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "30 minutes",
+          "conditions": "Includes obtaining patient history and brief physical examination.",
+          "special_prefix": null
+        },
+        {
+          "code": "K015",
+          "description": "Counselling with patient\u2019s relative(s) or representative",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "30 minutes",
+          "conditions": "Includes obtaining patient history and brief physical examination.",
+          "special_prefix": null
+        },
+        {
+          "code": "H313",
+          "description": "Hypnotherapy with patient\u2019s relative(s) or representative",
+          "fee": "single amount if only one column",
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "30 minutes",
+          "conditions": "Includes obtaining patient history and brief physical examination.",
+          "special_prefix": null
+        }
+      ],
+      "rules": [
+        "Services are calculated and payable in time units of 30 minute increments.",
+        "Minimum time required in direct contact with the patient is specified."
+      ],
+      "notes": [
+        "Payment includes arrangements for follow-up care and related assessments."
+      ],
+      "pages_processed": "68-68"
+    },
+    {
+      "subsection_title": "Psychotherapy, Psychiatric and Counselling Services",
+      "parent_section": "GP",
+      "page_ref": "GP55",
+      "fee_codes": [
+        {
+          "code": "K004A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K006A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K007A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K010A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K012A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K019A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K020A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K024A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        },
+        {
+          "code": "K025A",
+          "description": "Focused practice psychotherapy service",
+          "fee": "single amount if only one column",
+          "h_fee": "",
+          "p_fee": "",
+          "t_fee": "",
+          "asst_fee": "",
+          "surg_fee": "",
+          "anae_fee": "",
+          "units": "20 minutes per unit",
+          "conditions": "Eligible for focused practice psychotherapy premium.",
+          "special_prefix": ""
+        }
+      ],
+      "rules": [
+        "Psychotherapy is not eligible for payment when rendered on the same day to the same patient by the same physician as obstetrical delivery.",
+        "Subsequent visits rendered by the same psychiatrist to the same patient on the same day as in-patient individual psychotherapy are not eligible for payment."
+      ],
+      "notes": [
+        "Services less than 20 minutes do not constitute any of the services defined in this section.",
+        "Hypnotherapy is not eligible for payment when rendered on the same day to the same patient by the same physician as obstetrical delivery."
+      ],
+      "pages_processed": "69-74"
+    }
+  ]
+}

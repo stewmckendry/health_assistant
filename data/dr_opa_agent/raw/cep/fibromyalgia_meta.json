@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_fibromyalgia",
+  "slug": "fibromyalgia",
+  "name": "Fibromyalgia (FM)",
+  "category": "pain_msk",
+  "url": "https://tools.cep.health/tool/fibromyalgia/",
+  "content_hash": "f29988417841e933273bcfe1cbad8ddd47a980d658d92a8b283b1dd2f301c12e",
+  "crawled_at": "2025-09-24T15:32:45.467745"
+}

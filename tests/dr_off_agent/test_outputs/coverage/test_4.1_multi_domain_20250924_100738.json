@@ -1,0 +1,45 @@
+{
+  "test_name": "test_4.1_multi_domain",
+  "timestamp": "2025-09-24T10:07:38.969241",
+  "elapsed_seconds": 1.211922,
+  "result": {
+    "decision": "billable",
+    "summary": "The requested service/code is billable under OHIP. Code A125 (Section: A\nSubsection: Laboratory Medicine (28)\nPage Reference: A125\n\nFee Codes (13 codes):\n  A285: Consultation - $163) has a fee of $None.",
+    "provenance_summary": "sql+vector",
+    "confidence": 0.75,
+    "highlights": [
+      {
+        "point": "A125: Section: A\nSubsection: Laboratory Medicine (28)\nPage Reference: A125\n\nFee Codes (13 codes):\n  A285: Consultation - $163 - $None",
+        "citations": [
+          {
+            "source": "schedule_of_benefits.pdf",
+            "loc": "A125",
+            "page": null
+          }
+        ]
+      },
+      {
+        "point": "A138: Section: A\nSubsection: Nuclear Medicine (63)\nPage Reference: A138\n\nFee Codes (12 codes):\n  A635: Consultation - $157 - $None",
+        "citations": [
+          {
+            "source": "schedule_of_benefits.pdf",
+            "loc": "A138",
+            "page": null
+          }
+        ]
+      }
+    ],
+    "conflicts": [],
+    "followups": [],
+    "trace": [
+      {
+        "tool": "schedule.get",
+        "args": {
+          "q": "75yo patient discharged after 3 days, can I bill C124 as MRP? Also needs walker - what's covered?"
+        },
+        "duration_ms": null,
+        "error": null
+      }
+    ]
+  }
+}

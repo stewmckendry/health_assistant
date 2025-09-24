@@ -1,0 +1,55 @@
+Subsection: Orbit
+Parent Section: Y
+Page Reference: Y8
+Pages: 762 to 762
+Text chunks: 1
+Total text length: 2607 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 762 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+ORBIT
+Asst Surg Anae
+INCISION
+# E164 Drainage of abscess ............................................................... 350.00 7
+EXCISION
+# E102 Enucleation, with or without primary implant .......................... 6 542.00 7
+# E103 Evisceration, with or without primary implant.......................... 6 542.00 7
+# E109 Enucleation/evisceration with insertion of implant and
+reattachment of extraocular muscles ................................ 6 677.50 7
+Note:
+E102 or E103 are not eligible for payment with E109.
+# E171 Exenteration............................................................................ 6 1005.00 6
+# E941 - with major plastic repair ............................................. add 296.90
+# E181 Secondary orbital implant ....................................................... 6 640.00 6
+Tumour or foreign body
+# E166 - anterior route ...................................................................... 6 450.00 6
+# E167 - posterior exposure.............................................................. 6 640.00 7
+# E172 Biopsy (anterior) ..................................................................... 200.00 6
+# E168 Biopsy (posterior exposure).................................................... 308.30 6
+# E165 Lateral orbitotomy (Kronlein) .................................................. 6 590.00 7
+Decompression
+# E169 - two walls............................................................................. 6 542.00 6
+# E170 - three walls .......................................................................... 6 575.85 6
+RECONSTRUCTION
+Dermis fat graft
+# E160 - immediately following enucleation...................................... 190.30
+# E163 - delayed............................................................................... 6 514.80 7
+# E176 Fornix reconstruction .............................................................. 325.00 7
+# E177 - with mucous membrane graft ............................................. 321.60 6
+# E937 - with autogenous conjunctival transplant .................... add 100.00
+Free mucous membrane graft
+# E178 - full thickness....................................................................... 222.65 7
+# E179 - split thickness ..................................................................... 296.90 6
+# E180 Alloplastic volume replacement .............................................. 411.20 7
+Note:
+Repair - for E173 and E174 see Skull and Mandible - Musculoskeletal System.
+Amd 12 Draft 1 Y8 February 14 , 2 025 (e ffective M arch 3, 2025)

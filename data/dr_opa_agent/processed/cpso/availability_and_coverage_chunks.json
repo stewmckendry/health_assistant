@@ -1,0 +1,100 @@
+[
+  {
+    "chunk_id": "bab6b7c8c9a73b5b4393399d9513c4d7",
+    "chunk_type": "parent",
+    "section_heading": "Definitions",
+    "text_preview": "[ORG=cpso] [TOPIC=privacy,continuity_care,prescribing,documentation] [DATE=unknown] [TYPE=policy]\n\n## Definitions\n\n**Sustained physician-patient relationship:** A physician-patient relationship where ...",
+    "text_length": 443
+  },
+  {
+    "chunk_id": "79d313c42e9315679650d5c541837168",
+    "chunk_type": "child",
+    "section_heading": "Definitions",
+    "text_preview": "**Sustained physician-patient relationship:** A physician-patient relationship where care is actively managed over multiple encounters.\n\n**Temporary leaves of absence:\u00a0**Vacations and leaves of absenc...",
+    "text_length": 328
+  },
+  {
+    "chunk_id": "41009141b8d4e6810b21cd3a46f4f376",
+    "chunk_type": "parent",
+    "section_heading": "Policy",
+    "text_preview": "[ORG=cpso] [TOPIC=privacy,continuity_care,prescribing,documentation] [DATE=unknown] [TYPE=policy]\n\n## Policy\n\n",
+    "text_length": 110
+  },
+  {
+    "chunk_id": "5bb66149ce2f5614f2e52173eece638e",
+    "chunk_type": "child",
+    "section_heading": "Being Available by Phone (or other means)",
+    "text_preview": "1. Physicians **must** have an office telephone that is answered and/or allows voicemails to be left during regular business hours.^2\n2. Physicians **must** ensure that the outgoing voicemail message ...",
+    "text_length": 1013
+  },
+  {
+    "chunk_id": "c30ff7c48f4a4b6a4c911044115608c8",
+    "chunk_type": "child",
+    "section_heading": "Communicating with Other Health-Care Providers",
+    "text_preview": "1. Physicians **must** respond in a timely manner when contacted by other physicians or health-care providers who want to communicate or request information about a patient. What is timely will depend...",
+    "text_length": 607
+  },
+  {
+    "chunk_id": "c582cf6a05dd6b07b0ec8e278616b07e",
+    "chunk_type": "child",
+    "section_heading": "Facilitating Access to Appointments",
+    "text_preview": "1. Physicians providing care as part of a sustained physician-patient relationship **must** structure their practice in a way that allows for timely access to appointments for urgent or time-sensitive...",
+    "text_length": 208
+  },
+  {
+    "chunk_id": "660578e27de7ff3137fd313499ad7fc1",
+    "chunk_type": "child",
+    "section_heading": "Supporting Access to Appropriate After-hours Patient Care",
+    "text_preview": "1. Physicians providing care as part of a sustained physician-patient relationship **must** inform patients of when and where to access appropriate care outside of regular office hours (e.g., Teleheal...",
+    "text_length": 306
+  },
+  {
+    "chunk_id": "cc7e7a57ce54703867183fa4ca2696d0",
+    "chunk_type": "child",
+    "section_heading": "Managing Care During Temporary Absences from Practice",
+    "text_preview": "1. Physicians who will be unavailable during temporary absences from practice **must\u00a0**make specific coverage arrangements with another health-care provider(s) to:\r\n\r\n\t1. Receive, review, and provide ...",
+    "text_length": 1845
+  },
+  {
+    "chunk_id": "5bc3b4e87a02234a0a90951011cb3644",
+    "chunk_type": "child",
+    "section_heading": "Managing Care During Temporary Absences from Practice",
+    "text_preview": "appropriate alternative access points of care (e.g., Telehealth, local walk-in clinics, emergency department, etc.).\n\n1. Receive, review, and provide or coordinate immediate care that is required duri...",
+    "text_length": 836
+  },
+  {
+    "chunk_id": "2431417a7c7d287029b954b2324f6fcc",
+    "chunk_type": "child",
+    "section_heading": "Coordinating Coverage for Critical Test-Results",
+    "text_preview": "1. Physicians **must** ensure that *critical test results*^8 can be received and reviewed at all times, including outside of regular office hours and during temporary absences from practice, and that ...",
+    "text_length": 298
+  },
+  {
+    "chunk_id": "4b540a799db0b2c28aa5216fefe43b4e",
+    "chunk_type": "parent",
+    "section_heading": "Endnotes",
+    "text_preview": "[ORG=cpso] [TOPIC=privacy,continuity_care,prescribing,documentation] [DATE=unknown] [TYPE=policy]\n\n## Endnotes\n\n1. This does not include suspensions of a physician\u2019s certificate of registration. For e...",
+    "text_length": 4557
+  },
+  {
+    "chunk_id": "73e216ce3ce7eb4fe868d0314024f10b",
+    "chunk_type": "child",
+    "section_heading": "Endnotes",
+    "text_preview": "1. This does not include suspensions of a physician\u2019s certificate of registration. For expectations relating to suspensions, please see the [*Closing a Medical Practice*](/en/Physicians/Policies-Guida...",
+    "text_length": 1954
+  },
+  {
+    "chunk_id": "6b7d70ae79197827c51a277ce32cb8e1",
+    "chunk_type": "child",
+    "section_heading": "Endnotes",
+    "text_preview": "out how physicians must inform patients and allows for flexibility. For example, staff could notify patients upon calling the office or in some instances physicians may elect to proactively inform pat...",
+    "text_length": 1755
+  },
+  {
+    "chunk_id": "294ed4ddafe880959b3af93bd7b27a2e",
+    "chunk_type": "child",
+    "section_heading": "Endnotes",
+    "text_preview": "nce/Policies/Managing-Tests), [*Prescribing Drugs*](/en/Physicians/Policies-Guidance/Policies/Prescribing-Drugs), and [*Transitions in Care*](/en/Physicians/Policies-Guidance/Policies/Transitions-in-C...",
+    "text_length": 1536
+  }
+]

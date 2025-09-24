@@ -1,0 +1,136 @@
+{
+  "subsection_title": "Accessory Nasal Sinuses",
+  "parent_section": "P",
+  "page_ref": "P4",
+  "pages_processed": "634-635",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z319",
+      "description": "Antral puncture and/or lavage - unilateral or bilateral",
+      "fee": 43.15,
+      "units": 6
+    },
+    {
+      "code": "M055",
+      "description": "Caldwell-Luc (includes intranasal antrostomy) - unilateral",
+      "fee": 247.35,
+      "units": 10
+    },
+    {
+      "code": "M056",
+      "description": "partial or complete maxillectomy",
+      "fee": 971.75,
+      "units": 10
+    },
+    {
+      "code": "E947",
+      "description": "with orbital exenteration, to M056",
+      "fee": 306.85
+    },
+    {
+      "code": "M058",
+      "description": "Radical frontal sinusectomy for tumour, radical exenteration of disease with drill out for access, or ostium revision",
+      "fee": 460.2,
+      "units": 10
+    },
+    {
+      "code": "M063",
+      "description": "Coronal and/or osteoplastic procedure for frontal sinusectomy, reconstruction or obliteration - unilateral or bilateral",
+      "fee": 716.25,
+      "units": 10
+    },
+    {
+      "code": "M059",
+      "description": "External frontal-ethmoidal sinusectomy and/or reconstruction - unilateral",
+      "fee": 460.2,
+      "units": 10
+    },
+    {
+      "code": "M023",
+      "description": "External or transantral ethmoidectomy - unilateral (to include Caldwell-Luc with transantral approach)",
+      "fee": 360.45,
+      "units": 10
+    },
+    {
+      "code": "M061",
+      "description": "Trans-septal sphenoidectomy for tumour or radical exenteration of disease",
+      "fee": 355.65,
+      "units": 10
+    },
+    {
+      "code": "M064",
+      "description": "External transethmoidal sphenoid sinusectomy",
+      "fee": 612.65,
+      "units": 10
+    },
+    {
+      "code": "M067",
+      "description": "Closure of antral fistula under general anaesthetic (to include Caldwell-Luc if necessary)",
+      "fee": 345.15,
+      "units": 7
+    },
+    {
+      "code": "Z318",
+      "description": "Trephine or endoscopic frontal sinusotomy",
+      "fee": 133.3,
+      "units": 7
+    },
+    {
+      "code": "M054",
+      "description": "Intranasal maxillary antrostomy \u2013 unilateral \u2013 by endoscopic or endonasal approach",
+      "fee": 123.7,
+      "units": 10
+    },
+    {
+      "code": "M083",
+      "description": "Intranasal ethmoidectomy including maxillary antrostomy, with endoscope \u2013 unilateral (not eligible for payment with M061 or M054)",
+      "fee": 350.0,
+      "units": 10
+    },
+    {
+      "code": "E844",
+      "description": "bilateral procedure, to M083",
+      "fee": 200.0
+    },
+    {
+      "code": "Z350",
+      "description": "Endoscopic sphenoidotomy - unilateral",
+      "fee": 123.7,
+      "units": 10
+    },
+    {
+      "code": "E843",
+      "description": "bilateral procedure, to Z350",
+      "fee": 103.05
+    },
+    {
+      "code": "E845",
+      "description": "when performed using a 3D CT/MRI image guided system, to M083 or Z350",
+      "fee": 140.0
+    },
+    {
+      "code": "Z351",
+      "description": "Endoscopic Septoplasty",
+      "fee": 122.4,
+      "units": 10
+    },
+    {
+      "code": "M086",
+      "description": "Trans-nasal endoscopic repair of CSF rhinorrhea (includes harvesting of graft material) with or without 3D CT/MRI image guided system",
+      "fee": 822.45,
+      "units": 15
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,76 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Introduction
+Parent Section: GP
+Page Reference: GP1
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Introduction",
+  "parent_section": "GP",
+  "page_ref": "GP1",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 15 ---
+GENERAL PREAMBLE
+General PreambleMarch 4, 2024 (effective April 1, 2024)
+INTRODUCTION
+[Commentary:
+The Health Insurance Act and, to a lesser extent, the Integrated Community Health Services
+Centres Act, 2023 and the Commitment to the Future of Medicare Act, 2004, provide the legal
+foundation and framework for the Schedule of Benefits for Physician Services (“the Schedule”).
+The Schedule lists services insured by OHIP and includes the General Preamble (which
+impacts all physicians), Consultations and Visits section (which applies to all specialties) and
+specific system and/or specialty sections (including specialty preambles).
+The General Preamble provides details about billing requirements for all physicians as follows:
+The initial Definitions Section (GP2) begins with general definitions of key terms and phrases
+used in the Schedule. Those terms and phrases are italicized throughout the General Preamble
+as an indication that further information is available in the Definitions Section. The second
+group of defined terms refers specifically to maximums, minimums, and time or unit-based
+services.
+The information provided in the General Information Section (GP8) is the foundation for the
+remainder of the General Preamble. A variety of subjects are reviewed as detailed in the table
+of contents. This is followed by the Constituent and Common Elements of Insured Services
+(GP13). Next is the section which lists the Specific Elements of Assessments (GP15). The
+next section provides information on Consultations and Assessments (GP16) followed by
+the section regarding services provided only in Hospitals and Other Institutions (GP40).
+The next section focuses on psychotherapy, counselling, and related services, followed by a
+similar review of services that involve interviews. The remaining sections include special visits,
+surgical assistants’ services, anaesthesiologists’ services, and others as listed in the table of
+contents.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP1 Amd 12 Draft 1

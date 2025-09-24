@@ -1,0 +1,42 @@
+Subsection: Scintimammography
+Parent Section: B
+Page Reference: B11
+Pages: 335 to 335
+Text chunks: 1
+Total text length: 1164 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      16,
+      "J863 - unilateral or bilateral ........................................................... 99.95 40.30"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 335 ---
+NUCLEAR MEDICINE - IN VIVO
+SCINTIMAMMOGRAPHY
+H P
+Scintimammography is not eligible for payment unless at least one of the following conditions is
+met:
+a. the patient has a dense breast(s) and one or both of the following risk factors:
+i. a first degree relative with breast cancer diagnosed prior to age 50; or
+ii. a first degree relative with breast cancer diagnosed over age 50 and patient is within 5
+years of the age when the relative was diagnosed with breast cancer.
+b. architectural distortion of the breasts due to prior breast surgery, radiotherapy,
+chemotherapy or the presence of breast prosthesis rendering mammography interpretation
+difficult;
+c. malignant breast lesion when mammography is unable to exclude multifocal disease; or
+d. solitary lesion identified on mammography of greater than 1 cm.
+Scintimammography
+J863 - unilateral or bilateral ........................................................... 99.95 40.30
+Note:
+For the purpose of this provision, "dense breast(s)" means (a) breast(s) occupied by over 75%
+fibroglandular tissue as noted on mammography.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B11 Amd 12 Draft 1

@@ -1,0 +1,152 @@
+Subsection: Bladder
+Parent Section: T
+Page Reference: T9
+Pages: 715 to 717
+Text chunks: 1
+Total text length: 8563 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 715 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+BLADDER
+Asst Surg Anae
+ENDOSCOPY - CYSTOSCOPY
+Diagnostic and Therapeutic Procedures
+# Z606 Diagnostic with or without urethroscopy ................................. 71.85 5
+# Z607 Repeat within 30 days ............................................................ 35.50 5
+# E775 - with catheterization of the ureter and collection of the
+ureteral specimen, unilateral...................................... add 15.35
+# E817 - with catheterization of the ureter and retrograde injection
+of opaque media, unilateral........................................ add 15.35
+# E776 - with unilateral brush biopsy of renal pelvis and/or ureter,
+and/or transurethral biopsy of bladder ....................... add 24.90
+# E818 - with insertion of ureteric stent, unilateral.................... add 24.90
+# E777 - with cystometrogram (to include urethral pressure profile if
+necessary) ................................................................. add 11.50
+# E780 - with needle biopsy of prostate ................................... add 32.60
+# E783 - with secondary surgical evacuation of bladder clots and
+control of haemorrhage.............................................. add 99.65
+# E784 - with hydrodistention of bladder - general anaesthetic add 49.85
+# E824 - with bladder biopsy - general anaesthetic.................. add 49.85
+# E773 - with placement of ureteric stent past obstructing lesion
+(unilateral).................................................................. add 49.90
+Note:
+1.Only one of E773 or E818 is eligible for payment for the same ureteric obstruction.
+2.Time units and anaesthesia extra units listed on GP97 are not eligible for payment with
+anaesthesia services for Z606C or Z607C.
+3.E003C is not payable for anaesthesia services rendered for Z606 or Z607.
+# E791 - with periurethral injection of bulking agents ............... add 26.00
+# E781 - with electrocoagulation - tumour(s)............................ add 49.90
+# E782 - with electrocoagulation - Hunner ulcer....................... add 49.90
+# E786 - with resection or incision bladder neck, female ......... add 99.70
+# E787 - with resection or incision bladder neck, male ............ add 260.40
+# E788 - with ureteral meatotomy, by any means .................... add 99.70
+# E789 - with removal foreign body or calculus........................ add 99.70
+# E790 - with removal of ureteric catheter................................ add 8.80
+# E751 - with insertion of chemotherapeutic agent(s) .............. add 54.70
+Note:
+E751 is not eligible for payment with Z602, Z603 or Z611.
+Excision of tumour or tumours including base and adjacent muscles and electrocoagulation,
+if necessary
+# Z632 - single tumour 1 to 2 cm diameter ....................................... 271.35 6
+# Z633 - single tumour over 2 cm diameter ...................................... 437.20 6
+# Z634 - multiple tumours................................................................. 437.20 6
+Note:
+No additional claim for cystoscopy when done at the same time as excision of tumour(s).
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) T9 Amd 12 Draft 1
+
+--- PAGE 716 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+BLADDER
+Asst Surg Anae
+INTRODUCTION
+Catheterization
+Z602 - office................................................................................... 8.55
+Z603 - home .................................................................................. 16.25
+# Z611 - hospital ............................................................................... 8.55
+Note:
+1.Catheterization is only eligible for payment for acute retention, change of Foley catheter or
+suprapubic tube or instillation of medication.
+2.Z603 or Z611 is only eligible for payment when rendered personally by the physician.
+3.Z611 is not eligible for payment in conjunction with any surgical procedure.
+Z608 Manual catheter declotting and irrigation of bladder............... 58.65
+Z610 Intravesical instillation of BCG or immunotherapeutic agent or
+chemotherapeutic agent for the treatment of bladder cancer 25.65
+Payment rules:
+1.This service is only eligible for payment when the service, including the catheterization and
+preparation and disposal of the agents, is rendered personally by the physician.
+2.Z602, Z603 or Z611 is not eligible for payment in addition to Z610.
+[Commentary:
+Z610 is not payable for indications other than bladder cancer.]
+INCISION
+Z605 Aspiration................................................................................ 12.50
+# S478 Cystotomy or cystostomy........................................................ 6 215.80 6
+# Z480 Cystotomy with trochar and cannula and insertion of tube ..... 85.30 6
+# E750 - when done in conjunction with another procedure..... add 26.05
+# S481 Cystolithotomy - when sole operative procedure.................... 6 260.65 7
+# E792 - when performed laparoscopically, to S481 ........ add 25%
+# S476 Cutaneous vesicostomy.......................................................... 6 437.20 6
+EXCISION
+Cystectomy - Partial
+# S482 - partial for tumour or diverticulum (single or multiple) ......... 6 381.60 6
+# S483 - with reimplantation of ureter ............................................... 6 552.30 7
+# S490 - with reimplantation of ureters ............................................. 6 733.50 7
+# E792 - when performed laparoscopically, to S482, S483 or S490
+........................................................................... add 25%
+Note:
+S482 not to be billed in addition to S451.
+Amd 12 Draft 1 T10 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 717 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+BLADDER
+Asst Surg Anae
+Cystectomy - Complete
+# S484 - complete cystectomy, without transplant............................ 6 791.85 10
+# S485 - with ureterointestinal transplant.......................................... 8 984.65 13
+# S453 - with ureteroileal conduit...................................................... 9 1250.30 15
+# S440 - with continent urinary diversion.......................................... 9 1475.70 15
+# E792 - when performed laparoscopically, to S484, S485, S453 or
+S440................................................................... add 25%
+# S438 Retroperitoneal lymph node dissection for bladder cancer,
+specimen must include obturator, internal iliac and external
+iliac nodes as a minimum to the level of the iliac bifurcation,
+bilateral............................................................................... 7 630.00 7
+# S441 Creation of continent urinary diversion ................................... 9 1013.45 15
+# S471 Excision of urachal cyst or sinus with or without umbilical
+hernia repair ....................................................................... 6 296.30 6
+# E792 - when performed laparoscopically, to S471 ........ add 25%
+Extrophy - excision of bladder and repair of abdominal wall
+# S488 - inclusive of graft ................................................................. 6 215.80 6
+# S491 Plastic repair of extrophy using bladder and including skin flaps 6 657.75 6
+REPAIR
+# S512 Repair of ruptured bladder...................................................... 6 346.45 6
+# S513 Cystoplasty, using intestine .................................................... 8 692.85 9
+Plastic repair of bladder neck
+# S518 - child .................................................................................... 6 494.90 6
+# S519 - adolescent or adult............................................................. 6 437.20 7
+DESTRUCTION
+# S521 Litholapaxy and removal of fragments.................................... 215.80 6
+# E792 - when performed laparoscopically, to S521.........add 25%
+SUTURE
+Closure of fistula
+# S522 External, suprapubic............................................................... 6 260.85 7
+Vesicovaginal
+# S523 - vaginal approach ................................................................ 6 791.85 6
+# S524 - transvesical approach (with or without omental flap) ......... 6 544.40 6
+# S525 Vesicorectal or vesicosigmoid................................................. 6 446.90 7
+# E792 - when performed laparoscopically, to S522, S524 or S525
+........................................................................... add 25%
+Note:
+Closure of fistula - see also Operations on the Female Genital System, page V4.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) T11 Amd 12 Draft 1

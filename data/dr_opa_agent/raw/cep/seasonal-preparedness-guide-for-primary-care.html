@@ -1,0 +1,1614 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Seasonal Preparedness Guide |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/seasonal-preparedness-guide-for-primary-care\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/69088" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fseasonal-preparedness-guide-for-primary-care%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fseasonal-preparedness-guide-for-primary-care%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-69088 wp-theme-cep-tools seasonal-preparedness-guide-for-primary-care">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Seasonal Preparedness Guide</h1>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+						<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="chronic-condition-optimization" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Chronic condition optimization								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Chronic conditions like asthma, COPD, and heart failure often worsen during respiratory season. Proactive management—including timely assessment, individualized action plans and appropriate education for people living with these conditions— can help reduce complications, improve outcomes and support stability during high-risk periods. </p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#asthmacopd" data-type="internal" data-id="#screenpatient">Asthma and COPD</a><br><a href="#HF" data-type="internal" data-id="#conductcompassessment">Heart failure</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h1 class="wp-block-heading" id="asthmacopd">Asthma and COPD</h1>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Key messages<sup>1–5</sup> </strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Minimize exposure to known triggers and optimize daily therapy.</li>
+
+
+
+<li>Encourage vaccination and good hygiene to prevent respiratory infections.</li>
+
+
+
+<li>Support self-management with a personalized action plan and ensure medication readiness.</li>
+</ul>
+</div></article></div>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>COPD and asthma are chronic respiratory diseases that can worsen during respiratory season due to cold air, viral infections and other environmental triggers.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Both conditions are associated with significant morbidity during respiratory season, but with proper management, most exacerbations are preventable.</p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+                    <h6>Risk stratification </h6>
+                          <a data-modal="MJ6qPK" class="button open-modal" href="#" data-id="MJ6qPK">Click for details</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="MJ6qPK" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Risk stratification </h4>
+                                      <h6><span class="TextRun Underlined MacChromeBold SCXW120317192 BCX8" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW120317192 BCX8">COPD</span></span><strong><sup><span class="TextRun Underlined MacChromeBold SCXW120317192 BCX8" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW120317192 BCX8"><span class="TextRun SCXW259182812 BCX8" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun Superscript SCXW259182812 BCX8" data-fontsize="12">5,8–10</span></span></span></span></sup></strong></h6>
+<ul>
+<li>The risk of acute exacerbation can be assessed by:
+<ul>
+<li>History of past acute exacerbations of COPD (i.e., timing, frequency, severity and hospitalizations).</li>
+<li>Severe and worsening airflow obstruction (based on spirometry results).</li>
+<li>Presence of chronic bronchitis.</li>
+</ul>
+</li>
+<li><strong style="font-size: 1.5rem;">Low risk of exacerbation:  </strong><span style="font-size: 1.5rem;">≤1 moderate exacerbation in the past year and did not require ER visit or hospitalization.</span></li>
+<li><strong style="font-size: 1.5rem;">High risk of exacerbation: </strong><span style="font-size: 1.5rem;"> ≥ 2 moderate or ≥1 severe exacerbation in the last year, requiring hospital admission or ED visit.</span></li>
+</ul>
+<h6>Asthma <sup>4,6</sup></h6>
+<ul>
+<li><strong>Mild exacerbation</strong>: an increase in asthma symptoms from baseline that does not require systemic steroids, an emergency department visit, or a hospitalization. Differentiating this from chronic poorly controlled asthma may only occur retrospectively.</li>
+<li><strong>Severe exacerbation</strong>: an exacerbation requiring any of the following:
+<ul>
+<li>Systemic steroids</li>
+<li>Emergency department visit</li>
+<li>Hospitalization</li>
+</ul>
+</li>
+<li><strong>Higher risk of exacerbation</strong>:
+<ul>
+<li>History of severe exacerbation requiring systemic steroids, ED visit and/or hospitalization</li>
+<li>Poorly controlled asthma</li>
+<li>SABA overuse (&gt;2 inhalers/year)</li>
+<li>Current smoker or vape use</li>
+</ul>
+</li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="optimization">Management optimization for respiratory season</h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Annual review &amp; risk assessment<sup>4,6,11,12</sup></h6>
+<ul>
+<li>Conduct an <strong>annual assessment</strong> (or more frequent if control is poor or after a recent exacerbation) to prepare for respiratory season:
+<ul>
+<li>Evaluate symptom control, lung function (spirometry as needed) and history of exacerbations.</li>
+<li>Review medication adherence, <a href="https://link.cep.health/sphtml26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">inhaler technique</a> and trigger exposures.</li>
+<li>Identify comorbidities impacting control (e.g., GERD, OSA, depression).</li>
+<li>Identify impact of social determinants on accessing supports (e.g., education, employment, housing, income, geographic location, transportation, access to care).</li>
+</ul>
+</li>
+</ul>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Prevent respiratory infections<sup>1,3,5,12</sup></h6>
+<ul>
+<li><strong>Immunizations:</strong>
+<ul>
+<li>Annual influenza (OHIP covered)</li>
+<li>SARS-CoV-2 (OHIP covered)</li>
+<li>Pneumococcal – consult current recommendations</li>
+<li>RSV prevention product (OHIP covered for high-risk individuals 60+ and may be purchased for others 60+)</li>
+<li>TD (booster) – every 10 years (COPD-specific)</li>
+<li>Shingles (OHIP covered for those between 65-70 years old) (COPD-specific)</li>
+</ul>
+</li>
+<li><strong>Hygiene and exposure reduction:</strong>
+<ul>
+<li>Handwashing and hand sanitizers</li>
+<li>Avoid face touching</li>
+<li>Avoid close contact with sick individuals</li>
+<li>Clean and disinfect surfaces (caution around cleaning agents that can trigger asthma symptoms)</li>
+<li>Masking in crowded indoor spaces; encourage in cold, windy or high-pollen conditions to help manage allergies.</li>
+</ul>
+</li>
+<li><strong>Encourage smoking cessation.</strong></li>
+<li><strong>Refer to pulmonary rehabilitation</strong> if indicated for individuals living with COPD with high symptom burden and risk of exacerbation. See the Lung Health foundation <a href="https://link.cep.health/sphtml23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">virtual Fitness for Breath classes</a> and <a href="https://link.cep.health/sphtml24" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">exercise videos</a> for more information.<br />
+<article class="block--list core-block" data-block-name="core/list">
+<div class="container"></div>
+</article>
+</li>
+</ul>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Manage triggers</h6>
+<ul>
+<li>Ensure individuals are prepared and understand common seasonal triggers and environmental control strategies.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:80%"><article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey blue">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:20%;">
+                                            <h6>Season</h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <h6>Triggers</h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <h6>Strategies</h6>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:20%;">
+                                            <p><strong><span class="TextRun MacChromeBold SCXW23276824 BCX8" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW23276824 BCX8">Summer</span></span></strong><sup><span class="FieldRange SCXW23276824 BCX8"><span class="TextRun SCXW23276824 BCX8" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun Superscript SCXW23276824 BCX8" data-fontsize="12">12–16</span></span></span><span class="EOP SCXW23276824 BCX8" data-ccp-props="{}"> </span></sup></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <ul>
+<li><span data-contrast="auto">Environmental triggers: pollen, pet dander, dust mites, mould, smog, humidity</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="none">Heat</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="none">Smoke: cigarette, cigar, fireplace, wood burning stove or campfire</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="none">Overexertion</span><span data-ccp-props="{}"> </span></li>
+</ul>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <ul>
+<li>Check the <a href="https://link.cep.health/sphtml1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Pollen Count</a> and local <a href="https://link.cep.health/sphtml2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Air Quality Health Index</a> before going outside. <span class="NormalTextRun SCXW217282527 BCX0">Discuss what these numbers mean and how </span><span class="NormalTextRun SCXW217282527 BCX0">they</span><span class="NormalTextRun SCXW217282527 BCX0"> can </span><span class="NormalTextRun SCXW217282527 BCX0">make</span><span class="NormalTextRun SCXW217282527 BCX0"> symptoms worse.</span></li>
+<li><span data-contrast="auto">S</span><span data-contrast="auto">chedule physical activity during cooler parts of the day (e.g., morning or evening) and indoors when possible.</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="auto">Avoid scented products and smoke.</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="auto">Take breaks when overexerted.</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="auto">Stay hydrated.</span></li>
+<li><span class="NormalTextRun SCXW130138503 BCX0">Use AC and keep windows closed to minimize exposure to </span><span class="NormalTextRun SCXW130138503 BCX0">allergens.</span> <span class="NormalTextRun SCXW130138503 BCX0">For</span><span class="NormalTextRun SCXW130138503 BCX0"> more information for OW and ODSP individuals see: <a href="https://link.cep.health/sphtml25" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://link.cep.health/sphtml25</a></span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:20%;">
+                                            <p><strong>Respiratory season</strong><sup><span class="TextRun SCXW80663044 BCX8" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun Superscript SCXW80663044 BCX8" data-fontsize="12">1,3,14,15</span></span></sup></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <ul>
+<li><span data-contrast="auto">Environmental triggers: cold air (wear mask/scarf), viral infections (see prevent respiratory infections section).</span></li>
+<li><span data-contrast="auto">Holiday-specific exposures: real trees may carry mould or dust.</span></li>
+<li><span data-contrast="none">Allergen and irritant reduction.</span><span data-ccp-props="{}"> </span></li>
+</ul>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <ul>
+<li>Consider <a href="https://link.cep.health/sphtml2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Air Quality Health Index</a> before going outside</li>
+<li><span data-contrast="auto">Rinse trees or opt for artificial trees. Clean stored decorations before use.</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="none">Improve air filtration (provide recommendations), avoid scented products and smoke, minimize dust/mould.</span><span data-ccp-props="{}"> </span></li>
+<li><span class="TextRun SCXW38175133 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW38175133 BCX0">Ensure individuals are up to date </span><span class="NormalTextRun SCXW38175133 BCX0">with</span><span class="NormalTextRun SCXW38175133 BCX0"> immunizations. </span></span><span class="TextRun SCXW38175133 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW38175133 BCX0">See <a href="#optimization">prevent respiratory infections</a> for more information.</span></span><span class="EOP SCXW38175133 BCX0" data-ccp-props="{}"> </span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+                    <footer>
+                <p>See <a href="https://link.cep.health/sphtml3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HQO’s Asthma Quality Statement 3</a> for more information on medication management.</p>
+<p>See <a href="https://tools.cep.health/tool/chronic-obstructive-pulmonary-disease-copd/#pharmacological-management" data-wpel-link="internal">CEP COPD pharmacologic management section</a> for more information on medication management.</p>
+            </footer>
+        
+    </div>
+</div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Self-management and action plans<sup>5-7,11,12</sup></h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Provide/refresh individualized <strong>action plans</strong>, including strategies for control (e.g., adherence, environmental considerations, trigger management), when to seek urgent care (worsening symptoms), medication management/adjustments, etc. <span class="NormalTextRun SCXW161987835 BCX0">Hospitalization may act as a natural trigger to </span><span class="NormalTextRun SCXW161987835 BCX0">initiate</span><span class="NormalTextRun SCXW161987835 BCX0"> discussions with patients and their families on advanced care planning. </span></p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Ensure <strong>medication readiness</strong> (30-day supply), and correct use of inhalers.</p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Encourage individuals to <strong>carry relievers</strong> at all times <span class="TextRun SCXW230985680 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW230985680 BCX0">(</span><span class="NormalTextRun SCXW230985680 BCX0">e.g.,</span><span class="NormalTextRun SCXW230985680 BCX0"> at home and at work) </span><span class="NormalTextRun SCXW230985680 BCX0">and regularly check dose counter</span></span><span class="TextRun SCXW230985680 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW230985680 BCX0">.</span></span></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Provider resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/sphtml4" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Action Plan</a> (Asthma Canada)</li>
+<li><a href="https://link.cep.health/sphtml47" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">My Asthma Diary</a> (Lung Health Foundation)- for self-monitoring of symptoms and triggers.</li>
+<li><a href="https://link.cep.health/sphtml6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">COPD Action Plan</a> (Canadian Thoracic Society)</li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Referrals</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consider referral to specialized care for:<sup>4,6,7,17</sup></p>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="1528" height="951" src="https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited.jpg" alt="" class="wp-image-69274" style="width:789px;height:auto" srcset="https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited.jpg 1528w, https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited-300x187.jpg 300w, https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited-1024x637.jpg 1024w, https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited-768x478.jpg 768w, https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited-1157x720.jpg 1157w, https://tools.cep.health/wp-content/uploads/2025/07/Screenshot-2025-07-10-at-11.35.02 AM-edited-640x398.jpg 640w" sizes="auto, (max-width: 1528px) 100vw, 1528px" /></figure>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Specialized care may include respirologists, allergists, Certified Respiratory Educator (CRE), Certified Asthma Educator (CAE) or other trained professionals.<sup>6,7</sup>&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Patient resources</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:70%"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Patient resources</h6></strong>
+            </div>
+                  </div>
+                    <p><strong>Asthma</strong></p>
+<ul>
+<li>Asthma Canada’s Asthma &amp; Allergy Helpline: 1-866-787-4050 or <a href="mailto:info@asthma.ca">info@asthma.ca</a> for CRE support</li>
+<li><a href="https://link.cep.health/sphtml7" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Children’s Asthma Action Plan- English</a> (Asthma Canada)</li>
+<li><a href="https://link.cep.health/sphtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Children’s Asthma Action Plan- French</a> (Asthma Canada)</li>
+<li><a href="https://link.cep.health/sphtml9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Asthma Attack Toolkit</a> (Asthma Canada)</li>
+<li><a href="https://link.cep.health/sphtml10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Asthma Control Toolkit</a> (Asthma Canada)</li>
+<li><a href="https://link.cep.health/sphtml11" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Asthma Best Practices Implementation Toolkit</a> (Lung Health Foundation)</li>
+<li><a href="https://link.cep.health/sphtml22" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Best Care</a></li>
+</ul>
+<p><strong>COPD</strong></p>
+<ul>
+<li><a href="https://link.cep.health/sphtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Living with COPD booklet</a> (Lung Health Foundation)</li>
+<li><a href="https://link.cep.health/sphtml13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Vaccination Tracker</a> (Canadian Lung Association)</li>
+<li><a href="https://link.cep.health/sphtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Smoking Treatment for Ontario Patients (STOP) Program</a> (CAMH)</li>
+<li><a href="https://link.cep.health/sphtml22" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Best Care</a></li>
+<li>See CEP’s <a href="https://tools.cep.health/tool/chronic-obstructive-pulmonary-disease-copd/#patient-self-management-and-education" data-wpel-link="internal">COPD self-management and education section</a> for more information</li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+</div>
+
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="13" src="https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line-1024x13.png" alt="" class="wp-image-69373" srcset="https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line-1024x13.png 1024w, https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line-300x4.png 300w, https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line-768x10.png 768w, https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line-1280x16.png 1280w, https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line-640x8.png 640w, https://tools.cep.health/wp-content/uploads/2025/07/thin-blue-line.png 1452w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h1 class="wp-block-heading" id="HF">Heart failure</h1>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:70%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Key messages </strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Support self-management in different seasons with a personalized action plan.</li>
+
+
+
+<li>Support management of any comorbidities that may be impacted by seasonal changes, such as COPD.</li>
+
+
+
+<li>Encourage Immunization as part of seasonal activities in the person’s individualized care plan.</li>
+</ul>
+</div></article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Heart Failure is a clinical condition where the heart is unable to pump enough blood to meet the demands of the body.&nbsp;The condition is complex, progressive and ultimately fatal. Heart Failure is often found alongside other conditions, with 37% of Ontarians experiencing four or more co-occurring chronic conditions. Seasonal weather such as extreme heat, may impact people with cardiovascular disease such as heart failure. While there is still more research needed on the ways in which the heat impacts cardiovascular disease and to what extent, it is important to consider this risk to cardiovascular health.<sup>18,19</sup></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Symptoms and Severity</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Heart Failure’s hallmark symptoms include shortness of breath, fatigue and ankle swelling. There are different categories of people living with Heart Failure which include<sup>18,20,21</sup>:</p>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="905" height="310" src="https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF.png" alt="" class="wp-image-66830" style="width:1077px;height:auto" srcset="https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF.png 905w, https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF-300x103.png 300w, https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF-768x263.png 768w, https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF-640x219.png 640w" sizes="auto, (max-width: 905px) 100vw, 905px" /></figure>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The NYHA classification also describes degrees of symptom severity among people living with Heart Failure (PWHF). For more information, see <a href="https://tools.cep.health/tool/managing-patients-with-heart-failure-in-primary-care/#typeSeverity" data-wpel-link="internal">CEP’s Heart Failure tool</a>.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Seasonal preparedness for HF patients<sup>12,18</sup></h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Review care plans</h6>
+<ul>
+<li>Review a person with Heart Failure&#8217;s at least every 6 months.</li>
+<li>Consider timing follow-up appointments just before high-risk times of the year.</li>
+<li>Consider the way seasonal changes may impact management of their condition and ensure the PWHF and their care partners are knowledgeable about seasonal changes to their care plan.</li>
+</ul>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Prevent exacerbating illnesses</h6>
+<ul>
+<li><strong>Relevant immunizations available in Ontario include:</strong>
+<ul>
+<li>Annual influenza (OHIP covered)</li>
+<li>SARS-CoV-2 (OHIP covered)</li>
+<li>Pneumococcal – consult current recommendations</li>
+<li>RSV prevention product (OHIP covered for high-risk individuals 60+ and may be purchased for others 60+)</li>
+<li><span class="TextRun SCXW46768814 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW46768814 BCX0">Shingrix (OHIP covered for seniors 65-70 who have not had a </span></span><span class="TextRun SCXW46768814 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW46768814 BCX0">Zostavax® II vaccine</span></span><span class="TextRun SCXW46768814 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW46768814 BCX0">)</span></span><span class="EOP SCXW46768814 BCX0" data-ccp-props="{&quot;335557856&quot;:16777215,&quot;335559739&quot;:0}"> </span></li>
+</ul>
+</li>
+</ul>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Be aware of worsening heart failure</h6>
+<ul>
+<li>Ensure the PWHF is aware of <a href="https://tools.cep.health/tool/managing-patients-with-heart-failure-in-primary-care/#hfwarningsigns" data-wpel-link="internal">warning signs of worsening heart failure,</a> has a plan for monitoring their symptoms and knows when to take action.</li>
+<li>When gradual, worsening symptoms are reported, they should be assessed by a clinician and have their medications adjusted (as needed) within 48 hours.</li>
+<li>For information on coordination of care and referrals see <a href="https://tools.cep.health/tool/managing-patients-with-heart-failure-in-primary-care/#coordination-of-care" data-wpel-link="internal">CEP’s Heart Failure tool</a> or seek support from the <a href="https://link.cep.health/sphtml27" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Best Care program</a>.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex"></div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:80%"><article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey blue">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:20%;">
+                                            <h6>Season</h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <h6>Triggers</h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <h6>Strategies</h6>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:20%;">
+                                            <p><strong><span class="TextRun MacChromeBold SCXW23276824 BCX8" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW23276824 BCX8">Summer<sup>12,18,19,22</sup></span></span></strong></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <ul>
+<li>Heat and increased exertion (e.g., outdoor activities).</li>
+<li><span class="TextRun SCXW84105738 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW84105738 BCX0">Dehydration, electrolyte imbalance, and related medication effects</span><span class="NormalTextRun SCXW84105738 BCX0">.</span></span><span class="EOP SCXW84105738 BCX0" data-ccp-props="{}"> </span></li>
+<li><span class="TextRun SCXW20439403 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW20439403 BCX0">Increased sodium intake (e.g., summer BBQs, etc.) </span></span><span class="EOP SCXW20439403 BCX0" data-ccp-props="{}"> </span></li>
+<li>Seasonal exacerbation of comorbid conditions.</li>
+</ul>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <ul>
+<li>Discuss safe exercise practices and if modifications need to be made during a heat wave. <span class="NormalTextRun SCXW78820225 BCX0">If unsure about safely meeting the physical activity goals, consider consulting a physiotherapist or kinesiologist</span><span class="NormalTextRun SCXW78820225 BCX0">.</span><span class="NormalTextRun SCXW78820225 BCX0"> </span></li>
+<li>Counsel the person with heart failure about appropriate hydration during hotter than usual times. Be aware that the evidence base to support fluid restriction is limited, and severely limiting intake may have adverse consequences.</li>
+<li>Consider any changes needed to prescribed diuretic medication.</li>
+<li><span class="TextRun SCXW242821091 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW242821091 BCX0">Encourage the PWHF to </span><span class="NormalTextRun SCXW242821091 BCX0">monitor</span><span class="NormalTextRun SCXW242821091 BCX0"> weight </span></span><span class="TextRun SCXW242821091 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW242821091 BCX0">and symptoms daily to detect early signs of worsening heart failure</span><span class="NormalTextRun SCXW242821091 BCX0">.</span></span><span class="EOP SCXW242821091 BCX0" data-ccp-props="{&quot;335559737&quot;:810,&quot;335559739&quot;:600}"> </span></li>
+<li><span class="TextRun SCXW75156797 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="auto"><span class="NormalTextRun SCXW75156797 BCX0">Monitor the individual’s dry weight and volume status.</span></span><span class="EOP SCXW75156797 BCX0" data-ccp-props="{&quot;335559737&quot;:810,&quot;335559739&quot;:600}"> </span></li>
+<li><span class="TextRun SCXW232780464 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW232780464 BCX0">Counsel on </span><span class="NormalTextRun SCXW232780464 BCX0">appropriate diet</span><span class="NormalTextRun SCXW232780464 BCX0"> and sodium intake</span><span class="NormalTextRun SCXW232780464 BCX0">.</span></span><span class="EOP SCXW232780464 BCX0" data-ccp-props="{&quot;335559737&quot;:810,&quot;335559739&quot;:600}"> </span></li>
+<li>Discuss and share resources on self-management strategies for the season.</li>
+<li>Discuss management of co-occurring conditions, such as <a href="https://tools.cep.health/tool/chronic-obstructive-pulmonary-disease-copd/" data-wpel-link="internal">COPD</a> in summer.</li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:20%;">
+                                            <p><b>Winter<sup>12,18,23,24</sup></b></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <ul>
+<li>Cold weather and increased exertion (e.g., snow removal, walking through heavy snow).</li>
+<li><span class="TextRun SCXW22268113 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW22268113 BCX0">Reduced physical activity.</span><span class="NormalTextRun SCXW22268113 BCX0"> </span></span><span class="EOP SCXW22268113 BCX0" data-ccp-props="{}"> </span></li>
+<li><span class="TextRun SCXW187499869 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW187499869 BCX0">Seasonal illnesses, such as respiratory viruses (possible increased risk of worsening heart failure)</span><span class="NormalTextRun SCXW187499869 BCX0">.</span><span class="NormalTextRun SCXW187499869 BCX0"> </span></span><span class="EOP SCXW187499869 BCX0" data-ccp-props="{}"> </span></li>
+<li><span class="TextRun SCXW37730829 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW37730829 BCX0">Risk of weather impacts, social </span><span class="NormalTextRun SCXW37730829 BCX0">isolation</span><span class="NormalTextRun SCXW37730829 BCX0"> and travel considerations</span><span class="NormalTextRun SCXW37730829 BCX0">.</span></span><span class="EOP SCXW37730829 BCX0" data-ccp-props="{}"> </span></li>
+<li><span class="TextRun SCXW156595182 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW156595182 BCX0">Increased sodium intake (holiday events, etc.)</span><span class="NormalTextRun SCXW156595182 BCX0">.</span><span class="NormalTextRun SCXW156595182 BCX0"> </span></span><span class="EOP SCXW156595182 BCX0" data-ccp-props="{}"> </span></li>
+<li>Seasonal exacerbation of comorbid conditions.</li>
+</ul>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <ul>
+<li>Advise keeping warm and wearing appropriate layers of clothing.</li>
+<li>Discuss safe exercise practices and if modifications need to be made during cold weather. <span class="TextRun SCXW243791187 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW243791187 BCX0">If unsure about safely meeting the physical activity goals, consider consulting a physiotherapist or kinesiologist. </span></span></li>
+<li>Encourage the PWHF to obtain annual immunizations.</li>
+<li><span class="TextRun SCXW3473171 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW3473171 BCX0">Encourage the PWHF to </span><span class="NormalTextRun SCXW3473171 BCX0">monitor</span> <span class="NormalTextRun SCXW3473171 BCX0">weight</span></span><span class="TextRun SCXW3473171 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW3473171 BCX0"> and symptoms daily to detect early signs of worsening heart failure</span><span class="NormalTextRun SCXW3473171 BCX0">.</span><span class="NormalTextRun SCXW3473171 BCX0"> </span></span><span class="EOP SCXW3473171 BCX0" data-ccp-props="{&quot;335559737&quot;:810,&quot;335559739&quot;:600}"> </span></li>
+<li><span class="TextRun SCXW37347609 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW37347609 BCX0">Encourage the PWHF to </span><span class="NormalTextRun SCXW37347609 BCX0">maintain</span><span class="NormalTextRun SCXW37347609 BCX0"> a supply of their prescribed medication in case of winter weather and difficulty with travel.</span></span><span class="TextRun SCXW37347609 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW37347609 BCX0"> </span></span></li>
+<li><span class="TextRun SCXW215717501 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW215717501 BCX0">Counsel on </span><span class="NormalTextRun SCXW215717501 BCX0">appropriate diet</span><span class="NormalTextRun SCXW215717501 BCX0"> and sodium intake</span><span class="NormalTextRun SCXW215717501 BCX0">.</span><span class="NormalTextRun SCXW215717501 BCX0"> </span></span><span class="EOP SCXW215717501 BCX0" data-ccp-props="{&quot;335559737&quot;:810,&quot;335559739&quot;:600}"> </span></li>
+<li>Discuss and share resources on self-management strategies for the season.</li>
+<li>Discuss management of co-occurring conditions such as <a href="https://tools.cep.health/tool/chronic-obstructive-pulmonary-disease-copd/" data-wpel-link="internal">COPD</a> in winter.</li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Patient resources</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:70%"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Patient resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/sphtml15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Heart Failure Daily Weight Tracker</a> (University of Ottawa Heart Institute)</li>
+<li><a href="https://link.cep.health/sphtml16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Heart Failure Zones</a> (Heart and Stroke)</li>
+<li><a href="https://link.cep.health/sphtml17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">5 factors to consider before exercising outdoors this summer</a> (HeartLife Foundation)</li>
+<li><a href="https://link.cep.health/sphtml18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Hot weather and your heart</a> (British Heart Foundation)</li>
+<li><a href="https://link.cep.health/sphtml19" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">How cold weather affects your heart</a> (British Heart Foundation)</li>
+<li><a href="https://link.cep.health/sphtml20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Winter with Heart Failure</a> (HeartLife Foundation)</li>
+<li><a href="https://link.cep.health/sphtml21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Vaccination and Heart Failure</a> (Heart Hub)</li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="practice-management-during-respiratory-season-coming-this-fall" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Practice management during respiratory season (coming this fall)								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+													</div>
+					</div>
+				</section>
+							<section class="main-section" id="seasonal-and-respiratory-immunizations-coming-this-fall" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Seasonal and respiratory immunizations (coming this fall)								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+													</div>
+					</div>
+				</section>
+							<section class="main-section" id="seasonal-illness-testing-and-management-coming-this-winter" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Seasonal illness testing and management (coming this winter)								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+													</div>
+					</div>
+				</section>
+							<section class="main-section" id="ipac-recommendations-coming-this-winter" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								IPAC recommendations (coming this winter)								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+													</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>Asthma Canada. Be Winter Ready &#8211; Tips for Managing Your Asthma This Season [Internet]. 2025 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://asthma.ca/be-winter-ready-tips-for-managing-your-asthma-this-season/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>CDC. Living with Asthma [Internet]. Asthma. 2024 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.cdc.gov/asthma/living-with/index.html</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>CDC. Respiratory Infections and Asthma [Internet]. Asthma. 2024 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml30" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.cdc.gov/asthma/respiratory-infections/index.html</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>Yang CL, Hicks EA, Mitchell P, Reisman J, Podgers D, Hayward KM, et al. 2021 Canadian Thoracic Society Guideline – A focused update on the management of very mild and mild asthma. Can J Respir Crit Care Sleep Med. 2021;5(4):205–45.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p>Bourbeau J, Bourbeau M, Hernandez P, Hernandez S, Beauchesne M, Kermelly S, et al. 2023 Canadian Thoracic Society Guideline on Pharmacotherapy in Patients With Stable COPD. Chest [Internet]. 2023 Nov [cited 2025 Jul 9];164(5). Available from: <a href="https://link.cep.health/sphtml31" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/37690008/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p>Health Quality Ontario (HQO). Asthma in Adults: The Quality Standard in Brief [Internet]. 2025 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.hqontario.ca/Evidence-to-Improve-Care/Quality-Standards/View-all-Quality-Standards/Asthma-in-Adults/The-Quality-Standard-in-Brief</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p>Chronic Obstructive Pulmonary Disease (COPD) &#8211; Health Quality Ontario (HQO) [Internet]. 2023 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.hqontario.ca/Evidence-to-Improve-Care/Quality-Standards/View-all-Quality-Standards/Chronic-Obstructive-Pulmonary-Disease</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p>Agustí A, Celli BR, Criner GJ, Halpin D, Anzueto A, Barnes P, et al. Global Initiative for Chronic Obstructive Lung Disease 2023 Report: GOLD Executive Summary. Am J Respir Crit Care Med. 2023 Mar 1;207(7):819.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p>US Department of Veterans Affairs. Management of Chronic Obstructive Pulmonary Disease (COPD) [Internet]. 2021 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml33" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.healthquality.va.gov/guidelines/cd/copd/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p>NICE. Recommendations | Chronic obstructive pulmonary disease in over 16s: diagnosis and management | Guidance | NICE [Internet]. NICE; [cited 2021 Feb 24]. Available from: <a href="https://link.cep.health/sphtml34" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.nice.org.uk/guidance/ng115/chapter/Recommendations#managing-stable-copd</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p>National Institute for Health and Care Excellence. Asthma: diagnosis, monitoring and chronic asthma management (BTS, NICE, SIGN) [Internet]. NICE; 2024 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml35" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.nice.org.uk/guidance/NG245</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p><a href="https://link.cep.health/expertopinionrationale" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Expert Opinion</a>.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p>Asthma Canada. Beat the Heat: 9 Tips for Managing Your Asthma in the Summer [Internet]. 2025. Available from: <a href="https://link.cep.health/sphtml36" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://asthma.ca/beat-the-heat-9-tips-for-managing-your-asthma-in-the-summer/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p>Asthma Canada. Breathe Easy<sup>TM</sup>: Triggers [Internet]. 2016 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml37" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://asthma.ca/breathe-easy-triggers/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p>American Lung Association. Prevent a COPD Exacerbation or Flare Up [Internet]. 2025. Available from: <a href="https://link.cep.health/sphtml38" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.lung.org/lung-health-diseases/lung-disease-lookup/copd/living-with-copd/prevent-flare-ups</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p>Othar L. Managing COPD Year-Round: Weather Tips for COPD Patients [Internet]. Chronic Lung Diseases. 2024 [cited 2025 Jul 9]. Available from: <a href="https://link.cep.health/sphtml39" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://chroniclungdiseases.com/en/news/weather-tips-for-copd-patients/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p>Lung Health Foundation. Living with COPD [Internet]. 2021. Available from: <a href="https://link.cep.health/sphtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://lunghealth.ca/wp-content/uploads/2021/06/2021_LHF_COPD-Handbook-2.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW137728860 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW137728860 BCX0" data-ccp-parastyle="Bibliography">Health Quality Ontario (HQO). Heart Failure Quality Standard [Internet]. 2022 [cited 2025 Jul 11]. Available from: <a href="https://link.cep.health/sphtml41" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.hqontario.ca/evidence-to-improve-care/quality-standards/view-all-quality-standards/heart-failure</a></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SpellingErrorV2Themed SCXW201586090 BCX0" data-ccp-parastyle="Bibliography">Chaseling</span><span class="NormalTextRun SCXW201586090 BCX0" data-ccp-parastyle="Bibliography"> G, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW201586090 BCX0" data-ccp-parastyle="Bibliography">Uchmanowicz</span><span class="NormalTextRun SCXW201586090 BCX0" data-ccp-parastyle="Bibliography"> I, Bäck M, Miró O, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW201586090 BCX0" data-ccp-parastyle="Bibliography">Tokmakova</span><span class="NormalTextRun SCXW201586090 BCX0" data-ccp-parastyle="Bibliography"> M, Ljungman P, et al. Heat extremes and cardiovascular diseases: a scientific statement of the Association of Cardiovascular Nursing &amp; Allied Professions, Association for Acute Cardiovascular Care, European Association of Preventive Cardiology, Heart Failure Association, European Heart Rhythm Association of the ESC, the ESC Council on Hypertension, the ESC Council on Stroke, and the ESC Working Group on Cardiovascular Pharmacotherapy. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW201586090 BCX0" data-ccp-parastyle="Bibliography">Eur</span><span class="NormalTextRun SCXW201586090 BCX0" data-ccp-parastyle="Bibliography"> Heart J [Internet]. 2025 Mar 6 [cited 2025 Jul 11]; Available from: <a href="https://link.cep.health/sphtml42" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/40457965/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW163626851 BCX0" data-ccp-parastyle="Bibliography">Bozkurt B, Coats Aj, Tsutsui H, Abdelhamid C, Adamopoulos S, Albert N, et al. Universal definition and classification of heart failure: a report of the Heart Failure Society of America, Heart Failure Association of the European Society of Cardiology, Japanese Heart Failure Society and Writing Committee of the Universal Definition of Heart Failure: Endorsed by the Canadian Heart Failure Society, Heart Failure Association of India, Cardiac Society of Australia and New Zealand, and Chinese Heart Failure Association. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW163626851 BCX0" data-ccp-parastyle="Bibliography">Eur</span><span class="NormalTextRun SCXW163626851 BCX0" data-ccp-parastyle="Bibliography"> J Heart Fail [Internet]. 2021 Mar [cited 2025 Jul 11];23(3). Available from: <a href="https://link.cep.health/sphtml43" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/33605000/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW94382601 BCX0" data-ccp-parastyle="Bibliography">Heidenreich P, Bozkurt B, Aguilar D, Allen L, Byun J, Colvin M, et al. 2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. J Am Coll </span><span class="NormalTextRun SpellingErrorV2Themed SCXW94382601 BCX0" data-ccp-parastyle="Bibliography">Cardiol</span><span class="NormalTextRun SCXW94382601 BCX0" data-ccp-parastyle="Bibliography"> [Internet]. 2022 Mar 5 [cited 2025 Jul 11];79(17). Available from: <a href="https://link.cep.health/sphtml44" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/35379503/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SpellingErrorV2Themed SCXW89902502 BCX0" data-ccp-parastyle="Bibliography">Ezekowitz</span><span class="NormalTextRun SCXW89902502 BCX0" data-ccp-parastyle="Bibliography"> J, O’Meara E, McDonald M, Abrams H, Chan M, Ducharme A, et al. 2017 Comprehensive Update of the Canadian Cardiovascular Society Guidelines for the </span><span class="NormalTextRun SCXW89902502 BCX0" data-ccp-parastyle="Bibliography">Management of Heart Failure. Can J </span><span class="NormalTextRun SpellingErrorV2Themed SCXW89902502 BCX0" data-ccp-parastyle="Bibliography">Cardiol</span><span class="NormalTextRun SCXW89902502 BCX0" data-ccp-parastyle="Bibliography"> [Internet]. 2017 Nov [cited 2025 Jul 11];33(11). Available from: <a href="https://link.cep.health/sphtml45" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/29111106/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW118605463 BCX0" data-ccp-parastyle="Bibliography">British Heart Foundation. How </span><span class="NormalTextRun SCXW118605463 BCX0" data-ccp-parastyle="Bibliography">cold weather</span><span class="NormalTextRun SCXW118605463 BCX0" data-ccp-parastyle="Bibliography"> affects your heart [Internet]. 2024. Available from: <a href="https://link.cep.health/sphtml46" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.bhf.org.uk/informationsupport/support/practical-support/will-cold-weather-affect-my-heart-condition#h3</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [24]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW65460078 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SpellingErrorV2Themed SCXW65460078 BCX0" data-ccp-parastyle="Bibliography">Dedegikas</span><span class="NormalTextRun SCXW65460078 BCX0" data-ccp-parastyle="Bibliography"> C. Winter with heart failure: Things to be mindful of this season &#8211; </span><span class="NormalTextRun SpellingErrorV2Themed SCXW65460078 BCX0" data-ccp-parastyle="Bibliography">HeartLife</span><span class="NormalTextRun SCXW65460078 BCX0" data-ccp-parastyle="Bibliography"> Foundation [Internet]. 2018 [cited 2025 Jul 11]. Available from: <a href="https://link.cep.health/sphtml20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://heartlife.ca/patients/winter-with-heart-failure-things-to-be-mindful-of-this-season/</a></span></span></p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgement-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgement and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p><span data-contrast="none">The </span><span data-contrast="none">Seasonal Preparedness Guide</span> <span data-contrast="none">was developed using the Centre for Effective Practice’s (CEP’s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. </span><span data-contrast="none">End users and clinical experts were engaged to provide feedback.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span><span data-contrast="none">Funded by the Ministry of Health, the KTinPC Initiative supports primary care clinicians with a series of clinical tools and health information resources.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> Learn more about the <a title="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" href="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" target="_blank" rel="external noopener noreferrer" data-wpel-link="external">KTinPC Initiative</a>.</span></p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><i><span data-contrast="none">This Tool is a product of the CEP. Permission to use, copy, and distribute this material is for all </span></i><i><span data-contrast="none">noncommercial</span></i><i><span data-contrast="none"> and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of this Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">).</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><i><span data-contrast="none">For statistical and bibliographic purposes, please notify the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">) of any use or reprinting of the Tool. Please use the following citation when referencing the Tool: Reprinted with Permission from Centre for Effective Practice. (</span></i><i><span data-contrast="none">2025</span></i><i><span data-contrast="none">). </span></i><span data-contrast="none">Seasonal Preparedness Guide</span><i><span data-contrast="none">: Ontario. Toronto: Centre for Effective Practice.</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":69088,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

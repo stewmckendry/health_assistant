@@ -1,0 +1,83 @@
+{
+  "subsection_title": "Interviews",
+  "parent_section": "GP",
+  "page_ref": "GP61",
+  "pages_processed": "75-75",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [],
+  "referenced_codes": [
+    {
+      "code": "1 unit",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 20 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "2 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 46 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "3 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 76 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "4 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 106 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "5 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 136 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "6 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 166 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "7 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 196 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "8 units",
+      "context": "minimum time requirement",
+      "description": "Minimum time required in direct contact with the patient is 226 minutes.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    },
+    {
+      "code": "GP61",
+      "context": "page reference",
+      "description": "Reference to the GP Schedule subsection for interviews.",
+      "source_subsection": "Interviews",
+      "source_page": "GP61"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

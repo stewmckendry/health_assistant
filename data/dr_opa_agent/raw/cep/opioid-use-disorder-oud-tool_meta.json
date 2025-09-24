@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_opioid_use_disorder_oud_tool",
+  "slug": "opioid-use-disorder-oud-tool",
+  "name": "Opioid Use Disorder (OUD)",
+  "category": "substance_use",
+  "url": "https://tools.cep.health/tool/opioid-use-disorder-oud-tool/",
+  "content_hash": "e0df5105cd82138ac516ccc07b9a7ff8268c99e15e873e6250f84336917cc215",
+  "crawled_at": "2025-09-24T15:32:37.092267"
+}

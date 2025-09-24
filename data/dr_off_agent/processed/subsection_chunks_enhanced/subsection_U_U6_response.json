@@ -1,0 +1,76 @@
+{
+  "subsection_title": "Spermatic Cord and Seminal Vesicles",
+  "parent_section": "U",
+  "page_ref": "U6",
+  "pages_processed": "726-726",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "S630",
+      "description": "Hydrocele excision - single",
+      "fee": 205.35,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": 6,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "when done with hernia repair use E727",
+      "special_prefix": "#"
+    },
+    {
+      "code": "S631",
+      "description": "Varicocele excision - single",
+      "fee": 205.35,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": 7,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "Z711",
+      "description": "Incision of abscess",
+      "fee": 120.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": 6,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S636",
+      "description": "Vesiculectomy",
+      "fee": 552.3,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": 6,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

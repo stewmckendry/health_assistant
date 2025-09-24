@@ -1,0 +1,191 @@
+{
+  "document_id": "cep_dementia_diagnosis",
+  "source_url": "https://tools.cep.health/tool/dementia-diagnosis/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "mental_health",
+  "extracted_at": "2025-09-24T14:49:40.285915",
+  "content_hash": "3908c8b6e4370a5f924701d160dd42b78a0c9d3c0ba2beacb3fac04ca29dd996",
+  "title": "Dementia Diagnosis",
+  "tool_slug": "dementia-diagnosis",
+  "last_updated": "July 31, 2025",
+  "navigation": [
+    {
+      "title": "Assessment algorithm2,3,5-8",
+      "anchor": "#algorithm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Assessment approach",
+      "anchor": "#Assessment approach",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Validated assessment tools",
+      "anchor": "#assess-tools",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Diagnosis",
+      "anchor": "#diagnosis",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Subtype diagnostic criteria",
+      "anchor": "#criteria",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Environment and appointment structure1",
+      "anchor": "#structure",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Emotional supports1",
+      "anchor": "#supports",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Post-diagnostic supports4",
+      "anchor": "#post-diagnostic",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "assessment_tools": [
+      "MoCA",
+      "MMSE",
+      "PHQ-9",
+      "GAD-7",
+      "Mini-Cog"
+    ],
+    "red_flags": [
+      "Evaluate dementia-related risks:Neurodegenerative/cerebrovascular: Stroke, Parkinson\u2019s, hypertension, diabetes,head injury (TBI),myocardial infarctionPsychiatric: Depression, anxiety (especially late-"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": false,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "DementiaNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Assessment algorithm2,3,5-8",
+          "anchor": "#algorithm",
+          "level": 3
+        },
+        {
+          "heading": "Assessment approach",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Assessment approach",
+          "anchor": "#Assessment approach",
+          "level": 3
+        },
+        {
+          "heading": "Validated assessment tools",
+          "anchor": "#assess-tools",
+          "level": 3
+        },
+        {
+          "heading": "Diagnosis",
+          "anchor": "#diagnosis",
+          "level": 3
+        }
+      ],
+      "summary": "Assessment algorithmAssessment approachValidated assessment toolsDiagnosis Dementia (major neurocognitive disorder) is a clinical syndrome characterized by neurocognitive degeneration resulting in progressive decline in cognitive function (e.g., memory, executive functions, attention, language, social engagement, cognition and judgement, psychomotor speed, visuoperceptual or visuospatial abilities). Dementia is often accompanied by behavioural changes and impairments in functional abilities. ..."
+    },
+    {
+      "heading": "Common dementia subtypesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Subtype overview2-11",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Subtype diagnostic criteria",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Subtype diagnostic criteria",
+          "anchor": "#criteria",
+          "level": 3
+        }
+      ],
+      "summary": "Subtype diagnostic criteria Most common(60\u201380% of all dementia cases). Associated withamyloid-beta plaques,tau neurofibrillary tangles, andneurodegeneration."
+    },
+    {
+      "heading": "ReferralsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Consider specialist referral if2,5,9,11: Presentation is atypicalEarly-onset or rapid progressionMedication sensitivity concerns (e.g., neuroleptic reactions)Complex symptom management (e.g., Parkinsonism, hallucination, sleep disturbances)Need for advanced assessment (e.g., biomarker testing, neuropsychology, detailed neuroimaging interpretation, detailed behavioural assessment, genetic counselling) if uncertainty persists or there is suspicion of subtypes. When considering referrals, consid..."
+    },
+    {
+      "heading": "Disclosing a diagnosisNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Environment and appointment structure1",
+          "anchor": "#structure",
+          "level": 3
+        },
+        {
+          "heading": "Emotional supports1",
+          "anchor": "#supports",
+          "level": 3
+        },
+        {
+          "heading": "Post-diagnostic supports4",
+          "anchor": "#post-diagnostic",
+          "level": 3
+        }
+      ],
+      "summary": "Environment and appointment structureEmotional supportsPost-diagnostic supports Once a diagnosis of dementia is made, it is important that the diagnosis is communicated to the person living with dementia (PLWD) and care partner(s) by theassessing primary care clinicianor ahealthcare practitioner on the PLWD care team. Ask thePLWDif they would like a care partnerto be with them during the appointment.This may include a family member, spouse,friend, neighbour, community member, religious person..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Alzheimer Society of Canada. National guidelines fordisclosinga diagnosis of dementia: Enhancing disclosure through person-centred care. Toronto: ASC; 2024.[2]Atri A, Hendrix JA, Carrillo MC, Graff-Radford N, Jack CR Jr, Jicha GA, et al. Alzheimer\u2019s Association clinical practice guideline for Diagnostic Evaluation, Testing, Counseling, and Disclosure (DETeCD-ADRD).AlzheimersDement. 2024;1\u201332.[3]Expert Opinion.[4]Scottish Intercollegiate Guidelines Network (SIGN). Assessment, diagnosis,care..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "TheDementia Diagnosis toolwas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the tool was provided by Drs. Andrea Moser and Sid Feldman. End users and clinical experts were also engaged to provide ..."
+    }
+  ],
+  "references": [],
+  "summary": "Dementia Diagnosis. Category: Mental Health. Features: algorithm, checklist, forms. Tools: MoCA, MMSE, PHQ-9. 6 main sections"
+}

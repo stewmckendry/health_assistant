@@ -1,0 +1,2605 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Opioid Use Disorder (OUD) |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/opioid-use-disorder-oud-tool\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/40022" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fopioid-use-disorder-oud-tool%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fopioid-use-disorder-oud-tool%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-40022 wp-theme-cep-tools opioid-use-disorder-oud-tool">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Opioid Use Disorder (OUD)</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: November 1, 2022</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool is designed to support primary care providers in screening, diagnosing and implementing Opioid Agonist Therapy (OAT) for patients who have problems with opioid use. </p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/08/OUD-care-icon.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong data-rich-text-format-boundary="true">People living with OUD must be provided with nonjudgmental and supportive care</strong></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Important considerations for OUD</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>People with OUD must have integrated and concurrent management of their physical health and addiction treatment needs, as well as their mental health and social well-being<sup>1</sup></li>
+
+
+
+<li>OUD is a chronic, relapsing condition that requires long-term chronic disease management<sup>23</sup></li>
+
+
+
+<li>OAT is first-line treatment for OUDs and should be offered to all patients with OUD</li>
+
+
+
+<li>Providers can develop the skills in prescribing OAT through the support and assistance of the following resources:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>For providers who want more education on how to initiate OAT confidently, courses are available to help (See <a href="#courses">Courses for providers</a>)</li>
+
+
+
+<li>For providers who require assistance starting or maintaining OAT, there are <a href="https://link.cep.health/oudhtml2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Rapid Access Addiction Medicine (RAAM</a><a href="https://link.cep.health/oud2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">) Clinics</a> and the <a href="https://link.cep.health/oudhtml45" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">OCFP Peer Connect Mentorship</a> available to help</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Engage patients with non-stigmatizing language (See <a href="#resources">Resources to reduce stigma</a>) </li>
+
+
+
+<li>Ensure that when you prescribe opioids to patients to also provide them with naloxone kits</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="1Efgsl" class="button open-modal" href="#" data-id="1Efgsl">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="1Efgsl" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p>Motivational interviewing can help encourage patients to make personal changes that they already deem as important for reaching a particular goal. Principles of motivational interviewing are:</p>
+<ul>
+<li>Express empathy through reflective listening</li>
+<li>Explore the discrepancy between patient’s goals or values and their current behavior</li>
+<li>Avoid arguments and direct confrontation</li>
+<li>Adjust to patient resistance rather than opposing it directly</li>
+<li>Support self-efficacy and optimism<sup>8</sup></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-yellow-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Yellow-Notice.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Naloxone</h6>
+<p>Naloxone is a medication that is used to reverse effects of an opioid overdose. It is recommended to keep naloxone on hand in case of an accidental overdose. Naloxone should be recommended for all patients on opioids. This is particularly important for patients on doses of &gt;50 morphine equivalent dose (MED)/day, and those with a history of overdose or concurrent benzodiazepine use.</p>
+<p><strong>Providers are to advise patients that after using naloxone in the case of an overdose, they should immediately call 911 as the effects of the naloxone wears off after about 30 minutes.</strong></p>
+<p>Advise patients that Ontarians do not require a health card or a prescription to be eligible for a free take-home naloxone kit.</p>
+<p>Naloxone is available in nasal and injectable kits. Patients can receive these kits and training on their use from pharmacies.</p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="screening-for-and-diagnosing-oud" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Screening for and diagnosing OUD								
+    <span class="badge new" data-last-modified="Jun 21, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Screening for OUD</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>OUD is a complex issue that can occur at any time in one’s life and presents differently for everyone. If you suspect that your patient may be at risk of struggling with OUD, use the Prescription Opioid Misuse Index (POMI). The POMI is a 6-point questionnaire with strong predictive abilities for OUD.<sup>24</sup></p>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <h5>Questions</h5>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <ol>
+<li>Do you ever use more of your medication, that is, take a higher dose, than is prescribed for you?</li>
+<li>Do you ever use your medication more often, that is, shorten the time between doses, than is prescribed for you?</li>
+<li>Do you ever need early refills for your pain medication?</li>
+<li>Do you ever feel high or get a buzz after using your pain medication?</li>
+<li>Do you ever take your pain medication because you are upset, using the medication to relieve or cope with problems other than pain?</li>
+<li>Have you ever gone to multiple physicians, including emergency room doctors, seeking more of your pain medication?</li>
+</ol>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6 id="block-79bc3ccd-c52f-49d1-ae77-5c2a388334f7" class="block-editor-rich-text__editable block-editor-block-list__block wp-block is-selected wp-block-heading rich-text" tabindex="0" role="document" contenteditable="true" aria-multiline="true" aria-label="Block: Heading" data-block="79bc3ccd-c52f-49d1-ae77-5c2a388334f7" data-type="core/heading" data-title="Heading"><strong data-rich-text-format-boundary="true">Two ‘yes’ answers indicate a positive screen and a possible diagnosis of OUD.</strong></h6>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Diagnosing OUD</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Once you have identified that your patient might have OUD through using the POMI, the DSM-5 criteria is then used to diagnose your patient. The DSM-5 OUD criteria defines opioid use disorder as a problematic pattern of opioid use leading to clinically significant impairment or distress, as manifested by at least two out of the eleven criteria within a twelve month period.<sup>6, 14</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>All patients who meet the DSM-5 criteria for OUD should be offered first-line treatment: buprenorphine-naloxone.</strong></p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="F0sZYE" class="button open-modal" href="#" data-id="F0sZYE">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="F0sZYE" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <ul>
+<li>“Opioids change the brain and the body in ways that can make it hard to stop using.” <sup>5</sup></li>
+<li>“OUD has nothing to do with character, willpower, or morals. Many good and strong people have an alcohol or drug problem. People with OUD find that once they start using opioids, it is no longer about choice.”<sup>7</sup></li>
+<li>“You have been diagnosed with this disorder because you have repeatedly tried but have been unable to cut down or stop your opioid use. People with OUD have lost control over their use and regularly consume more than they intend to, despite knowing that it’s harmful to them.”<sup> 7</sup><br />
+<strong>Note:</strong> If patients are unable or uninterested in starting treatment at this time, keep the door open for future treatment and begin building a rapport. Identify and address patient-centred goals. Follow up on patient goals regularly and consider motivational interviewing and harm reduction counseling. <sup>9</sup></li>
+<li>“I know that you are not interested in starting treatment at this time, but how about we create some goals to work towards?”</li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">DSM-5 OUD Criteria</h5>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <p>To confirm a diagnosis of OUD, <strong>at least two of the following criteria</strong> should be observed within a 12-month period:<sup>15</sup></p>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><!-- wp:list --></p>
+<ul><!-- wp:list-item --></p>
+<li>Opioids are often taken in larger amounts or over a longer period than was intended</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>There is a persistent desire or unsuccessful efforts to cut down or control opioid use</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>A great deal of time is spent on activities necessary to obtain the opioid, use the opioid, or recover from its effects</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Craving, or a strong desire or urge to use opioids</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Recurrent opioid use resulting in a failure to fulfill major role obligations at work, school, or home</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Continued opioid use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of opioids</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Important social, occupational, or recreational activities are given up or reduced because of opioid use</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Recurrent opioid use in situations in which use is physically hazardous</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Continued opioid use despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by the substance</li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Exhibits tolerance: *<!-- wp:list -->
+<ul><!-- wp:list-item --></p>
+<li>Need for markedly increased amounts to achieve intoxication or desired effect<sup>19</sup></li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Markedly diminished effect with continued use of the same amount<sup>19</sup></li>
+<p><!-- /wp:list-item --></ul>
+<p><!-- /wp:list --></li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Exhibits withdrawal: *<!-- wp:list -->
+<ul><!-- wp:list-item --></p>
+<li>Characteristic opioid withdrawal syndrome<sup>19</sup></li>
+<p><!-- /wp:list-item --> <!-- wp:list-item --></p>
+<li>Same (or a closely related) substance is taken to relieve or avoid withdrawal symptoms<sup>19</sup><!-- /wp:list --></li>
+<p><!-- /wp:list-item --></ul>
+<p><!-- /wp:list --></li>
+<p><!-- /wp:list-item --></ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p style="font-size:12px"><strong>NOTE:<br>• </strong>DSM-5 OUD criteria is not validated in youth ≤ 12 <sup>9</sup><br>• Youth ≤ 12 have special needs and clinicians should consult experts<br><em>*With the exception of patients who are taking opioids for chronic pain (For more information see <a href="#prescribing-considerations-for-buprenorphine-naloxone" data-type="internal" data-id="#prescribing-considerations-for-buprenorphine-naloxone">Prescribing considerations for buprenorphine-naloxone</a>)</em></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading"><strong>Severity of OUD</strong></h5>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:10%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="95" src="https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-1024x95.png" alt="" class="wp-image-54754" srcset="https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-1024x95.png 1024w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-300x28.png 300w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-768x71.png 768w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-1536x142.png 1536w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-1920x178.png 1920w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-1280x118.png 1280w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1-640x59.png 640w, https://tools.cep.health/wp-content/uploads/2021/08/OUD-Severity-1.png 1924w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:10%"></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>After confirming that your patient meets the DSM-5 criteria for OUD, consider conducting the following assessment to ensure that your patient will be an appropriate candidate for opioid agonist therapy (OAT). OAT involves treatment with opioid agonists and providers must have a clear understanding of their patient’s current substance use, physical health, and contraindications before initiating treatment:</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Obtain substance use history</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>All illicit drugs used, including alcohol, nicotine, benzodiazepines (prescribed or nonprescribed), cannabis</li>
+
+
+
+<li>Age and amount of first use and current use</li>
+
+
+
+<li>All periods of abstinence</li>
+
+
+
+<li>Treatment history</li>
+
+
+
+<li>Goals</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Order/review lab test results</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>CBC</li>
+
+
+
+<li>Electrolytes</li>
+
+
+
+<li>Renal panel</li>
+
+
+
+<li>Liver panel</li>
+
+
+
+<li>Hep A/B/C serologies</li>
+
+
+
+<li>STI panel (including HIV)</li>
+
+
+
+<li>Urine drug screen (UDS)</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Rule out contraindications</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Allergy to buprenorphine or naloxone</li>
+
+
+
+<li>Severe respiratory insufficiency</li>
+
+
+
+<li>Acute intoxication</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p class="is-style-blue-background"><strong>Check with your pharmacist or RxTx to identify contraindications</strong></p>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="opioid-agonist-therapy-oat" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Opioid agonist therapy (OAT)								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>OAT involves taking the opioid agonists buprenorphine-naloxone or methadone in order to prevent withdrawal and reduce cravings for opioids.<sup>25</sup> </p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Buprenorphine-naloxone is considered first-line treatment for OUD. Buprenorphine-naloxone is a 4:1 mixture of buprenorphine to naloxone that is administered sublingually. Buprenorphine is a long-acting semi-synthetic partial opioid agonist that relieves opioid withdrawal symptoms and cravings. The inclusion of naloxone is intended to prevent diversion through injection.<sup>10</sup> Naloxone is not absorbed orally. It does not contribute to the efficacy of buprenorphine-naloxone and does not cause withdrawal in people who take opioids while on buprenorphine-naloxone. </p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>In conjunction to prescribing buprenorphine-naloxone, the risks and benefits of all of the treatment options are to be provided to patients.<sup>20</sup> </p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Buprenorphine-naloxone is generally preferable to methadone because of its improved safety profile.<sup>20</sup> (see <a href="#BNM">below</a>)</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Initiating and maintaining OAT with buprenorphine-naloxone or methadone can be done in primary care, integrated care (primary care and addiction care), or specialized clinic settings.<sup>1</sup></p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Provider Resources fo OAT</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/oud1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">META:PHI</a> has a list of RAAM clinics that are available to help<sup>13</sup></li>
+<li>Consult specialists across the province to provide the best care possible for your patients at <a href="https://link.cep.health/oud3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">OTN eConsult</a></li>
+<li><a href="https://link.cep.health/oud4" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Project ECHO for Chronic Pain/Opioid Stewardship</a></li>
+<li><a href="https://link.cep.health/oudhtml45" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario College of Family Physicians (OCFP) Peer Connect Mentorship</a></li>
+<li><a href="https://link.cep.health/oudhtml9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">The Ontario Pharmacists Association (OPA)</a> has an information line for professionals prescribing OAT 1-888-519-6069</li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="BstsZD" class="button open-modal" href="#" data-id="BstsZD">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="BstsZD" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p>“At the right dose, buprenorphine-naloxone controls withdrawal symptoms for 24 hours so that you feel “normal” and not sick or high. Although some people think that this is just replacing one opioid with another, the idea is that by taking a medication as prescribed and getting rid of cravings, you will be able to break the patterns associated with misusing drugs and focus on getting healthy.”<sup>20</sup></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="BNM">Buprenorphine–naloxone vs. methadone<sup>21</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Methadone and generic buprenorphine-naloxone are both covered under Ontario Drug Benefits and most private plans.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-green-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Buprenorphine–naloxone</h6>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <ul id="block-6fa9a869-22be-4a99-92ea-1b7180298dd9" class="block-editor-rich-text__editable block-editor-block-list__block wp-block is-selected wp-block-list rich-text" tabindex="0" role="group" aria-multiline="true" aria-label="Block: List" data-block="6fa9a869-22be-4a99-92ea-1b7180298dd9" data-type="core/list" data-title="List">
+<li>Lower risk of overdose</li>
+<li>Shorter time to achieve an effective dose</li>
+<li>Milder side effect profile</li>
+<li>More flexible dosing schedules and take-home doses</li>
+<li>Feasible for rural and remote locations</li>
+<li>Easier to transition from buprenorphine-naloxone to methadone</li>
+<li>Lower risk of harms (e.g. respiratory depression)</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-yellow-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Methadone</h6>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Yellow-Notice.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <ul>
+<li>May have higher treatment retention rates for those with higher intensity opioid use (e.g. heroin, those who inject opioids)</li>
+<li>No withdrawal necessary to start treatment</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article></div>
+</div>
+
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Information for methadone prescribing</h6>
+<p><strong>Methadone is to be used only if providers have the appropriate skills and training to do so, due to the risks and restrictions affiliated with prescribing methadone.*</strong></p>
+<ul>
+<li>Consider methadone for OAT if treatment with buprenorphine-naloxone is contraindicated or not preferred<sup>9</sup></li>
+<li>Discuss switching to methadone if buprenorphine-naloxone is not relieving the patient’s cravings<sup>7</sup></li>
+<li>May be preferred treatment for individuals who cannot be stabilized on buprenorphine-naloxone<sup>9</sup></li>
+</ul>
+<p><strong>Prescribing considerations for methadone</strong></p>
+<ul>
+<li>Before prescribing methadone providers must discuss the risks and side effects of methadone, duration of treatment, and issues of accessibility and logistics (i.e. daily pharmacy visits for two months, potential impact on lifestyle and employment, and special considerations for traveling)</li>
+<li>Keep patient on methadone if they are already stable on the medication</li>
+</ul>
+<p>&nbsp;</p>
+<p><em>*See<a href="https://link.cep.health/oudhtml44" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"> Machealth Managing Opioid Use Disorder</a> for more instructions and support for methadone prescribing<sup>12</sup></em></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background"></div>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="prescribing-considerations-for-buprenorphine-naloxone" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Prescribing considerations for buprenorphine-naloxone								
+    <span class="badge new" data-last-modified="Jun 21, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">General approach</h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Any patient that is considering OAT with buprenorphine-naloxone should sign a patient agreement form with their provider to ensure that the patient is aware of all of their roles and responsibilities during treatment: <a href="https://link.cep.health/oud8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Refer to the Machealth resource Buprenorphine Reference Guide</a></li>
+
+
+
+<li>Patients should be offered concurrent psychosocial treatment, support, and monitoring for at least six months while on treatment<sup>1</sup></li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="jPvZRk" class="button open-modal" href="#" data-id="jPvZRk">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="jPvZRk" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p><strong>Patients living with chronic pain</strong></p>
+<ul>
+<li>“I know that you have pain and no one is questioning that. But I am worried that the risks of opioids are now outweighing the benefits for you.”</li>
+<li>“Your OUD is probably making your pain worse. This is because you go through withdrawal every day as the opioid wears off, and withdrawal greatly increases your perception of pain. If you treat your OUD with buprenorphine-naloxone, you will likely experience a decrease in your chronic pain as well as an improvement in your daily life.” <sup>7</sup></li>
+<li>“If you are on opioids and are worried about switching to another treatment because of your pain, you should know that other options such as buprenorphine-naloxone will effectively relieve your pain.”</li>
+</ul>
+<p><strong>Preparing the patient to start treatment on buprenorphinenaloxone</strong></p>
+<ul>
+<li>“You will need to stop all opioids at least 12-24 hours before starting buprenorphine-naloxone.”</li>
+<li>“When your opioids begin to wear off, you will experience withdrawal. Symptoms of withdrawal include muscle aches, nausea and vomiting, cramps, chills, sweating, yawning, and goosebumps. People also experience insomnia, anxiety, fatigue, and powerful cravings.”</li>
+<li>“To help with withdrawal symptoms, you may take:
+<ul>
+<li>Clonidine 0.1 mg every 8 hours (by prescription)—many people do not need this</li>
+<li>Ibuprofen up to 600 mg every 8 hours</li>
+<li>Acetaminophen up to 1000 mg (2 Extra Strength) every 6 hours</li>
+<li>Dimenhydrinate 50 mg every 6 hours</li>
+<li>Walking, resting, hot baths or showers can help (but not right after taking clonidine)”</li>
+</ul>
+</li>
+<li>“It is important to be in withdrawal before you start buprenorphinenaloxone in order to avoid precipitated withdrawal, which is like the worst flu of your life.”<sup>18</sup></li>
+</ul>
+<p><strong>Handling patient concerns</strong></p>
+<ul>
+<li>“Let’s talk about your questions and concerns so that you will understand the benefits and drawbacks to this treatment. I understand that you are worried about starting buprenorphinenaloxone but know that most people feel significantly better.”</li>
+</ul>
+<p><strong>Stopping treatment suddenly</strong></p>
+<ul>
+<li>“It is important not to stop taking buprenorphine-naloxone suddenly or you will experience withdrawal.”<sup>20</sup></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">For patients who refuse OAT</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>People with opioid use disorder who decline opioid agonist therapy should be offered an opioid taper, preferably using buprenorphine-naloxone, lasting longer than one month.<sup>1</sup></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Prescribing considerations for OUD and patients living with chronic pain</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Tell patients who are on morphine and have chronic pain, but are hesitant to switch to buprenorphine-naloxone, that buprenorphine-naloxone is an effective pain reliever with lower risks and fewer side effects.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Precipitated withdrawal</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Precipitated withdrawal is a sudden onset of severe withdrawal symptoms that occurs when the first dose of buprenorphine-naloxone is taken while other opioids are still present in the body.<sup>10</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Precipitated withdrawal can be avoided by allowing sufficient time to pass between the last use of opioids and starting buprenorphine-naloxone treatment.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Determining withdrawal for treatment</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>In order to avoid precipitated withdrawal, the following scales can help determine opioid withdrawal symptoms:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a href="https://link.cep.health/oud9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">The Clinical Opiate Withdrawal Scale (COWS)</a> is an 11-item scale designed to be administered by a provider. This tool can be used in both inpatient and outpatient settings to rate common signs and symptoms of opiate withdrawal and monitor these symptoms over time.<sup>26</sup> </li>
+
+
+
+<li><a href="https://link.cep.health/oud10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">The Subjective Opiate Withdrawal Scale (SOWS)</a> is self-administered by a patient for grading opioid withdrawal symptoms. It contains 16 symptoms whose intensity the patient rates on a scale of 0 (not at all) to 4 (extremely), and takes less than 10 minutes to complete.<sup>27</sup></li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Buprenorphine-naloxone prescription</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>If you have never written a prescription for buprenorphine-naloxone before, refer to the <a href="https://link.cep.health/oud8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Machealth resource Buprenorphine Reference Guide</a>, which provides guidance on how to prescribe buprenorphine-naloxone.</p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="treatment-protocols" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Treatment protocols								
+    <span class="badge new" data-last-modified="Jun 21, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Office treatment</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Office treatment is the preferred method of treatment to ensure that patients do not go into precipitated withdrawal.<sup>7</sup></strong></p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Protocol</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Planning for treatment</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Plan treatment for a weekday morning, allowing for reassessment later the same day<sup>18</sup>
+<ul>
+<li>Monday mornings are the most optimal<sup>18</sup></li>
+</ul>
+</li>
+<li>Refer to the <a href="https://link.cep.health/oudhtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Machealth resource Buprenorphine Reference Guide</a> on how to prescribe buprenorphine-naloxone</li>
+<li>Identify the pharmacy to be used:
+<ul>
+<li>Confirm that they stock buprenorphine-naloxone Rx for 6&#215;2 mg buprenorphine-naloxone tablets<sup>20</sup> and that doses will be dispensed daily at the pharmacy</li>
+</ul>
+</li>
+<li>Determine whether the patient will take their first dose at the pharmacy or bring their medication to the office for witnessed dosing</li>
+<li>Advise your patient that the first dose of buprenorphine-naloxone is to be taken at least 12 hours since the last oral immediate release (IR) dose, and 24 hours since the last oral controlled release (CR) dose<sup>29</sup>
+<ul>
+<li>Ensure patient is aware that treatment cannot take place if they are intoxicated OR if they are not in withdrawal<sup>20</sup></li>
+</ul>
+</li>
+<li>Remind the patient not to drive or operate heavy machinery during the first day of treatment<sup>20</sup>
+<ul>
+<li>Watch for signs of sedation whenever the dose of buprenorphinenaloxone is increased and gage whether to tell patient to refrain from driving or operating heavy machinery accordingly</li>
+</ul>
+</li>
+<li>Inform the patient that they will be taking their medication at the pharmacy daily for the first 1-2 weeks</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Day of treatment</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><!-- wp:cep/background {"className":"is-style-red-background"} --></p>
+<div class="wp-block-cep-background is-style-red-background"><!-- wp:paragraph --><strong>CAUTION: If the patient is not in withdrawal then treatment must be postponed to avoid precipitated withdrawal.</strong></p>
+</div>
+<p>&nbsp;</p>
+<ul>
+<li>Confirm the patient’s intention to start buprenorphine-naloxone and review questions and risks/benefits</li>
+<li>Ask when the patient last used opioids, including which, how much and how</li>
+<li>Assess withdrawal using the <a href="https://link.cep.health/oudhtml13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">COWS</a>. Treatment may be started if the score is 12+<sup>9,23</sup></li>
+<li>Patients may pick up their Day 1 prescription and bring it to the office for witnessed ingestion by a primary care team member after assessment of withdrawal <sup>9</sup></li>
+<li><strong>The first dose of buprenorphine-naloxone will be 4 mg SL (2mg if elderly or on high dose of benzodiazepines)</strong></li>
+<li>Ensure that the patient allows the buprenorphine-naloxone tablet to dissolve under their tongue completely; this should take about 5-10 minutes<sup>21</sup></li>
+<li>Ask the patient to lift their tongue after 3-5 minutes to show the tablet dissolving<sup>21</sup></li>
+<li>Reassess in 2 hours. If the patient has improved but is still in withdrawal, give another 4 mg to take in the office or at home. <strong>Maximum dose for the first day is 12 mg</strong><sup>29</sup></li>
+<li>Patients are not required to wait in the office between doses</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Follow-up assessments</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Patients should be reassessed within the week of treatment (ideally Day 2-5), and then weekly after that</li>
+<li>Day 2 maximum dose 16 mg</li>
+<li>Days 3-4 maximum dose 24 mg</li>
+<li>Ask specific questions at each visit:<sup>18</sup>
+<ul>
+<li>How long did the dose last?</li>
+<li>What time did the dose wear off?</li>
+<li>What were the specific withdrawal symptoms?</li>
+<li>Did they use additional opioids?</li>
+<li>Was there sedation? Side effects?</li>
+</ul>
+</li>
+<li>If withdrawal symptoms are present, give previous dose + additional 2-4 mg.</li>
+<li>If no withdrawal symptoms, continue previous day’s dose.<sup>18</sup></li>
+</ul>
+<p><b>Ongoing follow-up assessment</b></p>
+<ul>
+<li>Review the same questions in “Follow-up assessments” in the following weeks</li>
+<li>At each assessment, write prescription for the appropriate quantity of tablets until the next visit</li>
+<li>After two to four weeks, if you deem that the patient is stable on buprenorphine-naloxone, the patient can take their medication at home. Patients typically start with one dose per week and increase by one dose every one to two weeks</li>
+<li>One urine sample per month or at every visit. See <a href="#follow-up-visits-and-maintenance">Follow-up and maintenance</a> for more information</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Home treatment</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Home treatment is not the preferred method but may be necessary for certain situations. <sup>29</sup></strong></p>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong>CAUTION: Home treatment is not appropriate for patients with complicated histories of comorbid substance use (i.e. alcohol use disorder or other substance use disorders).</strong></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Protocol</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Planning for treatment</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>It is required that the provider has experience and comfort with buprenorphine-naloxone treatment before recommending a home treatment<sup>9</sup></li>
+<li>Refer to the <a href="https://link.cep.health/oudhtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Machealth resource Buprenorphine Reference Guide</a> on how to prescribe buprenorphine-naloxone</li>
+<li>Write a prescription for Day 1 2 mg x 6 tablets SL and have the patient pick up the medication</li>
+</ul>
+<p><strong>Primary care providers should provide the following information to their patients if considering home treatment:</strong></p>
+<ul>
+<li>Access to nurses, physicians, or support 
+<ul>
+<li>Practitioner contact information including after-hours advice if needed and the contact information of closest pharmacies</li>
+<li>Instruct patients to call 911 in case of emergencies and to obtain naloxone kits</li>
+</ul>
+</li>
+<li>Written instructions for home treatment dosing and timing that has been carefully reviewed with the patient and their caregiver (if applicable) in advance</li>
+<li>Provide your patient with the form, <a href="https://link.cep.health/oudhtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">BC OUD subjective opiate withdrawal scale (SOWS)</a> patient handout, to ensure that they know what withdrawal looks and feels like<sup>28</sup>
+<ul>
+<li>Ask your patient to repeat instructions back to you in their own words to see if they understand what the process is going to look like</li>
+</ul>
+</li>
+<li>Advise your patient that the first dose of buprenorphine-naloxone is to be taken at least 12 hours since the last oral immediate release (IR) dose, and before 24 hours since last oral controlled release (CR) dose<sup>29</sup>
+<ul>
+<li>Ensure your patient is aware that treatment cannot take place if they are intoxicated OR if they are not in withdrawal <sup>20</sup></li>
+<li>Remind the patient not to drive or operate heavy machinery during the first day of treatment<sup>20</sup></li>
+<li>Watch for signs of sedation whenever the dose of buprenorphinenaloxone is increased and gage whether to tell patient to refrain from driving or operating heavy machinery accordingly</li>
+</ul>
+</li>
+<li>Ensure that your patient knows to allow the buprenorphine-naloxone tablet to dissolve under their tongue completely; this should take about 10 minutes<sup>21</sup></li>
+<li>Schedule follow-ups by phone or in office<sup>9</sup>
+<ul>
+<li>Set up specific times that the patient can call you</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Day of treatment</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><!-- wp:cep/background {"className":"is-style-red-background"} --></p>
+<div class="wp-block-cep-background is-style-red-background"><!-- wp:paragraph --><strong>CAUTION: If the patient is not in withdrawal then the treatment must be postponed to avoid precipitated withdrawal.</strong></p>
+</div>
+<p>&nbsp;</p>
+<ul>
+<li>Advise the patient to use <a href="https://link.cep.health/oudpss15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">SOWS</a>. If withdrawal score is 17+ then they may take their first dose of buprenorphine-naloxone<sup>9</sup></li>
+<li>Patient is to take 2 mg x 2 tabs SL <sup>29</sup>
+<ul>
+<li>If the patient is still in withdrawal after 2 hours, they may take another 2 mg x 2 tabs SL. Maximum total dose is 12 mg (6 tablets) in 24 hours</li>
+<li>If the patient is still in withdrawal after another 4 hours, they may take 1-2 tabs</li>
+</ul>
+</li>
+<li>Patients following home treatment instructions should be logging the total dose taken (number of tablets). <strong>The total dose taken on Day 1 is the Day 2 starting dose<sup>9</sup></strong></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Day two of treatment</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><strong>Day 2</strong> maximum dose 16 mg</li>
+<li>Plan to check-in by phone in the morning so that the prescription can be sent to the pharmacy<sup>9</sup></li>
+<li>Ask specific questions:<sup>18</sup>
+<ul>
+<li>How long did the dose last?</li>
+<li>What time did the dose wear off?</li>
+<li>What were the specific withdrawal symptoms?</li>
+<li>Did the patient use additional opioids?</li>
+<li>Was there sedation? Side effects?</li>
+</ul>
+</li>
+<li>It is recommended that the patient come in for an office visit on Day Three <sup>9</sup></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Follow-up assessments</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><strong>Days 3-4</strong> maximum dose 24 mg</li>
+<li>Review the same questions in “Day Two of Treatment” in the following weeks. Reassess the patient on days two to four. Increase dose by 2-4 mg at each visit if the patient reports withdrawal symptoms or cravings towards the end of a dosing interval. Each dose increase should increase the duration of the patient’s relief from withdrawal and cravings<sup>29</sup></li>
+<li>One urine sample per month or at every visit. See <a href="https://tools.cep.health/tool/opioid-use-disorder-oud-tool/#follow-up-visits-and-maintenance" data-wpel-link="internal">Follow-up and maintenance</a> for more information</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="follow-up-visits-and-maintenance" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Follow-up visits and maintenance								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:70%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>After two to four weeks, stable patients can take their medication at home. Consider if your patient is stable on buprenorphine-naloxone:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Patients are considered stable if they are attending appointments, getting their dose regularly, and there is no ongoing opioid use, verified by UDS</li>
+
+
+
+<li>Take home doses are typically increased every one to two weeks to a maximum of six for three to six months, and can then be increased to two to four weeks of take home doses at a time</li>
+
+
+
+<li>Take home doses are usually reduced if there is a recurrence of problematic substance use</li>
+
+
+
+<li>Arrange frequent office visits for counseling.<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Frequency of office visits should be proportionate to the patient’s level of stability</li>
+
+
+
+<li>In the early stabilization stage, visits are typically weekly</li>
+
+
+
+<li>Later stabilization every two weeks</li>
+
+
+
+<li>Maintenance stage typically every four weeks</li>
+</ul>
+</div></article></li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="hN5k00" class="button open-modal" href="#" data-id="hN5k00">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="hN5k00" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p><strong>Ask about withdrawal symptoms or cravings; </strong><strong>sometimes patients require minor dose adjustments of </strong><strong>2–4 mg/day</strong></p>
+<ul>
+<li>“Have you had any withdrawal symptoms?”</li>
+<li>“Have you had any cravings lately?”</li>
+</ul>
+<p><strong>Ask about any substance use</strong></p>
+<ul>
+<li>“Have you been using any substances to cope with withdrawal?”</li>
+</ul>
+<p><strong>Ask about overall mood and functioning</strong></p>
+<ul>
+<li>“How have you been feeling?”</li>
+<li>“Are you able to complete chores and tasks during the day?”</li>
+<li>“Are you attending work?”</li>
+</ul>
+<p><strong>UDS that show signs of opioids and/or other drug use</strong></p>
+<ul>
+<li>“Your UDS results show that you have been using opioids. Why is that? Are you using opioids to cope with withdrawal symptoms? Are you feeling pain? It is normal to feel pain, and we want to understand why you are experiencing this discomfort. As your provider, I am here for you.”</li>
+<li>“Your UDS results show continuous substance use, and I think we should talk to a specialist to discuss adjusting your OAT to address the issues that you are facing. I will help you every step of the way.”</li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Urine Drug Screening (UDS)</h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Stable patients should provide at least one urine sample per month or at every visit (typically monthly for patients who are stabilizing or in the earlier phase of maintenance)<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>A minimum of four urine drug screens (24 hour notice) is recommended in the first year for patients who are very stable and are seen less frequently<sup>9</sup></li>
+</ul>
+</div></article></li>
+
+
+
+<li>Review unexpected results with the patient and, if necessary, with an addiction physician<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>If your patient’s UDS results are positive with signs of opioids and/or other drug use, it is essential to understand why the test results are positive. Identify if the patient is experiencing withdrawal symptoms or cravings, if they are in need of strategies for dealing with cravings and triggers, and if there is another substance use issue. Use non-stigmatizing language, and discuss the primary cause before taking action</li>
+
+
+
+<li>Create a plan with your patient if they come back with multiple positive UDS results. If it is a continuous issue, refer to a specialist to get a second opinion</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Consider lab testing UDS over point-of-care test<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Point-of-care tests are more costly, and must be interpreted with caution because of false positives and false negatives<sup>11</sup></li>
+
+
+
+<li>Lab test results are more accurate and can indicate additional substances and metabolites<sup>11</sup></li>
+</ul>
+</div></article></li>
+
+
+
+<li>Practitioners may request random urine drug screens UDS and random pill counts to reduce the risk of diversion</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"></h6>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:70%"><article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <h6 id="block-021f0b4e-18cb-47c0-908d-54b56fe461df" class="block-editor-rich-text__editable block-editor-block-list__block wp-block is-selected wp-block-heading rich-text" tabindex="0" role="document" contenteditable="true" aria-multiline="true" aria-label="Block: Heading" data-block="021f0b4e-18cb-47c0-908d-54b56fe461df" data-type="core/heading" data-title="Heading"><strong data-rich-text-format-boundary="true">Consider the following screening questions to identify the cause of the patient not stabilizing<sup>20</sup></strong></h6>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><strong>Is the dose adequate?</strong></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <p>Ask, “Are you experiencing withdrawal symptoms?”</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><strong>Is the patient using other illicit substances?</strong></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <p>Ask, “Are you taking any substances to cope with your withdrawal?”</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><strong>Is the patient experiencing perceived withdrawal symptoms?</strong></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <p>Ask, “Are you experiencing pain? shakiness? sweats?”</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><strong>Are there other active health issues present in the patient?</strong></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <p>Ask, “Do you have any chronic conditions?”</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><strong>Are there factors present in the patients life that is putting them at risk?</strong></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <p>Ask, “Are you able to access your pharmacy easily?”<br />
+Ask, “How are things at home?”</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%"></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">For patients who do not stabilize on buprenorphine-naloxone</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>If a patient fails to stabilize on buprenorphine-naloxone, try to identify if there are other mental health issues going on</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Ask: “How is your mood?” “Are you experiencing a lot of anxiety?”</li>
+
+
+
+<li>Consider the <a href="https://link.cep.health/oudhtml38" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Patient Health Questionnaire (PHQ-9)</a> and the <a href="https://link.cep.health/oudhtml39" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Generalized Anxiety Disorder 7-item (GAD-7) scale</a> for further screening</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Also consider having a discussion with the patient about an alternative in treatment modalities:<sup>11</sup></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>This could include remaining on buprenorphine-naloxone and referring the patient for more intensive counseling or to a residential treatment program.<sup>11</sup></li>
+
+
+
+<li>It could involve referring the patient to a physician experienced in addiction medicine for consideration of a switch from buprenorphine-naloxone to methadone maintenance treatment.<sup>11</sup></li>
+</ul>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-yellow-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Yellow-Notice.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong>Missed doses:</strong> If six or more daily consecutive doses are missed, a loss of tolerance to buprenorphine-naloxone may have occurred and patients may require re-stabilization.<sup>9</sup></p>
+<p>Refer below if six or more daily consecutive doses are missed:</p>
+<div style="width: 40%; padding: 0 10px 0 0; float: left;">
+<p><strong>Dose</strong></p>
+<ul>
+<li>2 mg/0.5 mg &#8211; 4 mg/1 mg</li>
+<li>6 mg/1.5 mg &#8211; 8 mg/2 mg</li>
+<li>&gt; 8 mg/2mg</li>
+</ul>
+</div>
+<div style="width: 40%; padding: 0 10px 0 0; float: right;">
+<p><strong>Suggested Dose Adjustment</strong></p>
+<ul>
+<li>No change</li>
+<li>Restart at 4 mg/1mg</li>
+<li>Restart at 8 mg/2 mg</li>
+</ul>
+</div>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Yellow-Notice.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>If the patient displays persistent, problematic use of non-opioid substances, consideration should be given to refer the patient for intensive psychosocial treatment or consulting with a physician experienced in addiction medicine for the management of these disorders.<sup>11</sup></p>
+<p>If treatment is not effective or patient is not able to tolerate buprenorphine-naloxone, try consulting experts and specialists through <a href="https://www-origin.otn.ca/patients/econsult/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">OTN eConsult</a>, <a href="https://link.cep.health/oudhtml45" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Peer Connect Mentorship</a>, and <a href="https://uhn.echoontario.ca/Our-Programs/Chronic-Pain" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Project ECHO for Chronic Pain/Opioid Stewardship</a> to pinpoint the cause, before putting your patient on second-line therapy of methadone.<sup>20</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="tapering-off-buprenorphine-naloxone" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Tapering off buprenorphine-naloxone								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>It is important to acknowledge that treatment failure and success does not rely on the duration of a patient being on OAT. OUD is a chronic, relapsing condition that requires a life-long dedication to its management. The end goal of every OAT is to not necessarily taper off of the medication, as every patient’s journey is unique and individual to their own needs. Providers must discuss at length how long their patients should remain on treatment and how treatment should be managed.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This section is relevant for patients who have been identified as appropriate candidates for tapering off of buprenorphine-naloxone.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>When to taper buprenorphine-naloxone</h6>
+<p>Ultimately, it is the patient’s choice if and when they want to taper off buprenorphine-naloxone. However, it is important to inform all patients inquiring about tapering that longer term (&gt;6-12 months) treatment generally is associated with better outcomes.<sup>9</sup></p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Indications for buprenorphine-naloxone tapering<sup>1</sup></h6>
+<p>The decision to taper should be individualized and patient-centred, based on factors such as:</p>
+<ul>
+<li>Prescriber evaluation of patient’s clinical and social stability;</li>
+<li>High visit attendance/adherence;</li>
+<li>Continued abstinence from non-medical opioid use;</li>
+<li>Re-entry into school, work, and volunteering;</li>
+<li>Housing stability;</li>
+<li>Family stability and the presence of a support system;</li>
+<li>Patient insight into triggers and well-developed relapse prevention plan;</li>
+<li>Existing physical and mental health issues are addressed and well-controlled; and</li>
+<li>Patient’s desire to taper treatment is not due to outside pressures or circumstances.<sup>9</sup></li>
+</ul>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Example of buprenorphine-naloxone tapering protocol</h6>
+<ul>
+<li>Decrease dose by small amounts, e.g. 2 mg or even 1 mg at doses less than 6 mg at a time.</li>
+<li>Leave at least two weeks, preferably longer, between dose decreases.</li>
+<li>Put the taper on hold at the patient’s request, or if the patient experiences withdrawal symptoms or cravings.</li>
+<li>Return to the original dose if the patient begins using opioids again, even in small amounts or intermittently.</li>
+<li>Provide regular support and encouragement.</li>
+<li>Emphasize that it is not a “failure” if the taper has to be held or reversed, and it is safe and acceptable to remain on buprenorphinenaloxone for long periods when necessary.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="Vpwt87" class="button open-modal" href="#" data-id="Vpwt87">Click to View</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="Vpwt87" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <ul>
+<li>“How long you stay on these medications is up to you. However, you are much less likely to relapse if you taper off of these medications gradually once your life becomes more stable, and you have not used nonprescribed opioids for at least six months. In general, the longer you have been addicted to opioids, the longer you should stay on buprenorphine-naloxone.” <sup>7</sup></li>
+<li>“You will be told how to taper the medication slowly and safely. This decreases the risk of going through withdrawal symptoms. If you<br />
+have very strong urges, or if you relapse, you should go back on the medication.” <sup>7</sup></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="resources" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Resources								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Provider Resources</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li><a href="https://link.cep.health/oudhtml17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Canadian Medical Association Journal (CMAJ) Management of opioid use disorders: a national clinical practice guideline</a></li>
+<li><a href="https://link.cep.health/oudhtml18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">DSM-5 OUD criteria</a></li>
+<li><a href="https://link.cep.health/oudhtml13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Clinical Opiate Withdrawal Scale (COWS)</a></li>
+<li><a href="https://link.cep.health/oudhtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Subjective Opiate Withdrawal Scale (SOWS)</a></li>
+<li><a href="https://link.cep.health/oudhtml7" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Telemedicine Network (OTN) eConsult</a></li>
+<li><a href="https://link.cep.health/oudhtml2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">META:PHI RAAM Clinics</a></li>
+<li><a href="https://link.cep.health/oudhtml45" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario College of Family Physicians (OCFP) Peer Connect Mentorship</a></li>
+<li><a href="https://link.cep.health/oudhtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Machealth Buprenorphine Reference Guide</a></li>
+<li><a href="https://link.cep.health/oudhtml9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Pharmacists Association (OPA) OTA line</a></li>
+<li><a href="https://link.cep.health/oudhtml21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Substance Abuse and Mental Health Services Administration (SAMHSA) TIP 63: Medications for Opioid Use Disorder</a></li>
+<li><a href="https://link.cep.health/oudhtml23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">BC Guidelines Opioid Use Disorder: Diagnosis and Management in Primary Care</a></li>
+<li><a href="https://link.cep.health/oudhtml24" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CAMH Buprenorphine/Naloxone for Opioid Dependence: Clinical Practice Guideline</a></li>
+<li><a href="https://link.cep.health/oudhtml25" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Government of Canada Awareness Resources for Opioids</a></li>
+<li><a href="https://link.cep.health/oudhtml41" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Harm Reduction Distribution Program (OHRDP)</a></li>
+<li><a href="https://link.cep.health/oudhtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Project ECHO for Chronic Pain/Opioid Stewardship</a></li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6 id="stigma">Resources to reduce stigma</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/oudhtml35" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Changing how we talk about substance use a resource from the government of Canada</a></li>
+<li><a href="https://link.cep.health/oudhtml42" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Substance Abuse and Mental Health Services Administration (SAMHSA): Overcoming Stigma, Ending Discrimination</a></li>
+<li><a href="https://link.cep.health/oudhtml37" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CAMH Understanding Stigma</a></li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Patient resources</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li><a href="https://link.cep.health/oudhtml43" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">eCouch Self Help</a></li>
+<li><a href="https://link.cep.health/oudhtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Subjective Opiate Withdrawal Scale (SOWS)</a></li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Mental health resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/oudhtml29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario 211</a></li>
+<li><a href="https://link.cep.health/oudhtml46" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario College of Family Physicians (OCFP) Collaborative Mental Health Network (CMHN)</a></li>
+<li><a href="https://link.cep.health/oudhtml31" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CAMH Opioid Addiction</a></li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Addiction counseling, stress-management strategies and tools for preventing relapse</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/oudhtml32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ConnexOntario</a></li>
+<li><a href="https://link.cep.health/oudhtml33" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Women’s College Hospital Substance Use Service/Addictions Medicine Resources</a></li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources for social needs such as housing and income support</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/oudhtml34" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Poverty Tool</a></li>
+<li><a href="https://link.cep.health/oudhtml32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ConnexOntario</a></li>
+<li><a href="https://link.cep.health/oudhtml29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario 211</a></li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6 id="courses">Courses for providers</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://machealth.ca/programs/opioids_clinical_primer/p/oud?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=oudhtml" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Machealth Managing Opioid Use Disorder</a></li>
+<li><a href="https://link.cep.health/oudhtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Machealth Opioids Clinical Primer</a></li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>Health Quality Ontario (HQO). Opioid Use Disorder Care for People 16 Years of Age and Older. 2018. [cited 2018 September 10].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>McMaster University. Canadian Guideline for Safe and Effective Use of Opioids for Chronic Non-Cancer Pain. [cited 2018 August 30].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>Centre for Effective Practice. Management of Chronic Non Cancer Pain Tool. 2017. [cited 2018 July 13].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>McMaster University. The 2017 Canadian Guideline for Opioids for Chronic Non-Cancer Pain. 2017. [cited 2018 August 10].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p>Government of Canada. About Opioids. 2018. [cited 2018 June 20].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p>British Columbia Centre on Substance Use (BCCSU). DSM-5 Clinical Diagnostic Criteria for Opioid Use Disorder. [cited 2018 June 20].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p>Women’s College Hospital (WCH). Opioid Use Disorders A Guide for Patients. 2017. [cited 2018 August 10].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p>Centers for Disease Control and Prevention (CDC). Module 3: Communicating with Patients. [cited 2018 August 9].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p>British Columbia (BC) Guidelines. Opioid Use Disorder: Diagnosis and Management in Primary Care. 2018. [cited 2018 July 5].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p>The College of Physicians and Surgeons of Ontario. Methadone Program. [cited 2018 June 18].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p>The Centre for Addiction and Mental Health (CAMH). Buprenorphine/Naloxone for Opioid Dependence: Clinical Practice Guideline. 2011. [cited 2018 June<br />
+10].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p>Machealth. Opioids Clinical Primer. 2020 [cited 2023 Jul 12].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p>Mentoring, Education, and Clinical Tools for Addiction: Primary Care-Hospital Integration (META:PHI). Rapid access addiction medicine (RAAM) clinics. [cited 2018 June 20].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p>BMJ Best Practice. Opioid use disorder. 2018. [cited 2018 September 10].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p>Centers for Disease Control and Prevention (CDC). Module 5: Assessing and Addressing Opioid Use Disorder (OUD). [cited 2018 August 9].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p>Smith PC, Schmidt SM, Allensworth-Davies D, Saitz R. A Single-Question Screening Test for Drug Use in Primary Care. Arch Intern Med. 2010 Jul 12;170:1155–60.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p>Ontario Telemedicine Network (OTN). eConsult. [cited 2018 September 10].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p>Machealth. Buprenorphine Reference Guide. 2018. [cited 2018 October 30].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p>Centre for Effective Practice. Opioid Tapering Template. 2018. [cited 2018 July 13].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p>Expert opinion.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p>Canadian Medical Association Journal (CMAJ). Management of opioid use disorders: a national clinical practice guideline. 2018. [cited 2018 June 20].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p>Health Quality Ontario (HQO). Opioid Use Disorder Care for People 16 Years of Age and Older. 2018. [cited 2018 June 4].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p>Canadian Research Initiative in Substance Misuse (CRISM). National Guideline for the Clinical Management of Opioid Use Disorder. 2018. [cited 2018 July 12].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [24]
+                    </div>
+
+                    <div class="column">
+                      <p>Alberta College of Family Physicians. Tip #222 Prescription Opioid Misuse Index (POMI). [cited 2018 October 22].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [25]
+                    </div>
+
+                    <div class="column">
+                      <p>The Centre for Addiction and Mental Health (CAMH). Opioid agonist therapy. 2016. [cited 2018 November 1].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [26]
+                    </div>
+
+                    <div class="column">
+                      <p>National Institute on Drug Abuse. Clinical Opiate Withdrawal Scale. [cited 2018 October 1].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [27]
+                    </div>
+
+                    <div class="column">
+                      <p>British Columbia Centre on Substance Use (BCCSU). Subjective Opiate Withdrawal Scale. [cited 2018 October 1]</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [28]
+                    </div>
+
+                    <div class="column">
+                      <p>British Columbia (BC) Guidelines. Day 1 Starting Suboxone® (buprenorphine/naloxone). 2018. [cited 2018 July 5].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [29]
+                    </div>
+
+                    <div class="column">
+                      <p>Women’s College Hospital (WCH). Safe opioid prescribing and managing opioid use disorder: A pocket reference for primary care providers. 2017. [cited 2018 June 20].</p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgments-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgments and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p>This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice in collaboration with the Ontario College of Family Physicians and the Nurse Practitioners’ Association of Ontario. Clinical leadership for the development of the Tool was provided by Jennifer Wyman, MD, CCFP, FCFP, DABAM, MPH and Arun Radhakrishnan, MSc, MD, CM CCFP and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as part of the Knowledge Translation in Primary Care Initiative.</p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgment in using this Tool. Neither the Centre for Effective Practice (“CEP”), Ontario College of Family Physicians, Nurse Practitioners’ Association of Ontario, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+<p><em>Opioid Use Disorder Tool is a product of the Centre for Effective Practice. Permission to use, copy, and distribute this material is for all non-commercial and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of the Opioid Use Disorder Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the Centre for Effective Practice (Email: i<a href="mailto:nfo@cep.health">nfo@cep.health</a>).</em></p>
+<p>For statistical and bibliographic purposes, please notify the Centre for Effective Practice (<a href="mailto:info@cep.health">info@cep.health</a>) of any use or reprinting of the Tool. Please use the below citation when referencing the Tool: Reprinted with Permission from Centre for Effective Practice. (November 2018). Opioid Use Disorder Tool: Ontario. Toronto: Centre for Effective Practice.</p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+            
+                <p>
+                  In collaboration with                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/OCFP_Logo_UPDATED.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/NPAO-Logo.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":40022,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

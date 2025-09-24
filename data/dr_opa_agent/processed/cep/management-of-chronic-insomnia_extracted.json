@@ -1,0 +1,153 @@
+{
+  "document_id": "cep_management_of_chronic_insomnia",
+  "source_url": "https://tools.cep.health/tool/management-of-chronic-insomnia/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "mental_health",
+  "extracted_at": "2025-09-24T15:32:59.352313",
+  "content_hash": "60ae7e041ae3efbd938b41801f3faf76420f22a5349b75a93f257a7d8c8ecf8d",
+  "title": "Management of Chronic Insomnia",
+  "tool_slug": "management-of-chronic-insomnia",
+  "last_updated": "April 10, 2025",
+  "navigation": [],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Address and optimize the management of underlying causes",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Common comorbid medicaldisorders, conditions and symptoms4",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological causes of insomnia",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Comorbid conditions associated with insomnia are very common. In most cases, addressing and optimizing the management of an underlying medical, psychiatric or environmental cause may improve insomnia (e.g., treating hyperthyroidism). In other cases, treating insomnia with CBT-I has offered improvement to comorbid conditions (e.g., depression or chronic pain).5,6Discuss with the patient to understand potential underlying causes. Cardiovascular:Angina, congestive heart failure, dyspnea, dysrhyt..."
+    },
+    {
+      "heading": "Non-pharmacological options",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological Interventions",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Components of cognitive behavioural therapy for insomnia (CBT-I) are outlined in the cards below.8CBT-I has shown improved Insomnia Severity Index (ISI) scores, sleep onset latency (time to fall asleep), wake af ter sleep onset, sleep ef f iciency and quality. Studies show no signif icant dif ference in total sleep time compared to placebo group. Sleep hygieneIntended effectReduce behaviours that inter ferewith sleep drive or increase arousalSpecific directions for patientsStick to a regular ..."
+    },
+    {
+      "heading": "Pharmacotherapy options",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Key considerations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pharmacotherapy options for insomnia2 , 3, 4 ,14 ,15(low to moderate quality of evidence)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "General principles of treatment2",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Risks vs. benefits of benzodiazepines & Z-drugs (zopiclone and zolpidem)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Sedatives",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Pharmacotherapy should be considered as adjunctive therapy to CBT-I2,3,4CBT-I combined with medication may produce faster improvements in sleep than CBT-I alone12The studies that support the use of sedative hypnotics (benzodiazepines and Z-drugs) for insomnia are limited to short-term treatment (<4 weeks)13 AvoidBenzdiazepines (BZD)in the elderly due to risk of cognitive and behavioural adverse effects, falls and fractures. Flurazepam, oxazepam, triazolam are indicated for primary insomnia, b..."
+    },
+    {
+      "heading": "Benzodiazepine or Z-drug tapering",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "General approach to tapering",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Benzodiazepine or Z-drug tapering approach29",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select step to view details",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Schedule follow-up visits ever y 1\u2013 4 weeksdepending on the patient\u2019s response to thetaper. At each visit, ask the patient about thebenefits of tapering (e.g., increased energy,increased alertness). Provide quantity-limited prescriptions andno refills. This will require the patient toreturn for follow-up."
+    },
+    {
+      "heading": "Special populations",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Select special population",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "There are no studies examining the efficacy of CBT-I during pregnancy and the postpartum period. Based on expert opinion and experience, CBT-I may be effective and should be used as a first approach to manage insomnia if available and appropriate to a patient\u2019s individual situation.Use of non-benodiazepine hypnotics (zopiclone or zolpidem) may cause adverse pregnancy outcomes (e.g., low birth weight infants, preterm deliveries, small for gestational age infants and cesarean deliver y). Use wi..."
+    },
+    {
+      "heading": "Supporting material",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Sleep Disorders Questionnaire.Sleep Diary: Patient can fill out.Insomnia Severity Index: Patient can fill out.The Insomnia SeverityIndex: Psychometric indicators to detect insomnia cases and evaluatetreatment response:Patient can fill out.Epworth Sleepiness Scale.STOPBANG.Sleep Clinic Map.Insomnia and anxiety in older people: Sleeping pills are usually not the bestsolution (Choosing Wisely Canada).Sedative-Hypnotic Medication Deprescribing Brochure(Centre de Recherche de l\u2019Institut Universita..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Statistics Canada. The Daily \u2013 Study: Insomnia. 2005. [cited 2016 October 16].[2]Toward Optimized Practice. Assessment to management of adult insomnia. Clinical Practice Guideline. December 2015.[3]Qaseem A, Kansagara D, Forciea M, Cooke M, Denberg T. Management of chronic insomnia disorder in adults: a clinical practice guideline from the American College of Physicians.Ann Intern Med. 2016.[4]Schutte-Rodin S, Broch L, Buysse D, Dorsey C, Sateia M. Clinical guideline for the evaluation and..."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by Centre for Effective Practice with collaboration from the Ontario College of Family Physicians and the NursePractitioners\u2019 Association of Ontario. Clinical leadership for the development of the Tool was provided by Dr. Jose Silveira, MD, FRCPC Dip. ABAM and Dr. Deanna Telner MD CCFP, and the Tool was subjectto external review by health care providers and other relevant stakeholders. This Tool was f..."
+    }
+  ],
+  "references": [],
+  "summary": "Management of Chronic Insomnia. Category: Mental Health. Features: algorithm, calculator, forms. 8 main sections"
+}

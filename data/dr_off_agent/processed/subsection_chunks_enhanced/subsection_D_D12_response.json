@@ -1,0 +1,175 @@
+{
+  "subsection_title": "Genitourinary Tract",
+  "parent_section": "D",
+  "page_ref": "D12",
+  "pages_processed": "360-360",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        4,
+        "X129 Retrograde pyelogram, unilateral or bilateral.......................... 21.70 9.00"
+      ],
+      [
+        5,
+        "X130 Intravenous pyelogram including preliminary film................... 49.65 22.75"
+      ],
+      [
+        6,
+        "X137 Cystogram (catheter).............................................................. 23.85 8.40"
+      ],
+      [
+        7,
+        "X135 Cystourethrogram, stress or voiding (catheter) ...................... 27.50 13.80"
+      ],
+      [
+        8,
+        "X131 Cystourethrogram (non-catheter) ........................................... 5.75 4.75"
+      ],
+      [
+        9,
+        "X191 Intestinal conduit examination or nephrostogram................... 21.70 9.00"
+      ],
+      [
+        10,
+        "X138 Percutaneous antegrade pyelogram....................................... 21.70 9.00"
+      ],
+      [
+        11,
+        "X139 Percutaneous nephrostogram ................................................ 21.70 11.10"
+      ],
+      [
+        12,
+        "X134 Retrograde urethrogram ......................................................... 17.95 6.80"
+      ],
+      [
+        13,
+        "X136 Vasogram................................................................................ 17.95 6.80"
+      ],
+      [
+        14,
+        "X141 Cavernosography ................................................................... 20.65 8.30"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "X129",
+      "description": "Retrograde pyelogram, unilateral or bilateral",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 9.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X130",
+      "description": "Intravenous pyelogram including preliminary film",
+      "fee": 49.65,
+      "h_fee": 49.65,
+      "p_fee": 22.75,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X137",
+      "description": "Cystogram (catheter)",
+      "fee": 23.85,
+      "h_fee": 23.85,
+      "p_fee": 8.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X135",
+      "description": "Cystourethrogram, stress or voiding (catheter)",
+      "fee": 27.5,
+      "h_fee": 27.5,
+      "p_fee": 13.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X131",
+      "description": "Cystourethrogram (non-catheter)",
+      "fee": 5.75,
+      "h_fee": 5.75,
+      "p_fee": 4.75,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X191",
+      "description": "Intestinal conduit examination or nephrostogram",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 9.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X138",
+      "description": "Percutaneous antegrade pyelogram",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 9.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X139",
+      "description": "Percutaneous nephrostogram",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 11.1,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X134",
+      "description": "Retrograde urethrogram",
+      "fee": 17.95,
+      "h_fee": 17.95,
+      "p_fee": 6.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X136",
+      "description": "Vasogram",
+      "fee": 17.95,
+      "h_fee": 17.95,
+      "p_fee": 6.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X141",
+      "description": "Cavernosography",
+      "fee": 20.65,
+      "h_fee": 20.65,
+      "p_fee": 8.3,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

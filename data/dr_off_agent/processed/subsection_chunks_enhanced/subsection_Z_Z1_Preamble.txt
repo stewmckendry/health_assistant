@@ -1,0 +1,71 @@
+Subsection: Preamble
+Parent Section: Z
+Page Reference: Z1
+Pages: 773 to 774
+Text chunks: 1
+Total text length: 3672 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 773 ---
+SPINAL SURGICAL PROCEDURES
+Spinal Surgical ProceduresMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+[Commentary:
+The structure of this section uses “N” prefix codes to describe the basic elements of spine
+surgery: decompression and arthrodesis (fusion), both anterior and posterior. Specific “E”
+prefix codes can be added where indicated to determine the amount payable for a particular
+operation. In accordance with the surgical preamble, the full fee applies to the major procedure
+and additional “N” prefix procedures are payable in addition to the major procedure at 85% of
+the fee unless otherwise stated.]
+OTHER TERMS AND DEFINITIONS
+1. The preamble to the Musculoskeletal System Surgical Procedures section also applies to this
+section as applicable (e.g. fractures).
+2. Fusion of one disc level (one motion segment) includes two levels of instrumentation.
+3. Obtaining bone for grafting is included as a component of all fusion procedures and is not
+eligible for payment when performed with any fusion procedure.
+4. Thoracotomy performed in conjunction with spinal procedures by a surgeon not performing the
+spinal surgery constitutes M137 (P13).
+5. Laparotomy performed in conjunction with spinal procedures by a surgeon not performing the
+spinal surgery constitutes S312 (S34).
+6. Three-dimensional (3D) computer-assisted stereotactic navigation (E378) must include the pre-
+operative or intra-operative generation of axial, sagittal and coronal reformatted images that are
+processed and virtually represented in 3D by a surgical navigational system. In addition, the
+surgical navigational system must be used to reflect the position of an image-guided (tracked)
+surgical tool(s) relative to the patient's anatomy. This may be performed by either frame or
+frameless technique and applies to any spinal level.
+7. Two-dimensional (2D) computer-assisted stereotactic navigation (E379) must include the intra-
+operative generation of antero-posterior, lateral or multiple oblique 2D views that are processed
+and virtually represented in 2D by a surgical navigational system. In addition, the surgical
+navigational system must be used to reflect the position of an image-guided (tracked) surgical
+tool(s) relative to the patient's anatomy. This may be performed by either frame or frameless
+technique and applies to any spinal level.
+Note:
+The use of an intra-operative imaging tool such as a portable x-ray, fluoroscope (2D or 3D), CT,
+MRI or ultrasound for "live" localization without a surgical navigational system as defined
+above does not constitute E378 or E379 and is not eligible for payment.
+8. Acute spinal cord injury premium (E383) is only eligible for payment when rendered to patients
+who are described under ASIA impairment scale ratings A to C and have acute conditions
+which have been present for 6 weeks or less.
+ASIA IMPAIRMENT SCALE
+A. Complete - No motor or sensory function is preserved in the sacral segments S4-S5.
+B. Incomplete - Sensory but not motor function is preserved below the neurological level and
+extends though the sacral segments S4-S5.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Z1 Amd 12 Draft 1
+
+--- PAGE 774 ---
+SPINAL SURGICAL PROCEDURES
+PREAMBLE
+C. Incomplete - Motor function is preserved below the neurological level, and the majority of key
+muscles below the neurological level have a muscle grade less than 3.
+9. Use of the operating microscope, both intra and extradural, when required, is included as a
+component of all spinal fee schedule codes and is not eligible for payment when rendered with
+any procedure in this section.
+Amd 12 Draft 1 Z2 February 14 , 2 025 (e ffective M arch 3, 2025)

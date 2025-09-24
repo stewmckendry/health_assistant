@@ -1,0 +1,141 @@
+{
+  "document_id": "cep_maid_forms",
+  "source_url": "https://tools.cep.health/tool/maid-forms/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "operational",
+  "extracted_at": "2025-09-24T15:33:04.905541",
+  "content_hash": "81f0daaff115c83f0c11bc5e4197d656a2b592bde7bd7c1736ff737d5fb8b48c",
+  "title": "MAID Forms Staging*",
+  "tool_slug": "maid-forms",
+  "navigation": [
+    {
+      "title": "Non-pharmacological management",
+      "anchor": "#hfnonpharm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Patient self-management",
+      "anchor": "#hfptself",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Non-pharmacological management and patient self-management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological management",
+          "anchor": "#hfnonpharm",
+          "level": 3
+        },
+        {
+          "heading": "Patient self-management",
+          "anchor": "#hfptself",
+          "level": 3
+        }
+      ],
+      "summary": "Non-pharmacological managementPatient self-management The quantity of salt in the diet should be adapted to the clinical situation, severity of symptoms and baseline consumptionThe evidence base to support dietary salt restrictions is limited Strict limits on fluid intake (2L/day) should only be imposed when there is a clear fluid overload or demonstrated sensitivity to fluid intakeThe evidence base to support fluid restrictions is limited and severely limiting intake may have adverse consequ..."
+    },
+    {
+      "heading": "Supporting your patient",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Additional Community-based Mental Health Support",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Educational Supports for Patients, Families, and Caregivers",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Clinical Support for Providers",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "211Ontario: Regional community mental health centres, geriatric psychiatry services, and support groups. Canadian Mental Health Association: 30 branches that provide community mental health services across Ontario. ConnexOntario: Mental health system navigation and information. Mental health: 1-800-531-2600 | Addictions: 1-800-565-8603"
+    },
+    {
+      "heading": "MAID Track One: Full pathway",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Informs the patient that they are unwilling to discuss MAID due toconscientious objectionsRefers the patient to another Clinician, institution or agency (e.g.CCS) that is willing and able to provide MAIDContinue to provide ongoing care to the patientMust report all requests for MAID. Seefederal reporting requirementsfor more information Choosesnotto participate in eligibility assessments and/or provision of MAIDRefers the patient to another Clinician, institution or agency (e.g.CCS) that is w..."
+    },
+    {
+      "heading": "MAID Track One: Patient inquiry",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Informs the patient that they are unwilling to discuss MAID due toconscientious objectionsRefers the patient to another Clinician, institution or agency (e.g.CCS) that is willing and able to provide MAIDContinue to provide ongoing care to the patientMust report all requests for MAID. Seefederal reporting requirementsfor more information Choosesnotto participate in eligibility assessments and/or provision of MAIDRefers the patient to another Clinician, institution or agency (e.g.CCS) that is w..."
+    },
+    {
+      "heading": "MAID Track One: Assessment of Patient Eligibility and Procedural Safeguards",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Request for MAID must be made in writing. Awritten requestmust be signed by one independent witness, and it must be made after the patient is informed that\nthey have a \u201cgrievous and irremediable medication condition\u201d (Clinician Aid A)Two independent Clinicians must provide an assessment and confirm that all of the eligibility requirements are metThe patient must be informed that they can withdraw their request at any time, in any manner"
+    },
+    {
+      "heading": "MAID Track One: Provision of MAID",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Confirms the patient\u2019s express\nconsent for MAIDProvides the patient with the\nopportunity to withdraw the request Confirms with patient that they must be present during selfadministration Confirms the patient\u2019s express consent for MAIDProvides the patient with the opportunity to withdraw the request"
+    },
+    {
+      "heading": "MAID Track Two: Full Pathway",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Informs the patient that they are unwilling to discuss MAID due toconscientious objectionsRefers the patient to another Clinician, institution or agency (e.g.CCS) that is willing and able to provide MAIDContinue to provide ongoing care to the patientMust report all requests for MAID. Seefederal reporting requirementsfor more information Choosesnotto participate in eligibility assessments and/or provision of MAIDRefers the patient to another Clinician, institution or agency (e.g.CCS) that is w..."
+    },
+    {
+      "heading": "MAID Track Two: Patient Inquiry",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Informs the patient that they are unwilling to discuss MAID due toconscientious objectionsRefers the patient to another Clinician, institution or agency (e.g.CCS) that is willing and able to provide MAIDContinue to provide ongoing care to the patientMust report all requests for MAID. Seefederal reporting requirementsfor more information Choosesnotto participate in eligibility assessments and/or provision of MAIDRefers the patient to another Clinician, institution or agency (e.g.CCS) that is w..."
+    },
+    {
+      "heading": "MAID Track Two: Assessment of patients eligibility",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Is 18 years of age or older and hasdecision-making capacity.Is eligible for publicly funded health care servicesHas made avoluntary requestthat is not the result of external pressure. SeeHas providedinformed consentto receive MAID, meaning that the patient has consented to receive MAID after they have received all information needed to make this decisionHas a serious and incurable illness, disease or disability*Is in an advanced state of irreversible decline in capabilityHas enduring and into..."
+    },
+    {
+      "heading": "MAID Track Two: Provision of MAID",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Confirms the patient\u2019s express\nconsent for MAIDProvides the patient with the\nopportunity to withdraw the request Confirms with patient that they must be present during self-administration Confirms the patient\u2019s express consent for MAIDProvides the patient with the opportunity to withdraw the request"
+    }
+  ],
+  "references": [],
+  "summary": "MAID Forms Staging*. Category: Operational. Features: checklist, forms. 10 main sections"
+}

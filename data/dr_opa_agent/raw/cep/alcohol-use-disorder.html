@@ -1,0 +1,2308 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Alcohol Use Disorder (AUD) |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/alcohol-use-disorder-aud-tool\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/40866" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Falcohol-use-disorder-aud-tool%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Falcohol-use-disorder-aud-tool%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-40866 wp-theme-cep-tools alcohol-use-disorder-aud-tool">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Alcohol Use Disorder (AUD)</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: September 30, 2019</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool is designed to support primary care providers (family physicians and primary care nurse practitioners) in screening, diagnosing and implementing pharmacotherapy treatments for adult patients (&gt;18 years) with Alcohol Use Disorder (AUD). Primary care providers should routinely offer medication for moderate and severe AUD. </p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Pharmacotherapy alone to treat AUD is better than no therapy at all.<sup>1</sup> </strong></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Pharmacotherapy is most effective when combined with non-pharmacotherapy, including behavioural therapy,<br>community reinforcement, motivational enhancement, counselling and/or support groups.<sup>2,3</sup></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/08/OUD-care-icon.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong data-rich-text-format-boundary="true">People living with AUD must be provided with nonjudgmental and supportive care</strong></p>
+          </div>
+        </div>
+
+      </div>
+</article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="screening-for-aud" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Screening for AUD								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>All patients should be screened routinely (e.g. annually or when indicators are observed) with a recommended tool like the <a href="https://link.cep.health/audhtml71" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">AUDIT</a>.<sup>2,3</sup> It is important to screen all patients and not just patients eliciting an index of suspicion for AUD, since most persons with AUD are not recognized.<sup>4</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consider screening for AUD when any of the following indicators are observed:</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>After a recent motor vehicle accident</li>
+
+
+
+<li>Frequent work avoidance (off work slips)</li>
+
+
+
+<li>Rosacea</li>
+
+
+
+<li>Rhinophyma</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>High blood pressure</li>
+
+
+
+<li>Cardiac arrhythmia</li>
+
+
+
+<li>Insomnia</li>
+
+
+
+<li>Exacerbation of sleep apnea</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Liver disease</li>
+
+
+
+<li>Chronic pain</li>
+
+
+
+<li>Social problems</li>
+
+
+
+<li>Legal problems</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Special patient populations</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>A few studies have reviewed AUD in specific patient populations, including youth, older adults and pregnant or breastfeeding patients. The AUDIT screening tool considered these populations in determining the sensitivity of the tool.</p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Select special population to view screening tools</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Youth<sup>5</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Screening tools</strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml63" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Alcohol Screening and Brief Intervention for Youth (age 9-18)</a></li>
+<li><a href="https://link.cep.health/audhtml4" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CRAFFT Screening Tool – Adolescent Screening (age 14-17)</a></li>
+</ul>
+<p><strong>Pharmacotherapy</strong></p>
+<p>There are no medications approved for the treatment of AUD in youth. Pending clinical judgment, it may be appropriate to treat older youth with pharmacotherapy. Off-label agents should be avoided, especially agents with probability of diversion.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Older Adults<sup>6,7</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Screening tools</strong></p>
+<p>Older adults are less likely to disclose alcohol use. Take care in screening older adults: offer restated questions and show sensitivity.</p>
+<p><strong>Pharmacotherapy</strong></p>
+<p>To avoid adverse events, combine pharmacotherapy with:</p>
+<ul>
+<li>Frequent renal function tests</li>
+<li>Reduced dosage (disulfiram)</li>
+<li>Care to prevent drug interactions (Older adults may take more prescription medications than other patients)</li>
+<li>For women and men over age 65, an AUDIT score of 7 or more is an indication of hazardous alcohol use.<sup>8</sup></li>
+</ul>
+<p><strong>Provider support</strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml66" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Treating alcohol use in older adults</a></li>
+<li><a href="https://link.cep.health/audhtml67" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Management of Alcohol Use Disorders in Older Adults</a></li>
+<li><a href="https://link.cep.health/audhtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Medication for the Treatment of AUD: A Brief Guide</a></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Pregnant or Breastfeeding<sup>2,5</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Screening tools</strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml68" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">T-ACE Screening Tool</a></li>
+</ul>
+<p><strong>Pharmacotherapy</strong></p>
+<p>There are no medications approved or recommended for the treatment of AUD in pregnant or breastfeeding patients.</p>
+<p><strong>Provider support</strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml69" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Managing alcohol use in pregnancy</a></li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:77%"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Tips for screening</h6>
+<p>AUD is a psychiatric illness defined as alcohol use that causes clinically significant impairment or distress.<sup>15</sup> It is characterized by impaired control over drinking and ongoing drinking, despite harmful consequences.<sup>15</sup> Primary care providers or clinical staff should administer the screening process in a friendly and non-judgmental manner.</p>
+<p>Before screening:<sup>8</sup></p>
+<ul>
+<li>Take time to reassure the patient about the confidentiality of their answers</li>
+<li>Indicate that the purpose of the screening is essential to their overall health status</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong>Note:</strong> Patients should not be intoxicated at the time of the screen. If a patient is intoxicated at the time of their scheduled appointment, maintain a high index of suspicion for AUD.</p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.3%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points </h6>
+                          <a data-modal="Yv1a65" class="button open-modal" href="#" data-id="Yv1a65">Click to view </a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="Yv1a65" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points </h4>
+                                      <p>Motivational interviewing can help encourage patients to make personal changes that they deem as important for reaching a particular goal.</p>
+<p>Principles of motivational interviewing are:</p>
+<ul>
+<li>Express empathy through reflective listening</li>
+<li>Explore the discrepancy between a patient’s goals or values and their current behavior</li>
+<li>Avoid arguments and confrontation</li>
+<li>Adjust to patient resistance rather than opposing it directly</li>
+<li>Support self-efficacy and optimism <sup>8</sup></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Alcohol Use Disorder Identification Test (AUDIT)</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The AUDIT was developed specifically to identify patients with recent heavy drinking as well as alcohol dependence. The AUDIT was designed to consider cultural appropriateness and cross-national applicability and is appropriate for male and female patients across all age groups.<sup>8</sup></p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>For collaborative screening</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a href="https://link.cep.health/audhtml71" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Interview Version AUDIT (see page 2)</a></li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>For self-directed screening</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a href="https://link.cep.health/audhtml71" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Self-Report Version AUDIT (see page 3)</a></li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The AUDIT can be administered either by the provider using the Interview Version or by the patient using the Self-Reported Version. It is up to the providers clinical judgment and experience with the patient to determine which version is most appropriate.</p>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>If time is limited during a patient encounter, a primary care provider can use the modified <a href="https://link.cep.health/audhtml77" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">AUDIT-C.</a> The AUDIT-C is a three-question alcohol screen that can help identify patients who have active AUD.</p>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Results</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><a href="http://link.cep.health/audhtml71" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><strong>AUDIT</strong></a></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>A score of 8 or more indicates harmful alcohol use. <sup>16</sup> </p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><a href="https://link.cep.health/audhtml77" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><strong>AUDIT-C</strong></a></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>A male patient with a score of 4 or more OR a female with a score of 3 or more indicates hazardous or active AUD.</strong></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>However, if a patient’s point total reflects Question 1 alone (i.e. Questions 2 and 3 total zero), then assume that the patient is drinking below the recommended limits. Review the patient’s alcohol intake over the past few months to confirm accuracy.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Often there is an underestimate of potential harm associated with AUD and an overestimate of the harm with regards to reporting to appropriate authorities. It is important to remember reporting obligations.</strong></p>
+</div></article></div>
+</div>
+
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-green-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Discussion results</h6>
+<p>When a patient receives screening results that may indicate harmful alcohol use, it is essential to remain non-judgmental and discuss practical ways to cope. Screening is only the first step. The goal of this short discussion is to help set and record goals together. <sup>2,5,</sup>9 Listen reflectively and repeat what the patient says to you. Follow-up with the patient within 14 days after screening and regularly after that.<sup>1,5,9,15</sup></p>
+<p><strong>Pharmacotherapy is recommended for patients identified as high-risk users and dependent on alcohol.</strong></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+        </div>
+        <h3 class="faq-title">Click risk score to view interventions, resources and talking points</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Low-risk | AUDIT score: 0-7</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 45%; padding: 0 10px 0 0; float: left;">
+<p><strong>Intervention: <sup>8,18</sup></strong></p>
+<ul>
+<li>Simple advice</li>
+<li>Discuss the benefits of low-risk drinking</li>
+</ul>
+<p><strong>Patient resource:</strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml72" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Low risk drinking guidelines</a></li>
+</ul>
+</div>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/09/Screen-Shot-2021-09-08-at-11.52.26-AM.png" alt="" /></p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Risky | AUDIT score: 8-15</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 45%; padding: 0 10px 0 0; float: left;">
+<p><strong>Intervention: <sup>8,18</sup></strong></p>
+<ul>
+<li>Simple advice</li>
+<li>If the patient is receptive, offer tips for reducing alcohol consumption</li>
+</ul>
+<p><strong>Patient resource:</strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml72" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Low risk drinking guidelines</a></li>
+</ul>
+<p><strong>Provider resource </strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Keeping Your Patients Safe tool</a></li>
+</ul>
+</div>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/09/Screen-Shot-2021-09-08-at-11.51.35-AM.png" alt="" /></p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">High-risk | AUDIT score: 16-19</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 45%; padding: 0 10px 0 0; float: left;">
+<p><strong>Intervention: <sup>8,18</sup></strong></p>
+<ul>
+<li>Simple advice + brief counselling + monitoring</li>
+<li>Brief counselling is more in depth and tailored than brief intervention, and requires follow-up</li>
+<li>Express concern</li>
+<li>Discuss harms associated with alcohol consumption</li>
+<li>Tailor counselling to situation and stage of change (from no interest to action planning)</li>
+<li>Conduct laboratory testing to corroborate heavy drinking assumption: <sup>1,4</sup>
+<ul>
+<li>GGT (alcohol elevates GGT through enzyme induction)</li>
+<li>MCV (alcohol retards the maturation of red cells in bone marrow, causing slight enlargement)</li>
+<li>Monitor every 2-3 months</li>
+</ul>
+</li>
+</ul>
+<p><strong>Provider resource </strong></p>
+<ul>
+<li><a href="https://link.cep.health/audhtml13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Keeping Your Patients Safe tool</a></li>
+</ul>
+</div>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/09/Screen-Shot-2021-09-08-at-12.28.31-PM-1.png" alt="" /></p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">High-risk dependent | AUDIT score: 20-24</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 45%; padding: 0 10px 0 0; float: left;">
+<p><strong>Intervention: <sup>8,18</sup></strong></p>
+<ul>
+<li>Further laboratory testing to corroborate heavy drinking diagnosis: 1,4
+<ul>
+<li><strong>GGT</strong> (alcohol elevates GGT through enzyme induction)</li>
+<li><strong>MCV</strong> (alcohol retards the maturation of red cells in bone marrow, causing slight enlargement)</li>
+<li>Monitor every 2-3 months</li>
+<li>Thiamine supplements (200mg) <sup>19</sup></li>
+<li>Withdrawal management by a specialist may be necessary</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/09/Screen-Shot-2021-09-08-at-12.39.11-PM.png" alt="" /></p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="diagnosing-aud" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Diagnosing AUD								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Once you have identified that your patient might have AUD through the AUDIT or the AUDIT-C, then the DSM-5 criteria can be used to diagnose your patient.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">DSM-5 Criteria for AUD<sup>21</sup></h4>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <p>To confirm a diagnosis of AUD, at least two of the following criteria need to be met. Ask your patients, in the past 12-months have you:</p>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <ul>
+<li>Had times when you ended up drinking more, or longer than you intended?</li>
+<li>More than once wanted to cut down or stop drinking, or tried to, but couldn’t?</li>
+<li>Spent a lot of time drinking? Or being sick or getting over the after effects?</li>
+<li>Experienced craving — a strong need, or urge, to drink?</li>
+<li>Found that drinking — or being sick from drinking — often interfered with taking care of your home or family? Or caused job troubles? Or school problems?</li>
+<li>Continued to drink even though it was causing trouble with your family or friends?</li>
+<li>Given up or cut back on activities that were important or interesting to you, or gave you pleasure, in order to drink?</li>
+<li>More than once gotten into situations while or after drinking that increased your chances of getting hurt (such as driving, swimming, using machinery, walking in a dangerous area, or having unsafe sex)?</li>
+<li>Continued to drink even though it was making you feel depressed or anxious or adding to another health problem? Or after having had a memory blackout?</li>
+<li>Had to drink much more than you once did to get the effect you want? Or found that your usual number of drinks had much less effect than before?</li>
+<li>Found that when the effects of alcohol were wearing off, you had withdrawal symptoms, such as trouble sleeping, shakiness, irritability, anxiety, depression, restlessness, nausea, or sweating? Or sensed things that were not there?</li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Severity of AUD is based on the number of criteria met</strong></p>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey blue">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p style="color: green;"><strong>Mild: </strong></p>
+<p>2 to 3 criteria</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <p style="color: orange;"><strong>Moderate: </strong></p>
+<p>4 to 5 criteria</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <p style="color: red;"><strong>Severe: </strong></p>
+<p>6 + criteria</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-green-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2024/05/tool-tip.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Tool tip</h6>
+<p>Once there is a diagnosis of AUD, the initial goals of treatment should be agreed on by the patient and the primary care provider. It is important to discuss the patient’s legal obligations, as well as risks to self and others that result from the continued use of alcohol.</p>
+<p>Work with the patient to develop a documented, comprehensive and person-centred treatment plan that includes evidence-based non-pharmacotherapy and pharmacotherapy options.</p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Refer to Specialist <sup>1,2,3</sup></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Refer to a specialist, including mental health care specialists, hepatologists, addiction treatment specialists, etc. Referral to specialists should be based on availability and access. Consider other options such as <a href="https://link.cep.health/audhtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">OTN eConsult</a>, <a href="https://link.cep.health/audhtml15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ConnexOntario</a>, phone consult and <a href="https://link.cep.health/audhtml79" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Peer Connect Mentorship</a>. Patients with comorbidities may benefit from the concurrent treatment of conditions from the same provider. These may include patients with:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Psychosis</li>
+
+
+
+<li>Complex opioid addictions</li>
+
+
+
+<li>Post-traumatic stress disorder</li>
+
+
+
+<li>Liver failure</li>
+
+
+
+<li>Risk of withdrawal from other substances in addition to alcohol</li>
+</ul>
+</div></article></div>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="pharmacotherapy-options" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Pharmacotherapy options								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Talk with your patient about the various available pharmacotherapy options. Consider the advantages and disadvantages of each therapy for your patient. Generally, naltrexone oral and acamprosate are the recommended first line options.<sup>2,3</sup> Note that these options do not eliminate or diminish withdrawal symptoms.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Recommended pharmacotherapy</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Naltrexone Oral</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Patient Type<sup>9,11</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>For patients with strong cravings and suffer recurrent binges.</li>
+
+
+
+<li>Effective treatment to help stop or reduce alcohol use</li>
+
+
+
+<li>Patients <strong>do not have</strong> to be abstinent before treatment</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>What it does<sup>1,5,9,19,22,25,26-29</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Blocks opioid receptor and reduces euphoric effects of drinking</li>
+
+
+
+<li>Reduce desire to drink and help to remain abstinent</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Laboratory Work Required for Medication Initiation<sup>,2,9,10,22</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Urine drug screen to verify abstinence from opioids</strong></li>
+
+
+
+<li><strong>LFTs:</strong> alanine aminotransferase, aspartate aminotransferase, gamma glutamyl transferase, alkaline phosphatase, bilirubin, total protein, albumin, prothrombin time</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Laboratory Work<sup>1,9,10,22</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>LFTs</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--drug-options ">
+<div class="container">
+  <h5></h5>
+          <div class="slider">
+        <div class="inner-stage">
+          <ul>
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Naltrexone Oral</h6>
+                    <p><strong>Dosage/Duration <sup>1,5,9,19,22,23,30</sup></strong></p>
+<ul>
+<li>Start patient on 25 mg/d for 3 days. Then, depending on patient response, increase to 50mg/d to a max of 150 mg/d.</li>
+</ul>
+<p><strong>Treatment Duration</strong></p>
+<ul>
+<li>Patients are usually on medication from about 3 months to 1 year</li>
+</ul>
+<p><a href="https://link.cep.health/audhtml17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><strong>Product monograph</strong></a></p>
+<ul>
+<li>LU Code: 532</li>
+<li>Coverage: covered under Ontario Drug Benefits and most private plans.</li>
+<li>Generic: Available</li>
+<li>Cost (30-day supply): $50 &#8211; $100*</li>
+</ul>
+<p><strong>Warning: patients cannot be raking opioids or opioid agonist therapy</strong></p>
+                                            <a class="button open-modal" href="#" data-modal="qFLNoX">View contradictions, side effects, and interactions</a>
+                                      </div>
+                                      <div class="modal" data-modal="qFLNoX">
+                      <div class="inner ">
+                        <div class="close-wrapper">
+                          <a href="" class="close" data-wpel-link="internal">Close</a>
+                        </div>
+                        <div class="container">
+                          <div class="content">
+                                                          <h4>Contradictions, side effects, and interactions</h4>
+                                                                                      <p><strong>Contraindications and Precautions <sup>1,2,5,9,19,22,26</sup></strong></p>
+<ul>
+<li>Taking opioids</li>
+<li>Elevated liver enzymes</li>
+<li>Liver failure</li>
+<li>Pregnancy</li>
+</ul>
+<p><strong>Side Effects, Risks and Notes <sup>1,5,26</sup></strong></p>
+<ul>
+<li>GI upset</li>
+<li>Elevated liver enzymes</li>
+<li>Must monitor liver enzymes (discontinue if levels rise &gt; 3 times baseline) Interactions</li>
+<li>Thioridazine, opioids, some cough and diarrhea medication</li>
+</ul>
+<p><strong>Interactions</strong></p>
+<ul>
+<li>Thioridazine, opioids, some cough and diarrhea medication</li>
+</ul>
+<p><strong>Tapering:</strong><br />
+There is no withdrawal syndrome associated with discontinuing oral naltrexone, and it is not necessary to taper the dose.</p>
+                                                      </div>
+                        </div>
+                      </div>
+                      <div class="overlay"></div>
+                    </div>
+                                  </li>
+
+                      </ul>
+        </div>
+      </div>
+    </div>
+</article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Acamprosate</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Patient Type<sup>9,11</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>For patients who are committed to abstinence but suffer from withdrawal symptoms such as insomnia and anxiety</li>
+
+
+
+<li>May be appropriate for patients with mild to moderate liver disease and those who take opioids</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>What it does <sup>1,5,9,19,22,25,26-29</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Antagonizes glutamate receptors</li>
+
+
+
+<li>Reduces discomfort caused by the imbalance of brain chemicals (due to heavy drinking) and makes it easier not to drink</li>
+
+
+
+<li>Safe for patients with liver disease</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Laboratory Work Required for Medication Initiation<sup>1,2,9,10,22</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Renal function tests: </strong>urea, electrolytes, serum creatinine</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Laboratory Work<sup>1,9,10,22</sup></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Not necessary unless evidence of renal impairment</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--drug-options ">
+<div class="container">
+  <h5></h5>
+          <div class="slider">
+        <div class="inner-stage">
+          <ul>
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Acamprosate</h6>
+                    <p><strong>Dosage/Duration <sup>1,5,9,19,22,23,30</sup></strong></p>
+<ul>
+<li>Each tablet is 333 mg. The full dose is 666 mg tid.</li>
+<li>To reduce probability of nausea and diarrhea it is helpful to start with 333 mg (1 tablet) tid for several days.</li>
+</ul>
+<p><strong>Treatment Duration</strong></p>
+<ul>
+<li>Patients are usually on medication from about 3 months to 1 year</li>
+</ul>
+<p><a href="https://link.cep.health/audhtml18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><strong>Product monograph</strong></a></p>
+<ul>
+<li><strong>LU Code:</strong> 531</li>
+<li><strong>Coverage:</strong> covered under Ontario Drug Benefits and most private plans.</li>
+<li><strong>Generic:</strong> Not vailable</li>
+<li><strong>Cost (30-day supply):</strong> ≥ $100*</li>
+</ul>
+<p><strong>Patients should abstain at least 4 d before initiation <sup>1,25</sup><br />
+</strong></p>
+                                            <a class="button open-modal" href="#" data-modal="SIIBXF">View contradictions, side effects, and interactions</a>
+                                      </div>
+                                      <div class="modal" data-modal="SIIBXF">
+                      <div class="inner ">
+                        <div class="close-wrapper">
+                          <a href="" class="close" data-wpel-link="internal">Close</a>
+                        </div>
+                        <div class="container">
+                          <div class="content">
+                                                          <h4>Contradictions, side effects, and interactions</h4>
+                                                                                      <p><strong>Contraindications and Precautions <sup>1,2,5,9,19,22,26</sup></strong></p>
+<ul>
+<li>Renal disease</li>
+<li>Pregnancy</li>
+</ul>
+<p><strong>Side Effects, Risks and Notes <sup>1,5,26</sup></strong></p>
+<ul>
+<li>GI upset</li>
+<li>Nervousness</li>
+</ul>
+<p><strong>Interactions</strong></p>
+<ul>
+<li>Over-the-counter medications (e.g. cough syrups with alcohol), some vitamins and herbal products</li>
+</ul>
+<p><strong>Tapering:</strong><br />
+There is no withdrawal syndrome associated with discontinuing oral naltrexone, and it is not necessary to taper the dose.</p>
+                                                      </div>
+                        </div>
+                      </div>
+                      <div class="overlay"></div>
+                    </div>
+                                  </li>
+
+                      </ul>
+        </div>
+      </div>
+    </div>
+</article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Disulfiram <sup>2,5,9,22,25</sup></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Disulfiram is only available through select compounding pharmacies. This drug interferes with the body’s process to metabolize alcohol, and as a result, makes the patient feel sick after alcohol consumption. Disulfiram is designed to help patients stay in a state of enforced sobriety and absolute abstinence is required.<sup>1,5,9,19,22,25-29</sup> If this medication is prescribed, consider having the patient carry a wallet information card to identify medication use to emergency health care personnel. This medication does not take away craving or withdrawal symptoms.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more information, see <a href="https://link.cep.health/audhtml19" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Disulfiram product monograph</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Off-Label Pharmacotherapy Options</h3>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Gabapentin <sup>2,9,22</sup></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Gabapentin is not indicated for the treatment of AUD and therefore should be considered off-label treatment.</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Has few contraindications</li>
+
+
+
+<li>How it works with AUD is not fully known (possibly normalizes the brain chemicals disturbed by heavy drinking)</li>
+
+
+
+<li>Sometimes is considered a drug of abuse, with increasing “street value”</li>
+
+
+
+<li>Gradually taper medication use if stopping is necessary due to a risk of seizures <sup>1,5,19,25-29</sup></li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more information, see <a href="https://link.cep.health/audhtml20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Gabapentin product monograph</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Topiramate <sup>2,9,22</sup></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Topiramate is not indicated for the treatment of AUD and therefore should be considered off-label treatment.</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Numerous contraindications and interactions with other medications</li>
+
+
+
+<li>Mechanism of action is unknown</li>
+
+
+
+<li>Sometimes considered for patients who have experienced alcohol-related seizures</li>
+
+
+
+<li>Regular blood work is required <sup>1,5,19,25-29</sup></li>
+
+
+
+<li>May cause angle-closure glaucoma and kidney stones</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more information, see <a href="https://link.cep.health/audhtml21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Topiramate product monograph</a></p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="non-pharmacotherapy-options" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Non-pharmacotherapy options								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>AUD is treated most effectively when pharmacotherapy is combined with other treatments.<sup>1,3</sup> Non-pharmacotherapy treatments help patients target behaviours that relate to drinking, develop skills needed to stop or reduce drinking, set reachable goals, build support networks and address triggers that might cause a relapse.<sup>1</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The goal is to improve health and wellness to live a full and self-directed life.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Types of behavioural treatments</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey blue">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:70%;">
+                                            <h5 style="text-align: left;">Cognitive–Behavioral Therapy (CBT)</h5>
+<p>This therapy is designed to address feelings and situations (triggers) that may lead to a relapse. Coping skills are learned in one-on-one or small group settings to change or address thought processes to manage the stress of triggers experienced in everyday life.</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:44%;">
+                                            <h6><strong>Resources</strong></h6>
+<ul>
+<li><a href="https://link.cep.health/audhtml73" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CBT Therapists in Ontario</a></li>
+<li>Contact information for treatment<br />
+services: <a href="https://link.cep.health/audhtml15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ConnexOntario</a> or 1.866.531.2600</li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:70%;">
+                                            <h5>Motivational Enhancement Therapy</h5>
+<p>This therapy is individualized for patients to consider their reasons for seeking treatment, form a plan to make changes in their life and to develop coping skills necessary to adhere to their plan. It is intended to be conducted over a short period of time.</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:44%;">
+                                            <h6><strong>Resources</strong></h6>
+<ul>
+<li><a href="https://link.cep.health/audhtml23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Canada Drug Rehab Addiction Services Directory</a></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:70%;">
+                                            <h5>Marital and Family Counseling</h5>
+<p>This therapy involves family members to increase support for the individual with AUD and to enhance the family’s understanding of the plan to address AUD. Strong family support increases the chances of maintaining abstinence.</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:44%;">
+                                            <h6><strong>Resources</strong></h6>
+<ul>
+<li><a href="https://link.cep.health/audhtml22" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">AUD Therapists in Ontario</a></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:70%;">
+                                            <h5>Community Reinforcement Therapy</h5>
+<p>This therapy involves group meetings with others who want to do something about their drinking problem. It is peer guided and selfsupporting (e.g. Alcoholics Anonymous).</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:44%;">
+                                            <h6><strong>Resources</strong></h6>
+<ul>
+<li><a href="https://link.cep.health/audhtml25" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Alcoholics Anonymous</a></li>
+<li><a href="https://link.cep.health/audhtml26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">SMART Recovery Meetings</a></li>
+<li><a href="https://link.cep.health/audhtml27" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">LifeRing Alcohol and Drug Peer Support Groups (non-spiritual)</a></li>
+<li><a href="https://link.cep.health/audhtml28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Togetherall</a></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="alcohol-withdrawal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Alcohol withdrawal								
+    <span class="badge new" data-last-modified="May 23, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Withdrawal symptoms usually start within 8 hours after the last drink but can occur days later. Symptoms typically peak by 24 to 72 hours but may continue for weeks.<sup>19</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Alcohol withdrawal that requires treatment is rare in people who consume fewer than six drinks per day. Older adults are an exception and may develop significant withdrawal symptoms even if fewer than six drinks per day are consumed.</p>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Past withdrawal predicts future episodes. Patients with a history of delirium tremens and withdrawal seizures are at high risk of reoccurrence if they return to drinking and stop again.<sup>19</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Screen for Alcohol Withdrawal</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The Clinical Institute Withdrawal Assessment of Alcohol Scale, Revised (<a href="https://link.cep.health/audhtml78" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CIWA-Ar</a>) is a validated instrument to monitor the severity of a patient’s withdrawal.<sup>3</sup> It consists of 10 items to assess symptoms, such as anxiety and hallucinations, as well as signs, such as tremor and sweating. The CIWA-Ar takes about 5 minutes for a primary care provider to administer.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>A patient with a CIWA-Ar score of &lt; 10 does not require medications to manage withdrawal symptoms, unless tremor is present.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>A patient with a CIWA-Ar score of &gt; 10 has a potential need for medication to manage their withdrawal symptoms.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Treatment for Alcohol Withdrawal</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Benzodiazepines are the first-line treatment for the withdrawal symptoms of alcohol withdrawal. Long-acting benzodiazepines, such as diazepam, may be more effective than short-acting in preventing complications. For more information on the treatment of alcohol with benzodiazepines, please visit <a href="https://link.cep.health/audhtml74" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">CAMH</a>. <sup>19</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>If a benzodiazapine has been initiatied, treatment is complete when the patient is comfortable, with minimal tremor, and the CIWA-Ar score is less than 8 on two consecutive readings.</p>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Refer to Specialist <sup>3</sup></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Refer to substance use specialist to manage withdrawal process (where available) or nearest emergency department for critical treatment:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>History of delirium tremens or withdrawal seizures</li>
+
+
+
+<li>Inability to tolerate oral medication</li>
+
+
+
+<li>Co-occurring medical conditions that would pose serious risk for ambulatory withdrawal management (e.g. severe coronary artery disease, congestive heart failure, liver cirrhosis)</li>
+
+
+
+<li>Severe alcohol withdrawal (i.e. CIWA-Ar score ≥20)</li>
+
+
+
+<li>Risk of withdrawal from other substances in addition to alcohol (e.g. sedative hypnotics)</li>
+</ul>
+</div></article></div>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="resources" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Resources								
+    <span class="badge new" data-last-modified="Jun 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Screening Tools</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li><a href="https://link.cep.health/audhtml71" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">AUDIT Tool</a> – considered a standard screening tool to identify people at risk of alcohol problems</li>
+<li><a href="https://link.cep.health/audhtml77" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">AUDIT-C</a> – is a 3-item alcohol screen that can help identify persons who are hazardous drinkers or have active alcohol use disorder (including alcohol abuse or dependence)</li>
+<li><a href="https://link.cep.health/audhtml31" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Paddington Alcohol Test (PAT)</a> – for use with specific triggers (e.g. fall, assault, collapse, self-neglect, repeat attender for unknown injury/illnesses)</li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Patient Tools</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/audhtml32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Addiction. The Next Step. (website)</a> – an online resource to help patients understand medications, resources available, frequently asked questions</li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Self-Help Book</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li>Mind-Body Workbook for Addiction: Effective Tools for Substance-Abuse Recovery and Relapse Prevention – useful to both patients<br />
+and providers with a mind-body technique to help patients stay sober, manage emotions and stress</li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Provider Tools</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li><a href="https://link.cep.health/audhtml75" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Fundamentals of Addiction (CAMH)</a> – an online resource with information on screening, treatment and resources</li>
+<li><a href="https://link.cep.health/audhtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Medication for the Treatment of Alcohol Use Disorder: A Brief Guide (SAMHSA)</a> – provides details on pharmacotherapy options, including contraindications, side effects and dosing</li>
+<li><a href="https://link.cep.health/audhtml76" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Managing Alcohol Problems (CAMH – 6-week online course)</a> – a self-directed online course to explore the use of pharmacotherapies and psychosocial treatments for patients with AUD</li>
+<li><a href="https://link.cep.health/audhtml79" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario College of Family Physicians (OCFP) Peer Connect Mentorship</a>&#8211; connects family doctors mentees with specialist expert mentors on an informal basis (not a referral service)</li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+    <span class="badge new" data-last-modified="May 24, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>Kahan M. Management of substance use disorders in primary care. 2015 Women’s College Hospital. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml36" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.schulich.uwo.ca/familymedicine/citywide/docs/Management_of_substance_use_disorders_in_primary_care.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>The American Psychiatric Association. Practice Guideline for the Pharmacological Treatment of Patients with Alcohol Use Disorder. 2018. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml37" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://psychiatryonline.org/doi/pdf/10.1176/appi.books.9781615371969</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>Department of Veterans Affairs, Department of Defense. VA/DoD clinical practice guideline for substance use disorders. 2015. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml38" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.healthquality.va.gov/guidelines/MH/sud/VADoDSUDCPGRevised22216.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>European Addiction Research. German Guidelines on Screening, Diagnosis and Treatment of Alcohol Use Disorders. 2017. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml39" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.karger.com/Article/Abstract/455841</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p>Medication for the Treatment of Alcohol Use Disorder: A Brief Guide. 2015. Substance Abuse and Mental Health Services Administration (SAMHSA). [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://store.samhsa.gov/product/Medication-for-the-Treatment-of-Alcohol-Use-Disorder-ABrief-Guide/SMA15-4907</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p>Chan AWK; Pristach EA; Welte JW; Russell M. Use of the TWEAK test in screening for alcoholism/heavy drinking in three populations. Alcoholism: Clinical and Experimental Research 17(6): 1188-1192, 1993. (30 refs.). [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml41" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pubmed/8116829</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p>Management of Alcohol Use Disorders in Older Adults, 2013. National Initiative for the Care of the Elderly. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p>Babor T, et al. AUDIT The Alcohol Use Disorders Identification Test. Guidelines for Use in Primary Care. Second Edition. Geneva: World Health Organization, 2001. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p>Alcoholism One-page Primer. Sarah Munroe, MD; Blaise Clarkson, MD, CCFP; Family and Community Medicine, University of Toronto, 2011. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml42" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://dfcmopen.com/item/alcoholism-one-page-primer/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p>Medication for the Treatment of Alcohol Use Disorder: A Brief Guide. 2015. Substance Abuse and Mental Health Services Administration (SAMHSA). [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://store.samhsa.gov/product/Medication-for-the-Treatment-of-Alcohol-Use-Disorder-ABrief-Guide/SMA15-4907</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p>Exploring Treatment Options for Alcohol Use Disorders, 2010. National Institute on Alcohol Abuse and Alcoholism. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p>Addressing Alcohol and Drug Use &#8211; An Integral Part of Primary Care, 2016. New York Department of Health and Mental Hygiene. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml44" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www1.nyc.gov/assets/doh/downloads/pdf/chi/chi-35-3.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p>Watkins, K. Procedures for Medication-Assisted Treatment of Alcohol or Opioid Dependence in Primary Care, 2016. The RAND Corporation. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p>Chick J (Chair). The management of harmful drinking and alcohol dependence in primary care. A national clinical guideline. Scottish Intercollegiate Guidelines Network, 2003. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p>Spithoff S, Kahan M. Primary care management of alcohol use disorder and at-risk drinking. Can Fam Physician. 2015 Jun; 61(6): 515-521. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml47" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4463892/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p>Babor T, et al. The Alcohol Use Disorders Identification Test (AUDIT). 2nd edition. World Health Organization. Geneva, 2001. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml48" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.drugabuse.gov/sites/default/files/files/AUDIT.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p>AUDIT-C Overview. Substance Abuse and Mental Health Services Administration (SAMHSA). [cited 2019 September 09].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p>Emiliussen J, Nielsen AS, Andersen K. Identifying Risk Factors for Late-Onset (50+) Alcohol Use Disorder and Heavy Drinking: A Systematic Review. Subst Use Misuse. 2017 Oct 15;52(12):1575–88. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml50" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pubmed/28524740</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p>Primary Care Toolkit: Portico Network (CAMH) [Medications for alcohol use disorders]. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p>Sawicka M, Tracy DK. Naltrexone efficacy in treating alcohol-use disorder in individuals with comorbid psychosis: a systematic review. Ther Adv Psychopharmacol. 2017 Sep;7(8–9):211–24. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml51" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pubmed/28959434</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p>National Institute on Alcohol Abuse and Alcoholism (NIH). Alcohol Use Disorder: A Comparison Between DSM–IV and DSM–5. cited 2019 September 2019]. Available from: <a href="https://link.cep.health/audhtml52" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubs.niaaa.nih.gov/publications/dsmfactsheet/dsmfact.htm</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p>Carpenter JE, LaPrad D, Dayo Y, DeGrote S, Williamson K. An Overview of Pharmacotherapy Options for Alcohol Use Disorder. Federal Practitioner. 2018 Oct. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml64" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.fedprac-digital.com/federalpractitioner/october2018/MobilePagedReplica.action?pm=1&amp;folio=48#pg24</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p>Zhang D-X, Li ST-S, Lee QK-Y, Chan KH-S, Kim JH, Yip BH-K, et al. Systematic Review of Guidelines on Managing Patients with Harmful Use of Alcohol in Primary Healthcare Settings. Alcohol. 2017 Sep 1;52(5):595–609. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml54" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pubmed/28591801</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [24]
+                    </div>
+
+                    <div class="column">
+                      <p>Salisbury-Afshar, Elizabeth MD, MPH, Heartland Health Outreach, Chicago, Illinois Am Fam Physician. Pharmacotherapy for Adults with Alcohol Use Disorder. 2016 Jul 15;94(2):155-157. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml55" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.aafp.org/afp/2016/0715/p155.html</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [25]
+                    </div>
+
+                    <div class="column">
+                      <p>Patel K. Pharmacologic Management of Alcohol Dependence. US Pharm. 2009;34(11):60- 65. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [26]
+                    </div>
+
+                    <div class="column">
+                      <p>Medications to Treat Alcohol Use Disorder, 2018. Center for Motivation and Change. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://addictionthenextstep.com/resources/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [27]
+                    </div>
+
+                    <div class="column">
+                      <p>Principles of Drug Addiction Treatment: A Research-Based Guide (Third Edition) &#8211; Alcohol Addiction, 2018. National Institute on Drug Abuse. [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [28]
+                    </div>
+
+                    <div class="column">
+                      <p>Rural Prevention and Treatment of Substance Use Disorder Toolkit: Pharmacotherapies for Substance Use Disorders. The Rural Health Information Hub is supported by the Health Resources and Services Administration (HRSA) of the U.S. Department of Health and Human Services (HHS). [cited 2019 April 11].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [29]
+                    </div>
+
+                    <div class="column">
+                      <p>Medication-Assisted Treatment (MAT) for Alcohol Use Disorder, 2015. Substance Abuse and Mental Health Services Administration (SAMHSA). [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml65" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://store.samhsa.gov/system/files/sma15-4907.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [30]
+                    </div>
+
+                    <div class="column">
+                      <p>Kaner EF, Beyer FR, Muirhead C, Campbell F, Pienaar ED, Bertholet N, et al. Effectiveness of brief alcohol interventions in primary care populations. Cochrane Database Syst Rev. 2018 24;2:CD004148. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml60" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.cochrane.org/CD004148/ADDICTN_effectiveness-brief-alcohol-interventions-primary-care-populations</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [31]
+                    </div>
+
+                    <div class="column">
+                      <p>Implementing Care for Alcohol &amp; Other Drug Use in Medical Settings: An Extension of SBIRT, 2018. National Council for Behavioural Health. [cited 2019 April 11]. Available from: <a href="https://link.cep.health/audhtml61" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=42&amp;ved=2ahUKEwiYu-bnxvfeAhWL44MKHSKbB604KBAWMAF6BAgAEAI&amp;url=https%3A%2F%2Fwww.thenationalcouncil.org%2Fwp-content%2Fuploads%2F2018%2F03%2F021518_NCBH_ASPTReport-FINAL.pdf&amp;usg=AOvVaw3K4U1_mtQGjb6fplcrOQf_</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [32]
+                    </div>
+
+                    <div class="column">
+                      <p>Naglich AC, Lin A, Wakhlu S, Adinoff BH. Systematic Review of Combined Pharmacotherapy for the Treatment of Alcohol Use Disorder in Patients Without Comorbid Conditions. CNS Drugs. 2018 Jan;32(1):13–31. [cited 2019 April 11]. Available from: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29273901" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pubmed/29273901</a></p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgments-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgments and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p>This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice in collaboration with the Ontario College of Family Physicians and the Nurse Practitioners’ Association of Ontario. Clinical leadership for the development of the Tool was provided by Jose Silveira MD, FRCPC Dip. ABAM and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as part of the Knowledge Translation in Primary Care Initiative.</p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgment in using this Tool. Neither the Centre for Effective Practice (“CEP”), Ontario College of Family Physicians, Nurse Practitioners’ Association of Ontario, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+<p><em>Alcohol Use Disorder (AUD) Tool is a product of the Centre for Effective Practice. Permission to use, copy, and distribute this material for all non-commercial and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of the Alcohol Use Disorder Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the Centre for Effective Practice (Email: <a href="mailto:info@cep.health">info@cep.health</a>).</em></p>
+<p>For statistical and bibliographic purposes, please notify the Centre for Effective Practice (<a href="mailto:info@cep.health">info@cep.health</a>) of any use or reprinting of the Tool. Please use the below citation when referencing the Tool: Reprinted with Permission from the Centre for Effective Practice. (September 2019). Alcohol Use Disorder (AUD) Tool: Ontario. Toronto: Centre for Effective Practice.</p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+            
+                <p>
+                  In collaboration with:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/OCFP_Logo_UPDATED.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/NPAO-Logo.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/assets/js/app/modules/slider.js?ver=6.4.2" id="block-acf-drug-options-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":40866,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

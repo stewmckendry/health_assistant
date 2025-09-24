@@ -1,0 +1,136 @@
+Subsection: Surgical Assistants’ Services
+Parent Section: GP
+Page Reference: GP85
+Pages: 99 to 102
+Extracted text length: 8104 characters
+============================================================
+
+--- PAGE 99 ---
+GENERAL PREAMBLE
+SURGICAL ASSISTANTS’ SERVICES
+SPECIFIC ELEMENTS
+In addition to the common elements, assistance at surgery includes the following specific elements.
+A. Preparing or supervising the preparation of the patient for the procedure.
+B. Performing the procedure by any method, or assisting another physician in the performance of the
+procedure(s), assisting with the carrying out of all recovery room procedures and the transfer of the
+patient to the recovery room, and any ongoing monitoring and detention rendered during the
+immediate post-operative and recovery period, when indicated.
+C. Making arrangements for any related assessments, procedures, or therapy, (including obtaining
+any specimens from the patient) and/or interpreting results.
+D. When medically indicated, monitoring the condition of the patient for post-procedure follow-up until
+the first post-operative visit.
+E. Discussion with, and providing any advice and information, including prescribing therapy to the
+patient or the patient’s representative, whether by telephone or otherwise, on matters related to the
+service.
+F. Providing premises, equipment, supplies, and personnel for services identified with prefix # for any
+aspect(s) of A, C, D, and E that is (are) performed in a place other than the place in which the
+surgical procedure is performed.
+While no occasion may arise for performing elements A, C, D or E, when performed in connection with
+the specific elements of a service, these are included in the service.
+CALCULATION OF FEE PAYABLE: BASIC UNITS AND TIME UNITS
+Except where “nil” is listed opposite the service in the column headed with “Asst”, the amount payable
+for the surgical assistant service is calculated by adding together the number of basic and time units
+and multiplying that total by the unit fee.
+Assistant Unit Fee ................................................................ $12.51
+Basic Units: The number of basic units is the number of units listed opposite the service in the
+column headed with “Asst”, except
+a. where multiple or bilateral surgical procedures are performed during the same anaesthetic,
+the number of basic units is that listed in the column headed with “Asst” opposite the service
+that describes the major procedure; or
+b. where no basic unit is listed opposite the service in the column headed with “Asst” and
+where “nil” is not listed opposite the service in the column headed with “Asst”, the number of
+basic units is that listed opposite the service under the column headed with “Anae”. This
+type of service is only eligible for payment upon authorization by a medical consultant
+following submission of a letter from the surgeon outlining the reason the assistant was
+required. Submit claims for this type of service using fee code M400B.
+Where “nil” is listed opposite the service in the column headed with “Asst”, the assistant’s service is
+not eligible for payment.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP85 Amd 12 Draft 1
+
+--- PAGE 100 ---
+GENERAL PREAMBLE
+SURGICAL ASSISTANTS’ SERVICES
+Time Units: For the purpose of calculating time units, time is determined per operation as the total of
+the following, excluding any time spent waiting between surgical procedures:
+a. time spent by the physician in direct contact with the patient in the operating room prior to
+scrub time to assist with patient preparation; and
+b. time spent by the physician assisting at the patient's surgery starting with scrub time and
+ending when the physician is no longer required to be in attendance with that patient.
+Time units are calculated for each 15 minutes or part thereof. The unit value of each 15 minute period
+or part thereof is:
+During the first hour or less..................................................... 1 unit
+After the first hour ................................................................... 2 units
+After 2.5 hours ........................................................................ 3 units
+Claims submission instruction:
+Submit claims for assisting at surgery using the suffix “B”, with the procedural code.
+[Commentary:
+See Appendix H for a table stating the duration of surgical assisting and corresponding time
+units.]
+Amd 12 Draft 1 GP86 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 101 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+SURGICAL ASSISTANTS’ SERVICES
+AFTER HOURS PREMIUMS
+These premiums are payable when a case commences:
+E400B Evenings (17:00h – 24:00h) Monday to Friday or daytime and
+evenings on Saturdays, Sundays or Holidays - increase the
+total assistant’s fee by ........................................................ 50%
+E401B Nights (00:00h – 07:00h) - increase the total assistant's fee by 75%
+REPLACEMENT SURGICAL ASSISTANT
+When one surgical assistant (“the first assistant”) starts a procedure and is replaced by another
+surgical assistant (“the replacement assistant”) during a surgical procedure:
+a. The amount payable to the first assistant is calculated by adding the listed procedural basic
+units plus time units for the time the first assistant is in attendance.
+b. The service provided by the replacement assistant constitutes E005B based on the number
+of time units for the time the replacement assistant is in attendance.
+Payment rules:
+1.Base units are not eligible for payment to the replacement assistant.
+2.Time units for the replacement assistant are calculated based on the total time the
+replacement assistant participates in the case. Time unit values are calculated in the same
+manner as would have applied to the original assistant had he/she not been replaced.
+[Commentary:
+As an example, if the original assistant is eligible for double time units when the replacement
+assistant takes over, the replacement assistant is also eligible for double time units.]
+3.E400B or E401B is eligible for payment with E005B only if the beginning of the case
+commences after hours.
+Medical record requirements:
+E005B is only eligible for payment when the start and stop times are documented in the
+patient’s permanent medical record.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP87 Amd 12 Draft 1
+
+--- PAGE 102 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+SURGICAL ASSISTANTS’ SERVICES
+SPECIAL VISIT PREMIUMS
+All special visit premiums are subject to the maximums, limitations and conditions set out in the
+"Special Visit Premium Table" applicable in the circumstances.
+Sacrifice of Office Hours
+[Commentary:
+For the definition of Sacrifice of Office Hours, see GP65.]
+C988B Special visit premium to assist at non-elective surgery with
+sacrifice of office hours - first patient seen.......................... 76.40
+Payment rules:
+C988B is not eligible for payment in respect of any special visits to assist at surgery in a calendar
+month if the amount payable for all surgical assistant's fees (including special visit premiums
+associated with performing surgical assistant services) rendered by the physician in that month is
+greater than 20% of the total amount payable for all insured services rendered by the physician in that
+month.
+Evenings, Weekend/Holiday and Nights
+C998B Evenings (17:00h - 24:00h) Monday to Friday, first patient
+seen..................................................................................... 67.05
+C983B Saturdays, Sundays or Holidays, daytime and evenings
+(07:00h -24:00h), first patient seen ..................................... 85.60
+C999B Nights (00:00h - 07:00h), first patient seen ............................. 117.65
+Payment rules:
+1. C988B, C998B, C983B and C999B are only eligible for payment for the first patient seen on
+each special visit.
+2. C988B, C998B, C983B, C999B are only eligible for payment when the physician is required to
+travel from one location to another location, as defined under “Travel Premium”, page
+GP66.
+[Commentary:
+1.The specific requirements for special visits are found on pages GP65 to GP77.
+2.These premiums are eligible for payment in addition to the E400 and E401 premiums.]
+Amd 12 Draft 1 GP88 February 14 , 2 025 (e ffective M arch 3, 2025)

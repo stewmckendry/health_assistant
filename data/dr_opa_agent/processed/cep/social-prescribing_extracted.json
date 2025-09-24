@@ -1,0 +1,123 @@
+{
+  "document_id": "cep_social_prescribing",
+  "source_url": "https://tools.cep.health/tool/social-prescribing/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "social_care",
+  "extracted_at": "2025-09-24T15:33:02.987381",
+  "content_hash": "e8a4dc8c4cdaf6f66253566f0c71877d6f0381f3164ef26d49717dc3504ce769",
+  "title": "Social Prescribing: a Resource for Health Professionals",
+  "tool_slug": "social-prescribing",
+  "last_updated": "October 11, 2023",
+  "navigation": [
+    {
+      "title": "Making a warm connection",
+      "anchor": "#warmconnection",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Using a navigator",
+      "anchor": "#navigator",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "It addresses social determinants of health, which is key to improving health outcomes.Empowers people to take an active role in co-creating their health and well-being.Helps people build meaningful co",
+      "TeamCare (available across multiple sites in ON)\u2013 provides support with conducting an assessment and connecting an individual to a range of social and community supports.211 Ontario Community Connecti"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Introduction to social prescribing",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Being ready:incorporating social prescribing into your practice2,4-6",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Social prescribing is a practical way for health professionals to address social determinants of health by connecting people with a range of resources that support their social, mental and physical well-being. It expands the options available in primary care and connects people to non-clinical services and programs in the community to improve their health and well-being. Social prescribing may help patients with their: Mental health/substance useSocial support systemFinancial wellbeingHousing..."
+    },
+    {
+      "heading": "Assess and understand the social factors impacting health",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Through discussion with individuals, assess their needs to understand how social determinants of health may be affecting their well-being. It is important to block off time for open-ended conversations to discuss their needs. Document identified social determinants of health in the individual\u2019s health record (e.g., in the CPP).1,2,4,6 Lead with empathy and create a safe space for all\u2013 Remember that everyone comes with a unique social story. Approach discussions with an empathetic, welcoming m..."
+    },
+    {
+      "heading": "Initiate social prescribing",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pointing a person to a support1,2,6",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Making a warm connection",
+          "anchor": "#warmconnection",
+          "level": 3
+        },
+        {
+          "heading": "Using a navigator",
+          "anchor": "#navigator",
+          "level": 3
+        },
+        {
+          "heading": "Resources",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Billing for social prescribing",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Once an individual\u2019s needs and the social factors impacting their health have been identified,work together to initiatesocial prescribing. Social prescribing should betailored toanindividual\u2019sspecific needs, context and identity,as well astime and resourcesavailable to thehealthcare professional. Thereisno one-size\u2013fits\u2013all approach to social prescribing. Social prescribing can take the form of: Pointing a person to a support service.Making a warm connectionand ensuring the patient has the re..."
+    },
+    {
+      "heading": "After social prescribing: follow-up and follow through",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "After initiating a social prescription, be diligent in scheduling a follow-up appointment(s) to check-in on its effectiveness. Just like other prescriptions and referrals, best practice in social prescribing requires follow-up. Be sure to emphasize to the individual that their social needs are equally as important as their medical ones. The follow-up gives the healthcare professional or navigator an opportunity to assess the fit of the prescription, to redefine goals and to identify any barri..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]World Health Organization. A toolkit on how to implement social prescribing. 2022.[2]Alliance for Healthier Communities. Social prescribing guidebook for team: based primary care providers in Ontario. n.d.[3]Napierala H, Kr\u00fcger K, Kuschick D, Heintze C, Herrmann WJ, Holzinger F. Social prescribing: Systematic review of the effectiveness of psychosocial community referral interventions in primary care. Int J Integr Care. 2022 Aug 19;22(3):11.[4]Bloch G, Rozmovits L. Implementing social inte..."
+    },
+    {
+      "heading": "Acknowledgment and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Social Prescribing: A Resource for Health Professionals was developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Dominik Nowak. End users and clinical experts were also e..."
+    }
+  ],
+  "references": [],
+  "summary": "Social Prescribing: a Resource for Health Professionals. Category: Social Care. Features: forms. 6 main sections"
+}

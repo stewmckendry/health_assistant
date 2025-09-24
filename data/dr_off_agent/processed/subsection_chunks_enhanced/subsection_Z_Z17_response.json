@@ -1,0 +1,182 @@
+{
+  "subsection_title": "Meningocoele and Myelomeningocoele",
+  "parent_section": "Z",
+  "page_ref": "Z17",
+  "pages_processed": "789-789",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "E382",
+      "description": "spinal duroplasty using autologous/allogenic/synthetic tissue",
+      "fee": 244.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N535",
+      "description": "Repair of meningocoele",
+      "fee": 510.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 7,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N536",
+      "description": "Repair of myelomeningocoele (one surgeon)",
+      "fee": 1217.1,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 7,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N537",
+      "description": "neurosurgeon",
+      "fee": 510.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N538",
+      "description": "reconstructive surgeon",
+      "fee": 881.55,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N565",
+      "description": "Repair of lipomeningocoele including release of tethered cord",
+      "fee": 1622.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 8,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N566",
+      "description": "Repair of anterior sacral meningocoele including release of tethered cord",
+      "fee": 1020.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 8,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "N567",
+      "description": "Repair of intraspinal meningocoele",
+      "fee": 1020.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 8,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "N535",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    },
+    {
+      "code": "N536",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    },
+    {
+      "code": "N537",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    },
+    {
+      "code": "N538",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    },
+    {
+      "code": "N565",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    },
+    {
+      "code": "N566",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    },
+    {
+      "code": "N567",
+      "context": "not payable with",
+      "description": "No decompressive codes are eligible for payment rendered with N535, N536, N537, N538, N565, N566 or N567.",
+      "source_subsection": "Meningocoele and Myelomeningocoele",
+      "source_page": "Z17"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

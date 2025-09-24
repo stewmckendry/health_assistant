@@ -1,0 +1,151 @@
+{
+  "document_id": "cep_attention_deficit_hyperactivity_disorder_in_adults",
+  "source_url": "https://tools.cep.health/tool/attention-deficit-hyperactivity-disorder-in-adults/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "mental_health",
+  "extracted_at": "2025-09-24T15:32:59.902330",
+  "content_hash": "5884c3ddf44c9cfa9f8849bc6cffd532d4c9195e21fba382ce5444d7d297a400",
+  "title": "Attention Deficit Hyperactivity Disorder (ADHD) in Adults",
+  "tool_slug": "attention-deficit-hyperactivity-disorder-in-adults",
+  "last_updated": "March 19, 2025",
+  "navigation": [
+    {
+      "title": "Categories of impairment2,7,8",
+      "anchor": "#categories",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Treatment options",
+      "anchor": "#firstline",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Medications3-4,11-27",
+      "anchor": "#meds",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Screening and diagnosis",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Opportunities for screening",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screening",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Diagnosis",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Consider screening for ADHD in primary care in adults who present with executive function difficulties, including those who do not have a childhood diagnosis of ADHD. Due to the barriers to accessing specialty care, this tool aims to empower and guide primary care providers in managing adult ADHD within the primary care setting.For additional supportsee theCanadian ADHD Resource Alliance (CADDRA)and consult specialists across the province atOTN eConsult. Consider screening your patient who ha..."
+    },
+    {
+      "heading": "Initiating treatmentNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Develop a treatment plan with your patient that addresses their psychological, behavioural, occupational and educational needs.4 How symptoms and impairments affect the patient\u2019s daily life activities, including sleep and appetite.4E.g. the potential for stimulant-induced appetite suppression and proactively planning for food and hydration reminders.2The patient\u2019s resilience and protective factors (positive self-esteem, success at school, steady employment, supportive family).4,9Consider inco..."
+    },
+    {
+      "heading": "Non-pharmacological treatment optionsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Non-pharmacological treatment should always be discussed as an adjunct therapy when prescribing medication for ADHD to optimize the effects of the patient\u2019s treatment.2When available, the following may be helpful: Consider a structured, supportive psychological intervention focused on ADHD, such as cognitive behavioural therapy (CBT).4Consider referring patients for more information on ADHD (e.g., coaching, counselling, mindfulness, food and nutrition, healthy lifestyle modifications, vocatio..."
+    },
+    {
+      "heading": "Pharmacological treatment options",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Considerations when prescribing2,3,4",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Medications3-4,11-27",
+          "anchor": "#meds",
+          "level": 3
+        },
+        {
+          "heading": "Titration",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "If a patient has a diagnosis of ADHD, pharmacological and non-pharmacological treatment should be used in parallel. Revisit the patient\u2019s S.M.A.R.T. goal methods to determine when their medication needs to be effective over an extended period. This can help determine if medication is losing effect during the day.2Evaluate current educational or employment circumstances.3,4Complete a risk assessment for substance misuse and drug diversion.3,4Rule out contraindications to medication (e.g., unco..."
+    },
+    {
+      "heading": "Treatment for patients with comorbid conditions and differential diagnosisNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Select comorbid condition to view details",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Up to 80% of adults with ADHD will have at least one other mental health diagnosis (e.g. anxiety, mood disorder, personality disorder or substance use disorder) or a comorbid neurodevelopmental condition (e.g. autism spectrum disorder or a learning/intellectual disability).3 It is important for treatment to address themost distressingsymptoms first. Consultation with an experienced healthcare ADHD professional or psychologist may be required for complex cases. Note:Medications such as SSRIs a..."
+    },
+    {
+      "heading": "Maintenance and monitoringNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Guidance for conducting follow-up visits with patients",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Follow up is recommended 3-12 months after optimizing treatment (i.e. an effective long-term stable dose is obtained), unless clinical indicators warrant the need for an earlier visit. Considerations to address during the follow-up visit include: Ongoing monitoring of the following is recommended2,3,4:AppetiteWeightSleepCardiovascular functionTicsSeizuresSexual functionWorsening symptomsWorsening of moodIncreased anxietyRisk of stimulant diversionAssess cardiovascular health (e.g., heart rate..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]UpToDate. Approach to treating attention deficit hyperactivity disorder in adults. 2019.[cited 2019 November 13].[2]Expert opinion.[3]Australasian ADHD Professionals Association (AADPA). Australian Evidence-Based Clinical Practice ADHD Guideline. 2022. Available from:https://adhdguideline.aadpa.com.au/[4]National Institute for Health and Care Excellence (NICE). Attention deficit hyperactivity\u00a0disorder: diagnosis and management. 2018. Available fromhttps://www.nice.org.uk/guidance/ng87[5]Up..."
+    },
+    {
+      "heading": "Acknowledgment and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "TheADHD in Adults tool\u00a0was developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Devon Shewfelt. End users and clinical experts were also engaged to provide feedback.\u00a0Fund..."
+    }
+  ],
+  "references": [],
+  "summary": "Attention Deficit Hyperactivity Disorder (ADHD) in Adults. Category: Mental Health. Features: algorithm, calculator, checklist. 8 main sections"
+}

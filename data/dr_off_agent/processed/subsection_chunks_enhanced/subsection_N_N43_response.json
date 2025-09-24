@@ -1,0 +1,338 @@
+{
+  "subsection_title": "Femur",
+  "parent_section": "N",
+  "page_ref": "N43",
+  "pages_processed": "607-609",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "R625",
+      "description": "Gritti-Stokes or Callander",
+      "fee": 349.85,
+      "units": 6
+    },
+    {
+      "code": "R626",
+      "description": "Through femur",
+      "fee": 306.3,
+      "units": 6
+    },
+    {
+      "code": "Z869",
+      "description": "core, punch",
+      "fee": 48.5,
+      "units": 7
+    },
+    {
+      "code": "Z870",
+      "description": "x-ray control/general anaesthetic",
+      "fee": 120.7,
+      "units": 6
+    },
+    {
+      "code": "Z242",
+      "description": "open",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "Z228",
+      "description": "open",
+      "fee": 97.35,
+      "units": 6
+    },
+    {
+      "code": "Z219",
+      "description": "Muscle needle biopsy, soft tissue, per site",
+      "fee": 31.2
+    },
+    {
+      "code": "R256",
+      "description": "Injection into bone cysts",
+      "fee": 117.0
+    },
+    {
+      "code": "R242",
+      "description": "Bone",
+      "fee": 325.75,
+      "units": 6
+    },
+    {
+      "code": "R245",
+      "description": "Sequestrectomy",
+      "fee": 395.25,
+      "units": 6
+    },
+    {
+      "code": "R243",
+      "description": "Saucerization and graft",
+      "fee": 619.9,
+      "units": 6
+    },
+    {
+      "code": "Z226",
+      "description": "Soft tissue",
+      "fee": 97.35,
+      "units": 7
+    },
+    {
+      "code": "R314",
+      "description": "Simple cyst/exostosis",
+      "fee": 225.5,
+      "units": 6
+    },
+    {
+      "code": "R330",
+      "description": "simple",
+      "fee": 629.65,
+      "units": 6
+    },
+    {
+      "code": "R216",
+      "description": "with reconstruction/graft",
+      "fee": 1007.35,
+      "units": 8
+    },
+    {
+      "code": "R522",
+      "description": "simple",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R523",
+      "description": "complex",
+      "fee": 484.35,
+      "units": 6
+    },
+    {
+      "code": "R632",
+      "description": "simple",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R633",
+      "description": "complex with or without synthetic graft or rotation flap",
+      "fee": 402.75,
+      "units": 6
+    },
+    {
+      "code": "E048",
+      "description": "intramedullary nail with distal and proximal locking screws - femur",
+      "fee": 108.75,
+      "special_prefix": "+"
+    },
+    {
+      "code": "R328",
+      "description": "Bone graft with or without external fixation",
+      "fee": 872.65,
+      "units": 6
+    },
+    {
+      "code": "R967",
+      "description": "Circular external fixation",
+      "fee": 291.4,
+      "units": 6
+    },
+    {
+      "code": "R262",
+      "description": "Osteotomy femoral shaft",
+      "fee": 727.15,
+      "units": 6
+    },
+    {
+      "code": "R215",
+      "description": "Osteotomy supracondylar",
+      "fee": 387.0,
+      "units": 6
+    },
+    {
+      "code": "R963",
+      "description": "Single level correction - circular external fixation",
+      "fee": 638.4,
+      "units": 6
+    },
+    {
+      "code": "R964",
+      "description": "Double level correction - circular external fixation",
+      "fee": 798.1,
+      "units": 6
+    },
+    {
+      "code": "R965",
+      "description": "Bone transport - circular external fixation (less than or equal to 6 cm)",
+      "fee": 655.15,
+      "units": 6
+    },
+    {
+      "code": "R966",
+      "description": "Bone transport - circular external fixation (greater than 6 cm)",
+      "fee": 763.8,
+      "units": 6
+    },
+    {
+      "code": "R333",
+      "description": "Femoral shortening",
+      "fee": 480.7,
+      "units": 6
+    },
+    {
+      "code": "R332",
+      "description": "Femoral lengthening",
+      "fee": 541.95,
+      "units": 6
+    },
+    {
+      "code": "R968",
+      "description": "Lengthening with circular external fixation (less than or equal to 6 cm)",
+      "fee": 546.55,
+      "units": 6
+    },
+    {
+      "code": "R969",
+      "description": "Lengthening with circular external fixation (greater than 6 cm)",
+      "fee": 763.8,
+      "units": 6
+    },
+    {
+      "code": "R340",
+      "description": "Femoral epiphysiodesis",
+      "fee": 301.6,
+      "units": 7
+    },
+    {
+      "code": "R341",
+      "description": "Tibial and femoral epiphysiodesis",
+      "fee": 426.9,
+      "units": 7
+    },
+    {
+      "code": "R343",
+      "description": "Femoral stapling",
+      "fee": 313.65,
+      "units": 7
+    },
+    {
+      "code": "R344",
+      "description": "Tibial and femoral stapling",
+      "fee": 387.0,
+      "units": 6
+    },
+    {
+      "code": "R589",
+      "description": "simple",
+      "fee": 227.4,
+      "units": 7
+    },
+    {
+      "code": "R587",
+      "description": "reconstructive",
+      "fee": 387.0,
+      "units": 7
+    },
+    {
+      "code": "R530",
+      "description": "Quadricepsplasty - all types",
+      "fee": 381.4,
+      "units": 7
+    },
+    {
+      "code": "R561",
+      "description": "Ilio-tibial band",
+      "fee": 190.1,
+      "units": 6
+    },
+    {
+      "code": "Z197",
+      "description": "Closed release of ilio-tibial band",
+      "fee": 49.2,
+      "units": 6
+    },
+    {
+      "code": "R543",
+      "description": "single",
+      "fee": 168.85,
+      "units": 7
+    },
+    {
+      "code": "R562",
+      "description": "multiple",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R557",
+      "description": "single",
+      "fee": 223.65,
+      "units": 7
+    },
+    {
+      "code": "E050",
+      "description": "each additional",
+      "fee": 77.05,
+      "special_prefix": "+"
+    },
+    {
+      "code": "R571",
+      "description": "Tendon or muscle transfer",
+      "fee": 307.15,
+      "units": 7
+    },
+    {
+      "code": "E049",
+      "description": "each additional",
+      "fee": 87.2,
+      "special_prefix": "+"
+    },
+    {
+      "code": "R524",
+      "description": "Excision of myositis",
+      "fee": 289.5,
+      "units": 7
+    },
+    {
+      "code": "F094",
+      "description": "traction - infant or child",
+      "fee": 258.0,
+      "units": 6
+    },
+    {
+      "code": "F095",
+      "description": "traction - adult or adolescent",
+      "fee": 407.35,
+      "units": 6
+    },
+    {
+      "code": "F097",
+      "description": "cast",
+      "fee": 258.9,
+      "units": 6
+    },
+    {
+      "code": "F096",
+      "description": "open reduction",
+      "fee": 670.0,
+      "units": 8
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E048",
+      "context": "not payable with",
+      "description": "intramedullary nail with distal and proximal locking screws - femur",
+      "source_subsection": "Femur",
+      "source_page": "N43"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

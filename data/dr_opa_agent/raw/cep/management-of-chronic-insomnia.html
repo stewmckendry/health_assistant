@@ -1,0 +1,2368 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Management of Chronic Insomnia |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/management-of-chronic-insomnia\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/68280" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fmanagement-of-chronic-insomnia%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fmanagement-of-chronic-insomnia%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-68280 wp-theme-cep-tools management-of-chronic-insomnia">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Management of Chronic Insomnia</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: April 10, 2025</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This clinical tool guides primary care providers to assess and manage chronic insomnia and pharmacological options in the general adult population. An estimated 3. 3 million Canadians aged 15 years or older (about one in ever y seven Canadians) have difficulty going to sleep or staying asleep.<sup>1</sup> This can impact both daily functioning and quality of life. Appropriate management options, such as cognitive behaviour therapy for insomnia (CBT-I) and pharmacotherapy regimens, are discussed in the tool to support primary care providers in their approach.<sup>2,3,4</sup> Considerations and instructions for initiating a benzodiazepine taper are also addressed within the tool.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Assessment</h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ol class="wp-block-list">
+<li>Consider using a <a href="https://link.cep.health/mci1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">sleep disorder questionnaire</a></li>
+
+
+
+<li>Instruct patient to complete a <a href="https://link.cep.health/insomhtml30" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">sleep diary</a></li>
+
+
+
+<li>Assess severity of insomnia using one or more of the following:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a href="https://link.cep.health/insomhtml3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Insomnia Severity Index</a></li>
+
+
+
+<li><a href="https://link.cep.health/mci4" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Epworth Sleepiness Scale</a></li>
+
+
+
+<li><a href="https://link.cep.health/insomhtml5" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">STOPBANG</a></li>
+</ul>
+</div></article></li>
+
+
+
+<li>Refer to a <a href="https://link.cep.health/insomhtml6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">sleep clinic</a> for further investigation if necessary (e.g., circadium rhythm disorder, sleep apnea/snoring, movement disorder, or parasomnia)</li>
+</ol>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Management Overview</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Insomnia often manifests as a chronic disease, and approaches for management may take a few months or years to optimize. Start with interventions at base of pyramid, then monitor, evaluate and initiate further interventions, as needed.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:85%"><article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1544" height="982" src="https://tools.cep.health/wp-content/uploads/2021/07/insomnia-pyramid.png" alt="" class="wp-image-38164"/></figure>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="address-and-optimize-the-management-of-underlying-causes" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Address and optimize the management of underlying causes								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Comorbid conditions associated with insomnia are very common. In most cases, addressing and optimizing the management of an underlying medical, psychiatric or environmental cause may improve insomnia (e.g., treating hyperthyroidism). In other cases, treating insomnia with CBT-I has offered improvement to comorbid conditions (e.g., depression or chronic pain).<sup>5,6 </sup>Discuss with the patient to understand potential underlying causes.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Common comorbid medical <strong>disorders</strong>, conditions and symptoms<sup>4</sup></h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Cardiovascular:</strong> Angina, congestive heart failure, dyspnea, dysrhythmias</li>
+
+
+
+<li><strong>Endocrine:</strong> Diabetes mellitus, hyperthyroidism, hypothyroidism</li>
+
+
+
+<li><strong>Genitourinary:</strong> Incontinence, benign prostatic hypertrophy, nocturia, enuresis, interstitial cystitis</li>
+
+
+
+<li><strong>Mental Health (psychiatric):</strong><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Mood disorders: depression, bipolar, dysthymia</li>
+
+
+
+<li>Anxiety disorders: generalized anxiety disorder, panic disorder, post-traumatic stress disorder, obsessive compulsive disorder</li>
+
+
+
+<li>Psychotic disorders: schizophrenia, schizoaffective disorder</li>
+
+
+
+<li>Amnestic disorders: Alzheimer’s disease</li>
+
+
+
+<li>Other: attention deficit disorder, adjustment disorders, personality disorders, bereavement, stress</li>
+</ul>
+</div></article></li>
+
+
+
+<li><strong>Musculoskeletal:</strong> Rheumatoid arthritis, osteoarthritis, fibromyalgia, Sjögren’s syndrome, kyphosis</li>
+
+
+
+<li><strong>Neurological:</strong> Stroke, dementia, Parkinson’s disease, seizure, headache, traumatic brain injury, peripheral neuropathy, chronic pain disorders, neuromuscular disorders</li>
+
+
+
+<li><strong>Reproductive:</strong> Menstrual cycle variations, including pregnancy and menopause</li>
+
+
+
+<li><strong>Sleep:</strong> Obstructive sleep apnea, central sleep apnea, restless legs syndrome, periodic limb movement disorder, circadian rhythm sleep disorders, parasomnias</li>
+
+
+
+<li><strong>Environmental:</strong> Noise, temperature, disruptive presence of a partner, uncomfortable bed</li>
+
+
+
+<li><strong>Other:</strong> Allergies, rhinitis, sinusitis, bruxism, alcohol and other substance use/dependence/withdrawal</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Pharmacological causes of insomnia</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Change administration of drug(s) to the morning (AM), taper or stop, if possible. Drugs may cause fragmented sleep, nightmares, nocturia, or stimulation. These include:</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:75%"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Antidepressants: </strong>Bupropion, MAOIs (phenelzine, tranylcypromine), SNRIs (desvenlafaxine, duloxetine, venlafaxine), SSRIs (citalopram, escitalopram, fluoxetine, paroxetine, sertraline)</li>
+
+
+
+<li><strong>Cardiovascular: </strong>α-blockers (e.g., tamsulosin), β-blockers (e.g., propranolol, metoprolol), diuretics (e.g., furosemide, hydrochlorothiazide), statins</li>
+
+
+
+<li><strong>Decongestants: </strong>Phenylephrine, pseudoephedrine</li>
+
+
+
+<li><strong>Opioids:</strong> In combination with caffeine (e.g., Tylenol #1, #2, #3)</li>
+
+
+
+<li><strong>Respiratory: </strong>β2-agonists (e.g., salbutamol, salmeterol, formoterol, terbutaline, indacaterol, olodaterol), theophylline</li>
+
+
+
+<li><strong>Stimulants:</strong> Amphetamine, caffeine, cocaine, ephedrine, methylphenidate, modafinil</li>
+
+
+
+<li><strong>Others:</strong> Acetylcholinesterase inhibitors (e.g., donepezil), alcohol (fragmented sleep), antineoplastics, corticosteroids (e.g., prednisone), dopamine receptor agonists (e.g., levodopa, rotigotine), nicotine, medroxyprogesterone, phenytoin, thyroid supplements</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p style="font-size:12px"><strong>MAOIs</strong> = Monoamine Oxidase Inhibitors, <strong>SNRIs</strong> = Serotonin Norepinephrine Reuptake Inhibitors, <strong>SSRIs</strong> = Selective Serotonin Reuptake Inhibitors</p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:25%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-yellow-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Five most common medications likely to disrupt sleep<sup>7</sup></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ol class="wp-block-list">
+<li>Levodopa</li>
+
+
+
+<li>Prednisone</li>
+
+
+
+<li>Venlafaxine</li>
+
+
+
+<li>Fluvoxamine</li>
+
+
+
+<li>Rotigotine</li>
+</ol>
+</div></article></div>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="non-pharmacological-options" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Non-pharmacological options								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>CBT-I is recommended as the initial treatment for chronic insomnia<sup>2 , 3, 4 , 5</sup></strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Components of cognitive behavioural therapy for insomnia (CBT-I) are outlined in the cards below.<sup>8</sup></li><li>CBT-I has shown improved Insomnia Severity Index (ISI) scores, sleep onset latency (time to fall asleep), wake af ter sleep onset, sleep ef f iciency and quality. Studies show no signif icant dif ference in total sleep time compared to placebo group.</li></ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Non-pharmacological Interventions</h3>
+</div></article>
+
+<article class="block--drug-options ">
+<div class="container">
+  <h5><span style="font-size: 13.5px;">Scroll (left-right) for details</h5>
+          <div class="slider">
+        <div class="inner-stage">
+          <ul>
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Sleep hygiene</h6>
+                    <p><strong>Intended effect</strong></p>
+<ul>
+<li><span id="page1R_mcid126" class="markedContent"><span dir="ltr" role="presentation">Reduce behaviours that inter fere </span></span><span id="page1R_mcid127" class="markedContent"><span dir="ltr" role="presentation">with sleep drive or increase arousal</span></span></li>
+</ul>
+<p><strong>Specific directions for patients</strong></p>
+<ul>
+<li>Stick to a regular sleep schedule – even on weekends</li>
+<li>Get regular exercise – avoid exercising in the late evening<sup>9,10</sup></li>
+<li>Go to bed only when you feel tired</li>
+<li>Use your bedroom only for sleep and sexual activity</li>
+<li>Avoid large meals just before bedtime</li>
+<li>Limit caffeine, alcohol and nicotine</li>
+<li>Keep bedroom dark and quiet</li>
+<li>Avoid daytime or evening napping</li>
+<li>Remove bedroom clock from sight</li>
+<li>Avoid light-emitting devices or bright lights in the hours before bedtime (e.g., e-books, cell phones)<sup>11</sup></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Sleep restriction</h6>
+                    <p><strong>Intended effect</strong></p>
+<ul>
+<li><span id="page1R_mcid152" class="markedContent"><span dir="ltr" role="presentation">Increase sleep drive and stabilize </span></span><span id="page1R_mcid153" class="markedContent"><span dir="ltr" role="presentation">circadian rhythm</span></span></li>
+</ul>
+<p><strong>Specific directions for patients</strong></p>
+<ul>
+<li><span id="page1R_mcid155" class="markedContent"><span dir="ltr" role="presentation">Reduce time in bed to your perceived total sleep time (not less than 5-6 </span></span><span id="page1R_mcid156" class="markedContent"><span dir="ltr" role="presentation">hours)</span></span></li>
+<li><span id="page1R_mcid158" class="markedContent"><span dir="ltr" role="presentation">Choose specific hours in bed as per personal preference and circadian </span></span><span id="page1R_mcid159" class="markedContent"><span dir="ltr" role="presentation">timing</span></span></li>
+<li><span id="page1R_mcid161" class="markedContent"><span dir="ltr" role="presentation">Increase time in bed gradually as sleep efficiency improves</span></span></li>
+<li><span id="page1R_mcid163" class="markedContent"><span dir="ltr" role="presentation">Never get into bed earlier than your usual bedtime</span></span><span id="page1R_mcid164" class="markedContent"></span></li>
+<li><span id="page1R_mcid165" class="markedContent"><span dir="ltr" role="presentation">Do not get into bed unless you feel tired (e.g., nodding head, yawning, </span></span><span id="page1R_mcid166" class="markedContent"><span dir="ltr" role="presentation">eyes closing), even if it is your usual bedtime</span></span><span id="page1R_mcid167" class="markedContent"></span></li>
+<li><span id="page1R_mcid168" class="markedContent"><span dir="ltr" role="presentation">Do not nap when you feel tired during the day. If a nap is necessary, </span></span><span id="page1R_mcid169" class="markedContent"><span dir="ltr" role="presentation">begin napping before 3pm and sleep 1 hour or less. Take ‘power naps’ </span></span><span id="page1R_mcid170" class="markedContent"><span dir="ltr" role="presentation">to promote alertness when driving or doing other activities in which </span></span><span id="page1R_mcid171" class="markedContent"><span dir="ltr" role="presentation">drowsiness is a hazard.</span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Stimulus control</h6>
+                    <p><strong>Intended effect</strong></p>
+<ul>
+<li><span id="page1R_mcid173" class="markedContent"><span dir="ltr" role="presentation">Reduce arousal in sleep environment </span></span><span id="page1R_mcid174" class="markedContent"><span dir="ltr" role="presentation">and promote the association </span></span><span id="page1R_mcid175" class="markedContent"><span dir="ltr" role="presentation">between bed and sleep</span></span></li>
+</ul>
+<p><strong>Specific directions for patients</strong></p>
+<ul>
+<li><span id="page1R_mcid155" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid177" class="markedContent">Attempt to sleep when feeling tired</span><span id="page1R_mcid178" class="markedContent"></span></span></span></li>
+<li><span id="page1R_mcid155" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid179" class="markedContent">Get out of bed when awake and/or anxious at night</span><span id="page1R_mcid180" class="markedContent"></span></span></span></li>
+<li><span id="page1R_mcid155" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid181" class="markedContent">Do not stay in bed if you are not able to sleep. Leave the bed within 10 -15 </span><span id="page1R_mcid182" class="markedContent">minutes and return when you feel tired. Repeat these steps as needed </span><span id="page1R_mcid183" class="markedContent">during the night.</span><span id="page1R_mcid184" class="markedContent"></span></span></span></li>
+<li><span id="page1R_mcid155" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid185" class="markedContent">Use the bed only for sleep or sexual activity (e.g., no TV, radio, electronic </span><span id="page1R_mcid186" class="markedContent">devices, no eating or reading in bed)</span><span id="page1R_mcid187" class="markedContent"></span></span></span></li>
+<li><span id="page1R_mcid155" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid188" class="markedContent">Do not stay in bed after the alarm sounds (if you are awake, get out of bed)</span></span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Cognitive therapy</h6>
+                    <p><strong>Intended effect</strong></p>
+<ul>
+<li><span id="page1R_mcid190" class="markedContent"><span dir="ltr" role="presentation">Restructure maladaptive beliefs </span></span><span id="page1R_mcid191" class="markedContent"><span dir="ltr" role="presentation">regarding health and day time </span></span><span id="page1R_mcid192" class="markedContent"><span dir="ltr" role="presentation">consequences of insomnia</span></span></li>
+</ul>
+<p><strong>Specific directions for patients</strong></p>
+<ul>
+<li><span id="page1R_mcid194" class="markedContent"><span dir="ltr" role="presentation">Maintain reasonable expectations about sleep</span></span><span id="page1R_mcid195" class="markedContent"></span></li>
+<li><span id="page1R_mcid196" class="markedContent"><span dir="ltr" role="presentation">Review with the patient previous insomnia experiences or challenging </span></span><span id="page1R_mcid197" class="markedContent"><span dir="ltr" role="presentation">perceived catastrophic thinking about the consequences of insomnia</span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead"></span>
+                    <h6>Relaxation therapy </h6>
+                    <p><strong>Intended effect</strong></p>
+<ul>
+<li><span id="page1R_mcid199" class="markedContent"><span dir="ltr" role="presentation">Reduce physical and psychological </span></span><span id="page1R_mcid200" class="markedContent"><span dir="ltr" role="presentation">arousal in sleep environment</span></span></li>
+</ul>
+<p><strong>Specific directions for patients</strong></p>
+<ul>
+<li><span id="page1R_mcid194" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid202" class="markedContent">Practice progressive muscle relaxation, breathing exercises, or </span><span id="page1R_mcid203" class="markedContent">meditation.</span><span id="page1R_mcid204" class="markedContent"></span></span></span></li>
+<li><span id="page1R_mcid194" class="markedContent"><span dir="ltr" role="presentation"><span id="page1R_mcid205" class="markedContent">Try relaxation techniques 30 -60 minutes prior to sleep. Find a relaxation </span><span id="page1R_mcid206" class="markedContent">technique that works well for you.</span></span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+                      </ul>
+        </div>
+      </div>
+    </div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="pharmacotherapy-options" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Pharmacotherapy options								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Key considerations</h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Pharmacotherapy should be considered as adjunctive therapy to CBT-I <sup>2,3,4</sup></li><li>CBT-I combined with medication may produce faster improvements in sleep than CBT-I alone<sup>12</sup></li><li>The studies that support the use of sedative hypnotics (benzodiazepines and Z-drugs) for insomnia are limited to short-term treatment (&lt;4 weeks)<sup>13</sup></li></ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Pharmacotherapy options for insomnia<sup>2 , 3, 4 ,14 ,15</sup> (low to moderate quality of evidence)</h3>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong><span class="markedContent"><span dir="ltr" role="presentation">Avoid </span></span>Benzdiazepines (BZD) <span id="page6R_mcid368" class="markedContent"><span dir="ltr" role="presentation">in the elderly due to risk of cognitive and behavioural adverse effects, falls and fractures. </span></span></strong></p>
+<p><strong><span id="page6R_mcid369" class="markedContent"><span dir="ltr" role="presentation">Flurazepam, oxazepam, triazolam are indicated for primary insomnia, but are not recommended.</span></span><sup><span id="page6R_mcid370" class="markedContent"><span dir="ltr" role="presentation">2</span></span></sup></strong></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--drug-options ">
+<div class="container">
+  <h5><span style="font-size: 13.5px;">Scroll (left-right) for details</h5>
+          <div class="slider">
+        <div class="inner-stage">
+          <ul>
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Non-benzodiazepines (Z-drugs)</span>
+                    <h6>Zopiclone</h6>
+                    <p><strong>Not covered under Ontario Drug Benefit (ODB) Program</strong></p>
+<p><strong>Formulations</strong></p>
+<ul>
+<li>5, 7. 5mg T</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid277" class="markedContent"><span dir="ltr" role="presentation">3.75 &#8211; 7. 5mg</span></span></li>
+<li><span id="page6R_mcid278" class="markedContent"><span dir="ltr" role="presentation"><strong>Max</strong>:</span></span><span id="page6R_mcid279" class="markedContent"><span dir="ltr" role="presentation"> 5.0 mg in elderly or </span></span><span id="page6R_mcid280" class="markedContent"><span dir="ltr" role="presentation">patients with kidney/liver </span></span><span id="page6R_mcid281" class="markedContent"><span dir="ltr" role="presentation">disease</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid267" class="markedContent"><span dir="ltr" role="presentation">Indicated for insomnia</span></span><span id="page6R_mcid268" class="markedContent"></span></li>
+<li><span id="page6R_mcid269" class="markedContent"><span dir="ltr" role="presentation">Improves sleep onset latency (~19 min), total sleep time (~45 </span></span><span id="page6R_mcid270" class="markedContent"><span dir="ltr" role="presentation">min), wake after sleep onset (~11 min)</span></span><sup><span id="page6R_mcid271" class="markedContent"><span dir="ltr" role="presentation">3</span></span></sup><span id="page6R_mcid272" class="markedContent"></span></li>
+<li><span id="page6R_mcid273" class="markedContent"><span dir="ltr" role="presentation">Risk of physical tolerance and dependence</span></span><span id="page6R_mcid274" class="markedContent"></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation">Metallic after taste</span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Non-benzodiazepines (Z-drugs)</span>
+                    <h6>Zolpidem</h6>
+                    <p><strong>Formulations</strong></p>
+<ul>
+<li>5, 10 mg S</li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ?</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid303" class="markedContent"><span dir="ltr" role="presentation">5 &#8211; 10 mg</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li><span id="page6R_mcid273" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid288" class="markedContent">Indicated for insomnia</span><span id="page6R_mcid289" class="markedContent"></span></span></span></li>
+<li><span id="page6R_mcid273" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid290" class="markedContent">Improves sleep onset latency (~15 min), total sleep time (~23 min)</span><sup><span id="page6R_mcid291" class="markedContent">3</span></sup><span id="page6R_mcid292" class="markedContent"></span></span></span></li>
+<li><span id="page6R_mcid273" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid293" class="markedContent"></span><span id="page6R_mcid294" class="markedContent">Oral disintegrating tablet &#8211; cannot be split</span><span id="page6R_mcid295" class="markedContent"></span></span></span></li>
+<li><span id="page6R_mcid273" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid296" class="markedContent">Less chance of morning hang-over effect</span></span></span></li>
+<li><span id="page6R_mcid273" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid297" class="markedContent"></span><span id="page6R_mcid298" class="markedContent">Risk of physical tolerance and dependence</span></span></span><span id="page6R_mcid274" class="markedContent"></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid301" class="markedContent">Daytime drowsiness</span></span></span></li>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid301" class="markedContent">Dizziness/vertigo</span></span></span></li>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid301" class="markedContent">Aamnesia</span></span></span></li>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid301" class="markedContent">Nausea</span></span></span></li>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid302" class="markedContent">Headache</span></span></span></li>
+<li><span id="page6R_mcid276" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid302" class="markedContent">Falls</span></span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Antidepressants</span>
+                    <h6>Doxepin</h6>
+                    <p><strong>Formulations</strong></p>
+<ul>
+<li>10, 25, 50, 10 0 mg C</li>
+<li>3, 6mg T</li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ✓</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid327" class="markedContent"><span dir="ltr" role="presentation">10 &#8211; 50 mg C</span></span></li>
+<li><span id="page6R_mcid329" class="markedContent"><span dir="ltr" role="presentation">3 &#8211; 6mg T</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid311" class="markedContent"><span dir="ltr" role="presentation">3mg: improve total sleep time (~12 min), wake after sleep </span></span><span id="page6R_mcid312" class="markedContent"><span dir="ltr" role="presentation">onset (~10 min)</span></span><sup><span id="page6R_mcid313" class="markedContent"><span dir="ltr" role="presentation">3</span></span></sup></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid315" class="markedContent"><span dir="ltr" role="presentation">6mg: improve total sleep time (~17 min), wake after sleep </span></span><span id="page6R_mcid316" class="markedContent"><span dir="ltr" role="presentation">onset (~14 min)</span></span><sup><span id="page6R_mcid317" class="markedContent"><span dir="ltr" role="presentation">3</span></span></sup></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid319" class="markedContent"><span dir="ltr" role="presentation">Not to be taken within 3 hours of a meal due to delayed </span></span><span id="page6R_mcid320" class="markedContent"><span dir="ltr" role="presentation">absorption and potential for next day drowsiness</span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid322" class="markedContent"><span dir="ltr" role="presentation">Minimal risk of physical tolerance/dependence; consider </span></span><span id="page6R_mcid323" class="markedContent"><span dir="ltr" role="presentation">doxepin if substance abuse or dependence is a concern</span></span></span><span id="page6R_mcid273" class="markedContent"><span id="page6R_mcid298" class="markedContent"></span></span><span id="page6R_mcid274" class="markedContent"></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid326" class="markedContent"><span dir="ltr" role="presentation">Anticholinergic side effects with higher doses</span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Antidepressants</span>
+                    <h6>Trazodone </h6>
+                    <p><strong>Formulations</strong></p>
+<ul>
+<li>50, 100, 150 mg T</li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ✓</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid348" class="markedContent"><span dir="ltr" role="presentation">25 &#8211; 150 mg</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid335" class="markedContent">Trazodone is indicated for depression; </span><strong><span id="page6R_mcid336" class="markedContent">limited evidence</span></strong><span id="page6R_mcid337" class="markedContent"> for </span><span id="page6R_mcid338" class="markedContent">insomnia</span><span id="page6R_mcid339" class="markedContent"></span></span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid340" class="markedContent">Lower risk of morning hangover effect due to shor</span></span></span></span><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid340" class="markedContent">t half-life</span><span id="page6R_mcid341" class="markedContent"></span></span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid342" class="markedContent">Minimal risk of tolerance/dependence</span><span id="page6R_mcid343" class="markedContent"></span></span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid344" class="markedContent">Low anticholinergic activity</span></span></span></span><span id="page6R_mcid273" class="markedContent"><span id="page6R_mcid298" class="markedContent"></span></span><span id="page6R_mcid274" class="markedContent"></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid347" class="markedContent"><span dir="ltr" role="presentation">Orthostatic hypotension</span></span></li>
+<li><span id="page6R_mcid347" class="markedContent"><span dir="ltr" role="presentation">Priapism in men (rare) </span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Antidepressants</span>
+                    <h6>L-Tryptophan</h6>
+                    <p><strong>Not covered under Ontario Drug Benefit (ODB) Program</strong></p>
+<p><strong>Formulations</strong></p>
+<ul>
+<li><span id="page6R_mcid352" class="markedContent"><span dir="ltr" role="presentation">500 mg C</span></span><span id="page6R_mcid353" class="markedContent"> </span></li>
+<li><span id="page6R_mcid354" class="markedContent"><span dir="ltr" role="presentation">250, 500, 750, 1g T</span></span></li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ?</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid365" class="markedContent"><span dir="ltr" role="presentation">500 mg &#8211; 2g</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid356" class="markedContent"><span dir="ltr" role="presentation">Indicated as an adjunct for affective disorders</span></span><span id="page6R_mcid357" class="markedContent"></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><strong><span id="page6R_mcid358" class="markedContent"><span dir="ltr" role="presentation">Conflicting evidence</span></span></strong><span id="page6R_mcid359" class="markedContent"><span dir="ltr" role="presentation"> for insomnia</span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid361" class="markedContent"><span dir="ltr" role="presentation">Caution: Serotonin syndrome with SSRI or MAOIs</span></span></span><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span id="page6R_mcid344" class="markedContent"></span></span></span><span id="page6R_mcid273" class="markedContent"><span id="page6R_mcid298" class="markedContent"></span></span><span id="page6R_mcid274" class="markedContent"></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation">Dry mouth</span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation">Drowsiness</span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation">Dizziness</span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation">GI upset</span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Benzodiazepines (BZD)</span>
+                    <h6>Temazepam</h6>
+                    <p><strong>Formulations</strong></p>
+<ul>
+<li><span id="page6R_mcid372" class="markedContent"><span dir="ltr" role="presentation">15, 30mg C</span></span></li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ✓</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid383" class="markedContent"><span dir="ltr" role="presentation">15 &#8211; 30mg hs</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li>Indicated for insomnia</li>
+<li>Risk of physical tolerance and dependence</li>
+<li>Low-to-moderate risk of morning hangover due to intermediate half-life</li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation">D<span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">izziness</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Confusion</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Memory impairment</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Falls/Fractures</span></span></span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Over-the-counter (limited evidence for use)</span>
+                    <h6>Melatonin</h6>
+                    <p><strong>Formulations</strong></p>
+<ul>
+<li><span id="page6R_mcid389" class="markedContent"><span dir="ltr" role="presentation">1, 3, or 5mg C</span></span></li>
+<li><span id="page6R_mcid390" class="markedContent"><span dir="ltr" role="presentation">2mg controlled release C</span></span></li>
+<li><span id="page6R_mcid391" class="markedContent"><span dir="ltr" role="presentation">3mg S, various formulations</span></span></li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ?</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid410" class="markedContent"><span dir="ltr" role="presentation">0. 3 &#8211; 5mg (usual dose 1 &#8211; </span></span><span id="page6R_mcid411" class="markedContent"><span dir="ltr" role="presentation">3mg), 30 -90 min before hs or </span></span><span id="page6R_mcid412" class="markedContent"><span dir="ltr" role="presentation">if shift in circadian rhythm, </span></span><span id="page6R_mcid413" class="markedContent"><span dir="ltr" role="presentation">take 4-5 hours before hs</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid356" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid393" class="markedContent">Modest effect on sleep (may decrease sleep onset latency </span><span id="page6R_mcid394" class="markedContent"> </span><span id="page6R_mcid395" class="markedContent">[~7 min], increase total sleep time [~8 min], and improve sleep </span><span id="page6R_mcid396" class="markedContent">quality)</span><sup><span id="page6R_mcid397" class="markedContent">16</span></sup><span id="page6R_mcid398" class="markedContent"></span></span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid356" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid399" class="markedContent">Melatonin has no effect on benzodiazepine discontinuation </span><span id="page6R_mcid400" class="markedContent">while the ef</span></span></span></span><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid356" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid400" class="markedContent">fect of melatonin on sleep quality is inconsistent</span><sup><span id="page6R_mcid401" class="markedContent">17</span></sup><span id="page6R_mcid402" class="markedContent"></span></span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid356" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid403" class="markedContent">No apparent physical tolerance and dependence</span><span id="page6R_mcid404" class="markedContent"></span></span></span></span></li>
+<li><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid356" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid405" class="markedContent">Purity concerns</span></span></span></span><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid361" class="markedContent"></span></span><span id="page6R_mcid258" class="markedContent"><span id="page6R_mcid323" class="markedContent"><span id="page6R_mcid344" class="markedContent"></span></span></span><span id="page6R_mcid273" class="markedContent"><span id="page6R_mcid298" class="markedContent"></span></span><span id="page6R_mcid274" class="markedContent"></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Fatigue</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Headache</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Dizziness</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Irritability</span></span></span></span></li>
+<li><span id="page6R_mcid364" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid408" class="markedContent"><span id="page6R_mcid382" class="markedContent">Abdominal <span id="page6R_mcid409" class="markedContent">cramps</span></span></span></span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+            
+                <li>
+                  <div class="inner">
+                    <span class="subhead">Over-the-counter (limited evidence for use)</span>
+                    <h6>Valerian Root</h6>
+                    <p><strong>Formulations</strong></p>
+<ul>
+<li><span id="page6R_mcid389" class="markedContent"><span dir="ltr" role="presentation"><span id="page6R_mcid417" class="markedContent">Herbal Sleepwell, Herbal Nerve, etc.</span></span></span><span id="page6R_mcid391" class="markedContent"></span></li>
+</ul>
+<p><strong>Coverage</strong></p>
+<ul>
+<li>ODB ?</li>
+</ul>
+<p><strong><span id="page6R_mcid258" class="markedContent"><span dir="ltr" role="presentation">Usual dose</span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid427" class="markedContent"><span dir="ltr" role="presentation">400 &#8211; 900 mg, </span></span><span id="page6R_mcid428" class="markedContent"> </span><span id="page6R_mcid429" class="markedContent"><span dir="ltr" role="presentation">30 &#8211; 60 min before hs</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid257" class="markedContent"><span dir="ltr" role="presentation">Notes</span></span><span id="page6R_mcid258" class="markedContent"> </span></strong></p>
+<ul>
+<li><span id="page6R_mcid419" class="markedContent"><span dir="ltr" role="presentation">Limited evidence for insomnia</span></span><sup><span id="page6R_mcid420" class="markedContent"><span dir="ltr" role="presentation">18</span></span></sup><span id="page6R_mcid421" class="markedContent"></span></li>
+<li><span id="page6R_mcid422" class="markedContent"><span dir="ltr" role="presentation">Purity concerns</span></span></li>
+</ul>
+<p><strong><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">Adverse e</span></span><span id="page6R_mcid275" class="markedContent"><span dir="ltr" role="presentation">ffects </span></span></strong></p>
+<ul>
+<li><span id="page6R_mcid425" class="markedContent"><span dir="ltr" role="presentation">Dizziness</span></span></li>
+<li><span id="page6R_mcid425" class="markedContent"><span dir="ltr" role="presentation">Nausea</span></span></li>
+<li><span id="page6R_mcid425" class="markedContent"><span dir="ltr" role="presentation">Headache</span></span></li>
+<li><span id="page6R_mcid425" class="markedContent"><span dir="ltr" role="presentation">Upset stomach</span></span></li>
+<li><span id="page6R_mcid426" class="markedContent"><span dir="ltr" role="presentation">Hepatotoxicity (rare)</span></span></li>
+</ul>
+                                      </div>
+                                  </li>
+
+                      </ul>
+        </div>
+      </div>
+    </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p style="font-size:12px"><strong>C</strong> = Capsule; <strong>GI</strong> = gastrointestinal; <strong>hs</strong> = bedtime; <strong>MAOIs </strong>= monoamine oxidase inhibitors; <strong>ODB</strong> = Ontario Drug Benefit Program; <strong>S</strong> = Sublingual tablet; <strong>SSRI</strong> = selective serotonin reuptake inhibitor; <strong>T</strong> = Tablet<br>✓ = general benefit, ? = not a benefit</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">General principles of treatment<sup>2</sup></h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Start at the lowest effective dose and initiate a short-term duration of treatment (e.g., 1-2 weeks).</li><li>Evidence suggests that pharmacotherapy should be used no longer than ~1 month due to the risk of dependence and tolerance.</li><li>Principles of behavioural management should remain the focus, even if medication is used.</li><li>Long-term use of hypnotics may be appropriate in some cases (e.g., severe or refractory insomnia resistant to CBT-I, existing medical or mental health comorbidities). Regular follow-up and reassessment are beneficial to ensure that comorbidities, tolerance, and/or dependence do not emerge.</li></ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Risks vs. benefits of benzodiazepines &amp; Z-drugs (zopiclone and zolpidem)</h3>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Meta-analyses* of sedative hypnotics identified that:<sup>19, 20</sup></strong></h6>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey red">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <ul>
+<li><span id="page11R_mcid549" class="markedContent"><span dir="ltr" role="presentation"><strong>The number needed to harm (NNH) = 6</strong> </span></span><span id="page11R_mcid550" class="markedContent"><span dir="ltr" role="presentation">(95% CI [4.7, 7.1] compared to placebo </span></span><span id="page11R_mcid551" class="markedContent"><span dir="ltr" role="presentation">(drowsiness, fatigue, headache, </span></span><span id="page11R_mcid552" class="markedContent"><span dir="ltr" role="presentation">nightmares, nausea, GI disturbances and </span></span><span id="page11R_mcid553" class="markedContent"><span dir="ltr" role="presentation">cognitive effects))</span></span><span id="page11R_mcid554" class="markedContent"></span></li>
+<li><span id="page11R_mcid555" class="markedContent"><span dir="ltr" role="presentation">Other serious adverse events such as falls </span></span><span id="page11R_mcid556" class="markedContent"><span dir="ltr" role="presentation">and motor vehicle accidents have been </span></span><span id="page11R_mcid557" class="markedContent"><span dir="ltr" role="presentation">reported after benzodiazepine use</span></span><span id="page11R_mcid558" class="markedContent"></span></li>
+<li><span id="page11R_mcid559" class="markedContent"><span dir="ltr" role="presentation">New use of sedative hypnotics is </span></span><span id="page11R_mcid560" class="markedContent"><span dir="ltr" role="presentation">associated with approximately </span></span><span id="page11R_mcid561" class="markedContent"><span dir="ltr" role="presentation">two times the risk of motor vehicle </span></span><span id="page11R_mcid562" class="markedContent"><span dir="ltr" role="presentation">accidents</span></span><sup><span id="page11R_mcid563" class="markedContent"><span dir="ltr" role="presentation">21, 22, 23, 24, 25</span></span></sup></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p style="font-size:12px">*Length of treatment in studies ranged from 5 days to 9 weeks</p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey green">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <ul>
+<li><strong><span id="page11R_mcid565" class="markedContent"><span dir="ltr" role="presentation">The number needed to treat (NNT) = 13</span></span></strong><span id="page11R_mcid566" class="markedContent"> </span><span id="page11R_mcid567" class="markedContent"> </span><span id="page11R_mcid568" class="markedContent"><span dir="ltr" role="presentation">(95% CI [6.7, 62.9] for a sedative to </span></span><span id="page11R_mcid569" class="markedContent"><span dir="ltr" role="presentation">improve sleep quality)</span></span><span id="page11R_mcid570" class="markedContent"></span></li>
+<li><strong><span id="page11R_mcid571" class="markedContent"><span dir="ltr" role="presentation">Sedative hypnotics can increase total </span></span></strong><span id="page11R_mcid572" class="markedContent"><span dir="ltr" role="presentation"><strong>sleep time by 25 minutes</strong> </span></span><span id="page11R_mcid573" class="markedContent"><span dir="ltr" role="presentation">(95% CI [13, 38 </span></span><span id="page11R_mcid574" class="markedContent"><span dir="ltr" role="presentation">minutes] compared with placebo)</span></span><span id="page11R_mcid575" class="markedContent"> </span></li>
+<li><span id="page11R_mcid576" class="markedContent"><span dir="ltr" role="presentation">Sedative hypnotics can decrease sleep </span></span><span id="page11R_mcid577" class="markedContent"><span dir="ltr" role="presentation">latency by ~10 minutes</span></span><span id="page11R_mcid578" class="markedContent"></span></li>
+<li><span id="page11R_mcid579" class="markedContent"><span dir="ltr" role="presentation">The mean number of awakenings </span></span><span id="page11R_mcid580" class="markedContent"><span dir="ltr" role="presentation">decreased by 0.63 (95% CI [- 0.48, &#8211; 0.77])</span></span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Sedatives</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:90%"><article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Insomnia-sedatives.png" alt="" class="wp-image-38358" width="472" height="149"/></figure>
+</div></article></div>
+</div>
+
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" alt="" />
+                    <h6>Drugs not recommended for the sole management of insomnia<sup>2</sup></h6>
+                          <a data-modal="0I1E56" class="button open-modal" href="#" data-id="0I1E56">View list of agents</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="0I1E56" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Drugs NOT recommended for the sole management of insomnia<sup>2</sup></h4>
+                                      <p>The following agents are not recommended for the management of insomnia alone, except in cases where the agent is being used specifically to manage a comorbidity, such as depression.<img loading="lazy" decoding="async" class="" src="https://tools.cep.health/wp-content/uploads/2021/07/Insomnia-2.png" alt="" width="811" height="800" /></p>
+<p>&nbsp;</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Talking points</h6>
+<p><strong><span id="page11R_mcid601" class="markedContent"><span dir="ltr" role="presentation">When initiating </span></span><span id="page11R_mcid602" class="markedContent"><span dir="ltr" role="presentation">benzodiazepines </span></span><span id="page11R_mcid603" class="markedContent"></span><span id="page11R_mcid604" class="markedContent"><span dir="ltr" role="presentation">or Z-drugs</span></span></strong></p>
+<ul>
+<li><span id="page11R_mcid581" class="markedContent"><span dir="ltr" role="presentation">&#8220;Before we initiate a medication, could you </span></span><span id="page11R_mcid582" class="markedContent"><span dir="ltr" role="presentation">fill  out this sleep diary for 2 weeks so I can </span></span><span id="page11R_mcid583" class="markedContent"><span dir="ltr" role="presentation">review which medication (if any) would be </span></span><span id="page11R_mcid584" class="markedContent"><span dir="ltr" role="presentation">most appropriate for you?”</span></span></li>
+<li><span id="page11R_mcid585" class="markedContent"><span dir="ltr" role="presentation">“If we are to start a medication, it would </span></span><span id="page11R_mcid586" class="markedContent"><span dir="ltr" role="presentation">only be for a short-term period (e.g., a </span></span><span id="page11R_mcid587" class="markedContent"><span dir="ltr" role="presentation">few weeks). The benefits of this drug may </span></span><span id="page11R_mcid588" class="markedContent"><span dir="ltr" role="presentation">increase your sleep by about 25 minutes </span></span><span id="page11R_mcid589" class="markedContent"><span dir="ltr" role="presentation">throughout the night and it may reduce </span></span><span id="page11R_mcid590" class="markedContent"><span dir="ltr" role="presentation">1 nighttime awakening. The medication </span></span><span id="page11R_mcid591" class="markedContent"><span dir="ltr" role="presentation">may also cause some daytime drowsiness, </span></span><span id="page11R_mcid592" class="markedContent"><span dir="ltr" role="presentation">fatigue, headache, nightmares, nausea and/</span></span><span id="page11R_mcid593" class="markedContent"><span dir="ltr" role="presentation">or upset stomach.”</span></span></li>
+<li><span id="page11R_mcid594" class="markedContent"><span dir="ltr" role="presentation">“It is also important to know that the use of </span></span><span id="page11R_mcid595" class="markedContent"><span dir="ltr" role="presentation">this type of medication will increase your risk </span></span><span id="page11R_mcid596" class="markedContent"><span dir="ltr" role="presentation">of having a traffic accident, a work accident </span></span><span id="page11R_mcid597" class="markedContent"><span dir="ltr" role="presentation">or a fall. These risks are especially high when </span></span><span id="page11R_mcid598" class="markedContent"><span dir="ltr" role="presentation">alcohol is consumed during the weeks you </span></span><span id="page11R_mcid599" class="markedContent"><span dir="ltr" role="presentation">are using the medication.”</span></span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="benzodiazepine-or-z-drug-tapering" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Benzodiazepine or Z-drug tapering								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">General approach to tapering</h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/insomnia-icon1.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><span id="page16R_mcid735" class="markedContent"><span dir="ltr" role="presentation">Schedule follow-up visits ever y 1– 4 weeks </span></span><span id="page16R_mcid736" class="markedContent"><span dir="ltr" role="presentation">depending on the patient’s response to the </span></span><span id="page16R_mcid737" class="markedContent"><span dir="ltr" role="presentation">taper.</span></span></p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Insomnia-icon2.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><span id="page16R_mcid738" class="markedContent"><span dir="ltr" role="presentation">At each visit, ask the patient about the </span></span><span id="page16R_mcid739" class="markedContent"><span dir="ltr" role="presentation">benefits of tapering (e.g., increased energy, </span></span><span id="page16R_mcid740" class="markedContent"><span dir="ltr" role="presentation">increased alertness).</span></span></p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Insomnia-icon3.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><span id="page16R_mcid741" class="markedContent"><span dir="ltr" role="presentation">Provide quantity-limited prescriptions and </span></span><span id="page16R_mcid742" class="markedContent"><span dir="ltr" role="presentation">no refills. This will require the patient to </span></span><span id="page16R_mcid743" class="markedContent"><span dir="ltr" role="presentation">return for follow-up.</span></span></p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/insomnia-icon4.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><span id="page16R_mcid752" class="markedContent"><span dir="ltr" role="presentation">Discontinue or reverse taper if severe </span></span><span id="page16R_mcid753" class="markedContent"><span dir="ltr" role="presentation">anxiety, depression, or withdrawal </span></span><span id="page16R_mcid754" class="markedContent"><span dir="ltr" role="presentation">symptoms occur.</span></span><span id="page16R_mcid755" class="markedContent"></span></p>
+<ul>
+<li><span id="page16R_mcid756" class="markedContent"><span dir="ltr" role="presentation">Examples of withdrawal symptoms </span></span><span id="page16R_mcid757" class="markedContent"><span dir="ltr" role="presentation">include rebound anxiety, restlessness, </span></span><span id="page16R_mcid758" class="markedContent"><span dir="ltr" role="presentation">tremor, sweating, agitation, insomnia, </span></span><span id="page16R_mcid759" class="markedContent"><span dir="ltr" role="presentation">or seizures (particularly when </span></span><span id="page16R_mcid760" class="markedContent"><span dir="ltr" role="presentation">benzodiazepines are used &gt;8 weeks)</span></span><span id="page16R_mcid761" class="markedContent"></span></li>
+<li><span id="page16R_mcid762" class="markedContent"><span dir="ltr" role="presentation">Onset of withdrawal symptoms: 1-2 days </span></span><span id="page16R_mcid763" class="markedContent"><span dir="ltr" role="presentation">for benzodiazepines</span></span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>There is limited evidence to support one tapering schedule over another.<sup>28</sup> A slow tapering schedule is more likely to be successful; use scheduled rather than PRN doses</strong>.</p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Talking points</h6>
+<p><strong><span id="page16R_mcid615" class="markedContent"><span dir="ltr" role="presentation">For </span></span><span id="page16R_mcid616" class="markedContent"><span dir="ltr" role="presentation">patients reluctant to </span></span><span id="page16R_mcid617" class="markedContent"><span dir="ltr" role="presentation">discontinue the use of </span></span><span id="page16R_mcid618" class="markedContent"><span dir="ltr" role="presentation">sleeping pills</span></span><sup><span id="page16R_mcid619" class="markedContent"><span dir="ltr" role="presentation">27</span></span></sup></strong></p>
+<ul>
+<li><span id="page16R_mcid620" class="markedContent"><span dir="ltr" role="presentation">&#8220;Discontinuing the use of sleeping pills </span></span><span id="page16R_mcid621" class="markedContent"><span dir="ltr" role="presentation">can increase alertness, energy, daily </span></span><span id="page16R_mcid622" class="markedContent"><span dir="ltr" role="presentation">function and can also reduce the risk of </span></span><span id="page16R_mcid623" class="markedContent"><span dir="ltr" role="presentation">falls and traffic accidents.&#8221;</span></span><span id="page16R_mcid624" class="markedContent"></span></li>
+<li><span id="page16R_mcid625" class="markedContent"><span dir="ltr" role="presentation">&#8220;Sleeping pills can have serious or </span></span><span id="page16R_mcid626" class="markedContent"><span dir="ltr" role="presentation">deadly side effects, including:</span></span>
+<ul>
+<li><span id="page16R_mcid627" class="markedContent"><span dir="ltr" role="presentation">confusion, memory problems, </span></span><span id="page16R_mcid628" class="markedContent"><span dir="ltr" role="presentation">falls and hip fractures</span></span></li>
+<li><span id="page16R_mcid629" class="markedContent"><span dir="ltr" role="presentation">increase the risk of car accidents&#8221;</span></span><span id="page16R_mcid630" class="markedContent"></span></li>
+</ul>
+</li>
+<li><span id="page16R_mcid631" class="markedContent"><span dir="ltr" role="presentation">&#8220;Sleeping pills can be addictive.&#8221;</span></span></li>
+<li><span id="page16R_mcid632" class="markedContent">&#8220;</span><span id="page16R_mcid633" class="markedContent"><span dir="ltr" role="presentation">Sleeping pills may only help a little. </span></span><span id="page16R_mcid634" class="markedContent"><span dir="ltr" role="presentation">On average, individuals who take </span></span><span id="page16R_mcid635" class="markedContent"><span dir="ltr" role="presentation">these drugs sleep only a little longer </span></span><span id="page16R_mcid636" class="markedContent"><span dir="ltr" role="presentation">and better than those who do not </span></span><span id="page16R_mcid637" class="markedContent"><span dir="ltr" role="presentation">take the drug.&#8221;</span></span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Tips to assist patients that want to STOP taking benzodiazepines, Z-drugs or other sleeping pills</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Ask the patient regularly (e.g., ever y 3-6 months) if it is a suitable time to stop the use of sleeping pills</li><li>Tapering and/or discontinuing benzodiazepine can be done with or without switching to diazepam</li><li>A gradual and flexible drug tapering schedule may be negotiated</li><li>Ask the pharmacy to dispense using weekly dosette or blisterpack</li><li>Check-in with the patient frequently (e.g., every 2-4 weeks) to detect /manage problems and to provide encouragement</li><li>If a patient does not succeed on their first attempt, encourage them to try again</li></ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Benzodiazepine or Z-drug tapering approach<sup>29</sup></h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Select step to view details</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Step 1: Initiate tapering</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><span id="page16R_mcid678" class="markedContent"><span dir="ltr" role="presentation">Taper with a longer-acting agent, such as diazepam or clonazepam, or taper with the </span></span><span id="page16R_mcid679" class="markedContent"><span dir="ltr" role="presentation">drug that the patient is currently taking. (Note: </span></span><span id="page16R_mcid680" class="markedContent"><span dir="ltr" role="presentation">diazepam can cause prolonged sedation </span></span><span id="page16R_mcid681" class="markedContent"><span dir="ltr" role="presentation">in the elderly and those with liver impairment</span></span><span id="page16R_mcid682" class="markedContent"><span dir="ltr" role="presentation">).</span></span><span id="page16R_mcid683" class="markedContent"></span></li>
+<li><span id="page16R_mcid684" class="markedContent"><span dir="ltr" role="presentation">There is insufficient evidence to support the use of one particular benzodiazepine or </span></span><span id="page16R_mcid685" class="markedContent"><span dir="ltr" role="presentation">Z-drug for a tapering schedule.</span></span><span id="page16R_mcid686" class="markedContent"></span></li>
+<li><span id="page16R_mcid687" class="markedContent"><span dir="ltr" role="presentation">Convert to equivalent doses and adjust initial dose according to symptoms (refer to </span></span><span id="page16R_mcid688" class="markedContent"><span dir="ltr" role="presentation">Benzodiazepine equivalency).</span></span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Step 2: Decreasing the dose</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><span id="page16R_mcid691" class="markedContent"><span dir="ltr" role="presentation">Taper by no more than diazepam 5mg or clonazepam 0.25mg equivalent per week.</span></span><span id="page16R_mcid692" class="markedContent"></span></li>
+<li><span id="page16R_mcid693" class="markedContent"><span dir="ltr" role="presentation">Adjust rate of taper according to symptoms.</span></span><span id="page16R_mcid694" class="markedContent"></span></li>
+<li><span id="page16R_mcid695" class="markedContent"><span dir="ltr" role="presentation">Slow the pace of the taper once dose is below 20 mg of diazepam equivalent (e.g., 1–2 </span></span><span id="page16R_mcid696" class="markedContent"><span dir="ltr" role="presentation">mg/week).</span></span><span id="page16R_mcid697" class="markedContent"></span></li>
+<li><span id="page16R_mcid698" class="markedContent"><span dir="ltr" role="presentation">Instruct the pharmacist to dispense daily, weekly, or every 2 weeks depending on dose </span></span><span id="page16R_mcid699" class="markedContent"><span dir="ltr" role="presentation">and patient reliability (e.g., suggest dosette or blisterpack).</span></span></li>
+</ul>
+<p><span id="page16R_mcid700" class="markedContent"><strong><span dir="ltr" role="presentation">Anot</span><span dir="ltr" role="presentation">her</span><span dir="ltr" role="presentation"> tapering approach </span></strong></span><span id="page16R_mcid701" class="markedContent"></span></p>
+<ul>
+<li><span id="page16R_mcid702" class="markedContent"><span dir="ltr" role="presentation">Taper according to the proportional dose remaining: </span></span><span id="page16R_mcid703" class="markedContent"></span>
+<ul>
+<li><span id="page16R_mcid704" class="markedContent"><span dir="ltr" role="presentation">taper by 10% of the dose ever y 1–2 weeks, until </span></span><span id="page16R_mcid705" class="markedContent"> </span><span id="page16R_mcid706" class="markedContent"><span dir="ltr" role="presentation">the dose is at 20% of the original dose</span></span><span id="page16R_mcid707" class="markedContent"></span></li>
+<li><span id="page16R_mcid708" class="markedContent"><span dir="ltr" role="presentation">then taper by 5% every 2– 4 weeks</span></span></li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Step 3: Try adjunctive therapy</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><strong><span id="page16R_mcid711" class="markedContent"><span dir="ltr" role="presentation">Consider using cognitive therapy and adjunctive agents to improve success rates</span></span><span id="page16R_mcid712" class="markedContent"></span></strong></li>
+<li><strong><span id="page16R_mcid713" class="markedContent"><span dir="ltr" role="presentation">Cognitive behavior therapy (CBT) </span></span></strong><span id="page16R_mcid714" class="markedContent"><span dir="ltr" role="presentation">has the highest success rate for patients </span></span><span id="page16R_mcid715" class="markedContent"><span dir="ltr" role="presentation">discontinuing benzodiazepines compared to usual care or other prescribing </span></span><span id="page16R_mcid716" class="markedContent"><span dir="ltr" role="presentation">interventions, such as individualized relaxation therapy, medication review, or </span></span><span id="page16R_mcid717" class="markedContent"><span dir="ltr" role="presentation">education.</span></span><span id="page16R_mcid718" class="markedContent"><span dir="ltr" role="presentation"><sup>30, 31, 32</sup> </span></span><span id="page16R_mcid719" class="markedContent"></span></li>
+<li><strong><span id="page16R_mcid720" class="markedContent"><span dir="ltr" role="presentation">The use of adjunctive agents has limited evidence to support success.</span></span></strong><span id="page16R_mcid721" class="markedContent"> </span><span id="page16R_mcid722" class="markedContent"><span dir="ltr" role="presentation">Examples include: anticonvulsants (e.g., carbamazepine, pregabalin, valproate), </span></span><span id="page16R_mcid723" class="markedContent"><span dir="ltr" role="presentation">antidepressants (e.g., SSRIs, mirtazapine, imipramine, trazodone), beta-blockers, </span></span><span id="page16R_mcid724" class="markedContent"><span dir="ltr" role="presentation">buspirone, and melatonin</span></span></li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:45%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+                    <h6>Benzodiazepine equivalency<sup>34</sup></h6>
+                          <a data-modal="meHi08" class="button open-modal" href="#" data-id="meHi08">Click to view table</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="meHi08" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                                      <p><img loading="lazy" decoding="async" class="" src="https://tools.cep.health/wp-content/uploads/2021/07/Insomnia5.png" alt="" width="600" height="590" /></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-blue blue">
+
+                    <header>
+                <h4>Some approaches to tapering benzodiazepines or Z-drugs<sup>33</sup></h4>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:30%;">
+                                            <h6><strong>Duration of use: &lt; 8 weeks</strong></h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:70%;">
+                                            <p><strong>Recommended taper length</strong>: Taper may not be required</p>
+<p><strong>Comments</strong>: Depending on clinical judgment and patient stability/preference, consider implementing a taper, particularly if patient is using a high-dose benzodiazepine or an agent with a short-intermediate half-life (e.g., alprazolam, triazolam).</p>
+<p>&nbsp;</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:30%;">
+                                            <h6><strong>Duration of use: 8 weeks &#8211; 6months</strong></h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:70%;">
+                                            <p><strong>Recommended taper length</strong>: Slowly over 2 to 3 weeks</p>
+<p><strong>Comments</strong>: Go slower during the latter half of taper. Tapering will reduce, not eliminate, withdrawal symptoms. Patients should avoid alcohol and stimulants during benzodiazepine or Z-drug withdrawal.</p>
+<p>&nbsp;</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:30%;">
+                                            <h6><strong>Duration of use: 6 months &#8211; 1 yr</strong></h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:70%;">
+                                            <p><strong>Recommended taper length</strong>: Slowly over 4 to 8 weeks</p>
+<p><strong>Comments</strong>: Go slower during the latter half of taper. Tapering will reduce, not eliminate, withdrawal symptoms. Patients should avoid alcohol and stimulants during benzodiazepine or Z-drug withdrawal.</p>
+<p>&nbsp;</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:30%;">
+                                            <h6><strong>Duration of use: &gt; 1 year</strong></h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:70%;">
+                                            <p><strong>Recommended taper length</strong>: Slowly over 2 to 4 months or longer</p>
+<p><strong>Comments</strong>: Reduce dose by 10% a week, until 10 mg diazepam equivalent is reached. Maintain reduced dose for months before final taper. For the final taper, decrease dose by 10% ever y 1-2 weeks. When 20% of the dosage remains, begin a 5% dose reduction ever y 2-4 weeks.</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="special-populations" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Special populations								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Select special population</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Pregnancy &#038; postpartum<sup>2</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>There are no studies examining the efficacy of CBT-I during pregnancy and the postpartum period. Based on expert opinion and experience, CBT-I may be effective and should be used as a first approach to manage insomnia if available and appropriate to a patient’s individual situation.</li>
+<li>Use of non-benodiazepine hypnotics (zopiclone or zolpidem) may cause adverse pregnancy outcomes (e.g., low birth weight infants, preterm deliveries, small for gestational age infants and cesarean deliver y). Use with caution.</li>
+<li>Use of benzodiazepines during pregnancy remains controversial at this time:
+<ul>
+<li>If a benzodiazepine must be prescribed, lorazepam is preferred during pregnancy and lactation because it lacks active metabolites and has low levels in breast milk. Lorazepam is less likely to be associated with withdrawal syndrome in the neonate.</li>
+<li>When used during the first trimester, trazodone may be beneficial for reducing sleep onset latency, with no difference in pregnancy outcome when compared to other non-teratogenic antidepressants/drugs.</li>
+</ul>
+</li>
+<li>There are insufficient studies to support the use of melatonin in pregnancy</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Elderly<sup>2</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Advanced Sleep Phase Syndrome results in an urge to sleep much earlier then the regular time and is common in the elderly.</li>
+<li>Treating insomnia in elderly patients can be more challenging. There is an increased likelihood of medical and mental health comorbidities, polypharmacy, drug interaction, CNS or anticholinergic load, and a potential for cognitive impairment due to sedating medication</li>
+<li>As people age, they may not require the same number of sleep hours as when they were younger. This is due to various reasons (e.g., more active at a younger age, the change in “body clock” where older adults sleep earlier and wake earlier)</li>
+<li>Sometimes, letting the patient know that less sleep is “normal” as he/she gets older (e.g., 6 hours for those aged 60 or older) may help the patient sleep better without the use of medications</li>
+<li>CBT-I is more effective than medication for the short- and long-term management of insomnia in older adults.<sup>35</sup> When medication is indicated, the safest and best studied sleep medication for use in the elderly is doxepin (≤ 6mg/day).<sup>36, 37 </sup>Other drugs to consider are melatonin or zolpidem.<sup>2,38</sup></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Teenagers<sup>39</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Exposure to bright light therapy in the morning can be helpful for a teenager to normalize their sleep pattern</li>
+<li>Other factors that may contribute to insomnia in the teenager may include: stress, genetic disposition, underlying medical/psychiatric conditions, substance abuse, sleep apnea and/or poor sleep hygiene</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="supporting-material" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Supporting material								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                                <div class="column">
+              <strong class="heading"><h6>General</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li><a href="https://link.cep.health/insomhtml29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid946" class="markedContent"><span dir="ltr" role="presentation">Sleep Disorders Questionnaire.</span></span><span id="page35R_mcid948" class="markedContent"></span></a></li>
+<li><a href="https://link.cep.health/insomhtml30" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid949" class="markedContent"><span dir="ltr" role="presentation">Sleep Diary</span></span><span id="page35R_mcid951" class="markedContent"></span></a>: Patient can fill out.</li>
+<li><a href="https://link.cep.health/insomhtml3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid952" class="markedContent"><span dir="ltr" role="presentation">Insomnia Severity Index</span></span><span id="page35R_mcid953" class="markedContent"></span></a>: Patient can fill out.</li>
+<li><a href="https://link.cep.health/insomhtml3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid953" class="markedContent"></span><span id="page35R_mcid954" class="markedContent"><span dir="ltr" role="presentation">The Insomnia Severity </span></span><span id="page35R_mcid955" class="markedContent"><span dir="ltr" role="presentation">Index: Psychometric indicators to detect insomnia cases and evaluate </span></span><span id="page35R_mcid956" class="markedContent"><span dir="ltr" role="presentation">treatment response:</span></span></a> Patient can fill out.</li>
+<li><a href="https://link.cep.health/insomhtml4" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid959" class="markedContent"><span dir="ltr" role="presentation">Epworth Sleepiness Scale.</span></span></a></li>
+<li><a href="https://link.cep.health/insomhtml5" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid962" class="markedContent"><span dir="ltr" role="presentation">STOPBANG.</span></span></a></li>
+<li><a href="https://link.cep.health/insomhtml6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid965" class="markedContent"><span dir="ltr" role="presentation">Sleep Clinic Map.</span></span></a></li>
+<li><a href="https://link.cep.health/insomhtml7" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid968" class="markedContent"></span><span id="page35R_mcid969" class="markedContent"></span><span id="page35R_mcid970" class="markedContent"><span dir="ltr" role="presentation">Insomnia and anxiety in older people: Sleeping pills are usually not the best </span></span><span id="page35R_mcid971" class="markedContent"><span dir="ltr" role="presentation">solution (Choosing Wisely Canada).</span></span><span id="page35R_mcid972" class="markedContent"></span></a></li>
+<li><a href="https://link.cep.health/insomhtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid974" class="markedContent"></span><span id="page35R_mcid975" class="markedContent"><span dir="ltr" role="presentation">Sedative-Hypnotic Medication Deprescribing Brochure</span></span><span id="page35R_mcid976" class="markedContent"> (Centre de Recherche de l’Institut Universitaire de Gériatrie de Montréal).</span></a></li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--support-materials ">
+  <div class="container two-column">
+    <div class="columns is-variable is-8">
+
+      <div class="column">
+        <div class="inner">
+                      <div class="columns is-variable is-3">
+                                            <div class="column">
+                  <strong class="heading"><h6>Additional supporting materials and resources that may be useful for providers</h6></strong>
+                </div>
+                          </div>
+                    <ul>
+<li><span id="page35R_mcid979" class="markedContent"><span dir="ltr" role="presentation"><a href="https://link.cep.health/insomhtml9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">MySleep101:</a></span></span><span id="page35R_mcid980" class="markedContent"> </span><span id="page35R_mcid981" class="markedContent"><span dir="ltr" role="presentation">Animated educational modules on sleep disorders. Cost $5.49 CAD for mobile application. </span></span><span id="page35R_mcid982" class="markedContent"> </span></li>
+<li><a href="https://link.cep.health/insomhtml10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid984" class="markedContent"><span dir="ltr" role="presentation">Sleepio Clinic:</span></span><span id="page35R_mcid987" class="markedContent"></span></a> Sleep medicine resources for healthcare professionals and researchers.</li>
+<li><a href="https://link.cep.health/insomhtml11" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid990" class="markedContent"><span dir="ltr" role="presentation">Evidence-based desprescribing algorithm for benzodiazepine receptor agonists</span></span></a><span id="page35R_mcid991" class="markedContent"><span dir="ltr" role="presentation">: </span></span><span id="page35R_mcid994" class="markedContent"><span dir="ltr" role="presentation">Evidence-based clinical practice </span></span><span id="page35R_mcid995" class="markedContent"><span dir="ltr" role="presentation">guideline for deprescribing benzodiazepine receptor agonists. </span></span><span id="page35R_mcid996" class="markedContent"></span><span id="page35R_mcid997" class="markedContent"> </span></li>
+<li><a href="https://link.cep.health/insomhtml12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid999" class="markedContent"><span dir="ltr" role="presentation">Insomnia in Adults and Children:</span></span></a><span id="page35R_mcid1000" class="markedContent"> </span><span id="page35R_mcid1001" class="markedContent"><span dir="ltr" role="presentation">This booklet reviews the pathology, the psychological and physical treatments </span></span><span id="page35R_mcid1002" class="markedContent"><span dir="ltr" role="presentation">of insomnia in adults, children and teens</span></span><span id="page35R_mcid1003" class="markedContent">.</span><span id="page35R_mcid1005" class="markedContent"></span><span id="page35R_mcid1007" class="markedContent"></span></li>
+<li><span id="page35R_mcid1007" class="markedContent"><span dir="ltr" role="presentation"><a href="https://link.cep.health/insomhtml13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Canadian Sleep Society:</a>.  Resources for clinicians and patients to </span></span><span id="page35R_mcid1008" class="markedContent"><span dir="ltr" role="presentation">treat insomnia. </span></span><span id="page35R_mcid1009" class="markedContent"> </span><span id="page35R_mcid1010" class="markedContent"></span></li>
+<li><a href="https://link.cep.health/insomhtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1011" class="markedContent"><span dir="ltr" role="presentation">Top Ten Sleep Tips</span></span></a>: Patient handout.</li>
+<li><a href="https://link.cep.health/insomhtml15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1014" class="markedContent"><span dir="ltr" role="presentation">National Sleep Foundation.</span></span><span id="page35R_mcid1015" class="markedContent"> </span></a></li>
+<li><a href="https://link.cep.health/insomhtml16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1044" class="markedContent"><span dir="ltr" role="presentation">Canadian Books on Sleep</span></span></a><span id="page35R_mcid1045" class="markedContent">: </span><span id="page35R_mcid1046" class="markedContent"><span dir="ltr" role="presentation">The Canadian Sleep Society has a list of Canadian books and workbook(s) </span></span><span id="page35R_mcid1047" class="markedContent"> </span><span id="page35R_mcid1048" class="markedContent"><span dir="ltr" role="presentation">on sleep.</span></span><span id="page35R_mcid1049" class="markedContent"> </span><span id="page35R_mcid1050" class="markedContent"> </span></li>
+<li><a href="https://link.cep.health/insomhtml17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1051" class="markedContent"></span><span id="page35R_mcid1052" class="markedContent"><span dir="ltr" role="presentation">Toxnet</span></span></a><span id="page35R_mcid1053" class="markedContent">: </span><span id="page35R_mcid1054" class="markedContent"><span dir="ltr" role="presentation">Toxicology Data Network.</span></span></li>
+<li><span id="page35R_mcid1055" class="markedContent"></span><a href="https://link.cep.health/insomhtml18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1057" class="markedContent"><span dir="ltr" role="presentation">Motherisk.</span></span></a><span id="page35R_mcid1058" class="markedContent"> </span></li>
+</ul>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="inner">
+                      <div class="columns is-variable is-3">
+                                            <div class="column">
+                  <strong class="heading"><h6>Online CBT-I &#038; Apps</h6></strong>
+                </div>
+                          </div>
+                    <ul>
+<li><a href="https://link.cep.health/insomhtml19" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1061" class="markedContent"><span dir="ltr" role="presentation">CBT for Insomnia</span></span></a><span id="page35R_mcid1062" class="markedContent">: </span><span id="page35R_mcid1063" class="markedContent"><span dir="ltr" role="presentation">This website offers 5-session on-line cognitive behavioural therapy (CBT)  </span></span><span id="page35R_mcid1064" class="markedContent"><span dir="ltr" role="presentation">program for insomnia. Cost ranges from $24.95 US to $49.95 US.</span></span><span id="page35R_mcid1065" class="markedContent"> </span><span id="page35R_mcid1066" class="markedContent"> </span></li>
+<li><span id="page35R_mcid1067" class="markedContent"></span><a href="https://link.cep.health/insomhtml20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1068" class="markedContent"><span dir="ltr" role="presentation">CBT-i Coach</span></span></a>:<span id="page35R_mcid1069" class="markedContent"> </span><span id="page35R_mcid1070" class="markedContent"><span dir="ltr" role="presentation">CBT-i Coach provides a structured program that teaches strategies to improve </span></span><span id="page35R_mcid1071" class="markedContent"><span dir="ltr" role="presentation">sleep and help alleviate symptoms of insomnia.</span></span><span id="page35R_mcid1072" class="markedContent"> </span><span id="page35R_mcid1073" class="markedContent"> </span></li>
+<li><span id="page35R_mcid1074" class="markedContent"></span><a href="https://link.cep.health/insomhtml21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1075" class="markedContent"><span dir="ltr" role="presentation">Sleepio</span></span></a>: <span id="page35R_mcid1077" class="markedContent"><span dir="ltr" role="presentation">An evidence-based CBT-I online and mobile app programme. Cost is $300 US </span></span><span id="page35R_mcid1078" class="markedContent"><span dir="ltr" role="presentation">for a 12-month subscription. </span></span><span id="page35R_mcid1079" class="markedContent"> </span></li>
+<li><a href="https://link.cep.health/insomhtml22" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1081" class="markedContent"><span dir="ltr" role="presentation">SlumberPRO</span></span></a>: <span id="page35R_mcid1083" class="markedContent"><span dir="ltr" role="presentation">A self-help program based out of Queensland Australia that requires about 30-</span></span><span id="page35R_mcid1084" class="markedContent"><span dir="ltr" role="presentation">60 minutes each day. The program lasts 4-8 weeks. Cost $39 AUS. </span></span></li>
+<li><a href="https://link.cep.health/insomhtml23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1087" class="markedContent"><span dir="ltr" role="presentation">Go! To Sleep</span></span></a>: <span id="page35R_mcid1089" class="markedContent"><span dir="ltr" role="presentation">A 6-week CBT-I program available through Cleveland Clinic of Wellness. </span></span><span id="page35R_mcid1090" class="markedContent"> </span><span id="page35R_mcid1091" class="markedContent"><span dir="ltr" role="presentation">A mobile app is also available. Cost $3.99 US for app or $40 US for web. </span></span></li>
+<li><a href="https://link.cep.health/insomhtml24" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1094" class="markedContent"><span dir="ltr" role="presentation">SHUTi</span></span></a>: <span id="page35R_mcid1096" class="markedContent"><span dir="ltr" role="presentation">A 6-week CBT-I program that has been evaluated in 2 randomized trials </span></span><span id="page35R_mcid1097" class="markedContent"><span dir="ltr" role="presentation">involving adults with insomnia and cancer survivors. Cost $135 US for 16 weeks </span></span><span id="page35R_mcid1098" class="markedContent"><span dir="ltr" role="presentation">access or $156 US for 20 weeks access.</span></span><span id="page35R_mcid1099" class="markedContent"> </span></li>
+<li><a href="https://link.cep.health/insomhtml25" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1101" class="markedContent"><span dir="ltr" role="presentation">Restore CBT-I:</span></span></a><span id="page35R_mcid1102" class="markedContent"> </span><span id="page35R_mcid1103" class="markedContent"><span dir="ltr" role="presentation">A 6-week CBT-I program evaluated in a randomized trial (developed by </span></span><span id="page35R_mcid1104" class="markedContent"><span dir="ltr" role="presentation">Canadian psychologist, Dr. Norah Vincent). Price varies from £99 to £199.</span></span><span id="page35R_mcid1105" class="markedContent"> </span></li>
+<li><a href="https://link.cep.health/insomhtml26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1107" class="markedContent"><span dir="ltr" role="presentation">Sleep Training System:</span></span></a><span id="page35R_mcid1108" class="markedContent"> </span><span id="page35R_mcid1109" class="markedContent"><span dir="ltr" role="presentation">6-week online CBT-I program with money-back guarantee and personalized </span></span><span id="page35R_mcid1110" class="markedContent"><span dir="ltr" role="presentation">feedback. Cost $29.95 US.</span></span><span id="page35R_mcid1111" class="markedContent"> </span></li>
+<li><span id="page35R_mcid1112" class="markedContent"></span><a href="https://link.cep.health/insomhtml27" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span id="page35R_mcid1113" class="markedContent"><span dir="ltr" role="presentation">Meditation Oasis:</span></span></a> <span id="page35R_mcid1115" class="markedContent"><span dir="ltr" role="presentation">Relax &amp; Rest Guided Mediation apps. Cost $2.79 US.</span></span><span id="page35R_mcid1116" class="markedContent"> </span></li>
+<li><span id="page35R_mcid1118" class="markedContent"><span dir="ltr" role="presentation"><a href="https://link.cep.health/insomhtml28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Centre for Mindfulness</a> Studies</span></span><span id="page35R_mcid1119" class="markedContent"> </span><span id="page35R_mcid1120" class="markedContent"><span dir="ltr" role="presentation">Provides mindfulness-based cognitive therapy, mindfulness-based stressed </span></span><span id="page35R_mcid1121" class="markedContent"><span dir="ltr" role="presentation">reduction, mindful self-compassion and specialized mindfulness training </span></span></li>
+</ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p style="font-size:12px">*These supporting materials are hosted by external organizations and as such, the accuracy and accessibility of their links are not guaranteed. CEP will make every effort to keep these links up to date.</p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1134" class="markedContent"><span dir="ltr" role="presentation">Statistics Canada. The Daily – Study: Insomnia. 2005. [cited 2016 October 16]. </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1134" class="markedContent"><span dir="ltr" role="presentation"><span id="page35R_mcid1135" class="markedContent">Toward Optimized Practice. Assessment to management of adult insomnia. Clinical Practice Guideline. December 2015.</span></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1135" class="markedContent"><span dir="ltr" role="presentation"><span id="page35R_mcid1136" class="markedContent">Qaseem A, Kansagara D, Forciea M, Cooke M, Denberg T. Management of chronic insomnia disorder in adults: a clinical practice guideline from the American College of Physicians. </span><span id="page35R_mcid1137" class="markedContent">Ann Intern Med. 2016.</span></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1138" class="markedContent"><span dir="ltr" role="presentation">Schutte-Rodin S, Broch L, Buysse D, Dorsey C, Sateia M. Clinical guideline for the evaluation and management of chronic insomnia in adults. J Clin Sleep Med 2008;4(5):487-504.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1139" class="markedContent"><span class="" dir="ltr" role="presentation">Jungquist C, O’Brien C, Matteson-Rusby S, Smith M, Pigeon W, Xia Y, et al. The Efficacy of Cognitive Behavioral Therapy for Insomnia in Patients with Chronic Pain. Sleep Med. </span></span><span id="page35R_mcid1140" class="markedContent"><span dir="ltr" role="presentation">2010;11(3):302-9.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1141" class="markedContent"><span class="" dir="ltr" role="presentation">Sidani S, Epstein D. Effects of a multi-component behavioral intervention (MCI) for insomnia on depressive and insomnia symptoms in individuals with high and low depression. J </span></span><span id="page35R_mcid1142" class="markedContent"><span dir="ltr" role="presentation">Evid Info Soc Work. 2015;12(5):451-61.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1143" class="markedContent"><span dir="ltr" role="presentation">Doufas A, Panagiotou O, Panousis P, Wong S, Ioannidis P. Insomnia from drug treatments: evidence from meta-analyses of randomized trials and concordance with prescribing </span></span><span id="page35R_mcid1144" class="markedContent"><span dir="ltr" role="presentation">information. Mayo Clin Proc. 2016;92(1):72-87.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1145" class="markedContent"><span dir="ltr" role="presentation">Winkelman J. Insomnia Disorder. N Engl J Med. 2015;373:1437-44.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1146" class="markedContent"><span dir="ltr" role="presentation">Allessi C, Vitiello M. Insomnia (primary) in older people: non-drug treatments. Clinical Evidence. 2015.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1147" class="markedContent"><span dir="ltr" role="presentation">Montgomey P, Dennis J. Physical exercise for sleep problems in adults aged 60+. Cochrane Database of Systemic Reviews. 2002;(4):CD003404.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1148" class="markedContent"><span dir="ltr" role="presentation">Chang A, Aeschbach D, Duffy J, et al. Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. PNAS. 2015;112(4):1232-7.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page35R_mcid1149" class="markedContent"><span dir="ltr" role="presentation">Morin CM, Beaulieu-Bonneau S, Ivers H, Vallières A, Guay B, Savard J, et al. Speed and trajectory of changes of insomnia symptoms during acute treatment with cognitive-</span></span><span id="page35R_mcid1150" class="markedContent"><span dir="ltr" role="presentation">behavioral therapy, singly and combined with medication. Sleep Med. 2014;15(6):701-7.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1158" class="markedContent"><span class="" dir="ltr" role="presentation"> Tenni P, Dunbabin D. A guide to deprescribing benzodiazepines. Consultant Pharmacy Services. Australia. 2016. [cited 2016 September 16] </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1159" class="markedContent"><span dir="ltr" role="presentation">PL Detail-Document, Insomnia Treatments. Pharmacist’s Letter/Prescriber’s Letter. May 2013.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1160" class="markedContent"><span dir="ltr" role="presentation">Canadian Pharmacists Association. Therapeutic Choices for Minor Ailments. First Edition. 2013. Chapter 5: Insomnia, p. 33-42.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1161" class="markedContent"><span dir="ltr" role="presentation">Ferracioli-Oda E, Qawasmi A, Bloch MH. Meta-analysis: melatonin for the treatment of primary sleep disorders. PLOS ONE 2013; 8(5):e63773.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1162" class="markedContent"><span dir="ltr" role="presentation">Wright A, Diebold J, Otal J, et al. The effect of melatonin on benzodiazepine discontinuation and sleep quality in adults attempting to discontinue benzodiazepines: A systematic </span></span><span id="page40R_mcid1163" class="markedContent"><span dir="ltr" role="presentation">review and meta-analysis. Drugs Aging. 2015;32(12):1009-18.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1164" class="markedContent"><span dir="ltr" role="presentation">Fernández-San-Martín MI, Masa-Font R, Palacios-Soler L, Sancho-Gómez P, Calbó-Caldentey C, Flores-Mateo G. Effectiveness of valerian on insomnia: A meta-analysis of </span></span><span id="page40R_mcid1165" class="markedContent"><span dir="ltr" role="presentation">randomized placebo-controlled trials. Sleep Med. 2010;11(6):505-11.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1166" class="markedContent"><span dir="ltr" role="presentation">Glass J, Lanctot K, Hermann N, Sproule B, Busto U. Sedative hypnotics in older people with insomnia: meta-analysis of risks and benefits. BMJ. 2005.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1167" class="markedContent"><span dir="ltr" role="presentation">Buscemi N, Vandermeer B, Friesen C, et al. The efficacy and safety of drug treatments for chronic insomnia in adults: a meta-analysis of RCTs. J Gen Intern Med. 2007;22:1335</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1168" class="markedContent"><span dir="ltr" role="presentation">Hansen R, Boudreau D, Ebel B, Grossman D, Sullivan S. Sedative hypnotic medication use and the risk of motor vehicle crash. Am J Public Health. 2015;105(8):e64-e69</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1169" class="markedContent"><span dir="ltr" role="presentation">Barbone F, McMahon AD, Davey PG, Morris AD, Reid IC, McDevitt DG, MacDonald TM. Association of road-traffic accidents with benzodiazepine use. Lancet. 1998; 352:1331–36. </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1170" class="markedContent"><span class="" dir="ltr" role="presentation">Gustavsen I, Bramness JG, Skurtveit S, Engeland A, Neutel I, Mørland J. Road traffic accident risk related to prescriptions of the hypnotics zopiclone, zolpidem, flunitrazepam and </span></span><span id="page40R_mcid1171" class="markedContent"><span dir="ltr" role="presentation">nitrazepam. Sleep Medicine. 2008;9(8):818–822. </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [24]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1172" class="markedContent"><span dir="ltr" role="presentation">Movig KL, Mathijssen MP, Nagel PH, van Egmond T, de Gier JJ, Leufkens HG, Egberts AC. Psychoactive Substance Use and the Risk of Motor Vehicle Accidents. Accident Analysis </span></span><span id="page40R_mcid1173" class="markedContent"><span dir="ltr" role="presentation">and Prevention. 2004;36(4):631–636. </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [25]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1174" class="markedContent"><span dir="ltr" role="presentation">Engeland A, Skurtveit S, Mørland J. Risk of Road Traffic Accidents Associated With the Prescription of Drugs: A Registry-Based Cohort Study. Ann Epidemiol 2007;17(8):597–602. </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [26]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1175" class="markedContent"><span dir="ltr" role="presentation">Schneider LS, Dagerman KS, Insel P. Risk of death with atypical antipsychotic drug treatment for dementia: Meta-analysis of randomized placebo-controlled trials. JAMA. </span></span><span id="page40R_mcid1176" class="markedContent"><span dir="ltr" role="presentation">2005;294(15):1934-1943.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [27]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1177" class="markedContent"><span dir="ltr" role="presentation">Canadian Geriatrics Society. Insomnia and anxiety in older people. Choosing Wisely Canada. 2014. [cited 2016 September 22].</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [28]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1178" class="markedContent"><span class="" dir="ltr" role="presentation">Pollman AS, Murphy AL, Berman JC, Gardner DM. Deprescribing benzodiazepines and Z-drugs in community-dwelling adults: a scoping review. BMC Pharmacology and </span></span><span id="page40R_mcid1179" class="markedContent"><span dir="ltr" role="presentation">Toxicology. 2015;16:19</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [29]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1180" class="markedContent"><span dir="ltr" role="presentation">Canadian Guideline for Safe and Effective Use of Opioids for Chronic Non-Cancer Pain. 2015. Appendix B-6. Benzodiazepine Tapering. [cited 2016 December 30]</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [30]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1181" class="markedContent"><span dir="ltr" role="presentation">Paquin A, Zimmerman K, Rudolph J. Risk versus risk: a review of benzodiazepine reduction in older adults. Expert Opin Drug Saf. 2014;13(7):919-34.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [31]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1182" class="markedContent"><span dir="ltr" role="presentation">Gould R, Coulson M, Patel N, Highton-Williamson E, Howard R. Interventions for reducing benzodiazepines in older people: meta-analysis of randomized controlled trials. Br J </span></span><span id="page40R_mcid1183" class="markedContent"><span dir="ltr" role="presentation">Psych. 2014;204:98-107.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [32]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1184" class="markedContent"><span class="" dir="ltr" role="presentation">Otto M, McHugh R, Simon N, Farach F, Worthington J, Pollack M. Efficacy of CBT for benzodiazepine discontinuation in patients with panic disorder: Further evaluation. Behav Res </span></span><span id="page40R_mcid1185" class="markedContent"><span dir="ltr" role="presentation">Ther. 2010;48:720-7.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [33]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1186" class="markedContent"><span dir="ltr" role="presentation">Bostwick, JR, Casher MI, Yasugi S. Benzodiazepines: A versatile clinical tool. Current Psych. 2012;11(4):55-63 </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [34]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1187" class="markedContent"><span dir="ltr" role="presentation">Benzodiazepine. e-cps. 2015. [cited December 31, 2015]</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [35]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1188" class="markedContent"><span dir="ltr" role="presentation">Sivertsen B, Omvik S, Pallesen S, et al. Cognitive behavioral therapy vs zopiclone for treatment of chronic primary insomnia in older adults: A randomized controlled trial. JAMA. </span></span><span id="page40R_mcid1189" class="markedContent"><span class="" dir="ltr" role="presentation">2006 Jun 28;295(24):2851-8.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [36]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1190" class="markedContent"><span dir="ltr" role="presentation">Krystal AD, Lankford A, Durrence HH, Ludington E, Jochelson P, Rogowski R, Roth T. Efficacy and safety of doxepin 3 and 6 mg in a 35-day sleep laboratory trial in adults with </span></span><span id="page40R_mcid1191" class="markedContent"><span dir="ltr" role="presentation">chronic primary insomnia. Sleep. 2011 Oct 1;34(10):1433-42.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [37]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1192" class="markedContent"><span class="" dir="ltr" role="presentation">By the American Geriatrics Society 2015 Beers Criteria Update Expert Panel. American Geriatrics Society 2015 Updated Beers Criteria for potentially inappropriate medication </span></span><span id="page40R_mcid1193" class="markedContent"><span dir="ltr" role="presentation">use in older adults. J Am Geriatr Soc. 2015;63:2227-46.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [38]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1194" class="markedContent"><span class="" dir="ltr" role="presentation">Wilson SJ, Nutt DJ, Alford C, Argyropoulos SV, Baldwin DS, Bateson AN, et al. British Association for Psychopharmacology consensus statement on evidence-based treatment of </span></span><span id="page40R_mcid1195" class="markedContent"><span dir="ltr" role="presentation">insomnia, parasomnias and circadian rhythm disorders. J Psychopharmacol Oxf Engl. 2010 Nov;24(11):1577-601.</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [39]
+                    </div>
+
+                    <div class="column">
+                      <p><span id="page40R_mcid1196" class="markedContent"><span dir="ltr" role="presentation">Driver H, Gottschalk R, Hussain M, Morin C, Shapiro C, Van Zyl L. Insomnia in Adults and Children. Joli Joco Publications Inc., 2012. [cited 2016 May 16] </span></span></p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgments-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgments and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p><span id="page40R_mcid1243" class="markedContent"><span dir="ltr" role="presentation">This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by Centre for Effective Practice with collaboration from the Ontario College of Family Physicians and the Nurse </span></span><span id="page40R_mcid1244" class="markedContent"><span dir="ltr" role="presentation">Practitioners’ Association of Ontario. Clinical leadership for the development of the Tool was provided by Dr. Jose Silveira, MD, FRCPC Dip. ABAM and Dr. Deanna Telner MD CCFP, and the Tool was subject </span></span><span id="page40R_mcid1245" class="markedContent"><span class="" dir="ltr" role="presentation">to external review by health care providers and other relevant stakeholders. </span></span></p>
+<p><span id="page40R_mcid1245" class="markedContent"><span class="" dir="ltr" role="presentation">This Tool was funded by the Government of Ontario as part of the Knowledge Translation in Primary Care Initiative.</span></span><span id="page40R_mcid1246" class="markedContent"> </span><span id="page40R_mcid1247" class="markedContent"><span dir="ltr" role="presentation">T</span></span><span id="page40R_mcid1248" class="markedContent"><span dir="ltr" role="presentation">his Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exer</span></span><span id="page40R_mcid1249" class="markedContent"><span dir="ltr" role="presentation">cise their own </span></span><span id="page40R_mcid1250" class="markedContent"><span dir="ltr" role="presentation">clinical judgment in using this Tool. Neither the Centre for Effective Practice (“CEP”), Ontario College of Family Physicians, Nurse Practitioners’ Association of Ontario, Government of Ontario, nor any of their </span></span><span id="page40R_mcid1251" class="markedContent"><span class="" dir="ltr" role="presentation">respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by </span></span><span id="page40R_mcid1252" class="markedContent"><span class="" dir="ltr" role="presentation">applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) </span></span><span id="page40R_mcid1253" class="markedContent"><span dir="ltr" role="presentation">arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically </span></span><span id="page40R_mcid1254" class="markedContent"><span dir="ltr" role="presentation">named or not) that are owned or operated by third parties, including any information or advice contained therein.</span></span></p>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+<p><em><span id="page40R_mcid1224" class="markedContent"><span class="" dir="ltr" role="presentation">Management of Chronic Insomnia is a product of the Centre for Effective Practice. Permission to use, copy, and distribute this material for all non-commercial and research purposes </span></span><span id="page40R_mcid1225" class="markedContent"><span dir="ltr" role="presentation">is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of the Man</span></span><span id="page40R_mcid1227" class="markedContent"><span class="" dir="ltr" role="presentation">agement of Chronic Insomnia for commercial purposes or any modifications of the Tool are subject to charge and use must be negotiated with the Centre for Effective Practice (Email:</span></span><span id="page40R_mcid1228" class="markedContent"> </span><a href="mailto:info@cep.health"><span id="page40R_mcid1229" class="markedContent"><span dir="ltr" role="presentation">info@cep.health</span></span></a><span id="page40R_mcid1230" class="markedContent"><span dir="ltr" role="presentation">).</span></span></em><span id="page40R_mcid1231" class="markedContent"> </span></p>
+<p><span id="page40R_mcid1234" class="markedContent"><span class="" dir="ltr" role="presentation">For statistical and bibliographic purposes, please notify the Centre for Effective Practice </span></span><span id="page40R_mcid1235" class="markedContent"><span dir="ltr" role="presentation">(</span></span><span id="page40R_mcid1236" class="markedContent"><span dir="ltr" role="presentation">info@cep.health</span></span><span id="page40R_mcid1237" class="markedContent"><span dir="ltr" role="presentation">)</span></span><span id="page40R_mcid1238" class="markedContent"><span dir="ltr" role="presentation"> of any use or reprinting of the tool. </span></span><span id="page40R_mcid1239" class="markedContent"> </span><span id="page40R_mcid1240" class="markedContent"><span dir="ltr" role="presentation">Please use the below citation when referencing the Tool:</span></span><span id="page40R_mcid1241" class="markedContent"> </span><span id="page40R_mcid1242" class="markedContent"><span dir="ltr" role="presentation">Reprinted with Permission from Centre for Effective Practice. (January 2017). Management of Chronic Insomnia: Ontario. Toronto: Centre for Effective Practice.</span></span></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+            
+                <p>
+                  In collaboration with                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/OCFP_Logo_UPDATED.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/NPAO-Logo.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/assets/js/app/modules/slider.js?ver=6.4.2" id="block-acf-drug-options-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":68280,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

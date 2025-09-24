@@ -1,0 +1,20 @@
+{
+  "test_name": "test_4.3_drug_alternatives",
+  "timestamp": "2025-09-24T10:07:42.697169",
+  "elapsed_seconds": 0.000267,
+  "result": {
+    "decision": "needs_more_info",
+    "summary": "Additional information is needed for a definitive answer.",
+    "provenance_summary": "none",
+    "confidence": 0.5,
+    "highlights": [],
+    "conflicts": [],
+    "followups": [
+      {
+        "ask": "Has the patient tried other first-line treatments?",
+        "reason": "Some drugs require trial of alternatives for coverage"
+      }
+    ],
+    "trace": []
+  }
+}

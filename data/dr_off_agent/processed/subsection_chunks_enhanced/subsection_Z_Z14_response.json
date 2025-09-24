@@ -1,0 +1,83 @@
+{
+  "subsection_title": "Procedures on Musculoskeletal Elements",
+  "parent_section": "Z",
+  "page_ref": "Z14",
+  "pages_processed": "786-786",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z940",
+      "description": "Vertebral needle biopsy",
+      "fee": 177.05,
+      "asst_fee": 6
+    },
+    {
+      "code": "N546",
+      "description": "posterior approach - sole procedure",
+      "fee": 244.8,
+      "asst_fee": 6,
+      "units": 7
+    },
+    {
+      "code": "N547",
+      "description": "anterior approach - sole procedure",
+      "fee": 306.0,
+      "asst_fee": 6,
+      "units": 8
+    },
+    {
+      "code": "N551",
+      "description": "Excision spinous process - sole procedure",
+      "fee": 229.5,
+      "asst_fee": 6,
+      "units": 6
+    },
+    {
+      "code": "N552",
+      "description": "Excision transverse process - sole procedure",
+      "fee": 382.5,
+      "asst_fee": 6,
+      "units": 8
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "N546",
+      "context": "not payable with",
+      "description": "N546, N547, N551 or N552 are not eligible for payment when rendered with any other service in the Spinal Surgical Procedures section.",
+      "source_subsection": "Procedures on Musculoskeletal Elements",
+      "source_page": "Z14"
+    },
+    {
+      "code": "N547",
+      "context": "not payable with",
+      "description": "N546, N547, N551 or N552 are not eligible for payment when rendered with any other service in the Spinal Surgical Procedures section.",
+      "source_subsection": "Procedures on Musculoskeletal Elements",
+      "source_page": "Z14"
+    },
+    {
+      "code": "N551",
+      "context": "not payable with",
+      "description": "N546, N547, N551 or N552 are not eligible for payment when rendered with any other service in the Spinal Surgical Procedures section.",
+      "source_subsection": "Procedures on Musculoskeletal Elements",
+      "source_page": "Z14"
+    },
+    {
+      "code": "N552",
+      "context": "not payable with",
+      "description": "N546, N547, N551 or N552 are not eligible for payment when rendered with any other service in the Spinal Surgical Procedures section.",
+      "source_subsection": "Procedures on Musculoskeletal Elements",
+      "source_page": "Z14"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

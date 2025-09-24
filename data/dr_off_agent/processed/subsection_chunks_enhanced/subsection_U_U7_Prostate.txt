@@ -1,0 +1,64 @@
+Subsection: Prostate
+Parent Section: U
+Page Reference: U7
+Pages: 727 to 728
+Text chunks: 1
+Total text length: 2797 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 727 ---
+MALE GENITAL SURGICAL PROCEDURES
+PROSTATE
+Asst Surg Anae
+PREAMBLE
+A transurethral resection followed within 10 days by a bilateral orchidectomy because of carcinoma of
+the prostate should be claimed in accordance with paragraph (3) of the Surgical Preamble (SP3.).
+INCISION
+# Z712 Biopsy, needle ........................................................................ 85.45 6
+# Z713 - with drainage abscess ..................................................... 6 92.10 6
+# S644 Biopsy, perineal, open operation ............................................ 6 215.80 6
+EXCISION
+Prostatectomy
+# S645 Perineal................................................................................... 6 574.60 7
+# S646 Perineal with vesiculectomy.................................................... 8 875.00 11
+# S647 Suprapubic - with or without removal of bladder stones......... 6 643.35 6
+Retropubic - with or without removal of bladder stones
+# S650 - simple ................................................................................. 6 643.35 6
+# S651 - radical................................................................................. 6 1008.35 10
+# E792 - when performed laparoscopically, to S647, S650 or S651
+........................................................................... add 25%
+Note:
+1. Prostatectomy (S645-S651) does not include investigative cystoscopy but includes
+vasectomy when rendered.
+2. S651 includes S519 - plastic repair of bladder neck when rendered and/or S636 -
+vesiculectomy when rendered.
+# S652 Staging pelvic lymphadenectomy for prostatic cancer
+(laparoscopic or open) must include at a minimum bilateral
+obturator nodes .................................................................. 7 431.20 10
+# E792 - when performed laparoscopically, to S652.........add 25%
+[Commentary:
+A sampling of nodes does not constitute a complete staging lymphadenectomy. When only a
+sampling of nodes is performed, either S312 - laparotomy or Z553 - laparoscopic biopsy, may
+be eligible for payment depending on procedure performed.]
+# S653 Laparoscopic radical prostatectomy ....................................... 8 1411.70 10
+ENDOSCOPY
+Transurethral resection of prostate
+# S655 - and may include cystoscopy, meatotomy, dilatation of
+stricture, internal urethrotomy or vasectomy ...................... 450.60 7
+# S654 - for residual or regrowth of tissue within one year of previous
+prostatectomy by same surgeon ........................................ 411.20 6
+# S656 - Transurethral drainage of abscess..................................... 85.30 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) U7 Amd 12 Draft 1
+
+--- PAGE 728 ---
+MALE GENITAL SURGICAL PROCEDURES
+NOT ALLOCATED
+Amd 12 Draft 1 U8 February 14 , 2 025 (e ffective M arch 3, 2025)

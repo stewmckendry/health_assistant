@@ -1,8 +1,0 @@
-{
-  "source_pdf": "data/ontario/ohip/moh-schedule-benefit-2024-03-04.pdf",
-  "toc_file": "data/processed/toc_extracted.json",
-  "subsections_processed": 0,
-  "extraction_time": 6.9141387939453125e-06,
-  "extraction_method": "enhanced_chunking",
-  "subsections": []
-}

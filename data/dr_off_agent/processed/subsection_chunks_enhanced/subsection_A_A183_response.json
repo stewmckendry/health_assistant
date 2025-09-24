@@ -1,0 +1,206 @@
+{
+  "subsection_title": "Respiratory Disease (47)",
+  "parent_section": "A",
+  "page_ref": "A183",
+  "pages_processed": "311-313",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A475",
+      "description": "Consultation",
+      "fee": 175.55,
+      "units": null
+    },
+    {
+      "code": "A765",
+      "description": "Consultation, patient 16 years of age and under",
+      "fee": 165.5,
+      "units": null
+    },
+    {
+      "code": "A470",
+      "description": "Comprehensive respiratory disease consultation",
+      "fee": 310.45,
+      "units": "minimum of seventy-five (75) minutes of direct contact"
+    },
+    {
+      "code": "A575",
+      "description": "Limited consultation",
+      "fee": 108.95,
+      "units": null
+    },
+    {
+      "code": "A476",
+      "description": "Repeat consultation",
+      "fee": 108.95,
+      "units": null
+    },
+    {
+      "code": "A473",
+      "description": "Medical specific assessment",
+      "fee": 87.6,
+      "units": null
+    },
+    {
+      "code": "A474",
+      "description": "Medical specific re-assessment",
+      "fee": 65.9,
+      "units": null
+    },
+    {
+      "code": "A471",
+      "description": "Complex medical specific re-assessment",
+      "fee": 76.3,
+      "units": null
+    },
+    {
+      "code": "A478",
+      "description": "Partial assessment",
+      "fee": 39.6,
+      "units": null
+    },
+    {
+      "code": "E078",
+      "description": "chronic disease assessment premium (see General Preamble GP25)",
+      "fee": null,
+      "conditions": "add 50%"
+    },
+    {
+      "code": "A570",
+      "description": "Complex respiratory assessment",
+      "fee": 93.0,
+      "units": null
+    },
+    {
+      "code": "C475",
+      "description": "Consultation",
+      "fee": 169.65,
+      "units": null
+    },
+    {
+      "code": "C765",
+      "description": "Consultation, patient 16 years of age and under",
+      "fee": 165.5,
+      "units": null
+    },
+    {
+      "code": "C470",
+      "description": "Comprehensive respiratory disease consultation - subject to the same conditions as A470",
+      "fee": 310.45,
+      "units": null
+    },
+    {
+      "code": "C575",
+      "description": "Limited consultation",
+      "fee": 105.25,
+      "units": null
+    },
+    {
+      "code": "C476",
+      "description": "Repeat consultation",
+      "fee": 105.25,
+      "units": null
+    },
+    {
+      "code": "C473",
+      "description": "Medical specific assessment",
+      "fee": 84.65,
+      "units": null
+    },
+    {
+      "code": "C474",
+      "description": "Medical specific re-assessment",
+      "fee": 63.7,
+      "units": null
+    },
+    {
+      "code": "C471",
+      "description": "Complex medical specific re-assessment",
+      "fee": 73.75,
+      "units": null
+    },
+    {
+      "code": "C570",
+      "description": "Complex respiratory assessment \u2013 subject to the same conditions as A570",
+      "fee": 89.85,
+      "units": null
+    },
+    {
+      "code": "C472",
+      "description": "Subsequent visits - first five weeks",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C477",
+      "description": "Subsequent visits - sixth to thirteenth week inclusive (maximum 3 per patient per week)",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C479",
+      "description": "Subsequent visits - after thirteenth week (maximum 6 per patient per month)",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C122",
+      "description": "Subsequent visits by the Most Responsible Physician (MRP) - day following the hospital admission assessment",
+      "fee": 61.15,
+      "units": null
+    },
+    {
+      "code": "C123",
+      "description": "Subsequent visits by the MRP - second day following the hospital assessment",
+      "fee": 61.15,
+      "units": null
+    },
+    {
+      "code": "C124",
+      "description": "Subsequent visits by the MRP - day of discharge",
+      "fee": 61.15,
+      "units": null
+    },
+    {
+      "code": "C142",
+      "description": "Subsequent visits by the MRP following transfer from an Intensive Care Area - first subsequent visit",
+      "fee": 61.15,
+      "units": null
+    },
+    {
+      "code": "C143",
+      "description": "Subsequent visits by the MRP following transfer from an Intensive Care Area - second subsequent visit",
+      "fee": 61.15,
+      "units": null
+    },
+    {
+      "code": "C121",
+      "description": "Additional visits due to intercurrent illness (see General Preamble GP43)",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C478",
+      "description": "Concurrent care",
+      "fee": 34.1,
+      "units": "per visit"
+    },
+    {
+      "code": "C982",
+      "description": "Palliative care (see General Preamble GP50)",
+      "fee": 34.1,
+      "units": "per visit"
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

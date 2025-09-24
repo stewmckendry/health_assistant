@@ -1,0 +1,747 @@
+{
+  "subsection_title": "Hand and Wrist",
+  "parent_section": "N",
+  "page_ref": "N8",
+  "pages_processed": "572-579",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "R606",
+      "description": "Phalanx",
+      "fee": 161.45,
+      "units": 6
+    },
+    {
+      "code": "R608",
+      "description": "Metacarpal or metaphalangeal joint",
+      "fee": 190.2,
+      "units": 7
+    },
+    {
+      "code": "E583",
+      "description": "each additional",
+      "fee": 94.6
+    },
+    {
+      "code": "R610",
+      "description": "Trans. metacarpal 2nd to 5th ray",
+      "fee": 279.35,
+      "units": 7
+    },
+    {
+      "code": "R611",
+      "description": "Hand - all metacarpals",
+      "fee": 289.5,
+      "units": 6
+    },
+    {
+      "code": "R612",
+      "description": "Wrist",
+      "fee": 289.5,
+      "units": 6
+    },
+    {
+      "code": "R629",
+      "description": "Revision of amputated finger tip",
+      "fee": 241.55,
+      "units": 6
+    },
+    {
+      "code": "R465",
+      "description": "Finger-thumb",
+      "fee": 321.3,
+      "units": 7
+    },
+    {
+      "code": "R466",
+      "description": "Wrist",
+      "fee": 714.7,
+      "units": 6
+    },
+    {
+      "code": "R437",
+      "description": "interposition",
+      "fee": 374.0,
+      "units": 7
+    },
+    {
+      "code": "R485",
+      "description": "total",
+      "fee": 679.95,
+      "units": 6
+    },
+    {
+      "code": "R479",
+      "description": "removal only",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R435",
+      "description": "single",
+      "fee": 254.35,
+      "units": 7
+    },
+    {
+      "code": "R436",
+      "description": "multiple",
+      "fee": 459.4,
+      "units": 7
+    },
+    {
+      "code": "R489",
+      "description": "Single joint - total (arthrodesis and/or arthroplasties) maximum of 4",
+      "fee": 290.55,
+      "units": 7
+    },
+    {
+      "code": "R209",
+      "description": "Basal thumb - first carpometacarpal joint",
+      "fee": 363.05,
+      "units": 7
+    },
+    {
+      "code": "R500",
+      "description": "Removal only",
+      "fee": 144.8,
+      "units": 6
+    },
+    {
+      "code": "R236",
+      "description": "Carpal replacement",
+      "fee": 322.05,
+      "units": 7
+    },
+    {
+      "code": "R682",
+      "description": "Wrist arthroscopy setup, includes when rendered debridement, synovectomy, synovial biopsy, removal of loose body(ies) and/or screw, drilling of defect or microfracture, and/or wrist ganglion debridement.",
+      "fee": 400.0,
+      "units": 7
+    },
+    {
+      "code": "E479",
+      "description": "Arthroscopy of midcarpal and/or distal radio-ulnar joint, through separate portals, to R682",
+      "fee": 192.0
+    },
+    {
+      "code": "E478",
+      "description": "Pinning of osteochondral fragment, to R682",
+      "fee": 251.55
+    },
+    {
+      "code": "E480",
+      "description": "Triangular fibrocartilage complex repair, to R682",
+      "fee": 350.65
+    },
+    {
+      "code": "E482",
+      "description": "Soft tissue capsular release, for contractures, without bone procedure, to R682",
+      "fee": 251.55
+    },
+    {
+      "code": "E483",
+      "description": "Synovectomy for inflammatory arthritis requiring a minimum of 90 minutes to resect, to R682",
+      "fee": 326.55
+    },
+    {
+      "code": "R409",
+      "description": "Finger",
+      "fee": 168.0,
+      "units": 6
+    },
+    {
+      "code": "R410",
+      "description": "Wrist",
+      "fee": 212.5,
+      "units": 6
+    },
+    {
+      "code": "Z230",
+      "description": "punch, x-ray control",
+      "fee": 89.7,
+      "units": 6
+    },
+    {
+      "code": "Z214",
+      "description": "open biopsy or taking of bone graft by other than operating surgeon",
+      "fee": 144.8,
+      "units": 6
+    },
+    {
+      "code": "Z221",
+      "description": "needle",
+      "fee": 49.2
+    },
+    {
+      "code": "Z228",
+      "description": "open",
+      "fee": 97.35,
+      "units": 6
+    },
+    {
+      "code": "Z219",
+      "description": "Muscle needle biopsy, soft tissue, per site",
+      "fee": 31.2
+    },
+    {
+      "code": "N290",
+      "description": "Decompression median nerve at wrist (carpal tunnel syndrome)",
+      "fee": 156.75,
+      "units": 6
+    },
+    {
+      "code": "N285",
+      "description": "Exploration and/or decompression and/or transposition and/or neurolysis of major nerve (excluding carpal tunnel nerve)",
+      "fee": 256.15,
+      "units": 7
+    },
+    {
+      "code": "R219",
+      "description": "incision and drainage",
+      "fee": 182.9,
+      "units": 6
+    },
+    {
+      "code": "R218",
+      "description": "sequestrectomy",
+      "fee": 144.8,
+      "units": 6
+    },
+    {
+      "code": "R217",
+      "description": "saucerization and bone graft",
+      "fee": 242.25,
+      "units": 7
+    },
+    {
+      "code": "R534",
+      "description": "Tendon sheath",
+      "fee": 225.0,
+      "units": 6
+    },
+    {
+      "code": "Z222",
+      "description": "Manipulation - under general anaesthetic (see Surgical Preamble SP5)",
+      "fee": 134.1,
+      "units": 6
+    },
+    {
+      "code": "R316",
+      "description": "Proximal row carpectomy",
+      "fee": 338.75,
+      "units": 7
+    },
+    {
+      "code": "R285",
+      "description": "Carpal - bone (one)",
+      "fee": 214.45,
+      "units": 7
+    },
+    {
+      "code": "R317",
+      "description": "Dorsal exostosis (triquetrum)",
+      "fee": 189.75,
+      "units": 6
+    },
+    {
+      "code": "R286",
+      "description": "Radial styloid",
+      "fee": 234.75,
+      "units": 7
+    },
+    {
+      "code": "R283",
+      "description": "Phalanx/metacarpal",
+      "fee": 193.0,
+      "units": 7
+    },
+    {
+      "code": "R425",
+      "description": "finger joint",
+      "fee": 226.4,
+      "units": 6
+    },
+    {
+      "code": "R414",
+      "description": "two or more joints",
+      "fee": 339.65,
+      "units": 7
+    },
+    {
+      "code": "R407",
+      "description": "Synovectomy of extensor or flexor tendons",
+      "fee": 224.45,
+      "units": 6
+    },
+    {
+      "code": "R418",
+      "description": "Synovectomy/debridement - wrist",
+      "fee": 342.55,
+      "units": 7
+    },
+    {
+      "code": "R492",
+      "description": "Radio-ulnar meniscectomy",
+      "fee": 231.1,
+      "units": 7
+    },
+    {
+      "code": "R549",
+      "description": "Ganglion - Simple or complex",
+      "fee": 177.8,
+      "units": 6
+    },
+    {
+      "code": "R551",
+      "description": "Excision of fascia for Dupuytrens (palmar fibromatosis), single ray, with or without flaps.",
+      "fee": 322.15,
+      "units": 7
+    },
+    {
+      "code": "E832",
+      "description": "excision of fascia for Dupuytrens, one or more additional rays, to R551",
+      "fee": 273.85
+    },
+    {
+      "code": "E831",
+      "description": "use of skin grafts, or revision surgery (with or without skin grafts), to R549 or R551",
+      "fee": 0.3
+    },
+    {
+      "code": "R522",
+      "description": "simple",
+      "fee": 193.0,
+      "units": 6
+    },
+    {
+      "code": "R523",
+      "description": "complex",
+      "fee": 484.35,
+      "units": 7
+    },
+    {
+      "code": "R321",
+      "description": "Phalanx, metacarpal",
+      "fee": 260.75,
+      "units": 7
+    },
+    {
+      "code": "R322",
+      "description": "Scaphoid",
+      "fee": 588.2,
+      "units": 6
+    },
+    {
+      "code": "R345",
+      "description": "Carpal bone, other than scaphoid",
+      "fee": 260.75,
+      "units": 6
+    },
+    {
+      "code": "E497",
+      "description": "pedicled vascularized bone graft, to R322 or R345",
+      "fee": 526.4
+    },
+    {
+      "code": "R257",
+      "description": "terminal",
+      "fee": 162.65,
+      "units": 6
+    },
+    {
+      "code": "R258",
+      "description": "middle proximal or metacarpal",
+      "fee": 193.2,
+      "units": 7
+    },
+    {
+      "code": "E591",
+      "description": "each additional",
+      "fee": 158.65
+    },
+    {
+      "code": "R597",
+      "description": "Simple/single repair - wrist",
+      "fee": 301.6,
+      "units": 7
+    },
+    {
+      "code": "R548",
+      "description": "Extensive/multiple repair - wrist",
+      "fee": 511.45,
+      "units": 7
+    },
+    {
+      "code": "R601",
+      "description": "Metacarpal phalangeal repair",
+      "fee": 316.75,
+      "units": 7
+    },
+    {
+      "code": "R557",
+      "description": "one",
+      "fee": 223.65,
+      "units": 7
+    },
+    {
+      "code": "E050",
+      "description": "each additional",
+      "fee": 77.05
+    },
+    {
+      "code": "R559",
+      "description": "one",
+      "fee": 306.3,
+      "units": 7
+    },
+    {
+      "code": "E052",
+      "description": "each additional",
+      "fee": 259.85
+    },
+    {
+      "code": "R586",
+      "description": "Reconstruction of flexor tendon pulley, per finger",
+      "fee": 97.35,
+      "units": 7
+    },
+    {
+      "code": "R554",
+      "description": "one",
+      "fee": 294.2,
+      "units": 7
+    },
+    {
+      "code": "E051",
+      "description": "each additional",
+      "fee": 245.9
+    },
+    {
+      "code": "R563",
+      "description": "single",
+      "fee": 284.95,
+      "units": 7
+    },
+    {
+      "code": "E054",
+      "description": "each additional",
+      "fee": 236.1
+    },
+    {
+      "code": "R578",
+      "description": "single",
+      "fee": 164.1,
+      "units": 7
+    },
+    {
+      "code": "E580",
+      "description": "each additional*",
+      "fee": 70.95
+    },
+    {
+      "code": "R585",
+      "description": "single",
+      "fee": 307.6,
+      "units": 7
+    },
+    {
+      "code": "E581",
+      "description": "each additional*",
+      "fee": 128.95
+    },
+    {
+      "code": "R574",
+      "description": "K-wire",
+      "fee": 133.95,
+      "units": 7
+    },
+    {
+      "code": "R573",
+      "description": "open",
+      "fee": 147.2,
+      "units": 6
+    },
+    {
+      "code": "R577",
+      "description": "open",
+      "fee": 147.3,
+      "units": 6
+    },
+    {
+      "code": "R582",
+      "description": "late",
+      "fee": 246.65,
+      "units": 7
+    },
+    {
+      "code": "R602",
+      "description": "Pollicization",
+      "fee": 596.35,
+      "units": 6
+    },
+    {
+      "code": "R603",
+      "description": "Digital reimplantation involving microvascular and neuro anastomosis",
+      "fee": 1586.2,
+      "units": 8
+    },
+    {
+      "code": "R604",
+      "description": "Revision of R602, R603 (see General Preamble GP12)",
+      "fee": 0.0
+    },
+    {
+      "code": "R605",
+      "description": "Reconstruction and plastic repair of traumatically amputated extremities (see General Preamble GP12)",
+      "fee": 0.0
+    },
+    {
+      "code": "R575",
+      "description": "one digit",
+      "fee": 194.05,
+      "units": 6
+    },
+    {
+      "code": "E537",
+      "description": "each additional digit",
+      "fee": 165.2
+    },
+    {
+      "code": "R541",
+      "description": "Flexor tenolysis with pulley preservation",
+      "fee": 309.0,
+      "units": 6
+    },
+    {
+      "code": "Z247",
+      "description": "one",
+      "fee": 49.2,
+      "units": 6
+    },
+    {
+      "code": "Z248",
+      "description": "two",
+      "fee": 72.35,
+      "units": 7
+    },
+    {
+      "code": "Z249",
+      "description": "three or more",
+      "fee": 99.15,
+      "units": 6
+    },
+    {
+      "code": "Z231",
+      "description": "palmar or plantar",
+      "fee": 73.7,
+      "units": 7
+    },
+    {
+      "code": "R536",
+      "description": "finger/palm",
+      "fee": 156.5,
+      "units": 6
+    },
+    {
+      "code": "E592",
+      "description": "more than one, to R536",
+      "fee": 133.05
+    },
+    {
+      "code": "R537",
+      "description": "wrist",
+      "fee": 175.0,
+      "units": 6
+    },
+    {
+      "code": "E571",
+      "description": "more than one, to R537",
+      "fee": 148.75
+    },
+    {
+      "code": "F004",
+      "description": "no reduction, rigid immobilization",
+      "fee": 49.2
+    },
+    {
+      "code": "F005",
+      "description": "closed reduction",
+      "fee": 99.25,
+      "units": 6
+    },
+    {
+      "code": "E584",
+      "description": "application of plaster cast outside hospital",
+      "fee": 11.15
+    },
+    {
+      "code": "E558",
+      "description": "each additional",
+      "fee": 22.25
+    },
+    {
+      "code": "F007",
+      "description": "open reduction",
+      "fee": 298.45,
+      "units": 7
+    },
+    {
+      "code": "F008",
+      "description": "no reduction, one or more, rigid immobilization",
+      "fee": 49.2
+    },
+    {
+      "code": "F009",
+      "description": "closed reduction",
+      "fee": 99.25,
+      "units": 6
+    },
+    {
+      "code": "E504",
+      "description": "each additional",
+      "fee": 22.2
+    },
+    {
+      "code": "F011",
+      "description": "open reduction",
+      "fee": 262.6,
+      "units": 7
+    },
+    {
+      "code": "E559",
+      "description": "each additional (open)",
+      "fee": 142.9
+    },
+    {
+      "code": "F006",
+      "description": "closed reduction",
+      "fee": 119.75
+    },
+    {
+      "code": "F010",
+      "description": "open reduction",
+      "fee": 335.8,
+      "units": 7
+    },
+    {
+      "code": "F012",
+      "description": "no reduction, rigid immobilization",
+      "fee": 49.2
+    },
+    {
+      "code": "F013",
+      "description": "closed reduction",
+      "fee": 119.8,
+      "units": 6
+    },
+    {
+      "code": "F015",
+      "description": "open reduction",
+      "fee": 335.8,
+      "units": 7
+    },
+    {
+      "code": "F102",
+      "description": "no reduction, rigid immobilization",
+      "fee": 49.2
+    },
+    {
+      "code": "F016",
+      "description": "closed reduction, one or more",
+      "fee": 115.1,
+      "units": 6
+    },
+    {
+      "code": "F017",
+      "description": "open reduction, one or more",
+      "fee": 346.15,
+      "units": 7
+    },
+    {
+      "code": "F018",
+      "description": "no reduction, rigid immobilization",
+      "fee": 49.2
+    },
+    {
+      "code": "F019",
+      "description": "open reduction",
+      "fee": 480.0,
+      "units": 7
+    },
+    {
+      "code": "F020",
+      "description": "excision",
+      "fee": 193.0,
+      "units": 7
+    },
+    {
+      "code": "D001",
+      "description": "closed reduction",
+      "fee": 57.5,
+      "units": 6
+    },
+    {
+      "code": "D003",
+      "description": "open reduction",
+      "fee": 196.5,
+      "units": 6
+    },
+    {
+      "code": "D004",
+      "description": "closed reduction",
+      "fee": 57.5,
+      "units": 6
+    },
+    {
+      "code": "D006",
+      "description": "open reduction",
+      "fee": 181.85,
+      "units": 7
+    },
+    {
+      "code": "D007",
+      "description": "closed reduction",
+      "fee": 128.05,
+      "units": 6
+    },
+    {
+      "code": "D008",
+      "description": "open reduction",
+      "fee": 241.3,
+      "units": 7
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E564",
+      "context": "revision of arthroplasty",
+      "description": "add 35%",
+      "source_subsection": "Hand and Wrist",
+      "source_page": "N8"
+    },
+    {
+      "code": "F019",
+      "context": "open reduction",
+      "description": "see General Preamble GP12",
+      "source_subsection": "Hand and Wrist",
+      "source_page": "N8"
+    },
+    {
+      "code": "F020",
+      "context": "excision",
+      "description": "see General Preamble GP12",
+      "source_subsection": "Hand and Wrist",
+      "source_page": "N8"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

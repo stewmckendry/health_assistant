@@ -1,0 +1,90 @@
+{
+  "subsection_title": "Vas Deferens",
+  "parent_section": "U",
+  "page_ref": "U5",
+  "pages_processed": "725-725",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z710",
+      "description": "Vasography",
+      "fee": 55.15,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "S623",
+      "description": "unilateral",
+      "fee": 215.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": 6,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": "To include microscopic control if required.",
+      "special_prefix": "#"
+    },
+    {
+      "code": "S625",
+      "description": "including biopsy and vasography",
+      "fee": 260.85,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": 6,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": "To include microscopic control if required.",
+      "special_prefix": null
+    },
+    {
+      "code": "S626",
+      "description": "uni - or bilateral - by any technique",
+      "fee": 107.4,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E545",
+      "description": "when performed outside hospital",
+      "fee": 11.55,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Vasectomy reversal is an insured benefit only for treatment of significant symptomatology, and requires prior approval. Re-establishing fertility does not constitute significant symptomatology.",
+      "special_prefix": "add"
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

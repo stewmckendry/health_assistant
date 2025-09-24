@@ -1,0 +1,94 @@
+{
+  "document_id": "cep_seasonal_preparedness_guide_for_primary_care",
+  "source_url": "https://tools.cep.health/tool/seasonal-preparedness-guide-for-primary-care/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "operational",
+  "extracted_at": "2025-09-24T15:32:59.822933",
+  "content_hash": "c2a726b8271322062e1d5e185431890b538f84611701fe78636061cd2884d66a",
+  "title": "Seasonal Preparedness Guide",
+  "tool_slug": "seasonal-preparedness-guide-for-primary-care",
+  "navigation": [
+    {
+      "title": "Management optimization for respiratory season",
+      "anchor": "#optimization",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Mild exacerbation: an increase in asthma symptoms from baseline that does not require systemic steroids, an emergency department visit, or a hospitalization. Differentiating this from chronic poorly c",
+      "Systemic steroidsEmergency department visitHospitalization"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Chronic condition optimization",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Management optimization for respiratory season",
+          "anchor": "#optimization",
+          "level": 3
+        },
+        {
+          "heading": "Self-management and action plans5-7,11,12",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Referrals",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Patient resources",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Seasonal preparedness for HF patients12,18",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Patient resources",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Chronic conditions like asthma, COPD, and heart failure often worsen during respiratory season. Proactive management\u2014including timely assessment, individualized action plans and appropriate education for people living with these conditions\u2014 can help reduce complications, improve outcomes and support stability during high-risk periods. Asthma and COPDHeart failure Minimize exposure to known triggers and optimize daily therapy.Encourage vaccination and good hygiene to prevent respiratory infect..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Asthma Canada. Be Winter Ready \u2013 Tips for Managing Your Asthma This Season [Internet]. 2025 [cited 2025 Jul 9]. Available from:https://asthma.ca/be-winter-ready-tips-for-managing-your-asthma-this-season/[2]CDC. Living with Asthma [Internet]. Asthma. 2024 [cited 2025 Jul 9]. Available from:https://www.cdc.gov/asthma/living-with/index.html[3]CDC. Respiratory Infections and Asthma [Internet]. Asthma. 2024 [cited 2025 Jul 9]. Available from:https://www.cdc.gov/asthma/respiratory-infections/ind..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "TheSeasonal Preparedness Guidewas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology.End users and clinical experts were engaged to provide feedback.Funded by the Ministry of Health, the KTinPC Initiative supports primary car..."
+    }
+  ],
+  "references": [],
+  "summary": "Seasonal Preparedness Guide. Category: Operational. Features: forms, patient resources. 3 main sections"
+}

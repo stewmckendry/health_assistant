@@ -1,0 +1,273 @@
+{
+  "subsection_title": "Urethra",
+  "parent_section": "T",
+  "page_ref": "T12",
+  "pages_processed": "718-720",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z617",
+      "description": "diagnostic",
+      "fee": 35.5,
+      "units": 6
+    },
+    {
+      "code": "Z618",
+      "description": "with biopsy",
+      "fee": 77.7,
+      "units": 6
+    },
+    {
+      "code": "S547",
+      "description": "Removal of foreign body or calculus",
+      "fee": 170.65,
+      "units": 7
+    },
+    {
+      "code": "Z616",
+      "description": "Biopsy of urethra (without endoscopy)",
+      "fee": 23.55,
+      "units": 6
+    },
+    {
+      "code": "S530",
+      "description": "external",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "S532",
+      "description": "transurethral (visual)",
+      "fee": 166.05,
+      "units": 6
+    },
+    {
+      "code": "S538",
+      "description": "repeat procedure within 6 months by same surgeon",
+      "fee": 95.75,
+      "units": 6
+    },
+    {
+      "code": "S531",
+      "description": "Urethrostomy",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "Z604",
+      "description": "Meatotomy and plastic repair",
+      "fee": 39.6,
+      "units": 6
+    },
+    {
+      "code": "Z609",
+      "description": "Periurethral abscess",
+      "fee": 31.6,
+      "units": 6
+    },
+    {
+      "code": "S536",
+      "description": "Caruncle",
+      "fee": 118.8,
+      "units": 6
+    },
+    {
+      "code": "S537",
+      "description": "Urethral papilloma, single or multiple",
+      "fee": 118.8,
+      "units": 6
+    },
+    {
+      "code": "S541",
+      "description": "Diverticulectomy - male or female",
+      "fee": 260.85,
+      "units": 7
+    },
+    {
+      "code": "S542",
+      "description": "Posterior urethral valve",
+      "fee": 331.7,
+      "units": 6
+    },
+    {
+      "code": "S543",
+      "description": "Prolapse urethra",
+      "fee": 118.8,
+      "units": 7
+    },
+    {
+      "code": "S544",
+      "description": "Urethrectomy - radical",
+      "fee": 296.95,
+      "units": 6
+    },
+    {
+      "code": "S548",
+      "description": "Urethral sling",
+      "fee": 381.6,
+      "units": 6
+    },
+    {
+      "code": "S815",
+      "description": "Tension free vaginal tape mid-urethral sling, by any method/approach",
+      "fee": 393.3,
+      "units": 6
+    },
+    {
+      "code": "S549",
+      "description": "primary procedure",
+      "fee": 391.55,
+      "units": 6
+    },
+    {
+      "code": "S546",
+      "description": "repeat procedure for failed retropubic or vaginal surgery for stress incontinence",
+      "fee": 496.25,
+      "units": 7
+    },
+    {
+      "code": "S539",
+      "description": "Insertion of artificial urinary sphincter",
+      "fee": 776.7,
+      "units": 6
+    },
+    {
+      "code": "S540",
+      "description": "Revision or removal of artificial urinary sphincter",
+      "fee": 239.75,
+      "units": 7
+    },
+    {
+      "code": "S545",
+      "description": "posterior",
+      "fee": 381.6,
+      "units": 6
+    },
+    {
+      "code": "S550",
+      "description": "anterior",
+      "fee": 293.35,
+      "units": 6
+    },
+    {
+      "code": "S558",
+      "description": "Second stage",
+      "fee": 235.35,
+      "units": 6
+    },
+    {
+      "code": "S535",
+      "description": "One stage repair and may include skin grafting",
+      "fee": 618.25,
+      "units": 6
+    },
+    {
+      "code": "S551",
+      "description": "Rupture, anterior urethra (diversion of urine extra)",
+      "fee": 170.65,
+      "units": 7
+    },
+    {
+      "code": "Z612",
+      "description": "Endoscopic urethral realignment for urethral trauma",
+      "fee": 250.0,
+      "units": 6
+    },
+    {
+      "code": "S552",
+      "description": "immediate repair",
+      "fee": 437.2,
+      "units": 7
+    },
+    {
+      "code": "S553",
+      "description": "late repair",
+      "fee": 643.35,
+      "units": 7
+    },
+    {
+      "code": "S554",
+      "description": "penile urethra (diversion of urine extra)",
+      "fee": 92.1,
+      "units": 6
+    },
+    {
+      "code": "S555",
+      "description": "perineal urethra",
+      "fee": 325.95,
+      "units": 6
+    },
+    {
+      "code": "S556",
+      "description": "Rectourethral with diversion, colostomy and closure of colostomy",
+      "fee": 552.3,
+      "units": 7
+    },
+    {
+      "code": "S557",
+      "description": "Urethrovesicolysis - when sole operative procedure",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "S564",
+      "description": "Transurethral incision or resection of external sphincter - when sole operative procedure",
+      "fee": 325.95,
+      "units": 6
+    },
+    {
+      "code": "Z621",
+      "description": "male, local anaesthetic",
+      "fee": 19.2
+    },
+    {
+      "code": "Z619",
+      "description": "male, general anaesthetic",
+      "fee": 52.7,
+      "units": 6
+    },
+    {
+      "code": "Z622",
+      "description": "female",
+      "fee": 9.9
+    },
+    {
+      "code": "Z620",
+      "description": "female, general anaesthetic",
+      "fee": 41.65,
+      "units": 6
+    },
+    {
+      "code": "Z615",
+      "description": "Filiform and follower urethral dilation and may include bladder catheterization",
+      "fee": 59.75,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z606",
+      "context": "not eligible for payment with",
+      "description": "Cystoscopy",
+      "source_subsection": "Urethra",
+      "source_page": "T12"
+    },
+    {
+      "code": "Z612",
+      "context": "not eligible for payment with",
+      "description": "Cystoscopy, urethroscopy, retrograde urethrogram or insertion of guidewire/catheter",
+      "source_subsection": "Urethra",
+      "source_page": "T12"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

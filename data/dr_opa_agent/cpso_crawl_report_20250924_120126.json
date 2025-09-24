@@ -1,0 +1,184 @@
+{
+  "total": 35,
+  "success": 0,
+  "failed": 35,
+  "skipped": 0,
+  "processed_urls": [],
+  "errors": [
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Availability-and-Coverage",
+      "title": "Availability and Coverage",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Availability-and-Coverage: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Consent-to-Treatment",
+      "title": "Consent to Treatment",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Consent-to-Treatment: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Complementary-Alternative-Medicine",
+      "title": "Complementary and Alternative Medicine",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Complementary-Alternative-Medicine: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Decision-Making-for-End-of-Life-Care",
+      "title": "Decision-Making for End-of-Life Care",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Decision-Making-for-End-of-Life-Care: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Delegation-of-Controlled-Acts",
+      "title": "Delegation of Controlled Acts",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Delegation-of-Controlled-Acts: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Dispensing-Drugs",
+      "title": "Dispensing Drugs",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Dispensing-Drugs: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ensuring-Competence",
+      "title": "Ensuring Competence: Changing Scope of Practice and/or Re-entering Practice",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ensuring-Competence: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Managing-Tests",
+      "title": "Managing Tests",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Managing-Tests: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Infection-Prevention-and-Control-for-Clinical-Offi",
+      "title": "Infection Prevention and Control for Clinical Office Practice",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Infection-Prevention-and-Control-for-Clinical-Offi: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Assistance-in-Dying",
+      "title": "Medical Assistance in Dying",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Assistance-in-Dying: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Documentation",
+      "title": "Medical Records Documentation",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Documentation: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Prescribing-Drugs",
+      "title": "Prescribing Drugs",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Prescribing-Drugs: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Public-Health-Emergencies",
+      "title": "Public Health Emergencies",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Public-Health-Emergencies: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Transitions-in-Care",
+      "title": "Transitions in Care",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Transitions-in-Care: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Treatment-of-Self-Family-Members-or",
+      "title": "Treatment of Self, Family Members, and Others Close to You",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Treatment-of-Self-Family-Members-or: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Virtual-Care",
+      "title": "Virtual Care",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Virtual-Care: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Walk-in-Clinics",
+      "title": "Walk-in Clinics",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Walk-in-Clinics: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Boundary-Violations",
+      "title": "Boundary Violations",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Boundary-Violations: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physicians-Relationships-with-Industry-Practice",
+      "title": "Conflicts of Interest and Industry Relationships",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physicians-Relationships-with-Industry-Practice: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Human-Rights-in-the-Provision-of-Health-Services",
+      "title": "Human Rights in the Provision of Health Services",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Human-Rights-in-the-Provision-of-Health-Services: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Behaviour-in-the-Professional-Environmen",
+      "title": "Professional Behaviour",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Behaviour-in-the-Professional-Environmen: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Professional-Responsibilities-in-Medical-Education",
+      "title": "Professional Responsibilities in Medical Education",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Professional-Responsibilities-in-Medical-Education: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Providing-Physician-Services-During-Job-Actions",
+      "title": "Providing Physician Services During Job Actions",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Providing-Physician-Services-During-Job-Actions: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Social-Media",
+      "title": "Social Media",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Social-Media: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Accepting-New-Patients",
+      "title": "Accepting New Patients",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Accepting-New-Patients: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Advertising",
+      "title": "Advertising",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Advertising: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Closing-a-Medical-Practice",
+      "title": "Closing a Medical Practice",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Closing-a-Medical-Practice: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ending-the-Physician-Patient-Relationship",
+      "title": "Ending the Physician-Patient Relationship",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ending-the-Physician-Patient-Relationship: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Management",
+      "title": "Medical Records Management",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Management: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Protecting-Personal-Health-Information",
+      "title": "Protecting Personal Health Information",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Protecting-Personal-Health-Information: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Mandatory-and-Permissive-Reporting",
+      "title": "Reporting Requirements",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Mandatory-and-Permissive-Reporting: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Uninsured-Services-Billing-and-Block-Fees",
+      "title": "Uninsured Services: Billing and Block Fees",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Uninsured-Services-Billing-and-Block-Fees: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Disclosure-of-Harm",
+      "title": "Disclosure of Harm",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Disclosure-of-Harm: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Reporting-Requirements",
+      "title": "Reporting Requirements",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Reporting-Requirements: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    },
+    {
+      "url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Third-Party-Medical-Reports",
+      "title": "Third Party Medical Reports",
+      "error": "Error processing https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Third-Party-Medical-Reports: CPSOIngester.__init__() got an unexpected keyword argument 'data_dir'"
+    }
+  ]
+}

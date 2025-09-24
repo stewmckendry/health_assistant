@@ -1,1 +1,0 @@
-"""Clinical agents for emergency triage using OpenAI Agents SDK."""

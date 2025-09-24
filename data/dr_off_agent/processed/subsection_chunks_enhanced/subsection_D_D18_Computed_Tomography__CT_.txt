@@ -1,0 +1,206 @@
+Subsection: Computed Tomography (CT)
+Parent Section: D
+Page Reference: D18
+Pages: 366 to 371
+Text chunks: 1
+Total text length: 10849 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 366 ---
+DIAGNOSTIC RADIOLOGY
+March 4, 2024 (effective April 1, 2024)
+COMPUTED TOMOGRAPHY (CT)
+H P
+Head
+X400 - without IV contrast.............................................................. - 43.25
+X401 - with IV contrast................................................................... - 64.95
+X188 - with and without IV contrast ............................................... - 75.85
+E874 - with CT perfusion study, to X188, X400, X401, X402,
+X405, or X408............................................................ add 64.00
+Note:
+1.E874 is only eligible for payment when the study is rendered as part of the investigation of
+acute stroke and the interpretation is rendered within the limited period of time following
+acute stroke during which the treating physician must render therapeutic decisions.
+2.E874 includes the administration of contrast necessary to complete the CT perfusion study.
+3.E874 includes creation and interpretation of post-imaging colour mapping of cerebral
+perfusion maps for regional cerebral blood flow, cerebral blood volume, and mean blood
+transit time.
+[Commentary:
+For example, when a CT perfusion study is only performed in conjunction with a non-contrast
+CT head scan, the appropriate claim is E874 and the non-contrast CT head service (e.g. X400,
+X402). In this example, a claim for E874 with a contrast enhanced CT head service (e.g. X401,
+X405) would not be appropriate.]
+Complex head
+X402 - without IV contrast.............................................................. - 64.95
+X405 - with IV contrast................................................................... - 75.85
+X408 - with and without IV contrast ............................................... - 86.60
+Note:
+Complex head (see Diagnostic Radiology Preamble, paragraph 9).
+Neck
+X403 - without IV contrast.............................................................. - 86.60
+X404 - with IV contrast................................................................... - 97.50
+X124 - with and without IV contrast ............................................... - 108.30
+Thorax
+X406 - without IV contrast.............................................................. - 64.95
+X407 - with IV contrast................................................................... - 75.85
+X125 - with and without IV contrast ............................................... - 86.60
+Amd 12 Draft 1 D18 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 367 ---
+DIAGNOSTIC RADIOLOGY
+COMPUTED TOMOGRAPHY (CT)
+H P
+Cardio-thoracic
+Cardio-thoracic CT is an imaging service of the cardio-thoracic structures including cardiac
+gating and 3D imaging post-processing, cardiac structure and morphology and computed
+tomographic angiography of coronary arteries (including native and anomalous coronary
+arteries, coronary bypass grafts) and requires imaging without contrast material followed by
+contrast material(s).
+X235 Cardio-thoracic ...................................................................... - 147.50
+Note:
+1.The service described by X235 includes the supervision of oral beta blockers and/or IV
+injection where clinically indicated.
+2.X235 is only eligible for payment when the service is performed using a minimum of a
+64-detector CT scanner.
+3.X235 is only eligible for payment when:
+a.one or more of the following indications are present:
+i. arterial and venous aneurysms;
+ii. traumatic injuries of arteries and veins;
+iii. arterial dissection and intramural hematoma;
+iv. arterial thromboembolism;
+v. vascular congenital anomalies and variants;
+vi. percutaneous and surgical, vascular interventions;
+vii.vascular infection, vasculitis, and collagen vascular disease;
+viii.sequelae of ischemic coronary disease (i.e. myocardial scarring, ventricular
+aneurysms, thrombi);
+ix. cardiac tumours and thrombi;
+x. pericardial diseases;
+xi. cardiac function evaluation, especially in patients in whom cardiac function may not
+be assessed by magnetic resonance imaging or echocardiography; or
+b.conventional coronary angiography is technically infeasible, or contraindicated for:
+i. a clinically stable symptomatic patient with low to intermediate probability of
+obstructive coronary disease;
+ii. a clinically stable symptomatic patient who has planned surgery for valvular or
+structural heart disease;
+iii. a patient has low to intermediate probability of stent stenosis where the stent has a
+diameter > 3mm; or
+iv. a patient with suspected clinically relevant congenital coronary artery anomalies.
+Payment rules:
+1.X417, X406, X407, and X125 are not eligible for payment with X235.
+2.X235 includes all elements required to perform the study, including additional CT acquisition
+sequencing and/or post-processing, two or three dimensional reconstruction(s), and
+administration of contrast.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) D19 Amd 12 Draft 1
+
+--- PAGE 368 ---
+DIAGNOSTIC RADIOLOGY
+COMPUTED TOMOGRAPHY (CT)
+H P
+Medical record requirements:
+X235 is only eligible for payment when the patient’s permanent medical record includes all of
+the following:
+1.An interpretation is provided by a physician who must meet the current American College of
+Radiology’s minimum training standards for thorax and cardiac CT imaging.
+2.A record of a detailed relevant patient history and demographics to determine the scan
+protocol is maintained.
+3.A diagnosis of the entire detailed field of view is provided including the lymph nodes, pleura,
+lungs, mediastinum, airways, bony thorax, spine and heart, and veins, arteries and other
+related anatomical structure.
+4.A quantitative evaluation of coronary calcium for risk stratification is documented when
+clinically appropriate.
+Amd 12 Draft 1 D20 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 369 ---
+DIAGNOSTIC RADIOLOGY
+COMPUTED TOMOGRAPHY (CT)
+H P
+[Commentary:
+1.For services where the heart vasculature and structures are not being visualized for the
+indications above, CT thorax (X406, X407 and/or X125) may be payable instead of X235.
+2.Examples where CT coronary angiography is not insured include:
+a.for a patient with a high pre-test probability of obstructive coronary artery disease or ECG
+or cardiac enzyme evidence of an acute coronary syndrome;
+b.for purposes of screening, risk stratification, or calcium scoring in asymptomatic patients.
+3.The maintenance of radiation dose should be consistent with the As Low As Responsibly
+Achievable principle and current standards under the direction of the radiologist Radiation
+Protection Officer.]
+Abdomen
+X409 - without IV contrast.............................................................. - 86.60
+X410 - with IV contrast................................................................... - 97.50
+X126 - with and without IV contrast ............................................... - 108.30
+Pelvis
+X231 - without IV contrast.............................................................. - 86.60
+X232 - with IV contrast................................................................... - 97.50
+X233 - with and without IV contrast ............................................... - 108.30
+X234 CT colonography .................................................................... - 235.30
+Note:
+1.X234 includes all elements required to perform the study, including additional CT acquisition
+sequencing and/or post processing, two or three dimensional reconstruction(s),
+administration of contrast, and faecal tagging, if rendered.
+2.X417, X409, X410, X126, X231, X232, X233 are not eligible for payment with X234.
+Payment rules:
+1.CT colonography is an insured service only in the following circumstances:
+a.individuals who are at moderate risk for colorectal cancer based on family history and the
+patient refuses colonoscopy or where the patient has been advised of the relative risks
+and benefits of CT colonography and colonoscopy and the patient refuses colonoscopy;
+b.for surveillance examination in patients with a history of previous colonic neoplasm,
+where clinically appropriate;
+c.for diagnostic examination in symptomatic patients;
+[Commentary:
+Examples of relevant symptomatology include unexplained abdominal pain, diarrhea,
+constipation, gastrointestinal bleeding, anemia, intestinal obstruction, or weight loss.]
+1.when rendered for a patient for whom colonoscopy is technically infeasible, has been difficult
+in the past, or contraindicated;
+2.for patients who are at increased risk for complications during endoscopy such as, advanced
+age, sedation or anti-coagulation therapy, prior incomplete or difficult colonoscopy;
+3.when double contrast barium enema services are unavailable or regarded as inadequate for
+clinical or diagnostic reasons.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) D21 Amd 12 Draft 1
+
+--- PAGE 370 ---
+DIAGNOSTIC RADIOLOGY
+COMPUTED TOMOGRAPHY (CT)
+H P
+2.CT colonography is only eligible for payment if:
+a.the study is interpreted using standard 2D and 3D rendering consistent with current
+practice guidelines;
+b.the study is performed on a minimum 16-detector CT scanner; and
+c.the interpretation is provided by a physician who must meet minimum training standards.
+Medical record requirements:
+X234 is only eligible for payment when the reporting radiologist:
+1.documents a detailed relevant patient history and demographics to determine the scan
+protocol; and
+2.provides a diagnosis of the entire detailed field of view including colonic and extra-colonic
+structures.
+[Commentary:
+1.CT colonography also refers to and includes “virtual colonoscopy”.
+2.The maintenance of radiation dose should be consistent with the As Low As Responsibly
+Achievable principle and current standards under the direction of the radiologist Radiation
+Protection Officer.]
+Amd 12 Draft 1 D22 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 371 ---
+DIAGNOSTIC RADIOLOGY
+COMPUTED TOMOGRAPHY (CT)
+H P
+Extremities (one or more)
+X412 - without IV contrast.............................................................. - 43.25
+X413 - with IV contrast................................................................... - 64.95
+X127 - with and without IV contrast ............................................... - 75.85
+Spine(s)
+X415 - without IV contrast.............................................................. - 86.60
+X416 - with IV contrast................................................................... - 97.50
+X128 - with and without IV contrast ............................................... - 108.30
+X168 CT guidance of biopsy............................................................ - 42.50
+X417 Three dimensional CT acquisition sequencing, including post-
+processing (minimum of 60 slices; maximum 1 scan per
+patient per day) .................................................................. - 32.70
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) D23 Amd 12 Draft 1

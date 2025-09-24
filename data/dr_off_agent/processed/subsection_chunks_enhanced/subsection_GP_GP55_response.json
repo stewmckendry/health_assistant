@@ -1,0 +1,405 @@
+{
+  "subsection_title": "Psychotherapy, Psychiatric and Counselling Services",
+  "parent_section": "GP",
+  "page_ref": "GP55",
+  "pages_processed": "69-74",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [],
+  "referenced_codes": [
+    {
+      "code": "K004",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K006",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K007",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K010",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K012",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K019",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K020",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K024",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K025",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K122",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K123",
+      "context": "qualifying service for focused practice psychotherapy premium",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "E080",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G010",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G039",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G040",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G041",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G042",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G043",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G202",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G205",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G365",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G372",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G384",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G385",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G394",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G462",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G480",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G489",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G482",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G538",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G590",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G593",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G840",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G841",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G842",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G843",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G844",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G845",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G846",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G847",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "G848",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "H313",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K002",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K003",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K008",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K014",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K015",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K031",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K035",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K036",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K038",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K682",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K683",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K684",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    },
+    {
+      "code": "K730",
+      "context": "not payable with counselling services",
+      "description": "",
+      "source_subsection": "Psychotherapy, Psychiatric and Counselling Services",
+      "source_page": "GP55"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

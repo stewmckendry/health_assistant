@@ -1,0 +1,39 @@
+{
+  "subsection_title": "Obstetrics and Gynaecology",
+  "parent_section": "D",
+  "page_ref": "D13",
+  "pages_processed": "361-361",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        4,
+        "X147 Hysterosalpingogram.............................................................. 29.80 11.35"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "X147",
+      "description": "Hysterosalpingogram",
+      "fee": 29.8,
+      "h_fee": 29.8,
+      "p_fee": 11.35,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

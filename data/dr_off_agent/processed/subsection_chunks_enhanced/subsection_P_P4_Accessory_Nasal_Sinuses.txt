@@ -1,0 +1,84 @@
+Subsection: Accessory Nasal Sinuses
+Parent Section: P
+Page Reference: P4
+Pages: 634 to 635
+Text chunks: 1
+Total text length: 3912 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 634 ---
+RESPIRATORY SURGICAL PROCEDURES
+ACCESSORY NASAL SINUSES
+Asst Surg Anae
+ACCESSORY NASAL SINUSES - EXTERNAL OR ENDONASAL APPROACH
+Antrum or sinus lavage
+# Z319 Antral puncture and/or lavage - unilateral or bilateral............. 43.15 6
+Note:
+Z319 is not eligible for payment when rendered with any other surgical procedure by the same
+physician on the same patient, on the same day.
+Maxillary
+# M055 - Caldwell-Luc (includes intranasal antrostomy)
+- unilateral........................................................................... 6 247.35 10
+[Commentary:
+For antrostomy by endonasal or endoscopic approach see M054.]
+Maxillectomy
+# M056 - partial or complete.............................................................. 7 971.75 10
+# E947 - with orbital exenteration, to M056.............................. add 306.85
+# M058 Radical frontal sinusectomy for tumour, radical exenteration of
+disease with drill out for access, or ostium revision ........... 460.20 10
+# M063 Coronal and/or osteoplastic procedure for frontal sinusectomy,
+reconstruction or obliteration - unilateral or bilateral .......... 7 716.25 10
+[Commentary:
+For frontal trephine see Z318.]
+External frontal-ethmoidal sinusectomy and/or reconstruction
+# M059 - unilateral............................................................................. 6 460.20 10
+External or transantral ethmoidectomy
+# M023 - unilateral (to include Caldwell-Luc with transantral
+approach) ........................................................................... 6 360.45 10
+Sphenoid
+# M061 Trans-septal sphenoidectomy for tumour or radical
+exenteration of disease ...................................................... 355.65 10
+Note:
+M061 is not eligible for payment when rendered for performing the approach to the pituitary
+fossa as part of N111, N112, N114 or N116.
+# M064 External transethmoidal sphenoid sinusectomy ..................... 7 612.65 10
+Closure of antral fistula
+# M067 - under general anaesthetic (to include Caldwell-Luc if
+necessary).......................................................................... 345.15 7
+Amd 12 Draft 1 P4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 635 ---
+RESPIRATORY SURGICAL PROCEDURES
+ACCESSORY NASAL SINUSES
+Asst Surg Anae
+ACCESSORY NASAL SINUSES – ENDOSCOPIC APPROACH
+# Z318 Trephine or endoscopic frontal sinusotomy ............................ 133.30 7
+# M054 Intranasal maxillary antrostomy – unilateral – by endoscopic or
+endonasal approach........................................................... 6 123.70 10
+Ethmoidectomy/Antrostomy
+# M083 Intranasal ethmoidectomy including maxillary antrostomy, with
+endoscope – unilateral (not eligible for payment with M061
+or M054) ............................................................................. 350.00 10
+# E844 - bilateral procedure, to M083 ...................................... add 200.00
+# Z350 Endoscopic sphenoidotomy - unilateral.................................. 123.70 10
+# E843 - bilateral procedure, to Z350....................................... add 103.05
+# E845 - when performed using a 3D CT/MRI image guided
+system, to M083 or Z350 ........................................... add 140.00
+Note:
+E845 is only eligible for payment under the following circumstances:
+1.Identification of the anatomy of the paranasal sinuses distorted by previous surgery, trauma,
+abnormalities of development or benign or malignant tumours; or
+2.A pathological lesion abuts the base of the skull, orbit, optic nerve or carotid artery.
+# Z351 Endoscopic Septoplasty ......................................................... 122.40 10
+# M086 Trans-nasal endoscopic repair of CSF rhinorrhea (includes
+harvesting of graft material) with or without 3D CT/MRI
+image guided system ......................................................... 822.45 15
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P5 Amd 12 Draft 1

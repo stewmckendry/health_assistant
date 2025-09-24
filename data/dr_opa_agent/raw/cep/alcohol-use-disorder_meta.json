@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_alcohol_use_disorder",
+  "slug": "alcohol-use-disorder",
+  "name": "Alcohol Use Disorder",
+  "category": "substance_use",
+  "url": "https://tools.cep.health/tool/alcohol-use-disorder/",
+  "content_hash": "6d1e18a26b5a20aeb6d290cfe7d06ae5e1a7a1377e6cc011fa5010a5eee07db8",
+  "crawled_at": "2025-09-24T15:01:23.209312"
+}

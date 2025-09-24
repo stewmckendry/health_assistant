@@ -1,0 +1,204 @@
+{
+  "document_id": "cep_managing_patients_with_heart_failure_in_primary_care",
+  "source_url": "https://tools.cep.health/tool/managing-patients-with-heart-failure-in-primary-care/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "chronic_disease",
+  "extracted_at": "2025-09-24T15:33:00.179044",
+  "content_hash": "aa8a6c8d7c5308c07fb0ab6668b676c4bf87724decaeffea10ed504d3400456b",
+  "title": "Managing Heart Failure in Primary Care",
+  "tool_slug": "managing-patients-with-heart-failure-in-primary-care",
+  "last_updated": "November 22, 2024",
+  "navigation": [
+    {
+      "title": "Diagnosis3\u20135",
+      "anchor": "#dxingHF",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Determining heart failure type by ejection fraction and symptom severity3",
+      "anchor": "#typeSeverity",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Determining etiology of heart failure3",
+      "anchor": "#etiology",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Advanced care planning3,10,11",
+      "anchor": "#hfacp",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Palliative and supportive care",
+      "anchor": "#hfpall",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non-pharmacological and lifestyle management3",
+      "anchor": "#hfnonpharm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacological management",
+      "anchor": "#pharmacological-management",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Warning signs and symptoms of worsening heart failure3,8,31",
+      "anchor": "#hfwarningsigns",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Warning signs and symptoms of worsening heart failure",
+      "Vital signs (e.g., BP, HR, O2 saturation and body weight) until they stabilize (body weight daily).Clinical signs and symptoms of congestion and hypoperfusion (worsening heart failure) regularly.Encou"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Initial assessment and diagnosis",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Diagnosis3\u20135",
+          "anchor": "#dxingHF",
+          "level": 3
+        },
+        {
+          "heading": "When HF is suspected, the following steps should be conducted to confirm a diagnosis",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Determining heart failure type by ejection fraction and symptom severity3",
+          "anchor": "#typeSeverity",
+          "level": 3
+        },
+        {
+          "heading": "Determining etiology of heart failure3",
+          "anchor": "#etiology",
+          "level": 3
+        }
+      ],
+      "summary": "Diagnosing heart failureDetermining heart failure type by ejection fraction and symptom severityEtiology of heart failure When HF is suspected, a diagnosis should be confirmed by:3 Assessing for symptoms and signs of HF caused by a structural or functional cardiac abnormality.Corroborated by at least one of the following:Objective evidence of cardiogenic pulmonary or systemic congestion (e.g. findings from chest radiograph (x-ray) or echocardiogram).Elevated natriuretic peptide (NP) levels wh..."
+    },
+    {
+      "heading": "Advanced care planning and palliative care",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Advanced care planning3,10,11",
+          "anchor": "#hfacp",
+          "level": 3
+        },
+        {
+          "heading": "FAQs about advance care planning10,11",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Palliative and supportive care",
+          "anchor": "#hfpall",
+          "level": 3
+        },
+        {
+          "heading": "FAQs about palliative care10",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Advance care planningPalliative and supportive care HF is often underestimated in terms of its severity as a lifelong, life-limiting illness. When compared to advanced cancer (which is more recognized as a life-limiting illness) the trajectory of HF is quite different. HF patients typically experience a gradual decline in function over years, with intermittent serious episodes that often require hospitalization."
+    },
+    {
+      "heading": "Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Overall management12",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Non-pharmacological and lifestyle management3",
+          "anchor": "#hfnonpharm",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological management",
+          "anchor": "#pharmacological-management",
+          "level": 3
+        }
+      ],
+      "summary": "Non-pharmacological and lifestyle managementSelf-carePharmacological management Providers, together with patients and caregivers, should decide on and implement a combination of non-pharmacological and lifestyle, pharmacological and self-care strategies to manage HF and the symptoms. Assess clinical criteria for additional individualized therapy(e.g., HF modifying medications)"
+    },
+    {
+      "heading": "Monitoring",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Warning signs and symptoms of worsening heart failure3,8,31",
+          "anchor": "#hfwarningsigns",
+          "level": 3
+        }
+      ],
+      "summary": "Warning signs and symptoms of worsening heart failure Providers and patients should monitor the following regularly: Vital signs (e.g., BP, HR, O2 saturation and body weight) until they stabilize (body weight daily).Clinical signs and symptoms of congestion and hypoperfusion (worsening heart failure) regularly.Encourage patients to take part in the monitoring process. Patients should identify and document their early, individualized signs and symptoms of worsening HF.Ensure patients know who ..."
+    },
+    {
+      "heading": "Coordination of care",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "When to refer3,7,9,11,32,",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The coordination of care and information across care team members is integral to supporting patients with HF.3,7,11,32Coordination of care and information requires bidirectional follow-up between team members (e.g., discharge plans, care plans, community paramedicine/remote monitoring programs, pharmacy, dietician, home and community care support services) and should involve active engagement of patients and their caregivers.9 Timely clinical follow-up with patients should occur within 7 days..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Heart & Stroke Foundation. How Canada is failing people with heart failure-and how we can change that [Internet]. 2022. Available from:https://www.heartandstroke.ca/-/media/pdf-files/canada/2022-heart-month/HS-Heart-Failure-Report-2022-FINAL.ashx[2]Steinberg L, White M, Arvanitis J, Husain A, Mak S. Approach to advanced heart failure at the end of life. 2017 Sep;7.[3]Ezekowitz JA, O\u2019Meara E, McDonald MA, Abrams H, Chan M, Ducharme A, et al. 2017 Comprehensive Update of the Canadian Cardiov..."
+    },
+    {
+      "heading": "Acknowledgment and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The Managing Heart Failure in Primary Caretool was developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Rahul Jain. End users and clinical experts were also engaged to pr..."
+    }
+  ],
+  "references": [],
+  "summary": "Managing Heart Failure in Primary Care. Category: Chronic Disease. Features: forms, patient resources. 7 main sections"
+}

@@ -1,0 +1,62 @@
+Subsection: Penis
+Parent Section: U
+Page Reference: U1
+Pages: 721 to 721
+Text chunks: 1
+Total text length: 2995 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 721 ---
+MALE GENITAL SURGICAL PROCEDURES
+Male Genital Surgical ProceduresMarch 4, 2024 (effective April 1, 2024)
+PENIS
+Asst Surg Anae
+INCISION
+Slit of prepuce (complete care)
+# S567 - newborn.............................................................................. 61.35
+# S568 - infant................................................................................... 62.45 6
+# S569 - adult or child ....................................................................... 65.30 6
+EXCISION
+Circumcision - for physical symptomatology only
+# S573 - for patients aged one year or older .................................... 6 210.80 6
+# S577 - for infants less than one year of age .................................. 6 188.05 6
+Note:
+1. Circumcision is an insured service only when medically necessary. As such, circumcision
+performed for ritual, cultural, religious or cosmetic reasons at any age is not an insured
+service.
+2. Circumcision for neonatal phimosis is not an insured service.
+Z702 Biopsy..................................................................................... 39.60 6
+E542 - when performed outside of hospital........................... add 11.55
+Amputation
+# S574 - partial.................................................................................. 6 284.15 7
+# S575 - partial with inguinal glands 1 or 2 stages ........................... 6 437.20 7
+# S576 - radical with inguinal and femoral glands 1 or 2 stages....... 6 719.30 7
+Condylomata
+Z701 - local anaesthetic................................................................. 32.60
+# Z767 - general anaesthetic............................................................ 78.60 6
+# S599 Excision plaque for Peyronies disease................................... 6 286.20 7
+Note:
+Where grafting is necessary, appropriate skin graft fee is payable with S599.
+REPAIR
+Hypospadias or Epispadia
+One stage repair
+# S578 - with meatus to but not into glans........................................ 6 593.80 7
+# S571 - with advancement of meatus into glans........................... 6 614.40 6
+# S572 - into glans using island flap pedicle (penoscrotal) ............ 6 872.45 6
+# S579 Chordee repair........................................................................ 6 215.80 6
+# S580 Plastic reconstruction, urethra ................................................ 6 331.70 7
+# S581 Closure urethro-cutaneous fistula........................................... 296.95 7
+# S597 Penile prosthesis for impotence.............................................. 6 395.90 7
+# E755 - with inflatable prosthesis............................................ add 69.30
+# S588 Surgical removal of prosthesis................................................ 6 148.45 7
+# S566 Revision including removal of prosthesis................................ 6 239.75 7
+Z700 Intracorporeal injection for impotence..................................... 27.80
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) U1 Amd 12 Draft 1

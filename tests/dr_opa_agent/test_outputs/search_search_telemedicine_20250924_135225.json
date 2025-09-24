@@ -1,0 +1,7 @@
+{
+  "test_name": "search_search_telemedicine",
+  "timestamp": "2025-09-24T13:52:25.700716",
+  "success": false,
+  "error": "Error: 'FunctionTool' object is not callable",
+  "result": {}
+}

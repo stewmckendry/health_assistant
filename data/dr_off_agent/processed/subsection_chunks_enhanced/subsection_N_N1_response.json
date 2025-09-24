@@ -1,0 +1,259 @@
+{
+  "subsection_title": "Preamble",
+  "parent_section": "N",
+  "page_ref": "N1",
+  "pages_processed": "565-566",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "E554",
+      "description": "synovectomy requiring a minimum of 30 minutes to resect",
+      "fee": 175.0,
+      "units": "30 minutes",
+      "conditions": "Payment rules: Synovectomy codes other than E554 are not eligible for payment when rendered in addition to the codes listed above."
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "R236",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R240",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R241",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R244",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R281",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R288",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R436",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R437",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R438",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R439",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R440",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R441",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R443",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R453",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R454",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R456",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R479",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R481",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R482",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R483",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R485",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R486",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R487",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R488",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R491",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R493",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R496",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R497",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R498",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R499",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R500",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R509",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    },
+    {
+      "code": "R510",
+      "context": "not payable with",
+      "description": "Referenced in relation to E554",
+      "source_subsection": "Preamble",
+      "source_page": "N1"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

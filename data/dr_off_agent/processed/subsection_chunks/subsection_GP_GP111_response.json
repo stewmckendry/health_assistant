@@ -1,0 +1,16 @@
+{
+  "subsection_title": "Diagnostic Procedures Ordered By Persons Other Than Physicians",
+  "parent_section": "GP",
+  "page_ref": "GP111",
+  "fee_codes": [],
+  "rules": [
+    "Diagnostic procedures are insured when referred by authorized practitioners.",
+    "Procedures must be rendered in an ICHSC or hospital to be insured."
+  ],
+  "notes": [
+    "Midwives and Aboriginal Midwives can refer for diagnostic ultrasounds for pregnancy.",
+    "Nurse Practitioners can refer for various diagnostic procedures if authorized.",
+    "Oral and Maxillofacial Surgeons can refer for diagnostic procedures related to dental surgical procedures."
+  ],
+  "pages_processed": "125-126"
+}

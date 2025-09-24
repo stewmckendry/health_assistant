@@ -1,0 +1,110 @@
+{
+  "document_id": "cep_secure_messaging_content",
+  "source_url": "https://tools.cep.health/tool/secure-messaging-content/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "digital_health",
+  "extracted_at": "2025-09-24T15:33:01.676995",
+  "content_hash": "50950d795ecc0a6dee16f24bde9aaf00e26d446b6c730321efb4ecc2592568c5",
+  "title": "Secure Messaging",
+  "tool_slug": "secure-messaging-content",
+  "last_updated": "July 30, 2024",
+  "navigation": [
+    {
+      "title": "Promotes privacy & security",
+      "anchor": "#security",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Prepare your team",
+      "anchor": "#prepareyourteam",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Prepare your patients",
+      "anchor": "#prepareyourpatients",
+      "type": "heading_h4",
+      "level": 4
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Reduces the need for some scheduled appointments. Can free up time for urgent appointments.Reduces time spent on phone calls and paper-based communication.Clinicians can respond to messages at their c",
+      "\u201cOne-touch\u201d system \u2013 only open a message when you have time to complete a response.Setting inbox clearing goals to keep message numbers from growing.Create standard phrases to use within messaging tha",
+      "Communicate to patients about when secure messaging should be used and when it is not appropriate (e.g., send a welcome letter outlining the role of secure messaging).1Communicate to patients about ap"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": true
+  },
+  "sections": [
+    {
+      "heading": "Secure messaging in clinical practice",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Potential time-saving & convenience",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Promotes privacy & security",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Promotes privacy & security",
+          "anchor": "#security",
+          "level": 3
+        },
+        {
+          "heading": "Facilitates easy information sharing",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Enhanced patient engagement",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The benefits of implementing secure messaging will depend on an individual practice\u2019s specific resources, roster and workflow. While each practice will have different needs and challenges, various mitigation strategies can be used to suit an individual practice. Reduces the need for some scheduled appointments. Can free up time for urgent appointments.Reduces time spent on phone calls and paper-based communication.Clinicians can respond to messages at their convenience. Communication with a p..."
+    },
+    {
+      "heading": "Implementing secure messaging in your practice",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "SeeVerified solutions list for virtual visits (OH)to find secure messaging solutions that meet provincial standards for privacy, security, technology and functionality.Consider both practice and patient needs when choosing a secure messaging platform.Consider if it\u2019s important to have secure messaging integrated with a current clinical information system (e.g., EMR, HIS, etc.). Some systems have existing secure messaging features that can be activated. Ensure that all team members are consult..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]OMD Educates \u2013 Securemessaging 101 [Internet]. 2023. Available from:https://vimeo.com/892654083?share=copy[2]SteitzBD,UnertlKM, Levy MA. Ananalysis ofelectronichealthrecordwork tomanageasynchronousclinicalmessages amongbreastcancercareteams. Appl Clin Inform. 2021 Aug;12(4):877\u201387.Available from:https://pubmed.ncbi.nlm.nih.gov/34528233/[3]Conroy M, Powell M,SuelzerE,PamulapatiS, Min H, Wright T, et al.Electronicmedicalrecord-basedelectronicmessagingamongpatients withbreastcancer: Asystemat..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The Secure Messaging resourcewas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology.End users and clinical experts were also engaged to provide feedback.This resource was developed by the Centre for Effective Practice in collaboration with Ontario Health with resources and guidance provided by Ont..."
+    }
+  ],
+  "references": [],
+  "summary": "Secure Messaging. Category: Digital Health. Features: forms, patient resources, videos. 4 main sections"
+}

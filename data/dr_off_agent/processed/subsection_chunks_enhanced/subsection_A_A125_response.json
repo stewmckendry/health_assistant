@@ -1,0 +1,124 @@
+{
+  "subsection_title": "Laboratory Medicine (28)",
+  "parent_section": "A",
+  "page_ref": "A125",
+  "pages_processed": "253-253",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A285",
+      "description": "Consultation",
+      "fee": 163.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A286",
+      "description": "Limited consultation",
+      "fee": 108.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A586",
+      "description": "Repeat consultation",
+      "fee": 71.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A283",
+      "description": "Medical specific assessment",
+      "fee": 82.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A284",
+      "description": "Partial assessment",
+      "fee": 38.85,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E078",
+      "description": "chronic disease assessment premium (see General Preamble GP25)",
+      "fee": null,
+      "units": null,
+      "conditions": "add 50%",
+      "special_prefix": null
+    },
+    {
+      "code": "A585",
+      "description": "Diagnostic consultation",
+      "fee": 73.3,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C285",
+      "description": "Consultation",
+      "fee": 163.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C286",
+      "description": "Limited consultation",
+      "fee": 108.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C586",
+      "description": "Repeat consultation",
+      "fee": 71.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C283",
+      "description": "Medical specific assessment",
+      "fee": 82.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C585",
+      "description": "Diagnostic consultation - subject to the same conditions as A585",
+      "fee": 73.3,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C288",
+      "description": "Concurrent care",
+      "fee": 30.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

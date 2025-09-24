@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-09-24T15:10:52.926086",
+  "tests": {
+    "collections": {
+      "success": true,
+      "pho_collection_found": true
+    },
+    "vector_search": {
+      "success": true
+    },
+    "mcp_tool": {
+      "success": false
+    },
+    "ipac_queries": {
+      "success": true
+    }
+  }
+}

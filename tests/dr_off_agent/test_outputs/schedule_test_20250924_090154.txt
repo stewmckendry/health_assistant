@@ -1,0 +1,166 @@
+================================================================================
+   SCHEDULE.GET MCP TOOL TEST SUITE
+   Testing OHIP Schedule of Benefits Lookup
+   Output File: tests/dr_off_agent/test_outputs/schedule_test_20250924_090154.txt
+================================================================================
+
+🔧 ENVIRONMENT CHECK:
+  Python: 3.11.8
+  Working Dir: /Users/liammckendry/health_assistant_dr_off_worktree
+  OPENAI_API_KEY: ✅ Set
+  Output File: tests/dr_off_agent/test_outputs/schedule_test_20250924_090154.txt
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.1: MRP Discharge Billing (C124)
+================================================================================
+
+📝 Test Description:
+  Scenario: MRP billing on day of discharge after 72+ hour admission
+  Expected: Should find C124 fee code with requirements and documentation
+  Codes to check: C124, C122, C123
+
+🚀 Executing query...
+⏱️  Response time: 1.535 seconds
+
+### MRP Discharge Billing
+Timestamp: 2025-09-24T09:01:56.158030
+Confidence Score: 0.600
+Data Sources Used: ['sql']
+
+📋 Found 0 items:
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql"
+  ],
+  "confidence": 0.6,
+  "items": [],
+  "citations": [],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.600 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=False
+  Expected codes: ['C124']
+  Found codes: []
+  Data Quality Checks:
+  ❌ No citations provided
+
+❌ TEST FAILED
+Issues found:
+  - Low confidence: 0.600
+  - Missing dual-path retrieval: ['sql']
+  - Expected code C124 not found
+  - No citations provided
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.2: Emergency Department Consultation
+================================================================================
+
+📝 Test Description:
+  Scenario: Internist consultation in emergency department
+  Expected: Should find consultation codes with specialty restrictions
+  Codes to check: A135, A935
+
+🚀 Executing query...
+
+❌ TEST FAILED WITH ERROR: 1 validation error for ScheduleGetRequest
+include.1
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='specialty_restrictions', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+Traceback:
+Traceback (most recent call last):
+  File "/Users/liammckendry/health_assistant_dr_off_worktree/tests/dr_off_agent/test_scripts/test_schedule.py", line 233, in test_emergency_consultation
+    result = await schedule_get({
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/liammckendry/health_assistant_dr_off_worktree/src/agents/dr_off_agent/mcp/tools/schedule.py", line 399, in schedule_get
+    parsed_request = ScheduleGetRequest(**request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/liammckendry/spacy_env/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ScheduleGetRequest
+include.1
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='specialty_restrictions', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.3: House Call with Premiums
+================================================================================
+
+📝 Test Description:
+  Scenario: House call assessment for elderly patient with time premiums
+  Expected: Should find house call codes with premium information
+  Codes to check: B998, B992, B994
+
+🚀 Executing query...
+
+❌ TEST FAILED WITH ERROR: 2 validation errors for ScheduleGetRequest
+include.1
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='premiums', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+include.2
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='time_restrictions', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+Traceback:
+Traceback (most recent call last):
+  File "/Users/liammckendry/health_assistant_dr_off_worktree/tests/dr_off_agent/test_scripts/test_schedule.py", line 279, in test_house_call_premiums
+    result = await schedule_get({
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/liammckendry/health_assistant_dr_off_worktree/src/agents/dr_off_agent/mcp/tools/schedule.py", line 399, in schedule_get
+    parsed_request = ScheduleGetRequest(**request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/liammckendry/spacy_env/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for ScheduleGetRequest
+include.1
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='premiums', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+include.2
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='time_restrictions', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+
+
+================================================================================
+   TEST SUMMARY
+================================================================================
+
+📊 Overall Results: 0/3 tests passed
+📁 Full output saved to: tests/dr_off_agent/test_outputs/schedule_test_20250924_090154.txt
+
+Test Status:
+  ❌ FAIL - MRP Discharge
+       - Low confidence: 0.600
+       - Missing dual-path retrieval: ['sql']
+       - Expected code C124 not found
+  ❌ FAIL - Emergency Consultation
+       - 1 validation error for ScheduleGetRequest
+include.1
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='specialty_restrictions', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+  ❌ FAIL - House Call Premiums
+       - 2 validation errors for ScheduleGetRequest
+include.1
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='premiums', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+include.2
+  Input should be 'codes', 'fee', 'limits', 'documentation' or 'commentary' [type=literal_error, input_value='time_restrictions', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/literal_error
+
+⏱️  Performance Metrics:
+  MRP Discharge:
+    - Confidence: 0.600
+    - Items: 0
+    - Dual-path: False
+
+✅ Test output saved to: tests/dr_off_agent/test_outputs/schedule_test_20250924_090154.txt

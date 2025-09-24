@@ -1,0 +1,20 @@
+{
+  "total": 69,
+  "success": 65,
+  "failed": 3,
+  "skipped": 1,
+  "errors": [
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_statements-positions_interprofessional-collaboration.json",
+      "error": "UNIQUE constraint failed: opa_documents.source_url"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_advertising_advice-to-the-profession-advertising.json",
+      "error": "UNIQUE constraint failed: opa_documents.source_url"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/availability_and_coverage.json",
+      "error": "UNIQUE constraint failed: opa_documents.source_url"
+    }
+  ]
+}

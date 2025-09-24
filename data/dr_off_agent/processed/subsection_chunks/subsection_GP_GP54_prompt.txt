@@ -1,0 +1,82 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Psychotherapy, Psychiatric and Counselling Services
+Parent Section: GP
+Page Reference: GP54
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Psychotherapy, Psychiatric and Counselling Services",
+  "parent_section": "GP",
+  "page_ref": "GP54",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 68 ---
+GENERAL PREAMBLE
+PSYCHOTHERAPY, PSYCHIATRIC AND COUNSELLING SERVICES
+SPECIFIC ELEMENTS
+In addition to the common elements, all Psychotherapy, Hypnotherapy, Counselling, Primary Mental
+Health, and Psychiatric Care include the following specific elements.
+A. Performing the appropriate therapy or interaction (described below) with the patient(s) or, in the
+case of K014, K015, and H313, the patient’s relative(s) or patient’s representative, which may
+include the appropriate inquires (including obtaining a patient history, and a brief physical
+examination) carried out in order to arrive at an opinion as to the nature of the patient’s condition
+(whether such inquiry takes place before, during or after the encounter during which the therapy or
+other interaction takes place); any appropriate procedure(s), related service(s), and/or follow-up
+care.
+B. Performing any procedure(s) during the same encounter as the therapy or other interaction unless
+the procedure(s) is(are) separately listed in the Schedule and an amount is payable for the
+procedure in conjunction with the therapy or interaction.
+C. Making arrangements for any related assessments, procedures, or therapy.
+D. Making arrangements for follow-up care.
+E. Discussion with, and providing advice and information, including prescribing therapy to the patient
+or the patient’s representative, whether by telephone or otherwise, on matters related to:
+a. the service; and
+b. in circumstances in which it would be professionally appropriate that results can be reported
+upon prior to any further patient visit, the results of related procedure(s) and/or
+assessment(s).
+F. When medically indicated, monitoring the condition of the patient and intervening, until the next
+insured service is rendered.
+G. Providing premises, equipment, supplies, and personnel for the specific elements of the service.
+While no occasion may arise for performing elements B, C, D and F, when performed in connection
+with the other specific elements they are included in the service.
+Payment rules:
+1. These services are calculated and payable in time units of 30 minute increments. In calculating
+the time unit(s), the minimum time required in direct contact with the patient (or patient’s relative
+or patient’s representative as the case may be) and the physician in person is as follows:
+Amd 12 Draft 1 GP54 February 14 , 2 025 (e ffective M arch 3, 2025)

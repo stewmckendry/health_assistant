@@ -1,0 +1,116 @@
+{
+  "document_id": "cep_opioid_tapering",
+  "source_url": "https://tools.cep.health/tool/opioid-tapering/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "substance_use",
+  "extracted_at": "2025-09-24T15:01:31.813798",
+  "content_hash": "917344d6ba4b8e7b827f456dfc547aac0714a716feb7b1bc43a1a4e627d2b139",
+  "title": "Opioid Tapering",
+  "tool_slug": "opioid-tapering",
+  "last_updated": ".png\"/>",
+  "navigation": [
+    {
+      "title": "Onset and duration of withdrawal symptoms",
+      "anchor": "#onsetandduration",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "assessment_tools": [
+      "PHQ-9",
+      "GAD-7"
+    ],
+    "red_flags": [
+      "Experiencesoverdoseor early warning signs for overdose risk (e.g. confusion, sedation, slurred speech)Medicalcomplications(e.g. sleep apnea, hyperalgesia and withdrawal mediated pain)Adverse effectsim"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "How to taper, reduce, or discontinue",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "General approach",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "For those on a higher dose and/or longer term opioids there is an increased potential for more challenges to tapering, including withdrawal symptoms. Establish the opioid formulation to be used for taperingSwitching from immediate release to controlled release opioids on a fixed dosing schedule may assist some patients in adhering to the withdrawal plan1Establish the dosing intervalScheduled doses are preferred over PRN doses (to help with better pain control and withdrawal)Keep the dosing in..."
+    },
+    {
+      "heading": "Withdrawal symptoms & management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Onset and duration of withdrawal symptoms",
+          "anchor": "#onsetandduration",
+          "level": 3
+        },
+        {
+          "heading": "Symptoms and management5,6",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Opioid withdrawal can be very uncomfortable and difficult for the patient and can feel like a very bad flu. Opioid withdrawal is not usually life-threatening. Onset: ~6\u201324 hours after last useDuration: ~3\u201310 days Onset: ~12\u201372 hours after last useDuration: ~10\u201320 days"
+    },
+    {
+      "heading": "Tapering plan and follow-up visits",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Tapering plan",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Follow-up visits",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "This form is designed to help primary care providers document the tapering plan agreed upon by both the patient and the primary care provider. Ensuring the patient has been part of the planning process is important for buy-in and adherence to the agreed upon plan. Have the patient repeat the plan back to you to ensure that they understand it. When undertaking an opioid taper plan, please keep in mind that although there may be a taper schedule in place there may be a need to deviate from the ..."
+    },
+    {
+      "heading": "Supporting materialNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Management of Chronic Non Cancer Pain \u2013 AppendicesOpioid ManagerManagement of Chronic InsomniaNaloxone and Opioid Crisis Training ResourcesOntario Naloxone Kit Access & ResourcesOpioid Tapering- Information for PatientsBrief Pain Inventory (BPI)PHQ-9 ScreenerGAD-7 Screener *These supporting materials are hosted by external organizations and as such, the accuracy and accessibility of their links are not guaranteed. The CEP will make every effort to keep these links up to date."
+    },
+    {
+      "heading": "ReferencesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Michael G. DeGroote National Pain Centre, McMaster University. Canadian guideline for safe and effective use of opioids for chronic noncancer pain. 2017; [cited Jan 4, 2018].[2]Department of Veterans Affairs & Department of Defense. VA/DoD clinical practice guideline for opioid therapy for chronic pain. 2017 ; [cited Jan 4, 2018].[3]Centers for Disease Control and Prevention (CDC): CDC Guideline for Prescribing Opioids for Chronic Pain. 2016 ; [cited Jan 4, 2018].[4]American Psychiatric As..."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice with in collaboration with from the Ontario College of Family Physicians and the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the tool was provided by Dr. Arun Radhakrishnan, MSc, MD, CM CCFP and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government ..."
+    }
+  ],
+  "references": [],
+  "summary": "Opioid Tapering. Category: Substance Use. Features: calculator, forms. Tools: PHQ-9, GAD-7. 6 main sections"
+}

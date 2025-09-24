@@ -1,0 +1,2000 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Menopause Management |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/menopause-management\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/68808" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fmenopause-management%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fmenopause-management%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-68808 wp-theme-cep-tools menopause-management">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Menopause Management</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: September 23, 2025</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool is designed to support primary care clinicians in screening, diagnosing and implementing treatment for women and people experiencing perimenopause, menopause and post-menopause. Although a natural transition, menopause is often under-recognized in healthcare and can have a significant impact on a person&#8217;s life and long-term health. Primary care is an important setting to normalize this life stage, provide evidence-based care, and reduce the stigma surrounding it and to improve quality of life and long-term health.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Important Considerations</strong><sup>1-</sup><sup>4</sup></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Menopause affects half the population, yet many are unprepared for it.</li>
+
+
+
+<li>The economic and personal costs of unmanaged symptoms of menopause are significant. An estimated 1 in 10 women leave the workforce due to unmanaged symptoms, resulting in an annual economic loss of $3.5 billion in Canada. The personal toll includes lost income, stalled career progression, and reduced self-esteem.</li>
+
+
+
+<li>Symptoms are common and can be long-lasting. The average age of menopause onset is 51, with 90% of women experiencing it between the ages of 45 and 56. Vasomotor symptoms (VMS) affect about 80% of women and can last for an average of 7-11 years. Genitourinary Syndrome of Menopause (GSM) affects 45-77% of women, with symptoms that often worsen over time and persist if untreated.</li>
+
+
+
+<li>There are sociocultural differences in age of onset and severity of symptoms.</li>
+</ul>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="assessment" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Assessment								
+    <span class="badge new" data-last-modified="Sep 24, 2025" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#screen">Screening</a><br><a href="#dx">Diagnosis</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">The menopause journey<sup>5-7</sup></h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Understanding what stage of menopause the individual is in will help influence management options.</li>
+
+
+
+<li>Perimenopause, also known as “the menopause transition”, begins when people experience menopause-associated symptoms and/or can be accompanied by changes in their menstrual cycle. It is an important time for preventative care, as it can be associated with increased risk of cardiovascular disease and bone loss. This stage can last up to 10 years. This stage can be divided into two phases &#8211; early and late. Early perimenopause is associated with more fluctuations of estrogen where late perimenopause is associated with a steadier decline in estrogen until menopause</li>
+
+
+
+<li>Premature menopause occurs when menopause happens before the age of 40 and should be evaluated for primary ovarian insufficiency (POI).</li>
+
+
+
+<li>Early menopause occurs between ages 40 and 45.</li>
+
+
+
+<li>Menopause is when a person has not had a period for at least 12 months and is not on hormonal contraception.</li>
+
+
+
+<li>Post-menopause refers to the time of life from the day of menopause until the end of life</li>
+
+
+
+<li>Menopause can also be induced either surgically (e.g. bilateral oophorectomy) or medically (e.g. chemotherapy, radiation).</li>
+</ul>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-green-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The term women and people experiencing perimenopause and menopause is inclusive of all individuals who will experience perimenopause and menopause, including women, Two-Spirit people, trans men, and nonbinary people assigned female at birth.<sup>6</sup></p>
+</div></article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking tips</h6>
+                          <a data-modal="w3UTUL" class="button open-modal" href="#" data-id="w3UTUL">Click for details</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="w3UTUL" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>The menopause journey</h4>
+                                      <h6>Talking tips<sup>10</sup></h6>
+<p>“Many people think of &#8216;menopause&#8217; as a single event, but it&#8217;s a natural and significant transition in your life – a journey that unfolds over several years. This journey, often starting with perimenopause, can feel unique for each person, and how you&#8217;re experiencing it is completely valid. My role is to partner with you, listen to your experience, and together, we&#8217;ll find the best ways to manage your symptoms and support your long-term health through this important time.”</p>
+<p>“You may have heard about the Women&#8217;s Health Initiative (WHI) study, which caused a lot of fear about MHT. While the study initially suggested increased risks, since then, evidence shows that hormone therapy is generally safe and effective when started at the right time with consideration for your individual health history.”</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article>
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+                    <h6>STRAW staging model</h6>
+                          <a data-modal="SvIskY" class="button open-modal" href="#" data-id="SvIskY">Click for details</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="SvIskY" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>STRAW staging model</h4>
+                                      <p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2025/09/STRAW.jpg" /></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool aims to empower and guide primary care clinicians in managing menopause within the primary care setting.&nbsp;<strong>For additional support consider&nbsp;consulting specialists across the province at <a href="https://link.cep.health/adhdhtml1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">OTN eConsult</a><sup>.</sup></strong></p>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="screen">Screening<sup>6</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consider screening individuals who are ≥ 40 years for menopause-associated symptoms. Symptoms can include:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Changes in menstrual cycle (may become irregular in timing, flow, or length)</li>
+
+
+
+<li>Vasomotor symptoms (VMS), such as hot flashes or night sweats</li>
+
+
+
+<li>Symptoms of Genitourinary Syndrome of Menopause (GSM):<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>vaginal dryness</li>
+
+
+
+<li>discomfort with sexual intercourse</li>
+
+
+
+<li>vulvovaginal discomfort or irritation</li>
+
+
+
+<li>discomfort, pain or urgency associated with urination</li>
+
+
+
+<li>frequent urinary tract infections, incontinence</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Sexual difficulties, such as low sexual desire</li>
+
+
+
+<li>Mood changes, such as depressive symptoms or anxiety</li>
+
+
+
+<li>Musculoskeletal symptoms, such as joint and muscle pain</li>
+
+
+
+<li>Sleep disturbances</li>
+
+
+
+<li>Changes in weight and/or body fat distribution</li>
+
+
+
+<li>Difficulties with concentration or memory (i.e. brain fog)</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="dx">Diagnosis<sup>8,9,10</sup></h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Identification of perimenopause or menopause is <strong>a clinical diagnosis</strong>, based on the menopause-associated symptoms that the person is experiencing. Routine lab work is not required. </li>
+
+
+
+<li>Conduct a thorough evaluation with detailed history including family, obstetrics, gynaecological, cancer, menstrual and sexual history.</li>
+
+
+
+<li>For those experiencing GSM, a physical exam is helpful to differentiate between hormonal (e.g. vulvo-vaginal atrophy) and non-hormonal (e.g. lichen sclerosis, lichen planus) causes and guide treatment.<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>A pre-exam is not a pre-requisite for prescribing treatment, but if ongoing symptoms, consider an in person review/examination.</li>
+</ul>
+</div></article></li>
+
+
+
+<li>It can be difficult to identify menopause in women and people who are taking hormonal treatments (e.g. birth control pills/IUS).</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consider using a screener such as <a href="https://link.cep.health/menopausehtml2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Menopause Quick 6 (MQ6)</a> to guide conversations:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ol class="wp-block-list">
+<li>Any changes in your periods?</li>
+
+
+
+<li>Are you having any hot flashes?</li>
+
+
+
+<li>Any vaginal dryness or pain or sexual concerns?</li>
+
+
+
+<li>Any bladder issues or incontinence?</li>
+
+
+
+<li>How is your sleep?</li>
+
+
+
+<li>How is your mood?</li>
+</ol>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The following laboratory and imaging tests should not be used to identify perimenopause or menopause in people aged 40 or over<sup>6,7,10</sup>:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Anti-Müllerian hormone&nbsp;</li>
+
+
+
+<li>Inhibin A&nbsp;</li>
+
+
+
+<li>Inhibin B&nbsp;</li>
+
+
+
+<li>Estradiol&nbsp;</li>
+
+
+
+<li>Antral follicle count</li>
+
+
+
+<li>Ovarian volume</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><em>Note: While not necessary to do a FSH and estradiol routinely to diagnose menopause in individuals over 40, these tests can be considered if there is a history of hysterectomy or IUD that makes diagnosis difficult. </em></p>
+</div></article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+                    <h6>What is Premature Ovarian Insufficiency (POI)?</h6>
+                          <a data-modal="S1JB0f" class="button open-modal" href="#" data-id="S1JB0f">Click for details</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="S1JB0f" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                                      <h6>Premature Ovarian Insufficiency (POI)<sup>11</sup></h6>
+<ul>
+<li>Premature Ovarian Insufficiency (POI) is a condition in which the ovaries stop producing eggs before the age of 40.</li>
+<li>It is under-diagnosed and has significant impact on an individual&#8217;s health</li>
+<li>While symptoms are similar to menopause (e.g. irregular periods, hot flashes, night sweats), POI requires further investigation to determine etiology and significant impact on cardiovascular brain and bone health (e.g. BMD).</li>
+<li>Management of POI often requires higher doses of hormone therapy than standard menopause treatment and is recommended from the time of diagnosis to at least the average of menopause.</li>
+<li><span style="font-size: 1.5rem;">POI is characterized by<sup>11</sup>: </span>
+<ul>
+<li>Oligo/amenorrhoea (infrequent menstrual periods, typically with cycles longer than 35 days amenorrhea &gt; 4 months)</li>
+<li>FSH &gt;25 IU/l represents a value greater than the physiological peak observed in premenopausal women and will encompass women with POI due to autoimmune causes.</li>
+<li>Fluctuating ovarian activity may occur resulting in variable FSH concentrations, including into the normal range. While guideline does not suggest a repeat FSH, this can be helpful for individuals to understand the diagnosis</li>
+<li>Estrogen levels tend to be low</li>
+<li>Negative serum BHCG</li>
+</ul>
+</li>
+<li>If diagnosis is made, consider referring to specialist for fertility (if desired), endocrinology, or genetics for additional care and support.</li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <h6>Clinician resources</h6>
+<ul>
+<li>SOGC – <a href="https://sogc.org/en/en/content/events/HUB-Pages/Menopause.aspx?hkey=55767821-2414-44ed-b3c5-f4354fa9d005" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Menopause Hub</a></li>
+<li>Australasian Menopause Society &#8211; <a href="https://www.menopause.org.au/hp/information-sheets/practitioners-toolkit-for-management-of-the-menopause" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Practitioner’s Toolkit for the Management of the Menopause</a></li>
+<li>The Menopause Society &#8211; <a href="https://menopause.org/professional-resources" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Menopause Resources for Healthcare Professionals</a></li>
+<li>Canadian Menopause Society – <a href="https://link.cep.health/menopausehtml16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Pocket Guide</a></li>
+<li>MQ6 &#8211; <a href="https://link.cep.health/menopausehtml2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Screener</a></li>
+<li>ESHRE &#8211; <a href="https://link.cep.health/menopausehtml20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">POI Guideline</a></li>
+</ul>
+<h6>Patient resources</h6>
+<ul>
+<li>Menopause Foundation of Canada – <a href="https://menopausefoundationcanada.ca/resources/menopause-what-everyone-should-know/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Stages of Menopause</a></li>
+<li>The Menopause Society &#8211; <a href="https://menopause.org/patient-education/menopause-topics/premature-menopause" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Premature Menopause</a></li>
+<li>Menopause and U &#8211; <a href="https://www.menopauseandu.ca/am-i-in-menopause/perimenopause-early-warning-system/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Perimenopause: Your early warning system</a></li>
+<li>Mount Sinai &#8211; <a href="https://link.cep.health/menopausehtml18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Gynecology Quality Improvement Collaboration Project</a></li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="management" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Management								
+    <span class="badge new" data-last-modified="Sep 24, 2025" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#mht">Menopausal hormone therapy</a><br><a href="#meds">Medications table</a><br><a href="#nonhormtx">Non-hormonal therapy</a><br><a href="#Nonpharm">Non-pharmacological therapy </a><br><a href="#Ref">Referrals</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Pharmacological therapy</h3>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading" id="mht"><strong>Menopausal hormonal therapy</strong> (MHT) for vasomotor symptoms<sup>6,7,8,12</sup></h4>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Menopausal hormone therapy (MHT) is the most effective option for managing vasomotor symptoms in women and people experiencing menopause and perimenopause. MHT can be safely initiated in individuals without contraindications who are younger than 60 years of age or less than 10 years post-menopause. Ensure routine screening (e.g. mammograms, cholesterol, lipoprotein(a), HbA1c, &nbsp;relevant blood work) is completed.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>A shared decision-making approach is a vital ongoing process that involves the individuals, their care team, family and caregivers.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Primary care clinicians initiating MHT should ensure it is individualized and consider the following when determining dose and duration:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Ongoing symptoms and impact on quality of life</li>
+
+
+
+<li>Age at presentation</li>
+
+
+
+<li>Individual preferences and treatment goals, cost of treatment</li>
+
+
+
+<li>Medical history</li>
+
+
+
+<li>Health benefits and risks</li>
+
+
+
+<li>Family history</li>
+
+
+
+<li>Timing of last menstrual period</li>
+
+
+
+<li>Review for possible contraindications</li>
+</ul>
+</div></article>
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+                    <h6>What benefits to expect and when​</h6>
+                          <a data-modal="CLVoE7" class="button open-modal" href="#" data-id="CLVoE7">Click for details</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="CLVoE7" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                                      <h6>GSM</h6>
+<p><strong>Vaginal estrogen:​</strong></p>
+<ul>
+<li>Studies show a 50% response rate with estragel softgel inserts compared to a 40% response rate with a placebo (lubricants and moisturizers)</li>
+<li>Timeframe: ​
+<ul>
+<li>Some benefits at 2 weeks ​</li>
+<li>Full effects at 8 weeks</li>
+</ul>
+</li>
+</ul>
+<h6>VMS</h6>
+<p><strong>Oral or transdermal estrogen</strong> (rating “improved” or “very much improved”) at 12 weeks: ​</p>
+<ul>
+<li>Baseline: 10-13 hot flashes/day</li>
+<li>placebo: 3-6 fewer</li>
+<li>lower dose estradiol 7-8 fewer</li>
+<li>higher dose estradiol 8-9 fewer​</li>
+<li>Timeframe:​
+<ul>
+<li>Some benefits at 1 week ​</li>
+<li>Majority of effects at 6-9 weeks</li>
+</ul>
+</li>
+</ul>
+<p><strong>Fezolinetant </strong>(“moderately or much better” &#8211; 12 weeks)​</p>
+<ul>
+<li>Baseline: 11 hot flashes/day, placebo 4 fewer, fezolinetant 7 fewer</li>
+<li>Timeframe:​
+<ul>
+<li>Some benefits at 1 week ​</li>
+<li>Majority of effects at 6 weeks</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Contraindications to systemic menopausal hormone therapy include the following:</strong><sup>7</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Contraindications to estrogen:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Undiagnosed abnormal vaginal bleeding</li>
+
+
+
+<li>Active breast cancer, suspected breast cancer, or a personal history of breast cancer</li>
+
+
+
+<li>Active estrogen-dependent cancers or suspected estrogen-dependent cancers (i.e., endometrial, ovarian)</li>
+
+
+
+<li>Coronary heart disease</li>
+
+
+
+<li>Active venous thromboembolism or history of venous thromboembolism</li>
+
+
+
+<li>Active stroke or history of stroke</li>
+
+
+
+<li>Known thrombophilia</li>
+
+
+
+<li>Active liver disease</li>
+
+
+
+<li>Known or suspected pregnancy</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Contraindications to progestogen:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Undiagnosed abnormal vaginal bleeding</li>
+
+
+
+<li>Active breast cancer or personal history of breast cancer</li>
+</ul>
+</div></article></div>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Yellow-Notice.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Compounded bioidentical hormone therapy is not approved by Health Canada, is not considered standard of care, and should not be offered in place of Health Canada approved, pharmaceutical-grade menopausal hormone therapy.<sup>6</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><em>Note: Clonidine and pregabalin are no longer used for treatment as there are more effective treatment options available.</em></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Perimenopause<sup>6–8,10</sup></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For women and people experiencing perimenopause, contraceptive needs and bleeding patterns must be discussed when considering options. Based on individual symptoms and goals of care, consider the following options:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Low dose combined hormonal contraceptives</li>
+
+
+
+<li>Estrogen in combination with a levonorgestrel-releasing intrauterine system</li>
+
+
+
+<li>MHT with a cyclical progestogen for 12 – 14 days/month (prefer cyclic early perimenopause to reduce risk of irregular bleeding)</li>
+
+
+
+<li>Progestogen only (i.e. drosperinone)</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>GSM</strong><sup>6,10,13</sup></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>~25% of individuals on systemic MHT may have ongoing GSM symptoms and would benefit from local treatment options in addition.</li>
+
+
+
+<li>If the only symptom of concern is GSM, management can be focused on local treatment only.</li>
+
+
+
+<li>For women and people experiencing moderate to severe genitourinary syndrome of menopause, <strong>local vaginal estrogen is first line treatment</strong>, administered either as a cream, tablet, or sustained-release ring.</li>
+
+
+
+<li>Unlike systemic hormonal therapy, local vaginal estrogen therapy can be initiated at ANY age and continued indefinitely.</li>
+
+
+
+<li>For mild symptoms or in combination with hormone and non-hormonal treatments:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Vaginal lubrication (reduce friction during intercourse and can be used as needed) or moisturizers (regular application required, provides more continuous relief than lubricants)</li>
+</ul>
+</div></article></li>
+
+
+
+<li>If non-hormonal or local estrogen options have been ineffective, impractical or not desired, consider either adding or replacing with:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Vaginal dehydroepiandrosterone (DHEA) ovules.</li>
+
+
+
+<li>Oral selective estrogen receptor modulator (Ospemifene) to support treatment of dyspareunia.</li>
+</ul>
+</div></article></li>
+
+
+
+<li>When symptoms are not relieved or physical exam reveals non-hormonal causes treat or refer accordingly.</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Sexual health<sup>6</sup></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Sexual dysfunction in menopausal individuals should be categorized as being related to desire, arousal, pain, and orgasm.</li>
+
+
+
+<li>For postmenopausal individuals with hypoactive sexual desire disorder (HSDD) consider managing pain, addressing biopsychological factors and counselling</li>
+
+
+
+<li>Testosterone supplementation can be offered to individuals with low sexual desire associated with menopause, if MHT alone is not effective.</li>
+</ul>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Practice point</strong></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Abnormal uterine bleeding<sup>7,10</sup> </strong></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Breakthrough bleeding is a common side effect of MHT. It is common to see bleeding up to 6 months after starting continuous MHT. Heavy bleeding or continued breakthrough bleeding after 6 months requires further investigation. If risk factors for endometrial cancer exist (PCOS, obesity, Lynch syndrome), investigate earlier than 6months.</p>
+</div></article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking tips</h6>
+                          <a data-modal="SQwmHd" class="button open-modal" href="#" data-id="SQwmHd">Click for details</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="SQwmHd" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                                      <h6>Talking tips<sup>10</sup></h6>
+<p>“If we decide that Menopausal Hormone Therapy (MHT) is a good option, you should start to feel the effects on some symptom relief within a few weeks, but can take up to 12 weeks to fully work, depending on the dosage we start with. We may need to adjust your dosage along the way to find what works best for you.”</p>
+<p>&#8220;When it comes to managing your menopausal symptoms, there are many good options, and what&#8217;s right for one person isn&#8217;t always right for another. My role is to help you understand all of the options available, both hormonal and non-hormonal and what they involve and their benefits. Let&#8217;s explore these together and decide on the best path forward that aligns with your symptoms, your health, and your preferences.&#8221;</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>See <a href="https://tools.cep.health/tool/menopause-management/#considerations-for-specific-populations-and-symptoms" data-wpel-link="internal">Special populations</a> for more information<br>See <a href="#Meds">Medications table</a> for further details and contraindications</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="Meds">Systemic and local MHT</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>*insert meds table*</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="nonhormtx">Non-hormonal therapy<sup>7,8,14</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For individuals who have contraindications or prefer alternatives to hormone therapy, non-hormonal prescription therapies can be considered. While these have shown efficacy in VMS relief, results vary with each option having their own adverse effects. It is important to flag that estrogen is still the most effective therapy for vasomotor symptom relief.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Non-hormonal therapies include:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Neurokinin B antagonist (Fezolinetant, Elinzanetant)</li>
+
+
+
+<li>Gabapentin</li>
+
+
+
+<li>Oxybutynin</li>
+
+
+
+<li>Selective serotonin reuptake inhibitors (SSRIs) and serotonin–norepinephrine reuptake inhibitors (SNRIs)</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="Nonpharm">Non- pharmacological therapy<sup>6,7</sup></h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Vasomotor and non-vasomotor symptoms experienced during perimenopause or menopause can affect quality of life.</li>
+
+
+
+<li>Evidence based lifestyle interventions with good evidence managing VMS symptoms include:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>CBT</li>
+
+
+
+<li>Hypnosis</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Prioritizing lifestyle modifications can help improve quality of life, mental health, CVD and bone health::<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Weight management</li>
+
+
+
+<li>Blood pressure management</li>
+
+
+
+<li>Smoking cessation</li>
+
+
+
+<li>Minimizing alcohol</li>
+
+
+
+<li>Physical activity including strength training</li>
+
+
+
+<li>Healthy diet (limiting caffeine, diet high in fibre, protein, unsaturated fats)</li>
+
+
+
+<li>Good sleep hygiene</li>
+</ul>
+</div></article></li>
+</ul>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="756" height="467" src="https://tools.cep.health/wp-content/uploads/2025/09/non-pharm-menopause.png" alt="" class="wp-image-70336" style="width:804px;height:auto" srcset="https://tools.cep.health/wp-content/uploads/2025/09/non-pharm-menopause.png 756w, https://tools.cep.health/wp-content/uploads/2025/09/non-pharm-menopause-300x185.png 300w, https://tools.cep.health/wp-content/uploads/2025/09/non-pharm-menopause-640x395.png 640w" sizes="auto, (max-width: 756px) 100vw, 756px" /></figure>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="Ref"><strong>Referrals</strong><sup>6</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consider referral to clinicians with expertise in menopause when there are:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>No improvement in symptoms with treatment, or continued side effects</li>
+
+
+
+<li>Contraindications to menopausal hormone therapy</li>
+
+
+
+<li>Premature menopause or POI</li>
+
+
+
+<li>Menopause-associated symptoms in a person who has taken gender-affirming hormone therapy in the past</li>
+</ul>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="considerations-for-specific-populations-and-symptoms" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Considerations for specific populations and symptoms								
+    <span class="badge new" data-last-modified="Sep 24, 2025" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--faq physicalexamination"><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2021/09/cep_icon_1_fallhistory.png" alt="" />
+        </div>
+        <h3 class="faq-title"><h3>Considerations for specific populations</h3></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Breast cancer <sup>13,14,17,18</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Assess breast cancer risk to help with shared decision-making treatment option. Consider using the <a href="https://link.cep.health/menopausehtml22" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">My CancerIQ</a> assessment.</li>
+<li>Systemic MHT is contraindicated in people with a history of breast cancer. Instead, non-hormonal and non-pharmacologic options can be used.</li>
+<li><strong>Genitourinary symptom management for people with a history of breast cancer:</strong>
+<ul>
+<li>Non-hormonal options – vaginal moisturizers, lubricants, pelvic floor physiotherapy, dilators or vibrators</li>
+<li>Local vaginal estrogen can be considered for individuals with breast cancer in consultation with an oncologist.</li>
+</ul>
+</li>
+<li><strong>Vasomotor symptom management for people with a history of breast cancer:</strong>
+<ul>
+<li>Non-hormonal options – CBT, hypnosis</li>
+<li>First line non-hormonal option – Neurokinin B receptor antagonists (Fezolinetant, Elinzanetant), desvenlafaxine/venlafaxine</li>
+<li>Second line non-hormonal option – Paroxetine (avoid in individuals on Tamoxifen), gabapentin, oxybutynin</li>
+</ul>
+</li>
+<li>For individuals with an active or history of breast cancer, encourage individuals to talk to their oncologist about their treatment options.</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Osteoporosis <sup>15,19,20</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>MHT, while primarily used for vasomotor symptom relief, can prevent bone loss and reduce fracture risk in post-menopausal individuals, if the following criteria is met:
+<ul>
+<li>&lt; 60 years</li>
+<li>no history of breast cancer or thromboembolic disease or cardiovascular disease</li>
+<li>low risk of cerebrovascular disease</li>
+<li>Pharmacological treatment of osteoporosis to reduce fracture risk is indicated
+<ul>
+<li>Consider using the FRAX tool and/or bone mineral density testing (BMD) to determine fracture risk.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Encourage all postmenopausal individuals to employ lifestyle practices that reduce the risk of bone loss and osteoporotic fractures:
+<ul>
+<li>Maintaining a healthy weight</li>
+<li>Eating a balanced diet</li>
+<li>Adequate protein, calcium and vitamin D. Routine supplementation with protein, vitamin K, or magnesium is not recommended for fracture prevention. Supplements should only be used when daily targets are not achieved from dietary sources.</li>
+<li>Participating in regular physical activity that includes weight bearing exercise and stability training for fall prevention</li>
+<li>Avoiding excess alcohol consumption</li>
+<li>No smoking</li>
+<li>Fall prevention</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Mood, sleep and cognition <sup>10,21</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Mood</strong></p>
+<ul>
+<li>People experiencing perimenopause can develop depressive symptoms, even without a previous history. This can be due to factors caused by menopause (e.g. hormonal changes, vasomotor symptoms, poor sleep) and lifestyle factors).</li>
+<li>It is also common for depression to resurface for individuals who have had it in the past.</li>
+<li>Assess for severity and impact on daily living and rule out other possible conditions contributing to change in mood.</li>
+<li>Choice of antidepressants should be based on
+<ul>
+<li>Individuals&#8217; response and tolerability</li>
+<li>Potential adverse effects that may influence other concerns (i.e. weight, sexual dysfunction)</li>
+<li>Drug to drug interactions and contraindications</li>
+</ul>
+</li>
+<li>Non-pharmacologic treatment – CBT, counselling, lifestyle modifications</li>
+<li>As vasomotor symptoms can contribute to disruption in sleep and mood, MHT may improve mood when used as treatment for vasomotor symptoms.</li>
+</ul>
+<p><strong>Sleep </strong></p>
+<ul>
+<li>Change in sleep quality is common among women and people in the perimenopausal and postmenopausal period.</li>
+<li>Primary sleep disorders (e.g. night terrors, obstructive sleep apnea) should be ruled out prior to recommending treatment (e.g. CBT for insomnia, education on sleep hygiene (i.e. limiting alcohol, caffeine, nighttime exercise, screens in bedroom)<span style="font-size: 1.5rem;">.</span></li>
+<li>As vasomotor symptoms can contribute to disruption in sleep and mood, MHT may improve mood when used as treatment for vasomotor symptoms.</li>
+</ul>
+<p><strong>Cognition </strong></p>
+<ul>
+<li>During the menopause transition, people can experience cognitive changes that are often temporary. These often include:
+<ul>
+<li>Worsening memory</li>
+<li>Slower cognitive speed (i.e. brain fog)</li>
+</ul>
+</li>
+<li>It is important to rule out mood disorders, thyroid dysfunction, vitamin B12 deficiency and iron deficiency. If identified, treat appropriately.
+<ul>
+<li>Can use screeners such as MOCA, Conners’ Adult rating scale; Adult ADHD self-report rating scale to diagnose and demonstrate transience of symptoms.</li>
+</ul>
+</li>
+<li>Cognitive function can improve by modifying lifestyle factors such as optimizing sleep, managing mood and engaging in regular exercise.</li>
+</ul>
+<p>&nbsp;</p>
+<p>See <a href="#Nonpharm">Non-Pharmacological</a> section for more details on treatment options</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Cardiovascular disease <sup>10,16,22</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>During perimenopause and the menopause transition, cardiovascular risk factors often worsen. Clinicians should be proactive in the identification and modification of risk factors as the most effective means of reducing cardiovascular risk. This includes screening for blood pressure, A1C, lipids, and lipoprotein(a).</li>
+<li><strong>At this time, MHT is not indicated as a method for prevention for CVD.  </strong>However, to support risk reduction of CVD alongside other treatment options, women and people with premature menopause should be prescribed estrogen (+ progesterone if intact uterus) replacement therapy until the average age of menopause (51 years).</li>
+<li>If there is a history of coronary artery disease, encourage individuals to talk to their cardiologist about menopause hormone therapy when discussing their treatment options.</li>
+</ul>
+<p><strong style="font-size: 1.5rem;">Cardiac event risk <strong>of MHT</strong></strong></p>
+<ul>
+<li>The risk of cardiac event is small and is not considered statistically significant for women are within the 50-60 age range.</li>
+</ul>
+<p><strong style="font-size: 1.5rem;">Stroke risk <strong>of MHT</strong></strong></p>
+<ul>
+<li>The overall risk of stroke associated with systemic estrogen is low.</li>
+<li>Risk prevention &#8211; the lowest effective dose of systemic estrogen (oral or transdermal) should be prescribed.</li>
+</ul>
+<p><strong style="font-size: 1.5rem;">Venous Thrombotic Events (VTE) <strong>of MHT</strong></strong></p>
+<ul>
+<li>MHT increases the risk of venous thrombotic events (e.g., deep vein thrombosis, pulmonary embolism).</li>
+<li>There is a higher risk of VTE with oral and combined hormone therapy preparations than transdermal preparations or estrogen alone.</li>
+<li>Risk reduction &#8211; the lowest effective dose of systemic transdermal estrogen, and estrogen-only therapy should be considered.</li>
+</ul>
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <h6>Clinician resources</h6>
+<ul>
+<li>Canadian Menopause Society &#8211; <a href="https://www.canadianmenopausesociety.org/professionals/menopause-hub/hcp-resources/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Health Care Provider Resources</a></li>
+<li>NICE &#8211; <a href="https://link.cep.health/menopausehtml17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HRT and the likelihood of some medical conditions A discussion aid for healthcare professionals and patients</a></li>
+<li>Osteoporosis Canada &#8211; <a href="https://link.cep.health/menopausehtml21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Menopause Hormone Therapy</a></li>
+</ul>
+<h6><strong>Patient </strong>resources</h6>
+<ul>
+<li>International Menopause Society – <a href="https://www.menopauseinfo.org/publications/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Menopause Info Fact Sheets</a></li>
+<li>The Menopause Society &#8211; <a href="https://menopause.org/patient-education/menopause-topics" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Fact Sheets</a></li>
+<li>Ontario Health &#8211; <a href="https://link.cep.health/menopausehtml19" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Structured Psychotherapy Program</a></li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Practice point</strong></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Beyond vasomotor symptoms, estrogen therapy may improve sleep and mood symptoms in perimenopausal women. Evidence suggests a possible “window of opportunity” during perimenopause.<sup>18</sup></p>
+</div></article></div>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-green-background"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p class="is-style-default">Gender-diverse individuals experience inequities in accessing appropriate menopause care which negatively affect their health outcomes. All individuals who experience perimenopause and menopause deserve quality care.<sup>6</sup></p>
+</div></article></div>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="follow-up-and-monitoring" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Follow up and monitoring								
+    <span class="badge new" data-last-modified="Sep 24, 2025" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Follow-up and monitoring<sup>7,10,18,23</sup></h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Effective management of menopause involves follow-up and ongoing monitoring to ensure treatment plans are optimized and symptoms are well-controlled.</li>
+
+
+
+<li>For primary care clinicians inheriting individuals who have already initiated menopausal hormone therapy (MHT) or bioidentical hormone regimens, the focus shifts from initiating therapy to continuing and monitoring it effectively. This includes:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Maintaining the therapeutic conversation</li>
+
+
+
+<li>Reassessing treatment goals</li>
+
+
+
+<li>Ensuring ongoing safety</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Follow-up should include:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Regular evaluation of symptom control (frequency and severity)</li>
+
+
+
+<li>Discussion of side effects</li>
+
+
+
+<li>Risk assessment for CVD and VTW to ensure safety of MHT need and dosing</li>
+
+
+
+<li>Routine assessment of cardiovascular, breast and bone health</li>
+</ul>
+</div></article></li>
+
+
+
+<li>For switching between MHT products, begin with the equivalent dose in the new product.</li>
+
+
+
+<li>In individuals with an intact uterus, when increasing beyond the standard dose of estrogen in MHT, ensure progestogen dose increases appropriately for endometrium protection.</li>
+
+
+
+<li>There is no recommended duration or stop time for MHT or non-hormonal management of menopausal symptoms. The duration should be individualized, and treatment should continue as long as benefits outweigh risks and symptoms persist. Vaginal estrogen can be continued life-long.</li>
+
+
+
+<li>For individuals who are stopping MHT, offer the choice of gradually reducing (to limit recurrence of symptoms) or immediately stopping treatment. Gradually reducing or immediately stopping MHT does not make a difference in symptoms in the long term.</li>
+</ul>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="706" height="189" src="https://tools.cep.health/wp-content/uploads/2025/09/Menopause-follow-up-and-monitoring-4.png" alt="" class="wp-image-70490" style="width:578px;height:auto" srcset="https://tools.cep.health/wp-content/uploads/2025/09/Menopause-follow-up-and-monitoring-4.png 706w, https://tools.cep.health/wp-content/uploads/2025/09/Menopause-follow-up-and-monitoring-4-300x80.png 300w, https://tools.cep.health/wp-content/uploads/2025/09/Menopause-follow-up-and-monitoring-4-640x171.png 640w" sizes="auto, (max-width: 706px) 100vw, 706px" /></figure>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+    <span class="badge new" data-last-modified="Sep 24, 2025" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>Menopause Foundation of Canada. The Silence  and the Stigma: Menopause in Canada [Internet]. 2022. Available from: https://menopausefoundationcanada.ca/wp-content/uploads/2022/10/MFC-Report_The-Silence-and-the-Stigma_Menopause-in-Canada_October-2022.pdf</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>Menopause Foundation of Canada. Menopause  and Work in Canada [Internet]. 2023. Available from: https://menopausefoundationcanada.ca/pdf_files/Menopause_Work_Canada_2023EN.pdf</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>Crandall CJ, Mehta JM, Manson JE. Management of Menopausal Symptoms: A Review. JAMA. 2023 Feb 7;329(5):405–20.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>Manson J, Kaunitz A. Menopause Management&#8211;Getting Clinical Care Back on Track. N Engl J Med [Internet]. 2016 Mar 3 [cited 2025 Sept 18];374(9). Available from: https://pubmed.ncbi.nlm.nih.gov/26962899/</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p>National Institute for Health and Care Excellence (NICE). Menopause: identification and management | Guidance | NICE [Internet]. NICE; 2015 [cited 2025 Sept 17]. Available from: https://www.nice.org.uk/guidance/ng23</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p>Health Quality Ontario (HQO). Menopause: Quality Standard [Internet]. 2025. Available from: https://www.hqontario.ca/Evidence-to-Improve-Care/Quality-Standards/View-All-Quality-Standards/Menopause</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p>Yuksel N, Evaniuk D, Huang L, Malhotra U, Blake J, Wolfman W, et al. Guideline No. 422a: Menopause: Vasomotor Symptoms, Prescription Therapeutic Agents, Complementary and Alternative Medicine, Nutrition, and Lifestyle. J Obstet Gynaecol Can. 2021 Oct 1;43(10):1188-1204.e1.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p>Perpustakaan Negara Malaysia. Clinical practice guidelines: management of menopause in Malaysia [Internet]. Obstetrical and Gynaecological Society of Malaysia (OGSM); Malaysian Menopause Society (MMS); 2022. Available from: https://www.moh.gov.my/moh/resources/Penerbitan/CPG/Women%20Health/CPG_Management_of_Menopause_2022_e-version-1.pdf</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p>Goldstein S. MQ6 Menopause Management Tools [Internet]. 2017 [cited 2025 Sept 18]. Available from: https://mq6.ca/</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p><a href="https://link.cep.health/expertopinionrationale" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Expert Opinion</a>.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p>Panay N, Anderson R, Bennie A, Cedars M, Davies M, Ee C, et al. Evidence-based guideline: premature ovarian insufficiency†‡. Climacteric J Int Menopause Soc [Internet]. 2024 Dec [cited 2025 Sept 17];27(6). Available from: https://pubmed.ncbi.nlm.nih.gov/39647506/</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p>Baber R, Panay N, Fenton A. 2016 IMS Recommendations on women’s midlife health and menopause hormone therapy. Climacteric J Int Menopause Soc [Internet]. 2016 Apr [cited 2025 Sept 18];19(2). Available from: https://pubmed.ncbi.nlm.nih.gov/26872610/</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p>Johnston S, Bouchard C, Fortier M, Wolfman W. Guideline No. 422b: Menopause and Genitourinary Health. J Obstet Gynaecol Can. 2021 Nov 1;43(11):1301-1307.e1.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p>The North American Menopause Society. The 2023 nonhormone therapy position statement of The North American Menopause Society. Menopause N Y N. 2023 Jan 6;30(6):573–90.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p>The North American Menopause Society. Management of osteoporosis in postmenopausal women: the 2021 position statement of The North American Menopause Society. Menopause N Y N. 2021 Jan 9;28(9):973–97.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p>National Institute for Health and Care Excellence (NICE). HRT and the likelihood of some medical conditions: A discussion aid for healthcare professionals and patients [Internet]. 2024. Available from: https://www.nice.org.uk/guidance/ng23/resources/incidence-of-medical-conditions-with-and-without-hrt-a-discussion-aid-pdf-13553199901</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p>Jacobson M, Mills K, Graves G, Wolfman W, Fortier M. Guideline No. 422f: Menopause and Breast Cancer. J Obstet Gynaecol Can. 2021 Dec 1;43(12):1450-1456.e1</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p>The North American Menopause Society. The 2022 hormone therapy position statement of The North American Menopause Society. Menopause N Y N. 2022 Jan 7;29(7):767–94.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p>Khan AA, Alrob HA, Ali DS, Dandurand K, Wolfman W, Fortier M. Guideline No. 422g: Menopause and Osteoporosis. J Obstet Gynaecol Can. 2022 May 1;44(5):527-536.e5.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p>Morin SN, Feldman S, Funnell L, Giangregorio L, Kim S, McDonald-Blumer H, et al. Clinical practice guideline for management of osteoporosis and fracture prevention in Canada: 2023 update. CMAJ. 2023 Oct 10;195(39):E1333–48.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p>Shea AK, Wolfman W, Fortier M, Soares CN. Guideline No. 422c: Menopause: Mood, Sleep, and Cognition. J Obstet Gynaecol Can. 2021 Nov 1;43(11):1316-1323.e1.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p>Abramson BL, Black DR, Christakis MK, Fortier M, Wolfman W. Guideline No. 422e: Menopause and Cardiovascular Disease. J Obstet Gynaecol Can. 2021 Dec 1;43(12):1438-1443.e1.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p>Kaufman M, Ackerman A, Amin K, Coffey M, Danan E, Faubion S, et al. The AUA/SUFU/AUGS Guideline on Genitourinary Syndrome of Menopause. J Urol [Internet]. 2025 Sept [cited 2025 Sept 18];214(3). Available from: https://pubmed.ncbi.nlm.nih.gov/40298120/</p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgement-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgement and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p><span data-contrast="none">The </span><span data-contrast="none">Menopause Management tool</span> <span data-contrast="none">was developed using the Centre for Effective Practice’s (CEP’s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Sheila Wijayasinghe</span><span data-contrast="none">. End users and clinical experts were also engaged to provide feedback.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span><span data-contrast="none">Funded by the Ministry of Health, the KTinPC Initiative supports primary care clinicians with a series of clinical tools and health information resources.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> Learn more about the <a title="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" href="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">KTinPC Initiative</a>.</span></p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><i><span data-contrast="none">This Tool is a product of the CEP. Permission to use, copy, and distribute this material is for all </span></i><i><span data-contrast="none">noncommercial</span></i><i><span data-contrast="none"> and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of this Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">).</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><i><span data-contrast="none">For statistical and bibliographic purposes, please notify the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">) of any use or reprinting of the Tool. Please use the following citation when referencing the Tool: Reprinted with Permission from Centre for Effective Practice. (October</span></i><i><span data-contrast="none"> 2025</span></i><i><span data-contrast="none">). Menopause Management</span></i><i><span data-contrast="none">: Ontario. Toronto: Centre for Effective Practice.</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><img decoding="async" class="alignnone size-medium wp-image-327" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":68808,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

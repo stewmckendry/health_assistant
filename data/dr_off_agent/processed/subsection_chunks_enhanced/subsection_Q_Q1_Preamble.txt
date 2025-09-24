@@ -1,0 +1,26 @@
+Subsection: Preamble
+Parent Section: Q
+Page Reference: Q1
+Pages: 647 to 647
+Text chunks: 1
+Total text length: 639 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 647 ---
+CARDIOVASCULAR SURGICAL PROCEDURES
+Cardiovascular Surgical ProceduresMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+1. Unless otherwise stated, excision or repair procedures for arteries and veins include
+endartectomy, thrombectomy and/or bypass graft.
+2. Excision or repair procedures for arteries and veins include harvest of graft tissue, except where
+harvest of graft tissue is explicitly excluded from the procedure. Where harvest of graft tissue is
+included as a specific element of the procedure, the harvest is an insured service payable at nil.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Q1 Amd 12 Draft 1

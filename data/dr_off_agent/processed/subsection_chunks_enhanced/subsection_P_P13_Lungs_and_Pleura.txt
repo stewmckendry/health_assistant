@@ -1,0 +1,138 @@
+Subsection: Lungs and Pleura
+Parent Section: P
+Page Reference: P13
+Pages: 643 to 646
+Text chunks: 1
+Total text length: 7890 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 643 ---
+RESPIRATORY SURGICAL PROCEDURES
+LUNGS AND PLEURA
+Asst Surg Anae
+INTRODUCTION - THORACENTESIS
+Z331 Aspiration for diagnostic sample............................................. 37.35
+Z332 Aspiration with therapeutic drainage with or without diagnostic
+sample................................................................................ 68.10 6
+E542 - when performed outside hospital ............................... add 11.55
+Z349 Intrapleural administration of chemotherapy or sclerosing
+agent - by any method........................................................ 23.25
+# Z334 Total unilateral lung lavage with or without bronchoscopy using
+Double Lumen Tube and single lung anaesthesia ............. 304.60 13
+ENDOSCOPY
+# Z335 Thoracoscopy (pleuroscopy) with or without pleural biopsy,
+suction, etc. ........................................................................ 242.35 7
+INCISION
+# Z340 Biopsy of lung, needle ............................................................ 158.70 7
+# Z336 Biopsy of pleura, needle - including diagnostic aspiration...... 59.15 6
+# Z341 Tube thoracostomy for closed drainage (chest tube) 76.80 6
+# Z352 Intrapleural administration of thrombolytic or fibrinolytic agent
+via thoracostomy tube (chest tube) .................................... 50.00
+# Z363 Removal of thoracostomy tube (chest tube)........................... 20.00
+Payment rules:
+Z363 is not eligible for payment for the same patient on the same day as Z341.
+# Z349 Intrapleural administration of chemotherapy or sclerosing
+agent - by any method........................................................ 23.25
+# Z337 Rib resection for drainage....................................................... 6 133.10 7
+# M133 Thoracotomy for removal of foreign body............................... 9 390.65 13
+# M137 Thoracotomy with or without biopsy ....................................... 9 390.65 13
+# M134 Thoracotomy for post-operative haemorrhage or empyema .. 9 390.65 13
+# M132 Repair of ruptured diaphragm or plication of diaphragm by
+thoracic approach............................................................... 9 900.00 13
+# M130 Closure of broncho-pleural fistula (transthoracic or
+trans-sternal) ...................................................................... 9 584.75 13
+# E609 - with intercostal muscle bundle, pericardium, Azygos vein,
+or pericardial fat pad, to M130 ................................... add 121.70
+# E610 - with myovascular flap (pectoralis major, latissimus dorsi,
+rectus abdominus) ..................................................... add 263.80
+# M135 Major decortication of lung for empyema or tumour ............... 11 848.80 15
+# Z339 Intercostal drainage with insufflation of sclerosing agent under
+general anaesthesia ........................................................... 6 182.90 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P13 Amd 12 Draft 1
+
+--- PAGE 644 ---
+RESPIRATORY SURGICAL PROCEDURES
+LUNGS AND PLEURA
+Asst Surg Anae
+Chronic indwelling pleural catheter for palliative management of malignant pleural
+effusion
+Z361 Insertion of indwelling catheter ............................................... 200.00
+Z362 Removal of indwelling catheter............................................... 200.00
+Note:
+1.Z361 and Z362 include any image guidance and interpretation.
+2.Z361 and Z362 are not payable for adjustment of a previously inserted indwelling pleural
+catheter. The applicable visit fee may be claimed.
+Amd 12 Draft 1 P14 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 645 ---
+RESPIRATORY SURGICAL PROCEDURES
+LUNGS AND PLEURA
+Asst Surg Anae
+EXCISION
+# Z338 Biopsy of pleura or lung - with limited thoracotomy ................ 9 202.80 13
+# M138 Hilar lymph node or lung biopsy with full thoracotomy............ 9 534.10 13
+# M142 Pneumonectomy, may include radical mediastinal node
+dissection, sampling or pericardial resection requiring repair 10 1700.00 14
+# E609 - with intercostal muscle bundle, pericardium, Azygos vein
+or pericardial fat pad, to M142 .................................. add 121.70
+# M143 Lobectomy, may include radical mediastinal node dissection or
+sampling ............................................................................. 10 1402.60 13
+# E644 - radical mediastinal node dissection following preoperative
+chemotherapy and/or radiotherapy, to M142, M143, S089
+or S090 ...................................................................... add 400.00
+# E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to M142 or M143 ............... add 35%
+# M144 Segmental resection, including segmental bronchus and artery 10 1441.75 13
+# E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to M144 ............................. add 35%
+# M145 Wedge resection of lung ......................................................... 10 843.40 13
+# M151 Bullectomy for major bullous disease ..................................... 10 725.00 13
+# M149 Pleurectomy, and/or apical bullectomy for pneumothorax ...... 10 525.00 13
+E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to M145, M149 or M151
+........................................................................... add 35%
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P15 Amd 12 Draft 1
+
+--- PAGE 646 ---
+RESPIRATORY SURGICAL PROCEDURES
+LUNGS AND PLEURA
+Asst Surg Anae
+The following E codes may apply to the preceding M prefix excision codes:
+# E612 - total extra-pleural pneumonectomy............................ add 338.35
+# E613 - sleeve pneumonectomy............................................. add 500.00
+# E614 - omental graft.............................................................. add 162.45
+# E615 - intra-pericardial dissection ......................................... add 250.00
+# E611 - with resection of diaphragm and direct suture closure
+................................................................................... add 145.00
+# E849 - with resection of diaphragm and reconstruction requiring
+repair with mesh or equivalent synthetic material...... add 220.00
+# E848 - with reconstruction of pericardium requiring repair with
+synthetic graft material .............................................. add 80.00
+# E616 - bi-lobectomy on right side.......................................... add 142.10
+# E617 - with pleural tent.......................................................... add 78.80
+# E618 - with decortication of remaining lobe(s) ...................... add 121.85
+# E619 - sleeve lobectomy ....................................................... add 162.45
+# E620 - with wedge bronchoplasty.......................................... add 78.80
+# E621 - with diagnostic wedge resection ................................ add 45.85
+# E624 - with completion pneumonectomy for positive resection
+margin........................................................................ add 111.20
+# E625 - with sleeve resection of pulmonary artery.................. add 142.20
+# E608 - each additional wedge resection of lung (to a maximum of
+3)................................................................................ add 84.15
+# E607 - re-operation more than 30 days subsequent to previous
+excision, to appropriate excision fee.......................... add 152.30
+# M155 Lung transplant (one lung)...................................................... 18 2054.25 40
+M156 Repeat lung transplant (one lung) .......................................... 24 2670.55 40
+M157 Donor Heart - Lung removal ................................................... 8 906.45 8
+Amd 12 Draft 1 P16 February 14 , 2 025 (e ffective M arch 3, 2025)

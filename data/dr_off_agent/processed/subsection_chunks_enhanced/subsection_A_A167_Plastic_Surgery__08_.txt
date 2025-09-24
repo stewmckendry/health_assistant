@@ -1,0 +1,73 @@
+Subsection: Plastic Surgery (08)
+Parent Section: A
+Page Reference: A167
+Pages: 295 to 296
+Text chunks: 1
+Total text length: 3826 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 295 ---
+CONSULTATIONS AND VISITS
+PLASTIC SURGERY (08)
+GENERAL LISTINGS
+A085 Consultation............................................................................ 91.35
+A935 Special surgical consultation (see General Preamble GP19). 163.20
+A086 Repeat consultation................................................................ 54.00
+A083 Specific assessment............................................................... 46.80
+A084 Partial assessment ................................................................. 29.90
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patient(s) in
+the Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C085 Consultation............................................................................ 91.35
+C935 Special surgical consultation (see General Preamble GP19). 163.20
+C086 Repeat consultation................................................................ 54.00
+C083 Specific assessment............................................................... 46.80
+C084 Specific re-assessment........................................................... 30.00
+Subsequent visits
+C082 - first five weeks........................................................per visit 31.00
+C087 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 31.00
+C089 - after thirteenth week (maximum 6 per patient per month)
+............................................................................... per visit 31.00
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge................................................................. 61.15
+Subsequent visits by the MRP following transfer from an Intensive Care Area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................ 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an Intensive Care Area....................................................... 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43)..................................................... per visit 34.10
+C088 Concurrent care..........................................................per visit 31.00
+C982 Palliative care (see General Preamble GP50)............per visit 34.10
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A167 Amd 12 Draft 1
+
+--- PAGE 296 ---
+CONSULTATIONS AND VISITS
+PLASTIC SURGERY (08)
+NON-EMERGENCY LONG-TERM CARE IN-PATIENT SERVICES
+Non-Emergency Long-Term Care In-Patient Services includes Chronic Care Hospitals,
+Convalescent Hospitals, Nursing Homes, Homes for the Aged, designated chronic or
+convalescent care beds in hospitals and nursing homes or homes for the aged, other than
+patients in designated palliative care beds. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+W085 Consultation............................................................................ 91.35
+W086 Repeat consultation................................................................ 54.00
+Amd 12 Draft 1 A168 February 14 , 2 025 (e ffective M arch 3, 2025)

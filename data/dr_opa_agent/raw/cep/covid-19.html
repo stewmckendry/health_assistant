@@ -1,0 +1,1941 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    COVID-19 in 2024: Care and Operations Guidance |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/covid-19\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/1885" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fcovid-19%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fcovid-19%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-1885 wp-theme-cep-tools covid-19">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/toolkit/covid-19-resource-centre/" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>COVID-19 in 2024: Care and Operations Guidance</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: June 28, 2024</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image aligncenter size-large is-resized"><img fetchpriority="high" decoding="async" width="4564" height="340" src="https://tools.cep.health/wp-content/uploads/2020/08/final-combined-logo-2020.05.27.png" alt="" class="wp-image-13361" style="width:1141px;height:85px"/><figcaption class="wp-element-caption"><br></figcaption></figure>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this resource will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="click-on-the-sections-below-to-get-started"><strong>Click on the sections below to get started:</strong></h3>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="isolation-requirements" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Isolation requirements								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-blue blue">
+
+                    <header>
+                <h5><strong> Isolation requirements <a href="https://link.cep.health/covid2906" data-type="URL" data-id="https://link.cep.health/covid2684" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">(MOH, Dec 19, 2023)</a><br />
+</strong></h5>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:25%;">
+                                            <h6><b>If you have symptoms of COVID-19</b></h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:75%;">
+                                            <p>Stay at home and self-isolate until all of the following apply:</p>
+<ul>
+<li>your symptoms have been improving for at least 24 hours (or 48 hours if you had nausea, vomiting and/or diarrhea)</li>
+<li>you do not have a fever</li>
+<li>you do not develop any additional symptoms</li>
+</ul>
+<p>Once symptoms are improving and you are no longer self-isolating at home, the following can provide extra protection against the spread of COVID-19.</p>
+<p>&nbsp;</p>
+<p>For 10 days after your symptoms started:</p>
+<ul>
+<li aria-level="1">Self-monitor for symptoms and self-isolate if they develop any symptom of COVID-19</li>
+<li aria-level="1">Wear a tight-fitted, well-constructed mask in all public settings</li>
+<li aria-level="1">Avoid non-essential activities where you need to take off your mask (e.g., dining out)</li>
+<li aria-level="1">Avoid non-essential visits to anyone who is immunocompromised or may be at higher risk of illness (e.g., seniors)</li>
+<li>Avoid non-essential visits to highest risk settings in the community such as hospitals and long-term care homes</li>
+<li>Where visits cannot be avoided, wear a mask and recommend the individual being visited also wear a mask</li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:25%;">
+                                            <h6>If you are</h6>
+<h6>immunocompromised</h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:75%;">
+                                            <p>If you are immunocompromised and test positive for COVID-19 or have not been tested, you should stay home for 10 days and follow guidance on <a href="https://link.cep.health/covid2906" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">COVID-19 testing and treatment</a> as you may benefit from available therapies to prevent severe illness.</p>
+<p>&nbsp;</p>
+<p>If you test negative for COVID-19, you can stop isolating at home once your symptoms are improving for at least 24 hours (or 48 hours if you had nausea, vomiting and/or diarrhea) and you do not have a fever.</p>
+<p>&nbsp;</p>
+<p>You can then take <a href="https://link.cep.health/covid2907" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">additional precautions for up to 10 days after your symptoms started</a> as extra protection against the spread of COVID-19 and other respiratory viruses circulating in the community.</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:25%;">
+                                            <h6><b>If you work in high-risk setting</b></h6>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:75%;">
+                                            <p>If you have symptoms of COVID-19 or have tested positive for COVID-19 and work in a high-risk setting (such as a hospital, a long-term care home, or a retirement home), you should speak with your employer and follow your workplace guidance for return to work.</p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more information, see <a href="https://link.cep.health/covid2906" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Protection from COVID‑19 and other respiratory illnesses (MOH, Dec 19, 2023)</a></p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="ppe-and-ipac-considerations-2024" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								PPE and IPAC considerations 2024								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For the high-risk 2024 respiratory season, CMOH recommends using additional precautions when appropriate. See OMA’s short, easy-to-read visual guide on how to select precautions in high-risk periods:&nbsp;<a href="https://link.cep.health/covid2889" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Safely providing in-person care for community-based practices (OMA, 2023)</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Also, see the OCFP’s latest guidance on masking, screening, PPE, office flow, cleaning and ventilation: <a href="https://link.cep.health/covid2904" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">IPAC Considerations for Infectious Respiratory Diseases for Community Practices (OCFP, October 2023)</a></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>To gauge transmission risk in your community, see the<a href="https://link.cep.health/covid2890" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">&nbsp;Ontario Respiratory Virus Tool (PHO)</a>, updated weekly (Fridays 11:30am) with epidemiology data from across the province. Includes a link to the&nbsp;<a href="https://link.cep.health/covid2891" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">provincial Wastewater Surveillance page</a>.</li>
+
+
+
+<li>To order additional PPE, use Ontario&#8217;s&nbsp;<a href="https://link.cep.health/covid2892" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">PPE Supply Portal</a>.</li>
+</ul>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="covid-19-vaccines-2024" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								COVID-19 vaccines 2024								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Vaccine guidance</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>As a reminder, please ensure that information in COVaxON is accurate and up-to-date based on the patient’s health card. For more information on COVaxON and EMR supports for COVID-19 care, please visit <a href="https://link.cep.health/covid2903" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">OntarioMD&#8217;s page on Planning a COVID-19 Vaccination Clinic</a>.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>In Spring 2024, individuals who are at increased risk of severe illness should receive an additional dose of an XBB COVID-19 vaccine. Eligible individuals include</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Adults 65 years of age and older</li>
+
+
+
+<li>Adult residents of long-term care homes and other congregate living settings for seniors</li>
+
+
+
+<li>Individuals 6 months of age and older who are moderately to severely immunocompromised (due to an underlying condition or treatment</li>
+
+
+
+<li>Individuals 55 years and older who identify as First Nations, Inuit, or Metis and their non-Indigenous household members who are 55 years and older.</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Eligible individuals may receive an XBB COVID-19 vaccine in Spring 2024 if it has been 6 months from the previous dose or known COVID-19 infection.&nbsp;&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>All other individuals are not currently recommended to receive an additional COVID-19 vaccine dose in Spring 2024. This includes individuals who are not at a higher risk of severe illness who did not receive an XBB COVID-19 vaccine in Fall 2023, unless they are specifically recommended to by their health care provider (<a href="https://link.cep.health/covid2912" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">MOH, 2024</a>).</p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Moderna XBB.1.5 COVID-19 vaccine recommendations</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">6 mos – 4 yrs</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Unvaccinated<br />
+<strong>2 doses:</strong> <strong>25 mcg</strong></p>
+<p>1 or more previous doses<br />
+<strong>1 dose: 25 mcg</strong></p>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">5- 11 yrs</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Vaccinated or unvaccinated<br />
+<strong>1 dose:</strong> <strong>25 mcg</strong></p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">12 yrs and older</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Vaccinated or unvaccinated<br />
+<strong>1 dose:</strong> <strong>50 mcg</strong></p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Adapted from <a href="https://link.cep.health/covid2888" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Moderna Biopharm Canada Corp., Sept 12, 2023.</a></p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Pfizer XBB.1.5 COVID-19 vaccine recommendations</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">6 mos – 4 yrs</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><span style="text-decoration: underline;">Unvaccinated</span><br />
+<strong><span class="TextRun MacChromeBold SCXW121956318 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW121956318 BCX0">3 doses:</span></span><span class="TextRun SCXW121956318 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW121956318 BCX0"> </span></span><span class="TextRun MacChromeBold SCXW121956318 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW121956318 BCX0"> 3 mcg</span></span></strong></p>
+<p><span style="text-decoration: underline;">Vaccinated<br />
+</span><span data-contrast="auto">1 dose received</span><br />
+<b><span data-contrast="auto">2 doses: 3 mcg</span></b><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></p>
+<p><span data-contrast="auto">2 doses of received</span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"><br />
+</span><b><span data-contrast="auto">1 dose: 3 mcg</span></b><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></p>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">5- 11 yrs</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Vaccinated or unvaccinated<br />
+<strong>1 dose:</strong> <strong>10</strong><strong> mcg</strong></p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">12 yrs and older</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Vaccinated or unvaccinated<br />
+<strong>1 dose:</strong> <strong>30 mcg</strong></p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Adapted from <a href="https://link.cep.health/covid2893" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Health Canada, Sept 28, 2023</a>.&nbsp;</p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Novavax XBB.1.5 COVID-19 vaccine recommendations</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">12 yrs and older</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Unvaccinated<br />
+<strong><span class="TextRun Highlight SCXW205628850 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW205628850 BCX0">2 doses</span><span class="NormalTextRun SCXW205628850 BCX0">: </span><span class="NormalTextRun SCXW205628850 BCX0">5 m</span><span class="NormalTextRun SCXW205628850 BCX0">cg</span><span class="NormalTextRun SCXW205628850 BCX0">, 21 days apart</span></span></strong></p>
+<p><span class="TextRun Highlight SCXW251348008 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW251348008 BCX0">Vaccinated</span></span><br />
+<strong>1 dose: 5 mcg</strong></p>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Adapted from <a href="https://link.cep.health/covid2901" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Health Canada, December 5, 2023</a>&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more information on vaccine storage &amp; handling and further resources to support immunization, please visit the Ministry of Health’s page on the <a href="https://link.cep.health/covid2911" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario COVID-19 Vaccine Program</a>.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading"><strong>Timing of other vaccinations</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Individuals 6 months and older can receive a COVID-19 vaccine before, after, or simultaneously with other vaccines (i.e., non-COVID-19 vaccines). This includes both live and non-live vaccines. Patients should be informed of the benefits and risks, given the limited data available on administration of COVID-19 vaccines at the same time as, or shortly before or after, other vaccines. In the case of co-administration, individuals should be immunized on separate arms to minimize the risk of interaction. &nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Exceptions:</strong></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Imvamune (mpox):&nbsp;</strong> A 4-week interval is recommended either before or after receiving a COVID-19 vaccine. If needed, individuals should receive the Imvamune vaccine pre- and post-exposure, regardless of the timing of a COVID-19 vaccine.&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Arexvy (RSV): </strong>Individuals should wait at least 2 weeks before or after administration of the RSV vaccine before receiving a COVID-19 vaccine. Please refer to the <a href="https://link.cep.health/covid2895" data-type="link" data-id="https://link.cep.health/covid2895" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ministry’s </a><a href="https://link.cep.health/covid2895" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">website on RSV</a> for more information.&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading"><strong>COVID-19 vaccines and consent for children and youth under 18</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consent requirements differ between Public Health Units, with some requiring parental consent but not others.&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>In Ontario, there is no defined age of consent for vaccinations. Generally, children can consent to medical treatments as long as they are deemed capable of making an informed decision. This means that they must be able to understand information about the vaccine and what will happen if they accept or refuse vaccination. Children should talk about the benefits and risks of getting the vaccine with a trusted caregiver and their health provider. &nbsp;<br><br>For a more detailed overview, see CMPA’s updated “<a href="https://link.cep.health/covid2871" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Vaccination</a>” section (May 2023).</p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="outpatient-management-of-patients-with-covid-19" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Outpatient management of patients with COVID-19								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading" id="jump-to"><strong>Jump to:</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#mgmt-athome">Managing patients at home</a><br><a href="https://tools.cep.health/tool/covid-19/#mgmt-mildcovid" data-wpel-link="internal">Therapeutic management of mild COVID-19</a><br><a href="#outpatientpathway">Pathway to accessing outpatient therapies</a><br><a href="#mildcovidrecs">Recommended drugs for patients with mild COVID-19</a><br><a href="#sx-mgmt">Symptom management</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading"><strong>Who can be managed at home?</strong></h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Patients can safely self-manage at home if they have mild to moderate symptoms of COVID-19 and do not have any co-morbid conditions or complications (<a href="https://link.cep.health/covid2804" data-type="URL" data-id="https://link.cep.health/covid2804" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HFAM, 2023</a>).</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading" id="Who-should-be-hospitalized">Who should be hospitalized?</h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Instruct patients to seek an urgent follow-up assessment with their family physician or hospitalization if they experience any of the following red flag symptoms (<a href="https://link.cep.health/covid2804" data-type="URL" data-id="https://link.cep.health/covid2804" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HFAM, 2023</a>):</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Severe shortness of breath at rest (e.g. Breathlessness RR &gt;30 despite normal O2 sats)</li>
+
+
+
+<li>Difficulty in breathing (work of breathing)</li>
+
+
+
+<li>Reducing O2 saturation</li>
+
+
+
+<li>Pain or pressure in chest</li>
+
+
+
+<li>Decreased oral intake or urine output (dehydrated, needing IV fluids)</li>
+
+
+
+<li>Low blood pressure (diastolic 60 mmHg or less, or systolic less than 90 mmHg)&nbsp;&nbsp;</li>
+
+
+
+<li>Cold, clammy or pale mottled skin</li>
+
+
+
+<li>New onset of confusion, becoming difficult to rouse, syncope</li>
+
+
+
+<li>Blue lips or face</li>
+
+
+
+<li>Coughing up blood</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Monitor other symptoms possibly associated with COVID-19, including:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Abdominal pain<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Not related to other known causes or conditions (e.g., menstrual cramps, gastroesophageal reflux disease)</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Conjunctivitis (pink eye)<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Not related to other known causes or conditions (e.g., blepharitis, recurrent styes)</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Decreased or lack of appetite<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>For young children and not related to other known causes or conditions (e.g., anxiety, constipation)</li>
+</ul>
+</div></article></li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For patients experiencing a more severe case of COVID-19 and cannot safely self-monitor at home (but not experiencing red flag symptoms), consider close monitoring by a family physician or refer to an <a href="https://www.ontario.ca/assessment-centre-locations/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">open Clinical Assessment Centre (CAC)</a>.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="mgmt-athome"><strong>Managing patients at home</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For patients with symptoms compatible with COVID-19 and those who have tested positive for COVID-19 (<a href="https://link.cep.health/covid2804" data-type="URL" data-id="https://link.cep.health/covid2804" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HFAM, 2023</a>):</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Counsel all patients about self-monitoring for red flag symptoms of worsening disease (see <a href="#Who-should-be-hospitalized" data-type="internal" data-id="#Who-should-be-hospitalized">Who should be hospitalized?</a>) and provide clear guidance on who to call.</li>
+
+
+
+<li>Assess patients for pre-existing conditions that may put them at a higher risk of deterioration and monitor these patients closely. See <a href="https://tools.cep.health/tool/covid-19/#sx-mgmt" data-wpel-link="internal">Symptom management and comorbid considerations</a>.</li>
+
+
+
+<li>Provide treatment as necessary to patients with COVID-19. For information on recommended treatment and evidence see <a href="https://tools.cep.health/tool/covid-19/#mgmt-mildcovid" data-wpel-link="internal">Therapeutic management of mild COVID-19</a>.</li>
+
+
+
+<li>Determine an appropriate follow-up frequency based on the patient’s risk for severe disease, severity of respiratory symptoms, and your comfort level with their ability to self-report worsening symptoms (<a href="https://link.cep.health/covid2804" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HFAM, 2023</a>).<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>For patients assessed at <strong>low risk</strong>, consider self-monitoring only with check-ins determined by individual patient;</li>
+
+
+
+<li>For patients assessed at <strong>average risk</strong>, monitor every few days for 7 days, then recommend self-monitor for additional 7 days spending on progress;</li>
+</ul>
+</div></article></li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more guidance, see Assessment, Monitoring and Management of COVID (<a href="https://hfam.ca/clinical-pathways-and-evidence/covid/assessment-diagnosis-and-management-of-covid/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HFAM, 2023</a>).</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For patients assessed at <strong>high risk</strong>, monitor daily for 7 days, then every few days depending on progress until symptoms resolve.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="mgmt-mildcovid"><strong>Therapeutic management of mild COVID-19</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The following recommendations apply to adult patients who do not require new or additional supplemental oxygen from their baseline status.</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>For more information on recommended treatments for adult patients with mild, moderate and severe COVID-19 and further prioritization of groups listed below, see <a href="https://link.cep.health/covid2520" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario COVID-19 Science Advisory Table’s Recommended Drugs and Biologics in Adult Patients with COVID-19</a>.</li>
+
+
+
+<li>To check for interactions with COVID-19 medications, see <a href="https://link.cep.health/covid2546" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">COVID-19 Drug Interactions (University of Liverpool)</a>.</li>
+
+
+
+<li>For therapies that can be used to manage symptoms, see <a href="https://tools.cep.health/tool/covid-19/#sx-mgmt" data-wpel-link="internal">Symptom management</a>.</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Below is a general pathway for how primary care providers can access outpatient therapies for people at higher risk of severe disease, specifically remdesivir and Paxlovid. Local pathways may vary based on availability of services and pre-existing pathways.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="outpatientpathway">Pathway to accessing outpatient therapies</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Proactively inform potentially eligible patients to contact a health care professional if they develop symptoms of COVID-19. This is done during appointments, via email or telephone, or by updating the practice’s website or online booking portal.&nbsp; See <a href="https://link.cep.health/covid2539" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">I think I have COVID. When should I call my doctor?</a> for a handout to give patients at higher risk of severe disease.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Individuals are at <strong>higher risk </strong>of severe outcomes if <strong>any</strong> of the following (<a href="https://link.cep.health/covid27800" data-type="URL" data-id="https://link.cep.health/covid27800" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Health, April 13, 2023</a>):</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>60 years of age or older</li>
+
+
+
+<li>18 years of age or older and are immunocompromised</li>
+
+
+
+<li>18 – 59 years old and at a higher risk of severe COVID-19 including having:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>one or more underlying <a href="https://link.cep.health/covid2843" data-type="URL" data-id="https://link.cep.health/covid2843" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">medical conditions</a> (such as diabetes, heart or lung disease), or</li>
+
+
+
+<li>inadequate immunity against COVID-19 from:<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>not receiving a full primary series of the COVID-19 vaccine</li>
+
+
+
+<li>having received a full primary series but no COVID-19 vaccine or COVID-19 infection within the past six months</li>
+</ul>
+</div></article></li>
+</ul>
+</div></article></li>
+
+
+
+<li>Indigenous people, Black people, and members of other racialized communities may be at increased risk of disease progression due to disparate rates of comorbidity, increased barriers to vaccination, and social determinants of health. They should be considered priority populations for access to COVID-19 drugs and therapeutics.</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more detailed information on determining a patient’s risk of disease progression, see <a href="https://link.cep.health/covid2520" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario COVID-19 Science Advisory Table’s Recommended Drugs and Biologics in Adult Patients with COVID-19</a>.</p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title"><h6>Pathway to accessing outpatient therapies</h6></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">1. Prioritize OR Direct*</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Try to connect virtually or in-person with patients at higher risk of severe disease who have developed symptoms of COVID-19 within 24 hours of the patient seeking support.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title"> 2. Assess</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Assess the patient and determine an appropriate treatment course, considering patient eligibility and contraindications and local availability of therapies. See <a href="#mildcovidrecs">Recommended drugs for patients with mild COVID-19</a>.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">3. Prescribe or Refer</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Prescribe Paxlovid to eligible patients if they are within 5 days of symptom onset. See <a href="#mildcovidrecs">Recommended drugs for patients with mild COVID-19</a> for information on Paxlovid.</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">4. Follow up</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Follow-up provided after treatment will vary depending on local arrangements and may include handoff back to primary care for ongoing monitoring (e.g., via COVID@Home). See <a href="https://link.cep.health/covid2260" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Assessment, monitoring and management of COVID-19: Monitoring and follow-up</a> (tab 6) for information on monitoring and follow-up based on risk level.</p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title"><h3 id ="mildcovidrecs">Recommended drugs for patients with mild COVID-19</h3></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Nirmatrelvir/Ritonavir (Paxlovid™) </h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>While evidence is still emerging, prescribers should feel confident that Paxlovid is effective for patients at high risk of severe COVID-19 when initiated within the first 5 days of symptom onset. Evidence suggests continued efficacy in the latest Omicron subvariants.</p>
+<p>Due to increased supply, Paxlovid is now available in community pharmacies and can be prescribed by a pharmacist. There is no cost to patients and no health care is required.</p>
+<h6><strong>Role in therapy</strong></h6>
+<ul>
+<li><strong>Recommended</strong> for patients with mild to moderate COVID-19 at higher risk of severe disease who present within 5 days of symptom onset.
+<ul>
+<li><b>May be considered</b> in pregnant or lactating patients if the benefits of treatment outweigh the potential risks.</li>
+</ul>
+</li>
+<li>Indicated for the treatment of mild-to-moderate coronavirus disease (COVID-19) in adults with positive results of direct severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) viral testing, and who are at high risk for progression to severe COVID-19, including hospitalization or death.</li>
+<li>For more information, see <a href="https://link.cep.health/covid2902" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Nirmatrelvir/Ritonavir (Paxlovid): What Prescribers and Pharmacists Need to Know</a>.</li>
+</ul>
+<p><strong>Assessing eligibility and appropriateness</strong></p>
+<p>Paxlovid is intended for patients with <strong>mild to moderate COVID-19</strong> who are not on supplemental oxygen but are <strong>at risk of progressing to severe COVID-19 infectio</strong>n. Primary care clinicians should engage in shared decision-making with every confirmed COVID-positive patient eligible for Paxlovid.</p>
+<p>To be eligible for Paxlovid, patients <strong>must:</strong></p>
+<ul>
+<li>have tested positive for COVID-19 by PCR, rapid molecular or rapid antigen test. At-home rapid antigen test with provider verification is acceptable (in-person, virtual, picture or video) <strong>AND</strong></li>
+<li>be within 5 days of symptom onset (symptom onset is considered day 0)</li>
+</ul>
+<p>Paxlovid should be <strong>strongly considered</strong> for individuals in these categories:</p>
+<ul>
+<li>60 years or older</li>
+<li>Living with comorbidities: See <a href="https://link.cep.health/covid2843" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Health Canada</a>’s list of underlying medical conditions associated with more severe COVID-19 disease</li>
+<li>Those with lowered Immune status: Either unvaccinated or with an incomplete primary series, or completed primary series with last COVID-19 vaccine dose more than 6 months ago AND last COVID-19 infection more than 6 months ago</li>
+<li>Groups with poorer COVID-19 outcomes including Indigenous people, Black people and other members of racialized communities, Individuals with intellectual, developmental, or cognitive disability, people who use substances regularly, who live with mental health conditions, and who are underhoused</li>
+</ul>
+<h6><strong>Dosage, cost and administration</strong></h6>
+<ul>
+<li>Normal renal function: 300 mg nirmatrelvir (two 150 mg tablets) with 100 mg ritonavir (one 100 mg tablet), with all three taken together orally twice daily for 5 days.</li>
+<li>Mild-moderate renal impairment (eGFR 30-60 mL/min): 150 mg nirmatrelvir (one 150 mg tablet) with 100 mg ritonavir (one 100 mg tablet), taken together orally twice daily for 5 days.</li>
+<li>Not recommended for patients with severe renal impairment (eGFR &lt;30 mL/min) or severe hepatic impairment.</li>
+</ul>
+<h6><strong>Adverse effects</strong></h6>
+<ul>
+<li>Altered sense of taste, diarrhea, muscle pain, vomiting, high blood pressure, headache.</li>
+</ul>
+<h6><strong>Key drug interactions</strong></h6>
+<ul>
+<li aria-level="1">Contraindicated in patients taking drugs that are:
+<ul>
+<li aria-level="2">Highly metabolized by CYP3A4 where elevated concentrations can be life-threatening</li>
+<li aria-level="2">Potent CYP3A4 inducers which may reduce the effectiveness of nirmatrelvir/ritonavir and contribute to the development of drug resistance.</li>
+</ul>
+</li>
+<li>Nirmatrelvir/ritonavir have many drug interactions. See <a href="https://link.cep.health/covid2902" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Nirmatrelvir/Ritonavir (Paxlovid): What Prescribers and Pharmacists Need to Know</a></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Remdesivir (Veklury™)</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6><strong>Role in therapy</strong></h6>
+<ul>
+<li aria-level="1"><b>Recommended </b>as an alternative to Paxlovid for patients with mild COVID-19 at higher risk of severe disease who present within 7 days of symptom onset.</li>
+<li aria-level="1"><strong>Recommended</strong> for patients who cannot take Paxlovid due to contraindication (medical contraindication or drug interaction that cannot be safely managed) or &gt;5 days after symptom onset.</li>
+<li aria-level="1">Available evidence indicates similar effectiveness to Paxlovid.</li>
+</ul>
+<h6><strong>Dosage, cost and administration</strong></h6>
+<ul>
+<li aria-level="1">200 mg IV x 1 day, then 100 mg IV daily x 2 days.</li>
+<li aria-level="1">Price of drug in Canada currently not publicly available. Administration costs must also be considered.</li>
+</ul>
+<h6><strong>Adverse effects</strong></h6>
+<ul>
+<li aria-level="1">Allergic reaction or infusion reaction (rare): changes to blood pressure or heart rate, low blood oxygen levels, high temperature, shortness of breath or wheezing, swelling of face, lips, tongue or throat, rash, nausea, sweating, shivering.</li>
+<li aria-level="1">Infusion site reaction: Pain, bruising swelling or redness at the infusion site.</li>
+<li aria-level="1">Other adverse events: increased transaminases, nausea, headache, rash</li>
+</ul>
+<h6><strong>Key drug interactions</strong></h6>
+<ul>
+<li aria-level="1">Avoid use with:
+<ul>
+<li aria-level="2">Chloroquine and hydroxychloroquine (antagonize the effects of remdesivir)</li>
+<li aria-level="2">Drugs which reduce renal function</li>
+<li aria-level="2">Strong inducers of CYP450 (e.g., rifampinin)</li>
+</ul>
+</li>
+<li aria-level="1">The potential for drug interactions with inhibitors inducers of CYP2C8, 2D6 or 3A4 (remdesivir is a substrate of these enzymes) has not been studied.</li>
+</ul>
+<p>Effective 2023-24, the Ontario Ministry of Health has established community-based ways for individuals to access Remdesivir as a treatment for COVID-19 through<a class="waffle-rich-text-link" href="https://link.cep.health/covid2866" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"> Home and Community Care Support Services (HCCSS)</a>. Refer patients to their <a class="waffle-rich-text-link" href="https://link.cep.health/covid2867" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">local HCCSS branch</a> for a nurse to administer Remdesivir infusions. Please note, in Northern Ontario, hospitals and assessment centres continue to operate and provide COVID-19 assessments in the majority of communities.</p>
+<p>For more information please visit <a class="waffle-rich-text-link" href="https://link.cep.health/covid2872" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Health: COVID-19 Health System Response Materials</a></p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title"><h3 id = "sx-mgmt">Symptom management </h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Fever (≥37.8 °C)</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Potential management strategies</strong> (<a href="https://link.cep.health/covid2783" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">NICE, November 30, 2023</a>)</p>
+<ul>
+<li aria-level="1">Drink fluids regularly (no more than 2 litres/day).</li>
+<li aria-level="1">Take paracetamol or ibuprofen if a patient has a fever and other symptoms antipyretics help treat.</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">New or worsening cough</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Potential management strategies</strong> (<a href="https://link.cep.health/covid2783" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">NICE, November 30, 2023</a>)</p>
+<ul>
+<li aria-level="1">Avoid lying on back (makes coughing ineffective).</li>
+<li aria-level="1">A teaspoon of honey.</li>
+<li aria-level="1">Only if cough is distressing, short-term, limited supply prescription for codeine linctus, codeine phosphate tablets or morphine sulfate oral solution may be considered.</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Shortness of breath (dyspnea)</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><strong>Potential management strategies</strong> (<a href="https://link.cep.health/covid2783" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">NICE, November 30, 2023</a>)</p>
+<ul>
+<li aria-level="1">Keep the room cool.</li>
+<li aria-level="1">Encourage relaxation and breathing techniques (positioning, pursed-lip breathing, breathing exercises and coordinated breathing training).</li>
+<li aria-level="1">Improve air circulation by opening a window or door (avoid using a fan because this can spread infection).</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For more information on dosing and techniques, see the <a href="https://link.cep.health/covid2783" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">COVID-19 rapid guideline: managing COVID-19 (NICE, November 30, 2023)</a>.</p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="post-covid-19-condition" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Post COVID-19 condition								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="pasc"><strong>What is “post COVID-19 condition”?</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Post COVID-19 condition (or long COVID) includes a wide range of symptoms following a probable or confirmed history of a severe, mild or asymptomatic COVID-19 infection usually occurring beyond 12 weeks (<a href="https://link.cep.health/covid2869" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Health, December 2022</a>).&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading" id="longCOVIDsymptoms">Common symptoms</h6>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Dyspnea or increased respiratory effort</li>
+
+
+
+<li>Cough</li>
+
+
+
+<li>Fatigue/malaise&nbsp;</li>
+
+
+
+<li>Decreased mobility&nbsp;</li>
+
+
+
+<li>Fever</li>
+
+
+
+<li>Menstrual cycle irregularities&nbsp;</li>
+
+
+
+<li>Insomnia</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Memory deficits</li>
+
+
+
+<li>Difficulty concentrating&nbsp;</li>
+
+
+
+<li>Headaches</li>
+
+
+
+<li>Dizziness</li>
+
+
+
+<li>Paresthesia&nbsp;</li>
+
+
+
+<li>Joint Pain</li>
+
+
+
+<li>Muscle pain&nbsp;</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Anxiety</li>
+
+
+
+<li>Depression</li>
+
+
+
+<li>Abdominal pain</li>
+
+
+
+<li>Diarrhea&nbsp;&nbsp;</li>
+
+
+
+<li>Loss of taste or smell&nbsp;</li>
+
+
+
+<li>Skin rashes</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p class="has-small-font-size"><em>Adapted from: <a href="https://link.cep.health/covid2869" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Post-COVID-19 Condition: Guidance for Primary Care, December 2022)</a></em></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="pteval"><strong>Patient evaluation for suspected post COVID-19 condition</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>To avoid over investigation, consider a conservative diagnostic approach in the first 4 to 12 weeks after COVID-19 infection. Currently, there are no definitive tests to determine the presence of post COVID-19 condition. Consider laboratory tests based on patient history, physical examination and clinical findings. Tailor testing to a person’s signs and symptoms to understand if they are caused by an ongoing case of COVID-19, post-COVID 19 condition or an unrelated diagnosis (<a href="https://link.cep.health/covid2869" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Health, December 2022</a>).</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>As multiple organ systems are possibly involved in post COVID-19 condition, a thorough physical examination is recommended (<a href="https://link.cep.health/covid2869" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Health, December 2022</a>).</p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p class="wp-block-heading"><strong>Reminder for providers to convey empathy, listen and validate </strong></p>
+<p>It is important to approach patients possibly dealing with post COVID-19 condition with empathy, listen to what symptoms they are experiencing, and validate what they are going through (<a href="https://link.cep.health/covid2702" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2702" data-wpel-link="external">NICE, November 11 2022</a>). Many patients report feeling like their symptoms are not taken seriously or they do not realize that what they are experiencing is connected to COVID-19, making a holistic approach to assessment highly important (<a href="https://link.cep.health/covid2702" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2702" data-wpel-link="external">NICE, November 11 2022</a>).</p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Evidence indicates that post-COVID 19 condition can cause a new onset of Postural Orthostatic Tachycardia Syndrome (POTS). For more information on diagnosing, assessing, and managing POTS, please visit <a href="https://tools.cep.health/tool/pots/" target="_blank" rel="noreferrer noopener" data-wpel-link="internal">CEP’s POTS tool</a> (<a href="https://link.cep.health/covid2913" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">PNAS, 2021</a>;&nbsp;<a href="https://link.cep.health/covid2914" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Nature, 2023</a>; Expert Opinion).</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Symptoms of post-COVID 19 condition can overlap with symptoms of Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS). There is also emerging evidence to suggest that post-COVID 19 condition can cause a new onset of ME/CFS. For more information on diagnosing, assessing, and managing ME/CFS, please visit <a href="https://tools.cep.health/tool/myalgic-encephalomyelitis-chronic-fatigue-syndrome-me-cfs/" target="_blank" rel="noreferrer noopener" data-wpel-link="internal">CEP’s ME/CFS tool</a> (<a href="https://link.cep.health/covid2913" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">PNAS, 2021</a>;&nbsp;<a href="https://link.cep.health/covid2914" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Nature, 2023</a>; Expert Opinion).</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="guidancept">Guidance for how to help patients recover</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The primary recommendation for managing patient recovery is self-management and supported self-management through several techniques. It is important to note that care plans are recommended to be developed using a shared decision making approach, ensuring that the patient’s preferences, support network, and goals are taken into account to create a management plan that works best for them (<a rel="noreferrer noopener external" href="https://link.cep.health/covid2702" data-type="URL" data-id="https://link.cep.health/covid2702" target="_blank" data-wpel-link="external">NICE, November 11 2022</a>).&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Supported self management techniques for symptoms </strong>(<a href="https://link.cep.health/covid2869" data-type="URL" data-id="https://link.cep.health/covid2705" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Ontario Health, December 2022</a>):</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Encouraging patients to keep diaries or calendars that document their symptom severity and any changes to health conditions. This can help identify any possible triggers such as physical exertion, medical treatments, medications, or menstruation. Examples include mood diaries which can aid in the screening and diagnosis of related or comorbid mental health conditions.&nbsp;</li>
+
+
+
+<li>Develop a <a href="https://link.cep.health/covid2706" data-type="URL" data-id="https://link.cep.health/covid2706" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">comprehensive plan</a> based on patient symptoms that incorporates their treatment goals.&nbsp;</li>
+
+
+
+<li>Consider providing referrals to other support services such as home care, mental health support, employment, housing, or financial support depending on patient needs. Patients can also be directed to <a href="https://link.cep.health/covid2730" data-type="URL" data-id="https://link.cep.health/covid2730" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">call 211</a> to be referred to relevant social service supports.&nbsp;</li>
+
+
+
+<li>Provide <a href="https://link.cep.health/covid2707" data-type="URL" data-id="https://link.cep.health/covid2707" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">education and support materials</a> for at-home self-care including <a href="https://link.cep.health/covid2708" data-type="URL" data-id="https://link.cep.health/covid2708" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">nutrition</a>, physical activity, sleep, stress, and <a href="https://link.cep.health/covid2710" data-type="URL" data-id="https://link.cep.health/covid2710" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">chronic disease management</a>. See “Self-management techniques for symptoms” tips below.&nbsp;</li>
+
+
+
+<li>If initial symptoms are moderate to severe, or continue worsening in severity, consider a referral to an <a href="https://link.cep.health/covid2573" data-type="URL" data-id="https://link.cep.health/covid2573" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">interdisciplinary rehabilitation program</a> or a relevant specialist. Note that COVID-19 and Post-COVID Condition advice is available through<a href="https://link.cep.health/covid2711" data-type="URL" data-id="https://link.cep.health/covid2711" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"> eConsult</a>.</li>
+
+
+
+<li>Consider providing <a href="https://ontariocaregiver.ca/for-caregivers/" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"> </a><a href="https://link.cep.health/caregiversupport" data-type="URL" data-id="https://link.cep.health/caregiversupport" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">resources</a> to support caregivers.&nbsp;</li>
+
+
+
+<li>Consider supporting an application for short or long term disability income support if unable to work or if work hours are reduced.&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Self-management techniques for symptoms:</strong>&nbsp;</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>There are many health promotion education resources available to share with patients when developing their self-management care plan. Consider the following resources and guidance:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a rel="noreferrer noopener external" href="https://link.cep.health/covid2714" data-type="URL" data-id="https://link.cep.health/covid2714" target="_blank" data-wpel-link="external">UHN’s COVID-19 Resources for Patients and Families: post COVID-19 condition</a>&nbsp;</li>
+
+
+
+<li><a href="https://link.cep.health/covid2715" data-type="URL" data-id="https://link.cep.health/covid2715" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ottawa Hospital: Post-COVID Rehabilitation Self-Management</a>&nbsp;</li>
+
+
+
+<li><a href="https://link.cep.health/covid2716" data-type="URL" data-id="https://link.cep.health/covid2716" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">CANCOV: Patient Resources</a>&nbsp;</li>
+
+
+
+<li><a rel="noreferrer noopener external" href="https://link.cep.health/covid2717" data-type="URL" data-id="https://link.cep.health/covid2717" target="_blank" data-wpel-link="external">Alberta Health Services: Self-Care and Universal Information Resources for post COVID-19 condition</a>&nbsp;</li>
+
+
+
+<li><a rel="noreferrer noopener external" href="https://link.cep.health/covid2718" data-type="URL" data-id="https://link.cep.health/covid2718" target="_blank" data-wpel-link="external">Shared Health Manitoba: Getting Back to Life After COVID-19</a><a href="https://link.cep.health/covid2718" data-type="URL" data-id="https://link.cep.health/covid2718" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"> (<meta http-equiv="content-type" content="text/html; charset=utf-8">post COVID-19 condition)</a></li>
+
+
+
+<li><a rel="noreferrer noopener external" href="https://link.cep.health/covid2719" data-type="URL" data-id="https://link.cep.health/covid2719" target="_blank" data-wpel-link="external">NHS Your COVID Recovery: I Think I Have post Long COVID</a>&nbsp;</li>
+
+
+
+<li><a href="https://link.cep.health/covid2706" data-type="URL" data-id="https://link.cep.health/covid2706" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">WHO Support for Rehabilitation: Self-Management After COVID-19 Related Illness</a>&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="betterpt">What to do if patients aren&#8217;t getting better</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>In the case that patients are not getting better through self-management recovery, it may be beneficial to suggest participation in a rehabilitation program available in their area. A list of post-COVID-19 rehabilitation clinics in Ontario is available through the <a rel="noreferrer noopener external" href="https://link.cep.health/covid2573" data-type="URL" target="_blank" data-wpel-link="external">Rehabilitative Care Allianc</a><a rel="noreferrer noopener external" href="https://link.cep.health/covid2573" data-type="URL" data-id="https://link.cep.health/covid2573" target="_blank" data-wpel-link="external">e</a>.&nbsp;</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Research trials</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a rel="noreferrer noopener external" href="https://link.cep.health/covid2720" data-type="URL" data-id="https://link.cep.health/covid2720" target="_blank" data-wpel-link="external">The Canadian COVID-19 Prospective Cohort Study</a>&nbsp;</li>
+
+
+
+<li><a rel="noreferrer noopener external" href="https://link.cep.health/covid2721" data-type="URL" data-id="https://link.cep.health/covid2721" target="_blank" data-wpel-link="external">Provincial Health Services Authority (BC): Participating in Post-COVID Research</a>&nbsp;</li>
+
+
+
+<li><a href="https://link.cep.health/covid2722" data-type="URL" data-id="https://link.cep.health/covid2722" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">C19 Recovery Awareness: Research</a>&nbsp;</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--faq disabilitysupport"><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title"><h3 id = "supportdisabilities">How to support patients completing disability applications</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">1. Identify the relevant disability support programs</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>The <a href="https://link.cep.health/covid2727" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2727" data-wpel-link="external">Prosper Benefits Wayfinder</a> produces an individualized list of income supports. <a href="https://link.cep.health/covid2728" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2728" data-wpel-link="external">Steps to Justice</a> provides guides to income assistance.  Key programs include:</p>
+<ul>
+<li>if missing work: <a href="https://link.cep.health/covid2723" data-type="URL" data-id="https://link.cep.health/covid2723" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">EI Sickness</a></li>
+<li>if has private insurance: Short and long term disability</li>
+<li>if there was workplace transmission: <a href="https://link.cep.health/covid2724" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2724" data-wpel-link="external">WSIB</a></li>
+<li>if has a history of workplace contributions: <a href="https://link.cep.health/covid2725" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2725" data-wpel-link="external">CPP Disability</a></li>
+<li>if living at low income or ineligible for other programs: <a href="https://link.cep.health/covid2726" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2726" data-wpel-link="external">Ontario Disability Support Program</a> or <a href="https://link.cep.health/covid2729" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2729" data-wpel-link="external">Ontario Works</a></li>
+</ul>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+<ul>
+<li style="list-style-type: none;"></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">2. Conduct a thorough assessment of symptoms and functional impairments</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Disability support programs generally look toward impact on day to day life and function as opposed to medical proof of diagnosis.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">3. Engage other supports for complicated cases or where a patient has been denied disability or other income support benefits</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li>Community support agencies can guide patients toward benefit programs and help with applications.  Search <a href="https://link.cep.health/covid2730" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2730" data-wpel-link="external">2-1-1 Ontario</a> for local resources.</li>
+<li><!-- /wp:list-item --> <!-- wp:list-item --><a href="https://link.cep.health/covid2731" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2731" data-wpel-link="external">Legal Aid Ontario</a>, <a href="https://link.cep.health/covid2732" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2732" data-wpel-link="external">Community Legal Clinics</a>, and <a href="https://link.cep.health/covid2733" target="_blank" rel="noreferrer noopener external" data-type="URL" data-id="https://link.cep.health/covid2733" data-wpel-link="external">Specialty Clinics</a> can help with information and appeals.</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Reminder, presentation of post COVID-19 condition symptoms can look different from patient to patient and can present on different timelines. It is important to keep this in mind when assessing for post COVID-19 condition and providing corresponding documentation for disability claims.&nbsp;</p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="palliative-care-and-covid-19" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Palliative care and COVID-19								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading has-small-font-size">Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visit <a href="https://link.cep.health/covid2915" data-type="link" data-id="https://link.cep.health/covid2915" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Ontario Health COVID-19 Clinical Resources</a>.</h3>
+</div></article></div>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="PC-role">The role of primary care</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>To help address palliative care services related to COVID-19, family physicians and community palliative care nurse practitioners will have to:</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="care-goals"><strong>Navigate difficult conversations with patients, families and caregivers and identify the patient’s goals of care</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Providers need to ensure the patient understands the nature and severity of their illness, and explore their goals of care to support decision-making and enable person-centred care.</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a href="https://link.cep.health/covid515" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">COVID-19 Advance Care Planning Toolkit (Hamilton Family Medicine, 2020)</a>.</li>
+
+
+
+<li><a href="https://link.cep.health/covid560" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Plan Well Guide: online tool for learning about medical treatments and preparing patients for decision-making during a serious illness (2020).</a></li>
+
+
+
+<li><a href="https://link.cep.health/covid2863" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Palliative Care Resources to Support Frontline Providers During the COVID-19 Pandemic (Ontario Palliative Care Network, Feb 9, 2022)</a></li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="DNR">Document decisions regarding do not resuscitate (DNR)</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>If a patient decides they do not want resuscitation when their heart stops beating or they stop breathing, (i.e. provides consent for a Do Not Resuscitate order), complete the <a href="https://link.cep.health/covid278" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Do Not Resuscitate Confirmation Form (DNR C) (Government of Ontario, 2008)</a>.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="pall-sx-mgmt"><strong>Manage symptoms, and address other palliative care needs for patients with COVID-19</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Family physicians and community palliative care nurse practitioners need to be prepared to address the palliative care needs of their COVID-19 patients. Dyspnea, delirium, nausea and vomiting, and pain will be particularly relevant for patients with COVID-19.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>See <a href="https://link.cep.health/covid349" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Symptom Management Guideline and Advice (Cancer Care Ontario)</a>.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="eol-care"><strong>Provide end-of-life care for COVID-19 patients</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>When patients with COVID-19 are in their final weeks and days of life, family physicians and community palliative care nurse practitioners need to be prepared to support and provide end-of-life care.</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>It is important to ensure rapid access to palliative medications that are often at higher doses than seen in standard practice</li>
+
+
+
+<li>Dose ranges should be considered to allow for urgent decision-making regarding escalation of dose for distressing symptoms.</li>
+
+
+
+<li>The most common terminal symptoms (fever, rigors, severe dyspnea, cough, delirium and agitation) can develop rapidly and be distressing.</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="grief"><strong>Provide grief and bereavement support</strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For many people, the time following the death of a loved one can be filled with a range of emotions and physical reactions. It is important in the grief journey that people are able to openly talk about these experiences, reactions and feelings. Providers can recommend the following resources for those who have lost a loved one:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><a href="https://link.cep.health/covid351" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Bereaved Families of Ontario</a> for group support, one-to-one sessions and telephone support.</li>
+
+
+
+<li><a href="https://link.cep.health/covid352" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">MyGrief.ca</a>, an online resource that can help one understand their grief and work through some of the difficult issues they may be facing.</li>
+
+
+
+<li><a href="https://link.cep.health/covid353" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Kidsgrief.ca</a>, a free online resource that helps parents support their children when someone in their life is dying or has died.</li>
+
+
+
+<li>Connect grieving individuals to local services for mental health and counselling support.</li>
+</ul>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgement-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgement and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p>The COVID-19 Resource Centre was developed using the Centre for Effective Practice&#8217;s (CEP&#8217;s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clincial leadership of the resource was provided by Dr. Derelie Mangin. End users and clinical experts were also engaged to provide feedback. This tool&#8217;s development was completed in collaboration with the <a href="https://fammedmcmaster.ca/" target="_blank" rel="noopener external noreferrer" data-wpel-link="external">Department of Family Medicine at McMaster University</a>, the <a href="https://www.ontariofamilyphysicians.ca/" target="_blank" rel="noopener external noreferrer" data-wpel-link="external">Ontario College of Family Physicians</a> and the <a href="https://npao.org/" target="_blank" rel="noopener external noreferrer" data-wpel-link="external">Nurse Practitioners’ Association of Ontario</a>. Funded by the Ministry of Health, the KTinPC Initiative supports primary care clinicians with a series of clinical tools and health information resources. Learn more about the <a title="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" href="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">KTinPC Initiative</a>.</p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, collaborating partner(s), nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><em>This Tool is a product of the CEP. Permission to use, copy, and distribute this material for all non-commercial and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of the COVID-19: Clinical Guidance for Primary Care Providers resource for commercial purposes or any modifications of the Tool are subject to charge and use must be negotiated with the CEP (Email: <a href="mailto:info@cep.health">info@cep.health</a>).</em></p>
+<p><i><span lang="EN-US">For statistical and bibliographic purposes, please notify the CEP (<a title="mailto:info@cep.health" href="mailto:info@cep.health">info@cep.health</a>) of any use or reprinting of the Tool. Please use the following citation when referencing the Tool: Reprinted with Permission from Centre for Effective Practice. (Month Year). [insert tool name]: Ontario. Toronto: Centre for Effective Practice.</span></i></p>
+<p><img decoding="async" class="size-medium wp-image-327 alignnone" src="http://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+            
+                <p>
+                  In collaboration with:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/mcm-fammed_left-col.jpg" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/OCFP_Logo_UPDATED.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/NPAO-Logo.svg" />
+
+                
+            
+                <p>
+                  With support from:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/SGFP_Logo_2009-UPDATED-1.jpg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":1885,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

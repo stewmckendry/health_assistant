@@ -1,0 +1,105 @@
+Subsection: Medical Oncology (44)
+Parent Section: A
+Page Reference: A126
+Pages: 254 to 255
+Text chunks: 1
+Total text length: 6192 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 254 ---
+CONSULTATIONS AND VISITS
+MEDICAL ONCOLOGY (44)
+GENERAL LISTINGS
+A445 Consultation............................................................................ 166.50
+A765 Consultation, patient 16 years of age and under.................... 165.50
+A845 Limited consultation................................................................ 105.25
+A446 Repeat consultation................................................................ 105.25
+A443 Medical specific assessment .................................................. 79.85
+A444 Medical specific re-assessment.............................................. 61.25
+A441 Complex medical specific re-assessment............................... 70.90
+A448 Partial assessment ................................................................. 38.05
+E078 - chronic disease assessment premium (see General
+Preamble GP25) ................................................ add 50%
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patients in the
+Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to
+in-patients, use General Listings and Premiums when applicable - see General Preamble
+GP65 to GP78.
+C445 Consultation............................................................................ 166.50
+C765 Consultation, patient 16 years of age and under.................... 165.50
+C845 Limited consultation................................................................ 105.25
+C446 Repeat consultation................................................................ 105.25
+C443 Medical specific assessment .................................................. 79.85
+C444 Medical specific re-assessment.............................................. 61.25
+C441 Complex medical specific re-assessment............................... 70.90
+Subsequent visits
+C442 - first five weeks ....................................................... per visit 34.10
+C447 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 34.10
+C449 - after thirteenth week (maximum 6 per patient per month)
+.............................................................................. per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge ................................................................. 61.15
+Amd 12 Draft 1 A126 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 255 ---
+CONSULTATIONS AND VISITS
+March 4, 2024 (effective April 1, 2024)
+MEDICAL ONCOLOGY (44)
+Subsequent visits by the MRP following transfer from an Intensive Care Area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................. 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an Intensive Care Area........................................................ 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43) ................................................... per visit 34.10
+C448 Concurrent care ......................................................... per visit 34.10
+C982 Palliative care (see General Preamble GP50)............ per visit 34.10
+NON-EMERGENCY LONG-TERM CARE IN-PATIENT SERVICES
+Non-Emergency Long-Term Care In-Patient Services includes Chronic Care Hospitals,
+Convalescent Hospitals, Nursing Homes, Homes for the Aged, designated chronic or
+convalescent care beds in hospitals and nursing homes or homes for the aged, other than
+patients in designated palliative care beds. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble
+GP65 to GP78.
+W445 Consultation............................................................................. 166.50
+W765 Consultation, patient 16 years of age and under..................... 167.00
+W845 Limited consultation................................................................. 105.25
+W446 Repeat consultation................................................................. 105.25
+Admission assessment
+W842 - Type 1 ................................................................................. 69.35
+W844 - Type 2 ................................................................................. 20.60
+W847 - Type 3 ................................................................................. 30.70
+W849 Periodic health visit.................................................................. 65.05
+W444 General re-assessment of patient in nursing home (as per the
+Nursing Homes Act)*........................................................... 20.60
+Note:
+*May only be claimed 6 months after Periodic health visit (as per the Nursing Homes Act).
+Subsequent visits (see General Preamble GP49)
+Chronic care or convalescent hospital
+W442 - first 4 subsequent visits per patient per month....... per visit 34.10
+W441 - additional subsequent visits (maximum of 6 per patient per
+month) .................................................................... per visit 34.10
+W982 - palliative care (see General Preamble GP50)........ per visit 34.10
+Nursing home or home for the aged
+W443 - first 2 subsequent visits per patient per month....... per visit 34.10
+W448 - subsequent visits per month (maximum of 3 per patient per
+month) .................................................................... per visit 34.10
+W972 - palliative care (see General Preamble GP50)........ per visit 34.10
+W121 Additional visits due to intercurrent illness (see General
+Preamble GP49) .................................................... per visit 34.10
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A127 Amd 12 Draft 1

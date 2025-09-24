@@ -1,0 +1,114 @@
+{
+  "subsection_title": "Assessments",
+  "parent_section": "GP",
+  "page_ref": "GP21",
+  "fee_codes": [
+    {
+      "code": "K017",
+      "description": "child",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K130",
+      "description": "adolescent",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K131",
+      "description": "adult age 18 to 64 inclusive",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K132",
+      "description": "adult 65 years of age and older",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K133",
+      "description": "adult with Intellectual and Developmental Disability (IDD)",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K269",
+      "description": "12 to 17 years",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K267",
+      "description": "2 to 11 years",
+      "fee": "single amount if only one column",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "rules": [
+    "General assessments are limited to one per patient per physician per 12 month period unless the patient presents a second time with a different complaint or at least 90 days have elapsed since the last assessment.",
+    "Periodic health visits are limited to one per patient per 12 month period per physician."
+  ],
+  "notes": [
+    "No diagnostic code is required for periodic health visits unless otherwise specifically listed.",
+    "Chronic disease assessment premium is payable in addition to the amount payable for an assessment when specific criteria are met."
+  ],
+  "pages_processed": "35-53"
+}

@@ -1,0 +1,76 @@
+{
+  "total_tools": 43,
+  "crawled_tools": 46,
+  "categories": {
+    "mental_health": [
+      "Dementia Diagnosis",
+      "Anxiety and Depression",
+      "Attention Deficit Hyperactivity Disorder (ADHD) in Adults",
+      "Behavioural and Psychological Symptoms of Dementia (BPSD)",
+      "Management of Chronic Insomnia",
+      "Youth Mental Health Anxiety and Depression"
+    ],
+    "neurology": [
+      "CORE Neck and Headache Navigator",
+      "Postural Orthostatic Tachycardia Syndrome (POTS)"
+    ],
+    "substance_use": [
+      "Alcohol Use Disorder (AUD)",
+      "Opioid Use Disorder (OUD)",
+      "Opioid Tapering Template",
+      "Non-Medical Cannabis Resource",
+      "Benzodiazepine Use in Older Adults"
+    ],
+    "chronic_disease": [
+      "Chronic obstructive pulmonary disease (COPD)",
+      "Managing Heart Failure in Primary Care",
+      "Type 2 diabetes: insulin therapy",
+      "Type 2 diabetes: non-insulin pharmacotherapy",
+      "Local Services for Patients Living With Type 2 Diabetes"
+    ],
+    "pain_msk": [
+      "Management of Chronic Non-Cancer Pain",
+      "Clinically Organized Relevant Exam (CORE) Back Tool",
+      "Fibromyalgia (FM)",
+      "Manual Therapy as an Evidence-Based Referral for Musculoskeletal Pain",
+      "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS)"
+    ],
+    "womens_health": [
+      "Menopause Management",
+      "Preconception Health Care Tool",
+      "Urinary Incontinence in Women"
+    ],
+    "preventive_care": [
+      "Fall Prevention and Management",
+      "Managing Proton Pump Inhibitor Use in Older Adults",
+      "Preventing Childhood Obesity"
+    ],
+    "metabolic": [
+      "Pharmacotherapy for Obesity Management"
+    ],
+    "infectious_disease": [
+      "Supporting Anal Cancer Screening in Primary Care for People Living with HIV",
+      "2025-2026 RSV Prevention Program for infants in Ontario",
+      "COVID-19 in 2024: Care and Operations Guidance"
+    ],
+    "end_of_life": [
+      "Medical Assistance in Dying (MAID) in Ontario Track One: Natural Death is Reasonably Foreseeable",
+      "Medical Assistance in Dying (MAID) in Ontario Track Two: Natural Death is NOT Reasonably Foreseeable"
+    ],
+    "digital_health": [
+      "Artificial Intelligence (AI) Learning Centre",
+      "Secure Messaging"
+    ],
+    "social_care": [
+      "Social Prescribing: a Resource for Health Professionals",
+      "Adaptive Mentoring to Build Primary Care Capacity: Caring for Canadians Living with Mental Illness, Chronic Pain and Addictions Implementation Toolkit",
+      "Keeping Your Patients Safe: A Guide to Primary Care Management of Mental Health and Addictions-related Risks and Functional Impairments"
+    ],
+    "operational": [
+      "Seasonal Preparedness Guide",
+      "SP drafting",
+      "MAID Forms Staging*"
+    ]
+  },
+  "last_crawl": "2025-09-24T15:32:59.322458"
+}

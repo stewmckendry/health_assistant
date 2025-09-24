@@ -1,0 +1,40 @@
+Subsection: Preamble
+Parent Section: E
+Page Reference: E1
+Pages: 373 to 373
+Text chunks: 1
+Total text length: 1800 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 373 ---
+CLINICAL PROCEDURES ASSOCIATED WITH DIAGNOSTIC
+RADIOLOGICAL EXAMINATIONS
+Clinical Procedures associated with Diagnostic Radiological ExaminationsMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, Clinical Procedures Associated with Diagnostic Radiological
+Examinations include the following specific elements.
+A. Supervising the preparation of and/or preparing the patient for the procedure(s).
+B. Performing the procedure(s) including the introduction of any contrast media and carrying out all
+appropriate recovery room procedures including transfer of the patient to the recovery room,
+ongoing monitoring and detention during the immediate post-procedure and recovery period.
+C. Making arrangements for any related assessments or procedures, including obtaining any
+specimens from the patient and interpretation of any results where appropriate.
+D. Where indicated, making or supervising the making of arrangements for follow-up care, and post-
+procedure monitoring of the patient’s condition, including intervening, until the next insured service.
+E. Discussion with, providing any advice and information and prescribing therapy to the patient or the
+patient’s representative, whether by telephone or otherwise, on matters related to the service.
+F. Providing premises, equipment, supplies and personnel for the specific element
+a. For services not identified with prefix # for all elements.
+b. For services identified with prefix # for any aspect(s) of A, C, D and E that is(are) performed
+in a place other than the place in which the procedure is performed.
+Radiological services may be claimed in addition. See Diagnostic Radiology for the appropriate fees.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) E1 Amd 12 Draft 1

@@ -1,0 +1,162 @@
+{
+  "document_id": "cep_sp_drafting",
+  "source_url": "https://tools.cep.health/tool/sp-drafting/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "operational",
+  "extracted_at": "2025-09-24T15:33:02.584827",
+  "content_hash": "14ef9f38bedd2e06ba5f06f13fb5f8a8e860bfcf5deb66de42ca322c2f9b54e7",
+  "title": "SP drafting",
+  "tool_slug": "sp-drafting",
+  "navigation": [
+    {
+      "title": "Planning and proactive strategies",
+      "anchor": "#proactive",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Effective teamwork and workflow strategies",
+      "anchor": "#teamwork",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pneumococcal",
+      "anchor": "#Pneumococcal",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Influenza (annual seasonal vaccines, trivalent and quadrivalent preparations)",
+      "anchor": "#Influenza",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "COVID-19",
+      "anchor": "#covid",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "RSV immunization for older adults",
+      "anchor": "#RSV",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Storing and transporting vaccines",
+      "anchor": "#store&transport",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Vaccine communication",
+      "anchor": "#comms",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Equity and access",
+      "anchor": "#equity",
+      "type": "heading_h2",
+      "level": 2
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Practice management during respiratory seasonNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Planning and proactive strategies",
+          "anchor": "#proactive",
+          "level": 3
+        },
+        {
+          "heading": "Effective teamwork and workflow strategies",
+          "anchor": "#teamwork",
+          "level": 3
+        }
+      ],
+      "summary": "Planning and proactive strategiesEffective teamwork and workflow strategies This resource shares strategies for fall preparedness that may be helpful for primary care practices in Ontario. It draws on ideas, information, and resources from various types of primary care practice models across Ontario. You are encouraged to select and adapt strategies that best fit your own context. Encourage annual immunizations for all eligible patients. Use multiple channels to maximize engagement.Email camp..."
+    },
+    {
+      "heading": "Seasonal and respiratory immunizationsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pneumococcal",
+          "anchor": "#Pneumococcal",
+          "level": 3
+        },
+        {
+          "heading": "Influenza (annual seasonal vaccines, trivalent and quadrivalent preparations)",
+          "anchor": "#Influenza",
+          "level": 3
+        },
+        {
+          "heading": "COVID-19",
+          "anchor": "#covid",
+          "level": 3
+        },
+        {
+          "heading": "RSV immunization for older adults",
+          "anchor": "#RSV",
+          "level": 3
+        },
+        {
+          "heading": "Storing and transporting vaccines",
+          "anchor": "#store&transport",
+          "level": 3
+        },
+        {
+          "heading": "Vaccine communication",
+          "anchor": "#comms",
+          "level": 3
+        }
+      ],
+      "summary": "PneumococcalInfluenzaCOVID-19RSV immunization for older adultsStoring and transporting vaccinesVaccine communicationEquity and access IPD is more common in winter and springRecommended for:Infants and children (routine for those aged 6 weeks to 4 years)Adults (recommended)Older adults (routine for those aged 65 years and older)Those at increased risk of invasive pneumococcal disease (for those aged 6 weeks and older with certain medical or non-medical conditions who are at high risk for IPD) ..."
+    },
+    {
+      "heading": "Equity and access",
+      "anchor": "#equity",
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Barriers and facilitators",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Culturally competent and safe care is essential to improving vaccination uptake and addressing inequities in the health system.48,49 Access to vaccination in Canada continues to be limited by multiple intersecting barriers, including: Limited informationLimited accessFear of adverse reactions or needlesFinancial barriersLack of awareness of vaccine existenceMisconceptions that older adults do not need vaccinationMisconception on vaccine effectiveness"
+    },
+    {
+      "heading": "ReferencesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Asthma Canada. Be Winter Ready \u2013 Tips for Managing Your Asthma This Season [Internet]. 2025 [cited 2025 Jul 9]. Available from:https://asthma.ca/be-winter-ready-tips-for-managing-your-asthma-this-season/[2]CDC. Living with Asthma [Internet]. Asthma. 2024 [cited 2025 Jul 9]. Available from:https://www.cdc.gov/asthma/living-with/index.html[3]CDC. Respiratory Infections and Asthma [Internet]. Asthma. 2024 [cited 2025 Jul 9]. Available from:https://www.cdc.gov/asthma/respiratory-infections/ind..."
+    }
+  ],
+  "references": [],
+  "summary": "SP drafting. Category: Operational. Features: checklist, forms, patient resources. 4 main sections"
+}

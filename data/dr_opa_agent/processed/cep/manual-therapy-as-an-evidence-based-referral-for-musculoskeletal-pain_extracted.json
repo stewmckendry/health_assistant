@@ -1,0 +1,144 @@
+{
+  "document_id": "cep_manual_therapy_as_an_evidence_based_referral_for_musculoskeletal_pain",
+  "source_url": "https://tools.cep.health/tool/manual-therapy-as-an-evidence-based-referral-for-musculoskeletal-pain/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "pain_msk",
+  "extracted_at": "2025-09-24T15:33:05.413011",
+  "content_hash": "09641fb70bff3126f78b0fdb1d4983bedb3a5e884eec04497be51cdca5cde466",
+  "title": "Manual Therapy as an Evidence-Based Referral for Musculoskeletal Pain",
+  "tool_slug": "manual-therapy-as-an-evidence-based-referral-for-musculoskeletal-pain",
+  "last_updated": "Oswestry Disability Index",
+  "navigation": [],
+  "key_content": {
+    "assessment_tools": [
+      "PHQ-9",
+      "GAD-7"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Multimodal treatment for MSK pain",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Low back pain (LBP)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Neck pain",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Shoulder pain",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Patient education",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Exercise",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manual therapy",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Non-pharmacological treatment for MSK pain should begin with patient education and exercise. For low back, neck and shoulder pain, current highquality clinical practice guidelines (CPGs) also recommend various manual therapies tailored to the needs and abilities of the individual patient.2-4, 6-9 Low- to high-quality evidence Acute and chronic low back pain,with or without sciatica."
+    },
+    {
+      "heading": "Implement clinical best practices",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pain and function evaluation",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "UpdatedPatient Education",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "UpdatedExercise11",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Perform the same outcome evaluation measures before and after the patient has completed their course of treatment to determine effect on function and pain. Clinically meaningful improvement in function and/or pain has been defined as a 30% improvement in scores.11 The treatment is ended as soon as the agreed-upon treatment goals have been achieved, or if maximum therapeutic benefit has been reached (improvement has plateaued and is unlikely to improve further).6If the patient\u2019s function or pa..."
+    },
+    {
+      "heading": "Assess manual therapy as an option",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Relative Contraindications",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The decision to proceed with manual therapy should be based on patient preference, functional ability and absence of absolute contraindications. Patient preference may be influenced by cost, accessibility and personal factors. As part of the Ministry of Health\u2019s Low Back Pain Strategy, two provincial models of care are available to eligible patients with low back pain18: Primary Care Low Back Pain ProgramSelect inter-professional primary care teams in Ontario offer a low back pain program to ..."
+    },
+    {
+      "heading": "Evidence for manual therapy",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Evidence for Manual Therapy",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "In the evidence table below, manual therapy is defined as treatment programs involving a variable combination of mobilization, exercise therapy and/or soft tissue therapies, with or without manipulation.For clarification of low back and neck conditions, seeAppendix A. Technique definitions17,21-23 Active or passive muscle lengthening with assistance of manual therapy clinician."
+    },
+    {
+      "heading": "Refer to appropriate clinician",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Chiropractors, physiotherapists and registered massage therapists (RMT) can perform all or some of the manual therapy techniques recommended as part of a multimodal program for low back, neck and shoulder pain. However, manipulation or spinal manipulative therapy (SMT) can only be performed by chiropractors or trained physiotherapists rostered with the College of Physiotherapists to perform manipulation (rostered physiotherapists). SeeAppendix Bfor required credentials. A qualified clinician ..."
+    },
+    {
+      "heading": "Resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[i]CORE Neck Pain and Headache[ii]CORE Back Tool[iii]Chronic Non-Cancer Pain[iv]Opioid Manager[v]Opioid Tapering Template [vi]Brief Pain Inventory (BPI)[vii]Bournemouth Questionnairethere is an error in the shorter link, but regular link is working fine[viii]Neck Disability Index (NDI)page not found[ix]RAND-36 Health Surveypage not found[x]The Revised Oswestry Disability Index[xi]Roland Morris Back Disability Index (available in 47 languages)[xii]GAD-7[xiii]PHQ-9 there is an error in the shor..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Lin I, Wiles L, Waller R, Goucke R, Nagree Y, Gibberd M, et al. What does best practice care for musculoskeletal pain look like? Eleven consistent recommendations from high-quality clinical practice guidelines: systematic review. Br J Sports Med. 2019 Mar 2;bjsports-2018-099878.[2]Low back pain and sciatica in over 16s: assessment and management [Internet]. National Institute for Health and Care Excellence; 2016. Available from: https://www.nice.org.uk/guidance/ng59.[3]Wong JJ, C\u00f4t\u00e9 P, Sut..."
+    }
+  ],
+  "references": [],
+  "summary": "Manual Therapy as an Evidence-Based Referral for Musculoskeletal Pain. Category: Pain Msk. Features: calculator, forms, patient resources. Tools: PHQ-9, GAD-7. 7 main sections"
+}

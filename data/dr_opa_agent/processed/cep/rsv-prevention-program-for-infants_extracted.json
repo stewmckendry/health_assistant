@@ -1,0 +1,302 @@
+{
+  "document_id": "cep_rsv_prevention_program_for_infants",
+  "source_url": "https://tools.cep.health/tool/rsv-prevention-program-for-infants/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "infectious_disease",
+  "extracted_at": "2025-09-24T15:33:02.102337",
+  "content_hash": "ea2ea6604d5776ea676534c9311160abcca3f98a5c2ef3fd9e8d751db27254a9",
+  "title": "2025-2026 RSV Prevention Program for infants in Ontario",
+  "tool_slug": "rsv-prevention-program-for-infants",
+  "last_updated": "August 26, 2025",
+  "navigation": [
+    {
+      "title": "What is Ontario\u2019s RSV Prevention Program for 2025-2026?2",
+      "anchor": "#RSVchanges2025/2026",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Are both products (Beyfortus and Abrysvo) necessary for an infant? Which product is recommended by the Ministry of Health?",
+      "anchor": "#bothproductsrecommended",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Which infants will receive Beyfortus (Nirsevimab) in primary care and which in the hospital?1",
+      "anchor": "#infantsinPC",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Who is considered to be a high-risk infant?2",
+      "anchor": "#highriskinfant",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Should premature infants receive Beyfortus (Nirsevimab)?3",
+      "anchor": "#prematureinfants",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "How does Beyfortus (Nirsevimab) work?",
+      "anchor": "#Beyfortus",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "How effective is Beyfortus(Nirsevimab)?",
+      "anchor": "#Beyfortuseffective",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "What are the side effects of Beyfortus (Nirsevimab)?",
+      "anchor": "#side-effects-of-Beyfortus",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "When is Beyfortus (Nirsevimab) contraindicated?",
+      "anchor": "#Beyfortuscontraindicated",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Should infants who have recovered from an RSV infection receive Beyfortus (Nirsevimab) this season?",
+      "anchor": "#rsvandbeyfortus",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "What is the role of primary care in RSV prevention?2",
+      "anchor": "#roleofpc",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "How do I check if an infant has received their Beyfortus (Nirsevimab) dose?5",
+      "anchor": "#checkinfant",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "How to obtain Beyfortus(Nirsevimab)for your primary care practice",
+      "anchor": "#obtain-Beyfortus",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Storage and handling information6",
+      "anchor": "#storage-handling",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "At what dose should Beyfortus (Nirsevimab) be given?",
+      "anchor": "#whatdose",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "UpdateCan Beyfortus (Nirsevimab) be given with other immunizations?3Can it be given at other scheduled appointments?",
+      "anchor": "#otherimmunizations",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Is Beyfortus (Nirsevimab) covered by OHIP?2",
+      "anchor": "#coveredbyOHIP",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Can parents access Beyfortus (Nirsevimab) privately for children outside of the RSV Prevention Program eligibility?1",
+      "anchor": "#privateaccessforchildren",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Checklist2",
+      "anchor": "#checklist",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Patient resources",
+      "anchor": "#Patient-resources",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Talking to patients about RSV prevention",
+      "anchor": "#RSVprevent",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "RSV Prevention Program for infants in Ontario 2025-2026",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "What is Ontario\u2019s RSV Prevention Program for 2025-2026?2",
+          "anchor": "#RSVchanges2025/2026",
+          "level": 3
+        },
+        {
+          "heading": "Are both products (Beyfortus and Abrysvo) necessary for an infant? Which product is recommended by the Ministry of Health?",
+          "anchor": "#bothproductsrecommended",
+          "level": 3
+        },
+        {
+          "heading": "Which infants will receive Beyfortus (Nirsevimab) in primary care and which in the hospital?1",
+          "anchor": "#infantsinPC",
+          "level": 3
+        },
+        {
+          "heading": "Who is considered to be a high-risk infant?2",
+          "anchor": "#highriskinfant",
+          "level": 3
+        },
+        {
+          "heading": "Should premature infants receive Beyfortus (Nirsevimab)?3",
+          "anchor": "#prematureinfants",
+          "level": 3
+        }
+      ],
+      "summary": "What is Ontario\u2019s RSV Prevention Program for 2025-2026?Are both products (Beyfortus and Abrysvo) necessary for an infant? Which product is recommended by the Ministry of Health?Which infants will receive Beyfortus (Nirsevimab) in primary care and which in the hospital?Who is considered to be a high-risk infant?Should premature infants receive Beyfortus (Nirsevimab)? In addition to supporting their patients with decision-making around RSV prevention, primary care will be involved in administer..."
+    },
+    {
+      "heading": "Beyfortus (Nirsevimab) and its administration",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "How does Beyfortus (Nirsevimab) work?",
+          "anchor": "#Beyfortus",
+          "level": 3
+        },
+        {
+          "heading": "How effective is Beyfortus(Nirsevimab)?",
+          "anchor": "#Beyfortuseffective",
+          "level": 3
+        },
+        {
+          "heading": "What are the side effects of Beyfortus (Nirsevimab)?",
+          "anchor": "#side-effects-of-Beyfortus",
+          "level": 3
+        },
+        {
+          "heading": "When is Beyfortus (Nirsevimab) contraindicated?",
+          "anchor": "#Beyfortuscontraindicated",
+          "level": 3
+        },
+        {
+          "heading": "Should infants who have recovered from an RSV infection receive Beyfortus (Nirsevimab) this season?",
+          "anchor": "#rsvandbeyfortus",
+          "level": 3
+        }
+      ],
+      "summary": "How does Beyfortus (Nirsevimab) work?How effective is Beyfortus (Nirsevimab)?What are the side effects of Beyfortus (Nirsevimab)?When is Beyfortus (Nirsevimab) contraindicated?Should infants who have recovered from an RSV infection receive Beyfortus (Nirsevimab) this season? Beyfortus is a passive immunizing agent, meaning antibodies are given to a person rather than created by their immune system.3,4It is an injectable monoclonal antibody, given as an intramuscular injection, that provides i..."
+    },
+    {
+      "heading": "RSV Prevention Program and primary care",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "What is the role of primary care in RSV prevention?2",
+          "anchor": "#roleofpc",
+          "level": 3
+        },
+        {
+          "heading": "How do I check if an infant has received their Beyfortus (Nirsevimab) dose?5",
+          "anchor": "#checkinfant",
+          "level": 3
+        },
+        {
+          "heading": "How to obtain Beyfortus(Nirsevimab)for your primary care practice",
+          "anchor": "#obtain-Beyfortus",
+          "level": 3
+        },
+        {
+          "heading": "Storage and handling information6",
+          "anchor": "#storage-handling",
+          "level": 3
+        },
+        {
+          "heading": "At what dose should Beyfortus (Nirsevimab) be given?",
+          "anchor": "#whatdose",
+          "level": 3
+        },
+        {
+          "heading": "UpdateCan Beyfortus (Nirsevimab) be given with other immunizations?3Can it be given at other scheduled appointments?",
+          "anchor": "#otherimmunizations",
+          "level": 3
+        },
+        {
+          "heading": "Is Beyfortus (Nirsevimab) covered by OHIP?2",
+          "anchor": "#coveredbyOHIP",
+          "level": 3
+        },
+        {
+          "heading": "Can parents access Beyfortus (Nirsevimab) privately for children outside of the RSV Prevention Program eligibility?1",
+          "anchor": "#privateaccessforchildren",
+          "level": 3
+        },
+        {
+          "heading": "Checklist2",
+          "anchor": "#checklist",
+          "level": 3
+        },
+        {
+          "heading": "Patient resources",
+          "anchor": "#Patient-resources",
+          "level": 3
+        },
+        {
+          "heading": "Talking to patients about RSV prevention",
+          "anchor": "#RSVprevent",
+          "level": 3
+        }
+      ],
+      "summary": "What is the role of primary care in RSV prevention?How do I check if an infant has received their Beyfortus (Nirsevimab) dose?How to obtain Beyfortus (Nirsevimab) for your primary care practiceStorage and handling informationAt what dose should Beyfortus (Nirsevimab) be given?Can Beyfortus (Nirsevimab) be given with other immunizations? Can it be given at other scheduled appointments?Is Beyfortus (Nirsevimab) covered by OHIP?Can parents access Beyfortus (Nirsevimab) privately for children out..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Ontario Ministry of Health. Appendix B: Respiratory Syncytial Virus Prevention Program for All Infants, High-Risk Children and Pregnancy. 2024.[2]Expert opinion, Chief Medical Officer of Health.[3]Respiratory syncytial virus (RSV): Canadian Immunization Guide [Internet]. 2024 [cited 2024 Aug 2]. Available from:https://link.cep.health/rsv7[4]CDC. Immunity Types [Internet]. Vaccines & Immunizations. 2024 [cited 2024 Aug 22]. Available from:https://link.cep.health/rsv8[5]Ontario College of Fa..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The 2024-2025 RSV Prevention Program for infants in Ontario resourcewas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. This resource was created with information from and in collaboration with the Chief Medical Officer o..."
+    }
+  ],
+  "references": [],
+  "summary": "2025-2026 RSV Prevention Program for infants in Ontario. Category: Infectious Disease. Features: checklist, forms, patient resources. 5 main sections"
+}

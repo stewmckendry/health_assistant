@@ -1,0 +1,174 @@
+Extract all fee codes and billing information from this OHIP Schedule section.
+
+Section: Clinical Procedures associated with Diagnostic Radiological Examinations
+Section Code: E
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "section_code": "E",
+  "section_title": "Clinical Procedures associated with Diagnostic Radiological Examinations",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this section"],
+  "subcategories": ["list of subsections found"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 373 ---
+CLINICAL PROCEDURES ASSOCIATED WITH DIAGNOSTIC
+RADIOLOGICAL EXAMINATIONS
+Clinical Procedures associated with Diagnostic Radiological ExaminationsMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, Clinical Procedures Associated with Diagnostic Radiological
+Examinations include the following specific elements.
+A. Supervising the preparation of and/or preparing the patient for the procedure(s).
+B. Performing the procedure(s) including the introduction of any contrast media and carrying out all
+appropriate recovery room procedures including transfer of the patient to the recovery room,
+ongoing monitoring and detention during the immediate post-procedure and recovery period.
+C. Making arrangements for any related assessments or procedures, including obtaining any
+specimens from the patient and interpretation of any results where appropriate.
+D. Where indicated, making or supervising the making of arrangements for follow-up care, and post-
+procedure monitoring of the patient’s condition, including intervening, until the next insured service.
+E. Discussion with, providing any advice and information and prescribing therapy to the patient or the
+patient’s representative, whether by telephone or otherwise, on matters related to the service.
+F. Providing premises, equipment, supplies and personnel for the specific element
+a. For services not identified with prefix # for all elements.
+b. For services identified with prefix # for any aspect(s) of A, C, D and E that is(are) performed
+in a place other than the place in which the procedure is performed.
+Radiological services may be claimed in addition. See Diagnostic Radiology for the appropriate fees.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) E1 Amd 12 Draft 1
+
+--- PAGE 374 ---
+CLINICAL PROCEDURES ASSOCIATED WITH DIAGNOSTIC
+RADIOLOGICAL EXAMINATIONS
+ANGIOGRAPHY
+Spec Anae
+Note:
+For cardiac catheterization procedures, see the Diagnostic and Therapeutic Procedures
+section of the Schedule.
+By catheterization - abdominal, thoracic, cervical or cranial
+# J021 - insertion of catheter (including cut down, if necessary) and
+injection, if given................................................................. 121.40 6
+# J022 - selective catheterization - add to catheter insertion fee (per
+vessel, to maximum of 4) ............................................each 60.15
+Payment rules:
+J021 and J022 are not eligible for payment in addition to cardiac catheterization procedures
+(Z439 to G288).
+# J014 - selective catheterization for spinal and parathyroid
+angiography (“Selective” means manipulation of the
+catheter from the vessel of introduction into a branch
+tributary, or cardiac chamber with angiogram(s)) - add to
+catheter insertion fee ......................................................... 38.05
+# J056 - transcatheter fibrinolytic therapy ........................................ 670.55 7
+[Commentary:
+1.For Extracranial approach to include balloon catheter techniques see N107 in Neurological
+Surgical Procedures.
+2.For Carotid-cavernous fistula; extracranial approach to include balloon catheter techniques
+see N118 in Neurological Surgical Procedures.]
+# J058 Vascular stenting .................................................................... 101.55 6
+Note:
+J058 claimed same patient same day as G298 is payable at nil.
+# J066 Renal angioplasty ................................................................... 504.40 6
+Carotid angiogram
+# J031 - direct puncture.................................................................... 89.90 6
+# J025 Transluminal angioplasty including angiography (if anatomy is
+known), with or without pressure measurements - one or
+more site(s) or vessel(s)..................................................... 398.15 6
+Note:
+1.If anatomy unknown at time of procedure, claim J021 and/or J022 at 50%. For simultaneous
+bilateral punctures and angioplasties, the amount payable for the second angioplasty is
+reduced by 50%.
+2.J021 & J022 may not be claimed with J025 if anatomy is known.
+# J067 Spinal angiography for AV malformation, per vessel, maximum
+of 12 vessels per side......................................................... 44.00 6
+# J048 Percutaneous trans-hepatic catheter portal venography........ 311.05 6
+Amd 12 Draft 1 E2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 375 ---
+CLINICAL PROCEDURES ASSOCIATED WITH DIAGNOSTIC
+RADIOLOGICAL EXAMINATIONS
+ANGIOGRAPHY
+Spec Anae
+Peripheral arteriogram
+# J027 - direct puncture.................................................................... 76.55 6
+Peripheral venogram
+# J026 - direct puncture.................................................................... 70.80 6
+# J033 Splenoportogram .................................................................... 128.35 6
+# J034 Trans-lumbar aortogram ......................................................... 89.90 6
+Vertebral angiogram
+# J032 - direct puncture or by retrograde brachial injection ............. 111.50 6
+Embolization (e.g. for treatment of haemangioma or renal carcinoma)
+# J040 - first vessel, claim appropriate angiographic procedural and
+radiological fees plus.......................................................... 121.25
+# J047 - each additional vessel catheterized and occluded per
+vessel............................................................................... 56.80
+# J023 Intra-arterial infusion of drugs e.g. for control of gastrointestinal
+haemorrhage - claim appropriate angiographic procedural
+and radiological fees plus a per diem supervision fee of.... 34.00
+# J035 Pressure measurements during angiography......................... 34.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) E3 Amd 12 Draft 1
+
+--- PAGE 376 ---
+CLINICAL PROCEDURES ASSOCIATED WITH DIAGNOSTIC
+RADIOLOGICAL EXAMINATIONS
+MISCELLANEOUS PROCEDURES
+Spec Anae
+# J001 Arthrogram, tenogram or bursogram ...................................... 34.00 7
+Note:
+Biliary duct calculus manipulation etc. (see Z562 listed in Digestive System - Biliary Tract.)
+Bronchial brushing
+# J024 - unilateral............................................................................. 89.90 6
+# J044 - bilateral............................................................................... 135.00 6
+Bronchogram
+# J002 - unilateral............................................................................. 27.00 6
+# J043 - bilateral............................................................................... 40.65 6
+Bronchogram with intra-tracheal catheter
+# J003 - unilateral............................................................................. 68.00 6
+# J042 - bilateral............................................................................... 82.20 6
+Carotid or vertebral artery occlusion by detachable balloon
+# J050 - percutaneous...................................................................... 297.30
+# J053 Cavernosography ................................................................... 45.35
+# J005 Dacrocystogram...................................................................... 45.40 6
+Discogram
+# J006 - one disc .............................................................................. 105.30 7
+# J030 - each additional disc ................................................... add 54.05
+Embolization of spinal arteriovenous malformation
+# J049 - percutaneous...................................................................... 437.30 6
+# J036 Fistula or sinus injection ......................................................... 26.95
+# J068 Hydrostatic/pneumatic reduction of intussusception............... 44.25 7
+# J008 Hysterosalpingogram.............................................................. 56.70 6
+# J004 Intramammary needling for localization under mammographic
+control................................................................................. 70.35
+# J009 Laryngogram...................................................

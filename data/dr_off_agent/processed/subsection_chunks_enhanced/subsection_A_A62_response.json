@@ -1,0 +1,259 @@
+{
+  "subsection_title": "Virtual Care Services",
+  "parent_section": "A",
+  "page_ref": "A62",
+  "pages_processed": "190-199",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A814",
+      "description": "Midwife or Aboriginal Midwife-Requested Assessment (MAMRA) by Video",
+      "fee": 111.7,
+      "units": null,
+      "conditions": "Maximum one MAMRA (A814 or A813) per patient per physician per pregnancy."
+    },
+    {
+      "code": "A817",
+      "description": "Midwife or Aboriginal Midwife-Requested Special Assessment (MAMRSA) by Video",
+      "fee": 186.95,
+      "units": "50 minutes in direct patient contact",
+      "conditions": "Maximum one MAMRSA (A817 or A815) per patient per physician per pregnancy."
+    },
+    {
+      "code": "A818",
+      "description": "Midwife or Aboriginal Midwife-Requested Anaesthesia Assessment (MAMRAA) by Video",
+      "fee": 106.8,
+      "units": null,
+      "conditions": "Maximum one MAMRAA (A818 or A816) per patient per anaesthesiologist per pregnancy."
+    },
+    {
+      "code": "A010",
+      "description": "GP focused practice consultation by Video",
+      "fee": 87.9,
+      "units": null,
+      "conditions": null
+    },
+    {
+      "code": "A011",
+      "description": "GP focused practice repeat consultation by Video",
+      "fee": 45.9,
+      "units": null,
+      "conditions": null
+    },
+    {
+      "code": "A906",
+      "description": "GP focused practice limited consultation by Video",
+      "fee": 73.25,
+      "units": null,
+      "conditions": null
+    },
+    {
+      "code": "A913",
+      "description": "GP focused practice special consultation by Video",
+      "fee": 150.7,
+      "units": "50 minutes of direct contact",
+      "conditions": null
+    },
+    {
+      "code": "A914",
+      "description": "GP focused practice comprehensive consultation by Video",
+      "fee": 226.05,
+      "units": "75 minutes of direct contact",
+      "conditions": null
+    },
+    {
+      "code": "A101",
+      "description": "Limited Virtual Care by Video",
+      "fee": 20.0,
+      "units": null,
+      "conditions": null
+    },
+    {
+      "code": "A102",
+      "description": "Limited Virtual Care by Telephone",
+      "fee": 15.0,
+      "units": null,
+      "conditions": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "K300A",
+      "context": "modality indicator for Video technology used during the service",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K301A",
+      "context": "modality indicator for Telephone technology used during the service",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K007",
+      "context": "Telephone services payable at 95% of the corresponding in-person fee",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K005",
+      "context": "Telephone services payable at 95% of the corresponding in-person fee",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K197",
+      "context": "Telephone services payable at 95% of the corresponding in-person fee",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K198",
+      "context": "Telephone services payable at 95% of the corresponding in-person fee",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "E060",
+      "context": "Premium for post renal transplant assessment",
+      "description": "25% of fee for virtual service premium",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "E078",
+      "context": "Premium for chronic disease assessment",
+      "description": "50% of fee for virtual service",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "E080",
+      "context": "Premium for video first visit by primary care physician after hospital discharge",
+      "description": "$25.25",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "E088",
+      "context": "Premium for congestive heart failure",
+      "description": "50% of fee for virtual service",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "E098",
+      "context": "Premium for gastroenterology chronic disease assessment",
+      "description": "28% of fee for virtual service",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K187",
+      "context": "Premium for acute post-discharge community psychiatric care",
+      "description": "15% of fee for virtual service",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K188",
+      "context": "Premium for high-risk community psychiatric care",
+      "description": "15% of fee for virtual service",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K189",
+      "context": "Premium for video urgent community psychiatric follow-up",
+      "description": "$216.30",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "E079",
+      "context": "Premium for smoking cessation: Initial discussion with patient",
+      "description": "$13.20 for phone and $15.55 for video",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K045",
+      "context": "Management fee for diabetes management by a specialist-annual",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K046",
+      "context": "Management fee for diabetes team management-annual",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "Q040",
+      "context": "Management fee for GP/FP-Diabetes management incentive-annual",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K119",
+      "context": "Management fee for paediatric developmental assessment incentive-annual",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K481",
+      "context": "Management fee for rheumatoid arthritis management by a specialist-annual",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K682",
+      "context": "Management fee for Opioid Agonist Maintenance Program monthly management fee-intensive, per month",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K683",
+      "context": "Management fee for Opioid Agonist Maintenance Program monthly management fee-maintenance, per month",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K684",
+      "context": "Management fee for Opioid Agonist Maintenance Program-team premium, per month",
+      "description": null,
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    },
+    {
+      "code": "K030",
+      "context": "Diabetic management assessment",
+      "description": "A virtual K030 is only eligible for payment if a K030 involving a direct physical encounter has been performed in the preceding 12 months.",
+      "source_subsection": "Virtual Care Services",
+      "source_page": "A62"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

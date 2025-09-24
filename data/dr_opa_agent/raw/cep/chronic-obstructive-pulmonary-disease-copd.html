@@ -1,0 +1,1945 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Chronic obstructive pulmonary disease (COPD) |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/chronic-obstructive-pulmonary-disease-copd\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/60955" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fchronic-obstructive-pulmonary-disease-copd%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fchronic-obstructive-pulmonary-disease-copd%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-60955 wp-theme-cep-tools chronic-obstructive-pulmonary-disease-copd">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Chronic obstructive pulmonary disease (COPD)</h1>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6><a href="https://cep.health/academic-detailing/" target="_blank" rel="noopener external noreferrer" data-wpel-link="external">Sign up for academic detailing (one-on-one education) with a pharmacist on this topic</a></h6>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool is designed to support family physicians and primary care nurse practitioners in identifying and managing COPD in adult patients.</p>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="initial-assessments-and-diagnosis" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Initial assessments and diagnosis								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3>Case finding<sup>1-4</sup></h3>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Case finding for COPD in the general population has been helpful in identifying persons to screen for COPD. Screen adult patients presenting with symptoms of COPD to support early detection. </p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading"><strong>Patients are clinically suspected of having COPD if they have at least 1 respiratory symptom and 1 risk factor</strong>.</h5>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Respiratory symptoms</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Exertional breathlessness&nbsp;&nbsp;</li>
+
+
+
+<li>Chronic cough&nbsp;&nbsp;</li>
+
+
+
+<li>Regular sputum production&nbsp;</li>
+
+
+
+<li>Frequent winter ‘bronchitis’/recurrent lower respiratory tract infections&nbsp;&nbsp;</li>
+
+
+
+<li>Chronic wheeze&nbsp;</li>
+
+
+
+<li>Chest tightness&nbsp;&nbsp;</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Risk factors</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Current or past tobacco smoking&nbsp;&nbsp;</li>
+
+
+
+<li>Exposure to second-hand smoke</li>
+
+
+
+<li>Exposure to cannabis smoke&nbsp;&nbsp;&nbsp;</li>
+
+
+
+<li>Smoke from home cooking and heating fuels</li>
+
+
+
+<li>Occupational dusts, vapors, fumes, gases, and other chemicals&nbsp;&nbsp;</li>
+
+
+
+<li>Host factors (genetic, developmental abnormalities, low birthweight, prematurity, childhood respiratory infections)</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><em>Symptoms of COPD are similar to those of asthma. However, COPD is unlikely in patients younger than 40 and diagnosis is dependent on a history of exposure to risk factors.</em></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><strong>Diagnosis<sup>1-4</sup></strong></h3>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Spirometry</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>In patients who screen positive for symptoms and risk factors, use forced spirometry to establish a diagnosis of COPD.</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Spirometry measures forced vital capacity (FVC) and forced expiratory volume in one second (FEV1) before and after administering an inhaled bronchodilator.&nbsp;</li>
+
+
+
+<li>A post-bronchodilator FEV1/FVC ratio ≤ 0.7 confirms the diagnosis of COPD.&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Although spirometry should be done within three months of developing symptoms, if access to spirometry is a barrier and there is a high degree of suspicion of COPD in a patient, therapy may be started on speculation.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For a full spirometry interpretation flowchart see <a href="https://link.cep.health/e2pcopd31" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">the Lung Health Foundation &#8211; Spirometry interpretation guide</a>&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Differential diagnosis</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Rule out the following conditions before confirming a diagnosis of COPD:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Anemia&nbsp;</li>
+
+
+
+<li>Asthma*&nbsp;</li>
+
+
+
+<li>Bronchiectasis&nbsp;</li>
+
+
+
+<li>Cardiovascular disease&nbsp;</li>
+
+
+
+<li>Interstitial lung disease  &nbsp;</li>
+
+
+
+<li>Neuromuscular disease  &nbsp;</li>
+
+
+
+<li>Obesity &nbsp;</li>
+
+
+
+<li>Tuberculosis&nbsp;</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><sub><em>*Differentiating asthma from COPD in adults may be clinically difficult but is important as they differ in first-line therapies and chronic management. Asthma can present as wheezing and chest tightness that is common at night, whereas COPD can present as morning cough that produces phlegm. Additionally, patients with asthma are more likely to have allergic or atopic dermatitis (eczema).</em></sub></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3>Evaluate severity of disease<sup>1-4</sup></h3>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Once COPD has been diagnosed, evaluate the severity and magnitude of the disease by assessing the degree of disability, past medical history, and previous history of moderate and severe exacerbation.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Degree of disability</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The degree of COPD related disability depends on symptom severity, and can be measured using:</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:35%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+                    <h6>COPD assessment test (CAT)</h6>
+                          <a data-modal="0XZaVb" class="button open-modal" href="#" data-id="0XZaVb">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="0XZaVb" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>COPD assessment test (CAT)</h4>
+                                      <p><img loading="lazy" decoding="async" class="" src="https://tools.cep.health/wp-content/uploads/2024/01/CAT-5.png" alt="CAT" width="1132" height="508" /></p>
+<h6>CAT score interpretation:</h6>
+<p>&gt;30: very high<br />
+&gt;20: high<br />
+10-20: medium<br />
+&lt;10: low</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+                    <h6>Modified medical research council (mMRC) dyspnea scale</h6>
+                          <a data-modal="dElBdg" class="button open-modal" href="#" data-id="dElBdg">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="dElBdg" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Modified medical research council (mMRC) dyspnea scale</h4>
+                                      <p><img loading="lazy" decoding="async" class="aligncenter" src="https://tools.cep.health/wp-content/uploads/2024/01/mMRC-3.png" alt="mMRC" width="1063" height="396" /></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+                    <h6>Severity of airflow obstruction</h6>
+                          <a data-modal="RVNNMS" class="button open-modal" href="#" data-id="RVNNMS">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="RVNNMS" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>The severity of airflow obstruction is measured using:</h4>
+                                      <p><img loading="lazy" decoding="async" class="" src="https://tools.cep.health/wp-content/uploads/2024/01/The-severity-of-airflow-obstruction-is-measured-using.png" alt="CAT" width="1063" height="396" /></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong><strong>Medical history</strong></strong></h6>
+</div></article>
+
+
+<li>Exposure to risk factors (smoking, environmental exposures).</li>
+
+
+
+<li>Past medical history including early life experiences (e.g. asthma, allergy, sinusitis, nasal polyps, HIV, tuberculosis).  </li>
+
+
+
+<li>Family history of COPD.</li>
+
+
+
+<li>Assess and manage the following comorbidities: <article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Anemia  &nbsp;</li>
+
+
+
+<li>Anxiety/depression  &nbsp;</li>
+
+
+
+<li>Cancer  &nbsp;</li>
+
+
+
+<li>Diabetes  &nbsp;</li>
+
+
+
+<li>Heart failure/ischemic heart disease &nbsp;</li>
+
+
+
+<li>Hypertension &nbsp;</li>
+
+
+
+<li>Malnutrition &nbsp;</li>
+
+
+
+<li>Metabolic syndrome  &nbsp;</li>
+
+
+
+<li>Osteopenia  &nbsp;</li>
+
+
+
+<li>Osteoporosis  &nbsp;</li>
+
+
+
+<li>Peripheral muscular dysfunction  &nbsp;</li>
+
+
+
+<li>Sleep apnea&nbsp;</li>
+</ul>
+</div></article></li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Physical examination</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Auscultation  &nbsp;</li>
+
+
+
+<li>Signs of lung hyperinflation, accessory muscle use  &nbsp;</li>
+
+
+
+<li>Signs of generalized muscle wasting  &nbsp;</li>
+
+
+
+<li>Ankle swelling (heart failure)  &nbsp;</li>
+
+
+
+<li>Cachexia, malnutrition&nbsp;</li>
+</ul>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading"><strong>Previous history of moderate and severe exacerbation</strong></h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Exacerbation is associated with increased rates of hospitalization and disease progression and can vary greatly between patients. Identifying patients with frequent past exacerbation will help to identify the severity of disease and those susceptible to exacerbation.&nbsp;&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Classification of severity</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Mild exacerbation: new or worsening respiratory symptoms without a change in any medications&nbsp;</li>
+
+
+
+<li>Moderate exacerbation: sustained worsening of respiratory status that requires systemic corticosteroids and/or antibiotics&nbsp;&nbsp;</li>
+
+
+
+<li>Severe exacerbation: rapid deterioration of respiratory status that requires a hospital admission or ED visit&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Risk of acute exacerbation</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The best way of identifying the severity of disease and patients susceptible to exacerbation is through exacerbation history:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Low risk of exacerbation:&nbsp; ≤1 moderate exacerbation in the past year and did not require ER visit or hospitalization&nbsp;&nbsp;</li>
+
+
+
+<li>High risk of exacerbation:&nbsp; ≥ 2 moderate or ≥1 severe exacerbation in the last year, requiring hospital admission or ED visit</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Physical examination</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Auscultation  &nbsp;</li>
+
+
+
+<li>Signs of lung hyperinflation, accessory muscle use  &nbsp;</li>
+
+
+
+<li>Signs of generalized muscle wasting  &nbsp;</li>
+
+
+
+<li>Ankle swelling (heart failure)  &nbsp;</li>
+
+
+
+<li>Cachexia, malnutrition&nbsp;</li>
+</ul>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="pharmacological-management" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Pharmacological management								
+    <span class="badge new" data-last-modified="Sep 23, 2025" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><a href="https://link.cep.health/e2pcopd43" data-type="link" data-id="https://tools.cep.health/wp-content/uploads/2023/11/CEP-23-018-COPD-Medications-Table.pdf" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Click to view</a> inhaled medication options for COPD.<sup>5 </sup> </h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><strong>Selecting therapy</strong></h3>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Choose medications based on cost and clinical response balanced with side effects. Individualize the treatment regimen as the relationship between symptom severity, airflow obstruction, and exacerbation severity differs with each patient. Initial management should address reducing exposure to risk factors, managing comorbidity, alleviating dyspnea (mMRC), improving health status (CAT), reducing the risk of acute exacerbation and mortality.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="Choosing-initial-therapy"><strong>Choosing initial therapy</strong><sup>4</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Choose initial medication based on past exacerbation and severity of disease.&nbsp;</p>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2024/01/MicrosoftTeams-image-2.jpg" alt=""/></figure>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><sub>* Low AECOPD risk = ≤1 moderate AECOPD in the last year (moderate AECOPD is an event with prescribed antibiotic and/or oral corticosteroids) and did not require hospital admission/ED visit<br>** High AECOPD risk = ≥2 moderate AECOPD or ≥1 severe exacerbation in the last year<br>† A single inhaler containing a combination of medications is preferred; however, separate inhalers may be used based on patient preference. LAMA+LABA is generally preferred over ICS+LABA (except in patients with concomitant asthma) because of additional improvements in lung function and the lower rates of adverse events such as pneumonia.<br>‡ Oral agents include prophylactic macrolide/PDE-4 inhibitor/mucolytic agents.<br>§ Consider stepping down to LAMA + LABA if LAMA + LABA + ICS did not result in improved symptoms or health status or because of adverse effects of significant importance.<br>†† Short-acting bronchodilators include SABAs (short-acting beta-2 agonists) and SAMAs (short-acting antimuscarinics), and are used for as needed relief of episodic dyspnea. SAMAs should not be given as short-acting relief in those also prescribed long-acting muscarinic therapy due to the cumulative anticholinergic side effects.<br>LAMA = long-acting antimuscarinic agent<br>LABA = long-acting beta-2 agonist&nbsp;<br>ICS = inhaled corticosteroid&nbsp;</sub></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Yellow-Notice.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><span class="TrackChangeTextInsertion TrackedChange SCXW103446851 BCX0"><span class="TextRun SCXW103446851 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW103446851 BCX0">Combining bronchodilators that have different mechanisms and durations of action can increase bronchodilation with a lower side effect risk. The combination of LAMA + LABA significantly improves lung function, dyspnea, health status, and reduces exacerbation rates in comparison to monotherapy with a LAMA or LABA. There are </span><span class="NormalTextRun SCXW103446851 BCX0">numerous</span><span class="NormalTextRun SCXW103446851 BCX0"> combinations of LABA and LAMA in a single inhaler, which is preferable to using two separate inhalers</span></span></span><span class="TextRun SCXW103446851 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW103446851 BCX0">.<sup>2</sup></span></span></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" alt="" />
+        </div>
+        <h3 class="faq-title"><h3>Additional considerations affecting inhaler selection</h3></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Adherence</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><span class="TrackChangeTextInsertion TrackedChange SCXW49489385 BCX0"><span class="TextRun SCXW49489385 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW49489385 BCX0">P</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW49489385 BCX0"><span class="TextRun SCXW49489385 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW49489385 BCX0">oor adherence could lead to: </span></span></span></p>
+<ul>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="2"><span data-contrast="auto">I</span><span data-contrast="auto">nadequate symptom control </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="2"><span data-contrast="auto">H</span><span data-contrast="auto">eightened exacerbation risk,  </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="2"><span data-contrast="auto">I</span><span data-contrast="auto">ncreased healthcare usage and costs </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:259}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="2"><span data-contrast="auto">R</span><span data-contrast="auto">educed quality of life </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:259}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="2"><span data-contrast="auto">I</span><span data-contrast="auto">ncreased risk of adding inappropriate therapy</span></li>
+</ul>
+<p><span class="TextRun SCXW135180379 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW135180379 BCX0">To improve adherence:</span></span></p>
+<ul>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="2"><span data-contrast="auto">Consider minimizing the number and variety of inhalers (e.g., using combination inhalers) </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="2"><span data-contrast="auto">Check whether cognitive ability, dexterity, or inspiratory flow may be limiting a patient’s ability to use an </span><span data-contrast="auto">inhaler</span><span data-contrast="auto"> </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="8" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="8" data-aria-level="2"><span data-contrast="auto">Consider using pharmacists, nurses and/or certified respiratory educators (CRE) to counsel the </span><span data-contrast="auto">patient</span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Ability to use drug delivery devices<sup>6</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Select a drug delivery device that is appropriate for the patient’s cognitive ability, hand and lung strength, and </span><span data-contrast="none">preferences</span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">If a patient already knows how to use a particular device and requires additional therapy, consider prescribing a therapy that is delivered in the same type of device</span><span data-contrast="none">.</span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span class="TrackChangeTextInsertion TrackedChange SCXW71004563 BCX0"><span class="TextRun SCXW71004563 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW71004563 BCX0">He</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW71004563 BCX0"><span class="TextRun SCXW71004563 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW71004563 BCX0">l</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW71004563 BCX0"><span class="TextRun SCXW71004563 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW71004563 BCX0">pful questions to ask when considering delivery device</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW71004563 BCX0"><span class="TextRun SCXW71004563 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW71004563 BCX0">:</span></span></span><span class="EOP TrackedChange SCXW71004563 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:259}"> </span>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">Can the patient perform a quick, deep voluntary inhalation? </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559685&quot;:1440,&quot;335559740&quot;:454}"> </span>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">If ‘no’ &#8211; all except DPI are re viable options </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559685&quot;:1440,&quot;335559731&quot;:720,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">If ‘yes’ &#8211; all devices are options </span></li>
+</ul>
+</li>
+<li><span data-contrast="auto">Can sufficient inspiratory flow be achieved? </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559685&quot;:1440,&quot;335559740&quot;:454}"> </span>
+<ul>
+<li><span data-contrast="auto">If ‘no’ &#8211; MDIs favoured over DPIs (may need spacer)</span></li>
+<li><span data-contrast="auto">If ‘yes’ &#8211; all devices are options </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559685&quot;:1440,&quot;335559731&quot;:720,&quot;335559740&quot;:454}"> </span></li>
+</ul>
+</li>
+<li><span data-contrast="auto">Does the patient have sufficient hand-lung coordination? </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559685&quot;:1440,&quot;335559740&quot;:454}"> </span>
+<ul>
+<li><span data-contrast="auto">If ‘no’ &#8211; DPIs favoured over MDIs and SMIs  </span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559685&quot;:1440,&quot;335559731&quot;:720,&quot;335559740&quot;:454}"> </span></li>
+<li><span data-contrast="auto">If </span><span data-contrast="auto">also </span><span data-contrast="auto">‘no’ to </span><span data-contrast="auto">above </span><span data-contrast="auto">2 questions – may need to use a spacer compatible device (MDI or </span><span data-contrast="auto">SMI)</span></li>
+<li><span data-contrast="auto">I</span><span data-contrast="auto">f ‘yes’ &#8211; all devices are options</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Environmental impact<sup>7</sup></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><span data-contrast="auto"><span class="TrackChangeTextInsertion TrackedChange SCXW7733472 BCX0"><span class="TextRun SCXW7733472 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW7733472 BCX0">T</span></span></span><span class="TextRun SCXW7733472 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW7733472 BCX0">he propellants in metered-dose inhalers (MDIs) are </span></span><span class="TrackChangeTextInsertion TrackedChange SCXW7733472 BCX0"><span class="TextRun SCXW7733472 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW7733472 BCX0">potent</span></span></span><span class="TextRun SCXW7733472 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"> <span class="NormalTextRun SCXW7733472 BCX0">greenhouse gases and have a large carbon footprint contributing to climate </span><span class="NormalTextRun SCXW7733472 BCX0">change</span></span><br />
+</span></li>
+<li><span class="TextRun SCXW97279888 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW97279888 BCX0">HFC-134a and HFC-227ea propellants are replacing CFCs in MDIs and are found to be </span><span class="NormalTextRun SCXW97279888 BCX0">powerful</span><span class="NormalTextRun SCXW97279888 BCX0"> greenhouse </span><span class="NormalTextRun SCXW97279888 BCX0">gases</span></span><span class="EOP TrackedChange SCXW97279888 BCX0" data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li>Choose <span class="TextRun SCXW132237075 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW132237075 BCX0">dry powder inhalers (DPIs) and soft mist inhalers (SMIs) that are kinder to the environment and have a lower carbon footprint</span></span> <span class="TrackChangeTextInsertion TrackedChange SCXW132237075 BCX0"><span class="TextRun SCXW132237075 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW132237075 BCX0">if </span><span class="NormalTextRun SCXW132237075 BCX0">appropriate for</span><span class="NormalTextRun SCXW132237075 BCX0"> a </span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW132237075 BCX0"><span class="TextRun SCXW132237075 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW132237075 BCX0">patient</span></span></span><span class="EOP TrackedChange SCXW132237075 BCX0" data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li><span class="TrackChangeTextInsertion TrackedChange SCXW122483335 BCX0"><span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">If</span></span></span> <span class="TrackChangeTextInsertion TrackedChange SCXW122483335 BCX0"><span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">choosing </span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW122483335 BCX0"><span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">MDIs,</span></span></span> c<span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">onsider recommending the</span></span> use of a spacer to make the MDI device more effective <span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">by allowing medicine to get directly to the lungs and reduce </span></span><span class="TrackChangeTextInsertion TrackedChange SCXW122483335 BCX0"><span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">environment</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW122483335 BCX0"><span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">al </span></span></span><span class="TextRun SCXW122483335 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW122483335 BCX0">exposure</span></span></li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><span class="TextRun SCXW257349901 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW257349901 BCX0">Maintenance therapy<sup>1,4</sup></span></span></h3>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Review the patient’s risk of exacerbation, symptom burden, and comorbidities at least annually.&nbsp;</p>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <h6><strong>Goals of treatment for stable COPD</strong></h6>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><span class="TrackChangeTextInsertion TrackedChange SCXW159861952 BCX0"><span class="TextRun SCXW159861952 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW159861952 BCX0">Reduce symptoms*</span></span></span><span class="EOP TrackedChange SCXW159861952 BCX0" data-ccp-props="{}"> </span></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <ul>
+<li data-leveltext="•" data-font="Arial" data-listid="55" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Arial&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;•&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="auto">Relieve symptoms (</span><span data-contrast="auto">mMRC</span><span data-contrast="auto">)</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="•" data-font="Arial" data-listid="55" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Arial&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;•&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="auto">Improve health status (CAT)</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="•" data-font="Arial" data-listid="55" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Arial&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;•&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Improve exercise tolerance</span><span data-ccp-props="{}"> </span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p><span class="TrackChangeTextInsertion TrackedChange SCXW184870648 BCX0"><span class="TextRun SCXW184870648 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW184870648 BCX0">Reduce risk*</span></span></span><span class="EOP TrackedChange SCXW184870648 BCX0" data-ccp-props="{}"> </span></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <ul>
+<li data-leveltext="•" data-font="Arial" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Arial&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;•&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="auto">Prevent disease </span><span data-contrast="auto">progression</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="•" data-font="Arial" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Arial&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;•&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="auto">Prevent and treat </span><span data-contrast="auto">exacerbation</span><span data-ccp-props="{}"><br />
+</span></li>
+<li data-leveltext="•" data-font="Arial" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Arial&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;•&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Reduce mortality</span><span data-ccp-props="{}"> </span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+                    <footer>
+                <p><span class="TrackChangeTextInsertion TrackedChange SCXW186432129 BCX0"><span class="TextRun SCXW186432129 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW186432129 BCX0">* For patients at </span><span class="NormalTextRun SCXW186432129 BCX0">low risk</span><span class="NormalTextRun SCXW186432129 BCX0"> of exacerbation, the primary focus is on reducing symptoms and improving health status. For patients at </span><span class="NormalTextRun SCXW186432129 BCX0">high risk</span><span class="NormalTextRun SCXW186432129 BCX0"> of exacerbation, the focus is on reducing symptoms and risk.</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW186432129 BCX0"><span class="TextRun SCXW186432129 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW186432129 BCX0"><br />
+</span></span></span></p>
+            </footer>
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>If patient is not achieving goals of therapy:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Check inhaler technique and adherence&nbsp;</li>
+
+
+
+<li>Optimize non-pharmacological measures&nbsp;</li>
+
+
+
+<li>Optimize pharmacological therapy (consider increasing dose, switching inhalation device, or stepping up therapy – <a href="#Choosing-initial-therapy" data-type="internal" data-id="#Choosing-initial-therapy">see Choosing Initial Therapy</a>)&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading"><strong>Oral medications</strong><sup>1,2,4</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Oral medications may be considered (in consultation with a specialists) if a patient has maximized use of inhaler therapies (additional use details below).&nbsp;</p>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table no-header inner-border-grey blue">
+
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:10%;">
+                                            <p><span class="TextRun SCXW82470146 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW82470146 BCX0"><span class="TextRun Highlight SCXW131838260 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW131838260 BCX0">Macrolide antibiotics <span class="NormalTextRun SCXW99095952 BCX0">(</span><span class="NormalTextRun SCXW99095952 BCX0">azithromycin</span><span class="NormalTextRun SCXW99095952 BCX0">)</span><br />
+</span></span></span></span></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:50%;">
+                                            <ul>
+<li><span class="NormalTextRun SCXW128384198 BCX0"><strong>Use</strong>: consider in appropriate* patients who continue to experience <span class="TextRun SCXW118164976 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW118164976 BCX0">exacerbation</span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW118164976 BCX0"><span class="TextRun SCXW118164976 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW118164976 BCX0"> despite treatment with LAMA + LABA + ICS (triple therapy)</span></span></span><br />
+</span></li>
+<li><span class="NormalTextRun SCXW128384198 BCX0"><span class="TextRun SCXW262250218 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW262250218 BCX0"><span class="TextRun Highlight SCXW99367170 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW99367170 BCX0"><strong><em>Note</em></strong>: <span class="TextRun SCXW52910991 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW52910991 BCX0">c</span><span class="NormalTextRun SCXW52910991 BCX0">onduct regular ECG monitoring </span><span class="NormalTextRun SCXW52910991 BCX0">before and </span><span class="NormalTextRun SCXW52910991 BCX0">during</span><span class="NormalTextRun SCXW52910991 BCX0"> use to </span><span class="NormalTextRun SCXW52910991 BCX0">monitor</span><span class="NormalTextRun SCXW52910991 BCX0"> for </span><span class="NormalTextRun SCXW52910991 BCX0">QTc interval </span><span class="NormalTextRun SCXW52910991 BCX0">prolongation-related clinical events</span><span class="NormalTextRun SCXW52910991 BCX0"> (</span><span class="NormalTextRun SCXW52910991 BCX0">stop or </span></span><span class="TextRun SCXW52910991 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW52910991 BCX0">do not start azithromycin if QTc &gt;450 in males or &gt;470 in females</span></span><span class="TextRun SCXW52910991 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW52910991 BCX0">)</span></span><span class="EOP SCXW52910991 BCX0" data-ccp-props="{}"> </span><br />
+</span></span></span></span></span></li>
+</ul>
+<p><sub><span class="TrackChangeTextInsertion TrackedChange SCXW82888064 BCX0"><span class="TextRun SCXW82888064 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW82888064 BCX0">*</span><span class="NormalTextRun SCXW82888064 BCX0">Appropriate patients</span><span class="NormalTextRun SCXW82888064 BCX0"> have normal QT interval, no significant drug interactions with concomitant medications, and no evidence of active or indolent infection with atypical mycobacteria</span></span></span><span class="EOP SCXW82888064 BCX0" data-ccp-props="{}"> </span></sub></p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:10%;">
+                                            <p><span class="TextRun SCXW146912343 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW146912343 BCX0"><span class="TextRun Highlight SCXW163143277 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW163143277 BCX0">Mucolytic agents <span class="NormalTextRun SCXW23251896 BCX0">(</span><span class="NormalTextRun SCXW23251896 BCX0">n-acetylcysteine</span><span class="NormalTextRun SCXW23251896 BCX0">)</span><br />
+</span></span></span></span></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:50%;">
+                                            <ul>
+<li><span class="TextRun Highlight SCXW201451034 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW201451034 BCX0"><strong>Use</strong>: consider for patients with chronic cough productive of </span><span class="NormalTextRun SCXW201451034 BCX0">sputum and</span><span class="NormalTextRun SCXW201451034 BCX0"> continue if there is symptomatic improvement<br />
+</span></span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:10%;">
+                                            <p><span class="TextRun Highlight SCXW218537426 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW218537426 BCX0"><span class="TextRun SCXW123369575 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW123369575 BCX0">PDE-4 inhibitor (r</span><span class="NormalTextRun SCXW123369575 BCX0">oflumilast</span><span class="NormalTextRun SCXW123369575 BCX0">)</span></span><span class="EOP SCXW123369575 BCX0" data-ccp-props="{}"> </span></span></span></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:50%;">
+                                            <ul>
+<li><span data-contrast="auto"><strong>Use</strong>: consider for patients treated with <span class="TextRun SCXW260482489 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW260482489 BCX0">LAMA + LABA + ICS (triple therapy) who have</span></span> FEV1 &lt;50%, especially if they have experienced at least 1 hospitalization for an exacerbation in the past year</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:259}"><br />
+</span></li>
+<li><span data-contrast="auto"><em><strong>Note</strong></em>: monitor patients for weight loss, and neuropsychiatric effects including suicidality. Assess the potential of drug interactions as well<br />
+</span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:10%;">
+                                            <p><span class="TextRun SCXW78338096 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW78338096 BCX0"><span class="TextRun Highlight SCXW222440294 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW222440294 BCX0"><span class="TextRun SCXW76676492 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW76676492 BCX0">Systemic glucocorticoids</span><span class="NormalTextRun SCXW76676492 BCX0"> (</span><span class="NormalTextRun SCXW76676492 BCX0">prednisone</span><span class="NormalTextRun SCXW76676492 BCX0">)</span></span><span class="EOP SCXW76676492 BCX0" data-ccp-props="{}"> </span></span></span></span></span></p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:50%;">
+                                            <ul>
+<li><span class="TextRun Highlight SCXW162568717 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW162568717 BCX0"><strong>Use</strong>: should be given to patients experiencing a COPD exacerbation</span></span></li>
+<li><span class="TextRun Highlight SCXW162568717 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW162568717 BCX0"><span data-contrast="auto"><em><strong>Note</strong></em></span>: not recommended as long-term therapy</span></span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="exacerbation-management" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Exacerbation management								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Acute exacerbation of COPD (AECOPD) are defined as increased dyspnea and/or cough and sputum that worsen in less than 14 days and is often associated with increased inflammation and may be accompanied by tachycardia and/or tachypnea.<sup>1,4,8</sup></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><span class="TextRun SCXW215976791 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW215976791 BCX0">Prevent</span></span></h3>
+<p><span class="TextRun Highlight SCXW124710288 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW124710288 BCX0"><span class="TrackChangeTextInsertion TrackedChange SCXW177925675 BCX0"><span class="TextRun Highlight SCXW177925675 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW177925675 BCX0">Preventing </span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW177925675 BCX0"><span class="TextRun SCXW177925675 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW177925675 BCX0">AE</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW177925675 BCX0"><span class="TextRun Highlight SCXW177925675 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW177925675 BCX0">COPD is important because they contribute to a decline in lung function, poor health status, and increased susceptibility to repeated exacerbation which results in increased morbidity and mortality. </span></span></span></span></span></p>
+<p>To reduce AECOPD risk:</p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="52" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">Encourage smoking cessation </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="52" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Encourage </span><span data-contrast="none">measures to prevent respiratory infections, such as </span><span data-contrast="none">vaccination</span><span data-contrast="none">, </span><span data-contrast="none">handwashing, and mask wearing</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="52" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Refer for pulmonary rehabilitation </span><span data-contrast="none">(for patients with a high symptom burden and AECOPD risk)</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="52" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Optimize pharmacological therapy</span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><span class="TextRun SCXW215976791 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW215976791 BCX0">Assess</span></span></h3>
+<p><span class="TextRun SCXW215976791 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW215976791 BCX0">Watch for the warning signs of a COPD flare up including: </span></span></p>
+<ul>
+<li data-leveltext="-" data-font="Calibri" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="auto">Unusual increase in shortness of breath </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="auto">Increased cough </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Increase in the amount, thickness, or stickiness of phlegm (may also be a change in colour)</span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="56" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">Extreme fatigue</span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><span class="TextRun MacChromeBold SCXW48651957 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW48651957 BCX0">Rule out</span></span></h3>
+<p><span class="TextRun MacChromeBold SCXW48651957 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW48651957 BCX0"><span class="TextRun SCXW181649745 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW181649745 BCX0">In patients with suspected COPD exacerbation</span></span><span class="TrackChangeTextInsertion TrackedChange SCXW181649745 BCX0"><span class="TextRun SCXW181649745 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW181649745 BCX0">, r</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW181649745 BCX0"><span class="TextRun SCXW181649745 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW181649745 BCX0">ule out confounders or contributors</span></span></span><span class="TextRun SCXW181649745 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW181649745 BCX0">:</span></span></span><br />
+</span></p>
+<ul>
+<li data-leveltext="-" data-font="Calibri" data-listid="67" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="auto">Pneumonia </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="67" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="auto">Pulmonary embolism</span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="67" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="auto">Heart failure </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="67" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1">COVID-19</li>
+<li data-leveltext="-" data-font="Calibri" data-listid="67" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="8" data-aria-level="1"><span data-contrast="auto">Less commonly: pneumothorax, myocardial infarction, <span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW112502112 BCX0"><span class="TextRun SCXW112502112 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW112502112 BCX0">cardiac arrhy</span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW112502112 BCX0"><span class="TextRun SCXW112502112 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW112502112 BCX0">t</span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW112502112 BCX0"><span class="TextRun SCXW112502112 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW112502112 BCX0">hmias</span></span></span>  </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"><br />
+</span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><span class="TextRun MacChromeBold SCXW260868650 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW260868650 BCX0">Treat early<br />
+</span></span></h3>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="53" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Provide patients with a COPD action plan </span><span data-contrast="none">with self-management education </span><span data-contrast="none">so they can recognize signs of an AECOPD and seek treatment early (ideally within 48 hours), which reduces hospitalization.</span><span data-contrast="none"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="53" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Advise patients to call or visit a doctor if symptoms persist or worsen after 48 hours </span><span data-contrast="none">in spite of</span><span data-contrast="none"> patient-initiated treatment.  </span><span data-contrast="none"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+</ul>
+<p><span data-contrast="none">Choose an appropriate treatment</span><span data-contrast="none"> when managing </span><span data-contrast="none">AECOPD</span><span data-contrast="none">:</span><span data-ccp-props="{}"> </span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="54" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Continue the patient’s existing COPD therapy (which may include long-acting bronchodilators with or without ICS)</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="54" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Increase dosage of SABD (SABA preferred; </span><span data-contrast="none">add SAMA if not improving promptly on SABA</span><span data-contrast="none">)</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="54" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="none">Consider a course of </span><span data-contrast="none">systemic </span><span data-contrast="none">corticosteroids*.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="54" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="none">Add antibiotics* if the patient has increased sputum purulence with increased sputum volume and/or increased dyspnea. The choice of antibiotic should be based on local resistance patterns, comorbidities, sputum volume and purulence, and </span><span data-contrast="none">history of antibiotic use in the past 3 months.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:278}"> </span></li>
+</ul>
+<p><sub><span class="TrackChangeTextInsertion TrackedChange SCXW22355103 BCX0"><span class="TextRun SCXW22355103 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun CommentStart CommentHighlightPipeClicked CommentHighlightClicked SCXW22355103 BCX0">*Oral, or intravenous if unable to take oral medications.</span></span></span> <span class="TrackChangeTextInsertion TrackedChange SCXW22355103 BCX0"><span class="TextRun SCXW22355103 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun CommentStart CommentHighlightPipeRest CommentHighlightRest SCXW22355103 BCX0">Generally, a</span><span class="NormalTextRun CommentHighlightRest SCXW22355103 BCX0"> 5-day course is preferred.</span></span></span><span class="EOP TrackedChange CommentHighlightPipeRest SCXW22355103 BCX0" data-ccp-props="{}"> </span></sub></p>
+          </div>
+        </div>
+
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/info-icon.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6><b><span data-contrast="none"><span class="NormalTextRun SCXW186865679 BCX0">When can a patient be treated as outpatient versus when is hospital care </span><span class="NormalTextRun SCXW186865679 BCX0">required</span><span class="NormalTextRun SCXW186865679 BCX0">?</span></span></b></h6>
+<p><span data-contrast="none"><span class="TextRun SCXW234646060 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW234646060 BCX0">Potential indications for hospitalization include:</span></span></span></p>
+<ul>
+<li data-leveltext="-" data-font="Calibri" data-listid="91" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Severe symptoms such as <span class="TextRun SCXW228592991 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW228592991 BCX0">dyspnea at rest,</span></span> high respiratory rate, decreased oxygen saturation, <span class="TrackChangeTextInsertion TrackedChange SCXW228592991 BCX0"><span class="TextRun SCXW228592991 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW228592991 BCX0">drowsiness</span></span></span> <span class="TrackChangeTextInsertion TrackedChange SCXW228592991 BCX0"><span class="TextRun SCXW228592991 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW228592991 BCX0">and</span></span></span> confusion</span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="91" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Acute respiratory failure</span> <span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="91" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="none">The onset of new physical signs (peripheral edema)</span> <span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="91" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="none">Failure to respond to initial medical management</span> <span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="91" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="8" data-aria-level="1"><span data-contrast="none">Presence of serious comorbidities (heart failure, new arrhythmias, etc.)</span> <span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="91" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="9" data-aria-level="1"><span data-contrast="none">Insufficient home support</span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h3><span class="TextRun Highlight Underlined MacChromeBold SCXW94730584 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW94730584 BCX0">Follow-up after an exacerbation</span></span></h3>
+<p><span class="TextRun Highlight SCXW122953638 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW122953638 BCX0">Follow-up within two to four weeks after hospital discharge and again at three-months. </span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW265551264 BCX0"><span class="TextRun SCXW265551264 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW265551264 BCX0">Refer to pulmonary rehabilitation as soon as possible after discharge (ideally patients should start the program </span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW265551264 BCX0"><span class="TextRun SCXW265551264 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun CommentStart CommentHighlightPipeRest CommentHighlightRest TrackChangeHoverSelectHighlightRed SCXW265551264 BCX0">within one month of discharge)</span></span></span>.</span></p>
+<p><span data-contrast="none">At every follow-up, assess the following:</span><span data-contrast="none"> </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></p>
+<ul>
+<li data-leveltext="-" data-font="Calibri" data-listid="69" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">Ability to cope with their usual home environment</span><span data-contrast="none"> </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="69" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Ability to understand their treatment regimen</span><span data-contrast="none"> </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="69" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Inhaler technique</span><span data-contrast="none"> </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="-" data-font="Calibri" data-listid="69" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Calibri&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;-&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Current symptom burden via CAT or mMRC</span><span data-contrast="none"> </span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+</ul>
+<p><span data-contrast="none">At the three-month follow-up:</span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></p>
+<ul>
+<li><span data-contrast="none">Measure spirometry &#8211; a decline in FEV1 can be easily tracked by spirometry when performed at regular intervals (most commonly yearly) to identify patients who are declining</span><span data-ccp-props="{&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="patient-self-management-and-education" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Patient self-management and education								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Patients and their caregivers should receive verbal and written education to support self-management.<sup>1-3,8</sup></p>
+</div></article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><a href="https://link.cep.health/e2pcopdt1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Living with COPD </span><span data-contrast="none">booklet</span><span data-contrast="none"> (Lung Health Foundation)</span></a><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;335557856&quot;:15852767}"> </span>
+<ul>
+<li data-leveltext="o" data-font="Courier New" data-listid="38" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="2"><span data-contrast="auto">Key areas include: smoking cessation pg.8, medications pg. 10, exercise pg. 12, preventing infections/flare-ups pg.16, reducing fatigue pg. 21 and healthy eating pg. 26</span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;335557856&quot;:15852767}"> </span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="38" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="2"><span data-contrast="auto">Contact the Lung Health Foundation for printed copies</span></li>
+</ul>
+</li>
+<li><a class="Hyperlink SCXW14729787 BCX0" href="https://link.cep.health/e2pcopd36" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="TextRun Highlight Underlined SCXW14729787 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW14729787 BCX0" data-ccp-charstyle="Hyperlink">My Lung Health Coach</span><span class="NormalTextRun SCXW14729787 BCX0" data-ccp-charstyle="Hyperlink"> (Lung Health Foundation)</span></span></a><span class="EOP SCXW14729787 BCX0" data-ccp-props="{&quot;134233117&quot;:true,&quot;335557856&quot;:15852767}"> </span>
+<ul>
+<li><span class="TextRun Highlight SCXW20681591 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW20681591 BCX0">Self-management and education service delive</span><span class="NormalTextRun SCXW20681591 BCX0">red by Certified Respiratory Educators</span></span><span class="EOP SCXW20681591 BCX0" data-ccp-props="{&quot;134233117&quot;:true,&quot;335557856&quot;:15852767}"> </span></li>
+</ul>
+</li>
+<li><a class="Hyperlink SCXW81482104 BCX0" href="https://link.cep.health/e2pcopd37" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="TextRun Highlight Underlined SCXW81482104 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW81482104 BCX0" data-ccp-charstyle="Hyperlink">Inhaler Technique videos (Canadian Thor</span><span class="NormalTextRun SCXW81482104 BCX0" data-ccp-charstyle="Hyperlink">acic</span><span class="NormalTextRun SCXW81482104 BCX0" data-ccp-charstyle="Hyperlink"> Society)</span></span></a><span class="EOP SCXW81482104 BCX0" data-ccp-props="{&quot;134233117&quot;:true,&quot;335557856&quot;:15852767}"> </span>
+<ul>
+<li><span class="TextRun Highlight SCXW132626400 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="auto"><span class="NormalTextRun SCXW132626400 BCX0">Tutorial videos on how to use inhaler and puffers properly</span></span><span class="EOP SCXW132626400 BCX0" data-ccp-props="{&quot;134233117&quot;:true,&quot;335557856&quot;:15852767}"> </span></li>
+</ul>
+</li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/09/cep_icon_1_fallhistory.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6></h6>
+<h6>COPD action plan</h6>
+<p>Written plan that contains guidance for:</p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="46" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="auto">E</span><span data-contrast="auto">arly recognition of exacerbation symptoms</span><span data-ccp-props="{&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="46" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="auto">W</span><span data-contrast="auto">hen to initiate medications</span><span data-ccp-props="{&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="46" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">C</span><span data-contrast="auto">oping techniques</span><span data-ccp-props="{&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="46" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">W</span><span data-contrast="auto">hen to seek care</span><span data-ccp-props="{&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+</ul>
+<p><a class="Hyperlink SCXW31172632 BCX0" href="https://link.cep.health/e2pcopd41" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="FieldRange SCXW31172632 BCX0"><span class="TrackChangeTextInsertion TrackedChange SCXW31172632 BCX0"><span class="TextRun Underlined SCXW31172632 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW31172632 BCX0">COPD Action Plan</span></span></span> <span class="TrackChangeTextInsertion TrackedChange SCXW31172632 BCX0"><span class="TextRun Underlined SCXW31172632 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW31172632 BCX0">–</span></span></span><span class="TrackChangeTextInsertion TrackedChange SCXW31172632 BCX0"><span class="TextRun Underlined SCXW31172632 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun SCXW31172632 BCX0"> Canadian Thoracic Society</span></span></span></span></a><span class="EOP TrackedChange SCXW31172632 BCX0" data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true}"> </span></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_physical-activity.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6></h6>
+<h6>Physical activity</h6>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="50" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">Encourage patients to think about which activities they prefer and set goals related to </span><span data-contrast="none">these</span><span data-ccp-props="{&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="50" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Exercise programs </span><span data-contrast="none">may be available through local community</span><span data-contrast="none">, recreation and </span><span data-contrast="none">seniors</span> <span data-contrast="none">centres</span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="50" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Additional supports include: </span><span data-contrast="none">The Lung Health Foundation </span><a href="https://link.cep.health/e2pcopd28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">virtual Fitness for Breath classes</span></span></a><span data-contrast="none"> and </span><a href="https://link.cep.health/e2pcopd29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">exercise videos</span></span></a><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="50" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><b><span data-contrast="none">Pulmonary rehabilitation</span></b><span data-contrast="none"> should be </span><span data-contrast="none">encouraged</span><span data-contrast="none"> for patients with high symptom burden and risk of exacerbation. Pulmonary rehabilitation includes exercise training, which, combined with disease-specific education, improves exercise capacity, symptoms and quality of life among all grades of COPD severity</span><span data-ccp-props="{&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_smoking-cessation.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6></h6>
+<h6>Smoking cessation</h6>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="39" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">Advise all smokers to quit and assist them in doing </span><span data-contrast="none">so</span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="39" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Smoking cessation is the single most important intervention to slow the rate of functional decline in COPD</span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="39" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">P</span><span data-contrast="none">ipe, </span><span data-contrast="none">cigar</span><span data-contrast="none">s</span><span data-contrast="none">, e-cigarettes</span><span data-contrast="none"> and cannabis</span><span data-contrast="none">,</span><span data-contrast="none"> are also risk factors for worsening COPD</span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"><br />
+</span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="39" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="none">Smoking cessation supports may be available through local community health centres, public health, mental health </span><span data-contrast="none">and </span><span data-contrast="none">addictions services programs, family health teams, pharmacies and </span><span data-contrast="none">universities</span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true,&quot;201341983&quot;:2,&quot;335559740&quot;:454}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="39" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="none">Additional supports include: </span><a href="https://link.cep.health/e2pcopdt6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">Smoking Treatment for Ontario Patients (STOP) Program</span></span></a><span data-contrast="none">, </span><a href="https://link.cep.health/e2pcopd26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">Smokershelpline</span></span></a><span data-contrast="auto"><a href="https://link.cep.health/e2pcopd26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">.ca</a> and </span><a href="https://link.cep.health/e2pcopd27" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">Indigenous Quit Smoking and Vaping Support: Talk tobacco</span></span></a></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2024/01/MicrosoftTeams-image-1.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6></h6>
+<h6>Vaccinations</h6>
+<ul>
+<li>Influenza vaccine (OHIP covered)</li>
+<li>SARS-CoV-2 (OHIP covered)</li>
+<li><span class="TextRun Highlight SCXW184147207 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW184147207 BCX0">Pneumococcal vaccine</span></span> &#8211; consult <a href="https://link.cep.health/e2pcopd39" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">current recommendations</a></li>
+<li><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TrackedChange SCXW163178819 BCX0"><span class="TextRun Highlight SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0">RSV</span></span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0"> (OHIP covered for </span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0">high risk</span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0"> individuals </span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0">60+</span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0"> and may be </span><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0">purchased</span><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0"> for others 60</span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0">+</span></span></span><span class="TrackChangeTextInsertion TrackedChange TrackChangeHoverSelectColorRed SCXW163178819 BCX0"><span class="TextRun SCXW163178819 BCX0" lang="EN-CA" xml:lang="EN-CA" data-contrast="none"><span class="NormalTextRun TrackChangeHoverSelectHighlightRed SCXW163178819 BCX0">)</span></span></span></li>
+<li>TD (booster) &#8211; every 10 years (OHIP covered)</li>
+<li>Shingles (OHIP covered for those between 65-70 years old)</li>
+<li><span class="TrackChangeTextInsertion TrackedChange SCXW126032915 BCX0"><span class="TextRun SCXW126032915 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW126032915 BCX0">Patients can track their vaccinations using the </span></span></span><a class="Hyperlink SCXW126032915 BCX0" href="https://link.cep.health/e2pcopd32" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="FieldRange SCXW126032915 BCX0"><span class="TrackChangeTextInsertion TrackedChange SCXW126032915 BCX0"><span class="TextRun Underlined SCXW126032915 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW126032915 BCX0">Vaccination Tracker </span></span></span></span></a><span class="TrackChangeTextInsertion TrackedChange SCXW126032915 BCX0"><span class="TextRun SCXW126032915 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW126032915 BCX0">from the Canadian Lung Associatio</span></span></span>n</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="advance-care-planning" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Advance care planning								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Having good advance care planning can reduce anxiety for patients and their families and provides an opportunity to offer emotional support.<sup>8</sup>   </li>
+
+
+
+<li>Hospitalization may act as a natural trigger to initiate discussions with patients and their families on advance care planning &#8211; including advance directives and resuscitation.<sup>8</sup></li>
+</ul>
+</div></article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Patient resource</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li><span class="TextRun Highlight SCXW229332235 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW229332235 BCX0">Documentation templates, step-by-step conversation guides, and resources for providers related to advance care planning in Ontario: </span></span><a href="https://link.cep.health/t2dmnihtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="TextRun Highlight SCXW229332235 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><a href="https://link.cep.health/e2pcopdt24"><span class="NormalTextRun CommentStart CommentHighlightPipeClicked CommentHighlightClicked SCXW229332235 BCX0">Hospice</span><span class="NormalTextRun CommentHighlightClicked SCXW229332235 BCX0"> Palliative Care Ontario</span></a></span></a></li>
+<li><span class="TextRun Highlight SCXW221561851 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW221561851 BCX0">Information, tools, and resources for patients and caregivers related to advance care planning in Ontario: </span><a href="https://link.cep.health/e2pcopdt25" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="NormalTextRun CommentStart CommentHighlightPipeRest CommentHighlightRest SCXW221561851 BCX0">Speak up Ontario</span></a></span></li>
+</ul>
+          </div>
+  </div>
+
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="coordination-of-care" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Coordination of care								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Patients with COPD would benefit from a collaborative approach involving providers across a variety of expertise such as physicians, nurses, pharmacists and dieticians to facilitate the implementation of effective management approaches and support self-care to reduce the risk of re-hospitalization and exacerbation, improve quality of life, and reduce mortality. Routine follow up with patients with COPD is essential in identifying and monitoring lung function.<sup>9</sup> </p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Follow-up with a <strong>respirologist</strong> may be considered in those with severe disease, supplemental oxygen dependence and frequent severe exacerbation to consider invasive treatment options.<sup>9</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW248798768 BCX0"><span class="TextRun Highlight SCXW248798768 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW248798768 BCX0" data-ccp-parastyle="Bibliography">Global Initiative for Chronic Obstructive Lung Disease. Global strategy for the diagnosis, management, and prevention of chronic obstructive pulmonary disease [Internet]. 2023. Available from: <a href="https://link.cep.health/e2pcopd33" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">www.goldcopd.org</a></span></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW200390203 BCX0"><span class="TextRun Highlight SCXW200390203 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW200390203 BCX0" data-ccp-parastyle="Bibliography">Department of Veterans Affairs, Department of Defense. VA/DoD clinical practice guideline for the management of chronic obstructive pulmonary disease (version 3.0). 2021. </span></span></span><span class="EOP SCXW200390203 BCX0" data-ccp-props="{&quot;335559685&quot;:384,&quot;335559739&quot;:240,&quot;335559991&quot;:384,&quot;469777462&quot;:[380],&quot;469777927&quot;:[0],&quot;469777928&quot;:[1]}"> </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun Highlight SCXW195286642 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW195286642 BCX0" data-ccp-parastyle="Bibliography">National Institute for Health and Care Excellence. Chronic obstructive pulmonary disease in over 16s: diagnosis and management. 2019 Jul 26;1–77. </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW31480048 BCX0"><span class="TextRun Highlight SCXW31480048 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW31480048 BCX0" data-ccp-parastyle="Bibliography">Bourbeau J, </span><span class="NormalTextRun SCXW31480048 BCX0" data-ccp-parastyle="Bibliography">Bhutani</span><span class="NormalTextRun SCXW31480048 BCX0" data-ccp-parastyle="Bibliography"> M, Hernandez P, Aaron SD, </span><span class="NormalTextRun SCXW31480048 BCX0" data-ccp-parastyle="Bibliography">Beauchesne</span><span class="NormalTextRun SCXW31480048 BCX0" data-ccp-parastyle="Bibliography"> MF, B. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW31480048 BCX0" data-ccp-parastyle="Bibliography">Kermelly</span><span class="NormalTextRun SCXW31480048 BCX0" data-ccp-parastyle="Bibliography"> S, et al. 2023 Canadian Thoracic Society guideline on pharmacotherapy in patients with stable COPD. Canadian Journal of Respiratory, Critical Care, and Sleep Medicine. 2023 Jul 4;7(4):173–91. </span></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW198212182 BCX0" data-ccp-parastyle="Bibliography">Canadian Pharmacists Association. Compendium of pharmaceuticals and </span><span class="NormalTextRun SpellingErrorV2Themed SCXW198212182 BCX0" data-ccp-parastyle="Bibliography">specialities</span><span class="NormalTextRun SCXW198212182 BCX0" data-ccp-parastyle="Bibliography">. </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW43624758 BCX0"><span class="TextRun Highlight SCXW43624758 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">C</span></span><span class="TextRun Highlight SCXW43624758 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">ataldo</span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography"> D, Hanon S, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">Peché</span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography"> RV, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">Schuermans</span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography"> DJ, </span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">Degryse</span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography"> JM, De Wulf IA, et al. How to choose the right inhaler using a patient-centric approach? Adv </span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">Ther</span><span class="NormalTextRun SCXW43624758 BCX0" data-ccp-parastyle="Bibliography">. 2022;39(3):1149–63. </span></span></span><span class="EOP SCXW43624758 BCX0" data-ccp-props="{&quot;335559685&quot;:384,&quot;335559739&quot;:240,&quot;335559991&quot;:384,&quot;469777462&quot;:[380],&quot;469777927&quot;:[0],&quot;469777928&quot;:[1]}"> </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SpellingErrorV2Themed SCXW65300110 BCX0" data-ccp-parastyle="Bibliography">Panigone</span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography"> S, Sandri F, </span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography">Ferri</span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography"> R, Volpato A, </span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography">Nudo</span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography"> E, </span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography">Nicolini</span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography"> G. Environmental impact of inhalers for respiratory diseases: decreasing the carbon footprint while preserving patient-tailored treatment. BMJ Open Respiratory Research. 2020 Mar 1;7(1</span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW65300110 BCX0" data-ccp-parastyle="Bibliography">):e</span><span class="NormalTextRun SCXW65300110 BCX0" data-ccp-parastyle="Bibliography">000571. </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun Highlight SCXW6777550 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW6777550 BCX0" data-ccp-parastyle="Bibliography">Ontario Health. Chronic obstructive pulmonary disease: Care in the community for adults [Internet]. 2023. Available from: <a href="https://link.cep.health/e2pcopd34" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.hqontario.ca/evidence-to-improve-care/quality-standards/view-all-quality-standards/chronic-obstructive-pulmonary-disease</a></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p><a href="https://link.cep.health/expertopinionrationale" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Expert opinion</a>.</p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgement-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgement and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p><span data-contrast="none">The </span><span data-contrast="none">Chronic Obstructive Pulmonary Disease tool</span> <span data-contrast="none">was developed using the Centre for Effective Practice’s (CEP’s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. </span><span data-contrast="none">Anthony </span><span data-contrast="none">D’</span><span data-contrast="none">Urzo</span><span data-contrast="none">. End users and clinical experts were also engaged to provide feedback.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span><span data-contrast="none">Funded by the Ministry of Health, the KTinPC Initiative supports primary care clinicians with a series of clinical tools and health information resources.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> Learn more about the <a title="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" href="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">KTinPC Initiative</a>.</span></p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><i><span data-contrast="none">This Tool is a product of the CEP. Permission to use, copy, and distribute this material is for all </span></i><i><span data-contrast="none">noncommercial</span></i><i><span data-contrast="none"> and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of this Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">).</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><i><span data-contrast="none">For statistical and bibliographic purposes, please notify the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">) of any use or reprinting of the Tool. Please use the following citation when referencing the Tool: Reprinted with Permission from Centre for Effective Practice. (</span></i><i><span data-contrast="none">January 2024</span></i><i><span data-contrast="none">). </span></i><span data-contrast="none">Chronic Obstructive Pulmonary Disease</span><i><span data-contrast="none">: Ontario. Toronto: Centre for Effective Practice.</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><img decoding="async" class="alignnone size-medium wp-image-327" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":60955,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

@@ -1,0 +1,1280 @@
+{
+  "subsection_title": "Family Practice & Practice in General (00)",
+  "parent_section": "A",
+  "page_ref": "A1",
+  "pages_processed": "129-189",
+  "chunks_processed": 5,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A005",
+      "description": "Consultation",
+      "fee": 87.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A911",
+      "description": "Special family and general practice consultation",
+      "fee": 150.7,
+      "units": "minimum of seventy-five (75) minutes",
+      "conditions": "Start and stop times must be recorded in the patient\u2019s permanent medical record.",
+      "special_prefix": null
+    },
+    {
+      "code": "A912",
+      "description": "Comprehensive family and general practice consultation",
+      "fee": 226.05,
+      "units": "minimum of seventy-five (75) minutes",
+      "conditions": "Start and stop times must be recorded in the patient\u2019s permanent medical record.",
+      "special_prefix": null
+    },
+    {
+      "code": "A945",
+      "description": "Special palliative care consultation",
+      "fee": 159.2,
+      "units": "minimum of 50 minutes",
+      "conditions": "Start and stop times must be recorded in the patient\u2019s permanent medical record.",
+      "special_prefix": null
+    },
+    {
+      "code": "A905",
+      "description": "Limited consultation",
+      "fee": 73.25,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A006",
+      "description": "Repeat consultation",
+      "fee": 45.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A003",
+      "description": "General assessment",
+      "fee": 87.35,
+      "units": null,
+      "conditions": "Not eligible for payment for an assessment provided in the patient\u2019s home.",
+      "special_prefix": null
+    },
+    {
+      "code": "A004",
+      "description": "General re-assessment",
+      "fee": 38.35,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A001",
+      "description": "Minor assessment",
+      "fee": 23.75,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A007",
+      "description": "Intermediate assessment or well baby care",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A002",
+      "description": "Enhanced 18 month well baby visit",
+      "fee": 62.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A008",
+      "description": "Mini assessment",
+      "fee": 13.05,
+      "units": null,
+      "conditions": "Only payable when the WSIB component of the visit is A001.",
+      "special_prefix": null
+    },
+    {
+      "code": "K017",
+      "description": "Periodic health visit for child",
+      "fee": 45.25,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K130",
+      "description": "Periodic health visit for adolescent",
+      "fee": 77.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K131",
+      "description": "Periodic health visit for adult age 18 to 64 inclusive",
+      "fee": 56.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K132",
+      "description": "Periodic health visit for adult 65 years of age and older",
+      "fee": 80.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A888",
+      "description": "Emergency department equivalent - partial assessment",
+      "fee": 37.95,
+      "units": null,
+      "conditions": "Only fee code payable is A888.",
+      "special_prefix": null
+    },
+    {
+      "code": "A900",
+      "description": "Complex house call assessment",
+      "fee": 54.5,
+      "units": null,
+      "conditions": "Only eligible for payment for the first person seen during a single visit.",
+      "special_prefix": null
+    },
+    {
+      "code": "A902",
+      "description": "House call assessment - Pronouncement of death in the home",
+      "fee": 54.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A933",
+      "description": "On-call admission assessment",
+      "fee": 79.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A100",
+      "description": "General/Family physician emergency department assessment",
+      "fee": 76.9,
+      "units": null,
+      "conditions": "No other service rendered by the same physician to the same patient during the same visit is eligible for payment.",
+      "special_prefix": null
+    },
+    {
+      "code": "A771",
+      "description": "Certification of death",
+      "fee": 20.6,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A777",
+      "description": "Intermediate assessment - Pronouncement of death",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A772",
+      "description": "Certification of stillbirth",
+      "fee": 20.6,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "K133",
+      "description": "Periodic health visit for adults with Intellectual and Developmental Disabilities (IDD)",
+      "fee": 160.0,
+      "units": "minimum of 50 minutes total time spent in direct contact with the patient",
+      "conditions": "Limited to one per patient per 12 month period.",
+      "special_prefix": null
+    },
+    {
+      "code": "A917",
+      "description": "Sport medicine FPA",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A927",
+      "description": "Allergy FPA",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A937",
+      "description": "Pain management FPA",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A947",
+      "description": "Sleep medicine FPA",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A957",
+      "description": "Addiction medicine FPA",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A967",
+      "description": "Care of the elderly FPA",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A110",
+      "description": "Periodic oculo-visual assessment for aged 19 years and below",
+      "fee": 48.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A112",
+      "description": "Periodic oculo-visual assessment for aged 65 years and above",
+      "fee": 48.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E077",
+      "description": "Identification of patient for a major eye examination",
+      "fee": 10.25,
+      "units": null,
+      "conditions": "Limited to a maximum of one every four fiscal years by the same physician for the same patient.",
+      "special_prefix": null
+    },
+    {
+      "code": "A115",
+      "description": "Major eye examination",
+      "fee": 51.1,
+      "units": null,
+      "conditions": "Limited to one per patient per consecutive 12 month period.",
+      "special_prefix": null
+    },
+    {
+      "code": "A813",
+      "description": "Midwife or Aboriginal Midwife-Requested Assessment (MAMRA)",
+      "fee": 111.7,
+      "units": null,
+      "conditions": "Maximum one per patient per physician per pregnancy.",
+      "special_prefix": null
+    },
+    {
+      "code": "A815",
+      "description": "Midwife or Aboriginal Midwife-Requested Special Assessment (MAMRSA)",
+      "fee": 186.95,
+      "units": "minimum of 50 minutes",
+      "conditions": "Maximum one per patient per physician per pregnancy.",
+      "special_prefix": null
+    },
+    {
+      "code": "C005",
+      "description": "Consultation",
+      "fee": 87.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C911",
+      "description": "Special family and general practice consultation",
+      "fee": 150.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C912",
+      "description": "Comprehensive family and general practice consultation",
+      "fee": 226.05,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C945",
+      "description": "Special palliative care consultation",
+      "fee": 159.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C905",
+      "description": "Limited consultation",
+      "fee": 74.25,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C006",
+      "description": "Repeat consultation",
+      "fee": 45.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C003",
+      "description": "General assessment",
+      "fee": 87.35,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C004",
+      "description": "General re-assessment",
+      "fee": 38.35,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C813",
+      "description": "Midwife or Aboriginal Midwife-Requested Assessment",
+      "fee": 111.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C815",
+      "description": "Midwife or Aboriginal Midwife-Requested Special Assessment",
+      "fee": 186.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C903",
+      "description": "Pre-dental/pre-operative general assessment",
+      "fee": 65.05,
+      "units": "maximum of 2 per 12 month period",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C904",
+      "description": "Pre-dental/pre-operative assessment",
+      "fee": 33.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C933",
+      "description": "On-call admission assessment",
+      "fee": 79.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C777",
+      "description": "Intermediate assessment - Pronouncement of death",
+      "fee": 37.95,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C771",
+      "description": "Certification of death",
+      "fee": 20.6,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C772",
+      "description": "Certification of stillbirth",
+      "fee": 20.6,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C002",
+      "description": "Subsequent visit - first five weeks",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C007",
+      "description": "Subsequent visit - sixth to thirteenth week inclusive",
+      "fee": 34.1,
+      "units": "per visit, maximum 3 per patient per week",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C009",
+      "description": "Subsequent visit - after thirteenth week",
+      "fee": 34.1,
+      "units": "per visit, maximum 6 per patient per month",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C122",
+      "description": "Subsequent visit by the Most Responsible Physician (MRP) - day following the hospital admission assessment",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C123",
+      "description": "Subsequent visit by the MRP - second day following the hospital assessment",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C124",
+      "description": "Subsequent visit by the MRP - day of discharge",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C142",
+      "description": "Subsequent visit by the MRP following transfer from an Intensive Care Area - first subsequent visit",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C143",
+      "description": "Subsequent visit by the MRP following transfer from an Intensive Care Area - second subsequent visit",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C121",
+      "description": "Additional visits due to intercurrent illness",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C008",
+      "description": "Concurrent care",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C010",
+      "description": "Supportive care",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C882",
+      "description": "Palliative care",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "H007",
+      "description": "Attendance at maternal delivery for care of high risk baby(ies)",
+      "fee": 61.65,
+      "units": null,
+      "conditions": "Not eligible for payment if any other service is rendered by the same physician at the time of the delivery.",
+      "special_prefix": null
+    },
+    {
+      "code": "H001",
+      "description": "Newborn care in hospital and/or home",
+      "fee": 52.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "H002",
+      "description": "Low birth weight baby care (uncomplicated) - initial visit",
+      "fee": 34.1,
+      "units": "per baby",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "H003",
+      "description": "Low birth weight baby care (uncomplicated) - subsequent visit",
+      "fee": 16.9,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "H065",
+      "description": "Consultation in Emergency Medicine",
+      "fee": 81.25
+    },
+    {
+      "code": "H105",
+      "description": "In-patient interim admission orders",
+      "fee": 26.25
+    },
+    {
+      "code": "H102",
+      "description": "Comprehensive assessment and care",
+      "fee": 43.05
+    },
+    {
+      "code": "H103",
+      "description": "Multiple systems assessment",
+      "fee": 40.0
+    },
+    {
+      "code": "H101",
+      "description": "Minor assessment",
+      "fee": 17.1
+    },
+    {
+      "code": "H104",
+      "description": "Re-assessment",
+      "fee": 17.1
+    },
+    {
+      "code": "H132",
+      "description": "Comprehensive assessment and care",
+      "fee": 52.55
+    },
+    {
+      "code": "H133",
+      "description": "Multiple systems assessment",
+      "fee": 47.45
+    },
+    {
+      "code": "H131",
+      "description": "Minor assessment",
+      "fee": 20.95
+    },
+    {
+      "code": "H134",
+      "description": "Re-assessment",
+      "fee": 20.95
+    },
+    {
+      "code": "H152",
+      "description": "Comprehensive assessment and care",
+      "fee": 66.15
+    },
+    {
+      "code": "H153",
+      "description": "Multiple systems assessment",
+      "fee": 58.9
+    },
+    {
+      "code": "H151",
+      "description": "Minor assessment",
+      "fee": 26.35
+    },
+    {
+      "code": "H154",
+      "description": "Re-assessment",
+      "fee": 26.35
+    },
+    {
+      "code": "H122",
+      "description": "Comprehensive assessment and care",
+      "fee": 76.95
+    },
+    {
+      "code": "H123",
+      "description": "Multiple systems assessment",
+      "fee": 68.0
+    },
+    {
+      "code": "H121",
+      "description": "Minor assessment",
+      "fee": 30.7
+    },
+    {
+      "code": "H124",
+      "description": "Re-assessment",
+      "fee": 30.7
+    },
+    {
+      "code": "H112",
+      "description": "Nights (00:00h to 08:00h)",
+      "fee": 35.15
+    },
+    {
+      "code": "H113",
+      "description": "Daytime and evenings (08:00h to 24:00h) on Saturdays, Sundays or Holidays",
+      "fee": 20.35
+    },
+    {
+      "code": "H100",
+      "description": "Emergency department investigative ultrasound",
+      "fee": 19.65
+    },
+    {
+      "code": "W105",
+      "description": "Consultation",
+      "fee": 87.75
+    },
+    {
+      "code": "W911",
+      "description": "Special family and general practice consultation - subject to the same conditions as A911",
+      "fee": 150.7
+    },
+    {
+      "code": "W912",
+      "description": "Comprehensive family and general practice consultation - subject to the same conditions as A912",
+      "fee": 226.05
+    },
+    {
+      "code": "W106",
+      "description": "Repeat consultation",
+      "fee": 45.9
+    },
+    {
+      "code": "W102",
+      "description": "Type 1 Admission assessment",
+      "fee": 69.35
+    },
+    {
+      "code": "W104",
+      "description": "Type 2 Admission assessment",
+      "fee": 20.6
+    },
+    {
+      "code": "W107",
+      "description": "Type 3 Admission assessment",
+      "fee": 30.7
+    },
+    {
+      "code": "W109",
+      "description": "Periodic health visit",
+      "fee": 70.5
+    },
+    {
+      "code": "W777",
+      "description": "Intermediate assessment - Pronouncement of death - subject to the same conditions as A777",
+      "fee": 37.95
+    },
+    {
+      "code": "W771",
+      "description": "Certification of death - subject to same conditions as A771",
+      "fee": 20.6
+    },
+    {
+      "code": "W004",
+      "description": "General re-assessment of patient in nursing home (per the Nursing Homes Act)",
+      "fee": 38.35
+    },
+    {
+      "code": "W903",
+      "description": "Pre-dental/pre-operative general assessment (maximum of 2 per 12 month period)",
+      "fee": 65.05
+    },
+    {
+      "code": "W904",
+      "description": "Pre-dental/pre-operative assessment",
+      "fee": 33.7
+    },
+    {
+      "code": "W002",
+      "description": "First 4 subsequent visits per patient per month",
+      "fee": 34.1
+    },
+    {
+      "code": "W001",
+      "description": "Additional subsequent visits (maximum 4 per patient per month)",
+      "fee": 34.1
+    },
+    {
+      "code": "W882",
+      "description": "Palliative care (see General Preamble GP50)",
+      "fee": 34.1
+    },
+    {
+      "code": "W003",
+      "description": "First 2 subsequent visits per patient per month",
+      "fee": 34.1
+    },
+    {
+      "code": "W008",
+      "description": "Additional subsequent visits (maximum 2 per patient per month)",
+      "fee": 34.1
+    },
+    {
+      "code": "W872",
+      "description": "Palliative care (see General Preamble GP50)",
+      "fee": 34.1
+    },
+    {
+      "code": "W121",
+      "description": "Additional visits due to intercurrent illness (see General Preamble GP49)",
+      "fee": 34.1
+    },
+    {
+      "code": "W010",
+      "description": "Monthly management fee (per patient per month) (see General Preamble GP51 to GP52)",
+      "fee": 115.25
+    },
+    {
+      "code": "K005",
+      "description": "Individual care",
+      "fee": 70.1
+    },
+    {
+      "code": "K013",
+      "description": "First three units of K013 and K040 combined per patient per provider per 12 month period",
+      "fee": 70.1
+    },
+    {
+      "code": "K033",
+      "description": "Additional units per patient per provider per 12 month period",
+      "fee": 49.35
+    },
+    {
+      "code": "K040",
+      "description": "Group counselling - 2 or more persons where no group members have received more than 3 units of any counselling paid under codes K013 and K040 combined per provider per 12 month period",
+      "fee": 70.1
+    },
+    {
+      "code": "K041",
+      "description": "Additional units where any group member has received 3 or more units of any counselling paid under codes K013 and K040 combined per provider per 12 month period",
+      "fee": 50.2
+    },
+    {
+      "code": "K014",
+      "description": "Counselling for transplant recipients, donors or families of recipients and donors - 1 or more persons",
+      "fee": 70.1
+    },
+    {
+      "code": "K015",
+      "description": "Counselling of relatives - on behalf of catastrophically or terminally ill patient - 1 or more persons",
+      "fee": 70.1
+    },
+    {
+      "code": "K140",
+      "description": "Chronic disease shared appointment - 2 patients",
+      "fee": 35.1
+    },
+    {
+      "code": "K141",
+      "description": "Chronic disease shared appointment - 3 patients",
+      "fee": 23.35
+    },
+    {
+      "code": "K142",
+      "description": "Chronic disease shared appointment - 4 patients",
+      "fee": 17.65
+    },
+    {
+      "code": "K143",
+      "description": "Chronic disease shared appointment - 5 patients",
+      "fee": 14.55
+    },
+    {
+      "code": "K144",
+      "description": "Chronic disease shared appointment - 6 to 12 patients",
+      "fee": 12.35
+    },
+    {
+      "code": "K007",
+      "description": "Individual care - Psychotherapy",
+      "fee": 70.1
+    },
+    {
+      "code": "K019",
+      "description": "Group - 2 people - Psychotherapy",
+      "fee": 35.1
+    },
+    {
+      "code": "K020",
+      "description": "Group - 3 people - Psychotherapy",
+      "fee": 23.35
+    },
+    {
+      "code": "K012",
+      "description": "Group - 4 people - Psychotherapy",
+      "fee": 17.65
+    },
+    {
+      "code": "K024",
+      "description": "Group - 5 people - Psychotherapy",
+      "fee": 14.55
+    },
+    {
+      "code": "K025",
+      "description": "Group - 6 to 12 people - Psychotherapy",
+      "fee": 12.35
+    },
+    {
+      "code": "K010",
+      "description": "Additional units per member (maximum 6 units per patient per day) - Psychotherapy",
+      "fee": 11.2
+    },
+    {
+      "code": "K004",
+      "description": "Family - 2 or more family members in attendance at the same time",
+      "fee": 76.1
+    },
+    {
+      "code": "K006",
+      "description": "Individual care - Hypnotherapy",
+      "fee": 70.1
+    },
+    {
+      "code": "K623",
+      "description": "Application for psychiatric assessment",
+      "fee": 117.05
+    },
+    {
+      "code": "K624",
+      "description": "Certification of involuntary admission",
+      "fee": 144.15
+    },
+    {
+      "code": "K629",
+      "description": "All other re-certification(s) of involuntary admission including completion of appropriate forms",
+      "fee": 42.7
+    },
+    {
+      "code": "K887",
+      "description": "CTO initiation including completion of the CTO form and all preceding CTO services directly related to CTO initiation.",
+      "fee": 94.55
+    },
+    {
+      "code": "K888",
+      "description": "CTO supervision including all associated CTO services except those related to initiation or renewal.",
+      "fee": 94.55
+    },
+    {
+      "code": "K889",
+      "description": "CTO renewal including completion of the CTO form and all preceding CTO services directly related to CTO renewal.",
+      "fee": 94.55
+    },
+    {
+      "code": "K002",
+      "description": "Interviews with relatives or a person who is authorized to make a treatment decision on behalf of the patient in accordance with the Health Care Consent Act",
+      "fee": 70.1
+    },
+    {
+      "code": "K003",
+      "description": "Interviews with Children\u2019s Aid Society (CAS) or legal guardian on behalf of the patient in accordance with the Health Care Consent Act conducted for a purpose other than to obtain consent",
+      "fee": 70.1
+    },
+    {
+      "code": "K008",
+      "description": "Diagnostic interview and/or counselling with child and/or parent for psychological problem or learning disabilities",
+      "fee": 70.1
+    },
+    {
+      "code": "K708",
+      "description": "MCC Participant, per patient",
+      "fee": 32.45
+    },
+    {
+      "code": "K709",
+      "description": "MCC Chairperson, per patient",
+      "fee": 41.85
+    },
+    {
+      "code": "K710",
+      "description": "MCC Radiologist Participant, per patient",
+      "fee": 32.45
+    },
+    {
+      "code": "K711",
+      "description": "MCC Nuclear Medicine Participant for patients requiring PET scan, per patient",
+      "fee": 32.45
+    },
+    {
+      "code": "K121",
+      "description": "Hospital in-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K700",
+      "description": "Palliative care out-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K704",
+      "description": "Paediatric out-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K701",
+      "description": "Mental health out-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K702",
+      "description": "Bariatric out-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K703",
+      "description": "Geriatric out-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K707",
+      "description": "Chronic pain out-patient case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K124",
+      "description": "Long-term care/CCAC case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K705",
+      "description": "Long-term care \u2013 high risk patient conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K706",
+      "description": "Convalescent care program case conference",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K730",
+      "description": "Physician to physician telephone consultation - Referring physician",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K731",
+      "description": "Physician to physician telephone consultation - Consultant physician",
+      "fee": 41.85,
+      "units": "per unit"
+    },
+    {
+      "code": "K734",
+      "description": "Physician to physician telephone consultation - Referring physician (emergency department)",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K735",
+      "description": "Physician to physician telephone consultation - Consultant physician (emergency department)",
+      "fee": 41.85,
+      "units": "per unit"
+    },
+    {
+      "code": "K732",
+      "description": "CritiCall telephone consultation - Referring physician",
+      "fee": 32.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K733",
+      "description": "CritiCall telephone consultation - Consultant physician",
+      "fee": 41.85,
+      "units": "per unit"
+    },
+    {
+      "code": "E150",
+      "description": "CritiCall review of complex neurosurgical imaging",
+      "fee": 44.0,
+      "units": "per unit"
+    },
+    {
+      "code": "K738",
+      "description": "Physician to physician e-consultation \u2013 Referring physician",
+      "fee": 16.0,
+      "units": "per unit"
+    },
+    {
+      "code": "K739",
+      "description": "Physician to physician e-consultation \u2013 Consultant physician",
+      "fee": 20.5,
+      "units": "per unit"
+    },
+    {
+      "code": "K022",
+      "description": "HIV primary care",
+      "fee": 70.1,
+      "units": "per unit"
+    },
+    {
+      "code": "K037",
+      "description": "Fibromyalgia/myalgic encephalomyelitis care",
+      "fee": 70.1,
+      "units": "per unit"
+    },
+    {
+      "code": "K023",
+      "description": "Palliative care support",
+      "fee": 74.7,
+      "units": "per unit"
+    },
+    {
+      "code": "K016",
+      "description": "Genetic assessment",
+      "fee": 74.05,
+      "units": "per unit"
+    },
+    {
+      "code": "K028",
+      "description": "STD management",
+      "fee": 70.1,
+      "units": "per unit"
+    },
+    {
+      "code": "K029",
+      "description": "Insulin therapy support (ITS)",
+      "fee": 70.1,
+      "units": "per unit"
+    },
+    {
+      "code": "K030",
+      "description": "Diabetic Management Assessment",
+      "fee": 40.55,
+      "units": "per unit"
+    },
+    {
+      "code": "Q040",
+      "description": "Diabetes management incentive",
+      "fee": 60.0,
+      "units": "per unit"
+    },
+    {
+      "code": "K090",
+      "description": "Pre-operative medical management of a bariatric surgery patient in a Bariatric RATC",
+      "fee": 100.0,
+      "units": "per unit"
+    },
+    {
+      "code": "K091",
+      "description": "Post-operative monthly management of a bariatric surgery patient in a Bariatric RATC",
+      "fee": 25.0,
+      "units": "per unit"
+    },
+    {
+      "code": "E079",
+      "description": "Initial discussion with patient, to eligible services",
+      "fee": 15.55,
+      "units": "add"
+    },
+    {
+      "code": "K039",
+      "description": "Smoking cessation follow-up visit",
+      "fee": 33.45,
+      "units": "per unit"
+    },
+    {
+      "code": "K018",
+      "description": "Sexual assault examination - female",
+      "fee": 326.0,
+      "units": "per unit"
+    },
+    {
+      "code": "K021",
+      "description": "Sexual assault examination - male",
+      "fee": 257.15,
+      "units": "per unit"
+    },
+    {
+      "code": "K026",
+      "description": "Certification of Medical Eligibility for OHCAP",
+      "fee": 54.7,
+      "units": "per unit"
+    },
+    {
+      "code": "K027",
+      "description": "Certification of Medical Eligibility for OHCAP - includes only completion of Application for OHCAP - Physician\u2019s Form without an associated consultation or visit on the same day.",
+      "fee": 21.85,
+      "units": "per unit"
+    },
+    {
+      "code": "K031",
+      "description": "Completion of Form 1 - Physician report in accordance with the Mandatory Blood Testing Act",
+      "fee": 102.5,
+      "units": "per unit"
+    },
+    {
+      "code": "K032",
+      "description": "Specific neurocognitive assessment",
+      "fee": 70.1,
+      "units": "per unit"
+    },
+    {
+      "code": "K042",
+      "description": "Extended specific neurocognitive assessment",
+      "fee": 140.2,
+      "units": "per unit"
+    },
+    {
+      "code": "K070",
+      "description": "Application for home care",
+      "fee": 31.75,
+      "units": "per unit"
+    },
+    {
+      "code": "K071",
+      "description": "Acute home care supervision (first 8 weeks following admission to home care program)",
+      "fee": 21.4,
+      "units": "per unit"
+    },
+    {
+      "code": "K072",
+      "description": "Chronic home care supervision (after the 8th week following admission to the home care program)",
+      "fee": 21.4,
+      "units": "per unit"
+    },
+    {
+      "code": "K035",
+      "description": "Mandatory reporting of medical condition to the Ontario Ministry of Transportation",
+      "fee": 36.25,
+      "units": "per unit"
+    },
+    {
+      "code": "K036",
+      "description": "Completion of northern health travel grant application form",
+      "fee": 10.25,
+      "units": "per unit"
+    },
+    {
+      "code": "K038",
+      "description": "Completion of Long-Term Care health report form",
+      "fee": 45.15,
+      "units": "per unit"
+    },
+    {
+      "code": "K034",
+      "description": "Telephone reporting - specified reportable disease to a MOH",
+      "fee": 36.0,
+      "units": "per unit"
+    },
+    {
+      "code": "K399",
+      "description": "Clinical interpretation by an immunologist",
+      "fee": 29.05,
+      "units": "per unit"
+    },
+    {
+      "code": "A680",
+      "description": "Initial assessment \u2013 substance abuse",
+      "fee": 144.75,
+      "units": "per unit"
+    },
+    {
+      "code": "C680",
+      "description": "Initial assessment \u2013 substance abuse \u2013 subject to the same conditions as A680",
+      "fee": 144.75,
+      "units": "per unit"
+    },
+    {
+      "code": "K680",
+      "description": "Substance abuse - extended assessment",
+      "fee": 70.1,
+      "units": "per unit",
+      "conditions": "Time calculated based on units. Unit means \u00bd hour or major part thereof.",
+      "special_prefix": ""
+    },
+    {
+      "code": "K682",
+      "description": "Opioid Agonist Maintenance Program monthly management fee - intensive",
+      "fee": 64.0,
+      "units": "per month",
+      "conditions": "Eligible for payment to the physician most responsible for the patient\u2019s OAMP for the applicable month.",
+      "special_prefix": ""
+    },
+    {
+      "code": "K683",
+      "description": "Opioid Agonist Maintenance Program monthly management fee - maintenance",
+      "fee": 54.0,
+      "units": "per month",
+      "conditions": "Eligible for payment to the physician most responsible for the patient\u2019s OAMP for the applicable month.",
+      "special_prefix": ""
+    },
+    {
+      "code": "K684",
+      "description": "Opioid Agonist Maintenance Program - team premium",
+      "fee": 8.55,
+      "units": "add",
+      "conditions": "Eligible for payment when all required patient encounters are documented in the medical record.",
+      "special_prefix": ""
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "K039",
+      "context": "Commentary",
+      "description": "Smoking cessation",
+      "source_subsection": "Family Practice & Practice in General (00)",
+      "source_page": "A1"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

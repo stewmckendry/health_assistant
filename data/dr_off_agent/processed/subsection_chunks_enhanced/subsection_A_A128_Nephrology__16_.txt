@@ -1,0 +1,152 @@
+Subsection: Nephrology (16)
+Parent Section: A
+Page Reference: A128
+Pages: 256 to 259
+Text chunks: 1
+Total text length: 8670 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 256 ---
+CONSULTATIONS AND VISITS
+March 4, 2024 (effective April 1, 2024)
+NEPHROLOGY (16)
+GENERAL LISTINGS
+A165 Consultation............................................................................ 162.90
+A765 Consultation, patient 16 years of age and under.................... 165.50
+Comprehensive nephrology consultation
+This service is a consultation rendered by a specialist in nephrology who provides all the
+appropriate elements of a consultation and spends a minimum of seventy-five (75) minutes of
+direct contact with the patient exclusive of time spent rendering any other separately billable
+intervention to the patient.
+A160 Comprehensive nephrology consultation................................ 310.45
+Medical record requirements:
+For A160, the start and stop times must be recorded in the patient’s permanent medical record
+or the amount payable for the service will be adjusted to a lesser paying fee.
+[Commentary:
+1.A160 must satisfy all the elements of a consultation (see page GP16).
+2.The calculation of the 75 minute minimum time for comprehensive nephrology consultations
+excludes time devoted to any other service or procedure for which an amount is payable in
+addition to the consultation.]
+A865 Limited consultation................................................................ 105.25
+A166 Repeat consultation................................................................ 105.25
+A163 Medical specific assessment .................................................. 80.95
+A164 Medical specific re-assessment.............................................. 62.10
+A161 Complex medical specific re-assessment............................... 71.85
+A168 Partial assessment ................................................................. 38.55
+Post Renal Transplant Assessment Premium
+Post renal transplant assessment premium is payable in addition to the amount payable for an
+assessment.
+E060 Post Renal Transplant Assessment Premium...........Add 25%
+Payment rules:
+All of the following criteria apply:
+1.The assessment is a:
+a.medical specific assessment (A163);
+b.medical specific re-assessment (A164);
+c.complex medical specific re-assessment (A161); or
+d.partial assessment (A168);
+2.The service is rendered by a physician with a specialty designation in (16) Nephrology;
+3.The assessment is not eligible for payment when rendered in an emergency department or
+emergency department equivalent or to a hospital inpatient;
+4.The purpose of the assessment is post-transplant care; and
+5.The patient is within the first three years of having received their renal transplant.
+[Commentary:
+The post renal transplant assessment premium is not payable for assessments rendered to in-
+patients of any hospital, patients seen in a long-term care facility or patients seen in an
+emergency department or emergency department equivalent.]
+Amd 12 Draft 1 A128 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 257 ---
+CONSULTATIONS AND VISITS
+NEPHROLOGY (16)
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patients in the
+Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to
+in-patients, use General Listings and Premiums when applicable - see General Preamble
+GP65 to GP78.
+C165 Consultation............................................................................ 162.90
+C765 Consultation, patient 16 years of age and under.................... 165.50
+C160 Comprehensive nephrology consultation - subject to the same
+conditions as A160 ............................................................. 310.45
+C865 Limited consultation................................................................ 105.25
+C166 Repeat consultation................................................................ 105.25
+C163 Medical specific assessment .................................................. 80.95
+C164 Medical specific re-assessment.............................................. 62.10
+C161 Complex medical specific re-assessment............................... 71.85
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A129 Amd 12 Draft 1
+
+--- PAGE 258 ---
+CONSULTATIONS AND VISITS
+March 4, 2024 (effective April 1, 2024)
+NEPHROLOGY (16)
+Subsequent visits
+C162 - first five weeks ....................................................... per visit 34.10
+C167 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week) ............................................................... per visit 34.10
+C169 - after thirteenth week (maximum 6 per patient per month)
+.............................................................................. per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment............... 61.15
+C123 - second day following the hospital assessment ................... 61.15
+C124 - day of discharge.................................................................. 61.15
+Subsequent visits by the MRP following transfer from an Intensive Care Area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................. 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an Intensive Care Area........................................................ 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43) ................................................... per visit 34.10
+C168 Concurrent care ......................................................... per visit 34.10
+C982 Palliative care (see General Preamble GP50) ........... per visit 34.10
+NON-EMERGENCY LONG-TERM CARE IN-PATIENT SERVICES
+Non-Emergency Long-Term Care In-Patient Services includes Chronic Care Hospitals,
+Convalescent Hospitals, Nursing Homes, Homes for the Aged, designated chronic or
+convalescent care beds in hospitals and nursing homes or homes for the aged, other than
+patients in designated palliative care beds. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble
+GP65 to GP78.
+W165 Consultation ............................................................................ 162.90
+W765 Consultation, patient 16 years of age and under..................... 167.00
+W160 Comprehensive nephrology consultation - subject to the same
+conditions as A160.............................................................. 310.45
+W865 Limited consultation................................................................. 105.25
+W166 Repeat consultation................................................................. 105.25
+Admission assessment
+W862 - Type 1 ................................................................................. 69.35
+W864 - Type 2 ................................................................................. 20.60
+W867 - Type 3 ................................................................................. 30.70
+W869 Periodic health visit ................................................................. 65.05
+W164 General re-assessment of patient in nursing home (as per the
+Nursing Homes Act)*........................................................... 20.60
+Amd 12 Draft 1 A130 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 259 ---
+CONSULTATIONS AND VISITS
+NEPHROLOGY (16)
+Note:
+*May only be claimed 6 months after Periodic health visit (as per the Nursing Homes Act).
+Subsequent visits (see General Preamble GP49)
+Chronic care or convalescent hospital
+W162 - first 4 subsequent visits per patient per month....... per visit 34.10
+W161 - additional subsequent visits (maximum of 6 per patient per
+month).................................................................... per visit 34.10
+W982 - palliative care (see General Preamble GP50)........ per visit 34.10
+Nursing home or home for the aged
+W163 - first 2 subsequent visits per patient per month....... per visit 34.10
+W168 - subsequent visits per month (maximum of 3 per patient per
+month).................................................................... per visit 34.10
+W972 - palliative care (see General Preamble GP50)........ per visit 34.10
+W121 Additional visits due to intercurrent illness (see General
+Preamble GP49) .................................................... per visit 34.10
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A131 Amd 12 Draft 1

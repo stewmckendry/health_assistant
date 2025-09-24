@@ -1,0 +1,101 @@
+{
+  "document_id": "cep_managing_urinary_incontinence_in_women",
+  "source_url": "https://tools.cep.health/tool/managing-urinary-incontinence-in-women/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "womens_health",
+  "extracted_at": "2025-09-24T15:33:01.199723",
+  "content_hash": "0320de1a900867c2c5991ad6aa3abbf9b656a68d545f1cb9c045b0cdc349df13",
+  "title": "Urinary Incontinence in Women",
+  "tool_slug": "managing-urinary-incontinence-in-women",
+  "last_updated": "-2.png\" width=\"849\"/>",
+  "navigation": [],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "ScreeningNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Screening for urinary incontinence in women is important because many women live with this condition for years without bringing it to the attention of their primary care provider. The screening and diagnostic measures below will help to identify if your patient has: stress urinary incontinence (SUI)overactive bladder (OAB)mixed urinary incontinence (MUI) Identifying your patient\u2019s type of UI will help direct their treatment plan."
+    },
+    {
+      "heading": "Diagnosis",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "After taking patient\u2019s medical history and conducting a physical examination, use a UI symptom questionnaire to assess and diagnose your patient9The Questionnaire for Female Urinary Incontinence Diagnosis (QUID) is a validated tool that has the potential to identify the different types of UI in women.16"
+    },
+    {
+      "heading": "Questionnaire for Female Urinary Incontinence Diagnosis (QUID)",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Stress score = total for questions 1, 2, 3>4 is clinically significant7,21Conservative management of UISurgical management of UI Urge score = total for questions 4, 5, 6>6 is clinically significant7,21Conservative management of UIPharmacological management of UISurgical management of UI Mixed UI includes both urge and stress scores7. Treat the most bothersome symptom first in patients with MUI.16"
+    },
+    {
+      "heading": "Conservative management of UINew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Options",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "If the patient has minor UI or presents concerns of UI symptoms, the first-line treatments are conservative therapies. These treatments usually carry the least risk of harm.16 Advise your patient to incorporate the following into their daily lifestyle routine: Recommend a trial of caffeine reduction to women with overactive bladder.6Recommend eating more fiber (this can also prevent constipation which can be a cause of UI).8Provide smoking cessation strategies to patients who smoke.16Review t..."
+    },
+    {
+      "heading": "Pharmacological management of UINew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Conservative management of OAB and MUI is the first choice of treatment. Pharmacological interventions are the second choice of treatment3when conservative treatment is not successful.16 Do not start medication if there is clinical evidence of acute angle glaucoma or cognitive impairments.7 Exercise caution with older patients especially those who are at risk of, or have, cognitive dysfunction.16"
+    },
+    {
+      "heading": "Surgical management of UI",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Discuss the benefits and risks of surgical treatment options for stress urinary incontinence. Refer the patient to a specialist with an interest in incontinence (i.e. gynaecologist or urologist) to discuss all surgical options.3,6,7 For women with overactive bladder that have not responded to non-surgical management or pharmacological treatment and who wish to discuss further treatment options6 refer patient to a specialist with an interest in incontinence (i.e. gynaecologist or urologist).3, 7"
+    },
+    {
+      "heading": "Follow-up and maintenanceNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Follow-up with patients depending on the severity of their condition (e.g. at 3 months, 6 months or at a year) after starting conservative treatment options\u2022 If patients symptoms have worsened, consider using pharmacological management options Offer a face-to-face, telephone or virtual review 4 weeks after starting a new medication. Ask the patient if they are satisfied with the treatment, and:6\u2022 If the improvement is optimal, continue treatment\u2022 If there is no or suboptimal improvement, or i..."
+    },
+    {
+      "heading": "Resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[I]BMI calculator[II]International Urogynecological Association[III]Pessary fitting kit[IV]Pessary insertion[V]OTN eConsult[VI]POP-Q interactive assessment tool[VII]Canadian Continence Foundation [VIII]What can I do about urinary incontinence[IX]Your guide to better bladder control[X]National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) bladder diary[XI]National Institute for Health and Care Excellence (NICE) surgery for stress urinary incontinence patient decision aid[XII]..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Merck Manual Professional Version. Urinary Incontinence in Adults. 2018. [cited 2019 November 11]. Available fromhttps://www.merckmanuals.com/en-ca/ professional/genitourinary-disorders/voiding-disorders/urinary-incontinence-in- adults?query=urinary%20incontinence[2]UpToDate. Evaluation of women with urinary incontinence. 2018. [cited 2019 November 11].[3]Expert opinion.[4]Lexicomp. Urinary Incontinence (Patient Education \u2013 Disease and Procedure). 2020. [cited 2019 December 12].[5]BMJ Best..."
+    }
+  ],
+  "references": [],
+  "summary": "Urinary Incontinence in Women. Category: Womens Health. Features: calculator, forms, patient resources. 9 main sections"
+}

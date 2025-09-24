@@ -1,0 +1,176 @@
+{
+  "document_id": "cep_menopause",
+  "source_url": "https://tools.cep.health/tool/menopause/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "womens_health",
+  "extracted_at": "2025-09-24T15:01:31.719146",
+  "content_hash": "8e03e42905db9390f0d71395e0a82817042fdf1c10500d9537687519a1ea4def",
+  "title": "Menopause",
+  "tool_slug": "menopause",
+  "last_updated": "September 23, 2025",
+  "navigation": [
+    {
+      "title": "Screening6",
+      "anchor": "#screen",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Diagnosis8,9,10",
+      "anchor": "#dx",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Menopausal hormonal therapy(MHT) for vasomotor symptoms6,7,8,12",
+      "anchor": "#mht",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Systemic and local MHT",
+      "anchor": "#Meds",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non-hormonal therapy7,8,14",
+      "anchor": "#nonhormtx",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non- pharmacological therapy6,7",
+      "anchor": "#Nonpharm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Referrals6",
+      "anchor": "#Ref",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "AssessmentNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "The menopause journey5-7",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screening6",
+          "anchor": "#screen",
+          "level": 3
+        },
+        {
+          "heading": "Diagnosis8,9,10",
+          "anchor": "#dx",
+          "level": 3
+        }
+      ],
+      "summary": "Understanding what stage of menopause the individual is in will help influence management options.Perimenopause, also known as \u201cthe menopause transition\u201d, begins when people experience menopause-associated symptoms and/or can be accompanied by changes in their menstrual cycle. It is an important time for preventative care, as it can be associated with increased risk of cardiovascular disease and bone loss. This stage can last up to 10 years. This stage can be divided into two phases \u2013 early a..."
+    },
+    {
+      "heading": "ManagementNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pharmacological therapy",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Systemic and local MHT",
+          "anchor": "#Meds",
+          "level": 3
+        },
+        {
+          "heading": "Non-hormonal therapy7,8,14",
+          "anchor": "#nonhormtx",
+          "level": 3
+        },
+        {
+          "heading": "Non- pharmacological therapy6,7",
+          "anchor": "#Nonpharm",
+          "level": 3
+        },
+        {
+          "heading": "Referrals6",
+          "anchor": "#Ref",
+          "level": 3
+        }
+      ],
+      "summary": "Menopausal hormone therapyMedications tableNon-hormonal therapyNon-pharmacological therapyReferrals Menopausal hormone therapy (MHT) is the most effective option for managing vasomotor symptoms in women and people experiencing menopause and perimenopause. MHT can be safely initiated in individuals without contraindications who are younger than 60 years of age or less than 10 years post-menopause. Ensure routine screening (e.g. mammograms, cholesterol, lipoprotein(a), HbA1c, \u00a0relevant blood wo..."
+    },
+    {
+      "heading": "Considerations for specific populations and symptomsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Considerations for specific populations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Considerations for specific populations",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Assess breast cancer risk to help with shared decision-making treatment option. Consider using theMy CancerIQassessment.Systemic MHT is contraindicated in people with a history of breast cancer. Instead, non-hormonal and non-pharmacologic options can be used.Genitourinary symptom management for people with a history of breast cancer:Non-hormonal options \u2013 vaginal moisturizers, lubricants, pelvic floor physiotherapy, dilators or vibratorsLocal vaginal estrogen can be considered for individuals..."
+    },
+    {
+      "heading": "Follow up and monitoringNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Follow-up and monitoring7,10,18,23",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Effective management of menopause involves follow-up and ongoing monitoring to ensure treatment plans are optimized and symptoms are well-controlled.For primary care clinicians inheriting individuals who have already initiated menopausal hormone therapy (MHT) or bioidentical hormone regimens, the focus shifts from initiating therapy to continuing and monitoring it effectively. This includes:Maintaining the therapeutic conversationReassessing treatment goalsEnsuring ongoing safetyFollow-up sho..."
+    },
+    {
+      "heading": "ReferencesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Menopause Foundation of Canada. The Silence\u00a0 and the Stigma: Menopause in Canada [Internet]. 2022. Available from: https://menopausefoundationcanada.ca/wp-content/uploads/2022/10/MFC-Report_The-Silence-and-the-Stigma_Menopause-in-Canada_October-2022.pdf[2]Menopause Foundation of Canada. Menopause\u00a0 and Work in Canada [Internet]. 2023. Available from: https://menopausefoundationcanada.ca/pdf_files/Menopause_Work_Canada_2023EN.pdf[3]Crandall CJ, Mehta JM, Manson JE. Management of Menopausal S..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "TheMenopause Management toolwas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Sheila Wijayasinghe. End users and clinical experts were also engaged to provide feed..."
+    }
+  ],
+  "references": [],
+  "summary": "Menopause. Category: Womens Health. Features: forms, patient resources. 6 main sections"
+}

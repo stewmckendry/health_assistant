@@ -1,0 +1,271 @@
+{
+  "subsection_title": "Oral Cavity and Pharynx",
+  "parent_section": "S",
+  "page_ref": "S1",
+  "pages_processed": "669-671",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z506",
+      "description": "Drainage of oral abscess or haematoma",
+      "fee": 50.9,
+      "units": 6
+    },
+    {
+      "code": "Z510",
+      "description": "Drainage of pharyngeal abscess or haematoma",
+      "fee": 91.1,
+      "units": 6
+    },
+    {
+      "code": "Z524",
+      "description": "Drainage of haematoma or deep neck abscess (external approach)",
+      "fee": 271.05,
+      "units": 7
+    },
+    {
+      "code": "Z501",
+      "description": "Biopsy",
+      "fee": 35.5
+    },
+    {
+      "code": "E542",
+      "description": "when performed outside of hospital",
+      "fee": 11.55
+    },
+    {
+      "code": "Z537",
+      "description": "requiring general anaesthetic",
+      "fee": 97.05,
+      "units": 6
+    },
+    {
+      "code": "Z111",
+      "description": "simple",
+      "fee": 15.35
+    },
+    {
+      "code": "Z112",
+      "description": "complex or requiring general anaesthetic",
+      "fee": 50.9,
+      "units": 6
+    },
+    {
+      "code": "S031",
+      "description": "Palatal fenestration",
+      "fee": 197.55,
+      "units": 6
+    },
+    {
+      "code": "Z502",
+      "description": "less than 2 cms",
+      "fee": 71.0,
+      "units": 6
+    },
+    {
+      "code": "S003",
+      "description": "2 to 4 cms, inclusive",
+      "fee": 354.5,
+      "units": 6
+    },
+    {
+      "code": "S006",
+      "description": "over 4 cms",
+      "fee": 431.15,
+      "units": 6
+    },
+    {
+      "code": "S004",
+      "description": "Ranula",
+      "fee": 165.8,
+      "units": 6
+    },
+    {
+      "code": "S005",
+      "description": "Composite resection of lesion of oral cavity and/or oropharynx with partial resection of mandible",
+      "fee": 1030.7,
+      "units": 12
+    },
+    {
+      "code": "S007",
+      "description": "Extended composite resection of lesion of oral cavity and oropharynx with partial resection of mandible and resection of maxilla",
+      "fee": 1059.45,
+      "units": 12
+    },
+    {
+      "code": "S050",
+      "description": "Cryotherapy for treatment of pre-malignant or malignant lesions of oral cavity or sinuses",
+      "fee": 148.6,
+      "units": 6
+    },
+    {
+      "code": "S018",
+      "description": "partial glossectomy",
+      "fee": 197.45,
+      "units": 6
+    },
+    {
+      "code": "S020",
+      "description": "Glossoplasty",
+      "fee": 197.45,
+      "units": 6
+    },
+    {
+      "code": "S023",
+      "description": "Extraction of tooth (complete care) - single",
+      "fee": 24.9,
+      "units": 6
+    },
+    {
+      "code": "S028",
+      "description": "Dentigerous cyst",
+      "fee": 98.8,
+      "units": 6
+    },
+    {
+      "code": "S021",
+      "description": "Repair of extensive laceration",
+      "fee": "I.C"
+    },
+    {
+      "code": "S034",
+      "description": "Cleft palate repair",
+      "fee": 369.25,
+      "units": 8
+    },
+    {
+      "code": "S035",
+      "description": "Removal of sutures under general anaesthesia",
+      "fee": 41.25,
+      "units": 6
+    },
+    {
+      "code": "S032",
+      "description": "Bone graft to palate",
+      "fee": 335.65,
+      "units": 8
+    },
+    {
+      "code": "S030",
+      "description": "Closure of anterior alveolar fistula",
+      "fee": 197.45,
+      "units": 6
+    },
+    {
+      "code": "S033",
+      "description": "Closure of palate fistula",
+      "fee": 281.95,
+      "units": 8
+    },
+    {
+      "code": "S036",
+      "description": "Uvulopalatopharyngoplasty (includes tonsillectomy)",
+      "fee": 239.75,
+      "units": 6,
+      "conditions": "Insured service only for treatment of obstructive sleep apnea unresponsive to CPAP."
+    },
+    {
+      "code": "S069",
+      "description": "Pharyngoplasty",
+      "fee": 360.45,
+      "units": 8
+    },
+    {
+      "code": "S002",
+      "description": "Excision of parapharyngeal space lesions (with mobilization of parotid gland)",
+      "fee": 907.05,
+      "units": 8
+    },
+    {
+      "code": "S067",
+      "description": "Partial pharyngectomy - transthyroid or lateral",
+      "fee": 1017.2,
+      "units": 8
+    },
+    {
+      "code": "S068",
+      "description": "Pharyngo-laryngectomy",
+      "fee": 1155.45,
+      "units": 14
+    },
+    {
+      "code": "E882",
+      "description": "with hemithyroidectomy",
+      "fee": 177.4
+    },
+    {
+      "code": "E883",
+      "description": "with subtotal thyroidectomy",
+      "fee": 266.6
+    },
+    {
+      "code": "E884",
+      "description": "with total thyroidectomy",
+      "fee": 374.0
+    },
+    {
+      "code": "S058",
+      "description": "cleft lesion",
+      "fee": 306.85,
+      "units": 7
+    },
+    {
+      "code": "S059",
+      "description": "repeat procedure",
+      "fee": 435.3,
+      "units": 6
+    },
+    {
+      "code": "S061",
+      "description": "Thyroglossal duct remnant",
+      "fee": 340.15,
+      "units": 7
+    },
+    {
+      "code": "S062",
+      "description": "repeat procedure",
+      "fee": 410.4,
+      "units": 6
+    },
+    {
+      "code": "S063",
+      "description": "Tonsillectomy and may include adenoidectomy",
+      "fee": 178.35,
+      "units": 6
+    },
+    {
+      "code": "S065",
+      "description": "Adenoidectomy",
+      "fee": 101.25,
+      "units": 6
+    },
+    {
+      "code": "E839",
+      "description": "with flexible endoscope, to S063 or S065",
+      "fee": 19.2
+    },
+    {
+      "code": "S066",
+      "description": "Secondary suture or cauterization following tonsillectomy and/or adenoidectomy when haemorrhage occurs after initial procedure",
+      "fee": 121.05,
+      "units": 6
+    },
+    {
+      "code": "S024",
+      "description": "Excision of torus palatinus",
+      "fee": 197.45,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

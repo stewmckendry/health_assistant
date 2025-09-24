@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_opioid_tapering_template",
+  "slug": "opioid-tapering-template",
+  "name": "Opioid Tapering Template",
+  "category": "substance_use",
+  "url": "https://tools.cep.health/tool/opioid-tapering-template/",
+  "content_hash": "ebc8414f75bb7667114eebe3c9bcc642be7da6ece5d1612d35a59dd2073a8058",
+  "crawled_at": "2025-09-24T15:32:37.210119"
+}
