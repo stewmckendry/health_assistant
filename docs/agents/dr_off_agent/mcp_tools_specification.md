@@ -416,9 +416,9 @@ ODB (Ontario Drug Benefit) formulary lookup with coverage determination, interch
     },
     "citations": [                     # From vector search
         {
-            "source": str,             # Usually "odb_formulary"
-            "loc": str,                # Section reference
-            "page": int                # Optional
+            "source": str,             # e.g., "odb_drugs_batch_7000"
+            "loc": str,                # DIN-based reference: "DIN: 02443937 - Jardiance (EMPAGLIFLOZIN)"
+            "page": int                # null for drug embeddings (XML source)
         }
     ],
     "conflicts": [                     # SQL/vector disagreements
@@ -428,6 +428,9 @@ ODB (Ontario Drug Benefit) formulary lookup with coverage determination, interch
             "vector_value": Any,
             "resolution": str          # How resolved
         }
+    ],
+    "context": [                       # NEW: Relevant text from vector embeddings
+        str                            # Text snippets from semantic search
     ]
 }
 ```
@@ -437,8 +440,31 @@ ODB (Ontario Drug Benefit) formulary lookup with coverage determination, interch
 - `price_comparison`: Detailed brand vs generic pricing breakdown
 - `needs_more_info`: True if insufficient data to determine coverage
 
+### Recent Enhancements (2025-01-25)
+
+#### Context Content from Vector Embeddings
+- **Problem**: Vector search results only provided citations without actual content
+- **Solution**: Added `context` field with relevant text snippets from embeddings
+- **Benefits**: Provides 1500-4000 chars of clinical context for LLM decision-making
+
+#### Intelligent Context Scaling
+- **Hybrid searches**: 3 snippets × 500 chars = ~1500 chars context  
+- **Vector-only searches**: 5 snippets × 800 chars = ~4000 chars context
+- **Drug embeddings**: Full structured text (not truncated)
+- **Policy chunks**: Truncated with "..." indicator
+
+#### Enhanced Citations
+- **Drug-specific format**: `"DIN: 02443937 - Jardiance (EMPAGLIFLOZIN)"`
+- **Explains null pages**: Drug embeddings from XML don't have page numbers
+- **Meaningful references**: Uses DIN + drug names instead of generic locations
+
+#### Natural Language Support  
+- **Drug extraction**: `odb_drug_extractor.py` with pattern matching + GPT-3.5 fallback
+- **Query examples**: "Is Ozempic covered for diabetes?" → extracts "Ozempic"
+- **Preserves context**: Full query for vector, extracted drug for SQL
+
 ### Algorithm
-**[IMPLEMENTED BY SESSION 2C]**
+**[UPDATED 2025-01-25: Enhanced context + natural language support]**
 
 1. **Drug Resolution**:
    - Accepts both simple (existing model) and enhanced request formats
@@ -446,16 +472,23 @@ ODB (Ontario Drug Benefit) formulary lookup with coverage determination, interch
    - Handles DIN, ingredient, brand name searches
    - Extracts drug from `request.drug`, `request.ingredient`, or `request.din`
 
-2. **Parallel Retrieval**:
+2. **Parallel Retrieval + Context Collection**:
    - SQL: `sql_client.query_odb_drugs()` queries:
      - `odb_drugs` table (8,401 records) for drug data
      - Filters by DIN, ingredient, or brand name
      - Retrieves interchangeable group information
      - Gets lowest_cost flag and pricing
    - Vector: `vector_client.search_odb()` searches:
-     - `odb_documents` collection (49 chunks)
+     - `odb_documents` collection (10,815 drug-specific embeddings + 49 PDF chunks)
+     - Uses OpenAI `text-embedding-3-small` model for semantic matching
+     - Each drug embedded with: DIN, generic/brand names, strength, therapeutic class, price, coverage info
+     - Metadata preserved across multi-chunk drugs for context retention
      - Includes condition context for LU evaluation
-     - Searches for documentation requirements
+     - **Context Processing**: Collects text snippets based on search type:
+       - **Drug embeddings**: Full structured text (not truncated)
+       - **Policy documents**: 500-800 chars depending on vector-only vs hybrid
+       - **Vector-only searches**: Up to 5 snippets for comprehensive context
+       - **Hybrid searches**: Up to 3 snippets (SQL provides structure)
    - Both run simultaneously with `asyncio.gather()` with exception handling
    - Database: `data/ohip.db` (Consolidated database with all tables)
    - SQL timeout: 500ms, Vector timeout: 1000ms
@@ -690,7 +723,9 @@ Each tool implements resilient error handling:
 ### ChromaDB Collections (`data/dr_off_agent/processed/dr_off/chroma/`)
 - `ohip_chunks`: 36 chunks (Health Insurance Act + Schedule)
 - `adp_v1`: 199 chunks (ADP manuals - Mobility & Communication Aids)
-- `odb_documents`: 49 chunks (ODB formulary policy)
+- `odb_documents`: 10,864 chunks total
+  - 10,815 drug-specific embeddings (from XML formulary data)
+  - 49 PDF chunks (ODB policy/procedure document)
 
 ---
 

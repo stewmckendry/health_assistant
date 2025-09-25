@@ -178,6 +178,9 @@ class ODBGetResponse(BaseModel):
     conflicts: List[Conflict] = Field(
         default_factory=list, description="Conflicts if any"
     )
+    context: Optional[List[str]] = Field(
+        None, description="Relevant text snippets from vector search"
+    )
 
 
 class SourcePassage(BaseModel):

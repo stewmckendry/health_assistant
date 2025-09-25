@@ -18,6 +18,7 @@ from ..models.response import (
 )
 from ..retrieval import SQLClient, VectorClient
 from ..utils import ConfidenceScorer, ConflictDetector
+from .odb_drug_extractor import get_drug_extractor
 
 logger = logging.getLogger(__name__)
 
@@ -51,6 +52,7 @@ class ODBTool:
         )
         self.confidence_scorer = ConfidenceScorer()
         self.conflict_detector = ConflictDetector()
+        self.drug_extractor = get_drug_extractor()
         
         logger.info("ODB tool initialized with dual-path retrieval")
     
@@ -88,10 +90,14 @@ class ODBTool:
             provenance.append("vector")
         else:
             logger.warning(f"Vector search failed: {vector_result}")
+            # Log more details about the error
+            import traceback
+            if hasattr(vector_result, '__traceback__'):
+                logger.error(f"Vector search traceback: {''.join(traceback.format_tb(vector_result.__traceback__))}")
             vector_result = []
         
         # Merge results
-        coverage, interchangeable, lowest_cost, citations, conflicts = await self._merge_results(
+        coverage, interchangeable, lowest_cost, citations, conflicts, context = await self._merge_results(
             sql_result if not isinstance(sql_result, Exception) else [],
             vector_result if not isinstance(vector_result, Exception) else [],
             request
@@ -127,7 +133,8 @@ class ODBTool:
             interchangeable=interchangeable,
             lowest_cost=lowest_cost,
             citations=citations,
-            conflicts=conflicts
+            conflicts=conflicts,
+            context=context if context else None
         )
     
     async def _sql_query(self, request: ODBGetRequest) -> List[Dict[str, Any]]:
@@ -143,7 +150,18 @@ class ODBTool:
         try:
             # Extract search parameters from the enhanced request
             din = getattr(request, 'din', None)
-            ingredient = getattr(request, 'ingredient', None) or getattr(request, 'drug', None)
+            raw_drug = getattr(request, 'drug', None)
+            ingredient = getattr(request, 'ingredient', None)
+            
+            # If we have a drug query that looks like natural language, extract the drug name
+            if raw_drug and not ingredient:
+                extracted_drug, condition = self.drug_extractor.extract_drug_info(raw_drug)
+                if extracted_drug:
+                    ingredient = extracted_drug
+                    logger.info(f"Extracted drug '{ingredient}' from query '{raw_drug}'")
+                else:
+                    # Fall back to using the raw query
+                    ingredient = raw_drug
             
             # Handle drug class searches
             if hasattr(request, 'drug_class') and request.drug_class:
@@ -240,7 +258,7 @@ class ODBTool:
         vector_results: List[Dict[str, Any]],
         request: ODBGetRequest
     ) -> Tuple[Optional[DrugCoverage], List[InterchangeableDrug], 
-               Optional[LowestCostDrug], List[Citation], List[Conflict]]:
+               Optional[LowestCostDrug], List[Citation], List[Conflict], List[str]]:
         """
         Merge SQL and vector results for comprehensive drug information.
         
@@ -250,7 +268,7 @@ class ODBTool:
             request: Original request for context
             
         Returns:
-            Tuple of (coverage, interchangeable, lowest_cost, citations, conflicts)
+            Tuple of (coverage, interchangeable, lowest_cost, citations, conflicts, context)
         """
         coverage = None
         interchangeable = []
@@ -270,23 +288,23 @@ class ODBTool:
                 coverage = DrugCoverage(
                     covered=True,  # If in database, it's covered
                     din=primary_drug.get('din', ''),
-                    brand_name=primary_drug.get('brand', ''),
-                    generic_name=primary_drug.get('ingredient', ''),
+                    brand_name=primary_drug.get('name', ''),  # SQL returns 'name' not 'brand'
+                    generic_name=primary_drug.get('generic_name', ''),  # SQL returns 'generic_name' not 'ingredient'
                     strength=primary_drug.get('strength', ''),
                     lu_required=lu_info.get('required', False),
                     lu_criteria=lu_info.get('criteria')
                 )
             
             # Find interchangeable drugs
-            group_id = primary_drug.get('group_id') if primary_drug else None
+            group_id = primary_drug.get('interchangeable_group_id') if primary_drug else None  # Fixed field name
             if group_id:
                 for drug in sql_results:
-                    if drug.get('group_id') == group_id:
+                    if drug.get('interchangeable_group_id') == group_id:  # Fixed field name
                         interchangeable.append(InterchangeableDrug(
                             din=drug.get('din', ''),
-                            brand=drug.get('brand', ''),
-                            price=drug.get('price', 0.0),
-                            lowest_cost=drug.get('lowest_cost', False)
+                            brand=drug.get('name', ''),  # SQL returns 'name' not 'brand'
+                            price=drug.get('individual_price', 0.0),  # SQL returns 'individual_price' not 'price'
+                            lowest_cost=drug.get('is_lowest_cost', False)  # SQL returns 'is_lowest_cost' not 'lowest_cost'
                         ))
             
             # Find lowest cost option
@@ -294,7 +312,7 @@ class ODBTool:
                 lowest = min(interchangeable, key=lambda x: x.price)
                 savings = 0.0
                 if primary_drug:
-                    primary_price = primary_drug.get('price', 0.0)
+                    primary_price = primary_drug.get('individual_price', 0.0)  # Fixed field name
                     savings = primary_price - lowest.price
                 
                 lowest_cost = LowestCostDrug(
@@ -305,14 +323,36 @@ class ODBTool:
                 )
         
         # Process vector results for policy context and citations
+        context_snippets = []
+        is_vector_only = len(sql_results) == 0  # Detect vector-only search
+        
         for vector_item in vector_results:
             metadata = vector_item.get('metadata', {})
             text = vector_item.get('text', '')
             
-            # Create citation
+            # Collect context snippets - provide more context for vector-only searches
+            if text:
+                # For drug embeddings, provide full text (they're structured and concise)
+                # For policy documents, provide more context if it's a vector-only search
+                if metadata.get('din'):  # Drug embedding
+                    context_snippets.append(text)  # Full drug info
+                elif len(context_snippets) < (5 if is_vector_only else 3):  # More context for vector-only
+                    # For policy docs, provide more context for clinical questions
+                    # Vector-only searches get longer snippets since they're the primary info source
+                    max_chars = 800 if is_vector_only else 500
+                    snippet = text[:max_chars] + "..." if len(text) > max_chars else text
+                    context_snippets.append(snippet)
+            
+            # Create citation with better metadata handling
+            # For drug embeddings, create a meaningful location string
+            if metadata.get('din'):
+                loc = f"DIN: {metadata.get('din')} - {metadata.get('brand_name', '')} ({metadata.get('generic_name', '')})"
+            else:
+                loc = metadata.get('section', '')
+            
             citation = Citation(
-                source=metadata.get('source', 'odb_formulary'),
-                loc=metadata.get('section', ''),
+                source=metadata.get('source_document', metadata.get('source', 'odb_formulary')),
+                loc=loc,
                 page=metadata.get('page')
             )
             
@@ -349,7 +389,7 @@ class ODBTool:
                     lowest_cost=False
                 ))
         
-        return coverage, interchangeable, lowest_cost, citations, conflicts
+        return coverage, interchangeable, lowest_cost, citations, conflicts, context_snippets
     
     def _find_primary_drug(
         self,
@@ -363,15 +403,15 @@ class ODBTool:
                 if drug.get('din') == request.din:
                     return drug
         
-        # Otherwise find by ingredient/brand name
+        # Otherwise find by generic_name/name (actual SQL field names)
         search_term = (getattr(request, 'drug', None) or 
                       getattr(request, 'ingredient', None))
         
         if search_term:
             search_lower = search_term.lower()
             for drug in sql_results:
-                if (search_lower in drug.get('ingredient', '').lower() or
-                    search_lower in drug.get('brand', '').lower()):
+                if (search_lower in drug.get('generic_name', '').lower() or
+                    search_lower in drug.get('name', '').lower()):
                     return drug
         
         # Return first result as fallback
