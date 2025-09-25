@@ -184,26 +184,55 @@ class EnhancedOHIPIngester(BaseIngester):
                 self.fee_codes_to_store.append(fee_record)
             
             # Prepare text for ChromaDB embeddings
-            # Create a searchable text representation of the subsection
-            subsection_text = self._create_subsection_text(sub)
-            if subsection_text:
-                # Extract referenced codes for metadata
+            # NEW APPROACH: Create individual documents per fee code for semantic search
+            fee_codes = sub.get('fee_codes', [])
+            for fee_code in fee_codes:
+                code = fee_code.get('code')
+                if code:  # Only create documents for codes with IDs
+                    fee_document = self._create_fee_code_document(fee_code, sub)
+                    if fee_document:
+                        self.subsection_texts.append({
+                            'text': fee_document,
+                            'fee_codes': [fee_code],  # Single fee code per document
+                            'metadata': {
+                                'source_type': 'ohip',
+                                'document_type': 'fee_code',
+                                'fee_code': code,
+                                'parent_section': parent,
+                                'subsection': title,
+                                'page_ref': page_ref,
+                                'pages': pages,
+                                'fee_amount': fee_code.get('fee'),
+                                'has_conditions': bool(fee_code.get('conditions')),
+                                'has_units': bool(fee_code.get('units')),
+                                'specialty': parent,  # For filtering by medical specialty
+                                'category': title[:100]  # Truncate for metadata
+                            }
+                        })
+            
+            # Also create one document per subsection for context (rules, notes, etc.)
+            # This preserves section-level context while adding individual fee searchability
+            context_document = self._create_subsection_context_document(sub)
+            if context_document:
                 referenced_codes = sub.get('referenced_codes', [])
                 referenced_code_list = [rc.get('code') for rc in referenced_codes if rc.get('code')]
                 
                 self.subsection_texts.append({
-                    'text': subsection_text,
-                    'fee_codes': sub.get('fee_codes', []),  # Include fee codes for junction table
+                    'text': context_document,
+                    'fee_codes': [],  # No specific fee codes - this is contextual
                     'metadata': {
                         'source_type': 'ohip',
+                        'document_type': 'subsection_context',
                         'parent_section': parent,
                         'subsection': title,
                         'page_ref': page_ref,
                         'pages': pages,
-                        'fee_code_count': len(sub.get('fee_codes', [])),
-                        'referenced_codes': json.dumps(referenced_code_list) if referenced_code_list else '',  # Convert list to JSON string
+                        'fee_code_count': len(fee_codes),
+                        'referenced_codes': json.dumps(referenced_code_list) if referenced_code_list else '',
                         'referenced_code_count': len(referenced_code_list),
-                        'has_tables': sub.get('table_structures_detected', {}).get('multi_column', False)
+                        'has_tables': sub.get('table_structures_detected', {}).get('multi_column', False),
+                        'has_rules': bool(sub.get('rules')),
+                        'has_notes': bool(sub.get('notes'))
                     }
                 })
     
@@ -292,6 +321,141 @@ class EnhancedOHIPIngester(BaseIngester):
                 parts.append(f"  - {note}")
         
         return '\n'.join(parts)
+    
+    def _create_fee_code_document(self, fee_code: Dict, subsection: Dict) -> str:
+        """Create rich, searchable text for individual fee code - optimized for semantic search."""
+        
+        code = fee_code.get('code', '')
+        description = fee_code.get('description', '')
+        
+        if not code or not description:
+            return None
+        
+        parts = []
+        
+        # Start with the fee code and full description for semantic matching
+        parts.append(f"OHIP Fee Code {code}")
+        parts.append(f"Service: {description}")
+        parts.append("")
+        
+        # Add fee information
+        fee = fee_code.get('fee')
+        if fee:
+            try:
+                fee_amount = float(fee)
+                parts.append(f"Fee Amount: ${fee_amount:.2f}")
+            except (ValueError, TypeError):
+                parts.append(f"Fee Amount: {fee}")
+        
+        # Add multi-column fees if available
+        fee_details = []
+        for fee_type, label in [
+            ('h_fee', 'Hospital'),
+            ('p_fee', 'Professional'), 
+            ('asst_fee', 'Assistant'),
+            ('surg_fee', 'Surgeon'),
+            ('anae_fee', 'Anaesthetist')
+        ]:
+            fee_value = fee_code.get(fee_type)
+            if fee_value:
+                try:
+                    fee_amount = float(fee_value)
+                    fee_details.append(f"{label}: ${fee_amount:.2f}")
+                except (ValueError, TypeError):
+                    fee_details.append(f"{label}: {fee_value}")
+        
+        if fee_details:
+            parts.append("Fee Structure: " + ", ".join(fee_details))
+        
+        # Add time/unit requirements
+        units = fee_code.get('units')
+        if units:
+            parts.append(f"Time Requirement: {units}")
+        
+        # Add conditions and billing rules
+        conditions = fee_code.get('conditions')
+        if conditions:
+            parts.append(f"Billing Conditions: {conditions}")
+        
+        parts.append("")
+        
+        # Add contextual information from subsection
+        parent_section = subsection.get('parent_section', '')
+        subsection_title = subsection.get('subsection_title', '')
+        
+        parts.append(f"Medical Specialty: {parent_section}")
+        parts.append(f"Category: {subsection_title}")
+        parts.append(f"Reference: {subsection.get('page_ref', '')}")
+        
+        # Add related billing context from subsection rules if relevant
+        rules = subsection.get('rules', [])
+        relevant_rules = []
+        for rule in rules:
+            # Include rules that mention this code or general billing rules
+            if code in rule or any(keyword in rule.lower() for keyword in ['billing', 'payment', 'assessment', 'visit', 'consultation']):
+                relevant_rules.append(rule)
+        
+        if relevant_rules:
+            parts.append("")
+            parts.append("Billing Rules:")
+            for rule in relevant_rules[:3]:  # Limit to most relevant
+                parts.append(f"- {rule}")
+        
+        return '\n'.join(parts)
+    
+    def _create_subsection_context_document(self, subsection: Dict) -> str:
+        """Create contextual document for subsection rules, notes, and general information."""
+        
+        parts = []
+        parent_section = subsection.get('parent_section', '')
+        title = subsection.get('subsection_title', '')
+        page_ref = subsection.get('page_ref', '')
+        
+        # Header for section context
+        parts.append(f"OHIP Billing Section: {parent_section} - {title}")
+        parts.append(f"Page Reference: {page_ref}")
+        parts.append("")
+        
+        # Add rules (these often contain billing scenarios and context)
+        rules = subsection.get('rules', [])
+        if rules:
+            parts.append("Billing Rules and Requirements:")
+            for rule in rules:
+                parts.append(f"• {rule}")
+            parts.append("")
+        
+        # Add notes (additional context and clarifications)
+        notes = subsection.get('notes', [])
+        if notes:
+            parts.append("Additional Notes:")
+            for note in notes:
+                parts.append(f"• {note}")
+            parts.append("")
+        
+        # Add referenced codes context
+        referenced_codes = subsection.get('referenced_codes', [])
+        if referenced_codes:
+            parts.append("Related Fee Codes:")
+            code_contexts = {}
+            
+            # Group by context for better readability
+            for rc in referenced_codes[:20]:  # Limit to avoid huge documents
+                code = rc.get('code', '')
+                context = rc.get('context', 'mentioned')
+                
+                if context not in code_contexts:
+                    code_contexts[context] = []
+                code_contexts[context].append(code)
+            
+            for context, codes in code_contexts.items():
+                if codes:
+                    parts.append(f"• {context.title()}: {', '.join(codes[:10])}")  # Limit codes per context
+        
+        # Only return if there's meaningful content
+        if len(parts) > 3:  # More than just header
+            return '\n'.join(parts)
+        
+        return None
     
     def _store_fee_codes_sql(self):
         """Store fee codes in SQL database."""

@@ -250,42 +250,30 @@ class BaseIngester(ABC):
         stored_count = 0
         for chunk, embedding in zip(chunks, embeddings):
             try:
-                # Store in database
-                cursor.execute("""
-                    INSERT INTO document_chunks (
-                        chunk_id, source_type, source_document, chunk_text,
-                        chunk_index, page_number, section, subsection,
-                        start_char, end_char, embedding_model, embedding_id,
-                        metadata_json
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, (
-                    chunk['chunk_id'],
-                    self.source_type,
-                    source_document,
-                    chunk['text'],
-                    chunk['chunk_index'],
-                    chunk['metadata'].get('page_number'),
-                    chunk['metadata'].get('section'),
-                    chunk['metadata'].get('subsection'),
-                    chunk['start_char'],
-                    chunk['end_char'],
-                    self.EMBEDDING_MODEL if embeddings else None,
-                    chunk['chunk_id'],  # Use chunk_id as embedding_id
-                    json.dumps(chunk['metadata'])
-                ))
-                
+                # Skip SQL storage for now - focus on ChromaDB only
                 # Store in Chroma if we have real embeddings
                 if self.openai_client and not all(v == 0.0 for v in embedding):
+                    # Filter out None values from metadata (ChromaDB doesn't accept None)
+                    clean_metadata = {
+                        'source_type': self.source_type,
+                        'source_document': source_document,
+                        'chunk_index': chunk['chunk_index']
+                    }
+                    
+                    # Add non-None metadata values
+                    for key, value in chunk['metadata'].items():
+                        if value is not None:
+                            # Convert boolean values to strings (ChromaDB metadata requirement)
+                            if isinstance(value, bool):
+                                clean_metadata[key] = str(value).lower()
+                            else:
+                                clean_metadata[key] = value
+                    
                     self.collection.add(
                         ids=[chunk['chunk_id']],
                         embeddings=[embedding],
                         documents=[chunk['text']],
-                        metadatas=[{
-                            'source_type': self.source_type,
-                            'source_document': source_document,
-                            'chunk_index': chunk['chunk_index'],
-                            **chunk['metadata']
-                        }]
+                        metadatas=[clean_metadata]
                     )
                 
                 stored_count += 1
