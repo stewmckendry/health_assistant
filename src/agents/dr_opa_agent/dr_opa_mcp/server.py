@@ -489,7 +489,7 @@ async def policy_check_handler(
         
         # Search for related by topics
         for related_topic in list(all_topics)[:3]:  # Limit to 3 topics
-            related_data = await sql_client.search_policies(
+            related_data = await get_sql_client().search_policies(
                 topic=related_topic,
                 policy_level=None,
                 include_related=False
