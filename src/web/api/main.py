@@ -46,9 +46,17 @@ from assistants.provider import ProviderAssistant
 from utils.session_logging import SessionLogger
 from langfuse import Langfuse
 
-# Import triage endpoints
-from src.web.api.triage_endpoint import register_triage_endpoint
-from src.web.api.triage_streaming_endpoint import register_streaming_endpoint
+# Import triage endpoints (conditionally)
+try:
+    from src.web.api.triage_endpoint import register_triage_endpoint
+    from src.web.api.triage_streaming_endpoint import register_streaming_endpoint
+    TRIAGE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Triage endpoints not available: {e}")
+    TRIAGE_AVAILABLE = False
+
+# Import agent streaming proxy (simple version without complex dependencies)
+from src.web.api.agents_streaming_proxy import register_agent_streaming_endpoints
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -122,9 +130,13 @@ sessions: Dict[str, Dict[str, Any]] = {}
 # Session settings store
 session_settings: Dict[str, Dict[str, Any]] = {}
 
-# Register triage endpoints
-register_triage_endpoint(app)
-register_streaming_endpoint(app)
+# Register triage endpoints (if available)
+if TRIAGE_AVAILABLE:
+    register_triage_endpoint(app)
+    register_streaming_endpoint(app)
+
+# Register agent streaming endpoints
+register_agent_streaming_endpoints(app)
 
 
 # Request/Response models
