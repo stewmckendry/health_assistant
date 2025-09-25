@@ -18,6 +18,9 @@ from ..models.response import (
 )
 from ..retrieval import SQLClient, VectorClient
 from ..utils import ConfidenceScorer, ConflictDetector
+from .adp_device_extractor import get_device_extractor
+import openai
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +55,14 @@ class ADPTool:
         self.conflict_detector = ConflictDetector()
         
         logger.info("ADP tool initialized with dual-path retrieval")
+        
+        # Initialize OpenAI client for LLM reranking
+        api_key = os.getenv("OPENAI_API_KEY")
+        if api_key:
+            self.openai_client = openai.OpenAI(api_key=api_key)
+        else:
+            self.openai_client = None
+            logger.warning("No OpenAI API key - LLM reranking disabled")
     
     async def execute(self, request: ADPGetRequest) -> ADPGetResponse:
         """
@@ -157,8 +168,10 @@ class ADPTool:
                 scenario_search=request.device.type
             )
             
+            # Extract keywords from device type for exclusion search
+            device_keywords = self._extract_device_keywords(request.device.type)
             exclusion_task = self.sql_client.query_adp_exclusions(
-                search_term=request.device.type
+                search_term=device_keywords
             )
             
             funding_results, exclusion_results = await asyncio.gather(
@@ -228,11 +241,21 @@ class ADPTool:
             results = await self.vector_client.search_adp(
                 query=search_query,
                 device_category=request.device.category,
-                n_results=8  # Get more results for comprehensive context
+                n_results=12  # Get more results for reranking
             )
             
-            logger.debug(f"Vector search returned {len(results)} ADP chunks")
-            return results
+            # Apply LLM reranking for better relevance
+            reranked_results = await self._rerank_vector_results(
+                query=request.device.type,
+                vector_results=results,
+                device_category=request.device.category
+            )
+            
+            # Return top results after reranking
+            final_results = reranked_results[:8]
+            
+            logger.debug(f"Vector search returned {len(results)} ADP chunks, reranked to {len(final_results)}")
+            return final_results
             
         except asyncio.TimeoutError:
             logger.warning("Vector search timed out")
@@ -269,7 +292,7 @@ class ADPTool:
                     other_criteria={"excluded": True}
                 )
         
-        # Extract eligibility criteria from vector results
+        # Extract eligibility criteria from vector results using rich metadata
         criteria = {
             "basic_mobility": None,
             "ontario_resident": None,
@@ -277,8 +300,35 @@ class ADPTool:
             "car_substitute": None
         }
         
+        # Use metadata to prioritize results with eligibility topics
+        eligibility_results = []
         for vector_item in vector_results:
+            metadata = vector_item.get("metadata", {})
+            topics = metadata.get("topics", "[]")
+            
+            # Parse topics JSON if it's a string
+            if isinstance(topics, str):
+                try:
+                    import json
+                    topics_list = json.loads(topics)
+                    if "eligibility" in topics_list or "requirements" in topics_list:
+                        eligibility_results.append(vector_item)
+                except:
+                    pass
+            
+            # Fallback: check if metadata indicates eligibility content
+            title = metadata.get("title", "").lower()
+            if "eligib" in title or "requir" in title or "criteria" in title:
+                eligibility_results.append(vector_item)
+        
+        # If no eligibility-specific results, use all results
+        if not eligibility_results:
+            eligibility_results = vector_results
+        
+        # Process eligibility results
+        for vector_item in eligibility_results:
             text = vector_item.get("text", "").lower()
+            metadata = vector_item.get("metadata", {})
             
             # Check for basic mobility need
             if "basic mobility" in text:
@@ -294,6 +344,15 @@ class ADPTool:
             # Check for Ontario residency
             if "ontario resident" in text or "valid health card" in text:
                 criteria["ontario_resident"] = True
+            
+            # Use metadata to enhance criteria detection
+            section_id = metadata.get("section_id", "")
+            if section_id and "eligib" in section_id.lower():
+                # This is an eligibility section, give it more weight
+                if "mobility" in text:
+                    criteria["basic_mobility"] = True
+                if "resident" in text:
+                    criteria["ontario_resident"] = True
             
             # Special checks for car substitute concern
             if request.use_case:
@@ -338,18 +397,52 @@ class ADPTool:
             if phrase.lower() in device_type or device_type in phrase.lower():
                 exclusions.append(f"{phrase}: {applies_to}")
         
-        # Extract exclusions from vector context
+        # Enhanced exclusions from vector context using metadata
+        exclusion_results = []
         for vector_item in vector_results:
+            metadata = vector_item.get("metadata", {})
+            exclusion_count = metadata.get("exclusion_count", 0)
+            topics = metadata.get("topics", "[]")
+            
+            # Prioritize results with exclusions
+            if exclusion_count > 0:
+                exclusion_results.append(vector_item)
+            elif isinstance(topics, str):
+                try:
+                    import json
+                    topics_list = json.loads(topics)
+                    if "exclusions" in topics_list or "not covered" in topics_list:
+                        exclusion_results.append(vector_item)
+                except:
+                    pass
+        
+        # Process exclusion-specific results first, then fallback to all results
+        search_results = exclusion_results if exclusion_results else vector_results
+        
+        for vector_item in search_results:
             text = vector_item.get("text", "")
+            metadata = vector_item.get("metadata", {})
             
             if "not cover" in text.lower() or "exclusion" in text.lower():
-                # Extract specific exclusions mentioned
+                # Extract specific exclusions mentioned with context
                 if "batteries" in text.lower() and "batteries" in device_type:
-                    exclusions.append("Batteries are not covered by ADP")
+                    policy_ref = metadata.get("policy_uid", "ADP Policy")
+                    exclusions.append(f"Batteries are not covered by ADP ({policy_ref})")
                 elif "repairs" in text.lower() and "repair" in device_type:
-                    exclusions.append("Repairs and maintenance are not covered")
+                    policy_ref = metadata.get("policy_uid", "ADP Policy") 
+                    exclusions.append(f"Repairs and maintenance are not covered ({policy_ref})")
                 elif "replacement parts" in text.lower():
-                    exclusions.append("Replacement parts are not covered")
+                    policy_ref = metadata.get("policy_uid", "ADP Policy")
+                    exclusions.append(f"Replacement parts are not covered ({policy_ref})")
+                elif "accessories" in text.lower() and any(word in device_type for word in ["accessor", "cushion", "bag"]):
+                    policy_ref = metadata.get("policy_uid", "ADP Policy")
+                    exclusions.append(f"Device accessories may not be covered ({policy_ref})")
+            
+            # Look for device-specific exclusions in metadata
+            section_id = metadata.get("section_id", "")
+            if "exclus" in section_id.lower() and any(word in text.lower() for word in device_type.split()):
+                title = metadata.get("title", "Exclusion")
+                exclusions.append(f"{title} - See {section_id}")
         
         return list(set(exclusions))  # Remove duplicates
     
@@ -381,16 +474,56 @@ class ADPTool:
                 }
                 break
         
-        # Extract funding from vector
+        # Enhanced funding extraction from vector using metadata
         vector_funding = None
+        funding_context = []
+        
+        # Prioritize results with funding information
+        funding_results = []
         for vector_item in vector_results:
-            text = vector_item.get("text", "")
+            metadata = vector_item.get("metadata", {})
+            funding_count = metadata.get("funding_count", 0)
+            topics = metadata.get("topics", "[]")
             
-            # Look for percentage mentions
+            if funding_count > 0:
+                funding_results.append(vector_item)
+            elif isinstance(topics, str):
+                try:
+                    import json
+                    topics_list = json.loads(topics)
+                    if "funding" in topics_list or "coverage" in topics_list:
+                        funding_results.append(vector_item)
+                except:
+                    pass
+        
+        # Process funding-specific results
+        search_results = funding_results if funding_results else vector_results
+        
+        for vector_item in search_results:
+            text = vector_item.get("text", "")
+            metadata = vector_item.get("metadata", {})
+            
+            # Look for percentage mentions with context
             if "75%" in text and "ADP" in text:
                 vector_funding = {"adp_share": 75, "client_share": 25}
+                policy_ref = metadata.get("policy_uid", "")
+                funding_context.append(f"75% ADP coverage mentioned in {policy_ref}")
             elif "50%" in text and "ADP" in text:
                 vector_funding = {"adp_share": 50, "client_share": 50}
+                policy_ref = metadata.get("policy_uid", "")
+                funding_context.append(f"50% ADP coverage mentioned in {policy_ref}")
+            elif "25%" in text and ("client" in text.lower() or "patient" in text.lower()):
+                if not vector_funding:  # Don't override existing funding
+                    vector_funding = {"adp_share": 75, "client_share": 25}
+                policy_ref = metadata.get("policy_uid", "")
+                funding_context.append(f"25% client share mentioned in {policy_ref}")
+            
+            # Look for specific funding amounts or caps
+            import re
+            dollar_amounts = re.findall(r'\$[\d,]+', text)
+            if dollar_amounts:
+                policy_ref = metadata.get("policy_uid", "ADP Policy")
+                funding_context.append(f"Funding amounts mentioned: {', '.join(dollar_amounts)} ({policy_ref})")
             
             if vector_funding:
                 break
@@ -405,8 +538,17 @@ class ADPTool:
                     resolution="Using SQL value as authoritative for percentages"
                 ))
         
-        # Use SQL as primary source for percentages
+        # Use SQL as primary source for percentages, enhance with vector context
+        funding_notes = []
+        if funding_context:
+            funding_notes.extend(funding_context)
+        
         if sql_funding:
+            # Add SQL source context
+            scenario = sql_result.get("funding", [{}])[0].get("scenario", "")
+            if scenario:
+                funding_notes.append(f"SQL rule: {scenario}")
+            
             funding = Funding(
                 client_share_percent=sql_funding["client_share"],
                 adp_contribution=sql_funding["adp_share"],
@@ -422,12 +564,22 @@ class ADPTool:
             )
         else:
             # Default funding split
+            funding_notes.append("Using standard ADP funding split")
             funding = Funding(
                 client_share_percent=25.0,
                 adp_contribution=75.0,
                 max_contribution=None,
                 repair_coverage="Not covered"
             )
+        
+        # Add funding context as a conflict if there are multiple sources
+        if len(funding_notes) > 1:
+            conflicts.append(Conflict(
+                field="funding_context",
+                sql_value="SQL database rules", 
+                vector_value="Policy document references",
+                resolution=f"Additional context: {'; '.join(funding_notes[:2])}"
+            ))
         
         return funding, conflicts
     
@@ -469,33 +621,219 @@ class ADPTool:
             client_share=0.0 if eligible else 25.0
         )
     
+    def _extract_device_keywords(self, device_type: str) -> str:
+        """
+        Extract keywords from compound device types for exclusion matching.
+        
+        Examples:
+            "scooter_batteries" -> "batteries"
+            "wheelchair_cushions" -> "cushions"
+            "walker_accessories" -> "accessories"
+        """
+        # Common exclusion keywords to extract
+        exclusion_keywords = [
+            "batteries", "battery", "chargers", "charger",
+            "repairs", "repair", "maintenance", "servicing",
+            "accessories", "cushions", "parts", "components",
+            "covers", "bags", "straps", "belts"
+        ]
+        
+        device_lower = device_type.lower()
+        
+        # Check for exact keyword matches
+        for keyword in exclusion_keywords:
+            if keyword in device_lower:
+                return keyword
+        
+        # Fallback: return the device type as-is
+        return device_type
+    
+    def _build_context_content(
+        self, 
+        vector_results: List[Dict[str, Any]], 
+        sql_result: Dict[str, Any]
+    ) -> str:
+        """
+        Build context content from search results for transparency.
+        Similar to ODB tool's context content.
+        """
+        context_parts = []
+        
+        # Add vector search context
+        if vector_results:
+            context_parts.append("**ADP Policy Context:**")
+            for i, result in enumerate(vector_results[:3]):  # Top 3 most relevant
+                text = result.get("text", "").strip()
+                metadata = result.get("metadata", {})
+                
+                # Create meaningful reference
+                policy_uid = metadata.get("policy_uid", "")
+                section_id = metadata.get("section_id", "")
+                title = metadata.get("title", "")
+                
+                if title:
+                    ref = f"{policy_uid} - {title[:60]}..."
+                elif section_id:
+                    ref = f"Section {section_id}"
+                else:
+                    ref = f"ADP Policy {i+1}"
+                
+                # Add truncated text with reference
+                text_snippet = text[:200] + "..." if len(text) > 200 else text
+                context_parts.append(f"• {ref}: {text_snippet}")
+        
+        # Add SQL funding rules context
+        funding_rules = sql_result.get("funding", [])
+        if funding_rules:
+            context_parts.append("\n**Funding Rules:**")
+            for rule in funding_rules[:2]:  # Top 2 matching rules
+                scenario = rule.get("scenario", "")
+                client_share = rule.get("client_share_percent", "")
+                adp_share = rule.get("adp_share_percent", "")
+                
+                if scenario and client_share and adp_share:
+                    context_parts.append(f"• {scenario}: Client {client_share}%, ADP {adp_share}%")
+        
+        # Add exclusions context
+        exclusions = sql_result.get("exclusions", [])
+        if exclusions:
+            context_parts.append("\n**Exclusions:**")
+            for exclusion in exclusions[:2]:  # Top 2 relevant exclusions
+                phrase = exclusion.get("phrase", "")
+                applies_to = exclusion.get("applies_to", "")
+                if phrase:
+                    context_parts.append(f"• {phrase}: {applies_to}")
+        
+        return "\n".join(context_parts)
+    
+    async def _rerank_vector_results(
+        self,
+        query: str,
+        vector_results: List[Dict[str, Any]],
+        device_category: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """
+        Use LLM to rerank vector results for better relevance.
+        Prioritizes exact device matches and relevant policy content.
+        """
+        if not self.openai_client or not vector_results:
+            return vector_results
+        
+        try:
+            # Build reranking prompt
+            device_type = query
+            category_context = f" in the {device_category} category" if device_category else ""
+            
+            # Prepare results for reranking
+            results_text = []
+            for i, result in enumerate(vector_results):
+                text = result.get("text", "")[:300]  # Truncate for prompt
+                metadata = result.get("metadata", {})
+                title = metadata.get("title", "")
+                policy_uid = metadata.get("policy_uid", "")
+                
+                result_summary = f"Result {i}: {title} ({policy_uid})\n{text}"
+                results_text.append(result_summary)
+            
+            # LLM reranking call
+            response = await asyncio.get_event_loop().run_in_executor(
+                None,
+                lambda: self.openai_client.chat.completions.create(
+                    model="gpt-3.5-turbo",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": f"""Rank these ADP policy results by relevance to the query about {device_type}{category_context}.
+                            
+                            Prioritize:
+                            1. Exact device name matches
+                            2. Device category matches  
+                            3. Funding and eligibility criteria
+                            4. Specific policy requirements
+                            
+                            Return only the result numbers in order of relevance (most relevant first), separated by commas.
+                            Example: 2,0,4,1,3"""
+                        },
+                        {
+                            "role": "user",
+                            "content": "\n\n".join(results_text[:8])  # Limit to top 8 for token efficiency
+                        }
+                    ],
+                    temperature=0,
+                    max_tokens=50
+                )
+            )
+            
+            # Parse reranking response
+            ranking_text = response.choices[0].message.content.strip()
+            try:
+                ranking_indices = [int(x.strip()) for x in ranking_text.split(",") if x.strip().isdigit()]
+                
+                # Reorder results based on ranking
+                reranked_results = []
+                used_indices = set()
+                
+                for idx in ranking_indices:
+                    if 0 <= idx < len(vector_results) and idx not in used_indices:
+                        reranked_results.append(vector_results[idx])
+                        used_indices.add(idx)
+                
+                # Add any remaining results
+                for i, result in enumerate(vector_results):
+                    if i not in used_indices:
+                        reranked_results.append(result)
+                
+                logger.info(f"LLM reranked {len(vector_results)} results: {ranking_indices}")
+                return reranked_results
+                
+            except (ValueError, IndexError) as e:
+                logger.warning(f"Could not parse ranking: {ranking_text}, error: {e}")
+                return vector_results
+                
+        except Exception as e:
+            logger.error(f"LLM reranking failed: {e}")
+            return vector_results
+    
     def _extract_citations(self, vector_results: List[Dict[str, Any]]) -> List[Citation]:
-        """Extract citations from vector search results."""
+        """Extract enhanced citations from vector search results using rich metadata."""
         citations = []
         seen = set()
         
         for result in vector_results:
             metadata = result.get("metadata", {})
             
-            source = metadata.get("source", "")
-            if "mobility" in source.lower():
-                source = "mobility-manual"
-            elif "comm" in source.lower():
-                source = "comm-aids-manual"
-            else:
-                source = "adp-manual"
+            # Use rich metadata for meaningful citations
+            adp_doc = metadata.get("adp_doc", "")
+            policy_uid = metadata.get("policy_uid", "")
+            section_id = metadata.get("section_id", "")
+            page_num = metadata.get("page_num")
             
-            loc = metadata.get("section_ref", metadata.get("section", ""))
-            page = metadata.get("page")
+            # Create meaningful source names
+            if "mobility" in adp_doc.lower():
+                source = "ADP Mobility Manual"
+            elif "comm" in adp_doc.lower():
+                source = "ADP Communication Aids Manual"
+            elif "core" in adp_doc.lower():
+                source = "ADP Core Manual"
+            else:
+                source = f"ADP {adp_doc.title()}" if adp_doc else "ADP Manual"
+            
+            # Create meaningful location reference
+            if policy_uid:
+                loc = policy_uid
+            elif section_id:
+                loc = f"Section {section_id}"
+            else:
+                loc = metadata.get("section_ref", metadata.get("section", ""))
             
             # Create unique key to avoid duplicates
-            key = f"{source}:{loc}:{page}"
+            key = f"{source}:{loc}:{page_num}"
             if key not in seen:
                 seen.add(key)
                 citations.append(Citation(
                     source=source,
                     loc=loc,
-                    page=page
+                    page=page_num
                 ))
         
         return citations
@@ -517,6 +855,37 @@ async def adp_get(
     Returns:
         Response dictionary
     """
+    # Enhanced natural language support - detect if device field contains a query
+    if "device" in request and isinstance(request["device"], dict):
+        device_info = request["device"]
+        device_type = device_info.get("type", "")
+        
+        # If device type looks like a natural language query, extract parameters
+        extractor = get_device_extractor()
+        if extractor._is_natural_language(device_type):
+            logger.info(f"Detected natural language query: {device_type}")
+            extracted_params = extractor.extract_device_params(device_type)
+            
+            # Update request with extracted parameters
+            if extracted_params["device_type"]:
+                request["device"]["type"] = extracted_params["device_type"]
+            if extracted_params["device_category"] and not device_info.get("category"):
+                request["device"]["category"] = extracted_params["device_category"]
+            
+            # Add extracted use case if not provided
+            if extracted_params["use_case"] and not request.get("use_case"):
+                request["use_case"] = extracted_params["use_case"]
+            
+            # Add extracted patient income if not provided  
+            if extracted_params["patient_income"] is not None and not request.get("patient_income"):
+                request["patient_income"] = extracted_params["patient_income"]
+            
+            # Add extracted check types if not provided
+            if extracted_params["check_types"] and not request.get("check"):
+                request["check"] = extracted_params["check_types"]
+            
+            logger.info(f"Enhanced request with extracted params: {request}")
+    
     # Parse request
     parsed_request = ADPGetRequest(**request)
     
@@ -526,5 +895,16 @@ async def adp_get(
     # Execute query
     response = await tool.execute(parsed_request)
     
-    # Return as dictionary
-    return response.model_dump()
+    # Add context content field like ODB tool
+    response_dict = response.model_dump()
+    
+    # Build context content from the search results that were used
+    # Re-run queries to get raw results for context building
+    sql_result = await tool._sql_query(parsed_request)
+    vector_result = await tool._vector_search(parsed_request)
+    
+    if not isinstance(sql_result, Exception) and not isinstance(vector_result, Exception):
+        context_content = tool._build_context_content(vector_result, sql_result)
+        response_dict["context"] = context_content
+    
+    return response_dict

@@ -38,10 +38,16 @@ Dr. OFF is an AI-powered clinical decision support agent designed to help Ontari
 ## 📚 Trusted Data Sources (Ground Truth Only)
 
 ### ODB (Ontario Drug Benefit)
-- **Coverage**: 8,401+ drugs across therapeutic classes
-- **Interchangeable Groups**: 2,369+ groups with lowest-cost identification
-- **Data Source**: Official ODB Formulary Data Extract (XML)
-- **PDF Manual**: ODB Formulary Edition 43 for policy context
+- **Coverage**: 8,401 drugs across all therapeutic classes
+- **Interchangeable Groups**: 2,369 groups with lowest-cost identification
+- **Data Sources**: 
+  - Official ODB Formulary XML Extract (structured drug data)
+  - ODB Formulary Edition 43 PDF (policy context)
+- **Embeddings**: 10,815 semantic vectors for intelligent drug search
+- **Key Features**:
+  - Dual-path retrieval (SQL + semantic search)
+  - Coverage section tracking (3, 3B, 3C, 9, 12)
+  - Real-time lowest cost alternatives
 
 ### OHIP (Ontario Health Insurance Plan)
 - **Fee Codes**: 2,000+ fee codes across medical specialties
@@ -55,6 +61,12 @@ Dr. OFF is an AI-powered clinical decision support agent designed to help Ontari
 - **Funding Rules**: 735 funding scenarios with client share percentages  
 - **Exclusions**: 1,101 documented exclusions and limitations
 - **Data Sources**: ADP manuals with focused page range extraction (Parts 2-7)
+- **Embeddings**: 610 rich metadata vectors (policy_uid, funding_count, exclusion_count)
+- **Enhanced Features** (2025-09-25):
+  - Natural language query support ("Can I get funding for a wheelchair?")
+  - LLM reranking for better relevance
+  - Context content field with policy snippets
+  - Enhanced citations with section references
 
 ## 🛡️ Key Principles & Guardrails
 
@@ -93,13 +105,13 @@ graph TD
 
 ### MCP Tool Architecture (5 Tools Only)
 
-| Tool | Purpose | Always Returns |
-|------|---------|----------------|
-| `coverage.answer` | Main orchestrator - routes 80% of queries | decision, summary, citations, confidence |
-| `schedule.get` | OHIP billing dual-path | provenance, items[], citations[] |
-| `adp.get` | Device funding dual-path | eligibility, exclusions, funding, citations |
-| `odb.get` | Drug formulary dual-path | coverage, interchangeable, lowest_cost |
-| `source.passages` | Direct chunk retrieval | exact text for "show source" |
+| Tool | Purpose | Always Returns | Enhanced Features (2025-09-25) |
+|------|---------|----------------|--------------------------------|
+| `coverage.answer` | Main orchestrator - routes 80% of queries | decision, summary, citations, confidence | - |
+| `schedule.get` | OHIP billing dual-path | provenance, items[], citations[], context | ✅ Context field |
+| `adp.get` | Device funding dual-path | eligibility, exclusions, funding, citations, context | ✅ Natural language, LLM reranking, Context field |
+| `odb.get` | Drug formulary dual-path | coverage, interchangeable, lowest_cost, context | ✅ Natural language, Context field |
+| `source.passages` | Direct chunk retrieval | exact text for "show source" | - |
 
 ## Implementation Status
 
@@ -156,10 +168,10 @@ sqlite3 data/ohip.db
 - **Processed Data**: `data/processed/` (JSON extractions)
 - **Databases**: 
   - `data/ohip.db` (Consolidated database with OHIP, ODB, and ADP tables)
-- **Vector Store**: `data/processed/dr_off/chroma/` (ChromaDB collections)
-  - ohip_documents: 191 embeddings
-  - adp_v1: 610 embeddings (enhanced with LLM extraction)
-  - odb_documents: 49 embeddings
+- **Vector Store**: `data/dr_off_agent/processed/dr_off/chroma/` (Primary ChromaDB collections)
+  - ohip_documents: 6,983 embeddings
+  - adp_documents: 610 embeddings (migrated from adp_v1, rich metadata)
+  - odb_documents: 10,815 embeddings (drug-specific chunks)
 
 ## Future Roadmap
 

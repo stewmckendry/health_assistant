@@ -238,7 +238,9 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
 {
     "device": {                        # Required
         "category": "mobility|comm_aids",
-        "type": str                    # e.g., "walker", "power_wheelchair"
+        "type": str                    # Supports natural language!
+                                      # e.g., "walker", "power wheelchair"
+                                      # or "Can I get funding for a wheelchair?"
     },
     "check": [                         # What to check (default all)
         "eligibility",
@@ -255,18 +257,27 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
 }
 ```
 
+**NEW: Natural Language Support** (2025-09-25)
+- Device type field now accepts natural language queries
+- Automatic parameter extraction using regex + LLM fallback
+- Examples:
+  - "Can I get funding for a power wheelchair?"
+  - "Is my patient with $20000 income eligible for a walker?"
+  - "Does ADP cover scooter batteries?"
+
 ### Response Schema
 ```python
 {
     "provenance": ["sql", "vector"],
     "confidence": float,
+    "context": str,                    # NEW: Policy snippets & funding rules
     "eligibility": {
         "basic_mobility": bool,
         "ontario_resident": bool,
         "valid_prescription": bool,
         "other_criteria": dict
     },
-    "exclusions": [str],              # List of applicable exclusions
+    "exclusions": [str],              # Enhanced with policy references
     "funding": {
         "client_share_percent": float,
         "adp_contribution": float,
@@ -278,23 +289,38 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
         "eligible": bool,
         "client_share": float          # Usually 0 if eligible
     },
-    "citations": [...],
+    "citations": [...],                # Enhanced with policy_uid, section_id
     "conflicts": [...]
 }
 ```
 
 ### Algorithm
-**[IMPLEMENTED - FIXED EMBEDDING MODEL 2025-09-25]**
+**[ENHANCED 2025-09-25: Natural Language, LLM Reranking, Rich Metadata]**
 
-1. **Parallel Retrieval**:
+1. **Natural Language Processing** (NEW):
+   - Device type field processed through `ADPDeviceExtractor`
+   - Regex patterns for common queries ("Can I get funding for...")
+   - LLM fallback (GPT-3.5-turbo) for complex queries
+   - Extracts: device_type, category, use_case, income, check_types
+
+2. **Parallel Retrieval**:
    - SQL queries run in nested parallel:
      - `sql_client.query_adp_funding()` for funding rules
      - `sql_client.query_adp_exclusions()` for exclusion rules
-   - Vector: `vector_client.search_adp()` with device context
+   - Vector: `vector_client.search_adp()` with enhanced query
+     - Now searches 610 chunks (migrated from adp_v1 collection)
+     - Uses rich metadata: policy_uid, funding_count, exclusion_count
    - All run simultaneously with `asyncio.gather()` with exception handling
    - SQL timeout: 500ms, Vector timeout: 1000ms
 
-2. **Eligibility Assessment** (if requested):
+3. **LLM Reranking** (NEW):
+   - Vector results reranked using GPT-3.5-turbo
+   - Prioritizes exact device matches, relevant policies
+   - Returns top 8 results after reranking
+
+4. **Enhanced Eligibility Assessment**:
+   - Metadata-aware filtering using topics JSON field
+   - Prioritizes results with "eligibility" or "requirements" topics
    - Check exclusions first - if device explicitly excluded, return ineligible
    - Extract criteria from vector results:
      - Basic mobility need vs. car substitute
@@ -302,23 +328,25 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
      - Prescription requirements
    - Special handling for outdoor-only use (car substitute flag)
 
-3. **Exclusion Detection**:
+5. **Enhanced Exclusion Detection**:
+   - Metadata-aware filtering for exclusion_count > 0
    - SQL provides structured exclusion rules
-   - Match device type against exclusion phrases
-   - Common exclusions detected:
-     - Batteries: "batteries are not covered"
-     - Repairs: "repairs and maintenance not covered"
-     - Replacement parts: flagged separately
+   - Enhanced exclusion messages with policy references
+   - Common exclusions with context:
+     - "Batteries not covered (adp:core_manual:400.5)"
+     - "Repairs not covered (adp:mobility_manual:Section 8.2)"
+   - Device-specific exclusion matching
    - Deduplication of exclusion messages
 
-4. **Funding Determination**:
+6. **Enhanced Funding Determination**:
+   - Metadata filtering for funding_count > 0
    - SQL provides percentage splits (client_share_percent, adp_share_percent)
    - Default: 75% ADP, 25% client
-   - Vector provides additional context on coverage
-   - Conflict detection if SQL and vector disagree on percentages
+   - Vector provides funding context with dollar amounts
+   - Enhanced conflict tracking with funding notes
    - SQL takes precedence for numeric values
 
-5. **CEP Routing** (if requested):
+7. **CEP Routing** (if requested):
    - Hardcoded thresholds: $28,000 single, $39,000 family
    - Check patient_income against threshold
    - If eligible:
@@ -326,7 +354,19 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
      - Flag CEP coverage of remaining 25%
    - Extract updated thresholds from vector if mentioned
 
-6. **Confidence Scoring**:
+8. **Context Building** (NEW):
+   - Builds human-readable context from search results
+   - Includes top 3 policy snippets with references
+   - Shows funding rules from SQL
+   - Lists relevant exclusions
+   - Similar to ODB tool's context field
+
+9. **Enhanced Citations**:
+   - Uses rich metadata: policy_uid, section_id, page_num
+   - Meaningful source names: "ADP Mobility Manual" vs "adp-manual"
+   - Section-specific references: "adp:mobility_manual:Section 4.2"
+
+10. **Confidence Scoring**:
    - Uses shared `ConfidenceScorer.calculate()`
    - Base 0.9 for SQL funding match
    - +0.03 per corroborating vector passage

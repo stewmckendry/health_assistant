@@ -84,7 +84,7 @@ class VectorClient:
             # Pre-load known collections
             collection_names = [
                 "ohip_documents",   # OHIP Schedule & Act chunks (191 embeddings)
-                "adp_documents",    # ADP manual chunks (if exists)  
+                "adp_documents",    # ADP manual chunks (610 embeddings with proper metadata - migrated from adp_v1)
                 "odb_documents"     # ODB policy chunks (49 embeddings)
             ]
             
@@ -285,7 +285,7 @@ class VectorClient:
         
         return await self.search(
             query=query,
-            collection="adp_documents",  # Try adp_documents, fallback to ohip_documents if not found
+            collection="adp_documents",  # Use the migrated collection with 610 chunks and proper metadata
             n_results=n_results,
             where=where if where else None
         )
