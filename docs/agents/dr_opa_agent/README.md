@@ -9,7 +9,7 @@
 Dr. OPA answers critical practice questions for Ontario clinicians:
 
 - **Regulatory Compliance**: "What are CPSO expectations for virtual care consent?"
-- **Screening Programs**: "What are the new HPV primary screening intervals starting March 2025?"
+- **Ontario Health Programs**: "What kidney care programs are available for a 65-year-old patient?"
 - **Infection Control**: "What are PHO IPAC requirements for instrument reprocessing?"
 - **Clinical Pathways**: "What is the CEP algorithm for managing chronic pain?"
 - **Digital Health**: "How do I integrate with OLIS for lab result retrieval?"
@@ -18,7 +18,7 @@ Dr. OPA answers critical practice questions for Ontario clinicians:
 
 ### 1. Authoritative Sources
 - **CPSO**: College of Physicians and Surgeons of Ontario policies and advice (366 vectors)
-- **Ontario Health/CCO**: Cancer Care Ontario screening programs and pathways (pending)
+- **Ontario Health**: ALL clinical programs via Claude + Web Search (cancer, kidney, cardiac, mental health, etc.)
 - **CEP**: Centre for Effective Practice clinical tools and algorithms (57 vectors, 6 tools)
 - **PHO**: Public Health Ontario infection prevention and control guidance (132 vectors)
 - **MOH**: Ministry of Health bulletins and program updates (pending)
@@ -54,7 +54,7 @@ Dr. OPA answers critical practice questions for Ontario clinicians:
 - `opa.search_sections`: Hybrid retrieval with metadata filters
 - `opa.get_section`: Fetch full section text with citations
 - `opa.policy_check`: CPSO-specific policy retrieval
-- `opa.program_lookup`: Ontario Health program guidance
+- `opa.program_lookup`: Ontario Health clinical programs (ALL programs via web search)
 - `opa.ipac_guidance`: PHO infection control sections
 - `opa.freshness_probe`: Check for guideline updates
 
@@ -138,6 +138,50 @@ response = agent.query(
 print(response)
 # Output includes cited sections, effective dates, and summary
 ```
+
+## Ontario Health Clinical Programs
+
+### Comprehensive Program Coverage
+
+The `opa.program_lookup` tool now provides access to ALL Ontario Health clinical programs using Claude with web search technology. This covers:
+
+- **Cancer Care**: Screening programs, treatment pathways, patient navigation
+- **Kidney Care**: Chronic kidney disease management, dialysis programs
+- **Cardiac Care**: Heart disease prevention, rehabilitation programs
+- **Stroke Care**: Prevention, acute care pathways, rehabilitation
+- **Mental Health**: Depression programs, anxiety treatment, psychotherapy access
+- **Palliative Care**: End-of-life care programs and resources
+- **And many more specialized programs**
+
+### Example Query
+
+```python
+# Get kidney care information for an elderly patient
+result = await session.call_tool(
+    "opa.program_lookup",
+    arguments={
+        "program": "kidney care",
+        "patient_age": 65,
+        "info_needed": ["eligibility", "locations", "referral"]
+    }
+)
+
+# Returns comprehensive information including:
+# - Eligibility criteria for the patient's age
+# - Available services and procedures
+# - Referral processes and self-referral options
+# - Contact information and service locations
+# - Patient education resources
+# - Official Ontario Health citations
+```
+
+### Key Features
+
+- **Real-time Information**: Searches 25+ Ontario Health domains for current program details
+- **Patient-Specific**: Provides age and risk-factor specific recommendations
+- **Comprehensive**: Includes eligibility, procedures, locations, referral processes, and resources
+- **Authoritative**: Cites official Ontario Health sources with direct links
+- **Current**: Always retrieves the most up-to-date program information
 
 ## Usage Examples
 

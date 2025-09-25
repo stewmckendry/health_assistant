@@ -97,16 +97,19 @@ class PolicyCheckResponse(BaseModel):
 
 class ProgramLookupResponse(BaseModel):
     """Response model for opa.program_lookup tool."""
-    program: str = Field(..., description="Screening program name")
+    program: str = Field(..., description="Clinical program name")
     eligibility: Dict[str, Any] = Field(..., description="Eligibility criteria")
-    intervals: Dict[str, str] = Field(..., description="Screening intervals")
-    procedures: List[str] = Field(default_factory=list, description="Screening procedures")
+    intervals: Dict[str, str] = Field(..., description="Screening/treatment intervals")
+    procedures: List[str] = Field(default_factory=list, description="Clinical procedures and services")
     followup: Dict[str, Any] = Field(default_factory=dict, description="Follow-up protocols")
     patient_specific: Optional[Dict[str, Any]] = Field(
         None, description="Patient-specific recommendations if age/risks provided"
     )
     citations: List[Citation] = Field(..., description="Supporting citations")
     last_updated: Optional[str] = Field(None, description="Last update date of guidelines")
+    additional_info: Optional[Dict[str, Any]] = Field(
+        None, description="Additional program information (locations, resources, overview)"
+    )
 
 
 class IPACGuidanceResponse(BaseModel):

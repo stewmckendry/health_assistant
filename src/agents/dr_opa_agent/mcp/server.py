@@ -6,12 +6,22 @@ Provides 6 tools for Ontario practice advice queries.
 import asyncio
 import json
 import logging
+import os
+from pathlib import Path
 from typing import Dict, Any, List, Optional
 from datetime import datetime, timedelta
 from fastmcp import FastMCP
+import sys
+import traceback
 
 # Import retrieval clients
 from .retrieval import SQLClient, VectorClient
+
+# Import semantic search engine
+from .search import SemanticSearchEngine
+
+# Import Ontario Health Programs tool
+from .tools.ontario_health_programs import get_client as get_ontario_health_client
 
 # Import utilities
 from .utils import calculate_confidence, resolve_conflicts
@@ -28,6 +38,9 @@ from .models.request import (
     FreshnessProbeRequest
 )
 
+# Add missing import
+import sqlite3
+
 from .models.response import (
     SearchSectionsResponse,
     GetSectionResponse,
@@ -43,12 +56,32 @@ from .models.response import (
     Update
 )
 
-# Configure logging
+# Configure logging with session-based file output
+log_dir = Path("logs/dr_opa_agent")
+log_dir.mkdir(parents=True, exist_ok=True)
+
+# Session ID based on timestamp
+session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+log_file = log_dir / f"mcp_session_{session_id}.log"
+
+# Configure both file and console logging
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 logger = logging.getLogger(__name__)
+
+# Log session start
+logger.info(f"="*60)
+logger.info(f"Dr. OPA MCP Server Session: {session_id}")
+logger.info(f"Log file: {log_file}")
+logger.info(f"Python path: {sys.path}")
+logger.info(f"Environment: {os.environ.get('PYTHONPATH', 'Not set')}")
+logger.info(f"="*60)
 
 # Initialize FastMCP server
 mcp = FastMCP("dr-opa-server")
@@ -56,13 +89,21 @@ mcp = FastMCP("dr-opa-server")
 # Initialize shared clients (lazy loading)
 _sql_client = None
 _vector_client = None
+_semantic_search = None
 
 
 def get_sql_client() -> SQLClient:
     """Get or create SQL client singleton."""
     global _sql_client
     if _sql_client is None:
-        _sql_client = SQLClient()
+        try:
+            logger.info("Initializing SQL client...")
+            _sql_client = SQLClient()
+            logger.info("SQL client initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize SQL client: {e}")
+            logger.error(traceback.format_exc())
+            raise
     return _sql_client
 
 
@@ -70,8 +111,31 @@ def get_vector_client() -> VectorClient:
     """Get or create vector client singleton."""
     global _vector_client
     if _vector_client is None:
-        _vector_client = VectorClient()
+        try:
+            logger.info("Initializing vector client...")
+            _vector_client = VectorClient()
+            logger.info("Vector client initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize vector client: {e}")
+            logger.error(traceback.format_exc())
+            raise
     return _vector_client
+
+
+def get_semantic_search() -> SemanticSearchEngine:
+    """Get or create semantic search engine singleton."""
+    global _semantic_search
+    if _semantic_search is None:
+        try:
+            logger.info("Initializing semantic search engine...")
+            vector_client = get_vector_client()
+            _semantic_search = SemanticSearchEngine(vector_client)
+            logger.info("Semantic search engine initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize semantic search: {e}")
+            logger.error(traceback.format_exc())
+            raise
+    return _semantic_search
 
 
 @mcp.tool(name="opa.search_sections", description="Hybrid search across OPA knowledge corpus")
@@ -101,33 +165,43 @@ async def search_sections_handler(
         Matching sections with documents, highlights, and confidence
     """
     logger.info(f"opa.search_sections called with query: {query[:100]}...")
+    logger.debug(f"Parameters: sources={sources}, doc_types={doc_types}, topics={topics}, top_k={top_k}")
     
-    sql_client = get_sql_client()
-    vector_client = get_vector_client()
+    try:
+        semantic_search = get_semantic_search()
+    except Exception as e:
+        logger.error(f"Failed to get semantic search engine: {e}")
+        return {
+            "error": f"Search engine initialization failed: {str(e)}",
+            "sections": [],
+            "documents": [],
+            "confidence": 0.0
+        }
     
-    # Run SQL and vector searches in parallel
-    sql_task = sql_client.search_sections(
-        query=query,
-        sources=sources,
-        doc_types=doc_types,
-        topics=topics,
-        limit=top_k,
-        include_superseded=include_superseded
-    )
+    # Use the new semantic search engine
+    try:
+        search_results = await semantic_search.search(
+            query=query,
+            sources=sources,
+            document_types=doc_types,
+            after_date=date_range.get('start') if date_range else None,
+            top_k=top_k,
+            use_reranking=True
+        )
+        
+        logger.info(f"Semantic search returned {len(search_results)} results")
+        
+        # Format results for response
+        formatted_results = semantic_search.format_results(search_results)
+        
+    except Exception as e:
+        logger.error(f"Semantic search failed: {e}")
+        logger.error(traceback.format_exc())
+        formatted_results = []
     
-    vector_task = vector_client.search_sections(
-        query=query,
-        sources=sources,
-        doc_types=doc_types,
-        topics=topics,
-        n_results=top_k,
-        include_superseded=include_superseded
-    )
-    
-    sql_results, vector_results = await asyncio.gather(sql_task, vector_task)
-    
-    # Resolve conflicts and merge results
-    resolved_data, conflicts = resolve_conflicts(sql_results, vector_results)
+    # No conflicts in new approach - just semantic results
+    conflicts = []
+    resolved_data = {r['document_id']: r for r in formatted_results}
     
     # Convert to response format
     sections = []
@@ -174,28 +248,23 @@ async def search_sections_handler(
         )
         highlights.append(highlight)
     
-    # Calculate confidence
+    # Calculate confidence based on semantic search results
     confidence = OPAConfidenceScorer.calculate(
-        sql_hits=len(sql_results),
-        vector_matches=len(vector_results),
+        sql_hits=0,  # No SQL anymore
+        vector_matches=len(sections),
         sources=sources,
         doc_types=doc_types,
-        has_conflict=len(conflicts) > 0
+        has_conflict=False  # No conflicts with single search
     )
     
     # Create response
     response = SearchSectionsResponse(
         sections=sections[:top_k],
         documents=list(documents_map.values()),
-        provenance=['sql'] if sql_results else [] + ['vector'] if vector_results else [],
+        provenance=['semantic_search'],
         confidence=confidence,
         highlights=highlights,
-        conflicts=[Conflict(
-            field=c.get('fields', ['unknown'])[0],
-            source1={'type': 'sql', 'value': str(c.get('sql_source', {}))[:100]},
-            source2={'type': 'vector', 'value': str(c.get('vector_source', {}))[:100]},
-            resolution=c.get('resolution', 'SQL preferred')
-        ) for c in conflicts[:3]],
+        conflicts=[],  # No conflicts with single search approach
         query_interpretation=f"Searching for: {query}"
     )
     
@@ -327,17 +396,43 @@ async def policy_check_handler(
         Relevant policies, expectations, advice with confidence
     """
     logger.info(f"opa.policy_check called for topic: {topic}")
+    logger.debug(f"Parameters: situation={situation}, policy_level={policy_level}, include_related={include_related}")
     
-    sql_client = get_sql_client()
+    try:
+        semantic_search = get_semantic_search()
+    except Exception as e:
+        logger.error(f"Failed to get semantic search engine: {e}")
+        return PolicyCheckResponse(
+            policies=[],
+            expectations=[],
+            advice=[],
+            related=[],
+            confidence=0.6,
+            summary=f"CPSO Guidance for '{topic}': No specific CPSO guidance found for this topic"
+        ).dict()
     
-    # Search for CPSO policies
+    # Search for CPSO policies using semantic search
     search_query = f"{topic} {situation}" if situation else topic
     
-    policies_data = await sql_client.search_policies(
-        topic=search_query,
-        policy_level=policy_level if policy_level != "both" else None,
-        include_related=include_related
-    )
+    # Use semantic search with CPSO filter
+    try:
+        search_results = await semantic_search.search(
+            query=search_query,
+            sources=['cpso'],
+            policy_level=policy_level if policy_level != "both" else None,
+            top_k=15,  # Get more for categorization
+            use_reranking=True
+        )
+        
+        logger.info(f"Semantic search found {len(search_results)} CPSO documents")
+        
+        # Format results
+        policies_data = semantic_search.format_results(search_results)
+        
+    except Exception as e:
+        logger.error(f"Semantic search failed: {e}")
+        logger.error(traceback.format_exc())
+        policies_data = []
     
     # Organize results
     policies = []
@@ -345,11 +440,11 @@ async def policy_check_handler(
     advice_items = []
     
     for policy_data in policies_data:
-        # Create document
+        # Create document - use document_title for semantic search results
         doc = Document(
             document_id=policy_data.get('document_id'),
-            title=policy_data.get('title'),
-            source_org='cpso',
+            title=policy_data.get('document_title') or policy_data.get('title'),
+            source_org=policy_data.get('source_org', 'cpso'),
             document_type=policy_data.get('document_type'),
             effective_date=policy_data.get('effective_date'),
             topics=policy_data.get('topics', []),
@@ -360,11 +455,12 @@ async def policy_check_handler(
         
         # Categorize by policy level
         level = policy_data.get('policy_level')
+        doc_title = policy_data.get('document_title') or policy_data.get('title', 'Unknown')
         if level == 'expectation':
             expectations.append(Highlight(
-                point=f"{policy_data.get('title')}: Mandatory expectation",
+                point=f"{doc_title}: Mandatory expectation",
                 citations=[Citation(
-                    source=policy_data.get('title'),
+                    source=doc_title,
                     source_org='cpso',
                     loc='Policy',
                     url=policy_data.get('source_url')
@@ -373,9 +469,9 @@ async def policy_check_handler(
             ))
         elif level == 'advice':
             advice_items.append(Highlight(
-                point=f"{policy_data.get('title')}: Professional advice",
+                point=f"{doc_title}: Professional advice",
                 citations=[Citation(
-                    source=policy_data.get('title'),
+                    source=doc_title,
                     source_org='cpso',
                     loc='Advice',
                     url=policy_data.get('source_url')
@@ -445,7 +541,7 @@ async def policy_check_handler(
     return response.dict()
 
 
-@mcp.tool(name="opa.program_lookup", description="Ontario Health screening program information")
+@mcp.tool(name="opa.program_lookup", description="Ontario Health clinical programs information (cancer, kidney, cardiac, etc.)")
 async def program_lookup_handler(
     program: str,
     patient_age: Optional[int] = None,
@@ -453,130 +549,182 @@ async def program_lookup_handler(
     info_needed: List[str] = None
 ) -> Dict[str, Any]:
     """
-    Ontario Health screening program information lookup.
+    Ontario Health clinical programs information lookup using Claude with web search.
+    Covers all Ontario Health programs including cancer care, kidney care, cardiac,
+    stroke, mental health, palliative care, and more.
     
     Args:
-        program: Screening program (breast, cervical, colorectal, lung, hpv)
+        program: Clinical program name (e.g., "cancer screening", "kidney care", "cardiac", "stroke")
         patient_age: Patient age for eligibility
         risk_factors: Patient risk factors
-        info_needed: Information types to retrieve
+        info_needed: Information types to retrieve (e.g., ["eligibility", "locations", "referral"])
     
     Returns:
-        Program eligibility, intervals, procedures, and patient-specific info
+        Program information including eligibility, procedures, locations, and resources
     """
     logger.info(f"opa.program_lookup called for program: {program}")
+    logger.debug(f"Parameters: age={patient_age}, risk_factors={risk_factors}, info_needed={info_needed}")
     
-    sql_client = get_sql_client()
-    
-    if info_needed is None:
-        info_needed = ["eligibility", "intervals"]
-    
-    # Get program information from database
-    program_data = await sql_client.get_program_info(program)
-    
-    if not program_data:
+    try:
+        # Use the Ontario Health Programs client with Claude + web_search
+        ontario_client = get_ontario_health_client()
+        
+        # Search for program information using Claude with restricted domain search
+        program_info = ontario_client.search_program(
+            program=program,
+            patient_age=patient_age,
+            risk_factors=risk_factors,
+            info_needed=info_needed
+        )
+        
+        # Check for errors from the client
+        if "error" in program_info:
+            logger.error(f"Ontario Health client error: {program_info['error']}")
+            return {
+                "error": program_info.get("error"),
+                "program": program,
+                "message": program_info.get("message", "Failed to retrieve program information")
+            }
+        
+        # Extract structured information from the response
+        eligibility = program_info.get("eligibility", {})
+        access_info = program_info.get("access", {})
+        services = program_info.get("services", [])
+        locations = program_info.get("locations", [])
+        resources = program_info.get("resources", [])
+        citations = program_info.get("citations", [])
+        
+        # Convert to ProgramLookupResponse format for backward compatibility
+        # Build procedures list from services
+        procedures = services[:5] if services else []
+        
+        # Build intervals from eligibility info if available
+        intervals = {}
+        if "age_criteria" in eligibility:
+            intervals["eligibility"] = eligibility.get("age_criteria")
+        
+        # Build follow-up from access info
+        followup = {}
+        if "referral_process" in access_info:
+            followup["referral"] = access_info.get("referral_process")
+        if "self_referral" in access_info:
+            followup["self_referral"] = access_info.get("self_referral")
+        
+        # Patient-specific recommendations
+        patient_specific = program_info.get("patient_specific")
+        if not patient_specific and patient_age:
+            # Generate basic recommendations based on age
+            patient_specific = {
+                "age": patient_age,
+                "recommendation": f"Please consult the program eligibility criteria for age {patient_age}"
+            }
+            
+            if risk_factors:
+                patient_specific["risk_factors"] = risk_factors
+                patient_specific["recommendation"] += " with consideration of risk factors"
+        
+        # Convert citations to Citation objects
+        formatted_citations = []
+        for cit in citations[:5]:  # Limit to 5 citations
+            formatted_citations.append(Citation(
+                source=cit.get("title", "Ontario Health"),
+                source_org="ontario_health",
+                loc=f"{program.capitalize()} Program",
+                url=cit.get("url", "")
+            ))
+        
+        # Add locations and resources to the response
+        additional_info = {}
+        if locations:
+            additional_info["locations"] = locations
+        if resources:
+            additional_info["resources"] = resources
+        if program_info.get("overview"):
+            additional_info["overview"] = program_info["overview"]
+        
+        # Create response
+        response = ProgramLookupResponse(
+            program=program,
+            eligibility=eligibility,
+            intervals=intervals,
+            procedures=procedures,
+            followup=followup,
+            patient_specific=patient_specific,
+            citations=formatted_citations,
+            last_updated=datetime.now().isoformat(),
+            additional_info=additional_info  # Include extra information
+        )
+        
+        logger.info(f"Successfully retrieved {program} program information with {len(formatted_citations)} citations")
+        
+        return response.dict()
+        
+    except Exception as e:
+        logger.error(f"Error in program_lookup_handler: {e}")
+        logger.error(traceback.format_exc())
+        
+        # Fallback to SQL client for backward compatibility with screening programs
+        try:
+            logger.info("Attempting fallback to SQL client for screening programs")
+            sql_client = get_sql_client()
+            
+            # Try to get basic screening program info from database
+            program_data = await sql_client.get_program_info(program)
+            
+            if program_data:
+                # Use the old parsing logic for screening programs
+                return _parse_screening_program_data(program_data, program, patient_age, risk_factors)
+        except Exception as sql_error:
+            logger.error(f"SQL fallback also failed: {sql_error}")
+        
+        # Return error response
         return {
-            "error": f"No information found for {program} screening program",
-            "program": program
+            "error": str(e),
+            "program": program,
+            "message": "Failed to retrieve program information from Ontario Health sources"
         }
-    
-    # Parse program data into structured format
+
+
+def _parse_screening_program_data(program_data: Dict, program: str, patient_age: Optional[int], risk_factors: Optional[List[str]]) -> Dict[str, Any]:
+    """Helper function to parse screening program data from SQL database (backward compatibility)."""
     eligibility = {}
     intervals = {}
     procedures = []
     followup = {}
     
-    # Extract information from sections
+    # Extract information from sections (simplified version of old logic)
     for section in program_data.get('sections', []):
         text = section.get('text', '').lower()
         heading = section.get('heading', '').lower()
         
-        # Extract eligibility
-        if 'eligibility' in info_needed and ('eligib' in heading or 'who' in heading):
-            if 'age' in text:
-                # Simple extraction - would be more sophisticated in production
-                if '50' in text and '74' in text:
-                    eligibility['age_range'] = '50-74'
-                elif '21' in text and '69' in text:
-                    eligibility['age_range'] = '21-69'
-            
-            if 'average risk' in text:
-                eligibility['risk_level'] = 'average'
-            elif 'high risk' in text:
-                eligibility['risk_level'] = 'high'
+        if 'eligib' in heading:
+            if '50' in text and '74' in text:
+                eligibility['age_range'] = '50-74'
+            elif '21' in text and '69' in text:
+                eligibility['age_range'] = '21-69'
         
-        # Extract intervals
-        if 'intervals' in info_needed and ('interval' in heading or 'how often' in heading):
-            if 'every 2 years' in text or 'biennial' in text:
+        if 'interval' in heading:
+            if 'every 2 years' in text:
                 intervals['standard'] = 'Every 2 years'
             elif 'every 3 years' in text:
                 intervals['standard'] = 'Every 3 years'
-            elif 'annual' in text or 'every year' in text:
-                intervals['high_risk'] = 'Annual'
-        
-        # Extract procedures
-        if 'procedures' in info_needed and ('test' in heading or 'procedure' in heading):
-            if 'mammograph' in text:
-                procedures.append('Mammography')
-            if 'colonoscop' in text:
-                procedures.append('Colonoscopy')
-            if 'fit' in text or 'fecal' in text:
-                procedures.append('FIT (Fecal Immunochemical Test)')
-            if 'pap' in text:
-                procedures.append('Pap test')
-            if 'hpv' in text:
-                procedures.append('HPV testing')
-        
-        # Extract follow-up
-        if 'followup' in info_needed and ('follow' in heading or 'result' in heading):
-            if 'abnormal' in text:
-                followup['abnormal'] = 'Referral for further assessment'
-            if 'positive' in text:
-                followup['positive'] = 'Diagnostic testing recommended'
     
     # Patient-specific recommendations
     patient_specific = None
     if patient_age:
-        patient_specific = {}
-        
-        # Check eligibility based on age
-        if program == 'breast' and 50 <= patient_age <= 74:
-            patient_specific['eligible'] = True
-            patient_specific['recommendation'] = 'Eligible for routine mammography screening'
-        elif program == 'cervical' and 21 <= patient_age <= 69:
-            patient_specific['eligible'] = True
-            patient_specific['recommendation'] = 'Eligible for cervical screening'
-        elif program == 'colorectal' and 50 <= patient_age <= 74:
-            patient_specific['eligible'] = True
-            patient_specific['recommendation'] = 'Eligible for colorectal screening'
-        else:
-            patient_specific['eligible'] = False
-            patient_specific['recommendation'] = 'Outside standard screening age range'
-        
-        # Adjust for risk factors
-        if risk_factors:
-            if 'family_history' in risk_factors:
-                patient_specific['risk_level'] = 'increased'
-                patient_specific['recommendation'] += ' - Consider earlier/more frequent screening due to family history'
+        patient_specific = {
+            'age': patient_age,
+            'recommendation': f'Check eligibility for {program} screening at age {patient_age}'
+        }
     
-    # Create citations
-    citations = []
-    for doc_id, doc_info in program_data.get('documents', {}).items():
-        citations.append(Citation(
-            source=doc_info.get('title', ''),
-            source_org='ontario_health',
-            loc=f"{program.capitalize()} Screening Program",
-            url=doc_info.get('url')
-        ))
+    # Create minimal citations
+    citations = [Citation(
+        source="Ontario Health Database",
+        source_org='ontario_health',
+        loc=f"{program.capitalize()} Screening Program",
+        url=""
+    )]
     
-    # Get last updated date
-    last_updated = None
-    for doc_info in program_data.get('documents', {}).values():
-        if doc_info.get('effective_date'):
-            last_updated = doc_info['effective_date']
-            break
-    
-    # Create response
     response = ProgramLookupResponse(
         program=program,
         eligibility=eligibility,
@@ -584,8 +732,8 @@ async def program_lookup_handler(
         procedures=procedures,
         followup=followup,
         patient_specific=patient_specific,
-        citations=citations[:3],  # Limit citations
-        last_updated=last_updated
+        citations=citations,
+        last_updated=None
     )
     
     return response.dict()
@@ -612,37 +760,41 @@ async def ipac_guidance_handler(
     """
     logger.info(f"opa.ipac_guidance called for {setting}/{topic}")
     
-    sql_client = get_sql_client()
-    vector_client = get_vector_client()
-    
     # Build search query
     search_query = f"{setting} {topic}"
     if pathogen:
         search_query += f" {pathogen}"
     
-    # Search for IPAC guidance (focus on PHO sources)
-    sql_task = sql_client.search_sections(
-        query=search_query,
-        sources=['pho', 'ontario_health'],
-        doc_types=['guideline', 'tool', 'policy'],
-        limit=15
-    )
+    logger.info(f"IPAC guidance search: '{search_query}'")
     
-    vector_task = vector_client.search_sections(
-        query=search_query,
-        sources=['pho'],
-        n_results=10
-    )
+    # Use semantic search for IPAC guidance
+    semantic_search = get_semantic_search()
     
-    sql_results, vector_results = await asyncio.gather(sql_task, vector_task)
+    try:
+        search_results = await semantic_search.search(
+            query=search_query,
+            sources=['pho'],  # Focus on PHO for IPAC
+            document_types=['guideline', 'tool', 'policy'],
+            top_k=15,
+            use_reranking=True
+        )
+        
+        # Format results
+        formatted_results = semantic_search.format_results(search_results)
+        logger.info(f"Semantic search returned {len(formatted_results)} IPAC results")
+        
+    except Exception as e:
+        logger.error(f"Search failed: {e}")
+        logger.error(traceback.format_exc())
+        formatted_results = []
     
     # Process results
     guidelines = []
     procedures = []
     checklists = []
     
-    for result in sql_results:
-        text = result.get('section_text', '')
+    for result in formatted_results:
+        text = result.get('text', '')
         heading = result.get('section_heading', '')
         
         # Create highlight for key guidelines
@@ -676,18 +828,18 @@ async def ipac_guidance_handler(
     # Pathogen-specific guidance
     pathogen_specific = None
     if pathogen:
-        pathogen_results = [r for r in sql_results if pathogen.lower() in r.get('section_text', '').lower()]
+        pathogen_results = [r for r in formatted_results if pathogen.lower() in r.get('text', '').lower()]
         if pathogen_results:
             pathogen_specific = {
                 'pathogen': pathogen,
-                'guidance': pathogen_results[0].get('section_text', '')[:500],
+                'guidance': pathogen_results[0].get('text', '')[:500],
                 'source': pathogen_results[0].get('document_title', '')
             }
     
     # Create citations
     citations = []
     seen_sources = set()
-    for result in sql_results[:5]:
+    for result in formatted_results[:5]:
         source = result.get('document_title', '')
         if source and source not in seen_sources:
             seen_sources.add(source)
@@ -859,116 +1011,103 @@ async def clinical_tools_handler(
     """
     logger.info(f"opa.clinical_tools called - condition: {condition}, category: {category}")
     
-    sql_client = get_sql_client()
-    
-    # Build query for clinical tools
-    query_parts = []
-    params = []
-    
-    query_parts.append("""
-        SELECT DISTINCT
-            d.document_id,
-            d.title,
-            d.source_url,
-            d.effective_date as last_updated,
-            d.metadata_json,
-            s.section_text as overview_text
-        FROM opa_documents d
-        LEFT JOIN opa_sections s ON d.document_id = s.document_id 
-            AND s.chunk_type = 'parent' 
-            AND s.section_heading LIKE '%Overview%'
-        WHERE d.source_org = 'cep' 
-            AND d.document_type = 'clinical_tool'
-    """)
-    
-    # Add filters
+    # Build search query
+    search_parts = []
     if condition:
-        query_parts.append("AND (LOWER(d.title) LIKE ? OR LOWER(d.metadata_json) LIKE ?)")
-        params.extend([f"%{condition.lower()}%", f"%{condition.lower()}%"])
-    
+        search_parts.append(f"clinical tool for {condition}")
     if tool_name:
-        query_parts.append("AND LOWER(d.title) LIKE ?")
-        params.append(f"%{tool_name.lower()}%")
-    
+        search_parts.append(tool_name)
     if category:
-        query_parts.append("AND LOWER(d.metadata_json) LIKE ?")
-        params.append(f"%{category.lower()}%")
-    
+        search_parts.append(f"{category} tools")
     if feature_type:
-        query_parts.append("AND LOWER(d.metadata_json) LIKE ?")
-        params.append(f"%has_{feature_type.lower()}%true%")
+        search_parts.append(f"{feature_type} calculator algorithm checklist")
     
-    query = " ".join(query_parts)
+    # Default query if no specific criteria
+    if not search_parts:
+        search_query = "clinical decision support tools"
+    else:
+        search_query = " ".join(search_parts)
     
-    # Execute query
-    conn = sql_client.db.connect()
-    cursor = conn.cursor()
-    cursor.execute(query, params)
-    results = cursor.fetchall()
+    logger.info(f"Clinical tools semantic search: '{search_query}'")
     
-    # Format results
-    tools = []
-    for row in results:
-        doc_id, title, url, last_updated, metadata_json, overview_text = row
+    # Use semantic search for clinical tools
+    semantic_search = get_semantic_search()
+    
+    try:
+        search_results = await semantic_search.search(
+            query=search_query,
+            sources=['cep'],  # Focus on CEP for clinical tools
+            document_types=['clinical_tool'],
+            top_k=20,  # Get more tools
+            use_reranking=True
+        )
         
-        # Parse metadata
-        try:
-            metadata = json.loads(metadata_json) if metadata_json else {}
-        except:
-            metadata = {}
+        # Format results
+        formatted_results = semantic_search.format_results(search_results)
+        logger.info(f"Semantic search returned {len(formatted_results)} clinical tools")
+        
+    except Exception as e:
+        logger.error(f"Search failed: {e}")
+        logger.error(traceback.format_exc())
+        formatted_results = []
+    
+    # Process results into tools
+    tools = []
+    for result in formatted_results:
+        # Extract fields from semantic search results
+        doc_id = result.get('document_id', '')
+        title = result.get('document_title', '')
+        url = result.get('source_url', '')
+        last_updated = result.get('effective_date', '')
+        text = result.get('text', '')
+        
+        # Parse metadata if available
+        metadata = {}
+        if 'metadata' in result:
+            metadata = result['metadata']
         
         tool_data = {
             'tool_id': doc_id,
             'name': title,
             'url': url,
             'last_updated': last_updated,
-            'category': metadata.get('category', 'general'),
-            'summary': overview_text[:500] if overview_text else metadata.get('meta_description', ''),
+            'category': category or 'general',
+            'summary': text[:500] if text else '',
             'key_features': {}
         }
         
-        # Extract features
-        features = metadata.get('features', {})
-        if features.get('has_algorithm'):
+        # Extract features from text/metadata
+        text_lower = text.lower() if text else ''
+        if 'algorithm' in text_lower or 'assessment' in text_lower:
             tool_data['key_features']['assessment_algorithm'] = {
                 'available': True,
                 'url': f"{url}#assessment"
             }
         
-        if features.get('has_calculator'):
+        if 'calculator' in text_lower or 'calculate' in text_lower:
             tool_data['key_features']['calculator'] = {
                 'available': True,
                 'url': f"{url}#calculator"
             }
         
-        if features.get('has_checklist'):
+        if 'checklist' in text_lower or 'criteria' in text_lower:
             tool_data['key_features']['checklist'] = {
                 'available': True,
                 'url': f"{url}#checklist"
             }
         
-        # Add assessment tools if available
-        if metadata.get('has_assessment_tools'):
-            tool_data['key_features']['screening_tools'] = ['Available - see tool page']
-        
         # Add sections if requested
-        if include_sections:
-            section_query = """
-                SELECT section_heading, section_text
-                FROM opa_sections
-                WHERE document_id = ? AND chunk_type = 'child'
-                LIMIT 5
-            """
-            cursor.execute(section_query, (doc_id,))
-            sections = cursor.fetchall()
-            
+        if include_sections and text:
+            # Extract section-like content from text
+            lines = text.split('\n')
             tool_data['sections'] = []
-            for heading, text in sections:
-                tool_data['sections'].append({
-                    'title': heading,
-                    'summary': text[:200] + '...' if len(text) > 200 else text,
-                    'url': f"{url}#{heading.lower().replace(' ', '-')}"
-                })
+            for i, line in enumerate(lines[:5]):  # First 5 lines as sections
+                if line.strip():
+                    tool_data['sections'].append({
+                        'title': f"Section {i+1}",
+                        'summary': line[:200] + '...' if len(line) > 200 else line,
+                        'url': url
+                    })
         
         # Add quick links
         tool_data['quick_links'] = {
@@ -977,8 +1116,6 @@ async def clinical_tools_handler(
         }
         
         tools.append(tool_data)
-    
-    conn.close()
     
     # Create response
     response = {
@@ -998,14 +1135,33 @@ async def clinical_tools_handler(
 
 
 if __name__ == "__main__":
-    # For testing, run the server directly
-    import uvicorn
+    logger.info("Starting Dr. OPA MCP server...")
+    logger.info("Registered tools:")
+    logger.info("  - opa.search_sections: Hybrid search across OPA corpus")
+    logger.info("  - opa.get_section: Retrieve complete section by ID")
+    logger.info("  - opa.policy_check: CPSO policy and advice retrieval")
+    logger.info("  - opa.program_lookup: Ontario Health clinical programs (ALL programs via web search)")
+    logger.info("  - opa.ipac_guidance: PHO infection prevention guidance")
+    logger.info("  - opa.freshness_probe: Check for guidance updates")
+    logger.info("  - opa.clinical_tools: CEP clinical decision support tools")
     
-    # Initialize clients on startup
-    logger.info("Dr. OPA MCP server starting...")
-    get_sql_client()
-    get_vector_client()
-    logger.info("Dr. OPA MCP server ready")
+    # Try to initialize clients on startup but don't fail if database is missing
+    try:
+        logger.info("Attempting to initialize database clients...")
+        get_sql_client()
+        get_vector_client()
+        logger.info("Dr. OPA MCP server ready with database connections")
+    except Exception as e:
+        logger.warning(f"Database initialization failed: {e}")
+        logger.warning("Server will start but database operations may fail")
+        logger.warning("Please ensure database is populated using ingestion scripts")
     
-    # Run server
-    uvicorn.run(mcp, host="127.0.0.1", port=8001)
+    logger.info(f"Server session log: {log_file}")
+    
+    # Run the server on stdio (what MCP CLI expects)
+    try:
+        mcp.run()
+    except Exception as e:
+        logger.error(f"Server crashed: {e}")
+        logger.error(traceback.format_exc())
+        raise

@@ -2,24 +2,26 @@
 
 ## Implementation Status
 
-| Tool | Status | Files |
-|------|--------|-------|
-| opa.search_sections | ✅ Implemented | `server.py` |
-| opa.get_section | ✅ Implemented | `server.py` |
-| opa.policy_check | ✅ Implemented | `server.py` |
-| opa.program_lookup | ✅ Implemented | `server.py` |
-| opa.ipac_guidance | ✅ Implemented | `server.py` |
-| opa.freshness_probe | ✅ Implemented | `server.py` |
-| opa.clinical_tools | ✅ Implemented | `server.py` |
+| Tool | Status | Search Method | Files |
+|------|--------|---------------|-------|
+| opa.search_sections | ✅ Implemented | Semantic Search | `server.py`, `search/semantic_search.py` |
+| opa.get_section | ✅ Implemented | SQL (by ID) | `server.py` |
+| opa.policy_check | ✅ Implemented | Semantic Search | `server.py`, `search/semantic_search.py` |
+| opa.program_lookup | ✅ Implemented | Claude + Web Search | `server.py`, `tools/ontario_health_programs.py` |
+| opa.ipac_guidance | ✅ Implemented | Semantic Search | `server.py`, `search/semantic_search.py` |
+| opa.freshness_probe | ✅ Implemented | SQL (metadata) | `server.py` |
+| opa.clinical_tools | ✅ Implemented | Semantic Search | `server.py`, `search/semantic_search.py` |
 | **Shared Utilities** | | |
-| SQL Client | ✅ Implemented | `retrieval/sql_client.py` |
-| Vector Client | ✅ Implemented | `retrieval/vector_client.py` |
-| Confidence Scorer | ✅ Implemented | `utils/confidence.py` |
-| Citation Formatter | ✅ Implemented | `utils/citations.py` |
+| SQL Client | ✅ Implemented | - | `retrieval/sql_client.py` |
+| Vector Client | ✅ Implemented | - | `retrieval/vector_client.py` |
+| Semantic Search Engine | ✅ Implemented | - | `search/semantic_search.py` |
+| Ontario Health Programs Client | ✅ Implemented | Claude + Web Search | `tools/ontario_health_programs.py` |
+| Confidence Scorer | ✅ Implemented | - | `utils/confidence.py` |
+| Citation Formatter | ✅ Implemented | - | `utils/citations.py` |
 
 ## Overview
 
-The Dr. OPA MCP server provides 7 specialized tools for Ontario practice guidance queries. Each tool implements **dual-path retrieval**, running SQL and vector searches in parallel to ensure accuracy, provide citations, and maintain currency of guidance.
+The Dr. OPA MCP server provides 7 specialized tools for Ontario practice guidance queries. Most tools use a **Vector → Rerank → Filter** semantic search algorithm for document-based queries, while `opa.program_lookup` uses **Claude + Web Search** for comprehensive Ontario Health clinical programs coverage.
 
 **Server Location**: `src/agents/dr_opa_agent/mcp/server.py`  
 **Base URL**: `http://localhost:8001` (when running)  
@@ -30,7 +32,7 @@ The Dr. OPA MCP server provides 7 specialized tools for Ontario practice guidanc
 ## Tool 1: opa.search_sections
 
 ### Purpose
-Hybrid search across all OPA knowledge sources with metadata filtering to find relevant guidance sections.
+Semantic search across all OPA knowledge sources using Vector → Rerank → Filter algorithm to find relevant guidance sections.
 
 ### Clinical Use Cases
 - **General guidance queries**: "What are the documentation requirements for virtual care?"
@@ -88,24 +90,43 @@ Hybrid search across all OPA knowledge sources with metadata filtering to find r
 
 ### Algorithm
 
-1. **Parallel Retrieval**:
+1. **Vector → Rerank → Filter Pipeline**:
    ```python
    async def search():
-       sql_task = asyncio.create_task(sql_client.search_sections())
-       vector_task = asyncio.create_task(vector_client.search_opa())
-       
-       sql_result, vector_result = await asyncio.gather(
-           sql_task, vector_task, return_exceptions=True
+       # Step 1: Vector Search (cast wide net)
+       candidates = await vector_client.search_sections(
+           query=query,
+           sources=sources,
+           n_results=50  # Oversample for reranking
        )
+       
+       # Step 2: LLM Reranking (improve precision)
+       reranked = await llm_rerank(
+           query=query,
+           documents=candidates,
+           top_k=20  # Narrow down
+       )
+       
+       # Step 3: Metadata Filtering (apply constraints)
+       filtered = apply_filters(
+           documents=reranked,
+           document_types=doc_types,
+           after_date=after_date
+       )
+       
+       return filtered[:top_k]
    ```
 
-2. **Metadata Filtering**:
-   - SQL: WHERE clauses on source_org, document_type, is_superseded
-   - Vector: Chroma metadata filters using $eq, $in operators
-   - Topics: Match any provided topic using JSON containment
+2. **LLM Reranking**:
+   - Uses GPT-4o-mini for fast relevance scoring
+   - Scores documents 0-10 based on query relevance
+   - Considers title, content, and metadata alignment
+   - Parallel scoring for efficiency
 
-3. **Re-ranking**:
-   - Combine SQL and vector results by section_id
+3. **Metadata Filtering**:
+   - Applied AFTER reranking to preserve relevance order
+   - Filters by document_type, policy_level, effective_date
+   - Does not affect relevance scores
    - Boost scores for:
      - Exact phrase matches (+50%)
      - Title matches (+30%)
@@ -266,74 +287,122 @@ CPSO-specific policy retrieval with focus on regulatory expectations vs. advice.
 ## Tool 4: opa.program_lookup
 
 ### Purpose
-Ontario Health screening program and clinical pathway guidance retrieval.
+Ontario Health clinical programs information retrieval using Claude with web search. Covers ALL Ontario Health programs including cancer care, kidney care, cardiac, stroke, mental health, palliative care, and screening programs.
 
 ### Clinical Use Cases
-- **Screening intervals**: "Cervical screening for 30-year-old patient"
-- **Eligibility criteria**: "Who qualifies for breast screening?"
-- **Referral pathways**: "How to refer for colonoscopy"
-- **Program changes**: "New HPV testing guidelines March 2025"
+- **Cancer programs**: "Breast cancer screening for 50-year-old with family history"
+- **Kidney care**: "Chronic kidney disease programs for elderly patients"
+- **Cardiac programs**: "Heart failure management resources"
+- **Mental health**: "Depression treatment programs and referral process"
+- **Screening programs**: "Cervical screening intervals and eligibility"
+- **Specialized care**: "Stroke rehabilitation programs in Ontario"
 
 ### Request Schema
 ```python
 {
-    "program": str,                    # Required: "cervical", "breast", "colorectal", "lung"
-    "query_type": str,                 # Required: "intervals", "eligibility", "pathway", "referral"
-    "patient_age": int,                # Optional: For age-based criteria
-    "risk_factors": [str]              # Optional: High-risk indicators
+    "program": str,                    # Required: Program name (e.g., "cancer screening", "kidney care", "mental health")
+    "patient_age": int,                # Optional: Patient age for eligibility checks
+    "risk_factors": [str],             # Optional: Risk factors (e.g., ["family history", "diabetes"])
+    "info_needed": [str]               # Optional: Specific info types ["eligibility", "locations", "referral", "procedures"]
 }
 ```
 
 ### Response Schema
 ```python
 {
-    "provenance": ["sql", "vector"],
-    "confidence": float,
-    "program": str,
-    "guidance_type": str,
-    "recommendations": [
+    "program": str,                    # Program name
+    "eligibility": {                   # Eligibility criteria
+        "age_criteria": str,           # Age-based requirements
+        "risk_criteria": str,          # Risk factor considerations
+        "general": [str]               # General eligibility points
+    },
+    "intervals": dict,                 # Screening/treatment intervals
+    "procedures": [str],               # Available services and procedures
+    "followup": {                      # Follow-up protocols
+        "referral_process": str,       # How to refer patients
+        "self_referral": str          # Self-referral options
+    },
+    "patient_specific": {              # Patient-specific recommendations
+        "age": int,                    # Patient age
+        "recommendation": str,         # Personalized recommendation
+        "risk_factors": [str]          # Considered risk factors
+    },
+    "citations": [                     # Web sources with citations
         {
-            "text": str,                # Recommendation text
-            "category": str,            # "screening", "diagnostic", "referral"
-            "age_range": [int, int],    # Age applicability
-            "frequency": str,           # e.g., "every 5 years"
-            "conditions": [str],        # Qualifying conditions
-            "source_section_id": str
+            "source": str,             # Source document title
+            "source_org": "ontario_health",
+            "loc": str,                # Location reference
+            "url": str                 # Source URL
         }
     ],
-    "algorithms": [                    # Decision algorithms if available
-        {
-            "name": str,
-            "description": str,
-            "steps": [str],
-            "decision_points": [dict],
-            "source_url": str
-        }
-    ],
-    "effective_date": str,             # When guidance takes effect
-    "next_review": str,                # Next review date
-    "citations": [...],
-    "conflicts": [...]
+    "last_updated": str,               # Timestamp of search
+    "additional_info": {               # Extended information
+        "overview": str,               # Program overview
+        "locations": [str],            # Service locations and contacts
+        "resources": [str]             # Patient resources and education materials
+    }
 }
 ```
 
+### Implementation Details
+
+1. **Claude + Web Search Architecture**:
+   - Uses Anthropic Claude with web_search tool
+   - Restricted to 25+ Ontario Health domains
+   - LLM-powered information extraction and structuring
+
+2. **Domain Coverage** (25+ domains):
+   ```python
+   ONTARIO_HEALTH_DOMAINS = [
+       # Core sites
+       "ontariohealth.ca", "health811.ontario.ca",
+       # Cancer care
+       "cancercareontario.ca", "ccohealth.ca", "mycanceriq.ca",
+       # Kidney care
+       "ontariorenalnetwork.ca", "renalnetwork.on.ca",
+       # Critical care
+       "criticalcareontario.ca",
+       # Cardiac/stroke
+       "corhealthontario.ca", "strokenetworkontario.ca",
+       # Mental health
+       "mentalhealthandaddictions.ca", "connex.ontariohealth.ca",
+       # And 15+ more specialized domains
+   ]
+   ```
+
+3. **Search Process**:
+   - Constructs targeted search queries based on program and patient factors
+   - Uses Claude to search Ontario Health domains for current information
+   - Structures response into standardized format
+   - Provides patient-specific recommendations when age/risk factors provided
+
+4. **Fallback Support**:
+   - Falls back to SQL database for legacy screening programs
+   - Maintains backward compatibility with existing implementations
+
 ### Algorithm
 
-1. **Program Mapping**:
-   - Map program names to Ontario Health collections
-   - Cervical → HPV Hub, OCSP documents
-   - Breast → OBSP guidelines
-   - Colorectal → ColonCancerCheck
+1. **Query Construction**:
+   ```python
+   query_parts = [f"Ontario Health {program} program"]
+   if patient_age: query_parts.append(f"age {patient_age} eligibility")
+   if risk_factors: query_parts.extend(risk_factors)
+   if info_needed: query_parts.extend(info_needed)
+   ```
 
-2. **Age-Based Filtering**:
-   - Extract age ranges from guidance text
-   - Match patient_age to applicable ranges
-   - Flag if outside screening age
+2. **Claude Web Search**:
+   - System prompt focuses on Ontario Health programs
+   - Web search restricted to trusted domains
+   - Multiple searches allowed for comprehensive coverage
 
-3. **Pathway Extraction**:
-   - Identify sequential steps in screening pathways
-   - Extract decision points (e.g., "if positive, then...")
-   - Format as structured algorithm
+3. **Response Parsing**:
+   - LLM extracts structured information from web content
+   - Categorizes into eligibility, procedures, locations, resources
+   - Generates patient-specific recommendations
+
+4. **Error Handling**:
+   - Graceful degradation to database lookup for screening programs
+   - Comprehensive error logging and fallback responses
 
 ---
 
@@ -854,3 +923,4 @@ result = await clinical_tools_handler(
     include_sections=True
 )
 ```
+

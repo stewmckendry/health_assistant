@@ -509,6 +509,45 @@ messages = [
 ]
 ```
 
+## 🤖 MCP Agents
+
+The project includes specialized MCP (Model Context Protocol) agents for healthcare professionals:
+
+### Dr. OPA Agent (Ontario Practice Advice)
+**Location**: `docs/agents/dr_opa_agent/`
+
+Provides Ontario-specific clinical practice guidance for healthcare professionals:
+
+- **CPSO Policies**: College of Physicians and Surgeons of Ontario regulatory guidance
+- **Ontario Health Programs**: ALL clinical programs via Claude + Web Search
+  - Cancer care, kidney care, cardiac programs, mental health services
+  - Real-time program information from 25+ Ontario Health domains  
+  - Patient-specific recommendations with age and risk factors
+- **PHO IPAC**: Public Health Ontario infection prevention and control
+- **CEP Tools**: Centre for Effective Practice clinical decision support
+
+**Key Tool**: `opa.program_lookup` - Comprehensive Ontario Health clinical programs lookup using Claude with web search, covering cancer screening, kidney care, cardiac rehabilitation, mental health programs, and more.
+
+### Dr. OFF Agent (Ontario Finance & Formulary)
+**Location**: `docs/agents/dr_off_agent/`
+
+Provides Ontario healthcare funding and formulary information:
+
+- **OHIP Schedule**: Ontario Health Insurance Plan billing codes and coverage
+- **ODB Formulary**: Ontario Drug Benefit formulary lookup
+- **ADP Coverage**: Assistive Devices Program eligibility and funding
+
+**Usage**:
+```bash
+# Start Dr. OPA MCP server
+python -m src.agents.dr_opa_agent.mcp.server
+
+# Start Dr. OFF MCP server  
+python -m src.agents.dr_off_agent.mcp.server
+```
+
+**Documentation**: See individual agent READMEs for detailed setup and usage instructions.
+
 ## 🔮 Future Phases
 
 - **Phase 4**: Advanced Configuration System
