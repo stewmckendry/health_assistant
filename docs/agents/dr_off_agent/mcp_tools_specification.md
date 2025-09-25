@@ -5,15 +5,17 @@
 | Tool | Session | Status | Files Created |
 |------|---------|--------|---------------|
 | coverage.answer | 2A | ✅ Complete | `tools/coverage.py` (780 lines) |
-| schedule.get | 2B | ✅ Complete | `tools/schedule.py` (400 lines) |
-| adp.get | 2B | ✅ Complete | `tools/adp.py` (450 lines) |
-| odb.get | 2C | ✅ Complete | `tools/odb.py` (650 lines) |
+| schedule.get | 2B | ✅ Complete* | `tools/schedule.py` (400 lines) |
+| adp.get | 2B | ✅ Complete* | `tools/adp.py` (450 lines) |
+| odb.get | 2C | ✅ Complete* | `tools/odb.py` (650 lines) |
 | source.passages | 2C | ✅ Complete | `tools/source.py` (200 lines) |
 | **Shared Utilities** | | | |
 | SQL Client | 2B | ✅ Complete | `retrieval/sql_client.py` (300 lines) |
-| Vector Client | 2B | ✅ Complete | `retrieval/vector_client.py` (280 lines) |
+| Vector Client | 2B | ✅ Fixed 2025-09-25 | `retrieval/vector_client.py` (280 lines) |
 | Confidence Scorer | 2A | ✅ Complete | `utils/confidence.py` |
 | Conflict Detector | 2A | ✅ Complete | `utils/conflicts.py` |
+
+*Fixed 2025-09-25: VectorClient now uses correct OpenAI embedding model (`text-embedding-3-small`) matching the ChromaDB collections
 
 ## Overview
 
@@ -182,13 +184,14 @@ OHIP Schedule of Benefits lookup with dual-path retrieval for billing codes, fee
 ```
 
 ### Algorithm
-**[IMPLEMENTED BY SESSION 2B]**
+**[IMPLEMENTED - FIXED EMBEDDING MODEL 2025-09-25]**
 
 1. **Parallel Retrieval**:
    - SQL: Query `ohip_fee_schedule` table using `sql_client.query_schedule_fees()`
-   - Vector: Search `ohip_chunks` collection using `vector_client.search_schedule()`
+   - Vector: Search `ohip_documents` collection using OpenAI `text-embedding-3-small` model
    - Both run simultaneously with `asyncio.gather()` with error handling
    - SQL timeout: 500ms, Vector timeout: 1000ms
+   - Vector uses cosine similarity for semantic matching
 
 2. **Result Processing**:
    - Process SQL results first (structured data takes priority)
@@ -281,7 +284,7 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
 ```
 
 ### Algorithm
-**[IMPLEMENTED BY SESSION 2B]**
+**[IMPLEMENTED - FIXED EMBEDDING MODEL 2025-09-25]**
 
 1. **Parallel Retrieval**:
    - SQL queries run in nested parallel:

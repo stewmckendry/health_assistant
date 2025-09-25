@@ -13,6 +13,7 @@ import time
 import os
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
+import openai
 
 # Load environment variables
 load_dotenv()
@@ -46,18 +47,17 @@ class VectorClient:
         # Thread pool for Chroma operations (not natively async)
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
         
-        # Initialize OpenAI embedding function to match the collections
-        # Collections were created with text-embedding-ada-002 (1536 dimensions)
+        # Initialize OpenAI client for embeddings
+        # Collections were created with text-embedding-3-small model
         api_key = os.getenv("OPENAI_API_KEY")
         if api_key:
-            self.embedding_function = embedding_functions.OpenAIEmbeddingFunction(
-                api_key=api_key,
-                model_name="text-embedding-ada-002"
-            )
-            logger.info("Using OpenAI embedding function (1536 dimensions)")
+            self.openai_client = openai.OpenAI(api_key=api_key)
+            self.embedding_model = "text-embedding-3-small"
+            logger.info(f"Using OpenAI embeddings model: {self.embedding_model}")
         else:
-            logger.warning("OPENAI_API_KEY not found - using default embedding function")
-            self.embedding_function = embedding_functions.DefaultEmbeddingFunction()
+            logger.error("OPENAI_API_KEY not found - embeddings will not work correctly")
+            self.openai_client = None
+            self.embedding_model = None
         
         # Initialize Chroma client with unique settings to avoid conflicts
         try:
@@ -135,25 +135,29 @@ class VectorClient:
         collection = self._collections[collection_name]
         
         # Generate embedding using OpenAI
-        if hasattr(self, 'embedding_function'):
-            # Use the embedding function to generate query embedding
-            query_embeddings = self.embedding_function([query_text])
+        if self.openai_client:
+            # Use OpenAI API directly to generate query embedding
+            embedding_response = self.openai_client.embeddings.create(
+                input=[query_text],
+                model=self.embedding_model
+            )
+            query_embedding = embedding_response.data[0].embedding
             
             # Perform similarity search with pre-computed embeddings
             results = collection.query(
-                query_embeddings=query_embeddings,
+                query_embeddings=[query_embedding],
                 n_results=n_results,
                 where=where,
                 include=include
             )
         else:
-            # Fall back to text query (will use collection's default)
-            results = collection.query(
-                query_texts=[query_text],
-                n_results=n_results,
-                where=where,
-                include=include
-            )
+            # This won't work properly without OpenAI embeddings
+            logger.error("Cannot perform search without OpenAI API key")
+            return {
+                "documents": [[]],
+                "metadatas": [[]],
+                "distances": [[]]
+            }
         
         return results
     
