@@ -270,23 +270,81 @@ export class AgentAdapter {
    */
   private isTrustedSource(urlOrDomain: string): boolean {
     const trustedDomains = [
-      // Canadian Healthcare
-      'ontario.ca', 'cpso.on.ca', 'publichealthontario.ca', 'ontariohealth.ca',
-      'cep.health', 'canada.ca', 'phac-aspc.gc.ca',
+      // Ontario & Canadian Public Health Authorities
+      'ontario.ca', 'publichealthontario.ca', 'hqontario.ca', 'ontariohealth.ca',
+      'cpso.on.ca', 'cihi.ca', 'canada.ca', 'phac-aspc.gc.ca', 'blood.ca',
+      'choosingwiselycanada.org', 'cma.ca', 'cmaj.ca', 'uhn.ca', 'sickkids.ca',
+      'sunnybrook.ca', 'stmichaelshospital.com', 'hamiltonhealthsciences.ca',
+      'theottawahospital.on.ca', 'kingstonhsc.ca', 'lhsc.on.ca',
       
-      // US Medical Centers
-      'mayoclinic.org', 'clevelandclinic.org', 'hopkinsmedicine.org',
-      'stanfordmedicine.stanford.edu', 'ucsfhealth.org',
+      // Other Canadian Provincial/Territorial Services
+      'healthlinkbc.ca', 'ahs.ca', 'saskhealthauthority.ca', 'manitoba.ca',
+      'gouv.qc.ca', 'nshealth.ca', 'nbhealth.ca', 'pei.ca', 'gov.nl.ca',
+      'yukon.ca', 'gov.nt.ca', 'nunavut.ca',
       
-      // Medical Journals
-      'nejm.org', 'thelancet.com', 'jamanetwork.com', 'bmj.com',
-      'nature.com', 'cell.com',
+      // Canadian Disease-Specific & Specialty Organizations
+      'diabetes.ca', 'heartandstroke.ca', 'cancer.ca', 'alzheimer.ca',
+      'arthritis.ca', 'lung.ca', 'parkinson.ca', 'crohnsandcolitis.ca',
+      'sogc.org', 'ccs.ca', 'cps.ca',
       
-      // Global Health Organizations
-      'who.int', 'cdc.gov', 'nih.gov', 'nhs.uk', 'health.gov.au',
+      // U.S. Academic & Professional Organizations
+      'aamc.org', 'ama-assn.org', 'aafp.org', 'acc.org', 'acog.org',
+      'aacr.org', 'diabetes.org', 'rheumatology.org', 'idsociety.org',
+      'aap.org', 'asahq.org', 'sccm.org', 'ashp.org', 'acr.org', 'aacc.org',
       
-      // Professional Organizations
-      'ama-assn.org', 'rcpsc.edu', 'cfpc.ca', 'cma.ca'
+      // U.S. Major Academic Health Systems
+      'mayoclinic.org', 'mayo.edu', 'hopkinsmedicine.org', 'clevelandclinic.org',
+      'massgeneral.org', 'brighamandwomens.org', 'stanfordhealthcare.org',
+      'med.stanford.edu', 'ucsfhealth.org', 'dukehealth.org', 'cuimc.columbia.edu',
+      'columbiamedicine.org', 'uchicagomedicine.org', 'nyulangone.org',
+      'uofmhealth.org', 'yalemedicine.org', 'mountsinai.org', 'nm.org',
+      'bcm.edu', 'pennmedicine.org', 'vumc.org', 'chop.edu', 'mdanderson.org',
+      
+      // First-Rank Medical Journals & Databases
+      'pubmed.ncbi.nlm.nih.gov', 'nejm.org', 'thelancet.com', 'jamanetwork.com',
+      'bmj.com', 'nature.com', 'sciencemag.org', 'annals.org', 'elsevier.com',
+      'cell.com', 'springer.com', 'wiley.com', 'oup.com', 'plos.org',
+      'frontiersin.org', 'mdpi.com', 'biomedcentral.com',
+      
+      // Specialty Journals
+      'ahajournals.org', 'diabetesjournals.org', 'cancerres.aacrjournals.org',
+      'neurology.org', 'gastrojournal.org', 'kidney.org',
+      'respiratory-research.biomedcentral.com', 'arthritis-research.biomedcentral.com',
+      
+      // Global Health Authorities
+      'who.int', 'cdc.gov', 'nih.gov', 'nhs.uk', 'ema.europa.eu', 'fda.gov',
+      
+      // Evidence Summaries & Guideline Repositories
+      'uptodate.com', 'cochranelibrary.com', 'guidelines.gov', 'clinicaltrials.gov',
+      
+      // Patient Education Sites
+      'medlineplus.gov', 'healthline.com', 'webmd.com',
+      
+      // Clinical Practice Resources
+      'dynamed.com', 'clinicalkey.com', 'epocrates.com', 'lexicomp.com',
+      'micromedex.com',
+      
+      // Radiology & Imaging
+      'radiopaedia.org', 'rsna.org',
+      
+      // Laboratory Medicine
+      'labcorp.com', 'questdiagnostics.com',
+      
+      // Drug Information
+      'rxlist.com', 'drugs.com', 'goodrx.com', 'accessdata.fda.gov',
+      
+      // Medical Education
+      'medscape.com', 'emedicine.medscape.com', 'teachmeanatomy.info', 'kenhub.com',
+      
+      // Research Repositories
+      'biorxiv.org', 'medrxiv.org', 'arxiv.org', 'researchgate.net',
+      'scholar.google.com',
+      
+      // International Clinical Guidelines
+      'nice.org.uk', 'sign.ac.uk', 'racgp.org.au', 'rnzcgp.org.nz',
+      
+      // Systematic Reviews
+      'epistemonikos.org', 'campbellcollaboration.org', 'joannabriggs.org'
     ];
 
     const domain = this.extractDomain(urlOrDomain);

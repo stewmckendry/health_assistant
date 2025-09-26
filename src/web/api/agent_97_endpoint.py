@@ -40,35 +40,34 @@ def register_agent_97_endpoint(app: FastAPI):
                     # Use the streaming method from PatientAssistant
                     citations_sent = []
                     
-                    async for chunk in assistant.query_stream(request.query, sessionId=request.sessionId):
-                        if chunk['type'] == 'tool_call':
+                    for chunk in assistant.query_stream(request.query, session_id=request.sessionId):
+                        if chunk['type'] == 'tool_use':
                             # Forward tool call events
                             tool_event = {
-                                'type': 'tool_call_start' if chunk.get('status') == 'executing' else 'tool_call_end',
+                                'type': 'tool_call_start',
                                 'data': {
                                     'id': chunk.get('id', f'tool_{uuid.uuid4().hex[:8]}'),
-                                    'name': chunk.get('name', 'web_search'),
-                                    'arguments': chunk.get('arguments', {}),
-                                    'status': chunk.get('status', 'executing'),
-                                    'result': chunk.get('result')
+                                    'name': chunk.get('content', {}).get('name', 'web_search'),
+                                    'arguments': chunk.get('content', {}).get('arguments', {}),
+                                    'status': 'executing'
                                 }
                             }
                             yield f"data: {json.dumps(tool_event)}\n\n"
                         
-                        elif chunk['type'] == 'text_delta':
-                            # Stream text deltas directly from the assistant
+                        elif chunk['type'] == 'text':
+                            # Stream text content directly from the assistant
                             text_event = {
                                 'type': 'text',
                                 'data': {
-                                    'delta': chunk.get('text', '')
+                                    'delta': chunk.get('content', '')
                                 }
                             }
                             yield f"data: {json.dumps(text_event)}\n\n"
                         
-                        elif chunk['type'] == 'citation' and chunk.get('citation'):
+                        elif chunk['type'] == 'citation':
                             # Forward citation events
-                            citation = chunk['citation']
-                            if citation.get('url') not in citations_sent:
+                            citation = chunk.get('content', {})
+                            if citation and citation.get('url') not in citations_sent:
                                 citations_sent.append(citation.get('url'))
                                 citation_event = {
                                     'type': 'citation',

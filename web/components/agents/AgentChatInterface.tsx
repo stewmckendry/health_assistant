@@ -24,6 +24,7 @@ import {
 import { ToolCallDisplay } from './ToolCallDisplay';
 import { CitationList } from './CitationList';
 import { StreamingMessage } from './StreamingMessage';
+import ReactMarkdown from 'react-markdown';
 
 interface AgentChatInterfaceProps {
   agent: AgentInfo;
@@ -38,6 +39,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [allCitations, setAllCitations] = useState<Citation[]>([]);
   const [allToolCalls, setAllToolCalls] = useState<ToolCall[]>([]);
+  const [streamingContent, setStreamingContent] = useState<string>('');
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -62,12 +64,14 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
         const data = await response.json();
         setSessionId(data.sessionId);
         
-        // Add welcome message
+        // Add welcome message based on agent
+        let welcomeContent = `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`;
+        
         const welcomeMessage: Message = {
           id: `welcome-${Date.now()}`,
           sessionId: data.sessionId,
           role: 'assistant',
-          content: `Hello! I'm ${agent.name}. To provide accurate, current practice guidance from Ontario healthcare authorities including CPSO policies, Ontario Health programs, PHO infection control, and CEP clinical tools. How can I assist you today?`,
+          content: welcomeContent,
           timestamp: new Date().toISOString(),
           toolCalls: [],
           citations: []
@@ -96,6 +100,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
     setInput('');
     setIsStreaming(true);
     setCurrentToolCalls([]);
+    setStreamingContent('');
 
     // Create assistant message placeholder
     const assistantMessage: Message = {
@@ -180,10 +185,12 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   const handleStreamEvent = (event: any, messageId: string) => {
     switch (event.type) {
       case 'text':
+        const newContent = (event.data.delta || event.data.content || '');
+        setStreamingContent(prev => prev + newContent);
         setMessages(prev => 
           prev.map(msg => 
             msg.id === messageId 
-              ? { ...msg, content: msg.content + (event.data.delta || '') }
+              ? { ...msg, content: msg.content + newContent, streaming: true }
               : msg
           )
         );
@@ -191,12 +198,22 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
         
       case 'tool_call_start':
         const newToolCall: ToolCall = {
-          ...event.data,
+          id: event.data.id || `tool_${Date.now()}`,
+          name: event.data.name,
+          arguments: event.data.arguments || {},
           status: 'executing',
           startTime: event.data.startTime || new Date().toISOString()
         };
-        setCurrentToolCalls(prev => [...prev, newToolCall]);
-        setAllToolCalls(prev => [...prev, newToolCall]);
+        setCurrentToolCalls(prev => {
+          // Avoid duplicates
+          if (prev.find(t => t.id === newToolCall.id)) return prev;
+          return [...prev, newToolCall];
+        });
+        setAllToolCalls(prev => {
+          if (prev.find(t => t.id === newToolCall.id)) return prev;
+          return [...prev, newToolCall];
+        });
+        console.log('Tool call started:', newToolCall);
         break;
         
       case 'tool_call_end':
@@ -264,6 +281,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
           )
         );
         setIsStreaming(false);
+        setStreamingContent('');
         // Don't clear currentToolCalls here - keep them for display
         break;
         
@@ -304,7 +322,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   };
 
   return (
-    <div className="flex h-[calc(100vh-8rem)] max-h-[900px]">
+    <div className="flex min-h-[calc(100vh-16rem)] bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col min-w-0 bg-white">
         {/* Sticky header bar */}
@@ -353,14 +371,34 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
                         ? 'bg-blue-600 text-white'
                         : 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
                     }`}>
-                      {message.streaming ? (
+                      {message.streaming && !message.content ? (
                         <div className="flex items-center gap-2">
                           <Loader2 className="h-3 w-3 animate-spin" />
                           <span className="text-sm italic">Thinking...</span>
                         </div>
                       ) : (
-                        <div className="text-sm leading-relaxed whitespace-pre-wrap">
-                          {message.content}
+                        <div className="text-sm leading-relaxed prose prose-sm max-w-none" style={{overflowWrap: 'break-word', wordBreak: 'break-word'}}>
+                          <ReactMarkdown
+                            components={{
+                              h1: ({ children }) => <h1 className="text-lg font-bold mt-4 mb-2">{children}</h1>,
+                              h2: ({ children }) => <h2 className="text-base font-semibold mt-3 mb-2">{children}</h2>,
+                              h3: ({ children }) => <h3 className="text-sm font-semibold mt-2 mb-1">{children}</h3>,
+                              p: ({ children }) => <p className="mb-2">{children}</p>,
+                              ul: ({ children }) => <ul className="list-disc pl-4 mb-2">{children}</ul>,
+                              ol: ({ children }) => <ol className="list-decimal pl-4 mb-2">{children}</ol>,
+                              li: ({ children }) => <li className="mb-1">{children}</li>,
+                              code: ({ inline, children }) => 
+                                inline ? (
+                                  <code className="bg-gray-100 px-1 py-0.5 rounded text-xs">{children}</code>
+                                ) : (
+                                  <pre className="bg-gray-100 p-2 rounded overflow-x-auto"><code>{children}</code></pre>
+                                ),
+                              strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                              em: ({ children }) => <em className="italic">{children}</em>,
+                            }}
+                          >
+                            {message.content}
+                          </ReactMarkdown>
                         </div>
                       )}
                       {message.error && (
@@ -414,6 +452,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
       </div>
 
       {/* Right Side Panel - Reasoning & Citations */}
+      {messages.length > 0 && (
       <div className="w-96 border-l bg-gray-50 flex flex-col">
         <Tabs defaultValue="reasoning" className="flex-1 flex flex-col">
           <TabsList className="mx-4 mt-4 grid w-[calc(100%-2rem)] grid-cols-2">
@@ -439,7 +478,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
                 {(currentToolCalls.length > 0 || allToolCalls.length > 0) ? (
                   <div className="space-y-3">
                     {/* Current active tool calls */}
-                    {currentToolCalls.map((toolCall) => (
+                    {currentToolCalls.filter(tc => tc.status === 'executing').map((toolCall) => (
                       <div key={toolCall.id} className="bg-blue-50 rounded-lg p-3 border border-blue-200">
                         <div className="flex items-center gap-2 mb-2">
                           <Loader2 className="h-3 w-3 animate-spin text-blue-600" />
@@ -449,7 +488,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
                           <Wrench className="h-3 w-3 text-blue-600" />
                           <span className="font-mono text-xs text-blue-800">{toolCall.name}</span>
                         </div>
-                        {toolCall.arguments && (
+                        {toolCall.arguments && Object.keys(toolCall.arguments).length > 0 && (
                           <div className="mt-2 text-xs text-blue-700 bg-white/50 rounded p-2">
                             <pre className="whitespace-pre-wrap">
                               {JSON.stringify(toolCall.arguments, null, 2)}
@@ -470,13 +509,22 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
                           <Wrench className="h-3 w-3 text-gray-500" />
                           <span className="font-mono text-xs text-gray-700">{toolCall.name}</span>
                         </div>
-                        {toolCall.result && (
-                          <div className="mt-2 text-xs text-gray-600">
-                            {toolCall.result}
+                        {toolCall.arguments && Object.keys(toolCall.arguments).length > 0 && (
+                          <div className="mt-2 text-xs text-gray-600 bg-white/50 rounded p-2">
+                            <pre className="whitespace-pre-wrap">
+                              {JSON.stringify(toolCall.arguments, null, 2)}
+                            </pre>
                           </div>
                         )}
                       </div>
                     ))}
+                  </div>
+                ) : isStreaming ? (
+                  <div className="text-center py-8">
+                    <Loader2 className="h-8 w-8 text-gray-400 mx-auto mb-3 animate-spin" />
+                    <p className="text-xs text-gray-500">
+                      Waiting for tool calls...
+                    </p>
                   </div>
                 ) : (
                   <div className="text-center py-8">
@@ -516,6 +564,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
           </TabsContent>
         </Tabs>
       </div>
+      )}
     </div>
   );
 }
