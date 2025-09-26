@@ -33,4 +33,4 @@ echo "Python path: $PYTHONPATH"
 cd "$PROJECT_ROOT"
 
 # Run the MCP server
-python -m src.agents.dr_opa_agent.mcp.server
+python -m src.agents.dr_opa_agent.dr_opa_mcp.server
