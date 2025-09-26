@@ -8,13 +8,13 @@ The Agent Web App is a Next.js-based interface for interacting with Ontario clin
 
 ### Technology Stack
 
-- **Frontend**: Next.js 14 with App Router
+- **Frontend**: Next.js 15 with App Router
 - **UI Framework**: React 18 with TypeScript
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **Backend**: Next.js API Routes
+- **Styling**: Tailwind CSS with custom components
+- **Backend**: FastAPI (port 8000) + Next.js API Routes (port 3000)
 - **Agent Integration**: OpenAI Agents SDK with MCP (Model Context Protocol)
-- **State Management**: React Context and SQLite sessions
-- **Real-time Updates**: Server-Sent Events (SSE)
+- **State Management**: React State and session persistence
+- **Real-time Updates**: Server-Sent Events (SSE) with ReadableStream
 
 ### Project Structure
 
@@ -22,7 +22,9 @@ The Agent Web App is a Next.js-based interface for interacting with Ontario clin
 web/
 ├── app/
 │   ├── agents/
-│   │   └── page.tsx                 # Main agents interface
+│   │   ├── page.tsx                 # Main agents interface
+│   │   └── [agentId]/
+│   │       └── page.tsx             # Individual agent chat page
 │   └── api/
 │       └── agents/
 │           ├── [agentId]/
@@ -35,6 +37,7 @@ web/
 ├── components/
 │   ├── agents/
 │   │   ├── AgentChatInterface.tsx   # Main chat component
+│   │   ├── AgentMessage.tsx        # Message with inline citations/tools
 │   │   ├── AgentGrid.tsx           # Agent selection grid
 │   │   ├── AgentCard.tsx           # Individual agent cards
 │   │   ├── ChatMessage.tsx         # Message components
@@ -123,6 +126,8 @@ interface AgentConfig {
 - **Deduplication**: URL and title-based duplicate removal
 - **Real-time Updates**: Citations appear during streaming
 - **Source Grouping**: Group citations by domain/organization
+- **Inline Display**: Citations shown directly with relevant messages
+- **Expandable View**: Show first 3 citations, expand for more
 
 **Citation Schema**: `/web/types/citations.ts`
 
@@ -150,6 +155,8 @@ interface Citation {
 - **Execution Details**: Tool names, parameters, and results
 - **Error Handling**: Display tool failures and retries
 - **Performance Metrics**: Execution timing and success rates
+- **Inline Display**: Tool calls shown with the message that triggered them
+- **Status Icons**: Visual indicators (executing, completed, failed)
 
 ### 5. Streaming Implementation
 
@@ -196,14 +203,19 @@ interface AgentAdapter {
 
 ### 3. Agent 97 Integration
 
-**Adapter**: `/web/lib/agents/adapters/agent-97.ts`
+**Implementation**: Direct PatientAssistant usage via dedicated endpoint
 
 **Features:**
 - **97 Trusted Sources**: Comprehensive medical domain validation
-- **Educational Content**: Patient and provider education
+- **Educational Content**: Plain language medical explanations
 - **Safety Guardrails**: Built-in content safety mechanisms
+- **Inline Citations**: Citations and tool calls displayed with each message
 
-**MCP Command**: `python -m src.agents.agent_97.openai_agent`
+**Architecture:**
+- **Endpoint**: `src/web/api/agent_97_endpoint.py`
+- **Core Implementation**: `src/assistants/patient.py` (PatientAssistant)
+- **Streaming**: Native SSE support with event transformation
+- **Frontend Component**: `AgentMessage.tsx` with inline citations/tools
 
 ## API Specifications
 
@@ -251,7 +263,8 @@ interface AgentAdapter {
 
 **Agent Streaming Endpoints**:
 - `POST /api/agents/dr-opa/stream` - Dr. OPA streaming responses
-- `POST /api/agents/agent-97/stream` - Agent 97 streaming responses
+- `POST /api/agents/agent-97/stream` - Agent 97 streaming via PatientAssistant
+- `POST /api/agents/agent-97/query` - Agent 97 non-streaming endpoint
 - `POST /api/agents/triage/stream` - Triage agent streaming (when available)
 
 **Integration Pattern**:

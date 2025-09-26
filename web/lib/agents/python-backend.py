@@ -30,7 +30,7 @@ sys.path.insert(0, str(project_root))
 # Import agents
 try:
     from src.agents.dr_opa_agent.openai_agent import create_dr_opa_agent
-    from src.agents.agent_97.openai_agent import create_agent_97
+    # Agent 97 now uses PatientAssistant directly via the agent_97_endpoint
 except ImportError as e:
     print(f"Warning: Could not import agents: {e}")
     print("Running in mock mode")
@@ -67,13 +67,9 @@ async def startup():
         print(f"Failed to initialize Dr. OPA: {e}")
         agents['dr-opa'] = None
 
-    try:
-        print("Initializing Agent 97...")
-        agents['agent-97'] = await create_agent_97()
-        print("✓ Agent 97 ready")
-    except Exception as e:
-        print(f"Failed to initialize Agent 97: {e}")
-        agents['agent-97'] = None
+    # Agent 97 is handled directly by PatientAssistant through dedicated endpoint
+    # See src/web/api/agent_97_endpoint.py
+    agents['agent-97'] = None  # Placeholder for agent list
 
     print(f"Backend API ready with {len([a for a in agents.values() if a is not None])} active agents")
 

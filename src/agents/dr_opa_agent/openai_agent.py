@@ -26,12 +26,32 @@ try:
 except ImportError:
     yaml = None
 
-from agents import Agent
-from agents.mcp.server import MCPServerStdio, MCPServerStdioParams
+import sys
+from pathlib import Path
 
-# Add the project root to the path for imports
+# Get project root
 project_root = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(project_root))
+
+# Save original sys.path
+original_path = sys.path.copy()
+
+# Remove project root from path to avoid collision with local agents module
+project_root_str = str(project_root)
+if project_root_str in sys.path:
+    sys.path.remove(project_root_str)
+
+# Also remove the src directory
+src_dir = str(project_root / "src")
+if src_dir in sys.path:
+    sys.path.remove(src_dir)
+
+try:
+    # Import from openai-agents package
+    from agents import Agent, Runner
+    from agents.mcp.server import MCPServerStdio, MCPServerStdioParams
+finally:
+    # Restore original sys.path
+    sys.path = original_path
 
 # Configure logging
 log_dir = Path("logs/dr_opa_agent")
@@ -343,9 +363,11 @@ RESPONSE STRUCTURE:
 5. **Currency Note**: When the guidance was last updated and confidence level
 
 CITATION FORMAT:
-- Organization Name. Document Title, Section [Effective: Date] Available at: URL
-- Always include effective dates and source URLs
+- Use markdown links: [Organization Name - Document Title](URL)
+- Include effective dates in the link text when available
+- Format as: [CPSO - Policy Title (Effective: Date)](URL)
 - Distinguish between expectations (mandatory) and advice (recommended)
+- Ensure URLs are properly formatted for markdown rendering
 
 Remember: You have access to the comprehensive Ontario practice guidance corpus through your MCP tools. Use them strategically to provide the most accurate, current, and relevant information."""
 
@@ -362,13 +384,177 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
             logger.warning("Agent will operate without MCP tools - responses will be limited")
             return False
     
+    async def query_stream(self, user_input: str, context: Dict[str, Any] = None):
+        """Process a user query and stream the response."""
+        logger.info(f"Processing streaming query: {user_input[:100]}...")
+        
+        try:
+            from openai.types.responses import ResponseTextDeltaEvent
+            
+            # Use the MCP server within an async context manager
+            async with self.mcp_server as server:
+                # Create agent with the connected MCP server
+                agent = Agent(
+                    name="Dr. OPA",
+                    instructions=self._get_system_instructions(),
+                    model="gpt-4o-mini",
+                    mcp_servers=[server]
+                )
+                
+                # Use run_streamed for streaming response
+                result = Runner.run_streamed(
+                    starting_agent=agent,
+                    input=user_input,
+                    context=context
+                )
+                
+                # Track accumulated data
+                accumulated_text = ""
+                tool_calls = []
+                all_citations = []
+                
+                # Stream events
+                async for event in result.stream_events():
+                    if event.type == "raw_response_event":
+                        # Stream text deltas
+                        if isinstance(event.data, ResponseTextDeltaEvent):
+                            delta_text = event.data.delta
+                            accumulated_text += delta_text
+                            yield {
+                                'type': 'text',
+                                'content': delta_text
+                            }
+                    
+                    elif event.type == "run_item_stream_event":
+                        # Handle tool calls
+                        if event.item.type == "tool_call_item":
+                            # Extract function name from raw_item
+                            tool_name = 'unknown'
+                            tool_args = ''
+                            
+                            if hasattr(event.item, 'raw_item'):
+                                raw_item = event.item.raw_item
+                                # raw_item should be a ResponseFunctionToolCall which has function attribute
+                                if hasattr(raw_item, 'function'):
+                                    tool_name = raw_item.function.name
+                                    tool_args = raw_item.function.arguments
+                                elif hasattr(raw_item, 'name'):
+                                    tool_name = raw_item.name
+                                    tool_args = str(getattr(raw_item, 'arguments', ''))
+                            
+                            tool_call_data = {
+                                'name': tool_name,
+                                'arguments': str(tool_args)
+                            }
+                            tool_calls.append(tool_call_data)
+                            yield {
+                                'type': 'tool_call',
+                                'content': tool_call_data
+                            }
+                        
+                        elif event.item.type == "tool_call_output_item":
+                            # Extract citations from tool output
+                            output_str = ''
+                            
+                            # Debug the structure
+                            logger.info(f"tool_call_output_item received")
+                            logger.info(f"event.item attributes: {[attr for attr in dir(event.item) if not attr.startswith('_')]}")
+                            
+                            if hasattr(event.item, 'raw_item'):
+                                logger.info(f"raw_item type: {type(event.item.raw_item)}")
+                                if isinstance(event.item.raw_item, dict):
+                                    logger.info(f"raw_item dict keys: {list(event.item.raw_item.keys())}")
+                                    if 'output' in event.item.raw_item:
+                                        output_str = event.item.raw_item['output']
+                                        logger.info(f"Got output from raw_item['output']")
+                                else:
+                                    logger.info(f"raw_item attributes: {[attr for attr in dir(event.item.raw_item) if not attr.startswith('_')]}")
+                                    if hasattr(event.item.raw_item, 'output'):
+                                        output_str = event.item.raw_item.output
+                                        logger.info(f"Got output from raw_item.output")
+                            
+                            if not output_str and hasattr(event.item, 'output'):
+                                output_str = event.item.output
+                                logger.info(f"Got output from item.output, type: {type(event.item.output)}")
+                            
+                            if not output_str:
+                                logger.warning(f"Could not find output in tool_call_output_item")
+                            
+                            # More detailed logging
+                            logger.info(f"Tool output received - type: {type(output_str)}, length: {len(str(output_str))}")
+                            if output_str:
+                                # Log first 500 chars of output
+                                logger.info(f"Tool output preview: {str(output_str)[:500]}...")
+                            
+                            if output_str:
+                                # Try to parse output as JSON to extract citations
+                                try:
+                                    import json
+                                    output_data = json.loads(output_str) if isinstance(output_str, str) else output_str
+                                    
+                                    # Handle MCP text type response
+                                    if isinstance(output_data, dict) and output_data.get('type') == 'text':
+                                        # Extract the actual text content
+                                        text_content = output_data.get('text', '')
+                                        logger.info(f"MCP returned text type, extracting inner text content")
+                                        # Try to parse the inner text as JSON
+                                        try:
+                                            output_data = json.loads(text_content)
+                                            logger.info(f"Successfully parsed inner text as JSON")
+                                        except:
+                                            logger.info(f"Inner text is not JSON, using as-is")
+                                            output_data = text_content
+                                    
+                                    if isinstance(output_data, dict):
+                                        logger.info(f"Parsed tool output keys: {list(output_data.keys())}")
+                                        # Check for specific fields that might contain citations
+                                        for key in ['citations', 'sections', 'documents', 'highlights']:
+                                            if key in output_data:
+                                                logger.info(f"Found '{key}' in output with {len(output_data[key]) if isinstance(output_data[key], list) else 'non-list'} items")
+                                    else:
+                                        logger.info(f"Parsed output is not a dict, type: {type(output_data)}")
+                                except Exception as e:
+                                    logger.info(f"Failed to parse tool output as JSON: {e}")
+                                    output_data = output_str
+                                
+                                citations = extract_citations_from_tool_result(
+                                    tool_calls[-1]['name'] if tool_calls else 'unknown',
+                                    output_data,
+                                    self.trusted_domains
+                                )
+                                
+                                logger.info(f"Extracted {len(citations)} citations from tool '{tool_calls[-1]['name'] if tool_calls else 'unknown'}'")
+                                
+                                for citation in citations:
+                                    if citation not in all_citations:
+                                        all_citations.append(citation)
+                                        logger.info(f"Yielding citation: {citation.get('title', 'Unknown')} - {citation.get('url', 'no-url')}")
+                                        yield {
+                                            'type': 'citation',
+                                            'content': citation
+                                        }
+                
+                # Send final completion event with all accumulated data
+                yield {
+                    'type': 'complete',
+                    'content': accumulated_text,
+                    'tool_calls': tool_calls,
+                    'citations': all_citations
+                }
+                
+        except Exception as e:
+            logger.error(f"Error in streaming query: {e}")
+            yield {
+                'type': 'error',
+                'content': str(e)
+            }
+    
     async def query(self, user_input: str, context: Dict[str, Any] = None) -> str:
         """Process a user query and return the agent's response."""
         logger.info(f"Processing query: {user_input[:100]}...")
         
         try:
-            # Import Runner here to avoid circular imports
-            from agents import Runner
+            # Runner already imported above
             
             # Use the MCP server within an async context manager
             async with self.mcp_server as server:

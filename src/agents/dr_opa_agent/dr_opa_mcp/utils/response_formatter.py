@@ -29,7 +29,7 @@ def extract_citations_from_response(response_data: Dict[str, Any]) -> List[Dict[
     if 'citations' in response_data:
         for cite in response_data['citations']:
             if isinstance(cite, dict):
-                add_citation(Citation(**cite))
+                add_citation(cite)
     
     # Extract from highlights (used in SearchSectionsResponse)
     if 'highlights' in response_data:
@@ -37,7 +37,7 @@ def extract_citations_from_response(response_data: Dict[str, Any]) -> List[Dict[
             if isinstance(highlight, dict) and 'citations' in highlight:
                 for cite in highlight['citations']:
                     if isinstance(cite, dict):
-                        add_citation(Citation(**cite))
+                        add_citation(cite)
     
     # Extract from expectations (used in PolicyCheckResponse)
     if 'expectations' in response_data:
@@ -45,7 +45,7 @@ def extract_citations_from_response(response_data: Dict[str, Any]) -> List[Dict[
             if isinstance(expectation, dict) and 'citations' in expectation:
                 for cite in expectation['citations']:
                     if isinstance(cite, dict):
-                        add_citation(Citation(**cite))
+                        add_citation(cite)
     
     # Extract from advice (used in PolicyCheckResponse)
     if 'advice' in response_data:
@@ -53,7 +53,7 @@ def extract_citations_from_response(response_data: Dict[str, Any]) -> List[Dict[
             if isinstance(advice_item, dict) and 'citations' in advice_item:
                 for cite in advice_item['citations']:
                     if isinstance(cite, dict):
-                        add_citation(Citation(**cite))
+                        add_citation(cite)
     
     # Extract from sections metadata (used in SearchSectionsResponse)
     if 'sections' in response_data:
@@ -97,12 +97,12 @@ def extract_citations_from_response(response_data: Dict[str, Any]) -> List[Dict[
     if 'updates' in response_data:
         for update in response_data['updates']:
             if isinstance(update, dict) and 'url' in update and update['url']:
-                cite = Citation(
-                    source=update.get('topic', 'Update'),
-                    source_org=update.get('source', 'unknown'),
-                    loc=f"Updated: {update.get('date', '')}",
-                    url=update['url']
-                )
+                cite = {
+                    'source': update.get('topic', 'Update'),
+                    'source_org': update.get('source', 'unknown'),
+                    'loc': f"Updated: {update.get('date', '')}",
+                    'url': update['url']
+                }
                 add_citation(cite)
     
     return citations

@@ -83,7 +83,8 @@ export class AgentAdapter {
 
             try {
               const event = JSON.parse(data);
-              yield this.processAgentEvent(event, controller, encoder);
+              this.processAgentEvent(event, controller, encoder);
+              yield; // Yield control to allow streaming
             } catch (e) {
               console.error('Failed to parse agent event:', e);
             }

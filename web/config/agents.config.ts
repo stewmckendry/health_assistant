@@ -97,9 +97,9 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
   'agent-97': {
     id: 'agent-97',
     name: 'Agent 97',
-    description: 'Medical education from 97 trusted sources',
-    fullDescription: 'AI-powered medical education assistant providing reliable health information from 97 carefully vetted medical sources with comprehensive safety guardrails.',
-    mission: 'To deliver accurate, educational health information to patients and the public from 97 trusted medical sources, with strict safety measures ensuring appropriate responses.',
+    description: 'Explains medical terms in plain language using trusted sources',
+    fullDescription: 'AI-powered medical education assistant that helps you understand health information by explaining medical terms and concepts in plain, accessible language.',
+    mission: 'To help patients and the public understand medical information by translating complex medical terms into plain language, providing educational context from 97 trusted medical sources with proper citations.',
     status: 'active',
     icon: '🎯',
     color: '#10b981', // green-500

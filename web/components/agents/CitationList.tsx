@@ -125,7 +125,7 @@ export function CitationList({ citations, compact = false }: CitationListProps) 
         </div>
         <div className="space-y-1">
           {citations.slice(0, 5).map((citation, index) => (
-            <div key={citation.id} className="flex items-center gap-2 text-sm">
+            <div key={`compact-${index}-${citation.url}`} className="flex items-center gap-2 text-sm">
               <span className="text-muted-foreground">{index + 1}.</span>
               <a 
                 href={citation.url}
@@ -189,7 +189,7 @@ export function CitationList({ citations, compact = false }: CitationListProps) 
                 {/* Citations for this domain */}
                 <div className="space-y-2">
                   {domainCitations.map((citation, citationIndex) => (
-                    <div key={citation.id} className="border rounded-lg p-3 space-y-2">
+                    <div key={`${domain}-${citationIndex}-${citation.url}`} className="border rounded-lg p-3 space-y-2">
                       {/* Title and Link */}
                       <div className="flex items-start gap-2">
                         <span className="text-xs text-muted-foreground font-mono min-w-[1.5rem]">

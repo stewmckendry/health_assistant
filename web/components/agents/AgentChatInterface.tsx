@@ -1,30 +1,20 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { AgentInfo, Message, ToolCall, Citation, ConversationSession } from '@/types/agents';
+import { AgentInfo, Message, ToolCall, Citation } from '@/types/agents';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Send, 
   Loader2, 
-  Bot, 
-  User,
   StopCircle,
   RefreshCw,
-  ExternalLink,
-  Wrench,
-  Brain,
-  FileText,
   Sparkles
 } from 'lucide-react';
-import { ToolCallDisplay } from './ToolCallDisplay';
-import { CitationList } from './CitationList';
-import { StreamingMessage } from './StreamingMessage';
-import ReactMarkdown from 'react-markdown';
+import { AgentMessage } from './AgentMessage';
 
 interface AgentChatInterfaceProps {
   agent: AgentInfo;
@@ -35,10 +25,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
-  const [currentToolCalls, setCurrentToolCalls] = useState<ToolCall[]>([]);
   const [sessionId, setSessionId] = useState<string | null>(null);
-  const [allCitations, setAllCitations] = useState<Citation[]>([]);
-  const [allToolCalls, setAllToolCalls] = useState<ToolCall[]>([]);
   const [streamingContent, setStreamingContent] = useState<string>('');
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -65,7 +52,18 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
         setSessionId(data.sessionId);
         
         // Add welcome message based on agent
-        let welcomeContent = `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`;
+        let welcomeContent = '';
+        if (agent.id === 'agent-97') {
+          welcomeContent = `Hello! I'm here to help explain medical terms and health topics in plain language. 
+
+I can provide educational information about conditions, symptoms, treatments, and wellness - all from trusted medical sources. 
+
+Please remember: This is for learning only. I cannot diagnose, prescribe, or replace professional medical advice.
+
+What would you like to understand better today?`;
+        } else {
+          welcomeContent = `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`;
+        }
         
         const welcomeMessage: Message = {
           id: `welcome-${Date.now()}`,
@@ -99,7 +97,6 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsStreaming(true);
-    setCurrentToolCalls([]);
     setStreamingContent('');
 
     // Create assistant message placeholder
@@ -185,7 +182,10 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   const handleStreamEvent = (event: any, messageId: string) => {
     switch (event.type) {
       case 'text':
-        const newContent = (event.data.delta || event.data.content || '');
+        // Handle both formats: 
+        // - Agent format: {type: "text", data: {delta: "..."}}
+        // - Backend format: {type: "text", content: "..."}
+        const newContent = event.data?.delta || event.data?.content || event.content || '';
         setStreamingContent(prev => prev + newContent);
         setMessages(prev => 
           prev.map(msg => 
@@ -196,23 +196,28 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
         );
         break;
         
+      case 'tool_use':
       case 'tool_call_start':
+        // Handle both backend formats
+        const toolData = event.content || event.data || {};
         const newToolCall: ToolCall = {
-          id: event.data.id || `tool_${Date.now()}`,
-          name: event.data.name,
-          arguments: event.data.arguments || {},
+          id: toolData.id || `tool_${Date.now()}`,
+          name: toolData.name || toolData.input?.name || 'unknown',
+          arguments: toolData.arguments || toolData.input || {},
           status: 'executing',
-          startTime: event.data.startTime || new Date().toISOString()
+          startTime: toolData.startTime || new Date().toISOString()
         };
-        setCurrentToolCalls(prev => {
-          // Avoid duplicates
-          if (prev.find(t => t.id === newToolCall.id)) return prev;
-          return [...prev, newToolCall];
-        });
-        setAllToolCalls(prev => {
-          if (prev.find(t => t.id === newToolCall.id)) return prev;
-          return [...prev, newToolCall];
-        });
+        // Update message with new tool call
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === messageId
+              ? { 
+                  ...msg, 
+                  toolCalls: [...(msg.toolCalls || []), newToolCall]
+                }
+              : msg
+          )
+        );
         console.log('Tool call started:', newToolCall);
         break;
         
@@ -222,67 +227,103 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
           status: 'completed' as const,
           endTime: event.data.endTime || new Date().toISOString()
         };
-        setCurrentToolCalls(prev => 
-          prev.map(tc => 
-            tc.id === event.data.id ? updatedToolCall : tc
-          )
-        );
-        setAllToolCalls(prev => 
-          prev.map(tc => 
-            tc.id === event.data.id ? updatedToolCall : tc
-          )
-        );
         
-        // Also update the message with tool calls
+        // Update the message with completed tool call
         setMessages(prev =>
           prev.map(msg =>
             msg.id === messageId
-              ? { ...msg, toolCalls: [...(msg.toolCalls || []), updatedToolCall] }
+              ? { 
+                  ...msg, 
+                  toolCalls: msg.toolCalls?.map(tc => 
+                    tc.id === event.data.id ? updatedToolCall : tc
+                  ) || []
+                }
               : msg
           )
         );
         break;
         
       case 'citation':
+        const citationData = event.data || event.content || {};
         const citation: Citation = {
-          ...event.data,
-          accessDate: event.data.accessDate || new Date().toISOString()
+          ...citationData,
+          id: citationData.id || `citation_${Date.now()}_${Math.random()}`,
+          accessDate: citationData.accessDate || new Date().toISOString()
         };
-        setAllCitations(prev => {
-          // Deduplicate citations by URL
-          const exists = prev.find(c => c.url === citation.url);
-          if (exists) return prev;
-          return [...prev, citation];
-        });
         
-        // Also update the message with citations
+        // Update the message with citations (deduped by URL)
         setMessages(prev =>
-          prev.map(msg =>
-            msg.id === messageId
-              ? { ...msg, citations: [...(msg.citations || []), citation] }
-              : msg
-          )
+          prev.map(msg => {
+            if (msg.id === messageId) {
+              const existingCitations = msg.citations || [];
+              const exists = existingCitations.find(c => c.url === citation.url);
+              if (!exists) {
+                return { ...msg, citations: [...existingCitations, citation] };
+              }
+            }
+            return msg;
+          })
         );
         break;
         
       case 'response_done':
       case 'done':
-        // Final update with all accumulated data
+      case 'complete':
+        // Extract citations from complete event if present
+        const completeCitations = (event.content?.citations || event.data?.citations || []).map((c: any) => ({
+          ...c,
+          id: c.id || `citation_${Date.now()}_${Math.random()}`,
+          accessDate: c.accessDate || new Date().toISOString(),
+          isTrusted: c.isTrusted !== undefined ? c.isTrusted : true
+        }));
+        
+        // Extract tool calls from complete event if present  
+        const completeToolCalls = (event.content?.toolCalls || event.data?.toolCalls || []).map((t: any) => ({
+          ...t,
+          id: t.id || `tool_${Date.now()}_${Math.random()}`,
+          status: 'completed' as const,
+          startTime: t.startTime || new Date().toISOString(),
+          endTime: t.endTime || new Date().toISOString()
+        }));
+        
+        // Final update - mark streaming false and ensure all tool calls are completed
         setMessages(prev => 
-          prev.map(msg => 
-            msg.id === messageId 
-              ? { 
-                  ...msg, 
-                  streaming: false,
-                  toolCalls: currentToolCalls.length > 0 ? currentToolCalls : msg.toolCalls,
-                  citations: allCitations.length > 0 ? allCitations : msg.citations
+          prev.map(msg => {
+            if (msg.id === messageId) {
+              // Mark all existing tool calls as completed
+              const finalToolCalls = msg.toolCalls?.map(tc => ({
+                ...tc,
+                status: 'completed' as const,
+                endTime: tc.endTime || new Date().toISOString()
+              })) || [];
+              
+              // Add any tool calls from complete event that aren't already there
+              completeToolCalls.forEach((newTool: ToolCall) => {
+                if (!finalToolCalls.find(t => t.name === newTool.name)) {
+                  finalToolCalls.push(newTool);
                 }
-              : msg
-          )
+              });
+              
+              // Add citations from complete event
+              const finalCitations = [...(msg.citations || [])];
+              completeCitations.forEach((newCite: Citation) => {
+                if (!finalCitations.find(c => c.url === newCite.url)) {
+                  finalCitations.push(newCite);
+                }
+              });
+              
+              return { 
+                ...msg, 
+                streaming: false,
+                toolCalls: finalToolCalls,
+                citations: finalCitations
+              };
+            }
+            return msg;
+          })
         );
         setIsStreaming(false);
         setStreamingContent('');
-        // Don't clear currentToolCalls here - keep them for display
         break;
         
       case 'error':
@@ -303,14 +344,10 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
       abortControllerRef.current.abort();
     }
     setIsStreaming(false);
-    setCurrentToolCalls([]);
   };
 
   const startNewConversation = () => {
     setMessages([]);
-    setAllCitations([]);
-    setCurrentToolCalls([]);
-    setAllToolCalls([]);
     initializeSession();
   };
 
@@ -350,66 +387,15 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
 
         {/* Messages Area */}
         <ScrollArea className="flex-1 px-6 py-4">
-          <div className="space-y-3 max-w-3xl mx-auto">
+          <div className="space-y-4 max-w-3xl mx-auto">
             {messages.map((message) => (
-              <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] ${message.role === 'user' ? 'order-2' : 'order-1'}`}>
-                  <div className={`flex items-start gap-2 ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
-                      message.role === 'user' 
-                        ? 'bg-blue-600 text-white' 
-                        : 'bg-gradient-to-br from-violet-500 to-purple-600 text-white'
-                    }`}>
-                      {message.role === 'user' ? (
-                        <User className="h-3.5 w-3.5" />
-                      ) : (
-                        <Sparkles className="h-3.5 w-3.5" />
-                      )}
-                    </div>
-                    <div className={`rounded-2xl px-4 py-2.5 ${
-                      message.role === 'user'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
-                    }`}>
-                      {message.streaming && !message.content ? (
-                        <div className="flex items-center gap-2">
-                          <Loader2 className="h-3 w-3 animate-spin" />
-                          <span className="text-sm italic">Thinking...</span>
-                        </div>
-                      ) : (
-                        <div className="text-sm leading-relaxed prose prose-sm max-w-none" style={{overflowWrap: 'break-word', wordBreak: 'break-word'}}>
-                          <ReactMarkdown
-                            components={{
-                              h1: ({ children }) => <h1 className="text-lg font-bold mt-4 mb-2">{children}</h1>,
-                              h2: ({ children }) => <h2 className="text-base font-semibold mt-3 mb-2">{children}</h2>,
-                              h3: ({ children }) => <h3 className="text-sm font-semibold mt-2 mb-1">{children}</h3>,
-                              p: ({ children }) => <p className="mb-2">{children}</p>,
-                              ul: ({ children }) => <ul className="list-disc pl-4 mb-2">{children}</ul>,
-                              ol: ({ children }) => <ol className="list-decimal pl-4 mb-2">{children}</ol>,
-                              li: ({ children }) => <li className="mb-1">{children}</li>,
-                              code: ({ inline, children }) => 
-                                inline ? (
-                                  <code className="bg-gray-100 px-1 py-0.5 rounded text-xs">{children}</code>
-                                ) : (
-                                  <pre className="bg-gray-100 p-2 rounded overflow-x-auto"><code>{children}</code></pre>
-                                ),
-                              strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
-                              em: ({ children }) => <em className="italic">{children}</em>,
-                            }}
-                          >
-                            {message.content}
-                          </ReactMarkdown>
-                        </div>
-                      )}
-                      {message.error && (
-                        <div className="text-red-500 text-xs mt-2">
-                          Error: {message.error}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <AgentMessage
+                key={message.id}
+                message={message}
+                agentName={agent.name}
+                agentIcon={agent.icon}
+                isStreaming={message.streaming}
+              />
             ))}
             <div ref={messagesEndRef} />
           </div>
@@ -450,121 +436,6 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
           )}
         </div>
       </div>
-
-      {/* Right Side Panel - Reasoning & Citations */}
-      {messages.length > 0 && (
-      <div className="w-96 border-l bg-gray-50 flex flex-col">
-        <Tabs defaultValue="reasoning" className="flex-1 flex flex-col">
-          <TabsList className="mx-4 mt-4 grid w-[calc(100%-2rem)] grid-cols-2">
-            <TabsTrigger value="reasoning" className="text-xs">
-              <Brain className="h-3 w-3 mr-1" />
-              Reasoning
-            </TabsTrigger>
-            <TabsTrigger value="citations" className="text-xs">
-              <FileText className="h-3 w-3 mr-1" />
-              Citations
-            </TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="reasoning" className="flex-1 px-4 pb-4 mt-4">
-            <div className="bg-white rounded-lg border h-full flex flex-col">
-              <div className="p-3 border-b">
-                <h4 className="text-sm font-medium text-gray-900">Tool Calls & Reasoning</h4>
-                <p className="text-xs text-gray-500 mt-1">
-                  See how {agent.name} processes your request
-                </p>
-              </div>
-              <ScrollArea className="flex-1 p-3">
-                {(currentToolCalls.length > 0 || allToolCalls.length > 0) ? (
-                  <div className="space-y-3">
-                    {/* Current active tool calls */}
-                    {currentToolCalls.filter(tc => tc.status === 'executing').map((toolCall) => (
-                      <div key={toolCall.id} className="bg-blue-50 rounded-lg p-3 border border-blue-200">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Loader2 className="h-3 w-3 animate-spin text-blue-600" />
-                          <span className="text-xs font-medium text-blue-900">Executing</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Wrench className="h-3 w-3 text-blue-600" />
-                          <span className="font-mono text-xs text-blue-800">{toolCall.name}</span>
-                        </div>
-                        {toolCall.arguments && Object.keys(toolCall.arguments).length > 0 && (
-                          <div className="mt-2 text-xs text-blue-700 bg-white/50 rounded p-2">
-                            <pre className="whitespace-pre-wrap">
-                              {JSON.stringify(toolCall.arguments, null, 2)}
-                            </pre>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                    
-                    {/* Completed tool calls */}
-                    {allToolCalls.filter(tc => tc.status === 'completed').map((toolCall) => (
-                      <div key={toolCall.id} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                          <span className="text-xs text-gray-600">Completed</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Wrench className="h-3 w-3 text-gray-500" />
-                          <span className="font-mono text-xs text-gray-700">{toolCall.name}</span>
-                        </div>
-                        {toolCall.arguments && Object.keys(toolCall.arguments).length > 0 && (
-                          <div className="mt-2 text-xs text-gray-600 bg-white/50 rounded p-2">
-                            <pre className="whitespace-pre-wrap">
-                              {JSON.stringify(toolCall.arguments, null, 2)}
-                            </pre>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ) : isStreaming ? (
-                  <div className="text-center py-8">
-                    <Loader2 className="h-8 w-8 text-gray-400 mx-auto mb-3 animate-spin" />
-                    <p className="text-xs text-gray-500">
-                      Waiting for tool calls...
-                    </p>
-                  </div>
-                ) : (
-                  <div className="text-center py-8">
-                    <Brain className="h-8 w-8 text-gray-300 mx-auto mb-3" />
-                    <p className="text-xs text-gray-500">
-                      Tool calls and reasoning steps will appear here as the agent processes your questions
-                    </p>
-                  </div>
-                )}
-              </ScrollArea>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="citations" className="flex-1 px-4 pb-4 mt-4">
-            <div className="bg-white rounded-lg border h-full flex flex-col">
-              <div className="p-3 border-b">
-                <h4 className="text-sm font-medium text-gray-900">Sources & Citations</h4>
-                <p className="text-xs text-gray-500 mt-1">
-                  {allCitations.length} sources referenced
-                </p>
-              </div>
-              <ScrollArea className="flex-1">
-                {allCitations.length > 0 ? (
-                  <div className="p-3">
-                    <CitationList citations={allCitations} />
-                  </div>
-                ) : (
-                  <div className="text-center py-8">
-                    <FileText className="h-8 w-8 text-gray-300 mx-auto mb-3" />
-                    <p className="text-xs text-gray-500">
-                      Citations will appear here as the agent responds
-                    </p>
-                  </div>
-                )}
-              </ScrollArea>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
-      )}
     </div>
   );
 }

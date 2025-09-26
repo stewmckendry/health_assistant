@@ -25,7 +25,7 @@ def register_agent_97_endpoint(app: FastAPI):
     @app.post("/agents/agent-97/stream")
     async def stream_agent_97_response(request: Agent97StreamRequest):
         """
-        Stream responses from Agent 97
+        Stream responses from Agent 97 using OpenAI Agent wrapper
         """
         try:
             async def generate() -> AsyncGenerator[str, None]:
@@ -41,7 +41,11 @@ def register_agent_97_endpoint(app: FastAPI):
                     citations_sent = []
                     
                     for chunk in assistant.query_stream(request.query, session_id=request.sessionId):
-                        if chunk['type'] == 'tool_use':
+                        if chunk['type'] == 'start':
+                            # Skip the start event as we already sent response_start
+                            continue
+                        
+                        elif chunk['type'] == 'tool_use':
                             # Forward tool call events
                             tool_event = {
                                 'type': 'tool_call_start',
@@ -81,9 +85,11 @@ def register_agent_97_endpoint(app: FastAPI):
                                     }
                                 }
                                 yield f"data: {json.dumps(citation_event)}\n\n"
-                    
-                    # Send completion event
-                    yield f"data: {json.dumps({'type': 'response_done', 'data': {'message_id': str(uuid.uuid4())}})}\n\n"
+                        
+                        elif chunk['type'] == 'complete':
+                            # Send completion event when PatientAssistant sends complete
+                            yield f"data: {json.dumps({'type': 'response_done', 'data': {'message_id': str(uuid.uuid4())}})}\n\n"
+                            break
                     
                 except Exception as e:
                     # Send error event

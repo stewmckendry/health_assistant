@@ -58,8 +58,21 @@ except ImportError as e:
 # Import agent streaming proxy (simple version without complex dependencies)
 from src.web.api.agents_streaming_proxy import register_agent_streaming_endpoints
 
-# Import Agent 97 endpoint
-from src.web.api.agent_97_endpoint import register_agent_97_endpoint
+# Import Agent 97 endpoint (conditionally)
+try:
+    from src.web.api.agent_97_endpoint import register_agent_97_endpoint
+    AGENT_97_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Agent 97 endpoint not available: {e}")
+    AGENT_97_AVAILABLE = False
+
+# Import Dr. OPA endpoint (conditionally)
+try:
+    from src.web.api.dr_opa_endpoint import register_dr_opa_endpoint
+    DR_OPA_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Dr. OPA endpoint not available: {e}")
+    DR_OPA_AVAILABLE = False
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -141,8 +154,13 @@ if TRIAGE_AVAILABLE:
 # Register agent streaming endpoints
 register_agent_streaming_endpoints(app)
 
-# Register Agent 97 endpoint
-register_agent_97_endpoint(app)
+# Register Agent 97 endpoint (if available)
+if AGENT_97_AVAILABLE:
+    register_agent_97_endpoint(app)
+
+# Register Dr. OPA endpoint (if available)
+if DR_OPA_AVAILABLE:
+    register_dr_opa_endpoint(app)
 
 
 # Request/Response models

@@ -72,42 +72,52 @@ export default function AgentChatPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-green-50">
-      <div className="border-b bg-white/80 backdrop-blur">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+      {/* Fixed Header */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Main Header */}
+          <div className="flex items-center justify-between h-14">
             <Link
               href="/agents"
-              className="text-gray-600 hover:text-gray-900 flex items-center gap-2 transition-colors"
+              className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Agents
+              <span className="hidden sm:inline">Back to Agents</span>
+              <span className="sm:hidden">Back</span>
             </Link>
-            <div className="text-center flex-1 max-w-2xl mx-auto">
-              <h1 className="text-xl font-semibold text-gray-900">
-                {agent.name} - {agent.description}
+            
+            <div className="flex-1 mx-4 text-center">
+              <h1 className="text-lg font-bold text-gray-900 truncate">
+                {agent.name}
               </h1>
-              <p className="text-sm text-gray-500 mt-1">
-                {agent.mission}
+              <p className="text-xs text-gray-500 hidden sm:block truncate">
+                {agent.tagline}
               </p>
             </div>
-            <div className="text-right">
-              <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+            
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-medium px-2 py-1 bg-blue-100 text-blue-700 rounded uppercase">
                 ALPHA
               </span>
             </div>
           </div>
+          
+          {/* Disclaimer Bar */}
+          <div className="bg-amber-50 border-t border-amber-100 px-3 py-2">
+            <p className="text-xs text-amber-800 text-center">
+              <span className="font-semibold">⚠️ Educational Use Only</span>
+              <span className="hidden sm:inline"> - Not for diagnosis or treatment. Consult healthcare providers for medical decisions.</span>
+              <span className="sm:hidden"> - Not for medical advice</span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="bg-yellow-50/80 border-b border-yellow-200 px-4 py-3">
-        <div className="max-w-7xl mx-auto text-sm text-yellow-800">
-          <strong>Important:</strong> This is a prerelease prototype for interested parties - Not ready for production use. 
-          Information provided is for educational purposes only and should not replace professional medical advice. 
-          Always consult qualified healthcare providers for clinical decisions.
-        </div>
-      </div>
+      {/* Spacer for fixed header */}
+      <div className="h-24"></div>
 
-      <div className="max-w-7xl mx-auto px-6 py-6">
+      {/* Chat Interface */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         <AgentChatInterface 
           agent={agent}
           onClose={handleClose}
