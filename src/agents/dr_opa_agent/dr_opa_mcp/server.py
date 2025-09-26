@@ -310,6 +310,15 @@ async def get_section_handler(
         }
     
     # Create section object
+    # Parse metadata_json if it's a string
+    metadata = section_data.get('metadata_json', {})
+    if isinstance(metadata, str):
+        try:
+            import json
+            metadata = json.loads(metadata)
+        except:
+            metadata = {}
+    
     section = Section(
         section_id=section_data.get('section_id'),
         document_id=section_data.get('document_id'),
@@ -317,7 +326,7 @@ async def get_section_handler(
         text=section_data.get('section_text', ''),
         chunk_type=section_data.get('chunk_type', 'unknown'),
         relevance_score=1.0,  # Direct retrieval
-        metadata=section_data.get('metadata_json', {})
+        metadata=metadata
     )
     
     # Create document object
@@ -1152,7 +1161,9 @@ async def clinical_tools_handler(
     elif feature_type:
         response['query_interpretation'] += f" with feature: {feature_type}"
     
-    return response
+    # Standardize response with top-level citations
+    tool_name = "opa_clinical_tools"
+    return standardize_mcp_response(response, tool_name)
 
 
 if __name__ == "__main__":
