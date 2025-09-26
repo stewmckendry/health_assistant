@@ -25,7 +25,9 @@ Dr. OFF is an AI-powered clinical decision support agent designed to help Ontari
 - "Ozempic for obesity vs diabetes - different coverage?"
 - "What's the cheapest statin that's covered without LU?"
 
-#### Device Funding & Eligibility
+#### Device Funding & Eligibility (NEW: Direct Natural Language Support)
+- "Can my patient get funding for a CPAP machine?" 
+  → **Answer**: "Yes, your patient can get funding for a CPAP machine through ADP. ADP covers 75% of the cost, so the patient would be responsible for paying 25%. Since the patient's income is $35,000, they are not eligible for the Chronic Equipment Pool (CEP) which would eliminate their 25% share. A valid prescription from an authorized prescriber is required."
 - "Patient with MS needs power wheelchair. Income $19,000 - CEP eligible?"
 - "3-year-old scooter needs batteries and motor repair - what's covered?"
 - "AAC device for ALS patient - funding percentage and forms?"
@@ -62,9 +64,10 @@ Dr. OFF is an AI-powered clinical decision support agent designed to help Ontari
 - **Exclusions**: 1,101 documented exclusions and limitations
 - **Data Sources**: ADP manuals with focused page range extraction (Parts 2-7)
 - **Embeddings**: 610 rich metadata vectors (policy_uid, funding_count, exclusion_count)
-- **Enhanced Features** (2025-09-25):
+- **Enhanced Features** (2025-09-26):
   - Natural language query support ("Can I get funding for a wheelchair?")
   - LLM reranking for better relevance
+  - **LLM answer synthesis** - Direct clinician-friendly answers
   - Context content field with policy snippets
   - Enhanced citations with section references
 
@@ -105,11 +108,11 @@ graph TD
 
 ### MCP Tool Architecture (5 Tools Only)
 
-| Tool | Purpose | Always Returns | Enhanced Features (2025-09-25) |
+| Tool | Purpose | Always Returns | Enhanced Features (2025-09-26) |
 |------|---------|----------------|--------------------------------|
 | `coverage.answer` | Main orchestrator - routes 80% of queries | decision, summary, citations, confidence | - |
 | `schedule.get` | OHIP billing dual-path | provenance, items[], citations[], context | ✅ Context field |
-| `adp.get` | Device funding dual-path | eligibility, exclusions, funding, citations, context | ✅ Natural language, LLM reranking, Context field |
+| `adp.get` | Device funding dual-path | eligibility, exclusions, funding, citations, context | ✅ Natural language, LLM synthesis, Context field |
 | `odb.get` | Drug formulary dual-path | coverage, interchangeable, lowest_cost, context | ✅ Natural language, Context field |
 | `source.passages` | Direct chunk retrieval | exact text for "show source" | - |
 

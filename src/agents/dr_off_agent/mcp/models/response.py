@@ -157,6 +157,8 @@ class ADPGetResponse(BaseModel):
     """Response model for adp.get tool."""
     provenance: List[str] = Field(..., description="Data sources used")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score")
+    answer: Optional[str] = Field(None, description="Direct LLM-generated answer to the original question")
+    answer_confidence: Optional[float] = Field(None, ge=0.0, le=1.0, description="LLM's confidence in the answer")
     eligibility: Optional[Eligibility] = Field(None, description="Eligibility assessment")
     exclusions: List[str] = Field(
         default_factory=list, description="Applicable exclusions"

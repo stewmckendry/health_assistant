@@ -290,6 +290,8 @@ Examples:
 {
     "provenance": ["sql", "vector"],
     "confidence": float,
+    "answer": str|null,                # NEW: Direct LLM-generated answer to original question
+    "answer_confidence": float|null,   # NEW: LLM's confidence in the answer (0.0-1.0)
     "summary": str,                    # LLM-friendly one-line answer
     "interpretation_notes": {          # Helps LLMs understand response
         "null_values": "null means 'not determined from query'",
@@ -321,7 +323,7 @@ Examples:
 ```
 
 ### Algorithm
-**[ENHANCED 2025-09-26: Natural Language Support + Planned LLM Answer Synthesis]**
+**[ENHANCED 2025-09-26: Natural Language Support + LLM Answer Synthesis COMPLETE]**
 
 1. **Natural Language Processing** (IMPLEMENTED):
    - Accepts either `query` string or structured `device` object
@@ -401,12 +403,13 @@ Examples:
    - -0.1 for conflicts between SQL and vector
    - Lower base (0.6) if vector-only evidence
 
-11. **LLM Answer Synthesis** (PLANNED):
+11. **LLM Answer Synthesis** (IMPLEMENTED 2025-09-26):
    - After dual-path retrieval completes, pass results to GPT-3.5-turbo
-   - Synthesize direct answer to original question
-   - Include: funding data, eligibility, CEP info, citations
-   - Generate confidence assessment based on data completeness
-   - Return as primary `answer` field with supporting evidence
+   - Synthesize direct clinician-friendly answer to original question
+   - Include: funding percentages, CEP eligibility, prescription requirements
+   - Generate confidence assessment (typically 0.8) based on data completeness
+   - Return as primary `answer` field with all structured data as supporting evidence
+   - Example output: "Yes, your patient can get funding for a CPAP machine through ADP. ADP covers 75% of the cost, so the patient would be responsible for paying 25%. Since the patient's income is $35,000, they are not eligible for the Chronic Equipment Pool (CEP) which would eliminate their 25% share. A valid prescription from an authorized prescriber is required."
 
 ---
 

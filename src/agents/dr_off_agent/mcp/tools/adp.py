@@ -838,6 +838,157 @@ class ADPTool:
         
         return citations
 
+    async def _synthesize_answer(
+        self,
+        original_query: str,
+        response: ADPGetResponse,
+        sql_result: Dict[str, Any],
+        vector_results: List[Dict[str, Any]],
+        patient_income: Optional[float] = None
+    ) -> tuple[str, float]:
+        """
+        Use LLM to synthesize a direct answer to the original clinical question.
+        
+        Args:
+            original_query: The original natural language query
+            response: The structured ADP response with all data
+            sql_result: Raw SQL query results
+            vector_results: Raw vector search results
+            patient_income: Patient income if provided
+            
+        Returns:
+            Tuple of (answer, confidence_score)
+        """
+        if not self.openai_client:
+            logger.warning("LLM synthesis requested but no OpenAI API key available")
+            return None, None
+        
+        try:
+            # Build context for LLM from the structured response
+            context_parts = []
+            
+            # Device information
+            if hasattr(response, 'device_info'):
+                context_parts.append(f"Device: {response.device_info}")
+            
+            # Funding information
+            if response.funding:
+                funding_text = f"ADP covers {response.funding.adp_contribution}%, patient pays {response.funding.client_share_percent}%"
+                if response.cep and response.cep.eligible:
+                    funding_text += f" (CEP eligible - patient cost eliminated due to income below ${response.cep.income_threshold:.0f})"
+                elif response.cep and not response.cep.eligible:
+                    funding_text += f" (income above CEP threshold of ${response.cep.income_threshold:.0f})"
+                context_parts.append(f"Funding: {funding_text}")
+            
+            # Eligibility information
+            if response.eligibility:
+                elig_parts = []
+                if response.eligibility.basic_mobility is True:
+                    elig_parts.append("meets basic mobility need")
+                elif response.eligibility.basic_mobility is False:
+                    elig_parts.append("does not meet basic mobility need")
+                
+                if response.eligibility.ontario_resident is True:
+                    elig_parts.append("Ontario resident")
+                elif response.eligibility.ontario_resident is False:
+                    elig_parts.append("not confirmed as Ontario resident")
+                
+                if response.eligibility.valid_prescription is True:
+                    elig_parts.append("valid prescription required")
+                elif response.eligibility.valid_prescription is False:
+                    elig_parts.append("no valid prescription")
+                
+                if elig_parts:
+                    context_parts.append(f"Eligibility: {', '.join(elig_parts)}")
+            
+            # Exclusions
+            if response.exclusions:
+                context_parts.append(f"Exclusions: {'; '.join(response.exclusions[:2])}")
+            
+            # Citations context
+            if response.citations:
+                citation_sources = [f"{c.source}" for c in response.citations[:3]]
+                context_parts.append(f"Sources: {', '.join(citation_sources)}")
+            
+            # Income context
+            if patient_income is not None:
+                context_parts.append(f"Patient income: ${patient_income:.0f}")
+            
+            structured_context = "\n".join(context_parts)
+            
+            # Build LLM prompt for answer synthesis
+            prompt = f"""You are a clinical expert analyzing ADP (Assistive Devices Program) funding eligibility in Ontario. 
+
+Original question: "{original_query}"
+
+Available information:
+{structured_context}
+
+Based on this information, provide a direct, clinical answer to the original question. Your answer should:
+1. Directly answer the yes/no question if possible
+2. Include specific funding percentages and costs
+3. Mention CEP eligibility if relevant to low-income patients  
+4. Note any important requirements or exclusions
+5. Be concise but complete for a clinician
+
+Also provide your confidence level (0.0-1.0) based on:
+- Completeness of available data
+- Clarity of eligibility criteria
+- Presence of any exclusions or conflicts
+
+Format your response as:
+ANSWER: [Your direct answer]
+CONFIDENCE: [0.0-1.0]
+
+Example:
+ANSWER: Yes, your patient qualifies for ADP funding for a power wheelchair. ADP covers 75% of the cost, and since the patient's income of $19,000 is below the CEP threshold of $28,000, they are eligible for the Chronic Equipment Pool which eliminates the patient's 25% share entirely. A valid prescription from an authorized prescriber is required.
+CONFIDENCE: 0.9"""
+
+            # Call LLM
+            response_obj = await asyncio.get_event_loop().run_in_executor(
+                None,
+                lambda: self.openai_client.chat.completions.create(
+                    model="gpt-3.5-turbo",
+                    messages=[
+                        {"role": "system", "content": "You are a clinical expert providing precise ADP funding guidance."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.1,
+                    max_tokens=300
+                )
+            )
+            
+            # Parse response
+            llm_response = response_obj.choices[0].message.content.strip()
+            
+            # Extract answer and confidence
+            answer = None
+            confidence = None
+            
+            for line in llm_response.split('\n'):
+                if line.startswith('ANSWER:'):
+                    answer = line.replace('ANSWER:', '').strip()
+                elif line.startswith('CONFIDENCE:'):
+                    try:
+                        confidence = float(line.replace('CONFIDENCE:', '').strip())
+                    except ValueError:
+                        confidence = None
+            
+            if answer is None:
+                # Fallback: use entire response as answer
+                answer = llm_response
+                confidence = 0.7  # Lower confidence for unparsed response
+            
+            if confidence is None:
+                confidence = 0.6  # Default moderate confidence
+            
+            logger.info(f"LLM synthesized answer (conf={confidence:.2f}): {answer[:100]}...")
+            return answer, confidence
+            
+        except Exception as e:
+            logger.error(f"LLM answer synthesis failed: {e}")
+            return None, None
+
 
 async def adp_get(
     request: Dict[str, Any],
@@ -857,11 +1008,15 @@ async def adp_get(
     Returns:
         Response dictionary with comprehensive context for LLM interpretation
     """
+    # Preserve original query for LLM synthesis
+    original_query_for_synthesis = None
+    
     # Handle natural language query format
     if "query" in request and "device" not in request:
         # Natural language query - extract device and parameters
         extractor = get_device_extractor()
         query = request["query"]
+        original_query_for_synthesis = query  # Preserve original query
         
         logger.info(f"Processing natural language query: {query}")
         extracted = extractor.extract_device_params(query)
@@ -994,6 +1149,46 @@ async def adp_get(
     if not isinstance(sql_result, Exception) and not isinstance(vector_result, Exception):
         context_content = tool._build_context_content(vector_result, sql_result)
         response_dict["context"] = context_content
+    
+    # Add LLM synthesis for natural language queries
+    original_query = original_query_for_synthesis  # Use preserved original query
+    logger.info(f"Checking for synthesis: preserved query = {original_query}")
+    
+    # Fallback: check if device type was natural language
+    if not original_query and "device" in request and isinstance(request["device"], dict):
+        device_type = request["device"].get("type", "")
+        extractor = get_device_extractor()
+        if extractor._is_natural_language(device_type):
+            original_query = device_type
+            logger.info(f"Found natural language device type: {original_query}")
+    
+    logger.info(f"Final original_query: {original_query}")
+    
+    if original_query:
+        logger.info(f"Attempting LLM synthesis for query: {original_query}")
+        try:
+            synthesized_answer, answer_confidence = await tool._synthesize_answer(
+                original_query=original_query,
+                response=response,
+                sql_result=sql_result,
+                vector_results=vector_result,
+                patient_income=parsed_request.patient_income
+            )
+            
+            logger.info(f"Synthesis returned: answer={synthesized_answer is not None}, confidence={answer_confidence}")
+            
+            if synthesized_answer:
+                response_dict["answer"] = synthesized_answer
+                response_dict["answer_confidence"] = answer_confidence
+                logger.info(f"Added LLM synthesis to response: {answer_confidence:.2f} confidence")
+            else:
+                logger.warning("LLM synthesis returned null answer")
+        except Exception as e:
+            logger.error(f"LLM synthesis failed with exception: {e}")
+            import traceback
+            logger.error(f"Traceback: {traceback.format_exc()}")
+    else:
+        logger.info(f"No original query found for synthesis. Query in request: {'query' in request}")
     
     # Add LLM-friendly summary that directly answers common questions
     summary_parts = []

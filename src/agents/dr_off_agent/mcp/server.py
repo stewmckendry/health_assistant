@@ -12,6 +12,10 @@ from pathlib import Path
 from typing import Dict, Any
 import uuid
 from fastmcp import FastMCP
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Import tool handlers
 from .tools.coverage import coverage_answer
