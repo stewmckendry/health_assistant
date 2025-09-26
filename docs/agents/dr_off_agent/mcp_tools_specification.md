@@ -232,13 +232,33 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
 - **Exclusions check**: "Are scooter batteries covered under ADP?"
 - **Repair coverage**: "3-year-old scooter needs motor repair - what's covered?"
 - **Documentation needs**: "What forms are needed for AAC device funding?"
+- **Natural language queries**: "Can my patient get funding for a CPAP?"
 
 ### Request Schema
+
+**Option A: Natural Language (Recommended for LLMs)**
+```python
+{
+    "query": str,              # Natural language question
+    "patient_income": float    # Optional: Annual income for CEP check
+}
+```
+
+Examples:
+- `{"query": "Can my patient get funding for a CPAP?", "patient_income": 35000}`
+- `{"query": "Is a power wheelchair covered for low income patients?"}`
+- `{"query": "Does ADP cover hearing aids?"}`
+
+**Option B: Structured Format**
 ```python
 {
     "device": {                        # Required
-        "category": "mobility|comm_aids",
-        "type": str                    # Supports natural language!
+        "category": str,               # One of 11 ADP categories:
+                                      # mobility, comm_aids, hearing_devices,
+                                      # visual_aids, respiratory, insulin_pump,
+                                      # glucose_monitoring, prosthesis,
+                                      # maxillofacial, grants, core_manual
+        "type": str                    # Device type
                                       # e.g., "walker", "power wheelchair"
                                       # or "Can I get funding for a wheelchair?"
     },
@@ -270,37 +290,45 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
 {
     "provenance": ["sql", "vector"],
     "confidence": float,
-    "context": str,                    # NEW: Policy snippets & funding rules
+    "summary": str,                    # LLM-friendly one-line answer
+    "interpretation_notes": {          # Helps LLMs understand response
+        "null_values": "null means 'not determined from query'",
+        "confidence": "0.99 = high, 0.8+ = good",
+        "cep": "CEP eliminates patient cost for low-income"
+    },
+    "context": str,                    # Policy snippets & funding rules
     "eligibility": {
-        "basic_mobility": bool,
-        "ontario_resident": bool,
-        "valid_prescription": bool,
+        "basic_mobility": bool|null,   # null = not determined
+        "ontario_resident": bool|null,
+        "valid_prescription": bool|null,
         "other_criteria": dict
     },
-    "exclusions": [str],              # Enhanced with policy references
+    "exclusions": [str],              
     "funding": {
-        "client_share_percent": float,
-        "adp_contribution": float,
-        "max_contribution": float,
-        "repair_coverage": str
+        "client_share_percent": float, # Typically 25% unless CEP
+        "adp_contribution": float,      # Typically 75%
+        "max_contribution": float|null,
+        "repair_coverage": str          # Often "Not covered"
     },
     "cep": {
         "income_threshold": float,     # $28k single, $39k family
         "eligible": bool,
-        "client_share": float          # Usually 0 if eligible
-    },
-    "citations": [...],                # Enhanced with policy_uid, section_id
+        "client_share": float          # 0% if eligible
+    }|null,
+    "citations": [...],                
     "conflicts": [...]
 }
 ```
 
 ### Algorithm
-**[ENHANCED 2025-09-25: Natural Language, LLM Reranking, Rich Metadata]**
+**[ENHANCED 2025-09-26: Natural Language Support + Planned LLM Answer Synthesis]**
 
-1. **Natural Language Processing** (NEW):
-   - Device type field processed through `ADPDeviceExtractor`
-   - Regex patterns for common queries ("Can I get funding for...")
-   - LLM fallback (GPT-3.5-turbo) for complex queries
+1. **Natural Language Processing** (IMPLEMENTED):
+   - Accepts either `query` string or structured `device` object
+   - Processes through `ADPDeviceExtractor` class
+   - Regex extraction for common patterns
+   - **LLM fallback when regex returns no category** (GPT-3.5-turbo)
+   - Supports all 11 ADP device categories with flexible aliasing
    - Extracts: device_type, category, use_case, income, check_types
 
 2. **Parallel Retrieval**:
@@ -372,6 +400,13 @@ ADP (Assistive Devices Program) eligibility, funding rules, and CEP (Chronic Equ
    - +0.03 per corroborating vector passage
    - -0.1 for conflicts between SQL and vector
    - Lower base (0.6) if vector-only evidence
+
+11. **LLM Answer Synthesis** (PLANNED):
+   - After dual-path retrieval completes, pass results to GPT-3.5-turbo
+   - Synthesize direct answer to original question
+   - Include: funding data, eligibility, CEP info, citations
+   - Generate confidence assessment based on data completeness
+   - Return as primary `answer` field with supporting evidence
 
 ---
 
