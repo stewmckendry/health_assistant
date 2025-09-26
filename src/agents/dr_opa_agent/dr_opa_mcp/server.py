@@ -27,6 +27,7 @@ from .tools.ontario_health_programs import get_client as get_ontario_health_clie
 from .utils import calculate_confidence, resolve_conflicts
 from .utils.confidence import OPAConfidenceScorer
 from .utils.conflicts import OPAConflictResolver
+from .utils.response_formatter import standardize_mcp_response
 
 # Import models
 from .models.request import (
@@ -268,7 +269,10 @@ async def search_sections_handler(
         query_interpretation=f"Searching for: {query}"
     )
     
-    return response.dict()
+    # Standardize response with top-level citations
+    response_dict = response.dict()
+    tool_name = "opa_search_sections"
+    return standardize_mcp_response(response_dict, tool_name)
 
 
 @mcp.tool(name="opa_get_section", description="Retrieve complete section details by ID")
@@ -373,7 +377,10 @@ async def get_section_handler(
         citations=citations
     )
     
-    return response.dict()
+    # Standardize response with top-level citations
+    response_dict = response.dict()
+    tool_name = "opa_get_section"
+    return standardize_mcp_response(response_dict, tool_name)
 
 
 @mcp.tool(name="opa_policy_check", description="CPSO-specific policy and advice retrieval")
@@ -538,7 +545,9 @@ async def policy_check_handler(
         summary=summary
     )
     
-    return response.dict()
+    # Standardize response with top-level citations
+    response_dict = response.dict()
+    return standardize_mcp_response(response_dict, "opa_policy_check")
 
 
 @mcp.tool(name="opa_program_lookup", description="Ontario Health clinical programs information (cancer, kidney, cardiac, etc.)")
@@ -657,7 +666,10 @@ async def program_lookup_handler(
         
         logger.info(f"Successfully retrieved {program} program information with {len(formatted_citations)} citations")
         
-        return response.dict()
+        # Standardize response with top-level citations
+        response_dict = response.dict()
+        tool_name = "opa_program_lookup"
+        return standardize_mcp_response(response_dict, tool_name)
         
     except Exception as e:
         logger.error(f"Error in program_lookup_handler: {e}")
@@ -736,7 +748,10 @@ def _parse_screening_program_data(program_data: Dict, program: str, patient_age:
         last_updated=None
     )
     
-    return response.dict()
+    # Standardize response with top-level citations
+    response_dict = response.dict()
+    tool_name = "opa_program_lookup"
+    return standardize_mcp_response(response_dict, tool_name)
 
 
 @mcp.tool(name="opa_ipac_guidance", description="PHO infection prevention and control guidance")
@@ -868,7 +883,10 @@ async def ipac_guidance_handler(
         resources=resources
     )
     
-    return response.dict()
+    # Standardize response with top-level citations
+    response_dict = response.dict()
+    tool_name = "opa_ipac_guidance"
+    return standardize_mcp_response(response_dict, tool_name)
 
 
 @mcp.tool(name="opa_freshness_probe", description="Check for guidance updates on a topic")
@@ -984,7 +1002,10 @@ async def freshness_probe_handler(
         web_sources_checked=web_sources_checked
     )
     
-    return response.dict()
+    # Standardize response with top-level citations
+    response_dict = response.dict()
+    tool_name = "opa_freshness_probe"
+    return standardize_mcp_response(response_dict, tool_name)
 
 
 @mcp.tool(name="opa_clinical_tools", description="CEP clinical decision support tools lookup")
