@@ -13,10 +13,19 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
+import json
+import uuid
+import re
 
 # Load environment variables
 from dotenv import load_dotenv
 load_dotenv()
+
+# Import yaml for loading trusted domains
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 from agents import Agent
 from agents.mcp.server import MCPServerStdio, MCPServerStdioParams
@@ -205,18 +214,26 @@ Remember: You are powered by sophisticated guardrails that ensure safe responses
                     context=context
                 )
                 
-                # Extract tool calls from the result
+                # Extract tool calls and citations from the result
                 tool_calls = []
+                all_citations = []
                 
                 logger.debug(f"Examining {len(result.new_items)} result items for tool calls")
                 
                 for i, item in enumerate(result.new_items):
                     # Check various patterns for tool calls
                     if hasattr(item, 'name') and hasattr(item, 'arguments'):
-                        tool_calls.append({
+                        tool_call = {
                             'name': item.name,
                             'arguments': str(item.arguments) if hasattr(item, 'arguments') else ''
-                        })
+                        }
+                        tool_calls.append(tool_call)
+                        
+                        # Extract citations from tool result if available
+                        if hasattr(item, 'result'):
+                            citations = self._extract_citations_from_tool_result(item.result)
+                            all_citations.extend(citations)
+                            
                     elif hasattr(item, 'tool_calls') and item.tool_calls:
                         for tool_call in item.tool_calls:
                             tool_calls.append({
@@ -236,7 +253,33 @@ Remember: You are powered by sophisticated guardrails that ensure safe responses
                                             'arguments': tool_call.function.arguments
                                         })
                 
-                # Log tool calls
+                # Deduplicate citations by URL
+                unique_citations = []
+                seen_urls = set()
+                for citation in all_citations:
+                    url = citation.get('url', '')
+                    if url and url not in seen_urls:
+                        seen_urls.add(url)
+                        unique_citations.append(citation)
+                
+                # Create simple highlights from key citations
+                highlights = []
+                for i, citation in enumerate(unique_citations[:3]):  # Top 3 citations
+                    highlights.append({
+                        'point': f"Information from {citation.get('title', 'trusted medical source')}",
+                        'citations': [citation['id']],
+                        'confidence': 0.9,
+                        'policy_level': 'guideline'
+                    })
+                
+                # Calculate confidence based on citations
+                confidence = 0.8  # Base confidence
+                if unique_citations:
+                    trusted_count = sum(1 for c in unique_citations if c.get('is_trusted', False))
+                    if trusted_count > 0:
+                        confidence = min(0.95, 0.8 + (trusted_count * 0.03))
+                
+                # Log tool calls and citations
                 if tool_calls:
                     logger.info(f"MCP Tools called: {[tc['name'] for tc in tool_calls]}")
                     for tc in tool_calls:
@@ -244,13 +287,20 @@ Remember: You are powered by sophisticated guardrails that ensure safe responses
                 else:
                     logger.info("No MCP tools were called")
                 
+                if unique_citations:
+                    trusted_count = sum(1 for c in unique_citations if c.get('is_trusted', False))
+                    logger.info(f"Extracted {len(unique_citations)} citations ({trusted_count} trusted)")
+                
                 logger.info(f"Query processed successfully. Response length: {len(result.final_output)}")
                 
-                # Return a dictionary with both response and tool call info
+                # Return enhanced response with structured citations
                 return {
                     'response': result.final_output,
                     'tool_calls': tool_calls,
                     'tools_used': [tc['name'] for tc in tool_calls],
+                    'citations': unique_citations,
+                    'highlights': highlights,
+                    'confidence': confidence,
                     'session_id': self.session_id
                 }
             
@@ -261,9 +311,60 @@ Remember: You are powered by sophisticated guardrails that ensure safe responses
                 'response': error_response,
                 'tool_calls': [],
                 'tools_used': [],
+                'citations': [],
+                'highlights': [],
+                'confidence': 0.0,
                 'error': str(e),
                 'session_id': self.session_id
             }
+    
+    def _extract_citations_from_tool_result(self, tool_result: Any) -> List[Dict]:
+        """Extract citations from MCP tool result (lightweight approach)."""
+        citations = []
+        
+        try:
+            # Handle different result formats
+            if isinstance(tool_result, dict):
+                result_data = tool_result
+            elif hasattr(tool_result, '__dict__'):
+                result_data = tool_result.__dict__
+            else:
+                return citations
+            
+            # The MCP tool returns citations in the 'citations' field
+            if 'citations' in result_data and isinstance(result_data['citations'], list):
+                for cite in result_data['citations']:
+                    if isinstance(cite, dict):
+                        # Convert to standardized format if needed
+                        citation = {
+                            'id': f"agent97_{uuid.uuid4().hex[:8]}",
+                            'title': cite.get('title', cite.get('source', 'Medical Source')),
+                            'source': cite.get('source', cite.get('organization', 'Unknown')),
+                            'source_type': cite.get('type', 'website'),
+                            'url': cite.get('url', ''),
+                            'domain': self._extract_domain(cite.get('url', '')),
+                            'is_trusted': cite.get('is_trusted', False),
+                            'access_date': datetime.now().isoformat(),
+                            'snippet': cite.get('snippet', cite.get('excerpt', '')),
+                            'relevance_score': cite.get('relevance_score', 0.8)
+                        }
+                        citations.append(citation)
+        except Exception as e:
+            logger.warning(f"Error extracting citations from tool result: {e}")
+        
+        return citations
+    
+    def _extract_domain(self, url: str) -> str:
+        """Extract domain from URL."""
+        try:
+            from urllib.parse import urlparse
+            if url:
+                parsed = urlparse(url)
+                domain = parsed.netloc.lower()
+                return domain.replace('www.', '') if domain.startswith('www.') else domain
+        except:
+            pass
+        return ''
     
     def _create_error_response(self, error_message: str, query: str) -> str:
         """Create a fallback response for errors."""
@@ -324,13 +425,34 @@ async def test_agent():
         
         result = await agent.query(test_query)
         
-        # Handle both old string format and new dict format
+        # Handle enhanced response format with citations
         if isinstance(result, dict):
             print(f"🔧 Tools Used: {', '.join(result['tools_used']) if result['tools_used'] else 'None'}")
             print(f"📊 Tool Calls: {len(result['tool_calls'])} tools called")
+            print(f"📚 Citations: {len(result.get('citations', []))} ({sum(1 for c in result.get('citations', []) if c.get('is_trusted', False))} trusted)")
+            print(f"💡 Highlights: {len(result.get('highlights', []))}")
+            print(f"🎯 Confidence: {result.get('confidence', 0.0):.2f}")
             print("-" * 60)
             print("📄 Response:")
             print(result['response'])
+            
+            if result.get('citations'):
+                print("\n📚 Citations:")
+                for i, cite in enumerate(result['citations'], 1):
+                    trust_indicator = "✓" if cite.get('is_trusted', False) else "?"
+                    print(f"  {i}. {trust_indicator} {cite['title']}")
+                    print(f"     Source: {cite['source']} ({cite['domain']})")
+                    print(f"     URL: {cite['url']}")
+                    if cite.get('snippet'):
+                        print(f"     Excerpt: {cite['snippet'][:100]}...")
+                    print()
+            
+            if result.get('highlights'):
+                print("\n💡 Key Highlights:")
+                for i, highlight in enumerate(result['highlights'], 1):
+                    print(f"  {i}. {highlight['point']}")
+                    print(f"     Citations: {len(highlight.get('citations', []))}")
+                    print()
             
             if result['tool_calls']:
                 print("\n🔧 Detailed Tool Calls:")

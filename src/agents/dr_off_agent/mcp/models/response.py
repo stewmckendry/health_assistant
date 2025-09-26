@@ -92,28 +92,65 @@ class ScheduleGetResponse(BaseModel):
 
 
 class Eligibility(BaseModel):
-    """ADP eligibility criteria."""
-    basic_mobility: Optional[bool] = Field(None, description="Meets basic mobility need")
-    ontario_resident: Optional[bool] = Field(None, description="Ontario resident status")
-    valid_prescription: Optional[bool] = Field(None, description="Has valid prescription")
+    """ADP eligibility assessment.
+    
+    Field values:
+    - true: Requirement confirmed as met
+    - false: Requirement confirmed as NOT met
+    - null: Not determined from available information
+    """
+    basic_mobility: Optional[bool] = Field(
+        None,
+        description="Meets basic needs requirement (applies to all device types, not just mobility)"
+    )
+    ontario_resident: Optional[bool] = Field(
+        None,
+        description="Confirmed Ontario resident (null = not verified from query)"
+    )
+    valid_prescription: Optional[bool] = Field(
+        None,
+        description="Has valid prescription from authorized prescriber (null = not verified)"
+    )
     other_criteria: Optional[Dict[str, bool]] = Field(
-        None, description="Additional eligibility criteria"
+        None,
+        description="Additional device-specific eligibility criteria"
     )
 
 
 class Funding(BaseModel):
     """ADP funding details."""
-    client_share_percent: float = Field(..., description="Client share percentage")
-    adp_contribution: float = Field(..., description="ADP contribution percentage")
-    max_contribution: Optional[float] = Field(None, description="Maximum ADP contribution")
-    repair_coverage: Optional[str] = Field(None, description="Repair coverage details")
+    client_share_percent: float = Field(
+        ...,
+        description="Percentage patient pays (typically 25% unless CEP eligible)"
+    )
+    adp_contribution: float = Field(
+        ...,
+        description="Percentage ADP pays (typically 75%)"
+    )
+    max_contribution: Optional[float] = Field(
+        None,
+        description="Maximum ADP contribution amount in CAD if applicable"
+    )
+    repair_coverage: Optional[str] = Field(
+        None,
+        description="Repair/maintenance coverage details (often 'Not covered')"
+    )
 
 
 class CEPInfo(BaseModel):
-    """Chronic Care Expansion Program information."""
-    income_threshold: float = Field(..., description="Income threshold for eligibility")
-    eligible: bool = Field(..., description="Whether patient is CEP eligible")
-    client_share: float = Field(..., description="Client share under CEP (usually 0)")
+    """Chronic Equipment Pool (CEP) information for low-income patients."""
+    income_threshold: float = Field(
+        ...,
+        description="Annual income threshold in CAD ($28,000 single, $39,000 family)"
+    )
+    eligible: bool = Field(
+        ...,
+        description="Whether patient qualifies for CEP based on income"
+    )
+    client_share: float = Field(
+        ...,
+        description="Patient payment under CEP (0% if eligible, replaces standard 25%)"
+    )
 
 
 class ADPGetResponse(BaseModel):

@@ -119,6 +119,21 @@ export class AgentAdapter {
         // Agent started responding
         break;
 
+      case 'text':
+        const plainTextEvent: StreamEvent = {
+          type: 'text',
+          data: {
+            content: event.data.content || '',
+            delta: event.data.delta || ''
+          },
+          timestamp: new Date().toISOString()
+        };
+
+        controller.enqueue(
+          encoder.encode(`data: ${JSON.stringify(plainTextEvent)}\n\n`)
+        );
+        break;
+
       case 'text_delta':
         const textEvent: StreamEvent = {
           type: 'text',

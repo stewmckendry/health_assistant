@@ -304,6 +304,23 @@ class BaseIngester(ABC):
         conn = self.db.connect()
         cursor = conn.cursor()
         
+        # Ensure the ingestion_log table exists
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS ingestion_log (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                source_file TEXT NOT NULL,
+                source_type TEXT NOT NULL,
+                status TEXT NOT NULL,
+                started_at DATETIME,
+                completed_at DATETIME,
+                records_processed INTEGER,
+                records_failed INTEGER,
+                error_message TEXT,
+                message TEXT,
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        
         if status == 'started':
             cursor.execute("""
                 INSERT INTO ingestion_log (
@@ -419,13 +436,14 @@ class BaseIngester(ABC):
                 logger.warning(f"No records found in {table}")
                 return False
         
-        # Check chunks and embeddings
-        cursor.execute(
-            "SELECT COUNT(*) FROM document_chunks WHERE source_type = ?",
-            (self.source_type,)
-        )
-        chunk_count = cursor.fetchone()[0]
-        logger.info(f"Created {chunk_count} document chunks for {self.source_type}")
+        # Check chunks in ChromaDB (not SQL)
+        # We're using ChromaDB for embeddings, not SQL table
+        try:
+            # Get count from collection instead
+            collection_count = len(self.collection.get()['ids'])
+            logger.info(f"Created {collection_count} document chunks in ChromaDB for {self.source_type}")
+        except Exception as e:
+            logger.warning(f"Could not verify ChromaDB chunks: {e}")
         
         return True
     

@@ -478,18 +478,38 @@ class ScheduleTool:
         # Extract from metadata and text
         metadata = doc.metadata or {}
         
-        # Try to parse code from text
-        import re
-        code_match = re.search(r'([A-Z]\d{3,4})', doc.text)
-        code = code_match.group(1) if code_match else metadata.get('code', '')
+        # Get fee code from metadata first, then try to parse from text
+        code = metadata.get('fee_code', '')
+        if not code:
+            import re
+            code_match = re.search(r'([A-Z]\d{3,4})', doc.text)
+            code = code_match.group(1) if code_match else ''
+        
+        # Build enriched description with metadata
+        description_parts = [doc.text[:200]]
+        
+        # Add specialty and category if available
+        if metadata.get('specialty'):
+            description_parts.append(f"Specialty: {metadata.get('specialty')}")
+        if metadata.get('category'):
+            description_parts.append(f"Category: {metadata.get('category')}")
+            
+        enriched_description = '\n'.join(description_parts)
+        
+        # Extract billing conditions if flagged
+        requirements = None
+        if metadata.get('has_conditions') == 'true':
+            # Try to extract from text
+            if 'Billing Conditions:' in doc.text:
+                requirements = doc.text.split('Billing Conditions:')[1].split('\n')[0].strip()
         
         return ScheduleItem(
             code=code,
-            description=doc.text[:200],  # First 200 chars
-            fee=metadata.get('fee'),
-            requirements=metadata.get('requirements'),
-            limits=metadata.get('limits'),
-            page_num=metadata.get('page_num')
+            description=enriched_description,
+            fee=metadata.get('fee_amount'),  # Correct field name
+            requirements=requirements,
+            limits=metadata.get('limits'),  # May need extraction from text
+            page_num=None  # Convert page_ref if needed
         )
     
     def _is_duplicate(self, item: ScheduleItem, items: List[ScheduleItem]) -> bool:

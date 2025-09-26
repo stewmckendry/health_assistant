@@ -243,7 +243,7 @@ class ODBIngester(BaseIngester):
                 self.lowest_cost_dins[drug['din']] = True
     
     def _ingest_xml(self, xml_file: str):
-        """Ingest XML data into database.
+        """Ingest XML data into database and create embeddings.
         
         Args:
             xml_file: Path to ODB XML file
@@ -254,6 +254,7 @@ class ODBIngester(BaseIngester):
         # Process drugs
         logger.info("Processing ODB drugs...")
         drug_count = 0
+        drug_chunks = []  # Collect chunks for batch embedding
         
         for drug in tqdm(self.parse_source(xml_file), desc="Ingesting drugs"):
             try:
@@ -286,16 +287,71 @@ class ODBIngester(BaseIngester):
                     drug['is_section_12'], drug['additional_benefit_type'], drug['notes']
                 ))
                 
+                # Create embedding text for this drug
+                sections = []
+                if drug.get('is_section_3'): sections.append('Section 3')
+                if drug.get('is_section_3b'): sections.append('Section 3B')
+                if drug.get('is_section_3c'): sections.append('Section 3C')
+                if drug.get('is_section_9'): sections.append('Section 9')
+                if drug.get('is_section_12'): sections.append('Section 12')
+                
+                drug_text = f"""Drug: {drug.get('name', 'Unknown')} ({drug.get('generic_name', 'Unknown')})
+DIN: {drug.get('din', 'N/A')}
+Strength: {drug.get('strength', 'N/A')} {drug.get('dosage_form', 'N/A')}
+Therapeutic Class: {drug.get('therapeutic_class', 'N/A')}
+Category: {drug.get('category') or 'General'}
+Price: ${drug.get('individual_price') or 'N/A'} per unit
+Daily Cost: ${drug.get('daily_cost') or 'N/A'}
+Coverage: {'General Benefit' if drug.get('is_benefit') else 'Not a Benefit'}
+{' '.join(sections)}
+{'Chronic Use' if drug.get('is_chronic_use') else ''}
+{'LOWEST COST OPTION' if drug.get('is_lowest_cost') else ''}
+Manufacturer: {drug.get('manufacturer_id', 'N/A')}"""
+                
+                # Add notes if present
+                if drug.get('notes'):
+                    drug_text += f"\nClinical Notes: {drug['notes']}"
+                
+                # Create chunks for this drug
+                chunks = self.chunk_text(
+                    drug_text,
+                    chunk_size=500,  # Smaller chunks for drug records
+                    chunk_overlap=50,
+                    metadata={
+                        'din': drug.get('din'),
+                        'generic_name': drug.get('generic_name'),
+                        'brand_name': drug.get('name'),
+                        'source_type': 'odb_drug',
+                        'therapeutic_class': drug.get('therapeutic_class'),
+                        'is_lowest_cost': str(drug.get('is_lowest_cost', False)),
+                        'document_type': 'formulary_drug'
+                    }
+                )
+                drug_chunks.extend(chunks)
+                
                 drug_count += 1
                 self.ingestion_stats['records_processed'] += 1
+                
+                # Store chunks in batches to avoid memory issues
+                if len(drug_chunks) >= 1000:
+                    logger.info(f"Storing batch of {len(drug_chunks)} drug chunks...")
+                    self.store_chunks_with_embeddings(drug_chunks, f"odb_drugs_batch_{drug_count}")
+                    drug_chunks = []
                 
             except Exception as e:
                 logger.error(f"Error inserting drug {drug.get('din')}: {e}")
                 self.ingestion_stats['records_failed'] += 1
                 self.ingestion_stats['errors'].append(str(e))
         
-        # Insert interchangeable groups
+        # Store remaining drug chunks
+        if drug_chunks:
+            logger.info(f"Storing final batch of {len(drug_chunks)} drug chunks...")
+            self.store_chunks_with_embeddings(drug_chunks, f"odb_drugs_final")
+        
+        # Insert interchangeable groups and create embeddings
         logger.info("Processing interchangeable groups...")
+        group_chunks = []
+        
         for group in self.interchangeable_groups.values():
             try:
                 cursor.execute("""
@@ -312,11 +368,40 @@ class ODBIngester(BaseIngester):
                     group['lowest_cost_din'], group['lowest_cost_price'],
                     group['daily_cost'], group['notes']
                 ))
+                
+                # Create embedding for interchangeable group
+                group_text = f"""Interchangeable Drug Group: {group['generic_name']} {group['strength']} {group['dosage_form']}
+Therapeutic Class: {group['therapeutic_class']}
+Category: {group.get('category') or 'General'}
+Number of alternatives: {group['member_count']}
+Lowest cost option: DIN {group['lowest_cost_din']} at ${group['lowest_cost_price']}
+Daily cost: ${group.get('daily_cost') or 'N/A'}
+Item Number: {group['item_number']}"""
+                
+                chunks = self.chunk_text(
+                    group_text,
+                    chunk_size=500,
+                    chunk_overlap=50,
+                    metadata={
+                        'group_id': group['group_id'],
+                        'generic_name': group['generic_name'],
+                        'source_type': 'odb_interchangeable_group',
+                        'therapeutic_class': group['therapeutic_class'],
+                        'document_type': 'formulary_group'
+                    }
+                )
+                group_chunks.extend(chunks)
+                
             except Exception as e:
                 logger.error(f"Error inserting group {group['group_id']}: {e}")
         
+        # Store interchangeable group embeddings
+        if group_chunks:
+            logger.info(f"Storing {len(group_chunks)} interchangeable group chunks...")
+            self.store_chunks_with_embeddings(group_chunks, "odb_interchangeable_groups")
+        
         conn.commit()
-        logger.info(f"Ingested {drug_count} drugs and {len(self.interchangeable_groups)} groups")
+        logger.info(f"Ingested {drug_count} drugs and {len(self.interchangeable_groups)} groups with embeddings")
     
     def _ingest_pdf(self, pdf_file: str):
         """Extract text from PDF and create embeddings.

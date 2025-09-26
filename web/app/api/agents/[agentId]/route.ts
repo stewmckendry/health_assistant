@@ -8,10 +8,10 @@ import { ApiError } from '@/types/agents';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { agentId: string } }
+  { params }: { params: Promise<{ agentId: string }> }
 ) {
   try {
-    const { agentId } = params;
+    const { agentId } = await params;
 
     if (!agentId) {
       const errorResponse: ApiError = {

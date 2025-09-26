@@ -58,6 +58,9 @@ except ImportError as e:
 # Import agent streaming proxy (simple version without complex dependencies)
 from src.web.api.agents_streaming_proxy import register_agent_streaming_endpoints
 
+# Import Agent 97 endpoint
+from src.web.api.agent_97_endpoint import register_agent_97_endpoint
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Health Assistant API",
@@ -137,6 +140,9 @@ if TRIAGE_AVAILABLE:
 
 # Register agent streaming endpoints
 register_agent_streaming_endpoints(app)
+
+# Register Agent 97 endpoint
+register_agent_97_endpoint(app)
 
 
 # Request/Response models

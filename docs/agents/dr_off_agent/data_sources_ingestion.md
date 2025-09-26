@@ -238,10 +238,34 @@ odb_interchangeable_groups (
 ```
 
 ### Implementation Details
-- **Parser**: `src/agents/ontario_orchestrator/ingestion/ingesters/odb_ingester.py`
+- **Parser**: `src/agents/dr_off_agent/ingestion/ingesters/odb_ingester.py`
 - **Key Method**: `parse_source()` - XML traversal with manufacturer lookup
-- **Performance**: ~3-5 seconds for full 8,401 drug ingestion
+- **Performance**: ~2.5 minutes for full 8,401 drug ingestion with embeddings
 - **Validation**: Cross-reference with known DINs and pricing
+
+### Embedding Strategy (NEW)
+**Dual Storage Approach**:
+1. **SQL Database**: Structured data for exact queries (DIN, price filters)
+2. **ChromaDB Vector Store**: Semantic search with rich embeddings
+
+**Embedding Generation**:
+- Each drug creates 1-2 text chunks (500 tokens, 50 overlap)
+- Metadata preserved: DIN, generic_name, brand_name, therapeutic_class
+- Result: 10,815 total embeddings (8,399 drugs + 2,367 groups + 49 PDFs)
+
+**Sample Drug Embedding**:
+```text
+Drug: Lipitor (ATORVASTATIN)
+DIN: 02230711
+Strength: 10mg Tab
+Therapeutic Class: LIPID METABOLISM REGULATORS
+Category: General
+Price: $0.3456 per unit
+Daily Cost: $0.3456
+Coverage: General Benefit Section 3
+LOWEST COST OPTION
+Manufacturer: PFI
+```
 
 ## 2. OHIP (Ontario Health Insurance Plan) Sources
 

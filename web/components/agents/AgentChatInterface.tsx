@@ -13,11 +13,13 @@ import {
   Loader2, 
   Bot, 
   User,
-  Settings,
-  MessageSquare,
   StopCircle,
   RefreshCw,
-  ExternalLink
+  ExternalLink,
+  Wrench,
+  Brain,
+  FileText,
+  Sparkles
 } from 'lucide-react';
 import { ToolCallDisplay } from './ToolCallDisplay';
 import { CitationList } from './CitationList';
@@ -35,7 +37,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   const [currentToolCalls, setCurrentToolCalls] = useState<ToolCall[]>([]);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [allCitations, setAllCitations] = useState<Citation[]>([]);
-  const [showToolPanel, setShowToolPanel] = useState(true);
+  const [allToolCalls, setAllToolCalls] = useState<ToolCall[]>([]);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -65,7 +67,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
           id: `welcome-${Date.now()}`,
           sessionId: data.sessionId,
           role: 'assistant',
-          content: `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`,
+          content: `Hello! I'm ${agent.name}. To provide accurate, current practice guidance from Ontario healthcare authorities including CPSO policies, Ontario Health programs, PHO infection control, and CEP clinical tools. How can I assist you today?`,
           timestamp: new Date().toISOString(),
           toolCalls: [],
           citations: []
@@ -113,37 +115,52 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
       // Create abort controller for this request
       abortControllerRef.current = new AbortController();
 
-      // Start streaming response
-      const eventSource = new EventSource(
-        `/api/agents/${agent.id}/stream?` + new URLSearchParams({
-          sessionId,
-          query: input.trim()
-        })
-      );
+      // Use fetch with streaming instead of EventSource for better control
+      const response = await fetch(`/api/agents/${agent.id}/stream?` + new URLSearchParams({
+        sessionId,
+        query: userMessage.content
+      }), {
+        signal: abortControllerRef.current.signal
+      });
 
-      eventSource.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        handleStreamEvent(data, assistantMessage.id);
-      };
+      if (!response.ok) {
+        throw new Error('Failed to connect to agent');
+      }
 
-      eventSource.onerror = (error) => {
-        console.error('Streaming error:', error);
-        setIsStreaming(false);
-        eventSource.close();
-      };
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
 
-      // Store event source for cleanup
-      const cleanup = () => {
-        eventSource.close();
-        setIsStreaming(false);
-      };
+      if (!reader) {
+        throw new Error('No response stream available');
+      }
 
-      // Set timeout for long-running requests
-      setTimeout(() => {
-        if (isStreaming) {
-          cleanup();
+      let buffer = '';
+
+      // Read the stream
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') {
+              setIsStreaming(false);
+              break;
+            }
+            try {
+              const event = JSON.parse(data);
+              handleStreamEvent(event, assistantMessage.id);
+            } catch (e) {
+              console.error('Failed to parse event:', e);
+            }
+          }
         }
-      }, 120000); // 2 minutes timeout
+      }
 
     } catch (error) {
       console.error('Failed to send message:', error);
@@ -166,7 +183,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
         setMessages(prev => 
           prev.map(msg => 
             msg.id === messageId 
-              ? { ...msg, content: msg.content + event.data.delta }
+              ? { ...msg, content: msg.content + (event.data.delta || '') }
               : msg
           )
         );
@@ -176,17 +193,35 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
         const newToolCall: ToolCall = {
           ...event.data,
           status: 'executing',
-          startTime: new Date().toISOString()
+          startTime: event.data.startTime || new Date().toISOString()
         };
         setCurrentToolCalls(prev => [...prev, newToolCall]);
+        setAllToolCalls(prev => [...prev, newToolCall]);
         break;
         
       case 'tool_call_end':
+        const updatedToolCall = {
+          ...event.data,
+          status: 'completed' as const,
+          endTime: event.data.endTime || new Date().toISOString()
+        };
         setCurrentToolCalls(prev => 
           prev.map(tc => 
-            tc.id === event.data.id 
-              ? { ...tc, ...event.data, status: 'completed', endTime: new Date().toISOString() }
-              : tc
+            tc.id === event.data.id ? updatedToolCall : tc
+          )
+        );
+        setAllToolCalls(prev => 
+          prev.map(tc => 
+            tc.id === event.data.id ? updatedToolCall : tc
+          )
+        );
+        
+        // Also update the message with tool calls
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === messageId
+              ? { ...msg, toolCalls: [...(msg.toolCalls || []), updatedToolCall] }
+              : msg
           )
         );
         break;
@@ -194,30 +229,53 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
       case 'citation':
         const citation: Citation = {
           ...event.data,
-          accessDate: new Date().toISOString()
+          accessDate: event.data.accessDate || new Date().toISOString()
         };
         setAllCitations(prev => {
-          // Deduplicate citations
-          if (prev.find(c => c.url === citation.url)) return prev;
+          // Deduplicate citations by URL
+          const exists = prev.find(c => c.url === citation.url);
+          if (exists) return prev;
           return [...prev, citation];
         });
+        
+        // Also update the message with citations
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === messageId
+              ? { ...msg, citations: [...(msg.citations || []), citation] }
+              : msg
+          )
+        );
         break;
         
+      case 'response_done':
       case 'done':
+        // Final update with all accumulated data
         setMessages(prev => 
           prev.map(msg => 
             msg.id === messageId 
               ? { 
                   ...msg, 
-                  streaming: false, 
-                  toolCalls: currentToolCalls,
-                  citations: allCitations.filter(c => event.data.citationIds?.includes(c.id))
+                  streaming: false,
+                  toolCalls: currentToolCalls.length > 0 ? currentToolCalls : msg.toolCalls,
+                  citations: allCitations.length > 0 ? allCitations : msg.citations
                 }
               : msg
           )
         );
         setIsStreaming(false);
-        setCurrentToolCalls([]);
+        // Don't clear currentToolCalls here - keep them for display
+        break;
+        
+      case 'error':
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === messageId
+              ? { ...msg, error: event.data.error, streaming: false }
+              : msg
+          )
+        );
+        setIsStreaming(false);
         break;
     }
   };
@@ -234,6 +292,7 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
     setMessages([]);
     setAllCitations([]);
     setCurrentToolCalls([]);
+    setAllToolCalls([]);
     initializeSession();
   };
 
@@ -245,164 +304,217 @@ export function AgentChatInterface({ agent, onClose }: AgentChatInterfaceProps) 
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-12rem)] max-h-[800px]">
-      {/* Agent Header */}
-      <Card className="flex-shrink-0 mb-4">
-        <CardHeader className="pb-3">
-          <div className="flex items-center justify-between">
+    <div className="flex h-[calc(100vh-8rem)] max-h-[900px]">
+      {/* Main Chat Area */}
+      <div className="flex-1 flex flex-col min-w-0 bg-white">
+        {/* Sticky header bar */}
+        <div className="sticky top-0 z-10 bg-white border-b shadow-sm">
+          <div className="flex items-center justify-between px-6 py-3">
             <div className="flex items-center gap-3">
               <span className="text-2xl" role="img" aria-label={agent.name}>
                 {agent.icon}
               </span>
               <div>
-                <h3 className="font-semibold">{agent.name}</h3>
-                <p className="text-sm text-muted-foreground">{agent.description}</p>
+                <h3 className="font-semibold text-gray-900">{agent.name}</h3>
+                <p className="text-xs text-gray-500">{agent.description}</p>
               </div>
-              <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+              <Badge className="bg-green-100 text-green-700 border-green-200">
+                <span className="inline-block w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
                 Online
               </Badge>
             </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={startNewConversation}>
-                <RefreshCw className="h-4 w-4 mr-2" />
-                New Chat
-              </Button>
-            </div>
+            <Button variant="ghost" size="sm" onClick={startNewConversation}>
+              <RefreshCw className="h-4 w-4 mr-2" />
+              New Chat
+            </Button>
           </div>
-        </CardHeader>
-      </Card>
+        </div>
 
-      <div className="flex gap-4 flex-1 min-h-0">
-        {/* Main Chat Area */}
-        <div className="flex-1 flex flex-col min-w-0">
-          {/* Messages */}
-          <Card className="flex-1 flex flex-col min-h-0">
-            <ScrollArea className="flex-1 p-4">
-              <div className="space-y-4">
-                {messages.map((message, index) => (
-                  <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                    <div className={`max-w-[80%] ${message.role === 'user' ? 'order-2' : 'order-1'}`}>
-                      <div className={`flex items-start gap-3 ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          message.role === 'user' 
-                            ? 'bg-primary text-primary-foreground' 
-                            : 'bg-muted'
-                        }`}>
-                          {message.role === 'user' ? (
-                            <User className="h-4 w-4" />
-                          ) : (
-                            <Bot className="h-4 w-4" />
-                          )}
+        {/* Messages Area */}
+        <ScrollArea className="flex-1 px-6 py-4">
+          <div className="space-y-3 max-w-3xl mx-auto">
+            {messages.map((message) => (
+              <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`max-w-[85%] ${message.role === 'user' ? 'order-2' : 'order-1'}`}>
+                  <div className={`flex items-start gap-2 ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      message.role === 'user' 
+                        ? 'bg-blue-600 text-white' 
+                        : 'bg-gradient-to-br from-violet-500 to-purple-600 text-white'
+                    }`}>
+                      {message.role === 'user' ? (
+                        <User className="h-3.5 w-3.5" />
+                      ) : (
+                        <Sparkles className="h-3.5 w-3.5" />
+                      )}
+                    </div>
+                    <div className={`rounded-2xl px-4 py-2.5 ${
+                      message.role === 'user'
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
+                    }`}>
+                      {message.streaming ? (
+                        <div className="flex items-center gap-2">
+                          <Loader2 className="h-3 w-3 animate-spin" />
+                          <span className="text-sm italic">Thinking...</span>
                         </div>
-                        <div className={`rounded-lg p-3 ${
-                          message.role === 'user'
-                            ? 'bg-primary text-primary-foreground ml-4'
-                            : 'bg-muted mr-4'
-                        }`}>
-                          {message.streaming ? (
-                            <StreamingMessage content={message.content} />
-                          ) : (
-                            <div className="prose prose-sm dark:prose-invert max-w-none">
-                              {message.content}
-                            </div>
-                          )}
-                          {message.error && (
-                            <div className="text-red-500 text-xs mt-2">
-                              Error: {message.error}
-                            </div>
-                          )}
+                      ) : (
+                        <div className="text-sm leading-relaxed whitespace-pre-wrap">
+                          {message.content}
                         </div>
-                      </div>
-                      {/* Tool calls for this message */}
-                      {message.toolCalls && message.toolCalls.length > 0 && (
-                        <div className="mt-2 ml-11">
-                          <ToolCallDisplay toolCalls={message.toolCalls} />
+                      )}
+                      {message.error && (
+                        <div className="text-red-500 text-xs mt-2">
+                          Error: {message.error}
                         </div>
                       )}
                     </div>
                   </div>
-                ))}
-                
-                {/* Current streaming tool calls */}
-                {currentToolCalls.length > 0 && (
-                  <div className="flex justify-start">
-                    <div className="max-w-[80%] ml-11">
-                      <ToolCallDisplay toolCalls={currentToolCalls} />
-                    </div>
-                  </div>
-                )}
-                
-                <div ref={messagesEndRef} />
+                </div>
               </div>
-            </ScrollArea>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+        </ScrollArea>
 
-            {/* Input Area */}
-            <div className="p-4 border-t">
-              <div className="flex gap-2">
-                <Input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder={`Ask ${agent.name} anything...`}
-                  disabled={isStreaming}
-                  className="flex-1"
-                />
-                {isStreaming ? (
-                  <Button onClick={stopStreaming} variant="outline">
-                    <StopCircle className="h-4 w-4" />
-                  </Button>
-                ) : (
-                  <Button onClick={handleSendMessage} disabled={!input.trim()}>
-                    <Send className="h-4 w-4" />
-                  </Button>
-                )}
-              </div>
+        {/* Input Area */}
+        <div className="border-t bg-gradient-to-b from-gray-50/50 to-white px-6 py-3">
+          <div className="flex gap-2 max-w-3xl mx-auto">
+            <div className="flex-1 relative">
+              <Input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder={`Ask ${agent.name} anything...`}
+                disabled={isStreaming}
+                className="flex-1 pr-10 bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+              />
               {isStreaming && (
-                <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
-                  <Loader2 className="h-3 w-3 animate-spin" />
-                  {agent.name} is thinking...
+                <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                  <Loader2 className="h-4 w-4 animate-spin text-gray-400" />
                 </div>
               )}
             </div>
-          </Card>
+            {isStreaming ? (
+              <Button onClick={stopStreaming} variant="outline" size="icon" className="bg-white">
+                <StopCircle className="h-4 w-4" />
+              </Button>
+            ) : (
+              <Button onClick={handleSendMessage} disabled={!input.trim()} size="icon" className="bg-blue-600 hover:bg-blue-700">
+                <Send className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+          {isStreaming && (
+            <div className="flex items-center gap-2 mt-2 text-xs text-gray-500 max-w-3xl mx-auto">
+              {agent.name} is analyzing your question...
+            </div>
+          )}
         </div>
+      </div>
 
-        {/* Side Panel */}
-        <div className="w-80 flex-shrink-0">
-          <Tabs defaultValue="citations" className="h-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="citations">Citations</TabsTrigger>
-              <TabsTrigger value="tools">Tools</TabsTrigger>
-            </TabsList>
-            <TabsContent value="citations" className="mt-4 h-[calc(100%-3rem)]">
-              <CitationList citations={allCitations} />
-            </TabsContent>
-            <TabsContent value="tools" className="mt-4 h-[calc(100%-3rem)]">
-              <Card className="h-full">
-                <CardHeader className="pb-3">
-                  <h4 className="font-medium">Available Tools</h4>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[calc(100%-4rem)]">
-                    <div className="space-y-2">
-                      {agent.tools.map((tool, idx) => (
-                        <div key={idx} className="border rounded p-2 text-sm">
-                          <div className="font-mono text-xs">{tool.name}</div>
-                          <div className="text-muted-foreground text-xs mt-1">
-                            {tool.description}
-                          </div>
-                          <Badge variant="outline" className="text-xs mt-1">
-                            {tool.category}
-                          </Badge>
+      {/* Right Side Panel - Reasoning & Citations */}
+      <div className="w-96 border-l bg-gray-50 flex flex-col">
+        <Tabs defaultValue="reasoning" className="flex-1 flex flex-col">
+          <TabsList className="mx-4 mt-4 grid w-[calc(100%-2rem)] grid-cols-2">
+            <TabsTrigger value="reasoning" className="text-xs">
+              <Brain className="h-3 w-3 mr-1" />
+              Reasoning
+            </TabsTrigger>
+            <TabsTrigger value="citations" className="text-xs">
+              <FileText className="h-3 w-3 mr-1" />
+              Citations
+            </TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="reasoning" className="flex-1 px-4 pb-4 mt-4">
+            <div className="bg-white rounded-lg border h-full flex flex-col">
+              <div className="p-3 border-b">
+                <h4 className="text-sm font-medium text-gray-900">Tool Calls & Reasoning</h4>
+                <p className="text-xs text-gray-500 mt-1">
+                  See how {agent.name} processes your request
+                </p>
+              </div>
+              <ScrollArea className="flex-1 p-3">
+                {(currentToolCalls.length > 0 || allToolCalls.length > 0) ? (
+                  <div className="space-y-3">
+                    {/* Current active tool calls */}
+                    {currentToolCalls.map((toolCall) => (
+                      <div key={toolCall.id} className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Loader2 className="h-3 w-3 animate-spin text-blue-600" />
+                          <span className="text-xs font-medium text-blue-900">Executing</span>
                         </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </div>
+                        <div className="flex items-center gap-2">
+                          <Wrench className="h-3 w-3 text-blue-600" />
+                          <span className="font-mono text-xs text-blue-800">{toolCall.name}</span>
+                        </div>
+                        {toolCall.arguments && (
+                          <div className="mt-2 text-xs text-blue-700 bg-white/50 rounded p-2">
+                            <pre className="whitespace-pre-wrap">
+                              {JSON.stringify(toolCall.arguments, null, 2)}
+                            </pre>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                    
+                    {/* Completed tool calls */}
+                    {allToolCalls.filter(tc => tc.status === 'completed').map((toolCall) => (
+                      <div key={toolCall.id} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                          <span className="text-xs text-gray-600">Completed</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Wrench className="h-3 w-3 text-gray-500" />
+                          <span className="font-mono text-xs text-gray-700">{toolCall.name}</span>
+                        </div>
+                        {toolCall.result && (
+                          <div className="mt-2 text-xs text-gray-600">
+                            {toolCall.result}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-8">
+                    <Brain className="h-8 w-8 text-gray-300 mx-auto mb-3" />
+                    <p className="text-xs text-gray-500">
+                      Tool calls and reasoning steps will appear here as the agent processes your questions
+                    </p>
+                  </div>
+                )}
+              </ScrollArea>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="citations" className="flex-1 px-4 pb-4 mt-4">
+            <div className="bg-white rounded-lg border h-full flex flex-col">
+              <div className="p-3 border-b">
+                <h4 className="text-sm font-medium text-gray-900">Sources & Citations</h4>
+                <p className="text-xs text-gray-500 mt-1">
+                  {allCitations.length} sources referenced
+                </p>
+              </div>
+              <ScrollArea className="flex-1">
+                {allCitations.length > 0 ? (
+                  <div className="p-3">
+                    <CitationList citations={allCitations} />
+                  </div>
+                ) : (
+                  <div className="text-center py-8">
+                    <FileText className="h-8 w-8 text-gray-300 mx-auto mb-3" />
+                    <p className="text-xs text-gray-500">
+                      Citations will appear here as the agent responds
+                    </p>
+                  </div>
+                )}
+              </ScrollArea>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );

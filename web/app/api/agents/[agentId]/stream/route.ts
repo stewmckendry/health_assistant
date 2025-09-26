@@ -9,10 +9,10 @@ import { createAgentAdapter } from '@/lib/agents/agent-adapter';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { agentId: string } }
+  { params }: { params: Promise<{ agentId: string }> }
 ) {
   try {
-    const { agentId } = params;
+    const { agentId } = await params;
     const { searchParams } = new URL(req.url);
     const sessionId = searchParams.get('sessionId');
     const query = searchParams.get('query');

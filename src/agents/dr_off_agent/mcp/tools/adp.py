@@ -848,16 +848,104 @@ async def adp_get(
     MCP tool entry point for adp.get.
     
     Args:
-        request: Raw request dictionary
+        request: Raw request dictionary - can be either:
+            1. Natural language: {"query": "Can I get funding for a CPAP?", "patient_income": 35000}
+            2. Structured: {"device": {"category": "respiratory", "type": "CPAP"}, ...}
         sql_client: Optional SQL client (for testing)
         vector_client: Optional vector client (for testing)
         
     Returns:
-        Response dictionary
+        Response dictionary with comprehensive context for LLM interpretation
     """
-    # Enhanced natural language support - detect if device field contains a query
+    # Handle natural language query format
+    if "query" in request and "device" not in request:
+        # Natural language query - extract device and parameters
+        extractor = get_device_extractor()
+        query = request["query"]
+        
+        logger.info(f"Processing natural language query: {query}")
+        extracted = extractor.extract_device_params(query)
+        
+        # Build structured request from extraction
+        request = {
+            "device": {
+                "category": extracted.get("device_category", "mobility"),
+                "type": extracted.get("device_type", "device")
+            },
+            "check": extracted.get("check_types", ["eligibility", "funding", "exclusions"]),
+            "patient_income": request.get("patient_income", extracted.get("patient_income")),
+            "use_case": extracted.get("use_case", {})
+        }
+        logger.info(f"Converted to structured request: {request}")
+    
+    # Category aliases for LLM flexibility  
+    CATEGORY_ALIASES = {
+        # Mobility variations
+        "mobility": "mobility",
+        "mobility_devices": "mobility",
+        "wheelchairs": "mobility",
+        
+        # Communication variations
+        "comm_aids": "comm_aids",
+        "communication": "comm_aids",
+        "communication_aids": "comm_aids",
+        "aac": "comm_aids",
+        "speech": "comm_aids",
+        
+        # Hearing variations
+        "hearing": "hearing_devices",
+        "hearing_devices": "hearing_devices",
+        "hearing_aids": "hearing_devices",
+        
+        # Vision variations
+        "vision": "visual_aids",
+        "visual": "visual_aids",
+        "visual_aids": "visual_aids",
+        
+        # Respiratory variations
+        "respiratory": "respiratory",
+        "oxygen": "respiratory",
+        "ventilator": "respiratory",
+        "cpap": "respiratory",
+        
+        # Insulin/glucose variations
+        "insulin": "insulin_pump",
+        "insulin_pump": "insulin_pump",
+        "glucose": "glucose_monitoring",
+        "glucose_monitoring": "glucose_monitoring",
+        "blood_glucose": "glucose_monitoring",
+        
+        # Prosthetics variations
+        "prosthesis": "prosthesis",
+        "prosthetic": "prosthesis",
+        "prosthetics": "prosthesis",
+        "limb": "prosthesis",
+        
+        # Maxillofacial variations
+        "maxillofacial": "maxillofacial",
+        "facial": "maxillofacial",
+        "facial_prosthetic": "maxillofacial",
+        
+        # Grants/core
+        "grants": "grants",
+        "special_funding": "grants",
+        "core": "core_manual",
+        "core_manual": "core_manual",
+        "general": "core_manual"
+    }
+    
+    # Normalize category using aliases
     if "device" in request and isinstance(request["device"], dict):
         device_info = request["device"]
+        
+        # Apply category aliasing for flexibility
+        if "category" in device_info:
+            original_cat = device_info["category"].lower().replace("-", "_")
+            normalized_cat = CATEGORY_ALIASES.get(original_cat)
+            if normalized_cat:
+                device_info["category"] = normalized_cat
+                logger.info(f"Normalized category '{original_cat}' to '{normalized_cat}'")
+        
         device_type = device_info.get("type", "")
         
         # If device type looks like a natural language query, extract parameters
@@ -906,5 +994,65 @@ async def adp_get(
     if not isinstance(sql_result, Exception) and not isinstance(vector_result, Exception):
         context_content = tool._build_context_content(vector_result, sql_result)
         response_dict["context"] = context_content
+    
+    # Add LLM-friendly summary that directly answers common questions
+    summary_parts = []
+    
+    # Build funding summary
+    if response_dict.get("funding"):
+        funding = response_dict["funding"]
+        adp_pct = funding.get("adp_contribution", 0)
+        client_pct = funding.get("client_share_percent", 0)
+        
+        # Check CEP eligibility
+        if response_dict.get("cep") and response_dict["cep"].get("eligible"):
+            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}% with CEP eliminating patient cost (income below ${response_dict['cep']['income_threshold']:.0f})")
+        elif response_dict.get("cep") and not response_dict["cep"].get("eligible"):
+            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}%, patient pays {client_pct}% (income above CEP threshold of ${response_dict['cep']['income_threshold']:.0f})")
+        else:
+            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}%, patient pays {client_pct}%")
+    else:
+        summary_parts.append("❓ Funding information not available")
+    
+    # Add eligibility notes
+    if response_dict.get("eligibility"):
+        elig = response_dict["eligibility"]
+        if elig.get("valid_prescription") == False:
+            summary_parts.append("⚠️ Requires valid prescription from authorized prescriber")
+        if elig.get("ontario_resident") == False:
+            summary_parts.append("⚠️ Must be Ontario resident")
+    
+    # Add exclusions if any
+    if response_dict.get("exclusions"):
+        excl_list = response_dict["exclusions"]
+        if excl_list:
+            summary_parts.append(f"⚠️ Exclusions: {'; '.join(excl_list[:2])}")
+    
+    # Add device type for clarity
+    if parsed_request.device:
+        device_desc = f"{parsed_request.device.type}"
+        if hasattr(parsed_request.device, 'category'):
+            category_map = {
+                "mobility": "Mobility Device",
+                "comm_aids": "Communication Aid",
+                "hearing_devices": "Hearing Device",
+                "visual_aids": "Visual Aid",
+                "respiratory": "Respiratory Equipment",
+                "insulin_pump": "Insulin Pump",
+                "glucose_monitoring": "Glucose Monitor",
+                "prosthesis": "Prosthetic",
+                "maxillofacial": "Maxillofacial Prosthetic"
+            }
+            cat_name = category_map.get(parsed_request.device.category, parsed_request.device.category)
+            summary_parts.insert(0, f"📋 Device: {device_desc} ({cat_name})")
+    
+    response_dict["summary"] = " | ".join(summary_parts)
+    
+    # Add interpretation guidance for nulls
+    response_dict["interpretation_notes"] = {
+        "null_values": "null means 'not determined from query' - may require follow-up",
+        "confidence": f"{response_dict['confidence']:.2f} - {'High' if response_dict['confidence'] > 0.9 else 'Moderate'} confidence",
+        "cep": "Chronic Equipment Pool eliminates patient cost for low-income patients"
+    }
     
     return response_dict

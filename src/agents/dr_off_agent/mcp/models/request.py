@@ -20,11 +20,32 @@ class PatientContext(BaseModel):
 
 
 class DeviceSpec(BaseModel):
-    """Device specification for ADP queries."""
-    category: Literal["mobility", "comm_aids"] = Field(
-        ..., description="Device category"
+    """Device specification for ADP queries.
+    
+    Categories match ADP policy documents:
+    - mobility: wheelchairs, walkers, scooters, canes
+    - comm_aids: AAC devices, speech aids, switches
+    - hearing_devices: hearing aids, FM systems
+    - visual_aids: magnifiers, CCTV, reading aids
+    - respiratory: ventilators, oxygen, CPAP
+    - insulin_pump: insulin pumps and supplies
+    - glucose_monitoring: blood glucose monitors
+    - prosthesis: limb prosthetics
+    - maxillofacial: facial prosthetics
+    - grants: special funding programs
+    """
+    category: Literal[
+        "mobility", "comm_aids", "hearing_devices", "visual_aids",
+        "respiratory", "insulin_pump", "glucose_monitoring", 
+        "prosthesis", "maxillofacial", "grants", "core_manual"
+    ] = Field(
+        ..., 
+        description="Device category (see class docstring for examples)"
     )
-    type: str = Field(..., description="Specific device type (e.g., walker, power_wheelchair)")
+    type: str = Field(
+        ..., 
+        description="Specific device type (e.g., 'wheelchair', 'hearing aid', 'CPAP')"
+    )
 
 
 class QueryHints(BaseModel):

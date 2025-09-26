@@ -9,10 +9,10 @@ import { v4 as uuidv4 } from 'uuid';
  */
 export async function POST(
   req: NextRequest,
-  { params }: { params: { agentId: string } }
+  { params }: { params: Promise<{ agentId: string }> }
 ) {
   try {
-    const { agentId } = params;
+    const { agentId } = await params;
 
     if (!agentId) {
       const errorResponse: ApiError = {
@@ -78,7 +78,8 @@ export async function POST(
     }, { status: 201 });
 
   } catch (error) {
-    console.error(`Error creating conversation for agent ${params.agentId}:`, error);
+    const resolvedParams = await params;
+    console.error(`Error creating conversation for agent ${resolvedParams.agentId}:`, error);
     
     const errorResponse: ApiError = {
       error: 'Internal Server Error',
@@ -96,12 +97,13 @@ export async function POST(
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { agentId: string } }
+  { params }: { params: Promise<{ agentId: string }> }
 ) {
   // This could be implemented to list user's conversations with this agent
+  const { agentId } = await params;
   return NextResponse.json({ 
     message: 'Conversation listing not yet implemented',
-    agentId: params.agentId 
+    agentId: agentId 
   }, { status: 501 });
 }
 

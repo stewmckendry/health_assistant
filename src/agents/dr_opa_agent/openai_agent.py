@@ -13,10 +13,18 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
+import json
+import uuid
 
 # Load environment variables
 from dotenv import load_dotenv
 load_dotenv()
+
+# Import yaml for loading trusted domains
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 from agents import Agent
 from agents.mcp.server import MCPServerStdio, MCPServerStdioParams
@@ -43,6 +51,215 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def load_trusted_domains() -> set:
+    """Load trusted domains from domains.yaml config file."""
+    try:
+        if yaml is None:
+            logger.warning("PyYAML not available, using fallback trusted domains")
+            raise ImportError("PyYAML not installed")
+            
+        domains_file = Path(__file__).parent.parent.parent.parent / "src" / "config" / "domains.yaml"
+        if domains_file.exists():
+            with open(domains_file, 'r') as f:
+                config = yaml.safe_load(f)
+                return set(config.get('trusted_domains', []))
+        else:
+            logger.warning(f"Domains file not found at {domains_file}")
+    except Exception as e:
+        logger.warning(f"Could not load trusted domains: {e}")
+    
+    # Fallback to core trusted domains
+    return {
+        'cpso.on.ca', 'ontario.ca', 'publichealthontario.ca', 'ontariohealth.ca',
+        'cep.health', 'mayoclinic.org', 'clevelandclinic.org', 'who.int',
+        'cdc.gov', 'nih.gov', 'nejm.org', 'thelancet.com'
+    }
+
+
+def extract_domain(url: str) -> str:
+    """Extract domain from URL, normalized without www."""
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        domain = parsed.netloc.lower()
+        return domain.replace('www.', '') if domain.startswith('www.') else domain
+    except:
+        return ''
+
+
+def extract_citations_from_tool_result(tool_name: str, tool_result: Any, trusted_domains: set) -> List[Dict]:
+    """Extract citations from MCP tool results."""
+    citations = []
+    
+    try:
+        # Handle different tool result formats
+        if hasattr(tool_result, 'content'):
+            result_data = tool_result.content
+        elif isinstance(tool_result, dict):
+            result_data = tool_result
+        elif isinstance(tool_result, str):
+            try:
+                result_data = json.loads(tool_result)
+            except:
+                result_data = {'content': tool_result}
+        else:
+            result_data = {'content': str(tool_result)}
+        
+        # Extract citations from various MCP response formats
+        if 'citations' in result_data and isinstance(result_data['citations'], list):
+            # Direct citations list from MCP response
+            for cite in result_data['citations']:
+                citation = create_citation_from_mcp(cite, trusted_domains)
+                if citation:
+                    citations.append(citation)
+        
+        # Extract from highlights that contain citations
+        if 'highlights' in result_data and isinstance(result_data['highlights'], list):
+            for highlight in result_data['highlights']:
+                if 'citations' in highlight:
+                    for cite in highlight['citations']:
+                        citation = create_citation_from_mcp(cite, trusted_domains)
+                        if citation:
+                            citations.append(citation)
+        
+        # Extract from sections with metadata
+        if 'sections' in result_data and isinstance(result_data['sections'], list):
+            for section in result_data['sections']:
+                if 'metadata' in section and 'url' in section['metadata']:
+                    citation = {
+                        'id': f"section_{uuid.uuid4().hex[:8]}",
+                        'title': section.get('heading', 'Document Section'),
+                        'source': section['metadata'].get('source_org', 'Unknown'),
+                        'source_type': 'policy',
+                        'url': section['metadata']['url'],
+                        'domain': extract_domain(section['metadata']['url']),
+                        'is_trusted': extract_domain(section['metadata']['url']) in trusted_domains,
+                        'access_date': datetime.now().isoformat(),
+                        'snippet': section.get('text', '')[:200] + '...' if len(section.get('text', '')) > 200 else section.get('text', ''),
+                        'relevance_score': section.get('relevance_score', 0.8)
+                    }
+                    citations.append(citation)
+        
+        # Extract from documents
+        if 'documents' in result_data and isinstance(result_data['documents'], list):
+            for doc in result_data['documents']:
+                if 'url' in doc and doc['url']:
+                    citation = {
+                        'id': f"doc_{uuid.uuid4().hex[:8]}",
+                        'title': doc.get('title', 'Document'),
+                        'source': doc.get('source_org', 'Unknown'),
+                        'source_type': doc.get('document_type', 'document'),
+                        'url': doc['url'],
+                        'domain': extract_domain(doc['url']),
+                        'is_trusted': extract_domain(doc['url']) in trusted_domains,
+                        'access_date': datetime.now().isoformat(),
+                        'relevance_score': 0.8
+                    }
+                    citations.append(citation)
+    
+    except Exception as e:
+        logger.warning(f"Error extracting citations from {tool_name}: {e}")
+    
+    return citations
+
+
+def create_citation_from_mcp(cite_data: Dict, trusted_domains: set) -> Optional[Dict]:
+    """Create standardized citation from MCP citation data."""
+    try:
+        # Handle different MCP citation formats
+        url = cite_data.get('url', '')
+        if not url and 'source' in cite_data:
+            # Try to construct URL from source info
+            source_org = cite_data.get('source_org', '').lower()
+            if 'cpso' in source_org:
+                url = f"https://www.cpso.on.ca/"  # Base URL, specific page unknown
+            elif 'ontario' in source_org:
+                url = f"https://www.ontario.ca/"
+            elif 'pho' in source_org or 'public health ontario' in source_org:
+                url = f"https://www.publichealthontario.ca/"
+            elif 'cep' in source_org:
+                url = f"https://cep.health/"
+        
+        if not url:
+            return None
+        
+        citation = {
+            'id': f"cite_{uuid.uuid4().hex[:8]}",
+            'title': cite_data.get('source', cite_data.get('title', 'Document')),
+            'source': cite_data.get('source_org', cite_data.get('source', 'Unknown')),
+            'source_type': 'policy',  # Most MCP results are policy documents
+            'url': url,
+            'domain': extract_domain(url),
+            'is_trusted': extract_domain(url) in trusted_domains,
+            'access_date': datetime.now().isoformat(),
+            'relevance_score': 0.9  # High relevance since from structured sources
+        }
+        
+        # Add location info if available
+        if 'loc' in cite_data:
+            citation['snippet'] = f"Section: {cite_data['loc']}"
+        
+        return citation
+    
+    except Exception as e:
+        logger.warning(f"Error creating citation: {e}")
+        return None
+
+
+def extract_highlights_from_tool_results(tool_results: List[Dict], citations: List[Dict]) -> List[Dict]:
+    """Extract key highlights with citation references."""
+    highlights = []
+    
+    for tool_result in tool_results:
+        try:
+            result_data = tool_result.get('result', {})
+            
+            # Extract highlights from MCP response
+            if 'highlights' in result_data and isinstance(result_data['highlights'], list):
+                for highlight in result_data['highlights']:
+                    # Map MCP citations to our citation IDs
+                    citation_ids = []
+                    if 'citations' in highlight:
+                        for cite in highlight['citations']:
+                            # Find matching citation by source and location
+                            for our_citation in citations:
+                                if (cite.get('source', '') in our_citation['title'] or 
+                                    cite.get('loc', '') in our_citation.get('snippet', '')):
+                                    citation_ids.append(our_citation['id'])
+                                    break
+                    
+                    highlights.append({
+                        'point': highlight.get('point', ''),
+                        'citations': citation_ids,
+                        'confidence': 0.9,
+                        'policy_level': highlight.get('policy_level')
+                    })
+            
+            # Extract from expectations and advice
+            for section_name in ['expectations', 'advice']:
+                if section_name in result_data and isinstance(result_data[section_name], list):
+                    for item in result_data[section_name]:
+                        citation_ids = []
+                        if 'citations' in item:
+                            for cite in item['citations']:
+                                for our_citation in citations:
+                                    if cite.get('source', '') in our_citation['title']:
+                                        citation_ids.append(our_citation['id'])
+                                        break
+                        
+                        highlights.append({
+                            'point': item.get('point', ''),
+                            'citations': citation_ids,
+                            'confidence': 0.9,
+                            'policy_level': 'expectation' if section_name == 'expectations' else 'advice'
+                        })
+        
+        except Exception as e:
+            logger.warning(f"Error extracting highlights: {e}")
+    
+    return highlights
+
+
 class DrOPAAgent:
     """Dr. OPA OpenAI Agent with MCP integration."""
     
@@ -50,6 +267,8 @@ class DrOPAAgent:
         """Initialize the Dr. OPA Agent with MCP server connection."""
         self.session_id = session_id
         self.project_root = project_root
+        self.trusted_domains = load_trusted_domains()
+        logger.info(f"Loaded {len(self.trusted_domains)} trusted domains for citation validation")
         
         # Initialize MCP server connection using STDIO
         # This connects to our local Dr. OPA MCP server running in STDIO mode
@@ -168,8 +387,10 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                     context=context
                 )
                 
-                # Extract tool calls from the result - with improved debugging
+                # Extract tool calls and citations from the result
                 tool_calls = []
+                all_citations = []
+                tool_results_for_highlights = []
                 
                 # Debug the overall result structure
                 logger.debug(f"RunResult type: {type(result)}")
@@ -182,39 +403,66 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                     logger.debug(f"Item {i} attributes: {[attr for attr in dir(item) if not attr.startswith('_')]}")
                     
                     # Check if this is a FunctionCall or tool-related item
+                    tool_call_data = None
+                    tool_result_data = None
+                    
                     if hasattr(item, 'name') and hasattr(item, 'arguments'):
                         logger.debug(f"Item {i} looks like a function call: name={getattr(item, 'name', None)}")
-                        tool_calls.append({
+                        tool_call_data = {
                             'name': item.name,
                             'arguments': str(item.arguments) if hasattr(item, 'arguments') else ''
-                        })
+                        }
+                        # Check if this item also has result data
+                        if hasattr(item, 'result'):
+                            tool_result_data = item.result
                     elif hasattr(item, 'call_id') and hasattr(item, 'name'):
                         logger.debug(f"Item {i} has call_id and name: {item.name}")
-                        tool_calls.append({
+                        tool_call_data = {
                             'name': item.name,
                             'arguments': str(getattr(item, 'arguments', ''))
-                        })
+                        }
+                        if hasattr(item, 'result'):
+                            tool_result_data = item.result
                     elif hasattr(item, 'tool_calls') and item.tool_calls:
                         logger.debug(f"Item {i} has {len(item.tool_calls)} tool calls")
                         for tool_call in item.tool_calls:
-                            tool_calls.append({
+                            tool_call_data = {
                                 'name': tool_call.function.name,
                                 'arguments': tool_call.function.arguments
-                            })
+                            }
                     elif hasattr(item, 'content') and hasattr(item.content, 'tool_calls'):
                         logger.debug(f"Item {i} content has tool calls")
                         if item.content.tool_calls:
                             for tool_call in item.content.tool_calls:
-                                tool_calls.append({
+                                tool_call_data = {
                                     'name': tool_call.function.name,
                                     'arguments': tool_call.function.arguments
-                                })
+                                }
                     else:
                         logger.debug(f"Item {i} doesn't match expected patterns")
                         if hasattr(item, '__dict__'):
                             logger.debug(f"Item {i} __dict__: {item.__dict__}")
                     
-                # Also check raw_responses for tool calls
+                    # Add tool call data if found
+                    if tool_call_data:
+                        tool_calls.append(tool_call_data)
+                        
+                        # Extract citations from tool result if available
+                        if tool_result_data:
+                            citations = extract_citations_from_tool_result(
+                                tool_call_data['name'], 
+                                tool_result_data, 
+                                self.trusted_domains
+                            )
+                            all_citations.extend(citations)
+                            
+                            # Store tool result for highlight extraction
+                            tool_results_for_highlights.append({
+                                'name': tool_call_data['name'],
+                                'result': tool_result_data
+                            })
+                    
+                # Also check raw_responses for additional tool calls
                 logger.debug(f"Examining {len(result.raw_responses)} raw responses")
                 for i, response in enumerate(result.raw_responses):
                     logger.debug(f"Response {i} type: {type(response)}")
@@ -224,12 +472,44 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                                 if choice.message.tool_calls:
                                     logger.debug(f"Found tool calls in response {i}, choice {j}")
                                     for tool_call in choice.message.tool_calls:
-                                        tool_calls.append({
-                                            'name': tool_call.function.name,
-                                            'arguments': tool_call.function.arguments
-                                        })
+                                        # Check if we already captured this tool call
+                                        existing_call = any(
+                                            tc['name'] == tool_call.function.name 
+                                            for tc in tool_calls
+                                        )
+                                        if not existing_call:
+                                            tool_calls.append({
+                                                'name': tool_call.function.name,
+                                                'arguments': tool_call.function.arguments
+                                            })
                 
-                # Log tool calls
+                # Deduplicate citations by URL and title
+                seen_citations = set()
+                unique_citations = []
+                for citation in all_citations:
+                    # Create deduplication key
+                    if citation.get('url') and citation['url'].startswith('http'):
+                        key = f"{extract_domain(citation['url'])}_{citation.get('title', '').lower().strip()}"
+                    else:
+                        key = f"{citation.get('domain', '')}_{citation.get('title', '').lower().strip()}"
+                    
+                    if key not in seen_citations:
+                        seen_citations.add(key)
+                        unique_citations.append(citation)
+                
+                # Extract highlights with citation references
+                highlights = extract_highlights_from_tool_results(tool_results_for_highlights, unique_citations)
+                
+                # Calculate overall confidence
+                confidence = 0.8  # Base confidence
+                if unique_citations:
+                    # Higher confidence with more citations
+                    confidence = min(0.95, 0.7 + (len(unique_citations) * 0.05))
+                    # Higher confidence if trusted sources
+                    trusted_ratio = sum(1 for c in unique_citations if c.get('is_trusted', False)) / len(unique_citations)
+                    confidence = min(0.98, confidence + (trusted_ratio * 0.1))
+                
+                # Log tool calls and citations
                 if tool_calls:
                     logger.info(f"MCP Tools called: {[tc['name'] for tc in tool_calls]}")
                     for tc in tool_calls:
@@ -237,13 +517,25 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                 else:
                     logger.info("No MCP tools were called")
                 
+                # Log citation summary
+                if unique_citations:
+                    trusted_count = sum(1 for c in unique_citations if c.get('is_trusted', False))
+                    logger.info(f"Extracted {len(unique_citations)} citations ({trusted_count} trusted)")
+                    for cite in unique_citations[:3]:  # Log first 3 citations
+                        logger.info(f"  - {cite['title']} ({cite['domain']}) {'✓' if cite.get('is_trusted') else '?'}")
+                else:
+                    logger.info("No citations extracted from tool results")
+                
                 logger.info(f"Query processed successfully. Response length: {len(result.final_output)}")
                 
-                # Return a dictionary with both response and tool call info
+                # Return enhanced response with structured citations
                 return {
                     'response': result.final_output,
                     'tool_calls': tool_calls,
-                    'tools_used': [tc['name'] for tc in tool_calls]
+                    'tools_used': [tc['name'] for tc in tool_calls],
+                    'citations': unique_citations,
+                    'highlights': highlights,
+                    'confidence': confidence
                 }
             
         except Exception as e:
@@ -253,6 +545,9 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                 'response': error_response,
                 'tool_calls': [],
                 'tools_used': [],
+                'citations': [],
+                'highlights': [],
+                'confidence': 0.0,
                 'error': str(e)
             }
     
@@ -305,13 +600,37 @@ async def test_agent():
     
     result = await agent.query(test_query)
     
-    # Handle both old string format and new dict format
+    # Handle enhanced response format with citations
     if isinstance(result, dict):
         print(f"🔧 Tools Used: {', '.join(result['tools_used']) if result['tools_used'] else 'None'}")
         print(f"📊 Tool Call Details: {len(result['tool_calls'])} tools called")
+        print(f"📚 Citations Found: {len(result.get('citations', []))} ({sum(1 for c in result.get('citations', []) if c.get('is_trusted', False))} trusted)")
+        print(f"💡 Highlights: {len(result.get('highlights', []))}")
+        print(f"🎯 Confidence: {result.get('confidence', 0.0):.2f}")
         print("-" * 60)
         print("📄 Response:")
         print(result['response'])
+        
+        if result.get('citations'):
+            print("\n📚 Citations:")
+            for i, cite in enumerate(result['citations'], 1):
+                trust_indicator = "✓" if cite.get('is_trusted', False) else "?"
+                print(f"  {i}. {trust_indicator} {cite['title']}")
+                print(f"     Source: {cite['source']} ({cite['domain']})")
+                print(f"     URL: {cite['url']}")
+                if cite.get('snippet'):
+                    print(f"     Excerpt: {cite['snippet'][:100]}...")
+                print()
+        
+        if result.get('highlights'):
+            print("\n💡 Key Highlights:")
+            for i, highlight in enumerate(result['highlights'], 1):
+                print(f"  {i}. {highlight['point']}")
+                if highlight.get('policy_level'):
+                    print(f"     Policy Level: {highlight['policy_level']}")
+                print(f"     Citations: {len(highlight.get('citations', []))}")
+                print()
+        
         if result['tool_calls']:
             print("\n🔧 Detailed Tool Calls:")
             for i, tc in enumerate(result['tool_calls'], 1):
