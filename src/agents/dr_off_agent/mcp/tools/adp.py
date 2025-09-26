@@ -939,7 +939,7 @@ async def adp_get(
         device_info = request["device"]
         
         # Apply category aliasing for flexibility
-        if "category" in device_info:
+        if "category" in device_info and device_info["category"]:
             original_cat = device_info["category"].lower().replace("-", "_")
             normalized_cat = CATEGORY_ALIASES.get(original_cat)
             if normalized_cat:

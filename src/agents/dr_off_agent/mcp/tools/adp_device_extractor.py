@@ -38,9 +38,15 @@ class ADPDeviceExtractor:
         device_info = self._try_regex_extraction(query)
         if device_info["device_type"]:
             logger.info(f"Regex extracted device: {device_info}")
+            # If we found device but no category, try LLM to get category
+            if not device_info["device_category"] and self._is_natural_language(query):
+                llm_result = self._llm_extraction(query)
+                if llm_result and llm_result.get("device_category"):
+                    device_info["device_category"] = llm_result["device_category"]
+                    logger.info(f"LLM provided category: {llm_result['device_category']}")
             return device_info
         
-        # If regex fails and query looks like natural language, use LLM
+        # If regex fails completely and query looks like natural language, use LLM
         if self._is_natural_language(query):
             llm_result = self._llm_extraction(query)
             if llm_result:
@@ -155,19 +161,35 @@ class ADPDeviceExtractor:
         
         # Communication aids  
         if any(word in device_lower for word in ["communication", "speech", "voice", "aac", "talking"]):
-            return "communication"
+            return "comm_aids"
         
         # Vision aids
         if any(word in device_lower for word in ["magnifier", "reading", "vision", "sight", "cctv"]):
-            return "vision"
+            return "visual_aids"
         
         # Hearing aids
         if any(word in device_lower for word in ["hearing", "ear", "audio", "sound"]):
-            return "hearing"
+            return "hearing_devices"
+        
+        # Respiratory devices (CPAP, BiPAP, ventilators)
+        if any(word in device_lower for word in ["cpap", "bipap", "ventilator", "oxygen", "breathing", "respiratory"]):
+            return "respiratory"
+        
+        # Insulin pumps
+        if "insulin" in device_lower and "pump" in device_lower:
+            return "insulin_pump"
+        
+        # Glucose monitoring
+        if any(word in device_lower for word in ["glucose", "blood sugar", "glucometer"]):
+            return "glucose_monitoring"
+        
+        # Prosthetics
+        if any(word in device_lower for word in ["prosthetic", "prosthesis", "limb", "artificial"]):
+            return "prosthesis"
         
         # Positioning/seating
         if any(word in device_lower for word in ["cushion", "seating", "position", "support"]):
-            return "positioning"
+            return "mobility"  # These are usually mobility-related
         
         return None
     
