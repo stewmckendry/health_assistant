@@ -73,7 +73,7 @@ request_stats = {
 mcp = FastMCP("dr-off-server")
 
 
-@mcp.tool(name="coverage.answer", description="Main orchestrator for clinical coverage questions")
+# @mcp.tool(name="coverage.answer", description="Main orchestrator for clinical coverage questions")  # Hidden - needs algorithm improvements
 async def coverage_answer_handler(
     question: str,
     hints: Dict[str, Any] = None,
@@ -343,7 +343,7 @@ async def odb_get_handler(
         }
 
 
-@mcp.tool(name="source.passages", description="Retrieve exact text chunks by ID")
+# @mcp.tool(name="source.passages", description="Retrieve exact text chunks by ID")  # Hidden from MCP interface
 async def source_passages_handler(
     chunk_ids: list,
     highlight_terms: list = None
