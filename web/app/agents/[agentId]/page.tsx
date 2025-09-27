@@ -91,7 +91,9 @@ export default function AgentChatPage() {
                 {agent.name}
               </h1>
               <p className="text-xs text-gray-500 hidden sm:block truncate">
-                {agent.tagline}
+                {agent.id === 'dr-off' 
+                  ? 'Ontario Finance & Formulary Assistant - OHIP, ODB, ADP Coverage'
+                  : agent.tagline}
               </p>
             </div>
             

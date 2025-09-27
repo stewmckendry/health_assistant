@@ -48,7 +48,7 @@ class ODBTool:
         )
         self.vector_client = vector_client or VectorClient(
             persist_directory="data/dr_off_agent/processed/dr_off/chroma",
-            timeout_ms=1000
+            timeout_ms=5000
         )
         self.confidence_scorer = ConfidenceScorer()
         self.conflict_detector = ConflictDetector()
@@ -112,6 +112,15 @@ class ODBTool:
             vector_matches=vector_hits,
             has_conflict=len(conflicts) > 0
         )
+        
+        # Ensure we always have at least one citation, even when no data is found
+        if not citations:
+            citations.append(Citation(
+                source="Ontario Drug Benefit Formulary (Edition 43)",
+                loc="General Reference",
+                page=None,
+                url="https://www.ontario.ca/files/2025-09/moh-formulary-edition-43-en-2025-09-17.pdf"
+            ))
         
         # Adjust response based on what was found
         if not coverage and not interchangeable and not provenance:
@@ -303,7 +312,7 @@ class ODBTool:
                         interchangeable.append(InterchangeableDrug(
                             din=drug.get('din', ''),
                             brand=drug.get('name', ''),  # SQL returns 'name' not 'brand'
-                            price=drug.get('individual_price', 0.0),  # SQL returns 'individual_price' not 'price'
+                            price=drug.get('individual_price') or 0.0,  # Handle None values explicitly
                             lowest_cost=drug.get('is_lowest_cost', False)  # SQL returns 'is_lowest_cost' not 'lowest_cost'
                         ))
             
@@ -312,7 +321,7 @@ class ODBTool:
                 lowest = min(interchangeable, key=lambda x: x.price)
                 savings = 0.0
                 if primary_drug:
-                    primary_price = primary_drug.get('individual_price', 0.0)  # Fixed field name
+                    primary_price = primary_drug.get('individual_price') or 0.0  # Handle None values explicitly
                     savings = primary_price - lowest.price
                 
                 lowest_cost = LowestCostDrug(
@@ -347,13 +356,21 @@ class ODBTool:
             # For drug embeddings, create a meaningful location string
             if metadata.get('din'):
                 loc = f"DIN: {metadata.get('din')} - {metadata.get('brand_name', '')} ({metadata.get('generic_name', '')})"
+                # Use ODB formulary search URL with DIN
+                din = metadata.get('din', '')
+                url = f"https://www.formulary.health.gov.on.ca/formulary/results.xhtml?q={din}" if din else "https://www.formulary.health.gov.on.ca/formulary/"
+                source = "Ontario Drug Benefit Formulary (Edition 43)"
             else:
                 loc = metadata.get('section', '')
+                # Use the actual ODB PDF URL
+                url = "https://www.ontario.ca/files/2025-09/moh-formulary-edition-43-en-2025-09-17.pdf"
+                source = "ODB Coverage Guidelines"
             
             citation = Citation(
-                source=metadata.get('source_document', metadata.get('source', 'odb_formulary')),
+                source=source,
                 loc=loc,
-                page=metadata.get('page')
+                page=metadata.get('page'),
+                url=url
             )
             
             # Avoid duplicate citations
@@ -388,6 +405,16 @@ class ODBTool:
                     price=0.0,  # Unknown from vector
                     lowest_cost=False
                 ))
+        
+        # Always include at least one citation to the ODB Formulary
+        # This ensures users know the source of the information, even for negative results
+        if not citations:
+            citations.append(Citation(
+                source="Ontario Drug Benefit Formulary (Edition 43)",
+                loc="General Reference",
+                page=None,
+                url="https://www.ontario.ca/files/2025-09/moh-formulary-edition-43-en-2025-09-17.pdf"
+            ))
         
         return coverage, interchangeable, lowest_cost, citations, conflicts, context_snippets
     

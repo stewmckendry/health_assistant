@@ -56,7 +56,7 @@ class ScheduleTool:
         )
         self.vector_client = vector_client or VectorClient(
             persist_directory="data/dr_off_agent/processed/dr_off/chroma",
-            timeout_ms=1000
+            timeout_ms=5000
         )
         
         # Initialize new components
@@ -524,10 +524,13 @@ class ScheduleTool:
         citations = []
         for item in items:
             if item.code:
+                # Generate specific PDF citation with page number
+                page_text = f", page {item.page_num}" if item.page_num else ""
                 citations.append(Citation(
-                    source="OHIP Schedule of Benefits",
-                    loc=f"Code {item.code}",
-                    page=item.page_num
+                    source="OHIP Schedule of Benefits (March 2025)",
+                    loc=f"Fee code {item.code}{page_text}",
+                    page=item.page_num,
+                    url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
                 ))
         return citations[:5]  # Limit citations
     
@@ -536,10 +539,21 @@ class ScheduleTool:
         citations = []
         for doc in docs[:5]:  # Limit to top 5
             metadata = doc.metadata or {}
+            # Generate specific PDF citation with section and page
+            section = metadata.get('section', '')
+            page = metadata.get('page_num')
+            loc_parts = []
+            if section:
+                loc_parts.append(f"Section {section}")
+            if page:
+                loc_parts.append(f"page {page}")
+            loc = ", ".join(loc_parts) if loc_parts else "General Reference"
+            
             citations.append(Citation(
-                source=metadata.get('source', 'OHIP Schedule'),
-                loc=metadata.get('section', ''),
-                page=metadata.get('page_num')
+                source="OHIP Schedule of Benefits (March 2025)",
+                loc=loc,
+                page=page,
+                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
         return citations
     
@@ -551,21 +565,35 @@ class ScheduleTool:
         """Merge citations from both sources"""
         citations = []
         
-        # Add SQL citations
+        # Add SQL citations with specific PDF reference
         for result in sql_results[:3]:
+            code = result.get('code', '')
+            page = result.get('page_num')
+            page_text = f", page {page}" if page else ""
             citations.append(Citation(
-                source="OHIP Schedule (Database)",
-                loc=result.get('code', ''),
-                page=result.get('page_num')
+                source="OHIP Schedule of Benefits (March 2025)",
+                loc=f"Fee code {code}{page_text}",
+                page=page,
+                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
         
-        # Add vector citations
+        # Add vector citations with specific PDF reference
         for doc in vector_docs[:3]:
             metadata = doc.metadata or {}
+            section = metadata.get('section', '')
+            page = metadata.get('page_num')
+            loc_parts = []
+            if section:
+                loc_parts.append(f"Section {section}")
+            if page:
+                loc_parts.append(f"page {page}")
+            loc = ", ".join(loc_parts) if loc_parts else "General Reference"
+            
             citations.append(Citation(
-                source="OHIP Schedule (Document)",
-                loc=metadata.get('section', ''),
-                page=metadata.get('page_num')
+                source="OHIP Schedule of Benefits (March 2025)",
+                loc=loc,
+                page=page,
+                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
         
         return citations

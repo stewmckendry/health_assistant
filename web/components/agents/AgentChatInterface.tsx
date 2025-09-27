@@ -12,7 +12,9 @@ import {
   Loader2, 
   StopCircle,
   RefreshCw,
-  Sparkles
+  Sparkles,
+  RotateCcw,
+  Plus
 } from 'lucide-react';
 import { AgentMessage } from './AgentMessage';
 
@@ -61,6 +63,12 @@ I can provide educational information about conditions, symptoms, treatments, an
 Please remember: This is for learning only. I cannot diagnose, prescribe, or replace professional medical advice.
 
 What would you like to understand better today?`;
+        } else if (agent.id === 'dr-off') {
+          welcomeContent = `Hello! I'm Dr. OFF (Ontario Finance & Formulary), your assistant for Ontario healthcare financing and coverage.
+
+I can help you with OHIP billing codes and fee schedules, Ontario Drug Benefit (ODB) formulary coverage, Assistive Devices Program (ADP) eligibility, and finding generic alternatives for cost-effective prescribing.
+
+How can I assist with your coverage or billing questions today?`;
         } else {
           welcomeContent = `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`;
         }
@@ -350,6 +358,106 @@ What would you like to understand better today?`;
     setMessages([]);
     initializeSession();
   };
+  
+  const regenerateLastMessage = async () => {
+    if (messages.length < 2 || isStreaming) return;
+    
+    // Find the last user message
+    const lastUserMessageIndex = messages.findLastIndex(msg => msg.role === 'user');
+    if (lastUserMessageIndex === -1) return;
+    
+    const lastUserMessage = messages[lastUserMessageIndex];
+    
+    // Remove all messages after the last user message
+    setMessages(prev => prev.slice(0, lastUserMessageIndex + 1));
+    
+    // Directly resend the last user message
+    // We need to handle this directly instead of using setInput + handleSendMessage
+    // because React state updates are async
+    const messageContent = lastUserMessage.content;
+    
+    setIsStreaming(true);
+    setStreamingContent('');
+
+    // Create assistant message placeholder
+    const assistantMessage: Message = {
+      id: `assistant-${Date.now()}`,
+      sessionId: sessionId!,
+      role: 'assistant',
+      content: '',
+      timestamp: new Date().toISOString(),
+      toolCalls: [],
+      citations: [],
+      streaming: true
+    };
+
+    setMessages(prev => [...prev, assistantMessage]);
+
+    try {
+      // Create abort controller for this request
+      abortControllerRef.current = new AbortController();
+
+      // Use fetch with streaming
+      const response = await fetch(`/api/agents/${agent.id}/stream?` + new URLSearchParams({
+        sessionId: sessionId!,
+        query: messageContent
+      }), {
+        signal: abortControllerRef.current.signal
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to connect to agent');
+      }
+
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+
+      if (!reader) {
+        throw new Error('No response stream available');
+      }
+
+      let buffer = '';
+
+      // Read the stream
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') {
+              setIsStreaming(false);
+              break;
+            }
+            try {
+              const event = JSON.parse(data);
+              handleStreamEvent(event, assistantMessage.id);
+            } catch (e) {
+              console.error('Failed to parse event:', e);
+            }
+          }
+        }
+      }
+
+    } catch (error) {
+      console.error('Failed to regenerate message:', error);
+      setIsStreaming(false);
+      
+      // Update message with error
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === assistantMessage.id 
+            ? { ...msg, content: 'Sorry, I encountered an error. Please try again.', error: String(error), streaming: false }
+            : msg
+        )
+      );
+    }
+  };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -359,11 +467,11 @@ What would you like to understand better today?`;
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-16rem)] bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="flex flex-col h-[calc(100vh-16rem)] bg-white rounded-lg shadow-lg">
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col min-w-0 bg-white">
-        {/* Sticky header bar */}
-        <div className="sticky top-0 z-10 bg-white border-b shadow-sm">
+      <div className="flex-1 flex flex-col min-w-0 bg-white overflow-hidden">
+        {/* Fixed header bar */}
+        <div className="sticky top-0 z-20 bg-white border-b shadow-sm">
           <div className="flex items-center justify-between px-6 py-3">
             <div className="flex items-center gap-3">
               <span className="text-2xl" role="img" aria-label={agent.name}>
@@ -386,7 +494,7 @@ What would you like to understand better today?`;
         </div>
 
         {/* Messages Area */}
-        <ScrollArea className="flex-1 px-6 py-4">
+        <ScrollArea className="flex-1 px-6 py-4 overflow-y-auto">
           <div className="space-y-4 max-w-3xl mx-auto">
             {messages.map((message) => (
               <AgentMessage
@@ -397,6 +505,31 @@ What would you like to understand better today?`;
                 isStreaming={message.streaming}
               />
             ))}
+            
+            {/* Action buttons shown after the last message */}
+            {messages.length > 1 && !isStreaming && messages[messages.length - 1].role === 'assistant' && (
+              <div className="flex gap-2 pt-2 pb-4">
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={regenerateLastMessage}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <RotateCcw className="h-4 w-4 mr-2" />
+                  Regenerate
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={startNewConversation}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  New Chat
+                </Button>
+              </div>
+            )}
+            
             <div ref={messagesEndRef} />
           </div>
         </ScrollArea>
@@ -409,7 +542,9 @@ What would you like to understand better today?`;
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder={`Ask ${agent.name} anything...`}
+                placeholder={agent.id === 'dr-off' 
+                  ? `Ask about OHIP billing, ODB coverage, or ADP eligibility...`
+                  : `Ask ${agent.name} anything...`}
                 disabled={isStreaming}
                 className="flex-1 pr-10 bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
               />

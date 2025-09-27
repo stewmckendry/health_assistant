@@ -193,8 +193,8 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming }: Age
           className={cn(
             'p-4 overflow-hidden',
             isUser
-              ? 'bg-muted/50'
-              : 'bg-background',
+              ? 'bg-muted/50 border-muted'
+              : 'bg-white shadow-sm border-gray-200',
             isError && 'border-destructive'
           )}
         >
@@ -260,18 +260,22 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming }: Age
             <InlineCitations citations={message.citations} />
           )}
 
-          {/* Timestamp */}
-          <div className="mt-3 flex items-center justify-between">
-            <span className="text-xs text-muted-foreground">
-              {new Date(message.timestamp).toLocaleTimeString()}
-            </span>
-            {isStreaming && !isUser && (
+          {/* Timestamp - only show if not streaming */}
+          {!isStreaming && (
+            <div className="mt-3 flex items-center justify-end">
+              <span className="text-[10px] text-muted-foreground/70">
+                {new Date(message.timestamp).toLocaleTimeString()}
+              </span>
+            </div>
+          )}
+          {isStreaming && !isUser && (
+            <div className="mt-3 flex items-center justify-end">
               <span className="text-xs text-primary flex items-center gap-1">
                 <Loader2 className="h-3 w-3 animate-spin" />
                 Responding...
               </span>
-            )}
-          </div>
+            </div>
+          )}
         </Card>
       </div>
     </div>
