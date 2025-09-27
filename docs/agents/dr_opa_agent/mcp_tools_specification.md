@@ -18,14 +18,25 @@
 | Ontario Health Programs Client | ✅ Implemented | Claude + Web Search | `tools/ontario_health_programs.py` |
 | Confidence Scorer | ✅ Implemented | - | `utils/confidence.py` |
 | Citation Formatter | ✅ Implemented | - | `utils/citations.py` |
+| Response Formatter | ✅ Implemented | - | `utils/response_formatter.py` |
 
 ## Overview
 
 The Dr. OPA MCP server provides 7 specialized tools for Ontario practice guidance queries. Most tools use a **Vector → Rerank → Filter** semantic search algorithm for document-based queries, while `opa.program_lookup` uses **Claude + Web Search** for comprehensive Ontario Health clinical programs coverage.
 
-**Server Location**: `src/agents/dr_opa_agent/mcp/server.py`  
+**Server Location**: `src/agents/dr_opa_agent/dr_opa_mcp/server.py`  
 **Base URL**: `http://localhost:8001` (when running)  
 **Protocol**: FastMCP
+
+### Citation Standardization
+
+All MCP tools now return standardized citations through a centralized response formatter (`utils/response_formatter.py`). Each tool response includes:
+
+- **Top-level `citations` field**: Deduplicated array of all citations extracted from the response
+- **`_tool_name` metadata**: The name of the MCP tool that generated the response
+- **`_citation_count` metadata**: Total number of unique citations extracted
+
+This ensures consistent citation formatting across all tools, making it easier for clients to extract and display source references.
 
 ---
 

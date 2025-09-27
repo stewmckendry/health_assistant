@@ -330,9 +330,16 @@ CREATE TABLE messages (
 ### 2. Citation Processing Pipeline
 
 1. **Agent Response**: Receive structured citations from agent
+   - Dr. OPA MCP tools now return standardized citations at the top level
+   - All citations include: source, source_org, loc, and url fields
+   - Automatic extraction from nested response structures
 2. **Domain Validation**: Check against trusted domains list
 3. **Deduplication**: Remove duplicate URLs and titles
+   - Dr. OPA MCP server now performs deduplication using unique citation keys
+   - Key format: `{source}_{source_org}_{loc}`
 4. **Standardization**: Convert to unified citation format
+   - Handled by response_formatter utility in dr_opa_mcp/utils/
+   - Ensures consistent citation structure across all MCP tools
 5. **UI Update**: Stream citations to frontend components
 
 ### 3. Error Handling Strategy

@@ -297,6 +297,53 @@ def handle_partial_results(results: List, query: str) -> Dict:
 - No PHI (Personal Health Information) processed or stored
 - Query logging for performance analysis only
 - MCP server communications over HTTPS in production
+
+## Citation Standardization
+
+### Overview
+
+All MCP tools now return citations in a standardized format at the top level of the response. This ensures consistent citation extraction and display across all tools.
+
+### Standardized Citation Format
+
+Each citation contains:
+- **source**: Title or name of the source document
+- **source_org**: Organization that authored the content (e.g., "cpso", "ontario_health", "pho")
+- **loc**: Location within the document (section ID, page number, etc.)
+- **url**: Direct link to the source document (when available)
+
+### Response Structure
+
+All MCP tool responses now include:
+```json
+{
+  // Tool-specific fields
+  "sections": [...],
+  "highlights": [...],
+  
+  // Standardized citations at top level
+  "citations": [
+    {
+      "source": "Prescribing Drugs Policy",
+      "source_org": "cpso",
+      "loc": "Section 2.1",
+      "url": "https://www.cpso.on.ca/..."
+    }
+  ],
+  
+  // Metadata added by standardization
+  "_tool_name": "opa_policy_check",
+  "_citation_count": 3
+}
+```
+
+### Implementation
+
+Citation standardization is handled by the `response_formatter` utility in `dr_opa_mcp/utils/response_formatter.py`. This utility:
+1. Extracts citations from various nested structures
+2. Deduplicates citations by unique key
+3. Adds citations as a top-level field
+4. Preserves backward compatibility with existing citation fields
 - API keys managed through environment variables
 
 ### Access Controls
