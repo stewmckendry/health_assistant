@@ -27,6 +27,16 @@ try:
 except ImportError:
     yaml = None
 
+# Import Langfuse and logfire for tracing
+try:
+    from langfuse import Langfuse
+    import logfire
+    LANGFUSE_AVAILABLE = True
+except ImportError:
+    LANGFUSE_AVAILABLE = False
+    logfire = None
+    Langfuse = None
+
 import sys
 from pathlib import Path
 
@@ -286,7 +296,7 @@ def create_citation_from_mcp(cite_data: Dict, trusted_domains: set, tool_name: s
 
 
 class DrOffAgent:
-    """Dr. OFF OpenAI Agent with MCP integration."""
+    """Dr. OFF OpenAI Agent with MCP integration and Langfuse tracing."""
     
     def _get_url_for_source(self, source: str, tool_name: str) -> str:
         """Get the appropriate URL based on source and tool."""
@@ -302,12 +312,51 @@ class DrOffAgent:
         else:
             return 'https://www.ontario.ca/'
     
-    def __init__(self, mcp_server_command: str = None):
-        """Initialize the Dr. OFF Agent with MCP server connection."""
+    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True):
+        """Initialize the Dr. OFF Agent with MCP server connection and optional Langfuse tracing.
+        
+        Args:
+            mcp_server_command: Command to start the MCP server
+            enable_langfuse: Whether to enable Langfuse tracing (default: True)
+        """
         self.session_id = session_id
         self.project_root = project_root
         self.trusted_domains = load_trusted_domains()
+        self.enable_langfuse = enable_langfuse and LANGFUSE_AVAILABLE
         logger.info(f"Loaded {len(self.trusted_domains)} trusted domains for citation validation")
+        
+        # Initialize Langfuse tracing if enabled
+        if self.enable_langfuse:
+            try:
+                # Configure logfire for OpenAI Agents instrumentation
+                logfire.configure(
+                    service_name='dr_off_agent',
+                    send_to_logfire=False,
+                )
+                # Instrument OpenAI Agents SDK
+                logfire.instrument_openai_agents()
+                
+                # Initialize Langfuse client
+                self.langfuse = Langfuse(
+                    public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
+                    secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
+                    host=os.getenv("LANGFUSE_HOST", "https://cloud.langfuse.com"),
+                )
+                
+                # Verify connection
+                if self.langfuse.auth_check():
+                    logger.info("Langfuse client authenticated and ready for tracing")
+                else:
+                    logger.warning("Langfuse authentication failed - tracing disabled")
+                    self.enable_langfuse = False
+                    
+            except Exception as e:
+                logger.warning(f"Failed to initialize Langfuse: {e}")
+                self.enable_langfuse = False
+        else:
+            self.langfuse = None
+            if not LANGFUSE_AVAILABLE:
+                logger.info("Langfuse not available - install langfuse and pydantic-ai[logfire] for tracing")
         
         # Initialize MCP server connection using STDIO
         if mcp_server_command is None:
@@ -424,9 +473,40 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
             logger.warning("Agent will operate without MCP tools - responses will be limited")
             return False
     
-    async def query_stream(self, user_input: str, session_id: str = None):
-        """Process a user query and stream the response."""
+    async def query_stream(self, user_input: str, session_id: str = None, user_id: str = None):
+        """Process a user query and stream the response with Langfuse tracing.
+        
+        Args:
+            user_input: The user's query
+            session_id: Session ID for conversation tracking
+            user_id: User ID for tracking
+        """
         logger.info(f"Processing streaming query: {user_input[:100]}...")
+        
+        # Generate trace ID for this query
+        trace_id = str(uuid.uuid4())
+        
+        # Start Langfuse trace if enabled
+        trace_context = None
+        if self.enable_langfuse and self.langfuse:
+            try:
+                # Use start_span for creating a trace (root span)
+                trace_context = self.langfuse.start_span(
+                    name="dr_off_query_stream",
+                    trace_id=trace_id,  # This becomes the trace ID
+                    input={
+                        "query": user_input[:200],
+                        "session_id": session_id,
+                        "user_id": user_id
+                    },
+                    metadata={
+                        "agent": "Dr. OFF",
+                        "mode": "streaming"
+                    },
+                    tags=["dr-off", "streaming", "mcp"]
+                )
+            except Exception as e:
+                logger.warning(f"Failed to start Langfuse trace: {e}")
         
         try:
             from openai.types.responses import ResponseTextDeltaEvent
@@ -545,24 +625,85 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                                 except Exception as e:
                                     logger.info(f"Failed to parse tool output as JSON: {e}")
                 
-                # Send final completion event
+                # Send final completion event with trace_id
                 yield {
                     'type': 'complete',
                     'content': accumulated_text,
                     'tool_calls': tool_calls,
-                    'citations': all_citations
+                    'citations': all_citations,
+                    'metadata': {
+                        'trace_id': trace_id  # Include trace_id for feedback
+                    }
                 }
+                
+                # End Langfuse trace if it was started
+                if trace_context:
+                    try:
+                        trace_context.end(
+                            output=accumulated_text[:1000],  # Truncate for storage
+                            metadata={
+                                "citations_count": len(all_citations),
+                                "tool_calls_count": len(tool_calls),
+                                "response_length": len(accumulated_text)
+                            }
+                        )
+                        self.langfuse.flush()
+                    except Exception as e:
+                        logger.warning(f"Failed to update Langfuse trace: {e}")
                 
         except Exception as e:
             logger.error(f"Error in streaming query: {e}")
+            
+            # Log error to Langfuse if trace was started
+            if trace_context:
+                try:
+                    trace_context.end(
+                        level="ERROR",
+                        status_message=str(e)
+                    )
+                    self.langfuse.flush()
+                except:
+                    pass
+            
             yield {
                 'type': 'error',
                 'content': str(e)
             }
     
-    async def query(self, user_input: str, session_id: str = None) -> Dict:
-        """Process a user query and return the agent's response."""
+    async def query(self, user_input: str, session_id: str = None, user_id: str = None) -> Dict:
+        """Process a user query and return the agent's response with Langfuse tracing.
+        
+        Args:
+            user_input: The user's query
+            session_id: Session ID for conversation tracking
+            user_id: User ID for tracking
+        """
         logger.info(f"Processing query: {user_input[:100]}...")
+        
+        # Generate trace ID for this query
+        trace_id = str(uuid.uuid4())
+        
+        # Start Langfuse trace if enabled
+        trace_context = None
+        if self.enable_langfuse and self.langfuse:
+            try:
+                # Use start_span for creating a trace (root span)
+                trace_context = self.langfuse.start_span(
+                    name="dr_off_query",
+                    trace_id=trace_id,  # This becomes the trace ID
+                    input={
+                        "query": user_input[:200],
+                        "session_id": session_id,
+                        "user_id": user_id
+                    },
+                    metadata={
+                        "agent": "Dr. OFF",
+                        "mode": "non-streaming"
+                    },
+                    tags=["dr-off", "non-streaming", "mcp"]
+                )
+            except Exception as e:
+                logger.warning(f"Failed to start Langfuse trace: {e}")
         
         try:
             # Create session if session_id provided
@@ -628,16 +769,45 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                 
                 logger.info(f"Query processed successfully. Response length: {len(result.final_output)}")
                 
+                # Update Langfuse trace if it was started
+                if trace_context:
+                    try:
+                        trace_context.end(
+                            output=result.final_output[:1000],  # Truncate for storage
+                            metadata={
+                                "citations_count": len(unique_citations),
+                                "tool_calls_count": len(tool_calls),
+                                "response_length": len(result.final_output),
+                                "confidence": confidence
+                            }
+                        )
+                        self.langfuse.flush()
+                    except Exception as e:
+                        logger.warning(f"Failed to update Langfuse trace: {e}")
+                
                 return {
                     'response': result.final_output,
                     'tool_calls': tool_calls,
                     'tools_used': [tc['name'] for tc in tool_calls],
                     'citations': unique_citations,
-                    'confidence': confidence
+                    'confidence': confidence,
+                    'trace_id': trace_id  # Include trace_id for feedback
                 }
             
         except Exception as e:
             logger.error(f"Error processing query: {e}")
+            
+            # Log error to Langfuse if trace was started
+            if trace_context:
+                try:
+                    trace_context.end(
+                        level="ERROR",
+                        status_message=str(e)
+                    )
+                    self.langfuse.flush()
+                except:
+                    pass
+            
             error_response = self._create_error_response(str(e), user_input)
             return {
                 'response': error_response,
@@ -645,7 +815,8 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                 'tools_used': [],
                 'citations': [],
                 'confidence': 0.0,
-                'error': str(e)
+                'error': str(e),
+                'trace_id': trace_id  # Include trace_id even on error
             }
     
     def _create_error_response(self, error_message: str, query: str) -> str:

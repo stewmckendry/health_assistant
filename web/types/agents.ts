@@ -76,6 +76,7 @@ export interface Message {
   citations?: Citation[];
   streaming?: boolean;
   error?: string;
+  traceId?: string; // For Langfuse feedback tracking
 }
 
 /**

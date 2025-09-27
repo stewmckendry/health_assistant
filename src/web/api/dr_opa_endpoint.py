@@ -17,6 +17,7 @@ class DrOPAStreamRequest(BaseModel):
     sessionId: str
     query: str
     stream: bool = True
+    userId: str = None  # Add user ID for Langfuse tracing
 
 
 def register_dr_opa_endpoint(app: FastAPI):
@@ -38,10 +39,11 @@ def register_dr_opa_endpoint(app: FastAPI):
                 try:
                     # Check if agent has streaming method
                     if hasattr(agent, 'query_stream'):
-                        # Use real streaming from the agent
+                        # Use real streaming from the agent with user_id
                         citations_sent = []
+                        trace_id = None  # Will be set from complete event
                         
-                        async for event in agent.query_stream(request.query):
+                        async for event in agent.query_stream(request.query, session_id=request.sessionId, user_id=request.userId):
                             if event['type'] == 'text':
                                 # Stream text deltas
                                 text_event = {
@@ -84,6 +86,10 @@ def register_dr_opa_endpoint(app: FastAPI):
                                     yield f"data: {json.dumps(citation_event)}\n\n"
                             
                             elif event['type'] == 'complete':
+                                # Extract trace_id from metadata if available
+                                metadata = event.get('metadata', {})
+                                trace_id = metadata.get('trace_id')
+                                
                                 # Mark all tool calls as completed
                                 for tool_call in event.get('tool_calls', []):
                                     tool_complete_event = {
@@ -101,8 +107,11 @@ def register_dr_opa_endpoint(app: FastAPI):
                                 yield f"data: {json.dumps({'type': 'error', 'data': {'error': event['content']}})}\n\n"
                     
                     else:
-                        # Fallback to non-streaming query
-                        result = await agent.query(request.query)
+                        # Fallback to non-streaming query with user_id
+                        result = await agent.query(request.query, session_id=request.sessionId, user_id=request.userId)
+                        
+                        # Extract trace_id from result
+                        trace_id = result.get('trace_id')
                         
                         # Convert OpenAI Agent response to streaming format
                         if isinstance(result, dict):
@@ -165,8 +174,8 @@ def register_dr_opa_endpoint(app: FastAPI):
                             }
                             yield f"data: {json.dumps(text_event)}\n\n"
                     
-                    # Send completion event
-                    yield f"data: {json.dumps({'type': 'response_done', 'data': {'message_id': str(uuid.uuid4())}})}\n\n"
+                    # Send completion event with trace_id for feedback
+                    yield f"data: {json.dumps({'type': 'response_done', 'data': {'message_id': str(uuid.uuid4()), 'traceId': trace_id}})}\n\n"
                     
                 except Exception as e:
                     # Send error event
@@ -195,7 +204,7 @@ def register_dr_opa_endpoint(app: FastAPI):
         """
         try:
             agent = await create_dr_opa_agent()
-            response = await agent.query(request.query)
+            response = await agent.query(request.query, session_id=request.sessionId)
             
             return {
                 "response": response.get('response', str(response)) if isinstance(response, dict) else str(response),

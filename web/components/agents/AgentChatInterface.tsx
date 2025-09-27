@@ -125,11 +125,16 @@ How can I assist with your coverage or billing questions today?`;
       // Create abort controller for this request
       abortControllerRef.current = new AbortController();
 
-      // Use fetch with streaming instead of EventSource for better control
-      const response = await fetch(`/api/agents/${agent.id}/stream?` + new URLSearchParams({
-        sessionId,
-        query: userMessage.content
-      }), {
+      // Use fetch with streaming - send as POST to include userId
+      const response = await fetch(`/api/agents/${agent.id}/stream`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId,
+          query: userMessage.content,
+          userId: sessionId, // Use sessionId as userId for now
+          stream: true
+        }),
         signal: abortControllerRef.current.signal
       });
 
@@ -277,6 +282,9 @@ How can I assist with your coverage or billing questions today?`;
       case 'response_done':
       case 'done':
       case 'complete':
+        // Extract trace ID from event if present
+        const traceId = event.data?.traceId || event.metadata?.trace_id || null;
+        
         // Extract citations from complete event if present
         const completeCitations = (event.content?.citations || event.data?.citations || []).map((c: any) => ({
           ...c,
@@ -324,7 +332,8 @@ How can I assist with your coverage or billing questions today?`;
                 ...msg, 
                 streaming: false,
                 toolCalls: finalToolCalls,
-                citations: finalCitations
+                citations: finalCitations,
+                traceId: traceId // Add trace ID for feedback
               };
             }
             return msg;
@@ -352,6 +361,28 @@ How can I assist with your coverage or billing questions today?`;
       abortControllerRef.current.abort();
     }
     setIsStreaming(false);
+  };
+
+  const handleFeedback = async (feedback: {
+    traceId: string;
+    sessionId: string;
+    rating?: number;
+    comment?: string;
+    thumbsUp?: boolean;
+  }) => {
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(feedback),
+      });
+      
+      if (!response.ok) {
+        console.error('Failed to submit feedback');
+      }
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+    }
   };
 
   const startNewConversation = () => {
@@ -397,11 +428,16 @@ How can I assist with your coverage or billing questions today?`;
       // Create abort controller for this request
       abortControllerRef.current = new AbortController();
 
-      // Use fetch with streaming
-      const response = await fetch(`/api/agents/${agent.id}/stream?` + new URLSearchParams({
-        sessionId: sessionId!,
-        query: messageContent
-      }), {
+      // Use fetch with streaming - send as POST to include userId
+      const response = await fetch(`/api/agents/${agent.id}/stream`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId: sessionId!,
+          query: messageContent,
+          userId: sessionId!, // Use sessionId as userId for now
+          stream: true
+        }),
         signal: abortControllerRef.current.signal
       });
 
@@ -503,6 +539,7 @@ How can I assist with your coverage or billing questions today?`;
                 agentName={agent.name}
                 agentIcon={agent.icon}
                 isStreaming={message.streaming}
+                onFeedback={handleFeedback}
               />
             ))}
             

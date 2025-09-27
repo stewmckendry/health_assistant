@@ -21,12 +21,14 @@ import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useState } from 'react';
+import { FeedbackButtons } from '@/components/chat/FeedbackButtons';
 
 interface AgentMessageProps {
   message: Message;
   agentName?: string;
   agentIcon?: string;
   isStreaming?: boolean;
+  onFeedback?: (feedback: any) => void;
 }
 
 // Inline citations component with better styling
@@ -79,7 +81,7 @@ function InlineCitations({ citations }: { citations: Citation[] }) {
                 </div>
                 {citation.snippet && (
                   <p className="text-xs text-muted-foreground line-clamp-2 mt-1">
-                    "{citation.snippet}"
+                    &ldquo;{citation.snippet}&rdquo;
                   </p>
                 )}
                 <div className="flex items-center gap-2 mt-1">
@@ -153,7 +155,7 @@ function InlineToolCalls({ toolCalls }: { toolCalls: ToolCall[] }) {
   );
 }
 
-export function AgentMessage({ message, agentName, agentIcon, isStreaming }: AgentMessageProps) {
+export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFeedback }: AgentMessageProps) {
   const isUser = message.role === 'user';
   const isError = message.error;
 
@@ -258,6 +260,16 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming }: Age
           {/* Citations for assistant messages */}
           {!isUser && message.citations && message.citations.length > 0 && (
             <InlineCitations citations={message.citations} />
+          )}
+
+          {/* Feedback buttons for assistant messages with traceId */}
+          {!isUser && !isStreaming && message.traceId && onFeedback && (
+            <FeedbackButtons
+              traceId={message.traceId}
+              sessionId={message.sessionId}
+              onFeedback={onFeedback}
+              context="chat"
+            />
           )}
 
           {/* Timestamp - only show if not streaming */}
