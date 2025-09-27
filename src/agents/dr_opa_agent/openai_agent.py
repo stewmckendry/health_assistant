@@ -28,13 +28,15 @@ except ImportError:
 
 # Import Langfuse and logfire for tracing
 try:
-    from langfuse import Langfuse
+    from langfuse import get_client
     import logfire
+    import nest_asyncio
     LANGFUSE_AVAILABLE = True
 except ImportError:
     LANGFUSE_AVAILABLE = False
     logfire = None
-    Langfuse = None
+    get_client = None
+    nest_asyncio = None
 
 import sys
 from pathlib import Path
@@ -310,24 +312,26 @@ class DrOPAAgent:
         # Initialize Langfuse tracing if enabled
         if self.enable_langfuse:
             try:
+                # Apply nest_asyncio for notebook/async compatibility
+                if nest_asyncio:
+                    nest_asyncio.apply()
+                
                 # Configure logfire for OpenAI Agents instrumentation
+                # This automatically sends traces to Langfuse via OTLP
                 logfire.configure(
                     service_name='dr_opa_agent',
-                    send_to_logfire=False,
+                    send_to_logfire=False,  # Only send to Langfuse via OTLP
                 )
-                # Instrument OpenAI Agents SDK
+                
+                # This method automatically patches the OpenAI Agents SDK
                 logfire.instrument_openai_agents()
                 
-                # Initialize Langfuse client
-                self.langfuse = Langfuse(
-                    public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
-                    secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
-                    host=os.getenv("LANGFUSE_HOST", "https://cloud.langfuse.com"),
-                )
+                # Get Langfuse client for verification and feedback
+                self.langfuse = get_client()
                 
                 # Verify connection
                 if self.langfuse.auth_check():
-                    logger.info("Langfuse client authenticated and ready for tracing")
+                    logger.info("Langfuse client authenticated and ready for tracing via logfire")
                 else:
                     logger.warning("Langfuse authentication failed - tracing disabled")
                     self.enable_langfuse = False
@@ -444,30 +448,16 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
         """
         logger.info(f"Processing streaming query: {user_input[:100]}...")
         
-        # Generate trace ID for this query
-        trace_id = str(uuid.uuid4())
-        
-        # Start Langfuse trace if enabled
-        trace_context = None
+        # Logfire instrumentation automatically creates traces for OpenAI Agents
+        # Get the current trace ID from Langfuse for feedback correlation
+        trace_id = None
         if self.enable_langfuse and self.langfuse:
             try:
-                # Use start_span for creating a trace (root span)
-                trace_context = self.langfuse.start_span(
-                    name="dr_opa_query_stream",
-                    trace_id=trace_id,  # This becomes the trace ID
-                    input={
-                        "query": user_input[:200],
-                        "session_id": session_id,
-                        "user_id": user_id
-                    },
-                    metadata={
-                        "agent": "Dr. OPA",
-                        "mode": "streaming"
-                    },
-                    tags=["dr-opa", "streaming", "mcp"]
-                )
+                trace_id = self.langfuse.get_current_trace_id()
+                logger.debug(f"Got Langfuse trace ID: {trace_id}")
             except Exception as e:
-                logger.warning(f"Failed to start Langfuse trace: {e}")
+                logger.debug(f"Could not get trace ID: {e}")
+                trace_id = str(uuid.uuid4())  # Fallback to UUID
         
         try:
             from openai.types.responses import ResponseTextDeltaEvent
@@ -635,34 +625,18 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                     }
                 }
                 
-                # End Langfuse trace if it was started
-                if trace_context:
+                # Logfire automatically handles trace completion
+                # Flush any pending Langfuse events
+                if self.enable_langfuse and self.langfuse:
                     try:
-                        trace_context.end(
-                            output=accumulated_text[:1000],  # Truncate for storage
-                            metadata={
-                                "citations_count": len(all_citations),
-                                "tool_calls_count": len(tool_calls),
-                                "response_length": len(accumulated_text)
-                            }
-                        )
                         self.langfuse.flush()
                     except Exception as e:
-                        logger.warning(f"Failed to update Langfuse trace: {e}")
+                        logger.debug(f"Failed to flush Langfuse: {e}")
                 
         except Exception as e:
             logger.error(f"Error in streaming query: {e}")
             
-            # Log error to Langfuse if trace was started
-            if trace_context:
-                try:
-                    trace_context.end(
-                        level="ERROR",
-                        status_message=str(e)
-                    )
-                    self.langfuse.flush()
-                except:
-                    pass
+            # Logfire automatically handles error tracing
             
             yield {
                 'type': 'error',
@@ -679,30 +653,16 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
         """
         logger.info(f"Processing query: {user_input[:100]}...")
         
-        # Generate trace ID for this query
-        trace_id = str(uuid.uuid4())
-        
-        # Start Langfuse trace if enabled
-        trace_context = None
+        # Logfire instrumentation automatically creates traces for OpenAI Agents
+        # Get the current trace ID from Langfuse for feedback correlation
+        trace_id = None
         if self.enable_langfuse and self.langfuse:
             try:
-                # Use start_span for creating a trace (root span)
-                trace_context = self.langfuse.start_span(
-                    name="dr_opa_query",
-                    trace_id=trace_id,  # This becomes the trace ID
-                    input={
-                        "query": user_input[:200],
-                        "session_id": session_id,
-                        "user_id": user_id
-                    },
-                    metadata={
-                        "agent": "Dr. OPA",
-                        "mode": "non-streaming"
-                    },
-                    tags=["dr-opa", "non-streaming", "mcp"]
-                )
+                trace_id = self.langfuse.get_current_trace_id()
+                logger.debug(f"Got Langfuse trace ID: {trace_id}")
             except Exception as e:
-                logger.warning(f"Failed to start Langfuse trace: {e}")
+                logger.debug(f"Could not get trace ID: {e}")
+                trace_id = str(uuid.uuid4())  # Fallback to UUID
         
         try:
             # Runner already imported above
@@ -874,22 +834,13 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
                 
                 logger.info(f"Query processed successfully. Response length: {len(result.final_output)}")
                 
-                # Update Langfuse trace if it was started
-                if trace_context:
+                # Logfire automatically handles trace completion
+                # Flush any pending Langfuse events
+                if self.enable_langfuse and self.langfuse:
                     try:
-                        trace_context.end(
-                            output=result.final_output[:1000],  # Truncate for storage
-                            metadata={
-                                "citations_count": len(unique_citations),
-                                "tool_calls_count": len(tool_calls),
-                                "response_length": len(result.final_output),
-                                "confidence": confidence,
-                                "highlights_count": len(highlights)
-                            }
-                        )
                         self.langfuse.flush()
                     except Exception as e:
-                        logger.warning(f"Failed to update Langfuse trace: {e}")
+                        logger.debug(f"Failed to flush Langfuse: {e}")
                 
                 # Return enhanced response with structured citations
                 return {
@@ -905,16 +856,7 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
         except Exception as e:
             logger.error(f"Error processing query: {e}")
             
-            # Log error to Langfuse if trace was started
-            if trace_context:
-                try:
-                    trace_context.end(
-                        level="ERROR",
-                        status_message=str(e)
-                    )
-                    self.langfuse.flush()
-                except:
-                    pass
+            # Logfire automatically handles error tracing
             
             error_response = self._create_error_response(str(e), user_input)
             return {

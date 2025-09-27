@@ -12,6 +12,7 @@ class Citation(BaseModel):
     source: str = Field(..., description="Source document name")
     loc: str = Field(..., description="Location reference (e.g., section, code)")
     page: Optional[int] = Field(None, description="Page number if available")
+    url: Optional[str] = Field(None, description="URL to the source document")
 
 
 class Highlight(BaseModel):

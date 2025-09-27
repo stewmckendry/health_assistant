@@ -61,11 +61,11 @@ logger = logging.getLogger(__name__)
 
 # Track request stats
 request_stats = {
-    "coverage.answer": 0,
-    "schedule.get": 0,
-    "adp.get": 0,
-    "odb.get": 0,
-    "source.passages": 0,
+    "coverage_answer": 0,
+    "schedule_get": 0,
+    "adp_get": 0,
+    "odb_get": 0,
+    "source_passages": 0,
     "errors": 0
 }
 
@@ -131,7 +131,7 @@ async def coverage_answer_handler(
         }
 
 
-@mcp.tool(name="schedule.get", description="OHIP Schedule of Benefits lookup with dual-path retrieval")
+@mcp.tool(name="schedule_get", description="OHIP Schedule of Benefits lookup with dual-path retrieval")
 async def schedule_get_handler(
     q: str,
     codes: list = None,
@@ -161,7 +161,7 @@ async def schedule_get_handler(
     }
     
     logger.debug(f"Request data: {json.dumps(request, indent=2)}")
-    request_stats["schedule.get"] += 1
+    request_stats["schedule_get"] += 1
     
     try:
         response = await schedule_get(request)
@@ -191,7 +191,7 @@ async def schedule_get_handler(
 
 
 @mcp.tool(
-    name="adp.get", 
+    name="adp_get", 
     description="""ADP (Assistive Devices Program) eligibility and funding lookup.
 
     Accepts EITHER natural language OR structured format:
@@ -253,7 +253,7 @@ async def adp_get_handler(
         }
     
     logger.debug(f"Request data: {json.dumps(request, indent=2)}")
-    request_stats["adp.get"] += 1
+    request_stats["adp_get"] += 1
     
     try:
         response = await adp_get(request)
@@ -283,7 +283,7 @@ async def adp_get_handler(
         }
 
 
-@mcp.tool(name="odb.get", description="ODB (Ontario Drug Benefit) formulary lookup")
+@mcp.tool(name="odb_get", description="ODB (Ontario Drug Benefit) formulary lookup")
 async def odb_get_handler(
     drug: str,
     check_alternatives: bool = True,
@@ -313,7 +313,7 @@ async def odb_get_handler(
     }
     
     logger.debug(f"Request data: {json.dumps(request, indent=2)}")
-    request_stats["odb.get"] += 1
+    request_stats["odb_get"] += 1
     
     try:
         response = await odb_get(request)

@@ -27,7 +27,7 @@ class SourceTool:
         """
         self.vector_client = vector_client or VectorClient(
             persist_directory="data/dr_off_agent/processed/dr_off/chroma",
-            timeout_ms=1000
+            timeout_ms=5000
         )
         logger.info("Source passages tool initialized")
     

@@ -50,7 +50,7 @@ class ADPTool:
             vector_client: Vector client instance (creates default if None)
         """
         self.sql_client = sql_client or SQLClient(db_path="data/ohip.db", timeout_ms=500)
-        self.vector_client = vector_client or VectorClient(persist_directory="data/dr_off_agent/processed/dr_off/chroma", timeout_ms=1000)
+        self.vector_client = vector_client or VectorClient(persist_directory="data/dr_off_agent/processed/dr_off/chroma", timeout_ms=5000)
         self.confidence_scorer = ConfidenceScorer()
         self.conflict_detector = ConflictDetector()
         
@@ -796,6 +796,22 @@ class ADPTool:
     
     def _extract_citations(self, vector_results: List[Dict[str, Any]]) -> List[Citation]:
         """Extract enhanced citations from vector search results using rich metadata."""
+        
+        # Mapping from adp_doc categories to actual PDF filenames
+        ADP_DOC_TO_FILENAME = {
+            "mobility": "moh-adp-policy-and-administration-manual-mobility-devices-2023-07-01.pdf",
+            "respiratory": "moh-adp-policy-and-administration-manual-respiratory-equipment-2024-11-08.pdf",
+            "comm_aids": "moh-adp-policy-and-administration-manual-communication-aids-2023-07-01.pdf",
+            "hearing_devices": "moh-adp-policy-and-administration-manual-hearing-devices-2023-07-01.pdf",
+            "glucose_monitoring": "moh-adp-policy-and-administration-manual-real-time-continuous-glucose-monitoring-systems-en-2025-08-05.pdf",
+            "visual_aids": "moh-adp-policy-and-administration-manual-visual-aids-2023-07-01.pdf",
+            "prosthesis": "moh-adp-policy-and-administration-manual-limb-prosthesis-2023-07-01.pdf",
+            "maxillofacial": "moh-adp-policy-and-administration-manual-maxillofacial-extraoral-2023-07-01.pdf",
+            "insulin_pump": "moh-adp-policy-and-administration-manual-insulin-pump-2023-07-01.pdf",
+            "grants": "moh-adp-policy-and-administration-manual-grants-2023-07-01.pdf",
+            "core_manual": "moh-adp-policies-and-procedures-manual-assistive-devices-program-2023-07-01.pdf"
+        }
+        
         citations = []
         seen = set()
         
@@ -807,24 +823,64 @@ class ADPTool:
             policy_uid = metadata.get("policy_uid", "")
             section_id = metadata.get("section_id", "")
             page_num = metadata.get("page_num")
+            source_document = metadata.get("source_document", "")  # Get actual filename if available
             
-            # Create meaningful source names
-            if "mobility" in adp_doc.lower():
-                source = "ADP Mobility Manual"
-            elif "comm" in adp_doc.lower():
-                source = "ADP Communication Aids Manual"
-            elif "core" in adp_doc.lower():
-                source = "ADP Core Manual"
+            # Construct URL using mapping or source_document
+            if source_document:
+                # Use provided source_document if available
+                import os
+                filename = os.path.basename(source_document)
+                url = f"https://files.ontario.ca/{filename}"
+            elif adp_doc in ADP_DOC_TO_FILENAME:
+                # Use mapping to get actual filename
+                filename = ADP_DOC_TO_FILENAME[adp_doc]
+                url = f"https://files.ontario.ca/{filename}"
             else:
-                source = f"ADP {adp_doc.title()}" if adp_doc else "ADP Manual"
+                # Fallback to ontario.ca if no specific file
+                url = "https://www.ontario.ca/page/assistive-devices-program"
+            
+            # Map database values to proper source names
+            if adp_doc == "mobility":
+                source = "ADP Mobility Devices Policy Manual"
+            elif adp_doc == "respiratory":
+                source = "ADP Respiratory Equipment Manual"
+            elif adp_doc == "comm_aids":
+                source = "ADP Communication Aids Manual"
+            elif adp_doc == "hearing_devices":
+                source = "ADP Hearing Devices Manual"
+            elif adp_doc == "glucose_monitoring":
+                source = "ADP Real-Time Continuous Glucose Monitoring Manual"
+            elif adp_doc == "visual_aids":
+                source = "ADP Visual Aids Manual"
+            elif adp_doc == "prosthesis":
+                source = "ADP Limb Prostheses Manual"
+            elif adp_doc == "maxillofacial":
+                source = "ADP Maxillofacial Prostheses Manual"
+            elif adp_doc == "insulin_pump":
+                source = "ADP Insulin Pump Manual"
+            elif adp_doc == "grants":
+                source = "ADP Grants Manual"
+            elif adp_doc == "core_manual":
+                source = "ADP Core Policies and Procedures Manual"
+            else:
+                # Fallback for any other values
+                source = f"ADP {adp_doc.replace('_', ' ').title()}" if adp_doc else "ADP Policy Manual"
             
             # Create meaningful location reference
+            loc_parts = []
             if policy_uid:
-                loc = policy_uid
+                loc_parts.append(policy_uid)
             elif section_id:
-                loc = f"Section {section_id}"
+                loc_parts.append(f"Section {section_id}")
             else:
-                loc = metadata.get("section_ref", metadata.get("section", ""))
+                section_ref = metadata.get("section_ref", metadata.get("section", ""))
+                if section_ref:
+                    loc_parts.append(section_ref)
+            
+            if page_num:
+                loc_parts.append(f"page {page_num}")
+            
+            loc = ", ".join(loc_parts) if loc_parts else "General Reference"
             
             # Create unique key to avoid duplicates
             key = f"{source}:{loc}:{page_num}"
@@ -833,7 +889,8 @@ class ADPTool:
                 citations.append(Citation(
                     source=source,
                     loc=loc,
-                    page=page_num
+                    page=page_num,
+                    url=url
                 ))
         
         return citations

@@ -74,6 +74,14 @@ except ImportError as e:
     print(f"Warning: Dr. OPA endpoint not available: {e}")
     DR_OPA_AVAILABLE = False
 
+# Import Dr. OFF endpoint (conditionally)
+try:
+    from src.web.api.dr_off_endpoint import register_dr_off_endpoint
+    DR_OFF_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Dr. OFF endpoint not available: {e}")
+    DR_OFF_AVAILABLE = False
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Health Assistant API",
@@ -161,6 +169,10 @@ if AGENT_97_AVAILABLE:
 # Register Dr. OPA endpoint (if available)
 if DR_OPA_AVAILABLE:
     register_dr_opa_endpoint(app)
+
+# Register Dr. OFF endpoint (if available)
+if DR_OFF_AVAILABLE:
+    register_dr_off_endpoint(app)
 
 
 # Request/Response models

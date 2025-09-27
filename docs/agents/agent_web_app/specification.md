@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Agent Web App is a Next.js-based interface for interacting with Ontario clinical AI agents. It provides a unified platform for healthcare clinicians to access specialized AI assistants including Dr. OPA (Ontario Practice Advice) and Agent 97 (Medical Education), with support for streaming responses, multi-turn conversations, and comprehensive citation tracking.
+The Agent Web App is a Next.js-based interface for interacting with Ontario clinical AI agents. It provides a unified platform for healthcare clinicians to access specialized AI assistants including Dr. OPA (Ontario Practice Advice), Agent 97 (Medical Education), and Dr. OFF (Ontario Finance & Formulary), with support for streaming responses, multi-turn conversations, and comprehensive citation tracking.
 
 ## Architecture
 
@@ -217,6 +217,24 @@ interface AgentAdapter {
 - **Streaming**: Native SSE support with event transformation
 - **Frontend Component**: `AgentMessage.tsx` with inline citations/tools
 
+### 4. Dr. OFF Integration
+
+**Adapter**: `/web/lib/agents/adapters/dr-off.ts`
+
+**Features:**
+- **MCP Tools**: OHIP schedule lookup, ODB formulary, ADP eligibility
+- **Natural Language**: Supports conversational queries for all tools
+- **Cost Optimization**: Generic alternatives and coverage guidance
+- **Billing Support**: OHIP codes, fees, and requirements
+
+**MCP Command**: `python -m src.agents.dr_off_agent.openai_agent`
+
+**Architecture:**
+- **Endpoint**: `src/web/api/dr_off_endpoint.py`
+- **Core Implementation**: `src/agents/dr_off_agent/openai_agent.py`
+- **MCP Server**: `src/agents/dr_off_agent/mcp/server.py` on port 8002
+- **Tools**: schedule_get, odb_get, adp_get with NLP support
+
 ## API Specifications
 
 ### Query Endpoint
@@ -265,6 +283,9 @@ interface AgentAdapter {
 - `POST /api/agents/dr-opa/stream` - Dr. OPA streaming responses
 - `POST /api/agents/agent-97/stream` - Agent 97 streaming via PatientAssistant
 - `POST /api/agents/agent-97/query` - Agent 97 non-streaming endpoint
+- `POST /api/agents/dr-off/stream` - Dr. OFF streaming responses  
+- `POST /api/agents/dr-off/query` - Dr. OFF non-streaming endpoint
+- `GET /api/agents/dr-off/health` - Dr. OFF health check
 - `POST /api/agents/triage/stream` - Triage agent streaming (when available)
 
 **Integration Pattern**:

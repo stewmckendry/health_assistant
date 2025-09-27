@@ -188,7 +188,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
     description: 'Ontario Finance & Formulary guidance',
     fullDescription: 'AI assistant specialized in Ontario drug formulary, OHIP billing, and healthcare financing guidance for clinicians.',
     mission: 'To provide comprehensive guidance on Ontario drug coverage, OHIP billing codes, ADP eligibility, and healthcare financing for optimal patient care and practice management.',
-    status: 'coming-soon',
+    status: 'active',
     icon: '💊',
     color: '#8b5cf6', // violet-500
     endpoint: '/api/agents/dr-off',
