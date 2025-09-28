@@ -354,9 +354,9 @@ def startup_message():
 if __name__ == "__main__":
     startup_message()
     
-    # Run the MCP server
+    # Run the MCP server (synchronous)
     try:
-        asyncio.run(mcp.run())
+        mcp.run()
     except KeyboardInterrupt:
         logger.info("Server shutdown requested")
     except Exception as e:

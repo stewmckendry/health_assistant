@@ -850,6 +850,26 @@ Please try:
 3. Checking back in a few minutes
 
 Technical details: {error_message}"""
+    
+    def get_agent(self, mcp_server=None):
+        """
+        Get the OpenAI Agent instance for use as a tool in orchestrators.
+        
+        Args:
+            mcp_server: The active MCP server context (from async with statement)
+                       If None, will use self.mcp_server
+        
+        Returns:
+            Agent instance configured with Dr. OFF's instructions and MCP tools
+        """
+        server = mcp_server if mcp_server is not None else self.mcp_server
+        
+        return Agent(
+            name="Dr. OFF",
+            instructions=self._get_system_instructions(),
+            model="gpt-4o-mini",
+            mcp_servers=[server] if server else []
+        )
 
 
 async def create_dr_off_agent(mcp_server_command: list = None) -> DrOffAgent:

@@ -252,6 +252,73 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
     ],
     disclaimer: 'Coverage information is subject to change. Always verify current coverage criteria and patient eligibility with official sources before prescribing or billing.',
     launchDate: '2025-02'
+  },
+
+  'orchestrator': {
+    id: 'orchestrator',
+    name: 'The Chief',
+    description: 'Chief Clinical Intelligence - Orchestrates specialist agents like a Chief Medical Officer',
+    fullDescription: 'Advanced AI orchestrator inspired by Microsoft\'s MAI-DxO approach and named after chief roles in medicine. Like a Chief Medical Officer coordinating specialists, The Chief intelligently routes clinical queries to Dr. OPA, Dr. OFF, and Agent 97 for comprehensive guidance.',
+    mission: 'To serve as the Chief Clinical Intelligence Orchestrator, providing comprehensive clinical guidance by intelligently coordinating between specialist agents, synthesizing their expertise for complex medical scenarios requiring multiple domains of knowledge.',
+    status: 'active',
+    icon: '🧠',
+    color: '#f59e0b', // amber-500
+    endpoint: '/api/agents/orchestrator',
+    tools: [
+      {
+        name: 'dr_opa',
+        description: 'Consult Dr. OPA for practice guidance and regulations',
+        category: 'orchestration'
+      },
+      {
+        name: 'dr_off',
+        description: 'Consult Dr. OFF for financing and coverage',
+        category: 'orchestration'
+      },
+      {
+        name: 'agent_97',
+        description: 'Consult Agent 97 for medical education',
+        category: 'orchestration'
+      }
+    ],
+    knowledgeSources: [
+      {
+        name: 'Dr. OPA Knowledge Base',
+        organization: 'CPSO, Ontario Health, PHO, CEP',
+        type: 'regulatory',
+        description: 'Access to all Dr. OPA sources'
+      },
+      {
+        name: 'Dr. OFF Knowledge Base',
+        organization: 'Ontario Ministry of Health',
+        type: 'financial',
+        description: 'Access to all Dr. OFF sources'
+      },
+      {
+        name: 'Agent 97 Knowledge Base',
+        organization: '97 Trusted Medical Sources',
+        type: 'educational',
+        description: 'Access to all Agent 97 sources'
+      }
+    ],
+    capabilities: [
+      'Intelligent query routing',
+      'Multi-agent coordination',
+      'Response synthesis',
+      'Complex scenario handling',
+      'Cross-domain expertise',
+      'Parallel agent consultation',
+      'Conflict resolution',
+      'Citation aggregation'
+    ],
+    limitations: [
+      'Dependent on sub-agent availability',
+      'May take longer for complex queries',
+      'Educational purposes only',
+      'Not for emergency decisions'
+    ],
+    disclaimer: 'The Chief coordinates multiple AI specialist agents to provide comprehensive guidance, similar to how a Chief Medical Officer coordinates specialist consultations. All information is for educational purposes only. Always verify with official sources and use clinical judgment.',
+    launchDate: '2025-02'
   }
 };
 

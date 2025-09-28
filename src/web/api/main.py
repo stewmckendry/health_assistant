@@ -82,6 +82,14 @@ except ImportError as e:
     print(f"Warning: Dr. OFF endpoint not available: {e}")
     DR_OFF_AVAILABLE = False
 
+# Import Clinical Intelligence Orchestrator endpoint (conditionally)
+try:
+    from src.web.api.orchestrator_endpoint import register_orchestrator_endpoint
+    ORCHESTRATOR_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Clinical Intelligence Orchestrator endpoint not available: {e}")
+    ORCHESTRATOR_AVAILABLE = False
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Health Assistant API",
@@ -173,6 +181,10 @@ if DR_OPA_AVAILABLE:
 # Register Dr. OFF endpoint (if available)
 if DR_OFF_AVAILABLE:
     register_dr_off_endpoint(app)
+
+# Register Clinical Intelligence Orchestrator endpoint (if available)
+if ORCHESTRATOR_AVAILABLE:
+    register_orchestrator_endpoint(app)
 
 
 # Request/Response models
