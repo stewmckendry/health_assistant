@@ -331,8 +331,13 @@ class DrOffAgent:
         if self.enable_langfuse:
             try:
                 # Apply nest_asyncio for notebook/async compatibility
+                # Skip if running under uvloop (FastAPI/uvicorn)
                 if nest_asyncio:
-                    nest_asyncio.apply()
+                    import asyncio
+                    loop = asyncio.get_event_loop()
+                    # Only apply nest_asyncio if not using uvloop
+                    if not loop.__class__.__module__.startswith('uvloop'):
+                        nest_asyncio.apply()
                 
                 # Configure logfire for OpenAI Agents instrumentation
                 # This automatically sends traces to Langfuse via OTLP
@@ -487,16 +492,9 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
         """
         logger.info(f"Processing streaming query: {user_input[:100]}...")
         
-        # Logfire instrumentation automatically creates traces for OpenAI Agents
-        # Get the current trace ID from Langfuse for feedback correlation
-        trace_id = None
-        if self.enable_langfuse and self.langfuse:
-            try:
-                trace_id = self.langfuse.get_current_trace_id()
-                logger.debug(f"Got Langfuse trace ID: {trace_id}")
-            except Exception as e:
-                logger.debug(f"Could not get trace ID: {e}")
-                trace_id = str(uuid.uuid4())  # Fallback to UUID
+        # Generate a trace ID upfront for fallback
+        fallback_trace_id = str(uuid.uuid4())
+        trace_id = fallback_trace_id
         
         try:
             from openai.types.responses import ResponseTextDeltaEvent
@@ -520,7 +518,29 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                     mcp_servers=[server]
                 )
                 
-                # Use run_streamed for streaming response with session
+                # Create Langfuse trace if enabled
+                langfuse_span = None
+                if self.enable_langfuse and self.langfuse:
+                    # Create a new trace ID and update the current trace
+                    trace_id = self.langfuse.create_trace_id()
+                    self.langfuse.update_current_trace(
+                        user_id=user_id,
+                        session_id=session_id,
+                        metadata={
+                            "agent": "dr_off",
+                            "model": "gpt-4o-mini",
+                            "trace_id": trace_id
+                        },
+                        tags=["dr_off", "streaming"]
+                    )
+                    # Start a span for this query
+                    langfuse_span = self.langfuse.start_span(
+                        name="dr_off_query_stream",
+                        input={"query": user_input}
+                    )
+                    logger.debug(f"Created Langfuse trace: {trace_id}")
+                
+                # Run the agent
                 result = Runner.run_streamed(
                     starting_agent=agent,
                     input=user_input,
@@ -565,6 +585,14 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                                 'arguments': str(tool_args)
                             }
                             tool_calls.append(tool_call_data)
+                            
+                            # Log tool call to Langfuse
+                            if self.enable_langfuse and self.langfuse:
+                                self.langfuse.start_span(
+                                    name=f"tool_call_{tool_name}",
+                                    input={"arguments": tool_args}
+                                )
+                            
                             yield {
                                 'type': 'tool_call',
                                 'content': tool_call_data
@@ -615,6 +643,17 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                                 except Exception as e:
                                     logger.info(f"Failed to parse tool output as JSON: {e}")
                 
+                # Update Langfuse span with final output
+                if langfuse_span:
+                    langfuse_span.update(
+                        output={
+                            "response": accumulated_text,
+                            "tool_calls": tool_calls,
+                            "citations": all_citations
+                        }
+                    )
+                    langfuse_span.end()
+                
                 # Send final completion event with trace_id
                 yield {
                     'type': 'complete',
@@ -626,7 +665,6 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                     }
                 }
                 
-                # Logfire automatically handles trace completion
                 # Flush any pending Langfuse events
                 if self.enable_langfuse and self.langfuse:
                     try:
@@ -654,16 +692,9 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
         """
         logger.info(f"Processing query: {user_input[:100]}...")
         
-        # Logfire instrumentation automatically creates traces for OpenAI Agents
-        # Get the current trace ID from Langfuse for feedback correlation
-        trace_id = None
-        if self.enable_langfuse and self.langfuse:
-            try:
-                trace_id = self.langfuse.get_current_trace_id()
-                logger.debug(f"Got Langfuse trace ID: {trace_id}")
-            except Exception as e:
-                logger.debug(f"Could not get trace ID: {e}")
-                trace_id = str(uuid.uuid4())  # Fallback to UUID
+        # Generate a trace ID upfront for fallback
+        fallback_trace_id = str(uuid.uuid4())
+        trace_id = fallback_trace_id
         
         try:
             # Create session if session_id provided
@@ -685,7 +716,29 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                     mcp_servers=[server]
                 )
                 
-                # Run the agent with the user input and session
+                # Create Langfuse trace if enabled
+                langfuse_span = None
+                if self.enable_langfuse and self.langfuse:
+                    # Create a new trace ID and update the current trace
+                    trace_id = self.langfuse.create_trace_id()
+                    self.langfuse.update_current_trace(
+                        user_id=user_id,
+                        session_id=session_id,
+                        metadata={
+                            "agent": "dr_off",
+                            "model": "gpt-4o-mini",
+                            "trace_id": trace_id
+                        },
+                        tags=["dr_off", "non-streaming"]
+                    )
+                    # Start a span for this query
+                    langfuse_span = self.langfuse.start_span(
+                        name="dr_off_query",
+                        input={"query": user_input}
+                    )
+                    logger.debug(f"Created Langfuse trace: {trace_id}")
+                
+                # Run the agent
                 result = await Runner.run(
                     starting_agent=agent,
                     input=user_input,
@@ -729,7 +782,25 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                 
                 logger.info(f"Query processed successfully. Response length: {len(result.final_output)}")
                 
-                # Logfire automatically handles trace completion
+                # Log tool calls to Langfuse
+                if self.enable_langfuse and self.langfuse:
+                    for tool_call in tool_calls:
+                        self.langfuse.start_span(
+                            name=f"tool_call_{tool_call['name']}",
+                            input={"arguments": tool_call['arguments']}
+                        )
+                
+                # Update span with output
+                if langfuse_span:
+                    langfuse_span.update(
+                        output={
+                            "response": result.final_output,
+                            "tool_calls": tool_calls,
+                            "citations": unique_citations
+                        }
+                    )
+                    langfuse_span.end()
+                
                 # Flush any pending Langfuse events
                 if self.enable_langfuse and self.langfuse:
                     try:
