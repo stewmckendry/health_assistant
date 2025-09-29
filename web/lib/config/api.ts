@@ -4,7 +4,7 @@
 
 export const getApiUrl = () => {
   // Use environment variable or fallback to localhost for development
-  return process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || 'http://localhost:8000';
+  return process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || 'http://localhost:8000';
 };
 
 export const getApiEndpoint = (path: string) => {
