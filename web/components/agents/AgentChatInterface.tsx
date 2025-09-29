@@ -535,70 +535,7 @@ What Ontario healthcare question can I help you with today?`;
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
             <div className="relative flex items-center justify-between px-6 py-4">
               <div className="flex items-center gap-4">
-                {/* Agent Switcher Dropdown */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="flex items-center gap-3 p-2 hover:bg-blue-50 rounded-xl">
-                      <div className="p-2 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg shadow-sm">
-                        <span className="text-2xl block" role="img" aria-label={agent.name}>
-                          {agent.icon}
-                        </span>
-                      </div>
-                      <div className="text-left">
-                        <div className="flex items-center gap-3">
-                          <h3 className="text-lg font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{agent.name}</h3>
-                          <div className="p-1.5 bg-blue-100 rounded-full">
-                            <ChevronDown className="h-4 w-4 text-blue-600" />
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-500">{agent.description}</p>
-                      </div>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" className="w-80 p-2">
-                    <div className="flex items-center gap-2 px-2 py-2 mb-2">
-                      <ArrowUpDown className="h-4 w-4 text-gray-400" />
-                      <span className="text-sm font-semibold text-gray-700">Switch Agent</span>
-                    </div>
-                    {availableAgents.map((availableAgent) => (
-                      <DropdownMenuItem
-                        key={availableAgent.id}
-                        onClick={() => onAgentSwitch?.(availableAgent.id)}
-                        className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-blue-50 focus:bg-blue-50"
-                        disabled={availableAgent.id === agent.id}
-                      >
-                        <div className={`p-2 rounded-lg shadow-sm ${
-                          availableAgent.id === agent.id 
-                            ? 'bg-gradient-to-br from-blue-100 to-cyan-100'
-                            : 'bg-gray-100'
-                        }`}>
-                          <span className="text-xl block" role="img" aria-label={availableAgent.name}>
-                            {availableAgent.icon}
-                          </span>
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className={`font-semibold ${
-                              availableAgent.id === agent.id ? 'text-blue-600' : 'text-gray-900'
-                            }`}>
-                              {availableAgent.name}
-                            </span>
-                            {availableAgent.id === agent.id && (
-                              <Badge className="bg-blue-100 text-blue-700 text-xs">
-                                Current
-                              </Badge>
-                            )}
-                          </div>
-                          <p className="text-xs text-gray-500 mt-0.5">
-                            {availableAgent.tagline || availableAgent.description}
-                          </p>
-                        </div>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                
-                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-md px-3 py-1">
+                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-md px-4 py-2">
                   <span className="inline-block w-2 h-2 bg-white rounded-full mr-2 animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
                   Online
                 </Badge>
