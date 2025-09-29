@@ -195,10 +195,15 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFee
           className={cn(
             'p-4 overflow-hidden',
             isUser
-              ? 'bg-muted/50 border-muted'
-              : 'bg-white shadow-sm border-gray-200',
+              ? 'bg-muted/50 border-muted text-black'
+              : 'bg-white shadow-sm border-gray-200 text-black',
             isError && 'border-destructive'
           )}
+          style={{
+            /* Force text color in Chrome dark mode */
+            color: '#000000',
+            backgroundColor: isUser ? undefined : '#ffffff',
+          }}
         >
           {/* Agent name for assistant messages */}
           {!isUser && agentName && (

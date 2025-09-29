@@ -534,7 +534,14 @@ What Ontario healthcare question can I help you with today?`;
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-16rem)] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+    <div 
+      className="flex flex-col h-[calc(100vh-16rem)] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+      style={{
+        /* Force white background in Chrome dark mode */
+        backgroundColor: '#ffffff',
+        color: '#000000',
+      }}
+    >
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col min-w-0 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden">
         {/* Enhanced Fixed header bar */}
@@ -646,6 +653,11 @@ What Ontario healthcare question can I help you with today?`;
                   : `Ask ${agent.name} anything...`}
                 disabled={isStreaming}
                 className="flex-1 h-12 px-4 pr-12 bg-white border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all text-gray-700 placeholder:text-gray-400"
+                style={{
+                  /* Force colors in Chrome dark mode */
+                  backgroundColor: '#ffffff',
+                  color: '#374151',
+                }}
               />
               {isStreaming && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2">

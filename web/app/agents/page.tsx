@@ -27,17 +27,11 @@ export default function AgentsPage() {
   // Agent selection grid
   return (
     <div 
-      className="min-h-screen agents-page-container"
+      className="min-h-screen bg-background"
       style={{
         /* Use background-image to bypass Chrome dark mode */
         backgroundImage: 'linear-gradient(to bottom right, #f8fafc, #f0f9ff, #ecfeff)',
         backgroundColor: '#ffffff',
-        minHeight: '100vh',
-        width: '100%',
-        position: 'relative',
-        /* Ensure no transform scaling */
-        transform: 'none',
-        transformOrigin: 'top left',
       }}
     >
       {/* Enhanced Header with vibrant gradient background */}
@@ -140,7 +134,7 @@ export default function AgentsPage() {
                 {/* Enhanced top section with animated icon */}
                 <div className="flex items-start gap-5 mb-5">
                   <div className="p-4 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl group-hover:from-blue-200 group-hover:to-cyan-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    <span className="text-4xl block">{agent.icon}</span>
+                    <span className="text-2xl block">{agent.icon}</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -149,7 +143,7 @@ export default function AgentsPage() {
                         <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold rounded-full shadow-md">ORCHESTRATOR</span>
                       )}
                     </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-cyan-600 transition-all duration-300">
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-cyan-600 transition-all duration-300">
                       {agent.name}
                     </h3>
                     <p className="text-sm text-gray-500 mt-1 font-medium">
@@ -212,7 +206,7 @@ export default function AgentsPage() {
                     <div className="flex items-center gap-2 mb-2">
                       <span className="px-3 py-1 bg-gray-300 text-gray-600 text-xs font-bold rounded-full">COMING SOON</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-600">
+                    <h3 className="text-lg font-bold text-gray-600">
                       {agent.name}
                     </h3>
                     {agent.tagline && (

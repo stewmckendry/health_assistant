@@ -80,21 +80,7 @@ div[class*="agent"] {
   width: 100% !important;
 }
 
-/* Scale control for very large screens */
-@media screen and (min-width: 1920px) {
-  .agents-page-container {
-    /* Scale down content on very large screens */
-    transform: scale(0.9) !important;
-    transform-origin: top center !important;
-  }
-}
-
-/* Normal scaling for standard screens */
-@media screen and (max-width: 1919px) {
-  .agents-page-container {
-    transform: none !important;
-  }
-}
+/* No scaling - let content be natural size */
 
 /* 2. Dark mode fixes for Chrome black background */
 @media (prefers-color-scheme: dark) {
