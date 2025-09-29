@@ -699,12 +699,33 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
                             
                             if hasattr(event.item, 'raw_item'):
                                 raw_item = event.item.raw_item
-                                if hasattr(raw_item, 'function'):
+                                
+                                # Handle WebSearchTool which has type 'web_search_call'
+                                if hasattr(raw_item, 'type') and raw_item.type == 'web_search_call':
+                                    tool_name = 'web_search'
+                                    # Extract query from action if available
+                                    if hasattr(raw_item, 'action') and hasattr(raw_item.action, 'query'):
+                                        tool_args = f'{{"query": "{raw_item.action.query}"}}'
+                                    else:
+                                        tool_args = ''
+                                # Standard function calls (MCP tools)
+                                elif hasattr(raw_item, 'function'):
                                     tool_name = raw_item.function.name
                                     tool_args = raw_item.function.arguments
                                 elif hasattr(raw_item, 'name'):
                                     tool_name = raw_item.name
                                     tool_args = str(getattr(raw_item, 'arguments', ''))
+                                elif isinstance(raw_item, dict):
+                                    # Sometimes raw_item is a dict
+                                    if 'type' in raw_item and raw_item['type'] == 'web_search_call':
+                                        tool_name = 'web_search'
+                                        tool_args = ''
+                                    elif 'function' in raw_item:
+                                        tool_name = raw_item['function'].get('name', 'unknown')
+                                        tool_args = raw_item['function'].get('arguments', '')
+                                    elif 'name' in raw_item:
+                                        tool_name = raw_item['name']
+                                        tool_args = str(raw_item.get('arguments', ''))
                             
                             tool_call_data = {
                                 'name': tool_name,
