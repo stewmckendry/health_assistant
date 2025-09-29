@@ -39,3 +39,4 @@ chromadb>=0.4.15
 # MCP SDKs (if available as packages)
 # ref-tools
 # exa-py
+fastmcp>=0.1.0  # FastMCP for MCP server implementation

@@ -13,7 +13,8 @@ project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Import the main server module
-from src.agents.dr_opa_agent.mcp.server import mcp, logger, SESSION_ID, write_session_summary
+# Use relative import since we're in the same package
+from .server import mcp, logger, SESSION_ID, write_session_summary
 
 async def run_http_server():
     """Run the MCP server in HTTP mode for Railway deployment"""

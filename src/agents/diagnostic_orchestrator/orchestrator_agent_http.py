@@ -25,19 +25,19 @@ finally:
     sys.path = original_path
 
 # Import base components
-from src.agents.diagnostic_orchestrator.orchestrator_agent import ClinicalIntelligenceOrchestrator
+from src.agents.diagnostic_orchestrator.orchestrator_agent import DiagnosticOrchestrator
 
 # Use HTTP versions of the sub-agents on Railway
 if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
     from src.agents.dr_opa_agent.openai_agent_http import DrOpaAgentHTTP as DrOpaAgent
     from src.agents.dr_off_agent.openai_agent_http import DrOffAgentHTTP as DrOffAgent
 else:
-    from src.agents.dr_opa_agent.openai_agent import DrOpaAgent
+    from src.agents.dr_opa_agent.openai_agent import DrOPAAgent as DrOpaAgent
     from src.agents.dr_off_agent.openai_agent import DrOffAgent
 
 logger = logging.getLogger(__name__)
 
-class ClinicalIntelligenceOrchestratorHTTP(ClinicalIntelligenceOrchestrator):
+class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
     """Orchestrator that can use either stdio or HTTP MCP servers"""
     
     async def initialize(self):

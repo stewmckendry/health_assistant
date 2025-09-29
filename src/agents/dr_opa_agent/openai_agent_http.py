@@ -25,11 +25,11 @@ finally:
     sys.path = original_path
 
 # Import the base agent
-from src.agents.dr_opa_agent.openai_agent import DrOpaAgent
+from src.agents.dr_opa_agent.openai_agent import DrOPAAgent
 
 logger = logging.getLogger(__name__)
 
-class DrOpaAgentHTTP(DrOpaAgent):
+class DrOpaAgentHTTP(DrOPAAgent):
     """Dr. OPA Agent that can use either stdio or HTTP MCP servers"""
     
     def __init__(self, session_id: Optional[str] = None):
