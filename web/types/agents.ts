@@ -13,6 +13,7 @@ export type AgentStatus = 'active' | 'coming-soon' | 'beta' | 'maintenance';
 export interface AgentInfo {
   id: string;
   name: string;
+  tagline?: string;
   description: string;
   fullDescription: string;
   mission: string;
@@ -26,6 +27,7 @@ export interface AgentInfo {
   limitations: string[];
   disclaimer?: string;
   launchDate?: string;
+  starterPrompts?: string[];
 }
 
 /**

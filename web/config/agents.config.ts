@@ -8,6 +8,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
   'dr-opa': {
     id: 'dr-opa',
     name: 'Dr. OPA',
+    tagline: 'Ontario Practice Advisor - CPSO Policies, Ontario Health Programs',
     description: 'Ontario Practice Advice - Regulatory and clinical guidance',
     fullDescription: 'AI assistant providing Ontario-specific primary care and practice guidance from trusted healthcare authorities.',
     mission: 'To provide accurate, current practice guidance from Ontario healthcare authorities including CPSO policies, Ontario Health programs, PHO infection control, and CEP clinical tools.',
@@ -91,12 +92,19 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'Requires verification with official sources',
       'Does not replace professional judgment'
     ],
-    disclaimer: 'This tool provides Ontario practice guidance based on official sources. Always verify critical information with the original source documents and use clinical judgment.'
+    disclaimer: 'This tool provides Ontario practice guidance based on official sources. Always verify critical information with the original source documents and use clinical judgment.',
+    starterPrompts: [
+      'What are the CPSO requirements for virtual care documentation?',
+      'Is there an Ontario screening program for colorectal cancer?',
+      'What are PHO best practices for instrument sterilization?',
+      'How do I register for ONE ID and OLIS access?'
+    ]
   },
   
   'agent-97': {
     id: 'agent-97',
     name: 'Agent 97',
+    tagline: 'Medical Education Assistant - 97 Trusted Healthcare Sources',
     description: 'Explains medical terms in plain language using trusted sources',
     fullDescription: 'AI-powered medical education assistant that helps you understand health information by explaining medical terms and concepts in plain, accessible language.',
     mission: 'To help patients and the public understand medical information by translating complex medical terms into plain language, providing educational context from 97 trusted medical sources with proper citations.',
@@ -179,12 +187,19 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'Not for emergencies',
       'Requires professional consultation'
     ],
-    disclaimer: 'This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider.'
+    disclaimer: 'This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider.',
+    starterPrompts: [
+      'What are the symptoms of Type 2 diabetes?',
+      'Explain how blood pressure medications work',
+      'What lifestyle changes help with high cholesterol?',
+      'What should I know about COVID-19 vaccines?'
+    ]
   },
   
   'dr-off': {
     id: 'dr-off',
     name: 'Dr. OFF',
+    tagline: 'Ontario Finance & Formulary Assistant - OHIP, ODB, ADP Coverage',
     description: 'Ontario Finance & Formulary guidance',
     fullDescription: 'AI assistant specialized in Ontario drug formulary, OHIP billing, and healthcare financing guidance for clinicians.',
     mission: 'To provide comprehensive guidance on Ontario drug coverage, OHIP billing codes, ADP eligibility, and healthcare financing for optimal patient care and practice management.',
@@ -251,15 +266,22 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'Not for private insurance'
     ],
     disclaimer: 'Coverage information is subject to change. Always verify current coverage criteria and patient eligibility with official sources before prescribing or billing.',
-    launchDate: '2025-02'
+    launchDate: '2025-02',
+    starterPrompts: [
+      'What OHIP codes can I bill for a diabetes follow-up?',
+      'Is Ozempic covered by ODB for weight loss?',
+      'Can my patient get ADP funding for a CPAP machine?',
+      'What are the generic alternatives to Januvia?'
+    ]
   },
 
   'orchestrator': {
     id: 'orchestrator',
     name: 'The Chief',
-    description: 'Chief Clinical Intelligence - Orchestrates specialist agents like a Chief Medical Officer',
-    fullDescription: 'Advanced AI orchestrator inspired by Microsoft\'s MAI-DxO approach and named after chief roles in medicine. Like a Chief Medical Officer coordinating specialists, The Chief intelligently routes clinical queries to Dr. OPA, Dr. OFF, and Agent 97 for comprehensive guidance.',
-    mission: 'To serve as the Chief Clinical Intelligence Orchestrator, providing comprehensive clinical guidance by intelligently coordinating between specialist agents, synthesizing their expertise for complex medical scenarios requiring multiple domains of knowledge.',
+    tagline: 'Ontario Healthcare Coordinator - Unified Clinical & Administrative Guidance',
+    description: 'Ontario Medical Coordinator - Connects you to the right Ontario healthcare guidance',
+    fullDescription: 'Like a Chief Medical Officer directing cases to appropriate specialists, The Chief coordinates Ontario-specific medical guidance by intelligently routing queries to Dr. OPA (Ontario regulations), Dr. OFF (Ontario coverage), and Agent 97 (trusted medical education) for complete clinical answers.',
+    mission: 'To help Ontario clinicians get complete answers quickly by orchestrating Dr. OPA, Dr. OFF, and Agent 97 - connecting you to billing codes, drug coverage, practice policies, and clinical guidelines all in one place.',
     status: 'active',
     icon: '🧠',
     color: '#f59e0b', // amber-500
@@ -302,23 +324,29 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       }
     ],
     capabilities: [
-      'Intelligent query routing',
-      'Multi-agent coordination',
-      'Response synthesis',
-      'Complex scenario handling',
-      'Cross-domain expertise',
-      'Parallel agent consultation',
-      'Conflict resolution',
-      'Citation aggregation'
+      'Unified Ontario healthcare guidance',
+      'Combines OHIP billing with clinical best practices',
+      'Links drug coverage to treatment guidelines',
+      'Coordinates regulatory and financial advice',
+      'Synthesizes multiple Ontario-specific sources',
+      'Provides complete clinical-administrative answers',
+      'Reduces time searching multiple databases',
+      'Deduplicates overlapping information'
     ],
     limitations: [
-      'Dependent on sub-agent availability',
-      'May take longer for complex queries',
-      'Educational purposes only',
-      'Not for emergency decisions'
+      'Ontario-focused (OHIP, ODB, CPSO)',
+      'Educational guidance only',
+      'Not for emergency medical decisions',
+      'Requires verification with official sources'
     ],
-    disclaimer: 'The Chief coordinates multiple AI specialist agents to provide comprehensive guidance, similar to how a Chief Medical Officer coordinates specialist consultations. All information is for educational purposes only. Always verify with official sources and use clinical judgment.',
-    launchDate: '2025-02'
+    disclaimer: 'The Chief coordinates Ontario healthcare guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (medical education). Information is for educational purposes only. Always verify with official Ontario sources and use clinical judgment.',
+    launchDate: '2025-02',
+    starterPrompts: [
+      'Can I prescribe medical cannabis and how is it covered in Ontario?',
+      'What are the billing codes and clinical guidelines for managing hypertension?',
+      'How do I set up virtual care and what can I bill for it?',
+      'What diabetes medications are covered and what are the prescribing guidelines?'
+    ]
   }
 };
 

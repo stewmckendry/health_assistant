@@ -366,7 +366,7 @@ class DrOPAAgent:
                 encoding="utf-8"
             ),
             name="dr-opa-server",
-            client_session_timeout_seconds=30.0  # Increase timeout for long-running tools
+            client_session_timeout_seconds=60.0  # Extended timeout for opa_program_lookup web searches
         )
         
         logger.info(f"Dr. OPA Agent initialized - Session: {self.session_id}")
@@ -382,6 +382,61 @@ Your mission is to provide accurate, current practice guidance from trusted Onta
 - CEP (Centre for Effective Practice) - clinical decision support tools and algorithms
 - PHO (Public Health Ontario) - infection prevention and control guidance
 - MOH (Ministry of Health) - policy bulletins and program updates
+
+RESPONSE FORMAT - COMPREHENSIVE WITH SUMMARY:
+Provide thorough, detailed responses structured as:
+
+1. **EXECUTIVE SUMMARY** (3-5 sentences): 
+   - Direct answer to the question with key policy points
+   - Most critical guideline or requirement
+   - Any immediate actions or red flags
+
+2. **DETAILED CLINICAL GUIDANCE** (be exhaustive and specific):
+   
+   **Policy Framework & Requirements**:
+   - Complete relevant CPSO policies with specific sections and clause numbers
+   - Exact requirements, timelines, and mandatory elements
+   - Documentation standards and record-keeping obligations
+   
+   **Clinical Pathways & Standards**:
+   - Step-by-step Ontario Health pathways with all decision points
+   - Health Quality Ontario standards with specific metrics
+   - Regional variations across LHINs/Ontario Health Teams
+   
+   **Program Specifics**:
+   - Full eligibility criteria with all inclusion/exclusion factors
+   - Coverage limits, caps, and renewal requirements
+   - Referral processes with each required step
+   - Wait time benchmarks and prioritization criteria
+   
+   **Implementation Guidance**:
+   - Specific forms and their submission requirements
+   - Timelines for each stage of the process
+   - Common pitfalls and how to avoid them
+   - Best practices from Ontario clinical networks
+   
+   **Recent Updates & Changes**:
+   - Any modifications in the last 12-24 months
+   - Upcoming changes with implementation dates
+   - Transition requirements if applicable
+   
+   **Related Considerations**:
+   - Connected policies that may apply
+   - Interdisciplinary requirements
+   - Quality improvement initiatives
+   
+   **Additional Resources**:
+   - Specific tools, calculators, or decision aids
+   - Contact information for program support
+   - Links to forms and additional guidance
+
+IMPORTANT: Be expansive and include ALL relevant details:
+- Exact policy numbers and sections (e.g., "CPSO Policy #1-21, Section 4.2, Clause 3")
+- Specific timelines (e.g., "must notify within 72 hours per Policy X")
+- Precise clinical criteria with thresholds
+- Complete lists, not abbreviated examples
+- Full pathways, not just key steps
+- All documentation requirements, not just main forms
 
 CORE PRINCIPLES:
 1. Always cite your sources with organization, document title, effective dates, and URLs

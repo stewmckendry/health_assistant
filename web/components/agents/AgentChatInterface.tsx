@@ -14,7 +14,8 @@ import {
   RefreshCw,
   Sparkles,
   RotateCcw,
-  Plus
+  Plus,
+  MessageSquare
 } from 'lucide-react';
 import { AgentMessage } from './AgentMessage';
 
@@ -69,6 +70,14 @@ What would you like to understand better today?`;
 I can help you with OHIP billing codes and fee schedules, Ontario Drug Benefit (ODB) formulary coverage, Assistive Devices Program (ADP) eligibility, and finding generic alternatives for cost-effective prescribing.
 
 How can I assist with your coverage or billing questions today?`;
+        } else if (agent.id === 'orchestrator') {
+          welcomeContent = `Hello! I'm The Chief, your Ontario healthcare coordinator.
+
+I bring together guidance from Ontario's medical systems by coordinating three specialist agents: Dr. OPA for CPSO policies and Ontario Health programs, Dr. OFF for OHIP billing and drug coverage, and Agent 97 for medical education from trusted sources.
+
+I excel at complex questions that need both clinical and administrative answers - like "Can I prescribe this medication and is it covered?" or "What are the billing codes and clinical guidelines for diabetes management?"
+
+What Ontario healthcare question can I help you with today?`;
         } else {
           welcomeContent = `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`;
         }
@@ -89,14 +98,15 @@ How can I assist with your coverage or billing questions today?`;
     }
   };
 
-  const handleSendMessage = async () => {
-    if (!input.trim() || !sessionId || isStreaming) return;
+  const handleSendMessage = async (messageText?: string) => {
+    const textToSend = messageText || input.trim();
+    if (!textToSend || !sessionId || isStreaming) return;
 
     const userMessage: Message = {
       id: `user-${Date.now()}`,
       sessionId,
       role: 'user',
-      content: input.trim(),
+      content: textToSend,
       timestamp: new Date().toISOString(),
       toolCalls: [],
       citations: []
@@ -564,6 +574,29 @@ How can I assist with your coverage or billing questions today?`;
                   <RefreshCw className="h-4 w-4 mr-2" />
                   New Chat
                 </Button>
+              </div>
+            )}
+            
+            {/* Starter Prompts - Show only when there's just the welcome message */}
+            {messages.length === 1 && messages[0].role === 'assistant' && agent.starterPrompts && !isStreaming && (
+              <div className="mt-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <MessageSquare className="h-4 w-4 text-gray-400" />
+                  <span className="text-sm font-medium text-gray-600">Suggested questions</span>
+                </div>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {agent.starterPrompts.map((prompt, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSendMessage(prompt)}
+                      className="text-left p-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-200 group"
+                    >
+                      <p className="text-sm text-gray-700 group-hover:text-gray-900 leading-relaxed">
+                        {prompt}
+                      </p>
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
             

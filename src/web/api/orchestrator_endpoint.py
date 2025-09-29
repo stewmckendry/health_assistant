@@ -1,8 +1,9 @@
 """
-Clinical Intelligence Orchestrator Streaming Endpoint for FastAPI
+The Chief - Ontario Healthcare Coordinator Streaming Endpoint for FastAPI
 
-Provides intelligent orchestration between Dr. OPA, Dr. OFF, and Agent 97
-for comprehensive clinical guidance.
+Provides intelligent orchestration between Dr. OPA (Ontario regulations), 
+Dr. OFF (Ontario coverage), and Agent 97 (medical education) for 
+comprehensive Ontario-specific healthcare guidance.
 """
 
 import asyncio
@@ -43,24 +44,24 @@ async def get_orchestrator() -> DiagnosticOrchestrator:
     """Get or create the orchestrator instance."""
     global _orchestrator_instance
     if _orchestrator_instance is None:
-        logger.info("Creating new Clinical Intelligence Orchestrator instance...")
+        logger.info("Creating new Chief orchestrator instance...")
         _orchestrator_instance = await create_diagnostic_orchestrator()
-        logger.info("Clinical Intelligence Orchestrator initialized")
+        logger.info("The Chief orchestrator initialized")
     return _orchestrator_instance
 
 
 def register_orchestrator_endpoint(app: FastAPI):
-    """Register Clinical Intelligence Orchestrator endpoints with the FastAPI app."""
+    """Register The Chief orchestrator endpoints with the FastAPI app."""
     
     @app.post("/agents/orchestrator/stream")
     async def stream_orchestrator_response(request: OrchestratorStreamRequest):
         """
-        Stream responses from the Clinical Intelligence Orchestrator.
+        Stream responses from The Chief - Ontario Healthcare Coordinator.
         
-        The orchestrator intelligently routes queries to:
-        - Dr. OPA for practice guidance and regulations
-        - Dr. OFF for financing and coverage
-        - Agent 97 for medical education
+        The Chief intelligently routes queries to:
+        - Dr. OPA for Ontario regulations (CPSO, Ontario Health, PHO)
+        - Dr. OFF for Ontario coverage (OHIP, ODB, ADP)
+        - Agent 97 for medical education from 97 trusted sources
         """
         try:
             async def generate() -> AsyncGenerator[str, None]:
@@ -274,9 +275,9 @@ def register_orchestrator_endpoint(app: FastAPI):
     @app.post("/agents/orchestrator/query")
     async def query_orchestrator(request: OrchestratorQueryRequest):
         """
-        Non-streaming query endpoint for the Clinical Intelligence Orchestrator.
+        Non-streaming query endpoint for The Chief - Ontario Healthcare Coordinator.
         
-        Returns a complete response with all agent consultations synthesized.
+        Returns a unified response synthesizing guidance from Ontario-specific sources.
         """
         try:
             # Get orchestrator instance
@@ -309,17 +310,17 @@ def register_orchestrator_endpoint(app: FastAPI):
     @app.get("/agents/orchestrator/status")
     async def get_orchestrator_status():
         """
-        Get the status of the Clinical Intelligence Orchestrator.
+        Get the status of The Chief - Ontario Healthcare Coordinator.
         
-        Returns information about available agents and orchestrator health.
+        Returns information about available Ontario healthcare agents and system health.
         """
         try:
             # Check if orchestrator is initialized
             is_initialized = _orchestrator_instance is not None
             
             status = {
-                "orchestrator": "The Chief - Clinical Intelligence Orchestrator",
-                "description": "Intelligent orchestration between Dr. OPA, Dr. OFF, and Agent 97",
+                "orchestrator": "The Chief - Ontario Healthcare Coordinator",
+                "description": "Coordinates Ontario-specific guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (medical education)",
                 "status": "ready" if is_initialized else "not_initialized",
                 "initialized": is_initialized,
                 "available_agents": [
@@ -355,7 +356,7 @@ def register_orchestrator_endpoint(app: FastAPI):
         except Exception as e:
             logger.error(f"Error getting orchestrator status: {e}")
             return {
-                "orchestrator": "The Chief - Clinical Intelligence Orchestrator",
+                "orchestrator": "The Chief - Ontario Healthcare Coordinator",
                 "status": "error",
                 "error": str(e),
                 "timestamp": datetime.now().isoformat()

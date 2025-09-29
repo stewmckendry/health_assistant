@@ -91,9 +91,7 @@ export default function AgentChatPage() {
                 {agent.name}
               </h1>
               <p className="text-xs text-gray-500 hidden sm:block truncate">
-                {agent.id === 'dr-off' 
-                  ? 'Ontario Finance & Formulary Assistant - OHIP, ODB, ADP Coverage'
-                  : agent.tagline}
+                {agent.tagline || agent.description}
               </p>
             </div>
             
@@ -107,9 +105,9 @@ export default function AgentChatPage() {
           {/* Disclaimer Bar */}
           <div className="bg-amber-50 border-t border-amber-100 px-3 py-2">
             <p className="text-xs text-amber-800 text-center">
-              <span className="font-semibold">⚠️ Educational Use Only</span>
-              <span className="hidden sm:inline"> - Not for diagnosis or treatment. Consult healthcare providers for medical decisions.</span>
-              <span className="sm:hidden"> - Not for medical advice</span>
+              <span className="font-semibold">⚠️ Educational & Experimental Use Only</span>
+              <span className="hidden sm:inline"> - Not for diagnosis, treatment, or clinical decisions. Always consult healthcare providers and verify with official sources.</span>
+              <span className="sm:hidden"> - Not for clinical advice</span>
             </p>
           </div>
         </div>

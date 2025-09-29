@@ -193,8 +193,17 @@ export function AgentDetailCard({ agent, open, onClose, onStartChat }: AgentDeta
           </Tabs>
         </div>
 
+        {/* Disclaimer Notice */}
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-4">
+          <p className="text-xs text-amber-800 text-center">
+            <span className="font-semibold">⚠️ Educational & Experimental Use Only</span>
+            <span className="mx-2">•</span>
+            <span>Not for clinical decisions or patient care</span>
+          </p>
+        </div>
+
         {/* Action Buttons - Fixed at bottom */}
-        <div className="flex gap-3 pt-6 mt-auto border-t bg-white">
+        <div className="flex gap-3 pt-4 mt-auto border-t bg-white">
           <Button 
             onClick={() => onStartChat(agent.id)}
             className="flex-1 bg-blue-600 hover:bg-blue-700"
