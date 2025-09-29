@@ -11,8 +11,8 @@
 
 set -e  # Exit on any error
 
-echo "🩺 AI Health Assistant - Starting Application..."
-echo "================================================="
+echo "🩺 AI Health Assistant & Agents Platform - Starting Application..."
+echo "================================================================="
 
 # Colors for output
 RED='\033[0;31m'
@@ -63,6 +63,19 @@ trap cleanup INT TERM
 # =============================================================================
 
 print_status "Running pre-flight checks..."
+
+# Clean up any corrupted databases
+print_status "Checking database integrity..."
+for db in data/*_conversations.db; do
+    if [ -f "$db" ]; then
+        if ! sqlite3 "$db" "PRAGMA integrity_check;" >/dev/null 2>&1; then
+            print_warning "Corrupted database found: $db"
+            print_status "Removing corrupted database files..."
+            rm -f "$db" "${db}-shm" "${db}-wal"
+            print_success "Corrupted database removed, will be recreated on first use"
+        fi
+    fi
+done
 
 # Check if we're in the right directory
 if [ ! -f "pyproject.toml" ]; then
@@ -200,12 +213,17 @@ done
 # =============================================================================
 
 echo ""
-echo "🎉 AI Health Assistant is ready!"
-echo "================================="
+echo "🎉 AI Health Assistant & Agents Platform is ready!"
+echo "================================================="
 echo ""
 print_success "Backend API:  http://localhost:8000"
 print_success "Frontend App: http://localhost:3000"
 print_success "API Docs:     http://localhost:8000/docs"
+echo ""
+print_status "Available Agents:"
+echo "  • Dr. OPA - Ontario Practice Advice & Regulatory guidance"
+echo "  • Dr. OFF - Ontario Formulary & Funding expert"
+echo "  • The Chief - AI Orchestrator for complex queries"
 echo ""
 print_status "Application Features:"
 echo "  • Patient mode for general health education"
