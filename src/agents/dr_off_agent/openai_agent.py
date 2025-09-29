@@ -369,23 +369,27 @@ class DrOffAgent:
                 logger.info("Langfuse not available - install langfuse and pydantic-ai[logfire] for tracing")
         
         # Initialize MCP server connection using STDIO
-        if mcp_server_command is None:
-            # Default command to run our Dr. OFF MCP server
-            mcp_server_command = [
-                "python", "-m", "src.agents.dr_off_agent.mcp.server"
-            ]
-        
-        self.mcp_server = MCPServerStdio(
-            params=MCPServerStdioParams(
-                command=mcp_server_command[0],
-                args=mcp_server_command[1:],
-                env=dict(os.environ),
-                cwd=str(self.project_root),
-                encoding="utf-8"
-            ),
-            name="dr-off-server",
-            client_session_timeout_seconds=60.0  # Extended timeout for web searches
-        )
+        # Special value "skip" means don't initialize (for subclasses)
+        if mcp_server_command == "skip":
+            self.mcp_server = None
+        else:
+            if mcp_server_command is None:
+                # Default command to run our Dr. OFF MCP server
+                mcp_server_command = [
+                    "python", "-m", "src.agents.dr_off_agent.mcp.server"
+                ]
+            
+            self.mcp_server = MCPServerStdio(
+                params=MCPServerStdioParams(
+                    command=mcp_server_command[0],
+                    args=mcp_server_command[1:],
+                    env=dict(os.environ),
+                    cwd=str(self.project_root),
+                    encoding="utf-8"
+                ),
+                name="dr-off-server",
+                client_session_timeout_seconds=60.0  # Extended timeout for web searches
+            )
         
         logger.info(f"Dr. OFF Agent initialized - Session: {self.session_id}")
         logger.info(f"MCP Server Command: {mcp_server_command}")

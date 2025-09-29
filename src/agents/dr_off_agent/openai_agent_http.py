@@ -19,56 +19,40 @@ logger = logging.getLogger(__name__)
 class DrOffAgentHTTP(DrOffAgent):
     """Dr. OFF Agent that can use either stdio or HTTP MCP servers"""
     
-    def __init__(self, session_id: Optional[str] = None):
+    def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True):
         """Initialize agent with appropriate MCP server based on environment"""
-        # Initialize everything except MCP server
-        super().__init__(session_id)
-        
-    def _initialize_mcp_server(self):
-        """Initialize MCP server based on environment"""
         # Check if we're on Railway or should use HTTP mode
         if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
-            logger.info("Initializing MCP server in HTTP mode for Railway")
-            
-            # Use HTTP mode - connect to the running HTTP MCP server
-            # On Railway, the MCP servers run on the same container at different ports
-            base_url = os.environ.get("MCP_DR_OFF_URL", "http://localhost:8001")
-            mcp_url = f"{base_url}/mcp" if not base_url.endswith("/mcp") else base_url
-            
-            self.mcp_server = MCPServerStreamableHttp(
-                params=MCPServerStreamableHttpParams(
-                    url=mcp_url,
-                    headers={},
-                    timeout=60.0,
-                    sse_read_timeout=120.0,
-                    terminate_on_close=True
-                ),
-                name="dr-off-server-http",
-                client_session_timeout_seconds=60.0
-            )
-            
-            logger.info(f"Dr. OFF Agent using HTTP MCP server at: {mcp_url}")
+            # Pass "skip" to prevent parent from creating stdio server
+            super().__init__(mcp_server_command="skip", enable_langfuse=enable_langfuse)
+            # Now initialize the HTTP MCP server
+            self._initialize_http_mcp_server()
         else:
-            # Use stdio mode for local development
-            logger.info("Initializing MCP server in stdio mode for local development")
-            
-            mcp_server_command = [
-                "python", "-m", "src.agents.dr_off_agent.mcp.server"
-            ]
-            
-            self.mcp_server = MCPServerStdio(
-                params=MCPServerStdioParams(
-                    command=mcp_server_command[0],
-                    args=mcp_server_command[1:],
-                    env=dict(os.environ),
-                    cwd=str(self.project_root),
-                    encoding="utf-8"
-                ),
-                name="dr-off-server",
-                client_session_timeout_seconds=60.0
-            )
-            
-            logger.info(f"Dr. OFF Agent using stdio MCP server")
+            # Use default stdio initialization
+            super().__init__(enable_langfuse=enable_langfuse)
+        
+    def _initialize_http_mcp_server(self):
+        """Initialize HTTP MCP server for Railway deployment"""
+        logger.info("Initializing MCP server in HTTP mode for Railway")
+        
+        # Use HTTP mode - connect to the running HTTP MCP server
+        # On Railway, the MCP servers run on the same container at different ports
+        base_url = os.environ.get("MCP_DR_OFF_URL", "http://localhost:8001")
+        mcp_url = f"{base_url}/mcp" if not base_url.endswith("/mcp") else base_url
+        
+        self.mcp_server = MCPServerStreamableHttp(
+            params=MCPServerStreamableHttpParams(
+                url=mcp_url,
+                headers={},
+                timeout=60.0,
+                sse_read_timeout=120.0,
+                terminate_on_close=True
+            ),
+            name="dr-off-server-http",
+            client_session_timeout_seconds=60.0
+        )
+        
+        logger.info(f"Dr. OFF Agent using HTTP MCP server at: {mcp_url}")
 
 async def create_dr_off_agent(session_id: Optional[str] = None) -> DrOffAgentHTTP:
     """Factory function to create a Dr. OFF agent with HTTP support"""

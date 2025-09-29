@@ -26,9 +26,24 @@ export default function AgentsPage() {
 
   // Agent selection grid
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
+    <div 
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20"
+      style={{
+        backgroundColor: '#ffffff',
+        background: 'linear-gradient(to bottom right, #f8fafc, rgba(219, 234, 254, 0.3), rgba(207, 250, 254, 0.2))',
+        minHeight: '100vh',
+        width: '100%',
+        position: 'relative',
+      }}
+    >
       {/* Enhanced Header with vibrant gradient background */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500">
+      <div 
+        className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500"
+        style={{
+          background: 'linear-gradient(to bottom right, #2563eb, #3b82f6, #06b6d4)',
+          position: 'relative',
+        }}
+      >
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-cyan-400/20 animate-pulse"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.2),transparent_50%)] animate-pulse"></div>
@@ -46,7 +61,12 @@ export default function AgentsPage() {
       </div>
 
       {/* Enhanced Disclaimer Banner */}
-      <div className="bg-gradient-to-r from-amber-500 to-orange-500">
+      <div 
+        className="bg-gradient-to-r from-amber-500 to-orange-500"
+        style={{
+          background: 'linear-gradient(to right, #f59e0b, #fb923c)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-shrink-0">

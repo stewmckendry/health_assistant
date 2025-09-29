@@ -352,23 +352,27 @@ class DrOPAAgent:
         
         # Initialize MCP server connection using STDIO
         # This connects to our local Dr. OPA MCP server running in STDIO mode
-        if mcp_server_command is None:
-            # Default command to run our Dr. OPA MCP server
-            mcp_server_command = [
-                "python", "-m", "src.agents.dr_opa_agent.dr_opa_mcp.server"
-            ]
-        
-        self.mcp_server = MCPServerStdio(
-            params=MCPServerStdioParams(
-                command=mcp_server_command[0],
-                args=mcp_server_command[1:],
-                env=dict(os.environ),  # Pass current environment variables
-                cwd=str(self.project_root),  # Set working directory
-                encoding="utf-8"
-            ),
-            name="dr-opa-server",
-            client_session_timeout_seconds=60.0  # Extended timeout for opa_program_lookup web searches
-        )
+        # Special value "skip" means don't initialize (for subclasses)
+        if mcp_server_command == "skip":
+            self.mcp_server = None
+        else:
+            if mcp_server_command is None:
+                # Default command to run our Dr. OPA MCP server
+                mcp_server_command = [
+                    "python", "-m", "src.agents.dr_opa_agent.dr_opa_mcp.server"
+                ]
+            
+            self.mcp_server = MCPServerStdio(
+                params=MCPServerStdioParams(
+                    command=mcp_server_command[0],
+                    args=mcp_server_command[1:],
+                    env=dict(os.environ),  # Pass current environment variables
+                    cwd=str(self.project_root),  # Set working directory
+                    encoding="utf-8"
+                ),
+                name="dr-opa-server",
+                client_session_timeout_seconds=60.0  # Extended timeout for opa_program_lookup web searches
+            )
         
         logger.info(f"Dr. OPA Agent initialized - Session: {self.session_id}")
         logger.info(f"MCP Server Command: {mcp_server_command}")
