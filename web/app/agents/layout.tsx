@@ -21,7 +21,7 @@ export default function AgentsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="agents-light-mode agents-page-wrapper" data-theme="light">
+    <div className="antialiased" data-theme="light">
       {children}
     </div>
   );

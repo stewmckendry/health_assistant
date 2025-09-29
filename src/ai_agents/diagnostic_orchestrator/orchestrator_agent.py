@@ -281,13 +281,13 @@ Remember: Each agent has its own MCP server and tools. You just need to call the
         
         try:
             # Initialize Dr. OPA wrapper - disable Langfuse to avoid conflicts
-            from src.agents.dr_opa_agent.openai_agent import DrOPAAgent
+            from src.ai_agents.dr_opa_agent.openai_agent import DrOPAAgent
             self.dr_opa_wrapper = DrOPAAgent(enable_langfuse=False)
             await self.dr_opa_wrapper.initialize_mcp_tools()
             logger.info("Dr. OPA wrapper initialized (Langfuse disabled for sub-agent)")
             
             # Initialize Dr. OFF wrapper - disable Langfuse to avoid conflicts
-            from src.agents.dr_off_agent.openai_agent import DrOffAgent
+            from src.ai_agents.dr_off_agent.openai_agent import DrOffAgent
             self.dr_off_wrapper = DrOffAgent(enable_langfuse=False)
             await self.dr_off_wrapper.initialize_mcp_tools()
             logger.info("Dr. OFF wrapper initialized (Langfuse disabled for sub-agent)")
@@ -375,7 +375,7 @@ When using the agent_97_query tool, pass the clinical query directly and it will
             agent_97_mcp = MCPServerStdio(
                 params=MCPServerStdioParams(
                     command="python",
-                    args=["-m", "src.agents.agent_97.mcp.server"],
+                    args=["-m", "src.ai_agents.agent_97.mcp.server"],
                     env=dict(os.environ),
                     cwd=str(self.project_root),
                     encoding="utf-8"
@@ -671,7 +671,7 @@ When using the agent_97_query tool, pass the clinical query directly and it will
             agent_97_mcp = MCPServerStdio(
                 params=MCPServerStdioParams(
                     command="python",
-                    args=["-m", "src.agents.agent_97.mcp.server"],
+                    args=["-m", "src.ai_agents.agent_97.mcp.server"],
                     env=dict(os.environ),
                     cwd=str(self.project_root),
                     encoding="utf-8"

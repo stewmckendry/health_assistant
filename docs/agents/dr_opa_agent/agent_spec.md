@@ -571,7 +571,7 @@ DR_OPA_TEMPERATURE=0.1
 ```bash
 # Start Dr. OPA MCP server
 cd /path/to/health_assistant_dr_off_worktree
-python -m src.agents.dr_opa_agent.mcp.server
+python -m src.ai_agents.dr_opa_agent.mcp.server
 ```
 
 ### C. Agent Dependencies

@@ -16,7 +16,7 @@ sys.path.insert(0, str(project_root))
 
 import chromadb
 from chromadb.config import Settings
-from src.agents.dr_off_agent.ingestion.ingesters.ohip_ingester import EnhancedOHIPIngester
+from src.ai_agents.dr_off_agent.ingestion.ingesters.ohip_ingester import EnhancedOHIPIngester
 import os
 
 def debug_chromadb():

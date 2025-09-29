@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Import the tool
-from src.agents.dr_off_agent.mcp.tools.schedule import schedule_get
+from src.ai_agents.dr_off_agent.mcp.tools.schedule import schedule_get
 
 class TestLogger:
     """Logger that writes to both console and file"""

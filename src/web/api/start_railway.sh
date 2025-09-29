@@ -14,11 +14,11 @@ export MCP_DR_OPA_URL=http://localhost:8002
 
 # Start MCP servers in background
 echo "Starting MCP servers in HTTP mode..."
-python -m src.agents.dr_off_agent.mcp.server_http &
+python -m src.ai_agents.dr_off_agent.mcp.server_http &
 MCP_OFF_PID=$!
 echo "Dr. OFF MCP server started on port 8001 (PID: $MCP_OFF_PID)"
 
-python -m src.agents.dr_opa_agent.mcp.server_http &
+python -m src.ai_agents.dr_opa_agent.mcp.server_http &
 MCP_OPA_PID=$!
 echo "Dr. OPA MCP server started on port 8002 (PID: $MCP_OPA_PID)"
 

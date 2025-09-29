@@ -24,15 +24,15 @@ except ImportError as e:
         sys.path = original_path
 
 # Import base components
-from src.agents.diagnostic_orchestrator.orchestrator_agent import DiagnosticOrchestrator
+from src.ai_agents.diagnostic_orchestrator.orchestrator_agent import DiagnosticOrchestrator
 
 # Use HTTP versions of the sub-agents on Railway
 if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
-    from src.agents.dr_opa_agent.openai_agent_http import DrOpaAgentHTTP as DrOpaAgent
-    from src.agents.dr_off_agent.openai_agent_http import DrOffAgentHTTP as DrOffAgent
+    from src.ai_agents.dr_opa_agent.openai_agent_http import DrOpaAgentHTTP as DrOpaAgent
+    from src.ai_agents.dr_off_agent.openai_agent_http import DrOffAgentHTTP as DrOffAgent
 else:
-    from src.agents.dr_opa_agent.openai_agent import DrOPAAgent as DrOpaAgent
-    from src.agents.dr_off_agent.openai_agent import DrOffAgent
+    from src.ai_agents.dr_opa_agent.openai_agent import DrOPAAgent as DrOpaAgent
+    from src.ai_agents.dr_off_agent.openai_agent import DrOffAgent
 
 logger = logging.getLogger(__name__)
 

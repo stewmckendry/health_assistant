@@ -13,7 +13,7 @@ project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Now import from the proper path
-from src.agents.dr_off_agent.ingestion.ingesters.adp_ingester import EnhancedADPIngester
+from src.ai_agents.dr_off_agent.ingestion.ingesters.adp_ingester import EnhancedADPIngester
 
 # Setup logging
 logging.basicConfig(

@@ -12,7 +12,7 @@ project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Import our modified ingester
-from src.agents.dr_off_agent.ingestion.ingesters.ohip_ingester import EnhancedOHIPIngester
+from src.ai_agents.dr_off_agent.ingestion.ingesters.ohip_ingester import EnhancedOHIPIngester
 
 def test_document_creation():
     """Test the new document creation methods with sample data"""

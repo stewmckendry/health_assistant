@@ -12,7 +12,7 @@ from datetime import datetime
 project_root = Path(__file__).parent.parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
-from src.agents.dr_opa_agent.ingestion.cep import (
+from src.ai_agents.dr_opa_agent.ingestion.cep import (
     CEPCrawler,
     CEPExtractor,
     CEPIngester

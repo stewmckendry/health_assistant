@@ -12,7 +12,7 @@ load_dotenv()
 
 import json
 import asyncio
-from src.agents.ontario_orchestrator.ingestion.extractors.ohip_extractor import EnhancedSubsectionExtractor
+from src.ai_agents.ontario_orchestrator.ingestion.extractors.ohip_extractor import EnhancedSubsectionExtractor
 
 async def test_assessment_subsection():
     """Test extraction specifically for GP21 Assessment subsection with complex tables."""

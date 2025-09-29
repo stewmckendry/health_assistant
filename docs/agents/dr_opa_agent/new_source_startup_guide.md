@@ -224,9 +224,9 @@ import sys
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from src.agents.dr_opa_agent.ingestion.ontario_health.oh_crawler import OntarioHealthCrawler
-from src.agents.dr_opa_agent.ingestion.ontario_health.oh_extractor import OntarioHealthExtractor
-from src.agents.dr_opa_agent.ingestion.ontario_health.oh_ingester import OntarioHealthIngester
+from src.ai_agents.dr_opa_agent.ingestion.ontario_health.oh_crawler import OntarioHealthCrawler
+from src.ai_agents.dr_opa_agent.ingestion.ontario_health.oh_extractor import OntarioHealthExtractor
+from src.ai_agents.dr_opa_agent.ingestion.ontario_health.oh_ingester import OntarioHealthIngester
 
 async def test_full_pipeline():
     # 1. Crawl
@@ -250,7 +250,7 @@ if __name__ == "__main__":
 ### Step 6: Test with MCP Tools
 ```python
 # Test that your data is accessible via MCP tools
-from src.agents.dr_opa_agent.mcp.tools.search import search_sections
+from src.ai_agents.dr_opa_agent.mcp.tools.search import search_sections
 
 result = await search_sections(
     query="cervical screening guidelines",

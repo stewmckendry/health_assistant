@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 def test_pho_extraction():
     """Test PHO document extraction."""
-    from src.agents.dr_opa_agent.ingestion.pho.pho_extractor import PHOExtractor
+    from src.ai_agents.dr_opa_agent.ingestion.pho.pho_extractor import PHOExtractor
     
     print("\n" + "="*60)
     print("Testing PHO Document Extraction")
@@ -74,7 +74,7 @@ def test_pho_extraction():
 
 def test_pho_ingestion(document: Dict[str, Any] = None):
     """Test PHO document ingestion into database."""
-    from src.agents.dr_opa_agent.ingestion.pho.pho_ingester import PHOIngester
+    from src.ai_agents.dr_opa_agent.ingestion.pho.pho_ingester import PHOIngester
     import os
     from dotenv import load_dotenv
     
@@ -130,8 +130,8 @@ async def test_mcp_retrieval():
     
     try:
         # Import MCP server components
-        from src.agents.dr_opa_agent.mcp.retrieval.sql_client import SQLClient
-        from src.agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
+        from src.ai_agents.dr_opa_agent.mcp.retrieval.sql_client import SQLClient
+        from src.ai_agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
         
         # Test queries
         test_queries = [

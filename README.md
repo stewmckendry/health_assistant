@@ -540,10 +540,10 @@ Provides Ontario healthcare funding and formulary information:
 **Usage**:
 ```bash
 # Start Dr. OPA MCP server
-python -m src.agents.dr_opa_agent.mcp.server
+python -m src.ai_agents.dr_opa_agent.mcp.server
 
 # Start Dr. OFF MCP server  
-python -m src.agents.dr_off_agent.mcp.server
+python -m src.ai_agents.dr_off_agent.mcp.server
 ```
 
 **Documentation**: See individual agent READMEs for detailed setup and usage instructions.

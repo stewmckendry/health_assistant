@@ -27,7 +27,7 @@ async def test_vector_client_collections():
     print("Testing Vector Client Collections")
     print("="*60)
     
-    from src.agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
+    from src.ai_agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
     
     try:
         # Initialize vector client
@@ -65,7 +65,7 @@ async def test_direct_vector_search():
     print("Testing Direct Vector Search")
     print("="*60)
     
-    from src.agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
+    from src.ai_agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
     
     try:
         client = VectorClient()
@@ -116,7 +116,7 @@ async def test_mcp_search_tool():
     
     try:
         # Import MCP handlers
-        from src.agents.dr_opa_agent.mcp.server import search_sections_handler
+        from src.ai_agents.dr_opa_agent.mcp.server import search_sections_handler
         
         # Test search with PHO filter
         result = await search_sections_handler(
@@ -159,8 +159,8 @@ async def test_ipac_specific_queries():
     print("Testing IPAC-Specific Queries")
     print("="*60)
     
-    from src.agents.dr_opa_agent.mcp.retrieval.sql_client import SQLClient
-    from src.agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
+    from src.ai_agents.dr_opa_agent.mcp.retrieval.sql_client import SQLClient
+    from src.ai_agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
     
     # IPAC-specific test cases
     test_cases = [

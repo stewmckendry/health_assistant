@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from dotenv import load_dotenv
 load_dotenv()
 
-from src.agents.clinical.orchestrator import create_triage_orchestrator, run_triage_assessment
+from src.ai_agents.clinical.orchestrator import create_triage_orchestrator, run_triage_assessment
 
 
 # Test cases with expected outcomes

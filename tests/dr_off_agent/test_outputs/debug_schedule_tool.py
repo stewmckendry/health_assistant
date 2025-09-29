@@ -17,8 +17,8 @@ logging.basicConfig(level=logging.DEBUG)
 from dotenv import load_dotenv
 load_dotenv()
 
-from src.agents.dr_off_agent.mcp.tools.schedule import ScheduleTool
-from src.agents.dr_off_agent.mcp.models.request import ScheduleGetRequest
+from src.ai_agents.dr_off_agent.mcp.tools.schedule import ScheduleTool
+from src.ai_agents.dr_off_agent.mcp.models.request import ScheduleGetRequest
 
 async def debug_schedule_tool():
     """Debug the schedule tool step by step"""

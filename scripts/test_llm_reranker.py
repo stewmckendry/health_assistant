@@ -16,7 +16,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 import asyncio
-from src.agents.dr_off_agent.mcp.utils.llm_reranker import LLMReranker, Document
+from src.ai_agents.dr_off_agent.mcp.utils.llm_reranker import LLMReranker, Document
 
 async def test_reranker():
     """Test LLM reranker directly"""

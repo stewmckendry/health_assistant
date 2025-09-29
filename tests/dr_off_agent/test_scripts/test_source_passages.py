@@ -21,8 +21,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Import the tools
-from src.agents.dr_off_agent.mcp.tools.source import source_passages
-from src.agents.dr_off_agent.mcp.tools.schedule import schedule_get
+from src.ai_agents.dr_off_agent.mcp.tools.source import source_passages
+from src.ai_agents.dr_off_agent.mcp.tools.schedule import schedule_get
 
 class TestLogger:
     """Simple test logger"""

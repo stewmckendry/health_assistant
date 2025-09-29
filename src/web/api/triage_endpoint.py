@@ -10,7 +10,7 @@ from fastapi import HTTPException
 from pydantic import BaseModel, Field
 import asyncio
 
-from src.agents.clinical.orchestrator import run_triage_assessment, TriageDecision
+from src.ai_agents.clinical.orchestrator import run_triage_assessment, TriageDecision
 from src.utils.logging import get_logger
 
 logger = get_logger(__name__)

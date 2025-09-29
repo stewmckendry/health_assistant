@@ -12,7 +12,7 @@ load_dotenv()
 
 async def test_dr_off_agent():
     """Test Dr. OFF agent with Langfuse tracing"""
-    from src.agents.dr_off_agent.openai_agent import create_dr_off_agent
+    from src.ai_agents.dr_off_agent.openai_agent import create_dr_off_agent
     
     print("Testing Dr. OFF Agent with Langfuse tracing...")
     print("-" * 50)
@@ -36,7 +36,7 @@ async def test_dr_off_agent():
 
 async def test_dr_opa_agent():
     """Test Dr. OPA agent with Langfuse tracing"""
-    from src.agents.dr_opa_agent.openai_agent import create_dr_opa_agent
+    from src.ai_agents.dr_opa_agent.openai_agent import create_dr_opa_agent
     
     print("\nTesting Dr. OPA Agent with Langfuse tracing...")
     print("-" * 50)

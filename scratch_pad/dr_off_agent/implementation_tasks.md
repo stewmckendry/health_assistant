@@ -4,7 +4,7 @@
 Integrate Dr. OFF (Ontario Finance & Formulary) Agent into the Ontario Clinical AI Agents registry by wrapping the existing MCP server with OpenAI Agents SDK and implementing frontend/backend integration.
 
 ## Critical Notes from Handoff
-- ⚠️ **Module Path**: Use `src.agents.dr_off_agent.dr_off_mcp.server` NOT `src.agents.dr_off_agent.mcp.server`
+- ⚠️ **Module Path**: Use `src.ai_agents.dr_off_agent.dr_off_mcp.server` NOT `src.ai_agents.dr_off_agent.mcp.server`
 - The actual MCP server directory is `dr_off_mcp` not `mcp`
 - Dr. OFF MCP server runs on port 8002
 - Always activate spacy_env: `source /Users/liammckendry/spacy_env/bin/activate`

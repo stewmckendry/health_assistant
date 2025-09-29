@@ -12,7 +12,7 @@ from fastapi import HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
-from src.agents.clinical.orchestrator_streaming import run_triage_assessment_streaming
+from src.ai_agents.clinical.orchestrator_streaming import run_triage_assessment_streaming
 from src.utils.logging import get_logger
 
 logger = get_logger(__name__)

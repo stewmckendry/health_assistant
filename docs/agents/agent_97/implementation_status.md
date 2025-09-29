@@ -120,7 +120,7 @@ python scripts/test_patient_assistant_direct.py
 
 ### 3. Use in Code
 ```python
-from src.agents.agent_97.openai_agent import create_agent_97
+from src.ai_agents.agent_97.openai_agent import create_agent_97
 
 # Create agent
 agent = await create_agent_97()

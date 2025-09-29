@@ -17,9 +17,9 @@ sys.path.insert(0, str(project_root))
 os.chdir(project_root)
 
 # Import retrieval clients and utilities directly
-from src.agents.dr_opa_agent.mcp.retrieval import SQLClient, VectorClient
-from src.agents.dr_opa_agent.mcp.utils.confidence import OPAConfidenceScorer
-from src.agents.dr_opa_agent.mcp.utils.conflicts import resolve_conflicts
+from src.ai_agents.dr_opa_agent.mcp.retrieval import SQLClient, VectorClient
+from src.ai_agents.dr_opa_agent.mcp.utils.confidence import OPAConfidenceScorer
+from src.ai_agents.dr_opa_agent.mcp.utils.conflicts import resolve_conflicts
 
 
 async def test_sql_client():

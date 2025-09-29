@@ -55,11 +55,11 @@ export default function AgentsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(6,182,212,0.2),transparent_50%)] animate-pulse delay-150"></div>
         
         <div className="relative text-center py-10 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">
+          <h1 className="text-2xl md:text-3xl font-bold mb-3">
             <span className="text-white">Ontario Healthcare</span>
             <span className="block mt-2 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">AI Registry</span>
           </h1>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto font-light">
+          <p className="text-sm md:text-base text-white/90 max-w-2xl mx-auto font-light">
             Specialized AI agents for OHIP billing, drug coverage, practice guidelines, and medical education
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function AgentsPage() {
       {/* Enhanced Section Header */}
       <div className="max-w-7xl mx-auto px-6 mt-12 mb-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
             Choose Your <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">AI Assistant</span>
           </h2>
           <p className="text-gray-600">

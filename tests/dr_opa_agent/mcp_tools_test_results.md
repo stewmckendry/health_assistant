@@ -289,13 +289,13 @@ SELECT title FROM opa_documents WHERE source_org='cpso'
 3. **Run Initial Data Ingestion**
    ```bash
    # Ingest CPSO policies
-   python -m src.agents.dr_opa_agent.ingestion.ingest_cpso
+   python -m src.ai_agents.dr_opa_agent.ingestion.ingest_cpso
    
    # Ingest PHO guidelines
-   python -m src.agents.dr_opa_agent.ingestion.ingest_pho
+   python -m src.ai_agents.dr_opa_agent.ingestion.ingest_pho
    
    # Ingest CEP tools
-   python -m src.agents.dr_opa_agent.ingestion.ingest_cep
+   python -m src.ai_agents.dr_opa_agent.ingestion.ingest_cep
    ```
 
 4. **Fix Data Validation Error**

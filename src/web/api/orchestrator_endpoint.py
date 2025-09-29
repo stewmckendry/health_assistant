@@ -20,10 +20,10 @@ import os
 
 # Use HTTP version on Railway, regular version locally
 if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
-    from src.agents.diagnostic_orchestrator.orchestrator_agent_http import create_orchestrator_http as create_diagnostic_orchestrator
-    from src.agents.diagnostic_orchestrator.orchestrator_agent_http import ClinicalIntelligenceOrchestratorHTTP as DiagnosticOrchestrator
+    from src.ai_agents.diagnostic_orchestrator.orchestrator_agent_http import create_orchestrator_http as create_diagnostic_orchestrator
+    from src.ai_agents.diagnostic_orchestrator.orchestrator_agent_http import ClinicalIntelligenceOrchestratorHTTP as DiagnosticOrchestrator
 else:
-    from src.agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator, DiagnosticOrchestrator
+    from src.ai_agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator, DiagnosticOrchestrator
 
 # Configure logging
 logger = logging.getLogger(__name__)

@@ -14,7 +14,7 @@ import logging
 from datetime import datetime
 import uuid
 
-from src.agents.dr_opa_agent.openai_agent import DrOPAAgent
+from src.ai_agents.dr_opa_agent.openai_agent import DrOPAAgent
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)

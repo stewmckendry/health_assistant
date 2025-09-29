@@ -82,16 +82,16 @@ export ANTHROPIC_API_KEY="your-anthropic-key"
 
 ```bash
 # Start the MCP server (in one terminal)
-python -m src.agents.agent_97.mcp.server
+python -m src.ai_agents.agent_97.mcp.server
 
 # Run the agent (in another terminal)
-python -m src.agents.agent_97.openai_agent
+python -m src.ai_agents.agent_97.openai_agent
 ```
 
 ### Using the Agent
 
 ```python
-from src.agents.agent_97.openai_agent import create_agent_97
+from src.ai_agents.agent_97.openai_agent import create_agent_97
 
 # Create agent instance
 agent = await create_agent_97()

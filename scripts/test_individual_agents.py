@@ -18,9 +18,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from agents import Agent, Runner
-from src.agents.clinical.triage_assessor import create_triage_assessor
-from src.agents.clinical.red_flag_detector import create_red_flag_detector
-from src.agents.clinical.workup_suggester import create_workup_suggester
+from src.ai_agents.clinical.triage_assessor import create_triage_assessor
+from src.ai_agents.clinical.red_flag_detector import create_red_flag_detector
+from src.ai_agents.clinical.workup_suggester import create_workup_suggester
 
 
 # Test cases

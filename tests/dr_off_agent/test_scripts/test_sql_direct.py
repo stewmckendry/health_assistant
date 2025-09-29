@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 from dotenv import load_dotenv
 load_dotenv()
 
-from src.agents.dr_off_agent.mcp.retrieval.sql_client import SQLClient
+from src.ai_agents.dr_off_agent.mcp.retrieval.sql_client import SQLClient
 
 async def test_sql_client():
     """Test SQL client directly"""

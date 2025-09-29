@@ -32,10 +32,10 @@ You're implementing Dr. OFF Agent by wrapping the existing Dr. OFF MCP server wi
 **SOLUTION**: 
 ```bash
 # WRONG (causes connection failure):
-python -m src.agents.dr_off_agent.mcp.server
+python -m src.ai_agents.dr_off_agent.mcp.server
 
 # CORRECT:
-python -m src.agents.dr_off_agent.dr_off_mcp.server
+python -m src.ai_agents.dr_off_agent.dr_off_mcp.server
 ```
 The actual directory is `dr_off_mcp`, not `mcp`!
 
@@ -115,7 +115,7 @@ mcp list  # Should show dr-off-agent
 
 3. **Module import paths**: Use full paths from project root:
    ```python
-   from src.agents.dr_off_agent.dr_off_mcp.models.response import ...
+   from src.ai_agents.dr_off_agent.dr_off_mcp.models.response import ...
    ```
 
 4. **Streaming response format**: Frontend expects specific SSE event types:

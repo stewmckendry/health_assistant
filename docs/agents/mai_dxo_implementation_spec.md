@@ -266,7 +266,7 @@ class ClinicalAgent:
 ```python
 # src/web/api/clinical_agents.py
 from fastapi import APIRouter
-from src.agents.clinical import get_orchestrator
+from src.ai_agents.clinical import get_orchestrator
 
 router = APIRouter(prefix="/api/agents")
 

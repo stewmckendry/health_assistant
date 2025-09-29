@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Import the tool
-from src.agents.dr_off_agent.mcp.tools.coverage import coverage_answer
+from src.ai_agents.dr_off_agent.mcp.tools.coverage import coverage_answer
 
 class TestLogger:
     """Simple test logger"""

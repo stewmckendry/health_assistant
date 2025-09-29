@@ -139,13 +139,13 @@ All existing tools work with PHO content:
 
 ```python
 # To ingest more PHO documents
-from src.agents.dr_opa_agent.ingestion.pho import PHOIngester
+from src.ai_agents.dr_opa_agent.ingestion.pho import PHOIngester
 
 ingester = PHOIngester()
 result = ingester.ingest_document("path/to/pho/document.pdf")
 
 # To query PHO content via MCP
-from src.agents.dr_opa_agent.mcp.tools import search_sections
+from src.ai_agents.dr_opa_agent.mcp.tools import search_sections
 
 results = await search_sections(
     query="hand hygiene requirements clinical office",
@@ -258,7 +258,7 @@ python tests/dr_opa_agent/test_scripts/test_pho_mcp_retrieval.py
 # Test IPAC tool specifically
 python -c "
 import asyncio
-from src.agents.dr_opa_agent.mcp.server import ipac_guidance_handler
+from src.ai_agents.dr_opa_agent.mcp.server import ipac_guidance_handler
 
 async def test():
     result = await ipac_guidance_handler(

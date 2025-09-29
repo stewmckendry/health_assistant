@@ -180,7 +180,7 @@ python -m src.web.api.main
 python test_chief_orchestrator.py
 
 # Test with specific scenarios
-python -c "from src.agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator; ..."
+python -c "from src.ai_agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator; ..."
 ```
 
 ### Monitoring

@@ -359,7 +359,7 @@ class DrOPAAgent:
             if mcp_server_command is None:
                 # Default command to run our Dr. OPA MCP server
                 mcp_server_command = [
-                    "python", "-m", "src.agents.dr_opa_agent.dr_opa_mcp.server"
+                    "python", "-m", "src.ai_agents.dr_opa_agent.dr_opa_mcp.server"
                 ]
             
             self.mcp_server = MCPServerStdio(

@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "src"))
 from dotenv import load_dotenv
 load_dotenv()
 
-from src.agents.dr_off_agent.ingestion.extractors.adp_extractor import EnhancedADPExtractor
+from src.ai_agents.dr_off_agent.ingestion.extractors.adp_extractor import EnhancedADPExtractor
 
 def test_battery_exclusion():
     """Test if the battery exclusion is properly detected"""

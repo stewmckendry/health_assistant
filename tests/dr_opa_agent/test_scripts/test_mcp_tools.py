@@ -16,7 +16,7 @@ from typing import Dict, Any, List
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
 # Import MCP components
-from src.agents.dr_opa_agent.mcp.server import (
+from src.ai_agents.dr_opa_agent.mcp.server import (
     search_sections_handler,
     get_section_handler,
     policy_check_handler,

@@ -37,7 +37,7 @@ The server must be run as a module to handle imports correctly:
 ```bash
 # From project root (NOT from mcp directory)
 source ~/spacy_env/bin/activate
-python -m src.agents.ontario_orchestrator.mcp.server
+python -m src.ai_agents.ontario_orchestrator.mcp.server
 
 # Server logs will show:
 # Starting Dr. OFF MCP server...
@@ -60,8 +60,8 @@ import asyncio
 import sys
 sys.path.insert(0, '.')
 
-from src.agents.ontario_orchestrator.mcp.tools.schedule import schedule_get
-from src.agents.ontario_orchestrator.mcp.tools.odb import odb_get
+from src.ai_agents.ontario_orchestrator.mcp.tools.schedule import schedule_get
+from src.ai_agents.ontario_orchestrator.mcp.tools.odb import odb_get
 
 async def test():
     # Test schedule lookup
@@ -96,7 +96,7 @@ bash test_mcp_cli.sh
 
 # Or create your own:
 echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}}' | \
-  python -m src.agents.ontario_orchestrator.mcp.server 2>/dev/null | python -m json.tool
+  python -m src.ai_agents.ontario_orchestrator.mcp.server 2>/dev/null | python -m json.tool
 ```
 
 ### Method 3: MCP CLI Testing (if installed)
@@ -105,7 +105,7 @@ echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}}' | \
 pip install mcp-cli
 
 # Connect to the server
-mcp-cli connect --command "python -m src.agents.ontario_orchestrator.mcp.server"
+mcp-cli connect --command "python -m src.ai_agents.ontario_orchestrator.mcp.server"
 
 # List available tools
 mcp-cli list-tools
@@ -213,8 +213,8 @@ mcp test adp.get '{
 ```python
 import asyncio
 import json
-from src.agents.ontario_orchestrator.mcp.tools.schedule import schedule_get
-from src.agents.ontario_orchestrator.mcp.tools.adp import adp_get
+from src.ai_agents.ontario_orchestrator.mcp.tools.schedule import schedule_get
+from src.ai_agents.ontario_orchestrator.mcp.tools.adp import adp_get
 
 async def test_tools():
     # Test schedule.get
@@ -305,7 +305,7 @@ All tools return:
 **Problem:** `ModuleNotFoundError: No module named 'src'`
 **Solution:** Run server as module from project root:
 ```bash
-python -m src.agents.ontario_orchestrator.mcp.server
+python -m src.ai_agents.ontario_orchestrator.mcp.server
 ```
 
 #### 2. Vector Database Not Found

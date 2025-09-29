@@ -10,7 +10,7 @@ from pathlib import Path
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from src.agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
+from src.ai_agents.dr_opa_agent.mcp.retrieval.vector_client import VectorClient
 
 
 async def test_direct_vector_search():

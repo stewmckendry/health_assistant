@@ -199,7 +199,7 @@ interface AgentAdapter {
 - **Citation Extraction**: Structured citations from MCP responses
 - **Context Awareness**: Ontario-specific healthcare context
 
-**MCP Command**: `python -m src.agents.dr_opa_agent.openai_agent`
+**MCP Command**: `python -m src.ai_agents.dr_opa_agent.openai_agent`
 
 ### 3. Agent 97 Integration
 
@@ -227,7 +227,7 @@ interface AgentAdapter {
 - **Cost Optimization**: Generic alternatives and coverage guidance
 - **Billing Support**: OHIP codes, fees, and requirements
 
-**MCP Command**: `python -m src.agents.dr_off_agent.openai_agent`
+**MCP Command**: `python -m src.ai_agents.dr_off_agent.openai_agent`
 
 **Architecture:**
 - **Endpoint**: `src/web/api/dr_off_endpoint.py`
@@ -427,8 +427,8 @@ npm install
 npm run dev
 
 # Agent servers (separate terminals)
-python -m src.agents.dr_opa_agent.openai_agent
-python -m src.agents.agent_97.openai_agent
+python -m src.ai_agents.dr_opa_agent.openai_agent
+python -m src.ai_agents.agent_97.openai_agent
 ```
 
 ### Production Considerations

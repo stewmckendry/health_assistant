@@ -376,7 +376,7 @@ class DrOffAgent:
             if mcp_server_command is None:
                 # Default command to run our Dr. OFF MCP server
                 mcp_server_command = [
-                    "python", "-m", "src.agents.dr_off_agent.mcp.server"
+                    "python", "-m", "src.ai_agents.dr_off_agent.mcp.server"
                 ]
             
             self.mcp_server = MCPServerStdio(

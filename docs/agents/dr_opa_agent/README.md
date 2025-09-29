@@ -93,7 +93,7 @@ export OPENAI_API_KEY="your-key"
 ### Ingesting Knowledge Sources
 
 ```python
-from src.agents.dr_opa_agent.ingestion.opa_ingester import OPADocumentIngester
+from src.ai_agents.dr_opa_agent.ingestion.opa_ingester import OPADocumentIngester
 
 # Initialize ingester for CPSO documents
 ingester = OPADocumentIngester(
@@ -114,7 +114,7 @@ print(f"Ingested {stats['documents_processed']} documents")
 ### Using MCP Tools
 
 ```python
-from src.agents.dr_opa_agent.mcp.server import app
+from src.ai_agents.dr_opa_agent.mcp.server import app
 from mcp import ClientSession, StdioServerParameters
 import asyncio
 
@@ -139,7 +139,7 @@ asyncio.run(main())
 ### Running the Agent
 
 ```python
-from src.agents.dr_opa_agent.opa_agent import OPAAgent
+from src.ai_agents.dr_opa_agent.opa_agent import OPAAgent
 
 # Initialize agent
 agent = OPAAgent()
@@ -292,13 +292,13 @@ sources:
 
 ```bash
 # Run scheduled ingestion
-python -m src.agents.dr_opa_agent.ingestion.update_corpus
+python -m src.ai_agents.dr_opa_agent.ingestion.update_corpus
 
 # Check for superseded documents
-python -m src.agents.dr_opa_agent.ingestion.check_supersession
+python -m src.ai_agents.dr_opa_agent.ingestion.check_supersession
 
 # Validate corpus integrity
-python -m src.agents.dr_opa_agent.validation.validate_corpus
+python -m src.ai_agents.dr_opa_agent.validation.validate_corpus
 ```
 
 ### Monitoring

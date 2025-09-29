@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from src.agents.dr_off_agent.ingestion.extractors.adp_extractor import EnhancedADPExtractor, ADPSection
+from src.ai_agents.dr_off_agent.ingestion.extractors.adp_extractor import EnhancedADPExtractor, ADPSection
 
 
 class FocusedADPExtractor(EnhancedADPExtractor):

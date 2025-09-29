@@ -16,9 +16,9 @@ os.system('source ~/spacy_env/bin/activate')
 from dotenv import load_dotenv
 load_dotenv()
 
-from src.agents.dr_off_agent.mcp.tools.schedule import schedule_get
-from src.agents.dr_off_agent.mcp.tools.adp import adp_get
-from src.agents.dr_off_agent.mcp.tools.odb import odb_get
+from src.ai_agents.dr_off_agent.mcp.tools.schedule import schedule_get
+from src.ai_agents.dr_off_agent.mcp.tools.adp import adp_get
+from src.ai_agents.dr_off_agent.mcp.tools.odb import odb_get
 
 async def verify_schedule():
     """Verify schedule.get accuracy"""

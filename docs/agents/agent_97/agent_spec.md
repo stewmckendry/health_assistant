@@ -57,7 +57,7 @@ Core responsibilities:
 AGENT_97_MCP_CONFIG = {
     "name": "agent-97-server",
     "transport": "stdio",
-    "command": ["python", "-m", "src.agents.agent_97.mcp.server"],
+    "command": ["python", "-m", "src.ai_agents.agent_97.mcp.server"],
     "timeout": 30,
     "encoding": "utf-8"
 }
@@ -264,7 +264,7 @@ When some components work but others fail:
 
 ```python
 AGENT_97_DEV_CONFIG = {
-    "mcp_server_command": ["python", "-m", "src.agents.agent_97.mcp.server"],
+    "mcp_server_command": ["python", "-m", "src.ai_agents.agent_97.mcp.server"],
     "model": "gpt-4o-mini",
     "max_tokens": 2000,
     "temperature": 0.3,
@@ -276,7 +276,7 @@ AGENT_97_DEV_CONFIG = {
 
 ```python
 AGENT_97_PROD_CONFIG = {
-    "mcp_server_command": ["python", "-m", "src.agents.agent_97.mcp.server"],
+    "mcp_server_command": ["python", "-m", "src.ai_agents.agent_97.mcp.server"],
     "model": "gpt-4o",
     "max_tokens": 3000,
     "temperature": 0.3,
@@ -463,7 +463,7 @@ AGENT_97_MAX_TOKENS=2000
 ```bash
 # Start Agent 97 MCP server
 cd /path/to/project
-python -m src.agents.agent_97.mcp.server
+python -m src.ai_agents.agent_97.mcp.server
 ```
 
 ### C. Dependencies

@@ -14,9 +14,9 @@ import os
 
 # Use HTTP version on Railway, regular version locally
 if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
-    from src.agents.dr_off_agent.openai_agent_http import create_dr_off_agent
+    from src.ai_agents.dr_off_agent.openai_agent_http import create_dr_off_agent
 else:
-    from src.agents.dr_off_agent.openai_agent import create_dr_off_agent
+    from src.ai_agents.dr_off_agent.openai_agent import create_dr_off_agent
 
 
 class DrOffStreamRequest(BaseModel):

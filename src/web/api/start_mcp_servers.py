@@ -20,13 +20,13 @@ logger = logging.getLogger(__name__)
 MCP_SERVERS = [
     {
         "name": "Dr. OFF MCP Server",
-        "module": "src.agents.dr_off_agent.mcp.server_http",
+        "module": "src.ai_agents.dr_off_agent.mcp.server_http",
         "port": 8001,
         "env_var": "MCP_DR_OFF_PORT"
     },
     {
         "name": "Dr. OPA MCP Server", 
-        "module": "src.agents.dr_opa_agent.mcp.server_http",
+        "module": "src.ai_agents.dr_opa_agent.mcp.server_http",
         "port": 8002,
         "env_var": "MCP_DR_OPA_PORT"
     }

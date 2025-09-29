@@ -10,9 +10,9 @@ from pathlib import Path
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from src.agents.dr_opa_agent.mcp.retrieval import SQLClient, VectorClient
-from src.agents.dr_opa_agent.mcp.utils.confidence import OPAConfidenceScorer
-from src.agents.dr_opa_agent.mcp.utils.conflicts import resolve_conflicts
+from src.ai_agents.dr_opa_agent.mcp.retrieval import SQLClient, VectorClient
+from src.ai_agents.dr_opa_agent.mcp.utils.confidence import OPAConfidenceScorer
+from src.ai_agents.dr_opa_agent.mcp.utils.conflicts import resolve_conflicts
 
 
 async def test_vector_search():

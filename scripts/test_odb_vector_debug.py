@@ -8,7 +8,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.agents.dr_off_agent.mcp.retrieval.vector_client import VectorClient
+from src.ai_agents.dr_off_agent.mcp.retrieval.vector_client import VectorClient
 
 async def test_vector_search():
     """Test vector search for ODB."""

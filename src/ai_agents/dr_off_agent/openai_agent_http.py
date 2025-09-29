@@ -1,5 +1,5 @@
 """
-Dr. OPA OpenAI Agent with HTTP MCP support for Railway deployment.
+Dr. OFF OpenAI Agent with HTTP MCP support for Railway deployment.
 Extends the base agent to support HTTP-based MCP servers.
 """
 
@@ -24,12 +24,12 @@ except ImportError as e:
         sys.path = original_path
 
 # Import the base agent
-from src.agents.dr_opa_agent.openai_agent import DrOPAAgent
+from src.ai_agents.dr_off_agent.openai_agent import DrOffAgent
 
 logger = logging.getLogger(__name__)
 
-class DrOpaAgentHTTP(DrOPAAgent):
-    """Dr. OPA Agent that can use either stdio or HTTP MCP servers"""
+class DrOffAgentHTTP(DrOffAgent):
+    """Dr. OFF Agent that can use either stdio or HTTP MCP servers"""
     
     def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True):
         """Initialize agent with appropriate MCP server based on environment"""
@@ -37,27 +37,27 @@ class DrOpaAgentHTTP(DrOPAAgent):
         is_railway = os.environ.get("RAILWAY_ENVIRONMENT")
         use_http = os.environ.get("USE_HTTP_MCP")
         
-        logger.info(f"DrOpaAgentHTTP init - RAILWAY_ENVIRONMENT: {is_railway}, USE_HTTP_MCP: {use_http}")
+        logger.info(f"DrOffAgentHTTP init - RAILWAY_ENVIRONMENT: {is_railway}, USE_HTTP_MCP: {use_http}")
         
         if is_railway or use_http:
-            logger.info("Using HTTP MCP mode for Dr. OPA Agent")
+            logger.info("Using HTTP MCP mode for Dr. OFF Agent")
             # Pass "skip" to prevent parent from creating stdio server
             super().__init__(mcp_server_command="skip", enable_langfuse=enable_langfuse)
             # Now initialize the HTTP MCP server
             self._initialize_http_mcp_server()
         else:
-            logger.info("Using stdio MCP mode for Dr. OPA Agent")
+            logger.info("Using stdio MCP mode for Dr. OFF Agent")
             # Use default stdio initialization
             super().__init__(enable_langfuse=enable_langfuse)
         
     def _initialize_http_mcp_server(self):
         """Initialize HTTP MCP server for Railway deployment"""
-        logger.info("Initializing HTTP MCP server for Dr. OPA Agent")
+        logger.info("Initializing HTTP MCP server for Dr. OFF Agent")
         
         try:
             # Use HTTP mode - connect to the running HTTP MCP server
             # On Railway, the MCP servers run on the same container at different ports
-            base_url = os.environ.get("MCP_DR_OPA_URL", "http://localhost:8002")
+            base_url = os.environ.get("MCP_DR_OFF_URL", "http://localhost:8001")
             mcp_url = f"{base_url}/mcp" if not base_url.endswith("/mcp") else base_url
             
             logger.info(f"Creating MCPServerStreamableHttp with URL: {mcp_url}")
@@ -70,18 +70,18 @@ class DrOpaAgentHTTP(DrOPAAgent):
                     sse_read_timeout=120.0,
                     terminate_on_close=True
                 ),
-                name="dr-opa-server-http",
+                name="dr-off-server-http",
                 client_session_timeout_seconds=60.0
             )
             
-            logger.info(f"Successfully created Dr. OPA HTTP MCP server connection to: {mcp_url}")
+            logger.info(f"Successfully created Dr. OFF HTTP MCP server connection to: {mcp_url}")
             logger.info(f"MCP server object type: {type(self.mcp_server)}")
             
         except Exception as e:
-            logger.error(f"Failed to initialize HTTP MCP server for Dr. OPA: {e}")
+            logger.error(f"Failed to initialize HTTP MCP server for Dr. OFF: {e}")
             logger.exception("Full traceback:")
             raise
 
-async def create_dr_opa_agent(session_id: Optional[str] = None) -> DrOpaAgentHTTP:
-    """Factory function to create a Dr. OPA agent with HTTP support"""
-    return DrOpaAgentHTTP(session_id)
+async def create_dr_off_agent(session_id: Optional[str] = None) -> DrOffAgentHTTP:
+    """Factory function to create a Dr. OFF agent with HTTP support"""
+    return DrOffAgentHTTP(session_id)

@@ -12,7 +12,7 @@ project_root = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Import database clients
-from src.agents.dr_opa_agent.mcp.retrieval import SQLClient
+from src.ai_agents.dr_opa_agent.mcp.retrieval import SQLClient
 
 
 async def test_clinical_tools_direct():

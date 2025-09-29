@@ -16,7 +16,7 @@ from typing import Dict, List, Any
 project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
-from src.agents.dr_opa_agent.openai_agent import create_dr_opa_agent
+from src.ai_agents.dr_opa_agent.openai_agent import create_dr_opa_agent
 
 # Test scenarios covering different query types
 TEST_SCENARIOS = [

@@ -117,7 +117,7 @@ echo -e "${YELLOW}Press Ctrl+C to stop the server${NC}"
 echo -e ""
 
 # Start the MCP server
-python -m src.agents.agent_97.mcp.server
+python -m src.ai_agents.agent_97.mcp.server
 
 # Exit message
 echo -e "\n${YELLOW}Agent 97 MCP Server stopped${NC}"

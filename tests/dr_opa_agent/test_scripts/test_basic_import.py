@@ -20,23 +20,23 @@ try:
     
     # Test model imports
     print("   - Importing models...")
-    from src.agents.dr_opa_agent.mcp.models.request import SearchSectionsRequest
-    from src.agents.dr_opa_agent.mcp.models.response import SearchSectionsResponse
+    from src.ai_agents.dr_opa_agent.mcp.models.request import SearchSectionsRequest
+    from src.ai_agents.dr_opa_agent.mcp.models.response import SearchSectionsResponse
     print("   ✓ Models imported successfully")
     
     # Test retrieval client imports
     print("   - Importing retrieval clients...")
-    from src.agents.dr_opa_agent.mcp.retrieval import SQLClient, VectorClient
+    from src.ai_agents.dr_opa_agent.mcp.retrieval import SQLClient, VectorClient
     print("   ✓ Retrieval clients imported successfully")
     
     # Test utility imports
     print("   - Importing utilities...")
-    from src.agents.dr_opa_agent.mcp.utils import calculate_confidence, resolve_conflicts
+    from src.ai_agents.dr_opa_agent.mcp.utils import calculate_confidence, resolve_conflicts
     print("   ✓ Utilities imported successfully")
     
     # Test server import
     print("   - Importing MCP server...")
-    from src.agents.dr_opa_agent.mcp.server import mcp
+    from src.ai_agents.dr_opa_agent.mcp.server import mcp
     print("   ✓ MCP server imported successfully")
     
     print("\n2. Testing client initialization...")

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.agents.dr_off_agent.mcp.tools.adp import adp_get
+from src.ai_agents.dr_off_agent.mcp.tools.adp import adp_get
 import json
 
 async def test_adp_tool():

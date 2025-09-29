@@ -77,7 +77,7 @@ def test_mcp_server():
         try:
             # Run the MCP server as a subprocess and send the request
             cmd = [
-                sys.executable, "-m", "src.agents.dr_opa_agent.mcp.server"
+                sys.executable, "-m", "src.ai_agents.dr_opa_agent.mcp.server"
             ]
             
             # Create the request as JSON input
@@ -124,7 +124,7 @@ def test_mcp_server():
     try:
         # Try to import the server module to verify it loads correctly
         sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-        from src.agents.dr_opa_agent.mcp.server import mcp
+        from src.ai_agents.dr_opa_agent.mcp.server import mcp
         
         print("✅ MCP server module imports successfully")
         

@@ -574,7 +574,7 @@ python test_assessment_enhanced.py  # GP21 Assessment
 python test_surgical_assistants.py # Surgical assistant codes
 
 # Database integrity checks
-python -c "from src.agents.clinical.dr_off.ingestion.database import Database; db=Database(); db.validate_schema()"
+python -c "from src.ai_agents.clinical.dr_off.ingestion.database import Database; db=Database(); db.validate_schema()"
 ```
 
 This comprehensive ingestion pipeline ensures Dr. OFF has access to accurate, timely, and well-structured data from all three major Ontario healthcare sources, enabling reliable and cited responses to clinical queries.

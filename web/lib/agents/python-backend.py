@@ -29,7 +29,7 @@ sys.path.insert(0, str(project_root))
 
 # Import agents
 try:
-    from src.agents.dr_opa_agent.openai_agent import create_dr_opa_agent
+    from src.ai_agents.dr_opa_agent.openai_agent import create_dr_opa_agent
     # Agent 97 now uses PatientAssistant directly via the agent_97_endpoint
 except ImportError as e:
     print(f"Warning: Could not import agents: {e}")

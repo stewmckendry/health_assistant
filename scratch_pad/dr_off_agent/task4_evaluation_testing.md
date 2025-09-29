@@ -213,7 +213,7 @@ Create comprehensive evaluation suite for Dr. OFF using existing Langfuse integr
 - [ ] Create `tests/integration/dr_off/test_dr_off_integration.py`:
   ```python
   import pytest
-  from src.agents.clinical.dr_off import DrOFFAgent
+  from src.ai_agents.clinical.dr_off import DrOFFAgent
   
   @pytest.fixture
   async def agent():
@@ -342,7 +342,7 @@ Create comprehensive evaluation suite for Dr. OFF using existing Langfuse integr
             pytest tests/integration/dr_off/
         - name: Run Golden Test Suite
           run: |
-            python -m src.agents.clinical.dr_off.evaluation.runner
+            python -m src.ai_agents.clinical.dr_off.evaluation.runner
   ```
 
 ## 📁 Deliverables
