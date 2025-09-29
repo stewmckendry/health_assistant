@@ -1,0 +1,147 @@
+/* Agents-specific CSS fixes for deployment */
+
+/* Force light mode globally for agents pages */
+html {
+  color-scheme: light !important;
+}
+
+/* 1. Fix zoom/scaling issues for Vercel deployment */
+@layer base {
+  html {
+    /* Prevent zoom issues on deployment */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Ensure consistent rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Ensure proper viewport scaling */
+  @media screen and (max-width: 1920px) {
+    .agents-container {
+      zoom: 1;
+      transform: scale(1);
+      transform-origin: top center;
+    }
+  }
+}
+
+/* 2. Dark mode fixes for Chrome black background */
+@media (prefers-color-scheme: dark) {
+  /* Force light theme colors in dark mode */
+  :root {
+    color-scheme: light !important;
+    --background: oklch(1 0 0) !important;
+    --foreground: oklch(0.145 0 0) !important;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* Override dark mode styles for agents pages */
+  .agents-page-wrapper,
+  .agents-page-wrapper * {
+    background-color: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Ensure content is visible in dark mode */
+  .agents-content {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Fix text visibility in dark mode */
+  .agents-text-dark {
+    color: #1f2937 !important;
+  }
+
+  .agents-text-light {
+    color: #6b7280 !important;
+  }
+
+  /* Fix card backgrounds in dark mode */
+  .agent-card {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+  }
+
+  /* Fix message backgrounds in chat interface */
+  .agent-message {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+  }
+
+  .user-message {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+
+  /* Ensure input fields are visible */
+  input, textarea {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #d1d5db !important;
+  }
+
+  /* Fix placeholder text */
+  input::placeholder,
+  textarea::placeholder {
+    color: #9ca3af !important;
+  }
+}
+
+/* Force light mode for agents pages regardless of system preference */
+.agents-light-mode {
+  color-scheme: light !important;
+  background: white !important;
+  color: black !important;
+}
+
+.agents-light-mode * {
+  color-scheme: light !important;
+}
+
+/* 3. Responsive scaling fixes */
+@media screen and (min-width: 1920px) {
+  .agents-container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+/* 4. Fix for consistent font sizing across deployments */
+.agents-page-wrapper {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* Small screens */
+@media screen and (max-width: 768px) {
+  .agents-page-wrapper {
+    font-size: 14px !important;
+  }
+  
+  h1 {
+    font-size: 1.875rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* 5. Ensure proper contrast for accessibility */
+.high-contrast-mode {
+  filter: contrast(1.1);
+}
+
+/* 6. Fix gradient backgrounds in dark mode */
+@media (prefers-color-scheme: dark) {
+  .gradient-background {
+    opacity: 0.9 !important;
+  }
+}

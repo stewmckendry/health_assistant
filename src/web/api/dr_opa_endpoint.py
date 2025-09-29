@@ -10,7 +10,13 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from src.agents.dr_opa_agent.openai_agent import create_dr_opa_agent
+import os
+
+# Use HTTP version on Railway, regular version locally
+if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
+    from src.agents.dr_opa_agent.openai_agent_http import create_dr_opa_agent
+else:
+    from src.agents.dr_opa_agent.openai_agent import create_dr_opa_agent
 
 
 class DrOPAStreamRequest(BaseModel):

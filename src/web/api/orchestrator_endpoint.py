@@ -16,7 +16,14 @@ from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import logging
 
-from src.agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator, DiagnosticOrchestrator
+import os
+
+# Use HTTP version on Railway, regular version locally
+if os.environ.get("RAILWAY_ENVIRONMENT") or os.environ.get("USE_HTTP_MCP"):
+    from src.agents.diagnostic_orchestrator.orchestrator_agent_http import create_orchestrator_http as create_diagnostic_orchestrator
+    from src.agents.diagnostic_orchestrator.orchestrator_agent_http import ClinicalIntelligenceOrchestratorHTTP as DiagnosticOrchestrator
+else:
+    from src.agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator, DiagnosticOrchestrator
 
 # Configure logging
 logger = logging.getLogger(__name__)
