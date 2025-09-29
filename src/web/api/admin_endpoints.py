@@ -6,6 +6,7 @@ These endpoints receive exported data and load it into Railway databases
 import sqlite3
 import json
 import os
+import sys
 import chromadb
 from chromadb.utils import embedding_functions
 from pathlib import Path
@@ -249,3 +250,182 @@ def register_admin_endpoints(app):
         except Exception as e:
             logger.error(f"Error checking database status: {e}")
             raise HTTPException(status_code=500, detail=f"Status check failed: {str(e)}")
+    
+    @app.post("/admin/ingest-json")
+    async def ingest_json_data(request: Dict[str, Any], background_tasks: BackgroundTasks):
+        """Ingest processed JSON data using existing ingestion pipelines"""
+        try:
+            agent_type = request.get("agent_type")  # "dr_off" or "dr_opa"
+            json_data = request.get("json_data")
+            collection_name = request.get("collection_name", "default_collection")
+            
+            logger.info(f"Starting JSON ingestion for {agent_type}, collection: {collection_name}")
+            
+            if agent_type == "dr_off":
+                # Use ADP ingestion pipeline for dr_off agent
+                from pathlib import Path
+                import tempfile
+                import json
+                
+                # Create temporary file for the JSON data
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as temp_file:
+                    json.dump(json_data, temp_file, indent=2)
+                    temp_file_path = temp_file.name
+                
+                try:
+                    # Import and use the ADP ingester
+                    sys.path.append('/app/src/agents/dr_off_agent/ingestion')
+                    from ingesters.adp_ingester import EnhancedADPIngester
+                    
+                    # Initialize ingester with Railway paths
+                    db_path = "/app/data/ohip.db"
+                    chroma_path = "/app/data/chroma"
+                    
+                    ingester = EnhancedADPIngester(
+                        db_path=db_path,
+                        chroma_path=chroma_path,
+                        collection_name=collection_name
+                    )
+                    
+                    # Ingest the JSON file
+                    count = ingester.ingest_json(temp_file_path)
+                    stats = ingester.get_stats()
+                    
+                    ingester.close()
+                    
+                    return {
+                        "success": True,
+                        "agent_type": agent_type,
+                        "collection_name": collection_name,
+                        "sections_ingested": count,
+                        "stats": stats,
+                        "message": f"Successfully ingested {count} sections for {agent_type}"
+                    }
+                    
+                finally:
+                    # Clean up temp file
+                    import os
+                    if os.path.exists(temp_file_path):
+                        os.unlink(temp_file_path)
+                        
+            elif agent_type == "dr_opa":
+                # Use OPA ingestion pipeline for dr_opa agent  
+                sys.path.append('/app/src/agents/dr_opa_agent/ingestion')
+                from base_ingester import BaseOPAIngester
+                
+                # Initialize ingester with Railway paths
+                db_path = "/app/data/dr_opa_agent/opa.db"
+                chroma_path = "/app/data/chroma"
+                
+                ingester = BaseOPAIngester(
+                    source_org=request.get("source_org", "generic"),
+                    db_path=db_path,
+                    chroma_path=chroma_path,
+                    collection_name=collection_name
+                )
+                
+                # Process JSON data based on structure
+                if isinstance(json_data, list):
+                    # Handle array of documents
+                    count = 0
+                    for doc in json_data:
+                        ingester.ingest_document(doc)
+                        count += 1
+                elif isinstance(json_data, dict):
+                    # Handle single document
+                    ingester.ingest_document(json_data)
+                    count = 1
+                else:
+                    raise ValueError("Invalid JSON data format")
+                
+                ingester.close()
+                
+                return {
+                    "success": True,
+                    "agent_type": agent_type,
+                    "collection_name": collection_name,
+                    "documents_ingested": count,
+                    "message": f"Successfully ingested {count} documents for {agent_type}"
+                }
+            else:
+                raise ValueError(f"Unsupported agent type: {agent_type}")
+                
+        except Exception as e:
+            logger.error(f"Error during JSON ingestion: {e}")
+            raise HTTPException(status_code=500, detail=f"JSON ingestion failed: {str(e)}")
+    
+    @app.post("/admin/bulk-ingest-files")
+    async def bulk_ingest_files(request: Dict[str, Any], background_tasks: BackgroundTasks):
+        """Bulk ingest multiple JSON files sent as file data"""
+        try:
+            files_data = request.get("files", [])
+            agent_type = request.get("agent_type")
+            
+            logger.info(f"Starting bulk ingestion: {len(files_data)} files for {agent_type}")
+            
+            results = []
+            total_processed = 0
+            
+            for file_info in files_data:
+                filename = file_info.get("filename")
+                content = file_info.get("content")
+                
+                try:
+                    # Determine collection name from filename
+                    if "adp" in filename.lower():
+                        collection_name = "adp_documents"
+                    elif "odb" in filename.lower():
+                        collection_name = "odb_documents"
+                    elif "ohip" in filename.lower():
+                        collection_name = "ohip_documents"
+                    elif "cpso" in filename.lower():
+                        collection_name = "opa_cpso_corpus"
+                    elif "cep" in filename.lower():
+                        collection_name = "opa_cep_corpus"
+                    elif "pho" in filename.lower():
+                        collection_name = "opa_pho_corpus"
+                    else:
+                        collection_name = "default_collection"
+                    
+                    # Ingest this file
+                    ingest_result = await ingest_json_data({
+                        "agent_type": agent_type,
+                        "json_data": content,
+                        "collection_name": collection_name,
+                        "source_org": file_info.get("source_org", "generic")
+                    }, background_tasks)
+                    
+                    results.append({
+                        "filename": filename,
+                        "collection": collection_name,
+                        "success": True,
+                        "count": ingest_result.get("sections_ingested") or ingest_result.get("documents_ingested", 0)
+                    })
+                    
+                    total_processed += results[-1]["count"]
+                    
+                except Exception as e:
+                    logger.error(f"Error ingesting {filename}: {e}")
+                    results.append({
+                        "filename": filename,
+                        "success": False,
+                        "error": str(e)
+                    })
+            
+            successful = sum(1 for r in results if r.get("success"))
+            failed = len(results) - successful
+            
+            return {
+                "success": True,
+                "agent_type": agent_type,
+                "files_processed": len(files_data),
+                "successful": successful,
+                "failed": failed,
+                "total_items_processed": total_processed,
+                "results": results,
+                "message": f"Bulk ingestion complete: {successful}/{len(files_data)} files successful"
+            }
+            
+        except Exception as e:
+            logger.error(f"Error during bulk ingestion: {e}")
+            raise HTTPException(status_code=500, detail=f"Bulk ingestion failed: {str(e)}")
