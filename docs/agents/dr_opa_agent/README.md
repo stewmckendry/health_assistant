@@ -22,6 +22,7 @@ Dr. OPA answers critical practice questions for Ontario clinicians:
 - **CEP**: Centre for Effective Practice clinical tools and algorithms (57 vectors, 6 tools)
 - **PHO**: Public Health Ontario infection prevention and control guidance (132 vectors)
 - **MOH**: Ministry of Health bulletins and program updates (pending)
+- **Web Search (Fallback)**: Domain-filtered web search for recent updates and edge cases
 
 ### 2. Intelligent Retrieval
 - Parent-child chunking for optimal context and precision
@@ -57,6 +58,19 @@ Dr. OPA answers critical practice questions for Ontario clinicians:
 - `opa.program_lookup`: Ontario Health clinical programs (ALL programs via web search)
 - `opa.ipac_guidance`: PHO infection control sections
 - `opa.freshness_probe`: Check for guideline updates
+
+### Web Search (Fallback Tool)
+- **Purpose**: Supplement MCP tools when recent updates or edge cases aren't in embedded knowledge
+- **Restricted Domains**: 19 Ontario healthcare and regulatory domains only:
+  - cpso.on.ca, ontariohealth.ca, cancercareontario.ca (regulatory/programs)
+  - effectivepractice.org, choosingwiselycanada.org (clinical guidelines)  
+  - publichealthontario.ca, health.gov.on.ca (public health)
+  - And 12 additional trusted Ontario healthcare domains
+- **Use Cases**:
+  - Recent policy changes not yet in embedded data
+  - Cross-referencing official websites for verification
+  - Finding latest screening program updates
+- **Transparency**: Always reported in "Sources & Tool Contributions" section
 
 ### AI Agent
 - System prompt with Ontario practice context

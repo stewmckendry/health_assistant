@@ -18,6 +18,7 @@ To provide accurate, current guidance on Ontario healthcare coverage including O
 - **Frontend**: Next.js with SSE (Server-Sent Events)
 - **Database**: SQLite for OHIP/ODB/ADP data
 - **Embeddings**: OpenAI text-embedding-3-small
+- **Web Search**: WebSearchTool with domain filtering (fallback tool)
 
 ### Components
 
@@ -91,6 +92,21 @@ def adp_get(query: str = None, device: dict = None, patient_income: float = None
 - **Purpose**: ADP eligibility and funding
 - **NLP Support**: Natural language or structured queries
 - **Returns**: Coverage, eligibility, funding amounts
+
+### Web Search (Fallback Tool)
+```python
+WebSearchTool with WebSearchToolFilters(
+    allowed_domains=[
+        "ontario.ca", "health.gov.on.ca", "wsib.ca", "fsrao.ca",
+        "cppd.ca", "canada.ca", "hqontario.ca", "cancercareontario.ca",
+        # ... 20 Ontario healthcare domains total
+    ]
+)
+```
+- **Purpose**: Supplement MCP tools for recent updates or edge cases
+- **Domain Filtering**: Restricted to 20 trusted Ontario healthcare domains
+- **Use Cases**: Recent policy changes, verification, latest forms
+- **Transparency**: Results reported in "Sources & Tool Contributions" section
 
 ## Response Format
 

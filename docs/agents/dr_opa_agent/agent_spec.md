@@ -11,7 +11,8 @@ The Dr. OPA OpenAI Agent is an intelligent assistant specialized in Ontario prac
 1. **OpenAI Agent**: Primary agent using `agents.Agent` from OpenAI Agents SDK
 2. **MCP Integration**: Connects to Dr. OPA MCP server via `MCPServerStreamableHttp` 
 3. **Tool Routing**: Intelligent routing to appropriate MCP tools based on query type
-4. **Response Formatting**: Structured responses with proper citations and confidence scores
+4. **Web Search Integration**: WebSearchTool with domain filtering (fallback tool)
+5. **Response Formatting**: Structured responses with proper citations and confidence scores
 
 ### System Instructions
 
@@ -68,6 +69,31 @@ DR_OPA_MCP_CONFIG = {
 }
 ```
 
+### Web Search Configuration
+
+```python
+from openai import OpenAI
+from agents.web_search_tool import WebSearchTool, WebSearchToolFilters
+
+# Web Search Tool (Fallback)
+DR_OPA_WEB_SEARCH_CONFIG = WebSearchToolFilters(
+    allowed_domains=[
+        "cpso.on.ca", "ontariohealth.ca", "cancercareontario.ca",
+        "effectivepractice.org", "choosingwiselycanada.org",
+        "publichealthontario.ca", "health.gov.on.ca", "ontario.ca",
+        "hqontario.ca", "oaml.com", "cfp.ca", "cps.sk.ca",
+        "cma.ca", "cfpc.ca", "rcpsc.ca", "mcc.ca",
+        "cadth.ca", "inesss.qc.ca", "cep.health"
+        # 19 trusted Ontario healthcare domains total
+    ]
+)
+```
+
+- **Purpose**: Supplement MCP tools for recent updates and edge cases not in embedded knowledge
+- **Domain Filtering**: Restricted to 19 trusted Ontario healthcare and regulatory domains
+- **Usage Priority**: Only used when MCP tools don't provide sufficient information
+- **Transparency**: Web search results are clearly attributed in response citations
+
 ### Available MCP Tools
 
 | Tool | Purpose | Use Cases |
@@ -79,6 +105,7 @@ DR_OPA_MCP_CONFIG = {
 | `opa.ipac_guidance` | PHO infection control guidance | Sterilization, PPE, environmental cleaning |
 | `opa.freshness_probe` | Check guidance currency | Verify document freshness, detect updates |
 | `opa.clinical_tools` | CEP decision support tools | Clinical algorithms, calculators, checklists |
+| `web_search` | Domain-filtered web search (fallback) | Recent updates, edge cases, verification |
 
 ## Tool Routing Logic
 

@@ -71,6 +71,21 @@ Dr. OFF is an AI-powered clinical decision support agent designed to help Ontari
   - Context content field with policy snippets
   - Enhanced citations with section references
 
+### Web Search (Fallback Tool) - NEW
+- **Purpose**: Supplement MCP tools when recent updates or edge cases aren't in embedded knowledge
+- **Restricted Domains**: 20 Ontario healthcare and billing/funding specific domains only:
+  - ontario.ca, health.gov.on.ca (Ontario government)
+  - wsib.ca, fsrao.ca (workers comp, financial services)
+  - cppd.ca, canada.ca (federal programs)
+  - hqontario.ca, cancercareontario.ca (Ontario Health)
+  - drugcoverage.ca, innovativemedicines.ca (pharmaceutical)
+  - And 10 additional trusted Ontario healthcare domains
+- **Use Cases**:
+  - Recent policy changes not yet in embedded data
+  - Cross-referencing official websites for verification
+  - Finding latest forms or application procedures
+- **Transparency**: Always reported in "Sources & Tool Contributions" section
+
 ## 🛡️ Key Principles & Guardrails
 
 1. **Accuracy Over Speed**: Better to say "needs more info" than guess
@@ -106,15 +121,16 @@ graph TD
     J --> K[Answer with Provenance]
 ```
 
-### MCP Tool Architecture (5 Tools Only)
+### MCP Tool Architecture (5 MCP Tools + 1 Web Search)
 
-| Tool | Purpose | Always Returns | Enhanced Features (2025-09-26) |
-|------|---------|----------------|--------------------------------|
-| `coverage.answer` | Main orchestrator - routes 80% of queries | decision, summary, citations, confidence | - |
-| `schedule.get` | OHIP billing dual-path | provenance, items[], citations[], context | ✅ Context field |
-| `adp.get` | Device funding dual-path | eligibility, exclusions, funding, citations, context | ✅ Natural language, LLM synthesis, Context field |
-| `odb.get` | Drug formulary dual-path | coverage, interchangeable, lowest_cost, context | ✅ Natural language, Context field |
-| `source.passages` | Direct chunk retrieval | exact text for "show source" | - |
+| Tool | Type | Purpose | Always Returns | Enhanced Features (2025-09-26) |
+|------|------|---------|----------------|--------------------------------|
+| `coverage.answer` | MCP | Main orchestrator - routes 80% of queries | decision, summary, citations, confidence | - |
+| `schedule.get` | MCP | OHIP billing dual-path | provenance, items[], citations[], context | ✅ Context field |
+| `adp.get` | MCP | Device funding dual-path | eligibility, exclusions, funding, citations, context | ✅ Natural language, LLM synthesis, Context field |
+| `odb.get` | MCP | Drug formulary dual-path | coverage, interchangeable, lowest_cost, context | ✅ Natural language, Context field |
+| `source.passages` | MCP | Direct chunk retrieval | exact text for "show source" | - |
+| `web_search` | Web | Fallback for recent updates | search results with domain citations | ✅ Domain filtering (20 Ontario domains) |
 
 ## Implementation Status
 
