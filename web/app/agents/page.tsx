@@ -119,9 +119,11 @@ export default function AgentsPage() {
             <button
               key={agent.id}
               onClick={() => handleAgentSelect(agent)}
-              className="agent-card-explicit group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 text-left overflow-hidden"
+              className="agent-card-explicit group relative rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 text-left overflow-hidden"
               style={{
-                background: 'white',
+                /* Use backgroundImage to force white in Chrome dark mode */
+                backgroundImage: 'linear-gradient(#ffffff, #ffffff)',
+                backgroundColor: '#ffffff',
                 borderRadius: '1rem',
                 boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
               }}
