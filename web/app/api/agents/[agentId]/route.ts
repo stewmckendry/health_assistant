@@ -48,7 +48,8 @@ export async function GET(
     return NextResponse.json(agentWithStatus);
 
   } catch (error) {
-    console.error(`Error fetching agent ${params.agentId}:`, error);
+    const resolvedParams = await params;
+    console.error(`Error fetching agent ${resolvedParams.agentId}:`, error);
     
     const errorResponse: ApiError = {
       error: 'Internal Server Error',

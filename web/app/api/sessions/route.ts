@@ -4,7 +4,18 @@ import { pythonBackend } from '@/lib/python-backend';
 
 // In-memory session store (for demo purposes)
 // In production, use a database or Redis
-const sessions = new Map<string, any>();
+interface SessionData {
+  id: string;
+  userId: string;
+  createdAt: string;
+  messages: any[];
+  metadata: {
+    source: string;
+    userAgent: string | null;
+  };
+}
+
+const sessions = new Map<string, SessionData>();
 
 export async function GET(req: NextRequest) {
   try {

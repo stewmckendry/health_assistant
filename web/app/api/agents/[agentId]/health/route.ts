@@ -8,10 +8,10 @@ import { AgentHealthCheck, ApiError } from '@/types/agents';
  */
 export async function GET(
   req: NextRequest,
-  { params }: { params: { agentId: string } }
+  { params }: { params: Promise<{ agentId: string }> }
 ) {
   try {
-    const { agentId } = params;
+    const { agentId } = await params;
 
     if (!agentId) {
       const errorResponse: ApiError = {
@@ -70,11 +70,12 @@ export async function GET(
     return NextResponse.json(healthCheck);
 
   } catch (error) {
-    console.error(`Error checking health for agent ${params.agentId}:`, error);
+    const resolvedParams = await params;
+    console.error(`Error checking health for agent ${resolvedParams.agentId}:`, error);
     
     // Return degraded status on error
     const healthCheck: AgentHealthCheck = {
-      agentId: params.agentId,
+      agentId: resolvedParams.agentId,
       status: 'degraded',
       lastChecked: new Date().toISOString(),
       components: {

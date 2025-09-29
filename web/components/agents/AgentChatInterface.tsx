@@ -339,7 +339,11 @@ What Ontario healthcare question can I help you with today?`;
               // Add any tool calls from complete event that aren't already there
               completeToolCalls.forEach((newTool: ToolCall) => {
                 if (!finalToolCalls.find(t => t.name === newTool.name)) {
-                  finalToolCalls.push(newTool);
+                  finalToolCalls.push({
+                    ...newTool,
+                    status: 'completed' as const,
+                    endTime: newTool.endTime || new Date().toISOString()
+                  });
                 }
               });
               

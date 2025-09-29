@@ -108,7 +108,15 @@ export class SessionManager {
       SELECT * FROM sessions WHERE session_id = ?
     `);
 
-    const row = stmt.get(sessionId) as any;
+    const row = stmt.get(sessionId) as {
+      session_id: string;
+      agent_id: string;
+      user_id: string;
+      started_at: string;
+      last_message_at: string;
+      message_count: number;
+      status: string;
+    } | undefined;
     if (!row) return null;
 
     return {
@@ -118,7 +126,7 @@ export class SessionManager {
       startedAt: row.started_at,
       lastMessageAt: row.last_message_at,
       messageCount: row.message_count,
-      status: row.status
+      status: row.status as 'active' | 'idle' | 'ended'
     };
   }
 
@@ -169,12 +177,21 @@ export class SessionManager {
       LIMIT ?
     `);
 
-    const rows = stmt.all(sessionId, limit) as any[];
+    const rows = stmt.all(sessionId, limit) as Array<{
+      id: string;
+      session_id: string;
+      role: string;
+      content: string;
+      timestamp: string;
+      tool_calls: string;
+      citations: string;
+      metadata: string;
+    }>;
     
     return rows.reverse().map(row => ({
       id: row.id,
       sessionId: row.session_id,
-      role: row.role,
+      role: row.role as 'user' | 'assistant' | 'system',
       content: row.content,
       timestamp: row.timestamp,
       toolCalls: JSON.parse(row.tool_calls || '[]'),
@@ -195,7 +212,15 @@ export class SessionManager {
       LIMIT ?
     `);
 
-    const rows = stmt.all(userId, limit) as any[];
+    const rows = stmt.all(userId, limit) as Array<{
+      session_id: string;
+      agent_id: string;
+      user_id: string;
+      started_at: string;
+      last_message_at: string;
+      message_count: number;
+      status: string;
+    }>;
     
     return rows.map(row => ({
       sessionId: row.session_id,
@@ -204,7 +229,7 @@ export class SessionManager {
       startedAt: row.started_at,
       lastMessageAt: row.last_message_at,
       messageCount: row.message_count,
-      status: row.status
+      status: row.status as 'active' | 'idle' | 'ended'
     }));
   }
 
@@ -241,12 +266,12 @@ export class SessionManager {
       WHERE last_message_at < ?
     `);
 
-    this.db.transaction(() => {
+    const result = this.db.transaction(() => {
       deleteMessages.run(cutoffDate.toISOString());
-      deleteSessions.run(cutoffDate.toISOString());
+      return deleteSessions.run(cutoffDate.toISOString());
     })();
 
-    return deleteSessions.changes;
+    return result.changes;
   }
 
   /**
@@ -261,15 +286,15 @@ export class SessionManager {
     let sessionQuery = 'SELECT COUNT(*) as total, COUNT(CASE WHEN status = "active" THEN 1 END) as active FROM sessions';
     let messageQuery = 'SELECT COUNT(*) as total FROM messages';
     
-    const params: any[] = [];
+    const params: string[] = [];
     if (agentId) {
       sessionQuery += ' WHERE agent_id = ?';
       messageQuery += ' WHERE session_id IN (SELECT session_id FROM sessions WHERE agent_id = ?)';
       params.push(agentId);
     }
 
-    const sessionStats = this.db.prepare(sessionQuery).get(...params) as any;
-    const messageStats = this.db.prepare(messageQuery).get(...params) as any;
+    const sessionStats = this.db.prepare(sessionQuery).get(...params) as { total: number; active: number };
+    const messageStats = this.db.prepare(messageQuery).get(...params) as { total: number };
 
     return {
       totalSessions: sessionStats.total,
