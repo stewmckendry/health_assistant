@@ -13,7 +13,18 @@ project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 # Import the main server module from dr_opa_mcp directory
-from ..dr_opa_mcp.server import mcp, logger, SESSION_ID, write_session_summary
+from ..dr_opa_mcp.server import mcp, logger
+from datetime import datetime
+import uuid
+
+# Create session ID for this run
+SESSION_ID = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + str(uuid.uuid4())[:8]
+
+def write_session_summary():
+    """Write session summary at shutdown"""
+    logger.info(f"{'=' * 80}")
+    logger.info("Dr. OPA MCP Server Session ended")
+    logger.info(f"Session ID: {SESSION_ID}")
 
 async def run_http_server():
     """Run the MCP server in HTTP mode for Railway deployment"""
