@@ -96,7 +96,12 @@ export default function AgentsPage() {
             <button
               key={agent.id}
               onClick={() => handleAgentSelect(agent)}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 text-left overflow-hidden"
+              className="agent-card-explicit group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 text-left overflow-hidden"
+              style={{
+                background: 'white',
+                borderRadius: '1rem',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+              }}
             >
               {/* Animated gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-cyan-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

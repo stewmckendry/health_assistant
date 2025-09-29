@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./agents.css";
+import "./critical-styles.css";
 
 export const metadata: Metadata = {
   title: "Ontario Healthcare AI Registry",

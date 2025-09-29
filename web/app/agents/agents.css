@@ -1,7 +1,3 @@
-/* Import Tailwind CSS properly for production build */
-@import "tailwindcss/preflight" layer(base);
-@import "tailwindcss/utilities" layer(utilities);
-
 /* Agents-specific CSS fixes for deployment */
 
 /* Force light mode globally for agents pages */
