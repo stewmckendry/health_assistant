@@ -1,50 +1,67 @@
 /* Agents-specific CSS fixes for deployment */
 
-/* CRITICAL: Force light mode and prevent Chrome dark mode interference */
+/* SOLUTION 1: Use gradient workaround for Chrome force-dark mode */
+/* Gradients bypass Chrome's color inversion */
 :root {
   color-scheme: light !important;
-  --forced-bg: #ffffff !important;
-  --forced-text: #000000 !important;
 }
 
 html {
   color-scheme: light !important;
-  background-color: white !important;
-  background: white !important;
+  /* Use gradient trick to force white background */
+  background-image: linear-gradient(#ffffff, #ffffff) !important;
+  background-color: #ffffff !important;
 }
 
 body {
   color-scheme: light !important;
-  background-color: white !important;
-  background: white !important;
-  color: black !important;
+  /* Use gradient to ensure white background in dark mode */
+  background-image: linear-gradient(#ffffff, #ffffff) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
-/* Fix viewport and zoom issues */
+/* Force light mode even in prefers-dark-scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light !important;
+  }
+  
+  html, body {
+    background-image: linear-gradient(#ffffff, #ffffff) !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* SOLUTION 2: Remove ALL zoom properties and ensure no scaling */
+* {
+  /* Remove any zoom that might be applied */
+  zoom: unset !important;
+}
+
 html, body {
-  /* Reset any zoom */
-  zoom: 1 !important;
+  /* No zoom or transform */
+  zoom: unset !important;
   transform: none !important;
   
-  /* Prevent browser zoom manipulation */
+  /* Prevent text size adjustment */
   -webkit-text-size-adjust: 100% !important;
-  -moz-text-size-adjust: 100% !important;
   text-size-adjust: 100% !important;
   
-  /* Consistent font rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-  /* Ensure proper viewport */
+  /* Standard viewport */
   width: 100% !important;
+  height: auto !important;
+  min-height: 100vh !important;
   max-width: 100vw !important;
   overflow-x: hidden !important;
 }
 
-/* Reset container scaling that might be causing zoom */
+/* Ensure containers don't have zoom */
 .agents-container,
-.agents-page-wrapper {
-  zoom: 1 !important;
+.agents-page-wrapper,
+div[class*="agent"] {
+  zoom: unset !important;
   transform: none !important;
   width: 100% !important;
 }

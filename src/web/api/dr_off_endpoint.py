@@ -36,8 +36,14 @@ def register_dr_off_endpoint(app: FastAPI):
         """
         try:
             async def generate() -> AsyncGenerator[str, None]:
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.info(f"Creating Dr. OFF agent for session {request.sessionId}")
+                
                 # Create the Dr. OFF agent instance
                 agent = await create_dr_off_agent()
+                
+                logger.info(f"Dr. OFF agent created successfully, type: {type(agent)}")
                 
                 # Send initial event
                 yield f"data: {json.dumps({'type': 'response_start', 'data': {}})}\n\n"

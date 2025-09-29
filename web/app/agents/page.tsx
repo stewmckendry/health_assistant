@@ -27,10 +27,11 @@ export default function AgentsPage() {
   // Agent selection grid
   return (
     <div 
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20"
+      className="min-h-screen"
       style={{
+        /* Use background-image to bypass Chrome dark mode */
+        backgroundImage: 'linear-gradient(to bottom right, #f8fafc, #f0f9ff, #ecfeff)',
         backgroundColor: '#ffffff',
-        background: 'linear-gradient(to bottom right, #f8fafc, rgba(219, 234, 254, 0.3), rgba(207, 250, 254, 0.2))',
         minHeight: '100vh',
         width: '100%',
         position: 'relative',
@@ -38,9 +39,10 @@ export default function AgentsPage() {
     >
       {/* Enhanced Header with vibrant gradient background */}
       <div 
-        className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500"
+        className="relative overflow-hidden"
         style={{
-          background: 'linear-gradient(to bottom right, #2563eb, #3b82f6, #06b6d4)',
+          /* Use backgroundImage instead of background for Chrome dark mode */
+          backgroundImage: 'linear-gradient(to bottom right, #2563eb, #3b82f6, #06b6d4)',
           position: 'relative',
         }}
       >
@@ -62,9 +64,10 @@ export default function AgentsPage() {
 
       {/* Enhanced Disclaimer Banner */}
       <div 
-        className="bg-gradient-to-r from-amber-500 to-orange-500"
+        className=""
         style={{
-          background: 'linear-gradient(to right, #f59e0b, #fb923c)',
+          /* Use backgroundImage for Chrome dark mode compatibility */
+          backgroundImage: 'linear-gradient(to right, #f59e0b, #fb923c)',
         }}
       >
         <div className="max-w-7xl mx-auto px-6 py-5">
