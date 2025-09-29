@@ -54,9 +54,13 @@ export function AgentChatInterface({ agent, onClose, onAgentSwitch }: AgentChatI
     setAvailableAgents(agents);
   }, [agent.id]);
 
-  // Auto-scroll to bottom when messages change
+  // Auto-scroll to bottom when messages change (but not on initial load)
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // Only scroll if there are user messages (not just the welcome message)
+    const hasUserMessages = messages.some(m => m.role === 'user');
+    if (hasUserMessages) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [messages]);
 
   const initializeSession = async () => {

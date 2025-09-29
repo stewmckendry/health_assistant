@@ -34,20 +34,33 @@ body {
   }
 }
 
-/* SOLUTION 2: Remove ALL zoom properties and ensure no scaling */
+/* SOLUTION 2: Fix zoom by controlling base font and removing all scaling */
+:root {
+  /* Force base font size to prevent zoom */
+  font-size: 16px !important;
+}
+
 * {
   /* Remove any zoom that might be applied */
   zoom: unset !important;
 }
 
-html, body {
+html {
+  /* Force standard font size */
+  font-size: 16px !important;
   /* No zoom or transform */
   zoom: unset !important;
   transform: none !important;
-  
   /* Prevent text size adjustment */
   -webkit-text-size-adjust: 100% !important;
   text-size-adjust: 100% !important;
+}
+
+body {
+  /* Inherit font size, no zoom */
+  font-size: 1rem !important;
+  zoom: unset !important;
+  transform: none !important;
   
   /* Standard viewport */
   width: 100% !important;
@@ -60,10 +73,27 @@ html, body {
 /* Ensure containers don't have zoom */
 .agents-container,
 .agents-page-wrapper,
+.agents-page-container,
 div[class*="agent"] {
   zoom: unset !important;
   transform: none !important;
   width: 100% !important;
+}
+
+/* Scale control for very large screens */
+@media screen and (min-width: 1920px) {
+  .agents-page-container {
+    /* Scale down content on very large screens */
+    transform: scale(0.9) !important;
+    transform-origin: top center !important;
+  }
+}
+
+/* Normal scaling for standard screens */
+@media screen and (max-width: 1919px) {
+  .agents-page-container {
+    transform: none !important;
+  }
 }
 
 /* 2. Dark mode fixes for Chrome black background */

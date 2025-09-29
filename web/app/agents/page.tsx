@@ -27,7 +27,7 @@ export default function AgentsPage() {
   // Agent selection grid
   return (
     <div 
-      className="min-h-screen"
+      className="min-h-screen agents-page-container"
       style={{
         /* Use background-image to bypass Chrome dark mode */
         backgroundImage: 'linear-gradient(to bottom right, #f8fafc, #f0f9ff, #ecfeff)',
@@ -35,6 +35,9 @@ export default function AgentsPage() {
         minHeight: '100vh',
         width: '100%',
         position: 'relative',
+        /* Ensure no transform scaling */
+        transform: 'none',
+        transformOrigin: 'top left',
       }}
     >
       {/* Enhanced Header with vibrant gradient background */}

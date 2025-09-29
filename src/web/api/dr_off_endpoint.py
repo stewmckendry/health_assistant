@@ -34,6 +34,11 @@ def register_dr_off_endpoint(app: FastAPI):
         """
         Stream responses from Dr. OFF Agent using OpenAI Agent wrapper
         """
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.info(f"Dr. OFF endpoint called - session: {request.sessionId}, query: {request.query[:50] if request.query else 'None'}...")
+        logger.info(f"Environment - RAILWAY_ENVIRONMENT: {os.environ.get('RAILWAY_ENVIRONMENT')}, USE_HTTP_MCP: {os.environ.get('USE_HTTP_MCP')}")
+        
         try:
             async def generate() -> AsyncGenerator[str, None]:
                 import logging

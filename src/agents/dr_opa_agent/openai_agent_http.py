@@ -8,8 +8,20 @@ import logging
 from typing import Optional
 from pathlib import Path
 
-# Import MCP server classes from openai-agents
-from agents.mcp.server import MCPServerStreamableHttp, MCPServerStreamableHttpParams, MCPServerStdio, MCPServerStdioParams
+# Import MCP server classes from openai-agents package
+try:
+    # Try the normal import first
+    from agents.mcp.server import MCPServerStreamableHttp, MCPServerStreamableHttpParams, MCPServerStdio, MCPServerStdioParams
+except ImportError as e:
+    # If it fails, it's likely due to path conflict with src/agents
+    # Remove src from path temporarily
+    import sys
+    original_path = sys.path.copy()
+    sys.path = [p for p in sys.path if not p.endswith('/src') and not p.endswith('/app/src')]
+    try:
+        from agents.mcp.server import MCPServerStreamableHttp, MCPServerStreamableHttpParams, MCPServerStdio, MCPServerStdioParams
+    finally:
+        sys.path = original_path
 
 # Import the base agent
 from src.agents.dr_opa_agent.openai_agent import DrOPAAgent
