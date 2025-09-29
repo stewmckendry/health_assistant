@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+import { getApiUrl } from '@/lib/config/api';
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,7 +15,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Call Python backend streaming endpoint
-    const response = await fetch(`${BACKEND_URL}/chat/stream`, {
+    const response = await fetch(`${getApiUrl()}/chat/stream`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

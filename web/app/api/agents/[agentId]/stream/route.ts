@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAgentById, isAgentAvailable } from '@/config/agents.config';
 import { ApiError } from '@/types/agents';
+import { getApiUrl } from '@/lib/config/api';
 
 /**
  * GET /api/agents/[agentId]/stream
@@ -44,9 +45,10 @@ export async function GET(
     console.log(`Starting stream for agent ${agentId}, session ${sessionId}`);
 
     // For Agent 97, use the working /chat/stream endpoint since it's just PatientAssistant
+    const apiUrl = getApiUrl();
     const endpoint = agentId === 'agent-97' 
-      ? 'http://localhost:8000/chat/stream'
-      : `http://localhost:8000/agents/${agentId}/stream`;
+      ? `${apiUrl}/chat/stream`
+      : `${apiUrl}/agents/${agentId}/stream`;
     
     const requestBody = agentId === 'agent-97'
       ? { query, sessionId, mode: 'patient' }
@@ -131,9 +133,10 @@ export async function POST(
     console.log(`Starting stream for agent ${agentId}, session ${sessionId}, user ${userId}`);
 
     // For Agent 97, use the working /chat/stream endpoint since it's just PatientAssistant
+    const apiUrl = getApiUrl();
     const endpoint = agentId === 'agent-97' 
-      ? 'http://localhost:8000/chat/stream'
-      : `http://localhost:8000/agents/${agentId}/stream`;
+      ? `${apiUrl}/chat/stream`
+      : `${apiUrl}/agents/${agentId}/stream`;
     
     // Stream to backend Python API with userId
     const response = await fetch(endpoint, {

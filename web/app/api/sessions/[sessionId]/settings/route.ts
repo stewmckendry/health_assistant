@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+import { getApiUrl } from '@/lib/config/api';
 
 export async function GET(
   req: NextRequest,
@@ -10,7 +9,7 @@ export async function GET(
     const { sessionId } = await params;
 
     // Call Python backend
-    const response = await fetch(`${BACKEND_URL}/sessions/${sessionId}/settings`, {
+    const response = await fetch(`${getApiUrl()}/sessions/${sessionId}/settings`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +44,7 @@ export async function PUT(
     const settings = await req.json();
 
     // Call Python backend
-    const response = await fetch(`${BACKEND_URL}/sessions/${sessionId}/settings`, {
+    const response = await fetch(`${getApiUrl()}/sessions/${sessionId}/settings`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
