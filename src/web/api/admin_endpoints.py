@@ -273,9 +273,9 @@ def register_admin_endpoints(app):
                     temp_file_path = temp_file.name
                 
                 try:
-                    # Import and use the ADP ingester
-                    sys.path.append('/app/src/agents/dr_off_agent/ingestion')
-                    from ingesters.adp_ingester import EnhancedADPIngester
+                    # Import and use the ADP ingester with absolute import
+                    sys.path.insert(0, '/app')
+                    from src.agents.dr_off_agent.ingestion.ingesters.adp_ingester import EnhancedADPIngester
                     
                     # Initialize ingester with Railway paths
                     db_path = "/app/data/ohip.db"
@@ -310,8 +310,8 @@ def register_admin_endpoints(app):
                         
             elif agent_type == "dr_opa":
                 # Use OPA ingestion pipeline for dr_opa agent  
-                sys.path.append('/app/src/agents/dr_opa_agent/ingestion')
-                from base_ingester import BaseOPAIngester
+                sys.path.insert(0, '/app')
+                from src.agents.dr_opa_agent.ingestion.base_ingester import BaseOPAIngester
                 
                 # Initialize ingester with Railway paths
                 db_path = "/app/data/dr_opa_agent/opa.db"
