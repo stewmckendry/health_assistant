@@ -36,7 +36,7 @@ export interface AgentInfo {
 export interface AgentTool {
   name: string;
   description: string;
-  category: 'search' | 'retrieval' | 'analysis' | 'validation';
+  category: 'search' | 'retrieval' | 'analysis' | 'validation' | 'orchestration';
   parameters?: Record<string, any>;
 }
 
@@ -46,7 +46,8 @@ export interface AgentTool {
 export interface KnowledgeSource {
   name: string;
   organization: string;
-  type: 'regulatory' | 'clinical' | 'research' | 'educational';
+  type: 'regulatory' | 'clinical' | 'research' | 'educational' | 'financial';
+  description?: string;
   url?: string;
   lastUpdated?: string;
   documentCount?: number;
