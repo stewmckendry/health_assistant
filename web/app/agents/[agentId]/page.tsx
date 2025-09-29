@@ -3,16 +3,19 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { AgentChatInterface } from '@/components/agents/AgentChatInterface';
-import { getAgentById, isAgentAvailable } from '@/config/agents.config';
+import { getAgentById, isAgentAvailable, getActiveAgents } from '@/config/agents.config';
 import { AgentInfo } from '@/types/agents';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 export default function AgentChatPage() {
   const params = useParams();
   const router = useRouter();
   const [agent, setAgent] = useState<AgentInfo | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [availableAgents, setAvailableAgents] = useState<AgentInfo[]>([]);
 
   useEffect(() => {
     const agentId = params?.agentId as string;
@@ -33,10 +36,18 @@ export default function AgentChatPage() {
     }
 
     setAgent(foundAgent);
+    
+    // Load available agents for sidebar
+    const agents = getActiveAgents();
+    setAvailableAgents(agents);
   }, [params?.agentId]);
 
   const handleClose = () => {
     router.push('/agents');
+  };
+
+  const handleAgentSwitch = (newAgentId: string) => {
+    router.push(`/agents/${newAgentId}`);
   };
 
   if (error) {
@@ -128,12 +139,68 @@ export default function AgentChatPage() {
       {/* Spacer for fixed header */}
       <div className="h-28"></div>
 
-      {/* Chat Interface Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <AgentChatInterface 
-          agent={agent}
-          onClose={handleClose}
-        />
+      {/* Main Content with Sidebar */}
+      <div className="flex max-w-7xl mx-auto px-4 sm:px-6 py-8 gap-6">
+        {/* Agent Sidebar */}
+        <div className="w-64 flex-shrink-0">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="p-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-b border-gray-100">
+              <h3 className="font-semibold text-gray-900 text-sm">Available Agents</h3>
+              <p className="text-xs text-gray-500 mt-1">Click to switch</p>
+            </div>
+            <div className="p-2">
+              {availableAgents.map((availableAgent) => (
+                <Button
+                  key={availableAgent.id}
+                  variant="ghost"
+                  onClick={() => handleAgentSwitch(availableAgent.id)}
+                  className={`w-full flex items-center gap-3 p-3 rounded-xl mb-2 text-left justify-start h-auto ${
+                    availableAgent.id === agent.id
+                      ? 'bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 hover:from-blue-100 hover:to-cyan-100'
+                      : 'hover:bg-gray-50'
+                  }`}
+                  disabled={availableAgent.id === agent.id}
+                >
+                  <div className={`p-2 rounded-lg shadow-sm flex-shrink-0 ${
+                    availableAgent.id === agent.id 
+                      ? 'bg-gradient-to-br from-blue-100 to-cyan-100'
+                      : 'bg-gray-100'
+                  }`}>
+                    <span className="text-xl block" role="img" aria-label={availableAgent.name}>
+                      {availableAgent.icon}
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`font-semibold text-sm truncate ${
+                        availableAgent.id === agent.id ? 'text-blue-700' : 'text-gray-900'
+                      }`}>
+                        {availableAgent.name}
+                      </span>
+                      {availableAgent.id === agent.id && (
+                        <Badge className="bg-blue-500 text-white text-xs px-2 py-0.5">
+                          Active
+                        </Badge>
+                      )}
+                    </div>
+                    <p className="text-xs text-gray-500 line-clamp-2">
+                      {availableAgent.tagline || availableAgent.description}
+                    </p>
+                  </div>
+                </Button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Chat Interface */}
+        <div className="flex-1 min-w-0">
+          <AgentChatInterface 
+            agent={agent}
+            onClose={handleClose}
+            onAgentSwitch={handleAgentSwitch}
+          />
+        </div>
       </div>
     </div>
   );
