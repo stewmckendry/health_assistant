@@ -1,0 +1,33 @@
+Subsection: Scrotum
+Parent Section: U
+Page Reference: U4
+Pages: 724 to 724
+Text chunks: 1
+Total text length: 854 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 724 ---
+MALE GENITAL SURGICAL PROCEDURES
+SCROTUM
+Asst Surg Anae
+INCISION
+Abscess or haematocele
+Z709 - local anaesthetic................................................................. 39.60
+# Z768 - general anaesthetic ............................................................ 99.00 6
+# S616 - and exploration - unilateral ................................................. 6 99.00 7
+EXCISION
+# S618 Resection of scrotum.............................................................. 6 215.80 7
+SUTURE
+Note:
+For suture of lacerations, refer to the general listings under Integumentary System Surgical
+Procedures - Skin and Subcutaneous Tissue - Suture of Lacerations. Where suture of
+lacerations is the sole procedure and is done under general anaesthesia, refer to code E530.
+Amd 12 Draft 1 U4 February 14 , 2 025 (e ffective M arch 3, 2025)

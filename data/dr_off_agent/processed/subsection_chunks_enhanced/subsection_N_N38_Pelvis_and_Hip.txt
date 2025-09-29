@@ -1,0 +1,198 @@
+Subsection: Pelvis and Hip
+Parent Section: N
+Page Reference: N38
+Pages: 602 to 606
+Text chunks: 1
+Total text length: 11641 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 602 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+PELVIS AND HIP
+Asst Surg Anae
+AMPUTATION
+# R631 Hemipelvectomy - hindquarter................................................ 10 796.20 15
+# R630 Hip disarticulation ................................................................... 10 514.80 10
+ARTHRODESIS
+# R469 Sacro-iliac joint ....................................................................... 6 395.25 7
+# R514 Symphysis pubis..................................................................... 6 387.00 7
+# R470 Hip .......................................................................................... 6 703.45 8
+ARTHROPLASTY
+# R439 Unipolar .................................................................................. 6 490.95 10
+# R440 Total hip replacement - acetabulum and femur....................... 8 708.70 10
+# R553 Total hip replacement with take down of fusion ...................... 8 972.90 15
+Revision total arthroplasty hip - one or both components
+# R241 - acetabular or femoral ......................................................... 9 1304.80 15
+# E589 - bone graft to acetabulum ........................................... add 101.25
+# E593 - acetabular reconstruction (extensive, including bone
+grafts)......................................................................... add 194.00
+# R481 Reattachment of greater trochanter (late)............................... 6 290.55 8
+Removal only
+# R443 - non-cemented .................................................................... 6 447.30 8
+# R488 - cemented............................................................................ 6 557.75 8
+# R491 Replacement acetabular liner and/or femoral head................ 8 353.25 10
+ARTHROSCOPY
+# R686 Hip arthroscopy set up, includes when rendered debridement,
+synovectomy, removal of loose body(ies) and/or screw,
+drilling of defect, microfracture, abrasion arthroplasty, and/
+or synovial biopsy............................................................... 6 669.80 10
+# E487 Resection of labrum, to R686 ........................................... add 240.00
+# E488 Repair of labrum, to R686................................................. add 350.00
+# E482 Soft tissue capsular release without bone procedure, to R686
+..................................................................................... add 251.55
+# E490 Osteochondroplasty (extensive bone and arthrofibrotic tissue
+removal requiring a minimum of 2 hours to resect), to R686
+..................................................................................... add 500.00
+Payment rules:
+1.E487 is not eligible for payment in addition to E488.
+2.Only one of E482 or E490 is eligible for payment same patient same day.
+3.Osteochondroplasty requiring less than 2 hours is included in R686.
+Amd 12 Draft 1 N38 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 603 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+PELVIS AND HIP
+Asst Surg Anae
+ARTHROTOMY
+# R547 Sacro-iliac joint ....................................................................... 6 290.55 7
+# R415 Hip - with removal of loose body............................................. 6 301.60 7
+ASPIRATION/INJECTION
+See Diagnostic and Therapeutic Procedures - Injections and Infusions.
+# Z290 Hip - infant or child, under general anaesthesia ..................... 6 63.95 6
+BIOPSY
+Bone
+Z212 - punch needle...................................................................... 89.70
+# Z217 - under general anaesthetic.................................................. 72.35 7
+# Z214 - open ................................................................................... 6 144.80 6
+Joint
+# R415 - open ................................................................................... 6 301.60 7
+Soft tissue
+# Z228 - open ................................................................................... 97.35 6
+Z219 Muscle needle biopsy, soft tissue, per site ............................. 31.20
+DENERVATION/DECOMPRESSION
+Exploration, decompression, division, excision, biopsy, neurolysis and/or transposition
+# N188 - minor nerve - including digital, cutaneous or lateral femoral
+cutaneous nerve................................................................. 6 153.70 7
+# N285 - major nerve - excluding carpal tunnel or ulnar nerve at
+elbow .................................................................................. 7 256.15 7
+# N177 Sciatic nerve in buttock........................................................... 7 430.75 7
+R427 Denervation of hip................................................................... 6 387.00 6
+Note:
+N188 or N285 when performed through the same incision as flexor tendon repairs R585 or
+E581 is an insured service payable at nil.
+INCISION AND DRAINAGE
+# R269 Bone ....................................................................................... 6 290.55 7
+# Z226 Bursae/soft tissue ................................................................... 97.35 7
+# R415 Joint ........................................................................................ 6 301.60 7
+# R249 Sequestrectomy...................................................................... 6 379.50 7
+# R250 Saucerization and bone graft.................................................. 6 627.30 6
+EXAMINATION/MANIPULATION
+Z252 Manipulation - under general anaesthetic............................... 39.00 6
+Note:
+Without general anaesthetic, see Diagnostic and Therapeutic Procedures - Physical Medicine.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N39 Amd 12 Draft 1
+
+--- PAGE 604 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+PELVIS AND HIP
+Asst Surg Anae
+EXCISION
+Bone
+# R639 Simple cyst, etc....................................................................... 6 338.75 7
+# R330 Major resection tumour ........................................................... 6 629.65 7
+# R216 Radical resection tumour........................................................ 8 1007.35 8
+# F115 Coccyx.................................................................................... 6 208.80 6
+# R315 Head and neck, femur ............................................................ 6 452.90 6
+Muscle
+# R522 - simple ................................................................................. 6 193.00 6
+# R523 - complex .............................................................................. 6 484.35 7
+# R524 - myositis .............................................................................. 6 289.50 7
+Joint
+# R423 Synovectomy/debridement ..................................................... 6 470.50 7
+Bursae
+# R590 GT trochanteric/ischial ............................................................ 6 201.40 7
+RECONSTRUCTION
+Pseudoarthrosis
+# R364 Pelvis ...................................................................................... 8 580.90 10
+# R328 Hip .......................................................................................... 6 872.65 6
+Osteotomy
+Pelvis
+# R265 - infant................................................................................... 8 399.00 8
+# R273 - other ................................................................................... 8 623.35 8
+# R263 Hip .......................................................................................... 6 578.55 7
+Muscle/tendon
+# R521 Muscle release........................................................................ 6 314.60 7
+Tenotomy
+# Z232 - closed adductors ................................................................ 49.20 6
+# Z233 - open adductors................................................................... 97.35 7
+# R545 - iliopsoas ............................................................................. 6 266.35 6
+Tendon transfer
+# R570 Iliopsoas.................................................................................. 6 520.60 7
+# R569 Abductor ................................................................................. 6 339.65 6
+Amd 12 Draft 1 N40 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 605 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+PELVIS AND HIP
+Asst Surg Anae
+REDUCTION
+Fractures
+Coccyx
+UVC - no reduction........................................................................ visit.fee
+# F115 - excision .............................................................................. 6 208.80 6
+Pelvic ring
+UVC - no reduction........................................................................ visit.fee
+# F134 - closed reduction ................................................................. 6 442.45 6
+# F135 - open reduction.................................................................... 6 680.30 8
+Sacrum
+UVC - no reduction........................................................................ visit.fee
+Femoral neck trochanteric, subtrochanteric
+UVC - no reduction........................................................................ visit.fee
+# F098 - closed reduction/traction .................................................... 6 426.90 6
+# F099 - open reduction - pin only .................................................... 6 408.30 8
+# F100 - open reduction - pin and plate/screws (cannulated included) 6 659.45 10
+# F101 - open reduction - primary prosthesis, femur only (includes
+Moore, Thompson, Unipolar, Bipolar)................................. 6 669.60 10
+# R600 - delayed/staged graft........................................................... 6 289.50 8
+Slipped epiphysis
+# R607 - closed reduction/traction .................................................... 6 387.00 8
+# R642 - closed reduction/internal fixation ........................................ 6 387.00 8
+# R627 - open reduction/fixation ....................................................... 6 580.90 8
+Dislocations
+Acetabulum
+UVC - no reduction........................................................................ visit.fee
+# D052 - open reduction - lips ........................................................... 7 612.45 8
+# D046 - open reduction - one pillar.................................................. 6 967.90 10
+# D047 - open reduction - two pillars ................................................ 8 1451.45 12
+Hip
+# D042 - closed reduction ................................................................. 268.25 6
+# D043 - open reduction.................................................................... 7 406.45 7
+# R628 - late, after four weeks - open............................................... 7 774.90 10
+Note:
+May not be claimed with D042 at the same time.
+Sacro-iliac
+# D059 - closed, traction, spica, etc. ................................................. 428.50 6
+# D060 - open reduction.................................................................... 6 593.00 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N41 Amd 12 Draft 1
+
+--- PAGE 606 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+PELVIS AND HIP
+Asst Surg Anae
+Sacro-coccygeal
+UVC - closed reduction ................................................................. visit.fee
+# D061 - open, removal of coccyx..................................................... 6 193.00 6
+Congenital hip
+# R404 - closed reduction (includes tenotomy and cast) .................. 190.20 7
+# R405 - repeat (includes cast) ......................................................... 131.80 6
+# R406 - open reduction (includes tenotomy and arthrotomy) .......... 7 472.35 7
+Z291 - Application Pavlik Harness or C.D.H. Splint....................... 24.10
+Amd 12 Draft 1 N42 February 14 , 2 025 (e ffective M arch 3, 2025)

@@ -1,0 +1,165 @@
+{
+  "subsection_title": "Genitourinary System",
+  "parent_section": "B",
+  "page_ref": "B6",
+  "pages_processed": "330-330",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        4,
+        "J834 Dynamic renal imaging ........................................................... 96.25 32.60"
+      ],
+      [
+        6,
+        "J835 - includes first transit............................................................. 131.70 57.80"
+      ],
+      [
+        7,
+        "J880 - repeat after pharmacological intervention .......................... 44.85 17.80"
+      ],
+      [
+        8,
+        "J836 Static renal scintigraphy.......................................................... 33.25 40.30"
+      ],
+      [
+        9,
+        "J837 ERPF by blood sample method.............................................. 40.15 10.35"
+      ],
+      [
+        10,
+        "J838 GFR by blood sample method................................................ 40.15 10.35"
+      ],
+      [
+        11,
+        "J839 Cystography for vesicoureteric reflux ..................................... 120.55 40.30"
+      ],
+      [
+        13,
+        "J840 - includes first transit............................................................. 82.45 40.30"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J834",
+      "description": "Dynamic renal imaging",
+      "fee": 96.25,
+      "h_fee": 96.25,
+      "p_fee": 32.6,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J835",
+      "description": "includes first transit",
+      "fee": 131.7,
+      "h_fee": 131.7,
+      "p_fee": 57.8,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J880",
+      "description": "repeat after pharmacological intervention",
+      "fee": 44.85,
+      "h_fee": 44.85,
+      "p_fee": 17.8,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J836",
+      "description": "Static renal scintigraphy",
+      "fee": 33.25,
+      "h_fee": 33.25,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J837",
+      "description": "ERPF by blood sample method",
+      "fee": 40.15,
+      "h_fee": 40.15,
+      "p_fee": 10.35,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J838",
+      "description": "GFR by blood sample method",
+      "fee": 40.15,
+      "h_fee": 40.15,
+      "p_fee": 10.35,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J839",
+      "description": "Cystography for vesicoureteric reflux",
+      "fee": 120.55,
+      "h_fee": 120.55,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J840",
+      "description": "includes first transit",
+      "fee": 82.45,
+      "h_fee": 82.45,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

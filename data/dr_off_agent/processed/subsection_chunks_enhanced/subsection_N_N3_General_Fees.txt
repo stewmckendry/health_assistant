@@ -1,0 +1,179 @@
+Subsection: General Fees
+Parent Section: N
+Page Reference: N3
+Pages: 567 to 571
+Text chunks: 1
+Total text length: 9633 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 567 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+GENERAL FEES
+Asst Surg Anae
+BONE/FASCIAL/DERMIS GRAFTS
+Autogenous
+# E551 - separate incision ........................................................ add 86.30
+# E552 - same incision ............................................................. add 58.45
+# Z279 - different surgeon ................................................................ 193.00
+Homogenous
+# E553 - banked bone or bone substitutes............................... add 25.15
+Allograft
+# R200 - cadaver - per long bone, each............................................ 144.80
+Note:
+Other donor allografts are payable at 85% of the listed excision fee.
+FIXATION
+# E547 - methyl methacrylate (not arthroplasty)....................... add 59.40
+# E555 - rigid external fixation (excluding casts) for closed
+reduction, to closed reduction fee ...................... add 50%
+# E544 - cast bracing with closed reduction, to closed reduction fee
+........................................................................... add 40%
+# E569 - percutaneous pinning, to closed reduction fee .. add 50%
+# E826 - percutaneous pinning, to F005, F006, F009, F013 or F016
+........................................................................... add 75%
+Payment rules:
+E544 is not eligible for payment when a prefabricated cast, brace or splint is used.
+Note:
+E569 is not eligible for payment with E826.
+# E590 - rigid external fixation - pseudoarthrosis ..................... add 76.10
+Removal of internal fixation device
+# R267 - general anaesthetic ............................................................ 6 158.65 6
+# R268 - local anaesthetic................................................................. 6 54.85 6
+# R598 Removal of extensive external fixation device under general
+anaesthetic ......................................................................... 48.25 6
+Adjustment of circumferential external fixation
+# Z280 - without general anaesthetic................................................ 72.35
+# Z281 - with general anaesthetic..................................................... 145.70 6
+# Z210 - Insertion traction pin - excludes fractures and dislocations 33.35
+WOUND CARE
+E550 - insertion of closed irrigation system during a surgical
+procedure for post-operative management................ add 63.15
+# E556 - extensive debridement of compound fractures or
+dislocations, to reduction fee ............................. add 50%
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N3 Amd 12 Draft 1
+
+--- PAGE 568 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+GENERAL FEES
+Asst Surg Anae
+# Z783 Secondary closure.................................................................. 97.35 7
+Note:
+Z783 is only eligible for payment for the delayed surgical closure of a wound. Debridement of a
+wound with healing by secondary intention is not payable as Z783.
+# R517 Excision of foreign body.......................................................... 107.70 6
+# Z250 Chronic Electrical Stimulation (not to include T.E.N.S.) external
+or internal ........................................................................... 193.00 7
+# Z273 Muscle core biopsy using a 6mm or larger Bergstrom muscle
+biopsy needle or equivalent kit - includes one or more
+biopsies .............................................................................. 63.35
+Note:
+Z219 is not eligible for payment when rendered in addition to Z273.
+Amd 12 Draft 1 N4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 569 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+GENERAL FEES
+Asst Surg Anae
+ORTHOPAEDIC TUMOUR SURGERY
+R226 Biopsy of suspected sarcoma, or resection of a complex bone
+or complex soft tissue tumour(s), per 15 minutes .............. 10 100.00 15
+Payment rules:
+1.R226 is eligible for payment only to an oncological orthopaedic surgeon with fellowship
+training in orthopaedic oncology. Documentation of fellowship training must be provided to
+the ministry prior to submitting a claim for R226.
+[Commentary:
+Surgeons eligible to claim R226 will typically be working within a multidisciplinary sarcoma
+subspecialty group.]
+2.R226 is a time based service. Except when rendering the services of a surgical assistant,
+time calculation for the purpose of R226A includes all resection and reconstruction
+components of the procedure rendered by the physician claiming R226A.
+[Commentary:
+For any period of time that a surgeon claiming R226A renders the services of an assistant, the
+time spent assisting constitutes surgical assist time and is not eligible for payment as time for
+the purpose of R226A.]
+3.Biopsy of suspected sarcoma, or resection of a complex bone or complex soft tissue
+tumour(s) is not eligible for payment as R226 when rendered in conjunction with another
+procedure(s) by the same surgeon when the biopsy or tumour resection is not the major
+procedure.
+[Commentary:
+In these circumstances (payment rule 3), use the appropriate fee code listing in the Schedule
+under biopsy or excision of bone or soft tissue.]
+4.R226 is eligible for payment for complex tumour resection by amputation only when the
+tumour resected is malignant.
+[Commentary:
+For other tumour resection by amputation, use the appropriate fee code listing in the Schedule
+under amputation.]
+5.If the nature, complexity and/or length of the procedure require(s) two oncological
+orthopaedic surgeons to render components of the same procedure simultaneously or
+sequentially, R226A is eligible for payment to each surgeon.
+Claims submission instructions:
+Submit R226A claims for a second surgeon using the manual review indicator and
+accompanied by operative report.
+[Commentary:
+In accordance with the Surgical Preamble, if a surgeon who is not an oncological orthopaedic
+surgeon renders a specialized component of the procedure (eg reconstructive flaps or grafts),
+the surgeon should claim the appropriate fee code(s) from the Schedule for the service(s)
+rendered.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N5 Amd 12 Draft 1
+
+--- PAGE 570 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+GENERAL FEES
+Asst Surg Anae
+6.Time calculation commences when the surgeon begins the procedure and ends when the
+surgeon leaves the operating room.
+7.Time unit calculation is based on full 15 minute time units.
+Medical record requirements:
+This service is eligible for payment only if start and stop times of the service are recorded in the
+patient's permanent medical record.
+[Commentary:
+Any surgeon rendering R226A should also record in the patient's permanent medical record the
+start and stop times of surgical assistant services when rendered.]
+Amd 12 Draft 1 N6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 571 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+GENERAL FEES
+Asst Surg Anae
+CASTS
+Application of plaster casts or corrective splints are not to be claimed if applied at the time of
+surgery (except for the application of a cast brace) or applied during the first 2 weeks for a
+fracture or dislocation when a procedural fee is applicable. The subsequent application of
+plaster casts may be claimed according to the following Schedule.
+Direct supervision requires the physical presence of the physician in the office in which the cast
+is applied at the time the cast is applied unless all conditions listed on page GP62 to GP63 of
+the General Preamble (Delegated Procedures) are met.
+Z201 Finger...................................................................................... 10.25
+E584 - application of plaster cast outside hospital ................ add 11.15
+Z202 Hand ....................................................................................... 14.90 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+Z203 Arm, forearm or wrist .............................................................. 24.10 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+Z199 Foot......................................................................................... 14.90 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+# Z213 Below knee, knee splints (Stove pipe, etc.) ............................ 24.10 6
+# Z211 Whole leg (mid thigh to toes) .................................................. 28.80 6
+Z198 Toes ........................................................................................ 10.25 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+# Z205 Head and torso ....................................................................... 6 97.35 6
+# Z208 Shoulder spica........................................................................ 6 97.35 7
+# Z206 Body cast ................................................................................ 6 57.50 6
+Hip spica
+# Z207 - unilateral............................................................................. 6 97.35 6
+# Z209 - bilateral............................................................................... 6 121.60 7
+Z216 Wedging of casts in other than fracture treatment.................. 10.25
+Z200 Application of Unna's paste .................................................... 14.90
+Z873 Application of cast brace (must include hinge) ....................... 67.75
+Z204 Removal of plaster (not associated with fractures or
+dislocations within 2 weeks of initial treatment).................. 10.25
+Payment rules:
+Z201, Z198, and Z873 are not eligible for payment for application of a prefabricated cast, brace
+or splint.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N7 Amd 12 Draft 1

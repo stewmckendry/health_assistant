@@ -1,0 +1,238 @@
+{
+  "document_id": "cep_managing_benzodiazepine_use_in_older_adults",
+  "source_url": "https://tools.cep.health/tool/managing-benzodiazepine-use-in-older-adults/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "substance_use",
+  "extracted_at": "2025-09-24T15:33:00.834032",
+  "content_hash": "7e3fb06e18155b5ac329efed545285f2c9e4c30e894ca58524df29bf7d4e5299",
+  "title": "Benzodiazepine Use in Older Adults",
+  "tool_slug": "managing-benzodiazepine-use-in-older-adults",
+  "last_updated": "June 30, 2019",
+  "navigation": [
+    {
+      "title": "Important information to collect before discontinuing benzodiazepines",
+      "anchor": "#beforetaper",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "TaperingSteps",
+      "anchor": "#beforetaper",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Step 1: Plan the taper",
+      "anchor": "#tapersteps",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Benzodiazepine available in Ontario7, 21, 30, 31",
+      "anchor": "#benzosON",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Safeguards for benzodiazepine prescribing",
+      "anchor": "#safeguards",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Nonbenzodiazepine benzodiazepine receptor agonist hypnotics (Z-drugs)",
+      "anchor": "#zdrugs",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "assessment_tools": [
+      "MoCA",
+      "GAD-7"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Discontinuing Benzodiazepines",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Important information to collect before discontinuing benzodiazepines",
+          "anchor": "#beforetaper",
+          "level": 3
+        },
+        {
+          "heading": "TaperingSteps",
+          "anchor": "#beforetaper",
+          "level": 3
+        },
+        {
+          "heading": "Step 1: Plan the taper",
+          "anchor": "#tapersteps",
+          "level": 3
+        },
+        {
+          "heading": "Step 2: Consider adjunctive therapy",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Step 3. Initiate and monitor7,12",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Discontinuation with no taper is possible if the benzodiazepine has been taken for <3 weeks14Individuals taking the equivalent of \u226560mg diazepam daily (seeBenzodiazepines available in Ontario), or with a history of serious withdrawal reactions, should be hospitalized during acute withdrawal and tapering should be slower14 Including supplements, vitamins, and naturopathic treatments Understand what the patient means by \u201ctried\u201d and consider if the duration \u201ctried\u201d is long enough to evaluate eff..."
+    },
+    {
+      "heading": "Starting Benzodiazepines",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Important information to collect before starting benzodiazepines",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Safeguards for benzodiazepine prescribing",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Benzodiazepine available in Ontario7, 21, 30, 31",
+          "anchor": "#benzosON",
+          "level": 3
+        }
+      ],
+      "summary": "Including supplements, vitamins, and naturopathic treatments Understand what the patient means by \u201ctried\u201d and consider if the duration \u201ctried\u201d is long enough to evaluate efficacy/side effectsAn adequate trial of non-pharmacological and pharmacological alternatives is approximately 6-8 weeks E.g. alcohol, cannabinoids, caffeine, nicotine"
+    },
+    {
+      "heading": "Continuing Benzodiazepines",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Safeguards for benzodiazepine prescribing",
+          "anchor": "#safeguards",
+          "level": 3
+        },
+        {
+          "heading": "Benzodiazepine available in Ontario7, 21, 30, 31",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "For patients continuing on a benzodiazepine, ensure safeguards are put in place to reduce harms and revisit thetapering conversationif/when appropriate. Avoid prescribing any combination of \u22653 central nervous system-active drugs (i.e. antidepressants, antipsychotics, antiepileptics, nonbenzodiazepine benzodiazepine receptor agonist hypnotics, opioids).28 Use limited dispensing9and intermittent therapy, if appropriate (e.g. limit to 3 nights/week).14"
+    },
+    {
+      "heading": "Alternatives to Benzodiazepines for Anxiety",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological options1,2",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological options",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The following outline many of the non-pharmacological and pharmacological alternative therapy options to benzodiazepines for older adults, along with the level of evidence and adverse effects associated with each therapy. Non-pharmacological alternatives are the preferred treatment for anxiety disorders, insomnia or panic disorder among older adults. Cognitive behavioural therapyLevel of evidence \u2022 \u2022 \u2022Efficacy of psychological treatment is similar to that of pharmacotherapy for the treatment ..."
+    },
+    {
+      "heading": "Alternatives to Benzodiazepines for Insomnia",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological options",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Nonbenzodiazepine benzodiazepine receptor agonist hypnotics (Z-drugs)",
+          "anchor": "#zdrugs",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological options",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Medications not recommended for the sole management of insomnia:21, 29",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The following outlines many of the non-pharmacological and pharmacological alternative therapy options to benzodiazepines for older adults, along with the level of evidence and adverse effects associated with each therapy. Non-pharmacological alternatives are the preferred treatment for anxiety disorders, insomnia or panic disorder among older adults. Cognitive behavioural therapyLevel of evidence \u2022 \u2022to\u2022 \u2022 \u2022NotesCognitive behavioural therapy for insomnia is more effective than pharmacological..."
+    },
+    {
+      "heading": "Alternatives to Benzodiazepines for Panic DisordersNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological options",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The following outlines many of the non-pharmacological and pharmacological alternative therapy options to benzodiazepines for older adults, along with the level of evidence and adverse effects associated with each therapy. Non-pharmacological alternatives are the preferred treatment for anxiety disorders, insomnia or panic disorder among older adults. Cognitive behavioural therapyLevel of evidence\u2022 \u2022 \u2022NotesCognitive behavioural therapy as the initial treatment for panic disorder is strongly s..."
+    },
+    {
+      "heading": "Provider and Patient Resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "For providers",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "For patients",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Centre for Effective Practice increased risk patient postcardCanadian Deprescribing Network (CaDeN) useful patient resourcesThe Ashton Manualbenzodiazepines tapering approachesCollege of Physicians and Surgeons of Alberta benzodiazepine treatment agreementGeriMedRisktelemedicine (telephone and eConsult) consultation service for questions regarding medication use in older adult patients from a team of geriatric specialists and pharmacistsCentre for Effective Practice Management of chronic inso..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]National Institute for Health and Care Excellence (NICE). Generalized anxiety disorder and panic disorder in adults: management. London: NICE; 2011 Jan. 41 p. Report No.:CG113[2]Katzman MA, Bleau P, Blier P, Chokka P, Kjernisted K, Van Ameringen M. Canadian Anxiety Guidelines Initiative Group. Canadian clinical practice guidelines for the management of anxiety, posttraumatic stress and obsessive-compulsive disorders. BMC Psychiatry. 2014;14(Suppl 1):S1.[3]Glass J, Lancto\u0302t KL, Herrmann N, ..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice in collaboration with the Ontario College of Family Physicians and the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the Tool was provided by Dr. Mark Silverman CCFP and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as part of the K..."
+    }
+  ],
+  "references": [],
+  "summary": "Benzodiazepine Use in Older Adults. Category: Substance Use. Features: calculator, checklist, forms. Tools: MoCA, GAD-7. 9 main sections"
+}

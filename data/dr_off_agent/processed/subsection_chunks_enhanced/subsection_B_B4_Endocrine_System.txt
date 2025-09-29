@@ -1,0 +1,82 @@
+Subsection: Endocrine System
+Parent Section: B
+Page Reference: B4
+Pages: 328 to 328
+Text chunks: 1
+Total text length: 1664 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      5,
+      "J816 - with iodocholesterol............................................................ 385.90 40.30"
+    ],
+    [
+      6,
+      "J868 - with iodocholesterol and dexamethasone suppression...... 451.30 44.60"
+    ],
+    [
+      7,
+      "J869 - with MIBG........................................................................... 555.35 49.70"
+    ],
+    [
+      9,
+      "J818 - with Tc99m or I-131 ............................................................ 64.15 40.30"
+    ],
+    [
+      10,
+      "J871 - with I-123............................................................................ 103.10 40.30"
+    ],
+    [
+      23,
+      "J817 - uptake................................................................................. 28.65 18.25"
+    ],
+    [
+      24,
+      "J870 - repeat ................................................................................. 14.65 10.75"
+    ],
+    [
+      26,
+      "J820 - dual isotope technique with T1201 and Tc99m Iodine........ 234.70 55.30"
+    ],
+    [
+      27,
+      "J872 Metastatic survey with I-131 ................................................... 240.60 49.70"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 328 ---
+NUCLEAR MEDICINE - IN VIVO
+ENDOCRINE SYSTEM
+H P
+Adrenal scintigraphy
+J816 - with iodocholesterol............................................................ 385.90 40.30
+J868 - with iodocholesterol and dexamethasone suppression...... 451.30 44.60
+J869 - with MIBG........................................................................... 555.35 49.70
+Thyroid scintigraphy
+J818 - with Tc99m or I-131 ............................................................ 64.15 40.30
+J871 - with I-123............................................................................ 103.10 40.30
+[Commentary:
+1.Indications for thyroid scanning include:
+a.Hyperthyroidism (including nodules associated with hyperthyroidism); or
+b.Congenital hypothyroidism; or
+c.Masses in the neck or mediastinum suspected to be thyroid in origin.
+d.Assessment of multinodular glands to guide tissue sampling ; or
+e.Assessment of nodules with equivocal Fine Needle Aspiration findings.
+2.Nuclear thyroid assessment is not generally indicated for the investigation of adult
+hypothyroidism.
+3.Thyroid nodules of less than 1 cm in size may not be accurately assessed by thyroid
+scintigraphy.]
+Thyroid
+J817 - uptake................................................................................. 28.65 18.25
+J870 - repeat ................................................................................. 14.65 10.75
+Parathyroid scintigraphy
+J820 - dual isotope technique with T1201 and Tc99m Iodine........ 234.70 55.30
+J872 Metastatic survey with I-131 ................................................... 240.60 49.70
+Amd 12 Draft 1 B4 February 14 , 2 025 (e ffective M arch 3, 2025)

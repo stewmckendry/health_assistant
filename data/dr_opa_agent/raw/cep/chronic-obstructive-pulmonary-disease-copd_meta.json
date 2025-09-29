@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_chronic_obstructive_pulmonary_disease_copd",
+  "slug": "chronic-obstructive-pulmonary-disease-copd",
+  "name": "Chronic obstructive pulmonary disease (COPD)",
+  "category": "chronic_disease",
+  "url": "https://tools.cep.health/tool/chronic-obstructive-pulmonary-disease-copd/",
+  "content_hash": "df4fc47b1b27026d905f44bd4fd7cd7f8531c6e33347b4cf4c50263ea6394b5f",
+  "crawled_at": "2025-09-24T15:32:39.169224"
+}

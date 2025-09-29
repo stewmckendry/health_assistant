@@ -1,0 +1,107 @@
+Subsection: Fibula and Tibia
+Parent Section: N
+Page Reference: N53
+Pages: 617 to 619
+Text chunks: 1
+Total text length: 6038 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 617 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+FIBULA AND TIBIA
+Asst Surg Anae
+AMPUTATION
+# R624 Tibia/fibula .............................................................................. 6 328.65 7
+BIOPSY
+Bone
+# Z870 - simple - punch .................................................................... 120.70 6
+# Z242 - open ................................................................................... 6 193.00 7
+Soft tissue
+# Z228 - open ................................................................................... 97.35 6
+Z219 Muscle needle biopsy, soft tissue, per site ............................. 31.20
+# R256 Injection into bone cysts ......................................................... 117.00
+DECOMPRESSION/DENERVATION
+# R495 Decompression of fascial compartments................................ 6 320.20 7
+# Z783 Secondary closure.................................................................. 97.35 7
+# Z251 Catheter insertion ................................................................... 49.20
+UVC Monitoring of pressure monitoring device............................... visit.fee
+# N184 Decompression of posterior tibial or common peroneal nerve 6 165.20 7
+INCISION AND DRAINAGE
+# R237 Bone ....................................................................................... 6 308.10 7
+# R239 Sequestrectomy...................................................................... 6 329.40 7
+# R238 Saucerization and bone grafting............................................. 6 411.20 7
+# Z226 Soft tissue............................................................................... 97.35 7
+EXCISION
+# R311 Exostosis/cyst......................................................................... 6 201.40 6
+# R210 Fibular head............................................................................ 6 193.00 7
+Tumour
+# R295 - simple ................................................................................. 6 289.50 7
+# R253 - extensive with repair........................................................... 6 648.20 6
+# R246 Excision bony ridge to include interpositional materials ......... 6 385.15 7
+Muscle/soft tissue
+# R522 - simple ................................................................................. 6 193.00 6
+# R523 - complex .............................................................................. 6 484.35 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N53 Amd 12 Draft 1
+
+--- PAGE 618 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+FIBULA AND TIBIA
+Asst Surg Anae
+RECONSTRUCTION
+Pseudoarthrosis
+# E041 - intramedullary nail with distal and proximal locking screws
+- tibia .......................................................................... add 81.55
+# R326 Tibia/fibula .............................................................................. 6 696.00 6
+# R327 By-pass fibular graft................................................................ 6 341.45 6
+# R372 Congenital pseudoarthrosis .................................................... 6 484.35 6
+# R970 Circumferential external fixation ............................................. 6 291.40 6
+Deformity
+# R289 Osteotomy tibia and fibula - adult or child............................... 6 376.80 6
+# R971 Single level correction - circular external fixation.................... 6 510.35 6
+# R972 Double level correction - circular external fixation .................. 6 638.40 6
+Bone transport
+# R973 - circular external fixation (less than or equal to 6 cm) ......... 6 634.70 6
+# R974 - circular external fixation (greater than 6 cm) ...................... 6 763.80 6
+# R403 Osteotomy repair recurrent dislocation (includes inspection of
+the joint).............................................................................. 6 422.15 7
+Leg length discrepancy
+# R331 Tibial lengthening.................................................................... 6 470.50 6
+# R458 Tibial shortening ..................................................................... 6 387.00 6
+# R341 Tibial and femoral epiphysiodesis........................................... 6 426.90 7
+# R339 Tibial epiphysiodesis............................................................... 6 322.05 7
+Tibial stapling
+# R342 - one side.............................................................................. 6 193.00 7
+# R460 - both sides ........................................................................... 6 242.25 6
+# R344 Tibial and femoral stapling...................................................... 6 387.00 6
+# R975 Lengthening with circular external fixation (less than or equal
+to 6 cm) .............................................................................. 6 438.00 6
+# R976 Lengthening with circular external fixation (greater than 6 cm) 6 655.15 6
+REDUCTION
+Fractures
+Tibia with or without fibula
+# F078 - no reduction, rigid immobilization ....................................... 115.95
+# F079 - closed reduction ................................................................. 6 180.05 6
+# F080 - open reduction - shaft......................................................... 6 604.15 6
+Intramedullary nail with distal and proximal locking screws
+# E041 - tibia ............................................................................ add 81.55
+# F081 - medial or lateral tibial plateau............................................. 6 660.00 6
+# E532 - both tibial plateaus, same knee ......................... add 50%
+Amd 12 Draft 1 N54 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 619 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+FIBULA AND TIBIA
+Asst Surg Anae
+Fibula
+# F082 - no reduction, rigid immobilization ....................................... 67.75
+# F083 - closed reduction ................................................................. 101.25 6
+# F084 - open reduction.................................................................... 6 230.20 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N55 Amd 12 Draft 1

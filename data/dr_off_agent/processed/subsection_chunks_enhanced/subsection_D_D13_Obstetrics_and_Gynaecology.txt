@@ -1,0 +1,27 @@
+Subsection: Obstetrics and Gynaecology
+Parent Section: D
+Page Reference: D13
+Pages: 361 to 361
+Text chunks: 1
+Total text length: 235 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      4,
+      "X147 Hysterosalpingogram.............................................................. 29.80 11.35"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 361 ---
+DIAGNOSTIC RADIOLOGY
+OBSTETRICS AND GYNAECOLOGY
+H P
+X147 Hysterosalpingogram.............................................................. 29.80 11.35
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) D13 Amd 12 Draft 1

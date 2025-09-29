@@ -1,0 +1,194 @@
+{
+  "subsection_title": "Preamble",
+  "parent_section": "F",
+  "page_ref": "F1",
+  "pages_processed": "379-382",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "X421",
+      "description": "multislice sequence",
+      "fee": 73.35,
+      "p_fee": 73.35
+    },
+    {
+      "code": "E875",
+      "description": "with magnetic resonance spectroscopy, to X421",
+      "fee": 19.4,
+      "p_fee": 19.4
+    },
+    {
+      "code": "X425",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 2 repeats)",
+      "fee": 36.7,
+      "p_fee": 36.7
+    },
+    {
+      "code": "E876",
+      "description": "with magnetic resonance spectroscopy, to X425",
+      "fee": 9.7,
+      "p_fee": 9.7
+    },
+    {
+      "code": "X431",
+      "description": "multislice sequence",
+      "fee": 73.35,
+      "p_fee": 73.35
+    },
+    {
+      "code": "X435",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 36.7,
+      "p_fee": 36.7
+    },
+    {
+      "code": "X441",
+      "description": "multislice sequence",
+      "fee": 73.35,
+      "p_fee": 73.35
+    },
+    {
+      "code": "X445",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 36.7,
+      "p_fee": 36.7
+    },
+    {
+      "code": "X451",
+      "description": "multislice sequence",
+      "fee": 73.35,
+      "p_fee": 73.35
+    },
+    {
+      "code": "X455",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 36.7,
+      "p_fee": 36.7
+    },
+    {
+      "code": "X480",
+      "description": "MRI guidance of biopsy or lesion ablation, breast, unilateral",
+      "fee": 285.0,
+      "p_fee": 285.0
+    },
+    {
+      "code": "X481",
+      "description": "MRI guidance of biopsy or lesion ablation, internal organ",
+      "fee": 285.0,
+      "p_fee": 285.0
+    },
+    {
+      "code": "X446",
+      "description": "multislice sequence",
+      "fee": 73.35,
+      "p_fee": 73.35
+    },
+    {
+      "code": "X447",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 36.7,
+      "p_fee": 36.7
+    },
+    {
+      "code": "X461",
+      "description": "multislice sequence",
+      "fee": 73.35,
+      "p_fee": 73.35
+    },
+    {
+      "code": "X465",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 36.7,
+      "p_fee": 36.7
+    },
+    {
+      "code": "X471",
+      "description": "multislice sequence, one extremity and/or one joint",
+      "fee": 62.8,
+      "p_fee": 62.8
+    },
+    {
+      "code": "X475",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 31.45,
+      "p_fee": 31.45
+    },
+    {
+      "code": "X488",
+      "description": "multislice sequence, two or more extremities, and/or two or more joints same extremity",
+      "fee": 108.8,
+      "p_fee": 108.8
+    },
+    {
+      "code": "X489",
+      "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+      "fee": 54.35,
+      "p_fee": 54.35
+    },
+    {
+      "code": "X490",
+      "description": "multislice sequence",
+      "fee": 59.5,
+      "p_fee": 59.5
+    },
+    {
+      "code": "X492",
+      "description": "repeat (another plane, different pulse sequence - maximum of 3 repeats)",
+      "fee": 29.85,
+      "p_fee": 29.85
+    },
+    {
+      "code": "X493",
+      "description": "multislice sequence",
+      "fee": 68.45,
+      "p_fee": 68.45
+    },
+    {
+      "code": "X495",
+      "description": "repeat (another plane, different pulse sequence - maximum of 3 repeats)",
+      "fee": 34.15,
+      "p_fee": 34.15
+    },
+    {
+      "code": "X496",
+      "description": "multislice sequence",
+      "fee": 101.65,
+      "p_fee": 101.65
+    },
+    {
+      "code": "X498",
+      "description": "repeat (another plane, different pulse sequence - maximum of 3 repeats)",
+      "fee": 50.65,
+      "p_fee": 50.65
+    },
+    {
+      "code": "X486",
+      "description": "when cardiac gating is performed (must include application of chest electrodes and ECG interpretation)",
+      "fee": "add 30%",
+      "p_fee": "add 30%"
+    },
+    {
+      "code": "X487",
+      "description": "when gadolinium is used",
+      "fee": 36.65,
+      "p_fee": 36.65
+    },
+    {
+      "code": "X499",
+      "description": "Three Dimensional MRI acquisition sequence, including post-processing (minimum of 60 slices; maximum 1 per patient per day)",
+      "fee": 32.7,
+      "p_fee": 32.7
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

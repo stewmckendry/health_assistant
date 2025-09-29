@@ -1,0 +1,101 @@
+{
+  "subsection_title": "Tumours/Infections of the Spine",
+  "parent_section": "Z",
+  "page_ref": "Z11",
+  "pages_processed": "783-783",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "N553",
+      "description": "Simple soft tissue tumour excision under 5cm",
+      "fee": 204.0,
+      "units": 6
+    },
+    {
+      "code": "N554",
+      "description": "Radical soft tissue tumour excision 5cm and greater",
+      "fee": 484.5,
+      "units": 9
+    },
+    {
+      "code": "N549",
+      "description": "Incision and drainage including sequestrectomy, anterior approach",
+      "fee": 632.4,
+      "units": 7
+    },
+    {
+      "code": "N548",
+      "description": "Incision and drainage only, posterior approach",
+      "fee": 102.0,
+      "units": 6
+    },
+    {
+      "code": "N550",
+      "description": "Sequestrectomy, posterior approach",
+      "fee": 357.0,
+      "units": 6
+    },
+    {
+      "code": "N560",
+      "description": "Intradural extramedullary spinal tumour(s) - partial or total removal",
+      "fee": 2132.8,
+      "units": 10
+    },
+    {
+      "code": "N561",
+      "description": "Intradural intramedullary spinal tumour(s) - partial or total removal",
+      "fee": 2461.45,
+      "units": 12
+    },
+    {
+      "code": "E382",
+      "description": "Spinal duroplasty using autologous/allogenic/synthetic tissue, to N560 or N561",
+      "fee": 244.8
+    },
+    {
+      "code": "E383",
+      "description": "Acute spinal cord injury premium, to N560 or N561",
+      "fee": 255.0
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E386",
+      "context": "fee adjustment",
+      "description": "Extradural decompression - spinal cord or cauda equina - tumour or infection",
+      "source_subsection": "Tumours/Infections of the Spine",
+      "source_page": "Z11"
+    },
+    {
+      "code": "N548",
+      "context": "not payable with",
+      "description": "N550 as it is included in the N550 service",
+      "source_subsection": "Tumours/Infections of the Spine",
+      "source_page": "Z11"
+    },
+    {
+      "code": "N560",
+      "context": "not eligible for payment when rendered with",
+      "description": "N561",
+      "source_subsection": "Tumours/Infections of the Spine",
+      "source_page": "Z11"
+    },
+    {
+      "code": "N561",
+      "context": "not eligible for payment when rendered with",
+      "description": "N560",
+      "source_subsection": "Tumours/Infections of the Spine",
+      "source_page": "Z11"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,293 @@
+{
+  "document_id": "cep_medical_assistance_in_dying_maid_in_ontario_track_two_natural_death_is_not_reasonably_foreseeable_2",
+  "source_url": "https://tools.cep.health/tool/medical-assistance-in-dying-maid-in-ontario-track-two-natural-death-is-not-reasonably-foreseeable-2/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "end_of_life",
+  "extracted_at": "2025-09-24T15:33:05.131907",
+  "content_hash": "26ccc575c8b3d7b07105a2054176eb1b52a8eeafdba4ff22ffae287302578488",
+  "title": "Medical Assistance in Dying (MAID) in Ontario Track Two: Natural Death is NOT Reasonably Foreseeable",
+  "tool_slug": "medical-assistance-in-dying-maid-in-ontario-track-two-natural-death-is-not-reasonably-foreseeable-2",
+  "last_updated": "as the new regulations are published.",
+  "navigation": [
+    {
+      "title": "Patient inquires about MAID",
+      "anchor": "#Patient-inquires-about-MAID",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Conscientious objections and patient referral",
+      "anchor": "#Conscientious-objections",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Patient submits formal written request",
+      "anchor": "#Patient-submits-formal-written-request",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Discussion to understand motivation behind patient\u2019s inquiry about MAID",
+      "anchor": "#Discussion",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Federal reporting requirements",
+      "anchor": "#Federal-Reporting-Requirements",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Competent adult and assessing capacity",
+      "anchor": "#Competent-Adult-and-Assessing-Capacity",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Voluntary request and informed consent to MAID",
+      "anchor": "#Voluntary-Request-and-Informed-Consent-to-MAID",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Grievous and irremediable medical condition",
+      "anchor": "#Grievous-and-Irremediable-Medical-Condition",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Procedural safeguards",
+      "anchor": "#Procedural-Safeguards",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Consulting a medical practitioner or nurse practitioner with \u201cexpertise\u201d in the condition causing the person\u2019s suffering3,18",
+      "anchor": "#Clinician-with-expertise",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "90-day assessment period",
+      "anchor": "#90-day-assessment-period",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Inclusion of family members, caregivers and friends",
+      "anchor": "#inclusion",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Clinician develops care plan for the provision of MAID",
+      "anchor": "#Clinician-develops-care-plan-for-the-provision-of-MAID",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "\u201cAdvance consent for failed Self-Administration\u201d",
+      "anchor": "#advance-consent-for-failed-self-administration",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Notification of the Coroner",
+      "anchor": "#Notification-of-the-Coroner",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Introduction",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "High-level clinical pathway for MAID",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Checklist for Track Two",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "There aretooltipsTooltip contentthroughout this tool that you can place your cursor over to view the definition of certain terms. For the full list of definitions, seeDefinition of terms. On March 17, 2021, changes to the MAID legislation came into force throughBill C-7.1These changes allow MAID for eligible persons who wish to pursue a medically assisted death, whether their natural death is reasonably foreseeable (Track One) or not reasonably foreseeable (Track Two).2 This resource highligh..."
+    },
+    {
+      "heading": "Section 1: Patient inquiry",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Patient inquires about MAID",
+          "anchor": "#Patient-inquires-about-MAID",
+          "level": 3
+        },
+        {
+          "heading": "Conscientious objections and patient referral",
+          "anchor": "#Conscientious-objections",
+          "level": 3
+        },
+        {
+          "heading": "Patient submits formal written request",
+          "anchor": "#Patient-submits-formal-written-request",
+          "level": 3
+        },
+        {
+          "heading": "Discussion to understand motivation behind patient\u2019s inquiry about MAID",
+          "anchor": "#Discussion",
+          "level": 3
+        },
+        {
+          "heading": "Federal reporting requirements",
+          "anchor": "#Federal-Reporting-Requirements",
+          "level": 3
+        }
+      ],
+      "summary": "A patient\u2019s inquiry about MAID can take many forms:7 An explicit request for MAID;A general inquiry of all available options to reduce suffering and expedite death (including MAID);An express desire to end their life with the help of a medical or nurse practitioner. Clinicians with conscientious objections must respectfully and non-judgementally inform their patients that they will not assess or provide MAID and refer patients to another medical or nurse practitioner, institution or agency th..."
+    },
+    {
+      "heading": "Section 2: Assessment of patient eligibility and procedural safeguards",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Competent adult and assessing capacity",
+          "anchor": "#Competent-Adult-and-Assessing-Capacity",
+          "level": 3
+        },
+        {
+          "heading": "Voluntary request and informed consent to MAID",
+          "anchor": "#Voluntary-Request-and-Informed-Consent-to-MAID",
+          "level": 3
+        },
+        {
+          "heading": "Grievous and irremediable medical condition",
+          "anchor": "#Grievous-and-Irremediable-Medical-Condition",
+          "level": 3
+        },
+        {
+          "heading": "Procedural safeguards",
+          "anchor": "#Procedural-Safeguards",
+          "level": 3
+        },
+        {
+          "heading": "Consulting a medical practitioner or nurse practitioner with \u201cexpertise\u201d in the condition causing the person\u2019s suffering3,18",
+          "anchor": "#Clinician-with-expertise",
+          "level": 3
+        },
+        {
+          "heading": "90-day assessment period",
+          "anchor": "#90-day-assessment-period",
+          "level": 3
+        },
+        {
+          "heading": "Inclusion of family members, caregivers and friends",
+          "anchor": "#inclusion",
+          "level": 3
+        },
+        {
+          "heading": "Care team",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "INFO:the Ministry has created Clinician Aids to record the patient\u2019s request and the results of the eligibility assessments: Clinician Aid A\u2013 is the formal patient request for MAID and completed by the patientClinician Aid B\u2013 is completed by the Clinician assessing/providing MAID to the patient and used to record the patient\u2019s eligibilityClinician Aid C\u2013 is completed by the Second Clinician who is confirming the patient\u2019s eligibility Federal legislation requires that a patient be at least 18 ..."
+    },
+    {
+      "heading": "Section 3: Provision of MAID",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Clinician develops care plan for the provision of MAID",
+          "anchor": "#Clinician-develops-care-plan-for-the-provision-of-MAID",
+          "level": 3
+        },
+        {
+          "heading": "Organ and tissue donations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Preparing for Self-Administration",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "\u201cAdvance consent for failed Self-Administration\u201d",
+          "anchor": "#advance-consent-for-failed-self-administration",
+          "level": 3
+        },
+        {
+          "heading": "Informing the pharmacist",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Drug protocols",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Notification of the Coroner",
+          "anchor": "#Notification-of-the-Coroner",
+          "level": 3
+        }
+      ],
+      "summary": "The Clinician develops a care plan for the provision of MAID through discussions with the patient, individuals chosen by the patient and other care team members. Determine the method of providing MAID that is most appropriate for the patient given their wishes, health status and available supports;If the patient plans to self-administer the medication for MAID at home: Clinicians should help the patient and the individuals chosen by the patient assess whether this is a manageable option. If s..."
+    },
+    {
+      "heading": "Definition of terms",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "A physician who is licensed to practice medicine in Ontario. A registered nurse who is licensed to practice as a nurse practitioner in Ontario. For this resource, the term Clinician refers to the medical or nurse practitioner that is overseeing the provision of MAID for an individual patient. This role may include, but is not limited to, receiving a patient request for MAID, conducting the first eligibility assessment, and administering or prescribing the drug protocol for the provision of MA..."
+    },
+    {
+      "heading": "Supporting materialsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "CPSO Policy Statement #18: Medical Assistance in DyingCPSO Fact Sheet: Ensuring Access to Care \u2013 Effective ReferralCNO Guidance on Nurses\u2019 Roles in Medical Assistance in DyingOCP Code of EthicsClinician Aid A \u2013 Patient Request for Medical Assistance in DyingClinician Aid B \u2013 (Primary) \u201cMedical Practitioner\u201d or \u201cNurse Practitioner\u201d Medical Assistance in Dying AidClinician Aid C \u2013 (Secondary) \u201cMedical Practitioner\u201d or \u201cNurse Practitioner\u201d Medical Assistance in Dying AidGuidance for reporting on..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]An Act to amend the Criminal Code (medical assistance in dying) (Bill C-7), 2nd Sess, 43rd Leg, Canada, 2021 (assented to March 17, 2021).[2]Government of Canada Department of Justice. Canada\u2019s new medical assistance in dying (MAID) law. 2021. [cited 2021 April 5]. Available from:https://www.justice.gc.ca/eng/cj-jp/ad-am/bk-di.html[3]College of Physicians and Surgeons of Ontario. Advice to the Profession: Medical Assistance in Dying. 2021. [cited 2021 April 20]. Available from:https://www...."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Resource was developed as part of the Knowledge Translation in Primary Care Initiative, led by CEP with collaboration from OCFP and NPAO. Clinical leadership for the development of the resource was provided by Dr. Sandy Buchman, MD CCFP (PC) FCFP, with Dr. Jocelyn Downie, CM, FRSC, FCAHS, SJD, providing feedback on the legal content for the 2021 update. The resource was subject to external review by health care providers and other relevant stakeholders. This resource was funded by the Go..."
+    }
+  ],
+  "references": [],
+  "summary": "Medical Assistance in Dying (MAID) in Ontario Track Two: Natural Death is NOT Reasonably Foreseeable. Category: End Of Life. Features: algorithm, calculator, checklist. 8 main sections"
+}

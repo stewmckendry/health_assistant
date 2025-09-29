@@ -1,0 +1,129 @@
+Subsection: Bone Mineral Density (BMD) Measurement
+Parent Section: D
+Page Reference: D16
+Pages: 364 to 365
+Text chunks: 1
+Total text length: 5036 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      24,
+      "X145 - one site............................................................................... 42.85 40.15"
+    ],
+    [
+      25,
+      "X146 - two or more sites ................................................................ 55.20 48.00"
+    ],
+    [
+      27,
+      "X152 - one site............................................................................... 42.85 40.15"
+    ],
+    [
+      28,
+      "X153 - two or more sites ................................................................ 55.20 48.00"
+    ],
+    [
+      30,
+      "X142 - one site............................................................................... 42.85 40.15"
+    ],
+    [
+      31,
+      "X148 - two or more sites ................................................................ 55.20 48.00"
+    ],
+    [
+      33,
+      "X149 - one site............................................................................... 42.85 40.15"
+    ],
+    [
+      34,
+      "X155 - two or more sites ................................................................ 55.20 48.00"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 364 ---
+DIAGNOSTIC RADIOLOGY
+BONE MINERAL DENSITY (BMD) MEASUREMENT
+H P
+Dual-energy X-ray Absorptiometry (DXA) - by axial technique only
+Definition:
+For the purpose of second and subsequent testing,
+“high risk patient” means a patient:
+1.at risk for accelerated bone loss (in the absence of other risk factors, patient age is deemed
+not to place a patient at high risk for accelerated bone loss);
+2.with osteopenia or osteoporosis on any previous BMD testing; or
+3.with bone loss in excess of 1% per year as demonstrated by previous BMD testing.
+“low risk patient” means a patient who is not a high risk patient.
+Definition/Required elements of service:
+BMD measurement by DXA is an insured service only when all the following conditions have
+been met:
+1.the service is rendered for the prevention and management of osteoporosis or osteopenia;
+2.when more than one site is measured, the sites include both hip and spine and where
+measurement of both hip and spine is not technically feasible the site measured consists of
+either hip or spine.
+[Commentary:
+Measurement of hip and spine would be considered not technically feasible due to prosthesis
+or deformity.]
+Baseline test
+X145 - one site............................................................................... 42.85 40.15
+X146 - two or more sites ................................................................ 55.20 48.00
+Second test - low risk patient
+X152 - one site............................................................................... 42.85 40.15
+X153 - two or more sites ................................................................ 55.20 48.00
+Subsequent test - low risk patient
+X142 - one site............................................................................... 42.85 40.15
+X148 - two or more sites ................................................................ 55.20 48.00
+Subsequent test - high risk patient
+X149 - one site............................................................................... 42.85 40.15
+X155 - two or more sites ................................................................ 55.20 48.00
+Payment rules:
+1.Patients are limited to one baseline test (X145 or X146) in their lifetime.
+2.Second test - low risk patient (X152/X153) is limited to a maximum of one test rendered not
+earlier than 36 months following the baseline test (X145/X146).
+3.Subsequent test - low risk patient (X142/X148) is not eligible for payment when rendered
+earlier than 60 months following the second or any subsequent test.
+Amd 12 Draft 1 D16 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 365 ---
+DIAGNOSTIC RADIOLOGY
+March 4, 2024 (effective April 1, 2024)
+BONE MINERAL DENSITY (BMD) MEASUREMENT
+H P
+4.Any combination of services described by X152 or X153 that were rendered to a patient
+between July 1, 2007 and April 1, 2008 for which claims were submitted and paid as insured
+services under the Health Insurance Act constitutes, a “second test – low risk patient” for the
+purpose of determining service maximums for a second or subsequent test - low risk patient,
+and is deemed to have been rendered on July 1, 2010.
+5.Any service described by X152 or X153 rendered between April 1, 2008 and July 1, 2010 for
+which a claim was submitted and paid as an insured service under the Health Insurance Act
+constitutes a subsequent test - low risk patient for the purpose of determining service
+maximums for second or subsequent test – low risk patient and is deemed to have been
+rendered on July 1, 2010.
+6.Subsequent test - high risk patients (X149/X155) is limited to a maximum of one test every 12
+months unless the ordering physician obtains written prior authorization from a medical
+consultant.
+[Commentary:
+Authorization will be dependent on the ordering physician demonstrating that the test is
+generally accepted as necessary for the patient under the circumstances.]
+[Commentary:
+1.Baseline, second test and subsequent tests should be ordered only in accordance with
+current practice guidelines. In those situations where testing is ordered on a particular patient
+for reasons that vary from the guidelines, the ordering physician should ensure that the
+patient’s medical record sufficiently explains the justification for the test in this particular
+case.
+2.In the event a patient with a previous normal baseline test (X145/X146) or second test (X152/
+X153) or normal subsequent test – low risk patient (X142/X148) meets any of the criteria
+listed for high risk patients as stated above, the patient would be eligible for subsequent test
+– high risk patient services (X149/X155) subject to the restriction stated in payment rule #6.
+3.The 2002 Clinical Practice Guidelines for the Diagnosis and Management of Osteoporosis in
+Canada (reviewed in 2006) can be found at http://www.cmaj.ca/cgi/reprint/167/10_suppl/
+s1.pdf.
+4.Individuals under age 65 without one major or two minor risk factors typically do not benefit
+from BMD measurement.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) D17 Amd 12 Draft 1

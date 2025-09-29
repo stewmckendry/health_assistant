@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_type_2_diabetes_insulin_therapy",
+  "slug": "type-2-diabetes-insulin-therapy",
+  "name": "Type 2 diabetes: insulin therapy",
+  "category": "chronic_disease",
+  "url": "https://tools.cep.health/tool/type-2-diabetes-insulin-therapy/",
+  "content_hash": "1f23bf99301c4ba6390b96bcf1182a87b34f9cc40d15d7aec9aedd337ae39725",
+  "crawled_at": "2025-09-24T15:32:41.547284"
+}

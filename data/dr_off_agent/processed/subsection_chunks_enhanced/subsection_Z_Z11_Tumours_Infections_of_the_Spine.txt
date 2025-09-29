@@ -1,0 +1,44 @@
+Subsection: Tumours/Infections of the Spine
+Parent Section: Z
+Page Reference: Z11
+Pages: 783 to 783
+Text chunks: 1
+Total text length: 1706 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 783 ---
+SPINAL SURGICAL PROCEDURES
+TUMOURS/INFECTIONS OF THE SPINE
+Asst Surg Anae
+# E386 - extradural decompression - spinal cord or cauda equina -
+tumour or infection ............................................. add 42%
+Note:
+E386 only applies to the major decompressive procedure.
+# N553 Simple soft tissue tumour excision under 5cm ....................... 6 204.00 8
+# N554 Radical soft tissue tumour excision 5cm and greater ............. 9 484.50 13
+Spinal osteomyelitis
+# N549 - incision and drainage including sequestrectomy, anterior
+approach ............................................................................ 7 632.40 10
+# N548 - incision and drainage only, posterior approach .................. 6 102.00 7
+# N550 - sequestrectomy, posterior approach .................................. 6 357.00 6
+Note:
+N548 is not eligible for payment when rendered with N550 as it is included in the N550 service.
+# N560 Intradural extramedullary spinal tumour(s) - partial or total
+removal............................................................................... 8 2132.80 10
+# N561 Intradural intramedullary spinal tumour(s) - partial or total
+removal............................................................................... 9 2461.45 12
+# E382 - spinal duroplasty using autologous/allogenic/synthetic
+tissue, to N560 or N561 ............................................. add 244.80
+# E383 - acute spinal cord injury premium, to N560 or N561... add 255.00
+Note:
+1.No other decompressive codes are eligible for payment when rendered with N560 or N561.
+2.N560 is not eligible for payment when rendered with N561.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Z11 Amd 12 Draft 1

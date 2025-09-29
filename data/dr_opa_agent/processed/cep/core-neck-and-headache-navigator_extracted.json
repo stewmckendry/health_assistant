@@ -1,0 +1,193 @@
+{
+  "document_id": "cep_core_neck_and_headache_navigator",
+  "source_url": "https://tools.cep.health/tool/core-neck-and-headache-navigator/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "neurology",
+  "extracted_at": "2025-09-24T15:33:03.811905",
+  "content_hash": "4daf78d5ac7b1ca320f1674c6fab53ee4e9d7e7b30b3a2a5c3515f81e996de60",
+  "title": "CORE Neck and Headache Navigator",
+  "tool_slug": "core-neck-and-headache-navigator",
+  "last_updated": ".png\"/>",
+  "navigation": [],
+  "key_content": {
+    "red_flags": [
+      "IfNORed Flags, continue with CORE Neck ToolCardiovascular pathology (carotid arterial dissection,concurrent chest pain, myocardial ischemia) can present withneck and shoulder pain."
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "CORE Neck history and Headache navigator",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Emergent \u2013 address immediately Thunderclap onset (CT)Fever and meningismus (CT)Papilloedema (+focal signs or reduced LOC) (MRI)Acute glaucoma (no current recommendation) Urgent \u2013 address hours to days"
+    },
+    {
+      "heading": "CORE Neck: Physical examination",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This is an examination which supports or refutes the differential diagnosis while assessing the severity of symptoms for prognosisand treatment planning. This examination should take 5 minutes of the clinical assessment. The examination has been developed forprimary care providers. Neck screenCervical Active ROMFlexionExtensionRotationSide flexionShoulder screenActive ROM Cervical Active ROMFlexionExtensionRotationSide flexion"
+    },
+    {
+      "heading": "CORE Neck: Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological options10,16",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological options9,10,16,18",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Patient education and exercise should be included as part of active management and may be delivered solely within primary care office visit. Reassurance of good prognosis and full recoveryEarly return to non-painful activities of daily living and workIndependent stretch, strengthen and aerobic exerciseRefer to active therapy if education and exercise does not alleviate symptoms. Treatment may include:"
+    },
+    {
+      "heading": "CORE Neck: Referrals",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Rehabilitation Referral provided to Patient",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Surgical Referral",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pain Management Referrals9,10,18",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Absence ofred flagsPain is managed well and patient can tolerate treatment regime16Pain has mechanical directional preference indicated by movement, position or activityPatient is ready to be an active partner in goal setting and self-management Ability to prescribe and progress exercise20Ability to modify, assess and treat limitations pertaining to\u00a0 work, home or fitness pursuitsAbility to provide manipulative and soft tissue therapy including massage, mobilizations, myofascial release techn..."
+    },
+    {
+      "heading": "Headache navigator",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Neuro-Imaging",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Headache Management Highlights",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The Headache Navigator is designed to provide guidance to primary care providers in an office based setting to manage primaryheadache disorders (e.g.migraine, cluster, tension type headache).It does not provide guidance for: Secondary headaches (e.g.cervicogenic headaches, post-traumatic headaches, temporomandibular joint disorder).Combined assessment and management ofheadache and neckpain due to the complexity of separating out the underlying pathologies. Use the Headache Navigator to start ..."
+    },
+    {
+      "heading": "Migraine pharmacological management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pharmacological management",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "These recommendations are systematically developed statements to assist practictioner and patient decisions about appropriate health care for specific clinical circumstances. They should be used as an adjunct to sound clinical decision making. Refer to full guideline for migraine treatment in pregnancy. Imaging is not recommended if neurological exam is normal.1,5Acute MedicationMonitor for medication overuseProphylactic medication if headache:>3 days/month and acute medication not effective;..."
+    },
+    {
+      "heading": "Behavioral management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Headache diary:record frequency, intensity, triggers and medicationAdjust lifestyle factors:reduce caffeine, ensure regular exercise, avoid irregular and/or inadequate sleep or mealsStress management:relaxation, training, CBT,pacing activity, biofeedback"
+    },
+    {
+      "heading": "Tension type headache management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pharmacological management",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "These recommendations are systematically developed statements to assist practitioner and patient decisions about appropriate health care for specific clinical circumstances. They should be used as an adjunct to sound clinical decision making. Imaging is not recommended if neurological exam is normal.1,5Acute medicationMonitor for medication overuseProphylactic medication if disability despite acute medicationIf the patient\u2019s headaches continue to interfere with function and activity after tri..."
+    },
+    {
+      "heading": "Behavioral management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Headache diary:record frequency, intensity, triggers and medicationAdjust lifestyle factors:reduce caffeine, ensure regular exercise, avoid irregular and/or inadequate sleep or mealsStress management:relaxation, training, CBT,pacing activity, biofeedback"
+    },
+    {
+      "heading": "Cluster headache management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Pharmacological management",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "These recommendations are systematically developed statements to assist practitioner and patient decisions about appropriate health care for specific clinical circumstances. They should be used as an adjunct to sound clinical decision making. Management primarily pharmacologicalAcute medicationProphylactic medicationEarly specialist referral recommendedIf considering neuroimaging choose MRI.1,5 Subcutaneous sumatriptan 6 mgintranasal zolmitriptan 5 mg;OR100% oxygen at 12 litres/minute for 15 ..."
+    },
+    {
+      "heading": "Supporting materialsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Opioid Risk Tool:This tool identifies patients who may be at risk for opioid dependency so that appropriate medication management can be planned.The Keele STarT Back Screening Tool: This screening tool categorizes patients by risk of persistent symptoms (low, medium or high), which allows the clinician to tailor interventions appropriately.Neck Pain Information and Exercise Sheet:The exercise sheet includes images to help identify correct and incorrect posture positions, and lying positions, ..."
+    },
+    {
+      "heading": "ReferencesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "CORE Neck",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Headache navigator",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "[1]Kopjar B, Tetreault L, Kalsi-Ryan S, Fehlings M. Psychometric properties of the modified Japanese orthopaedic association scale in patients with cervical spondylotic myelopathy. Spine. 2014. 40(1): E23-28.[2]Hall H. Effective spine triage: Patterns of pain. Ochsner J. 2014 Spring; 14(1): 88-95.[3]Stiell IG, et al. The Canadian C-spine rule for radiography in alert and stable trauma patients. JAMA. 2001 Oct; 286(15):1841-8[4]Concussions Ontario [Internet]. 2015 [cited 2016 May 30]. Availabl..."
+    },
+    {
+      "heading": "Acknowledgments and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative which is led by CEP with collaboration from Ontario College of Family Physicians and Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the tool was provided by Drs. Julia Alleyne MD, CAC(SEM), FCFP and Arun Radhakrishnan MSc, MD, CM CCFP and was subject to external review by primary care providers and other relevant stakeholders. This Tool was funded by the Government ..."
+    }
+  ],
+  "references": [],
+  "summary": "CORE Neck and Headache Navigator. Category: Neurology. Features: algorithm, calculator, checklist. 13 main sections"
+}

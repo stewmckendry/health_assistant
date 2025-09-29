@@ -1,0 +1,90 @@
+{
+  "subsection_title": "Conjunctiva",
+  "parent_section": "Y",
+  "page_ref": "Y11",
+  "pages_processed": "765-765",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "E208",
+      "description": "Peritomy (Gunderson conjunctival flap)",
+      "fee": 225.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z861",
+      "description": "Biopsy",
+      "fee": 26.6,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E210",
+      "description": "Excision of conjunctival lesion",
+      "fee": 100.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": "#",
+      "special_prefix": "#"
+    },
+    {
+      "code": "E948",
+      "description": "- with mucous membrane graft",
+      "fee": null,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "add 113.20",
+      "special_prefix": null
+    },
+    {
+      "code": "E937",
+      "description": "- with autogenous conjunctival transplant",
+      "fee": null,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "add 100.00",
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

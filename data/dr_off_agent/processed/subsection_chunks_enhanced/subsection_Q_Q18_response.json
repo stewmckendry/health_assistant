@@ -1,0 +1,206 @@
+{
+  "subsection_title": "Veins",
+  "parent_section": "Q",
+  "page_ref": "Q18",
+  "pages_processed": "664-666",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z745",
+      "description": "Saphenous",
+      "fee": 53.2,
+      "units": 6
+    },
+    {
+      "code": "R868",
+      "description": "High ligation and stripping of long saphenous vein with groin dissection",
+      "fee": 200.0,
+      "units": 6
+    },
+    {
+      "code": "R869",
+      "description": "Stripping of short saphenous vein with popliteal dissection",
+      "fee": 107.5,
+      "units": 6
+    },
+    {
+      "code": "R837",
+      "description": "Multiple ligation and avulsion",
+      "fee": 200.0,
+      "units": 6
+    },
+    {
+      "code": "R844",
+      "description": "Recurrent varicose veins - multiple ligation and/or stripping",
+      "fee": 353.8,
+      "units": 6
+    },
+    {
+      "code": "R842",
+      "description": "Extra fascial and sub-fascial incompetent perforators by full fascial technique",
+      "fee": 384.75,
+      "units": 6
+    },
+    {
+      "code": "E653",
+      "description": "plus stripping",
+      "fee": 127.15,
+      "conditions": "add"
+    },
+    {
+      "code": "Z746",
+      "description": "Femoral",
+      "fee": 74.25,
+      "units": 6
+    },
+    {
+      "code": "Z747",
+      "description": "Popliteal",
+      "fee": 74.25,
+      "units": 6
+    },
+    {
+      "code": "Z748",
+      "description": "Internal jugular",
+      "fee": 148.6,
+      "units": 6
+    },
+    {
+      "code": "R839",
+      "description": "Internal iliac",
+      "fee": 394.85,
+      "units": 6
+    },
+    {
+      "code": "R834",
+      "description": "I.V.C. - transabdominal",
+      "fee": 446.5,
+      "units": 6
+    },
+    {
+      "code": "R838",
+      "description": "I.V.C. - transvenous (umbrella)",
+      "fee": 303.0,
+      "units": 6
+    },
+    {
+      "code": "R825",
+      "description": "major aneurysm",
+      "fee": 975.5,
+      "units": 10
+    },
+    {
+      "code": "R826",
+      "description": "minor aneurysm",
+      "fee": 497.25,
+      "units": 10
+    },
+    {
+      "code": "R820",
+      "description": "Lacerated major vein e.g. femoral, popliteal, vena cava, axillary, sub-clavian, brachial or microscopic repair of digital vein",
+      "fee": 396.95,
+      "units": 6
+    },
+    {
+      "code": "R818",
+      "description": "including patch",
+      "fee": 596.7,
+      "units": 10
+    },
+    {
+      "code": "R819",
+      "description": "by vein graft",
+      "fee": 793.55,
+      "units": 10
+    },
+    {
+      "code": "R835",
+      "description": "S.V.C. bypass graft",
+      "fee": 758.4,
+      "units": 7
+    },
+    {
+      "code": "R836",
+      "description": "Pulmonary embolectomy",
+      "fee": 866.55,
+      "units": 18
+    },
+    {
+      "code": "R828",
+      "description": "Ilio-femoral thrombectomy with or without femoral vein ligation",
+      "fee": 446.5,
+      "units": 10
+    },
+    {
+      "code": "E657",
+      "description": "plus I.V.C. ligation",
+      "fee": 446.5,
+      "conditions": "add"
+    },
+    {
+      "code": "R829",
+      "description": "Thrombectomy, other than above",
+      "fee": 302.8,
+      "units": 7
+    },
+    {
+      "code": "R865",
+      "description": "Distal spleno-renal shunt",
+      "fee": 1259.55,
+      "units": 10
+    },
+    {
+      "code": "R822",
+      "description": "Porto-caval",
+      "fee": 919.1,
+      "units": 10
+    },
+    {
+      "code": "R823",
+      "description": "abdominal approach",
+      "fee": 1117.9,
+      "units": 10
+    },
+    {
+      "code": "R821",
+      "description": "transthoracic approach",
+      "fee": 1117.9,
+      "units": 10
+    },
+    {
+      "code": "R824",
+      "description": "Meso-caval",
+      "fee": 866.55,
+      "units": 10
+    },
+    {
+      "code": "R827",
+      "description": "Creation of A.V. fistula",
+      "fee": 490.15,
+      "units": 6
+    },
+    {
+      "code": "R841",
+      "description": "Obliteration of A.V. fistula",
+      "fee": 82.55,
+      "units": 7
+    },
+    {
+      "code": "R833",
+      "description": "Ligation or removal of by-pass graft",
+      "fee": 82.55,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

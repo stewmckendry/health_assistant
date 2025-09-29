@@ -1,0 +1,156 @@
+{
+  "subsection_title": "Angiography",
+  "parent_section": "E",
+  "page_ref": "E2",
+  "pages_processed": "374-375",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "J021",
+      "description": "insertion of catheter (including cut down, if necessary) and injection, if given",
+      "fee": 121.4,
+      "units": 6
+    },
+    {
+      "code": "J022",
+      "description": "selective catheterization - add to catheter insertion fee (per vessel, to maximum of 4)",
+      "fee": 60.15,
+      "units": "each"
+    },
+    {
+      "code": "J014",
+      "description": "selective catheterization for spinal and parathyroid angiography",
+      "fee": 38.05,
+      "units": null
+    },
+    {
+      "code": "J056",
+      "description": "transcatheter fibrinolytic therapy",
+      "fee": 670.55,
+      "units": 7
+    },
+    {
+      "code": "J058",
+      "description": "Vascular stenting",
+      "fee": 101.55,
+      "units": 6
+    },
+    {
+      "code": "J066",
+      "description": "Renal angioplasty",
+      "fee": 504.4,
+      "units": 6
+    },
+    {
+      "code": "J031",
+      "description": "direct puncture",
+      "fee": 89.9,
+      "units": 6
+    },
+    {
+      "code": "J025",
+      "description": "Transluminal angioplasty including angiography (if anatomy is known), with or without pressure measurements - one or more site(s) or vessel(s)",
+      "fee": 398.15,
+      "units": 6
+    },
+    {
+      "code": "J067",
+      "description": "Spinal angiography for AV malformation, per vessel, maximum of 12 vessels per side",
+      "fee": 44.0,
+      "units": 6
+    },
+    {
+      "code": "J048",
+      "description": "Percutaneous trans-hepatic catheter portal venography",
+      "fee": 311.05,
+      "units": 6
+    },
+    {
+      "code": "J027",
+      "description": "direct puncture",
+      "fee": 76.55,
+      "units": 6
+    },
+    {
+      "code": "J026",
+      "description": "direct puncture",
+      "fee": 70.8,
+      "units": 6
+    },
+    {
+      "code": "J033",
+      "description": "Splenoportogram",
+      "fee": 128.35,
+      "units": 6
+    },
+    {
+      "code": "J034",
+      "description": "Trans-lumbar aortogram",
+      "fee": 89.9,
+      "units": 6
+    },
+    {
+      "code": "J032",
+      "description": "direct puncture or by retrograde brachial injection",
+      "fee": 111.5,
+      "units": 6
+    },
+    {
+      "code": "J040",
+      "description": "first vessel, claim appropriate angiographic procedural and radiological fees plus",
+      "fee": 121.25,
+      "units": null
+    },
+    {
+      "code": "J047",
+      "description": "each additional vessel catheterized and occluded per vessel",
+      "fee": 56.8,
+      "units": null
+    },
+    {
+      "code": "J023",
+      "description": "Intra-arterial infusion of drugs e.g. for control of gastrointestinal haemorrhage - claim appropriate angiographic procedural and radiological fees plus a per diem supervision fee of",
+      "fee": 34.0,
+      "units": null
+    },
+    {
+      "code": "J035",
+      "description": "Pressure measurements during angiography",
+      "fee": 34.0,
+      "units": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z439",
+      "context": "not payable with",
+      "description": "cardiac catheterization procedures",
+      "source_subsection": "Angiography",
+      "source_page": "E2"
+    },
+    {
+      "code": "G288",
+      "context": "not payable with",
+      "description": "cardiac catheterization procedures",
+      "source_subsection": "Angiography",
+      "source_page": "E2"
+    },
+    {
+      "code": "G298",
+      "context": "not payable with",
+      "description": "J058 claimed same patient same day",
+      "source_subsection": "Angiography",
+      "source_page": "E2"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

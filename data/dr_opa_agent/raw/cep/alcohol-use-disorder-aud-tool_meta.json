@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_alcohol_use_disorder_aud_tool",
+  "slug": "alcohol-use-disorder-aud-tool",
+  "name": "Alcohol Use Disorder (AUD)",
+  "category": "substance_use",
+  "url": "https://tools.cep.health/tool/alcohol-use-disorder-aud-tool/",
+  "content_hash": "4eea88f2ca4aada4dd9e4056566e22759d760e73b366a2d6a49abefe566becfb",
+  "crawled_at": "2025-09-24T15:32:37.230736"
+}

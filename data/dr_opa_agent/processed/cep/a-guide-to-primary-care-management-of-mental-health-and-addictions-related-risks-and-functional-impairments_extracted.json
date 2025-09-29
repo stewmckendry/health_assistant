@@ -1,0 +1,186 @@
+{
+  "document_id": "cep_a_guide_to_primary_care_management_of_mental_health_and_addictions_related_risks_and_functional_impairments",
+  "source_url": "https://tools.cep.health/tool/a-guide-to-primary-care-management-of-mental-health-and-addictions-related-risks-and-functional-impairments/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "social_care",
+  "extracted_at": "2025-09-24T15:33:02.391057",
+  "content_hash": "86dce46630b785fd8634100d3db7f5c666ef668ce79dc49849774868bc8fe20c",
+  "title": "Keeping Your Patients Safe: A Guide to Primary Care Management of Mental Health and Addictions-related Risks and Functional Impairments",
+  "tool_slug": "a-guide-to-primary-care-management-of-mental-health-and-addictions-related-risks-and-functional-impairments",
+  "last_updated": ".png\"/>",
+  "navigation": [
+    {
+      "title": "High immediate risk",
+      "anchor": "#highrisk",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Medium to high risk",
+      "anchor": "#mediumrisk",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Low Risk",
+      "anchor": "#lowrisk",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Mandatory and permissive reporting",
+      "anchor": "#mandatoryreporting",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Referral to Community Mental Health Supports and Services",
+      "anchor": "#referral",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Psychotherapy",
+      "anchor": "#psychotherapy",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Warning signs and risks",
+      "Probe\u2020to determine if there are warning signs indicative of risk of harm to self or others"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Exploring symptoms and functional impairments to identify risk",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Investigate the impact of a patient\u2019s symptoms and behaviours on their daily functioning (e.g. unsafe driving) to consider potential risks (e.g. harm to self or others).3,4,5With the patient\u2019s consent, include family and/or other caregivers as part of this discussion. Personal Care:activities of daily living (e.g. cooking, cleaning, bathing, selecting appropriate attire, financial management, housekeeping, transportation, shopping, medication compliance) Dependents: caring for children, impai..."
+    },
+    {
+      "heading": "Assessing level of risk and identifying the appropriate intervention",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Weigh the factors",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Identify the intervention",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Use discussions\u2020with the patient to identify factors that increase susceptibility to risk. Based on your assessment of warning signs, means and opportunities, determine if protective factors mitigate the immediate risk of harm to self or others. Click here to view as image Examples of protective factors3,5,7,10"
+    },
+    {
+      "heading": "Interventions",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "High immediate risk",
+          "anchor": "#highrisk",
+          "level": 3
+        }
+      ],
+      "summary": "High immediate riskMedium to high riskLow risk A patient is at high-immediate risk of harm when life-threatening impairments (e.g. loss of life or limb) are imminent as a result of their actions/behaviours. These patients should be referred to the ED or local crisis support services for further assessment, where available and appropriate. The intent of the following section is to assist PCPs in making key decisions, once it has been determined that a patient needs to be sent to the ED for fur..."
+    },
+    {
+      "heading": "High Immediate Risk ED Consult",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Medium to high risk",
+          "anchor": "#mediumrisk",
+          "level": 3
+        }
+      ],
+      "summary": "Patient poses a high, immediate risk of harm \u2013 Send patient to emergency department for further assessment Determine best mode of transport:With the patient\u2019s consent, contact a family member or caregiver to go with\npatient to the EDIf in a rural or secluded location where the ED is not easily accessible, identify appropriate medical transport options.Send patient to ED with a brief note and fax a copy of the brief note to the EDCall the ED/receiving facility and inform\nthem that the patient ..."
+    },
+    {
+      "heading": "Medium-High Risk Adult Mental Health Intervention",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Low Risk",
+          "anchor": "#lowrisk",
+          "level": 3
+        }
+      ],
+      "summary": "Children:If there are legitimate concerns regarding the safety and welfare of children, consider the need to consult the Children\u2019s Aid SocietyMotor vehicle license:Report to the Registrar of Motor Vehicles any patient who may be suffering from a medical condition that could impair his or her driving abilityWork:Provide work-related letter to patient for work to grant immediate sick leave See below for links and resources to relevant forms.N.B.The patient should be informed that these steps w..."
+    },
+    {
+      "heading": "Ongoing monitoring and follow-up",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Monitor and assess the patient\u2019s progress of care goals, clinical outcomes, satisfaction and unmet needsLiaise and manage care transitions or changes in care status to facilitate continuity of care (e.g. warm handoffs as patient transitions in and out of hospital and/or specialist care)Identify appropriate point of contact for the patient with respect to any care coordination issuesParticipate in multi-disciplinary case conferences to develop a care plan based on the patient\u2019s care goals. Add..."
+    },
+    {
+      "heading": "Supporting materials",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Mandatory and permissive reporting",
+          "anchor": "#mandatoryreporting",
+          "level": 3
+        },
+        {
+          "heading": "Referral to Community Mental Health Supports and Services",
+          "anchor": "#referral",
+          "level": 3
+        },
+        {
+          "heading": "Psychotherapy",
+          "anchor": "#psychotherapy",
+          "level": 3
+        },
+        {
+          "heading": "Additional supporting materials and resources that may be useful for PCPs:",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "CPSO Policy Statement #6-12 Mandatory and Permissive ReportingThe College of Physicians and Surgeons of Ontario (CPSO) have documented all instances of mandatory reporting (e.g. child abuse or neglect; impaired driving ability; safety related to pilots or air traffic controllers, railway workers and maritime workers; and occupational health and safety) and permissive reporting (e.g. disclosure to prevent harm) requirements. Reporting Child Abuse & Neglect: It\u2019s Your DutyProvides an overview o..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Silveira J, Rockman P. Mental disorders, risks, and disability: Primary care needs a novel approach. Canadian Family Physician. 2016;62(12):958-960.[2]Silveira J, Rockman P, Fulford C, Hunter J. Approach to risk identification in undifferentiated mental disorders. Canadian Family Physician. 2016;62(12):972-978.[3]Perlman CM, Neufeld E, Martin L, Goy M, Hirdes JP. Suicide Risk Assessment Inventory: A Resource Guide for Canadian Health Care Organizations. 2011. Toronto, ON: Ontario Hospital ..."
+    },
+    {
+      "heading": "Acknowledgment and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by Centre for Effective Practice with collaboration from the Ontario College of Family Physicians and the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the tool was provided by Dr Jose Silveira, MD, FRCPC Dip. ABAM; Dr Patricia Rockman, MD CCFP FCFP and Dr Leah Skory, MD, CCFP FCFP. The tool was subject to external review by health care providers and other rel..."
+    }
+  ],
+  "references": [],
+  "summary": "Keeping Your Patients Safe: A Guide to Primary Care Management of Mental Health and Addictions-related Risks and Functional Impairments. Category: Social Care. Features: forms. 9 main sections"
+}

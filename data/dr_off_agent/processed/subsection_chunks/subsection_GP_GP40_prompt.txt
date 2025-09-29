@@ -1,0 +1,199 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Hospital and Institutional Consultations and Assessments
+Parent Section: GP
+Page Reference: GP40
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Hospital and Institutional Consultations and Assessments",
+  "parent_section": "GP",
+  "page_ref": "GP40",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 54 ---
+GENERAL PREAMBLE
+HOSPITAL AND INSTITUTIONAL CONSULTATIONS AND ASSESSMENTS
+ACUTE CARE HOSPITAL – NON-EMERGENCY IN-PATIENT SERVICES (“C” PREFIX
+SERVICES)
+A. Admission Assessment – General Requirements
+Definition:
+a. An admission assessment is the initial assessment of the patient rendered for the purpose
+of admitting a patient to hospital.
+b. The admitting physician is the physician who renders the admission assessment.
+Payment rules:
+1. Except as outlined below in paragraph 3, when the admitting physician has not previously
+assessed the patient for the same presenting illness within 90 days of the admission
+assessment, the admission assessment constitutes a consultation, general or medical specific
+or specific assessment depending on the specialty of the physician, the nature of the service
+rendered and any applicable payment rules.
+2. Except as outlined below in paragraph 3, if the admitting physician has previously assessed the
+patient for the same presenting illness within 90 days of the admission assessment, the
+admission assessment constitutes a general re-assessment or specific re-assessment
+depending on the specialty of the physician, the nature of the service rendered and any
+applicable payment rules.
+3. When a hospital in-patient is transferred from one physician to another physician, only one
+consultation, general or specific assessment or reassessment is eligible for payment
+per patient admission. The amount eligible for payment for services in excess of this limit will be
+adjusted to a lesser assessment fee. An additional admission assessment is not eligible for
+payment when a hospital inpatient is transferred from one physician to another physician within
+the same hospital.
+Admission Assessments by Specialists:
+When a patient has been assessed by a specialist in the emergency room (ER) or out-patient
+department (OPD) and that physician renders a service described as a consultation, specific
+assessment, or medical specific assessment and subsequently admits the patient to hospital, the
+initial consultation, specific, or medical specific assessment constitutes the admission assessment.
+When a patient has been assessed by a specialist in the ER or OPD, and that physician renders any
+other assessment other than those listed in the paragraph immediately above, and that physician
+subsequently admits the patient to hospital, an admission assessment is eligible for payment in
+addition to the initial assessment, if each service is rendered separately.
+[Commentary:
+In accordance with the surgical preamble, a hospital admission assessment by the surgeon is
+not eligible for payment, unless it is the “major pre-operative visit” (i.e., the consultation or
+assessment which may be claimed when the decision to operate is made and the operation is
+scheduled).]
+Amd 12 Draft 1 GP40 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 55 ---
+GENERAL PREAMBLE
+HOSPITAL AND INSTITUTIONAL CONSULTATIONS AND ASSESSMENTS
+Admission Assessments by General and Family Practitioners:
+When a patient has been assessed by a general or family practitioner in the emergency room (ER) or
+out-patient department (OPD) and that physician renders a service described as a consultation,
+general assessment, or general re-assessment and subsequently admits the patient to hospital, the
+initial consultation, general assessment, general re-assessment constitutes the admission
+assessment.
+When a patient has been assessed by a general or family practitioner in the ER or OPD and that
+physician renders any other assessment other than those listed in the paragraph immediately above,
+and subsequently admits the patient to hospital, an admission assessment is eligible for payment in
+addition to the initial assessment, if each assessment is rendered separately.
+Payment rules:
+A933/C933/C003/C004 are not eligible for payment for an admission assessment for an elective
+surgery patient when a pre-operative assessment has been rendered to the same patient within 30
+days of admission by the same physician.
+Admission Assessments by General and Family Practitioners in an Emergency
+Department Funded under an Emergency Department Alternative Funding Agreement:
+When a patient has been assessed by the patient's general or family practitioner in an emergency
+room and that physician subsequently admits the patient to hospital, the General/Family Physician
+Emergency Department Assessment constitutes the admission assessment if the physician remains
+the most responsible physician for the patient.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP41 Amd 12 Draft 1
+
+--- PAGE 56 ---
+GENERAL PREAMBLE
+HOSPITAL AND INSTITUTIONAL CONSULTATIONS AND ASSESSMENTS
+Admission Assessments by Emergency Physicians:
+When a patient has been assessed by an emergency physician in the ER or OPD and that physician
+renders a service described as a consultation, general assessment, or general re-assessment and
+subsequently admits the patient to hospital as the most responsible physician or that physician is
+asked to perform the admission assessment (even though the patient is admitted under a different
+most responsible physician), the initial consultation, general assessment, or general re-assessment
+constitutes the admission assessment.
+When a patient has been assessed by an emergency physician in the ER or OPD and that physician
+renders any other assessment other than those listed in the paragraph immediately above, and
+subsequently renders the admission assessment, (even if the patient is admitted under a different
+most responsible physician), the admission assessment is payable as C004, in addition to the initial
+assessment, if both services are rendered separately.
+Admission Assessment by the Most Responsible Physician (MRP) Premium
+E082 Admission assessment by the MRP, to admission
+assessment .......................................................... add 30%
+Payment rules:
+1.E082 is only eligible for payment once per patient per hospital admission.
+2.E082 is only eligible for payment:
+a.if the physician establishes that he or she does not receive any direct or indirect
+remuneration from a hospital or hospital foundation for rendering in-patient clinical
+services; or
+b.where the physician receives any direct or indirect remuneration from a hospital or
+hospital foundation for rendering in-patient clinical services, if the physician establishes
+that such remuneration has been reduced by an amount equal to the amount that would
+be eligible for payment to the physician had he or she not received any such direct or
+indirect remuneration.
+3.E082 is not eligible for payment for transfers within the same hospital.
+4.E082 is not applicable to any other service or premium.
+[Commentary:
+1.E082 is only eligible for payment when the admitting physician is the MRP. If the MRP does
+not render the admission assessment, E082 is not eligible for payment for any service
+rendered by any physician during that hospital admission.
+2.E082 is not eligible for payment for a patient admitted for obstetrical delivery or for a
+newborn.
+3.E082 is not applicable for any consultation or assessment related to day surgery.]
+Amd 12 Draft 1 GP42 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 57 ---
+GENERAL PREAMBLE
+HOSPITAL AND INSTITUTIONAL CONSULTATIONS AND ASSESSMENTS
+B. Subsequent Visit
+Definition:
+A subsequent visit is any routine assessment in hospital following the hospital admission assessment.
+Attendance at Surgery: If, in the interest of the patient, the referring physician is asked to be
+present by the patient or the patient’s representative, but does not assist at the procedure, the
+attendance at surgery by the referring physician constitutes a hospital subsequent visit.
+Multidisciplinary care: Except where a single service for a team of physicians is listed in this
+Schedule (e.g. the weekly team fee for dialysis), when the complexity of the medical condition
+requires the services of several physicians in different disciplines, each physician visit
+constitutes a subsequent visit.
+Payment rules:
+1. Except in the circumstances outlined in paragraphs 2 and 3, or when a patient is referred from
+one physician to another (see Claims submission instruction below), subsequent visits are
+limited to one per patient, per day for the first 5 weeks after admission, 3 visits per week from 6
+to 13 weeks after admission, and 6 visits per month after 13 weeks. Services in excess of the
+limit are not eligible for payment.
+2. After 5 weeks of hospitalization, any assessment in hospital required as a result of an acute
+intercurrent illness in excess of the weekly or monthly limits set out above constitutes C121 –
+“additional visit due to intercurrent illness”. The weekly or monthly limits set out above do not
+apply to additional visits due to intercurrent illness.
+3. Pediatric subsequent visits (C262) are limited to one per patient, per day for the duration of the
+admission.
+4. When a physician is already in the hospital and assesses one of his/her own patients or patients
+transferred to his/her care, the service constitutes a subsequent visit. If a physician assesses
+another physician’s patient on an emergency basis, the General Listings (“A” prefix) apply.
+Claims submission instruction:
+When a hospital in-patient is referred from one physician to another physician, the date the second
+physician assessed the patient for the first time is considered the “admission date” for the purposes of
+determining the appropriate subsequent visit fee code.
+[Commentary:
+When a hospital in-patient is transferred from one physician to another physician, subsequent
+visits by the second physician are calculated based on the actual admission date of the
+patient.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP43 Amd 12 Draft 1
+
+--- PAGE 58 ---
+GENERAL PREAMBLE
+HOSPITAL AND INSTITUTIONAL CONSULTATIONS AND ASSESSMENTS
+C. Subsequent visit by the Most Responsible Physician (MRP)
+Subsequent visit by the MRP – day follow

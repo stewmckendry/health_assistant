@@ -1,0 +1,405 @@
+{
+  "total_chunks": 162,
+  "chunk_samples": [
+    {
+      "chunk_id": "pho_chunk_1df57a_parent_0",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "TABLES",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## TABLES\n\nTABLE 1: FREQUENCY OF CLEANING  ITEMS IN THE CLINICA L PRA...",
+      "text_length": 473
+    },
+    {
+      "chunk_id": "pho_chunk_1df57a_child_0_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_1df57a_parent_0",
+      "section_heading": "TABLES",
+      "text_preview": "TABLE 1: FREQUENCY OF CLEANING  ITEMS IN THE CLINICA L PRACTICE SETTING  ................................ ................................ ...........................  43 \nTABLE 2: SPAULDING 'S CLASSI...",
+      "text_length": 331
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_parent_1",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "FIGURES",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## FIGURES\n\nFIGURE 1: HOW MICROORGANISMS AR E SPREAD  ..................",
+      "text_length": 10000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "FIGURE 1: HOW MICROORGANISMS AR E SPREAD  ................................ ................................ ................................ ...............................  12 \nFIGURE 2: SCREENING AN...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": ".......... ................................ ..........  19 \n \nInfection Prevention and Control for Clinical Of fice Practice | April 2015  3 FIGURE 10: PUTTING ON GLOVES  ................................",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_1",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "............................ ................  24 \nFIGURE 18: PUTTING ON EYE PROTEC TION ................................ ................................ ................................ ...............",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_2",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "virus  in 2009 , as well as events related to \ninadequate sterilization and disinfection of medical equipment, have underscored the notion that every person \nis vulnerable if proper safeguards are not...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_3",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "er when setting up a new clinical office  \n rationale and tools for screening and risk assessment for infection  \n recommendations for providing a clean clinical office  environment  \n guidance for...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_4",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "n Prevention and Control for Clinical Of fice Practice | April 2015  5 \nFOR RECOMMENDATIONS IN THIS DOCUMENT:  \nShall indicates mandatory requirements based on legislated requirements or national stan...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_4",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": " \nThe infection prevention and control practices set out in this document must be practiced in  all physician  \noffices including community health centres and clinics, independent health facilities (I...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_5",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "Providers of clinical office care have a responsibility to have systems in place with established policies and \nprocedures that protect the health and safety of workers in their workp lace.  Preventin...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_6",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "rown is a joint owner of a family health clinic  and works with two physicians and nine employees. She \nteaches family medicine residents in h er office and they join her on hospital rounds and assist...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_7",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "eir concerns.  \n Show workers how to work safely, and make sure they follow the law and \nworkplace health and safety policies and procedures . \n Make sure wo rkers wear and use the right PPE. \n Do ...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_8",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "le and accessible?  \n is PPE in good condition?  \n are chemical dis infectants/ sterilants labelled  and stored properly?  \n are food preparation areas clean  and dedicated for that purpose ? \n is...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_8",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "Control for Clinical Of fice Practice | April 2015  10  2. Employers shall  uphold WHMIS standards in their workplace. Every physician \nmust  therefore familiarize  himself or herself with the legisla...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_9",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "pport \nshall be provided in clinical office practices to help staff consistently implement \nappropriate infection prevention and control (IPAC) practices.  \n  \n\n \nInfection Prevention and Control for ...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_10",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "s . \nAdherence to Routine P ractic es protects not only the health care provider  but also staff and patients who may \nsubsequently be in contact with that health care provider . \nElements of Routine ...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_17fab2_child_1_11",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_17fab2_parent_1",
+      "section_heading": "FIGURES",
+      "text_preview": "ission of \nmicroorganisms.  \n \nThe first step in the effective use of Routine Practices is to perform a risk assessment  (Figure  2).5 \nA point -of-care risk assessment is applied before every interac...",
+      "text_length": 1513
+    },
+    {
+      "chunk_id": "pho_chunk_0afbd7_parent_2",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT\n\nRis...",
+      "text_length": 6984
+    },
+    {
+      "chunk_id": "pho_chunk_0afbd7_child_2_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_0afbd7_parent_2",
+      "section_heading": "ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT",
+      "text_preview": "Risk Assessment Based on Task : \nDo I need protection for what I am \nabout to do because there is a risk \nof exposure to blood, body fluids, \nsecretions or excre tions?  \nRisk Assessment Based on Pati...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_0afbd7_child_2_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_0afbd7_parent_2",
+      "section_heading": "ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT",
+      "text_preview": "o the removal of visible soil and removal or killing of transient microorganisms from the \nhands while maintaining good skin integrity.  \n \n Hand hygiene is considered the most important  and effectiv...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_0afbd7_child_2_1",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_0afbd7_parent_2",
+      "section_heading": "ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT",
+      "text_preview": "ter \nexamining pati ent B: HCW hand imprint after \ncleaning with ABHR  (From NEJM, Donskey, C.J ., Eckstein B.C., The \nHands Give It Away, Volume 360, e3. Copyright \n© 2009  Massachusetts Medical  Soc...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_0afbd7_child_2_2",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_0afbd7_parent_2",
+      "section_heading": "ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT",
+      "text_preview": "atient’s environment  \nWHY?  To protect the pa tient/patient environment from harmful germs carried \non your hands  \n2 BEFORE aseptic \nprocedure  WHEN?  Clean your hands immediately before any aseptic...",
+      "text_length": 1987
+    },
+    {
+      "chunk_id": "pho_chunk_0afbd7_child_2_3",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_0afbd7_parent_2",
+      "section_heading": "ACTION  BASED ON RISK ASSESSMENT  \n PERFORM A RISK ASSESSMENT",
+      "text_preview": "tting s range s in concent ration from 60 to 90  per \ncent alcohol. Norovirus is inactivated by alcohol concentrations ranging from 70 to \n90 per cent .7 For this reason, a  minimum concentration of 7...",
+      "text_length": 387
+    },
+    {
+      "chunk_id": "pho_chunk_b100a8_parent_3",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "HAND WASHING SOAPS",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## HAND WASHING SOAPS\n\nPlain soaps act on hands by emulsifying dirt a...",
+      "text_length": 616
+    },
+    {
+      "chunk_id": "pho_chunk_b100a8_child_3_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_b100a8_parent_3",
+      "section_heading": "HAND WASHING SOAPS",
+      "text_preview": "Plain soaps act on hands by emulsifying dirt and organ ic substances (e.g., blood, muc us), \nwhich are then flushed away with rinsing. Plain liquid soap is sufficient  for general clinical office prac...",
+      "text_length": 462
+    },
+    {
+      "chunk_id": "pho_chunk_be172b_parent_4",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "OTHER HAND ANTISEPTI C AGENTS",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## OTHER HAND ANTISEPTI C AGENTS\n\nAt the present time, there is no ev...",
+      "text_length": 2953
+    },
+    {
+      "chunk_id": "pho_chunk_be172b_child_4_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_be172b_parent_4",
+      "section_heading": "OTHER HAND ANTISEPTI C AGENTS",
+      "text_preview": "At the present time, there is no evidence for the efficacy of waterless antiseptic hand hygiene agents  that do not \ncontain 70 to 90 per cent  alcohol  in the health care environmen t and their use i...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_be172b_child_4_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_be172b_parent_4",
+      "section_heading": "OTHER HAND ANTISEPTI C AGENTS",
+      "text_preview": "jacent to, hand washi ng sinks . \n Place A BHR dispensers at the entrance to the health care area (e.g., waiting room)  with visual \ninstructions for patients . \n Use non-refillable bottles for ABHR...",
+      "text_length": 1188
+    },
+    {
+      "chunk_id": "pho_chunk_cbf5cf_parent_5",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "CRITERI A FOR CHOOSING AND INSTALLING NEW HAND WASHING SINKS",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## CRITERI A FOR CHOOSING AND INSTALLING NEW HAND WASHING SINKS\n\nWhen...",
+      "text_length": 4863
+    },
+    {
+      "chunk_id": "pho_chunk_cbf5cf_child_5_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_cbf5cf_parent_5",
+      "section_heading": "CRITERI A FOR CHOOSING AND INSTALLING NEW HAND WASHING SINKS",
+      "text_preview": "When renovating or choosing new office space:  \n Locate hand  washing  sink in: \n any space where treatment is provided or procedures \nor physical exams are performed  \n specimen collection area  \n...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_cbf5cf_child_5_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_cbf5cf_parent_5",
+      "section_heading": "CRITERI A FOR CHOOSING AND INSTALLING NEW HAND WASHING SINKS",
+      "text_preview": "ent underneath a sink or on a counter adjacent to a sink, \nas there is a risk of the items becoming dam p and susceptible to mould.  \nFigure 8: PREFERRED - Free -standing sink  \nFigure 9: NOT RECOMMEN...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_cbf5cf_child_5_1",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_cbf5cf_parent_5",
+      "section_heading": "CRITERI A FOR CHOOSING AND INSTALLING NEW HAND WASHING SINKS",
+      "text_preview": " not used for any \nother purpose, such as equipment cleaning or disposal of waste fluids . \n6. Rings should not be worn. If worn, the ring must be a smooth ban d with no \nprojections . \n7. Health care...",
+      "text_length": 1467
+    },
+    {
+      "chunk_id": "pho_chunk_bb5b63_parent_6",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "TYPES OF GLOVES",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## TYPES OF GLOVES\n\nIt is preferable to provide more than one type of...",
+      "text_length": 857
+    },
+    {
+      "chunk_id": "pho_chunk_bb5b63_child_6_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_bb5b63_parent_6",
+      "section_heading": "TYPES OF GLOVES",
+      "text_preview": "It is preferable to provide more than one type of glove to health care providers, because it allows the individual \nto select the type that  best suits their care activities :11 \n Use non -sterile ex...",
+      "text_length": 706
+    },
+    {
+      "chunk_id": "pho_chunk_a9e3cc_parent_7",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "GLOVE USE",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## GLOVE USE\n\n Wearing gloves is not  a substitute for hand hygiene. ...",
+      "text_length": 290
+    },
+    {
+      "chunk_id": "pho_chunk_a9e3cc_child_7_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_a9e3cc_parent_7",
+      "section_heading": "GLOVE USE",
+      "text_preview": " Wearing gloves is not  a substitute for hand hygiene.  \n \n \n \n \nInfection Prevention and Control for Clinical Of fice Practice | April 2015  22 ",
+      "text_length": 145
+    },
+    {
+      "chunk_id": "pho_chunk_6e1ef5_parent_8",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "APPROPRIATE USE OF GLOVES",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## APPROPRIATE USE OF GLOVES\n\n Wear gloves for contact with mucous m...",
+      "text_length": 720
+    },
+    {
+      "chunk_id": "pho_chunk_6e1ef5_child_8_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_6e1ef5_parent_8",
+      "section_heading": "APPROPRIATE USE OF GLOVES",
+      "text_preview": " Wear gloves for contact with mucous membranes, non -intact skin including undiagnosed rashes, blood, body \nfluids, secretions, excretions or equipment and environmental surfaces contaminated with an...",
+      "text_length": 559
+    },
+    {
+      "chunk_id": "pho_chunk_e6ccee_parent_9",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "APPROPRIATE USE OF GOWNS",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## APPROPRIATE USE OF GOWNS\n\n Wear a gown or plastic apron when prov...",
+      "text_length": 1299
+    },
+    {
+      "chunk_id": "pho_chunk_e6ccee_child_9_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_e6ccee_parent_9",
+      "section_heading": "APPROPRIATE USE OF GOWNS",
+      "text_preview": " Wear a gown or plastic apron when providing care that may contaminate skin or clothing  with blood, body \nfluids, secretions or excretions . \n Put gown on i mmediately before the activity for which...",
+      "text_length": 1139
+    },
+    {
+      "chunk_id": "pho_chunk_c7bb2e_parent_10",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "APPROPRIATE USE OF MA SKS",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## APPROPRIATE USE OF MA SKS\n\n Put on mask immediately before the ac...",
+      "text_length": 2637
+    },
+    {
+      "chunk_id": "pho_chunk_c7bb2e_child_10_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_c7bb2e_parent_10",
+      "section_heading": "APPROPRIATE USE OF MA SKS",
+      "text_preview": " Put on mask immediately before the activity for which it is indicated.  \n Secure mask over the nose and mouth.  \n Remove mask immediately after the activity for which it is used.  \n Change mask i...",
+      "text_length": 2000
+    },
+    {
+      "chunk_id": "pho_chunk_c7bb2e_child_10_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_c7bb2e_parent_10",
+      "section_heading": "APPROPRIATE USE OF MA SKS",
+      "text_preview": "prevent o ccupational \ninjuries and illnesses. More information is available at: www.pshsa.ca . \n \nFigure 14: Putting on mask  Figure 15: Taking off mask  \n \nInfection Prevention and Control for Clini...",
+      "text_length": 876
+    },
+    {
+      "chunk_id": "pho_chunk_73395e_parent_11",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "APPROPRIATE USE OF RESPI RATORS",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## APPROPRIATE USE OF RESPI RATORS\n\n Put on respirator immediately b...",
+      "text_length": 894
+    },
+    {
+      "chunk_id": "pho_chunk_73395e_child_11_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_73395e_parent_11",
+      "section_heading": "APPROPRIATE USE OF RESPI RATORS",
+      "text_preview": " Put on respirator immediately before the activity for which it is indicated.  \n Remove respirator as soon as it is safe to do so.  \n Use only a fit -tested respirator.  \n Perform a seal -check ea...",
+      "text_length": 727
+    },
+    {
+      "chunk_id": "pho_chunk_ed32db_parent_12",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "EYE PROTECTION",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## EYE PROTECTION\n\nEye protection may be disposable or, if reusable, ...",
+      "text_length": 845
+    },
+    {
+      "chunk_id": "pho_chunk_ed32db_child_12_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_ed32db_parent_12",
+      "section_heading": "EYE PROTECTION",
+      "text_preview": "Eye protection may be disposable or, if reusable, must  be cleaned and disinfected after each use. Prescription \neye glasses are not acceptable by themselves as eye protection, but they may be worn un...",
+      "text_length": 695
+    },
+    {
+      "chunk_id": "pho_chunk_48503e_parent_13",
+      "chunk_type": "parent",
+      "parent_id": null,
+      "section_heading": "APPROPRIATE USE OF EYE PROTECTION",
+      "text_preview": "[ORG=pho] [TOPIC=infection-prevention,ipac,clinical-office,sterilization,ppe,hand-hygiene] [DATE=April 2015] [TYPE=ipac-guidance]\n\n## APPROPRIATE USE OF EYE PROTECTION\n\n Ensure eye protection is comf...",
+      "text_length": 4653
+    },
+    {
+      "chunk_id": "pho_chunk_48503e_child_13_0",
+      "chunk_type": "child",
+      "parent_id": "pho_chunk_48503e_parent_13",
+      "section_heading": "APPROPRIATE USE OF EYE PROTECTION",
+      "text_preview": " Ensure eye protection is comfortable, fits securely and does not interfere with vision . \n Put on eye protection immediately be fore the activity for which it is indicated.  \n Remove eye protectio...",
+      "text_length": 2000
+    }
+  ]
+}

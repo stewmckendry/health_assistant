@@ -1,0 +1,218 @@
+Subsection: Kidney and Upper Urinary Tract
+Parent Section: T
+Page Reference: T2
+Pages: 708 to 713
+Text chunks: 1
+Total text length: 12726 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 708 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+KIDNEY AND UPPER URINARY TRACT
+Asst Surg Anae
+# E752 - with repeat surgery on kidney at least 30 days after
+previous kidney surgery............................................. add 83.25
+INCISION
+# Z601 Renal biopsy, needle .............................................................. 143.55 6
+# S401 Drainage of kidney abscess.................................................... 7 411.30 7
+# S402 Drainage of perinephric abscess ............................................ 7 267.60 7
+# S403 Exploration of renal and peri-renal tissues (with or without
+biopsy or unroofing of cyst) ................................................ 7 356.70 7
+# E792 - when performed laparoscopically, to S403 ........ add 25%
+# S400 Laparoscopic placement of probe(s) for ablation of renal
+tumour ................................................................................ 7 404.95 7
+Payment rules:
+This service is not eligible for payment in addition to J069.
+# S405 Nephrolithotomy - open .......................................................... 7 482.40 7
+# S408 Pyelolithotomy - open ............................................................. 7 437.20 7
+# S430 Removal of staghorn calculus filling renal pelvis and calyces -
+open, with or without x-ray control and/or anatrophic
+nephrolithotomy.................................................................. 7 657.75 9
+EXCISION
+# S410 Calycectomy with diversion of urine ....................................... 7 512.00 7
+# S411 Partial or heminephrectomy.................................................... 7 907.00 7
+# E792 - when performed laparoscopically, to S411 ........ add 25%
+# S423 Partial or heminephrectomy with total ureterectomy............... 7 757.85 7
+Nephrectomy
+# S412 - ectopic kidney..................................................................... 7 467.00 7
+# S413 - lumbar ................................................................................ 7 467.00 7
+# E792 - when performed laparoscopically, to S413 ........ add 25%
+# S415 - transperitoneal.................................................................... 7 522.50 7
+# S416 - thoraco-abdominal or radical nephrectomy ........................ 9 907.00 13
+# E766 - with gland dissection.................................................. add 29.70
+# E767 - with repair of vena cava for thrombus - below the hepatic
+vein ............................................................................ add 138.15
+# E768 - with repair of vena cava for thrombus - above the hepatic
+vein ............................................................................ add 236.70
+# E792 - when performed laparoscopically, to S416 ........ add 25%
+# S424 Extrophy - plastic closure of bladder with closure of abdominal
+wall and urethral lengthening with closure of pelvic floor with
+or without reimplantation of ureters .................................... 7 1237.25 10
+# S420 Nephroureterectomy, total, with resection of ureterovesical
+junction ............................................................................... 7 673.10 10
+# E792 - when performed laparoscopically, to S420 .........add 25%
+Amd 12 Draft 1 T2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 709 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+KIDNEY AND UPPER URINARY TRACT
+Asst Surg Anae
+REPAIR
+# S422 Pyeloplasty (with or without nephropexy) ............................... 7 907.00 7
+# E792 - when performed laparoscopically, to S422 ........ add 25%
+# E754 - with removal of calculus............................................. add 57.50
+# S428 Symphysiotomy for horseshoe kidney with or without
+nephropexy and associated procedures ............................ 7 494.90 7
+SUTURE
+# S429 Ruptured or lacerated kidney - repair or removal ................... 7 437.20 7
+EXTRA RENAL PROCEDURES
+# S431 Excision of retroperitoneal tumour.......................................... 7 381.60 7
+# S432 Exploration of retroperitoneal tumour ..................................... 7 260.85 7
+# S433 Sacrococcygeal teratoma ....................................................... 6 437.20 6
+# Z630 Extracorporeal shock wave lithotripsy .................................... 314.20 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) T3 Amd 12 Draft 1
+
+--- PAGE 710 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+KIDNEY AND UPPER URINARY TRACT
+Asst Surg Anae
+PERCUTANEOUS PROCEDURES
+# Z629 Percutaneous nephrostomy.................................................... 153.35 6
+# Z623 Insertion of stent ..................................................................... 95.10
+# Z624 Dilatation of tract..................................................................... 105.25
+# Z625 Selective catheterization of calyces (one or more)................. 52.70
+# Z626 Nephroscopy, percutaneous or retrograde ............................. 95.95 6
+# Z627 Removal of renal calculi.......................................................... 6 168.25 7
+# E759 - if disintegrated by any method, to Z627..................... add 95.95
+# E772 - percutaneous removal of staghorn calculus filling renal
+pelvis and extending into calyces .............................. add 175.50
+# Z636 Endoscopic ureterotomy or pyelotomy ................................... 273.25 7
+[Commentary:
+Z636 is eligible for payment when rendered by percutaneous or retrograde route.]
+# Z637 Percutaneous ablation of calyceal diverticulum to include
+dilation of communication with calyx and fulguration ......... 262.75 6
+# Z600 Change of nephrostomy tube ................................................. 44.00
+RENAL TRANSPLANTATION PROCEDURES
+Note:
+Submit on recipient’s claim. These fees do not include immunosuppressive therapy which is on
+a fee-for-service basis.
+# E762 - reconstruction or repair of renal artery done in addition
+torenal transplantation procedures ............................ add 301.05
+# S435 Kidney transplant.................................................................... 9 1553.15 13
+# E769 - team fee (not to be billed when assistant fees are billed)
+................................................................................... add 260.05
+# S434 Kidney re-transplant................................................................ 9 1858.15 13
+# E771 - team fee (not to be billed when assistant fees are billed)
+................................................................................... add 343.40
+# S436 Donor nephrectomy - unilateral or bilateral (to include renal
+perfusion with hypothermia when rendered by surgeon) ... 7 653.20 8
+# E753 - live donor ................................................................... add 241.20
+# E792 - when performed laparoscopically, to S436 ........ add 25%
+Note:
+For nephrological components - see Diagnostic and Therapeutic Procedures.
+# S437 Renal autotransplantation....................................................... 7 1161.60 10
+# Z631 Fine needle aspiration of renal transplant............................... 45.15
+ENDOSCOPIC PROCEDURES
+# S470 Cystoscopy with manipulation and/or removal of calculus and
+retrograde pyelogram if required ........................................ 240.65 6
+# Z638 Endoscopic treatment of vesicoureteral reflux by subureteral
+injection of agent, unilateral or bilateral.............................. 6 450.00 6
+Amd 12 Draft 1 T4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 711 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+KIDNEY AND UPPER URINARY TRACT
+Asst Surg Anae
+Note:
+Z606, Z607, Z611, Z617 and Z628 are not eligible for payment with Z638.
+Cystoscopy and diagnostic Ureteroscopy
+# Z628 - above intramural................................................................ 125.70 6
+# E819 - diagnostic ureteroscopy of second ureter, to Z628.... add 54.65
+# E822 - ureteroscopy to upper third of ureter or renal pelvis, to
+Z628........................................................................... add 37.70
+# E760 - with removal of calculus............................................. add 167.85
+# E761 - intracorporeal lithotripsy by any method .................... add 95.95
+# E820 - with biopsy of one or more sites in ureter and/or pelvis
+using ureteroscope .................................................... add 49.75
+# E823 - resection and fulgarization of one or more ureteral or renal
+pelvic tumours, to Z628.............................................. add 233.65
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) T5 Amd 12 Draft 1
+
+--- PAGE 712 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+KIDNEY AND UPPER URINARY TRACT
+Asst Surg Anae
+INCISION
+Ureterotomy, abdominal or vaginal exploratory or for drainage
+With removal of calculus
+# S445 - upper 2/3 ............................................................................ 6 376.80 7
+# S446 - lower 1/3............................................................................. 6 482.40 7
+Where ureter has been previously opened
+# S447 - upper 2/3 ............................................................................ 6 437.20 6
+# S448 - lower 1/3............................................................................. 6 522.50 7
+EXCISION
+Ureterectomy
+# S449 - including ureterovesical junction ........................................ 6 445.40 7
+# S450 - other e.g. partial ................................................................. 6 331.70 7
+REPAIR
+# S452 Ureteroileal conduit................................................................. 6 788.15 9
+# S454 - with ureterectomy and ileal replacement ........................... 6 893.50 9
+# S457 Ureteroureterostomy............................................................... 6 552.30 8
+# E792 - when performed laparoscopically, to S457 ........ add 25%
+Re-implantation
+# S451 Ureterovesical anastomosis or re-implantation unilateral ....... 6 490.25 8
+Note:
+Not to be billed in addition to S482.
+# S561 Re-implantation of ureter with extensive tapering with or
+without ureterolysis............................................................. 6 693.45 8
+# S562 Re-implantation of bifid ureter................................................. 6 539.50 8
+# E792 - when performed laparoscopically, to S451, S561 or S562
+........................................................................... add 25%
+# Z638 Endoscopic treatment of vesicoureteral reflux by subureteral
+injection of agent, unilateral or bilateral.............................. 6 450.00 6
+Note:
+Z606, Z607, Z611, Z617 and Z628 are not eligible for payment with Z638.
+Ureterointestinal anastomosis
+# S455 - unilateral............................................................................. 6 331.70 7
+# S462 - bilateral............................................................................... 6 438.35 6
+Ureterostomy
+Cutaneous
+# S458 - unilateral............................................................................. 6 494.90 6
+# S463 - with lower third ureterotomy ............................................... 6 381.60 6
+# S459 Ureterovaginal fistula.............................................................. 6 557.85 6
+Amd 12 Draft 1 T6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 713 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+KIDNEY AND UPPER URINARY TRACT
+Asst Surg Anae
+Ureterolysis for periureteral fibrosis
+# S460 - unilateral............................................................................. 6 448.00 6
+# E792 - when performed laparoscopically, to S460 ........ add 25%
+Note:
+When a physician submits a claim for performing any insured surgical procedure on the same
+patient on the same day as the physician submits a claim for rendering S460, the S460 service
+is included (in addition to the common elements) as a specific element of that other insured
+service.
+Ureteroplasty (Hutch)
+# S461 - unilateral............................................................................. 6 331.70 6
+Bladder flap (Boari)
+# S427 - to include re-implantation of ureter..................................... 6 502.45 6
+# E792 - when performed laparoscopically, to S427 ........ add 25%
+SUTURE
+Traumatic rupture, or transection (partial or complete)
+Immediate
+# S465 - upper 2/3 ............................................................................ 6 381.60 6
+# S466 - lower 1/3............................................................................. 6 437.20 6
+Late repair
+# S467 - upper 2/3 ............................................................................ 6 437.20 6
+# S468 - lower 1/3............................................................................. 6 482.40 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) T7 Amd 12 Draft 1

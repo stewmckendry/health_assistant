@@ -1,0 +1,295 @@
+{
+  "document_id": "cep_behavioural_andpsychological_symptoms_of_dementia_bpsd",
+  "source_url": "https://tools.cep.health/tool/behavioural-andpsychological-symptoms-of-dementia-bpsd/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "mental_health",
+  "extracted_at": "2025-09-24T15:33:00.466564",
+  "content_hash": "4e43883a0e33a01248e8bcdf9c1cfc13283cddb5c0a02365612833549dd84373",
+  "title": "Behavioural and Psychological Symptoms of Dementia (BPSD)",
+  "tool_slug": "behavioural-andpsychological-symptoms-of-dementia-bpsd",
+  "last_updated": "April 30, 2025",
+  "navigation": [
+    {
+      "title": "Identify risks and contributing factors1,3,4",
+      "anchor": "#factors",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Clinical evaluation1,3,5-7",
+      "anchor": "#clinicalevaluation",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Cognitive, functional and behavioural assessments1,3,5",
+      "anchor": "#Cognitive-functional-and-behavioural",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Behavioural and psychological symptoms of dementia1,3,8-13",
+      "anchor": "#BPSD",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Severity and impact1",
+      "anchor": "#severity",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non-pharmacological management1,3",
+      "anchor": "#nonpharm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Develop a non-pharmacological care plan1",
+      "anchor": "#manplan",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Safety3",
+      "anchor": "#safety",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacological management",
+      "anchor": "#pharm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacotherapy options1,3,15-36",
+      "anchor": "#medstable",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Deprescribing antipsychotics1",
+      "anchor": "#deprescribing",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacotherapy follow-up1",
+      "anchor": "#pharmfollow",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Guidance on follow-up5",
+      "anchor": "#guidance",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Frequency of follow-up1,3,5,6",
+      "anchor": "#frequency",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Recommended tests and scales3,5",
+      "anchor": "#tests/scales",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Care partner burden3,5",
+      "anchor": "#care-partner-burden",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "assessment_tools": [
+      "MoCA",
+      "MMSE",
+      "Mini-Cog"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Identify risks and contributing factors1,3,4",
+          "anchor": "#factors",
+          "level": 3
+        },
+        {
+          "heading": "Clinical evaluation1,3,5-7",
+          "anchor": "#clinicalevaluation",
+          "level": 3
+        },
+        {
+          "heading": "Cognitive, functional and behavioural assessments1,3,5",
+          "anchor": "#Cognitive-functional-and-behavioural",
+          "level": 3
+        }
+      ],
+      "summary": "Identify risks and contributing factorsClinical evaluationCognitive, functional and behavioural assessments When assessing people living with dementia (PLWD) experiencing BPSD, confirming etiology is crucial, as it directly impacts treatment choices. This assessment should include1,3: Interviewing and assessing the PLWD"
+    },
+    {
+      "heading": "Identifying BPSD",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Identifying BPSD symptom clusters1,3,8-11",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Behavioural and psychological symptoms of dementia1,3,8-13",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Behavioural and psychological symptoms of dementia1,3,8-13",
+          "anchor": "#BPSD",
+          "level": 3
+        },
+        {
+          "heading": "Severity and impact1",
+          "anchor": "#severity",
+          "level": 3
+        },
+        {
+          "heading": "Categorizing BPSD severity",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Behavioural and psychological symptoms of dementiaSeverity and impact Before implementing management strategies, it is important to identify the individual\u2019s specific behavioural and psychological symptoms of dementia. Dressing/undressingPacingRepetitive actionsRestless/anxious"
+    },
+    {
+      "heading": "Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-pharmacological management1,3",
+          "anchor": "#nonpharm",
+          "level": 3
+        },
+        {
+          "heading": "Develop a non-pharmacological care plan1",
+          "anchor": "#manplan",
+          "level": 3
+        },
+        {
+          "heading": "Symptom-based interventions:",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Safety3",
+          "anchor": "#safety",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological management",
+          "anchor": "#pharm",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacotherapy options1,3,15-36",
+          "anchor": "#medstable",
+          "level": 3
+        },
+        {
+          "heading": "Symptom cluster response to antipsychotic therapy3",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Deprescribing antipsychotics1",
+          "anchor": "#deprescribing",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacotherapy follow-up1",
+          "anchor": "#pharmfollow",
+          "level": 3
+        }
+      ],
+      "summary": "Non-pharmacological managementDevelop a non-pharmacological care planSafetyPharmacological managementPharmacotherapy optionsPotential benefits and harms of antipsychotic therapyDeprescribing antipsychoticsPharmacotherapy follow-up Non-pharmacological therapy is essential and considered thefirst-line therapyoption for managing BPSD. It is an ongoing process that involves the care team, family and care partners. It isvitaltoindividualize your approach as much as possible. Behavioural triggers a..."
+    },
+    {
+      "heading": "Follow-up and monitoring",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Guidance on follow-up5",
+          "anchor": "#guidance",
+          "level": 3
+        },
+        {
+          "heading": "Frequency of follow-up1,3,5,6",
+          "anchor": "#frequency",
+          "level": 3
+        },
+        {
+          "heading": "Recommended tests and scales3,5",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Recommended tests and scales3,5",
+          "anchor": "#tests/scales",
+          "level": 3
+        },
+        {
+          "heading": "Care partner burden3,5",
+          "anchor": "#care-partner-burden",
+          "level": 3
+        }
+      ],
+      "summary": "Guidance on follow-upFrequency on follow-upRecommended tests and scalesCare partner burden Treatment for dementia is an ongoing process. Since dementia is a progressive disease, regular follow-ups are necessary to ensure that the person living with dementia (PLWD) is receiving the best possible treatment for their symptoms. Tracking treatment response should be personalized and consider multiple factors. It should not rely on a single tool or clinical domain (e.g., cognition, functional auton..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Canadian Coalition for Seniors\u2019 Mental Health. Canadian Clinical Practice Guidelines for Assessing and Managing Behavioural and Psychological Symptoms of Dementia (BPSD) [Internet]. 2024. Available from:https://link.cep.health/bpsdupdate49.[2]Alzheimer Society Canada. National Dementia Guidelines for Health Care Providers: Disclosing and Communicating a Diagnosis of Dementia [Internet]. 2024. Available from:https://link.cep.health/bpsdupdate50.[3]Expert opinion.[4]Pieces Canada. PIECESTM3-..."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "TheBehavioural and Psychological Symptoms of Dementia (BPSD) toolwas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the tool was provided by Drs. Andrea Moser and Sid Feldman. End users and clinica..."
+    }
+  ],
+  "references": [],
+  "summary": "Behavioural and Psychological Symptoms of Dementia (BPSD). Category: Mental Health. Features: algorithm, calculator, forms. Tools: MoCA, MMSE, Mini-Cog. 6 main sections"
+}

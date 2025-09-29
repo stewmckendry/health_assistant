@@ -1,0 +1,111 @@
+{
+  "subsection_title": "Miscellaneous",
+  "parent_section": "B",
+  "page_ref": "B10",
+  "pages_processed": "334-334",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        4,
+        "J861 Radionuclide lymphangiogram ............................................... 112.20 54.80"
+      ],
+      [
+        5,
+        "J862 Ocular tumour localization ...................................................... 75.60 54.90"
+      ],
+      [
+        6,
+        "J864 Tear duct scintigraphy............................................................. 97.35 42.95"
+      ],
+      [
+        7,
+        "J865 Total body counting................................................................. 187.95 49.70"
+      ],
+      [
+        9,
+        "J866 - maximum one per Nuclear Medicine examination ..... add 43.50 23.65"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J861",
+      "description": "Radionuclide lymphangiogram",
+      "fee": 112.2,
+      "h_fee": 112.2,
+      "p_fee": 54.8,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J862",
+      "description": "Ocular tumour localization",
+      "fee": 75.6,
+      "h_fee": 75.6,
+      "p_fee": 54.9,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J864",
+      "description": "Tear duct scintigraphy",
+      "fee": 97.35,
+      "h_fee": 97.35,
+      "p_fee": 42.95,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J865",
+      "description": "Total body counting",
+      "fee": 187.95,
+      "h_fee": 187.95,
+      "p_fee": 49.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J866",
+      "description": "Application of Tomography (SPECT), other than to J808 or J852 - maximum one per Nuclear Medicine examination",
+      "fee": 43.5,
+      "h_fee": 43.5,
+      "p_fee": 23.65,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

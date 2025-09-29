@@ -1,0 +1,242 @@
+{
+  "subsection_title": "Corpus Uteri",
+  "parent_section": "V",
+  "page_ref": "V7",
+  "pages_processed": "735-736",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "S774",
+      "description": "Repair of incompetent cervix - not associated with pregnancy",
+      "fee": 142.5,
+      "units": 6
+    },
+    {
+      "code": "Z582",
+      "description": "diagnostic",
+      "fee": 111.5,
+      "units": 6
+    },
+    {
+      "code": "Z583",
+      "description": "with uterine biopsy and/or D&C",
+      "fee": 133.7,
+      "units": 6
+    },
+    {
+      "code": "Z585",
+      "description": "with cannulization of tube(s), lysis of intrauterine adhesions",
+      "fee": 149.6,
+      "units": 6
+    },
+    {
+      "code": "Z587",
+      "description": "with resection of one or more endometrial polyps, with or without D&C",
+      "fee": 206.35,
+      "units": 6
+    },
+    {
+      "code": "Z586",
+      "description": "with lysis of intrauterine adhesions/synechiae requiring a minimum of 60 minutes of surgical time",
+      "fee": 368.75,
+      "units": 7
+    },
+    {
+      "code": "E861",
+      "description": "paracervical block - payable in addition to endometrial sampling, ablation or curettage by same physician in an office - unilateral or bilateral",
+      "fee": 9.0
+    },
+    {
+      "code": "Z770",
+      "description": "Endometrial sampling",
+      "fee": 37.85
+    },
+    {
+      "code": "E542",
+      "description": "when performed outside hospital",
+      "fee": 11.55
+    },
+    {
+      "code": "S772",
+      "description": "Endometrial ablation by any method",
+      "fee": 225.9,
+      "units": 6
+    },
+    {
+      "code": "S768",
+      "description": "spontaneous, incomplete - including D&C",
+      "fee": 113.4,
+      "units": 6
+    },
+    {
+      "code": "S752",
+      "description": "induced - by any surgical technique up to and including 14 weeks gestation",
+      "fee": 112.4,
+      "units": 6
+    },
+    {
+      "code": "S785",
+      "description": "induced - by any surgical technique after 14 weeks of gestation",
+      "fee": 189.85,
+      "units": 6
+    },
+    {
+      "code": "S756",
+      "description": "missed abortion, or evacuation of molar pregnancy, by any surgical technique",
+      "fee": 120.45,
+      "units": 6
+    },
+    {
+      "code": "S770",
+      "description": "hysterotomy",
+      "fee": 245.4,
+      "units": 7
+    },
+    {
+      "code": "S783",
+      "description": "hysterotomy with tubal interruption",
+      "fee": 257.05,
+      "units": 6
+    },
+    {
+      "code": "S754",
+      "description": "Diagnostic curettage (with or without cauterization, biopsy of cervix removal of polyps, or hysterosalpingography)",
+      "fee": 97.2,
+      "units": 6
+    },
+    {
+      "code": "S764",
+      "description": "Myomectomy",
+      "fee": 406.9,
+      "units": 7
+    },
+    {
+      "code": "S757",
+      "description": "abdominal - total or subtotal",
+      "fee": 643.35,
+      "units": 7
+    },
+    {
+      "code": "S816",
+      "description": "vaginal",
+      "fee": 643.35,
+      "units": 7
+    },
+    {
+      "code": "S758",
+      "description": "with anterior and posterior vaginal repair and including enterocoele and/or vault prolapse repair when rendered",
+      "fee": 733.45,
+      "units": 6
+    },
+    {
+      "code": "S759",
+      "description": "with anterior or posterior vaginal repair and including enterocoele and/or vault prolapse repair when rendered",
+      "fee": 655.05,
+      "units": 7
+    },
+    {
+      "code": "E090",
+      "description": "removal of one or both ovaries with moderate or severe endometrosis, to S757, S758 or S759",
+      "fee": 260.8
+    },
+    {
+      "code": "E862",
+      "description": "when hysterectomy is performed laparoscopically, or with laparoscopic assistance, abdominal or vaginal, to S757, S758, S759 or S816",
+      "fee": "add 25%"
+    },
+    {
+      "code": "S710",
+      "description": "with omentectomy for malignancy",
+      "fee": 820.4,
+      "units": 6
+    },
+    {
+      "code": "S763",
+      "description": "radical (Wertheim or Schauta) - includes node dissection",
+      "fee": 1081.8,
+      "units": 8
+    },
+    {
+      "code": "S762",
+      "description": "radical trachelectomy - excluding node dissection",
+      "fee": 801.1,
+      "units": 8
+    },
+    {
+      "code": "S776",
+      "description": "Staging pelvic lymphadenectomy for carcinoma (laparoscopic or open)",
+      "fee": 462.3,
+      "units": 6
+    },
+    {
+      "code": "S781",
+      "description": "Staging Para-aortic lymphadenectomy for carcinoma (laparoscopic or open) (not eligible for payment when rendered with Z578 and/or S776)",
+      "fee": 431.2,
+      "units": 6
+    },
+    {
+      "code": "S779",
+      "description": "excision of septum",
+      "fee": 349.0,
+      "units": 6
+    },
+    {
+      "code": "S775",
+      "description": "unification of double uterus (Strassman)",
+      "fee": 431.45,
+      "units": 7
+    },
+    {
+      "code": "S777",
+      "description": "uterine inversion, operative",
+      "fee": 349.0,
+      "units": 6
+    },
+    {
+      "code": "S778",
+      "description": "Presacral neurectomy (with or without ovarian neurectomy)",
+      "fee": 349.0,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z582",
+      "context": "not payable with",
+      "description": "Hysteroscopy (Z582, Z583, Z587) is not eligible for payment when rendered with endometrial ablation (S772).",
+      "source_subsection": "Corpus Uteri",
+      "source_page": "V7"
+    },
+    {
+      "code": "S785",
+      "context": "Payment rules",
+      "description": "S785 is only eligible for payment if the length of gestation is confirmed by ultrasound.",
+      "source_subsection": "Corpus Uteri",
+      "source_page": "V7"
+    },
+    {
+      "code": "E862",
+      "context": "add 25%",
+      "description": "when performed laparoscopically, to S710, S763, S762",
+      "source_subsection": "Corpus Uteri",
+      "source_page": "V7"
+    },
+    {
+      "code": "S722",
+      "context": "not eligible for payment",
+      "description": "not eligible for payment when rendered with S757, S816, S758, S759, S710, S763 or S762.",
+      "source_subsection": "Corpus Uteri",
+      "source_page": "V7"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

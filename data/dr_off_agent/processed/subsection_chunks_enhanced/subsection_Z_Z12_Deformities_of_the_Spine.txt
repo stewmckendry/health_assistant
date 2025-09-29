@@ -1,0 +1,33 @@
+Subsection: Deformities of the Spine
+Parent Section: Z
+Page Reference: Z12
+Pages: 784 to 784
+Text chunks: 1
+Total text length: 1069 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 784 ---
+SPINAL SURGICAL PROCEDURES
+DEFORMITIES OF THE SPINE
+Asst Surg Anae
+# N539 Anterior scoliosis correction - any number of levels (includes
+approach, disc excision and instrumentation) ................... 12 3060.00 20
+# N540 Posterior scoliosis correction - up to six levels (includes
+approach, disc excision and instrumentation) .................... 11 2805.00 20
+# E389 - each additional level of scoliosis correction over six levels,
+to N540 ...................................................................... add 102.00
+# E390 - halo fixation/traction - pre- or peri-operative, to N539 or
+N540 ......................................................................... add 255.00
+# E387 - fusion to sacrum, to N539 or N540 ............................ add 153.00
+# E378 - 3D stereotactic spinal procedure, to N539 or N540... add 510.00
+# E379 - 2D stereotactic spinal procedure, to N539 or N540... add 510.00
+# E383 - acute spinal cord injury premium, to N539 or N540... add 255.00
+Amd 12 Draft 1 Z12 February 14 , 2 025 (e ffective M arch 3, 2025)

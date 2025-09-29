@@ -1,0 +1,5627 @@
+{
+  "source_pdf": "data/ontario/ohip/moh-schedule-benefit-2024-03-04.pdf",
+  "toc_file": "data/processed/toc_extracted.json",
+  "subsections_processed": 29,
+  "extraction_time": 170.5774700641632,
+  "extraction_method": "enhanced_chunking",
+  "subsections": [
+    {
+      "subsection_title": "Preamble",
+      "parent_section": "D",
+      "page_ref": "D1",
+      "pages_processed": "349-352",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": false,
+        "has_h_p_columns": false,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": false,
+        "table_sections": []
+      },
+      "fee_codes": [],
+      "referenced_codes": [
+        {
+          "code": "X400",
+          "context": "not payable with",
+          "description": "not to be billed in addition to those fees for complex head studies",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X401",
+          "context": "not payable with",
+          "description": "not to be billed in addition to those fees for complex head studies",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X188",
+          "context": "not payable with",
+          "description": "not to be billed in addition to those fees for complex head studies",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X006",
+          "context": "not to be routinely claimed",
+          "description": "Mandible X006 and Temporomandibular joints X007 are not both to be routinely claimed on the same patient but only when specifically ordered.",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X007",
+          "context": "not to be routinely claimed",
+          "description": "Mandible X006 and Temporomandibular joints X007 are not both to be routinely claimed on the same patient but only when specifically ordered.",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X090",
+          "context": "not eligible for payment",
+          "description": "The technical and professional fee components for chest x-ray are not eligible for payment in the routine preoperative preparation or screening of a patient for non-cardiac, non-thoracic surgery, unless there is a clinical indication.",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X091",
+          "context": "not eligible for payment",
+          "description": "The technical and professional fee components for chest x-ray are not eligible for payment in the routine preoperative preparation or screening of a patient for non-cardiac, non-thoracic surgery, unless there is a clinical indication.",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        },
+        {
+          "code": "X092",
+          "context": "not eligible for payment",
+          "description": "The technical and professional fee components for chest x-ray are not eligible for payment in the routine preoperative preparation or screening of a patient for non-cardiac, non-thoracic surgery, unless there is a clinical indication.",
+          "source_subsection": "Preamble",
+          "source_page": "D1"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Head and Neck",
+      "parent_section": "D",
+      "page_ref": "D5",
+      "pages_processed": "353-353",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            6,
+            "X001 - four views ........................................................................... 29.90 13.25"
+          ],
+          [
+            7,
+            "X009 - five or more views .............................................................. 37.25 16.40"
+          ],
+          [
+            8,
+            "X003 Sella turcica (when skull not examined) ................................. 14.90 6.40"
+          ],
+          [
+            10,
+            "X004 - three views ......................................................................... 21.70 10.30"
+          ],
+          [
+            12,
+            "X005 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            14,
+            "X006 - three views (unilateral or bilateral) ..................................... 21.70 10.35"
+          ],
+          [
+            15,
+            "X012 - four or more views.............................................................. 29.90 13.25"
+          ],
+          [
+            17,
+            "closed mouth views ............................................................ 21.70 10.35"
+          ],
+          [
+            20,
+            "X010 - six views........................................................................... 28.65 14.25"
+          ],
+          [
+            21,
+            "X011 - Internal auditory meati (when skull not examined) ............. 21.70 10.35"
+          ],
+          [
+            24,
+            "X016 Eye, for foreign body............................................................... 14.85 9.05"
+          ],
+          [
+            25,
+            "X017 Eye, for localization, additional ............................................... 15.30 20.40"
+          ],
+          [
+            26,
+            "X018 Optic foramina ........................................................................ 16.85 9.05"
+          ],
+          [
+            27,
+            "X019 Salivary gland region .............................................................. 13.75 7.95"
+          ],
+          [
+            29,
+            "X020 - two views............................................................................ 13.75 7.95"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X001",
+          "description": "four views",
+          "fee": 29.9,
+          "h_fee": 29.9,
+          "p_fee": 13.25,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X009",
+          "description": "five or more views",
+          "fee": 37.25,
+          "h_fee": 37.25,
+          "p_fee": 16.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X003",
+          "description": "Sella turcica (when skull not examined)",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X004",
+          "description": "three views",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 10.3,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X005",
+          "description": "two views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X006",
+          "description": "three views (unilateral or bilateral)",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 10.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X012",
+          "description": "four or more views",
+          "fee": 29.9,
+          "h_fee": 29.9,
+          "p_fee": 13.25,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X007",
+          "description": "Temporomandibular joints - four views including open and closed mouth views",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 10.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X010",
+          "description": "six views",
+          "fee": 28.65,
+          "h_fee": 28.65,
+          "p_fee": 14.25,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X011",
+          "description": "Internal auditory meati (when skull not examined)",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 10.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X016",
+          "description": "Eye, for foreign body",
+          "fee": 14.85,
+          "h_fee": 14.85,
+          "p_fee": 9.05,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X017",
+          "description": "Eye, for localization, additional",
+          "fee": 15.3,
+          "h_fee": 15.3,
+          "p_fee": 20.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X018",
+          "description": "Optic foramina",
+          "fee": 16.85,
+          "h_fee": 16.85,
+          "p_fee": 9.05,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X019",
+          "description": "Salivary gland region",
+          "fee": 13.75,
+          "h_fee": 13.75,
+          "p_fee": 7.95,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X020",
+          "description": "two views",
+          "fee": 13.75,
+          "h_fee": 13.75,
+          "p_fee": 7.95,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Spine and Pelvis",
+      "parent_section": "D",
+      "page_ref": "D6",
+      "pages_processed": "354-354",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "X025 - two or three views .............................................................. 25.90 7.95"
+          ],
+          [
+            6,
+            "X202 - four or five views ................................................................ 33.40 10.75"
+          ],
+          [
+            7,
+            "X203 - six or more views................................................................ 40.35 13.25"
+          ],
+          [
+            9,
+            "X027 - two views............................................................................ 23.65 7.95"
+          ],
+          [
+            10,
+            "X204 - three or more...................................................................... 29.90 10.65"
+          ],
+          [
+            12,
+            "X028 - two or three views .............................................................. 25.90 7.95"
+          ],
+          [
+            13,
+            "X205 - four or five views ................................................................ 33.40 10.75"
+          ],
+          [
+            14,
+            "X206 - six or more views................................................................ 40.35 13.35"
+          ],
+          [
+            16,
+            "X032 - four views ........................................................................... 53.55 20.75"
+          ],
+          [
+            18,
+            "X033 - single view ....................................................................... 21.70 10.15"
+          ],
+          [
+            19,
+            "X031 - two or more views............................................................ 29.70 13.35"
+          ],
+          [
+            21,
+            "X034 - two views............................................................................ 23.95 6.40"
+          ],
+          [
+            22,
+            "X207 - three or more views............................................................ 31.05 10.65"
+          ],
+          [
+            24,
+            "X035 - two or three views .............................................................. 21.70 10.35"
+          ],
+          [
+            25,
+            "X208 - four or more views.............................................................. 28.95 13.05"
+          ],
+          [
+            27,
+            "X036 - one view ............................................................................. 14.90 6.40"
+          ],
+          [
+            29,
+            "plus lateral one hip) ............................................................ 27.75 9.20"
+          ],
+          [
+            31,
+            "both hips plus lateral each hip)........................................... 31.90 10.35"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X025",
+          "description": "two or three views",
+          "fee": 25.9,
+          "h_fee": 7.95,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X202",
+          "description": "four or five views",
+          "fee": 33.4,
+          "h_fee": 10.75,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X203",
+          "description": "six or more views",
+          "fee": 40.35,
+          "h_fee": 13.25,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X027",
+          "description": "two views",
+          "fee": 23.65,
+          "h_fee": 7.95,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X204",
+          "description": "three or more",
+          "fee": 29.9,
+          "h_fee": 10.65,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X028",
+          "description": "two or three views",
+          "fee": 25.9,
+          "h_fee": 7.95,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X205",
+          "description": "four or five views",
+          "fee": 33.4,
+          "h_fee": 10.75,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X206",
+          "description": "six or more views",
+          "fee": 40.35,
+          "h_fee": 13.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X032",
+          "description": "four views",
+          "fee": 53.55,
+          "h_fee": 20.75,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X033",
+          "description": "single view",
+          "fee": 21.7,
+          "h_fee": 10.15,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X031",
+          "description": "two or more views",
+          "fee": 29.7,
+          "h_fee": 13.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X034",
+          "description": "two views",
+          "fee": 23.95,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X207",
+          "description": "three or more views",
+          "fee": 31.05,
+          "h_fee": 10.65,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X035",
+          "description": "two or three views",
+          "fee": 21.7,
+          "h_fee": 10.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X208",
+          "description": "four or more views",
+          "fee": 28.95,
+          "h_fee": 13.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X036",
+          "description": "one view",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X037",
+          "description": "two views (e.g. AP and frog view, both hips, or AP both hips plus lateral one hip)",
+          "fee": 27.75,
+          "h_fee": 9.2,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X038",
+          "description": "three or more views (e.g. pelvis and sacro-iliac joints, or AP both hips plus lateral each hip)",
+          "fee": 31.9,
+          "h_fee": 10.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Upper Extremities",
+      "parent_section": "D",
+      "page_ref": "D7",
+      "pages_processed": "355-355",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "X045 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            6,
+            "X209 - three or more views............................................................ 22.90 8.90"
+          ],
+          [
+            8,
+            "X046 - two views............................................................................ 21.70 10.35"
+          ],
+          [
+            9,
+            "X210 - three or more views............................................................ 29.60 13.05"
+          ],
+          [
+            11,
+            "X047 - two or three views .............................................................. 17.95 7.95"
+          ],
+          [
+            12,
+            "X211 - four or more views.............................................................. 25.60 10.90"
+          ],
+          [
+            14,
+            "X048 - two views............................................................................ 17.95 7.95"
+          ],
+          [
+            15,
+            "X212 - three or more views............................................................ 25.60 10.65"
+          ],
+          [
+            17,
+            "X049 - two views............................................................................ 17.95 7.95"
+          ],
+          [
+            18,
+            "X213 - three or more views............................................................ 25.80 10.65"
+          ],
+          [
+            20,
+            "X050 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            21,
+            "X214 - three or more views............................................................ 22.75 9.30"
+          ],
+          [
+            23,
+            "X051 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            24,
+            "X215 - three or four views.............................................................. 22.90 9.05"
+          ],
+          [
+            25,
+            "X216 - five or more views .............................................................. 30.85 11.65"
+          ],
+          [
+            27,
+            "X052 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            28,
+            "X217 - three or more views............................................................ 22.90 9.05"
+          ],
+          [
+            30,
+            "X053 - two or three views .............................................................. 14.90 6.40"
+          ],
+          [
+            31,
+            "X218 - four or more views.............................................................. 22.90 9.05"
+          ],
+          [
+            33,
+            "X054 - two or three views .............................................................. 14.90 6.40"
+          ],
+          [
+            34,
+            "X219 - four or more views.............................................................. 22.90 9.05"
+          ],
+          [
+            36,
+            "X055 - two or three views .............................................................. 21.70 13.05"
+          ],
+          [
+            37,
+            "X220 - four or more views.............................................................. 27.65 15.70"
+          ],
+          [
+            39,
+            "X056 - two views............................................................................ 11.50 4.70"
+          ],
+          [
+            40,
+            "X221 - three or more views............................................................ 14.90 6.40"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X045",
+          "description": "two views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        },
+        {
+          "code": "X209",
+          "description": "three or more views",
+          "fee": 22.9,
+          "h_fee": 22.9,
+          "p_fee": 8.9
+        },
+        {
+          "code": "X046",
+          "description": "two views",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 10.35
+        },
+        {
+          "code": "X210",
+          "description": "three or more views",
+          "fee": 29.6,
+          "h_fee": 29.6,
+          "p_fee": 13.05
+        },
+        {
+          "code": "X047",
+          "description": "two or three views",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 7.95
+        },
+        {
+          "code": "X211",
+          "description": "four or more views",
+          "fee": 25.6,
+          "h_fee": 25.6,
+          "p_fee": 10.9
+        },
+        {
+          "code": "X048",
+          "description": "two views",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 7.95
+        },
+        {
+          "code": "X212",
+          "description": "three or more views",
+          "fee": 25.6,
+          "h_fee": 25.6,
+          "p_fee": 10.65
+        },
+        {
+          "code": "X049",
+          "description": "two views",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 7.95
+        },
+        {
+          "code": "X213",
+          "description": "three or more views",
+          "fee": 25.8,
+          "h_fee": 25.8,
+          "p_fee": 10.65
+        },
+        {
+          "code": "X050",
+          "description": "two views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        },
+        {
+          "code": "X214",
+          "description": "three or more views",
+          "fee": 22.75,
+          "h_fee": 22.75,
+          "p_fee": 9.3
+        },
+        {
+          "code": "X051",
+          "description": "two views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        },
+        {
+          "code": "X215",
+          "description": "three or four views",
+          "fee": 22.9,
+          "h_fee": 22.9,
+          "p_fee": 9.05
+        },
+        {
+          "code": "X216",
+          "description": "five or more views",
+          "fee": 30.85,
+          "h_fee": 30.85,
+          "p_fee": 11.65
+        },
+        {
+          "code": "X052",
+          "description": "two views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        },
+        {
+          "code": "X217",
+          "description": "three or more views",
+          "fee": 22.9,
+          "h_fee": 22.9,
+          "p_fee": 9.05
+        },
+        {
+          "code": "X053",
+          "description": "two or three views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        },
+        {
+          "code": "X218",
+          "description": "four or more views",
+          "fee": 22.9,
+          "h_fee": 22.9,
+          "p_fee": 9.05
+        },
+        {
+          "code": "X054",
+          "description": "two or three views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        },
+        {
+          "code": "X219",
+          "description": "four or more views",
+          "fee": 22.9,
+          "h_fee": 22.9,
+          "p_fee": 9.05
+        },
+        {
+          "code": "X055",
+          "description": "two or three views",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 13.05
+        },
+        {
+          "code": "X220",
+          "description": "four or more views",
+          "fee": 27.65,
+          "h_fee": 27.65,
+          "p_fee": 15.7
+        },
+        {
+          "code": "X056",
+          "description": "two views",
+          "fee": 11.5,
+          "h_fee": 11.5,
+          "p_fee": 4.7
+        },
+        {
+          "code": "X221",
+          "description": "three or more views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Lower Extremities",
+      "parent_section": "D",
+      "page_ref": "D8",
+      "pages_processed": "356-356",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            6,
+            "X060 - two or more views .............................................................. 23.75 7.65"
+          ],
+          [
+            8,
+            "X063 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            9,
+            "X223 - three or more views............................................................ 22.20 9.05"
+          ],
+          [
+            11,
+            "X065 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            12,
+            "X224 - three or four views.............................................................. 22.90 9.05"
+          ],
+          [
+            13,
+            "X225 - five or more views .............................................................. 30.85 11.65"
+          ],
+          [
+            15,
+            "X066 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            16,
+            "X226 - three or more views............................................................ 22.90 9.05"
+          ],
+          [
+            18,
+            "X067 - two or three views .............................................................. 14.90 6.40"
+          ],
+          [
+            19,
+            "X227 - four or more views.............................................................. 22.90 9.05"
+          ],
+          [
+            21,
+            "X068 - two views............................................................................ 14.90 6.40"
+          ],
+          [
+            22,
+            "X228 - three or more views............................................................ 22.90 9.05"
+          ],
+          [
+            24,
+            "X069 - two or three views .............................................................. 14.90 6.40"
+          ],
+          [
+            25,
+            "X229 - four or more views.............................................................. 22.90 9.05"
+          ],
+          [
+            27,
+            "X072 - two views............................................................................ 11.50 4.70"
+          ],
+          [
+            28,
+            "X230 - three or more views............................................................ 14.90 9.05"
+          ],
+          [
+            29,
+            "X064 Leg length studies (orthoroentgenogram)............................... 21.70 10.35"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X060",
+          "description": "Hip (unilateral) - two or more views",
+          "fee": 23.75,
+          "h_fee": 7.65,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X063",
+          "description": "Femur including one joint - two views",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X223",
+          "description": "Femur including one joint - three or more views",
+          "fee": 22.2,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X065",
+          "description": "Knee including patella - two views",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X224",
+          "description": "Knee including patella - three or four views",
+          "fee": 22.9,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X225",
+          "description": "Knee including patella - five or more views",
+          "fee": 30.85,
+          "h_fee": 11.65,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X066",
+          "description": "Tibia and fibula including one joint - two views",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X226",
+          "description": "Tibia and fibula including one joint - three or more views",
+          "fee": 22.9,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X067",
+          "description": "Ankle - two or three views",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X227",
+          "description": "Ankle - four or more views",
+          "fee": 22.9,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X068",
+          "description": "Calcaneus - two views",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X228",
+          "description": "Calcaneus - three or more views",
+          "fee": 22.9,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X069",
+          "description": "Foot - two or three views",
+          "fee": 14.9,
+          "h_fee": 6.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X229",
+          "description": "Foot - four or more views",
+          "fee": 22.9,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X072",
+          "description": "Toe - two views",
+          "fee": 11.5,
+          "h_fee": 4.7,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X230",
+          "description": "Toe - three or more views",
+          "fee": 14.9,
+          "h_fee": 9.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X064",
+          "description": "Leg length studies (orthoroentgenogram)",
+          "fee": 21.7,
+          "h_fee": 10.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Skeletal Surveys",
+      "parent_section": "D",
+      "page_ref": "D9",
+      "pages_processed": "357-357",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "X057 - single film ........................................................................... 14.90 6.40"
+          ],
+          [
+            6,
+            "X058 - two or more films or views.................................................. 21.70 10.65"
+          ],
+          [
+            8,
+            "X080 - single view.......................................................................... 7.45 3.30"
+          ],
+          [
+            9,
+            "X081 - each additional film or view ................................................ 7.45 3.30"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X057",
+          "description": "Skeletal survey for bone age - single film",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X058",
+          "description": "Skeletal survey for bone age - two or more films or views",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 10.65,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X080",
+          "description": "Other survey studies - e.g. rheumatoid, metabolic or metastatic - single view",
+          "fee": 7.45,
+          "h_fee": 7.45,
+          "p_fee": 3.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X081",
+          "description": "Other survey studies - e.g. rheumatoid, metabolic or metastatic - each additional film or view",
+          "fee": 7.45,
+          "h_fee": 7.45,
+          "p_fee": 3.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Chest and Abdomen",
+      "parent_section": "D",
+      "page_ref": "D10",
+      "pages_processed": "358-358",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "X090 - single view.......................................................................... 14.90 6.35"
+          ],
+          [
+            6,
+            "X091 - two views............................................................................ 21.90 10.70"
+          ],
+          [
+            7,
+            "X092 - three or more views............................................................ 28.15 12.40"
+          ],
+          [
+            11,
+            "X039 - two or more views .............................................................. 17.95 7.85"
+          ],
+          [
+            13,
+            "X040 - two or more views .............................................................. 17.95 7.85"
+          ],
+          [
+            15,
+            "X096 - two or more views .............................................................. 14.90 6.40"
+          ],
+          [
+            17,
+            "X100 - single view.......................................................................... 14.90 6.40"
+          ],
+          [
+            18,
+            "X101 - two or more views .............................................................. 22.80 9.20"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X090",
+          "description": "single view",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.35,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X091",
+          "description": "two views",
+          "fee": 21.9,
+          "h_fee": 21.9,
+          "p_fee": 10.7,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X092",
+          "description": "three or more views",
+          "fee": 28.15,
+          "h_fee": 28.15,
+          "p_fee": 12.4,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X039",
+          "description": "two or more views",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 7.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X040",
+          "description": "two or more views",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 7.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X096",
+          "description": "two or more views",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X100",
+          "description": "single view",
+          "fee": 14.9,
+          "h_fee": 14.9,
+          "p_fee": 6.4,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X101",
+          "description": "two or more views",
+          "fee": 22.8,
+          "h_fee": 22.8,
+          "p_fee": 9.2,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Gastrointestinal Tract",
+      "parent_section": "D",
+      "page_ref": "D11",
+      "pages_processed": "359-359",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "X105 - cine or videotape ................................................................ 29.50 36.90"
+          ],
+          [
+            7,
+            "X106 - cine or videotape ................................................................ 29.50 36.90"
+          ],
+          [
+            8,
+            "X107 Oesophagus when X103, X104, X108 or X109 not claimed... 26.70 21.40"
+          ],
+          [
+            10,
+            "X108 - including survey film, if taken ............................................. 46.30 38.15"
+          ],
+          [
+            11,
+            "X104 - double contrast, including survey film, if taken................... 48.50 46.40"
+          ],
+          [
+            13,
+            "bowel .................................................................................. 60.95 58.40"
+          ],
+          [
+            14,
+            "X110 Hypotonic duodenogram......................................................... 39.35 32.95"
+          ],
+          [
+            15,
+            "X109 Oesophagus, stomach and small bowel ................................. 59.10 49.80"
+          ],
+          [
+            17,
+            "X111 - when only examination performed during patient\u2019s visit..... 26.40 21.80"
+          ],
+          [
+            19,
+            "X112 - barium enema including survey film, if taken ..................... 48.40 29.40"
+          ],
+          [
+            21,
+            "taken................................................................................... 61.30 49.80"
+          ],
+          [
+            23,
+            "X114 - one or multiple day examinations....................................... 29.95 11.60"
+          ],
+          [
+            24,
+            "X120 - one or multiple day examinations with preliminary plain film 39.80 11.60"
+          ],
+          [
+            25,
+            "X116 T-tube cholangiogram............................................................. 21.70 9.90"
+          ],
+          [
+            26,
+            "X117 Operative cholangiogram........................................................ 21.70 11.10"
+          ],
+          [
+            27,
+            "X123 Operative pancreatogram or ERCP........................................ 21.70 9.00"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X105",
+          "description": "cine or videotape",
+          "fee": 29.5,
+          "h_fee": 29.5,
+          "p_fee": 36.9,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X106",
+          "description": "cine or videotape",
+          "fee": 29.5,
+          "h_fee": 29.5,
+          "p_fee": 36.9,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X107",
+          "description": "Oesophagus when X103, X104, X108 or X109 not claimed",
+          "fee": 26.7,
+          "h_fee": 26.7,
+          "p_fee": 21.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X108",
+          "description": "including survey film, if taken",
+          "fee": 46.3,
+          "h_fee": 46.3,
+          "p_fee": 38.15,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X104",
+          "description": "double contrast, including survey film, if taken",
+          "fee": 48.5,
+          "h_fee": 48.5,
+          "p_fee": 46.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X103",
+          "description": "double contrast, including survey film, if taken, and small bowel",
+          "fee": 60.95,
+          "h_fee": 60.95,
+          "p_fee": 58.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X110",
+          "description": "Hypotonic duodenogram",
+          "fee": 39.35,
+          "h_fee": 39.35,
+          "p_fee": 32.95,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X109",
+          "description": "Oesophagus, stomach and small bowel",
+          "fee": 59.1,
+          "h_fee": 59.1,
+          "p_fee": 49.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X111",
+          "description": "when only examination performed during patient\u2019s visit",
+          "fee": 26.4,
+          "h_fee": 26.4,
+          "p_fee": 21.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X112",
+          "description": "barium enema including survey film, if taken",
+          "fee": 48.4,
+          "h_fee": 48.4,
+          "p_fee": 29.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X113",
+          "description": "air contrast, primary or secondary, including survey films, if taken",
+          "fee": 61.3,
+          "h_fee": 61.3,
+          "p_fee": 49.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X114",
+          "description": "one or multiple day examinations",
+          "fee": 29.95,
+          "h_fee": 29.95,
+          "p_fee": 11.6,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X120",
+          "description": "one or multiple day examinations with preliminary plain film",
+          "fee": 39.8,
+          "h_fee": 39.8,
+          "p_fee": 11.6,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X116",
+          "description": "T-tube cholangiogram",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 9.9,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X117",
+          "description": "Operative cholangiogram",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 11.1,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X123",
+          "description": "Operative pancreatogram or ERCP",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 9.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Genitourinary Tract",
+      "parent_section": "D",
+      "page_ref": "D12",
+      "pages_processed": "360-360",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            4,
+            "X129 Retrograde pyelogram, unilateral or bilateral.......................... 21.70 9.00"
+          ],
+          [
+            5,
+            "X130 Intravenous pyelogram including preliminary film................... 49.65 22.75"
+          ],
+          [
+            6,
+            "X137 Cystogram (catheter).............................................................. 23.85 8.40"
+          ],
+          [
+            7,
+            "X135 Cystourethrogram, stress or voiding (catheter) ...................... 27.50 13.80"
+          ],
+          [
+            8,
+            "X131 Cystourethrogram (non-catheter) ........................................... 5.75 4.75"
+          ],
+          [
+            9,
+            "X191 Intestinal conduit examination or nephrostogram................... 21.70 9.00"
+          ],
+          [
+            10,
+            "X138 Percutaneous antegrade pyelogram....................................... 21.70 9.00"
+          ],
+          [
+            11,
+            "X139 Percutaneous nephrostogram ................................................ 21.70 11.10"
+          ],
+          [
+            12,
+            "X134 Retrograde urethrogram ......................................................... 17.95 6.80"
+          ],
+          [
+            13,
+            "X136 Vasogram................................................................................ 17.95 6.80"
+          ],
+          [
+            14,
+            "X141 Cavernosography ................................................................... 20.65 8.30"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X129",
+          "description": "Retrograde pyelogram, unilateral or bilateral",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 9.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X130",
+          "description": "Intravenous pyelogram including preliminary film",
+          "fee": 49.65,
+          "h_fee": 49.65,
+          "p_fee": 22.75,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X137",
+          "description": "Cystogram (catheter)",
+          "fee": 23.85,
+          "h_fee": 23.85,
+          "p_fee": 8.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X135",
+          "description": "Cystourethrogram, stress or voiding (catheter)",
+          "fee": 27.5,
+          "h_fee": 27.5,
+          "p_fee": 13.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X131",
+          "description": "Cystourethrogram (non-catheter)",
+          "fee": 5.75,
+          "h_fee": 5.75,
+          "p_fee": 4.75,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X191",
+          "description": "Intestinal conduit examination or nephrostogram",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 9.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X138",
+          "description": "Percutaneous antegrade pyelogram",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 9.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X139",
+          "description": "Percutaneous nephrostogram",
+          "fee": 21.7,
+          "h_fee": 21.7,
+          "p_fee": 11.1,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X134",
+          "description": "Retrograde urethrogram",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 6.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X136",
+          "description": "Vasogram",
+          "fee": 17.95,
+          "h_fee": 17.95,
+          "p_fee": 6.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X141",
+          "description": "Cavernosography",
+          "fee": 20.65,
+          "h_fee": 20.65,
+          "p_fee": 8.3,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Obstetrics and Gynaecology",
+      "parent_section": "D",
+      "page_ref": "D13",
+      "pages_processed": "361-361",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            4,
+            "X147 Hysterosalpingogram.............................................................. 29.80 11.35"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X147",
+          "description": "Hysterosalpingogram",
+          "fee": 29.8,
+          "h_fee": 29.8,
+          "p_fee": 11.35,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Fluoroscopy - By physician With or Without Spot Films",
+      "parent_section": "D",
+      "page_ref": "D14",
+      "pages_processed": "362-362",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            4,
+            "X195 Chest ...................................................................................... 9.25 14.20"
+          ],
+          [
+            5,
+            "X196 Skeleton.................................................................................. 9.25 14.20"
+          ],
+          [
+            6,
+            "X197 Abdomen ................................................................................ 9.25 14.20"
+          ],
+          [
+            8,
+            "physician per \u00bc hour .......................................................... 7.30 23.75"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X195",
+          "description": "Chest",
+          "fee": 14.2,
+          "h_fee": 9.25,
+          "p_fee": 14.2,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X196",
+          "description": "Skeleton",
+          "fee": 14.2,
+          "h_fee": 9.25,
+          "p_fee": 14.2,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X197",
+          "description": "Abdomen",
+          "fee": 14.2,
+          "h_fee": 9.25,
+          "p_fee": 14.2,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X189",
+          "description": "Fluoroscopic control of clinical procedures done by another physician per \u00bc hour",
+          "fee": 23.75,
+          "h_fee": 7.3,
+          "p_fee": 23.75,
+          "units": "per \u00bc hour",
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Special Examinations",
+      "parent_section": "D",
+      "page_ref": "D15",
+      "pages_processed": "363-363",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            6,
+            "X179 - non-selective ...................................................................... 29.60 15.85"
+          ],
+          [
+            7,
+            "X180 - selective (per vessel, to a maximum of 4) .......................... 38.95 31.35"
+          ],
+          [
+            9,
+            "X181 - non-selective ...................................................................... 59.65 30.90"
+          ],
+          [
+            10,
+            "X182 - selective (per vessel, to a maximum of 4) .......................... 79.30 37.45"
+          ],
+          [
+            11,
+            "X140 - selective (5 or more vessels).............................................. 317.35 185.60"
+          ],
+          [
+            13,
+            "X160 - unilateral............................................................................. 48.90 34.00"
+          ],
+          [
+            14,
+            "X161 - bilateral............................................................................... 78.60 69.65"
+          ],
+          [
+            16,
+            "X174 - unilateral............................................................................. 29.80 15.50"
+          ],
+          [
+            17,
+            "X175 - bilateral............................................................................... 39.35 30.90"
+          ],
+          [
+            18,
+            "X198 Splenoportogram .................................................................... 59.10 22.60"
+          ],
+          [
+            19,
+            "X199 Translumbar aortogram .......................................................... 59.10 22.60"
+          ],
+          [
+            21,
+            "X132 - unilateral............................................................................. 48.90 34.00"
+          ],
+          [
+            22,
+            "X133 - bilateral............................................................................... 79.90 51.05"
+          ],
+          [
+            23,
+            "X156 Arthrogram, tenogram or bursogram ...................................... 26.25 27.50"
+          ],
+          [
+            25,
+            "physician ............................................................................ 36.70 45.55"
+          ],
+          [
+            27,
+            "X158 - unilateral............................................................................. 28.95 23.00"
+          ],
+          [
+            28,
+            "X159 - bilateral............................................................................... 38.40 34.60"
+          ],
+          [
+            29,
+            "X162 Cerebral stereotaxis................................................................ 59.20 23.10"
+          ],
+          [
+            30,
+            "X122 Cholangiogram, percutaneous trans-hepatic.......................... 29.50 23.15"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X179",
+          "description": "non-selective",
+          "fee": 29.6,
+          "h_fee": 29.6,
+          "p_fee": 15.85
+        },
+        {
+          "code": "X180",
+          "description": "selective (per vessel, to a maximum of 4)",
+          "fee": 38.95,
+          "h_fee": 38.95,
+          "p_fee": 31.35
+        },
+        {
+          "code": "X181",
+          "description": "non-selective",
+          "fee": 59.65,
+          "h_fee": 59.65,
+          "p_fee": 30.9
+        },
+        {
+          "code": "X182",
+          "description": "selective (per vessel, to a maximum of 4)",
+          "fee": 79.3,
+          "h_fee": 79.3,
+          "p_fee": 37.45
+        },
+        {
+          "code": "X140",
+          "description": "selective (5 or more vessels)",
+          "fee": 317.35,
+          "h_fee": 317.35,
+          "p_fee": 185.6
+        },
+        {
+          "code": "X160",
+          "description": "unilateral",
+          "fee": 48.9,
+          "h_fee": 48.9,
+          "p_fee": 34.0
+        },
+        {
+          "code": "X161",
+          "description": "bilateral",
+          "fee": 78.6,
+          "h_fee": 78.6,
+          "p_fee": 69.65
+        },
+        {
+          "code": "X174",
+          "description": "unilateral",
+          "fee": 29.8,
+          "h_fee": 29.8,
+          "p_fee": 15.5
+        },
+        {
+          "code": "X175",
+          "description": "bilateral",
+          "fee": 39.35,
+          "h_fee": 39.35,
+          "p_fee": 30.9
+        },
+        {
+          "code": "X198",
+          "description": "Splenoportogram",
+          "fee": 59.1,
+          "h_fee": 59.1,
+          "p_fee": 22.6
+        },
+        {
+          "code": "X199",
+          "description": "Translumbar aortogram",
+          "fee": 59.1,
+          "h_fee": 59.1,
+          "p_fee": 22.6
+        },
+        {
+          "code": "X132",
+          "description": "unilateral",
+          "fee": 48.9,
+          "h_fee": 48.9,
+          "p_fee": 34.0
+        },
+        {
+          "code": "X133",
+          "description": "bilateral",
+          "fee": 79.9,
+          "h_fee": 79.9,
+          "p_fee": 51.05
+        },
+        {
+          "code": "X156",
+          "description": "Arthrogram, tenogram or bursogram",
+          "fee": 26.25,
+          "h_fee": 26.25,
+          "p_fee": 27.5
+        },
+        {
+          "code": "X200",
+          "description": "with fluoroscopy and complete positioning throughout by physician",
+          "fee": 36.7,
+          "h_fee": 36.7,
+          "p_fee": 45.55
+        },
+        {
+          "code": "X158",
+          "description": "unilateral",
+          "fee": 28.95,
+          "h_fee": 28.95,
+          "p_fee": 23.0
+        },
+        {
+          "code": "X159",
+          "description": "bilateral",
+          "fee": 38.4,
+          "h_fee": 38.4,
+          "p_fee": 34.6
+        },
+        {
+          "code": "X162",
+          "description": "Cerebral stereotaxis",
+          "fee": 59.2,
+          "h_fee": 59.2,
+          "p_fee": 23.1
+        },
+        {
+          "code": "X122",
+          "description": "Cholangiogram, percutaneous trans-hepatic",
+          "fee": 29.5,
+          "h_fee": 29.5,
+          "p_fee": 23.15
+        },
+        {
+          "code": "X121",
+          "description": "Stereotactic core breast biopsy",
+          "fee": null,
+          "h_fee": null,
+          "p_fee": 83.15
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Bone Mineral Density (BMD) Measurement",
+      "parent_section": "D",
+      "page_ref": "D16",
+      "pages_processed": "364-365",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            24,
+            "X145 - one site............................................................................... 42.85 40.15"
+          ],
+          [
+            25,
+            "X146 - two or more sites ................................................................ 55.20 48.00"
+          ],
+          [
+            27,
+            "X152 - one site............................................................................... 42.85 40.15"
+          ],
+          [
+            28,
+            "X153 - two or more sites ................................................................ 55.20 48.00"
+          ],
+          [
+            30,
+            "X142 - one site............................................................................... 42.85 40.15"
+          ],
+          [
+            31,
+            "X148 - two or more sites ................................................................ 55.20 48.00"
+          ],
+          [
+            33,
+            "X149 - one site............................................................................... 42.85 40.15"
+          ],
+          [
+            34,
+            "X155 - two or more sites ................................................................ 55.20 48.00"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X145",
+          "description": "Baseline test - one site",
+          "fee": 42.85,
+          "h_fee": 40.15,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X146",
+          "description": "Baseline test - two or more sites",
+          "fee": 55.2,
+          "h_fee": 48.0,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X152",
+          "description": "Second test - low risk patient - one site",
+          "fee": 42.85,
+          "h_fee": 40.15,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X153",
+          "description": "Second test - low risk patient - two or more sites",
+          "fee": 55.2,
+          "h_fee": 48.0,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X142",
+          "description": "Subsequent test - low risk patient - one site",
+          "fee": 42.85,
+          "h_fee": 40.15,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X148",
+          "description": "Subsequent test - low risk patient - two or more sites",
+          "fee": 55.2,
+          "h_fee": 48.0,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X149",
+          "description": "Subsequent test - high risk patient - one site",
+          "fee": 42.85,
+          "h_fee": 40.15,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X155",
+          "description": "Subsequent test - high risk patient - two or more sites",
+          "fee": 55.2,
+          "h_fee": 48.0,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "X145",
+          "context": "Payment rules",
+          "description": "Patients are limited to one baseline test in their lifetime.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X146",
+          "context": "Payment rules",
+          "description": "Patients are limited to one baseline test in their lifetime.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X152",
+          "context": "Payment rules",
+          "description": "Second test - low risk patient is limited to a maximum of one test rendered not earlier than 36 months following the baseline test.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X153",
+          "context": "Payment rules",
+          "description": "Second test - low risk patient is limited to a maximum of one test rendered not earlier than 36 months following the baseline test.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X142",
+          "context": "Payment rules",
+          "description": "Subsequent test - low risk patient is not eligible for payment when rendered earlier than 60 months following the second or any subsequent test.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X148",
+          "context": "Payment rules",
+          "description": "Subsequent test - low risk patient is not eligible for payment when rendered earlier than 60 months following the second or any subsequent test.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X149",
+          "context": "Payment rules",
+          "description": "Subsequent test - high risk patients is limited to a maximum of one test every 12 months unless the ordering physician obtains written prior authorization.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        },
+        {
+          "code": "X155",
+          "context": "Payment rules",
+          "description": "Subsequent test - high risk patients is limited to a maximum of one test every 12 months unless the ordering physician obtains written prior authorization.",
+          "source_subsection": "Bone Mineral Density (BMD) Measurement",
+          "source_page": "D16"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Computed Tomography (CT)",
+      "parent_section": "D",
+      "page_ref": "D18",
+      "pages_processed": "366-371",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": []
+      },
+      "fee_codes": [
+        {
+          "code": "X400",
+          "description": "without IV contrast",
+          "fee": 43.25,
+          "h_fee": null,
+          "p_fee": 43.25,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X401",
+          "description": "with IV contrast",
+          "fee": 64.95,
+          "h_fee": null,
+          "p_fee": 64.95,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X188",
+          "description": "with and without IV contrast",
+          "fee": 75.85,
+          "h_fee": null,
+          "p_fee": 75.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "E874",
+          "description": "with CT perfusion study, to X188, X400, X401, X402, X405, or X408",
+          "fee": 64.0,
+          "h_fee": null,
+          "p_fee": 64.0,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "only eligible for payment when the study is rendered as part of the investigation of acute stroke and the interpretation is rendered within the limited period of time following acute stroke during which the treating physician must render therapeutic decisions.",
+          "special_prefix": null
+        },
+        {
+          "code": "X402",
+          "description": "without IV contrast",
+          "fee": 64.95,
+          "h_fee": null,
+          "p_fee": 64.95,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Complex head",
+          "special_prefix": null
+        },
+        {
+          "code": "X405",
+          "description": "with IV contrast",
+          "fee": 75.85,
+          "h_fee": null,
+          "p_fee": 75.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Complex head",
+          "special_prefix": null
+        },
+        {
+          "code": "X408",
+          "description": "with and without IV contrast",
+          "fee": 86.6,
+          "h_fee": null,
+          "p_fee": 86.6,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Complex head",
+          "special_prefix": null
+        },
+        {
+          "code": "X403",
+          "description": "without IV contrast",
+          "fee": 86.6,
+          "h_fee": null,
+          "p_fee": 86.6,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X404",
+          "description": "with IV contrast",
+          "fee": 97.5,
+          "h_fee": null,
+          "p_fee": 97.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X124",
+          "description": "with and without IV contrast",
+          "fee": 108.3,
+          "h_fee": null,
+          "p_fee": 108.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X406",
+          "description": "without IV contrast",
+          "fee": 64.95,
+          "h_fee": null,
+          "p_fee": 64.95,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X407",
+          "description": "with IV contrast",
+          "fee": 75.85,
+          "h_fee": null,
+          "p_fee": 75.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X125",
+          "description": "with and without IV contrast",
+          "fee": 86.6,
+          "h_fee": null,
+          "p_fee": 86.6,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X235",
+          "description": "Cardio-thoracic",
+          "fee": 147.5,
+          "h_fee": null,
+          "p_fee": 147.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "only eligible for payment when the service is performed using a minimum of a 64-detector CT scanner.",
+          "special_prefix": null
+        },
+        {
+          "code": "X409",
+          "description": "without IV contrast",
+          "fee": 86.6,
+          "h_fee": null,
+          "p_fee": 86.6,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X410",
+          "description": "with IV contrast",
+          "fee": 97.5,
+          "h_fee": null,
+          "p_fee": 97.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X126",
+          "description": "with and without IV contrast",
+          "fee": 108.3,
+          "h_fee": null,
+          "p_fee": 108.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X231",
+          "description": "without IV contrast",
+          "fee": 86.6,
+          "h_fee": null,
+          "p_fee": 86.6,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X232",
+          "description": "with IV contrast",
+          "fee": 97.5,
+          "h_fee": null,
+          "p_fee": 97.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X233",
+          "description": "with and without IV contrast",
+          "fee": 108.3,
+          "h_fee": null,
+          "p_fee": 108.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X234",
+          "description": "CT colonography",
+          "fee": 235.3,
+          "h_fee": null,
+          "p_fee": 235.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "only eligible for payment in specific circumstances related to colorectal cancer risk.",
+          "special_prefix": null
+        },
+        {
+          "code": "X412",
+          "description": "without IV contrast",
+          "fee": 43.25,
+          "h_fee": null,
+          "p_fee": 43.25,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X413",
+          "description": "with IV contrast",
+          "fee": 64.95,
+          "h_fee": null,
+          "p_fee": 64.95,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X127",
+          "description": "with and without IV contrast",
+          "fee": 75.85,
+          "h_fee": null,
+          "p_fee": 75.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X415",
+          "description": "without IV contrast",
+          "fee": 86.6,
+          "h_fee": null,
+          "p_fee": 86.6,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X416",
+          "description": "with IV contrast",
+          "fee": 97.5,
+          "h_fee": null,
+          "p_fee": 97.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X128",
+          "description": "with and without IV contrast",
+          "fee": 108.3,
+          "h_fee": null,
+          "p_fee": 108.3,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X168",
+          "description": "CT guidance of biopsy",
+          "fee": 42.5,
+          "h_fee": null,
+          "p_fee": 42.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X417",
+          "description": "Three dimensional CT acquisition sequencing, including post-processing (minimum of 60 slices; maximum 1 scan per patient per day)",
+          "fee": 32.7,
+          "h_fee": null,
+          "p_fee": 32.7,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Miscellaneous Examinations",
+      "parent_section": "D",
+      "page_ref": "D24",
+      "pages_processed": "372-372",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            4,
+            "X151 Cordotomy, percutaneous....................................................... 48.40 34.85"
+          ],
+          [
+            5,
+            "X163 Dacrocystogram...................................................................... 29.60 11.60"
+          ],
+          [
+            7,
+            "X164 - one or more levels ........................................................... 28.95 23.00"
+          ],
+          [
+            8,
+            "X167 Fistula or sinus........................................................................ 21.50 11.45"
+          ],
+          [
+            9,
+            "X169 Laminogram, planigram, tomogram........................................ 39.90 11.35"
+          ],
+          [
+            10,
+            "X170 Laryngogram........................................................................... 28.95 23.00"
+          ],
+          [
+            11,
+            "X171 Lymphangiogram .................................................................... 49.00 23.05"
+          ],
+          [
+            12,
+            "X192 Mammary ductography........................................................... 25.05 10.65"
+          ],
+          [
+            17,
+            "X184 - unilateral............................................................................. 28.05 19.40"
+          ],
+          [
+            18,
+            "X185 - bilateral............................................................................... 37.15 31.00"
+          ],
+          [
+            24,
+            "X172 - unilateral............................................................................. 28.05 19.40"
+          ],
+          [
+            25,
+            "X178 - bilateral............................................................................... 37.15 31.00"
+          ],
+          [
+            28,
+            "film...................................................................................... 5.95 5.20"
+          ],
+          [
+            29,
+            "X201 Breast biopsy specimen x-ray, per specimen ......................... 5.95 5.20"
+          ],
+          [
+            30,
+            "X150 Mechanical evaluation of knee ............................................... 25.45 15.85"
+          ],
+          [
+            31,
+            "X193 Microradioscopy of the hands................................................. 14.50 11.60"
+          ],
+          [
+            32,
+            "X173 Myelogram - spine and/or posterior fossa .............................. 34.95 27.30"
+          ],
+          [
+            33,
+            "X190 Pantomography ...................................................................... 17.75 6.90"
+          ],
+          [
+            34,
+            "X154 Penis....................................................................................... 15.95 4.70"
+          ],
+          [
+            36,
+            "X176 Sialogram................................................................................ 29.80 11.35"
+          ],
+          [
+            37,
+            "X177 Skin thickness measurement.................................................. 15.60 9.20"
+          ],
+          [
+            38,
+            "X183 Ventriculogram........................................................................ 48.40 34.70"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "X151",
+          "description": "Cordotomy, percutaneous",
+          "fee": 48.4,
+          "h_fee": 48.4,
+          "p_fee": 34.85,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X163",
+          "description": "Dacrocystogram",
+          "fee": 29.6,
+          "h_fee": 29.6,
+          "p_fee": 11.6,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X164",
+          "description": "Discogram(s) - one or more levels",
+          "fee": 28.95,
+          "h_fee": 28.95,
+          "p_fee": 23.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X167",
+          "description": "Fistula or sinus",
+          "fee": 21.5,
+          "h_fee": 21.5,
+          "p_fee": 11.45,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X169",
+          "description": "Laminogram, planigram, tomogram",
+          "fee": 39.9,
+          "h_fee": 39.9,
+          "p_fee": 11.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X170",
+          "description": "Laryngogram",
+          "fee": 28.95,
+          "h_fee": 28.95,
+          "p_fee": 23.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X171",
+          "description": "Lymphangiogram",
+          "fee": 49.0,
+          "h_fee": 49.0,
+          "p_fee": 23.05,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X192",
+          "description": "Mammary ductography",
+          "fee": 25.05,
+          "h_fee": 25.05,
+          "p_fee": 10.65,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X184",
+          "description": "Mammogram - unilateral",
+          "fee": 28.05,
+          "h_fee": 28.05,
+          "p_fee": 19.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X185",
+          "description": "Mammogram - bilateral",
+          "fee": 37.15,
+          "h_fee": 37.15,
+          "p_fee": 31.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X172",
+          "description": "Mammogram - unilateral (no signs or symptoms)",
+          "fee": 28.05,
+          "h_fee": 28.05,
+          "p_fee": 19.4,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X178",
+          "description": "Mammogram - bilateral (no signs or symptoms)",
+          "fee": 37.15,
+          "h_fee": 37.15,
+          "p_fee": 31.0,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X194",
+          "description": "Additional coned views with or without magnification (limit of two per breast) per film",
+          "fee": 5.95,
+          "h_fee": 5.95,
+          "p_fee": 5.2,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X201",
+          "description": "Breast biopsy specimen x-ray, per specimen",
+          "fee": 5.95,
+          "h_fee": 5.95,
+          "p_fee": 5.2,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X150",
+          "description": "Mechanical evaluation of knee",
+          "fee": 25.45,
+          "h_fee": 25.45,
+          "p_fee": 15.85,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X193",
+          "description": "Microradioscopy of the hands",
+          "fee": 14.5,
+          "h_fee": 14.5,
+          "p_fee": 11.6,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X173",
+          "description": "Myelogram - spine and/or posterior fossa",
+          "fee": 34.95,
+          "h_fee": 34.95,
+          "p_fee": 27.3,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X190",
+          "description": "Pantomography",
+          "fee": 17.75,
+          "h_fee": 17.75,
+          "p_fee": 6.9,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X154",
+          "description": "Penis",
+          "fee": 15.95,
+          "h_fee": 15.95,
+          "p_fee": 4.7,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X165",
+          "description": "Photographic subtraction",
+          "fee": null,
+          "h_fee": null,
+          "p_fee": 11.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X176",
+          "description": "Sialogram",
+          "fee": 29.8,
+          "h_fee": 29.8,
+          "p_fee": 11.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X177",
+          "description": "Skin thickness measurement",
+          "fee": 15.6,
+          "h_fee": 15.6,
+          "p_fee": 9.2,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X183",
+          "description": "Ventriculogram",
+          "fee": 48.4,
+          "h_fee": 48.4,
+          "p_fee": 34.7,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "X166",
+          "description": "Examination using portable machine \u201cin home\u201d add to first examination only",
+          "fee": null,
+          "h_fee": null,
+          "p_fee": null,
+          "units": null,
+          "conditions": "X166 does not apply to the use of a portable machine in a hospital. Can only be claimed once per day regardless of the number of people x-rayed in the same \u201chome\u201d including \u201cnursing home\u201d.",
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Preamble",
+      "parent_section": "E",
+      "page_ref": "E1",
+      "pages_processed": "373-373",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": false,
+        "has_h_p_columns": false,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": false,
+        "table_sections": []
+      },
+      "fee_codes": [],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Angiography",
+      "parent_section": "E",
+      "page_ref": "E2",
+      "pages_processed": "374-375",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": false,
+        "has_h_p_columns": false,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": []
+      },
+      "fee_codes": [
+        {
+          "code": "J021",
+          "description": "insertion of catheter (including cut down, if necessary) and injection, if given",
+          "fee": 121.4,
+          "units": 6
+        },
+        {
+          "code": "J022",
+          "description": "selective catheterization - add to catheter insertion fee (per vessel, to maximum of 4)",
+          "fee": 60.15,
+          "units": "each"
+        },
+        {
+          "code": "J014",
+          "description": "selective catheterization for spinal and parathyroid angiography",
+          "fee": 38.05,
+          "units": null
+        },
+        {
+          "code": "J056",
+          "description": "transcatheter fibrinolytic therapy",
+          "fee": 670.55,
+          "units": 7
+        },
+        {
+          "code": "J058",
+          "description": "Vascular stenting",
+          "fee": 101.55,
+          "units": 6
+        },
+        {
+          "code": "J066",
+          "description": "Renal angioplasty",
+          "fee": 504.4,
+          "units": 6
+        },
+        {
+          "code": "J031",
+          "description": "direct puncture",
+          "fee": 89.9,
+          "units": 6
+        },
+        {
+          "code": "J025",
+          "description": "Transluminal angioplasty including angiography (if anatomy is known), with or without pressure measurements - one or more site(s) or vessel(s)",
+          "fee": 398.15,
+          "units": 6
+        },
+        {
+          "code": "J067",
+          "description": "Spinal angiography for AV malformation, per vessel, maximum of 12 vessels per side",
+          "fee": 44.0,
+          "units": 6
+        },
+        {
+          "code": "J048",
+          "description": "Percutaneous trans-hepatic catheter portal venography",
+          "fee": 311.05,
+          "units": 6
+        },
+        {
+          "code": "J027",
+          "description": "direct puncture",
+          "fee": 76.55,
+          "units": 6
+        },
+        {
+          "code": "J026",
+          "description": "direct puncture",
+          "fee": 70.8,
+          "units": 6
+        },
+        {
+          "code": "J033",
+          "description": "Splenoportogram",
+          "fee": 128.35,
+          "units": 6
+        },
+        {
+          "code": "J034",
+          "description": "Trans-lumbar aortogram",
+          "fee": 89.9,
+          "units": 6
+        },
+        {
+          "code": "J032",
+          "description": "direct puncture or by retrograde brachial injection",
+          "fee": 111.5,
+          "units": 6
+        },
+        {
+          "code": "J040",
+          "description": "first vessel, claim appropriate angiographic procedural and radiological fees plus",
+          "fee": 121.25,
+          "units": null
+        },
+        {
+          "code": "J047",
+          "description": "each additional vessel catheterized and occluded per vessel",
+          "fee": 56.8,
+          "units": null
+        },
+        {
+          "code": "J023",
+          "description": "Intra-arterial infusion of drugs e.g. for control of gastrointestinal haemorrhage - claim appropriate angiographic procedural and radiological fees plus a per diem supervision fee of",
+          "fee": 34.0,
+          "units": null
+        },
+        {
+          "code": "J035",
+          "description": "Pressure measurements during angiography",
+          "fee": 34.0,
+          "units": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "Z439",
+          "context": "not payable with",
+          "description": "cardiac catheterization procedures",
+          "source_subsection": "Angiography",
+          "source_page": "E2"
+        },
+        {
+          "code": "G288",
+          "context": "not payable with",
+          "description": "cardiac catheterization procedures",
+          "source_subsection": "Angiography",
+          "source_page": "E2"
+        },
+        {
+          "code": "G298",
+          "context": "not payable with",
+          "description": "J058 claimed same patient same day",
+          "source_subsection": "Angiography",
+          "source_page": "E2"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Miscellaneous Procedures",
+      "parent_section": "E",
+      "page_ref": "E4",
+      "pages_processed": "376-378",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": false,
+        "has_h_p_columns": false,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": []
+      },
+      "fee_codes": [
+        {
+          "code": "J001",
+          "description": "Arthrogram, tenogram or bursogram",
+          "fee": 34.0,
+          "units": 7
+        },
+        {
+          "code": "J024",
+          "description": "Bronchial brushing - unilateral",
+          "fee": 89.9,
+          "units": 6
+        },
+        {
+          "code": "J044",
+          "description": "Bronchial brushing - bilateral",
+          "fee": 135.0,
+          "units": 6
+        },
+        {
+          "code": "J002",
+          "description": "Bronchogram - unilateral",
+          "fee": 27.0,
+          "units": 6
+        },
+        {
+          "code": "J043",
+          "description": "Bronchogram - bilateral",
+          "fee": 40.65,
+          "units": 6
+        },
+        {
+          "code": "J003",
+          "description": "Bronchogram with intra-tracheal catheter - unilateral",
+          "fee": 68.0,
+          "units": 6
+        },
+        {
+          "code": "J042",
+          "description": "Bronchogram with intra-tracheal catheter - bilateral",
+          "fee": 82.2,
+          "units": 6
+        },
+        {
+          "code": "J050",
+          "description": "Carotid or vertebral artery occlusion by detachable balloon - percutaneous",
+          "fee": 297.3
+        },
+        {
+          "code": "J053",
+          "description": "Cavernosography",
+          "fee": 45.35
+        },
+        {
+          "code": "J005",
+          "description": "Dacrocystogram",
+          "fee": 45.4,
+          "units": 6
+        },
+        {
+          "code": "J006",
+          "description": "Discogram - one disc",
+          "fee": 105.3,
+          "units": 7
+        },
+        {
+          "code": "J030",
+          "description": "Discogram - each additional disc",
+          "fee": 54.05
+        },
+        {
+          "code": "J049",
+          "description": "Embolization of spinal arteriovenous malformation - percutaneous",
+          "fee": 437.3,
+          "units": 6
+        },
+        {
+          "code": "J036",
+          "description": "Fistula or sinus injection",
+          "fee": 26.95
+        },
+        {
+          "code": "J068",
+          "description": "Hydrostatic/pneumatic reduction of intussusception",
+          "fee": 44.25,
+          "units": 7
+        },
+        {
+          "code": "J008",
+          "description": "Hysterosalpingogram",
+          "fee": 56.7,
+          "units": 6
+        },
+        {
+          "code": "J004",
+          "description": "Intramammary needling for localization under mammographic control",
+          "fee": 70.35
+        },
+        {
+          "code": "J009",
+          "description": "Laryngogram",
+          "fee": 33.5
+        },
+        {
+          "code": "J010",
+          "description": "Lymphangiogram - per side",
+          "fee": 105.3
+        },
+        {
+          "code": "J037",
+          "description": "Mammary ductography",
+          "fee": 70.35
+        },
+        {
+          "code": "J011",
+          "description": "Myelogram",
+          "fee": 93.4,
+          "units": 6
+        },
+        {
+          "code": "J038",
+          "description": "Myelogram - with supine views requiring removal and re-introduction of spinal needle",
+          "fee": 21.75
+        },
+        {
+          "code": "J020",
+          "description": "Myelogram - with posterior fossa views",
+          "fee": 23.85
+        },
+        {
+          "code": "J012",
+          "description": "Nephrotomogram",
+          "fee": -6
+        },
+        {
+          "code": "J060",
+          "description": "Nephrostogram",
+          "fee": 34.0
+        },
+        {
+          "code": "J045",
+          "description": "Percutaneous antegrade pyelogram",
+          "fee": 140.55,
+          "units": 6
+        },
+        {
+          "code": "J055",
+          "description": "Percutaneous gastrostomy",
+          "fee": 257.6
+        },
+        {
+          "code": "J061",
+          "description": "Percutaneous cecostomy",
+          "fee": 257.6
+        },
+        {
+          "code": "J062",
+          "description": "Percutaneous cholecystostomy",
+          "fee": 257.6
+        },
+        {
+          "code": "J063",
+          "description": "Percutaneous jejunostomy",
+          "fee": 298.8
+        },
+        {
+          "code": "J064",
+          "description": "Exchange of drainage tubes, including supervision, imaging and hard copy film interpretation if any",
+          "fee": 72.65
+        },
+        {
+          "code": "J046",
+          "description": "Percutaneous nephrostomy",
+          "fee": 257.6,
+          "units": 6
+        },
+        {
+          "code": "J041",
+          "description": "Percutaneous removal of intravascular and intraureteric foreign bodies",
+          "fee": 339.9,
+          "conditions": "IC"
+        },
+        {
+          "code": "J065",
+          "description": "Dilation of non-vascular structures",
+          "fee": 23.6,
+          "units": 6
+        },
+        {
+          "code": "J059",
+          "description": "Non-vascular stenting",
+          "fee": 116.9
+        },
+        {
+          "code": "J069",
+          "description": "Percutaneous focal thermal ablation of solid tumours using CT or ultrasound guidance",
+          "fee": 515.7,
+          "units": 6
+        },
+        {
+          "code": "J051",
+          "description": "Percutaneous spinal cord puncture for syringogram",
+          "fee": 108.9,
+          "units": 6
+        },
+        {
+          "code": "J013",
+          "description": "Percutaneous trans-hepatic cholangiogram",
+          "fee": 121.25,
+          "units": 6
+        },
+        {
+          "code": "J057",
+          "description": "Transjugular intrahepatic portosystemic shunt (TIPS)",
+          "fee": 906.45,
+          "units": 7
+        },
+        {
+          "code": "J052",
+          "description": "Positive contrast cisternogram",
+          "fee": 99.9,
+          "units": 6
+        },
+        {
+          "code": "Z597",
+          "description": "Intracavitary/intratumoural injections",
+          "fee": 103.75,
+          "units": 7
+        },
+        {
+          "code": "J039",
+          "description": "Renal cyst puncture",
+          "fee": 140.4,
+          "units": 6
+        },
+        {
+          "code": "J018",
+          "description": "Sialogram",
+          "fee": 52.25,
+          "units": 6
+        },
+        {
+          "code": "J007",
+          "description": "Tomogram",
+          "fee": -7
+        },
+        {
+          "code": "J028",
+          "description": "Urethrogram and/or urethrocystogram and/or or intestinal conduit examination, cystogram",
+          "fee": 34.0
+        },
+        {
+          "code": "J029",
+          "description": "Vasogram",
+          "fee": 69.0,
+          "units": 6
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "Z562",
+          "context": "Note",
+          "description": "Biliary duct calculus manipulation etc.",
+          "source_subsection": "Miscellaneous Procedures",
+          "source_page": "E4"
+        },
+        {
+          "code": "Z540",
+          "context": "Note",
+          "description": "Intubation of small intestine",
+          "source_subsection": "Miscellaneous Procedures",
+          "source_page": "E4"
+        },
+        {
+          "code": "J069",
+          "context": "Payment rules",
+          "description": "Only eligible for payment for focal thermal ablation of solid tumours in patients meeting clinical criteria consistent with current clinical practice guidelines",
+          "source_subsection": "Miscellaneous Procedures",
+          "source_page": "E4"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Preamble",
+      "parent_section": "F",
+      "page_ref": "F1",
+      "pages_processed": "379-382",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": false,
+        "has_h_p_columns": false,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": []
+      },
+      "fee_codes": [
+        {
+          "code": "X421",
+          "description": "multislice sequence",
+          "fee": 73.35,
+          "p_fee": 73.35
+        },
+        {
+          "code": "E875",
+          "description": "with magnetic resonance spectroscopy, to X421",
+          "fee": 19.4,
+          "p_fee": 19.4
+        },
+        {
+          "code": "X425",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 2 repeats)",
+          "fee": 36.7,
+          "p_fee": 36.7
+        },
+        {
+          "code": "E876",
+          "description": "with magnetic resonance spectroscopy, to X425",
+          "fee": 9.7,
+          "p_fee": 9.7
+        },
+        {
+          "code": "X431",
+          "description": "multislice sequence",
+          "fee": 73.35,
+          "p_fee": 73.35
+        },
+        {
+          "code": "X435",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 36.7,
+          "p_fee": 36.7
+        },
+        {
+          "code": "X441",
+          "description": "multislice sequence",
+          "fee": 73.35,
+          "p_fee": 73.35
+        },
+        {
+          "code": "X445",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 36.7,
+          "p_fee": 36.7
+        },
+        {
+          "code": "X451",
+          "description": "multislice sequence",
+          "fee": 73.35,
+          "p_fee": 73.35
+        },
+        {
+          "code": "X455",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 36.7,
+          "p_fee": 36.7
+        },
+        {
+          "code": "X480",
+          "description": "MRI guidance of biopsy or lesion ablation, breast, unilateral",
+          "fee": 285.0,
+          "p_fee": 285.0
+        },
+        {
+          "code": "X481",
+          "description": "MRI guidance of biopsy or lesion ablation, internal organ",
+          "fee": 285.0,
+          "p_fee": 285.0
+        },
+        {
+          "code": "X446",
+          "description": "multislice sequence",
+          "fee": 73.35,
+          "p_fee": 73.35
+        },
+        {
+          "code": "X447",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 36.7,
+          "p_fee": 36.7
+        },
+        {
+          "code": "X461",
+          "description": "multislice sequence",
+          "fee": 73.35,
+          "p_fee": 73.35
+        },
+        {
+          "code": "X465",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 36.7,
+          "p_fee": 36.7
+        },
+        {
+          "code": "X471",
+          "description": "multislice sequence, one extremity and/or one joint",
+          "fee": 62.8,
+          "p_fee": 62.8
+        },
+        {
+          "code": "X475",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 31.45,
+          "p_fee": 31.45
+        },
+        {
+          "code": "X488",
+          "description": "multislice sequence, two or more extremities, and/or two or more joints same extremity",
+          "fee": 108.8,
+          "p_fee": 108.8
+        },
+        {
+          "code": "X489",
+          "description": "repeat (another plane, different pulse sequence - to a maximum of 3 repeats)",
+          "fee": 54.35,
+          "p_fee": 54.35
+        },
+        {
+          "code": "X490",
+          "description": "multislice sequence",
+          "fee": 59.5,
+          "p_fee": 59.5
+        },
+        {
+          "code": "X492",
+          "description": "repeat (another plane, different pulse sequence - maximum of 3 repeats)",
+          "fee": 29.85,
+          "p_fee": 29.85
+        },
+        {
+          "code": "X493",
+          "description": "multislice sequence",
+          "fee": 68.45,
+          "p_fee": 68.45
+        },
+        {
+          "code": "X495",
+          "description": "repeat (another plane, different pulse sequence - maximum of 3 repeats)",
+          "fee": 34.15,
+          "p_fee": 34.15
+        },
+        {
+          "code": "X496",
+          "description": "multislice sequence",
+          "fee": 101.65,
+          "p_fee": 101.65
+        },
+        {
+          "code": "X498",
+          "description": "repeat (another plane, different pulse sequence - maximum of 3 repeats)",
+          "fee": 50.65,
+          "p_fee": 50.65
+        },
+        {
+          "code": "X486",
+          "description": "when cardiac gating is performed (must include application of chest electrodes and ECG interpretation)",
+          "fee": "add 30%",
+          "p_fee": "add 30%"
+        },
+        {
+          "code": "X487",
+          "description": "when gadolinium is used",
+          "fee": 36.65,
+          "p_fee": 36.65
+        },
+        {
+          "code": "X499",
+          "description": "Three Dimensional MRI acquisition sequence, including post-processing (minimum of 60 slices; maximum 1 per patient per day)",
+          "fee": 32.7,
+          "p_fee": 32.7
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Preamble",
+      "parent_section": "G",
+      "page_ref": "G1",
+      "pages_processed": "383-384",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": false,
+        "has_h_p_columns": false,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": false,
+        "table_sections": []
+      },
+      "fee_codes": [],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Head and Neck",
+      "parent_section": "G",
+      "page_ref": "G3",
+      "pages_processed": "385-385",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "J122 - complete, B-mode .............................................................. 47.20 23.70"
+          ],
+          [
+            7,
+            "J102 - quantitative, A-mode........................................................... 22.40 28.50"
+          ],
+          [
+            8,
+            "J103 - B-scan immersion............................................................... 43.95 38.05"
+          ],
+          [
+            9,
+            "J107 - B-scan contact.................................................................... 21.75 18.85"
+          ],
+          [
+            10,
+            "J108 - biometry (Axial length - A-mode) ........................................ 22.80 19.70"
+          ],
+          [
+            12,
+            "J105 - excluding vascular study .................................................... 47.30 23.70"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J122",
+          "description": "complete, B-mode",
+          "fee": 47.2,
+          "h_fee": 47.2,
+          "p_fee": 23.7,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J102",
+          "description": "quantitative, A-mode",
+          "fee": 22.4,
+          "h_fee": 22.4,
+          "p_fee": 28.5,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J103",
+          "description": "B-scan immersion",
+          "fee": 43.95,
+          "h_fee": 43.95,
+          "p_fee": 38.05,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J107",
+          "description": "B-scan contact",
+          "fee": 21.75,
+          "h_fee": 21.75,
+          "p_fee": 18.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J108",
+          "description": "biometry (Axial length - A-mode)",
+          "fee": 22.8,
+          "h_fee": 22.8,
+          "p_fee": 19.7,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J105",
+          "description": "excluding vascular study",
+          "fee": 47.3,
+          "h_fee": 47.3,
+          "p_fee": 23.7,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "J105 is not eligible for payment when rendered for ultrasound imaging of the sinus(es).",
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Thorax, Abdomen and Retroperitoneum",
+      "parent_section": "G",
+      "page_ref": "G4",
+      "pages_processed": "386-386",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "J125 Chest masses, pleural effusion - A & B-mode ........................ 48.75 24.55"
+          ],
+          [
+            10,
+            "J135 - complete............................................................................. 48.75 26.45"
+          ],
+          [
+            12,
+            "study).................................................................................. 32.10 17.55"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J125",
+          "description": "Chest masses, pleural effusion - A & B-mode",
+          "fee": 48.75,
+          "h_fee": 48.75,
+          "p_fee": 24.55,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J135",
+          "description": "complete",
+          "fee": 48.75,
+          "h_fee": 48.75,
+          "p_fee": 26.45,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J128",
+          "description": "limited study (e.g. gallbladder only, aorta only or follow-up study)",
+          "fee": 32.1,
+          "h_fee": 32.1,
+          "p_fee": 17.55,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Pregnancy",
+      "parent_section": "G",
+      "page_ref": "G5",
+      "pages_processed": "387-387",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            6,
+            "pregnancy) ......................................................................... 48.75 33.80"
+          ],
+          [
+            7,
+            "J160 - for high risk pregnancy or complications of pregnancy ...... 48.75 32.25"
+          ],
+          [
+            8,
+            "J166 - multiple gestation, for each additional fetus, to J160 add 41.45 22.10"
+          ],
+          [
+            11,
+            "pregnancy) ......................................................................... 32.10 17.55"
+          ],
+          [
+            13,
+            "J158 - for high risk pregnancy or complications of pregnancy ...... 32.10 17.55"
+          ],
+          [
+            15,
+            "ductus venosus, to J160 or J158 ............................... add 32.10 30.00"
+          ],
+          [
+            25,
+            "(maximum one per pregnancy) .......................................... 39.00 20.85"
+          ],
+          [
+            26,
+            "J169 - multiple gestation, for each additional fetus, to J168. add 33.15 16.35"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J159",
+          "description": "Complete - on or after 16 weeks gestation (maximum one per normal pregnancy)",
+          "fee": 48.75,
+          "h_fee": 48.75,
+          "p_fee": 33.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J160",
+          "description": "Complete - for high risk pregnancy or complications of pregnancy",
+          "fee": 48.75,
+          "h_fee": 48.75,
+          "p_fee": 32.25,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J166",
+          "description": "Complete - multiple gestation, for each additional fetus, to J160 add",
+          "fee": 41.45,
+          "h_fee": 41.45,
+          "p_fee": 22.1,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J157",
+          "description": "Gestational age for Maternal Serum Screening Program - before 16 weeks gestation (maximum one per normal pregnancy)",
+          "fee": 32.1,
+          "h_fee": 32.1,
+          "p_fee": 17.55,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J158",
+          "description": "Limited - for high risk pregnancy or complications of pregnancy",
+          "fee": 32.1,
+          "h_fee": 32.1,
+          "p_fee": 17.55,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J167",
+          "description": "Limited - fetal Doppler evaluation of middle cerebral artery and/or ductus venosus, to J160 or J158 add",
+          "fee": 32.1,
+          "h_fee": 32.1,
+          "p_fee": 30.0,
+          "units": null,
+          "conditions": "J167 is only eligible for payment when rendered by a physician for assessment of: a. fetal anemia, or b. intrauterine growth retardation i. with estimated fetal weight OR abdominal circumference measuring below the 10th percentile, or ii. >=30 percentile decrease in estimated fetal weight since previous imaging, or c. in high-risk pregnancies.",
+          "special_prefix": null
+        },
+        {
+          "code": "J168",
+          "description": "Nuchal translucency for Prenatal Genetic Screening (maximum one per pregnancy)",
+          "fee": 39.0,
+          "h_fee": 39.0,
+          "p_fee": 20.85,
+          "units": null,
+          "conditions": "Ultrasound services listed under the headings 'Abdomen and Retroperitoneum' or 'Pelvis' or 'Pregnancy' rendered on the same day to the same patient by any physician as J168 are not eligible for payment.",
+          "special_prefix": null
+        },
+        {
+          "code": "J169",
+          "description": "Multiple gestation, for each additional fetus, to J168 add",
+          "fee": 33.15,
+          "h_fee": 33.15,
+          "p_fee": 16.35,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Pelvis",
+      "parent_section": "G",
+      "page_ref": "G6",
+      "pages_processed": "388-388",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "J162 - complete* ........................................................................... 48.75 26.55"
+          ],
+          [
+            6,
+            "J138 Intracavitary ultrasound* (e.g. transrectal, transvaginal) ........ 48.75 26.50"
+          ],
+          [
+            12,
+            "demonstration of tubal patency .......................................... 99.95 33.15"
+          ],
+          [
+            14,
+            "media for demonstration of tubal patency .......................... 232.90 30.65"
+          ],
+          [
+            20,
+            "J163 - limited study - for other than pregnancy............................. 32.10 17.55"
+          ],
+          [
+            22,
+            "J161 - limited - for other than pregnancy....................................... 32.10 16.25"
+          ],
+          [
+            28,
+            "J164 Follicle monitoring studies ...................................................... 24.40 12.30"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J162",
+          "description": "complete*",
+          "fee": 48.75,
+          "h_fee": 48.75,
+          "p_fee": 26.55,
+          "units": null,
+          "conditions": "For ovulation induction purposes, the limit is one per cycle. Additional ultrasounds may be claimed as J164.",
+          "special_prefix": null
+        },
+        {
+          "code": "J138",
+          "description": "Intracavitary ultrasound* (e.g. transrectal, transvaginal)",
+          "fee": 48.75,
+          "h_fee": 48.75,
+          "p_fee": 26.5,
+          "units": null,
+          "conditions": "For ovulation induction purposes, the limit is one per cycle. Additional ultrasounds may be claimed as J164.",
+          "special_prefix": null
+        },
+        {
+          "code": "J165",
+          "description": "Transvaginal sonohysterography - may include saline or other intracavitary contrast media except Echovist for demonstration of tubal patency",
+          "fee": 99.95,
+          "h_fee": 99.95,
+          "p_fee": 33.15,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J476",
+          "description": "Transvaginal sonohysterography - including Echovist contrast media for demonstration of tubal patency",
+          "fee": 232.9,
+          "h_fee": 232.9,
+          "p_fee": 30.65,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J163",
+          "description": "limited study - for other than pregnancy",
+          "fee": 32.1,
+          "h_fee": 32.1,
+          "p_fee": 17.55,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J161",
+          "description": "limited - for other than pregnancy",
+          "fee": 32.1,
+          "h_fee": 32.1,
+          "p_fee": 16.25,
+          "units": null,
+          "conditions": "Residual urine measurement by ultrasound (G900) is not eligible for payment when rendered with an ultrasound of the pelvis or intracavitary ultrasound.",
+          "special_prefix": null
+        },
+        {
+          "code": "J164",
+          "description": "Follicle monitoring studies",
+          "fee": 24.4,
+          "h_fee": 24.4,
+          "p_fee": 12.3,
+          "units": null,
+          "conditions": "Ultrasound services are not insured when rendered to support in-vitro fertilization services or artificial insemination services.",
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "G900",
+          "context": "not payable with",
+          "description": "Residual urine measurement by ultrasound",
+          "source_subsection": "Pelvis",
+          "source_page": "G6"
+        },
+        {
+          "code": "G399",
+          "context": "delegated procedure",
+          "description": "Transvaginal sonohysterography, introduction of catheter with or without injection or contrast media",
+          "source_subsection": "Pelvis",
+          "source_page": "G6"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Vascular System",
+      "parent_section": "G",
+      "page_ref": "G7",
+      "pages_processed": "389-390",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            16,
+            "analysis, if rendered ........................................................... 42.65 17.10"
+          ],
+          [
+            18,
+            "and frequency/spectral analysis ......................................... 55.05 24.65"
+          ],
+          [
+            25,
+            "analysis, if rendered, unilateral........................................... 22.05 14.30"
+          ],
+          [
+            27,
+            "and frequency/spectral analysis, unilateral ........................ 28.50 16.60"
+          ],
+          [
+            33,
+            "manoeuvres and permanent record ................................... 7.40 9.90"
+          ],
+          [
+            37,
+            "J205 - arterial and/or venous......................................................... 22.05 14.20"
+          ],
+          [
+            47,
+            "veins and hepatic arteries .................................................. 22.05 14.20"
+          ],
+          [
+            52,
+            "vascular shunts .................................................................. 22.05 14.20"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J189",
+          "description": "Transcranial doppler assessment of intracranial circulation",
+          "fee": 23.65,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J186",
+          "description": "assessment with power mode doppler",
+          "fee": 32.5,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J187",
+          "description": "prolonged study requiring at least 50 minutes",
+          "fee": 32.5,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "50 minutes",
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J188",
+          "description": "follow-up study within 4 weeks of J186 or J187 requiring at least 50 minutes",
+          "fee": 22.9,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "50 minutes",
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J190",
+          "description": "doppler scan or B scan, includes frequency/spectral analysis, if rendered",
+          "fee": 42.65,
+          "h_fee": 17.1,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J201",
+          "description": "duplex scan i.e. simultaneous real time, B-mode imaging and frequency/spectral analysis",
+          "fee": 55.05,
+          "h_fee": 24.65,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J193",
+          "description": "doppler scan or B scan, includes frequency/spectral analysis, if rendered, unilateral",
+          "fee": 22.05,
+          "h_fee": 14.3,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J202",
+          "description": "duplex scan i.e. simultaneous real time, B-mode imaging and frequency/spectral analysis, unilateral",
+          "fee": 28.5,
+          "h_fee": 16.6,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J198",
+          "description": "bilateral - includes assessment of femoral, popliteal and posterior or tibial veins with appropriate functional manoeuvres and permanent record",
+          "fee": 7.4,
+          "h_fee": 9.9,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not to be claimed during surgery or during patient\u2019s post-operative stay in hospital.",
+          "special_prefix": null
+        },
+        {
+          "code": "J205",
+          "description": "arterial and/or venous",
+          "fee": 22.05,
+          "h_fee": 14.2,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J206",
+          "description": "must include doppler interrogation and documentation of superior mesenteric vein, splenic vein, portal veins, hepatic veins and hepatic arteries",
+          "fee": 22.05,
+          "h_fee": 14.2,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not to be billed unless study specifically requested by referring provider.",
+          "special_prefix": null
+        },
+        {
+          "code": "J207",
+          "description": "must include doppler interrogation and documentation of vascular shunts",
+          "fee": 22.05,
+          "h_fee": 14.2,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": "Not to be billed unless study specifically requested by referring provider.",
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "J189",
+          "context": "not payable with",
+          "description": "J186, J187 or J188 same patient same day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J186",
+          "context": "not payable with",
+          "description": "J189 same patient, same physician, same day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J187",
+          "context": "not payable with",
+          "description": "J189 same patient, same physician, same day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J188",
+          "context": "not payable with",
+          "description": "J189 same patient, same physician, same day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J190",
+          "context": "only one of",
+          "description": "J190 or J201 is eligible for payment per patient per day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J201",
+          "context": "only one of",
+          "description": "J190 or J201 is eligible for payment per patient per day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J193",
+          "context": "not to be billed routinely with",
+          "description": "J190.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        },
+        {
+          "code": "J202",
+          "context": "only one of",
+          "description": "J193 or J202 is eligible for payment per extremity per patient per day.",
+          "source_subsection": "Vascular System",
+          "source_page": "G7"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Vascular Laboratory Fees",
+      "parent_section": "G",
+      "page_ref": "G9",
+      "pages_processed": "391-391",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            7,
+            "unilateral or bilateral ........................................................... 20.40 21.40"
+          ],
+          [
+            9,
+            "................................................................................... add 8.00 10.10"
+          ],
+          [
+            17,
+            "J197 - two or more pressures........................................................ 6.85 7.80"
+          ],
+          [
+            19,
+            "J199 - doppler scan....................................................................... 6.85 7.80"
+          ],
+          [
+            30,
+            "J203 - oxygen tension measurements .......................................... 24.10 5.50"
+          ],
+          [
+            31,
+            "J204 - when done in addition to Doppler studies .......................... 13.20 5.50"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J200",
+          "description": "Ankle pressure measurements - requires a minimum of 4 segmental pressure recordings and/or pulse volume recordings and/or Doppler recordings - unilateral or bilateral",
+          "fee": 20.4,
+          "h_fee": 20.4,
+          "p_fee": 21.4,
+          "units": null,
+          "conditions": "This service is only eligible for payment when the device used produces a hard copy output.",
+          "special_prefix": null
+        },
+        {
+          "code": "J196",
+          "description": "Ankle pressure measurements - with exercise and/or quantitative measurements, to J200",
+          "fee": 8.0,
+          "h_fee": 8.0,
+          "p_fee": 10.1,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J197",
+          "description": "Penile pressure recordings - two or more pressures",
+          "fee": 6.85,
+          "h_fee": 6.85,
+          "p_fee": 7.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J199",
+          "description": "Penile Doppler Evaluation - doppler scan",
+          "fee": 6.85,
+          "h_fee": 6.85,
+          "p_fee": 7.8,
+          "units": null,
+          "conditions": "Penile Doppler is only insured for specific indications.",
+          "special_prefix": null
+        },
+        {
+          "code": "J203",
+          "description": "Transcutaneous tissue oxygen tension measurements",
+          "fee": 24.1,
+          "h_fee": 24.1,
+          "p_fee": 5.5,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J204",
+          "description": "Transcutaneous tissue oxygen tension measurements - when done in addition to Doppler studies",
+          "fee": 13.2,
+          "h_fee": 13.2,
+          "p_fee": 5.5,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "G517",
+          "context": "not payable with",
+          "description": "This service is not eligible for payment in addition to J200.",
+          "source_subsection": "Vascular Laboratory Fees",
+          "source_page": "G9"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Miscellaneous",
+      "parent_section": "G",
+      "page_ref": "G10",
+      "pages_processed": "392-392",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            5,
+            "J180 - scan B-mode ...................................................................... 35.15 18.90"
+          ],
+          [
+            7,
+            "J182 - per limb (excluding vascular study) .................................... 25.50 14.95"
+          ],
+          [
+            9,
+            "J127 - scan B-mode (per breast)................................................... 23.70 13.10"
+          ],
+          [
+            11,
+            "J183 - scan.................................................................................... 47.30 23.80"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J180",
+          "description": "Echography for placement of radiation therapy fields - scan B-mode",
+          "fee": 35.15,
+          "h_fee": 35.15,
+          "p_fee": 18.9,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J182",
+          "description": "Echography for placement of radiation therapy fields - per limb (excluding vascular study)",
+          "fee": 25.5,
+          "h_fee": 25.5,
+          "p_fee": 14.95,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J127",
+          "description": "Echography for placement of radiation therapy fields - scan B-mode (per breast)",
+          "fee": 23.7,
+          "h_fee": 23.7,
+          "p_fee": 13.1,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J183",
+          "description": "Echography for placement of radiation therapy fields - scan (scrotal)",
+          "fee": 47.3,
+          "h_fee": 47.3,
+          "p_fee": 23.8,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "E475",
+          "description": "Portable ultrasound - only eligible for payment when personally rendered by a specialist in diagnostic radiology in an area of a hospital outside of the diagnostic imaging department",
+          "fee": 25.0,
+          "h_fee": null,
+          "p_fee": null,
+          "units": "per unit - \u00bc hour or major part thereof",
+          "conditions": "See General Preamble GP7, GP55 for definitions and time-keeping requirements.",
+          "special_prefix": null
+        },
+        {
+          "code": "J290",
+          "description": "Spinal sonography",
+          "fee": null,
+          "h_fee": null,
+          "p_fee": 30.6,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Ultrasonic Guidance",
+      "parent_section": "G",
+      "page_ref": "G11",
+      "pages_processed": "393-394",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            28,
+            "drainage procedures (one physician only) ......................... 47.30 36.85"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J149",
+          "description": "Ultrasonic guidance of biopsy, aspiration, amniocentesis or drainage procedures (one physician only)",
+          "fee": 47.3,
+          "h_fee": 47.3,
+          "p_fee": 36.85,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J151",
+          "description": "Ultrasound compression of groin pseudoaneurysm, per \u00bc hour",
+          "fee": 19.65,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": "per \u00bc hour",
+          "conditions": "Effective March 3, 2025",
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "J138",
+          "context": "not payable with",
+          "description": "Performed during the same visit as J149 is an insured service payable at nil",
+          "source_subsection": "Ultrasonic Guidance",
+          "source_page": "G11"
+        },
+        {
+          "code": "J161",
+          "context": "not payable with",
+          "description": "Performed during the same visit as J149 is an insured service payable at nil",
+          "source_subsection": "Ultrasonic Guidance",
+          "source_page": "G11"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    },
+    {
+      "subsection_title": "Preamble",
+      "parent_section": "H",
+      "page_ref": "H1",
+      "pages_processed": "395-400",
+      "chunks_processed": 1,
+      "table_structures_detected": {
+        "multi_column": true,
+        "has_h_p_columns": true,
+        "has_asst_surg_anae": false,
+        "has_time_requirements": false,
+        "has_fee_amounts": true,
+        "table_sections": [
+          [
+            83,
+            "75)...................................................................................... 9.85 7.85"
+          ],
+          [
+            84,
+            "J324 - repeat after bronchodilator............................................... 2.97 4.20"
+          ],
+          [
+            88,
+            "loop may include derivation of FEV 1 , VC, V 50 , V 25 ............ 19.60 11.55"
+          ],
+          [
+            89,
+            "J327 - repeat after bronchodilator............................................... 2.97 6.90"
+          ],
+          [
+            122,
+            "J311 - by gas dilution method ....................................................... 16.30 18.90"
+          ],
+          [
+            123,
+            "J307 - by body plethysmography .................................................. 17.50 19.20"
+          ],
+          [
+            127,
+            "to FRC)............................................................................... 51.95 48.15"
+          ],
+          [
+            129,
+            "oesophageal catheter......................................................... 16.20 17.25"
+          ],
+          [
+            130,
+            "J303 Extra pulmonary airways resistance by plethysmography...... 16.20 16.05"
+          ],
+          [
+            131,
+            "J340 Maximum inspiratory and expiratory pressures...................... 2.81 3.43"
+          ],
+          [
+            132,
+            "J310 Carbon monoxide diffusing capacity by single breath method 21.40 19.40"
+          ],
+          [
+            133,
+            "J308 Carbon dioxide ventilatory response ...................................... 19.90 14.60"
+          ],
+          [
+            137,
+            "each workload) ................................................................... 62.45 50.75"
+          ],
+          [
+            138,
+            "E450 - J315 plus J301 or J304 before and/or after exercise. add 13.30 8.05"
+          ],
+          [
+            141,
+            "post exercise.............................................................. add 18.10 25.05"
+          ],
+          [
+            148,
+            "recovery) ............................................................................ 90.00 65.40"
+          ],
+          [
+            152,
+            "exercise)............................................................................. 33.35 24.50"
+          ],
+          [
+            158,
+            "sampling mixed expired gas and using alveolar air equation 27.55 12.85"
+          ],
+          [
+            159,
+            "J331 Estimate of shunt (Qs/Qt) breathing pure oxygen .................. 27.55 16.05"
+          ],
+          [
+            160,
+            "J313 Mixed venous PCO 2 , by the rebreathing method ................... 11.25 4.70"
+          ],
+          [
+            169,
+            "without O 2 ........................................................................... 17.60 11.35"
+          ],
+          [
+            170,
+            "J334 - J332 with at least two levels of supplemental O 2 ............... 30.55 16.85"
+          ],
+          [
+            172,
+            "with supplemental oxygen.................................................. 30.55 16.85"
+          ],
+          [
+            187,
+            "J322 Standard O 2 consumption and CO 2 production...................... 5.30 6.45"
+          ],
+          [
+            189,
+            "methacholine, thermal challenge) ...................................... 48.25 37.35"
+          ],
+          [
+            190,
+            "J335 Antigen challenge test ............................................................ 51.85 30.95"
+          ]
+        ]
+      },
+      "fee_codes": [
+        {
+          "code": "J301",
+          "description": "Volume versus Time Study - must include Vital capacity, FEV1, FEV1/FVC, and may include calculation of MMEFR(FEF25-75)",
+          "fee": 9.85,
+          "h_fee": 7.85,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J324",
+          "description": "repeat after bronchodilator",
+          "fee": 2.97,
+          "h_fee": 4.2,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J304",
+          "description": "Volume versus Flow Study - from which an expiratory limb, and inspiratory limb if indicated, are generated. A flow volume loop may include derivation of FEV1, VC, V50, V25",
+          "fee": 19.6,
+          "h_fee": 11.55,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J327",
+          "description": "repeat after bronchodilator",
+          "fee": 2.97,
+          "h_fee": 6.9,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J311",
+          "description": "by gas dilution method",
+          "fee": 16.3,
+          "h_fee": 18.9,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J307",
+          "description": "by body plethysmography",
+          "fee": 17.5,
+          "h_fee": 19.2,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J305",
+          "description": "Lung compliance (pressure volume curve of the lung from TLC to FRC)",
+          "fee": 51.95,
+          "h_fee": 48.15,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J306",
+          "description": "Airways resistance by plethysmography or estimated using oesophageal catheter",
+          "fee": 16.2,
+          "h_fee": 17.25,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J303",
+          "description": "Extra pulmonary airways resistance by plethysmography",
+          "fee": 16.2,
+          "h_fee": 16.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J340",
+          "description": "Maximum inspiratory and expiratory pressures",
+          "fee": 2.81,
+          "h_fee": 3.43,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J310",
+          "description": "Carbon monoxide diffusing capacity by single breath method",
+          "fee": 21.4,
+          "h_fee": 19.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J308",
+          "description": "Carbon dioxide ventilatory response",
+          "fee": 19.9,
+          "h_fee": 14.6,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J315",
+          "description": "Graded exercise to maximum tolerance (exercise must include continuous heart rate, oximetry and ventilation at rest and at each workload)",
+          "fee": 62.45,
+          "h_fee": 50.75,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "E450",
+          "description": "J315 plus J301 or J304 before and/or after exercise.",
+          "fee": 13.3,
+          "h_fee": 8.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "E451",
+          "description": "J315 plus 12 lead E.C.G. done at rest, used for monitoring during the exercise and followed for at least 5 minutes post exercise",
+          "fee": 18.1,
+          "h_fee": 25.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J316",
+          "description": "Repeated steady state graded exercise (must include heart rate, oximetry, ventilation, VO2, VCO2, BP, ECG, end tidal and mixed Venous CO2 at rest, 3 levels of exercise and recovery)",
+          "fee": 90.0,
+          "h_fee": 65.4,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J330",
+          "description": "Assessment of exercise induced asthma (workload sufficient to achieve heart rate 85% of predicted maximum; performance of J301 or J304 before exercise and 5-10 minutes post exercise)",
+          "fee": 33.35,
+          "h_fee": 24.5,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J319",
+          "description": "Blood gas analysis - pH, PO2, PCO2, bicarbonate and base excess",
+          "fee": 11.25,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J318",
+          "description": "Arterialized venous blood sample collection (e.g. ear lobe)",
+          "fee": 3.79,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J320",
+          "description": "A-a oxygen gradient requiring measurement of RQ by sampling mixed expired gas and using alveolar air equation",
+          "fee": 27.55,
+          "h_fee": 12.85,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J331",
+          "description": "Estimate of shunt (Qs/Qt) breathing pure oxygen",
+          "fee": 27.55,
+          "h_fee": 16.05,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J313",
+          "description": "Mixed venous PCO2, by the rebreathing method",
+          "fee": 11.25,
+          "h_fee": 4.7,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J323",
+          "description": "by oximetry at rest, with or without O2",
+          "fee": 4.2,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J332",
+          "description": "by oximetry at rest and exercise, or during sleep with or without O2",
+          "fee": 17.6,
+          "h_fee": 11.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J334",
+          "description": "J332 with at least two levels of supplemental O2",
+          "fee": 30.55,
+          "h_fee": 16.85,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J336",
+          "description": "with single blind assessment of exercise on room air and with supplemental oxygen",
+          "fee": 30.55,
+          "h_fee": 16.85,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J322",
+          "description": "Standard O2 consumption and CO2 production",
+          "fee": 5.3,
+          "h_fee": 6.45,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J333",
+          "description": "Non-specific bronchial provocative test (histamine, methacholine, thermal challenge)",
+          "fee": 48.25,
+          "h_fee": 37.35,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "J335",
+          "description": "Antigen challenge test",
+          "fee": 51.85,
+          "h_fee": 30.95,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        },
+        {
+          "code": "Z459",
+          "description": "Arterial puncture for blood gas analysis",
+          "fee": 10.2,
+          "h_fee": null,
+          "p_fee": null,
+          "t_fee": null,
+          "asst_fee": null,
+          "surg_fee": null,
+          "anae_fee": null,
+          "units": null,
+          "conditions": null,
+          "special_prefix": null
+        }
+      ],
+      "referenced_codes": [
+        {
+          "code": "J301",
+          "context": "not payable with",
+          "description": "not eligible for payment same patient same day as J304 or J327",
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J324",
+          "context": "not payable with",
+          "description": "not eligible for payment same patient same day as J304 or J327",
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J304",
+          "context": "only eligible for payment for a study that meets all of the following requirements",
+          "description": "a. There is a permanent record that includes a written interpretation by the physician; b. The permanent record includes constituent graph(s), tracing(s) and measurements with a scale on the tracing or graph of: i. at least 5 mm per litre per second for flow; and ii. 10 mm per litre for volume.",
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J327",
+          "context": "only eligible for payment for a study that meets all of the following requirements",
+          "description": "a. There is a permanent record that includes a written interpretation by the physician; b. The permanent record includes constituent graph(s), tracing(s) and measurements with a scale on the tracing or graph of: i. at least 5 mm per litre per second for flow; and ii. 10 mm per litre for volume.",
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J311",
+          "context": "not to be claimed same patient same day as J307",
+          "description": null,
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J323",
+          "context": "not eligible for payment when rendered with",
+          "description": "J332, J315, J316, G315, G319, G111, G112, G570, G571, G582, G583, G574, G575 or any overnight sleep study.",
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J332",
+          "context": "not eligible for payment when rendered with",
+          "description": "J315, J316, G315, G319, G111, G112, G570, G571, G582, G583, G574, G575 or any overnight sleep study.",
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        },
+        {
+          "code": "J336",
+          "context": "only eligible for payment for evaluation of a patient to determine eligibility for funding under the Ontario Home Oxygen Program",
+          "description": null,
+          "source_subsection": "Preamble",
+          "source_page": "H1"
+        }
+      ],
+      "rules": [],
+      "notes": []
+    }
+  ]
+}

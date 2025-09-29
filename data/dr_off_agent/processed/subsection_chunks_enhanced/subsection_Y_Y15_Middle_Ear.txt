@@ -1,0 +1,83 @@
+Subsection: Middle Ear
+Parent Section: Y
+Page Reference: Y15
+Pages: 769 to 770
+Text chunks: 1
+Total text length: 4124 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 769 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+MIDDLE EAR
+Asst Surg Anae
+DEBRIDEMENT
+Under microscopy, debridement of mastoid cavities, and/or ears with significant external or
+middle ear pathology but not for removal of cerumen.
+Z907 - unilateral............................................................................. 27.40
+# Z908 - under general anaesthetic, with or without repair of small
+perforation - when sole ear procedure(s) performed -
+unilateral ............................................................................ 50.90 6
+Note:
+1.Debridement not performed under microscopy (e.g. if performed using loupes or magnifying
+headlights) or in the absence of significant external or middle ear pathology, or for removal of
+cerumen does not constitute Z907 or Z908.
+2.G420 is not eligible for payment in conjunction with Z906, Z907, Z908 or Z913.
+3.For contralateral procedures, Z907 and Z908 are payable at 85% of the listed fee.
+INCISION
+# Z912 Myringotomy, to include aspiration when indicated - unilateral 42.15 6
+# Z914 - with insertion of ventilation tube using operating microscope
+- unilateral........................................................................... 78.60 6
+# Z916 Intratympanic injection, with or without myringotomy - unilateral
+75.90 6
+[Commentary:
+Z912 is not eligible for payment when rendered in conjunction with the service described by
+Z916.]
+Note:
+Z912 or Z914 performed on an otherwise healthy child is only eligible for payment for the
+treatment of symptomatic chronic otitis media with effusion that has persisted beyond 3 months
+or recurrent episodes of acute otitis media with effusion.
+EXCISION
+Mastoidectomy
+# E320 Cortical mastoidectomy .......................................................... 6 345.15 10
+# E322 Modified or radical mastoidectomy ......................................... 6 627.10 10
+# E315 Revision mastoidectomy with revision of middle ear .............. 6 674.00 10
+# E946 - with mastoid cavity obliteration E315, E320 or E322. add 106.45
+# E959 - with meatoplasty and/or canalplasty.......................... add 106.45
+# E960 - with ossiculoplasty E315, E320 or E322.................... add 103.80
+# E985 - with tympanoplasty, to E315, E320 or E322 .............. add 106.45
+# E319 Atticotomy............................................................................... 6 345.30 6
+REPAIR
+# E323 Myringoplasty.......................................................................... 209.05 6
+Z913 Repair of small perforation under local anaesthesia, with or
+without debridement, unilateral ......................................... 39.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Y15 Amd 12 Draft 1
+
+--- PAGE 770 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+MIDDLE EAR
+Asst Surg Anae
+Note:
+1.Z913 is not eligible for payment with Z908 or E323.
+2.For contralateral procedure, Z913 is payable at 85% of the listed fee.
+Tympanoplasty
+# E336 Type 1 (myringoplasty with exploration of middle ear)............ 345.15 7
+# E337 - with ossiculoplasty.............................................................. 468.85 10
+# E957 - with mastoidectomy ................................................... add 138.05
+# E959 - with meatoplasty and/or canalplasty .......................... add 106.45
+# E333 Ossiculoplasty......................................................................... 6 406.55 10
+# E325 Facial nerve decompression................................................... 6 642.45 10
+# E326 Facial nerve grafting (to include decompression)................... 6 987.65 10
+# E327 Closure of mastoid fistula ....................................................... 6 252.15 10
+# E328 Tympanotomy ......................................................................... 288.50 10
+# E981 - with removal of middle ear tumour............................. add 132.35
+# E329 Tympanic neurectomy............................................................. 370.10 10
+# E316 Tympanotomy with fistula repair ............................................. 395.05 10
+Amd 12 Draft 1 Y16 February 14 , 2 025 (e ffective M arch 3, 2025)

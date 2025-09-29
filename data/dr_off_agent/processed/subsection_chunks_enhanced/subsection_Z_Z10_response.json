@@ -1,0 +1,154 @@
+{
+  "subsection_title": "Fractures of the Spine",
+  "parent_section": "Z",
+  "page_ref": "Z10",
+  "pages_processed": "782-782",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "F200",
+      "description": "No reduction, brace (includes Halo orthosis), total care by operating surgeon",
+      "fee": 178.5,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "F201",
+      "description": "Closed reduction, fracture/dislocation (Halo or caliper traction)",
+      "fee": 280.5,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": 6,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "N572",
+      "description": "Open reduction, any single level, spine fracture/dislocation, anterior/posterior",
+      "fee": 1020.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": 8,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 11,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "N570",
+      "description": "Vertebroplasty (injection of bone cement) as sole procedure, first level",
+      "fee": 655.25,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": 7,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 9,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "N583",
+      "description": "Kyphoplasty (balloon tamp and injection of bone cement) as sole procedure, first level",
+      "fee": 1201.55,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": 8,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 11,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E383",
+      "context": "premium, to F201",
+      "description": "acute spinal cord injury",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E395",
+      "context": "to N572",
+      "description": "open reduction, additional level, spine fracture/dislocation, anterior/posterior",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E362",
+      "context": "to N572",
+      "description": "combined thoracotomy/laparotomy",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E378",
+      "context": "to N572",
+      "description": "3D stereotactic spinal procedure",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E379",
+      "context": "to N572",
+      "description": "2D stereotactic spinal procedure",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E388",
+      "context": "to other procedure",
+      "description": "vertebroplasty combined with any other procedure, first level",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E391",
+      "context": "to N570 or E388",
+      "description": "vertebroplasty, each additional level",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E392",
+      "context": "to other procedure",
+      "description": "kyphoplasty combined with any other procedure, first level",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    },
+    {
+      "code": "E393",
+      "context": "to N583 or E392",
+      "description": "kyphoplasty, each additional level",
+      "source_subsection": "Fractures of the Spine",
+      "source_page": "Z10"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,183 @@
+Subsection: Consultations
+Parent Section: GP
+Page Reference: GP16
+Pages: 30 to 34
+Extracted text length: 9274 characters
+============================================================
+
+--- PAGE 30 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+CONSULTATIONS
+CONSULTATION
+Definition/Required elements of service:
+A consultation is an assessment rendered following a written request from a referring:
+1. physician
+2. nurse practitioner or
+3. dental surgeon in connection with an insured dental procedure rendered in a hospital,
+who, in light of his/her professional knowledge of the patient, requests the opinion of a physician (the
+“consultant physician”) competent to give advice in this field because of the complexity, seriousness,
+or obscurity of the case, or because another opinion is requested by the patient or patient’s
+representative.
+[Commentary:
+1.The referring physician, nurse practitioner or dental surgeon must determine if multiple
+requests by a patient or the patient’s representative to different physicians in the same
+specialty for the same condition are medically necessary. Services that are not medically
+necessary are uninsured.
+2.If the physician rendering the service requests a referring physician, nurse practitioner or
+dental surgeon to submit a consultation request for that service after the service has been
+provided, a consultation is not payable. The visit fee appropriate to the service rendered may
+be claimed.
+3. Where a physician who has been paid for a consultation for the patient for the same
+diagnosis makes a request for a referral for ongoing management of the patient, the service
+rendered following the referral is not payable as a consultation, except as outlined in the
+Virtual Care Services section under definitions, part 3, commentary 3]
+A consultation includes the services necessary to enable the consultant to prepare a written report
+(including findings, opinions, and recommendations) to the referring physician, nurse practitioner or
+dental surgeon. Where the referral is made by a nurse practitioner, the consultant shall provide the
+report to the nurse practitioner and the patient’s primary care provider, if applicable. Except where
+otherwise specified, the consultant is required to perform a general, specific or medical specific
+assessment, including a review of all relevant data.
+The following are additional requirements for a consultation:
+a. A copy of the written request for the consultation, signed by the referring physician, nurse
+practitioner or dental surgeon must be kept in the consulting physician’s medical record,
+except in the case of a consultation which occurs in a hospital, long-term care institution or
+multi-specialty clinic where common medical records are maintained. In such cases, the
+written request may be contained on the common medical record.
+b. The request identifies the consultant by name, the referring physician, nurse practitioner or
+dental surgeon by name and billing number, and identifies the patient by name and health
+number.
+c. The written request sets out the information relevant to the referral and specifies the
+service(s) required.
+In the event these requirements are not met, the amount payable for a consultation will be reduced to
+a lesser assessment fee.
+Amd 12 Draft 1 GP16 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 31 ---
+GENERAL PREAMBLE
+CONSULTATIONS
+[Commentary:
+The request would ordinarily also include appropriate clinical information, such as the reason
+for the referral for consultation, present and past history, physical findings and relevant test
+results and reports.]
+Payment rules:
+1. Consultations rendered to the same patient by the same physician for the same diagnosis are
+limited to one service per two consecutive 12 month periods except:
+a. When the additional consultation service(s) is a repeat consultation;
+b. When a consultant has rendered a consultation service to a patient in any location and the
+same consultant is referred to the same patient a second time with the same diagnosis, then
+the number of consultations eligible for payment is a total of two services per two
+consecutive 12 month periods only when:
+i. the second consultation is rendered for a hospital inpatient or a patient in an Emergency
+Department; and
+ii. the consultation is rendered more than 12 months but less than 24 months following the
+first consultation.
+See the Table below.
+Limits on Consultation Services Rendered for the Same
+Problem Within Two Consecutive 12 Month Periods
+Total consultation
+services eligible for
+Patient location where
+payment in two
+consultation rendered
+consecutive 12 month
+periods
+Services
+Services
+rendered
+Second rendered
+First consultation between 12
+consultation within first
+and 24
+12 months
+months
+All locations Hospital One service One service
+Inpatient or
+Emergency
+Department
+All locations All locations One service
+except
+hospital
+inpatient or
+Emergency
+Department
+2. Consultations rendered to the same patient by the same consultant with a clearly defined
+unrelated diagnosis are limited to one service every 12 months.
+3. The amount payable for consultations will be adjusted to the amount payable for a general or
+specific assessment, depending upon the specialty of the consultant where:
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP17 Amd 12 Draft 1
+
+--- PAGE 32 ---
+GENERAL PREAMBLE
+CONSULTATIONS
+a. consultations are in excess of the above limits;
+b. the payment requirements of a repeat consultation are not met; or
+c. the consultation is requested by a Medical Trainee.
+Note:
+1.The above limits are applicable to all consultations, including time-based and age-specific
+consultation services (e.g. special, extended and comprehensive consultations) but not
+repeat consultations.
+2.In the preoperative preparation of a patient undergoing the following low risk elective surgical
+procedures under local anaesthesia and/or I.V. sedation, a preoperative consultation by any
+physician is only eligible for payment where the medical record demonstrates the
+consultation is medically necessary.
+a.cataract surgery;
+b.colonoscopy;
+c.cystoscopy;
+d.carpal tunnel surgery; or
+e.arthroscopic surgery.
+[Commentary:
+Such medically necessary consultations would be very uncommon.]
+Amd 12 Draft 1 GP18 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 33 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+CONSULTATIONS
+REPEAT CONSULTATION
+Definition/Required elements of service:
+A repeat consultation is an additional consultation rendered by the same consultant, in respect of the
+same presenting problem, following care rendered to the patient by another physician in the interval
+following the initial consultation but preceding the repeat consultation.
+A repeat consultation has the same requirements as a consultation including the requirement for a
+new written request by the referring physician, nurse practitioner or dental surgeon.
+LIMITED CONSULTATION
+Definition/Required elements of service:
+A limited consultation is a consultation which is less demanding and, in terms of time, normally
+requires substantially less of the physician’s time than the full consultation. Otherwise, a limited
+consultation has the same requirements as a full consultation.
+Under the heading of “Family Practice & Practice in General", a limited consultation is the service
+rendered by any physician who is not a specialist, where the service meets all the requirements for a
+consultation but, because of the nature of the referral, only those services which constitute a specific
+assessment are rendered.
+EMERGENCY ROOM (ER) PHYSICIAN CONSULTATION
+Payment rules:
+1. The amount payable for a consultation by an ER Physician will be adjusted to a lesser
+assessment fee under either of the following circumstances:
+a. the patient is referred by another ER physician in the same hospital; or
+b. the service is rendered in any location other than the emergency department or other critical
+care area in a hospital, or to a critically ill patient in a hospital.
+2. ER reports constitute adequate documentation of the written report of the consultation as long
+as the rendering of all constituent elements is clearly documented on all copies of the report. If
+the consulting physician fails to ensure that a copy of the ER report is sent to the physician or
+nurse practitioner who referred the patient, the amount payable for the service will be adjusted
+to the amount payable for an assessment.
+Claims submission instruction:
+Claims for ER Physician consultations are to be submitted using H055 for a specialist in emergency
+medicine (FRCP) and H065 for all other physicians.
+SPECIAL SURGICAL CONSULTATION
+Definition/Required elements of service:
+A special surgical consultation is rendered when a surgeon provides all the appropriate elements of a
+regular consultation and is required to devote at least fifty minutes exclusively to the consultation with
+the patient.
+[Commentary:
+The calculation of the 50 minute minimum excludes time devoted to any other service or
+procedure for which an amount is payable in addition to the consultation.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP19 Amd 12 Draft 1
+
+--- PAGE 34 ---
+GENERAL PREAMBLE
+CONSULTATIONS
+Claims submission instruction:
+Claims for special surgical consultations are to be submitted using either A935 or C935, as applicable.
+Amd 12 Draft 1 GP20 February 14 , 2 025 (e ffective M arch 3, 2025)

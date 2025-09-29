@@ -1,0 +1,29 @@
+{
+  "source_org": "pho",
+  "organization_full": "Public Health Ontario",
+  "jurisdiction": "Ontario",
+  "country": "Canada",
+  "document_id": "pho_20250924_266ee277",
+  "title": "Infection Prevention and Control",
+  "source_url": "https://www.publichealthontario.ca/en/health-topics/infection-prevention-control/clinical-office-practice",
+  "source_file": "data/dr_opa_agent/raw/pho/bp-clinical-office-practice.pdf",
+  "document_type": "ipac-guidance",
+  "topics": [
+    "infection-prevention",
+    "ipac",
+    "clinical-office",
+    "sterilization",
+    "ppe",
+    "hand-hygiene"
+  ],
+  "published_date": "June 2013",
+  "revision_date": "April 2015",
+  "effective_date": "April 2015",
+  "version": null,
+  "page_count": 116,
+  "content_hash": "87944fa5bd2d37b39896e195c5d9a5caeb5e9f1da3d76b134127b4512d7b8fd2",
+  "ingested_at": "2025-09-24T14:50:32.045917",
+  "is_superseded": false,
+  "practice_area": "infection-control",
+  "clinical_setting": "office-practice"
+}

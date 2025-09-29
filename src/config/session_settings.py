@@ -77,11 +77,11 @@ class SessionSettings(BaseModel):
     
     # Model Settings
     model: Literal[
-        "claude-3-5-sonnet-20241022",
-        "claude-opus-4-1-20250805", 
-        "claude-sonnet-4-20250514"
+        "claude-sonnet-4-20250514",
+        "claude-3-5-haiku-20241022",
+        "claude-3-haiku-20240307"
     ] = Field(
-        default="claude-3-5-sonnet-20241022",
+        default="claude-sonnet-4-20250514",
         description="AI model to use for responses"
     )
     temperature: float = Field(
@@ -119,7 +119,7 @@ class SessionSettings(BaseModel):
                 "enable_streaming": True,
                 "max_web_searches": 1,
                 "max_web_fetches": 2,
-                "model": "claude-3-5-sonnet-20241022",
+                "model": "claude-sonnet-4-20250514",
                 "temperature": 0.3
             }
         }

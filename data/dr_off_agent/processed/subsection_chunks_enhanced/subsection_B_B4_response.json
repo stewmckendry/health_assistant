@@ -1,0 +1,183 @@
+{
+  "subsection_title": "Endocrine System",
+  "parent_section": "B",
+  "page_ref": "B4",
+  "pages_processed": "328-328",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        5,
+        "J816 - with iodocholesterol............................................................ 385.90 40.30"
+      ],
+      [
+        6,
+        "J868 - with iodocholesterol and dexamethasone suppression...... 451.30 44.60"
+      ],
+      [
+        7,
+        "J869 - with MIBG........................................................................... 555.35 49.70"
+      ],
+      [
+        9,
+        "J818 - with Tc99m or I-131 ............................................................ 64.15 40.30"
+      ],
+      [
+        10,
+        "J871 - with I-123............................................................................ 103.10 40.30"
+      ],
+      [
+        23,
+        "J817 - uptake................................................................................. 28.65 18.25"
+      ],
+      [
+        24,
+        "J870 - repeat ................................................................................. 14.65 10.75"
+      ],
+      [
+        26,
+        "J820 - dual isotope technique with T1201 and Tc99m Iodine........ 234.70 55.30"
+      ],
+      [
+        27,
+        "J872 Metastatic survey with I-131 ................................................... 240.60 49.70"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J816",
+      "description": "Adrenal scintigraphy with iodocholesterol",
+      "fee": 385.9,
+      "h_fee": 385.9,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J868",
+      "description": "Adrenal scintigraphy with iodocholesterol and dexamethasone suppression",
+      "fee": 451.3,
+      "h_fee": 451.3,
+      "p_fee": 44.6,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J869",
+      "description": "Adrenal scintigraphy with MIBG",
+      "fee": 555.35,
+      "h_fee": 555.35,
+      "p_fee": 49.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J818",
+      "description": "Thyroid scintigraphy with Tc99m or I-131",
+      "fee": 64.15,
+      "h_fee": 64.15,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J871",
+      "description": "Thyroid scintigraphy with I-123",
+      "fee": 103.1,
+      "h_fee": 103.1,
+      "p_fee": 40.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J817",
+      "description": "Thyroid uptake",
+      "fee": 28.65,
+      "h_fee": 28.65,
+      "p_fee": 18.25,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J870",
+      "description": "Thyroid repeat",
+      "fee": 14.65,
+      "h_fee": 14.65,
+      "p_fee": 10.75,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J820",
+      "description": "Parathyroid scintigraphy dual isotope technique with T1201 and Tc99m Iodine",
+      "fee": 234.7,
+      "h_fee": 234.7,
+      "p_fee": 55.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J872",
+      "description": "Metastatic survey with I-131",
+      "fee": 240.6,
+      "h_fee": 240.6,
+      "p_fee": 49.7,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

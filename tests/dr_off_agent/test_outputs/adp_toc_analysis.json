@@ -1,0 +1,1955 @@
+{
+  "analysis_date": "2025-09-24",
+  "total_documents": 16,
+  "documents": [
+    {
+      "filename": "moh-adp-policy-and-administration-manual-real-time-continuous-glucose-monitoring-systems-en-2025-08-05.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-real-time-continuous-glucose-monitoring-systems-en-2025-08-05.pdf",
+      "total_parts": 5,
+      "total_sections": 14,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Real-Time Continuous Glucose Monitoring Systems Policy",
+            "start_page": null
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered",
+            "start_page": 14
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Real-Time Continuous Glucose Monitoring",
+            "start_page": null
+          },
+          {
+            "number": 4,
+            "title": "Confirmation of Eligibility for Real-Time Continuous Glucose Monitoring",
+            "start_page": null
+          },
+          {
+            "number": 5,
+            "title": "Diabetes Education Program",
+            "start_page": 24
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual",
+            "page": 5,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information",
+            "page": 6,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions",
+            "page": 6,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered",
+            "page": 14,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Repairs/Batteries",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Prescriber",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Applicant Identified as Ineligible by ADP",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Renewal Eligibility Criteria for Supplies",
+            "page": 19,
+            "part": 3
+          },
+          {
+            "number": "400",
+            "title": "Acceptable Evidence of Medical Eligibility Criteria",
+            "page": 21,
+            "part": 4
+          },
+          {
+            "number": "405",
+            "title": "Renewal of ADP Coverage for Supplies",
+            "page": 21,
+            "part": 4
+          },
+          {
+            "number": "500",
+            "title": "Diabetes Education Program Status",
+            "page": 24,
+            "part": 5
+          },
+          {
+            "number": "505",
+            "title": "ADP Clinic Status",
+            "page": 24,
+            "part": 5
+          },
+          {
+            "number": "510",
+            "title": "Guidelines for a Diabetes Education Program",
+            "page": 24,
+            "part": 5
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 14,
+            "end_page": 24,
+            "total_pages": 11
+          },
+          "devices_covered": {
+            "start_page": 14,
+            "end_page": 16,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 17,
+            "end_page": 23,
+            "parts": [
+              3,
+              4
+            ]
+          },
+          "special_programs": {
+            "start_page": 24,
+            "end_page": 24,
+            "parts": [
+              5
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 14,
+        "end_page": 24,
+        "total_pages": 11
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-respiratory-equipment-2024-11-08.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-respiratory-equipment-2024-11-08.pdf",
+      "total_parts": 3,
+      "total_sections": 19,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Respiratory Equipment Policy and Administration Manual .",
+            "start_page": 8
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered ..................................................................................................................",
+            "start_page": 15
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Respiratory Equipment ...................................",
+            "start_page": 20
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual ...............................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information ........................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions .............................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities ......................................................................................................................",
+            "page": 11,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Respiratory Devices Funded................................................................................................................",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Apnea/Cardiorespiratory Monitors .................................................................................................",
+            "page": 16,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Medication Compressors........................................................................................................................",
+            "page": 16,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "High Output Air Compressors .............................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Airway Clearance Devices .....................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "225",
+            "title": "Positive Airway Pressure Systems...................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "230",
+            "title": "Suction Devices .............................................................................................................................................",
+            "page": 18,
+            "part": 2
+          },
+          {
+            "number": "235",
+            "title": "Repairs/Batteries .........................................................................................................................................",
+            "page": 18,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Prescriber .........................................................................................................................................................",
+            "page": 20,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Applicant Identified as Ineligible by ADP ...................................................................................",
+            "page": 21,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Medical Eligibility Criteria .......................................................................................................................",
+            "page": 21,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Medical Eligibility Criteria for Cardiorespiratory Monitors ............................................",
+            "page": 22,
+            "part": 3
+          },
+          {
+            "number": "320",
+            "title": "Medical Eligibility Criteria for Medication Compressors ................................................",
+            "page": 23,
+            "part": 3
+          },
+          {
+            "number": "325",
+            "title": "Medical Eligibility Criteria for High Output Air Compressors .....................................",
+            "page": 23,
+            "part": 3
+          },
+          {
+            "number": "330",
+            "title": "Medical Eligibility Criteria for Airway Clearance Devices .............................................",
+            "page": 24,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 15,
+            "end_page": 24,
+            "total_pages": 10
+          },
+          "devices_covered": {
+            "start_page": 15,
+            "end_page": 19,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 20,
+            "end_page": 24,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 15,
+        "end_page": 24,
+        "total_pages": 10
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-ocular-prosthesis-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-ocular-prosthesis-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 8,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Ocular Prostheses Policy and Administration Manual ...........",
+            "start_page": 7
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered ..................................................................................................................",
+            "start_page": 16
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Ocular Prostheses .............................................",
+            "start_page": 20
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual ....................................................................................................................................................",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information............................................................................................................",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ..................................................................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "210",
+            "title": "Devices.......................................................................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Procedures..............................................................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Modifications and Procedures ................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "225",
+            "title": "Repairs ........................................................................................................................................................................................1",
+            "page": 8,
+            "part": 2
+          },
+          {
+            "number": "230",
+            "title": "Devices and Procedures for Ocular Prostheses Not Funded by the ADP ..........................",
+            "page": 18,
+            "part": 2
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 8,
+            "end_page": 18,
+            "total_pages": 11
+          },
+          "devices_covered": {
+            "start_page": 8,
+            "end_page": 18,
+            "parts": [
+              2
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 8,
+        "end_page": 18,
+        "total_pages": 11
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-maxillofacial-extraoral-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-maxillofacial-extraoral-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 8,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Maxillofacial Extraoral Prosthesis Policy and",
+            "start_page": null
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered ..................................................................................................................",
+            "start_page": 14
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Maxillofacial Extraoral Prostheses ..............",
+            "start_page": 16
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual ....................................................................................................................................................",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information............................................................................................................",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ..................................................................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities............................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Prostheses Funded ..........................................................................................................................................................1",
+            "page": 4,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Repairs ........................................................................................................................................................................................1",
+            "page": 4,
+            "part": 2
+          },
+          {
+            "number": "310",
+            "title": "Individual Identified as Ineligible by Authorizer ........................................................................................",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Applicant Identified as Ineligible by ADP .......................................................................................................",
+            "page": 17,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 4,
+            "end_page": 17,
+            "total_pages": 14
+          },
+          "devices_covered": {
+            "start_page": 4,
+            "end_page": 6,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 17,
+            "end_page": 17,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 4,
+        "end_page": 17,
+        "total_pages": 14
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-communication-aids-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-communication-aids-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 9,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction .....................................................................................................................................",
+            "start_page": 8
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered ........................................................................................................................",
+            "start_page": 20
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Communication Aids................................................",
+            "start_page": 25
+          }
+        ],
+        "sections": [
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information ...............................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ....................................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities ............................................................................................................................",
+            "page": 12,
+            "part": 1
+          },
+          {
+            "number": "120",
+            "title": "Augmentative and Alternative Communication (AAC) Service Delivery Model ....",
+            "page": 17,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered .................................................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Communication Aids .........................................................................................................................................",
+            "page": 21,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Items Not Funded by ADP ...........................................................................................................................",
+            "page": 23,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Repairs/Batteries................................................................................................................................................",
+            "page": 23,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Basic Communication Aids Requirements .......................................................................................",
+            "page": 25,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 20,
+            "end_page": 25,
+            "total_pages": 6
+          },
+          "devices_covered": {
+            "start_page": 20,
+            "end_page": 24,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 25,
+            "end_page": 25,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 20,
+        "end_page": 25,
+        "total_pages": 6
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-home-oxygen-en-2024-06-03.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-home-oxygen-en-2024-06-03.pdf",
+      "total_parts": 0,
+      "total_sections": 0,
+      "toc": {
+        "parts": [],
+        "sections": [],
+        "page_ranges": {}
+      },
+      "extraction_recommended": {}
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-grants-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-grants-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 14,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Grants Policy and Administration Manual",
+            "start_page": 8
+          },
+          {
+            "number": 2,
+            "title": "Breast Prostheses",
+            "start_page": 17
+          },
+          {
+            "number": 3,
+            "title": "Enteral Feeding Pump and Supplies",
+            "start_page": 25
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Grants for Devices and Supplies ............................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Purpose of the Manual ..................................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Protecting Personal Health Information ..........................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Definitions ............................................................................................................................................................................",
+            "page": 10,
+            "part": 1
+          },
+          {
+            "number": "120",
+            "title": "Eligibility Criteria ...............................................................................................................................................................1",
+            "page": 2,
+            "part": 1
+          },
+          {
+            "number": "125",
+            "title": "Roles and Responsibilities ........................................................................................................................................1",
+            "page": 3,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Eligibility Criteria ...............................................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Breast Prostheses Funded .......................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Non-Eligible Items ..........................................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Assessment and Application Process .............................................................................................................1",
+            "page": 8,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Applicant Identified as Ineligible by the ADP .........................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "225",
+            "title": "Replacement Breast Prostheses .......................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "230",
+            "title": "Grant Amounts and Payments...............................................................................................................................2",
+            "page": 1,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Eligibility Criteria ..............................................................................................................................................................",
+            "page": 25,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 1,
+            "end_page": 25,
+            "total_pages": 25
+          },
+          "devices_covered": {
+            "start_page": 1,
+            "end_page": 24,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 25,
+            "end_page": 25,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 1,
+        "end_page": 25,
+        "total_pages": 25
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-mobility-devices-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-mobility-devices-2023-07-01.pdf",
+      "total_parts": 4,
+      "total_sections": 19,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction Mobility Devices Policy and Administration Manual",
+            "start_page": 7
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered",
+            "start_page": 12
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Mobility Devices",
+            "start_page": 17
+          },
+          {
+            "number": 4,
+            "title": "Confirmation of Eligibility for Device Required",
+            "start_page": 21
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Roles & Responsibilities",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered",
+            "page": 12,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Ambulation Aids",
+            "page": 12,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Wheelchairs",
+            "page": 13,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Positioning Devices (Seating)",
+            "page": 13,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Options",
+            "page": 14,
+            "part": 2
+          },
+          {
+            "number": "225",
+            "title": "Repairs/Batteries",
+            "page": 14,
+            "part": 2
+          },
+          {
+            "number": "230",
+            "title": "Modifications to Wheelchairs Not Funded by ADP",
+            "page": 14,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Functional Status",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Basic Mobility Requirements",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Non-Eligible Mobility Requirements",
+            "page": 18,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Individual Identified Ineligible by Authorizer",
+            "page": 18,
+            "part": 3
+          },
+          {
+            "number": "320",
+            "title": "Applicant Identified Ineligible by the ADP",
+            "page": 19,
+            "part": 3
+          },
+          {
+            "number": "400",
+            "title": "Ambulation Aid",
+            "page": 21,
+            "part": 4
+          },
+          {
+            "number": "405",
+            "title": "Manual Wheelchair Mobility",
+            "page": 21,
+            "part": 4
+          },
+          {
+            "number": "410",
+            "title": "Power Mobility",
+            "page": 24,
+            "part": 4
+          },
+          {
+            "number": "415",
+            "title": "Funding for Both a Wheelchair and a Lower Extremity Prosthesis",
+            "page": 25,
+            "part": 4
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 12,
+            "end_page": 25,
+            "total_pages": 14
+          },
+          "devices_covered": {
+            "start_page": 12,
+            "end_page": 16,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 17,
+            "end_page": 25,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 12,
+        "end_page": 25,
+        "total_pages": 14
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-maxillofacial-intraoral-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-maxillofacial-intraoral-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 9,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction Maxillofacial Intraoral Prostheses Policy and Administration",
+            "start_page": null
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered .........................................................................................................................",
+            "start_page": 14
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Maxillofacial Intraoral Prostheses .....................",
+            "start_page": 17
+          }
+        ],
+        "sections": [
+          {
+            "number": "110",
+            "title": "Definitions ........................................................................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities .................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Prostheses Funded ................................................................................................................................................................",
+            "page": 14,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Options .............................................................................................................................................................................................",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Repairs..............................................................................................................................................................................................",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Adjustments to Maxillofacial Intraoral Prostheses Not Funded by the ADP...........................",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "General Eligibility .....................................................................................................................................................................",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Non-Eligible Items ..................................................................................................................................................................",
+            "page": 17,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Individual Identified as Ineligible by Authorizer .............................................................................................",
+            "page": 18,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 14,
+            "end_page": 18,
+            "total_pages": 5
+          },
+          "devices_covered": {
+            "start_page": 14,
+            "end_page": 16,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 17,
+            "end_page": 18,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 14,
+        "end_page": 18,
+        "total_pages": 5
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-hearing-devices-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-hearing-devices-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 11,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Hearing Devices Policy and Administration Manual .......................",
+            "start_page": 8
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered by ADP ..........................................................................................................",
+            "start_page": 18
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Hearing Devices .........................................................",
+            "start_page": 22
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual ........................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information .................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions .....................................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities ..............................................................................................................................",
+            "page": 11,
+            "part": 1
+          },
+          {
+            "number": "205",
+            "title": "Hearing Aids/FM Systems.............................................................................................................................",
+            "page": 19,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Cochlear Implant Replacement Speech Processors ..................................................................",
+            "page": 19,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Bone Anchored Hearing Aid (BAHA) Replacement Sound Processors ........................",
+            "page": 19,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Teletypewriters (TTY) for the Deaf or Speech Impaired .........................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "225",
+            "title": "Items Not Funded by ADP ............................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "230",
+            "title": "Repairs/Batteries ...............................................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Basic Hearing Device Requirements ......................................................................................................",
+            "page": 22,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 19,
+            "end_page": 22,
+            "total_pages": 4
+          },
+          "devices_covered": {
+            "start_page": 19,
+            "end_page": 21,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 22,
+            "end_page": 22,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 19,
+        "end_page": 22,
+        "total_pages": 4
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-limb-prosthesis-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-limb-prosthesis-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 12,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction",
+            "start_page": 7
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered",
+            "start_page": 18
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Limb Prostheses",
+            "start_page": 22
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual .............................................................................................................................",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Overview Of The Assistive Devices Program .........................................................................",
+            "page": 7,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ..........................................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities ...................................................................................................................",
+            "page": 12,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered ........................................................................................................................................",
+            "page": 18,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Options .............................................................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Repairs/Batteries .....................................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Modifications to Limb Prostheses Not Funded by the ADP ....................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Applicant Eligibility Criteria for Limb Prostheses ..............................................................",
+            "page": 22,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Non-Eligible Items ....................................................................................................................................",
+            "page": 22,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Individual Identified as Ineligible by Authorizer .................................................................",
+            "page": 23,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Applicant Identified as Ineligible by ADP ................................................................................",
+            "page": 23,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 18,
+            "end_page": 23,
+            "total_pages": 6
+          },
+          "devices_covered": {
+            "start_page": 18,
+            "end_page": 21,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 22,
+            "end_page": 23,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 18,
+        "end_page": 23,
+        "total_pages": 6
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-pressure-modification-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-pressure-modification-2023-07-01.pdf",
+      "total_parts": 3,
+      "total_sections": 12,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Pressure Modification Devices Policy and Administration Manual .......................",
+            "start_page": 9
+          },
+          {
+            "number": 2,
+            "title": "Devices ..........................................................................................................................................",
+            "start_page": 21
+          },
+          {
+            "number": 3,
+            "title": "Management of Hypertrophic Scars - Garments/Orthoses ...................................",
+            "start_page": 25
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual .................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information ..........................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ..............................................................................................................................................................................",
+            "page": 10,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities .........................................................................................................................................",
+            "page": 15,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered ............................................................................................................................................................",
+            "page": 21,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Non-Eligible Pressure Modification Devices ...........................................................................................",
+            "page": 22,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Repairs/Batteries ...........................................................................................................................................................",
+            "page": 22,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Individual Identified as Ineligible by Authorizer .....................................................................................",
+            "page": 23,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Applicant Identified as Ineligible by ADP ...................................................................................................",
+            "page": 23,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Eligibility ................................................................................................................................................................................",
+            "page": 25,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Devices Covered ............................................................................................................................................................",
+            "page": 25,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Authorization of Garments and Orthoses ....................................................................................................",
+            "page": 26,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 21,
+            "end_page": 26,
+            "total_pages": 6
+          },
+          "devices_covered": {
+            "start_page": 21,
+            "end_page": 24,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 25,
+            "end_page": 26,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 21,
+        "end_page": 26,
+        "total_pages": 6
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-orthotic-devices-2025-09-02.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-orthotic-devices-2025-09-02.pdf",
+      "total_parts": 3,
+      "total_sections": 10,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to the Orthotic Devices Policy and Administration Manual ........",
+            "start_page": 8
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered ...................................................................................................................",
+            "start_page": 16
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility for Orthotic Devices ..................................................................",
+            "start_page": 20
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual ...................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information ...........................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions .................................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities .........................................................................................................................",
+            "page": 12,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered ...............................................................................................................................................",
+            "page": 16,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Listed Components/Additions ..............................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Repairs ......................................................................................................................................................................",
+            "page": 17,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Modifications to Orthotic Devices Not Funded by the ADP ...........................................",
+            "page": 18,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "General Eligibility .............................................................................................................................................2",
+            "page": 0,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Non Eligible Items ............................................................................................................................................",
+            "page": 21,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 0,
+            "end_page": 21,
+            "total_pages": 22
+          },
+          "devices_covered": {
+            "start_page": 16,
+            "end_page": 20,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 0,
+            "end_page": 21,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 0,
+        "end_page": 21,
+        "total_pages": 22
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-insulin-pump-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-insulin-pump-2023-07-01.pdf",
+      "total_parts": 4,
+      "total_sections": 14,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Insulin Pump and Supplies Policy and Administration",
+            "start_page": null
+          },
+          {
+            "number": 2,
+            "title": "Device Covered ....................................................................................................................",
+            "start_page": 15
+          },
+          {
+            "number": 3,
+            "title": "Applicant Eligibility Criteria for Insulin Pump and Supplies ..............................",
+            "start_page": 18
+          },
+          {
+            "number": 4,
+            "title": "Confirmation of Eligibility for Insulin Pump and Supplies Required ...............",
+            "start_page": 24
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual ................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information .........................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions .............................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities ....................................................................................................................",
+            "page": 10,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered ...........................................................................................................................................",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Insulin Pumps...................................................................................................................................................",
+            "page": 15,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Repairs/Batteries .........................................................................................................................................",
+            "page": 16,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Prescriber ...........................................................................................................................................................",
+            "page": 18,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Applicant Identified as Ineligible by ADP ..................................................................................",
+            "page": 18,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Pediatric Medical Eligibility Criteria for Insulin Pump and Supplies ........................",
+            "page": 19,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Pediatric Renewal Medical Ineligibility Criteria for Insulin Pump Supplies ......",
+            "page": 20,
+            "part": 3
+          },
+          {
+            "number": "320",
+            "title": "Adult Medical Eligibility Criteria for Insulin Pump and Supplies...............................",
+            "page": 20,
+            "part": 3
+          },
+          {
+            "number": "325",
+            "title": "Adult Renewal Medical Eligibility Criteria for Insulin Pump Supplies ....................",
+            "page": 21,
+            "part": 3
+          },
+          {
+            "number": "330",
+            "title": "Transition from Pediatric to Adult Funding Assistance ....................................................",
+            "page": 22,
+            "part": 3
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 15,
+            "end_page": 22,
+            "total_pages": 8
+          },
+          "devices_covered": {
+            "start_page": 15,
+            "end_page": 17,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 18,
+            "end_page": 22,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 15,
+        "end_page": 22,
+        "total_pages": 8
+      }
+    },
+    {
+      "filename": "moh-adp-policy-and-administration-manual-visual-aids-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policy-and-administration-manual-visual-aids-2023-07-01.pdf",
+      "total_parts": 2,
+      "total_sections": 12,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction to Visual Aids Policy and Administration Manual ...................................",
+            "start_page": 8
+          },
+          {
+            "number": 2,
+            "title": "Devices Covered by ADP ............................................................................................................",
+            "start_page": 18
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual .....................................................................................................................................",
+            "page": 8,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Protecting Personal Health Information ..............................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ..................................................................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "115",
+            "title": "Roles and Responsibilities ............................................................................................................................",
+            "page": 11,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Covered .................................................................................................................................................",
+            "page": 18,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Optical Aids ............................................................................................................................................................",
+            "page": 19,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Reading Aids ........................................................................................................................................................",
+            "page": 20,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Writing Aids ............................................................................................................................................................",
+            "page": 21,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Orientation and Mobility Aids ...................................................................................................................",
+            "page": 22,
+            "part": 2
+          },
+          {
+            "number": "225",
+            "title": "Items Not Funded by ADP .........................................................................................................................",
+            "page": 22,
+            "part": 2
+          },
+          {
+            "number": "230",
+            "title": "Repairs/Batteries .............................................................................................................................................",
+            "page": 23,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Basic Visual Aids Requirements .............................................................................................................",
+            "page": 25,
+            "part": 2
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 18,
+            "end_page": 25,
+            "total_pages": 8
+          },
+          "devices_covered": {
+            "start_page": 18,
+            "end_page": 25,
+            "parts": [
+              2
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 18,
+        "end_page": 25,
+        "total_pages": 8
+      }
+    },
+    {
+      "filename": "moh-adp-policies-and-procedures-manual-assistive-devices-program-2023-07-01.pdf",
+      "path": "data/dr_off_agent/ontario/adp/moh-adp-policies-and-procedures-manual-assistive-devices-program-2023-07-01.pdf",
+      "total_parts": 4,
+      "total_sections": 15,
+      "toc": {
+        "parts": [
+          {
+            "number": 1,
+            "title": "Introduction",
+            "start_page": 9
+          },
+          {
+            "number": 2,
+            "title": "Devices",
+            "start_page": 19
+          },
+          {
+            "number": 3,
+            "title": "Clients",
+            "start_page": 33
+          },
+          {
+            "number": 4,
+            "title": "General Authorizer and Vendor Policies",
+            "start_page": 42
+          }
+        ],
+        "sections": [
+          {
+            "number": "100",
+            "title": "Purpose of the Manual .........................................................................................................................",
+            "page": 9,
+            "part": 1
+          },
+          {
+            "number": "105",
+            "title": "Overview of the Assistive Devices Program .....................................................................",
+            "page": 10,
+            "part": 1
+          },
+          {
+            "number": "110",
+            "title": "Definitions ....................................................................................................................................................",
+            "page": 14,
+            "part": 1
+          },
+          {
+            "number": "200",
+            "title": "Devices Available for Funding Assistance ..........................................................................",
+            "page": 19,
+            "part": 2
+          },
+          {
+            "number": "205",
+            "title": "Listing New Products ..........................................................................................................................",
+            "page": 21,
+            "part": 2
+          },
+          {
+            "number": "210",
+            "title": "Removal of Listed Devices .............................................................................................................",
+            "page": 26,
+            "part": 2
+          },
+          {
+            "number": "215",
+            "title": "Device Pricing Reviews.....................................................................................................................",
+            "page": 27,
+            "part": 2
+          },
+          {
+            "number": "220",
+            "title": "Replacement of Funded Devices ..............................................................................................",
+            "page": 28,
+            "part": 2
+          },
+          {
+            "number": "300",
+            "title": "Eligibility Criteria for Program Benefits..................................................................................",
+            "page": 33,
+            "part": 3
+          },
+          {
+            "number": "305",
+            "title": "Funding Available to Clients .........................................................................................................",
+            "page": 35,
+            "part": 3
+          },
+          {
+            "number": "310",
+            "title": "Funding Available to Clients Receiving Social Assistance ......................................",
+            "page": 36,
+            "part": 3
+          },
+          {
+            "number": "315",
+            "title": "Payment to Clients ...............................................................................................................................",
+            "page": 37,
+            "part": 3
+          },
+          {
+            "number": "320",
+            "title": "Release of Information about Previous Funding ............................................................",
+            "page": 38,
+            "part": 3
+          },
+          {
+            "number": "325",
+            "title": "Letters for Insurance Purposes ...................................................................................................",
+            "page": 39,
+            "part": 3
+          },
+          {
+            "number": "400",
+            "title": "Conduct of Authorizers and Vendors .....................................................................................",
+            "page": 42,
+            "part": 4
+          }
+        ],
+        "page_ranges": {
+          "clinical_content": {
+            "start_page": 19,
+            "end_page": 42,
+            "total_pages": 24
+          },
+          "devices_covered": {
+            "start_page": 19,
+            "end_page": 32,
+            "parts": [
+              2
+            ]
+          },
+          "eligibility": {
+            "start_page": 33,
+            "end_page": 42,
+            "parts": [
+              3,
+              4
+            ]
+          }
+        }
+      },
+      "extraction_recommended": {
+        "start_page": 19,
+        "end_page": 42,
+        "total_pages": 24
+      }
+    }
+  ]
+}

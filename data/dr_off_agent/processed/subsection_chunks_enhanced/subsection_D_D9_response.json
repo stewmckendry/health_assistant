@@ -1,0 +1,93 @@
+{
+  "subsection_title": "Skeletal Surveys",
+  "parent_section": "D",
+  "page_ref": "D9",
+  "pages_processed": "357-357",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        5,
+        "X057 - single film ........................................................................... 14.90 6.40"
+      ],
+      [
+        6,
+        "X058 - two or more films or views.................................................. 21.70 10.65"
+      ],
+      [
+        8,
+        "X080 - single view.......................................................................... 7.45 3.30"
+      ],
+      [
+        9,
+        "X081 - each additional film or view ................................................ 7.45 3.30"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "X057",
+      "description": "Skeletal survey for bone age - single film",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X058",
+      "description": "Skeletal survey for bone age - two or more films or views",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 10.65,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X080",
+      "description": "Other survey studies - e.g. rheumatoid, metabolic or metastatic - single view",
+      "fee": 7.45,
+      "h_fee": 7.45,
+      "p_fee": 3.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X081",
+      "description": "Other survey studies - e.g. rheumatoid, metabolic or metastatic - each additional film or view",
+      "fee": 7.45,
+      "h_fee": 7.45,
+      "p_fee": 3.3,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,30 @@
+{
+  "section_code": "J",
+  "section_title": "Diagnostic and Therapeutic Procedures",
+  "fee_codes": [
+    {
+      "code": "G700",
+      "description": "Basic fee-per-visit premium for procedures marked (+)",
+      "fee": "5.60",
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Not eligible for payment for a service provided in a hospital. Not eligible for payment when the service marked with (+) is not eligible for payment.",
+      "special_prefix": null
+    }
+  ],
+  "rules": [
+    "Services listed in the Diagnostic and Therapeutic Procedures Section are eligible for payment in addition to a consultation or assessment except where they are specifically listed as included in consultation or assessment services.",
+    "When a procedure(s) is the sole reason for a visit, add G700 for those procedures marked (+) regardless of the number of procedures carried out during that visit."
+  ],
+  "subcategories": [],
+  "notes": [
+    "If a patient presents for an allergy injection and has an acute infectious condition, the physician is entitled to claim the appropriate assessment fee as well as the injection fee.",
+    "If a patient requires a brief assessment of his allergic condition as well as the allergy injection, the physician should claim the injection and the basic fee."
+  ],
+  "pages_processed": "401-516"
+}

@@ -1,0 +1,476 @@
+Section: B - Positron Emission Tomography (PET)
+Pages: 325 to 342
+Extracted text length: 27917 characters
+============================================================
+
+--- PAGE 325 ---
+NUCLEAR MEDICINE - IN VIVO
+Nuclear Medicine - IN VIVOMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+Nuclear Medicine procedures are divided into a professional component listed in the columns headed
+with a "P", and a technical component listed in the column headed with an "H". The technical
+component of the procedure subject to the conditions stated under "Diagnostic Services Rendered at
+a Hospital" on page GP11, is eligible for payment only if the service is:
+a. rendered at a hospital; or
+b. rendered at an off-site premise operated by a hospital corporation that has received
+approval under section 4 of the Public Hospitals Act.
+In addition to the common elements, the components of Nuclear Medicine procedures include the
+following specific elements.
+For Professional Component
+A. Providing clinical supervision, including approving, modifying and/or intervening in the performance
+of the procedure where appropriate.
+B. Performance of any clinical procedure associated with the diagnostic procedure which is not
+separately billable.
+C. Where appropriate, post-procedure monitoring, including intervening except where this constitutes
+a separately billable service.
+D. Interpreting the results of the diagnostic procedure.
+E. Providing premises for any aspect(s) of A and D that is(are) performed at a place other than the
+place in which the procedure is performed.
+Note:
+1.Element D must be personally performed by the physician who claims for the service.
+2.If the physician claiming the fee for the service is personally unable to perform elements A, B
+and C, these may be delegated to another physician.
+3.Where the only component provided is interpreting the results of the diagnostic procedure,
+the specific elements A and C listed for the professional component are included in the
+specific elements of the technical component.
+For Technical Component H
+A. Preparing the patient for the procedure.
+B. Performing the diagnostic procedure(s).
+C. Making arrangements for any appropriate follow-up care.
+D. Providing records of the results of the procedure to the interpreting physician.
+E. Discussion with, and providing information and advice to, the patient or patient’s representative,
+whether by telephone or otherwise, on matters related to the service.
+F. Preparing and transmitting a written, signed and dated interpretive report of the procedure to the
+referring provider.
+G. Providing premises, equipment, supplies and personnel for all specific elements of the technical
+and professional components except for the premises for any aspect(s) of A and D of the
+professional component that is(are) not performed at the place in which the procedure is
+performed.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B1 Amd 12 Draft 1
+
+--- PAGE 326 ---
+NUCLEAR MEDICINE - IN VIVO
+March 4, 2024 (effective April 1, 2024)
+PREAMBLE
+OTHER TERMS AND DEFINITIONS
+1. Professional and technical components are claimed separately. Claims for the technical
+component H are submitted using listed fee code with suffix B. Claims for professional
+component are submitted using listed fee code with suffix C. (e.g. J802C)
+2. For services rendered outside a hospital setting the only fees billable under the Health
+Insurance Act are listed under P (use suffix C). Costs for the technical component of these
+services are only billable under the Integrated Community Health Services Centres Act, 2023.
+3. With the exception of J818, J835, J821, J834, J880 or when SPECT is claimed, if quantification
+or data manipulation is carried out in addition to visual inspection of imaging studies, add 30%
+to the appropriate professional benefit. For claim purposes, use prefix “Y”. Such activity must
+add significant diagnostic information not available by inspection alone and does not include
+simple image enhancement techniques such as smoothing, background subtraction, etc.
+Recording of images on videotape for replay and production of images on the video display of a
+computer do not in themselves justify the additional benefit. The claims for cardiac wall motion
+studies and calculation of ventricular ejection fraction (J811 and J813) already include an
+allowance for data manipulation as a general rule and no additional benefit may be claimed.
+The additional computer benefit may be claimed only when additional cardiac quantifications
+are performed i.e. stroke volume ratio and volume response curves and/or phase analysis.
+4. If examination of Brain, Lung, Liver or Spleen is limited to one view, the benefit (H and P) is to
+be reduced by 50%.
+5. Repeat studies on the same day may be claimed only after exercise or drug intervention.
+6. When tomographic examination (SPECT) is billed, the 30% add-on referred to in paragraph 3
+may not be claimed.
+7. Costs for the technical component of services rendered in an ICHSC are listed in the Schedule
+of Facility Costs.
+8. The technical and professional fee components for myocardial perfusion imaging /
+echocardiogram/exercise stress test/stress echocardiogram are not eligible for payment in the
+routine preoperative preparation or screening of a patient for surgery where the patient will
+undergo a low risk procedure or has a low risk of perioperative cardiac complications, unless
+there is a clinical indication requiring myocardial perfusion imaging/exercise stress test/cardiac
+stress echo studies other than solely for preoperative preparation of the patient.
+[Commentary:
+1.Studies have indicated that for non cardiac surgery, there may be no clinical benefit and
+there may be harm in performing functional cardiac testing in patients with low operative risk
+and little or limited benefit in moderate risk patients. BMJ 2010, Jan 28; 340.
+2.One example of a generally accepted guideline is the American College of Cardiology
+(ACC)/ American Heart Association (AHA) Guidelines that states:
+a.Non invasive testing could be considered in patients with 1 to 2 risk factors and poor
+functional capacity (less than 4 mets) who require intermediate risk surgery if it will
+change management (class IIb)
+b.Non invasive testing has not been show to be useful in patients with no clinical risk factors
+undergoing intermediate risk non cardiac surgery (class III).
+c.Non invasive testing has not been shown to useful in patients undergoing low risk non
+cardiac surgery (class III)]
+Amd 12 Draft 1 B2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 327 ---
+NUCLEAR MEDICINE - IN VIVO
+CARDIOVASCULAR SYSTEM
+H P
+Venography
+J802 - peripheral and superior vena cava ..................................... 96.35 40.30
+First Transit
+J804 - without blood pool images.................................................. 16.10 16.55
+J867 - with blood pool images....................................................... 57.30 23.25
+Cardioangiography
+J806 - first pass for shunt detection, cardiac output and transit
+studies................................................................................ 95.10 41.70
+Myocardial Perfusion Scintigraphy
+J807 - resting, immediate post stress............................................ 217.55 38.10
+J866 - application of SPECT (maximum 1 per examination), to
+J807 ........................................................................... add 43.50 23.65
+J900 - application of Rubidium PET for cardiac perfusion
+(maximum 1 per examination), to J807...................... add 43.50 23.65
+J808 - delayed............................................................................... 80.10 20.90
+J809 - application of SPECT (maximum 2 per examination), to
+J808.............................................................................. add 43.50 23.65
+J901 - application of Rubidium PET for cardiac perfusion
+(maximum 1 per examination), to J808 ........................ add 43.50 23.65
+Note:
+PET Rubidium for cardiac perfusion is only eligible for payment in patients with known coronary
+artery disease or suspected coronary artery disease at intermediate risk (10-90%) of significant
+ischemia where the need for intervention is uncertain.
+Myocardial scintigraphy
+J810 - acute infarction, injury ........................................................ 88.25 37.90
+Myocardial wall motion
+J811 - studies................................................................................ 95.10 43.25
+J812 - repeat same day (to a maximum of three repeats).......... 48.15 20.90
+J813 - studies with ejection fraction .............................................. 135.15 62.50
+J814 - repeat same day (to a maximum of three repeats) ............ 48.15 33.00
+Note:
+J811 and/or J812 rendered in conjunction with J813 and/or J814 are insured services payable
+at nil.
+J815 Detection of venous thrombosis using radioiodinated
+fibrinogen up to ten days .................................................... 131.70 40.30
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B3 Amd 12 Draft 1
+
+--- PAGE 328 ---
+NUCLEAR MEDICINE - IN VIVO
+ENDOCRINE SYSTEM
+H P
+Adrenal scintigraphy
+J816 - with iodocholesterol............................................................ 385.90 40.30
+J868 - with iodocholesterol and dexamethasone suppression...... 451.30 44.60
+J869 - with MIBG........................................................................... 555.35 49.70
+Thyroid scintigraphy
+J818 - with Tc99m or I-131 ............................................................ 64.15 40.30
+J871 - with I-123............................................................................ 103.10 40.30
+[Commentary:
+1.Indications for thyroid scanning include:
+a.Hyperthyroidism (including nodules associated with hyperthyroidism); or
+b.Congenital hypothyroidism; or
+c.Masses in the neck or mediastinum suspected to be thyroid in origin.
+d.Assessment of multinodular glands to guide tissue sampling ; or
+e.Assessment of nodules with equivocal Fine Needle Aspiration findings.
+2.Nuclear thyroid assessment is not generally indicated for the investigation of adult
+hypothyroidism.
+3.Thyroid nodules of less than 1 cm in size may not be accurately assessed by thyroid
+scintigraphy.]
+Thyroid
+J817 - uptake................................................................................. 28.65 18.25
+J870 - repeat ................................................................................. 14.65 10.75
+Parathyroid scintigraphy
+J820 - dual isotope technique with T1201 and Tc99m Iodine........ 234.70 55.30
+J872 Metastatic survey with I-131 ................................................... 240.60 49.70
+Amd 12 Draft 1 B4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 329 ---
+NUCLEAR MEDICINE - IN VIVO
+GASTROINTESTINAL SYSTEM
+H P
+Schilling test
+J821 - single isotope ..................................................................... 44.65 11.40
+J823 - dual isotope ........................................................................ 48.15 9.70
+Malabsorption test
+J824 14
+- with C substrate............................................................... 57.30 10.35
+J873 - with whole body counting ................................................... 137.70 14.25
+Gastrointestinal
+J825 - protein loss ......................................................................... 82.45 9.75
+J874 51
+- blood loss using - Cr ....................................................... 61.90 9.70
+J829 - transit.................................................................................. 103.10 40.30
+Calcium absorption
+J826 45
+- Ca .................................................................................... 61.90 9.95
+J875 47
+- Calcium absorption/excretion.......................................... 253.10 31.00
+J827 - Oesophageal motility studies - one or more....................... 118.90 40.30
+Gastro-oesophageal
+J876 - reflux................................................................................... 56.70 40.30
+J877 - aspiration............................................................................ 40.15 40.30
+Abdominal scintigraphy - for gastrointestinal bleed
+J830 04
+- Tc99m sulphur colloid or Tc ............................................. 87.00 40.30
+J878 - labelled RBCs..................................................................... 143.20 40.30
+J879 - LeVeen shunt patency........................................................ 66.30 38.70
+J831 Biliary scintigraphy.................................................................. 114.50 40.30
+J832 Liver/spleen scintigraphy ........................................................ 80.10 40.30
+J833 Salivary gland scintigraphy..................................................... 96.25 40.30
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B5 Amd 12 Draft 1
+
+--- PAGE 330 ---
+NUCLEAR MEDICINE - IN VIVO
+GENITOURINARY SYSTEM
+H P
+J834 Dynamic renal imaging ........................................................... 96.25 32.60
+Computer assessed renal function
+J835 - includes first transit............................................................. 131.70 57.80
+J880 - repeat after pharmacological intervention .......................... 44.85 17.80
+J836 Static renal scintigraphy.......................................................... 33.25 40.30
+J837 ERPF by blood sample method.............................................. 40.15 10.35
+J838 GFR by blood sample method................................................ 40.15 10.35
+J839 Cystography for vesicoureteric reflux ..................................... 120.55 40.30
+Testicular and scrotal scintigraphy
+J840 - includes first transit............................................................. 82.45 40.30
+Amd 12 Draft 1 B6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 331 ---
+NUCLEAR MEDICINE - IN VIVO
+HAEMATOPOIETIC SYSTEM
+H P
+J841 Plasma volume ....................................................................... 43.50 11.85
+J843 Red cell volume ...................................................................... 48.15 11.85
+J847 Ferrokinetics - clearance, turnover, and utilization ................. 400.95 26.50
+J848 Red cell, white cell or platelet survival .................................... 102.60 21.25
+J849 Red cell survival with serial surface counts ............................ 148.25 27.10
+Bone marrow scintigraphy
+J881 - whole body ......................................................................... 113.70 49.70
+J882 - single site ........................................................................... 84.85 40.30
+In-111 leukocyte scintigraphy
+J883 - whole body ......................................................................... 364.30 49.70
+J884 - single site ........................................................................... 320.80 40.30
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B7 Amd 12 Draft 1
+
+--- PAGE 332 ---
+NUCLEAR MEDICINE - IN VIVO
+MUSCULOSKELETAL SYSTEM
+H P
+Bone scintigraphy
+J850 - general survey.................................................................... 103.70 49.70
+J851 - single site ........................................................................... 84.85 40.30
+Gallium scintigraphy
+J852 - general survey.................................................................... 177.55 49.70
+J853 - single survey ...................................................................... 123.70 40.30
+Application of tomography (SPECT)
+J819 - where each SPECT image represents a different organ or
+body area, to J852, maximum 3 images per examination
+................................................................................... add 43.50 24.65
+Note:
+J850 and J851 are not to be billed together. J804 may be claimed in addition to J850 or J851
+for blood pool study.
+Amd 12 Draft 1 B8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 333 ---
+NUCLEAR MEDICINE - IN VIVO
+NERVOUS SYSTEM AND RESPIRATORY SYSTEM
+H P
+NERVOUS SYSTEM
+CSF circulation
+J857 - with Tc99m or I-131 HSA..................................................... 120.25 45.75
+J885 - with In-111 ........................................................................... 308.20 45.75
+J886 - via shunt puncture ............................................................... 88.55 44.45
+J858 Brain scintigraphy .................................................................... 90.40 44.80
+RESPIRATORY SYSTEM
+J859 Perfusion lung scintigraphy ..................................................... 85.90 36.05
+J887 Ventilation lung scintigraphy .................................................... 107.70 36.05
+J860 Perfusion and ventilation scintigraphy - same day .................. 171.85 75.90
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B9 Amd 12 Draft 1
+
+--- PAGE 334 ---
+NUCLEAR MEDICINE - IN VIVO
+MISCELLANEOUS
+H P
+J861 Radionuclide lymphangiogram ............................................... 112.20 54.80
+J862 Ocular tumour localization ...................................................... 75.60 54.90
+J864 Tear duct scintigraphy............................................................. 97.35 42.95
+J865 Total body counting................................................................. 187.95 49.70
+Application of Tomography (SPECT), other than to J808 or J852
+J866 - maximum one per Nuclear Medicine examination ..... add 43.50 23.65
+Amd 12 Draft 1 B10 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 335 ---
+NUCLEAR MEDICINE - IN VIVO
+SCINTIMAMMOGRAPHY
+H P
+Scintimammography is not eligible for payment unless at least one of the following conditions is
+met:
+a. the patient has a dense breast(s) and one or both of the following risk factors:
+i. a first degree relative with breast cancer diagnosed prior to age 50; or
+ii. a first degree relative with breast cancer diagnosed over age 50 and patient is within 5
+years of the age when the relative was diagnosed with breast cancer.
+b. architectural distortion of the breasts due to prior breast surgery, radiotherapy,
+chemotherapy or the presence of breast prosthesis rendering mammography interpretation
+difficult;
+c. malignant breast lesion when mammography is unable to exclude multifocal disease; or
+d. solitary lesion identified on mammography of greater than 1 cm.
+Scintimammography
+J863 - unilateral or bilateral ........................................................... 99.95 40.30
+Note:
+For the purpose of this provision, "dense breast(s)" means (a) breast(s) occupied by over 75%
+fibroglandular tissue as noted on mammography.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B11 Amd 12 Draft 1
+
+--- PAGE 336 ---
+NUCLEAR MEDICINE - IN VIVO
+March 4, 2024 (effective April 1, 2024)
+CLINICAL PROCEDURES ASSOCIATED WITH DIAGNOSTIC NUCLEAR MEDICINE
+Such procedural benefits are intended for the physician’s service of placing an instrument or
+introducing diagnostic radiopharmaceuticals. They are not intended to be used for simple
+subcutaneous, intramuscular or intravenous injection nor for oral administration. Rather than
+double listing the procedures and benefits in this part of the fee schedule, physicians are
+directed to the following reference points in the Schedule
+a. Intra-articular injections - G370 on page J54.
+b. Injection into CSF spaces or shunt apparatus - Z801 or Z821 on page X8.
+c. Arterial puncture - Z459 on pages H6 and J7.
+d. Paracentesis in conjunction with shunt patency study - Z590 on page S34.
+Amd 12 Draft 1 B12 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 337 ---
+POSITRON EMISSION TOMOGRAPHY (PET)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, the professional component of PET procedures includes the
+following specific elements.
+For Professional Component P
+A. Providing clinical supervision, including approving, modifying and/or intervening in the performance
+of the procedure where appropriate, and quality control of all elements of the technical component
+of the procedure.
+B. Performance of any clinical procedure associated with the diagnostic procedure which is not
+separately billable (e.g. injections which are an integral part of the study).
+C. Where appropriate, post-procedure monitoring, including intervening except where this constitutes
+a separately billable service.
+D. Interpreting the results of the diagnostic procedure.
+E. Providing premises for any aspect(s) of A and D that is(are) performed at a place other than the
+place in which the procedure is performed.
+If the physician claiming the fee for the service is personally unable to perform elements A, B and C,
+these may be delegated to another physician, who must personally perform the service.
+Element D must be personally performed by the physician who claims for the service.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B13 Amd 12 Draft 1
+
+--- PAGE 338 ---
+POSITRON EMISSION TOMOGRAPHY (PET)
+March 4, 2024 (effective April 1, 2024)
+P
+Note:
+1.PET scanning is an insured service only for the investigation of the indications listed below.
+2.PET scanning for all oncologic or suspected oncologic indications must be performed using a
+combined positron emission tomography-computed tomography scanner (PET/CT) in order
+to localize anatomically any areas of abnormality on the PET image.
+3.Interpretation of a CT scan performed to identify the anatomical location of a PET scan
+abnormality or for attenuation correction is not eligible for payment.
+[Commentary:
+1.It is expected that the physician requesting a PET scan is making clinical decisions related to
+the treatment of the patient or is basing their request on the recommendation of the treating
+physician.
+2.A PET scan may be available for indications other than those listed below through other PET
+Scans Ontario programs. PET Scans Ontario is coordinated by Ontario Health. The contact
+number is 1-877-473-8411. A full list of all funded indications in Ontario is available at
+CCOHealth.ca/PET.]
+Solitary pulmonary nodule (SPN)
+Solitary pulmonary nodule for which a diagnosis could not be established by a needle biopsy
+due to:
+a. unsuccessful attempted needle biopsy;
+b. the SPN is inaccessible to needle biopsy; or
+c. the existence of a contra-indication to the use of needle biopsy.
+J700 Solitary pulmonary nodule ..................................................... 255.20
+Thyroid cancer
+Thyroid cancer for which standard imaging studies, including I-131 scan and/or neck
+ultrasound, are negative or equivocal, and recurrent or persistent disease is suspected on the
+basis of an elevated and/or rising thyroglobulin level(s).
+J701 Thyroid cancer........................................................................ 255.20
+Germ cell tumour
+Germ cell tumour for which recurrent or persistent disease is suspected on the basis of:
+a. elevated tumour marker(s) (beta human chorionic gonadotrophin (HCG) and/or alpha
+fetoprotein) in the presence of negative or equivocal standard imaging studies; or
+b. the presence of a residual mass after primary treatment for seminoma when curative
+surgical resection is being considered.
+J702 Germ cell tumour .................................................................... 255.20
+Amd 12 Draft 1 B14 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 339 ---
+POSITRON EMISSION TOMOGRAPHY (PET)
+P
+Colorectal cancer
+Colorectal cancer for which standard imaging studies are negative or equivocal and recurrent
+disease after surgical resection is suspected on the basis of an elevated and/or rising
+carcinoembryronic antigen (CEA) level(s).
+J703 Colorectal cancer.................................................................... 255.20
+Lymphoma
+For the evaluation of a residual mass(es) following chemotherapy in a patient with Hodgkin’s or
+Non-Hodgkin’s lymphoma when further potentially curative therapy (such as radiation or stem
+cell transplantation) is being considered.
+J704 Lymphoma for the evaluation of a residual mass(es) ............. 255.20
+For the assessment of response in early stage Hodgkin’s lymphoma following 2 or 3 cycles of
+chemotherapy when chemotherapy is being considered as the definitive single modality
+therapy.
+J705 Lymphoma for the assessment of response to treatment....... 255.20
+Non-small cell lung cancer (NSCLC):
+a. For which curative surgical resection is being considered based on negative standard
+imaging tests; or
+b. For clinical stage III NSCLC which is being considered for potentially curative combined
+modality therapy with radical radiotherapy and chemotherapy.
+J706 Non-small cell lung cancer...................................................... 255.20
+Limited disease small cell lung cancer
+Limited disease small cell lung cancer for evaluation and staging where combined modality
+therapy with chemotherapy and radiotherapy is being considered.
+J709 Limited disease small cell lung cancer ................................... 255.20
+Esophageal carcinoma
+a. Baseline staging assessment of those patients diagnosed with esophageal cancer being
+considered for curative therapy.
+b. Repeat PET/CT scan on completion of pre-operative/neoadjuvant therapy, prior to surgery.
+J710 Esophageal carcinoma ........................................................... 255.20
+Metastatic squamous cell carcinoma – evaluation of neck nodes
+J711 Metastatic squamous cell carcinoma – evaluation of neck
+nodes.................................................................................. 255.20
+Note:
+J711 is only insured when the primary disease site is unknown after radiologic and
+clinical investigation.
+Liver metastasis from colorectal cancer
+Prior to surgery for resection of metastatic lesions from colorectal cancer only when:
+a. The surgical procedure on the liver is high risk; or
+b. The patient is considered at high risk for surgery.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B15 Amd 12 Draft 1
+
+--- PAGE 340 ---
+POSITRON EMISSION TOMOGRAPHY (PET)
+P
+[Commentary:
+Examples of high risk liver surgical procedures are multiple staged liver resection or where
+vascular reconstruction is required.]
+J712 Liver metastasis from colorectal cancer ................................. 255.20
+Staging nasopharyngeal carcinoma
+J713 Staging of nasopharyngeal carcinoma ................................... 255.20
+Amd 12 Draft 1 B16 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 341 ---
+POSITRON EMISSION TOMOGRAPHY (PET)
+P
+Cardiac PET using fluorodeoxyglucose (FDG)
+Cardiac PET using fluorodeoxyglucose (FDG) for myocardial viability assessment in a patient
+that:
+a. has moderate to severe ischemic left ventricular dysfunction (left ejection less than or equal
+to 40%) despite maximal medical therapy; and
+b. is a suitable candidate for a cardiac revascularization procedure or cardiac transplantation.
+J707 - cardiac PET........................................................................ 237.50
+J708 - cardiac PET with quantitative analysis, to J707... add 0%
+Note:
+PET is an insured service for the clarification of myocardial viability when:
+a.a previous myocardial imaging assessment has been rendered, using another modality
+(e.g. SPECT using thallium, MIBI or dobutamine stress echocardiography) and the result
+of the previous imaging assessment was equivocal or demonstrated insufficient viable
+myocardium; or
+b.a patient with a left ventricular ejection fraction less than 35% and known multi-vessel
+coronary disease determined by coronary angiography urgently needs an assessment of
+myocardial viability.
+[Commentary:
+Examples of other modalities for assessing viability include SPECT imaging using myocardial
+perfusion agents such as thallium, MIBI or tetrofosmin, or dobutamine stress
+echocardiography.]
+Payment rules:
+Only one of J700, J701, J702, J703, J704, J705, J706, J707, J709 or J710 is eligible for
+payment per patient per day.
+Claims submission instructions:
+Submit claims for the professional component of a PET scan using the “C” suffix.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B17 Amd 12 Draft 1
+
+--- PAGE 342 ---
+POSITRON EMISSION TOMOGRAPHY (PET)
+NOT ALLOCATED
+Amd 12 Draft 1 B18 February 14 , 2 025 (e ffective M arch 3, 2025)

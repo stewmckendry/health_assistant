@@ -1,0 +1,111 @@
+{
+  "document_id": "cep_adaptive_mentoring_to_build_primary_care_capacity_caring_for_canadians_living_with_mental_illness_chronic_pain_and_addictions_implementation_toolkit",
+  "source_url": "https://tools.cep.health/tool/adaptive-mentoring-to-build-primary-care-capacity-caring-for-canadians-living-with-mental-illness-chronic-pain-and-addictions-implementation-toolkit/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "social_care",
+  "extracted_at": "2025-09-24T15:33:05.319448",
+  "content_hash": "5030ba16bea6dac6c666adcb67f8ee75c97e6776ae0be0215e0a17cbe48b4758",
+  "title": "Adaptive Mentoring to Build Primary Care Capacity: Caring for Canadians Living with Mental Illness, Chronic Pain and Addictions Implementation Toolkit",
+  "tool_slug": "adaptive-mentoring-to-build-primary-care-capacity-caring-for-canadians-living-with-mental-illness-chronic-pain-and-addictions-implementation-toolkit",
+  "navigation": [
+    {
+      "title": "Setting up leadership",
+      "anchor": "#leadership",
+      "type": "heading_h2",
+      "level": 2
+    },
+    {
+      "title": "Setting up institutions",
+      "anchor": "#institutions",
+      "type": "heading_h2",
+      "level": 2
+    },
+    {
+      "title": "Setting up mentorship activities",
+      "anchor": "#mentorship-activities",
+      "type": "heading_h2",
+      "level": 2
+    }
+  ],
+  "key_content": {
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Mentorship network implementation",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Jump to:",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Setting up leadershipSetting up institutionsSetting up mentorship activities This collection of knowledge products was developed through the four-year national SUAP initiative to build capacity among primary care providers caring for patients with chronic pain, mental illness, and substance use disorders. The resources \u2013 including HR documents, training materials, and community of practice frameworks \u2013 are shared to support the ongoing spread and scale of Adaptive Mentorship Networks across d..."
+    },
+    {
+      "heading": "Setting up leadership",
+      "anchor": "#leadership",
+      "level": 2,
+      "subsections": [],
+      "summary": "A critical lesson from the four-year Adaptive Mentorship Network initiative is that successful network operations depend not only on the mentorship model itself but also on having the right leadership and operational infrastructure in place. To support this, the program developed a suite of HR knowledge products, including role descriptions for key leadership and coordination positions. These tools are designed to help organizations identify, recruit, and retain the individuals who will drive..."
+    },
+    {
+      "heading": "Setting up institutions",
+      "anchor": "#institutions",
+      "level": 2,
+      "subsections": [],
+      "summary": "The established Adaptive Mentorship Network (AMN) model proved highly effective in Nova Scotia, where it supported the development of a strong, engaged network and facilitated the formation of key institutional partnerships. Through sustained collaboration and committed local leadership, the Nova Scotia Health Authority (NSHA) successfully secured Ministry of Health (MOH) funding to continue and expand their network\u2014formerly AMN-Pain & Addiction and now known as AMN-Nova Scotia. This early su..."
+    },
+    {
+      "heading": "Setting up mentorship activities",
+      "anchor": "#mentorship-activities",
+      "level": 2,
+      "subsections": [],
+      "summary": "At the heart of the Adaptive Mentorship Network is the role of the mentor, not just as a clinical expert, but as a facilitator of trust, learning, and growth. To support this, a suite of knowledge products was developed to guide mentor training, support creation of structured activity workplans, and prepare mentors for their pivotal role in network delivery. These resources emphasize the importance of both subject matter expertise in addition to strong program management to develop the operat..."
+    },
+    {
+      "heading": "Program evaluation & performance measurement",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "A foundational element of the Adaptive Mentorship Network\u2019s success has been the systematic evaluation of its reach, impact, and ongoing refinement. To achieve this, a comprehensive set of evaluation tools was developed, including self-report surveys designed to measure changes in knowledge, clinical confidence, skills, and behaviours among program participants. These tools also captured participant feedback on program satisfaction, usability, and the relevance of mentorship activities to the..."
+    },
+    {
+      "heading": "Establishing financial sustainability",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Create a resilient financial strategy by diversifying funding streams, avoiding sole reliance on any single source.Potential funding sources identified through past conversations include:Government and Health Authority Funding:Traditional primary funders, historically significant but can be uncertain and precarious.Philanthropic Contributions:Leverage donations from foundations and charitable organizations.Corporate Sponsorships:Secure partnerships with ethical corporate entities whose values..."
+    },
+    {
+      "heading": "Key themes and best practices",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The evaluation of the Adaptive Mentorship Network surfaced several key themes that highlight its impact and guide future implementation: 1. Improved Clinical Capacity Over 90% of participants reported increased knowledge, confidence, and skills in managing chronic pain, mental health conditions, and substance use disorders. These improvements translated into real-world changes in clinical behaviour, including more trauma-informed, culturally safe, and collaborative care approaches."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Mental Health Commission of Canada. Changing directions, changing lives: The mental health strategy for Canada. Calgary, AB; 2012. Available from:https://www.mentalhealthcommission.ca/sites/default/files/MHStrategy_Strategy_ENG.pd[2]Canadian Pain Task Force. Working Together to Better Understand, Prevent, and Manage Chronic Pain: What We Heard. Ottawa, ON: Health Canada; 2020. Available from:https://www.canada.ca/en/health-canada/corporate/about-healthcanada/public-engagement/external-advi..."
+    }
+  ],
+  "references": [],
+  "summary": "Adaptive Mentoring to Build Primary Care Capacity: Caring for Canadians Living with Mental Illness, Chronic Pain and Addictions Implementation Toolkit. Category: Social Care. Features: calculator, forms. 8 main sections"
+}

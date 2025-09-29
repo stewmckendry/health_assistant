@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_pots",
+  "slug": "pots",
+  "name": "Postural Orthostatic Tachycardia Syndrome (POTS)",
+  "category": "neurology",
+  "url": "https://tools.cep.health/tool/pots/",
+  "content_hash": "2f22a9d3bc6efb84950b9ebd0e8f6b145f2eaab7c98dee1b6f520ddbb76db51a",
+  "crawled_at": "2025-09-24T15:32:53.329301"
+}

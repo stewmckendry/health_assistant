@@ -1,0 +1,79 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Specific Elements of Assessments
+Parent Section: GP
+Page Reference: GP15
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Specific Elements of Assessments",
+  "parent_section": "GP",
+  "page_ref": "GP15",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 29 ---
+GENERAL PREAMBLE
+SPECIFIC ELEMENTS OF ASSESSMENTS
+In addition to the common elements, all services which are described as assessments, or as including
+assessments (e.g. consultations), include the following specific elements:
+A. A direct physical encounter with the patient including taking a patient history and performing a
+physical examination.
+B. Other inquiry (including taking a patient history), carried out to arrive at an opinion as to the nature
+of the patient’s condition, (whether such inquiry takes place before, during or after the encounter
+during which the physical examination takes place) and/or follow-up care.
+C. Performing any procedure(s) during the same encounter as the physical examination, unless the
+procedure(s) is(are) separately listed in the Schedule and an amount is payable for the procedure
+in conjunction with an assessment.
+“Procedure” in this context includes obtaining specimens, preparation of the patient, interpretation
+of results and, unless otherwise specified, all diagnostic (including laboratory) and therapeutic
+(including surgical) services;
+D. Making arrangements for any related assessments, procedures or therapy, and/or interpreting
+results.
+E. Making arrangements for follow-up care.
+F. Discussion with, and providing advice and information, including prescribing therapy to the patient
+or the patient’s representative, whether by telephone or otherwise, on matters related to:
+1. the service; and
+2. in circumstances in which it would be professionally appropriate that results can be reported
+upon prior to any further patient visit, the results of related procedure(s) and/or assessment(s).
+G. When medically indicated, monitoring the condition of the patient and intervening, until the next
+insured service is provided.
+H. Providing premises, equipment, supplies, and personnel for the specific elements of the service
+except for any aspect(s) that is (are) performed in a hospital or nursing home.
+While no occasion may arise for performing elements C, D, E, G, or H, when performed in connection
+with the other specific elements, they are included in the assessment.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP15 Amd 12 Draft 1

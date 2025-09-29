@@ -1,0 +1,130 @@
+{
+  "document_id": "cep_fibromyalgia",
+  "source_url": "https://tools.cep.health/tool/fibromyalgia/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "pain_msk",
+  "extracted_at": "2025-09-24T15:33:03.281539",
+  "content_hash": "f29988417841e933273bcfe1cbad8ddd47a980d658d92a8b283b1dd2f301c12e",
+  "title": "Fibromyalgia (FM)",
+  "tool_slug": "fibromyalgia",
+  "navigation": [
+    {
+      "title": "Differential diagnosis and comorbid conditions",
+      "anchor": "#diffdiag",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Specialist referral",
+      "anchor": "#specref",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Clinical accommodation and disability support",
+      "anchor": "#clinaccdis",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non-pharmacological management",
+      "anchor": "#nonpharmman",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacological management5,6,8-13",
+      "anchor": "#pharmman",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Clinical presentation and assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Common symptoms1-4",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Differential diagnosis and comorbid conditions",
+          "anchor": "#diffdiag",
+          "level": 3
+        }
+      ],
+      "summary": "Differential diagnosis and comorbid conditions Fibromyalgia (FM) is a disease characterized by widespread musculoskeletal pain which is nociplastic in nature and can be very disabling, and other associated symptoms such as sleep disturbances, fatigue, and impaired cognitive and physical function. Symptoms vary from person to person and may fluctuate from day to day.1-6 Practice point: Patientsmay notdescribe widespread pain when initially asked and may only report focal pain or theircurrentmo..."
+    },
+    {
+      "heading": "Diagnosis",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Specialist referral",
+          "anchor": "#specref",
+          "level": 3
+        }
+      ],
+      "summary": "If FM is suspected, use the 2016 revisions to ACR 1990/2010 diagnostic criteria. This involves calculating the patient\u2019s level of symptom severity and widespread pain index to diagnose FM.1,2Use theRoyal College of Physicians FM Diagnostic Worksheetto assist with assessment and diagnosis. A diagnosis of FM is confirmed when all the following criteria are met: Generalized pain, defined as pain in at least 4 of 5 regions, ispresent"
+    },
+    {
+      "heading": "Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Clinical accommodation and disability support",
+          "anchor": "#clinaccdis",
+          "level": 3
+        },
+        {
+          "heading": "Non-pharmacological management",
+          "anchor": "#nonpharmman",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological management5,6,8-13",
+          "anchor": "#pharmman",
+          "level": 3
+        }
+      ],
+      "summary": "Clinical accommodation and disability supportNon-pharmacological managementPharmacological management Practice point: There is no curative treatment for FM. Management aims to reduce symptom severity and improve the patient\u2019s quality of life. Develop a personalized and supportive management plan with the patient, considering their needs and preferences. Addressing a patient\u2019s priority symptoms is important to managing the overall condition. This may include both non-pharmacological and pharma..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]ArianiA,BazzichiL,Sarzi-PuttiniP,SalaffiF,ManaraM,PreveteI, et al. The Italian Society for Rheumatology clinical practice guidelines for the diagnosis and management of fibromyalgiaBestpractices based on current scientific evidence.Reumatismo. 2021 Aug 3;73(2):89\u2013105.[2]Rivera Redondo J, D\u00edaz Del CampoFontechaP, Alegre de Miquel C,AlmirallBernab\u00e9M,CasanuevaFern\u00e1ndez B, Castillo Ojeda C, et al. Recommendations by the Spanish Society of Rheumatology on Fibromyalgia. Part 1: Diagnosis and Tre..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "TheFibromyalgia toolwas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Farah Tabassum. End users and clinical experts were also engaged to provide feedback.Funded b..."
+    }
+  ],
+  "references": [],
+  "summary": "Fibromyalgia (FM). Category: Pain Msk. Features: calculator, forms, patient resources. 5 main sections"
+}

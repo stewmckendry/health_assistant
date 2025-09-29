@@ -1,0 +1,117 @@
+{
+  "document_id": "cep_access_study_clinical_education_tool_supporting_anal_cancer_screening_in_primary_care_for_people_living_with_hiv",
+  "source_url": "https://tools.cep.health/tool/access-study-clinical-education-tool-supporting-anal-cancer-screening-in-primary-care-for-people-living-with-hiv/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "infectious_disease",
+  "extracted_at": "2025-09-24T15:33:04.782926",
+  "content_hash": "1a8303fc22244296033bf0362c5f2b065ab782ef76790c51746b17c08a3bc477",
+  "title": "Supporting Anal Cancer Screening in Primary Care for People Living with HIV",
+  "tool_slug": "access-study-clinical-education-tool-supporting-anal-cancer-screening-in-primary-care-for-people-living-with-hiv",
+  "last_updated": "-1.png\"/>",
+  "navigation": [],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "What we are screening for",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Anal cancer screening aims to find anal high-grade squamous intraepithelial lesions which are HPV-associated precancerous changes that come before most anal squamous cell carcinomas, and to detect early cancers when they are still palpable or localized. In practice, screening uses anal cytology and/or high-risk HPV testing, with Digital Anal Rectal Exam (DARE) performed at the same visit; abnormal results are evaluated with high-resolution anoscopy (HRA) and biopsy. In settings without HRA acces"
+    },
+    {
+      "heading": "Who to screen",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Anal cancer screening using Digital Anal Rectal Exam (DARE) and an anal pap swab is recommended for people living with HIV: Starting at age \u226535 for men who have sex with men (MSM) and transgender women (TW) Starting at age \u226545 for all others"
+    },
+    {
+      "heading": "Why is screening needed?",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "People living with HIV, especially men who have sex with men (MSM), face a significantly higher risk of developing anal cancer compared to the general population. (Spindler et al., 2024; Chromy et al., 2025; Hirsch et al., 2025) Early detection through screening and appropriate treatment can reduce the risk of progression of HSIL to squamous cell carcinoma (SCC) by about 57%. (Palefsky et al., 2022)"
+    },
+    {
+      "heading": "Recognizing and responding to symptoms",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Anal cancer screening is intended for asymptomatic individuals at elevated risk. However, when patients present with anorectal symptoms, they require diagnostic evaluation, not routine screening. Anal pain or itching.Bleeding, particularly during bowel movements.A sensation of fullness or a lump in the anal canal.Perianal lesions. If a patient presents with any of these symptoms, primary care providers should:"
+    },
+    {
+      "heading": "What to say: Education and engaging patients",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Education improves screening uptake; knowledge is often limited in patients and is an important step that should not be overlooked (Wheldon et al., 2023). Stigma, embarrassment, and provider discomfort are top screening barriers (Sam et al., 2025). Affirming communication improves trust and participation (Stier et al., 2024) Use inclusive, non-judgmental language.Acknowledge stigma and cultural barriers.Be transparent about what the exam involves to reduce fear and uncertainty.Use plain-langu..."
+    },
+    {
+      "heading": "Preparing to screen",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Review whether patienrs with abnormal Pap tests can be sent for high-resolution anoscopy (HRA).If HRA is possible, do Pap + DAREIf no HRA referral is possible, only do DAREInfrastructure and exam room readinessEnsure appropriate exam space: clean, private, with adjustable examination tables.Stock supplies: gloves, lubricant, proper swabs (Dacron), patient gowns, cleaning materials, liquid cytology bottles.Confirm EMR templates or screening documentation forms are in place for data capture.Rev..."
+    },
+    {
+      "heading": "How to screen: Recommended practices",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Anal Cytology (Pap test)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "DARE",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "The following steps outline the procedure when the patient is positioned in the left lateral position:",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Annual screening is recommended for people living with HIV. (Hirsch et al., 2025; NIH, 2024) The primary objective is to identify abnormal cytology or any palpable abnormalities that require further evaluation. (Hilman et al, 2016) Anal cytology should be performed before the DARE and should only be done if HRA referral can be done for abnormal results. (Spindler et al., 2024) How to perform Anal cytology:Insert a water-moistened polyester Dacron swab (tap water is sufficient) into the anal c..."
+    },
+    {
+      "heading": "What to do next: Referral and follow-up",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Specialist wait-times can be long, but referrals should still be made promptly, as timely referral improves outcomes (Hirsch et al., 2025). Symptomatic patients or those with abnormal results require immediate evaluation (Spindler et al., 2024). Refer for HRA if cytology shows high-grade squamous intraepithelial lesions (HSIL) or Atypical Squamous Cells (ASC-H); repeat cytology in one year if not high-grade. Refer to an anorectal surgeon if a mass or other concerning symptoms are present. Ref..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Hirsch et al. (2025). NYSDOH AIDS Institute Guidelines.[2]Chromy et al. (2025). German-Austrian Guideline on Screening for Anal Carcinoma in PLHIV.[3]Gillis JL, Grennan T, Grewal R, et al. Racial Disparities in Anal Cancer Screening Among Men Living With HIV: Findings From a Clinical Cohort Study. J Acquir Immune Defic Syndr. 2020;84(3):295-303.[4]Spindler et al. (2024). French Recommendations for Clinical Practice.[5]Stier et al. (2024). International Anal Neoplasia Society Consensus Guid..."
+    }
+  ],
+  "references": [],
+  "summary": "Supporting Anal Cancer Screening in Primary Care for People Living with HIV. Category: Infectious Disease. Features: forms, patient resources. 9 main sections"
+}

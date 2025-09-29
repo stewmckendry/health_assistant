@@ -1,0 +1,222 @@
+{
+  "subsection_title": "Bone Mineral Density (BMD) Measurement",
+  "parent_section": "D",
+  "page_ref": "D16",
+  "pages_processed": "364-365",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        24,
+        "X145 - one site............................................................................... 42.85 40.15"
+      ],
+      [
+        25,
+        "X146 - two or more sites ................................................................ 55.20 48.00"
+      ],
+      [
+        27,
+        "X152 - one site............................................................................... 42.85 40.15"
+      ],
+      [
+        28,
+        "X153 - two or more sites ................................................................ 55.20 48.00"
+      ],
+      [
+        30,
+        "X142 - one site............................................................................... 42.85 40.15"
+      ],
+      [
+        31,
+        "X148 - two or more sites ................................................................ 55.20 48.00"
+      ],
+      [
+        33,
+        "X149 - one site............................................................................... 42.85 40.15"
+      ],
+      [
+        34,
+        "X155 - two or more sites ................................................................ 55.20 48.00"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "X145",
+      "description": "Baseline test - one site",
+      "fee": 42.85,
+      "h_fee": 40.15,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X146",
+      "description": "Baseline test - two or more sites",
+      "fee": 55.2,
+      "h_fee": 48.0,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X152",
+      "description": "Second test - low risk patient - one site",
+      "fee": 42.85,
+      "h_fee": 40.15,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X153",
+      "description": "Second test - low risk patient - two or more sites",
+      "fee": 55.2,
+      "h_fee": 48.0,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X142",
+      "description": "Subsequent test - low risk patient - one site",
+      "fee": 42.85,
+      "h_fee": 40.15,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X148",
+      "description": "Subsequent test - low risk patient - two or more sites",
+      "fee": 55.2,
+      "h_fee": 48.0,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X149",
+      "description": "Subsequent test - high risk patient - one site",
+      "fee": 42.85,
+      "h_fee": 40.15,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X155",
+      "description": "Subsequent test - high risk patient - two or more sites",
+      "fee": 55.2,
+      "h_fee": 48.0,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "X145",
+      "context": "Payment rules",
+      "description": "Patients are limited to one baseline test in their lifetime.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X146",
+      "context": "Payment rules",
+      "description": "Patients are limited to one baseline test in their lifetime.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X152",
+      "context": "Payment rules",
+      "description": "Second test - low risk patient is limited to a maximum of one test rendered not earlier than 36 months following the baseline test.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X153",
+      "context": "Payment rules",
+      "description": "Second test - low risk patient is limited to a maximum of one test rendered not earlier than 36 months following the baseline test.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X142",
+      "context": "Payment rules",
+      "description": "Subsequent test - low risk patient is not eligible for payment when rendered earlier than 60 months following the second or any subsequent test.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X148",
+      "context": "Payment rules",
+      "description": "Subsequent test - low risk patient is not eligible for payment when rendered earlier than 60 months following the second or any subsequent test.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X149",
+      "context": "Payment rules",
+      "description": "Subsequent test - high risk patients is limited to a maximum of one test every 12 months unless the ordering physician obtains written prior authorization.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    },
+    {
+      "code": "X155",
+      "context": "Payment rules",
+      "description": "Subsequent test - high risk patients is limited to a maximum of one test every 12 months unless the ordering physician obtains written prior authorization.",
+      "source_subsection": "Bone Mineral Density (BMD) Measurement",
+      "source_page": "D16"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

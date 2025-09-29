@@ -1,0 +1,207 @@
+================================================================================
+   SCHEDULE.GET MCP TOOL TEST SUITE
+   Testing OHIP Schedule of Benefits Lookup
+   Output File: tests/dr_off_agent/test_outputs/schedule_test_20250924_091340.txt
+================================================================================
+
+🔧 ENVIRONMENT CHECK:
+  Python: 3.11.8
+  Working Dir: /Users/liammckendry/health_assistant_dr_off_worktree
+  OPENAI_API_KEY: ✅ Set
+  Output File: tests/dr_off_agent/test_outputs/schedule_test_20250924_091340.txt
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.1: MRP Discharge Billing (C124)
+================================================================================
+
+📝 Test Description:
+  Scenario: MRP billing on day of discharge after 72+ hour admission
+  Expected: Should find C124 fee code with requirements and documentation
+  Codes to check: C124, C122, C123
+
+🚀 Executing query...
+⏱️  Response time: 0.926 seconds
+
+### MRP Discharge Billing
+Timestamp: 2025-09-24T09:13:41.383819
+Confidence Score: 0.750
+Data Sources Used: ['sql', 'vector']
+
+📋 Found 0 items:
+
+📚 Citations (1 sources):
+  - Source: schedule.pdf
+    Location: 
+    Page: None
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql",
+    "vector"
+  ],
+  "confidence": 0.75,
+  "items": [],
+  "citations": [
+    {
+      "source": "schedule.pdf",
+      "loc": "",
+      "page": null
+    }
+  ],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.750 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=True
+  Expected codes: ['C124']
+  Found codes: []
+  Data Quality Checks:
+  ✅ 1 citations provided
+
+❌ TEST FAILED
+Issues found:
+  - Expected code C124 not found
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.2: Emergency Department Consultation
+================================================================================
+
+📝 Test Description:
+  Scenario: Internist consultation in emergency department
+  Expected: Should find consultation codes with specialty restrictions
+  Codes to check: A135, A935
+
+🚀 Executing query...
+⏱️  Response time: 0.820 seconds
+
+### Emergency Consultation
+Timestamp: 2025-09-24T09:13:43.204729
+Confidence Score: 0.750
+Data Sources Used: ['sql', 'vector']
+
+📋 Found 0 items:
+
+📚 Citations (1 sources):
+  - Source: schedule.pdf
+    Location: 
+    Page: None
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql",
+    "vector"
+  ],
+  "confidence": 0.75,
+  "items": [],
+  "citations": [
+    {
+      "source": "schedule.pdf",
+      "loc": "",
+      "page": null
+    }
+  ],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.750 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=True
+  Expected codes: ['A135']
+  Found codes: []
+  Data Quality Checks:
+  ✅ 1 citations provided
+
+❌ TEST FAILED
+Issues found:
+  - Expected code A135 not found
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.3: House Call with Premiums
+================================================================================
+
+📝 Test Description:
+  Scenario: House call assessment for elderly patient with time premiums
+  Expected: Should find house call codes with premium information
+  Codes to check: B998, B992, B994
+
+🚀 Executing query...
+⏱️  Response time: 0.939 seconds
+
+### House Call Premiums
+Timestamp: 2025-09-24T09:13:45.145736
+Confidence Score: 0.750
+Data Sources Used: ['sql', 'vector']
+
+📋 Found 0 items:
+
+📚 Citations (1 sources):
+  - Source: schedule.pdf
+    Location: 
+    Page: None
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql",
+    "vector"
+  ],
+  "confidence": 0.75,
+  "items": [],
+  "citations": [
+    {
+      "source": "schedule.pdf",
+      "loc": "",
+      "page": null
+    }
+  ],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.750 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=True
+  Expected codes: []
+  Found codes: []
+  Data Quality Checks:
+  ✅ 1 citations provided
+
+✅ TEST PASSED
+
+================================================================================
+   TEST SUMMARY
+================================================================================
+
+📊 Overall Results: 1/3 tests passed
+📁 Full output saved to: tests/dr_off_agent/test_outputs/schedule_test_20250924_091340.txt
+
+Test Status:
+  ❌ FAIL - MRP Discharge
+       - Expected code C124 not found
+  ❌ FAIL - Emergency Consultation
+       - Expected code A135 not found
+  ✅ PASS - House Call Premiums
+
+⏱️  Performance Metrics:
+  MRP Discharge:
+    - Confidence: 0.750
+    - Items: 0
+    - Dual-path: True
+  Emergency Consultation:
+    - Confidence: 0.750
+    - Items: 0
+    - Dual-path: True
+  House Call Premiums:
+    - Confidence: 0.750
+    - Items: 0
+    - Dual-path: True
+
+✅ Test output saved to: tests/dr_off_agent/test_outputs/schedule_test_20250924_091340.txt

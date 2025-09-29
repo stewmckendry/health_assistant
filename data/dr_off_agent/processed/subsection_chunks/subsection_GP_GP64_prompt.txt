@@ -1,0 +1,92 @@
+Extract all fee codes and billing information from this OHIP Schedule subsection.
+
+Subsection: Age-Based Fee Premiums
+Parent Section: GP
+Page Reference: GP64
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, C988B, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "subsection_title": "Age-Based Fee Premiums",
+  "parent_section": "GP",
+  "page_ref": "GP64",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this subsection"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 78 ---
+GENERAL PREAMBLE
+AGE-BASED FEE PREMIUMS
+1. Despite any other provision in this Schedule, the amount payable for the following services to
+an insured person who falls into the age group described in the Age Group column of the
+following Age Premium Table is increased by the percentage specified in Percentage Increase
+column opposite the Age Group:
+a. A consultation, limited consultation or repeat consultation rendered by a specialist, as those
+services are defined in this Schedule.
+b. A surgical procedure listed in Parts K to Z inclusive of this Schedule.
+c. Basic and time unit surgical assistant services listed in Parts K to Z inclusive of this
+Schedule.
+d. Clinical Procedures associated with Diagnostic Radiological Examinations.
+e. A specific assessment or a partial assessment rendered by a specialist in ophthalmology
+(23) (A233 or A234).
+age premium table
+Percentage
+Item Age Group
+Increase
+1 Less than 30 days of 30%
+age
+2 At least 30 days but 25%
+less than one year of
+age
+3 At least one year but 20%
+less than two years of
+age
+4 At least two years but 15%
+less than five years of
+age
+5 At least five years but 10%
+less than 16 years of
+age
+2. Despite any other provision in this Schedule, the amount payable for the following services to
+an insured person who is at least 65 years of age, as those services are defined in this
+Schedule, is increased by 15 per cent:
+a. A general assessment (A003, C003, C903, W102, W109 or W903);
+b. A general re-assessment (A004, C004, W004);
+c. An intermediate assessment (A007);
+d. A focused practice assessment (A917, A927, A937, A947, A957 or A967);
+e. A periodic health visit (K132).
+f. Comprehensive assessment and care (H102, H122, H132, H152)
+g. A multiple systems assessment (H103, H123, H133, H153)
+Amd 12 Draft 1 GP64 February 14 , 2 025 (e ffective M arch 3, 2025)

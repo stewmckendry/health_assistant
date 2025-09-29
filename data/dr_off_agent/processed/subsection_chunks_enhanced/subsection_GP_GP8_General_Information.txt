@@ -1,0 +1,211 @@
+Subsection: General Information
+Parent Section: GP
+Page Reference: GP8
+Pages: 22 to 26
+Text chunks: 1
+Total text length: 12995 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 22 ---
+GENERAL PREAMBLE
+GENERAL INFORMATION
+[Commentary: Services Insured by OHIP
+The Schedule is established under section 37.1 of regulation 552 under the Act. The fees listed
+are the amounts payable by OHIP for insured services. Insured services under the Act are
+limited to those which are listed in this Schedule, medically necessary, are not otherwise
+excluded by legislation or regulation, and are rendered personally by physicians or by others
+delegated to perform them where such delegation is authorized in accordance with the
+Schedule requirements for delegated services.
+Some services are specifically listed as uninsured in regulation 552, section 24 of the Act (see
+Appendix A), such as a service that is solely for the purpose of altering or restoring
+appearance. Other services may be uninsured depending on the circumstances. An example
+of a service which is uninsured in limited circumstances is psychotherapy, which is uninsured
+where it is a requirement for the patient to obtain a diploma or degree or to fulfill a course of
+study. Other examples of commonly uninsured services include missed appointments or
+procedures, circumcision except if medically necessary, and certain services rendered and
+documents and forms completed in connection with non-medically necessary requests (e.g. life
+insurance application).]
+[Commentary: Modifications to the Schedule
+Under agreement between the MOH and the OMA, additions, deletions, fee changes, or other
+modifications to the Schedule, are made by the MOH following consultation and/or negotiation
+with the OMA. Physicians who wish to have modifications to the Schedule considered should
+submit any proposals to the Physician Payment Committee (PPC) through the appropriate
+clinical section of the OMA.
+In the situation where a new therapy or procedure is being introduced into Ontario, and the
+physicians performing the new therapy or procedure wish to have a new fee item inserted into
+the Schedule, the following process is recommended.
+An application for a new fee related to the new therapy or procedure should be submitted by
+the appropriate section(s) of the OMA to the PPC for consideration, with documentation
+supporting the introduction of this item into the Schedule. The PPC will advise OHIP whether or
+not this new therapy is experimental. If the PPC and the MOH agree that the item is
+experimental, the service is deemed uninsured (in accordance with section 24 of regulation
+552 under the Act), and will not be introduced into the Schedule. If the MOH, on the advice of
+the PPC, determines that the new therapy or procedure is not experimental, the fee application
+will be handled in the usual manner as detailed above.]
+[Commentary: Medical Research
+Examinations or procedures for the purpose of a research or survey program are not insured
+services, nor are services provided by a laboratory or a hospital that support an examination or
+procedure that is for the purpose of research or a survey. The exception to this is that an
+assessment conducted to determine if an insured person is suitable for such a program is not
+necessarily an uninsured service (see section 24 of regulation 552 under the Act - this is
+provided as Appendix A of the Schedule).]
+[Commentary: Medical Records
+All insured services must be documented in appropriate records. The Act requires that the
+record establish that:
+1.an insured service was provided;
+2.the service for which the account is submitted is the service that was rendered; and
+3.the service was medically necessary.
+The medical record requirements as found in the Act are listed in Appendix G of the Schedule.]
+Amd 12 Draft 1 GP8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 23 ---
+GENERAL PREAMBLE
+GENERAL INFORMATION
+GENERAL PAYMENT RULES
+[Commentary:
+Claims for payment must be submitted to OHIP in the form and by the medium (e.g. electronic
+data transmission; machine readable input) as set out in sections 38.3 to 38.5 of regulation 552
+under the Act and must contain the information required by the regulation and the General
+Manager of OHIP. Regulation 552 under the Act can be found at:
+http://www.e-laws.gov.on.ca/DBLaws/Regs/English/900552_e.htm.
+Claims must be submitted within three months of the date the service was rendered, except in
+extenuating circumstances. A claim cannot be accepted for payment unless it meets all of the
+technical and formal requirements set out in the Act and regulations.]
+1. The fee is payable only to the physician who rendered the service personally, or by the
+physician whose delegate rendered the service where delegation is authorized in accordance
+with the Schedule.
+2. Where more than one physician renders different components of a listed service, only one fee is
+payable for that service, and the fee is payable only where the Schedule provides that different
+physicians may perform different components of the service.
+[Commentary:
+Where an insured service contains several components (e.g. surgical procedures that include
+post-operative care or fracture care), the components of the service are not divisible among
+physicians for claims purposes and the physicians are responsible for apportioning payment
+amongst themselves.]
+3. Where the Schedule provides that different physicians may substitute for one another in
+performing the total service, only one fee is payable for the service.
+[Commentary:
+When physicians routinely or frequently substitute for each other in providing hospital visits to
+registered bed patients in active treatment hospitals, e.g. weekend coverage or daily rounds by
+various members of a group, the most responsible physician may claim for all the visits.]
+Specialist services
+When a service rendered by a specialist comprises part of an insured consultation or assessment that
+falls within the scope of his or her specialist practice, the service is not eligible for payment unless the
+claim for the service is submitted either:
+a. unless otherwise noted, in respect of a service described in the portions of the Consultations
+and Visits section of this Schedule that reflects the physician’s Royal College of Physicians
+and Surgeons of Canada specialty, as documented in the records maintained by the MOH
+for claims payment purposes; or
+b. in respect of a service described in this Schedule under the following sub-headings which
+can be claimed by any specialty: psychotherapy, counselling, HIV primary care, palliative
+care support, hypnotherapy, certification of mental illness, interviews, genetic assessments,
+midwife or aboriginal midwife-requested emergency and special emergency assessments,
+home care application, or home care supervision.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP9 Amd 12 Draft 1
+
+--- PAGE 24 ---
+GENERAL PREAMBLE
+GENERAL INFORMATION
+When a service rendered by a specialist does not fall within the scope of the specialist’s practice and/
+or the specialist is providing primary care in a family or general practice setting, the service is only
+eligible for payment when the claim is submitted using the appropriate code from the “Family Practice
+& Practice in General” listings.
+When more than one assessment is rendered to a patient during the same visit by the same physician
+who is qualified in one or more specialties, only one assessment is payable.
+[Commentary:
+Any additional assessment is not eligible for payment.]
+Use of Codes, Prefixes and Suffixes
+[Commentary:
+Services are generally, but not necessarily, listed by anatomical system or specialty for
+convenience.]
+The alpha-numeric fee code opposite the service listing in this Schedule must be set out in the claim
+submitted, together with the required suffix.
+Surgical Codes: In the surgical part of the Schedule, the required suffixes are:
+suffix A if the physician performs the procedure;
+suffix B if the physician assisted at the surgery; and
+suffix C if the physician administered the anaesthetic.
+Amd 12 Draft 1 GP10 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 25 ---
+GENERAL PREAMBLE
+2.Diagnostic Radiology;
+GENERAL INFORMATION
+GENERAL PAYMENT RULES
+Diagnostic Services Rendered at a Hospital
+The technical component of those diagnostic services that are listed with "technical component" or in
+a column headed "H" or "T" is not eligible for payment if the service is rendered to a patient who:
+1. is an in-patient of a hospital; or
+2. attends a hospital where he or she receives an insured diagnostic service; and
+3. within 24 hours of receiving that diagnostic service, is admitted to the same hospital as an in-
+patient in connection with the same condition, illness, injury or disease in relation to which the
+diagnostic service was rendered.
+[Commentary:
+1.For those diagnostic services which have both technical and professional components listed
+under one fee schedule code, the technical and professional components are claimed
+separately. The claim for the technical component is submitted using the fee schedule code
+with the suffix B and the claim for the professional component is submitted using the fee
+schedule code with a suffix C.
+2.The technical component may be listed as either "technical component" or in a column
+headed "H" or "T". The professional component may be listed as either "professional
+component" or in a column headed "P".]
+The technical component of a diagnostic service listed in the column headed with an "H" and rendered
+outside of a hospital is not eligible for payment under the Health Insurance Act.
+Payment for Diagnostic and Therapeutic Services Rendered at a Hospital
+The technical component of a diagnostic and therapeutic service listed below and rendered in a
+hospital is payable at 94.68% of the listed fee in the column headed “T”.
+G104A, G111A, G121A, G127A, G140A, G143A, G146A, G149A, G152A, G153A, G167A,
+G174A,G181A, G209A, G284A, G308A, G310A, G311A, G315A, G414A, G440A, G441A, G442A,
+G443A,G448A, G451A, G455A, G466A, G471A, G519A, G540A, G541A, G542A, G544A, G554A,
+G570A,G574A, G582A, G585A, G647A, G648A, G651A, G652A, G654A, G655A, G682A, G683A,
+G684A,G685A, G686A, G687A, G688A, G689A, G694A, G695A, G815A, G850A, G851A, G852A,
+G853A,G854A, G855A, G856A, G857A, G858A, J301B, J304B, J324B, J327B
+Technical Component Requirements
+The technical component of a diagnostic procedure as described in the relevant section of the
+Schedule is only eligible for payment where:
+1. the physician has the necessary training and experience to personally render the technical
+component of the service; and
+2. the physician maintains documentation that describes the process by which the physician
+monitors quality assurance in accordance with professional standards.
+[Commentary:
+1.The physician submitting a claim for the technical component is responsible for the complete
+quality assurance process for all elements of the technical component of the service,
+including data acquisition, reporting, and record keeping. The physician must be able to
+demonstrate the above upon request by the MOH.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP11 Amd 12 Draft 1
+
+--- PAGE 26 ---
+GENERAL PREAMBLE
+GENERAL INFORMATION
+2.For delegated services rendered in the physician’s office, see the Delegated Procedures
+section in the General Preamble of this Schedule.]
+Consultation and Assessment Codes
+There are four different prefixes used for consultations and assessments listed in the “Consultations
+and Visits” section of the Schedule. The codes with the “A” prefix are described as the “General
+Listings”. These must be used when submitting a claim for consultations and assessments except in
+the following situations when the code listed below must be used:
+1. acute care hospital – non-emergency in-patient services – “C” prefix codes;
+2. long term care institution – non-emergency in-patient services – “W” prefix codes;
+3. emergency department – services rendered by a physician on duty – “H” prefix (H1- codes); or
+4. rehabilitation unit – services rendered by a specialist in Physical Medicine – “H” prefix codes
+(H3XX codes)
+[Commentary:
+Submit claim using an “A” prefix assessment when an assessment is rendered in conjunction
+with a special visit premium. Information regarding when special visit premiums are payable is
+found on pages GP65 to GP78 of the General Preamble.]
+Independent Consideration (IC)
+Services listed in the Schedule without specified fees are identified as “IC” and are given independent
+consideration by the medical consultant. Claims for such services must be submitted with a
+supporting letter explaining the amount of the fee claimed, and must include an appropriate operative
+or consultation report, and a comparison of the scope and difficulty of the procedure in relation to non-
+IC procedures in the Schedule. For treatment of tumours not listed in the Schedule, surgeons must
+use the IC code, R993, and for surgical procedures not listed, but similar to a listed service, the code,
+R990.
+Amd 12 Draft 1 GP12 February 14 , 2 025 (e ffective M arch 3, 2025)

@@ -76,3 +76,20 @@ tmp/
 temp/
 *.tmp
 .vercel
+
+# ChromaDB vector stores
+.chroma/
+**/chroma/
+data/.chroma/
+data/processed/dr_off/chroma/
+
+# SQLite temporary files
+*.db-wal
+*.db-shm
+
+# Test scripts (temporary development files)
+test_*.py
+
+# Test output files
+*.json
+*.txt

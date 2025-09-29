@@ -1,0 +1,117 @@
+{
+  "document_id": "cep_type_2_diabetes_non_insulin_pharmacotherapy_2",
+  "source_url": "https://tools.cep.health/tool/type-2-diabetes-non-insulin-pharmacotherapy-2/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "chronic_disease",
+  "extracted_at": "2025-09-24T15:33:04.260788",
+  "content_hash": "d62f78942fdd340ca54d8af51fc8772948c1e167ffbbb7113dda7bb13dd03b27",
+  "title": "Type 2 diabetes: non-insulin pharmacotherapy",
+  "tool_slug": "type-2-diabetes-non-insulin-pharmacotherapy-2",
+  "last_updated": "June 23, 2023",
+  "navigation": [
+    {
+      "title": "Shared decision-making",
+      "anchor": "#shared-decision-making",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non-insulin pharmacotherapy",
+      "anchor": "#non-insulin",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "DiagnosisNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Fasting plasma glucose(FPG) \u22657.0 mmol/L*; ORA1C\u22656.5%\u2020; OR2-hour plasma glucose(2hPG) in a 75goral glucose tolerance test(OGTT) \u226511.1 mmol/L; ORRandom\u2021plasma glucose(PG) \u226511.1 mmol/L The decision of which test to use for diabetes diagnosis is left to clinical judgment. Each diagnostic test hasadvantages and disadvantages.2 Symptomatic hyperglycemia is present (therefore confirmatory tests are not required); ORThe results of two laboratory tests are in the diabetes range (in the absence of symp..."
+    },
+    {
+      "heading": "Individualizing A1C targets",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "A1C targets and considerations for glycemic control1,3-12",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Factors that can increase A1C: iron deficiency, B12 deficiency,\u2193erythropoiesis, alcoholism, chronic renal failure, splenectomyFactors that can decrease A1C: use of erythropoietin, iron or B12, reticulocytosis, chronic liver disease, ingestion of acetylsalicylic acid, vitamin C/E, decreased erythrocyte lifespan (e.g., chronic renal failure, hemoglobinopathies, splenomegaly, rheumatoid arthritis, antiretrovirals, ribavirin, dapsone) Usethis practice aidto individualize the patient\u2019s A1C target ..."
+    },
+    {
+      "heading": "Approach to selecting antihyperglycemic agents",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Shared decision-making",
+          "anchor": "#shared-decision-making",
+          "level": 3
+        }
+      ],
+      "summary": "Lifestyle interventionshave a greater potential for A1C lowering than any pharmacotherapy (nutrition A1C 1-2% and exercise A1C 0.5-0.7%) Check renal function before starting agentMonitor for hypoglycemia when on multiple agents of different classes initiate insulin +/- metformin and titrate to achieving fasting blood glucose target (e.g., 4.0-7.0 mmol/L)SeeType 2 diabetes: insulin therapy"
+    },
+    {
+      "heading": "Non-insulin pharmacotherapy options",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Non-insulin pharmacotherapy",
+          "anchor": "#non-insulin",
+          "level": 3
+        },
+        {
+          "heading": "Combination products29,30,39,40-42",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Seedefinitions of acronymsused throughout the following pharmacotherapy cards BiguanidesMetformin HCL/ Glucophage\u00aeAgent with evidence-based outcome benefits500mg tab, 850mg tab and generic availableCoverageODB \u2713: 500mg tabODB X: 850mg tabNIHB\u2713A1C reduction (%):1.0Dose:Initial: 250\u2013500mg po daily ccUsual: 1000mg po bid cc OR 1700mg cc am and 850mg cc pmMax: 2550mg daily OR 850mg tidRenal dose:eGFR 30-45mL/min (\u22641000mg daily)eGFR <30mL/min (avoid*)*Sometimes used at low dose when eGFR between 1..."
+    },
+    {
+      "heading": "Resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Diabetes Canada Hypoglycemia low blood sugar in adultsDiabetes Canada Drive safe with diabetesDiabetes Canada Stay safe when you have diabetes and are sick or at risk of dehydrationRxFiles Type 2 diabetes and sick days: Medications to pauseCentre for Effective Practice local services for patients living with type 2 diabetes"
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Diabetes Canada Clinical Practice Guidelines Expert Committee. Diabetes Canada 2018 clinical practice guidelines for the prevention and management of diabetes in Canada. Can J Diabetes. 2018;42(Suppl 1):S1\u2013325.[2]Punthakee Z, Goldenberg R, Katz P. Definition, classification and diagnosis of diabetes, prediabetes and metabolic syndrome. 2018;42(Suppl 1): S10\u2013S15. Table 4, Advantages and disadvantages of diagnostic tests for diabetes; p. S12.[3]Qaseem A, Wilt TJ, Kansagara D, Horwitch C, Bar..."
+    },
+    {
+      "heading": "Acknowledgments and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The Type 2 diabetes: Non-insulin pharmacotherapy tool (\u2018Tool\u2019) was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice, in collaboration with the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the Tool was provided by Dr. Risa Bordman and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as part of the..."
+    }
+  ],
+  "references": [],
+  "summary": "Type 2 diabetes: non-insulin pharmacotherapy. Category: Chronic Disease. Features: forms, patient resources. 7 main sections"
+}

@@ -1,0 +1,274 @@
+{
+  "document_id": "cep_type_2_diabetes_insulin_therapy",
+  "source_url": "https://tools.cep.health/tool/type-2-diabetes-insulin-therapy/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "chronic_disease",
+  "extracted_at": "2025-09-24T15:33:05.678601",
+  "content_hash": "1f23bf99301c4ba6390b96bcf1182a87b34f9cc40d15d7aec9aedd337ae39725",
+  "title": "Type 2 diabetes: insulin therapy",
+  "tool_slug": "type-2-diabetes-insulin-therapy",
+  "last_updated": "June 23, 2023",
+  "navigation": [
+    {
+      "title": "Insulin options",
+      "anchor": "#insulinspecificprop",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Prandial (bolus) insulin1,15,45,53,57,60,61,62",
+      "anchor": "#bolus",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Premixed insulin and GLP1-RA + insulin combinations15,45,53,54,57",
+      "anchor": "#premixedoptions",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Safe insulin injection techniques and pen needle use66",
+      "anchor": "#safeinjection",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Hypoglycemia symptoms14",
+      "anchor": "#hyposymptoms",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Risk factors for severe hypoglycemia",
+      "anchor": "#hyporiskfactors",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Glucagon as treatment for severe hypoglycemia",
+      "anchor": "#glucagon",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Caregiver or support person should administer 1mg of glucagon subcutaneously or intramuscularly, or 3mg intranasally (seeGlucagon as treatment for severe hypoglycemia)14,80Caregiver or support person ",
+      "Caregiver or support person should administer 10-25g (20\u201350 mL of D50W) glucose intravenously over 1-3 minutes14Caregiver or support person should call for emergency services and notify the care team ",
+      "For patients with clinical decline (and/or a positive ketone test), recommend an evaluation at the emergency department given the concern of a rapid clinical decline (patients should not drive themsel"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Overview of insulin therapy for type 2 diabetes",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Glycemic approach1,2,8-10",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Different types of insulin",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "If the desired glycemic goals cannot be reached using current antihyperglycemic medication(s) or if the patient\u2019s medical condition changes, other agents should be considered (either added to the existing regimen or used as replacements)to minimize cardiorenal complications and enhance glycemic management.3-7 * Functionally dependent patients have aClinical Frailty Scale11score of 4-5 on a 9-point scale. Patients with frailty have aClinical Frailty Scale11score of 6-8 on a 9-point scale.** So..."
+    },
+    {
+      "heading": "Selecting an insulin",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Common properties of insulin",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Insulin specific properties",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Other properties20,21,30,31",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Insulin options",
+          "anchor": "#insulinspecificprop",
+          "level": 3
+        },
+        {
+          "heading": "Prandial (bolus) insulin1,15,45,53,57,60,61,62",
+          "anchor": "#bolus",
+          "level": 3
+        },
+        {
+          "heading": "Premixed insulin and GLP1-RA + insulin combinations15,45,53,54,57",
+          "anchor": "#premixedoptions",
+          "level": 3
+        }
+      ],
+      "summary": "There is not a simple reason to choose one insulin over another, within each type of insulin (basal, prandial and combination)When comparing insulin options, prioritize a patient\u2019s preference in the shared decision-making process Effect on A1C is 0.9-1.2% or more2A1C reduction depends on dose and number of injections per day14Dose increases may be limited by hypoglycemia and cost2 All insulin associated with weight gain:Effects on weight are dose-relatedBasal insulin is associated with a weig..."
+    },
+    {
+      "heading": "Initiating and titrating insulin",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Practical tips for discussing insulin initiation with patients57",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Insulin initiation checklist",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Safe insulin injection techniques and pen needle use66",
+          "anchor": "#safeinjection",
+          "level": 3
+        },
+        {
+          "heading": "Insulin\u00a0initiation and titration",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Insulin initiation and titration process",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Start the insulin discussion early (e.g., at diagnosis and regular follow-up appointments)Ensure patients understand that insulin is not a punishment or indication of treatment failure, and that many patients end up on insulin later in lifeConsider patient values regarding the benefits/harms of adding insulin relative to the intensity of glycemic control (e.g., some patients may opt for moderate control without insulin)Provide information on the benefits of insulin therapy (e.g., lower blood ..."
+    },
+    {
+      "heading": "Switching insulin",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "When to switch insulin57",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "How to switch insulin15,28",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Consider switching to insulin if patient presents the following: HypoglycemiaWeight gainHyperglycemiaHigher or more concentrated dose requiredCost and coverage concerns, if raised by the patientPatient convenience Confirm current insulin dose, including agent, concentration and dosage form usedSwitching insulin often involves switching insulin pen devicesCounsel patients to temporarily increase the frequency of blood glucose monitoring during switchTwo approaches to switch insulin (20% dose r..."
+    },
+    {
+      "heading": "Managing hypoglycemia",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Hypoglycemia symptoms14",
+          "anchor": "#hyposymptoms",
+          "level": 3
+        },
+        {
+          "heading": "Reducing hypoglycemia risk",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Risk factors for severe hypoglycemia",
+          "anchor": "#hyporiskfactors",
+          "level": 3
+        },
+        {
+          "heading": "Range of hypoglycemia severity14",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Treating hypoglycemia14",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select for treatment details",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select for treatment details",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Glucagon as treatment for severe hypoglycemia",
+          "anchor": "#glucagon",
+          "level": 3
+        }
+      ],
+      "summary": "It is safer and more effective to prevent hypoglycemia than to t reat it after hypoglycemia occurs.11Counsel patients who are at high-risk for hypoglycemia on how to prevent low blood glucose.14 The development of neurogenic or neuroglycopenic symptoms (seeHypoglycemia symptoms)A low blood glucose level (<4.0 mmol/L for people with diabetes treated with insulin or an insulin secretagogue)The presence of symptoms that resolve following the intake of carbohydrates TremblingPalpitationsSweating*..."
+    },
+    {
+      "heading": "Troubleshooting common insulin situations",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Select common insulin situation for details",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select common insulin situation for details",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "There are a number of situations that patients taking insulin should be aware of how to troubleshoot. Counsel patients as follows when they are sick (e.g., vomiting, diarrhea, fever, dehydration):Monitor blood glucose more often (e.g., every 1-2 hours)If at risk of dehydration (i.e., cannot keep food/liquid down), temporarily stop agents from the SADMANS list (seeType 2 diabetes and sick days: Medications to pause):Secretagogues (e.g., gliclazide, glyburide, repaglinide)ACE inhibitorsDiuretic..."
+    },
+    {
+      "heading": "Patient resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Biosimilars: Information for patients from Ontario\u2019s Ministry of Health, and financial support programs for patients prescribedSemglee\u00aeandKirsty\u00ae.Local services for patients living with type 2 diabetesForum for Injection Technique (FIT) technique plusDiabetes Canada Glycemic index food guideDiabetes Canada Hypoglycemia low blood sugar in adultsRxFiles Type 2 diabetes and sick days: Medications to pauseDiabetes Canada Drive safe with diabetesDiabetes Canada Air travel: Traveling can be a breeze i"
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]RxTx. Diabetes mellitus. 2020.[2]Lipscombe L, Butalia S, Dasgupta K, Eurich DT, MacCallum L, Shah BR, et al. Pharmacologic glycemic management of type 2 diabetes in adults: 2020 update. Canadian Journal of Diabetes. 2020 Oct 1;44(7):575\u201391.[3]The EMPA-KIDNEY Collaborative Group, Herrington W.G., Staplin N, Wanner C, Green J.B, Hause S.J., Emberson J.R., et al. Empagliflozin in patients with chronic kidney disease. N Engl J Med. 2023 Jan 12;388(2):117-127.[4]Solomon S.D., McMurray J.J.V., C..."
+    },
+    {
+      "heading": "Acknowledgement and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The Type 2 diabetes: Insulin therapy tool (\u2018Tool\u2019) was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice, in collaboration with the andNurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the Tool was provided by Dr. Risa Bordman and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as part of theKnowledge..."
+    }
+  ],
+  "references": [],
+  "summary": "Type 2 diabetes: insulin therapy. Category: Chronic Disease. Features: calculator, checklist, forms. 9 main sections"
+}

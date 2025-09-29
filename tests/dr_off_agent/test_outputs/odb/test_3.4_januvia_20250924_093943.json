@@ -1,0 +1,56 @@
+{
+  "test_name": "test_3.4_januvia",
+  "timestamp": "2025-09-24T09:39:43.526562",
+  "elapsed_seconds": 0.369847,
+  "result": {
+    "provenance": [
+      "sql",
+      "vector"
+    ],
+    "confidence": 0.9500000000000001,
+    "coverage": {
+      "covered": true,
+      "din": "02388839",
+      "brand_name": "",
+      "generic_name": "",
+      "strength": "25mg",
+      "lu_required": true,
+      "lu_criteria": "Certain drug submission requirements are waived to allow for the short-term funding"
+    },
+    "interchangeable": [],
+    "lowest_cost": null,
+    "citations": [
+      {
+        "source": "odb_formulary",
+        "loc": "",
+        "page": null
+      }
+    ],
+    "conflicts": [
+      {
+        "field": "coverage",
+        "sql_value": "covered",
+        "vector_value": "Please note that some OFI products may be covered under the ODB program through the EAP",
+        "resolution": "SQL data is authoritative for formulary listing"
+      },
+      {
+        "field": "coverage",
+        "sql_value": "covered",
+        "vector_value": "In order to receive coverage through the EAP, the patient must be eligible to receive benefits under an ODB funding program",
+        "resolution": "SQL data is authoritative for formulary listing"
+      },
+      {
+        "field": "coverage",
+        "sql_value": "covered",
+        "vector_value": "Overpayments due to inappropriate claim submissions are subject to recovery",
+        "resolution": "SQL data is authoritative for formulary listing"
+      },
+      {
+        "field": "coverage",
+        "sql_value": "covered",
+        "vector_value": "areness of covered products and approved dosage and may also assist in the monitoring of the approval duration of the request to avoid a gap in treatment should ongoing coverage be required",
+        "resolution": "SQL data is authoritative for formulary listing"
+      }
+    ]
+  }
+}

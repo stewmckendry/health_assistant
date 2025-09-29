@@ -1,0 +1,41 @@
+{
+  "subsection_title": "Preamble - Bladder and Urethra",
+  "parent_section": "T",
+  "page_ref": "T8",
+  "pages_processed": "714-714",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [],
+  "referenced_codes": [
+    {
+      "code": "E",
+      "context": "payable in addition to any 'S' or 'Z' code listed under the 'Bladder' subheading",
+      "description": "Applicable for additional billing",
+      "source_subsection": "Preamble - Bladder and Urethra",
+      "source_page": "T8"
+    },
+    {
+      "code": "Z626",
+      "context": "payable in addition to any 'S' or 'Z' code listed under the 'Bladder' subheading",
+      "description": "Applicable for additional billing",
+      "source_subsection": "Preamble - Bladder and Urethra",
+      "source_page": "T8"
+    },
+    {
+      "code": "Z628",
+      "context": "payable in addition to any 'S' or 'Z' code listed under the 'Bladder' subheading",
+      "description": "Applicable for additional billing",
+      "source_subsection": "Preamble - Bladder and Urethra",
+      "source_page": "T8"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

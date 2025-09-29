@@ -1,0 +1,737 @@
+{
+  "toc_structure": [
+    {
+      "section_code": "GP",
+      "title": "General Preamble",
+      "page_ref": "GP1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": null,
+      "title": "Surgical Assistants\u2019 Services",
+      "page_ref": "GP85",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": null,
+      "title": "Surgical Assistants\u2019 Services",
+      "page_ref": "GP89",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Consultations and Visits",
+      "page_ref": "A1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Family Practice & Practice in General",
+      "page_ref": "A1",
+      "level": 1,
+      "specialty_code": "00",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Virtual Care Services",
+      "page_ref": "A62",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Anaesthesia",
+      "page_ref": "A72",
+      "level": 1,
+      "specialty_code": "01",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Cardiology",
+      "page_ref": "A75",
+      "level": 1,
+      "specialty_code": "60",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Cardiac Surgery",
+      "page_ref": "A77",
+      "level": 1,
+      "specialty_code": "09",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Clinical Immunology",
+      "page_ref": "A79",
+      "level": 1,
+      "specialty_code": "62",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Community Medicine",
+      "page_ref": "A81",
+      "level": 1,
+      "specialty_code": "05",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Critical Care Medicine",
+      "page_ref": "A85",
+      "level": 1,
+      "specialty_code": "11",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Dermatology",
+      "page_ref": "A87",
+      "level": 1,
+      "specialty_code": "02",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Emergency Medicine",
+      "page_ref": "A92",
+      "level": 1,
+      "specialty_code": "12",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Endocrinology & Metabolism",
+      "page_ref": "A93",
+      "level": 1,
+      "specialty_code": "15",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Gastroenterology",
+      "page_ref": "A99",
+      "level": 1,
+      "specialty_code": "41",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "General Surgery",
+      "page_ref": "A102",
+      "level": 1,
+      "specialty_code": "03",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "General Thoracic Surgery",
+      "page_ref": "A104",
+      "level": 1,
+      "specialty_code": "64",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Genetics",
+      "page_ref": "A106",
+      "level": 1,
+      "specialty_code": "22",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Geriatrics",
+      "page_ref": "A112",
+      "level": 1,
+      "specialty_code": "07",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Haematology",
+      "page_ref": "A117",
+      "level": 1,
+      "specialty_code": "61",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Infectious Disease",
+      "page_ref": "A119",
+      "level": 1,
+      "specialty_code": "46",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Internal and Occupational Medicine",
+      "page_ref": "A122",
+      "level": 1,
+      "specialty_code": "13",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Laboratory Medicine",
+      "page_ref": "A125",
+      "level": 1,
+      "specialty_code": "28",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Medical Oncology",
+      "page_ref": "A126",
+      "level": 1,
+      "specialty_code": "44",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Nephrology",
+      "page_ref": "A128",
+      "level": 1,
+      "specialty_code": "16",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Neurology",
+      "page_ref": "A132",
+      "level": 1,
+      "specialty_code": "18",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Neurosurgery",
+      "page_ref": "A136",
+      "level": 1,
+      "specialty_code": "04",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Nuclear Medicine",
+      "page_ref": "A138",
+      "level": 1,
+      "specialty_code": "63",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Obstetrics and Gynaecology",
+      "page_ref": "A140",
+      "level": 1,
+      "specialty_code": "20",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Ophthalmology",
+      "page_ref": "A142",
+      "level": 1,
+      "specialty_code": "23",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Orthopaedic Surgery",
+      "page_ref": "A151",
+      "level": 1,
+      "specialty_code": "06",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Otolaryngology",
+      "page_ref": "A153",
+      "level": 1,
+      "specialty_code": "24",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Paediatrics",
+      "page_ref": "A155",
+      "level": 1,
+      "specialty_code": "26",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Physical Medicine & Rehabilitation",
+      "page_ref": "A161",
+      "level": 1,
+      "specialty_code": "31",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Plastic Surgery",
+      "page_ref": "A167",
+      "level": 1,
+      "specialty_code": "08",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Psychiatry",
+      "page_ref": "A169",
+      "level": 1,
+      "specialty_code": "19",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Diagnostic Radiology",
+      "page_ref": "A178",
+      "level": 1,
+      "specialty_code": "33",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Radiation Oncology",
+      "page_ref": "A181",
+      "level": 1,
+      "specialty_code": "34",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Respiratory Disease",
+      "page_ref": "A183",
+      "level": 1,
+      "specialty_code": "47",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Rheumatology",
+      "page_ref": "A186",
+      "level": 1,
+      "specialty_code": "48",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Urology",
+      "page_ref": "A192",
+      "level": 1,
+      "specialty_code": "35",
+      "parent_section": null
+    },
+    {
+      "section_code": "A",
+      "title": "Vascular Surgery",
+      "page_ref": "A194",
+      "level": 1,
+      "specialty_code": "17",
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Nuclear Medicine - IN VIVO",
+      "page_ref": "B1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Preamble",
+      "page_ref": "B1",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Cardiovascular System",
+      "page_ref": "B3",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Endocrine System",
+      "page_ref": "B4",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Gastrointestinal System",
+      "page_ref": "B5",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Genitourinary System",
+      "page_ref": "B6",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Haematopoietic System",
+      "page_ref": "B7",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Musculoskeletal System",
+      "page_ref": "B8",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Nervous System and Respiratory System",
+      "page_ref": "B9",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Miscellaneous",
+      "page_ref": "B10",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Scintimammography",
+      "page_ref": "B11",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Clinical Procedures Associated With Diagnostic Nuclear Medicine",
+      "page_ref": "B12",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Positron Emission Tomography (PET)",
+      "page_ref": "B13",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "B",
+      "title": "Preamble",
+      "page_ref": "B13",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "C",
+      "title": "Radiation Oncology",
+      "page_ref": "C1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "C",
+      "title": "Preamble",
+      "page_ref": "C1",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "C",
+      "title": "Radiotherapy",
+      "page_ref": "C2",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "C",
+      "title": "Radium and Radioisotopes (Sealed Sources)",
+      "page_ref": "C5",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "C",
+      "title": "Radioisotopes (Non-sealed Sources)",
+      "page_ref": "C6",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Diagnostic Radiology",
+      "page_ref": "D1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Preamble",
+      "page_ref": "D1",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Head and Neck",
+      "page_ref": "D5",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Spine and Pelvis",
+      "page_ref": "D6",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Upper Extremities",
+      "page_ref": "D7",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Lower Extremities",
+      "page_ref": "D8",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Skeletal Surveys",
+      "page_ref": "D9",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Chest and Abdomen",
+      "page_ref": "D10",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Gastrointestinal Tract",
+      "page_ref": "D11",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Genitourinary Tract",
+      "page_ref": "D12",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Obstetrics and Gynaecology",
+      "page_ref": "D13",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Fluoroscopy - By physician With or Without Spot Films",
+      "page_ref": "D14",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Special Examinations",
+      "page_ref": "D15",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Bone Mineral Density (BMD) Measurement",
+      "page_ref": "D16",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Computed Tomography (CT)",
+      "page_ref": "D18",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "D",
+      "title": "Miscellaneous Examinations",
+      "page_ref": "D24",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "E",
+      "title": "Clinical Procedures associated with Diagnostic Radiological Examinations",
+      "page_ref": "E1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "E",
+      "title": "Preamble",
+      "page_ref": "E1",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "E",
+      "title": "Angiography",
+      "page_ref": "E2",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "E",
+      "title": "Miscellaneous Procedures",
+      "page_ref": "E4",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "F",
+      "title": "Magnetic Resonance Imaging (MRI)",
+      "page_ref": "F1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "G",
+      "title": "Diagnostic Ultrasound",
+      "page_ref": "G1",
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "G",
+      "title": "Preamble",
+      "page_ref": "G1",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "G",
+      "title": "Head and Neck",
+      "page_ref": "G3",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "G",
+      "title": "Thorax, Abdomen and Retroperitoneum",
+      "page_ref": "G4",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "G",
+      "title": "Pregnancy",
+      "page_ref": "G5",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": "G",
+      "title": "Pelvis",
+      "page_ref": "G6",
+      "level": 1,
+      "specialty_code": null,
+      "parent_section": null
+    },
+    {
+      "section_code": null,
+      "title": "Vascular System",
+      "page_ref": null,
+      "level": 0,
+      "specialty_code": null,
+      "parent_section": null
+    }
+  ],
+  "processed_sections": [
+    "D",
+    "E",
+    "GP",
+    "C",
+    "F",
+    "A",
+    null,
+    "G",
+    "B"
+  ],
+  "sections_completed": 9,
+  "last_section": "B"
+}

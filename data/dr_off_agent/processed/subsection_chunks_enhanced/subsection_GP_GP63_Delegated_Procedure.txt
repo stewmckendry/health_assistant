@@ -1,0 +1,49 @@
+Subsection: Delegated Procedure
+Parent Section: GP
+Page Reference: GP63
+Pages: 77 to 77
+Text chunks: 1
+Total text length: 1065 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 77 ---
+GENERAL PREAMBLE
+DELEGATED PROCEDURE
+COMMON
+APPLICABLE FEE CURRENT PAGE
+PROCEDURAL
+CODES #
+DESCRIPTION
+Venipuncture G480, G482, G489 J7
+Injections and G372, G373, G538, G590, J55
+immunizations G593, G840, G841, G842,
+G843, G844, G845, G846,
+G847, G848
+Ultraviolet light therapy G470 J37
+Administration of oral G462 J55
+polio vaccine
+Simple office G001, G002, G004, G005, J68
+laboratory procedures G009, G010, G011, G012,
+G014, G481
+Ear syringing, G420 J98
+curetting or
+debridement
+B.C.G. inoculation G369 J54
+Simple Spirometry and J301, J324, J304, J327 H4
+Flow Volume Loop
+Casts Z198-Z209, Z211, Z213, N7
+Z216, Z873
+[Commentary:
+Claims for services delegated to an individual employed by the physician submitting the claim
+are payable by OHIP. Claims are not payable for delegated services provided by an individual
+who is employed by a facility or organization such as a public hospital, public health unit,
+industrial clinics, long-term care facilities or Family Health Teams.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP63 Amd 12 Draft 1

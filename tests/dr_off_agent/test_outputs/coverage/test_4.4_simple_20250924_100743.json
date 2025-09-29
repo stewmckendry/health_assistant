@@ -1,0 +1,45 @@
+{
+  "test_name": "test_4.4_simple",
+  "timestamp": "2025-09-24T10:07:43.698763",
+  "elapsed_seconds": 0.44091,
+  "result": {
+    "decision": "billable",
+    "summary": "The requested service/code is billable under OHIP. Code E600 (Section: P\nSubsection: Larynx\nPage Reference: P6\n\nFee Codes (20 codes):\n  E600: using operating microscope - to charges for laryngoscopy - $33) has a fee of $None.",
+    "provenance_summary": "sql+vector",
+    "confidence": 0.75,
+    "highlights": [
+      {
+        "point": "E600: Section: P\nSubsection: Larynx\nPage Reference: P6\n\nFee Codes (20 codes):\n  E600: using operating microscope - to charges for laryngoscopy - $33 - $None",
+        "citations": [
+          {
+            "source": "schedule_of_benefits.pdf",
+            "loc": "E600",
+            "page": null
+          }
+        ]
+      },
+      {
+        "point": "E643: 35\n  E643: when using laser with microlaryngoscopy for benign disease, to Z323 - $121 - $None",
+        "citations": [
+          {
+            "source": "schedule_of_benefits.pdf",
+            "loc": "E643",
+            "page": null
+          }
+        ]
+      }
+    ],
+    "conflicts": [],
+    "followups": [],
+    "trace": [
+      {
+        "tool": "schedule.get",
+        "args": {
+          "q": "What's the fee for code A135?"
+        },
+        "duration_ms": null,
+        "error": null
+      }
+    ]
+  }
+}

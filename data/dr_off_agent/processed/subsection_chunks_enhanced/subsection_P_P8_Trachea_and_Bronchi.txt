@@ -1,0 +1,129 @@
+Subsection: Trachea and Bronchi
+Parent Section: P
+Page Reference: P8
+Pages: 638 to 640
+Text chunks: 1
+Total text length: 6718 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 638 ---
+RESPIRATORY SURGICAL PROCEDURES
+TRACHEA AND BRONCHI
+Asst Surg Anae
+PREAMBLE
+1. When bronchoscopy, flexible or rigid, is rendered in conjunction with laryngoscopy or
+oesophagoscopy, only the bronchoscopy is eligible for payment.
+2. Bronchoscopy rendered by the same surgeon immediately following thoracic surgery under the
+same anaesthetic is not eligible for payment.
+3. Bronchoscopy (including intraoperative bronchoscopy) rendered the same day as a major lung
+resection is not eligible for payment if a bronchoscopy has been rendered by the same
+physician to the same patient in the 3-week period preceding the major lung resection.
+ENDOSCOPY
+Bronchoscopy
+# Z360 Emergency rigid bronchoscopy for obstructed airway............ 474.65
+Note:
+1.Z360 is eligible for payment only for life-threatening emergency situations where the patient
+is not intubated.
+2.No other bronchoscopy service is eligible for payment with Z360.
+3.Life Threatening Critical Care and Other Critical Care services are not payable in addition to
+Z360 to the same physician for the same patient, same day.
+# Z327 - flexible or rigid, with or without bronchial biopsy, suction or
+injection of contrast material............................................... nil 124.90 6
+# E846 - rigid bronchoscopy rendered immediately after flexible
+bronchoscopy, to Z327 .............................................. add 95.70
+Note:
+E846 is only eligible for payment when rendered for the treatment of a condition identified by
+the preceding flexible bronchoscopy.
+# E632 - with removal of foreign body, to Z327 ........................ add 68.40
+# E633 - with dilatation of stricture, to Z327 ............................. add 44.55
+# E634 - with selective endobronchial blocker or catheter
+insertion, to Z327 ....................................................... add 52.00
+# E635 - with palliative endobronchial tumour resection including
+laser or cryotherapy, to Z327..................................... add 67.20
+# E636 - with broncho-alveolar lavage for diagnosis of malignancy
+or diagnosis and/or treatment of infection and includes
+obtaining specimens suitable for differential cellular
+analysis, to Z327........................................................ add 50.00
+# E637 - with selective brushings of all 18 segmental bronchi for
+occult carcinoma in situ; specimens labeled as to site, to
+Z327........................................................................... add 76.45
+# E638 - with transbronchial lung biopsy with or without image
+intensification, to Z327............................................... add 81.90
+# E622 - any bronchoscopic procedure for patients under 3 years of
+age, to Z327............................................................... add 79.40
+# E677 - transbronchial needle aspiration (TBNA) of mediastinal
+and/or hilar lymph nodes, to Z327 ............................. add 104.00
+Amd 12 Draft 1 P8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 639 ---
+RESPIRATORY SURGICAL PROCEDURES
+TRACHEA AND BRONCHI
+Asst Surg Anae
+# E678 - TBNA of lung mass, to Z327 ...................................... add 104.00
+# E838 - bronchoscopy in a high risk patient with respiratory failure
+(i.e. severe hypoxemia or hypercapnia), to Z327...... add 79.40
+Note:
+E838 is not eligible for payment unless the physician remains with the patient after the
+procedure is completed and until oxygen levels have returned to their pre-intervention level and
+it is apparent the patient will not require assisted ventilation.
+# Z342 Limited bronchoscopy with placement of endobronchial
+blocker and/or double lumen tube...................................... 112.55
+# Z359 Repeat bronchoscopy for tracheobronchial toilet when
+performed within one week of another bronchoscopic
+procedure ........................................................................... 56.65 6
+# G050 Endobronchial ultrasound (EBUS), for guided biopsy of hilar
+and/or mediastinal lymph nodes......................................... 203.05
+# E837 - additional biopsy(s) performed by EBUS, to a maximum of
+3, to G050 .................................................................. add 50.75
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P9 Amd 12 Draft 1
+
+--- PAGE 640 ---
+RESPIRATORY SURGICAL PROCEDURES
+TRACHEA AND BRONCHI
+Asst Surg Anae
+Quadroscopy or panendoscopy
+# Z355 - with or without biopsy (nasopharyngoscopy, laryngoscopy,
+bronchoscopy, oesophagoscopy with or without gastro-
+duodenoscopy) using separate instruments in search of
+malignant disease .............................................................. 321.45 6
+TRACHEO-BRONCHIAL ASPIRATION
+# Z344 First procedure........................................................................ 45.95
+# Z345 Subsequent procedures performed by same physician.......... 18.60
+Note:
+Not to apply to:
+1.operating surgeons,
+2.when respiratory unit fees apply; or
+3.within the first two hours post-operatively.
+# Z326 Change of tracheostomy tube................................................. 12.50
+# Z346 Transtracheal aspiration ......................................................... 22.35
+# Z356 Closure of persistent tracheostoma ........................................ 133.95 6
+INCISION
+# Z741 Tracheotomy........................................................................... 6 273.15 6
+# E639 - with anterior cricoid split............................................. add 78.50
+# Z738 Insertion of Montgomery “T” Tube or similar laryngeal or
+tracheal stent...................................................................... 6 216.10 8
+# Z325 Emergency tracheotomy......................................................... 10 474.65 10
+Note:
+1.Z325 is eligible for payment only for life-threatening emergency situations where the patient
+is not intubated.
+2.Percutaneous tracheostomy, cricothyroidotomy or other emergency airway punctures do not
+constitute Z325.
+EXCISION
+E623 - repeat operation after 30 days................................... add 415.15
+# M099 Segmental resection of cervical trachea................................. 9 918.60 10
+# E631 - with resection of cricoid.............................................. add 314.20
+# M103 Segmental resection of trachea with either sternotomy or
+thoracotomy........................................................................ 9 1294.20 13
+# M104 Carinal resection (without pulmonary resection)..................... 11 825.40 15
+REPAIR
+# M100 Tracheal rupture, transcervical ............................................... 9 654.30 10
+# M101 Tracheal-bronchial rupture, transthoracic ............................... 9 868.15 13
+Amd 12 Draft 1 P10 February 14 , 2 025 (e ffective M arch 3, 2025)

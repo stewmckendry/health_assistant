@@ -1,0 +1,16 @@
+{
+  "subsection_title": "Constituent and Common Elements of Insured Services",
+  "parent_section": "GP",
+  "page_ref": "GP13",
+  "fee_codes": [],
+  "rules": [
+    "All insured services include the skill, time, and responsibility involved in performing, including when delegated to a non-physician.",
+    "Patients cannot be charged for the premises, equipment, supplies, and personnel for services denoted with the prefix '#' rendered outside of a hospital or ICHSC.",
+    "No charges may be made (except to OHIP) for an insured service rendered to an insured person."
+  ],
+  "notes": [
+    "This Schedule identifies the constituent elements that comprise insured services.",
+    "Common elements apply to all insured services and specific elements apply to specific groups of services."
+  ],
+  "pages_processed": "27-28"
+}

@@ -1,0 +1,228 @@
+{
+  "subsection_title": "Radiation Oncology (34)",
+  "parent_section": "A",
+  "page_ref": "A181",
+  "pages_processed": "309-310",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A345",
+      "description": "Consultation",
+      "fee": 158.05,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A765",
+      "description": "Consultation, patient 16 years of age and under",
+      "fee": 165.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A745",
+      "description": "Limited consultation",
+      "fee": 102.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A346",
+      "description": "Repeat consultation",
+      "fee": 102.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A343",
+      "description": "Medical specific assessment",
+      "fee": 80.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A340",
+      "description": "Medical specific re-assessment",
+      "fee": 61.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A341",
+      "description": "Complex medical specific re-assessment",
+      "fee": 71.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "A348",
+      "description": "Partial assessment",
+      "fee": 37.55,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C345",
+      "description": "Consultation",
+      "fee": 158.05,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C765",
+      "description": "Consultation, patient 16 years of age and under",
+      "fee": 165.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C745",
+      "description": "Limited consultation",
+      "fee": 102.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C346",
+      "description": "Repeat consultation",
+      "fee": 102.9,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C343",
+      "description": "Medical specific assessment",
+      "fee": 80.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C344",
+      "description": "Medical specific re-assessment",
+      "fee": 61.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C341",
+      "description": "Complex medical specific re-assessment",
+      "fee": 71.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C342",
+      "description": "first five weeks",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C347",
+      "description": "sixth to thirteenth week inclusive (maximum 3 per patient per week)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C349",
+      "description": "after thirteenth week (maximum 6 per patient per month)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C122",
+      "description": "day following the hospital admission assessment",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C123",
+      "description": "second day following the hospital assessment",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C124",
+      "description": "day of discharge",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C142",
+      "description": "first subsequent visit by the MRP following transfer from an Intensive Care Area",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C143",
+      "description": "second subsequent visit by the MRP following transfer from an Intensive Care Area",
+      "fee": 61.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C121",
+      "description": "Additional visits due to intercurrent illness (see General Preamble GP43)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C348",
+      "description": "Concurrent care",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C982",
+      "description": "Palliative care (see General Preamble GP50)",
+      "fee": 34.1,
+      "units": "per visit",
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,110 @@
+{
+  "document_id": "cep_clinically_organized_relevant_exam_core_back_tool",
+  "source_url": "https://tools.cep.health/tool/clinically-organized-relevant-exam-core-back-tool/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "pain_msk",
+  "extracted_at": "2025-09-24T15:33:06.870484",
+  "content_hash": "8d436ac740ea9b02c1ac6748ad756aa4f89570865e21ea00f76f9f1ca5b856bc",
+  "title": "Clinically Organized Relevant Exam (CORE) Back Tool",
+  "tool_slug": "clinically-organized-relevant-exam-core-back-tool",
+  "navigation": [
+    {
+      "title": "Physical examination",
+      "anchor": "#physical",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Back or leg dominant painIntermittent or constant painAssociated aggravating movementNon-mechanical vs. mechanical painRed flags and yellow flags",
+      "Rule outRed Flags",
+      "NIFTIis a mnemonic for common red flagsRed flags indicate the potential presence of an underlying serious pathology"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": true
+  },
+  "sections": [
+    {
+      "heading": "History and physical examinationNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Review History",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "A patient\u2019s history can help identify: Back or leg dominant painIntermittent or constant painAssociated aggravating movementNon-mechanical vs. mechanical painRed flags and yellow flags Work through questions 1\u20136 to evaluate the patient\u2019s history"
+    },
+    {
+      "heading": "CORE Back Tool History",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Physical examination",
+          "anchor": "#physical",
+          "level": 3
+        }
+      ],
+      "summary": "NIFTIis a mnemonic for common red flagsRed flags indicate the potential presence of an underlying serious pathology Consider other etiologies and investigations indicated inRed flags Yellow flags indicate the potential of psychosocial risk factors for developing chronic painYellow flags can be picked up on any visitIf significant, CBT or 1:1 psychoeducation counselling may be necessary for pain management"
+    },
+    {
+      "heading": "Initial Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Select pattern for initial managment details",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Goals may include \u201cto reduce pain\u201d and \u201cto increase activity\u201dFrequent movement in small doses recommendedSelf management involves patient driven goals for motivating behaviour change like exercise, medication compliance or activity modificationRemember that all recovery positions and/or exercises should be customized to the individual patient. This section offers a starting point with links to additional resources Repeated prone lying passive extensions (i.e. hips on ground, arms straight).10..."
+    },
+    {
+      "heading": "Referral (if required)New",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Diagnostic imaging:Tests like X- rays, CT scans and MRIs are not helpful for recovery or management of acute or recurring low back pain unless there are signs of serious pathology. Refer tored flagsfor details. Absence of red flagsPain is managed well so that patient can tolerate treatmentPain has mechanical directional preference \u2013 varies with movement, position or activityPatient is ready to be an active partner in goal setting and self management Failure to respond to evidence based compli..."
+    },
+    {
+      "heading": "Supporting materialNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Patient Education Inventory Opioid Manager Switching Opioids Form Imaging Tests for Lower Back Pain: When You Need Them \u2013 And When You Don\u2019t"
+    },
+    {
+      "heading": "ReferencesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Centre for Effective Practice, Government of Ontario. Opioid Risk Tool [Internet]. 2013 Jan [cited 2016 Jan 6].[2]Centre for Effective Practice, Government of Ontario. Patient Education Inventory [Internet]. 2013 Jan [cited 2016 Jan 6].[3]Practice Support Program, Centre for Effective Practice, Government of Ontario. Personal Action Planning for Patient Self Management [Internet]. 2013 Jan [cited 2016 Jan 6].[4]Keele University, Arthritis Research UK. The Keele STarT Back Screening Tool [I..."
+    },
+    {
+      "heading": "Acknowledgment and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed by the Centre for Effective Practice (\u201cCEP\u201d) with clinical leadership from Drs. Julia Alleyne, Hamilton Hall and Y. Raja Rampersaud. In addition, this Tool was informed by advice from our Education Planning Committee, Clinical Working Group and target end-users engaged throughout the development process. The development of this Tool was originally funded by the Government of Ontario (2012) and the current 2016 revision was funded by Centre for Effective Practice. This ..."
+    }
+  ],
+  "references": [],
+  "summary": "Clinically Organized Relevant Exam (CORE) Back Tool. Category: Pain Msk. Features: forms, patient resources, videos. 7 main sections"
+}

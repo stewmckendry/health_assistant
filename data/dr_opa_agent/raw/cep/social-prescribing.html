@@ -1,0 +1,1451 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Social Prescribing: a Resource for Health Professionals |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/social-prescribing\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/55137" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fsocial-prescribing%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fsocial-prescribing%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-55137 wp-theme-cep-tools social-prescribing">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Social Prescribing: a Resource for Health Professionals</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: October 11, 2023</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/Banner_SP_rev_10.10-scaled.jpg" alt=""/></figure>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This resource is designed to support health professionals working in primary care to implement social prescribing in their practice. This resource brings together the best available evidence and expert opinion to provide guidance on social prescribing. To accompany the resource, a 30 minute <a href="https://link.cep.health/socialprescribe32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">online training module</a> (short registration required) with case studies is available to support implementation and enhance the learning experience.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="introduction-to-social-prescribing" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Introduction to social prescribing								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/SP-main-graphic-above-table.png" alt=""/></figure>
+</div></article>
+
+<article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <h6 style="text-align: left;">Social prescribing <sup>1–3, 6<br />
+</sup></h6>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <h6>What is social prescribing?</h6>
+<p><span class="TextRun Highlight SCXW233435521 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW233435521 BCX0">Social prescribing is a practical way for health professionals to address social determinants of health by connecting people with a range of resources that support their social, mental and physical well-being.</span></span><span class="EOP SCXW233435521 BCX0" data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></p>
+<p><span class="TextRun Highlight SCXW175753461 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW175753461 BCX0">It expands the options available in primary care and connects people to non-clinical services and programs in the community to improve their health and well-being. Social prescribing may help patients with their:</span></span><span class="EOP SCXW175753461 BCX0" data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></p>
+<ul>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="auto">Mental health/substance use</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="auto">Social support system</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Financial wellbeing</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">Housing</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="auto">Physical activity</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="auto">Creative self-expression</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="6" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="none">Activities of daily living and instrumental activities of daily living</span></li>
+</ul>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 2" style="flex-basis:33%;">
+                                            <h6>Why is it beneficial?</h6>
+<ul>
+<li>It addresses social determinants of health, which is key to improving health outcomes.</li>
+<li data-leveltext="●" data-font="Calibri" data-listid="5" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="auto">Empowers people to take an active role in co-creating their health and well-being.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:540,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="5" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Helps people build meaningful connections.</span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="5" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Promotes autonomy</span> <span data-contrast="none">and sense of purpose.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:540,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="5" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Enhances a partnership built on advocacy and accompaniment.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:540,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="5" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="auto">Allows for  more holistic, person-centred care.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:540,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="5" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="auto">Reduces utilization of primary and emergency care, decreasing the overall stress on the healthcare system.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:540,&quot;335559740&quot;:240}"> </span></li>
+</ul>
+<p>&nbsp;</p>
+                                        </div>
+                                    
+                                
+                                                                            <div class="col 3" style="flex-basis:33%;">
+                                            <h6>Who is it for?</h6>
+<p><span class="TextRun Highlight SCXW5658207 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW5658207 BCX0">Anyone, but it is most helpful for people with a high burden of social or systemic factors that adversely impact their health.</span></span><span class="EOP SCXW5658207 BCX0" data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></p>
+<p><span data-contrast="auto">Examples that may indicate </span><span data-contrast="none">a social prescribing need include</span><span data-contrast="auto">:</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span><span data-contrast="auto"> </span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559740&quot;:240}"> </span></p>
+<ul>
+<li data-leveltext="●" data-font="Open Sans" data-listid="19" data-list-defn-props="{&quot;335551500&quot;:5065804,&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Open Sans&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">Skipping</span><span data-contrast="auto"> a medication because they don’t have coverage and can’t afford it.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:425,&quot;335559740&quot;:240,&quot;335559991&quot;:283}"> </span></li>
+<li data-leveltext="●" data-font="Open Sans" data-listid="19" data-list-defn-props="{&quot;335551500&quot;:5065804,&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Open Sans&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Those </span><span data-contrast="auto">who may be lonely or socially isolated.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:425,&quot;335559740&quot;:240,&quot;335559991&quot;:283}"> </span></li>
+<li data-leveltext="●" data-font="Open Sans" data-listid="19" data-list-defn-props="{&quot;335551500&quot;:5065804,&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Open Sans&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Those for whom affordable childcare would mean the ability to focus on their health, participate in therapy, work, etc.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:425,&quot;335559740&quot;:240,&quot;335559991&quot;:283}"> </span></li>
+<li data-leveltext="●" data-font="Open Sans" data-listid="19" data-list-defn-props="{&quot;335551500&quot;:5065804,&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Open Sans&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Trouble </span><span data-contrast="auto">getting nutritious food because of income or limited mobility.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:425,&quot;335559740&quot;:240,&quot;335559991&quot;:283}"> </span></li>
+<li data-leveltext="●" data-font="Open Sans" data-listid="19" data-list-defn-props="{&quot;335551500&quot;:5065804,&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Open Sans&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Those who have a limited or absent formal support system.</span><span data-ccp-props="{&quot;134245417&quot;:false,&quot;201341983&quot;:0,&quot;335559685&quot;:425,&quot;335559740&quot;:240,&quot;335559991&quot;:283}"> </span></li>
+</ul>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+        
+    </div>
+</div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>How you are already implementing social prescribing:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Connecting people with the Trillium Drug Program and disability-related income supports.&nbsp;</li>
+
+
+
+<li>Suggesting programs at an older adult centre.&nbsp;</li>
+
+
+
+<li>Connecting someone to the Alzheimer Society of Canada, Ontario Caregiver Org, etc.&nbsp;</li>
+
+
+
+<li>Museum passes for low income families.&nbsp;</li>
+
+
+
+<li>Sharing information about where to access free meals, when food security is an issue.&nbsp;</li>
+
+
+
+<li>Connecting someone who has low vision with the association for the blind so that they can get IT recommendations that will promote their independence and autonomy.&nbsp;</li>
+
+
+
+<li>Asking individuals about their social situation, who they live with, if they work or go to school, what their hobbies are, if they have pets and what matters to them.&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Being ready:<strong> incorporating social prescribing into your practice<sup>2,4-6</sup></strong></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>There is no one-size-fits-all approach to integrating social prescribing into your practice. Social prescribing practices are customized to individuals, your community, your resources and your capacity.&nbsp;&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This guide is designed to support healthcare practitioners in implementing small changes that require minimal additional resources. It offers a great starting point for introducing social prescribing into your practice and provides guidance on how to build your program with more resources if they can be found.&nbsp;&nbsp;</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Designing the pathway and preparation</strong>&nbsp;</h6>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Determine who will be involved in the social prescribing pathway. This will depend on the capacity and needs of your practice. Here are some general steps to consider based on practice type:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong><em>Build your social prescribing team</em></strong> &#8211; Determine which members of your practice will participate in the social prescribing pathway and what their assigned roles will be.&nbsp;<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Interprofessional teams (Family Health Teams (FHTs), Community Health Centres (CHCs), etc.) &#8211; <strong>consider</strong> allocating resources to create a social navigator role on your team if one does not already exist.</li>
+
+
+
+<li>Non-interprofessional teams (solo doctors, larger family practices, etc.) &#8211; <strong>consider</strong> who in the practice would be the most effective touchpoint&nbsp; to take on the role of social navigator. This decision is ideally made in collaboration with potential social navigators to identify who they are most comfortable interacting with. For example, the most effective touchpoint could be a nurse, social worker on staff or clinic receptionist. Primary care professionals<strong> </strong>in practices unaffiliated with teams could turn to the SCOPE program for assistance (i.e., SCOPE Health Coaches, TIP program) or consider partnering with a local CHC or FHT.&nbsp;</li>
+</ul>
+</div></article></li>
+
+
+
+<li><strong><em>Engage in training</em></strong><em> &#8211; </em>After determining who will be&nbsp; involved in the pathway, consider engaging the team in focused training on trauma-informed and culturally safe care if not previously done. Look into resources such as <a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe20" target="_blank" data-wpel-link="external">CAMH’s Trauma-Informed Practice handout</a>&nbsp; and <a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe21" target="_blank" data-wpel-link="external">Cancer Care Ontario’s Indigenous Relationship and Cultural Awareness Courses</a>.&nbsp;&nbsp;</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="gRnXwR" class="button open-modal" href="#" data-id="gRnXwR">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="gRnXwR" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p><strong><span class="TextRun SCXW47016697 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW47016697 BCX0"><span class="TextRun MacChromeBold SCXW11840038 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW11840038 BCX0">What is a social prescribing navigator?</span></span><span class="EOP SCXW11840038 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></span></span></strong></p>
+<p><span class="TextRun SCXW47016697 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW47016697 BCX0">A social prescribing navigator (also referred to as a link worker) helps people explore and connect to social supports. A social prescribing navigator could be a social worker, psychological counsellor, system navigator, care coordinator, community connector, health coach, outreach worker, etc. If resources allow, it is ideal to have a social prescribing navigator on staff to keep social prescribing interactions consistent, allow relationships and trust to build between them and individuals receiving a social prescripti</span><span class="NormalTextRun SCXW47016697 BCX0">on </span><span class="NormalTextRun SCXW47016697 BCX0">and help share the workload.</span></span><span class="EOP SCXW47016697 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Building your base</strong>&nbsp;</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong><em>Know your community</em></strong> – Look into what social determinants of health are impacting your area of practice. A great resource for this is the<a href="https://link.cep.health/socialprescribe1" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"> </a><a href="https://link.cep.health/socialprescribe1" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">211 Ontario User Needs Dashboard</a> which provides data on the most commonly reported needs in communities across Ontario. Start with what is realistic for your capacity and work collaboratively with your team to determine priorities and initial focus.&nbsp;</li>
+
+
+
+<li><strong><em>Build a list of community resources</em></strong> – Make a list of locally available social supports and resources and&nbsp; e<em>nsure the list is</em><strong><em> </em></strong>easily accessible when social prescribing. You can also find a list of services and resources available in your region through <a href="https://link.cep.health/socialprescribe22" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">TheHealthline</a> which is separated by health topic or need. Ideally, become familiar&nbsp; with the intake procedures and requirements of the programs and services you are considering for your prescribing base.&nbsp;</li>
+</ul>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="assess-and-understand-the-social-factors-impacting-health" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Assess and understand the social factors impacting health								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Through discussion with individuals, assess their needs to understand how social determinants of health may be affecting their well-being. It is important to block off time for open-ended conversations to discuss their needs. Document identified social determinants of health in the individual’s health record (e.g., in the CPP).<sup>1,2,4,6</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong><em>Lead with empathy and create a safe space for all</em> </strong>– Remember that everyone comes with a unique social story. Approach discussions with an empathetic, welcoming mindset and create a safe space for individuals to feel comfortable talking about sensitive issues. Trust and openness is foundational to building relationships and successful social prescribing.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong><em>Setting the stage</em></strong> &#8211; Clarifying your intent with individuals before asking about their social stories is important. Introduce the concept of social prescribing and explain how it can help them. Acknowledge that this is a journey and no single clinician can know everything but can reach out to team members (e.g., FHT) or community organizations for guidance, both for themselves and individuals.&nbsp;</p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="jsC1eg" class="button open-modal" href="#" data-id="jsC1eg">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="jsC1eg" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p><b><span data-contrast="none">Discuss the idea of social prescribing with individuals using plain language</span></b><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></p>
+<ul>
+<li data-leveltext="●" data-font="Calibri" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">“There are many things that affect our health – I can help you address your medical concerns, but there are other people in our community who may also be able to help you with other aspects of your health.” </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559738&quot;:240,&quot;335559740&quot;:276}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">“In addition to treating the medical aspects of your health, I would like to  connect you to services that can help you achieve better health.” </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article>
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points</h6>
+                          <a data-modal="p0W3Cl" class="button open-modal" href="#" data-id="p0W3Cl">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="p0W3Cl" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking points</h4>
+                                      <p><b><span data-contrast="none"><span class="TextRun MacChromeBold SCXW128355527 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW128355527 BCX0">Block time to have an open-ended discussion with individuals about their social </span></span><span class="TextRun MacChromeBold SCXW128355527 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW128355527 BCX0">story</span></span><sup><span class="TextRun SCXW128355527 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun Superscript SCXW128355527 BCX0" data-fontsize="11">6</span></span></sup><span class="EOP SCXW128355527 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></span></b></p>
+<ul>
+<li><span data-contrast="none">“What would you like me to know about you?”</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559740&quot;:240}"> </span></li>
+<li><span data-contrast="none">“How has your experience been with our team&#8217;s care for you?”</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559740&quot;:240}"> </span></li>
+<li><span data-contrast="auto">“What do you enjoy doing?” </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559740&quot;:240}"> </span></li>
+<li><span data-contrast="auto">“Have there been times when you’ve felt lonely or isolated? Can you tell me about it?” </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:276}"> </span></li>
+<li><span data-contrast="auto">“Are you able to access the food you’d prefer to be eating?” </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:276}"> </span></li>
+<li><span data-contrast="auto">“Can you tell me a little bit about your current living situation? Do you feel comfortable and safe?” </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:276}"> </span></li>
+<li><span data-contrast="auto">“Do you ever have trouble accessing health or social services?” </span></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><!-- wp:paragraph --></p>
+<h6><strong>Screening tools<br />
+</strong></h6>
+<p><!-- /wp:paragraph --> <!-- wp:paragraph --></p>
+<p>If you feel more comfortable using a screening tool to guide conversations, here are some examples you can use in practice:</p>
+<ul>
+<li><a href="https://link.cep.health/socialprescribe23" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">IF</a><a href="https://link.cep.health/socialprescribe23" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">&#8211;</a><a href="https://link.cep.health/socialprescribe23" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">IT</a><a href="https://link.cep.health/socialprescribe23" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">&#8211;</a><a href="https://link.cep.health/socialprescribe23" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">HELPS</a></li>
+<li><a href="https://link.cep.health/socialprescribe31" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">SPARK tool</a></li>
+<li><a href="https://link.cep.health/socialprescribe25" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Your Current Life Situation (YCLS) tool</a></li>
+<li><a href="https://link.cep.health/socialprescribe26" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">AAFP Social Needs Screening tool</a></li>
+<li><a href="https://link.cep.health/socialprescribe30" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Wheel of Life</a> (Black-focused social prescribing)</li>
+<li style="list-style-type: none;">
+<ul style="list-style-type: circle;"><!-- wp:list-item --></ul>
+</li>
+</ul>
+<p><!-- /wp:list-item --></p>
+<p><!-- /wp:list --></p>
+          </div>
+        </div>
+
+      </div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="initiate-social-prescribing" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Initiate social prescribing								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><span class="TextRun SCXW64817871 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW64817871 BCX0">Once an individual’s needs and the social factors impacting their health have been identified, </span></span><span class="TextRun SCXW64817871 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW64817871 BCX0">work together to initiate</span></span><span class="TextRun SCXW64817871 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW64817871 BCX0"> social prescribing. Social prescribing should be </span></span><span class="TextRun SCXW64817871 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW64817871 BCX0">tailored to</span> <span class="NormalTextRun SCXW64817871 BCX0">an </span><span class="NormalTextRun SCXW64817871 BCX0">individual’s</span><span class="NormalTextRun SCXW64817871 BCX0"> specific needs, context and identity</span><span class="NormalTextRun SCXW64817871 BCX0">, </span><span class="NormalTextRun SCXW64817871 BCX0">as well as </span><span class="NormalTextRun SCXW64817871 BCX0">time and resources </span><span class="NormalTextRun SCXW64817871 BCX0">available to the</span><span class="NormalTextRun SCXW64817871 BCX0"> healthcare professional. There </span><span class="NormalTextRun SCXW64817871 BCX0">is</span><span class="NormalTextRun SCXW64817871 BCX0"> no one-size</span><span class="NormalTextRun SCXW64817871 BCX0">&#8211;</span><span class="NormalTextRun SCXW64817871 BCX0">fits</span><span class="NormalTextRun SCXW64817871 BCX0">&#8211;</span><span class="NormalTextRun SCXW64817871 BCX0">all approach to social prescribing</span></span><span class="TextRun SCXW64817871 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW64817871 BCX0">. Social prescribing can take the form of: </span></span></p>
+<ul>
+<li aria-level="1"><a href="#pointingsupport">Pointing a person to a support service.</a></li>
+<li aria-level="1"><a href="#warmconnection">Making a warm connection</a> <span class="TextRun SCXW149564093 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW149564093 BCX0">and ensuring the patient has the resources to access it.</span></span></li>
+<li aria-level="1"><a href="#navigator">Using a navigator</a> <span class="NormalTextRun SCXW153249878 BCX0">to explore a patient’s context and needs</span><span class="NormalTextRun SCXW153249878 BCX0">.</span></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading"><strong>Pointing a person to a support</strong><sup>1,2,6</sup></h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/Pointing-to-Support.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Direct an individual to a social support service or something an individual can engage in on their own. This can include anything from visiting a tax clinic to spending time outside. This form of social prescribing is good for individuals who are able to pursue these options by themselves.</p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Steps</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Discuss and explore the social support options that will help address the individual’s identified need.<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Leverage<a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe1" target="_blank" data-wpel-link="external"> 211 Ontario</a> or <a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe22" target="_blank" data-wpel-link="external">TheHealthline</a> to find an appropriate social support option.&nbsp;&nbsp;</li>
+
+
+
+<li>Provide sufficient information for the individual to explore the option by themselves and manage expectations.&nbsp;</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Make a plan for a follow-up to discuss their experience, noting their preferred method of communication.&nbsp;</li>
+
+
+
+<li>Document the discussion, decision and follow-up plan in the person’s health record.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-top is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Example social prescriptions</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Isolation and social support:</strong> newcomer settlement support, bereavement groups,<a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe4" target="_blank" data-wpel-link="external"> local older adult centres</a>, cultural organizations or other supportive service centres, <a rel="noreferrer noopener external" href="https://www.redcross.ca/how-we-help/community-health-services-in-canada/friendly-calls-program" target="_blank" data-wpel-link="external">national Friendly Calls line</a> 1-833-979-9779</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Food security and nutrition:</strong> community meal programs, food bank, community garden&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Employment and job security:</strong> <a href="https://link.cep.health/socialprescribe5" data-type="URL" data-id="https://link.cep.health/socialprescribe5" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Employment Ontario</a>, vocational services agencies</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Income</strong>: <a href="https://link.cep.health/socialprescribe6" data-type="URL" data-id="https://link.cep.health/socialprescribe6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">free local tax clinic</a>, <a href="https://link.cep.health/socialprescribe19" data-type="URL" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Canada Benefits Finder</a>, <a href="https://link.cep.health/socialprescribe8" data-type="URL" data-id="https://link.cep.health/socialprescribe8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Benefits Wayfinder</a>, <a href="https://link.cep.health/covid2793" data-type="URL" data-id="https://link.cep.health/covid2793" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">financial support options for caregivers</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Education, learning and growth: </strong>participatory art making, physical activity, outdoor activities, museum and gallery visits&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Mental health empowerment:</strong> <a href="https://link.cep.health/socialprescribe9" data-type="URL" data-id="https://link.cep.health/socialprescribe9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">local mental health centres and services</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Disability:</strong> <a href="https://link.cep.health/socialprescribe27" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">Disability Benefits Compass</a><a href="https://link.cep.health/covid2793" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">,</a> <a href="https://link.cep.health/socialprescribe28" target="_blank" rel="noreferrer noopener external" data-wpel-link="external">financial support resources for people living with disabilities</a>&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Culturally specific: </strong>activities that help to connect people to their culture such as sharing food, literature, theatre&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Transportation</strong>: shared-ride services, subsidized ride programs, accessible transport&nbsp;</p>
+</div></article></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="warmconnection">Making a warm connection</h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/Making-a-warm-connection_icon.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Directly connect a person to a social support. This process is similar to ‘point a person to a support,’ but it goes a step further by making a warm hand-off or referral  to the social support. This type of social prescribing is helpful for individuals who are hesitant or facing barriers to connecting with social supports.</p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Steps</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Discuss with individuals the social support options that will help address their identified needs.&nbsp;&nbsp;&nbsp;<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Leverage<a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe1" target="_blank" data-wpel-link="external"> 211 Ontario</a> or <a rel="noreferrer noopener external" href="https://link.cep.health/socialprescribe22" target="_blank" data-wpel-link="external">TheHealthline</a> to find an appropriate social support option.&nbsp;</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Decide together on an appropriate social support option.&nbsp;&nbsp;</li>
+
+
+
+<li>Provide a ‘warm hand-off’ by completing a referral (Ocean, electronic fax) to the social support OR by contacting them to confirm availability and the welcoming process.&nbsp;<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Share sufficient information with the individual about the referral or welcoming process so they understand next steps and manage expectations.&nbsp;</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Make a plan to follow-up to discuss their experience, leveraging their preferred method of communication.&nbsp;</li>
+
+
+
+<li>Document the discussion, decision and follow-up plan in the person’s health record.&nbsp;&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="navigator">Using a navigator</h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/Using-a-Navigator.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Connect a person to a social prescribing navigator. A social prescribing navigator (also referred to as a link worker) helps people explore and connect to social supports. A social prescribing navigator could be a social worker, psychological counsellor, system navigator, care coordinator, community connector, health coach, outreach worker, etc. This type of social prescribing is helpful for any individual but availability of social prescribing navigators differs in communities across Ontario.</p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Steps</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Discuss with individuals the social prescribing navigator options that will help address their identified needs or that are available in their community.&nbsp;&nbsp;<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Leverage one of the resources mentioned below or explore funding options.</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Decide together on an appropriate social prescribing navigator option.&nbsp;</li>
+
+
+
+<li>Connect the individual with the social prescribing navigator by completing a referral form OR by contacting them to confirm availability, the welcoming process and provide a ‘warm hand-off’ to the individual.&nbsp;<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Share sufficient information with the individual about the social prescribing navigator process so they understand next steps.&nbsp;&nbsp;</li>
+
+
+
+<li>Establish communication mechanisms with the navigator.&nbsp;</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Make a plan to follow-up to discuss their experience, leveraging their preferred method of communication.&nbsp;</li>
+
+
+
+<li>Follow-up with the navigator to learn whether they successfully linked the individual to a resource, reasons for not being able to connect the individual to a resource or any additional needs identified.&nbsp;</li>
+
+
+
+<li>Document the discussion, decision and follow-up plan in the person’s health record.&nbsp;&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ol class="wp-block-list"><article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h3>Resources</h3></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <p><b>Current social prescribing navigator programs (any regional availability is noted below):</b><b><sup>7</sup></b></p>
+<ul>
+<li data-leveltext="●" data-font="Calibri" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><a href="https://link.cep.health/socialprescribe10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">TeamCare (available across multiple sites in ON)</span></a><span data-contrast="auto"> – provides support with conducting an assessment and connecting an individual to a range of social and community supports. </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559738&quot;:240,&quot;335559740&quot;:276}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="15" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><a href="https://link.cep.health/socialprescribe11" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">211 Ontario Community Connection (available in Central East region)</span></a><span data-contrast="auto"> – provides support with social needs assessment, navigation, advocacy, care coordination, referrals and provides outcome reports. </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="15" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><a href="https://link.cep.health/socialprescribe12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">SCOPE (available in the GTA and other sites across ON)</span></a><span data-contrast="auto"> – provides support with community and hospital resource navigation, real-time consultation and support for complex and urgent cases, access to mental health supports and care coordination for structurally vulnerable cases through telemedicine.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="15" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><a href="https://link.cep.health/socialprescribe13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Ontario Caregiver Organization (available across ON)</span></a><span data-contrast="auto"> – helpline for caregivers to connect them with information, resources and referrals to supports.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="15" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><a href="https://link.cep.health/socialprescribe3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Ontario Home and Community Care Support Services</span></a><span data-contrast="none"> – provides support with home care service navigation.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li data-leveltext="●" data-font="Calibri" data-listid="15" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="auto">Social prescribing navigator (currently available in various Ontario </span><span data-contrast="none">F</span><span data-contrast="auto">amily </span><span data-contrast="none">H</span><span data-contrast="auto">ealth </span><span data-contrast="none">T</span><span data-contrast="auto">eams, e.g., McMaster FHT, St. Michael’s Hospital FHT</span><span data-contrast="none">, and to be incorporated into Ontario Health Teams in the future through a partnership with </span><a href="https://link.cep.health/socialprescribe29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Access to Resources in the Community</span></a><span data-contrast="auto">) – provides support with conducting an assessment through co-creative, strengths-based conversations, and connecting individuals to a range of social and community-based supports.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"><br />
+</span></li>
+</ul>
+<p><span class="TextRun SCXW129081742 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW129081742 BCX0">To explore opportunities to resource a local navigator for your community, connect with your Ontario Health Team or community partners (e.g., educational institutions, older adult </span><span class="SpellingError SCXW129081742 BCX0">centres</span><span class="NormalTextRun SCXW129081742 BCX0">, other organizations).</span></span><span class="EOP SCXW129081742 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559738&quot;:240,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></p>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article></ol>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Billing for social prescribing&nbsp;</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Use the general family practice OHIP codes or condition specific codes to bill for social prescribing, where applicable, as part of their care. Just like there is often no specific code for a prescription or referral as part of a person’s visit, there is no OHIP billing code specific to social prescribing.&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Examples:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>K005 &#8211; Primary mental health care&nbsp;</li>
+
+
+
+<li>K013, K033 &#8211; Counselling&nbsp;</li>
+
+
+
+<li>K030 &#8211; Diabetes management&nbsp;</li>
+
+
+
+<li>K037 &#8211; Fibromyalgia/myalgic encephalomyelitis care&nbsp;</li>
+</ul>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="after-social-prescribing-follow-up-and-follow-through" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								After social prescribing: follow-up and follow through								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/Follow-up-follow-through.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>After initiating a social prescription, be diligent in scheduling a follow-up appointment(s) to check-in on its effectiveness. Just like other prescriptions and referrals, best practice in social prescribing requires follow-up. Be sure to emphasize to the individual that their social needs are equally as important as their medical ones. The follow-up gives the healthcare professional or navigator an opportunity to assess the fit of the prescription, to redefine goals and to identify any barriers to access.</p>
+<p><strong>Following through</strong> demonstrates a long-term commitment to the patient, and should be the standard of care. It ensures that the patient feels supported throughout the entire process and that they’ve been connected with the resources that best meet their needs.</p>
+<p><!-- /wp:paragraph --></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The nature and length of follow-up may depend on a variety of factors such as:&nbsp;&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>patient need&nbsp;</li>
+
+
+
+<li>level of intervention implemented&nbsp;</li>
+
+
+
+<li>goals to achieve&nbsp;</li>
+
+
+
+<li>types of approaches to address needs, etc.&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>*Make sure to ask the individual about their preferred method of communication for follow-up outside of office appointments. (e.g., email, text, phone call, or even regular mail).&nbsp;</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Also, make note of individuals’ experiences with specific social support options to reference during future social prescribing. Keep track of successful programs, classes, and other opportunities in your individual communities. Check to see that they’re still being offered before you share the information with future patients.&nbsp;&nbsp;</p>
+</div></article>
+
+<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Practical tips</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong><strong>Follow-up will vary depending on context, but these tips are universally applicable</strong>:<sup>6</sup>&nbsp;</strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Determine if the individual pursued the prescription and find out if they encountered any challenges or barriers.&nbsp;</li>
+
+
+
+<li>Understand the individual’s level of satisfaction with the prescription.&nbsp;&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Gauge any changes in the person’s knowledge, health and general well-being.&nbsp;&nbsp;</li>
+
+
+
+<li>As you move through the follow-up appointment, consider asking general questions like:&nbsp;&nbsp;<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>How are things going?&nbsp;&nbsp;</li>
+
+
+
+<li>What has gone well for you and what hasn’t gone well?&nbsp;&nbsp;</li>
+
+
+
+<li>What else do you need from me to help you meet your goals?</li>
+</ul>
+</div></article></li>
+
+
+
+<li>Build in time to acknowledge and discuss the emotional impact of the social prescription on the patient.&nbsp;</li>
+
+
+
+<li>Provide further information and support for the individual where appropriate. If the first social prescription was not successful, work together to find an alternative.&nbsp;</li>
+
+
+
+<li>Document the follow-up in the individual’s health record.&nbsp;&nbsp;</li>
+
+
+
+<li>If you have the practice resources, continuously track, measure and evaluate social prescriptions and any resulting impact on the individual</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><br><strong>*How to follow-up and follow through when there are no easy answers or solutions</strong>&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>There may be some systemic social issues, such as housing and food insecurity, for example, that are harder to solve for individuals. It’s important to acknowledge when there may not be an easy fix and that some issues may require a bigger commitment. If time allows, consider reaching out and advocating on behalf of individuals to social service organizations in your community, government agencies, or directly to your local political representatives.&nbsp;&nbsp;</li>
+</ul>
+</div></article></div>
+</div></article>
+
+<article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <p><b>To learn more about implementing social prescribing:</b></p>
+<ul>
+<li><a href="https://link.cep.health/socialprescribe14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Alliance for Healthier Communities – social prescribing guidebook</span></a><span data-contrast="auto"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559738&quot;:240,&quot;335559740&quot;:276}"> </span></li>
+<li><a href="https://link.cep.health/socialprescribe15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Alliance for Healthier Communities – social prescribing community of practice</span></a><span data-contrast="auto"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li><a href="https://link.cep.health/socialprescribe16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Canadian Institute for Social Prescribing – events and webinars</span></a><span data-contrast="auto"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li><a href="https://link.cep.health/socialprescribe17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">World Health Organization – toolkit on social prescribing</span></a><span data-contrast="auto"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559740&quot;:276}"> </span></li>
+<li><a href="https://link.cep.health/socialprescribe18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">St. Michael’s Hospital FHT – real world example of a care team addressing their communities’ social determinants of health</span></a><span data-contrast="auto"> </span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:1080,&quot;335559739&quot;:240,&quot;335559740&quot;:276}"> </span></li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>
+
+<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>World Health Organization. A toolkit on how to implement social prescribing. 2022.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>Alliance for Healthier Communities. Social prescribing guidebook for team: based primary care providers in Ontario. n.d.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>Napierala H, Krüger K, Kuschick D, Heintze C, Herrmann WJ, Holzinger F. Social prescribing: Systematic review of the effectiveness of psychosocial community referral interventions in primary care. Int J Integr Care. 2022 Aug 19;22(3):11.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>Bloch G, Rozmovits L. Implementing social interventions in primary care. CMAJ. 2021 Nov 8;193(44):E1696–701.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW204614337 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW204614337 BCX0">Thomas G, Lynch M, Spencer LH. A Systematic Review to Examine the Evidence in Developing Social Prescribing Interventions That Apply a Co-Productive, Co-Designed Approach to Improve Well-Being Outcomes in a Community Setting. Int. J. Environ. Res. Public Health 2021, 18, 3896.</span></span><span class="EOP SCXW204614337 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:276}"> </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW200843337 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW200843337 BCX0"><a href="https://link.cep.health/expertopinionrationale" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Expert opinion</a>.</span></span><span class="EOP SCXW200843337 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559740&quot;:276}"> </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW93098562 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW93098562 BCX0">Nowak DA, Mulligan K. Social prescribing: A call to action. Can Fam Physician. 2021 Feb;67(2):88–91.</span></span></p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgment-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgment and legal								
+    <span class="badge new" data-last-modified="Feb 22, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p>Social Prescribing: A Resource for Health Professionals was developed using the Centre for Effective Practice&#8217;s (CEP&#8217;s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Dominik Nowak. End users and clinical experts were also engaged to provide feedback. This tool&#8217;s development was completed in collaboration with the Alliance for Healthier Communities, the Canadian Institute for Social Prescribing and the Academic Family Health Team at Unity Health Toronto. Funded by the Ministry of Health, the KTinPC Initiative supports primary care clinicians with a series of clinical tools and health information resources. Learn more about the <a title="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" href="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">KTinPC Initiative</a>.</p>
+<p>This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, collaborating partner(s), nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><i><span lang="EN-US">This Tool is a product of the CEP. Permission to use, copy, and distribute this material is for all noncommercial and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of this Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the CEP <em>(info@cep.health)</em></span></i><span lang="EN-US"><i>.</i> </span></p>
+<p><em>For statistical and bibliographic purposes, please notify the CEP (info@cep.health) of any use or reprinting of the Resource. Please use the following citation when referencing the Resource: Reprinted with Permission from Centre for Effective Practice. (October 2023). Social Prescribing: A Resource for Health Professionals: Ontario. Toronto: Centre for Effective Practice.</em></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/11/Alliance-Logos-digital-Primary_tagline-EN.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/11/cisp_3c_anchored-by-rc.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2023/10/Gary-Unity-Health-Logo-1.jpeg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":55137,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

@@ -1,0 +1,168 @@
+{
+  "subsection_title": "Ovary",
+  "parent_section": "V",
+  "page_ref": "V10",
+  "pages_processed": "738-738",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "S780",
+      "description": "Biopsy of ovaries by laparotomy",
+      "fee": 257.05,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 6,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S745",
+      "description": "and/or oophorocystectomy",
+      "fee": 366.2,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 6,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "E090",
+      "description": "removal of contralateral ovary with moderate or severe endometriosis, to S745",
+      "fee": 260.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S782",
+      "description": "with total omentectomy",
+      "fee": 410.4,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 6,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S747",
+      "description": "Para ovarian cystectomy",
+      "fee": 306.85,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 6,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S714",
+      "description": "Second look exploratory laparotomy including biopsies, when done as part of chemotherapy protocol for ovarian carcinoma with or without total omentectomy",
+      "fee": 431.45,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 6,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S727",
+      "description": "Ovarian debulking, for ovarian carcinoma of stage 2C, 3B, 3C, or 4 and may include hysterectomy, omentectomy, bowel resection, one or more biopsies and/or resection of pelvic peritoneum",
+      "fee": 1081.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 8,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "E853",
+      "description": "with resection of diaphragm including reconstruction, to S727",
+      "fee": 145.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S750",
+      "description": "Radical resection pelvic and para-aortic nodes for cancer",
+      "fee": 797.45,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": 6,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z758",
+      "context": "not payable with",
+      "description": "not eligible for payment when rendered to the same patient same day as S750",
+      "source_subsection": "Ovary",
+      "source_page": "V10"
+    },
+    {
+      "code": "S776",
+      "context": "not payable with",
+      "description": "not eligible for payment when rendered to the same patient same day as S750",
+      "source_subsection": "Ovary",
+      "source_page": "V10"
+    },
+    {
+      "code": "S781",
+      "context": "not payable with",
+      "description": "not eligible for payment when rendered to the same patient same day as S750",
+      "source_subsection": "Ovary",
+      "source_page": "V10"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

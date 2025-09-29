@@ -1,0 +1,57 @@
+Subsection: Posterior Spinal Arthrodesis As Sole Procedure
+Parent Section: Z
+Page Reference: Z9
+Pages: 781 to 781
+Text chunks: 1
+Total text length: 2353 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 781 ---
+SPINAL SURGICAL PROCEDURES
+POSTERIOR SPINAL ARTHRODESIS AS SOLE PROCEDURE
+Asst Surg Anae
+All levels
+# E378 - 3D stereotactic spinal procedure ............................... add 510.00
+# E379 - 2D stereotactic spinal procedure ............................... add 510.00
+Cervical & Thoracic … without instrumentation
+# N519 C1/C2 fusion using graft/posterior wires................................. 8 612.00 10
+# N514 One disc level - below C2....................................................... 7 408.00 10
+# E364 - each additional disc level fused, to N514 or N519..... add 102.00
+Note:
+1.N519 is not eligible for payment when rendered with any other fusion procedure at the same
+level.
+2.Submit claims for levels fused in addition to N519 using E364.
+[Commentary:
+N514 will be reduced to E364 if claimed with N519.]
+Lumbar … without instrumentation
+# N581 One disc level ......................................................................... 7 408.00 10
+# E364 - each additional disc level fused, to N581................... add 102.00
+Cervical & Thoracic … with instrumentation
+# N532 C1/C2 screw fixation (transarticular, pedicle, lateral mass).... 9 1224.00 11
+# N515 One disc level - below C2....................................................... 9 1020.00 11
+# E366 - each additional level fused except fusion to occiput or
+fusion of cervico-thoracic junction, to N532 or N515 . add 153.00
+# E371 - fusion to occiput, to N532 .......................................... add 816.00
+# E377 - cervico-thoracic junction, to N515 or N572................ add 255.00
+Note:
+Submit claims for levels fused in addition to N532 or N515 using one of E366, E371, or E377
+as appropriate.
+[Commentary:
+N515 will be reduced to E366 if claimed with N532.]
+Lumbar … with instrumentation
+# N582 One disc level ......................................................................... 9 1020.00 15
+# E366 - each additional disc level fused, to N582................... add 153.00
+# E387 - fusion to sacrum, to N582.......................................... add 153.00
+# N533 Pars reconstruction for spondylolysis ..................................... 9 1020.00 11
+Note:
+No other services in the Spinal Surgical Procedures section are eligible for payment when
+rendered with N533.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Z9 Amd 12 Draft 1

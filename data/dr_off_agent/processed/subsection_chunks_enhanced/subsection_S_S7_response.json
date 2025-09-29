@@ -1,0 +1,253 @@
+{
+  "subsection_title": "Oesophagus",
+  "parent_section": "S",
+  "page_ref": "S7",
+  "pages_processed": "675-678",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z515",
+      "description": "Oesophagoscopy, with or without biopsy(ies)",
+      "fee": 68.25,
+      "units": 4
+    },
+    {
+      "code": "Z399",
+      "description": "oesophagoscopy-gastroscopy, elective",
+      "fee": 92.5,
+      "units": 4
+    },
+    {
+      "code": "Z400",
+      "description": "oesophagoscopy-gastroscopy, for active bleeding",
+      "fee": 125.1,
+      "units": 4
+    },
+    {
+      "code": "E696",
+      "description": "oesophagoscopy with dilatation of oesophagus",
+      "fee": 30.65
+    },
+    {
+      "code": "E702",
+      "description": "oesophagoscopy with multiple (3 or more) biopsies of specific lesion",
+      "fee": 15.1
+    },
+    {
+      "code": "E690",
+      "description": "oesophagoscopy with removal of foreign body(ies)",
+      "fee": 43.85
+    },
+    {
+      "code": "E795",
+      "description": "oesophagoscopy with brushing of oesophagus, stomach, and/or duodenum",
+      "fee": 46.3
+    },
+    {
+      "code": "E770",
+      "description": "oesophagoscopy with duodenoscopy and drainage of bile after I.V. CCK stimulation",
+      "fee": 23.1
+    },
+    {
+      "code": "E692",
+      "description": "oesophagoscopy with laser debulking",
+      "fee": 69.7
+    },
+    {
+      "code": "E698",
+      "description": "oesophagoscopy with pneumatic or balloon dilation",
+      "fee": 69.7
+    },
+    {
+      "code": "E703",
+      "description": "oesophagoscopy with snare polypectomy first polyp (> 1 cm)",
+      "fee": 50.5
+    },
+    {
+      "code": "E799",
+      "description": "oesophagoscopy each additional polyp, by snare polypectomy (> 1 cm) (to a maximum of 2)",
+      "fee": 25.25
+    },
+    {
+      "code": "E797",
+      "description": "management of uncomplicated upper or lower gastrointestinal bleeding, by any technique (e.g. laser, injection, diathermy, banding etc.)",
+      "fee": 46.3
+    },
+    {
+      "code": "E798",
+      "description": "management of complicated upper gastrointestinal bleeding by any technique in haemodynamically unstable patients with active bleeding during endoscopy",
+      "fee": 69.7
+    },
+    {
+      "code": "E629",
+      "description": "endoscopic placement of stent in duodenum",
+      "fee": 137.05
+    },
+    {
+      "code": "S084",
+      "description": "Oesophagostomy, cervical approach, other than neonatal",
+      "fee": 212.35
+    },
+    {
+      "code": "S085",
+      "description": "Oesophagostomy, cervical approach, neonatal",
+      "fee": 304.2
+    },
+    {
+      "code": "S082",
+      "description": "Intrathoracic oesophageal stent via laparotomy",
+      "fee": 410.55
+    },
+    {
+      "code": "S083",
+      "description": "Intrathoracic oesophageal stent via oesophagoscope (includes Z515)",
+      "fee": 304.2
+    },
+    {
+      "code": "S081",
+      "description": "Trans-oesophageal division of oesophageal varices",
+      "fee": 558.05
+    },
+    {
+      "code": "S080",
+      "description": "Oesophageal-gastric devascularization (including splenectomy and oesophageal division/anastomosis)",
+      "fee": 898.15
+    },
+    {
+      "code": "S087",
+      "description": "Intrathoracic diverticulum",
+      "fee": 507.0
+    },
+    {
+      "code": "S086",
+      "description": "Cricopharyngeal myotomy, open approach",
+      "fee": 300.0
+    },
+    {
+      "code": "Z505",
+      "description": "Cricopharyngeal myotomy, when rendered by endoscopy, or in association with a surgical procedure during the same anaesthetic",
+      "fee": 37.2
+    },
+    {
+      "code": "S088",
+      "description": "Cricopharyngeal diverticulum",
+      "fee": 390.05
+    },
+    {
+      "code": "S089",
+      "description": "Partial oesophageal resection and reconstruction (including intestinal transposition)",
+      "fee": 1180.5
+    },
+    {
+      "code": "S090",
+      "description": "Total thoracic oesophageal resection",
+      "fee": 1912.3
+    },
+    {
+      "code": "E730",
+      "description": "oesophageal resection with reconstruction",
+      "fee": 740.95
+    },
+    {
+      "code": "E847",
+      "description": "oesophageal resection with reconstruction of diaphragm requiring repair with mesh or equivalent synthetic material",
+      "fee": 75.0
+    },
+    {
+      "code": "E644",
+      "description": "radical mediastinal node dissection following preoperative chemotherapy and/or radiotherapy, to S089 or S090",
+      "fee": 400.0
+    },
+    {
+      "code": "S093",
+      "description": "Enucleation of benign oesophageal tumour",
+      "fee": 584.15
+    },
+    {
+      "code": "S161",
+      "description": "Oesophageal myotomy, partial (below aortic arch)",
+      "fee": 584.15
+    },
+    {
+      "code": "S100",
+      "description": "Total thoracic oesophageal myotomy (as sole procedure)",
+      "fee": 738.9
+    },
+    {
+      "code": "S091",
+      "description": "Oesophageal hiatus hernia, abdominal or transthoracic approach with fundal plication",
+      "fee": 750.0
+    },
+    {
+      "code": "S092",
+      "description": "Oesophageal hiatus hernia, recurrent",
+      "fee": 1100.0
+    },
+    {
+      "code": "S079",
+      "description": "massive paraesophageal hernia",
+      "fee": 1200.0
+    },
+    {
+      "code": "S095",
+      "description": "Oesophageal stricture (Thal) - may include oesophageal hiatus hernia repair with or without gastroplasty",
+      "fee": 676.05
+    },
+    {
+      "code": "S096",
+      "description": "Ruptured oesophagus, suture and drainage",
+      "fee": 1200.0
+    },
+    {
+      "code": "S097",
+      "description": "Oesophago-gastrostomy for bypass (as sole procedure)",
+      "fee": 608.3
+    },
+    {
+      "code": "S103",
+      "description": "Closure of H-type tracheo-oesophageal fistula by cervical or thoracic approach",
+      "fee": 923.05
+    },
+    {
+      "code": "S104",
+      "description": "Repair of oesophageal atresia with or without tracheal fistula",
+      "fee": 2203.2
+    },
+    {
+      "code": "Z529",
+      "description": "Dilation of oesophagus, initial session",
+      "fee": 40.55
+    },
+    {
+      "code": "Z530",
+      "description": "Dilation of oesophagus, repeat session (within three months following previous dilation)",
+      "fee": 27.35
+    },
+    {
+      "code": "Z525",
+      "description": "Pneumatic dilation of oesophagus as sole procedure",
+      "fee": 110.85
+    },
+    {
+      "code": "Z523",
+      "description": "Pneumatic dilation of oesophagus with rigid dilators guided over a string or wire",
+      "fee": 52.9
+    },
+    {
+      "code": "Z531",
+      "description": "Repeat dilations during the same admission",
+      "fee": 26.4
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

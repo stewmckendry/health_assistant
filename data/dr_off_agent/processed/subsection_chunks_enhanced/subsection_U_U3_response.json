@@ -1,0 +1,57 @@
+{
+  "subsection_title": "Epididymis and Tunica Vaginalis",
+  "parent_section": "U",
+  "page_ref": "U3",
+  "pages_processed": "723-723",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z707",
+      "description": "Incision of abscess",
+      "fee": 55.15,
+      "units": 6
+    },
+    {
+      "code": "S601",
+      "description": "Spermatocele or spermatic granuloma excision",
+      "fee": 207.85,
+      "units": 6
+    },
+    {
+      "code": "S602",
+      "description": "unilateral Epididymectomy",
+      "fee": 170.65,
+      "units": 6
+    },
+    {
+      "code": "Z708",
+      "description": "Hydrocele aspiration",
+      "fee": 19.8
+    },
+    {
+      "code": "S611",
+      "description": "Hydrocele excision - unilateral",
+      "fee": 207.85,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E727",
+      "context": "Note regarding hydrocele excision",
+      "description": "Hydrocele excision rendered with hernia repair is claimed as E727.",
+      "source_subsection": "Epididymis and Tunica Vaginalis",
+      "source_page": "U3"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,68 @@
+{
+  "subsection_title": "Ultrasonic Guidance",
+  "parent_section": "G",
+  "page_ref": "G11",
+  "pages_processed": "393-394",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        28,
+        "drainage procedures (one physician only) ......................... 47.30 36.85"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J149",
+      "description": "Ultrasonic guidance of biopsy, aspiration, amniocentesis or drainage procedures (one physician only)",
+      "fee": 47.3,
+      "h_fee": 47.3,
+      "p_fee": 36.85,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J151",
+      "description": "Ultrasound compression of groin pseudoaneurysm, per \u00bc hour",
+      "fee": 19.65,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "per \u00bc hour",
+      "conditions": "Effective March 3, 2025",
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "J138",
+      "context": "not payable with",
+      "description": "Performed during the same visit as J149 is an insured service payable at nil",
+      "source_subsection": "Ultrasonic Guidance",
+      "source_page": "G11"
+    },
+    {
+      "code": "J161",
+      "context": "not payable with",
+      "description": "Performed during the same visit as J149 is an insured service payable at nil",
+      "source_subsection": "Ultrasonic Guidance",
+      "source_page": "G11"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

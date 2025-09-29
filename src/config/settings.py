@@ -58,7 +58,7 @@ class Settings(BaseSettings):
     
     # Model Configuration
     primary_model: str = Field(
-        default="claude-3-5-sonnet-20241022",
+        default="claude-sonnet-4-20250514",
         env="PRIMARY_MODEL",
         description="Primary Claude model to use"
     )

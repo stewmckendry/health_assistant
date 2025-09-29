@@ -1,0 +1,51 @@
+Subsection: Valves
+Parent Section: Q
+Page Reference: Q10
+Pages: 656 to 656
+Text chunks: 1
+Total text length: 2713 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 656 ---
+CARDIOVASCULAR SURGICAL PROCEDURES
+VALVES
+Asst Surg Anae
+# R724 Pulmonary valvotomy .............................................................. 18 663.10 28
+# R725 Pulmonary valvotomy and infundibular resection .................... 18 758.80 28
+# R772 Pulmonary valve replacement ................................................. 18 758.80 28
+# R726 Tricuspid valvotomy ................................................................. 18 778.25 20
+# R727 Tricuspid annuloplasty ............................................................. 18 678.80 20
+# R731 Tricuspid valvuloplasty............................................................. 18 770.55 28
+# R728 Tricuspid valve replacement .................................................... 18 777.40 28
+# R729 Mitral valvotomy....................................................................... 18 717.25 20
+# R730 Mitral valvotomy - restenosis ................................................... 18 798.80 20
+# R734 Mitral annuloplasty................................................................... 18 789.60 20
+# R735 Mitral replacement ................................................................... 18 1200.00 28
+# R733 Mitral valvuloplasty .................................................................. 18 963.40 28
+Mitral valve reconstruction
+# R773 - simple (includes annuloplasty) ............................................ 18 1648.25 28
+# R774 - complex (includes annuloplasty and repair of both the
+anterior and posterior leaflets)............................................. 18 2058.20 28
+# R930 Aortic valvoloplasty.................................................................. 18 837.70 28
+# R736 Aortic valvotomy ...................................................................... 18 707.85 20
+# R737 Aortic infundibular resection (ventriculomyotomy)................... 18 869.70 28
+# R738 Aortic valve replacement ......................................................... 18 1049.20 28
+# E647 - patch aortoplasty with pericardium or graft, to R738
+and/or aortic annuloplasty...........................................add 264.70
+# E656 - aortic annuloplasty (reconstruction and enlargement of
+aortic annulus), to R738 and/or patch aortoplasty ......add 288.85
+# R863 Replacement of aortic valve, replacement of ascending aorta,
+and reimplantation of coronary arteries (Modified Bentall).. 18 2070.60 28
+# R876 Valve sparing aortic root replacement or remodelling.............. 18 2144.95 28
+Note:
+Multivalvular replacement - the fee will be that for the major valve replaced plus 85% of the fee
+for the additional valve or valves.
+Amd 12 Draft 1 Q10 February 14 , 2 025 (e ffective M arch 3, 2025)

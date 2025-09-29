@@ -1,0 +1,37 @@
+Subsection: Anterior Spinal Arthrodesis With Instrumentation Without Decompression
+Parent Section: Z
+Page Reference: Z5
+Pages: 777 to 777
+Text chunks: 1
+Total text length: 1422 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 777 ---
+SPINAL SURGICAL PROCEDURES
+ANTERIOR SPINAL ARTHRODESIS WITH INSTRUMENTATION WITHOUT DECOMPRESSION
+Asst Surg Anae
+Cervical
+# N516 One disc level ......................................................................... 7 510.00 10
+# E366 - each additional disc level fused, to N516................... add 153.00
+Thoracic - includes thoracotomy
+# N517 One disc level ......................................................................... 9 1224.00 13
+# E366 - each additional disc level fused, to N517................... add 153.00
+Thoracic - thoracotomy by separate surgeon
+# N518 One disc level ......................................................................... 9 765.00 13
+# E366 - each additional disc level fused, to N518................... add 153.00
+Lumbar - includes laparotomy/retroperitioneal approach
+# N559 One disc level ......................................................................... 7 1122.00 13
+# E366 - each additional disc level fused, to N559................... add 153.00
+# E362 - combined thoracotomy/laparotomy, to N559 ............. add 153.00
+Lumbar - laparotomy/retroperitoneal approach by separate surgeon
+# N580 One disc level ......................................................................... 7 765.00 10
+# E366 - each additional disc level fused, to N580................... add 153.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Z5 Amd 12 Draft 1

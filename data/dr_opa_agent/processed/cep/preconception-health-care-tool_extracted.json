@@ -1,0 +1,329 @@
+{
+  "document_id": "cep_preconception_health_care_tool",
+  "source_url": "https://tools.cep.health/tool/preconception-health-care-tool/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "womens_health",
+  "extracted_at": "2025-09-24T15:33:04.081552",
+  "content_hash": "2116f15a77061c1fff7eb2e57e547a6b3f86be561d08e66e8ae90f7307fc35ab",
+  "title": "Preconception Health Care Tool",
+  "tool_slug": "preconception-health-care-tool",
+  "last_updated": "2018 June 29; cited 2018 Oct 10]. Canadian Guidelines on Sexually Transmitted Infections.",
+  "navigation": [],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Reproductive life plan",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Ask all individuals of reproductive age, \u201cWould you like to have a child in the next year?\u201d Encourage all individuals to make aReproductive Life Plan.1 No:Discuss contraception options.Not sure:Choosing Wisely Tool.2Inform women of reproductive age that natural fertility and assisted reproductive Discuss family planning and conception."
+    },
+    {
+      "heading": "Reproductive history",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Gravida (G)Full-term (T)Premature (P)Abortions (A)Living children (L) Inquire about previous pregnancies Preterm BirthPreeclampsiaCongenital anomaliesStillbirthMiscarriageAssisted reproductive technologiesGestational DM"
+    },
+    {
+      "heading": "Sexual health",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Inform all individuals of sexual health risks associated with travel to countries with reported Zika infection. Recommend patients wait 6 months following travel to attempt conception due topotential for transmission through sperm.41 ChlamydiaSyphilisTrichomoniasisGonorrheaGenital herpes (if lesions) Provide treatment according toCanadian Guidelines on Sexually Transmitted Infections.5Inform women with genital herpes of risk of vertical transmission"
+    },
+    {
+      "heading": "Chronic medical conditions",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Optimize management for the following diseases, as suboptimal control or treatments can increase risk for adverse maternal and/or infant outcomes. Motherisk6should be consulted for the safety of any medications taken by patients with chronic conditions. Motherisk Helpline: 1-877-439-2744 Asthma:Delay conception until good control is achieved.Cancer:All individuals with cancer should be counselled regarding the potential effects of treatment on fertility and informed of options to preserve fer..."
+    },
+    {
+      "heading": "Medication",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Human teratogenicity risk is unknown for the majority of medications. Use caution when prescribing for women of reproductive age. ConsultMotherisk.6 Screen for teratogenic medication use: Prescribed medicationsOver-the-counter medicationsComplementary and alternative therapy (herbal, natural, weight loss, athletic products or supplements, etc.)"
+    },
+    {
+      "heading": "Mental health",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Promote mental health wellness through adequate sleep, work-life balance, stress reduction and social connectedness. Depression8Anxiety9Other10Screen for family history of mental health issues. Bipolar disorderMood disorderSchizophreniaCounsel women with mental health diagnoses of risks of pregnancy and relapse. Strategize management.Stabilize/optimize mood and anxiety level; discuss risks and benefits of medications."
+    },
+    {
+      "heading": "Tobacco use",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Encourage all individuals to be tobacco free prior to conception. Tobacco (all forms)Tobacco exposure (second-hand smoke) Provide brief intervention and provideappropriate referrals.11Inform women of availablepatient resources12and Smokers\u2019 Helpline 1-877-513-5333.ConsultCanadian Smoking Cessation Guidelines.13Counsel women with tobacco addictions of risks of pregnancy and relapse.Strategize management.Recommend an extra 35 \u03bcg of vitamin C daily for smokers"
+    },
+    {
+      "heading": "Alcohol and other substance use",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Encourage all individuals to be substance free prior to conception. AlcoholOther substances Providebrief intervention14and provide appropriate referrals.Recommendfolic acid 5mg daily prior to conception for those with addictions.15Inform women of availablepatient resources16and Drug and Alcohol Helpline 1-800-565-8603.Consultlow risk drinking guidelines.17Consultlow risk cannabis use guidelines.42"
+    },
+    {
+      "heading": "Vaccinations and immunity",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "All individuals of reproductive age should have theirimmunization status reviewed and updated18as required VaricellaRubellaHPVInfluenzaHepatitis BTetanus, Diphtheria, B PertussisMeasles, Mumps RubellaHepatitis BVaricella"
+    },
+    {
+      "heading": "Infectious disease",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Prevention and screening of these infectious diseases19are important for those of reproductive age. HIVParvovirusHepatitis BHepatitis CTuberculosisCytomegalovirusToxoplasmosis Hepatitis CTuberculosis"
+    },
+    {
+      "heading": "Family and genetic history",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Obtain 3 generation family history to identify:21 Congenital malformations, birth defects.Developmental delays, learning disabilities.Ethnicity.Genetic disorders.22Family history of a genetic condition.Consanguinity (first cousins or closer).Children who died at a young age (may reveal a metabolic condition).History of sudden unexplained death (may indicate cardiomyopathy or metabolic condition).History of infertility, multiple miscarriages (>3 or all male fetuses). Ethnicity Based Screening ..."
+    },
+    {
+      "heading": "Nutrition",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Eat well withCanada\u2019s Food Guide.24 Recommend folic acid 0.4-1.0mg daily (through a multivitamin or supplement)15and folate rich diet, prior to conception and throughout pregnancy.Recommendcalcium 1000mg daily25through food and/or supplements.Recommend essential fatty acid rich diet, including omega 3 and 6.Recommend avoiding raw/undercooked meat and fish and unpasteurized milk and cheese.26Caffeine <300mg/day.27Recommendvitamin D 600 IU (15 \u03bcg) supplementation daily.28Recommend 2.6 \u03bcg of vit..."
+    },
+    {
+      "heading": "Weight status",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Weight can increase risk of adverse pregnancy outcomes and developing chronic disease. Target Body Mass Index (BMI) = 18.5-24.9 (for ages \u226519)Waist Circumference (WC)29:European, African, EasternMediterranean, Middle EasternMale target: <102cmFemale target: <88cmSouth Asian, Asian, South <80cm and Central AmericanMale target: <90cmFemale target: <80cmTarget BMI for ages <1930 European, African, EasternMediterranean, Middle EasternMale target: <102cmFemale target: <88cmSouth Asian, Asian, Sout..."
+    },
+    {
+      "heading": "Physical activity",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Being physically active prepares the body for the physical demands of pregnancy and can assist with stress management. Recommend at least 150 minutes of moderate to vigorous aerobic physical activity per week, in episodes of 10 minutes or more. Add muscle and bone strengthening activities at least 2 days per week. See theCanadian Physical Activity Guidelines33"
+    },
+    {
+      "heading": "Psycosocial stressors",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Prevent and promote",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Screen",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Manage",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Identify stressors and discuss strategies to reduce impact Access to care to careSocial isolation (newcomers, language barriers)34Social supportWorkplace stressHousingIntimate partner violence35UnemploymentFinancesUnhealthy relationship Inform women that violence often worsens during pregnancy and discuss safety plan.Provideappropriate referrals.36"
+    }
+  ],
+  "references": [],
+  "summary": "Preconception Health Care Tool. Category: Womens Health. Features: calculator, forms, patient resources. 15 main sections"
+}

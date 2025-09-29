@@ -1,0 +1,320 @@
+Subsection: Hand and Wrist
+Parent Section: N
+Page Reference: N8
+Pages: 572 to 579
+Text chunks: 1
+Total text length: 19244 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 572 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+AMPUTATION
+# R606 Phalanx................................................................................... 161.45 6
+# R608 Metacarpal or metaphalangeal joint........................................ 190.20 7
+# E583 - each additional........................................................... add 94.60
+# R610 Trans. metacarpal 2nd to 5th ray............................................ 279.35 7
+# R611 Hand - all metacarpals............................................................ 6 289.50 6
+# R612 Wrist........................................................................................ 6 289.50 6
+# R629 Revision of amputated finger tip ............................................. 6 241.55 6
+ARTHRODESIS
+# R465 Finger-thumb .......................................................................... 6 321.30 7
+# R466 Wrist........................................................................................ 6 714.70 6
+ARTHROPLASTY
+# E564 - revision of arthroplasty....................................... add 35%
+Wrist
+# R437 - interposition ........................................................................ 6 374.00 7
+# R485 - total..................................................................................... 6 679.95 6
+# R479 - removal only ....................................................................... 6 193.00 6
+Hand - interposition
+# R435 - single .................................................................................. 6 254.35 7
+# R436 - multiple ............................................................................... 6 459.40 7
+# R489 Single joint - total (arthrodesis and/or arthroplasties)
+maximum of 4..................................................................... 6 290.55 7
+# R209 Basal thumb - first carpometacarpal joint ............................... 6 363.05 7
+# R500 Removal only.......................................................................... 6 144.80 6
+# R236 Carpal replacement ................................................................ 6 322.05 7
+ARTHROSCOPY
+# R682 Wrist arthroscopy setup, includes when rendered
+debridement, synovectomy, synovial biopsy, removal of
+loose body(ies) and/or screw, drilling of defect or
+microfracture, and/or wrist ganglion debridement. ............. 6 400.00 7
+Note:
+1.A wrist procedure listed in the Hand and Wrist section of the Schedule performed
+arthroscopically is eligible for payment in addition to R682 if that procedure is not described
+as a component of R682 or described by an E-add-on code to R682.
+2.Arthroscopic E-add-on codes listed below are not eligible for payment in addition to R682
+when the service described by the E-code is a generally accepted component of a procedure
+described in Note #1.
+# E479 Arthroscopy of midcarpal and/or distal radio-ulnar joint,
+through separate portals, to R682................................ add 192.00
+# E478 Pinning of osteochondral fragment, to R682 .................... add 251.55
+Amd 12 Draft 1 N8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 573 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+Note:
+F-prefix fracture procedures are not eligible for payment with E478 for the same fracture.
+# E480 Triangular fibrocartilage complex repair, to R682 ............. add 350.65
+# E482 Soft tissue capsular release, for contractures, without bone
+procedure, to R682....................................................... add 251.55
+# E483 Synovectomy for inflammatory arthritis requiring a minimum of
+90 minutes to resect, to R682 ...................................... add 326.55
+Payment rules:
+1.Synovectomy less then 90 minutes in duration is included in R682.
+2.Only one of E482 or E483 is eligible for payment same patient same day.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N9 Amd 12 Draft 1
+
+--- PAGE 574 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+ARTHROTOMY
+# R409 Finger...................................................................................... 168.00 6
+# R410 Wrist........................................................................................ 6 212.50 6
+ASPIRATION/INJECTION
+See Diagnostic and Therapeutic Procedures - Injections and Infusions.
+BIOPSY
+Bone
+# Z230 - punch, x-ray control............................................................ 89.70 6
+# Z214 - open biopsy or taking of bone graft by other than operating
+surgeon .............................................................................. 6 144.80 6
+Joint
+Z221 - needle................................................................................. 49.20
+# R409 - open finger ......................................................................... 168.00 6
+# R410 - open wrist........................................................................... 6 212.50 6
+Soft tissue
+# Z228 - open ................................................................................... 97.35 6
+Z219 Muscle needle biopsy, soft tissue, per site ............................. 31.20
+DECOMPRESSION - DENERVATION
+# N290 Decompression median nerve at wrist (carpal tunnel
+syndrome) .......................................................................... 6 156.75 6
+# N285 Exploration and/or decompression and/or transposition and/or
+neurolysis of major nerve (excluding carpal tunnel nerve) . 7 256.15 7
+INCISION AND DRAINAGE
+# R409 Finger joint.............................................................................. 168.00 6
+# R410 Wrist joint................................................................................ 6 212.50 6
+Phalanx/metacarpal/carpus
+# R219 - incision and drainage ......................................................... 6 182.90 6
+# R218 - sequestrectomy.................................................................. 6 144.80 6
+# R217 - saucerization and bone graft.............................................. 6 242.25 7
+# R534 Tendon sheath ........................................................................ 6 225.00 6
+EXAMINATION/MANIPULATION
+Z222 Manipulation - under general anaesthetic (see Surgical
+Preamble SP5)................................................................... 134.10 6
+Note:
+Without general anaesthetic, see Diagnostic and Therapeutic Procedures - Physical Medicine.
+Amd 12 Draft 1 N10 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 575 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+EXCISION
+Bone
+# R316 Proximal row carpectomy ....................................................... 6 338.75 7
+# R285 Carpal - bone (one)................................................................. 6 214.45 7
+# R317 Dorsal exostosis (triquetrum).................................................. 6 189.75 6
+# R286 Radial styloid .......................................................................... 6 234.75 7
+# R283 Phalanx/metacarpal................................................................ 6 193.00 7
+# R272 Bone tumour (see General Preamble GP12).......................... I.C I.C I.C
+Joint
+Synovectomy/capsulectomy/debridement
+# R425 - finger joint........................................................................... 6 226.40 6
+# R414 - two or more joints............................................................... 6 339.65 7
+# R407 Synovectomy of extensor or flexor tendons............................ 224.45 6
+# R418 Synovectomy/debridement - wrist........................................... 6 342.55 7
+# R492 Radio-ulnar meniscectomy ..................................................... 6 231.10 7
+Soft tissue
+# R549 Ganglion - Simple or complex................................................. 6 177.80 6
+# R551 Excision of fascia for Dupuytrens (palmar fibromatosis), single
+ray, with or without flaps. .................................................... 6 322.15 7
+# E832 - excision of fascia for Dupuytrens, one or more additional
+rays, to R551.............................................................. add 273.85
+# E831 - use of skin grafts, or revision surgery (with or without skin
+grafts), to R549 or R551 ................................... add 30%
+Payment rules:
+1.Excision of fascia for Dupuytren’s (R551, E832) is only insured for patients who demonstrate
+at least one of the following physical signs:
+a.Metacarophalangeal (MCP) joint flexion contractures of 30 degrees or more.
+b.Interphalangeal (IP) joint flexion contracture of any degree.
+c.Adduction contractures of the interdigital web spaces with significant functional
+impairment.
+d.Recurrence of Dupuytren’s disease, defined as any recurrent flexion contracture of the
+MCP or IP joints following prior interventional treatment (e.g., fasciotomy/fasciectomy).
+e.Significant functional impairment with any degree of contracture at the MCP or IP joints.
+2.R551 is not payable for treatment of Dupuytren’s by aponeurotomy.
+3.A maximum of one R551 is eligible for payment per limb, per day.
+Note:
+1.Services listed under “Skin Flaps and Grafts” are not eligible for payment with R549 or R551.
+2.R551, E832 and E831 include the palmar and digital components of the Dupuytrens
+procedure, when rendered.
+Muscle
+# R522 - simple................................................................................. 6 193.00 6
+# R523 - complex .............................................................................. 6 484.35 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N11 Amd 12 Draft 1
+
+--- PAGE 576 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+RECONSTRUCTION
+Bone - Pseudoarthrosis/non-union/avascular necrosis
+# R321 Phalanx, metacarpal ............................................................... 6 260.75 7
+# R322 Scaphoid................................................................................. 6 588.20 6
+# R345 Carpal bone, other than scaphoid........................................... 6 260.75 6
+# E497 - pedicled vascularized bone graft, to R322 or R345 ... add 526.40
+Note:
+1.R322 and R345 must include fixation and a non-vascularized bone graft.
+2.E497 is payable in addition to R322 and R345 if a pedicled vascularized bone graft is used in
+addition to, or in place of a non-vascularized bone graft.
+3.F019 and Z279 rendered in conjunction with R322 and R345 are not eligible for payment.
+Bone - Deformity
+Osteotomy - phalanx
+# R257 - terminal............................................................................... 162.65 6
+# R258 - middle proximal or metacarpal ........................................... 6 193.20 7
+# E591 - each additional........................................................... add 158.65
+Ligaments
+# R597 Simple/single repair - wrist...................................................... 6 301.60 7
+# R548 Extensive/multiple repair - wrist .............................................. 6 511.45 7
+# R601 Metacarpal phalangeal repair ................................................. 6 316.75 7
+Note:
+Reconstruction - Nerve - see page X13.
+Amd 12 Draft 1 N12 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 577 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+RECONSTRUCTION
+Tendon
+Tenoplasty
+# R557 - one ..................................................................................... 6 223.65 7
+# E050 - each additional........................................................... add 77.05
+Tendon graft
+# R559 - one ..................................................................................... 6 306.30 7
+# E052 - each additional........................................................... add 259.85
+# R586 Reconstruction of flexor tendon pulley, per finger................... 97.35 7
+Silicone rod insertion
+# R554 - one ..................................................................................... 6 294.20 7
+# E051 - each additional........................................................... add 245.90
+Transplant/transfer
+# R563 - single .................................................................................. 6 284.95 7
+# E054 - each additional........................................................... add 236.10
+Tendon repair - extensor
+# R578 - single .................................................................................. 6 164.10 7
+# E580 - each additional*............................................................ add 70.95
+Flexor
+# R585 - single .................................................................................. 6 307.60 7
+# E581 - each additional* ......................................................... add 128.95
+Mallet finger
+UVC - closed ................................................................................. visit.fee
+# R574 - K-wire ................................................................................. 133.95 7
+# R573 - open ................................................................................... 6 147.20 6
+Boutonniere
+UVC - closed ................................................................................. visit.fee
+# R577 - open ................................................................................... 6 147.30 6
+# R582 - late...................................................................................... 6 246.65 7
+Note:
+*If additional tendon repair(s) requires a separate incision, bill according to Surgical Preamble
+SP3.
+Extremities
+# R602 Pollicization............................................................................. 6 596.35 6
+# R603 Digital reimplantation involving microvascular and neuro
+anastomosis ....................................................................... 8 1586.20 8
+# R604 Revision of R602, R603 (see General Preamble GP12) ........ I.C I.C I.C
+# R605 Reconstruction and plastic repair of traumatically amputated
+extremities (see General Preamble GP12) ........................ I.C I.C I.C
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N13 Amd 12 Draft 1
+
+--- PAGE 578 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+RELEASE
+Tendon
+Tenolysis - flexor and/or extensor tendon of
+# R575 - one digit.............................................................................. 6 194.05 6
+# E537 - each additional digit ................................................... add 165.20
+# R541 Flexor tenolysis with pulley preservation ................................ 6 309.00 6
+Tenotomy or fasciotomy (closed)
+Finger
+# Z247 - one ..................................................................................... 49.20 6
+# Z248 - two...................................................................................... 72.35 7
+# Z249 - three or more...................................................................... 99.15 6
+# Z231 - palmar or plantar ................................................................ 73.70 7
+Tendon release (open)
+# R536 - finger/palm.......................................................................... 156.50 6
+# E592 - more than one, to R536 ............................................. add 133.05
+# R537 - wrist .................................................................................... 6 175.00 6
+# E571 - more than one, to R537 ............................................. add 148.75
+REDUCTION
+Fractures
+Phalanx
+F004 - no reduction, rigid immobilization ....................................... 49.20
+F005 - closed reduction ................................................................. 99.25 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+E558 - each additional........................................................... add 22.25
+# F007 - open reduction.................................................................... 6 298.45 7
+Metacarpal
+F008 - no reduction, one or more, rigid immobilization.................. 49.20
+F009 - closed reduction ................................................................. 99.25 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+E504 - each additional........................................................... add 22.20
+# F011 - open reduction.................................................................... 6 262.60 7
+E559 - each additional (open) ............................................... add 142.90
+Intra-articular
+F006 - closed reduction ................................................................. 119.75
+E584 - application of plaster cast outside hospital ................ add 11.15
+E503 - each additional........................................................... add 26.85
+# F010 - open reduction.................................................................... 6 335.80 7
+Amd 12 Draft 1 N14 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 579 ---
+MUSCULOSKELETAL SYSTEM SURGICAL PROCEDURES
+HAND AND WRIST
+Asst Surg Anae
+REDUCTION
+Fractures
+Bennett's
+F012 - no reduction, rigid immobilization ....................................... 49.20
+E584 - application of plaster cast outside hospital ................ add 11.15
+# F013 - closed reduction ................................................................. 6 119.80 6
+# F015 - open reduction.................................................................... 6 335.80 7
+Carpus
+F102 - no reduction, rigid immobilization ....................................... 49.20
+E584 - application of plaster cast outside hospital ................ add 11.15
+# F016 - closed reduction, one or more............................................ 115.10 6
+# F017 - open reduction, one or more .............................................. 6 346.15 7
+Scaphoid
+F018 - no reduction, rigid immobilization ....................................... 49.20
+E584 - application of plaster cast outside hospital ................ add 11.15
+# F019 - open reduction.................................................................... 6 480.00 7
+# F020 - excision .............................................................................. 6 193.00 7
+Dislocations
+Finger
+D001 - closed reduction ................................................................. 57.50 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+E576 - each additional........................................................... add 10.25
+# D003 - open reduction.................................................................... 6 196.50 6
+Metacarpal/phalangeal
+D004 - closed reduction ................................................................. 57.50 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+E577 - each additional........................................................... add 10.25
+# D006 - open reduction.................................................................... 6 181.85 7
+Carpal
+D007 - closed reduction ................................................................. 128.05 6
+E584 - application of plaster cast outside hospital ................ add 11.15
+# D008 - open reduction.................................................................... 6 241.30 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) N15 Amd 12 Draft 1

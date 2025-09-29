@@ -1,0 +1,110 @@
+{
+  "source": "data/ontario/ohip/health-insurance-act.doc",
+  "extracted_at": "2025-09-23T17:18:41.535525Z",
+  "total_sections": 5,
+  "normalized_sections": 5,
+  "sections": [
+    {
+      "section_ref": "1.1",
+      "title": "mendments dated May 12, 2006",
+      "raw_text": " 1.1 Amendments dated May 12, 2006.\n 2. Amendments dated July 1, 2006.\n 3. Amendments dated October 1, 2006.\n 4. Amendments dated October 2, 2006 (effective as of October 1, 2006).\n 4.0.1 Amendments dated October 1, 2006 (made in 2007).",
+      "line_range": "L129-L133",
+      "level": 2,
+      "effect": "This section lists amendments to the Health Insurance Act made on specific dates.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [],
+      "notes": "This section primarily serves as a record of amendments and does not establish specific requirements or conditions.",
+      "topics": []
+    },
+    {
+      "section_ref": "4.1",
+      "title": "mendments dated December 1, 2006",
+      "raw_text": " 4.1 Amendments dated December 1, 2006.\n 5. Amendments dated January 1, 2007.\n 6. Amendments dated April 1, 2007.",
+      "line_range": "L134-L136",
+      "level": 2,
+      "effect": "This section lists amendments to the Health Insurance Act made on specific dates.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [],
+      "notes": "This section does not establish specific requirements or conditions related to health insurance eligibility.",
+      "topics": []
+    },
+    {
+      "section_ref": "6.1",
+      "title": "mendments dated October 1, 2007",
+      "raw_text": " 6.1 Amendments dated October 1, 2007.\n 7. Amendments dated January 1, 2008.\n 8. Amendments dated January 2, 2008 (effective as of January 1, 2008).\n 9. Amendments dated November 19, 2007 (effective as of February 1, 2008).",
+      "line_range": "L137-L140",
+      "level": 2,
+      "effect": "This section lists amendments to the Health Insurance Act with specific effective dates.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [],
+      "notes": "This section primarily serves as a record of amendments and does not establish eligibility or residency requirements.",
+      "topics": []
+    },
+    {
+      "section_ref": "9.1",
+      "title": "mendments dated November 22, 2007 (effective as of February 1, 2008)",
+      "raw_text": " 9.1 Amendments dated November 22, 2007 (effective as of February 1, 2008).\n 10. Amendments dated April 1, 2008.\n 11. Amendments dated April 15, 2008 (effective as of June 3, 2008).\n 12. Amendments dated July 3, 2009 (effective as of October 1, 2009).\n 13. Amendments dated June 26, 2009 (effective as of October 1, 2009).\n 14. Amendments dated July 1, 2010.\n 15. Amendments dated October 1, 2010.\n 16. Amendments dated April 1, 2011.\n 17. Amendments dated June 1, 2011.\n 18. Amendments dated July 1, 2011.\n 19. Amendments dated September 1, 2011.\n 20. Amendments dated April 1, 2012.\n 21. Amendments dated January 1, 2013.\n 22. Amendments dated January 1, 2013 (effective as of April 1, 2013).\n 23. Amendments dated September 1, 2013 (effective as of April 1, 2013).\n 24. Amendments dated September 1, 2013 (effective as of October 1, 2013).\n 25. Amendments dated November 19, 2013 (effective as of May 1, 2014).\n 26. Amendments dated January 15, 2015 (effective April 1, 2015).\n 27. Amendments dated May 1, 2015.\n 28. Amendments dated September 28, 2015 (effective as of October 1, 2015).\n 29. Amendments dated September 1, 2015 (effective as of April 1, 2016).\n 30. Amendments dated October 1, 2015 (effective as of October 26, 2015).\n 31. Amendments dated October 30, 2015 (effective as of December 21, 2015).\n 32. Amendments dated December 22, 2015 (effective as of March 1, 2016).\n 33. Amendments dated September 6, 2019 (effective as of October 1, 2019).\n 34. Amendments dated March 19, 2020 (effective as of April 1, 2020).\n 35. Amendments dated February 10, 2021 (effective as of April 1, 2020).\n 36. Amendments dated February 11, 2021 (effective as of March 14, 2021).\n 37. Amendments dated July 2, 2021 (effective as of October 1, 2021).\n 38. Amendments dated January 24, 2022 (effective as of November 1, 2021).\n 39. Amendments dated January 25, 2022 (effective as of July 1, 2022).\n 40. Amendments dated October 5, 2022 (effective as of December 1, 2022).\n 41. Amendments dated January 22, 2025 (effective as of April 1, 2023).\n 42. Amendments dated March 9, 2023 (effective as of April 1, 2023).\n 43. Amendments dated May 25, 2023 (effective as of November 1, 2021).\n 44. Amendments dated May 26, 2023 (effective as of July 1, 2023).\n 45. Amendments dated June 29, 2023 (effective as of July 24, 2023).\n 46. Amendments dated February 19, 2024 (effective as of September 25, 2023).\n 47. Amendments dated February 20, 2024 (effective as of April 1, 2024).\n 48. Amendments dated February 14, 2025 (effective as of March 3, 2025).\n\u201cschedule of laboratory benefits\u201d means the document published by the Ministry of Health titled \u201cSchedule of Benefits for Laboratory Services\u201d, dated February 14, 2025 (effective as of March 3, 2025), which is available on a website of the Government of Ontario;\n\u201cschedule of optometry benefits\u201d means the document published by the Ministry of Health titled \u201cSchedule of Benefits for Optometry Services (March 11, 2023 (effective September 1, 2023))\u201d, but does not include the \u201c[Commentary\u2026]\u201d portions of the document, or any appendix to the document;\n\u201cspouse\u201d means a person,\n (a) to whom the person is married, or\n (b) with whom the person was living, in a conjugal relationship outside marriage, if the two persons,\n (i) have cohabited for at least one year,\n (ii) are together the parents of a child, or\n (iii) have together entered into a cohabitation agreement under section 53 of the Family Law Act;\n\u201cstandard ward accommodation\u201d means,\n (a) a bed in a hospital area designated by the hospital in accordance with Regulation 794 of the Revised Regulations of Ontario, 1990 under the Ministry of Health Act as a standard ward.\n (b) REVOKED: O.\u00a0Reg. 375/93, s.\u00a01.\nR.R.O. 1990, Reg. 552, s.\u00a01; O.\u00a0Reg. 616/91, s.\u00a01\u00a0(1); O.\u00a0Reg. 214/93, s.\u00a01; O.\u00a0Reg. 375/93, s.\u00a01; O.\u00a0Reg. 794/93, s.\u00a01; O.\u00a0Reg. 488/94, s.\u00a01; O.\u00a0Reg. 114/96, s.\u00a01; O.\u00a0Reg. 409/96, s.\u00a01\u00a0(1); O.\u00a0Reg. 410/96, s.\u00a01; O.\u00a0Reg. 502/97, s.\u00a01\u00a0(1); O.\u00a0Reg. 44/98, s.\u00a01; O.\u00a0Reg. 147/98, s.\u00a01; O.\u00a0Reg. 375/98, s.\u00a01\u00a0(1); O.\u00a0Reg. 376/98, s.\u00a01; O.\u00a0Reg. 378/98, s.\u00a01; O.\u00a0Reg. 478/98, s.\u00a01; O.\u00a0Reg. 178/99, s.\u00a01\u00a0(1-5); O.\u00a0Reg. 201/99, s.\u00a01; O.\u00a0Reg. 482/99, s.\u00a01; O.\u00a0Reg. 67/00, s.\u00a01; O.\u00a0Reg. 322/00, s.\u00a01; O.\u00a0Reg.\u00a0368/00, s.\u00a01\u00a0(1); O.\u00a0Reg. 617/00, s.\u00a01; O.\u00a0Reg. 66/01, s.\u00a01; O.\u00a0Reg. 250/01, s.\u00a01\u00a0(1); O.\u00a0Reg. 272/01, s.\u00a01\u00a0(1); O.\u00a0Reg. 345/01, s.\u00a01; O.\u00a0Reg. 415/01, s.\u00a01; O.\u00a0Reg. 56/02, s.\u00a01\u00a0(1); O.\u00a0Reg. 169/02, s.\u00a01\u00a0(1); O.\u00a0Reg. 302/02, s.\u00a01\u00a0(1); O.\u00a0Reg. 361/02, s.\u00a01\u00a0(1); O.\u00a0Reg. 18/03, s.\u00a01; O.\u00a0Reg. 50/03, s.\u00a01; O.\u00a0Reg. 62/03, s.\u00a01; O.\u00a0Reg. 203/03, s.\u00a01; O.\u00a0Reg. 221/03, s.\u00a01; O.\u00a0Reg. 265/03, s.\u00a01\u00a0(1); O.\u00a0Reg. 266/03, s.\u00a01; O.\u00a0Reg. 350/03, s.\u00a01; O.\u00a0Reg. 6/04, s.\u00a01; O.\u00a0Reg. 238/04, s.\u00a01; O.\u00a0Reg. 320/04, s.\u00a01 (1, 2); O.\u00a0Reg. 352/04, s.\u00a01; O.\u00a0Reg. 129/05, s.\u00a01; O.\u00a0Reg. 328/05, s.\u00a01; O.\u00a0Reg. 374/05, s.\u00a01; O.\u00a0Reg. 502/05, s.\u00a01 (1); O.\u00a0Reg. 96/06, s.\u00a01\u00a0(1); O.\u00a0Reg. 318/06, s.\u00a01; O.\u00a0Reg. 418/06, s.\u00a01; O.\u00a0Reg. 420/06, s.\u00a01; O.\u00a0Reg. 501/06, s.\u00a01; O.\u00a0Reg. 538/06, s.\u00a01; O.\u00a0Reg. 557/06, s.\u00a01; O.\u00a0Reg. 24/07, s.\u00a01; O.\u00a0Reg. 98/07, s.\u00a01; O.\u00a0Reg. 128/07, s.\u00a01; O.\u00a0Reg. 189/07, s.\u00a01; O.\u00a0Reg. 403/07, s. 1; O.\u00a0Reg. 519/07, s.\u00a01; O.\u00a0Reg. 587/07, s.\u00a01; O.\u00a0Reg. 8/08, s.\u00a01; O.\u00a0Reg. 26/08, s.\u00a01; O.\u00a0Reg. 52/08, s.\u00a01; O.\u00a0Reg. 168/08, s.\u00a01; O.\u00a0Reg. 209/08, s.\u00a01; O.\u00a0Reg. 210/08, s.\u00a01; O.\u00a0Reg. 430/08, s.\u00a01; O.\u00a0Reg. 133/09, s.\u00a01; O.\u00a0Reg. 135/09, s.\u00a01; O.\u00a0Reg. 298/09, s.\u00a01; O.\u00a0Reg. 421/09, s.\u00a01; O.\u00a0Reg. 100/10, s.\u00a01; O.\u00a0Reg. 214/10, s.\u00a01; O.\u00a0Reg. 404/10, s.\u00a01; O.\u00a0Reg. 406/10, s.\u00a01; O.\u00a0Reg. 83/11, s.\u00a01; O.\u00a0Reg. 186/11, s.\u00a01; O.\u00a0Reg. 217/11, s.\u00a01; O.\u00a0Reg. 385/11, s.\u00a01; O.\u00a0Reg. 76/12, s.\u00a01\u00a0(1); O.\u00a0Reg. 8/13, s.\u00a01; O. Reg. 138/13, s. 1; O. Reg. 166/13, s. 1; O. Reg. 267/13, s. 1 (1, 2); O.\u00a0Reg. 354/13, s.\u00a01; O. Reg. 15/15, s. 1; O.\u00a0Reg. 95/15, s.\u00a01; O. Reg. 283/15, s. 1 (2); O. Reg. 303/15, s. 1; O. Reg. 307/15, s. 1; O. Reg. 436/15, s. 1; O. Reg. 39/16, s. 1; O. Reg. 519/17, s. 1; O. Reg. 239/19, s. 1; O. Reg. 259/19, s. 1; O. Reg. 323/19, s. 1; O.\u00a0Reg. 468/19, s. 1; O. Reg. 67/20, s. 1; O. Reg. 85/20, s. 1; O. Reg. 266/20, s. 1; O. Reg. 132/21, s. 1; O. Reg. 178/21, s. 1; O. Reg. 536/21, s. 1; O. Reg. 85/22, s. 1; O. Reg. 255/22, s. 1; O. Reg. 296/22, s. 1; O. Reg. 502/22, s. 1; O. Reg. 37/23, s. 1; O. Reg. 48/23, s. 1; O. Reg. 51/23, s. 1; O. Reg. 144/23, s. 1; O. Reg. 208/23, s. 1 (1-3); O. Reg. 149/24, s. 1; O. Reg. 150/24, s. 1; O. Reg. 23/25, s. 1; O. Reg. 34/25, s. 1; O. Reg. 96/25, s. 1.\n (2)\u00a0\u00a0A reference to the schedule of benefits or the schedule of optometry benefits in relation to a service is a reference to the relevant schedule in force at the time the service was rendered. O.\u00a0Reg. 320/04, s.\u00a01 (3).\n (3)\u00a0\u00a0A person who is exempted from the requirement to be a member of the College of Physicians and Surgeons of Ontario under subsections 9 (1) and (3) of the Medicine Act, 1991 by a regulation made under that Act is a prescribed person for the purposes of the definition of \u201cphysician\u201d in section 1 of the Act, except with respect to the application of sections 27, 28.2 and 29 of this Regulation. O. Reg. 208/23, s. 1 (4).\n (4)\u00a0\u00a0REVOKED: O.\u00a0Reg. 265/03, s.\u00a01\u00a0(2).",
+      "line_range": "L141-L195",
+      "level": 2,
+      "effect": "Establishes amendments to the Health Insurance Act and defines terms related to benefits and exemptions.",
+      "conditions": [],
+      "durations": {},
+      "prerequisites": {},
+      "actors": [],
+      "notes": "Includes various amendments effective on specified dates and definitions for terms such as 'schedule of laboratory benefits' and 'schedule of optometry benefits'.",
+      "topics": [
+        "dependant",
+        "exemption",
+        "spouse"
+      ]
+    },
+    {
+      "section_ref": "1.1",
+      "title": "or the purposes of subsection 11 (2",
+      "raw_text": " 1.1\u00a0\u00a0For the purposes of subsection 11 (2.1) of the Act,\n\u201cdependant\u201d means a dependent child who is, \n (a) under 22 years of age, or\n (b) 22 years of age or older, but dependent on the member of the Canadian Forces due to a mental or physical disability;\n\u201cmember of the Canadian forces\u201d means,\n (a) a regular force member, or \n (b) a member of the reserve force of the Canadian Forces referred to in subsection 15 (3) of the National Defence Act (Canada) who falls within the circumstances described in clause 50.2 (1) (a) or (b) of the Employment Standards Act, 2000;\n\u201cspouse\u201d has the meaning set out in subsection 1 (1) of this Regulation. O.\u00a0Reg. 133/09, s.\u00a02.",
+      "line_range": "L196-L203",
+      "level": 2,
+      "effect": "Defines the terms 'dependant' and 'member of the Canadian Forces' for the purposes of subsection 11 (2.1) of the Act.",
+      "conditions": [
+        {
+          "key": "dependant_age",
+          "op": "<",
+          "value": 22
+        },
+        {
+          "key": "dependant_disability",
+          "op": "exists",
+          "value": "true"
+        },
+        {
+          "key": "member_type",
+          "op": "in",
+          "value": [
+            "regular_force",
+            "reserve_force"
+          ]
+        }
+      ],
+      "actors": [
+        "dependant",
+        "member_of_the_Canadian_forces",
+        "spouse"
+      ],
+      "notes": "The definition of 'spouse' refers to subsection 1 (1) of this Regulation.",
+      "topics": [
+        "dependant",
+        "military",
+        "spouse",
+        "workers"
+      ],
+      "incomplete": true,
+      "validation_note": "Missing presence requirements for eligibility section"
+    }
+  ]
+}

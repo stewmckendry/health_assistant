@@ -1,0 +1,77 @@
+Subsection: Critical Care Medicine (11)
+Parent Section: A
+Page Reference: A85
+Pages: 213 to 214
+Text chunks: 1
+Total text length: 4153 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 213 ---
+CONSULTATIONS AND VISITS
+CRITICAL CARE MEDICINE (11)
+GENERAL LISTINGS
+A715 Consultation............................................................................ 175.55
+Comprehensive critical care medicine consultation
+This service is a consultation rendered by a specialist in critical care medicine who provides all
+the appropriate elements of a consultation and spends a minimum of seventy-five (75) minutes
+of direct contact with the patient exclusive of time spent rendering any other separately billable
+intervention to the patient.
+A710 Comprehensive critical care medicine consultation................ 310.45
+Medical record requirements:
+The start and stop times must be recorded in the patient’s permanent medical record.
+A915 Limited consultation................................................................ 108.95
+A116 Repeat consultation................................................................ 108.95
+A713 Medical specific assessment .................................................. 87.60
+A114 Medical specific re-assessment.............................................. 65.90
+A111 Complex medical specific re-assessment............................... 76.30
+A118 Partial assessment ................................................................. 39.60
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patients in the
+Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C715 Consultation............................................................................ 175.55
+C710 Comprehensive critical care medicine consultation - subject to
+the same conditions as A710 ............................................. 310.45
+C915 Limited consultation................................................................ 108.95
+C116 Repeat consultation................................................................ 108.95
+C713 Medical specific assessment .................................................. 87.60
+C114 Medical specific re-assessment.............................................. 65.90
+C111 Complex medical specific re-assessment............................... 76.30
+Subsequent visits
+C112 - first five weeks........................................................per visit 34.10
+C117 - sixth to thirteenth week inclusive (maximum 3 per patient
+per week)................................................................ per visit 34.10
+C119 - after thirteenth week (maximum 6 per patient per month)
+............................................................................... per visit 34.10
+Subsequent visits by the Most Responsible Physician (MRP)
+See General Preamble GP44 to GP45 for terms and conditions.
+C122 - day following the hospital admission assessment.............. 61.15
+C123 - second day following the hospital assessment .................. 61.15
+C124 - day of discharge ................................................................. 61.15
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A85 Amd 12 Draft 1
+
+--- PAGE 214 ---
+CONSULTATIONS AND VISITS
+CRITICAL CARE MEDICINE (11)
+Subsequent visits by the MRP following transfer from an Intensive Care Area
+See General Preamble GP46 for terms and conditions.
+C142 - first subsequent visit by the MRP following transfer from an
+Intensive Care Area............................................................ 61.15
+C143 - second subsequent visit by the MRP following transfer from
+an Intensive Care Area....................................................... 61.15
+C121 Additional visits due to intercurrent illness (see General
+Preamble GP43)..................................................... per visit 34.10
+C118 Concurrent care..........................................................per visit 34.10
+C982 Palliative care (see General Preamble GP50)............ per visit 34.10
+Amd 12 Draft 1 A86 February 14 , 2 025 (e ffective M arch 3, 2025)

@@ -1,0 +1,19 @@
+{
+  "subsection_title": "Skull and Mandible",
+  "parent_section": "N",
+  "page_ref": "N28",
+  "pages_processed": "592-601",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

@@ -1,0 +1,131 @@
+{
+  "document_id": "cep_alcohol_use_disorder",
+  "source_url": "https://tools.cep.health/tool/alcohol-use-disorder/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "substance_use",
+  "extracted_at": "2025-09-24T15:01:31.511407",
+  "content_hash": "6d1e18a26b5a20aeb6d290cfe7d06ae5e1a7a1377e6cc011fa5010a5eee07db8",
+  "title": "Alcohol Use Disorder",
+  "tool_slug": "alcohol-use-disorder",
+  "last_updated": "September 30, 2019",
+  "navigation": [],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Screening for AUDNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Special patient populations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select special population to view screening tools",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Alcohol Use Disorder Identification Test (AUDIT)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Results",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Click risk score to view interventions, resources and talking points",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "All patients should be screened routinely (e.g. annually or when indicators are observed) with a recommended tool like theAUDIT.2,3It is important to screen all patients and not just patients eliciting an index of suspicion for AUD, since most persons with AUD are not recognized.4 Consider screening for AUD when any of the following indicators are observed: After a recent motor vehicle accidentFrequent work avoidance (off work slips)RosaceaRhinophyma"
+    },
+    {
+      "heading": "Diagnosing AUDNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Once you have identified that your patient might have AUD through the AUDIT or the AUDIT-C, then the DSM-5 criteria can be used to diagnose your patient. To confirm a diagnosis of AUD, at least two of the following criteria need to be met. Ask your patients, in the past 12-months have you: Had times when you ended up drinking more, or longer than you intended?More than once wanted to cut down or stop drinking, or tried to, but couldn\u2019t?Spent a lot of time drinking? Or being sick or getting ov..."
+    },
+    {
+      "heading": "Pharmacotherapy optionsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Recommended pharmacotherapy",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Off-Label Pharmacotherapy Options",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Talk with your patient about the various available pharmacotherapy options. Consider the advantages and disadvantages of each therapy for your patient. Generally, naltrexone oral and acamprosate are the recommended first line options.2,3Note that these options do not eliminate or diminish withdrawal symptoms. For patients with strong cravings and suffer recurrent binges.Effective treatment to help stop or reduce alcohol usePatientsdo not haveto be abstinent before treatment What it does1,5,9,..."
+    },
+    {
+      "heading": "Non-pharmacotherapy options",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Types of behavioural treatments",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "AUD is treated most effectively when pharmacotherapy is combined with other treatments.1,3Non-pharmacotherapy treatments help patients target behaviours that relate to drinking, develop skills needed to stop or reduce drinking, set reachable goals, build support networks and address triggers that might cause a relapse.1 The goal is to improve health and wellness to live a full and self-directed life. This therapy is designed to address feelings and situations (triggers) that may lead to a rel..."
+    },
+    {
+      "heading": "Alcohol withdrawalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Withdrawal symptoms usually start within 8 hours after the last drink but can occur days later. Symptoms typically peak by 24 to 72 hours but may continue for weeks.19 Alcohol withdrawal that requires treatment is rare in people who consume fewer than six drinks per day. Older adults are an exception and may develop significant withdrawal symptoms even if fewer than six drinks per day are consumed. Past withdrawal predicts future episodes. Patients with a history of delirium tremens and withd..."
+    },
+    {
+      "heading": "ResourcesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "AUDIT Tool\u2013 considered a standard screening tool to identify people at risk of alcohol problemsAUDIT-C\u2013 is a 3-item alcohol screen that can help identify persons who are hazardous drinkers or have active alcohol use disorder (including alcohol abuse or dependence)Paddington Alcohol Test (PAT)\u2013 for use with specific triggers (e.g. fall, assault, collapse, self-neglect, repeat attender for unknown injury/illnesses) Addiction. The Next Step. (website)\u2013 an online resource to help patients underst..."
+    },
+    {
+      "heading": "ReferencesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Kahan M. Management of substance use disorders in primary care. 2015 Women\u2019s College Hospital. [cited 2019 April 11]. Available from:https://www.schulich.uwo.ca/familymedicine/citywide/docs/Management_of_substance_use_disorders_in_primary_care.pdf[2]The American Psychiatric Association. Practice Guideline for the Pharmacological Treatment of Patients with Alcohol Use Disorder. 2018. [cited 2019 April 11]. Available from:https://psychiatryonline.org/doi/pdf/10.1176/appi.books.9781615371969[..."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice in collaboration with the Ontario College of Family Physicians and the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the Tool was provided by Jose Silveira MD, FRCPC Dip. ABAM and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as par..."
+    }
+  ],
+  "references": [],
+  "summary": "Alcohol Use Disorder. Category: Substance Use. Features: calculator, forms, patient resources. 8 main sections"
+}

@@ -1,0 +1,144 @@
+Subsection: Vagina
+Parent Section: V
+Page Reference: V3
+Pages: 731 to 733
+Text chunks: 1
+Total text length: 8100 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 731 ---
+FEMALE GENITAL SURGICAL PROCEDURES
+VAGINA
+Asst Surg Anae
+ENDOSCOPY
+Z478 Vaginoscopy (premenarchal) with or without medication........ 56.70 6
+Note:
+Culdoscopy - see Z552 - Abdomen, Peritoneum and Omentum - Digestive System.
+INCISION
+# S712 Culdotomy, drainage or needle puncture................................ 115.00 6
+Z728 Incision and drainage of cyst, abscess or haematoma........... 97.20 6
+EXCISION
+Biopsy(ies) - when sole procedure
+Z722 - local anaesthetic................................................................. 39.60
+E542 - when performed outside of hospital, to Z722............. add 11.55
+# Z723 - general anaesthetic............................................................ 97.20 6
+# S715 Excision of cyst(s), or benign tumour(s) ................................. 6 140.45 6
+# S742 Colpectomy - e.g. for carcinoma............................................. 6 365.55 6
+# S702 Excision of congenital vaginal septum.................................... 6 159.55 6
+REPAIR
+# S716 Anterior or posterior repair...................................................... 6 250.65 7
+Anterior and posterior
+# S717 - repair .................................................................................. 6 396.80 7
+# S718 - repair of enterocoele and/or vault prolapse........................ 6 432.45 7
+Posterior repair and repair of
+# S719 - enterocoele and/or vault prolapse ...................................... 6 366.55 7
+# S723 - anal sphincter ..................................................................... 6 305.90 6
+Anterior repair
+# S720 - with or without posterior repair and repair of uterine prolapse
+(Fothergill or Watkin's interposition) ................................... 6 432.45 7
+# S721 Anterior, posterior repair with excision of cervical stump........ 6 432.45 7
+Post hysterectomy vault prolapse
+# S722 - repair by vaginal approach, may include enterocoele and/or
+anterior and posterior repair ............................................... 6 432.45 7
+# S812 - repeat - repair by vaginal approach, may include
+enterocoele and/or anterior and posterior repair ................ 6 515.05 7
+Abdominal approach to vaginal vault prolapse
+# S760 - vaginal sacropexy............................................................... 6 432.45 6
+# S813 - repeat - vaginal sacropexy ................................................. 6 515.05 6
+# S761 Combined abdominal/vaginal approach for vaginal vault
+prolapse.............................................................................. 7 431.45 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) V3 Amd 12 Draft 1
+
+--- PAGE 732 ---
+FEMALE GENITAL SURGICAL PROCEDURES
+VAGINA
+Asst Surg Anae
+# E862 - when performed laparoscopically, to S760, S813 or S761
+........................................................................... add 25%
+# S724 Perineorrhaphy (not eligible for payment with delivery or other
+vaginal surgery procedures)............................................... 6 127.35 6
+# S725 Colpocleisis (LeFort or modification) ...................................... 6 300.35 7
+# S726 Construction of artificial vagina (see General Preamble GP12) 6 I.C 6
+Closure of fistula
+# S523 Vesicovaginal.......................................................................... 6 791.85 6
+# S231 Rectovaginal (any repair)........................................................ 6 338.55 6
+# S729 Ureterovaginal ........................................................................ 6 560.95 6
+# S709 Urethrovaginal ........................................................................ 6 374.85 6
+Retropubic Urethropexy
+# S549 Primary procedure .................................................................. 6 391.55 6
+# S546 Repeat procedure for failed retropubic or vaginal surgery for
+stress incontinence............................................................. 6 496.25 7
+# E862 - when performed laparoscopically, to S549 or S546
+........................................................................... add 25%
+# S815 Tension free vaginal tape mid-urethral sling by any method/
+approach ............................................................................ 6 393.30 6
+Payment rules:
+Cystoscopy (Z606) is not eligible for payment with S815 unless the cystoscopy is rendered for
+suspicion of disease.
+Combined Abdominal-Vaginal Procedure for Stress Incontinence (Sling Procedure)
+[Commentary:
+Combined abdominal vaginal sling procedures are indicated for the management of stress
+incontinence or genital prolapse, particularly following previous failed anti-incontinence
+procedures of any kind, or a very large cystocoele. The procedure usually entails entry into the
+space of Retzius through an abdominal approach (open or laparoscopic) in conjunction with an
+anterior vaginal dissection (with or without cystoscopy) following which the sling material
+(autologous, synthetic or xenograft) is passed through the perineal membrane, placed under
+appropriate tension at the bladder neck, and sutured to Cooper’s ligament bilaterally.]
+Payment rules:
+1.Anti-prolapse procedures or other anti-incontinence procedures are not eligible for payment
+when rendered with combined abdominal-vaginal procedures for stress incontinence (sling
+procedures).
+2.Cystoscopy (Z606) is not eligible for payment with combined abdominal-vaginal procedures
+for stress incontinence (sling procedures) unless the cystoscopy is rendered for suspicion of
+disease.
+[Commentary:
+Those procedures listed under the titles “Following one previous failed procedure” or “Following
+two or more previously failed procedures” are eligible for payment following failure of the
+appropriate number of any listed procedure.]
+Amd 12 Draft 1 V4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 733 ---
+FEMALE GENITAL SURGICAL PROCEDURES
+VAGINA
+Asst Surg Anae
+Primary approach
+# S728 One surgeon........................................................................... 7 429.10 7
+# E862 - when performed laparoscopically, to S728 ........ add 25%
+Two surgeons
+# S730 - vaginal surgeon .................................................................. 7 330.50 7
+# E863 - when performed laparoscopically, to S730 ........ add 25%
+S740 - abdominal surgeon............................................................. 7 330.50
+# E862 - when performed laparoscopically, to S740 ........ add 25%
+Following previous failed procedure
+# S731 One surgeon........................................................................... 7 557.95 7
+# E862 - when performed laparoscopically, to S731 ........ add 25%
+Two surgeons
+# S732 - vaginal surgeon .................................................................. 7 429.65 7
+# E863 - when performed laparoscopically, to S732 ........ add 25%
+# S733 - abdominal surgeon............................................................. 7 429.65
+# E862 - when performed laparoscopically, to S733 ........ add 25%
+Following two or more failed procedures
+# S748 One surgeon........................................................................... 7 686.70 7
+# E862 - when performed laparoscopically, to S748 ........ add 25%
+Two surgeons
+# S749 - vaginal surgeon .................................................................. 7 528.75 7
+# E863 - when performed laparoscopically, to S749 ........ add 25%
+S751 - abdominal surgeon............................................................. 7 528.75
+# E862 - when performed laparoscopically, to S751 ........ add 25%
+# S811 Rectus abdominus myocutaneous neovaginostomy - includes
+harvest of longitudinal, vertical or transverse rectus
+abdominus flap(s), formation of vaginal pouch and insertion
+of vaginal mold ................................................................... 8 829.40 8
+MANIPULATION
+Examination and/or dilatation (may include insertion and/or removal of IUD)
+# Z735 - general anaesthetic - as sole procedure ............................ 56.70 6
+G552 Removal of IUD without GA.................................................... 20.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) V5 Amd 12 Draft 1

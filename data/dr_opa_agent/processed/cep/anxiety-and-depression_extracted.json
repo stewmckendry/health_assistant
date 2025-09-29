@@ -1,0 +1,285 @@
+{
+  "document_id": "cep_anxiety_and_depression",
+  "source_url": "https://tools.cep.health/tool/anxiety-and-depression/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "mental_health",
+  "extracted_at": "2025-09-24T15:33:04.440786",
+  "content_hash": "158bcb50572f3c03b302ac1410f82dd758aa2cb413c68b7d0eb3b58c6fa62e59",
+  "title": "Anxiety and Depression",
+  "tool_slug": "anxiety-and-depression",
+  "last_updated": "April 4, 2023",
+  "navigation": [
+    {
+      "title": "Screen for risk factors1, 3",
+      "anchor": "#screenpatient",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Conduct a comprehensive assessment2-4, 6",
+      "anchor": "#block-fddfe501-2279-4a06-bdb0-4187f53a3af7",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Collect clinical history",
+      "anchor": "#conductcompassessment",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Screen for risk of suicide or self-harm or harm others",
+      "anchor": "#suiciderisk",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Psychological treatment options",
+      "anchor": "#psychtreatmentoptions",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Depression1, 4, 5, 10",
+      "anchor": "#psychdepressionpng",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Non-pharmacological complementary treatment options",
+      "anchor": "#Non-pharma-complementary-treatment-options",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacological treatment options",
+      "anchor": "#pharmatreatmentoptions",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "First-line medication options1,3\u20135, 7, 9, 11\u201330, 34,35,38",
+      "anchor": "#firstlinemedoptions",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Side effect management1, 5",
+      "anchor": "#side-effect-management",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Special populations",
+      "anchor": "#Special-populations",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Peri/post natal",
+      "anchor": "#specialpop-peri/postnatal",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Older adults",
+      "anchor": "#specialpop-olderadults",
+      "type": "heading_h4",
+      "level": 4
+    },
+    {
+      "title": "Depression",
+      "anchor": "#depression",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Anxiety",
+      "anchor": "#anxiety",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Discontinuation & withdrawal symptoms for anxiety and depression",
+      "anchor": "#discontinuationandwithdrawal",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Alternative therapies",
+      "anchor": "#Alternative-therapies",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Natural health products (NHPs)1, 36",
+      "anchor": "#NHPs",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "assessment_tools": [
+      "PHQ-9",
+      "GAD-7"
+    ],
+    "red_flags": [
+      "Assess for adequate social support and awareness of resourcesAdvise the patient to create asafety planand seek further help if the situation becomes worseLet the patient know that we have a legal obli",
+      "Antidepressants have been associated with thoughts of suicide or self-harm early in treatment or a small number of people under the age of 25. Weekly monitoring should be employed with treatment initi"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Screening and assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Screen patient",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Conduct a comprehensive assessment2-4, 6",
+          "anchor": "#block-fddfe501-2279-4a06-bdb0-4187f53a3af7",
+          "level": 3
+        }
+      ],
+      "summary": "Screen patientConduct a comprehensive assessment Screen patients who express mood or anxiety/depression-related concerns and those who come in for unrelated concerns, but who present with risk factors for anxiety and depression. Current evidence does not indicate a recommended screening interval for anxiety and depression. Balance the use of validated screening tools with facilitating talks with patients about anxiety and depression."
+    },
+    {
+      "heading": "Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Psychological treatment options",
+          "anchor": "#psychtreatmentoptions",
+          "level": 3
+        },
+        {
+          "heading": "OSP Networks and Referral Process",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "OSP Networks and Referral Process",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Non-pharmacological complementary treatment options",
+          "anchor": "#Non-pharma-complementary-treatment-options",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological treatment options",
+          "anchor": "#pharmatreatmentoptions",
+          "level": 3
+        },
+        {
+          "heading": "First-line medication options1,3\u20135, 7, 9, 11\u201330, 34,35,38",
+          "anchor": "#firstlinemedoptions",
+          "level": 3
+        },
+        {
+          "heading": "Medication counselling",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Specific side effect management for symptoms1, 5",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Warnings and precautions",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Special populations",
+          "anchor": "#Special-populations",
+          "level": 3
+        }
+      ],
+      "summary": "Psychological treatment optionsNon-pharmacological complementary treatment optionsPharmacological treatment optionsSide effect managementSpecial populations: peri/postnatal patientsSpecial populations: older adults Use your clinical judgement to move patients through the stepped-care approach. For the psychological and pharmacological management of anxiety and depression. Individualize therapy based on a patient\u2019s symptom severity, concerns and preferences. This may involve skipping steps to ..."
+    },
+    {
+      "heading": "Follow-up/monitoring",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Depression",
+          "anchor": "#depression",
+          "level": 3
+        },
+        {
+          "heading": "Anxiety",
+          "anchor": "#anxiety",
+          "level": 3
+        },
+        {
+          "heading": "Discontinuation & withdrawal symptoms for anxiety and depression",
+          "anchor": "#discontinuationandwithdrawal",
+          "level": 3
+        },
+        {
+          "heading": "Discontinuation & withdrawal symptoms8",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "DepressionAnxietyDiscontinuation & withdrawal symptoms for anxiety and depression Follow-up frequency for patients using pharmacological treatment:4 First 6 weeks OR until response and tolerability are established: at least every 2 weeksAfter 6 weeks OR after response and tolerability are confirmed: every 4 weeks"
+    },
+    {
+      "heading": "Appendix: alternative therapies and natural health products",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Alternative therapies",
+          "anchor": "#Alternative-therapies",
+          "level": 3
+        },
+        {
+          "heading": "Natural health products (NHPs)1, 36",
+          "anchor": "#NHPs",
+          "level": 3
+        }
+      ],
+      "summary": "Alternative therapiesNatural health products Patient values and wishes are a priority in treatment selection. While there is evidence for some types of alternative therapies and natural health products (NHPs), as with any treatment, the potential for harm must be considered. Consider the advantages:"
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]LamRW, Kennedy SH, Adams C,BahjiA, Beaulieu S, Bhat V, etal. CanadianNetwork forMoodandAnxietyTreatments(CANMAT) 2023 Update onClinicalGuidelines for Management of MajorDepressiveDisorderinAdults:R\u00e9seaucanadienpour lestraitementsdel\u2019humeuret del\u2019anxi\u00e9t\u00e9(CANMAT) 2023: Mise \u00e0 jour deslignesdirectricescliniquespour lapriseencharge du troubled\u00e9pressifmajeurchez lesadultes. Can JPsychiatry. 2024 May6:7067437241245384.[2]NICE. Generalised anxiety disorder and panic disorder in adults: management..."
+    },
+    {
+      "heading": "Acknowledgment and legalNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The Managing Patients with Anxiety and Depression in Primary Care Tool was developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Sharon Bal. End users and clinical experts..."
+    }
+  ],
+  "references": [],
+  "summary": "Anxiety and Depression. Category: Mental Health. Features: algorithm, calculator, forms. Tools: PHQ-9, GAD-7. 6 main sections"
+}

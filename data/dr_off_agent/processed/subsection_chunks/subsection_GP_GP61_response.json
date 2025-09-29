@@ -1,0 +1,17 @@
+{
+  "subsection_title": "Interviews",
+  "parent_section": "GP",
+  "page_ref": "GP61",
+  "fee_codes": [],
+  "rules": [
+    "Services are calculated and payable in time units of 30 minute increments.",
+    "Minimum time required in direct contact with the patient is 20 minutes for 1 unit.",
+    "If an appointment for the interview is not separately booked, the amount payable will be adjusted to a lesser fee.",
+    "All services must be rendered personally by the attending physician or they become uninsured services."
+  ],
+  "notes": [
+    "Services less than 20 minutes do not constitute any of the services defined in this section.",
+    "Inquiry, discussion or provision of advice or information that would ordinarily constitute part of a consultation is included as a common element of other services."
+  ],
+  "pages_processed": "75-75"
+}

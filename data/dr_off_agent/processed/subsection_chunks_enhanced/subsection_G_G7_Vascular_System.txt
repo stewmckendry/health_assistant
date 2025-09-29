@@ -1,0 +1,105 @@
+Subsection: Vascular System
+Parent Section: G
+Page Reference: G7
+Pages: 389 to 390
+Text chunks: 1
+Total text length: 3029 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      16,
+      "analysis, if rendered ........................................................... 42.65 17.10"
+    ],
+    [
+      18,
+      "and frequency/spectral analysis ......................................... 55.05 24.65"
+    ],
+    [
+      25,
+      "analysis, if rendered, unilateral........................................... 22.05 14.30"
+    ],
+    [
+      27,
+      "and frequency/spectral analysis, unilateral ........................ 28.50 16.60"
+    ],
+    [
+      33,
+      "manoeuvres and permanent record ................................... 7.40 9.90"
+    ],
+    [
+      37,
+      "J205 - arterial and/or venous......................................................... 22.05 14.20"
+    ],
+    [
+      47,
+      "veins and hepatic arteries .................................................. 22.05 14.20"
+    ],
+    [
+      52,
+      "vascular shunts .................................................................. 22.05 14.20"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 389 ---
+DIAGNOSTIC ULTRASOUND
+VASCULAR SYSTEM
+H P
+Transcranial doppler assessment of intracranial circulation
+J189 Transcranial doppler assessment of intracranial circulation ... - 23.65
+J186 - assessment with power mode doppler ............................... 32.50
+J187 - prolonged study requiring at least 50 minutes.................... 32.50
+J188 - follow-up study within 4 weeks of J186 or J187 requiring at
+least 50 minutes ................................................................. 22.90
+Payment rules:
+1.J189 is not eligible for payment with J186, J187 or J188 same patient same day.
+2.Only one of J186, J187 or J188 are payable same patient, same physician, same day.
+Extra-cranial vessel assessment - above the aortic arch
+Bilateral carotid and/or subclavian and/or vertebral arteries only
+J190 - doppler scan or B scan, includes frequency/spectral
+analysis, if rendered ........................................................... 42.65 17.10
+J201 - duplex scan i.e. simultaneous real time, B-mode imaging
+and frequency/spectral analysis ......................................... 55.05 24.65
+Note:
+Only one of J190 or J201 is eligible for payment per patient per day.
+Peripheral vessel assessment
+(distal to inguinal ligament or axilla), artery and/or vein evaluation per extremity.
+Not to be billed routinely with J190.
+J193 - doppler scan or B scan, includes frequency/spectral
+analysis, if rendered, unilateral........................................... 22.05 14.30
+J202 - duplex scan i.e. simultaneous real time, B-mode imaging
+and frequency/spectral analysis, unilateral ........................ 28.50 16.60
+Note:
+Only one of J193 or J202 is eligible for payment per extremity per patient per day.
+Venous assessment
+J198 - bilateral - includes assessment of femoral, popliteal and
+posterior or tibial veins with appropriate functional
+manoeuvres and permanent record ................................... 7.40 9.90
+Note:
+Not to be claimed during surgery or during patient’s post-operative stay in hospital.
+Doppler evaluation of organ transplantation
+J205 - arterial and/or venous......................................................... 22.05 14.20
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) G7 Amd 12 Draft 1
+
+--- PAGE 390 ---
+DIAGNOSTIC ULTRASOUND
+VASCULAR SYSTEM
+H P
+Duplex evaluation of portal hypertension
+J206 - must include doppler interrogation and documentation of
+superior mesenteric vein, splenic vein, portal veins, hepatic
+veins and hepatic arteries .................................................. 22.05 14.20
+Note:
+Not to be billed unless study specifically requested by referring provider.
+Duplex assessment of patency obstruction, and flow direction of vascular shunts
+J207 - must include doppler interrogation and documentation of
+vascular shunts .................................................................. 22.05 14.20
+Note:
+Not to be billed unless study specifically requested by referring provider.
+Amd 12 Draft 1 G8 February 14 , 2 025 (e ffective M arch 3, 2025)

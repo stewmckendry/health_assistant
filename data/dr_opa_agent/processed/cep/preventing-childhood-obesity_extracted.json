@@ -1,0 +1,104 @@
+{
+  "document_id": "cep_preventing_childhood_obesity",
+  "source_url": "https://tools.cep.health/tool/preventing-childhood-obesity/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "preventive_care",
+  "extracted_at": "2025-09-24T15:32:59.600703",
+  "content_hash": "afcd2fc601847e535b5496e1e29b01b4bd83f2b149cd2b1d5f87e4b1a8d3f222",
+  "title": "Preventing Childhood Obesity",
+  "tool_slug": "preventing-childhood-obesity",
+  "last_updated": ".png\"/>",
+  "navigation": [],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Select goal and agree on plan",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Select a goal",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Explore readiness to work on the goal",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select situation to view suggestions",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Agree on a Plan",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Assist the patient/patient\u2019s family to choose one or more goals tailored to their needs. Importance of regular meals and snacksInclusion of protein with all meals and snacks (e.g., protein fortified cereal)Liquid protein sources aren\u2019t as effective as solids for fullness (e.g., milk vs. yogurt or cheese) Set number of meals with protein/daySet number of snacks with protein/week"
+    },
+    {
+      "heading": "Measure, document, and interpret growth",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Measure and document growth",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Interpret Growth Data",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Complete healthy lifestyle record",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Routine growth monitoring allows providers to identify concerns appropriately, while providing an avenue to prompt healthy lifestyle discussions with patients and families. Use quality equipment that is accurate and regularly calibrated to measure patients\u2019 height and weight at both routine and acute/emergent visits.BMI is a strong predictor of future risk of becoming overweight and BMI is associated with negative health outcomes.9, 10As childhood BMI is consistent with adult BMI: It can be u..."
+    },
+    {
+      "heading": "Supporting materials",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "2014 WHO Growth Charts for Canada.Recommended for use by the Canadian Collaborative Group (Dieticians of Canada, Canadian Pediatric Society, College of Family Physicians of Canada, Community Health Nurses of Canada, and the Canadian Paediatric Endocrine Group)WHO Training Course on Child Growth Assessment.World Health Organization. Training Course on Child Growth AssessmentWHO Growth Chart Training Program.Dieticians of Canada. A training package on using the WHO Growth Charts for CanadaCanad..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Healthy Jacksonville Childhood Obesity Prevention Coalition. Motivational interviewing: tips for successful physician-patient-family interactions. [cited 2015 Dec 18].[2]Jackson County Weight Collaborative. Childhood obesity provider toolkit. [cited 2015 Dec 18].[3]The Family Dinner Project. Benefits of family dinners. [cited 2015 Dec 18].[4]Campbell M, Benton JM, Werk LN. 5-2-1-Almost None: parents\u2019 perceptions of changing health-related behaviors in their obese child. Perm J. 2009 Summer..."
+    },
+    {
+      "heading": "Acknowledgment and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative which is led by CEP with collaboration from OCFP and NPAO. Clinical leadershipfor the development of the tool was provided by Dr. Yoni Freedhoff MD, CCFP and was subject to external review by primary care providers and other relevantstakeholders. This Tool was funded by the Government of Ontario as part of the Knowledge Translation in Primary Care Initiative. This Tool was developed for licensed health car..."
+    }
+  ],
+  "references": [],
+  "summary": "Preventing Childhood Obesity. Category: Preventive Care. Features: forms. 5 main sections"
+}

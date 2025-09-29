@@ -1,0 +1,113 @@
+{
+  "subsection_title": "Vascular Laboratory Fees",
+  "parent_section": "G",
+  "page_ref": "G9",
+  "pages_processed": "391-391",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        7,
+        "unilateral or bilateral ........................................................... 20.40 21.40"
+      ],
+      [
+        9,
+        "................................................................................... add 8.00 10.10"
+      ],
+      [
+        17,
+        "J197 - two or more pressures........................................................ 6.85 7.80"
+      ],
+      [
+        19,
+        "J199 - doppler scan....................................................................... 6.85 7.80"
+      ],
+      [
+        30,
+        "J203 - oxygen tension measurements .......................................... 24.10 5.50"
+      ],
+      [
+        31,
+        "J204 - when done in addition to Doppler studies .......................... 13.20 5.50"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J200",
+      "description": "Ankle pressure measurements - requires a minimum of 4 segmental pressure recordings and/or pulse volume recordings and/or Doppler recordings - unilateral or bilateral",
+      "fee": 20.4,
+      "h_fee": 20.4,
+      "p_fee": 21.4,
+      "units": null,
+      "conditions": "This service is only eligible for payment when the device used produces a hard copy output.",
+      "special_prefix": null
+    },
+    {
+      "code": "J196",
+      "description": "Ankle pressure measurements - with exercise and/or quantitative measurements, to J200",
+      "fee": 8.0,
+      "h_fee": 8.0,
+      "p_fee": 10.1,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J197",
+      "description": "Penile pressure recordings - two or more pressures",
+      "fee": 6.85,
+      "h_fee": 6.85,
+      "p_fee": 7.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J199",
+      "description": "Penile Doppler Evaluation - doppler scan",
+      "fee": 6.85,
+      "h_fee": 6.85,
+      "p_fee": 7.8,
+      "units": null,
+      "conditions": "Penile Doppler is only insured for specific indications.",
+      "special_prefix": null
+    },
+    {
+      "code": "J203",
+      "description": "Transcutaneous tissue oxygen tension measurements",
+      "fee": 24.1,
+      "h_fee": 24.1,
+      "p_fee": 5.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J204",
+      "description": "Transcutaneous tissue oxygen tension measurements - when done in addition to Doppler studies",
+      "fee": 13.2,
+      "h_fee": 13.2,
+      "p_fee": 5.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "G517",
+      "context": "not payable with",
+      "description": "This service is not eligible for payment in addition to J200.",
+      "source_subsection": "Vascular Laboratory Fees",
+      "source_page": "G9"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

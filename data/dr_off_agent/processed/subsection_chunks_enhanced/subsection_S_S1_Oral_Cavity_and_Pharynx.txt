@@ -1,0 +1,110 @@
+Subsection: Oral Cavity and Pharynx
+Parent Section: S
+Page Reference: S1
+Pages: 669 to 671
+Text chunks: 1
+Total text length: 6244 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 669 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+Digestive System Surgical ProceduresMarch 4, 2024 (effective April 1, 2024)
+ORAL CAVITY AND PHARYNX
+Asst Surg Anae
+Note:
+To include nasopharynx, oropharynx, hypopharynx except where otherwise specified.
+INCISION
+# Z506 Drainage of oral abscess or haematoma................................ 50.90 6
+# Z510 Drainage of pharyngeal abscess or haematoma.................... 91.10 6
+# Z524 Drainage of haematoma or deep neck abscess (external
+approach) ........................................................................... 6 271.05 7
+Z501 Biopsy..................................................................................... 35.50
+E542 - when performed outside of hospital........................... add 11.55
+# Z537 - requiring general anaesthetic ............................................. 97.05 6
+Tongue tie, release of
+Z111 - simple ................................................................................. 15.35
+# Z112 - complex or requiring general anaesthetic .......................... 50.90 6
+# S031 Palatal fenestration................................................................. 197.55 6
+EXCISION
+Lesion
+Z502 - less than 2 cms .................................................................. 6 71.00 6
+S003 - 2 to 4 cms, inclusive ........................................................... 6 354.50 6
+S006 - over 4 cms.......................................................................... 6 431.15 7
+E542 - when performed outside of hospital........................... add 11.55
+S004 Ranula .................................................................................... 6 165.80 6
+S005 Composite resection of lesion of oral cavity and/or oropharynx
+with partial resection of mandible ....................................... 10 1030.70 12
+S007 Extended composite resection of lesion of oral cavity and
+oropharynx with partial resection of mandible and resection
+of maxilla ............................................................................ 10 1059.45 12
+# S050 Cryotherapy for treatment of pre-malignant or malignant
+lesions of oral cavity or sinuses.......................................... 148.60 6
+Glossectomy
+# S018 - partial.................................................................................. 6 197.45 8
+# S020 Glossoplasty ........................................................................... 6 197.45 6
+Extraction of tooth (complete care)
+S023 - single .................................................................................. 24.90 6
+E700 - each additional tooth.................................................. add 13.40
+# S028 Dentigerous cyst..................................................................... 6 98.80 6
+# S900 Basic units for anaesthesia with any unlisted dental surgical
+procedure performed by dental or oral surgeon (see
+General Preamble GP92, also Bulletin #4203) .................. 8
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S1 Amd 12 Draft 1
+
+--- PAGE 670 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+ORAL CAVITY AND PHARYNX
+Asst Surg Anae
+# S021 Repair of extensive laceration (see General Preamble GP12) 6 I.C I.C
+Note:
+For minor lacerations - see Skin.
+# S034 Cleft palate repair ................................................................... 6 369.25 8
+# S035 Removal of sutures under general anaesthesia ..................... 41.25 6
+# S032 Bone graft to palate ................................................................ 6 335.65 8
+Amd 12 Draft 1 S2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 671 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+ORAL CAVITY AND PHARYNX
+Asst Surg Anae
+Closure of fistula
+# S030 - anterior alveolar.................................................................. 6 197.45 6
+# S033 - palate.................................................................................. 6 281.95 8
+# S036 Uvulopalatopharyngoplasty (includes tonsillectomy) .............. 239.75 6
+Note:
+S036 Uvulopalatopharyngoplasty is an insured service only under the following conditions:
+a.For the treatment of obstructive sleep apnea that is unresponsive to continuous positive
+airway pressure (CPAP) or intolerant of continuous positive airway pressure (CPAP) and;
+b.the procedure is rendered to correct an identified site of airway obstruction causing the
+obstructive sleep apnea.
+[Commentary:
+Uvulopalatopharyngoplasty is not an insured service when rendered solely for the treatment of
+snoring.]
+# S069 Pharyngoplasty....................................................................... 8 360.45 8
+# S002 Excision of parapharyngeal space lesions (with mobilization of
+parotid gland) ..................................................................... 6 907.05 8
+# S067 Partial pharyngectomy - transthyroid or lateral....................... 8 1017.20 11
+# S068 Pharyngo-laryngectomy.......................................................... 8 1155.45 14
+# E882 - with hemithyroidectomy ............................................. add 177.40
+# E883 - with subtotal thyroidectomy........................................ add 266.60
+# E884 - with total thyroidectomy ............................................. add 374.00
+Branchial
+# S058 - cleft lesion .......................................................................... 6 306.85 7
+# S059 - repeat procedure ................................................................ 6 435.30 6
+# S061 Thyroglossal duct remnant ..................................................... 6 340.15 7
+# S062 - repeat procedure ................................................................ 6 410.40 6
+# S063 Tonsillectomy and may include adenoidectomy...................... 178.35 6
+# S065 Adenoidectomy....................................................................... 101.25 6
+E839 - with flexible endoscope, to S063 or S065.................. add 19.20
+Secondary suture or cauterization following tonsillectomy and/or adenoidectomy
+# S066 - when haemorrhage occurs after initial procedure .............. 121.05 6
+# S024 Excision of torus palatinus ...................................................... 6 197.45 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S3 Amd 12 Draft 1

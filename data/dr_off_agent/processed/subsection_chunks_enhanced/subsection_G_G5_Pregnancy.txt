@@ -1,0 +1,81 @@
+Subsection: Pregnancy
+Parent Section: G
+Page Reference: G5
+Pages: 387 to 387
+Text chunks: 1
+Total text length: 1684 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      6,
+      "pregnancy) ......................................................................... 48.75 33.80"
+    ],
+    [
+      7,
+      "J160 - for high risk pregnancy or complications of pregnancy ...... 48.75 32.25"
+    ],
+    [
+      8,
+      "J166 - multiple gestation, for each additional fetus, to J160 add 41.45 22.10"
+    ],
+    [
+      11,
+      "pregnancy) ......................................................................... 32.10 17.55"
+    ],
+    [
+      13,
+      "J158 - for high risk pregnancy or complications of pregnancy ...... 32.10 17.55"
+    ],
+    [
+      15,
+      "ductus venosus, to J160 or J158 ............................... add 32.10 30.00"
+    ],
+    [
+      25,
+      "(maximum one per pregnancy) .......................................... 39.00 20.85"
+    ],
+    [
+      26,
+      "J169 - multiple gestation, for each additional fetus, to J168. add 33.15 16.35"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 387 ---
+DIAGNOSTIC ULTRASOUND
+PREGNANCY
+H P
+Complete
+J159 - on or after 16 weeks gestation (maximum one per normal
+pregnancy) ......................................................................... 48.75 33.80
+J160 - for high risk pregnancy or complications of pregnancy ...... 48.75 32.25
+J166 - multiple gestation, for each additional fetus, to J160 add 41.45 22.10
+Gestational age for Maternal Serum Screening Program
+J157 - before 16 weeks gestation (maximum one per normal
+pregnancy) ......................................................................... 32.10 17.55
+Limited
+J158 - for high risk pregnancy or complications of pregnancy ...... 32.10 17.55
+J167 - fetal Doppler evaluation of middle cerebral artery and/or
+ductus venosus, to J160 or J158 ............................... add 32.10 30.00
+Payment rules:
+J167 is only eligible for payment when rendered by a physician for assessment of:
+a. fetal anemia, or
+b. intrauterine growth retardation
+i. with estimated fetal weight OR abdominal circumference measuring below the 10th
+percentile, or
+ii. >=30 percentile decrease in estimated fetal weight since previous imaging, or
+c. in high-risk pregnancies.
+J168 - nuchal translucency for Prenatal Genetic Screening
+(maximum one per pregnancy) .......................................... 39.00 20.85
+J169 - multiple gestation, for each additional fetus, to J168. add 33.15 16.35
+Payment rules:
+Ultrasound services listed under the headings "Abdomen and Retroperitoneum" or "Pelvis" or
+"Pregnancy" rendered on the same day to the same patient by any physician as J168 are not
+eligible for payment.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) G5 Amd 12 Draft 1

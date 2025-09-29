@@ -1,0 +1,290 @@
+{
+  "subsection_title": "Stomach",
+  "parent_section": "S",
+  "page_ref": "S11",
+  "pages_processed": "679-682",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z527",
+      "description": "Gastroscopy may include biopsies, photography and removal of polyps less than or equal to 1 cm",
+      "fee": 82.9,
+      "units": 4
+    },
+    {
+      "code": "Z547",
+      "description": "Gastroscopy with removal of foreign body",
+      "fee": 99.75,
+      "units": 4
+    },
+    {
+      "code": "Z528",
+      "description": "Subsequent gastroscopy (within three months following previous gastroscopy)",
+      "fee": 67.85,
+      "units": 4
+    },
+    {
+      "code": "E674",
+      "description": "Gastroscopy with snare polypectomy - 1st polyp > 1 cm (maximum 1)",
+      "fee": 142.4
+    },
+    {
+      "code": "E675",
+      "description": "Gastroscopy with snare polypectomy each - additional polyp > 1 cm (maximum 2)",
+      "fee": 73.5
+    },
+    {
+      "code": "S116",
+      "description": "Gastrotomy with removal of tumour or foreign body",
+      "fee": 406.85,
+      "units": 7
+    },
+    {
+      "code": "E731",
+      "description": "Gastrotomy with suture of bleeding peptic ulcer",
+      "fee": 247.05
+    },
+    {
+      "code": "S117",
+      "description": "Pyloromyotomy (Ramstedt's)",
+      "fee": 536.9,
+      "units": 10
+    },
+    {
+      "code": "S118",
+      "description": "Gastrostomy",
+      "fee": 467.85,
+      "units": 7
+    },
+    {
+      "code": "E697",
+      "description": "Gastrostomy with repair of Mallory-Weiss laceration",
+      "fee": 142.4
+    },
+    {
+      "code": "E707",
+      "description": "Gastrostomy when done with another intra-abdominal procedure",
+      "fee": 70.8
+    },
+    {
+      "code": "Z532",
+      "description": "Percutaneous endoscopic gastrostomy",
+      "fee": 172.95,
+      "units": 7
+    },
+    {
+      "code": "Z520",
+      "description": "Change of gastrostomy tube",
+      "fee": 10.65
+    },
+    {
+      "code": "Z526",
+      "description": "Biopsy by gastrostomy",
+      "fee": 73.6
+    },
+    {
+      "code": "Z533",
+      "description": "Biopsy by intubation",
+      "fee": 36.8
+    },
+    {
+      "code": "S122",
+      "description": "Wedge resection for ulcer",
+      "fee": 520.0,
+      "units": 7
+    },
+    {
+      "code": "E708",
+      "description": "Gastrectomy with vagotomy",
+      "fee": 122.05
+    },
+    {
+      "code": "E713",
+      "description": "Gastrectomy after previous partial gastrectomy",
+      "fee": 137.55
+    },
+    {
+      "code": "S123",
+      "description": "Partial gastrectomy distal",
+      "fee": 840.0,
+      "units": 8
+    },
+    {
+      "code": "S125",
+      "description": "Partial gastrectomy proximal",
+      "fee": 900.0,
+      "units": 8
+    },
+    {
+      "code": "S128",
+      "description": "Total gastrectomy with or without splenectomy",
+      "fee": 1235.0,
+      "units": 9
+    },
+    {
+      "code": "S129",
+      "description": "Conversion of previous gastrectomy to Roux-en-y",
+      "fee": 910.0,
+      "units": 9
+    },
+    {
+      "code": "S131",
+      "description": "Vagotomy truncal or selective",
+      "fee": 375.8,
+      "units": 7
+    },
+    {
+      "code": "S124",
+      "description": "Vagotomy highly selective (as sole procedure without pyloroplasty or gastroenterostomy)",
+      "fee": 503.1,
+      "units": 7
+    },
+    {
+      "code": "S121",
+      "description": "Transabdominal vagotomy after previous vagotomy",
+      "fee": 416.5,
+      "units": 8
+    },
+    {
+      "code": "S120",
+      "description": "Gastric bypass with Roux-en-Y anastomosis, for morbid obesity",
+      "fee": 1350.0,
+      "units": 10
+    },
+    {
+      "code": "S115",
+      "description": "Reversal of previous vertical banded gastroplasty",
+      "fee": 820.0,
+      "units": 10
+    },
+    {
+      "code": "S114",
+      "description": "Sleeve gastrectomy",
+      "fee": 820.0,
+      "units": 10
+    },
+    {
+      "code": "S113",
+      "description": "Removal of gastric band",
+      "fee": 300.0,
+      "units": 10
+    },
+    {
+      "code": "S132",
+      "description": "Pyloroplasty",
+      "fee": 406.85,
+      "units": 7
+    },
+    {
+      "code": "S133",
+      "description": "Pyloroplasty and vagotomy",
+      "fee": 528.85,
+      "units": 7
+    },
+    {
+      "code": "S137",
+      "description": "Pyloroplasty or gastroenterostomy plus vagotomy and cholecystectomy",
+      "fee": 678.9,
+      "units": 8
+    },
+    {
+      "code": "S134",
+      "description": "Gastroduodenostomy or gastrojejunostomy",
+      "fee": 406.85,
+      "units": 7
+    },
+    {
+      "code": "S138",
+      "description": "Closure of gastrostomy or other external fistula of stomach",
+      "fee": 345.85,
+      "units": 7
+    },
+    {
+      "code": "S139",
+      "description": "Gastrorrhaphy (for perforated gastric or duodenal ulcer or wound)",
+      "fee": 672.75,
+      "units": 7
+    },
+    {
+      "code": "S140",
+      "description": "Closure of gastrocolic fistula",
+      "fee": 574.4,
+      "units": 7
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z292",
+      "context": "not payable with",
+      "description": "Rendered in association with gastroscopy services is not eligible for payment unless the laryngoscopy service is rendered for suspicion of disease of the larynx.",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E731",
+      "context": "add",
+      "description": "With suture of bleeding peptic ulcer",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E793",
+      "context": "add",
+      "description": "Laparoscopic or laparoscopic assisted",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E706",
+      "context": "add",
+      "description": "With choledochotomy",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E709",
+      "context": "add",
+      "description": "With cholecystectomy",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E711",
+      "context": "add",
+      "description": "After previous gastro-enterostomy",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E712",
+      "context": "add",
+      "description": "After previous vagotomy and pyloroplasty",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E644",
+      "context": "add",
+      "description": "Radical mediastinal node dissection following preoperative chemotherapy and/or radiotherapy",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    },
+    {
+      "code": "E847",
+      "context": "add",
+      "description": "With reconstruction of diaphragm requiring repair with mesh or equivalent synthetic material",
+      "source_subsection": "Stomach",
+      "source_page": "S11"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

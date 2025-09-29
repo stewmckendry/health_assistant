@@ -1,0 +1,284 @@
+{
+  "total": 69,
+  "success": 0,
+  "failed": 69,
+  "skipped": 0,
+  "errors": [
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_prescribing-drugs.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_physician-treatment-of-self-family-members-or_advice-to-the-profession-physician-treatment-of-se.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_ensuring-competence_advice-to-the-profession-changing-scope-of-practic.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_accepting-new-patients.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_professional-responsibilities-in-medical-education.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_physicians-relationships-with-industry-practice_advice-to-the-profession-physicians-relationships.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_availability-and-coverage.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/advice_to_the_profession_advertising.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_third-party-medical-reports.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_decision-making-for-end-of-life-care.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_providing-physician-services-during-job-actions.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_disclosure-of-harm_advice-to-the-profession-disclosure-of-harm.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_transitions-in-care.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_decision-making-for-end-of-life-care_advice-to-the-profession-end-of-life-care.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_dispensing-drugs_advice-to-the-profession-dispensing-drugs.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_virtual-care.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_boundary-violations_advice-to-the-profession-maintaining-appropriate-b.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_advertising.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_medical-records-documentation.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_third-party-medical-reports_advice-to-the-profession-third-party-medical-repor.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_medical-records-management.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_professional-responsibilities-in-medical-education_advice-to-the-profession-professional-responsibili.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_managing-tests.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_human-rights-in-the-provision-of-health-services.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_protecting-personal-health-information_advice-to-the-profession-protecting-personal-healt.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_uninsured-services-billing-and-block-fees.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_public-health-emergencies_advice-to-the-profession-public-health-emergencies.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_accepting-new-patients_advice-to-the-profession-accepting-new-patients.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_ending-the-physician-patient-relationship_advice-to-the-profession-ending-the-physician-pati.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_delegation-of-controlled-acts.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_medical-assistance-in-dying.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_reporting-requirements.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_infection-prevention-and-control-for-clinical-offi.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_medical-records-documentation_advice-to-the-profession-medical-records-documenta.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_consent-to-treatment.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_infection-prevention-and-control-for-clinical-offi_advice-to-the-profession-infection-prevention-and.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_reporting-requirements_advice-to-the-profession-reporting-requirements.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_complementary-alternative-medicine_advice-to-the-profession-complementary-and-alterna.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_ending-the-physician-patient-relationship.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_physician-behaviour-in-the-professional-environmen_advice-to-the-profession-professional-behaviour.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_physicians-relationships-with-industry-practice.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_physician-treatment-of-self-family-members-or.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_continuity-of-care_advice-to-the-profession-continuity-of-care.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_uninsured-services-billing-and-block-fees_advice-to-the-profession-uninsured-services.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/interprofessional_collaboration_working_together_t.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_walk-in-clinics.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_virtual-care_advice-to-the-profession-virtual-care.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_ensuring-competence.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_consent-to-treatment_advice-to-the-profession-consent-to-treatment.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_public-health-emergencies.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_human-rights-in-the-provision-of-health-services_advice-to-the-profession-human-rights.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_dispensing-drugs.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_statements-positions_interprofessional-collaboration.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_boundary-violations.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_social-media.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_medical-records-management_advice-to-the-profession-medical-records-managemen.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_social-media_advice-to-the-profession-social-media.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_statements-positions_female-genital-cutting-(mutilation).json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_disclosure-of-harm.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_providing-physician-services-during-job-actions_advice-to-the-profession-providing-physician-servi.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_prescribing-drugs_advice-to-the-profession-prescribing-drugs.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_closing-a-medical-practice.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_physician-behaviour-in-the-professional-environmen.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_complementary-alternative-medicine.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_mandatory-and-permissive-reporting.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_delegation-of-controlled-acts_advice-to-the-profession-delegation-of-controlled.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_advertising_advice-to-the-profession-advertising.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/availability_and_coverage.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    },
+    {
+      "file": "data/dr_opa_agent/processed/cpso/en_physicians_policies-guidance_policies_protecting-personal-health-information.json",
+      "error": "'Database' object has no attribute 'fetch_one'"
+    }
+  ]
+}

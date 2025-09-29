@@ -9,15 +9,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { ModeToggle, AssistantMode } from '@/components/ModeToggle';
 import { SettingsPanel } from '@/components/settings/SettingsPanel';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Loader2, RefreshCw, Settings, Activity, Stethoscope, Search, Pill } from 'lucide-react';
+import { Loader2, RefreshCw, Settings, Stethoscope } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -84,40 +76,19 @@ export default function Home() {
               
               {/* Clinical Tools Group */}
               <div className="flex items-center gap-2">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="gap-2"
-                    >
-                      <Stethoscope className="h-4 w-4" />
-                      Clinical Agents
-                      <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-primary/10 text-primary rounded">
-                        ALPHA
-                      </span>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-56">
-                    <DropdownMenuLabel>Diagnostic AI Agents</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem disabled>
-                      <Activity className="h-4 w-4 mr-2" />
-                      ED Triage Assessment
-                      <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem disabled>
-                      <Search className="h-4 w-4 mr-2" />
-                      Symptom Analyzer
-                      <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem disabled>
-                      <Pill className="h-4 w-4 mr-2" />
-                      Drug Interactions
-                      <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <Link href="/agents">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="gap-2"
+                  >
+                    <Stethoscope className="h-4 w-4" />
+                    Clinical Agents
+                    <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-primary/10 text-primary rounded">
+                      ALPHA
+                    </span>
+                  </Button>
+                </Link>
                 <ThemeToggle />
               </div>
             </div>

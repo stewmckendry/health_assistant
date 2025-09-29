@@ -1,0 +1,144 @@
+Subsection: Preamble
+Parent Section: F
+Page Reference: F1
+Pages: 379 to 382
+Text chunks: 1
+Total text length: 7498 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 379 ---
+MAGNETIC RESONANCE IMAGING (MRI)
+Magnetic Resonance Imaging (MRI)March 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, the professional component of MRI procedures includes the
+following specific elements.
+For Professional Component P
+A. Providing clinical supervision, including approving, modifying and/or intervening in the performance
+of the procedure where appropriate, and quality control of all elements of the technical component
+of the procedure.
+B. Performance of any clinical procedure associated with the diagnostic procedure which is not
+separately billable (e.g. injections which are an integral part of the study).
+C. Where appropriate, post-procedure monitoring, including intervening except where this constitutes
+a separately billable service.
+D. Interpreting the results of the diagnostic procedure.
+E. Providing premises for any aspect(s) of A and D that is(are) performed at a place other than the
+place in which the procedure is performed.
+If the physician claiming the fee for the service is personally unable to perform elements A, B and C,
+these may be delegated to another physician, who must personally perform the service.
+Element D must be personally performed by the physician who claims for the service.
+OTHER TERMS AND DEFINITIONS
+MRI studies of the lumbar spine should not be routinely ordered or rendered for low back pain without
+suspected or known pathology.
+[Commentary:
+Examples of suspected or known pathology include infection, tumour, osteoporosis, ankylosing
+spondylitis, fracture, inflammatory process, radicular syndrome, and cauda equina syndrome.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) F1 Amd 12 Draft 1
+
+--- PAGE 380 ---
+MAGNETIC RESONANCE IMAGING (MRI)
+March 4, 2024 (effective April 1, 2024)
+P
+Head
+X421 - multislice sequence ............................................................ 73.35
+E875 - with magnetic resonance spectroscopy, to X421....... add 19.40
+X425 - repeat (another plane, different pulse sequence - to a
+maximum of 2 repeats)....................................................... 36.70
+E876 - with magnetic resonance spectroscopy, to X425....... add 9.70
+Payment rules:
+E875 and E876 are limited to a maximum of one each per patient per day.
+Neck
+X431 - multislice sequence ............................................................ 73.35
+X435 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 36.70
+Thorax
+X441 - multislice sequence ............................................................ 73.35
+X445 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 36.70
+Abdomen
+X451 - multislice sequence ............................................................ 73.35
+X455 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 36.70
+Payment rules:
+X451/X455 are not eligible for payment when used as guidance for organ biopsy.
+X480 MRI guidance of biopsy or lesion ablation, breast, unilateral . 285.00
+X481 MRI guidance of biopsy or lesion ablation, internal organ...... 285.00
+Note:
+X480 and X481 are only eligible for payment when a lesion can only be visualized by MRI or
+the use of another image guidance modality is not technically feasible.
+[Commentary:
+1. X487 and/or X499 may be eligible for payment in addition to X480 or X481.
+2. Biopsy fee codes specific to the breast or internal organ may be eligible for payment in
+addition to X480 or X481.]
+Breast - unilateral or bilateral
+X446 - multislice sequence ............................................................ 73.35
+X447 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 36.70
+Payment rules:
+1. X446/X447 are not eligible for payment when used as guidance for breast biopsy.
+2. X441/X445 thorax MRI is not eligible for payment same day, same physician as X446/X447.
+Note:
+Breast MRI is not an insured service for routine screening of an average risk individual.
+Amd 12 Draft 1 F2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 381 ---
+MAGNETIC RESONANCE IMAGING (MRI)
+P
+Pelvis
+X461 - multislice sequence ............................................................ 73.35
+X465 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 36.70
+Extremity or joint(s)
+X471 - multislice sequence, one extremity and/or one joint........... 62.80
+X475 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 31.45
+X488 - multislice sequence, two or more extremities, and/or two or
+more joints same extremity ................................................ 108.80
+X489 - repeat (another plane, different pulse sequence - to a
+maximum of 3 repeats)....................................................... 54.35
+Note:
+1. X488 and X489 require imaging of two extremities or two or more joints in the same extremity
+during the same examination at one sitting.
+2. X488 and X489 requires separate surface coil, separate imaging sequence, separate filming
+and separate post-processing for each joint examined.
+3. For the purposes of X471, X475, X488 and X489, the following are considered eligible joints:
+shoulder, elbow, wrist, hip, knee and ankle.
+[Commentary:
+When weight-bearing x-rays demonstrate osteoarthritis and symptoms are suggestive of
+osteoarthritis, knee MRI scans are not recommended by the Canadian Orthopaedic
+Association, the Canadian Arthroplasty Society and the Arthroscopy Association of Canada as
+this investigation rarely adds useful information to guide diagnosis or treatment. https://
+choosingwiselycanada.org/orthopaedics/ ]
+Limited spine (one segment)
+X490 - multislice sequence ............................................................ 59.50
+X492 - repeat (another plane, different pulse sequence - maximum
+of 3 repeats) ....................................................................... 29.85
+Intermediate spine (2 adjoining segments)
+X493 - multislice sequence ............................................................ 68.45
+X495 - repeat (another plane, different pulse sequence - maximum
+of 3 repeats) ....................................................................... 34.15
+Complex spine (2 or more non-adjoining segments)
+X496 - multislice sequence ............................................................ 101.65
+X498 - repeat (another plane, different pulse sequence - maximum
+of 3 repeats) ....................................................................... 50.65
+X486 - when cardiac gating is performed (must include
+application of chest electrodes and ECG interpretation)
+.......................................................................... add 30%
+X487 - when gadolinium is used............................................ add 36.65
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) F3 Amd 12 Draft 1
+
+--- PAGE 382 ---
+MAGNETIC RESONANCE IMAGING (MRI)
+P
+X499 Three Dimensional MRI acquisition sequence, including post-
+processing (minimum of 60 slices; maximum 1 per patient
+per day) .............................................................................. 32.70
+Amd 12 Draft 1 F4 February 14 , 2 025 (e ffective M arch 3, 2025)

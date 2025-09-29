@@ -1,0 +1,17 @@
+{
+  "subsection_title": "Supervision Of Postgraduate Medical Trainees",
+  "parent_section": "GP",
+  "page_ref": "GP79",
+  "fee_codes": [],
+  "rules": [
+    "A service rendered by a Medical Trainee is only eligible for payment to the Supervising Physician where Supervision is provided as defined above and subject to the specific requirements.",
+    "Services rendered independently by Residents or Clinical Fellows outside their training program are not eligible for payment to the Supervising Physician.",
+    "Special Visit premiums are not eligible for payment to the Supervising Physician unless the Supervising Physician personally satisfies the payment requirements for a special visit premium.",
+    "Certain services such as Case Conferences, Multidisciplinary Cancer Conferences, and Virtual Care Services are not eligible for payment to the Supervising Physician when rendered by a Medical Trainee."
+  ],
+  "notes": [
+    "The Supervising Physician must hold an academic appointment with the educational institution where the Medical Trainee is registered.",
+    "Supervision must be performed in person, by telephone, or videoconference, consistent with the acuity of the service and the Medical Trainee\u2019s level of competence."
+  ],
+  "pages_processed": "93-98"
+}

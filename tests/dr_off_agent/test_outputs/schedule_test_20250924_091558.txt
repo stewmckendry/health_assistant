@@ -1,0 +1,288 @@
+================================================================================
+   SCHEDULE.GET MCP TOOL TEST SUITE
+   Testing OHIP Schedule of Benefits Lookup
+   Output File: tests/dr_off_agent/test_outputs/schedule_test_20250924_091558.txt
+================================================================================
+
+🔧 ENVIRONMENT CHECK:
+  Python: 3.11.8
+  Working Dir: /Users/liammckendry/health_assistant_dr_off_worktree
+  OPENAI_API_KEY: ✅ Set
+  Output File: tests/dr_off_agent/test_outputs/schedule_test_20250924_091558.txt
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.1: MRP Discharge Billing (C124)
+================================================================================
+
+📝 Test Description:
+  Scenario: MRP billing on day of discharge after 72+ hour admission
+  Expected: Should find C124 fee code with requirements and documentation
+  Codes to check: C124, C122, C123
+
+🚀 Executing query...
+⏱️  Response time: 1.373 seconds
+
+### MRP Discharge Billing
+Timestamp: 2025-09-24T09:16:00.197674
+Confidence Score: 0.990
+Data Sources Used: ['sql', 'vector']
+
+📋 Found 3 items:
+
+  Item #1:
+    Code: C122
+    Description: Day following the hospital admission assessment
+    Fee: $61.15
+    Page: 7
+
+  Item #2:
+    Code: C123
+    Description: Second day following the hospital assessment
+    Fee: $61.15
+    Page: 7
+
+  Item #3:
+    Code: C124
+    Description: Day of discharge
+    Fee: $61.15
+    Page: 7
+
+📚 Citations (1 sources):
+  - Source: schedule.pdf
+    Location: 
+    Page: None
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql",
+    "vector"
+  ],
+  "confidence": 0.99,
+  "items": [
+    {
+      "code": "C122",
+      "description": "Day following the hospital admission assessment",
+      "fee": 61.15,
+      "requirements": null,
+      "limits": null,
+      "page_num": 7
+    },
+    {
+      "code": "C123",
+      "description": "Second day following the hospital assessment",
+      "fee": 61.15,
+      "requirements": null,
+      "limits": null,
+      "page_num": 7
+    },
+    {
+      "code": "C124",
+      "description": "Day of discharge",
+      "fee": 61.15,
+      "requirements": null,
+      "limits": null,
+      "page_num": 7
+    }
+  ],
+  "citations": [
+    {
+      "source": "schedule.pdf",
+      "loc": "",
+      "page": null
+    }
+  ],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.990 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=True
+  Expected codes: ['C124']
+  Found codes: ['C122', 'C123', 'C124']
+  Data Quality Checks:
+  ✅ 1 citations provided
+
+✅ TEST PASSED
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.2: Emergency Department Consultation
+================================================================================
+
+📝 Test Description:
+  Scenario: Internist consultation in emergency department
+  Expected: Should find consultation codes with specialty restrictions
+  Codes to check: A135, A935
+
+🚀 Executing query...
+⏱️  Response time: 0.230 seconds
+
+### Emergency Consultation
+Timestamp: 2025-09-24T09:16:01.429314
+Confidence Score: 0.990
+Data Sources Used: ['sql', 'vector']
+
+📋 Found 2 items:
+
+  Item #1:
+    Code: A135
+    Description: Consultation
+    Fee: $164.90
+    Page: 250
+
+  Item #2:
+    Code: A935
+    Description: Special surgical consultation (see General Preamble GP19)
+    Fee: $163.20
+    Page: 7
+
+📚 Citations (1 sources):
+  - Source: schedule.pdf
+    Location: 
+    Page: None
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql",
+    "vector"
+  ],
+  "confidence": 0.99,
+  "items": [
+    {
+      "code": "A135",
+      "description": "Consultation",
+      "fee": 164.9,
+      "requirements": null,
+      "limits": null,
+      "page_num": 250
+    },
+    {
+      "code": "A935",
+      "description": "Special surgical consultation (see General Preamble GP19)",
+      "fee": 163.2,
+      "requirements": null,
+      "limits": null,
+      "page_num": 7
+    }
+  ],
+  "citations": [
+    {
+      "source": "schedule.pdf",
+      "loc": "",
+      "page": null
+    }
+  ],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.990 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=True
+  Expected codes: ['A135']
+  Found codes: ['A135', 'A935']
+  Data Quality Checks:
+  ✅ 1 citations provided
+
+✅ TEST PASSED
+
+--------------------------------------------------------------------------------
+
+================================================================================
+  Test 1.3: House Call with Premiums
+================================================================================
+
+📝 Test Description:
+  Scenario: House call assessment for elderly patient with time premiums
+  Expected: Should find house call codes with premium information
+  Codes to check: B998, B992, B994
+
+🚀 Executing query...
+⏱️  Response time: 0.797 seconds
+
+### House Call Premiums
+Timestamp: 2025-09-24T09:16:03.227648
+Confidence Score: 0.990
+Data Sources Used: ['sql', 'vector']
+
+📋 Found 1 items:
+
+  Item #1:
+    Code: B998
+    Description: First person seen
+    Fee: $82.50
+    Page: 3
+
+📚 Citations (1 sources):
+  - Source: schedule.pdf
+    Location: 
+    Page: None
+
+🔍 Raw Response JSON:
+{
+  "provenance": [
+    "sql",
+    "vector"
+  ],
+  "confidence": 0.99,
+  "items": [
+    {
+      "code": "B998",
+      "description": "First person seen",
+      "fee": 82.5,
+      "requirements": null,
+      "limits": null,
+      "page_num": 3
+    }
+  ],
+  "citations": [
+    {
+      "source": "schedule.pdf",
+      "loc": "",
+      "page": null
+    }
+  ],
+  "conflicts": []
+}
+
+📊 Evaluation Results:
+  Confidence: 0.990 (threshold: 0.7)
+  Dual-path retrieval: SQL=True Vector=True
+  Expected codes: []
+  Found codes: ['B998']
+  Data Quality Checks:
+  ✅ 1 citations provided
+
+✅ TEST PASSED
+
+================================================================================
+   TEST SUMMARY
+================================================================================
+
+📊 Overall Results: 3/3 tests passed
+📁 Full output saved to: tests/dr_off_agent/test_outputs/schedule_test_20250924_091558.txt
+
+Test Status:
+  ✅ PASS - MRP Discharge
+  ✅ PASS - Emergency Consultation
+  ✅ PASS - House Call Premiums
+
+⏱️  Performance Metrics:
+  MRP Discharge:
+    - Confidence: 0.990
+    - Items: 3
+    - Dual-path: True
+  Emergency Consultation:
+    - Confidence: 0.990
+    - Items: 2
+    - Dual-path: True
+  House Call Premiums:
+    - Confidence: 0.990
+    - Items: 1
+    - Dual-path: True
+
+✅ Test output saved to: tests/dr_off_agent/test_outputs/schedule_test_20250924_091558.txt

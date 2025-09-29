@@ -1,0 +1,77 @@
+{
+  "subsection_title": "Fluoroscopy - By physician With or Without Spot Films",
+  "parent_section": "D",
+  "page_ref": "D14",
+  "pages_processed": "362-362",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        4,
+        "X195 Chest ...................................................................................... 9.25 14.20"
+      ],
+      [
+        5,
+        "X196 Skeleton.................................................................................. 9.25 14.20"
+      ],
+      [
+        6,
+        "X197 Abdomen ................................................................................ 9.25 14.20"
+      ],
+      [
+        8,
+        "physician per \u00bc hour .......................................................... 7.30 23.75"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "X195",
+      "description": "Chest",
+      "fee": 14.2,
+      "h_fee": 9.25,
+      "p_fee": 14.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X196",
+      "description": "Skeleton",
+      "fee": 14.2,
+      "h_fee": 9.25,
+      "p_fee": 14.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X197",
+      "description": "Abdomen",
+      "fee": 14.2,
+      "h_fee": 9.25,
+      "p_fee": 14.2,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "X189",
+      "description": "Fluoroscopic control of clinical procedures done by another physician per \u00bc hour",
+      "fee": 23.75,
+      "h_fee": 7.3,
+      "p_fee": 23.75,
+      "units": "per \u00bc hour",
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

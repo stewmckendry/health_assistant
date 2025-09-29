@@ -1,0 +1,2418 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Managing Heart Failure in Primary Care |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/managing-patients-with-heart-failure-in-primary-care\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/50862" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fmanaging-patients-with-heart-failure-in-primary-care%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fmanaging-patients-with-heart-failure-in-primary-care%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-50862 wp-theme-cep-tools managing-patients-with-heart-failure-in-primary-care">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Managing Heart Failure in Primary Care</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: November 22, 2024</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6><a href="https://cep.health/academic-detailing/" target="_blank" rel="noopener external noreferrer" data-wpel-link="external">Sign up for academic detailing (one-on-one education) with a pharmacist on this topic</a></h6>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Heart failure (HF) is a serious, life-long condition. With early diagnosis, lifestyle changes and proper management however, people living with heart failure can have a good quality of life.<sup>1</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool is designed to educate and support primary care practitioners in diagnosing and implementing treatment for adult patients (≥ 18 years) with heart failure.</p>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="initial-assessment-and-diagnosis" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Initial assessment and diagnosis								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#dxingHF">Diagnosing heart failure</a><br><a href="#typeSeverity">Determining heart failure type by ejection fraction and symptom severity</a><br><a href="#etiology">Etiology of heart failure</a></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>When HF is suspected, a diagnosis should be confirmed by:<sup>3</sup></p>
+<ul>
+<li>Assessing for symptoms and signs of HF caused by a structural or functional cardiac abnormality.</li>
+<li>Corroborated by at least one of the following:
+<ul>
+<li>Objective evidence of cardiogenic pulmonary or systemic congestion (e.g. findings from chest radiograph (x-ray) or echocardiogram).</li>
+<li>Elevated natriuretic peptide (NP) levels where available.</li>
+</ul>
+</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Once a HF diagnosis is confirmed, the HF type based on ejection fraction (EF) and symptom severity should be identified to inform subsequent management approaches and treatment goals. Etiology must also be investigated to understand underlying causes and guide subsequent treatment.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="421" src="https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1-1024x421.png" alt="" class="wp-image-54638" srcset="https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1-1024x421.png 1024w, https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1-300x123.png 300w, https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1-768x316.png 768w, https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1-1280x526.png 1280w, https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1-640x263.png 640w, https://tools.cep.health/wp-content/uploads/2022/10/Heart_normal-v-failures-1.png 1460w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="dxingHF">Diagnosis<sup>3–5</sup></h3>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" alt="" />
+        </div>
+        <h3 class="faq-title">When HF is suspected, the following steps should be conducted to confirm a diagnosis</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Assess for symptoms and/or signs of HF</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6>Investigate symptoms to determine the presence of:</h6>
+<ul>
+<li aria-level="1">Dyspnea</li>
+<li aria-level="1">Fatigue</li>
+<li aria-level="1">Edema</li>
+<li aria-level="1">Confusion (particularly in older adults)</li>
+<li aria-level="1">Orthopnea</li>
+<li aria-level="1">Paroxysmal nocturnal dyspnea</li>
+<li aria-level="1">Unintentional weight gain (e.g., &gt; 2 kg in 2 days)*</li>
+</ul>
+<h6>Collect or review clinical history to determine:</h6>
+<ul>
+<li>Symptoms (dyspnea, fatigue, edema/leg swelling, confusion (particularly in seniors), orthopnea, paroxysmal nocturnal dyspnea, unintentional weight gain [e.g., &gt; 2 kg in 2 days])*</li>
+<li>Prior cardiac disease (coronary artery disease, valvular heart disease, atrial fibrillation)</li>
+<li>Risk factors (hypertension, ischemic heart disease, valvular heart disease, diabetes, heavy alcohol or substance use, chemotherapy or radiation therapy, family history of cardiomyopathy, smoking, hyperlipidemia)</li>
+<li>Comorbidities and functional and cognitive limitations</li>
+</ul>
+<h6>Conduct a physical examination to determine the presence of:</h6>
+<ul>
+<li>Lung crackles</li>
+<li>Elevated jugular venous pressure (JVP)</li>
+<li>Positive abdominal jugular reflux</li>
+<li>Peripheral edema</li>
+<li>Abnormal heart sounds (S3/S4)</li>
+<li aria-level="1">Low blood pressure (BP) †</li>
+<li>Heart rate &gt; 100 beats/minute †</li>
+</ul>
+<p><span style="font-size: 12px;"><em>*While dyspnea, fatigue and edema are the classic presenting symptoms, they are not sufficient on their own to confirm or rule out heart failure. Other less common symptoms are possible, including nocturnal cough, wheezing, bloating, loss of appetite, dizziness, syncope, delirium (particularly in seniors), nausea, abdominal discomfort, oliguria, anorexia and cyanosis. </em></span></p>
+<p><span style="font-size: 12px;"><em>†While low blood pressure and heart rate &gt; 100 beats/minute may be presenting symptoms of heart failure, they are not sufficient on their own to confirm or rule out heart failure.</em></span></p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Conduct initial investigations</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6>Refer for initial investigations</h6>
+<ul>
+<li>Lab work to assess complete blood count (CBC), electrolytes, renal function, urinalysis, glucose and thyroid function.</li>
+<li>Chest x-ray to assess heart size and pulmonary congestion and to detect other cardiac and pulmonary diseases that may contribute to the patient’s symptoms.
+<ul>
+<li><strong>Findings that may suggest HF: cardiomegaly, pulmonary venous redistribution, pulmonary edema or pleural effusion.</strong></li>
+</ul>
+</li>
+<li>12-lead electrocardiogram (ECG) to determine heart rhythm, heart rate, QRS duration, and morphology and to detect possible etiologies.
+<ul>
+<li><strong>Findings that may suggest HF: Q waves, left ventricular hypertrophy, left bundle branch block, tachycardia or atrial fibrillation.</strong></li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Assess ventricular function and natriuretic peptides</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6>Refer for echocardiogram</h6>
+<ul>
+<li>Assess cardiac structure and function, establish the presence or absence of cardiac abnormalities, and quantify systolic function to plan and monitor treatment and prognostic stratification
+<ul>
+<li><strong>Findings that may suggest HF:</strong> reduced left ventricular ejection fraction (EF), increased left ventricular end-systolic and end-diastolic diameter, left ventricular hypertrophy, wall motion abnormalities and diastolic dysfunction, increased right ventricular size, right ventricular dysfunction, valve dysfunction, or elevated filling pressures.</li>
+</ul>
+</li>
+</ul>
+<h6>Refer for natriuretic peptides (NPs) measurement (if cost is not a barrier; NT-proBNP covered by OHIP)</h6>
+<p><!-- /wp:heading --> <!-- wp:list --></p>
+<ul>
+<li>N-terminal pro-brain natriuretic peptide (NT-proBNP)
+<ul>
+<li><strong>Findings that may suggest HF</strong>: NT-proBNP &gt; 125 pg/ml</li>
+</ul>
+</li>
+<li>Brain natriuretic peptide (BNP)
+<ul>
+<li><strong>Findings that may suggest HF:</strong> BNP &gt; 50 pg/ml (if available)</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Additional diagnostic investigations</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6>Refer to a specialist (internal medicine or cardiologist) for additional diagnostic investigations if needed</h6>
+<ul>
+<li>Cardiac catheterization</li>
+<li>Cardiopulmonary exercise testing</li>
+<li>Other (cardiac magnetic resonance [CMR], myocardial perfusion [MIBI] scan, multigated acquisition scan [MUGA], computed tomography [CT] scan)</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+                    <h6>Role of natriuretic peptides</h6>
+                          <a data-modal="SNJOEq" class="button open-modal" href="#" data-id="SNJOEq">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="SNJOEq" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Role of natriuretic peptides</h4>
+                                      <h6><!-- wp:paragraph --></h6>
+<p>NPs are secreted from the heart in response to changes in pressure that occur when heart failure develops or worsens. NPs improve heart failure symptoms through natural diuresis, vasodilation and inhibition of the renin-angiotensin-aldosterone and sympathetic nervous systems.</p>
+<p>Two key NPs, brain natriuretic peptide (BNP) and N-terminal pro-brain natriuretic peptide (NT-proBNP), assist with diagnosis, prognostic stratification and management of HF<sup>3</sup>. However,  BNP and NT-proBNP have different cut-points/values, so they cannot be used interchangeably.</p>
+<h6><strong>BNP </strong>(brain natriuretic peptide)<sup><strong>3,5-7</strong></sup></h6>
+<ul>
+<li>Active hormone</li>
+<li>Not covered by OHIP (private insurance may cover the cost)</li>
+<li>If used to measure efficacy for angiotensin receptor-neprilysin inhibitors (ARNis), results are less reliable for monitoring the first year of therapy</li>
+</ul>
+<h6><strong>NT-proBNP </strong>(N-terminal pro-brain natriuretic peptide)<sup><strong>3,5-7<br />
+</strong></sup></h6>
+<ul>
+<li>Biologically inactive (metabolite of BNP)</li>
+<li>Higher levels in the bloodstream</li>
+<li><a href="https://link.cep.health/covid2758" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Covered by OHIP</a></li>
+<li>If used to measure efficacy for ARNis, results are more reliable in the first year of therapy</li>
+</ul>
+<h5>Role of NPs in heart failure<sup>3</sup></h5>
+<h6><b>Diagnosis</b><sup><b><em>*</em></b></sup></h6>
+<p>In the setting of diagnostic uncertainty, either BNP or NT-proBNP can rule out HF with a high degree of confidence.</p>
+<p><strong>NP cut-points (primary care)<br />
+</strong></p>
+<p>NT-proBNP &gt; 125 pg/mL</p>
+<p>BNP &gt; 50 pg/mL<sup>§</sup></p>
+<p><em><strong>* </strong>Strong recommendation, high-quality evidence; † Recommendations are based on Canadian Cardiovascular Society guidelines<sup>4 </sup>other sources recommend a cut-off of &lt; 35<sup>5,8 </sup></em></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="typeSeverity">Determining heart failure type by ejection fraction and symptom severity<sup>3</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p class="is-style-default">For patients with confirmed HF, determine the HF type by ejection fraction (EF) (via an echocardiogram) and symptom severity using the New York Heart Association (NYHA) functional classification to guide the subsequent management approach.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading has-text-align-center">Heart failure types by ejection fraction<sup>5,7</sup></h6>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image aligncenter size-full"><img loading="lazy" decoding="async" width="905" height="310" src="https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF.png" alt="" class="wp-image-66830" srcset="https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF.png 905w, https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF-300x103.png 300w, https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF-768x263.png 768w, https://tools.cep.health/wp-content/uploads/2024/10/type-of-HF-640x219.png 640w" sizes="auto, (max-width: 905px) 100vw, 905px" /></figure>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong>Symptom severity using the New York Heart Association functional classification<sup>3</sup> <br>I:</strong> Asymptomatic &#8211; No limitation of physical activity.<br><strong>II:</strong> Mild symptoms &#8211; Slight limitation of physical activity.<br><strong>III:</strong> Moderate symptoms &#8211; Marked limitation of physical activity.<br><strong>IV:</strong> Severe symptoms &#8211; Unable to engage in any physical activity without discomfort. Symptoms of heart failure at rest.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="etiology">Determining etiology of heart failure<sup>3</sup> </h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>For patients with confirmed HF, determine etiology to understand underlying causes and guide subsequent treatment. HF may have mixed etiologies. Noninvasive imaging should be considered to determine the presence or absence of coronary artery disease.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Common</strong></h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Coronary artery disease</li>
+
+
+
+<li>Left ventricular hypertrophy</li>
+
+
+
+<li>Valve disease</li>
+
+
+
+<li>Tachyarrhythmia</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Less common</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Genetic (e.g., hereditary cardiomyopathy, hemochromatosis, hypertrophic cardiomyopathy, arrhythmogenic right ventricular cardiomyopathy)</li>
+
+
+
+<li>Toxic agents (e.g., chemotherapy, radiation, steroids, heavy metals, alcohol, amphetamines, cocaine)</li>
+
+
+
+<li>Pregnancy (e.g., pre-eclampsia, gestational diabetes, peripartum cardiomyopathy)</li>
+
+
+
+<li>Inflammatory/infectious/immune (e.g., myocarditis, sarcoidosis, autoimmune diseases)</li>
+
+
+
+<li>Metabolic (e.g., diabetes, thyroid disease, adrenal insufficiency, pheochromocytoma, Cushing’s disease)</li>
+
+
+
+<li>Nutritional (e.g., deficiencies of thiamine or selenium, malnutrition, obesity)</li>
+
+
+
+<li>Infiltrative diseases (e.g., amyloidosis, glycogen storage diseases, Fabry disease)</li>
+</ul>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="advanced-care-planning-and-palliative-care" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Advanced care planning and palliative care								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#hfacp">Advance care planning</a><br><a href="#hfpall">Palliative and supportive care</a></p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>HF is often underestimated in terms of its severity as a lifelong, life-limiting illness.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>When compared to advanced cancer (which is more recognized as a life-limiting illness) the trajectory of HF is quite different. HF patients typically experience a gradual decline in function over years, with intermittent serious episodes that often require hospitalization.</p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Conversations with patients and caregivers about advance care planning and palliative care should take place early on in their heart failure journey and should be revisited regularly.<sup>11</sup> Patients should be made aware of what the trajectory of HF could look like and the possible variations.<sup>3,10</sup></p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Input from a person living with heart failure</h6>
+                          <a data-modal="L3xQBB" class="button open-modal" href="#" data-id="L3xQBB">When and how to approach advance care planning and palliative care discussions</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="L3xQBB" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Input from a person living with heart failure</h4>
+                                      <p>&#8220;My initial reaction is never, but I realize that’s unrealistic, so we move onto option two. I would say early on. If we’re creating sort of a treatment plan, I don’t know when I’m going to be at a point where I can’t care for myself anymore. I don’t have that information. But, I think, let’s make it part of the long term plan. Let&#8217;s get it on the table and discuss it and see where it fits into the projection of what the next 2 and 5 and God willing 8 years of your life are going to look like. Again, it&#8217;s not a comfortable subject but I don’t think it’ll go away if I ignore it. So, let’s deal with it.&#8221; &#8211; person living with heart failure</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/End-stage_Heart-Failure_chart.png" alt=""/><figcaption class="wp-element-caption"><sub><sup>3</sup></sub></figcaption></figure>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="hfacp"><strong>Advanced care planning</strong><sup>3</sup><sup>,10,11</sup></h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Family physicians and primary care nurse practitioners have a role in discussions to help prepare patients and their loved ones for the future.  This is especially true when people have serious illness, such as heart failure.</p>
+<ul>
+<li aria-level="1">Preparing happens over time. It isn’t a one-time conversation.</li>
+<li aria-level="1">Preparing is not about making decisions now for the future.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Three outcomes to aim for to help your patients prepare:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ol class="wp-block-list">
+<li><strong>Identify their automatic substitute decision-maker (SDM)</strong>. This is the person, recognized by the law, who would give or withhold consent for treatment or care when a person is mentally incapable of making treatment or care decisions. If someone wishes someone other than their automatic SDM, help them appoint an Attorney for Personal Care. It is important that all family members and caregivers in a patient’s circle of care know who the SDM is.</li>
+
+
+
+<li><strong>Explore their illness understanding</strong> and help them learn what to expect in the future. For example, most people do not know what to expect with heart failure, that it can get worse over time and often results in a shortened life expectancy. See talking points about explaining heart failure, the trajectory of HF and what to expect in the future.</li>
+
+
+
+<li><strong>Explore their goals, values, wishes, worries and fears</strong> and discuss these with their SDM.</li>
+</ol>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Talking points<sup>10</sup></h6>
+                          <a data-modal="jPNnJw" class="button open-modal" href="#" data-id="jPNnJw">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="jPNnJw" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Talking tips</h4>
+                                      <p><b>Explain HF to people using plain language </b><b>and reduce the use of medical language.</b></p>
+<p><em>“Can I explain what is happening? Your heart is a muscle and works as a pump. Its job is to squeeze and pump blood around your lungs and your body. When it does this, it brings oxygen and nutrition to all the parts of your body.”</em></p>
+<p><em>“For you, the muscle is weak, so the pump isn’t working to push blood into your body. That means that not enough blood is getting to your body, your organs such as your kidneys, your muscles and even to your brain.”</em></p>
+<p><em>“This is why you can feel weak and tired – there isn’t enough blood getting from your heart to the rest of your body. That is also why your kidneys aren’t working as well – your kidneys need the blood to work properly.”</em></p>
+<p><b>Discuss with patients and their caregivers the HF trajectory. Describe it according to the specific patient you are meeting with.</b></p>
+<p><i>“This is the common way that heart failure works. Initially, you were diagnosed and then we started the treatments. Things were stable for a period of time. Over time though, we know that the heart gets weaker and we start to see ups and downs like this where a person gets quite sick and needs to be in the hospital. With a change in medications or sometimes with a procedure like a pacemaker, they can get stronger again.</i></p>
+<p><i>We always try to find ways to make someone feel better and return to being able to do their regular activities. Unfortunately, over time we aren’t always able to make things better and at some point the heart is so weak that it means a person may be approaching end-of-life because of their heart failure.”</i><i> </i></p>
+<p><i>If very advanced HF: “I’m worried that for you, we are closer to this end of the situation. We will keep trying to make you feel well, but we don’t have a lot of ways to change the medications or any surgery to fix the heart.”</i></p>
+<p><i>If less advanced HF: “I am hopeful we are a way off from this end of the graph, but I think it is important for us to be open and honest about this information. What do you think? How would you like to continue talking about this as I care for you over time?”</i></p>
+<p><b>Bring up ACP in a neutral way</b></p>
+<p><i>“Before we finish today, I&#8217;ve been asking people if they have heard of something called advance care planning. Can I tell you a bit about it?”</i></p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large is-resized"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2025/04/Advance-care-planning_resized.png" alt="" style="aspect-ratio:1.6702702702702703;width:591px;height:auto"/></figure>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:5%"></div>
+</div>
+
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/04/question-mark.png" alt="" />
+        </div>
+        <h3 class="faq-title">FAQs about advance care planning<sup>10,11</sup></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">How do I talk about advance care planning (ACP) without upsetting a patient or taking away their hope?</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>People often want to know what they can expect in the future to be prepared and involved in their health care. Offer to be their guide. It is not about “bad news”; it is about being active in their health care and being in control. It is about living well with a chronic illness and for many people this includes knowledge and information.</p>
+<p>Your role is to <b>offer</b> to provide information and to <b>guide</b> them through the illness. If someone does not want this information or to participate in preparing for the future, acknowledge that and offer again in the future.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">How can I do this in a busy practice?
+</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li aria-level="1">Introduce the importance of preparing for the future: “many people I take care of find it helpful to do some preparing for the future…”</li>
+<li aria-level="1">If someone is interested, give them information to review on their own or with their caregivers and family</li>
+<li aria-level="1">Break up the conversation over time. You don’t have to have these conversations in one visit.</li>
+<li aria-level="1">Have a documentation template so that you can update it as your conversation goes forward.</li>
+<li aria-level="1">Engage interprofessional staff to support these conversations.</li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Can patients engage in ACP if they have not appointed a SDM?</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Yes. Everyone in Ontario automatically has an SDM found on a hierarchy as defined in the Health Care Consent Act. If the patient has no relatives or an appointed SDM, the Public Guardian and Trustee (PGT) will act as a SDM if a patient is unable to make healthcare decisions. Patients can choose to have ACP conversations with their healthcare providers. Healthcare provider can share this information with the PGT if healthcare decisions are required.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">What if patients’ wishes about a decision change over time?</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Reassure patients that they can continue to update their wishes as their goals and priorities change over time. In Ontario, a patient&#8217;s most recent wishes should be considered by their SDM when making a decision. Encourage patients to talk with their SDM regularly to ensure that they are aware of their most recent wishes.</p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li>Information, tools and resources for patients and caregivers related to advance care planning in Ontario: <a href="https://link.cep.health/hf17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Advance Care Planning Ontario</a></li>
+<li>Documentation templates, step-by-step conversation guides and resources for providers related to advance care planning in Ontario: <a href="https://link.cep.health/hf24" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Hospice Palliative Care Ontario</a></li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="hfpall">Palliative and supportive care</h3>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>For all patients with HF, family physicians and primary care nurse practitioners should initiate and have regular discussions regarding palliative and supportive care, including: <sup>3,7</sup></p>
+<ul>
+<li>Clear conveyance of prognosis</li>
+<li>Clarifying goals of care</li>
+<li>Clarifying preferences around the treatment of pain and other symptoms (physical, psychosocial and spiritual)</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Palliative care provides an extra layer of support and symptom relief for patients who have a serious illness, such as advanced heart failure, to improve their quality of life. Support may include:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Education about HF (e.g., what to expect and how to prepare for the future and future decision-making).</li>
+
+
+
+<li>Support such as home-care assistance, caregiver support and other resources for people with advanced illness.</li>
+
+
+
+<li>Home-based palliative care or hospice care if concordant with a person’s goals.</li>
+</ul>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/04/question-mark.png" alt="" />
+        </div>
+        <h3 class="faq-title">FAQs about palliative care<sup>10</sup></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">How do I talk to my patients about the value of palliative care without upsetting them? 
+</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Focus on the <b>role</b> of palliative care &#8211;  a team-based approach that focuses on providing support and symptom relief to improve a person’s quality of life. Explain that palliative care is not about dying. It is about improving the quality of life of patients experiencing serious illnesses like HF.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">When should I think about palliative care?</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>There is no specific right time. The important step is to assess your patient’s symptoms and needs (e.g., information needs, decision-support, psychosocial needs) as well as their goals and values, and align the discussion of palliative care accordingly. Palliative care has a role across the stages of heart failure, starting early in the disease course, and continuing through to end of life planning and managing caregiver bereavement.</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">When should I involve a specialized palliative care team?
+</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Palliative care specialists may be engaged if:</p>
+<ul>
+<li aria-level="1">A patient’s symptoms are challenging to manage despite optimizing HF therapy</li>
+<li aria-level="1">A patient wishes a palliative approach to care</li>
+<li aria-level="1">A patient needs additional support with decision-making about advanced treatments and goals of care</li>
+</ul>
+<p>Palliative care providers should be involved in symptom management early (if possible) to ease the transition.</p>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--support-materials ">
+
+  <div class="container wide">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <div class="columns">
+                      <div class="column">
+              <ul>
+<li>Courses for providers to equip them with the knowledge, attitudes and skills to help provide palliative care to patients and caregivers: <a href="https://link.cep.health/hf23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Learning Essential Approaches to Palliative Care (Pallium Canada)</a></li>
+</ul>
+            </div>
+                            </div>
+          </div>
+  </div>
+
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="management" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Management								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#hfnonpharm">Non-pharmacological and lifestyle management</a><br><a href="#hfptself">Self-care</a><br><a href="#pharmacological-management">Pharmacological management</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Providers, together with patients and caregivers, should decide on and implement a combination of non-pharmacological and lifestyle, pharmacological and self-care strategies to manage HF and the symptoms.</p>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Overall management<sup>12</sup></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Initiate and optimize comprehensive therapies</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6>Support patients to Initiate and optimize <a href="#hfnonpharm">non-pharmacological and lifestyle management </a></h6>
+<h6>Initiate <a href="#hfpharm">standard quadruple therapy</a></h6>
+<h6>Treat any underlying etiologies of HF</h6>
+<h6>Initiate and document <a href="https://tools.cep.health/tool/managing-patients-with-heart-failure-in-primary-care/#advance-care-planning-and-palliative-care" data-wpel-link="internal">advance care planning and palliative care discussions</a></h6>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Assess need for additional individualized therapy (medications)</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p>Assess clinical criteria for additional individualized therapy <b>(e.g., HF modifying medications)</b></p>
+<p><strong>HR &gt; 70 bpm and sinus rhythm</strong></p>
+<ul>
+<li>Consider referral to a community cardiologist or  Heart Function clinic to start i<span class="tooltip-wrapper"><span class="tooltip-parent">vabradine</span><br />
+<span class="tooltip-content">Ivabradine is a medication that works by slowing the heartbeat to reduce the workload on the heart and thus improving the EF.<br />
+• Initial dose: 2.5-5 mg bid<br />
+• Target dose: 7.5 mg bid.</span></span></li>
+</ul>
+<p><b>Black patients on optimal quadruple therapy OR patients unable to tolerate </b><b>ARNi</b><b>/</b><b>ACEi</b><b>/ARB</b></p>
+<ul>
+<li>Consider referral to community cardiologist or  Heart Function clinic to start <span class="tooltip-wrapper"><span class="tooltip-parent">hydralazine-isosorbide dinitrate</span><span class="tooltip-content">Hydralazine-isosorbide dinitrate is a combination of medications that work together to relax the blood vessels and increase the supply of blood and oxygen to the heart, thus reducing the heart workload.<br />
+• Initial dose: 10-37.5 mg tid/10-20 mg tid<br />
+• Target dose: 75-100 mg tid or qid/40 mg tid.</span></span></li>
+</ul>
+<p><b>Suboptimal rate control for atrial fibrillation OR persistent symptoms despite optimized quadruple therapy</b></p>
+<ul>
+<li>Consider referral to community cardiologist or  Heart Function clinic to start <span class="tooltip-wrapper"><span class="tooltip-parent">digoxin</span><span class="tooltip-content">Digoxin is a combination of medications that work together to improve the strength and efficiency of the heart, thus leading to better blood circulation and reduced swelling of hands and ankles.<br />
+• Initial dose: 0.0625-0.125 mg daily<br />
+• Target dose: N/A, monitor for toxicity</span></span></li>
+</ul>
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Assess need for additional therapy (devices and surgical interventions)</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <h6>Reassess left ventricle EF, symptoms and clinical risk<b> to determine need for device therapy or surgical interventions</b></h6>
+<p><strong>LVEF ≤ 35% and NYHA I-IV (ambulatory)</strong></p>
+<ul>
+<li>Consider refer to cardiology or cardiology device therapy clinic for <span class="tooltip-wrapper"><br />
+<span class="tooltip-parent">implantable cardioverter-defibrillator</span><br />
+<span class="tooltip-content">Implantable cardioverter-defibrillators are the first line in the prevention of sudden death and all-cause mortality. They are often used in patients with a history of sustained ventricular tachycardia or ventricular fibrillation, cardiac arrest or unexplained syncope in the presence of left ventricular systolic dysfunction with symptomatic HF </span></span>or <span class="tooltip-wrapper"><span class="tooltip-parent">cardiac resynchronization therapy</span><br />
+<span class="tooltip-content">Cardiac resynchronization therapy attempts to synchronize the activation of the ventricles and atrioventricular activation sequence leading to improvements in left ventricular function. This therapy is often used in patients with sinus rhythm and prolonged QRS duration or those who require chronic right ventricular pacing.</span><br />
+</span></li>
+</ul>
+<p><strong>LVEF &gt; 35%, NYHA I, and low risk</strong></p>
+<ul>
+<li>Continue present management, reassess as needed</li>
+</ul>
+<p><strong>NYHA III/IV, advanced HF or high risk</strong></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li aria-level="1">Consider:
+<ul>
+<li aria-level="2">Referral to cardiology or cardiac transplant clinic for cardiac transplant</li>
+<li aria-level="2">Referral for palliative and supportive care</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="hfnonpharm">Non-pharmacological and lifestyle management<sup>3</sup></h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Patients should be supported in implementing non-pharmacological management strategies including diet and lifestyle modifications.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_salt-intake.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Salt intake</h6>
+<ul>
+<li>Support patients to limit their salt intake to between approximately 2-3 grams/day, adapting the exact quantity to the clinical situation, severity of symptoms and baseline consumption.</li>
+<li>Educate patients on how to read food labels and understand the sodium content of foods, and remind them that reducing salt intake is more than just avoiding adding salt on top of food.</li>
+<li>The evidence base to support dietary salt restriction is limited.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_physical-activity.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Physical activity</h6>
+<ul>
+<li>Support patients with NYHA I-III to gradually increase regular physical activity to improve HF symptoms, quality of life and physical activity capacity (physical activity intolerance is recognized as a hallmark of HF).</li>
+<li>Physical activity in patients with NYHA IV should be supervised by experts.</li>
+<li>Consider referral to a cardiac rehabilitation centre.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_alchol-consumption.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Alcohol consumption</h6>
+<ul>
+<li>Encourage all patients to limit alcohol consumption.</li>
+<li>Alcohol consumption should be avoided altogether if it is believed to be responsible for contributing to heart failure.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_fluid-intake.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Fluid intake</h6>
+<ul>
+<li>Only impose strict limits on fluid intake (2L/day) for patients with a clear fluid overload, demonstrated sensitivity to fluid intake or hyponatremia.</li>
+<li>The evidence base to support fluid restriction is limited, and severely limiting intake may have adverse consequences.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_smoking-cessation.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Smoking cessation</h6>
+<ul>
+<li>All attempts should be made to promote smoking cessation (smoking has been linked to the progression of coronary artery disease).</li>
+<li>Nicotine replacement therapy and other smoking cessation therapies are acceptable.</li>
+<li>Refer patients for counselling.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/10/cep_icon_HF_weight-monitoring.png" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6>Weight monitoring</h6>
+<ul>
+<li>Encourage patients to weigh themselves every morning (after voiding and before breakfast) and record their weight.</li>
+<li>Patients should report weight increases of ≥ 2lbs per 24 hours or &gt; 5lbs per week.</li>
+<li>Weight monitoring is only one component of monitoring. See <a href="https://tools.cep.health/wp-admin/post.php?post=51867&amp;action=edit#monitoring" data-type="internal" data-id="#monitoring" data-wpel-link="internal">Monitoring</a> section below.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li>Curated list of non-pharmacological patient and caregiver educational resources: <a href="https://link.cep.health/hf26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Evidence2Practice Patient Resources (Centre for Effective Practice)</a></li>
+</ul>
+          </div>
+  </div>
+
+</article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="pharmacological-management">Pharmacological management</h3>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">HFrEF &#8211; Quadruple therapy</h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Patients with HFrEF should be started and maintained on quadruple therapy, including&nbsp;<strong>one evidence-based medication from each of the following classes</strong>, titrated to target doses or maximally tolerated doses<sup>11</sup></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Angiotensin receptor neprilysin inhibitor (ARNI) or angiotensin converting enzyme inhibitor (ACEI)/ angiotensin receptor blocker (ARB)</li>
+
+
+
+<li>Beta-blocker</li>
+
+
+
+<li>Mineralocorticoid receptor antagonist (MRA)</li>
+
+
+
+<li>Sodium-glucose cotransporter inhibitor (SGLT2i)</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Consider referral to or consultation with a specialist for:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Ongoing or worsening despite optimized quadruple therapy</li>
+
+
+
+<li>Difficulty titrating medications due to renal impairment or hypotension</li>
+
+
+
+<li>Access to Cardiologist or Heart Function Clinic to co-manage patients to ensure optimization of therapy and appropriate monitoring</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Therapy should be continued if patients are classified as HFimpEF (ejection fraction increases to ≥ 40% after treatment), even if patients become asymptomatic. If quadruple therapy must be discontinued during hospitalization, it should be restarted and further optimized as soon as possible.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Initiation and titration</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Because of the lifetime benefit of quadruple therapy, parallel initiation is now preferred to sequential initiation to avoid unnecessary delays in starting therapy. Therapy should be started at a low dose and titrated every 2-4 weeks to target or at a maximally tolerated dose over 3-6 months, while monitoring for safety and considering individual patient factors.<sup>4,11,12</sup></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading" id="HFmeds">Medications<sup>3,4,11,13-30,33</sup></h5>
+</div></article>
+
+<article class="block--file-download ">
+<div class="container">
+  <a href="https://tools.cep.health/wp-content/uploads/2024/11/HF-Medications-Table-v2.pdf" download="" target="_blank" class="inner" data-wpel-link="internal">
+    <div class="inner-wrapper">
+      <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/file.svg" />
+      <div class="filename-wrapper">
+        <h6>Medication Table</h6>
+        <span class="filename">HF-Medications-Table-v2.pdf</span>
+      </div>
+    </div>
+    <span class="button" target="_blank"><i class="icon-arrow-down-circ"></i> Download</span>
+  </a>
+</div>
+</article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1003" height="1024" src="https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-1003x1024.jpeg" alt="" class="wp-image-66974" srcset="https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-1003x1024.jpeg 1003w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-294x300.jpeg 294w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-768x784.jpeg 768w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-1504x1536.jpeg 1504w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-2005x2048.jpeg 2005w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-1410x1440.jpeg 1410w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-1057x1080.jpeg 1057w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-705x720.jpeg 705w, https://tools.cep.health/wp-content/uploads/2022/09/HeartFailure-graphic-cropped-470x480.jpeg 470w" sizes="auto, (max-width: 1003px) 100vw, 1003px" /></figure>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p class="has-small-font-size"><em>Adapted from the CCS/CHFS Heart Failure Guideline</em><sup>11</sup></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">Converting a patient from ACEi/ARB to ARNi<sup>4</sup></h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>ARNi treatment is recommended as first-line therapy, so stable HFrEF NYHA II-IV patients without recent symptomatic hypotension should be switched from an ACEi/ARB to an ARNi (if SBP &gt; 100mmHg, eGFR &gt; 30 mL/min and K+ &lt; 5.2mmol/L).</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-large"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2022/11/HF-table.png" alt=""/></figure>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+                    <h6>Therapies with limited benefit or to avoid<sup>8</sup></h6>
+                          <a data-modal="rITyWf" class="button open-modal" href="#" data-id="rITyWf">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="rITyWf" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Therapies with limited benefit or to avoid</h4>
+                                      <p>The following therapies have limited evidence to support their use in managing HF or may contribute to the worsening of HF. They should be avoided or withdrawn.</p>
+<p><strong>No benefit</strong></p>
+<ul>
+<li>Dihydropyridine calcium channel blockers</li>
+<li>Vitamins, nutritional supplements or hormonal therapy (unless to correct specific deficiencies)</li>
+<li>Nitrates or phosphodiesterase-5 inhibitors (among patients with HFpEF)</li>
+</ul>
+<p><strong>Potentially harmful</strong></p>
+<ul>
+<li>Nondihydropyridine calcium channel blockers (may depress cardiac function and worsen HF)</li>
+<li>IC antiarrhythmic medications and dronedarone (may increase risk of mortality)</li>
+<li>Thiazolidinediones (may increase risk of worsening HF symptoms and hospitalization)</li>
+<li>Dipeptidyl peptidase-4 inhibitors including saxagliptin and alogliptin (not recommended in patients with HF and type 2 diabetes as they may increase risk of hospitalization)</li>
+<li>NSAIDs (may worsen HF symptoms)</li>
+</ul>
+<p>&nbsp;</p>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">HFmrEF</h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>There is currently limited evidence about specific pharmacological therapy for people with HFmrEF.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">HFpEF</h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>There is currently limited evidence about specific pharmacological therapy for people with HFpEF (although guidelines are expected to be updated soon). There is emerging evidence that SGLT2is may be beneficial across the spectrum of heart failure. ARNI/ARB and MRAs may be considered in selected patients (particularly those with EF at the lower end of the spectrum) to reduce hospitalization from heart failure (HHF). ACEis and beta-blockers are not recommended (evidence does not support benefit in HFpEF).<sup>3,7</sup></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Pharmacological management of HFpEF should focus on:<sup>3,7,33</sup></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Identifying and treating underlying etiological factors for HF (e.g., hypertension)</li>
+
+
+
+<li>Managing HF symptoms (e.g., loop diuretics to control symptoms of congestion and peripheral edema)</li>
+
+
+
+<li>Identifying and treating comorbid conditions that might exacerbate the HF (e.g., atrial fibrillation)</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">HFimpEF</h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Do not withdraw treatment even if the patient’s condition becomes HFimpEF (unless experiencing intolerable side effects). Stopping medications can cause deterioration.<sup>9</sup></p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="monitoring" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Monitoring								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Jump to:</h4>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="#hfwarningsigns">Warning signs and symptoms of worsening heart failure</a></p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Providers and patients should monitor the following regularly:</p>
+<ul>
+<li>Vital signs (e.g., BP, HR, O2 saturation and body weight) until they stabilize (body weight daily).</li>
+<li>Clinical signs and symptoms of congestion and hypoperfusion (worsening heart failure) regularly.</li>
+<li>Encourage patients to take part in the monitoring process. Patients should identify and document their early, individualized signs and symptoms of worsening HF.</li>
+<li>Ensure patients know who to contact if they detect warning signs and symptoms of worsening HF.</li>
+</ul>
+<p>The extent of monitoring required depends on the severity of patients’ HF and response to therapy.</p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="hfwarningsigns">Warning signs and symptoms of worsening heart failure<sup>3,8,31</sup></h3>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-yellow-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Caution</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong><em>Patients should be encouraged to contact their primary care practitioners</em></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Edema (swelling) in ankles, feet, legs or abdomen</li>
+
+
+
+<li>Weight gain (≥ 2lbs per 24 hours or &gt; 5lbs per week)</li>
+
+
+
+<li>Shortness of breath (while lying down or with activity)</li>
+
+
+
+<li>Cough, wheezing</li>
+
+
+
+<li>Fatigue, tiredness</li>
+
+
+
+<li>Change in ability to do routine activities</li>
+
+
+
+<li>Gastrointestinal symptoms that last more than 2 days</li>
+</ul>
+</div></article></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Medical Alert</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><strong><em>Patients should proceed to their nearest emergency room/department or call 911 and notify their primary care practitioners</em></strong></p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Shortness of breath (while sitting still)</li>
+
+
+
+<li>Chest pain</li>
+
+
+
+<li>Confusion</li>
+
+
+
+<li>Changes in heart rate and blood pressure</li>
+
+
+
+<li>Heart palpitations</li>
+
+
+
+<li>Dizziness</li>
+
+
+
+<li>Fainting</li>
+</ul>
+</div></article></div>
+</div></article></div>
+</div>
+
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li>Remote monitoring program for patients
+<ul>
+<li aria-level="1"><a href="https://link.cep.health/hf18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Community Paramedicine Remote Patient Monitoring Program (Future Health Services)</a></li>
+<li aria-level="1"><a href="https://link.cep.health/hf21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Telehomecare for COPD and Heart Failure (Ontario Telemedicine Network/Ontario Health)</a></li>
+</ul>
+</li>
+</ul>
+          </div>
+  </div>
+
+</article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="coordination-of-care" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Coordination of care								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>The coordination of care and information across care team members is integral to supporting patients with HF.<sup>3,7,11,32 </sup>Coordination of care and information requires bidirectional follow-up between team members (e.g., discharge plans, care plans, community paramedicine/remote monitoring programs, pharmacy, dietician, home and community care support services) and should involve active engagement of patients and their caregivers.<sup>9</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p>Timely clinical follow-up with patients should occur within 7 days of hospital discharge.<sup>7</sup></p>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading"><strong>When to refer<sup>3,7,9,11,32,</sup></strong></h3>
+</div></article>
+
+<article class="block--image  core-block" data-block-name="core/image"><div class="container">
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="939" height="542" src="https://tools.cep.health/wp-content/uploads/2025/07/When-to-refer_graphic.png" alt="" class="wp-image-69144" style="width:809px;height:auto" srcset="https://tools.cep.health/wp-content/uploads/2025/07/When-to-refer_graphic.png 939w, https://tools.cep.health/wp-content/uploads/2025/07/When-to-refer_graphic-300x173.png 300w, https://tools.cep.health/wp-content/uploads/2025/07/When-to-refer_graphic-768x443.png 768w, https://tools.cep.health/wp-content/uploads/2025/07/When-to-refer_graphic-640x369.png 640w" sizes="auto, (max-width: 939px) 100vw, 939px" /></figure>
+</div></article>
+
+<article class="block--support-materials ">
+
+  <div class="container default">
+    <div class="inner">
+              <div class="columns">
+                      <div class="column icon">
+              <img decoding="async" src="https://tools.cep.health/wp-content/themes/cep-tools/img/support-materials.svg" />
+            </div>
+                                <div class="column">
+              <strong class="heading"><h6>Resources</h6></strong>
+            </div>
+                  </div>
+                    <ul>
+<li>Curated list of local cardiac rehabilitation centres and heart failure clinics: <a href="https://link.cep.health/hf37" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Evidence2Practice Patient Resources (Centre for Effective Practice)</a></li>
+<li>Practical guidance on how to implement the spoke-hub-node model of care: <a href="https://tools.cep.health/wp-content/uploads/2022/12/CorHealth-Spoke-Hub-Node_August-232018.pdf" data-wpel-link="internal">Minimal requirements and key clinical services for heart failure programs within a spoke-hub-node model of care (CorHealth/Ontario Health)</a></li>
+</ul>
+          </div>
+  </div>
+
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>Heart &amp; Stroke Foundation. How Canada is failing people with heart failure-and how we can change that [Internet]. 2022. Available from: <a href="https://link.cep.health/covid2766" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.heartandstroke.ca/-/media/pdf-files/canada/2022-heart-month/HS-Heart-Failure-Report-2022-FINAL.ashx</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>Steinberg L, White M, Arvanitis J, Husain A, Mak S. Approach to advanced heart failure at the end of life. 2017 Sep;7.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>Ezekowitz JA, O’Meara E, McDonald MA, Abrams H, Chan M, Ducharme A, et al. 2017 Comprehensive Update of the Canadian Cardiovascular Society Guidelines for the Management of Heart Failure. Can J Cardiol. 2017 Nov;33(11):1342–433.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>Canadian Cardiovascular Society. Is it Heart Failure and What Should I Do? [Internet]. Canadian Cardiovascular Society. 2021 [cited 2022 Sep 26]. Available from: <a href="https://link.cep.health/covid2764" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://ccs.ca/app/uploads/2021/05/2021-HF-Gui-PG-EN-2.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p>Bozkurt B, Coats AJ, Tsutsui H, Abdelhamid M, Adamopoulos S, Albert N, et al. Universal Definition and Classification of Heart Failure: A Report of the Heart Failure Society of America, Heart Failure Association of the European Society of Cardiology, Japanese Heart Failure Society and Writing Committee of the Universal Definition of Heart Failure. J Card Fail. 2021 Apr 1;27(4):387–413.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p>Kuwahara K. The natriuretic peptide system in heart failure: Diagnostic and therapeutic implications. Pharmacol Ther. 2021 Nov;227:107863.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p>Heidenreich PA, Bozkurt B, Aguilar D, Allen LA, Byun JJ, Colvin MM, et al. 2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure. J Am Coll Cardiol. 2022 May;79(17):e263–421.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p>McDonagh TA, Metra M, Adamo M, Gardner RS, Baumbach A, Böhm M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021 Sep 21;42(36):3599–726.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p><a href="https://link.cep.health/expertopinionrationale" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Expert Opinion</a>.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p>Advance Care Planning Ontario. Advance Care Planning [Internet]. 2022 [cited 2022 Sep 22]. Available from: <a href="https://link.cep.health/covid2763" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://advancecareplanningontario.ca/acp</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p>McDonald M, Virani S, Chan M, Ducharme A, Ezekowitz JA, Giannetti N, et al. CCS/CHFS Heart Failure Guidelines Update: Defining a New Pharmacologic Standard of Care for Heart Failure With Reduced Ejection Fraction. Can J Cardiol. 2021 Apr;37(4):531–46.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p>Sharma A, Verma S, Bhatt DL, Connelly KA, Swiggum E, Vaduganathan M, et al. Optimizing Foundational Therapies in Patients With HFrEF. JACC Basic Transl Sci. 2022 May;7(5):504–17.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p>Ministry of Health. Formulary Search [Internet]. 2022 [cited 2022 Sep 26]. Available from: <a href="https://link.cep.health/covid2531" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.formulary.health.gov.on.ca/formulary/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p>Government of Canada. Non-Insured Health Benefits: Drug benefit list [Internet]. 2021 [cited 2022 Sep 26]. Available from: <a href="https://link.cep.health/covid2762" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.sac-isc.gc.ca/eng/1572888328565/1572888420703</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p>Canadian Pharmacists Association. Canadian Pharmacists Association. Compendium of pharmaceuticals and specialities. n.d.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p>Novartis Pharmaceuticals Canada Inc. Product monograph: ENTRESTO® [Internet]. 2021 [cited 2022 Sep 28]. Available from: <a href="https://link.cep.health/covid2761" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ask.novartispharma.ca/download.htm?res=entresto_scrip_e.pdf&amp;resTitleId=1137</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p>Sanis Health Inc. Product Monograph: ENALAPRIL [Internet]. 2016 [cited 2022 Oct 18]. <a href="https://link.cep.health/hf59" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Available from: https://pdf.hres.ca/dpd_pm/00035279.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p>APOTEX INC. Product Monograph: APO-ENALAPRIL [Internet]. 2017 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf2" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00039172.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p>Angita Pharma Inc. Product Monograph: AG-PERINDOPRIL [Internet]. 2020 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf3" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00057080.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p>Auro Pharma Inc. Product Monograph: AURO-RAMIPRIL [Internet]. 2018 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf7" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.auropharma.ca/products/monograph/Auro-Ramipril-PM.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p>PHARAMASCIENCE INC. Product Monograph: pms-TRANDOLAPRIL [Internet]. 2018 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00045421.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p>JAMP PHARMA CORPORATION. Product Monograph: Jamp-CANDESARTAN [Internet]. 2012 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf5" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00016679.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p>Sivem Pharmaceuticals ULC. Product Monograph- VALSARTAN HCT [Internet]. 2016. Available from: <a href="https://link.cep.health/hf6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00033536.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [24]
+                    </div>
+
+                    <div class="column">
+                      <p>JAMP Pharma Corporation. Product Monograph: JAMP-CARDVEDILOL [Internet]. 2017 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00038626.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [25]
+                    </div>
+
+                    <div class="column">
+                      <p>Mint Pharmaceuticals Inc. Product Monograph: MINT-BISOPROLOL [Internet]. 2020 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://mintpharmaceuticals.com/English/pdf/PM%20Mint-Bisoprolol%20-%20English.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [26]
+                    </div>
+
+                    <div class="column">
+                      <p>Teva Canada Limited. Product Monograph: TEVA-SPIRONOLACTONE/HCTZ [Internet]. 2016 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf11" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00033429.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [27]
+                    </div>
+
+                    <div class="column">
+                      <p>Mint Pharmaceuticals Inc. Product Monograph: MINT-EPLERENONE [Internet]. 2018 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://mintpharmaceuticals.com/English/pdf/MINT-EPLERENONE%20PM%20EN.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [28]
+                    </div>
+
+                    <div class="column">
+                      <p>AstraZeneca Canada Inc. Product Monograph Including Patient Medication Information: FORXIGA [Internet]. 2021 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.astrazeneca.ca/content/dam/az-ca/downloads/productinformation/forxiga-product-monograph-en.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [29]
+                    </div>
+
+                    <div class="column">
+                      <p>Boehringer Ingelheim (Canada) Ltd. Product Monograph Including Patient Medication Information: JARDIANCE [Internet]. 2022. Available from: <a href="https://link.cep.health/hf14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.boehringer-ingelheim.ca/sites/ca/files/documents/jardiancepmen.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [30]
+                    </div>
+
+                    <div class="column">
+                      <p>Janssen Inc. Product Monograph: INVOKANA [Internet]. 2020 [cited 2022 Oct 18]. Available from: <a href="https://link.cep.health/hf15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pdf.hres.ca/dpd_pm/00054739.PDF</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [31]
+                    </div>
+
+                    <div class="column">
+                      <p>Alberta Health. Managing Heart Failure: Heart Failure Action Plan [Internet]. 2020 [cited 2022 Sep 27]. Available from: <a href="https://link.cep.health/hf16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://myhealth.alberta.ca/Alberta/Pages/heart-failure-action-plan.aspx</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [32]
+                    </div>
+
+                    <div class="column">
+                      <p>O’Meara E, McDonald M, Chan M, Ducharme A, Ezekowitz JA, Giannetti N, et al. CCS/CHFS Heart Failure Guidelines: Clinical Trial Update on Functional Mitral Regurgitation, SGLT2 Inhibitors, ARNI in HFpEF, and Tafamidis in Amyloidosis. Can J Cardiol. 2020 Feb 1;36(2):159–69.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [33]
+                    </div>
+
+                    <div class="column">
+                      <p>Jain R, Stone JA, Agarwal G, Andrade JG, Bacon SL, Bajaj HS, et al. Canadian Cardiovascular Harmonized National Guideline Endeavour (C-CHANGE) guideline for the prevention and management of cardiovascular disease in primary care: 2022 update. CMAJ. 2022 Nov 7;194(43):E1460–80.</p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgment-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgment and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p style="margin-top: 0cm; background: white;"><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;">The Managing Heart Failure in Primary Care</span><span style="-webkit-font-smoothing: antialiased;" data-contrast="none"> tool was developed using the Centre for Effective Practice’s (CEP’s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Rahul Jain. End users and clinical experts were also engaged to provide feedback. Funded by the Ministry of Health, the KTinPC Initiative supports primary care clinicians with a series of clinical tools and health information resources. Learn more about the <a style="-webkit-font-smoothing: antialiased; transition: 0.4s;" title="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" href="https://cep.health/case-studies/knowledge-translation-in-primary-care/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=ad-" target="_blank" rel="noopener external noreferrer" data-wpel-link="external"><span style="color: #2d4c95;">KTinPC Initiative</span></a>.</span></p>
+<p style="margin-top: 0cm; background: white;"><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;">This Tool was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</span></p>
+<p style="margin-top: 0cm; background: white; -webkit-font-smoothing: antialiased; margin-bottom: 2.5rem; font-size: 1.2rem; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px;"><i style="-webkit-font-smoothing: antialiased;"><span style="-webkit-font-smoothing: antialiased;" data-contrast="none"><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;">This Tool is a product of the CEP. Permission to use, copy, and distribute this material is for all </span>noncommercial and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of this Tool for commercial purposes or any modifications of the Tool are subject to charge and must be negotiated with the CEP (</span></i><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;"><a style="-webkit-font-smoothing: antialiased; transition: 0.4s;" href="mailto:info@cep.health"><i style="-webkit-font-smoothing: antialiased;"><span style="-webkit-font-smoothing: antialiased;" data-contrast="none"><span style="color: #2d4c95;">info@cep.health</span></span></i></a><i style="-webkit-font-smoothing: antialiased;"><span style="-webkit-font-smoothing: antialiased;" data-contrast="none">).</span></i><span style="-webkit-font-smoothing: antialiased;" data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></span></p>
+<p style="margin-top: 0cm; background: white; -webkit-font-smoothing: antialiased; margin-bottom: 2.5rem; font-size: 1.2rem; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px;"><i style="-webkit-font-smoothing: antialiased;"><span style="-webkit-font-smoothing: antialiased;" data-contrast="none"><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;">For statistical and bibliographic purposes, please notify the CEP (</span></span></i><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;"><a style="-webkit-font-smoothing: antialiased; transition: 0.4s;" href="mailto:info@cep.health"><i style="-webkit-font-smoothing: antialiased;"><span style="-webkit-font-smoothing: antialiased;" data-contrast="none"><span style="color: #2d4c95;">info@cep.health</span></span></i></a><i style="-webkit-font-smoothing: antialiased;"><span style="-webkit-font-smoothing: antialiased;" data-contrast="none">) of any use or reprinting of the Tool. Please use the following citation when referencing the Tool: Reprinted with Permission from Centre for Effective Practice. (November 2024).<em><span class="title">Managing Heart Failure in Primary Care</span>: Ontario</em></span></i></span><i><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;">. Toronto: Centre for Effective Practice.</span></i><span style="-webkit-font-smoothing: antialiased;" data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"><span style="font-family: 'Open Sans',sans-serif; color: #5c5c60;"> </span></span></p>
+<p><img decoding="async" class="alignnone size-medium wp-image-327" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+<p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by:                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":50862,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

@@ -1,0 +1,92 @@
+Subsection: Prenatal Care
+Parent Section: K
+Page Reference: K4
+Pages: 520 to 521
+Text chunks: 1
+Total text length: 4888 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 520 ---
+OBSTETRICS
+PRENATAL CARE
+Asst Surg Anae
+P003 General assessment (major prenatal visit) .............................. 80.35
+Antenatal preventative health assessment
+The service rendered by the most responsible physician for conducting the initial review of
+antenatal risk. The review must examine all current psychosocial, genetic and medical issues
+affecting antenatal risk and must be documented in writing in the patient’s permanent medical
+record. Maximum once per pregnancy. P005 rendered same patient same day same physician
+as any other consultation or visit except P003 and P004 is an insured service payable at nil.
+P005 Antenatal preventative health assessment.............................. 47.70
+P004 Minor prenatal assessment ..................................................... 38.15
+High risk prenatal assessment
+A high risk prenatal assessment is an assessment by a maternal-fetal medicine specialist
+requiring a minimum of 20 minutes in direct contact with the patient for the management of a
+documented significant maternal and/or fetal risk factor(s) where the mother and/or fetus are at
+significant risk for serious complications during the pregnancy.
+P002 High risk prenatal assessment ................................................ 74.70
+Medical record requirements:
+The service is eligible for payment only if start and stop times of the service are recorded in the
+patient's permanent medical record.
+Medical management of early pregnancy - initial service
+Medical management of early pregnancy - initial service when a physician renders an initial
+assessment and administration of cytotoxic medication(s) for the termination of early
+pregnancy or missed abortion. The cost of the drug(s) is not included in the fee for the service.
+A920 Medical management of early pregnancy - initial service........ 161.15
+Payment rules:
+Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service) are not eligible for payment when rendered
+the same day to the same patient by the same physician as A920.
+Medical management of ectopic pregnancy – initial service
+Medical Management of ectopic pregnancy – initial service when a physician renders an initial
+assessment and administration of cytotoxic medication(s) for the termination of an ectopic
+pregnancy. The cost of the drug(s) is not included in the fee for the service.
+A922 Medical management of ectopic pregnancy - initial service .... 207.80
+Payment rules:
+Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service) are not eligible for payment when rendered
+the same day to the same patient by the same physician as A922.
+[Commentary:
+As with all insured services, A920 and A922 must be provided in accordance with professional
+standards - such as those published by the Society of Obstetricians and Gynaecologists of
+Canada.]
+Amd 12 Draft 1 K4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 521 ---
+OBSTETRICS
+PRENATAL CARE
+Asst Surg Anae
+Medical management of early or ectopic pregnancy - follow-up visit
+Medical management of early or ectopic pregnancy - follow-up visit is for a visit that is a follow-
+up of A920 or A922, whether rendered by the same physician who rendered the A920 or A922
+service or by another physician.
+A921 Medical management of early or ectopic pregnancy - follow-up
+visit ..................................................................................... 36.85
+Payment rules:
+1.Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service) are not eligible for payment when
+rendered the same day to the same patient by the same physician as A921.
+2.A921 is limited to two per patient per pregnancy. Services in excess of this limit will be
+adjusted to another assessment fee.
+P001 Medical management of non-viable fetus or intra-uterine fetal
+demise between 14 and 20 weeks gestation ..................... 399.00
+Payment rules:
+1.P001 is only eligible for payment if the length of gestation is confirmed by ultrasound.
+2.Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service, including cervical ripening and oxytocin
+infusion if rendered) are not eligible for payment when rendered the same day to the same
+patient by the same physician as P001.
+3.Z774 is eligible for payment in addition to P001 if uterine curettage is required for postpartum
+hemorrhage due to retained products.
+[Commentary:
+P001 is only payable for the active medical management of the patient. It is not payable when
+the fetus delivers spontaneously prior to initiating intervention.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K5 Amd 12 Draft 1

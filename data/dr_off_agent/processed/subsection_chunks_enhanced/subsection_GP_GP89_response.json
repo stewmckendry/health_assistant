@@ -1,0 +1,1007 @@
+{
+  "subsection_title": "Surgical Assistants\u2019 Services",
+  "parent_section": "GP",
+  "page_ref": "GP89",
+  "pages_processed": "103-105",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "C988B",
+      "description": "Surgical Assistant Services - Evenings",
+      "fee": 76.4,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C998B",
+      "description": "Surgical Assistant Services - Saturdays, Sundays, and Holidays",
+      "fee": 67.05,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C983B",
+      "description": "Surgical Assistant Services - Weekdays (17:00-24:00)",
+      "fee": 85.6,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C999B",
+      "description": "Surgical Assistant Services - Daytime (07:00-17:00)",
+      "fee": 117.65,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E006B",
+      "description": "Cancelled Surgery - Assistant Services",
+      "fee": null,
+      "units": "6 basic units plus actual time units",
+      "conditions": "If anaesthetic has begun but surgery is cancelled due to complication.",
+      "special_prefix": null
+    },
+    {
+      "code": "E101B",
+      "description": "Surgical Assistant Standby",
+      "fee": null,
+      "units": "Time-based service",
+      "conditions": "Minimum of 30 minutes delay required.",
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E645",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "M111",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "M112",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "M117",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "M134",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "M142",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "P042",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "P051",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "P052",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "P056",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "P059",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R008",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R009",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R013",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R014",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R015",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R016",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R055",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R056",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R064",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R065",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R067",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R069",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R134",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R135",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R136",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R140",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R182",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R240",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R241",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R244",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R326",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R327",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R334",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R393",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R438",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R440",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R441",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R483",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R487",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R545",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R553",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R568",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R593",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R594",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R617",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R645",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R701",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R702",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R704",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R712",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R713",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R714",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R715",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R718",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R726",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R727",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R728",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R729",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R733",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R734",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R735",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R737",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R738",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R742",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R743",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R746",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R747",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R749",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R764",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R770",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R771",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R772",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R785",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R786",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R799",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R800",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R801",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R802",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R803",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R804",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R811",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R815",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R817",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R818",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R830",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R832",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R858",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R863",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R870",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R872",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R874",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R876",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R877",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R927",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R929",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R920",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "R930",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S005",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S007",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S079",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S090",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S091",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S092",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S096",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S098",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S099",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S120",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S125",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S189",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S213",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S214",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S267",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S270",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S271",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S274",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S275",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S294",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S295",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S298",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S300",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S321",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S416",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S429",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S440",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S441",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S453",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S454",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S462",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S484",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S750",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S758",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S759",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    },
+    {
+      "code": "S816",
+      "context": "Second assistant services payable without authorization",
+      "description": null,
+      "source_subsection": "Surgical Assistants\u2019 Services",
+      "source_page": "GP89"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

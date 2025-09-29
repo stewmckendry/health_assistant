@@ -1,0 +1,485 @@
+{
+  "subsection_title": "Kidney and Upper Urinary Tract",
+  "parent_section": "T",
+  "page_ref": "T2",
+  "pages_processed": "708-713",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "E752",
+      "description": "with repeat surgery on kidney at least 30 days after previous kidney surgery",
+      "fee": 83.25
+    },
+    {
+      "code": "Z601",
+      "description": "Renal biopsy, needle",
+      "fee": 143.55
+    },
+    {
+      "code": "S401",
+      "description": "Drainage of kidney abscess",
+      "fee": 411.3
+    },
+    {
+      "code": "S402",
+      "description": "Drainage of perinephric abscess",
+      "fee": 267.6
+    },
+    {
+      "code": "S403",
+      "description": "Exploration of renal and peri-renal tissues (with or without biopsy or unroofing of cyst)",
+      "fee": 356.7
+    },
+    {
+      "code": "S400",
+      "description": "Laparoscopic placement of probe(s) for ablation of renal tumour",
+      "fee": 404.95
+    },
+    {
+      "code": "S405",
+      "description": "Nephrolithotomy - open",
+      "fee": 482.4
+    },
+    {
+      "code": "S408",
+      "description": "Pyelolithotomy - open",
+      "fee": 437.2
+    },
+    {
+      "code": "S430",
+      "description": "Removal of staghorn calculus filling renal pelvis and calyces - open, with or without x-ray control and/or anatrophic nephrolithotomy",
+      "fee": 657.75
+    },
+    {
+      "code": "S410",
+      "description": "Calycectomy with diversion of urine",
+      "fee": 512.0
+    },
+    {
+      "code": "S411",
+      "description": "Partial or heminephrectomy",
+      "fee": 907.0
+    },
+    {
+      "code": "S423",
+      "description": "Partial or heminephrectomy with total ureterectomy",
+      "fee": 757.85
+    },
+    {
+      "code": "S412",
+      "description": "ectopic kidney",
+      "fee": 467.0
+    },
+    {
+      "code": "S413",
+      "description": "lumbar",
+      "fee": 467.0
+    },
+    {
+      "code": "S415",
+      "description": "transperitoneal",
+      "fee": 522.5
+    },
+    {
+      "code": "S416",
+      "description": "thoraco-abdominal or radical nephrectomy",
+      "fee": 907.0
+    },
+    {
+      "code": "S424",
+      "description": "Extrophy - plastic closure of bladder with closure of abdominal wall and urethral lengthening with closure of pelvic floor with or without reimplantation of ureters",
+      "fee": 1237.25
+    },
+    {
+      "code": "S420",
+      "description": "Nephroureterectomy, total, with resection of ureterovesical junction",
+      "fee": 673.1
+    },
+    {
+      "code": "S422",
+      "description": "Pyeloplasty (with or without nephropexy)",
+      "fee": 907.0
+    },
+    {
+      "code": "S428",
+      "description": "Symphysiotomy for horseshoe kidney with or without nephropexy and associated procedures",
+      "fee": 494.9
+    },
+    {
+      "code": "S429",
+      "description": "Ruptured or lacerated kidney - repair or removal",
+      "fee": 437.2
+    },
+    {
+      "code": "S431",
+      "description": "Excision of retroperitoneal tumour",
+      "fee": 381.6
+    },
+    {
+      "code": "S432",
+      "description": "Exploration of retroperitoneal tumour",
+      "fee": 260.85
+    },
+    {
+      "code": "S433",
+      "description": "Sacrococcygeal teratoma",
+      "fee": 437.2
+    },
+    {
+      "code": "Z630",
+      "description": "Extracorporeal shock wave lithotripsy",
+      "fee": 314.2
+    },
+    {
+      "code": "Z629",
+      "description": "Percutaneous nephrostomy",
+      "fee": 153.35
+    },
+    {
+      "code": "Z623",
+      "description": "Insertion of stent",
+      "fee": 95.1
+    },
+    {
+      "code": "Z624",
+      "description": "Dilatation of tract",
+      "fee": 105.25
+    },
+    {
+      "code": "Z625",
+      "description": "Selective catheterization of calyces (one or more)",
+      "fee": 52.7
+    },
+    {
+      "code": "Z626",
+      "description": "Nephroscopy, percutaneous or retrograde",
+      "fee": 95.95
+    },
+    {
+      "code": "Z627",
+      "description": "Removal of renal calculi",
+      "fee": 168.25
+    },
+    {
+      "code": "Z636",
+      "description": "Endoscopic ureterotomy or pyelotomy",
+      "fee": 273.25
+    },
+    {
+      "code": "Z637",
+      "description": "Percutaneous ablation of calyceal diverticulum to include dilation of communication with calyx and fulguration",
+      "fee": 262.75
+    },
+    {
+      "code": "Z600",
+      "description": "Change of nephrostomy tube",
+      "fee": 44.0
+    },
+    {
+      "code": "E762",
+      "description": "reconstruction or repair of renal artery done in addition to renal transplantation procedures",
+      "fee": 301.05
+    },
+    {
+      "code": "S435",
+      "description": "Kidney transplant",
+      "fee": 1553.15
+    },
+    {
+      "code": "S434",
+      "description": "Kidney re-transplant",
+      "fee": 1858.15
+    },
+    {
+      "code": "S436",
+      "description": "Donor nephrectomy - unilateral or bilateral (to include renal perfusion with hypothermia when rendered by surgeon)",
+      "fee": 653.2
+    },
+    {
+      "code": "S437",
+      "description": "Renal autotransplantation",
+      "fee": 1161.6
+    },
+    {
+      "code": "Z631",
+      "description": "Fine needle aspiration of renal transplant",
+      "fee": 45.15
+    },
+    {
+      "code": "S470",
+      "description": "Cystoscopy with manipulation and/or removal of calculus and retrograde pyelogram if required",
+      "fee": 240.65
+    },
+    {
+      "code": "Z638",
+      "description": "Endoscopic treatment of vesicoureteral reflux by subureteral injection of agent, unilateral or bilateral",
+      "fee": 450.0
+    },
+    {
+      "code": "Z628",
+      "description": "above intramural",
+      "fee": 125.7
+    },
+    {
+      "code": "S445",
+      "description": "Ureterotomy, abdominal or vaginal exploratory or for drainage with removal of calculus - upper 2/3",
+      "fee": 376.8
+    },
+    {
+      "code": "S446",
+      "description": "Ureterotomy, abdominal or vaginal exploratory or for drainage with removal of calculus - lower 1/3",
+      "fee": 482.4
+    },
+    {
+      "code": "S447",
+      "description": "Where ureter has been previously opened - upper 2/3",
+      "fee": 437.2
+    },
+    {
+      "code": "S448",
+      "description": "Where ureter has been previously opened - lower 1/3",
+      "fee": 522.5
+    },
+    {
+      "code": "S449",
+      "description": "Ureterectomy including ureterovesical junction",
+      "fee": 445.4
+    },
+    {
+      "code": "S450",
+      "description": "Ureterectomy other e.g. partial",
+      "fee": 331.7
+    },
+    {
+      "code": "S452",
+      "description": "Ureteroileal conduit",
+      "fee": 788.15
+    },
+    {
+      "code": "S454",
+      "description": "with ureterectomy and ileal replacement",
+      "fee": 893.5
+    },
+    {
+      "code": "S457",
+      "description": "Ureteroureterostomy",
+      "fee": 552.3
+    },
+    {
+      "code": "S451",
+      "description": "Ureterovesical anastomosis or re-implantation unilateral",
+      "fee": 490.25
+    },
+    {
+      "code": "S561",
+      "description": "Re-implantation of ureter with extensive tapering with or without ureterolysis",
+      "fee": 693.45
+    },
+    {
+      "code": "S562",
+      "description": "Re-implantation of bifid ureter",
+      "fee": 539.5
+    },
+    {
+      "code": "S460",
+      "description": "Ureterolysis for periureteral fibrosis - unilateral",
+      "fee": 448.0
+    },
+    {
+      "code": "S461",
+      "description": "Ureteroplasty (Hutch) - unilateral",
+      "fee": 331.7
+    },
+    {
+      "code": "S427",
+      "description": "Bladder flap (Boari) to include re-implantation of ureter",
+      "fee": 502.45
+    },
+    {
+      "code": "S465",
+      "description": "Traumatic rupture, or transection (partial or complete) Immediate - upper 2/3",
+      "fee": 381.6
+    },
+    {
+      "code": "S466",
+      "description": "Traumatic rupture, or transection (partial or complete) Immediate - lower 1/3",
+      "fee": 437.2
+    },
+    {
+      "code": "S467",
+      "description": "Traumatic rupture, or transection (partial or complete) Late repair - upper 2/3",
+      "fee": 437.2
+    },
+    {
+      "code": "S468",
+      "description": "Traumatic rupture, or transection (partial or complete) Late repair - lower 1/3",
+      "fee": 482.4
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E792",
+      "context": "when performed laparoscopically",
+      "description": "to S403",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E766",
+      "context": "with gland dissection",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E767",
+      "context": "with repair of vena cava for thrombus - below the hepatic vein",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E768",
+      "context": "with repair of vena cava for thrombus - above the hepatic vein",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E754",
+      "context": "with removal of calculus",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E759",
+      "context": "if disintegrated by any method",
+      "description": "to Z627",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E772",
+      "context": "percutaneous removal of staghorn calculus filling renal pelvis and extending into calyces",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E753",
+      "context": "live donor",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E769",
+      "context": "team fee (not to be billed when assistant fees are billed)",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E771",
+      "context": "team fee (not to be billed when assistant fees are billed)",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E819",
+      "context": "diagnostic ureteroscopy of second ureter",
+      "description": "to Z628",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E822",
+      "context": "ureteroscopy to upper third of ureter or renal pelvis",
+      "description": "to Z628",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E760",
+      "context": "with removal of calculus",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E761",
+      "context": "intracorporeal lithotripsy by any method",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E820",
+      "context": "with biopsy of one or more sites in ureter and/or pelvis using ureteroscope",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "E823",
+      "context": "resection and fulgarization of one or more ureteral or renal pelvic tumours",
+      "description": "to Z628",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "Z606",
+      "context": "not eligible for payment with",
+      "description": "Z638",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "Z607",
+      "context": "not eligible for payment with",
+      "description": "Z638",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "Z611",
+      "context": "not eligible for payment with",
+      "description": "Z638",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "Z617",
+      "context": "not eligible for payment with",
+      "description": "Z638",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "Z628",
+      "context": "not eligible for payment with",
+      "description": "Z638",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    },
+    {
+      "code": "S482",
+      "context": "not to be billed in addition to",
+      "description": "",
+      "source_subsection": "Kidney and Upper Urinary Tract",
+      "source_page": "T2"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

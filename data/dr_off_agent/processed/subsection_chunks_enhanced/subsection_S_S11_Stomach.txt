@@ -1,0 +1,168 @@
+Subsection: Stomach
+Parent Section: S
+Page Reference: S11
+Pages: 679 to 682
+Text chunks: 1
+Total text length: 8921 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 679 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+STOMACH
+Asst Surg Anae
+ENDOSCOPY
+Gastroscopy
+# Z527 - may include biopsies, photography and removal of polyps
+less than or equal to 1 cm .................................................. 82.90 4
+# Z547 - with removal of foreign body .............................................. 99.75 4
+# Z528 - subsequent (within three months following previous
+gastroscopy)...................................................................... 67.85 4
+Note:
+Z292 rendered in association with gastroscopy services is not eligible for payment unless the
+laryngoscopy service is rendered for suspicion of disease of the larynx. Claims for Z292 in
+these circumstances are assessed by a medical consultant on a manual review basis and
+require the submission of a written explanation.
+[Commentary:
+Manual review is not required for Z293, Z322 and Z323 rendered in association with
+gastroscopy services.]
+# E674 - with snare polypectomy - 1st polyp > 1 cm (maximum 1)
+................................................................................... add 142.40
+# E675 - with snare polypectomy each - additional polyp > 1 cm
+(maximum 2) .............................................................. add 73.50
+Note:
+E674, E675 are payable with Z527, Z547 or Z528.
+INCISION
+Gastrotomy
+# S116 - with removal of tumour or foreign body .............................. 6 406.85 7
+# E731 - with suture of bleeding peptic ulcer............................ add 247.05
+# S117 Pyloromyotomy (Ramstedt's).................................................. 6 536.90 10
+Payment rules:
+1.S117 is only eligible for payment for newborns and infants.
+Gastrostomy
+# S118 Gastrostomy ........................................................................... 6 467.85 7
+# E697 - with repair of Mallory-Weiss laceration ...................... add 142.40
+# E707 - when done with another intra-abdominal procedure........ 70.80
+# Z532 Percutaneous endoscopic gastrostomy.................................. 6 172.95 7
+Z520 Change of gastrostomy tube................................................... 10.65
+EXCISION
+Biopsy - incisional
+# Z526 - by gastrostomy ................................................................... 73.60
+# Z533 - by intubation ....................................................................... 36.80
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S11 Amd 12 Draft 1
+
+--- PAGE 680 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+STOMACH
+Asst Surg Anae
+GASTRECTOMY
+# S122 Wedge resection for ulcer....................................................... 7 520.00 7
+# E708 - with vagotomy............................................................ add 122.05
+# E713 - after previous partial gastrectomy.............................. add 137.55
+# E793 - laparoscopic or laparoscopic assisted, to S122. add 25%
+Partial or subtotal
+# S123 - distal ................................................................................... 7 840.00 8
+# S125 - proximal.............................................................................. 7 900.00 8
+# E731 - with suture of bleeding peptic ulcer............................ add 247.05
+# E708 - with vagotomy............................................................ add 122.05
+# E709 - with cholecystectomy................................................. add 122.05
+# E711 - after previous gastro-enterostomy ............................. add 106.55
+# E706 - with choledochotomy ................................................. add 122.05
+# E712 - after previous vagotomy and pyloroplasty ................. add 111.10
+# E713 - after previous partial gastrectomy.............................. add 137.55
+# E644 - radical mediastinal node dissection following preoperative
+chemotherapy and/or radiotherapy, to S125.............. add 400.00
+# E847 - with reconstruction of diaphragm requiring repair with
+mesh or equivalent synthetic material, to S125 ........ add 75.00
+# E793 - laparoscopic or laparoscopic assisted, to S123 or S125 .
+........................................................................... add 25%
+Total gastrectomy
+# S128 - with or without splenectomy .............................................. 7 1235.00 9
+# E709 - with cholecystectomy................................................. add 122.05
+# E706 - with choledochotomy ................................................. add 122.05
+# E713 - after previous partial gastrectomy.............................. add 137.55
+# E847 - with reconstruction of diaphragm requiring repair with
+mesh or equivalent synthetic material, to S128 ........ add 75.00
+# E793 - laparoscopic or laparoscopic assisted, to S128 add 25%
+# E644 - radical mediastinal node dissection following preoperative
+chemotherapy and/or radiotherapy, to S128.............. add 400.00
+# S129 Conversion of previous gastrectomy to Roux-en-y................. 7 910.00 9
+Amd 12 Draft 1 S12 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 681 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+STOMACH
+Asst Surg Anae
+Vagotomy
+# S131 - truncal or selective ............................................................. 7 375.80 7
+# S124 - highly selective (as sole procedure without pyloroplasty or
+gastroenterostomy) ............................................................ 7 503.10 7
+# S121 Transabdominal vagotomy after previous vagotomy .............. 7 416.50 8
+Note:
+For suture of duodenal ulcer, refer to S139 on next page.
+# S120 Gastric bypass with Roux-en-Y anastomosis, for morbid
+obesity ................................................................................ 7 1350.00 10
+# S115 Reversal of previous vertical banded gastroplasty ................. 7 820.00 10
+# S114 Sleeve gastrectomy ................................................................ 7 820.00 10
+Note:
+1.S114 Sleeve gastrectomy is only eligible for payment when:
+a.a Roux-en-Y gastric bypass is not possible due to small bowel disease/adhesions or
+previous surgery; or
+b.performed as a planned staged surgery in patients with a BMI > 60 to enable the patient
+to lose weight.
+2.S120 is an insured service only when all of the conditions set out in the Surgical Preamble
+are satisfied.
+3.S189 is not eligible for payment in conjunction with S120.
+4.S160 is not eligible for payment in conjunction with S120.
+5.Mini-gastric bypass (loop gastric bypass) does not constitute gastric bypass or partition for
+the purpose of S120.
+[Commentary:
+The second stage would be a gastric bypass with Roux-en-Y.]
+# S113 Removal of gastric band ........................................................ 7 300.00 10
+Note:
+S113 is only eligible for payment when the gastric band requires removal due to:
+1.Complications related to the gastric band; or
+2.Conversion to gastric bypass.
+# E793 - laparoscopic or laparoscopic assisted, to S113, S114,
+S115 or S120 ..................................................... add 25%
+[Commentary:
+1.S120 does not include the service described as adjustable gastric banding by laparoscopic
+or open surgical method. See section 37.1 of Regulation 552 under the Health Insurance
+Act.
+2.Morbid obesity refers to patients with a Body Mass Index (BMI) > 40.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S13 Amd 12 Draft 1
+
+--- PAGE 682 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+STOMACH
+Asst Surg Anae
+REPAIR
+# S132 Pyloroplasty ............................................................................ 7 406.85 7
+# S133 Pyloroplasty and vagotomy..................................................... 7 528.85 7
+# E731 - with suture of bleeding peptic ulcer............................ add 247.05
+# S137 Pyloroplasty or gastroenterostomy plus vagotomy and
+cholecystectomy................................................................. 7 678.90 8
+# E731 - with suture of bleeding peptic ulcer............................ add 247.05
+# E721 - with choledochotomy ................................................. add 122.05
+# S134 Gastroduodenostomy or gastrojejunostomy ........................... 7 406.85 7
+# E716 - either of above plus vagotomy ................................... add 147.30
+# E711 - after previous gastroenterostomy .............................. add 106.55
+# E721 - with choledochotomy ................................................. add 122.05
+# E793 - laparoscopic or laparoscopic assisted, to S134 add 25%
+SUTURE
+# S138 Closure of gastrostomy or other external fistula of stomach... 6 345.85 7
+# S139 Gastrorrhaphy (for perforated gastric or duodenal ulcer or
+wound)................................................................................ 6 672.75 7
+# S140 Closure of gastrocolic fistula................................................... 7 574.40 7
+Note:
+For suture of duodenal ulcer, refer to S139 above.
+Amd 12 Draft 1 S14 February 14 , 2 025 (e ffective M arch 3, 2025)

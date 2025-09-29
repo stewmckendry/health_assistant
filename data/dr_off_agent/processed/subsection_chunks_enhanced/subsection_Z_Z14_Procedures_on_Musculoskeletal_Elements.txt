@@ -1,0 +1,30 @@
+Subsection: Procedures on Musculoskeletal Elements
+Parent Section: Z
+Page Reference: Z14
+Pages: 786 to 786
+Text chunks: 1
+Total text length: 785 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 786 ---
+SPINAL SURGICAL PROCEDURES
+PROCEDURES ON MUSCULOSKELETAL ELEMENTS
+Asst Surg Anae
+# Z940 Vertebral needle biopsy .......................................................... 6 177.05
+Open vertebral biopsy
+# N546 - posterior approach - sole procedure .................................. 6 244.80 7
+# N547 - anterior approach - sole procedure .................................... 6 306.00 8
+# N551 Excision spinous process - sole procedure ............................ 6 229.50 6
+# N552 Excision transverse process - sole procedure ........................ 6 382.50 8
+Note:
+N546, N547, N551 or N552 are not eligible for payment when rendered with any other service
+in the Spinal Surgical Procedures section.
+Amd 12 Draft 1 Z14 February 14 , 2 025 (e ffective M arch 3, 2025)

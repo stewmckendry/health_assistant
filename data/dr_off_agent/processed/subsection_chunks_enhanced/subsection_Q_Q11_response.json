@@ -1,0 +1,555 @@
+{
+  "subsection_title": "Arteries",
+  "parent_section": "Q",
+  "page_ref": "Q11",
+  "pages_processed": "657-663",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "R775",
+      "description": "superficial temporal artery",
+      "fee": 95.8,
+      "units": 6
+    },
+    {
+      "code": "R776",
+      "description": "hepatic artery",
+      "fee": 263.05,
+      "units": 6
+    },
+    {
+      "code": "R778",
+      "description": "carotid artery",
+      "fee": 148.5,
+      "units": 6
+    },
+    {
+      "code": "R760",
+      "description": "Regional isolation perfusion e.g. iliac",
+      "fee": 410.45,
+      "units": 10
+    },
+    {
+      "code": "R764",
+      "description": "Exploration of major artery",
+      "fee": 271.6,
+      "units": 6
+    },
+    {
+      "code": "Z402",
+      "description": "Arteriotomy",
+      "fee": 117.3,
+      "units": 6
+    },
+    {
+      "code": "R790",
+      "description": "Suture of lacerated major artery",
+      "fee": 316.85,
+      "units": 6
+    },
+    {
+      "code": "R795",
+      "description": "Repair of lacerated major artery or microscopic repair of digital artery (including patch angioplasty)",
+      "fee": 598.4,
+      "units": 10
+    },
+    {
+      "code": "R862",
+      "description": "by bypass or interposition graft",
+      "fee": 834.3,
+      "units": 10
+    },
+    {
+      "code": "R781",
+      "description": "Ligation of artery - as sole procedure",
+      "fee": 170.1,
+      "units": 6
+    },
+    {
+      "code": "R788",
+      "description": "Internal maxillary artery - Caldwell Luc approach",
+      "fee": 408.1,
+      "units": 7
+    },
+    {
+      "code": "R789",
+      "description": "Anterior ethmoid artery",
+      "fee": 299.85,
+      "units": 6
+    },
+    {
+      "code": "R708",
+      "description": "Internal iliac artery (unilateral or bilateral)",
+      "fee": 409.55,
+      "units": 7
+    },
+    {
+      "code": "E679",
+      "description": "with vein graft harvest remote from site of by-pass and only when saphenous vein is unavailable",
+      "fee": 124.1
+    },
+    {
+      "code": "E649",
+      "description": "embolectomy and/or thrombectomy when done in conjunction with other vascular procedures",
+      "fee": 112.45
+    },
+    {
+      "code": "R875",
+      "description": "Endovascular aneurysm repair using stent grafting",
+      "fee": 1396.9,
+      "units": 10
+    },
+    {
+      "code": "E627",
+      "description": "ruptured aneurysm, to R875",
+      "fee": 400.0
+    },
+    {
+      "code": "E510",
+      "description": "for branched or fenestrated devices, to R875",
+      "fee": 838.15
+    },
+    {
+      "code": "E509",
+      "description": "conduit to aorta or common iliac artery, to R875",
+      "fee": 805.65
+    },
+    {
+      "code": "R880",
+      "description": "supraceliac aortic cross clamp",
+      "fee": 20
+    },
+    {
+      "code": "R881",
+      "description": "infraceliac aortic cross clamp",
+      "fee": 17
+    },
+    {
+      "code": "R882",
+      "description": "Thoracic surgical exposure",
+      "fee": 25
+    },
+    {
+      "code": "R883",
+      "description": "Thoraco-abdominal surgical exposure",
+      "fee": 30
+    },
+    {
+      "code": "R815",
+      "description": "Arterioplasty with or without patch graft including microvascular anastomosis, arterial or venous (other than listed below)",
+      "fee": 581.85,
+      "units": 10
+    },
+    {
+      "code": "R792",
+      "description": "endarterectomy, with or without bypass graft",
+      "fee": 841.0,
+      "units": 10
+    },
+    {
+      "code": "E665",
+      "description": "with patch graft, to R792",
+      "fee": 419.0
+    },
+    {
+      "code": "R796",
+      "description": "carotid body tumour",
+      "fee": 769.85,
+      "units": 10
+    },
+    {
+      "code": "R798",
+      "description": "aneurysm - reconstruction or excision with graft",
+      "fee": 820.7,
+      "units": 10
+    },
+    {
+      "code": "R830",
+      "description": "innominate",
+      "fee": 910.7,
+      "units": 10
+    },
+    {
+      "code": "R831",
+      "description": "subclavian",
+      "fee": 910.7,
+      "units": 10
+    },
+    {
+      "code": "R832",
+      "description": "vertebral",
+      "fee": 867.35,
+      "units": 10
+    },
+    {
+      "code": "E659",
+      "description": "with thoracotomy",
+      "fee": 169.0
+    },
+    {
+      "code": "E667",
+      "description": "ruptured",
+      "fee": 266.6
+    },
+    {
+      "code": "R799",
+      "description": "ascending",
+      "fee": 1473.15,
+      "units": 18
+    },
+    {
+      "code": "R800",
+      "description": "arch",
+      "fee": 1840.35,
+      "units": 18
+    },
+    {
+      "code": "R801",
+      "description": "descending with or without temporary shunt",
+      "fee": 1260.3,
+      "units": 10
+    },
+    {
+      "code": "R803",
+      "description": "Thoraco-abdominal aneurysm",
+      "fee": 2859.3,
+      "units": 18
+    },
+    {
+      "code": "R802",
+      "description": "aneurysm repair alone or including unilateral common femoral repair",
+      "fee": 1585.5,
+      "units": 10
+    },
+    {
+      "code": "R817",
+      "description": "aneurysm repair and bilateral common femoral repair",
+      "fee": 2327.5,
+      "units": 10
+    },
+    {
+      "code": "R877",
+      "description": "aneurysm with repair of iliac artery aneurysm (unilateral or bilateral)",
+      "fee": 2116.9,
+      "units": 10
+    },
+    {
+      "code": "E626",
+      "description": "with implantation of inferior mesenteric artery, to R802, R817 or R877",
+      "fee": 174.35
+    },
+    {
+      "code": "E986",
+      "description": "suprarenal or supraceliac aortic cross clamp, to R802, R817 or R877",
+      "fee": 250.0
+    },
+    {
+      "code": "R811",
+      "description": "aneurysm",
+      "fee": 410.85,
+      "units": 10
+    },
+    {
+      "code": "R935",
+      "description": "removal of band only",
+      "fee": 410.85,
+      "units": 10
+    },
+    {
+      "code": "R936",
+      "description": "endarterectomy or graft",
+      "fee": 954.1,
+      "units": 10
+    },
+    {
+      "code": "R940",
+      "description": "Pulmonary thromboendarterectomy (PTE) - includes circulatory arrest with hypothermia",
+      "fee": 2021.05,
+      "units": 18
+    },
+    {
+      "code": "R783",
+      "description": "including common iliac repair (uni- or bilateral)",
+      "fee": 2002.0,
+      "units": 10
+    },
+    {
+      "code": "R784",
+      "description": "plus unilateral common femoral repair",
+      "fee": 2102.0,
+      "units": 10
+    },
+    {
+      "code": "R785",
+      "description": "plus bilateral common femoral repair",
+      "fee": 2327.5,
+      "units": 10
+    },
+    {
+      "code": "R814",
+      "description": "embolectomy or thrombectomy of bifurcation (aorta or graft)",
+      "fee": 461.5,
+      "units": 10
+    },
+    {
+      "code": "R858",
+      "description": "Total removal of infected aortic graft (stem and limbs)",
+      "fee": 918.35,
+      "units": 10
+    },
+    {
+      "code": "R859",
+      "description": "Partial removal of infected aortic graft (one limb only)",
+      "fee": 344.0,
+      "units": 10
+    },
+    {
+      "code": "R805",
+      "description": "Renal artery - aneurysm - reconstruction or excision with graft",
+      "fee": 867.35,
+      "units": 10
+    },
+    {
+      "code": "R806",
+      "description": "Renal artery repair",
+      "fee": 867.35,
+      "units": 10
+    },
+    {
+      "code": "R807",
+      "description": "Splenic artery aneurysm - reconstruction or excision with graft",
+      "fee": 411.05,
+      "units": 10
+    },
+    {
+      "code": "R786",
+      "description": "Iliac repair to include internal iliac aneurysm",
+      "fee": 805.65,
+      "units": 10
+    },
+    {
+      "code": "R937",
+      "description": "Ilio-femoral bypass graft",
+      "fee": 805.65,
+      "units": 10
+    },
+    {
+      "code": "R860",
+      "description": "with saphenous vein",
+      "fee": 898.55,
+      "units": 10
+    },
+    {
+      "code": "R861",
+      "description": "with prosthetic graft",
+      "fee": 876.85,
+      "units": 10
+    },
+    {
+      "code": "R855",
+      "description": "Common femoral/profunda femoris repair - as sole procedure",
+      "fee": 559.2,
+      "units": 10
+    },
+    {
+      "code": "R856",
+      "description": "Extended profundoplasty",
+      "fee": 818.8,
+      "units": 10
+    },
+    {
+      "code": "R933",
+      "description": "Axillo-femoral, femoro-femoral or axillo-axillary graft",
+      "fee": 656.55,
+      "units": 10
+    },
+    {
+      "code": "R932",
+      "description": "Axillo-bilfemoral graft",
+      "fee": 1200.0,
+      "units": 10
+    },
+    {
+      "code": "R934",
+      "description": "Aorto-femoral unilateral graft (for bilateral see R785)",
+      "fee": 867.35,
+      "units": 10
+    },
+    {
+      "code": "R808",
+      "description": "Femoral aneurysm - reconstruction or excision with graft",
+      "fee": 600.3,
+      "units": 10
+    },
+    {
+      "code": "R873",
+      "description": "Thrombin injection of femoral artery pseudoaneurysm",
+      "fee": 68.2,
+      "units": 6
+    },
+    {
+      "code": "R809",
+      "description": "Femoral-popliteal endarterectomy",
+      "fee": 759.6,
+      "units": 10
+    },
+    {
+      "code": "R878",
+      "description": "Subintimal dissection for recanalization of femoral/popiteal/tibial arterial occlusive disease",
+      "fee": 759.6,
+      "units": 10
+    },
+    {
+      "code": "R879",
+      "description": "Subintimal dissection for recanalization of iliac/aorta arterial occlusive disease",
+      "fee": 759.6,
+      "units": 10
+    },
+    {
+      "code": "R791",
+      "description": "with saphenous vein",
+      "fee": 1077.25,
+      "units": 10
+    },
+    {
+      "code": "R794",
+      "description": "with prosthetic graft",
+      "fee": 733.15,
+      "units": 10
+    },
+    {
+      "code": "R787",
+      "description": "with saphenous or arm vein, with or without splicing",
+      "fee": 1265.0,
+      "units": 10
+    },
+    {
+      "code": "R780",
+      "description": "with prosthetic graft",
+      "fee": 878.0,
+      "units": 10
+    },
+    {
+      "code": "R810",
+      "description": "Popliteal aneurysm",
+      "fee": 805.65,
+      "units": 7
+    },
+    {
+      "code": "R812",
+      "description": "Peripheral arteries other than listed - aneurysm",
+      "fee": 410.45,
+      "units": 7
+    },
+    {
+      "code": "R813",
+      "description": "Embolectomy - artery or graft - as sole procedure",
+      "fee": 490.0,
+      "units": 7
+    },
+    {
+      "code": "R867",
+      "description": "Thrombectomy - artery or graft - as sole procedure",
+      "fee": 490.0,
+      "units": 7
+    },
+    {
+      "code": "R866",
+      "description": "Gastric devascularization - as sole procedure",
+      "fee": 549.65,
+      "units": 10
+    },
+    {
+      "code": "R797",
+      "description": "popliteal",
+      "fee": 1414.15,
+      "units": 10
+    },
+    {
+      "code": "R804",
+      "description": "tibial",
+      "fee": 1643.0,
+      "units": 10
+    },
+    {
+      "code": "R766",
+      "description": "tibial - first surgeon",
+      "fee": 1303.0,
+      "units": 10
+    },
+    {
+      "code": "R767",
+      "description": "tibial - second surgeon",
+      "fee": 1303.0,
+      "units": 0
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z402",
+      "context": "not allowed in addition to other major cardiovascular surgery",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "E649",
+      "context": "only eligible for payment under specific circumstances",
+      "description": "when embolectomy and/or thrombectomy is rendered at a site other than the main operative site; or when embolectomy and/or thrombectomy is rendered at the main operative site and thrombus and/or embolus was present prior to surgery.",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "R815",
+      "context": "not eligible for payment with R792",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "R766",
+      "context": "only eligible for payment to a physician that is a vascular surgeon with a specialty designation in General Surgery (03) or Vascular Surgery (17)",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "E815",
+      "context": "includes placement of stent(s) or any other device(s), when rendered",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "R878",
+      "context": "not eligible for payment same patient same day as R809, R791, R794, R787, R780 or R797",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "R879",
+      "context": "not eligible for payment same patient same day as R783, R784, R785, R860 or R861",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    },
+    {
+      "code": "J202",
+      "context": "payable when rendered in conjunction with R873",
+      "description": "",
+      "source_subsection": "Arteries",
+      "source_page": "Q11"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

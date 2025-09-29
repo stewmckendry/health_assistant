@@ -1,0 +1,130 @@
+{
+  "sections": 25,
+  "ranges": {
+    "A": {
+      "start": 129,
+      "end": 324,
+      "pages": 196
+    },
+    "B": {
+      "start": 325,
+      "end": 342,
+      "pages": 18
+    },
+    "C": {
+      "start": 343,
+      "end": 348,
+      "pages": 6
+    },
+    "D": {
+      "start": 349,
+      "end": 372,
+      "pages": 24
+    },
+    "E": {
+      "start": 373,
+      "end": 378,
+      "pages": 6
+    },
+    "F": {
+      "start": 379,
+      "end": 382,
+      "pages": 4
+    },
+    "G": {
+      "start": 383,
+      "end": 394,
+      "pages": 12
+    },
+    "GP": {
+      "start": 15,
+      "end": 126,
+      "pages": 112
+    },
+    "H": {
+      "start": 395,
+      "end": 400,
+      "pages": 6
+    },
+    "J": {
+      "start": 401,
+      "end": 516,
+      "pages": 116
+    },
+    "K": {
+      "start": 517,
+      "end": 528,
+      "pages": 12
+    },
+    "M": {
+      "start": 537,
+      "end": 564,
+      "pages": 28
+    },
+    "N": {
+      "start": 565,
+      "end": 630,
+      "pages": 66
+    },
+    "P": {
+      "start": 631,
+      "end": 646,
+      "pages": 16
+    },
+    "Q": {
+      "start": 647,
+      "end": 666,
+      "pages": 20
+    },
+    "R": {
+      "start": 667,
+      "end": 668,
+      "pages": 2
+    },
+    "S": {
+      "start": 669,
+      "end": 706,
+      "pages": 38
+    },
+    "SP": {
+      "start": 529,
+      "end": 536,
+      "pages": 8
+    },
+    "T": {
+      "start": 707,
+      "end": 720,
+      "pages": 14
+    },
+    "U": {
+      "start": 721,
+      "end": 728,
+      "pages": 8
+    },
+    "V": {
+      "start": 729,
+      "end": 738,
+      "pages": 10
+    },
+    "W": {
+      "start": 739,
+      "end": 740,
+      "pages": 2
+    },
+    "X": {
+      "start": 741,
+      "end": 754,
+      "pages": 14
+    },
+    "Y": {
+      "start": 755,
+      "end": 772,
+      "pages": 18
+    },
+    "Z": {
+      "start": 773,
+      "end": 789,
+      "pages": 17
+    }
+  }
+}

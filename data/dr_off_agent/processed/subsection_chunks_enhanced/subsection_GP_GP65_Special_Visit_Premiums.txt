@@ -1,0 +1,554 @@
+Subsection: Special Visit Premiums
+Parent Section: GP
+Page Reference: GP65
+Pages: 79 to 92
+Text chunks: 1
+Total text length: 22624 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 79 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUMS
+Special visit means a visit initiated by a patient or an individual on behalf of the patient for the purpose
+of rendering a non-elective service or, if rendered in the patient's home, a non-elective or elective
+service.
+A special visit premium is payable in respect of a special visit rendered to an insured person, subject
+to the conditions and limitations set out below. All special visit premiums are subject to the maximums,
+limitations and conditions set out in the "Special Visit Premium Table" applicable in the circumstances.
+Payment rules:
+1.Special visit premiums are only eligible for payment when rendered with certain services
+listed under "Consultations and Visits" and "Diagnostic and Therapeutic Procedures"
+sections of this Schedule.
+2.Regardless of the time of day at which the service is rendered, special visit premiums are not
+eligible for payment in the following circumstances:
+a.for patients seen during rounds at a hospital or long-term care institution (including a
+nursing home or home for the aged);
+b.in conjunction with admission assessments of patients who have been admitted to
+hospital on an elective basis;
+c.for non-referred or transferred obstetrical patients except, in the case of transferred
+obstetrical patients for a special visit for obstetrical delivery with sacrifice of office hours
+for the first patient seen (C989);
+d.for services rendered in a place, other than a hospital or long-term care facility, that is
+scheduled to be open for the purpose of diagnosing or treating patients;
+e.for a visit for which critical care team fees are payable under this Schedule;
+f. in conjunction with any sleep study service listed in the sleep studies section of this
+Schedule; or
+g.for services rendered to patients who present to an office without an appointment while
+the physician is there, or for patients seen immediately before, during or immediately after
+routine or ordinary office hours even if held at night or on weekends or holidays.
+3.Special visit premiums are not eligible for payment with services described by emergency
+department "H" prefix fee codes.
+[Commentary:
+For elective home visits rendered during daytime, evenings, nights or weekends, submit
+claim(s) using fee codes found under the column titled "Elective Home Visit" of Special Visit
+Premium Table VI listed on page GP75.]
+Sacrifice of office hours means an insured service rendered when the demands of the patient and/or
+the patient's condition are such that the physician makes a previously unscheduled non-elective visit
+to the patient at a time when the physician had an office visit booked with one or more patients but,
+because of the previously unscheduled non-elective visit, any such office visit was delayed or
+cancelled.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP65 Amd 12 Draft 1
+
+--- PAGE 80 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+PREMIUMS
+[Commentary:
+Special visit premiums are in respect of either or both: a "travel premium" and a "patient seen"
+premium (i.e. "first person seen premium" or "an additional person seen premium").]
+A. Travel Premium
+Definition/required elements of service:
+A travel premium is only eligible for payment for travel from one location to another location ("the
+destination") subject to the payment rules below.
+A travel premium is not eligible for payment when a physician is required to travel from one location to
+another within the same long-term care facility, hospital complex or within buildings situated on the
+same hospital campus.
+[Commentary:
+1.A first person seen premium may be eligible for payment in this circumstance.
+2.Only one travel premium is eligible for payment for each separate trip to a destination
+regardless of the number of patients seen in association with each trip.]
+B. First person seen premium
+A first person seen premium is eligible for payment for the first person seen at the destination under
+one of the following circumstances ("the eligible times"):
+1. if the insured service is commenced evenings (17:00 hr-24:00 hr) Monday to Friday; daytime or
+evenings on Saturdays, Sundays, and Holidays; or nights (24:00 hr-07:00 hr);
+2. if rendered requiring sacrifice of office hours; or
+3. if rendered during daytime hours (07:00 - 17:00 hrs Monday through Friday) in circumstances in
+which a travel premium is eligible for payment.
+C. Additional person premium
+An additional person premium is only eligible for payment for services rendered at the destination to
+additional patients seen in emergency departments, outpatient departments, long-term care
+institutions or to hospital inpatients, provided that each additional patient service is commenced
+during the eligible times.
+[Commentary:
+Special visit premiums are not eligible for payment for elective services rendered at a long-term
+care institution, including a nursing home or home for the aged, even when the long-term care
+institution is the "home" of the patient.
+Submit claims for routine elective visits in these locations as subsequent visits. For example, if
+the physician is called to a nursing home to see a patient for a non-elective problem at 8AM,
+and subsequently sees his/her routine patients on rounds, those additional patients do not
+qualify for the additional person premium.]
+Amd 12 Draft 1 GP66 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 81 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+LIMITS FOR SPECIAL VISIT PREMIUMS
+Special visit premiums in excess of the maximums listed in the Special Visit Premium Tables are not
+eligible for payment.
+The maximums apply to the number of patients where special visit premiums may be eligible for
+payment on that service date or in the time period specified.
+LIMITS FOR GERIATRIC HOME VISIT SPECIAL VISIT PREMIUMS
+For the purpose of special visit premiums under the heading "Geriatric Home Visit Special Visit
+Premiums", the special visit premiums listed under Table X are only eligible for payment to:
+a. a specialist in Geriatrics (07); or
+b. a physician with an exemption to access bonus impact in Care of the Elderly from the MOH.
+LIMITS FOR EMERGENCY DEPARTMENT PHYSICIAN
+For the purpose of special visit premiums under the heading "Emergency Department Physician",
+"Emergency Department Physician" means a physician:
+a. who on a day when the physician is scheduled to work in a hospital emergency department
+specifically for the purpose of rendering services to patients who attend the emergency
+department for physician services,
+i. is requested by the emergency department to attend at a time when the physician is not
+otherwise scheduled to work in the emergency department; and
+ii. who is not at the hospital at the time the emergency department request for attendance
+is made; or
+b. is on-call on a scheduled basis specifically to be available to a hospital emergency
+department to render services to patients who attend the emergency department for
+physician services and who is not at the hospital at the time the emergency department
+request for attendance is made.
+[Commentary:
+Emergency room physicians may be primarily funded either through an Emergency
+Department Alternate Funding Arrangement (ED-AFA) or fee-for-service.]
+In addition to the general restrictions regarding special visits as outlined above, there are specific
+restrictions which apply to special visit premiums for services rendered in the emergency department
+by Emergency Department Physicians (as defined above). These limits are listed in the Special Visit
+Premiums table under the heading “Emergency Department by Emergency Department Physician”
+(Table V). Special Visit Premiums listed in the Special Visit Premiums table under the heading
+"Emergency Department" (Table I) are not eligible for payment to Emergency Department Physicians
+(as defined above).
+[Commentary:
+1.First patient seen and additional person seen premiums for Emergency Department
+Physicians are eligible for payment only when the physician is required to travel, as defined
+under “Travel Premium” page GP66, to make a special visit to the hospital emergency
+department.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP67 Amd 12 Draft 1
+
+--- PAGE 82 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+2.If the Emergency Department Physician is at the hospital at the time the emergency
+department request for attendance is made, the appropriate H prefix code may be eligible for
+payment.
+3.If the Emergency Department Physician is called to a hospital ward on a non-elective basis,
+the General Listings ("A" prefix) apply and "C" prefix first person seen/additional person seen
+special visit premium may be eligible for payment.]
+Note:
+When special visits are rendered by physicians when they are not on duty to the emergency
+department, the limits for special visit premiums under the heading "Emergency Department"
+(Table I) apply (GP70). For patients assessed during this visit to the emergency department
+beyond the defined limits, submit claims for all subsequent patients using the "H" prefix listings.
+Amd 12 Draft 1 GP68 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 83 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+Medical record requirements:
+Special Visit Premiums are only eligible for payment if the following requirements are met:
+1. For fee codes listed in Tables I, II, III, IV, VI, VII, VIII, IX and X the time at which the special visit
+takes place must be documented on the medical record.
+2. For fee codes listed in Table V;
+a. the time of the request to attend in the emergency department must be documented on the
+medical record; and
+b. The specific situation requiring the physician's attendance must be documented on the
+medical record.
+[Commentary:
+When a special visit service occurs in a hospital, emergency department or long-term care
+institution where common medical records are maintained, the time when the visit takes place
+may be documented anywhere in the common medical record.]
+Claims submission instructions:
+Submit claims using the appropriate A-prefix assessment fee from the “General Listings” for an
+assessment rendered in conjunction with a special visit premium.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP69 Amd 12 Draft 1
+
+--- PAGE 84 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE I
+Emergency Department
+Not eligible for payment to Emergency Department Physicians (see definition GP67)
+Weekdays Evenings Sat., Sun.
+Weekdays Daytime (07:00 - (17:00- 24:00) and
+Nights (00:00-
+Premium Daytime 17:00) with Monday Holidays
+07:00)
+(07:00- 17:00) Sacrifice of through (07:00-
+Office Hours Friday 24:00)
+Travel $36.40 $36.40 $36.40 $36.40 $36.40
+Premium K960 K961 K962 K963 K964
+(max. 2 per time (max. 2 per time (max. 2 per (max. 6 per (no max. per
+period) period) time period) time period) time period)
+First $20.00 $40.00 $60.00 $75.00 $100.00
+Person K990 K992 K994 K998 K996
+Seen (max. 10 (total (max. 10 (total of (max. 10 (total (max. 20 (no max. per
+of first and first and of first and (total of first time period)
+additional additional person additional and
+person seen) seen) per time person seen) additional
+per time period) period) per time person
+period) seen) per
+time period)
+Additional $20.00 $40.00 $60.00 $75.00 $100.00
+Person(s) K991 K993 K995 K999 K997
+seen (max. 10 (total (max. 10 (total of (max. 10 (total (max. 20 (no max. per
+of first and first and of first and (total of first time period)
+additional additional person additional and
+person seen) seen) per time person seen) additional
+per time period) period) per time person
+period) seen) per
+time period)
+Amd 12 Draft 1 GP70 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 85 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE II
+Hospital Out-Patient Department
+Weekdays Evenings
+Sat., Sun.
+Weekdays Daytime (17:00-
+and
+Daytime (07:00- 24:00) Nights
+Premium Holidays
+(07:00- 17:00) with Monday (00:00- 07:00)
+(07:00-
+17:00) Sacrifice of through
+24:00)
+Office Hours Friday
+Travel Premium $36.40 $36.40 $36.40 $36.40 $36.40
+U960 U961 U962 U963 U964
+(max. 2 per (max. 2 per (max. 2 per (max. 6 per (no max. per
+time period) time period) time period) time period) time period)
+First person $20.00 $40.00 $60.00 $75.00 $100.00
+seen U990 U992 U994 U998 U996
+(max. 10 (max. 10 (max. 10 (max. 20 (no max. per
+(total of first (total of first (total of first (total of first time period)
+and and and and
+additional additional additional additional
+person seen) person seen) person seen) person seen)
+per time per time per time per time
+period) period) period) period)
+Additional $20.00 $40.00 $60.00 $75.00 $100.00
+person(s) seen U991 U993 U995 U999 U997
+(max. 10 (max. 10 (max. 10 (max. 20 (no max. per
+(total of first (total of first (total of first (total of first time period)
+and and and and
+additional additional additional additional
+person seen) person seen) person seen) person seen)
+per time per time per time per time
+period) period) period) period)
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP71 Amd 12 Draft 1
+
+--- PAGE 86 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE III
+Hospital In-Patient
+Weekdays Evenings
+Sat., Sun.
+Weekdays Daytime (17:00-
+and Nights
+Daytime (07:00- 24:00)
+Premium Holidays (00:00-
+(07:00- 17:00) with Monday
+(07:00- 07:00)
+17:00) Sacrifice of through
+24:00)
+Office Hours Friday
+Travel $36.40 $36.40 $36.40 $36.40 $36.40
+Premium C960 C961 C962 C963 C964
+(max. 2 per (max. 2 per (max. 2 per (max. 6 per (no max. per
+time period) time period) time period) time period) time period)
+First person $20.00 $40.00 $60.00 $75.00 $100.00
+seen C990 C992 C994 C986 C996
+(max. 10 (max. 10 (max. 10 (max. 20 (no max. per
+(total of first (total of first (total of first (total of first time period)
+and and and and
+additional additional additional additional
+person seen) person seen) person seen) person seen)
+per time per time per time per time
+period) period) period) period)
+Additional $20.00 $40.00 $60.00 $75.00 $100.00
+person(s) seen C991 C993 C995 C987 C997
+(max. 10 (max. 10 (max. 10 (max. 20 (no max. per
+(total of first (total of first (total of first (total of first time period)
+and and and and
+additional additional additional additional
+person seen) person seen) person seen) person seen)
+per time per time per time per time
+period) period) period) period)
+Amd 12 Draft 1 GP72 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 87 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE IV
+Long-Term Care Institution
+Weekdays Evenings
+Sat., Sun.
+Weekdays Daytime (17:00-
+and Nights
+Daytime (07:00- 24:00)
+Premium Holidays (00:00-
+(07:00- 17:00) with Monday
+(07:00- 07:00)
+17:00) Sacrifice of through
+24:00)
+Office Hours Friday
+Travel $36.40 $36.40 $36.40 $36.40 $36.40
+Premium W960 W961 W962 W963 W964
+(max. 2 per (max. 2 per (max. 2 per (max. 6 per (no max. per
+time period) time period) time period) time period) time period)
+First person $20.00 $40.00 $60.00 $75.00 $100.00
+seen W990 W992 W994 W998 W996
+(max. 10 (max. 10 (max. 10 (max. 20 (no max. per
+(total of first (total of first (total of first (total of first time period)
+and and and and
+additional additional additional additional
+person person seen) person seen) person seen)
+seen) per per time per time per time
+time period) period) period) period)
+Additional $20.00 $40.00 $60.00 $75.00 $100.00
+person(s) seen W991 W993 W995 W999 W997
+(max. 10 (max. 10 (max. 10 (max. 20 (no max. per
+(total of first (total of first (total of first (total of first time period)
+and and and and
+additional additional additional additional
+person person seen) person seen) person seen)
+seen) per per time per time per time
+time period) period) period) period)
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP73 Amd 12 Draft 1
+
+--- PAGE 88 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE V
+Emergency Department by Emergency Department Physician
+(as defined on GP67)
+Evenings
+Sat., Sun.
+Weekdays (17:00-
+and Nights
+Daytime 24:00)
+Premium Holidays (00:00-
+(07:00- Monday
+(07:00- 07:00)
+17:00) through
+24:00)
+Friday
+Travel Premium $36.40 $36.40 $36.40 $36.40
+H960 H962 H963 H964
+(max. 2 per (max. 2 per (max. 4 per (no max. per
+time period) time period) time period) time period)
+First person seen $20.00 $60.00 $75.00 $100.00
+H980 H984 H988 H986
+(max. 5 (max. 5 (total (max. 10 (no max. per
+(total of first of first and (total of first time period)
+and additional and
+additional person seen) additional
+person per time person
+seen) per period) seen) per
+time period) time period)
+Additional person(s) $20.00 $60.00 $75.00 $100.00
+seen H981 H985 H989 H987
+(max. 5 (max. 5 (total (max. 10 (no max. per
+(total of first of first and (total of first time period)
+and additional and
+additional person seen) additional
+person per time person
+seen) per period) seen) per
+time period) time period)
+Amd 12 Draft 1 GP74 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 89 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE VI
+Special Visits to Patient's Home (other than Long-Term Care Institution)
+Weekdays Evenings
+Sat., Sun.
+Weekdays Daytime (17:00-
+and Nights
+Daytime (07:00- 24:00)
+Holidays (00:00-
+(07:00- 17:00) with Monday Elective
+Premium (07:00- 07:00)
+17:00) Sacrifice of through home visit
+24:00) Non-
+Non- Office Friday
+Non- elective
+elective Hours Non- Non-
+elective
+elective elective
+Travel $36.40 $36.40 $36.40 $36.40 $36.40 $36.40
+Premium B960 B961 B962 B963 B964 B960
+(max. 2 (max. 2 per (max. 2 per (max. 6 (no max. (max. 2 per
+per time time period) time period) per time per time time period)
+period) period) period)
+First $27.50 $44.00 $66.00 $82.50 $110.00 $27.50
+person B990 B992 B994 B993 B996 B990
+seen (max. 10 (max. 10 (max. 10 (max. 20 (no max. (max. 10
+(total of (total of first (total of first (total of per time (total of first
+first and and and first and period) and
+additional additional additional additional additional
+person person person person person
+seen) per seen) per seen) per seen) per seen) per
+time time period) time period) time time period)
+period) period)
+Note:
+1.The maximum number of services per physician per day for B960 is 2, for any combination of
+non-elective and elective visits.
+2.The maximum number of services per physician per day for B990 is 10, for any combination
+of non-elective and elective visits.
+3.Special visit to patient’s home premiums are only eligible for payment for first patient seen,
+regardless of number of patients seen during one visit to a home or to one or more living
+units in a multiple resident dwelling. A multiple resident dwelling is a single location that
+shares a common external building entrance or lobby e.g. apartment block, rest or retirement
+home, commercial hotel, motel or boarding house, university or boarding school residence,
+hostel, correctional facility or group home.
+[Commentary:
+1.Special visit premiums listed in Table VI above are not eligible for payment with A007 or
+A001 when rendered in a patient’s home. See page A2.
+2.For A007 or A001 rendered in a patient’s home, travelling to and from the home is included
+as a common element of the insured service. See page GP13 of this Schedule.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP75 Amd 12 Draft 1
+
+--- PAGE 90 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE VII
+Palliative Care Home Visit
+Weekdays
+Evenings
+Daytime Sat., Sun.
+Weekdays (17:00-
+(07:00- and Nights
+Daytime 24:00)
+Premium 17:00) with Holidays (00:00-
+(07:00- Monday
+Sacrifice of (07:00- 07:00)
+17:00) through
+Office 24:00)
+Friday
+Hours
+Travel $36.40 B966 $36.40 $36.40 $36.40 $36.40
+Premium (no max. per B966 (no B966 B966 B966
+time period) max. per (no max. (no max. (no max.
+time period) per time per time per time
+period) period) period)
+First person $82.50 B998 $82.50 $82.50 $82.50 $110.00
+seen (no max. per B998 (no B998 B998 B997
+time period) max. per (no max. (no max. (no max.
+time period) per time per time per time
+period) period) period)
+SPECIAL VISIT PREMIUM TABLE VIII
+Physician Office
+Evenings
+Sat., Sun.
+Weekdays (17:00-
+and
+Daytime 24:00) Nights
+Premium Holidays
+(07:00- Monday (00:00- 07:00)
+(07:00-
+17:00) through
+24:00)
+Friday
+Travel Premium $36.40 $36.40 $36.40 $36.40
+A960 A962 A963 A964
+(max. 1 per (max. 1 per (max. 1 per (no max. per
+time period) time period) time period) time period)
+First person $20.00 $60.00 $75.00 $100.00
+seen A990 A994 A998 A996
+(max. 1 per (max. 1 per (max. 1 per (no max. per
+time period) time period) time period) time period)
+Amd 12 Draft 1 GP76 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 91 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE IX
+Other (non-professional setting not listed)
+Weekdays
+Evenings
+Daytime Sat., Sun.
+Weekdays (17:00-
+(07:00- and Nights
+Daytime 24:00)
+Premium 17:00) with Holidays (00:00-
+(07:00- Monday
+Sacrifice of (07:00- 07:00)
+17:00) through
+Office 24:00)
+Friday
+Hours
+Travel $36.40 $36.40 $36.40 $36.40 $36.40
+Premium Q960 Q961 Q962 Q963 Q964
+(max. 1 per (max. 1 per (max. 1 per (max. 1 per (no max. per
+time period) time period) time period) time period) time period)
+First person $20.00 $40.00 $60.00 $75.00 $100.00
+seen Q990 Q992 Q994 Q998 Q996
+(max. 1 per (max. 1 per (max. 1 per (max. 1 per (no max. per
+time period) time period) time period) time period) time period)
+SPECIAL VISIT PREMIUM TABLE X
+Geriatric Home Visit
+Weekdays Evenings
+Sat., Sun.
+Weekdays Daytime (17:00-
+and Nights
+Daytime (07:00- 24:00)
+Premium Holidays (00:00-
+(07:00- 17:00) with Monday
+(07:00- 07:00)
+17:00) Sacrifice of through
+24:00)
+Office Hours Friday
+Travel Premium $36.40 $36.40 $36.40 $36.40 $36.40
+B986 B986 B986 B986 B986
+(no max. per (no max. per (no max. per (no max. per (no max. per
+time period) time period) time period) time period) time period)
+First person $82.50 $82.50 $82.50 $82.50 $110.00
+seen B988 B988 B988 B988 B987
+(no max. per (no max. per (no max. per (no max. per (no max. per
+time period) time period) time period) time period) time period)
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP77 Amd 12 Draft 1
+
+--- PAGE 92 ---
+GENERAL PREAMBLE
+SPECIAL VISIT PREMIUMS
+SPECIAL VISIT PREMIUM TABLE - OBSTETRICAL DELIVERY WITH SACRIFICE OF OFFICE
+HOURS
+Obstetrical Delivery with Sacrifice of Office Hours
+Evenings Sat., Sun.
+Weekdays
+Sacrifice (17:00- 24:00) and Nights
+Daytime
+of Office Monday Holidays (00:00-
+(07:00-
+Hours through (07:00- 07:00)
+17:00)
+Friday 24:00)
+$0.00 $76.40 $0.00 $0.00 $0.00
+C989
+(max. 1
+per time
+period)
+Amd 12 Draft 1 GP78 February 14 , 2 025 (e ffective M arch 3, 2025)

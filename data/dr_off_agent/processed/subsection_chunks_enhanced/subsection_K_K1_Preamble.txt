@@ -1,0 +1,134 @@
+Subsection: Preamble
+Parent Section: K
+Page Reference: K1
+Pages: 517 to 519
+Text chunks: 1
+Total text length: 8308 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 517 ---
+OBSTETRICS
+ObstetricsMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, most obstetrical services have the same specific elements as
+other services listed elsewhere in the Schedule.
+Obstetrical Care includes the following kinds of services:
+a. Prenatal visits (major or minor or high risk) and postnatal care in the office are assessments
+(see General Preamble GP21).
+b. Labour-Delivery services have the specific elements of IOP Surgical Procedures identified
+with prefix # (see Surgical Preamble SP1).
+c. Anaesthetic services have the same specific elements as other services provided by an
+anaesthesiologist (see General Preamble GP92).
+d. Postnatal care in hospital/home (P007) is the initial assessment of a well patient postpartum
+with subsequent assessments of the well patient in the hospital or home until the patient’s
+first visit to the physician’s office. The specific elements for each visit are those for
+assessments (see General Preamble GP21).
+e. Attendance at labour is a service of being in constant or periodic attendance on a patient,
+during stages one and two of labour but without completion of the delivery, to provide all
+aspects of care. This includes the initial assessment, and such subsequent assessments as
+may be indicated, including ongoing monitoring of the patient’s conditions, intervening
+except where intervention is a separately billable service. The specific elements are those of
+assessments (see General Preamble GP21) except element H, but include providing
+premises, equipment, supplies and personnel for any aspects of the specific elements of the
+service that are performed outside the place in which the encounter(s) with the patient
+occurs.
+f. Attendance at delivery, specific elements as for Surgical Assistants’ Services (see General
+Preamble GP85).
+For all other procedures listed in this section the specific elements are those of IOP surgical
+procedures identified with prefix # (see Surgical Preamble SP1) except for removal of Shirodkar
+suture for which the specific elements are those for surgical IOP procedures not identified with prefix
+#.
+Fee schedule codes listed below which do not include providing all premises, equipment and
+personnel used to perform the specific elements of the service are identified with prefix #.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K1 Amd 12 Draft 1
+
+--- PAGE 518 ---
+OBSTETRICS
+PREAMBLE
+OTHER TERMS AND DEFINITIONS
+1. A prenatal major assessment includes a full history, and an examination of all parts or systems
+(and may include a detailed examination of one or more parts or systems), an appropriate
+record and advice to the patient. All other prenatal visits include the necessary history,
+examination, appropriate record and advice to the patient. All prenatal visits (major and minor
+and high risk) include pregnancy-related counselling as a form of providing advice to the patient
+or the patient’s representative.
+A prenatal general assessment is payable after another general assessment only if the reason
+for the first assessment does not pertain to the establishment of the antenatal care.
+Normal (uncomplicated) prenatal care includes a prenatal general assessment visit, then
+monthly visits to 28 weeks, followed by visits every 2nd week to 36 weeks, then weekly visits
+until delivery. However, complicated pregnancies may require additional visits. Labour, delivery
+and postpartum care are listed separately.
+2. If an uncomplicated obstetrical patient is transferred from one physician to another physician for
+obstetrical care, the appropriate assessment benefit may be claimed by the second physician,
+followed by prenatal visits. This statement does not apply to physicians substituting for each
+other or when the second physician sees the patient for the first time in labour. If the obstetrical
+patient is referred to a consultant for obstetrical care because of the complexity, obscurity or
+seriousness of the case, the consultant may claim a consultation in addition to the prenatal
+visits.
+3. Illnesses resulting from or associated with pregnancy or false labour requiring added home or
+hospital visits, shall be claimed on a per visit basis.
+4. When a pregnant patient visits her physician for a condition unrelated to her pregnancy and
+apart from her routine scheduled prenatal visits, the physician may claim the appropriate
+assessment.
+5. Fee schedule codes in this section are subject to the provisions of the Surgical Preamble where
+applicable.
+6. An assessment is payable for illness resulting from, or associated with, pregnancy or false
+labour even if the patient progresses to delivery within the next two days. This does not apply to
+patients who are assessed in the first stage of labour and admitted, or are transferred, to the
+delivery room from the antenatal floor in labour.
+7. The listings under the heading Referred Services may be claimed by the consultant physician in
+addition to the appropriate consultation or visit fee. They may not be claimed by physicians
+providing obstetrical care to their own patients.
+8. If a consultant is requested by another physician to perform a surgical induction of labour, or
+emergency removal of a Shirodkar suture (except at delivery) assuming someone else has
+inserted the suture, the consultant should claim a consultation fee for this(these) service(s).
+9. Medical induction or stimulation of labour may be claimed once per pregnancy by any one
+physician and only when carried out for a recognized obstetrical complication(s). The fee listed
+is applicable regardless of the time spent by the physician, therefore, detention may not be
+claimed.
+Amd 12 Draft 1 K2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 519 ---
+OBSTETRICS
+PREAMBLE
+10.The listings for “Attendance at labour and delivery” and for “Attendance of obstetric
+consultant(s) at delivery” may not be claimed by any physician when a patient is transferred to a
+second physician for normal obstetrical care.
+11. Ordinary immediate care of the newborn is included in the labour-delivery fee and when the
+service is rendered by the anaesthetist, it is included in the anaesthetic benefit. A life
+threatening emergency situation requiring active resuscitation of the newborn provided by any
+physician may be claimed under codes G521, G522, G523. When indicated, endotracheal
+intubation and tracheo-bronchial toilet should be billed under G211 and not as G521, G522,
+G523.
+12.When an obstetrician routinely transfers all newborns to another physician, the latter may not
+claim a consultation for these transferals. If the baby is well, the physician should claim newborn
+care in hospital plus attendance at maternal delivery (H007/H267) if this service is provided. If
+the baby is sick, the physician may claim a general assessment and attendance at maternal
+delivery (H007/H267) if this service is provided plus daily visits for as long as his/her services
+are required.
+13.If an obstetrician who normally cares for newborns him/herself or transfers the care of newborns
+to a family physician, refers a newborn to a paediatrician because of the complexity, obscurity or
+seriousness of the case, the latter may claim for this service according to the following
+guidelines:
+a. If attendance at maternal delivery is provided, C263 may be claimed in addition to H267 if a
+general assessment of the baby is carried out. A postnatal consultation of the baby, (C265)
+may not be claimed in addition to attendance at maternal delivery (H267).
+b. If attendance at maternal delivery (H267) is not provided, a postnatal consultation (C265)
+may be claimed, if rendered, whether or not a prenatal consultation has already been
+claimed.
+14.Physicians may claim for assisted breech delivery (P020) when the service includes
+spontaneous delivery to the umbilicus, with extraction of the shoulders, arms and head.
+15.See General Preamble GP104 for After Hours Premiums.
+16.If claims are being submitted in coded form, the obstetrician should add the suffix “A” to the
+listed procedural code, the assistant should add the suffix “B” to the listed procedural code, and
+the anaesthetist should add the suffix “C” to the listed procedural code.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K3 Amd 12 Draft 1

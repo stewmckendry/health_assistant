@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_clinically_organized_relevant_exam_core_back_tool",
+  "slug": "clinically-organized-relevant-exam-core-back-tool",
+  "name": "Clinically Organized Relevant Exam (CORE) Back Tool",
+  "category": "pain_msk",
+  "url": "https://tools.cep.health/tool/clinically-organized-relevant-exam-core-back-tool/",
+  "content_hash": "8d436ac740ea9b02c1ac6748ad756aa4f89570865e21ea00f76f9f1ca5b856bc",
+  "crawled_at": "2025-09-24T15:32:43.397358"
+}

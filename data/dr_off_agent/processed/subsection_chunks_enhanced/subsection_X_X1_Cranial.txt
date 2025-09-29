@@ -1,0 +1,385 @@
+Subsection: Cranial
+Parent Section: X
+Page Reference: X1
+Pages: 741 to 751
+Text chunks: 1
+Total text length: 22238 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 741 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+Neurological Surgical ProceduresMarch 4, 2024 (effective April 1, 2024)
+CRANIAL
+Asst Surg Anae
+Z811 Intravenous drug test for pain................................................. 54.10 6
+# E919 - intracranial duroplasty (greater than 2 cm diameter) to any
+intracranial procedure ................................................ add 254.45
+# E921 - repeat cranial procedure - payable in addition to any
+intracranial procedure and N111, N114 and N116 but
+excluding N127 .......................................................... add 262.15
+BRAIN
+Craniotomy plus excision
+Astrocytoma, oligodendroglioma, glioblastoma or metastatic tumour
+# N103 - supratentorial...................................................................... 15 1686.05 15
+# N151 - infratentorial........................................................................ 15 1862.85 15
+# N152 Craniotomy plus lobectomy .................................................... 15 1575.80 15
+# E901 - with operating microscope ......................................... add 234.65
+Meningioma and other tumourous lesions, including pituitary tumours
+# N102 - supratentorial...................................................................... 15 1862.85 15
+# N153 - infratentorial or basal.......................................................... 15 2529.80 15
+# E901 - with operating microscope ......................................... add 234.65
+# E902 - lesion greater than 2 cm diameter, to N102 or N153 . add 454.15
+# E903 - team fee for acoustic neuroma, same approach........ add 614.70
+Note:
+Claims for N200 or R380 with N153 rendered for the same patient should be submitted using
+the manual review indicator and accompanied by supporting documentation.
+NEUROSURGERY - OPEN SURGICAL APPROACH
+Intracranial aneurysm repair
+Craniotomy approaches
+# N105 Carotid circulation - per vessel ............................................... 15 2477.45 20
+# N154 Vertebrobasilar circulation, including aneurysm of vein of
+Galen.................................................................................. 15 2477.45 20
+# E901 - with operating microscope, to N105 or N154............. add 234.65
+# E898 - lesion greater than 2.5 cm, to N105 or N154............. add 283.80
+# E979 - clinoidal drilling for complex aneurysms, to N105 or N154
+................................................................................... add 396.70
+# E908 - removal of intracerebral and/or subdural haematoma in
+conjunction with a ruptured intracranial aneurysm or
+arteriovenous malformation, to N105 or N154 ........... add 304.30
+Cerebral vascular malformation
+Craniotomy
+# N106 - supratentorial...................................................................... 15 2006.05 20
+# N155 - infratentorial........................................................................ 15 2015.00 20
+# E895 - of cerebral arteriovenous malformation greater than
+4 cm, to N106 or N155............................................... add 373.80
+# E901 - with operating microscope, to N106 or N155............. add 234.65
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X1 Amd 12 Draft 1
+
+--- PAGE 742 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+# E908 - removal of intracerebral and/or subdural haematoma in
+conjunction with a ruptured intracranial aneurysm or
+arteriovenous malformation, to N106 or N155 ........... add 304.30
+# N218 Extracranial-intracranial microvascular anastomosis superficial
+temporal artery ................................................................... 15 1364.05 15
+# N156 Occipital artery........................................................................ 15 1229.55 15
+# E904 - posterior fossa ........................................................... add 241.00
+# N121 Extracranial-intracranial long venous bypass (from internal
+carotid in the neck or any of the trunk vessels in the neck or
+chest to a major intracerebral vessel, i.e. vertebral, internal
+carotid, middle cerebral)..................................................... 15 1711.40 15
+Amd 12 Draft 1 X2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 743 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+Carotid-cavernous fistula
+# N108 Obliteration of intracranial dural arteriovenous fistula (including
+carotid cavernous fistula) to include craniotomy and
+combined cervical and intracranial procedure.................... 15 1229.55 15
+INTRACRANIAL ENDOVASCULAR SURGERY
+Intracranial aneurysm repair
+Endovascular approaches
+# N122 Carotid circulation - per vessel ............................................... 15 2140.15 20
+# N125 Vertebrobasilar circulation, including aneurysm of vein of
+Galen.................................................................................. 15 2140.15 20
+# E894 - aneurysm greater than 2.5 cm, to N122 or N125....... add 229.55
+Cerebral arteriovenous malformation
+Endovascular approach for obliteration
+# N107 Endovascular approach to include balloon catheter or
+embolization techniques for arteriovenous malformation ... 15 1456.95 15
+Carotid-cavernous fistula
+# N118 Endovascular approach to include balloon catheter or
+embolization techniques for dural arteriovenous fistula
+including carotid cavernous fistula ..................................... 15 952.05 15
+SPONTANEOUS INTRACEREBRAL HAEMORRHAGE
+Craniotomy plus removal
+# N104 - supratentorial...................................................................... 15 1230.00 15
+# N157 - infratentorial........................................................................ 15 1388.40 15
+# N120 Burr hole plus drainage........................................................... 15 481.90 15
+INTRACRANIAL CYST
+Craniotomy plus evacuation
+# N158 - supratentorial...................................................................... 15 968.50 15
+# N159 - infratentorial........................................................................ 15 1065.05 15
+Note:
+N158, N159 to include interventriculostomy.
+# N160 Burr hole plus aspiration......................................................... 15 426.95 15
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X3 Amd 12 Draft 1
+
+--- PAGE 744 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+INTRACRANIAL ABSCESS
+# N117 Craniotomy ............................................................................. 15 1416.50 15
+Burr hole
+# N115 - aspiration............................................................................ 7 578.85 7
+# Z818 - subsequent aspiration through existing burr hole within 30
+days.................................................................................... 215.35
+# Z813 - plus needling of brain for biopsy......................................... 7 560.85 7
+# N127 Re-opening of craniotomy for post-operative haematoma or for
+removal of bone flap........................................................... 11 518.85 11
+# N113 Craniotomy for brain biopsy (other than for tumour)............... 11 1019.15 11
+# N130 Craniotomy plus midline commissurotomy ............................. 15 1014.85 15
+# N109 Hemispherectomy................................................................... 15 1878.35 15
+# N110 Lobectomy and/or excision of cortical scar for epilepsy ......... 15 2184.20 15
+# N128 Repair of encephalocoele ....................................................... 15 924.70 15
+# N129 Posterior fossa decompression for Arnold Chiari malformation 15 1284.95 15
+# E901 - with operating microscope, to N129........................... add 234.65
+# N126 Intra-oral approach to lesions of the skull base and upper
+cervical spine...................................................................... 15 1442.95 15
+# N123 Stereotaxis - intracranial (to include ventriculography)........... 11 559.60 11
+# E931 - with implantation (and removal) of radioactive sources into
+brain tumour.............................................................. add 222.85
+# E896 - sophisticated micro-electrode recording during
+stereotaxis, to N123................................................... add 400.40
+Functional stereotaxy
+Payable for neuroablative and implantation therapy for treatment of movement disorders of
+basal ganglia and connections (e.g. Parkinson’s disease). Must include pre-operative planning,
+application of stereotactic frame, intra-operative imaging, micro-electrode placement and
+recording, ablation of lesion and/or electrode implantation.
+# N124 Functional stereotaxy.............................................................. 9 2040.15 11
+Note:
+N123 performed in conjunction with N124 is an insured service payable at nil.
+# N119 Intracranial implantation of chronic surface electrodes........... 11 1185.30 11
+# Z823 Implantation or revision of stimulation pack or leads (peripheral
+nerve, brain) ....................................................................... 8 404.30 8
+# Z824 Removal of chronic surface or depth electrodes .................... 266.60
+# Z802 Ventricular puncture through previous burr hole or fontanelle or
+puncture and/or aspiration of cisterna ................................ 81.65 7
+Amd 12 Draft 1 X4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 745 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+Ventriculoscopy
+# Z825 - to include burr hole............................................................. 731.20 7
+# E916 - with biopsy ................................................................. add 233.30
+# E917 - with interventriculostomy............................................ add 301.70
+# E918 - with removal of foreign body ...................................... add 132.80
+# Z820 Insertion of intracranial pressure monitor and/or external
+ventricular drainage............................................................ nil 367.95 7
+# Z812 Subsequent revisions or replacements within 30 days....each 6 279.55 7
+Payment rules:
+1.Z820 is limited to one per patient per day.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X5 Amd 12 Draft 1
+
+--- PAGE 746 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+CRANIO-CEREBRAL INJURIES
+UVC Non-operative care ................................................................. visit. fee
+Reduction of skull fracture
+# N139 - simple, depressed .............................................................. 7 634.90 7
+# N140 - compound........................................................................... 11 895.00 11
+# E912 - with repair of dural laceration..................................... add 233.30
+Extracerebral haematoma and/or hygroma
+# N143 Drainage by burr hole(s) - unilateral ....................................... 7 647.80 7
+# N144 Drainage and/or removal by craniotomy................................. 11 999.30 11
+CEREBRAL INJURY
+# N148 Removal of intracerebral haematoma and/or debridement of
+traumatized brain (includes management of any skull
+fracture) .............................................................................. 15 1204.65 15
+Note:
+N143 is not eligible for payment in addition to N144 or N148 for the same craniotomy
+procedure.
+# N149 Removal of foreign body from brain........................................ 15 968.50 15
+# N150 C.S.F. leak - intracranial repair (to include trans-sphenoidal
+approach) ........................................................................... 15 1065.45 15
+# N200 Decompressive craniectomy (frontal, sub-temporal) .............. 11 738.60 11
+Note:
+Claims for N200 with N153 rendered for the same patient should be submitted using the
+manual review indicator and accompanied by supporting documentation.
+Subdural tap(s)
+# Z803 - unilateral............................................................................. 53.10
+CRANIAL NERVES
+# N258 Percutaneous coagulation or glyceral injection of gasserian
+(trigeminal) ganglion or root - unilateral.............................. nil 504.95 11
+# N259 V - Decompression or rhizotomy (partial or complete)
+trigeminal nerve.................................................................. 11 671.75 11
+# N265 VII - Differential section facial nerve for hemi-facial spasm
+(extracranial approach) ...................................................... 6 348.30 6
+# N266 Anastomosis hypoglossal or accessory to facial nerve .......... 6 727.80 6
+# N267 Occipital and/or suboccipital craniectomy for compression,
+decompression or section of cranial nerves ....................... 11 1280.90 11
+# E901 - with operating microscope, to N266 or N267 ............... add 234.65
+# N269 XI - Division of nerves to sternomastoid in neck..................... 6 292.25 7
+# Z826 Inferior dental neurectomy ...................................................... 6 184.00 6
+# Z827 Infraorbital or supraorbital neurectomy................................... 6 158.45 7
+Amd 12 Draft 1 X6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 747 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+CAROTID AND VERTEBRAL ARTERIES
+# N223 Vertebral endarterectomy ....................................................... 10 798.80 10
+# Z815 Temporal artery - biopsy, ligation or cryosurgery .................... 200.00 6
+# Z808 Progressive carotid occlusion by Selverstone clamp.............. 10 317.85 10
+# Z807 Removal of Selverstone clamp............................................... 10 266.60 10
+[Commentary:
+For carotid endarterectomy, refer to R792 on page Q13 of the Cardiovascular Surgical
+Procedures section.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X7 Amd 12 Draft 1
+
+--- PAGE 748 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+CSF SHUNTING PROCEDURES
+# N230 CSF shunting procedures - all types....................................... 11 1027.40 11
+Revision of CSF shunt
+# N245 - operative - all types ............................................................ 7 585.90 7
+# Z801 - non-operative ..................................................................... 51.50
+Conversion of shunt (e.g. ventriculoperitoneal to ventriculoatrial)
+# N174 - includes removal of existing shunt ..................................... 7 585.90 7
+# N246 Removal of shunt - any type ................................................... 7 289.70 7
+# Z809 Insertion of CSF reservoir (Ommaya) including burr holes..... 11 428.90 11
+# N249 Third ventriculostomy.............................................................. 11 1084.25 11
+# Z821 Injection of diagnostic or therapeutic agent into shunt
+apparatus ........................................................................... 53.10
+SKULL
+Repair of skull defect
+# N161 Acrylic or metal cranioplasty................................................... 11 600.85 11
+# N201 Rib graft cranioplasty (defect less than 7.5 cm)...................... 15 855.80 15
+# N202 Replacement of bone flap....................................................... 11 540.95 11
+# N203 Skull tumour, excision ............................................................. 11 408.30 11
+Craniosynostosis, linear craniectomy
+# N206 - one suture .......................................................................... 11 430.75 11
+# N207 - multiple sutures .................................................................. 15 563.50 15
+Morcellation procedure
+# N162 - one suture .......................................................................... 11 430.75 11
+# N163 - multiple sutures .................................................................. 15 614.70 15
+Lateral canthal advancement
+Unilateral
+# N164 - one surgeon ....................................................................... 15 696.35 15
+# N165 - two surgeons, major portion ............................................... 15 430.75 15
+# N166 - two surgeons, lesser portion .............................................. 345.35
+Bilateral
+# N167 - one surgeon ....................................................................... 15 952.55 15
+# N168 - two surgeons, major portion ............................................... 15 614.70 15
+# N169 - two surgeons, lesser portion .............................................. 461.10
+Craniotomy
+# N208 - for craniofacial repair......................................................... 15 918.15 15
+# E922 - with repair of frontonasal encephalocele ................... add 215.35
+Amd 12 Draft 1 X8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 749 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+ORBIT
+Craniotomy
+# N211 - plus removal of orbital tumour ............................................ 15 1116.60 15
+# N212 - plus orbital decompression (roof of orbit with or without
+lateral wall) ......................................................................... 15 1045.45 15
+# N213 - for decompression of optic nerve(s) ................................... 15 1116.60 15
+# E901 - with operating microscope, to N211 or N213 ............. add 234.65
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X9 Amd 12 Draft 1
+
+--- PAGE 750 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+BRAIN
+SKULL BASE SURGERY – SURGICAL ACCESS - ENDONASAL APPROACH
+Surgeon not rendering resection of lesion(s)
+# N112 Endonasal endoscopic or microscopic approach for surgical
+access to sella turcica - includes when rendered middle
+turbinate reductions, maxillary antrostomies,
+ethmoidotomies, ethmoidectomies, sphenoidotomies,
+septotomy, septoplasty and septal mucosal flap(s) harvest
+associated with septotomy or sphenoidal mucosal flap(s) . nil 1360.00 nil
+Surgeon rendering resection of lesion(s)
+E905 - endonasal endoscopic or microscopic approach for
+surgical access to sella turcica - includes when rendered
+middle turbinate reductions, maxillary antrostomies,
+ethmoidotomies, ethmoidectomies, sphenoidotomies,
+septotomy, septoplasty and septal mucosal flap(s) harvest
+associated with septotomy or sphenoidal mucosal flap(s),
+to N111, N114 or N116 ............................................... add 750.00
+E886 - extended endonasal endoscopic approach, for access to
+each anatomical area, anterior skull base, clivus/posterior
+fossa, C1 - C2, occipital condyle(s) when rendered, to
+N111, N112, N114 or N116......................................... add 800.00
+Payment rules:
+No services from the Respiratory Surgical Procedures or Integumentary System Surgical
+Procedures sections of this Schedule are eligible for payment with N111, N112, N114 or N116.
+SKULL BASE SURGERY – RESECTION OF LESION(S) - ENDONASAL APPROACH
+Pituitary lesion(s)
+# N111 Transsphenoidal microscopic resection of lesion(s) originating
+in the sella turcica requiring simple closure, repair and/or
+reconstruction of surgical defect(s) .................................... 1879.00 20
+# N114 Transsphenoidal endonasal endoscopic resection of lesion(s)
+originating in the sella turcica requiring simple closure,
+repair and/or reconstruction of surgical defect(s) ............... 1742.45 20
+E887 - resection of pituitary lesion(s) extending beyond the sella
+turcica to the optic nerve(s), optic chiasm or
+hypothalamus, to N111 or N114................................. add 500.00
+Non-pituitary lesion(s)
+# N116 Endonasal endoscopic resection of non-pituitary lesion(s) not
+originating from pituitary tissue requiring simple closure,
+repair and/or reconstruction of surgical defect(s) ............... 2243.45 20
+E888 Resection of non-pituitary lesion(s) involving the sellar region
+that extends to the optic nerve(s), optic chiasm or
+hypothalamus, to N116................................................ .add 500.00
+Amd 12 Draft 1 X10 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 751 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+CRANIAL
+Asst Surg Anae
+Complex endonasal endoscopic resection of pituitary and non-pituitary lesion(s)
+E889 - complex endonasal endoscopic resection from cranial
+nerves, to N114 or N116 ............................................ add 520.00
+E890 - complex endonasal endoscopic resection from cavernous
+sinuses, to N114 or N116........................................... add 520.00
+E891 - complex endonasal endoscopic resection from frontal or
+temporal lobe or brainstem, to N114 or N116 ............ add 520.00
+Payment rules:
+1.E889, E890 and E891 are only eligible for payment to a physician who has completed a
+fellowship in skull base surgery or who has equivalent experience.
+2.E889, E890 and E891 are only eligible for payment when rendered with E887 or E888.
+3.Harvesting and/or use of any autologous materials (e.g. bone, fascia, dermis, muscle) is not
+eligible for payment with N111, N112, N114 or N116.
+[Commentary:
+Examples of non-pituitary lesions include meningioma, craniopharyngioma, chordoma.]
+SKULL BASE SURGERY – COMPLEX CLOSURE, REPAIR AND/OR RECONSTRUCTION OF
+DEFECT(S)
+E892 - harvesting of pedicled vascular flap(s) greater than 3cm in
+size for use in complex endoscopic closure, repair and/or
+reconstruction of surgical defect(s) to N111, N112, N114 or
+N116........................................................................... add 500.00
+E893 - complex closure, repair and/or reconstruction of surgical
+defect(s) - includes duroplasty when rendered to N111,
+N112, N114 or N116................................................... add 555.00
+Note:
+A complex closure, repair and/or reconstruction is defined as surgical closure, repair and/or
+reconstruction:
+a.for a lesion extending beyond the sella turcica; and
+b.is necessary for repair of CSF leak(s); and
+c.requires the use of pedicled vascular flap(s) greater than 3 cm in size.
+Payment rules:
+1.N111, N114 and N116 requires simple closure, reconstruction and/or repair of surgical
+defect(s) and includes the harvesting and use of any autogenous materials and/or pedicled
+flap(s) less than 3 cm in size. E892 and E893 are not eligible for payment for simple closure,
+reconstruction and/or repair.
+2.E919 is eligible for payment, if rendered, when performed as part of a simple closure,
+reconstruction and/or repair. E919 is not eligible for payment with E893.
+[Commentary:
+E892 and E893 may only be claimed when a complex closure, repair and/or reconstruction is
+required, as defined in the note above.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X11 Amd 12 Draft 1

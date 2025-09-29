@@ -1,0 +1,74 @@
+Subsection: Larynx
+Parent Section: P
+Page Reference: P6
+Pages: 636 to 637
+Text chunks: 1
+Total text length: 3294 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 636 ---
+RESPIRATORY SURGICAL PROCEDURES
+LARYNX
+7 Asst Surg Anae
+ENDOSCOPY
+Laryngoscopy
+# E600 - using operating microscope - to charges for laryngoscopy
+................................................................................... add 33.60
+Direct
+# Z292 - without biopsy..................................................................... 61.30 6
+# Z293 - with biopsy.......................................................................... 61.30 6
+# Z322 - with removal of foreign body .............................................. 106.45 6
+# Z323 - with removal of lesion(s)..................................................... 226.35 6
+# E643 - when using laser with microlaryngoscopy for benign
+disease, to Z323 ........................................................ add 121.65
+Note:
+1.E600 is not eligible for payment in addition to E643.
+2.Z292 rendered in association with gastroscopy, oesophagoscopy, oesophagoscopy-
+gastroscopy, duodenoscopy, and small bowel push enteroscopy services is not eligible for
+payment unless the laryngoscopy service is rendered for suspicion of disease of the larynx.
+Claims for Z292 in these circumstances are assessed by a medical consultant on a manual
+review basis and require the submission of a written explanation.
+[Commentary:
+Manual review is not required for Z293, Z322 and Z323 rendered in association with
+gastroscopy, oesophagoscopy, oesophagoscopy-gastroscopy, duodenoscopy, and small bowel
+push enteroscopy services.]
+# Z343 - with dilatation of larynx, to include bronchoscopy if
+necessary ........................................................................... 202.35 7
+Indirect
+# Z324 - with biopsy or removal of foreign body............................... 44.70 6
+INTRODUCTION
+# M080 Teflon augmentation larynx..................................................... 182.10 7
+EXCISION
+Laryngectomy
+# M081 - total..................................................................................... 6 838.90 13
+# E882 - with thyroid lobectomy, to M081................................. add 177.40
+# E883 - with thyroid lobectomy, must include excision of isthmus
+and pyramidal tract, to M081 ..................................... add 266.60
+# E884 - with total thyroidectomy, to M081............................... add 374.00
+# M082 Laryngofissure ........................................................................ 6 444.80 8
+Note:
+Excision to include laryngoscopy.
+Laryngectomy
+# M084 - segmental, including reconstruction ................................... 6 888.85 9
+# M085 Arytenoidectomy or arytenoidopexy or lateralization procedure 6 395.05 8
+Amd 12 Draft 1 P6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 637 ---
+RESPIRATORY SURGICAL PROCEDURES
+LARYNX
+7 Asst Surg Anae
+REPAIR (TO INCLUDE LARYNGOSCOPY)
+# M090 Laryngoplasty - e.g. repair of stenosis and fractures,
+transections - not to be billed with M084 ............................ 642.45 7
+# M089 Creation of tracheo-oesophageal fistula................................. 6 234.60 6
+# Z320 Insertion of voice prosthesis ................................................... 25.85
+# Z303 Removal of laryngeal stent or keel ......................................... 240.20 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P7 Amd 12 Draft 1

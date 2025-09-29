@@ -1,0 +1,353 @@
+{
+  "document_id": "cep_covid_19",
+  "source_url": "https://tools.cep.health/tool/covid-19/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "infectious_disease",
+  "extracted_at": "2025-09-24T15:33:05.541676",
+  "content_hash": "1be7d8956eaa7441b8435eff577d4a0595eed4470d2ce630231c4d1f13784df0",
+  "title": "COVID-19 in 2024: Care and Operations Guidance",
+  "tool_slug": "covid-19",
+  "last_updated": "June 28, 2024",
+  "navigation": [
+    {
+      "title": "Click on the sections below to get started:",
+      "anchor": "#click-on-the-sections-below-to-get-started",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Managing patients at home",
+      "anchor": "#mgmt-athome",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Therapeutic management of mild COVID-19",
+      "anchor": "#mgmt-mildcovid",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pathway to accessing outpatient therapies",
+      "anchor": "#outpatientpathway",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Recommended drugs for patients with mild COVID-19",
+      "anchor": "#mildcovidrecs",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Symptom management",
+      "anchor": "#sx-mgmt",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "What is \u201cpost COVID-19 condition\u201d?",
+      "anchor": "#pasc",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Patient evaluation for suspected post COVID-19 condition",
+      "anchor": "#pteval",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Guidance for how to help patients recover",
+      "anchor": "#guidancept",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "What to do if patients aren\u2019t getting better",
+      "anchor": "#betterpt",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "How to support patients completing disability applications",
+      "anchor": "#supportdisabilities",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "The role of primary care",
+      "anchor": "#PC-role",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Navigate difficult conversations with patients, families and caregivers and identify the patient\u2019s goals of care",
+      "anchor": "#care-goals",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Document decisions regarding do not resuscitate (DNR)",
+      "anchor": "#DNR",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Manage symptoms, and address other palliative care needs for patients with COVID-19",
+      "anchor": "#pall-sx-mgmt",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Provide end-of-life care for COVID-19 patients",
+      "anchor": "#eol-care",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Provide grief and bereavement support",
+      "anchor": "#grief",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Counsel all patients about self-monitoring for red flag symptoms of worsening disease (seeWho should be hospitalized?) and provide clear guidance on who to call.Assess patients for pre-existing condit"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": false,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Isolation requirements",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visitOntario Health COVID-19 Clinical Resources.",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Stay at home and self-isolate until all of the following apply: your symptoms have been improving for at least 24 hours (or 48 hours if you had nausea, vomiting and/or diarrhea)you do not have a feveryou do not develop any additional symptoms Once symptoms are improving and you are no longer self-isolating at home, the following can provide extra protection against the spread of COVID-19."
+    },
+    {
+      "heading": "PPE and IPAC considerations 2024",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visitOntario Health COVID-19 Clinical Resources.",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "For the high-risk 2024 respiratory season, CMOH recommends using additional precautions when appropriate. See OMA\u2019s short, easy-to-read visual guide on how to select precautions in high-risk periods:Safely providing in-person care for community-based practices (OMA, 2023) Also, see the OCFP\u2019s latest guidance on masking, screening, PPE, office flow, cleaning and ventilation:IPAC Considerations for Infectious Respiratory Diseases for Community Practices (OCFP, October 2023) To gauge transmissio..."
+    },
+    {
+      "heading": "COVID-19 vaccines 2024",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visitOntario Health COVID-19 Clinical Resources.",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Vaccine guidance",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Moderna XBB.1.5 COVID-19 vaccine recommendations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pfizer XBB.1.5 COVID-19 vaccine recommendations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Novavax XBB.1.5 COVID-19 vaccine recommendations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Timing of other vaccinations",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "COVID-19 vaccines and consent for children and youth under 18",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "As a reminder, please ensure that information in COVaxON is accurate and up-to-date based on the patient\u2019s health card. For more information on COVaxON and EMR supports for COVID-19 care, please visitOntarioMD\u2019s page on Planning a COVID-19 Vaccination Clinic. In Spring 2024, individuals who are at increased risk of severe illness should receive an additional dose of an XBB COVID-19 vaccine. Eligible individuals include Adults 65 years of age and olderAdult residents of long-term care homes an..."
+    },
+    {
+      "heading": "Outpatient management of patients with COVID-19",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visitOntario Health COVID-19 Clinical Resources.",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Managing patients at home",
+          "anchor": "#mgmt-athome",
+          "level": 3
+        },
+        {
+          "heading": "Therapeutic management of mild COVID-19",
+          "anchor": "#mgmt-mildcovid",
+          "level": 3
+        },
+        {
+          "heading": "Pathway to accessing outpatient therapies",
+          "anchor": "#outpatientpathway",
+          "level": 3
+        },
+        {
+          "heading": "Pathway to accessing outpatient therapies",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Recommended drugs for patients with mild COVID-19",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Recommended drugs for patients with mild COVID-19",
+          "anchor": "#mildcovidrecs",
+          "level": 3
+        },
+        {
+          "heading": "Symptom management",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Symptom management",
+          "anchor": "#sx-mgmt",
+          "level": 3
+        }
+      ],
+      "summary": "Managing patients at homeTherapeutic management of mild COVID-19Pathway to accessing outpatient therapiesRecommended drugs for patients with mild COVID-19Symptom management Patients can safely self-manage at home if they have mild to moderate symptoms of COVID-19 and do not have any co-morbid conditions or complications (HFAM, 2023). Instruct patients to seek an urgent follow-up assessment with their family physician or hospitalization if they experience any of the following red flag symptoms..."
+    },
+    {
+      "heading": "Post COVID-19 condition",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visitOntario Health COVID-19 Clinical Resources.",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "What is \u201cpost COVID-19 condition\u201d?",
+          "anchor": "#pasc",
+          "level": 3
+        },
+        {
+          "heading": "Patient evaluation for suspected post COVID-19 condition",
+          "anchor": "#pteval",
+          "level": 3
+        },
+        {
+          "heading": "Guidance for how to help patients recover",
+          "anchor": "#guidancept",
+          "level": 3
+        },
+        {
+          "heading": "What to do if patients aren\u2019t getting better",
+          "anchor": "#betterpt",
+          "level": 3
+        },
+        {
+          "heading": "How to support patients completing disability applications",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "How to support patients completing disability applications",
+          "anchor": "#supportdisabilities",
+          "level": 3
+        }
+      ],
+      "summary": "Post COVID-19 condition (or long COVID) includes a wide range of symptoms following a probable or confirmed history of a severe, mild or asymptomatic COVID-19 infection usually occurring beyond 12 weeks (Ontario Health, December 2022). Dyspnea or increased respiratory effortCoughFatigue/malaiseDecreased mobilityFeverMenstrual cycle irregularitiesInsomnia Memory deficitsDifficulty concentratingHeadachesDizzinessParesthesiaJoint PainMuscle pain"
+    },
+    {
+      "heading": "Palliative care and COVID-19",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Please note that as of July 5, 2024, this page will no longer be updated. For the latest clinical recommendations, coverage updates, and treatment information, please visitOntario Health COVID-19 Clinical Resources.",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "The role of primary care",
+          "anchor": "#PC-role",
+          "level": 3
+        },
+        {
+          "heading": "Navigate difficult conversations with patients, families and caregivers and identify the patient\u2019s goals of care",
+          "anchor": "#care-goals",
+          "level": 3
+        },
+        {
+          "heading": "Document decisions regarding do not resuscitate (DNR)",
+          "anchor": "#DNR",
+          "level": 3
+        },
+        {
+          "heading": "Manage symptoms, and address other palliative care needs for patients with COVID-19",
+          "anchor": "#pall-sx-mgmt",
+          "level": 3
+        },
+        {
+          "heading": "Provide end-of-life care for COVID-19 patients",
+          "anchor": "#eol-care",
+          "level": 3
+        },
+        {
+          "heading": "Provide grief and bereavement support",
+          "anchor": "#grief",
+          "level": 3
+        }
+      ],
+      "summary": "To help address palliative care services related to COVID-19, family physicians and community palliative care nurse practitioners will have to: Providers need to ensure the patient understands the nature and severity of their illness, and explore their goals of care to support decision-making and enable person-centred care. COVID-19 Advance Care Planning Toolkit (Hamilton Family Medicine, 2020).Plan Well Guide: online tool for learning about medical treatments and preparing patients for decis..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "The COVID-19 Resource Centre was developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clincial leadership of the resource was provided by Dr. Derelie Mangin. End users and clinical experts were also engaged to provide feedback..."
+    }
+  ],
+  "references": [],
+  "summary": "COVID-19 in 2024: Care and Operations Guidance. Category: Infectious Disease. Features: forms, patient resources. 7 main sections"
+}

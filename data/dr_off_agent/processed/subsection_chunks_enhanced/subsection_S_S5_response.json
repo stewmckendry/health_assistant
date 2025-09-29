@@ -1,0 +1,105 @@
+{
+  "subsection_title": "Lips",
+  "parent_section": "S",
+  "page_ref": "S5",
+  "pages_processed": "673-673",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z503",
+      "description": "Biopsy",
+      "fee": 35.4,
+      "units": 6
+    },
+    {
+      "code": "S011",
+      "description": "vermilion",
+      "fee": 98.45,
+      "units": 6
+    },
+    {
+      "code": "S010",
+      "description": "with plastic repair",
+      "fee": 275.0,
+      "units": 6
+    },
+    {
+      "code": "Z504",
+      "description": "Excision of lesion",
+      "fee": 61.15,
+      "units": 6
+    },
+    {
+      "code": "S012",
+      "description": "Lip shave vermilionectomy",
+      "fee": 225.0,
+      "units": 6
+    },
+    {
+      "code": "S013",
+      "description": "unilateral",
+      "fee": 363.3,
+      "units": 8
+    },
+    {
+      "code": "S014",
+      "description": "Reconstruction with lip switch flap",
+      "fee": 444.4,
+      "units": 8
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E542",
+      "context": "when performed outside of hospital",
+      "description": "add 11.55",
+      "source_subsection": "Lips",
+      "source_page": "S5"
+    },
+    {
+      "code": "E501",
+      "context": "with nasal cartilage realignment",
+      "description": "add 304.30",
+      "source_subsection": "Lips",
+      "source_page": "S5"
+    },
+    {
+      "code": "S015",
+      "context": "Complex reconstruction or revision of previous repair and excision",
+      "description": "see General Preamble GP12",
+      "source_subsection": "Lips",
+      "source_page": "S5"
+    },
+    {
+      "code": "M030",
+      "context": "not eligible for payment with",
+      "description": "",
+      "source_subsection": "Lips",
+      "source_page": "S5"
+    },
+    {
+      "code": "M031",
+      "context": "not eligible for payment with",
+      "description": "",
+      "source_subsection": "Lips",
+      "source_page": "S5"
+    },
+    {
+      "code": "M032",
+      "context": "not eligible for payment with",
+      "description": "",
+      "source_subsection": "Lips",
+      "source_page": "S5"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

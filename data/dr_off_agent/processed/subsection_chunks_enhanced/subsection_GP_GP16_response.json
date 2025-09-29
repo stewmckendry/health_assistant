@@ -1,0 +1,98 @@
+{
+  "subsection_title": "Consultations",
+  "parent_section": "GP",
+  "page_ref": "GP16",
+  "pages_processed": "30-34",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A935",
+      "description": "Special surgical consultation requiring at least fifty minutes exclusively to the consultation with the patient.",
+      "fee": 0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "50 minutes",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "C935",
+      "description": "Special surgical consultation requiring at least fifty minutes exclusively to the consultation with the patient.",
+      "fee": 0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": "50 minutes",
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "H055",
+      "description": "Consultation by a specialist in emergency medicine.",
+      "fee": 0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "H065",
+      "description": "Consultation by all other physicians in the emergency department.",
+      "fee": 0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "G010",
+      "context": "not payable with",
+      "description": null,
+      "source_subsection": "Consultations",
+      "source_page": "GP16"
+    },
+    {
+      "code": "G039",
+      "context": "not payable with",
+      "description": null,
+      "source_subsection": "Consultations",
+      "source_page": "GP16"
+    },
+    {
+      "code": "G040",
+      "context": "not payable with",
+      "description": null,
+      "source_subsection": "Consultations",
+      "source_page": "GP16"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

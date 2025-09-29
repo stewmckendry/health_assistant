@@ -1,0 +1,85 @@
+Subsection: External Ear
+Parent Section: Y
+Page Reference: Y13
+Pages: 767 to 768
+Text chunks: 1
+Total text length: 4167 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 767 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+EXTERNAL EAR
+Asst Surg Anae
+PREAMBLE
+When debridement of ears under microscopy is carried out for access purposes only, no claim should
+be made for the debridement.
+ENDOSCOPY
+Removal of foreign body
+Z915 - simple ................................................................................. 10.55
+Z866 - complicated, general anaesthetic....................................... 50.90 6
+# E302 - requiring post auricular or endaural incisions..................... 202.35 6
+# E303 - from middle ear space........................................................ 202.35 6
+Note:
+Z915 claimed solely for removal of cerumen is payable at nil.
+Removal of drainage tube(s)
+# Z906 - under general anaesthetic, unilateral ................................. 66.50 6
+Note:
+For contralateral procedure, Z906 is payable at 85% of the listed fee.
+INCISION
+Z909 Biopsy, ear canal .................................................................... 25.85
+# Z846 - general anaesthetic (if sole procedure performed)............. 50.90 6
+Incision and drainage of extensive haematoma of pinna with packing of ear and external
+compression dressing
+# E317 - general anaesthetic ........................................................... 139.95 6
+# E318 - local anaesthetic................................................................ 92.40
+# E305 - Limited incision for perichondritis, removal of cartilage and
+drainage ............................................................................. 155.30 6
+# E306 Radical surgery for perichondritis ........................................... 291.50 7
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Y13 Amd 12 Draft 1
+
+--- PAGE 768 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+EXTERNAL EAR
+Asst Surg Anae
+EXCISION
+Local excision, polyp
+Z904 - office................................................................................... 25.85
+# Z905 - hospital ............................................................................... 50.90 6
+Resection of pinna
+# E300 - with primary closure ........................................................... 248.05 6
+# E977 - if excision is performed in hospital for tumour free margin
+with frozen section, to excision or repair fees, to E300
+........................................................................... add 25%
+# E301 - with local flap...................................................................... 355.35 6
+Exostosis
+# E311 - endomeatal surgery and removal and drilling out of
+exostosis ............................................................................ 243.35 7
+# E312 - with multiple removal with necessary grafting .................... 355.40 7
+# E313 - post auricular approach...................................................... 362.55 6
+# Z903 Pre-auricular sinus.................................................................. 62.95
+# E309 - general anaesthetic ............................................................ 208.05 6
+REPAIR
+Congenital defects
+External
+# E307 - minor .................................................................................. 6 219.60 6
+# E308 - major .................................................................................. 6 345.15 7
+# E310 Otoplasty for correction of outstanding ears - unilateral ......... 6 247.35 7
+# E304 Reconstruction of total ear with cartilage graft (e.g. Brent
+Technique), first stage ........................................................ 6 619.35 6
+Note:
+1.E304, E307, E308 - Descriptive details of procedure (e.g. operative report) should be
+submitted with claims for professional assessment (see Surgical Preamble, paragraph 17).
+2.E310 - for patients 18 years of age or older, please see Appendix D, Sub-Surface Pathology.
+# E314 Meatoplasty or canalplasty for congenital malformation......... 6 297.25 7
+# E955 - with grafting of canal.................................................. add 202.35
+# E956 - with tympanoplasty and/or ossiculoplasty, and/or
+mastoidectomy........................................................... add 399.90 2
+Amd 12 Draft 1 Y14 February 14 , 2 025 (e ffective M arch 3, 2025)

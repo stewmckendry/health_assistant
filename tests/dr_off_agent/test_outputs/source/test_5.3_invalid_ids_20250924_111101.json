@@ -1,0 +1,26 @@
+{
+  "test_name": "test_5.3_invalid_ids",
+  "timestamp": "2025-09-24T11:11:01.667925",
+  "elapsed_seconds": 0.005121,
+  "result": {
+    "passages": [
+      {
+        "chunk_id": "invalid_chunk_999",
+        "text": "[Passage invalid_chunk_999 from ohip_chunks not available - collection not initialized]",
+        "source": "ohip_chunks",
+        "page": null,
+        "section": null,
+        "highlights": []
+      },
+      {
+        "chunk_id": "non_existent_chunk_123",
+        "text": "[Passage non_existent_chunk_123 from ohip_chunks not available - collection not initialized]",
+        "source": "ohip_chunks",
+        "page": null,
+        "section": null,
+        "highlights": []
+      }
+    ],
+    "total_chunks": 2
+  }
+}

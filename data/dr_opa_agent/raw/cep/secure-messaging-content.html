@@ -1,0 +1,1290 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Secure Messaging |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/secure-messaging-content\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/61775" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fsecure-messaging-content%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fsecure-messaging-content%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-61775 wp-theme-cep-tools secure-messaging-content">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Secure Messaging</h1>
+                    <p class="last-updated"><i class="icon icon-clock-with-arrow"> </i>Last Updated: July 30, 2024</p>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <h6 style="text-align: center;"><a href="https://link.cep.health/securemessage51" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Secure messaging infographic</a></h6>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p style="text-align: center;"><a href="https://link.cep.health/securemessage51" target="_blank" rel="noopener external noreferrer" data-wpel-link="external"><img decoding="async" class="aligncenter" src="https://tools.cep.health/wp-content/uploads/2024/05/Screen-Shot-2024-05-01-at-4.40.52-PM.png" alt="" width="103" height="134" /></a></p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+                    <footer>
+                <h6 style="text-align: center;" data-mce-style="text-align: center;">Download print-ready PDF</h6>
+            </footer>
+        
+    </div>
+</div>
+</article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--table ">
+<div class="container">
+  <div class="table  inner-border-grey blue">
+
+                    <header>
+                <h6 style="text-align: center;"><a href="https://link.cep.health/securemessage53" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Secure messaging summary</a></h6>
+            </header>
+        
+                    <div class="rows">
+
+                                    <div class="row">
+
+                                                    <div class="cols">
+                        
+                                
+                                                                            <div class="col 1" style="flex-basis:33%;">
+                                            <p style="text-align: center;"><a href="https://link.cep.health/securemessage53" target="_blank" rel="noopener external noreferrer" data-wpel-link="external"><img decoding="async" class="aligncenter" src="https://tools.cep.health/wp-content/uploads/2024/05/Screen-Shot-2024-05-06-at-2.29.20-PM.jpg" alt="" width="103" height="134" /></a></p>
+                                        </div>
+                                    
+                                                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+                    <footer>
+                <h6 style="text-align: center;" data-mce-style="text-align: center;">Download print-ready PDF</h6>
+            </footer>
+        
+    </div>
+</div>
+</article></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This resource is intended to help Ontario clinicians understand:&nbsp;</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>How and when <strong>patient-to-clinician secure messaging</strong> can support clinical practice.&nbsp;</li>
+
+
+
+<li>Whether implementation of <strong>secure messaging</strong> may be beneficial to your practice.&nbsp;</li>
+</ul>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">What is secure messaging?</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Secure messaging can enable one-way or two-way communication between patients and clinicians by exchanging messages in a private and secure manner that protects personal health information. The messages exchanged are text-based and can also contain attachments like documents, images, audio or video recordings. </p>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p class="is-style-blue-background"><strong>Information on Ontario&#8217;s <a href="https://link.cep.health/securemessage6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Secure Messaging Proof-of-Concept Pilot</a></strong></p>
+</div></article></div>
+</div>
+
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p></p>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="secure-messaging-in-clinical-practice" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Secure messaging in clinical practice								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>The benefits of implementing secure messaging will depend on an individual practice’s specific resources, roster and workflow. While each practice will have different needs and challenges, various mitigation strategies can be used to suit an individual practice.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Potential time-saving &#038; convenience</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Benefits</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="4" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Reduces the need for some scheduled appointments. Can free up time for urgent appointments.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="4" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Reduces time spent on phone calls and paper-based communication.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="4" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Clinicians can respond to messages at their convenience. Communication with a patient doesn’t have to happen during a busy workday.</span><span data-ccp-props="{}"> </span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Challenges </h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335559738&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"><span class="NormalTextRun SCXW249880329 BCX0">Potential increase in workload when workflows are not carefully considered</span><span class="NormalTextRun SCXW249880329 BCX0">.</span></span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Mitigation strategies</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="1" data-aria-level="1"><span data-contrast="none">Block time in your schedule to address patient messages.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Limit the number of characters or words patients can use to make short, concise requests or comments.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Use standardized templates where appropriate for common message types.</span><span data-contrast="none"><sup>7</sup><span data-ccp-props="{}"> </span></span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Triage, when staff support is  available and appropriate, can help route important messages and documents to the right staff member.<sup>8</sup></span><span data-ccp-props="{}"><br />
+</span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="9" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Consider inbox efficiency approaches such as:<sup>9</sup></span>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="14" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="2"><span data-contrast="none">“One-touch” system – only open a message when you have time to complete a response. </span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="14" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="2"><span data-contrast="none">Setting inbox clearing goals to keep message numbers from growing.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="14" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="8" data-aria-level="2"><span data-contrast="none">Create standard phrases to use within messaging that signal boundaries, such as unavailability during certain hours. For example, end a message with “Just so you know, I won’t be able to access my computer regularly for the remainder of the weekend. If you need anything urgent, please use the main line. Thank you for understanding my absence on the weekend.”</span><span data-ccp-props="{}"> </span></li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" alt="" />
+        </div>
+        <h3 class="faq-title"><h3 id ="security">Promotes privacy &#038; security</h3></h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Benefits</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="12" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="auto">Ensures confidence in privacy and security standards. The </span><a href="https://link.cep.health/securemessage26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="auto">OMA </span><span data-contrast="none">indicates</span></a><span data-contrast="auto"> that</span><span data-contrast="none"> “the safest way to communicate with patients is through a secure messaging platform. These platforms represent the lowest risk to physicians in terms of susceptibility to privacy beaches and associated financial penalties.”<sup>6</sup></span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"><br />
+</span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="12" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="auto">Reduces the risk of privacy breaches and helps ensure information is sent to the right recipient. For example, in unsecured systems, other individuals may share an email inbox with the patient, or faxes can be accidentally sent to the wrong number.<sup>6</sup></span><span data-contrast="auto"><br />
+</span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Challenges </h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><span class="NormalTextRun SCXW99579684 BCX0">Selecting and adjusting to a new platform or software</span><span class="NormalTextRun SCXW99579684 BCX0">.</span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Mitigation strategies</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Review <a href="https://link.cep.health/securemessage27" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Verified solutions list for virtual visits (OH) </a></span><span data-contrast="none">to find secure messaging solutions that meet provincial standards for privacy, security, technology and functionality.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><span data-contrast="none">Consider de</span><span data-contrast="none">dicating time in your schedule to ensure you receive proper training.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1">See resources for support:
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><a href="https://link.cep.health/securemessage49" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Protecting personal health information (CPSO)</a></li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="1"><a href="https://link.cep.health/securemessage50" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Privacy and security considerations for virtual health care visits (IPC)</a></li>
+</ul>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="none">Use strategies outlined in</span> <a href="#implementing-secure-messaging-in-your-practice"><span class="TextRun SCXW229219369 BCX0" lang="EN" xml:lang="EN" data-contrast="none"> I</span><span class="TextRun Highlight Underlined SCXW229219369 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW229219369 BCX0">mplementing secure messaging in your practice.</span></span><span class="EOP SCXW229219369 BCX0" data-ccp-props="{}"> </span></a></li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Facilitates easy information sharing</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Benefits</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="12" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="9" data-aria-level="1"><span data-contrast="none">Clinicians can review patients’ questions ahead of a scheduled appointment</span><span data-contrast="none">.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="12" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="10" data-aria-level="1"><span data-contrast="none">Questionnaires, referrals, prescriptions and other paperwork can be sent to patients before or after an appointment</span><span data-contrast="auto">.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="12" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="11" data-aria-level="1"><span data-contrast="none">Information exchanged is documented and can be saved as part of the health record.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:240}"> </span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Challenges </h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li><span class="NormalTextRun SCXW214941575 BCX0">New workflows needed in practices without </span><span class="NormalTextRun SCXW214941575 BCX0">previous</span><span class="NormalTextRun SCXW214941575 BCX0"> asynchronous</span> <span class="NormalTextRun SCXW214941575 BCX0">communication processes</span><span class="NormalTextRun SCXW214941575 BCX0">.</span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Mitigation strategies</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="21" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="12" data-aria-level="1"><span data-contrast="none">Consider training clinic/admin staff to delegate and route a common clinic email for message triaging.<sup>8</sup></span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="21" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="13" data-aria-level="1"><span data-contrast="none">For practices where a group inbox management approach is feasible, consider coordinating a physician-to-physician coverage system for physician absences or rotational coverage of secure messaging inboxes.<sup>9</sup></span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="21" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="14" data-aria-level="1"><span data-contrast="none">Change management supports can help facilitate a smoother integration of secure messaging into your practice.<sup>5</sup></span>
+<ul>
+<li><a class="Hyperlink SCXW51687479 BCX0" href="https://link.cep.health/securemessage36" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="TextRun Underlined MacChromeBold SCXW51687479 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW51687479 BCX0" data-ccp-charstyle="Hyperlink">OntarioMD</span></span></a> <span class="TextRun SCXW51687479 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW51687479 BCX0">offers change management support to guide physicians in implementing and adopting virtual care platforms. For support </span><span class="NormalTextRun SCXW51687479 BCX0">with</span><span class="NormalTextRun SCXW51687479 BCX0"> secure messaging adoption, these include:</span></span>
+<ul>
+<li data-leveltext="o" data-font="Courier New" data-listid="21" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="6" data-aria-level="2"><a href="https://link.cep.health/securemessage1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Peer Leaders (OMD)</a>: <span class="NormalTextRun SCXW74049257 BCX0">A network of 60+ physicians offering mentorship and </span><span class="NormalTextRun SCXW74049257 BCX0">assistance</span><span class="NormalTextRun SCXW74049257 BCX0"> with digital health technologies</span><span class="NormalTextRun SCXW74049257 BCX0">.</span></li>
+<li data-leveltext="o" data-font="Courier New" data-listid="21" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1440,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Courier New&quot;,&quot;469769242&quot;:[9675],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;o&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="2"><a href="https://link.cep.health/securemessage33" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">OMD Educates</a>: <span class="TextRun SCXW110356950 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW110356950 BCX0">A series of CME-accredited webinars conducted by </span><span class="NormalTextRun SpellingErrorV2Themed SCXW110356950 BCX0">OntarioMD</span><span class="NormalTextRun SCXW110356950 BCX0"> Peer Leaders and experts, </span><span class="NormalTextRun SCXW110356950 BCX0">focused </span><span class="NormalTextRun SCXW110356950 BCX0">on clinical enhancements using digital health tools. </span><span class="NormalTextRun SCXW110356950 BCX0">S</span></span><span class="TextRun SCXW110356950 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW110356950 BCX0">ecure messaging </span><a href="https://link.cep.health/securemessage46" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="NormalTextRun SCXW110356950 BCX0">webinar</span><span class="NormalTextRun SCXW110356950 BCX0">s</span></a></span> <span class="TextRun SCXW110356950 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW110356950 BCX0" data-ccp-charstyle="Hyperlink">and</span></span> <a class="Hyperlink SCXW110356950 BCX0" href="https://link.cep.health/securemessage35" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="TextRun Underlined SCXW110356950 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW110356950 BCX0" data-ccp-charstyle="Hyperlink">associated </span><span class="NormalTextRun SCXW110356950 BCX0" data-ccp-charstyle="Hyperlink">resources</span></span></a><span class="TextRun SCXW110356950 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW110356950 BCX0"> provide</span> <span class="NormalTextRun SCXW110356950 BCX0">support for adopting the application in medical practices.</span></span></li>
+</ul>
+</li>
+<li><a href="https://link.cep.health/securemessage47" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Supporting clinicians with virtual care tools and training (Infoway)</a></li>
+<li><a href="https://link.cep.health/securemessage48" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Clinically appropriate use of virtual care (OH)</a></li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-1.svg" alt="" />
+        </div>
+        <h3 class="faq-title">Enhanced patient engagement </h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Benefits</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="11" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="8" data-aria-level="1"><span data-contrast="none">Opportunities for communication outside of a scheduled appointment.</span><span data-ccp-props="{&quot;335551550&quot;:6,&quot;335551620&quot;:6}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="11" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="9" data-aria-level="1"><span data-contrast="none">Encourages better symptom self-management, as patients can ask questions about medication regimens, side effects, etc.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="11" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="10" data-aria-level="1"><span data-contrast="none">Increases patient autonomy, empowerment and satisfaction – patients may feel more comfortable asking a sensitive question through messaging.</span><span data-ccp-props="{}"> </span></li>
+</ul>
+<p><span data-ccp-props="{}"> </span></p>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Challenges </h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="3" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="11" data-aria-level="1"><span data-contrast="auto">High volume of messages and/or inappropriate use from patients.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="3" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="12" data-aria-level="1"><span data-contrast="auto">Patient access barriers.</span><span data-ccp-props="{}"> </span></li>
+</ul>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title">Mitigation strategies</h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <p><span class="TextRun SCXW266576515 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW266576515 BCX0"><strong>Patient education</strong></span></span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="16" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="2" data-aria-level="1"><span data-contrast="none">Communicate to patients about when secure messaging should be used and when it is not appropriate (e.g., send a welcome letter outlining the role of secure messaging).</span><span data-contrast="none"><sup>1</sup></span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="16" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="3" data-aria-level="1"><span data-contrast="none">Communicate to patients about appropriate use and expectations for secure messaging, including turnaround time, subject lines, etc. (e.g., have patients sign an agreement for use when registering.</span><span data-contrast="none"><sup>1</sup></span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="16" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="4" data-aria-level="1"><span data-contrast="none">Give patients guidance on how to make the most of their secure messaging encounter.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="16" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="5" data-aria-level="1"><span data-contrast="none">Add a reminder about expectations of turnaround time and urgent messages to your message signature</span><span data-contrast="none">.<sup>9</sup></span><span data-ccp-props="{}"><br />
+</span></li>
+</ul>
+<p><strong>Patient access</strong></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="17" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span data-contrast="none">Advise patients about the introduction of secure messaging into your practice and include self-registration instructions.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="17" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="7" data-aria-level="1"><span class="TextRun SCXW177469411 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW177469411 BCX0">Connect patients with services to support access to training and equipment:</span></span><span class="EOP SCXW177469411 BCX0" data-ccp-props="{}"> </span>
+<ul>
+<li><a href="https://link.cep.health/securemessage28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Connecting families initiative (Government of Canada):</span></a><span data-contrast="none"> provides subsidized internet access for those eligible.</span><span data-ccp-props="{}"> </span></li>
+<li><span data-contrast="none"><a href="https://link.cep.health/securemessage29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Devices, services and training (CNIB)</a>: </span><span data-contrast="none">provides skills and training, as well as accessible/affordable technology for anyone who is blind or partially sighted. </span><span data-ccp-props="{}"> </span></li>
+<li><a href="https://link.cep.health/securemessage30" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span data-contrast="none">Assistive devices program</span><span data-contrast="none"> (MOH)</span></a>:<span data-contrast="none"> helps Ontarians with long-term physical disabilities pay for customized equip<span class="TextRun SCXW6799829 BCX0" lang="EN" xml:lang="EN" data-contrast="none"><span class="NormalTextRun SCXW6799829 BCX0">ment </span></span><span class="TextRun SCXW6799829 BCX0" lang="EN" xml:lang="EN" data-contrast="auto"><span class="NormalTextRun SCXW6799829 BCX0">such as specialized communication devices and visual aids.</span></span></span></li>
+</ul>
+</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+                    <h6>The role of secure messaging in managing chronic conditions</h6>
+                          <a data-modal="nwW3tc" class="button open-modal" href="#" data-id="nwW3tc">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="nwW3tc" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>The role of secure messaging in managing chronic conditions</h4>
+                                      <ul>
+<li data-leveltext="" data-font="Symbol" data-listid="10" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="9" data-aria-level="1"><span data-contrast="auto">Opportunities for follow-up and monitoring in chronic conditions such as mental health, diabetes or hypertension</span><span data-contrast="none">.</span><sup><span data-contrast="none">10,11</span></sup><span data-contrast="none"> </span><span data-ccp-props="{&quot;335551550&quot;:6,&quot;335551620&quot;:6}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="10" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="10" data-aria-level="1"><span data-contrast="none">Useful for reviewing r</span><span data-contrast="none">outine information</span><span data-contrast="none"> and follow-up for a patient receiving </span><span data-contrast="auto">cancer</span> <span data-contrast="none">maintenance therapy or surveillance.</span><sup><span data-contrast="none">3,12</span></sup> <span data-ccp-props="{&quot;335551550&quot;:6,&quot;335551620&quot;:6}"> </span></li>
+<li data-leveltext="" data-font="Symbol" data-listid="10" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="11" data-aria-level="1"><span data-contrast="none">It can he</span><span data-contrast="auto">lp with patient navigation, and pretreatment and survivorship visits</span><span data-contrast="none">.</span><sup><span data-contrast="none">3,12</span></sup></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/talking-points.svg" alt="" />
+                    <h6>Facilitate clear communication while using secure messaging</h6>
+                          <a data-modal="CSYnlC" class="button open-modal" href="#" data-id="CSYnlC">Click to view</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="CSYnlC" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Facilitate clear communication while using secure messaging</h4>
+                                      <ul>
+<li data-leveltext="●" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="12" data-aria-level="1"><span data-contrast="none">Avoid multi-part questions and take care to ensure that writing can be understood.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="●" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="13" data-aria-level="1"><span data-contrast="none">Be aware of the patient’s health literacy. </span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="●" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="14" data-aria-level="1"><span data-contrast="none">Avoid acronyms and words that are not suitable for a lay audience.</span><span data-ccp-props="{}"> </span></li>
+<li data-leveltext="●" data-font="Symbol" data-listid="7" data-list-defn-props="{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;●&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}" aria-setsize="-1" data-aria-posinset="14" data-aria-level="1"><span data-contrast="none">Consider a back-up plan in case the offered secure messaging option fails.</span><span data-ccp-props="{&quot;335557856&quot;:16777215,&quot;335559738&quot;:240,&quot;335559739&quot;:240}"> </span></li>
+</ul>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="implementing-secure-messaging-in-your-practice" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Implementing secure messaging in your practice								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h4>Select your platform</h4>
+<ul>
+<li>See <a href="https://link.cep.health/securemessage27" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Verified solutions list for virtual visits (OH)</a> to find secure messaging solutions that meet provincial standards for privacy, security, technology and functionality.</li>
+<li>Consider both practice and patient needs when choosing a secure messaging platform.</li>
+<li>Consider if it’s important to have secure messaging integrated with a current clinical information system (e.g., EMR, HIS, etc.). Some systems have existing secure messaging features that can be activated.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h4 id="prepareyourteam">Prepare your team</h4>
+<ul>
+<li>Ensure that all team members are consulted and involved including office assistants, nurses and administrators.</li>
+<li>Dedicate sufficient time for implementation.</li>
+<li>Consider relevant policies around use of secure messaging such as <a href="https://link.cep.health/securemessage31" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Virtual care (CPSO).</a></li>
+<li>Plan elements of workflow as a team:<sup>1</sup><!-- wp:list -->
+<ul>
+<li>Each practice will have an existing workflow in which to integrate secure messaging.  Consider approaches to using secure messaging that take your practice’s needs into account:<!-- wp:list -->
+<ul>
+<li>Standardize work processes such as patient training and message triage.<!-- wp:list -->
+<ul>
+<li>Who is checking and triaging messages, and how often?</li>
+<li>How are they sent to the clinician for review?</li>
+<li>How is a message sent from the office to the patient?</li>
+<li>What happens if a patient doesn’t read a message? What does follow-up look like?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set up at least one practice inbox.</li>
+<li>Set up an automatic reply for all clinical messages informing patients when they can expect a response and when to seek urgent care .</li>
+<li>Set up a dedicated inbox for collecting patient documents, photographs and data. A team member can monitor and add files to the medical record.</li>
+<li>Ensure all messages and associated attachments are documented in the patient’s medical record. Leveraging a secure messaging platform that is integrated into your clinical information system (e.g., EMR) can help facilitate this. See <a href="https://link.cep.health/securemessage32" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Medical records documentation (CPSO)</a>.</li>
+</ul>
+</li>
+<li>Establish specific subject lines with key words to help triage and sort messages.</li>
+<li>Plan how to communicate changes to patients: letters, in-person, email or telephone?</li>
+<li>Communicate expectations for clinician management of secure messages.</li>
+<li>For consistency, organize training at the practice level, if possible, instead of leaving it to individual clinicians.</li>
+<li>Schedule interactive training opportunities to allow care team members to engage with the patient facing side of the platform.</li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Checkmark-Large-2.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h4 id="prepareyourpatients">Prepare your patients</h4>
+<ul>
+<li>Confirm tech literacy, access to technology and reliable internet connection.<sup>13</sup></li>
+<li>Identify patients’ preferences for the available secure messaging options.<sup>13</sup></li>
+<li>Ask whether patients are comfortable with secure messaging and in what context.<sup>13</sup></li>
+<li>Ensure patient preference and capacity are documented and accessible to others within the practice (e.g., Medical Office Assistant, other care team members).<sup>14 </sup></li>
+<li>In-person and online tutorials may help with patient uptake. Some platforms will offer training as part of their service.<sup>13</sup></li>
+</ul>
+          </div>
+        </div>
+
+      </div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW248798768 BCX0"><span class="TextRun Highlight SCXW248798768 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW248798768 BCX0" data-ccp-parastyle="Bibliography"><span class="FieldRange SCXW69759250 BCX0"><span class="TextRun SCXW69759250 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW69759250 BCX0" data-ccp-parastyle="Bibliography">OMD Educates &#8211; Secure </span><span class="NormalTextRun SCXW69759250 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW69759250 BCX0" data-ccp-parastyle="Bibliography">essaging 101 [Internet]. 2023. Available from: <a href="https://link.cep.health/securemessage10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://vimeo.com/892654083?share=copy</a></span></span></span></span></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW249904138 BCX0"><span class="TextRun SCXW249904138 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">Steitz</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography"> BD, </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">Unertl</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography"> KM, Levy MA. An </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">a</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">nalysis of </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">e</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">lectronic </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">h</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">ealth </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">r</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">ecord </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">w</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">ork to </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">anage </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">a</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">synchronous </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">linical </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">essages among </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">b</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">reast </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">ancer </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">are </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">t</span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">eams. Appl Clin Inform. 2021 Aug;12(4):877–87. </span><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">Available from: </span><a href="https://link.cep.health/securemessage11" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="NormalTextRun SCXW249904138 BCX0" data-ccp-parastyle="Bibliography">https://pubmed.ncbi.nlm.nih.gov/34528233/</span></a></span></span><span class="EOP SCXW249904138 BCX0" data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:504,&quot;335559739&quot;:240,&quot;335559740&quot;:240,&quot;335559991&quot;:504,&quot;469777462&quot;:[500],&quot;469777927&quot;:[0],&quot;469777928&quot;:[1]}"> </span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">Conroy M, Powell M, </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">Suelzer</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography"> E, </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">Pamulapati</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography"> S, Min H, Wright T, et al. </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">E</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">lectronic </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">edical </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">r</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">ecord-</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">b</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">ased </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">e</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">lectronic </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">essaging</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography"> a</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">mong </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">p</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">atients with </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">b</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">reast </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">ancer: A </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">s</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">ystematic </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">r</span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">eview. Appl Clin Inform. 2023 Jan;14(1):134–43. </span><span class="NormalTextRun SCXW24240907 BCX0" data-ccp-parastyle="Bibliography">Available from: <a href="https://link.cep.health/securemessage12" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/36581054/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">Lee JL, Isenberg S, Adams G, Thurston M, Hammer PM, Mohanty SK, et al. Asynchronous </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">onferencing </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">t</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">hrough a </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">s</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">ecure </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">essaging </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">a</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">pplication </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">i</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">ncreases </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">r</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">eporting of </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">edical </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">e</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">rrors in a </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">ature </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">tr</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">auma </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">enter. J Patient </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">Saf</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography"> Risk </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">Manag</span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">. 2023 Oct;28(5):208–14. </span><span class="NormalTextRun SCXW178315984 BCX0" data-ccp-parastyle="Bibliography">Available from: <a href="https://link.cep.health/securemessage13" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/38405201/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">Fujioka JK, Nguyen M, Phung M, Bhattacharyya O, Kelley L, </span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">Stamenova</span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography"> V, et al. Impact of virtual visits on primary care physician </span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">workflows</span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">. Can Fam Physician. 2023 Apr;69(4</span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">):e</span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">86–93. </span><span class="NormalTextRun SCXW145241738 BCX0" data-ccp-parastyle="Bibliography">Available from: <a href="https://link.cep.health/securemessage14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/37072203/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW215006480 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW215006480 BCX0" data-ccp-parastyle="Bibliography">Ontario Medical Association. Privacy and secure electronic communication. 2024 Available from: <a href="https://link.cep.health/securemessage26" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.oma.org/member/practice-professional-support/running-your-practice/operations-and-practice-management/cybersecurity/privacy/</a> </span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">Baltaro</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography"> E, Henderson W, Goldstein KM. Patient </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">e</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">lectronic </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">essaging: 12 </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">ti</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">ps to </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">s</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">ave </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">t</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">ime. Fam </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">Pract</span> <span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">Manag</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">. 2022 Nov;29(6):5–9. </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">Available </span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">friom</span><span class="NormalTextRun SCXW142475667 BCX0" data-ccp-parastyle="Bibliography">: <a href="https://link.cep.health/securemessage15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/36378593/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">McCormack J, Lehmann CU, Lusk KG, Ayers </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">Wickenhauser</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography"> K, </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">Arvisais</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">-Anhalt S, </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">Feterik</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography"> K. Direct </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">s</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">ecure </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">essaging in </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">p</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">ractice: Addressing </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">w</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">orkflow </span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW32551960 BCX0" data-ccp-parastyle="Bibliography">hallenges. In: MEDINFO 2023 — The Future Is Accessible [Internet]. IOS Press; 2024 [cited 2024 Apr 10]. p. 189–93. Available from: <a href="https://link.cep.health/securemessage16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://ebooks.iospress.nl/doi/10.3233/SHTI230953</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">Lieu TA, </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">Altschuler</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography"> A, Weiner JZ, East JA, Moeller MF, </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">Prausnitz</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography"> S, et al. Primary </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">are </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">p</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">hysicians’ </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">e</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">xperiences </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">w</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">ith</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography"> and </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">s</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">trategies for </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">anaging </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">e</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">lectronic </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">essages. JAMA </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">Netw</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography"> Open. 2019 Dec 27;2(12</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">):e</span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">1918287. </span><span class="NormalTextRun SCXW45299748 BCX0" data-ccp-parastyle="Bibliography">Available from: <a href="https://link.cep.health/securemessage17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/31880798/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">Robinson SA, Zocchi M, Purington C, Am L, DeLaughter K, </span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">Vimalananda</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography"> VG, et al. Secure </span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">essaging for </span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">d</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">iabetes </span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">anagement: Content </span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">a</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">nalysis. JMIR Diabetes. 2023 Mar 23;</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">8:e</span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">40272. </span><span class="NormalTextRun SCXW140252024 BCX0" data-ccp-parastyle="Bibliography">Available from: <a href="https://link.cep.health/securemessage18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10131591/</a></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW104054366 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">Ontario Health. Clinically </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">a</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">ppropriate </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">u</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">se</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography"> of </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">v</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">irtual </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">are in </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">p</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">rimary </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">are</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">: Phase II – hypertension guidance reference </span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">document </span> <span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">[</span><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">Internet]. 2023. Available from: </span></span><a href="https://link.cep.health/securemessage23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="TextRun Underlined SCXW104054366 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-charstyle="Hyperlink">https://www.ontariohealth.ca/sites/ontariohealth/files/Hypertension</span></span><span class="TextRun SCXW104054366 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW104054366 BCX0" data-ccp-parastyle="Bibliography">VirtualCareGuidance-ReferenceDocument.pdf</span> </span></a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW16607889 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="auto"><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">Neeman</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography"> E, Kumar D, Lyon L, </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">Kolevska</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography"> T, Reed M, </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">Sundaresan</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography"> T, et al. Attitudes and </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">p</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">erceptions</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography"> of </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">ultidisciplinary </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">ancer </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">are </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">c</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">linicians </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">t</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">oward </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">t</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">elehealth and </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">s</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">ecure </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">m</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">essages. JAMA </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">Netw</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography"> Open. 2021 Nov 1;4(11</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">):e</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">2133877</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">. </span> <span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">Available </span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">fro</span><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography">m: </span></span><a href="https://link.cep.health/securemessage20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="TextRun Underlined SCXW16607889 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="none"><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-charstyle="Hyperlink">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8613601/</span></span></a><span class="TextRun SCXW16607889 BCX0" lang="EN-GB" xml:lang="EN-GB" data-contrast="auto"><span class="NormalTextRun SCXW16607889 BCX0" data-ccp-parastyle="Bibliography"><br />
+</span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="FieldRange SCXW244092427 BCX0"><span class="TextRun SCXW244092427 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW244092427 BCX0">Hefner JL, Sieck CJ, Walker DM. Patient and physician perspectives on training to improve communication through secure messaging: Clarifying the rules of engagement. Health Care Manage Rev. 2022 Mar 1;47(1):3–11. </span><span class="NormalTextRun SCXW244092427 BCX0">Available from: <a href="https://link.cep.health/securemessage21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/32379081/</a></span></span></span></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p><span class="TextRun SCXW127630206 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW127630206 BCX0">Ontario Health. Clinically </span><span class="NormalTextRun SCXW127630206 BCX0">a</span><span class="NormalTextRun SCXW127630206 BCX0">ppropriate </span><span class="NormalTextRun SCXW127630206 BCX0">u</span><span class="NormalTextRun SCXW127630206 BCX0">se</span><span class="NormalTextRun SCXW127630206 BCX0"> of </span><span class="NormalTextRun SCXW127630206 BCX0">v</span><span class="NormalTextRun SCXW127630206 BCX0">irtual </span><span class="NormalTextRun SCXW127630206 BCX0">c</span><span class="NormalTextRun SCXW127630206 BCX0">are in </span><span class="NormalTextRun SCXW127630206 BCX0">p</span><span class="NormalTextRun SCXW127630206 BCX0">rimary </span><span class="NormalTextRun SCXW127630206 BCX0">c</span><span class="NormalTextRun SCXW127630206 BCX0">are </span><span class="NormalTextRun SCXW127630206 BCX0">g</span><span class="NormalTextRun SCXW127630206 BCX0">uidance </span><span class="NormalTextRun SCXW127630206 BCX0">r</span><span class="NormalTextRun SCXW127630206 BCX0">eference </span><span class="NormalTextRun SCXW127630206 BCX0">d</span><span class="NormalTextRun SCXW127630206 BCX0">ocument [Internet]. 2022. Available from: </span></span><a class="Hyperlink SCXW127630206 BCX0" href="https://link.cep.health/securemessage24" target="_blank" rel="noreferrer noopener external" data-wpel-link="external"><span class="TextRun Underlined SCXW127630206 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="none"><span class="NormalTextRun SCXW127630206 BCX0" data-ccp-charstyle="Hyperlink">https://www.ontariohealth.ca/sites/ontariohealth/files/202211/ClinicallyAppropriateUseVirtualCarePrimaryCare.pdf</span></span></a></p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgement-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgement and legal								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p><span data-contrast="none">The Secure Messaging resource </span><span data-contrast="none">was developed using the Centre for Effective Practice’s (CEP’s) integrated knowledge translation approach. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology.</span><span data-contrast="none"> End users and clinical experts were also engaged to provide feedback.</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> This resource was developed by the Centre for Effective Practice in collaboration with Ontario Health with resources and guidance provided by OntarioMD and Ontario Medical Association (OMA).</span></p>
+<p>This resource was developed for licensed health care professionals in Ontario as a guide only and does not constitute medical or other professional advice. Health care professionals are required to exercise their own clinical judgement in using this tool. Neither the CEP, Government of Ontario, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this resource; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this resource by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this resource, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this resource (whether specifically named or not) that are owned or operated by their parties, including any information or advice contained therein.</p>
+<p><i><span data-contrast="none">This resource is a product of the CEP. Permission to use, copy, and distribute this material is for all </span></i><i><span data-contrast="none">noncommercial</span></i><i><span data-contrast="none"> and research purposes is granted, provided the above disclaimer, this paragraph and the following paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of this resource for commercial purposes or any modifications of the resource are subject to charge and must be negotiated with the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">).</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><i><span data-contrast="none">For statistical and bibliographic purposes, please notify the CEP (</span></i><a href="mailto:info@cep.health"><i><span data-contrast="none">info@cep.health</span></i></a><i><span data-contrast="none">) of any use or reprinting of the resource. Please use the following citation when referencing the resource: Reprinted with Permission from Centre for Effective Practice. (April</span></i><i><span data-contrast="none"> 2024</span></i><i><span data-contrast="none">). Secure Messaging.</span></i><i><span data-contrast="none"> Ontario. Toronto: Centre for Effective Practice.</span></i><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:true,&quot;335559738&quot;:0}"> </span></p>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":61775,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

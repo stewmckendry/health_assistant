@@ -1,0 +1,129 @@
+{
+  "document_id": "cep_management_of_chronic_non_cancer_pain",
+  "source_url": "https://tools.cep.health/tool/management-of-chronic-non-cancer-pain/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "pain_msk",
+  "extracted_at": "2025-09-24T15:33:06.361499",
+  "content_hash": "1324787c40bced6fdde2f6a64a7aee8d6ac094658abdaaf5818f63103606c50c",
+  "title": "Management of Chronic Non-Cancer Pain",
+  "tool_slug": "management-of-chronic-non-cancer-pain",
+  "navigation": [],
+  "key_content": {
+    "assessment_tools": [
+      "PHQ-9",
+      "GAD-7"
+    ],
+    "red_flags": [
+      "Identify pain diagnoses (e.g. osteoarthritis, fibromyalgia, neuropathic pain, etc.)Document relevant physical examination based on diagnosed pain condition(s)If suspectedComplex Regional Pain Syndrome",
+      "Patient has poor functional capacityPatient has moderate to high levels of distressPatient has failed to benefit from other, less comprehensive therapiesIf referring patient for CRPS, urgent consultat"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Baseline and ongoing assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Guidance on conducting a baseline assessment",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Guidance on conducting an ongoing assessment",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "The Baseline and Ongoing Assessment guides are designed to help develop and monitor a treatment plan for patients with CNCP.They are not designed to diagnose specific CNCP conditions.Consider completing a thorough Baseline Assessment for the following: Patients with a new diagnosis of CNCPPatients who are new to your practice with a diagnosis of CNCPPatients currently in your practice with a diagnosis of CNCP Identify pain diagnoses (e.g. osteoarthritis, fibromyalgia, neuropathic pain, etc.)D..."
+    },
+    {
+      "heading": "Management plan",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Based on the assessment, identify the\u00a0non-pharmacological and/or pharmacological treatments\u00a0that you and your patient feel comfortable starting.To learn more about the non-pharmacological and/or pharmacological options, considerations and guidance on initiating, adapting, and evaluating treatments click on the relevant sections below. This patient record and treatment plan is designed to help providers document the \u2018agreed-on\u2019 plan that can be filed in a patient\u2019s chart and referred to during..."
+    },
+    {
+      "heading": "Non-pharmacological therapies",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Tips on initating treatment(s)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Tips on adapting treatment(s)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Tips on evaluating treatment(s)",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Non-pharmacological treatments should be considered for all patients with CNCP.1Choose treatments that you and the patient feel comfortable with and then initiate, adapt, and evaluate the treatment plan (use motivational interviewing techniques, as appropriate). When determining the benefit of a therapy, an improvement of 30% in pain and function scores is considered clinically meaningful;2however, even a smaller improvement may be meaningful to the patient. Exercise, regardless of form, is r..."
+    },
+    {
+      "heading": "Non-opioid medicationsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Non-opioid medications, in combination with non-pharmacological therapies, are the preferred treatment for CNCP.1Choose a treatment that you and the patient feel comfortable with and then initiate, adapt, and evaluate the treatment plan. Most patients have either a good response (an improvement of 30% in pain and function scores is considered clinically meaningful) or have no response.2 Start with ONE medication and evaluate"
+    },
+    {
+      "heading": "Opioid medications",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Opioid medications are not the preferred treatment for CNCP but may be considered in selected patients.If opioids are used, they should be combined with non-pharmacological treatments and non-opioid medications as appropriate.2 Before trying opioids, it is not necessary to sequentially \u201cfail\u201d non-pharmacological or non-opioid pharmacological therapies, though it is important to weigh expected benefits and risks of therapy.2There is no high quality evidence showing that opioids improve pain or..."
+    },
+    {
+      "heading": "Intervention management and referral",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Ensure that all necessary and relevant information, as required by the clinic or specialist, is included when initiating a referral. Patient has moderate to high levels of distressPatient has difficulty adjusting to a life with painPatient is struggling to change their behaviour and maintain normal activitiesPatient is referred to specialist pain service Treatment failure after trial of 4 drugs for neuropathic painOpioid dose is greater than 90 MME2Inadequate response to non-specialist manage..."
+    },
+    {
+      "heading": "Supporting materials and resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Management of Chronic Non-Cancer Pain Appendices A-CComplex Regional Pain Syndrome (CRPS)Brief Pain Inventory (BPI)PHQ-9GAD-7CORE Neck and Headache toolCORE Back Pain toolOpioid Risk ToolOpioid ManagerOpioid Tapering TemplateOpioid Use Disorder ToolOpioid Risk: Urine Drug Testing GuideOpioid treatment agreementSBIRT (Screening, Brief Intervention, and Referral to Treatment)Centers for Disease Control Pocket Guide: Tapering opioids for chronic painOntario Pharmacy Evidence Network (OPEN): Evid..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Scottish Intercollegiate Guideline Network (SIGN). Sign Guideline 136: Management of chronic pain. 2013.[2]Centers for Disease Control and Prevention (CDC): CDC Guideline for Prescribing Opioids for Chronic Pain. 2016; 65(1).[3]2017 Canadian Guideline for Opioids for Chronic Non-Cancer Pain. Canada: Michael G. DeGroote National Pain Centre. 2017 [cited 2018 July 2].[4]Registered Nurses\u2019 Association of Ontario. Assessment and Management of Pain (3rd ed.). Toronto, ON: Registered Nurses\u2019 Ass..."
+    },
+    {
+      "heading": "Legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by Centre for Effective Practice with collaboration from the Ontario College of Family Physicians and the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the tool was provided by Dr. Arun Radhakrishnan, MSc, MD, CM CCFP and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario a..."
+    }
+  ],
+  "references": [],
+  "summary": "Management of Chronic Non-Cancer Pain. Category: Pain Msk. Features: algorithm, calculator, forms. Tools: PHQ-9, GAD-7. 9 main sections"
+}

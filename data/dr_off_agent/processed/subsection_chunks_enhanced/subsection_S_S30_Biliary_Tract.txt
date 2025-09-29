@@ -1,0 +1,90 @@
+Subsection: Biliary Tract
+Parent Section: S
+Page Reference: S30
+Pages: 698 to 699
+Text chunks: 1
+Total text length: 4483 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 698 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+BILIARY TRACT
+Asst Surg Anae
+Note:
+Unless otherwise specified, there is no additional fee payable for cholangiogram during
+abdominal surgery.
+ENDOSCOPY
+Endoscopic retrograde cholangiopancreatography (ERCP)
+# Z561 - with cannulation of common bile duct and/or pancreatic duct 213.15 6
+# Z558 - including sphincterotomy and may include removal of one or
+more bile duct stones ......................................................... 300.25 6
+# Z760 - through gastrojejunostomy following previous Billroth II .... 251.85 6
+# E702 - with multiple (3 or more) biopsies of a specific lesion add 15.10
+# E666 - with biliary tract manometry ....................................... add 52.30
+# E662 - with intraductal cytology brushing or intraductal biopsy
+................................................................................... add 49.75
+# E668 - with cannulation of minor papilla................................ add 93.80
+# E680 - with insertion of first endobiliary prosthesis and/or
+pancreatic stent (maximum 1).................................... add 82.35
+# E681 - with insertion of each additional endobiliary prosthesis
+and/or pancreatic stent (maximum 3) ........................ add 43.60
+# E669 - with oesophagoscopy-gastroscopy and may include
+duodenoscopy............................................................ add 102.75
+Note:
+E662, E666, E668, E702, E680, E681, E669 are payable with Z561, Z558 or Z760.
+# Z593 Nasobiliary catheter insertion ................................................. 55.25
+INCISION
+# S233 Percutaneous trans-hepatic catheter drainage of obstructed
+bile ducts including daily supervision and including
+percutaneous cholangiogram and catheterization to
+duodenum if achieved ........................................................ 394.25
+# S234 Replacement of catheter in above.......................................... 64.85
+Biliary duct calculus manipulation and/or removal via T-tube tract
+# Z562 - as sole procedure............................................................... 116.20 7
+# Z542 Intubation of bile duct for obstruction...................................... 85.25
+Amd 12 Draft 1 S30 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 699 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+BILIARY TRACT
+Asst Surg Anae
+INCISION
+# S278 Cholecystostomy .................................................................... 7 408.05 7
+# S276 Choledochotomy (previous cholecystectomy) ........................ 7 610.20 8
+# S280 Transduodenal sphincterotomy and choledochotomy (previous
+cholecystectomy)................................................................ 7 844.65 9
+# S281 Choledochoduodenostomy or choledochoenterostomy or
+choledochocholechostomy ................................................. 7 721.70 9
+# E704 - with choledochoscopy, to S276, S280, S281 or S287 plus
+E721........................................................................... add 46.50
+Note:
+S281 cannot be claimed with S276.
+# S282 Cholecystogastrostomy .......................................................... 7 447.45 7
+# S283 Cholecystoenterostomy .......................................................... 7 447.45 7
+# E743 - with entero-enterostomy, to S281 or S283................. add 153.05
+# S285 Intrahepatic choledochoenterostomy (anastomosis above the
+common hepatic duct bifurcation) ...................................... 9 915.30 12
+EXCISION
+# S287 Cholecystectomy .................................................................... 7 478.00 7
+# E721 - with choledochotomy ................................................. add 122.05
+# E722 - with transduodenal sphincterotomy ........................... add 162.70 1
+# E728 - with truncal or selective vagotomy............................. add 167.65
+# E729 - with highly selective vagotomy................................... add 284.75
+# E794 - with intra-operative cholangiogram, to S287.............. add 35.85
+# S291 Choledochectomy for tumour* ................................................ 8 406.85 8
+REPAIR
+# S292 Common duct stricture, dissection and/or resection* ............. 7 203.40 10
+# S293 Biliary duct atresia, infant (see General Preamble GP12)...... 8 I.C 12
+# Z596 Extracorporeal shock wave lithotripsy for bile duct calculi...... 314.20 6
+Note:
+* For reconstruction, refer to S281.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S31 Amd 12 Draft 1

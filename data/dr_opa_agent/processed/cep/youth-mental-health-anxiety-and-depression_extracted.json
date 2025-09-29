@@ -1,0 +1,168 @@
+{
+  "document_id": "cep_youth_mental_health_anxiety_and_depression",
+  "source_url": "https://tools.cep.health/tool/youth-mental-health-anxiety-and-depression/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "mental_health",
+  "extracted_at": "2025-09-24T15:33:03.488871",
+  "content_hash": "9f57870fd5536de705f9a24ce7d7bc987d054c396326636fcdfa421ac2ef7118",
+  "title": "Youth Mental Health Anxiety and Depression",
+  "tool_slug": "youth-mental-health-anxiety-and-depression",
+  "last_updated": "June 9, 2016, cited 30 May 2017].",
+  "navigation": [],
+  "key_content": {
+    "assessment_tools": [
+      "PHQ-9",
+      "GAD-7"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Screening / Assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Screen patients aged 12-24 routinely for anxiety and depression. Use questions such as those in theModified Patient Health Questionnaire (PHQ-4), below,2-5to help determine the need for further assessment. Current evidence does not indicate a recommended screening interval for anxiety and depression. It may be appropriate to screen opportunistically.2More frequent screening may be considered for patients with risk factors/red flags; signs and symptoms; and history of anxiety and/or depression..."
+    },
+    {
+      "heading": "Anxiety",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Administer a comprehensive screening test.For those <18 considerScreen for Child Anxiety Related Emotional Disorders (SCARED)For patients \u226518 considerGeneralized\nAnxiety Disorder 7 (GAD-7)For tools to screen for specific anxiety\ndisorders seeSupporting materials"
+    },
+    {
+      "heading": "Depression",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Administer comprehensive screening test such asPHQ-93,6 Begin or schedule time to conduct further assessment of anxiety or depressive symptoms and to evaluate symptom severity as well as the potential for self-harm (Further Assessment)2, 7"
+    },
+    {
+      "heading": "Further assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Consent and confidentiality: when to involve parents/legal guardians?",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Conduct diagnostic assessment8,9",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Additional assessment",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Other considerations",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "A mature minor has the mental capacity to consent to treatment, understands the nature of the treatment, its intended effect and the consequences of refusing it.To assess, try the \u201cteach-back technique\u201d: ask the youth to rephrase what they have been told and invite them to ask questions. Note that if a youth is deemed capable to consent to a specific treatment, e.g., SSRIs, this does not mean they are automatically deemed competent to consent to all treatments.Can a child provide consent?29 Y..."
+    },
+    {
+      "heading": "Create comprehensive mangagement plan",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Psychological therapy options",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological management",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Select medication option for details",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Overcoming barriers to treatment",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Patient care while waiting for referral",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Based on your initial assessment, select a treatment plan that you and your patient are comfortable with. Counsel patient on healthy living (e.g., regular sleep, physical activity, diet)Use psychological therapy as first-lineCognitive Behavioural Therapy (CBT) is first-line therapy alone for mild anxietyConsider pharmacological therapy for select casesSevere impairment4/struggling (e.g., truancy from school, substance use)Unlikely to respond to psychological therapy (due to cognitive or other..."
+    },
+    {
+      "heading": "Follow-up and monitoring",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Follow-up",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Monitoring",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "When starting patients on psychological therapy or pharmacological therapy primary care providers should follow up the week after initiating treatment to check to see if patient is tolerating treatment. Psychological therapy has a success rate of approximately 70%.4Antidepressants have a success rate of approximately 60-80%.21, 22 Response (defined as 25-50% reduction in symptoms) rates may vary by patient and disorder. Initial therapy (psychological and/or medications) is successful in about..."
+    },
+    {
+      "heading": "Resources",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Patient resources for youth and families",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Provider resources",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Ensure that your patient has a crisis plan and resources that they can access when neededKids Help Phone: 1-800-668-6868 (up to age 20)Good2Talk: 1-866-925-5454 (university/college students)Crisis Line: 1-866-996-0991 (all ages)Ontario Distress Centres Wellness Recovery Action Plan (WRAP)Safety plan for youth having thoughts of suicide Offer case management to patients who need help with day-to-day activities, such as shopping, banking, arranging medicalappointments, and budgeting"
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Canadian Mental Health Association \u2013 British Columbia Division. Mental illnesses in children and youth. [Accessed 15 May 2017].[2]U.S. Preventive Services Task Force. Final recommendation statement \u2013 depression in children and adolescents: screening. [Accessed 15 May 2017].[3]Siu AL, U.S. Preventive Services Task Force. Screening for depression in adults: U.S. Preventive Services Task Force recommendation Statement. JAMA. 2016;315(4):380-387.[4]Katzman MA, Bleau P, Blier P, Chokka P, Kjern..."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by Centre for Effective Practice with collaboration from the Ontario College of Family Physicians and the NursePractitioners\u2019 Association of Ontario. Clinical leadership for the development of the tool was provided by Dr. Muna Chowdhury MD, CCFP FCFP The tool was subject to external review by health careproviders and other relevant stakeholders. This tool was funded by the Government of Ontario as par..."
+    }
+  ],
+  "references": [],
+  "summary": "Youth Mental Health Anxiety and Depression. Category: Mental Health. Features: calculator, forms, patient resources. Tools: PHQ-9, GAD-7. 9 main sections"
+}

@@ -1,0 +1,36 @@
+============================================================
+OHIP EXTRACTION QUALITY REPORT
+============================================================
+
+## OVERALL STATISTICS
+Total subsections processed: 3
+Successful extractions: 3 (100.0%)
+Failed extractions: 0
+Total fee codes extracted: 65
+Average codes per subsection: 21.7
+
+## FEE EXTRACTION QUALITY
+Codes with valid fees: 63 (96.9%)
+Codes missing fees: 2
+Multi-column fee structures: 0
+Tables detected: 0
+Time requirements found: 0
+
+## DATA QUALITY ISSUES
+
+## COVERAGE BY SECTION
+Section    Subsections  Fee Codes  With Fees  Tables    
+----------------------------------------------------
+E          3            65         63         0         
+
+## SUBSECTIONS WITH NO CODES (1)
+  - E/E1 - Preamble
+
+## QUALITY ASSESSMENT
+✅ High extraction success rate (>95%)
+✅ Good fee capture rate (>80%)
+✅ Low malformed code rate (<1%)
+✅ Low duplicate rate (<5%)
+✅ Good code density (>5 per subsection)
+
+**Overall Quality Score: 5/5**

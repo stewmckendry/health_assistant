@@ -1,0 +1,31 @@
+Subsection: Epididymis and Tunica Vaginalis
+Parent Section: U
+Page Reference: U3
+Pages: 723 to 723
+Text chunks: 1
+Total text length: 765 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 723 ---
+MALE GENITAL SURGICAL PROCEDURES
+EPIDIDYMIS AND TUNICA VAGINALIS
+Asst Surg Anae
+EPIDIDYMIS
+# Z707 Incision of abscess ................................................................. 55.15 6
+# S601 Spermatocele or spermatic granuloma excision..................... 6 207.85 6
+Epididymectomy
+# S602 - unilateral............................................................................. 6 170.65 6
+TUNICA VAGINALIS
+Z708 Hydrocele aspiration............................................................... 19.80
+# S611 Hydrocele excision - unilateral................................................ 6 207.85 6
+Note:
+Hydrocele excision rendered with hernia repair is claimed as E727.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) U3 Amd 12 Draft 1

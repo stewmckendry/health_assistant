@@ -1,0 +1,129 @@
+Subsection: Nose
+Parent Section: P
+Page Reference: P1
+Pages: 631 to 633
+Text chunks: 1
+Total text length: 7185 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 631 ---
+RESPIRATORY SURGICAL PROCEDURES
+Respiratory Surgical ProceduresMarch 4, 2024 (effective April 1, 2024)
+NOSE
+Asst Surg Anae
+Z298 Nasopharynx (including oropharynx, oral cavity and
+hypopharynx) EUGA of nasopharynx for malignant disease
+including biopsies (not eligible for payment if rendered in
+conjunction with tonsillectomy and adenoidectomy or
+quadroscopy)...................................................................... 41.25 6
+Excision of nasopharyngeal or oropharyngeal lesion
+# R181 - with palatal split .................................................................. 6 508.20 7
+R182 - with mandibulotomy, glossotomy and/or palatal split ......... 7 1216.80 10
+Z297 Insertion of prosthesis for nasal septal perforation................. 18.30
+ENDOSCOPY
+Fiberoptic endoscopy of upper airway (nose, hypopharynx or larynx) (IOP)
+Z296 - with flexible endoscope - if only operative procedure
+performed ........................................................................... 20.10
+Z299 - with rigid endoscope, for diagnostic evaluation, or to
+facilitate biopsy or surgical treatment of pathology in the
+posterior nasal cavity, hypopharynx or larynx .................... 8.55
+# Z317 Examination under anaesthesia (EUA) of nose including
+suction cautery for posterior epistaxis - unilateral or bilateral 112.05 6
+# Z306 Excision of middle turbinate concha bullosa - unilateral......... 55.60 7
+INCISION
+# Z301 Drainage of abscess or haematoma....................................... 55.60 6
+# Z302 Turbinate reduction - unilateral or bilateral (by any method) .. 55.60 6
+EXCISION
+Nasal polyp
+Z304 - single .................................................................................. 21.00
+E839 - with flexible endoscope, to Z304................................ add 19.20
+# Z305 - multiple or involving general anaesthetic - unilateral.......... 55.60 7
+Choanal polypectomy
+# Z308 - unilateral............................................................................. 55.60 7
+Biopsy
+Z309 - single .................................................................................. 18.30
+E839 - with flexible endoscope, to Z309................................ add 19.20
+# Z310 - multiple or involving general anaesthetic ........................... 50.90 6
+Removal of foreign body
+# Z311 - local anaesthetic................................................................. 10.55
+E839 - with flexible endoscope, to Z311................................ add 19.20
+# Z312 - general anaesthetic............................................................ 50.90 6
+# M010 Excision of intranasal lesions by lateral rhinotomy approach . 6 493.90 7
+# M011 Excision of other intranasal lesions (see General Preamble
+GP12) ................................................................................. I.C I.C I.C
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P1 Amd 12 Draft 1
+
+--- PAGE 632 ---
+RESPIRATORY SURGICAL PROCEDURES
+NOSE
+Asst Surg Anae
+RECONSTRUCTION
+# M012 Septoplasty............................................................................. 293.95 10
+# M013 Partial septorhinoplasty (excluding osteotomies) ................... 526.00 10
+# M014 Septorhinoplasty..................................................................... 6 541.65 10
+# E841 - with autologous bone or cartilage graft - from site(s) other
+than nose, to a maximum of two, to M014................. add 226.80
+# E842 - with non-autologous graft or implant, to M014........... add 58.60
+# E642 - if performed by external approach using transverse
+columellar and rim incisions with elevation of nasal tip skin
+flap, to M012, M013 or M014..................................... add 119.20
+# E840 - with repair of septal perforation, to M012, M013 or M014
+................................................................................... add 119.20
+# R319 Graft to nose - autologous, bone or cartilage (without
+septorhinoplasty)................................................................ 6 360.45 7
+# R320 non-autologous or prosthetic implant (without
+septorhinoplasty) ................................................................ 6 232.00 7
+Note:
+M013, M014, R319, R320 - These procedures require written prior authorization by a Ministry
+of Health medical consultant. (see Surgical Preamble, paragraph 17).
+# M015 Septodermoplasty (to include fascial and other grafts)........... 306.85 7
+# M016 Repair of septal perforation .................................................... 358.70 7
+# E642 - if performed by external approach using transverse
+columellar and rim incisions with elevation of nasal tip skin
+flap, to M015 or M016................................................ add 119.20
+# M017 Packing for localization of cerebrospinal rhinorrhea............... 39.60 6
+# E603 - with fluorescein injection, to M017............................. add 50.90
+# M033 Closure or opening of nostril for atrophic rhinitis .................... 254.15 7
+# M018 Endonasal augmentation for atrophic rhinitis - unilateral
+(including obtaining graft or preparing implant).................. 306.85 7
+# M020 Repair of choanal atresia - unilateral or bilateral .................... 6 360.45 6
+# M021 Puncture and insertion of tube for choanal atresia - unilateral
+or bilateral .......................................................................... 123.70 6
+# M028 Dilation of choanal atresia - unilateral or bilateral................... 73.80 6
+RECONSTRUCTION
+Rhinoplasty for reconstruction of cleft lip - nasal deformity
+# M030 - complex, to include necessary grafts and septoplasty....... 6 1082.30 7
+# M032 - tip and septum to include total take down of cleft lip.......... 432.45 6
+# M031 - tip and septum reconstruction to include minor lip repair
+(Minor revision, Z-plasty).................................................... 254.15 7
+# E642 - if performed by external approach using transverse
+columellar and rim incisions with elevation of nasal tip skin
+flap, to M030, M032 or M031..................................... add 119.20
+Amd 12 Draft 1 P2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 633 ---
+RESPIRATORY SURGICAL PROCEDURES
+NOSE
+Asst Surg Anae
+Note:
+Cleft lip reconstruction (S013, S014, S015) is not eligible for payment with M030, M031 or
+M032.
+TREATMENT OF EPISTAXIS (NASAL HAEMORRHAGE)
+Z314 Cauterization - unilateral......................................................... 11.50 6
+Z315 Anterior packing - unilateral.................................................... 15.35 6
+Z316 Posterior packing - unilateral or bilateral ................................ 35.50 6
+E839 - with flexible endoscope, to Z314, Z315 or Z316........ add 19.20
+# M027 Ligation of external carotid artery - unilateral.......................... 6 297.25 6
+# R788 Ligation of internal maxillary artery - unilateral ....................... 7 408.10 10
+# R789 Ligation of anterior ethmoidal artery - unilateral ..................... 6 299.85 7
+# Z313 Endoscopic transnasal ligation of the sphenopalatine artery for
+posterior epistaxis - unilateral............................................. 123.70
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) P3 Amd 12 Draft 1

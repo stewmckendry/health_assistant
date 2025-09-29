@@ -1,0 +1,836 @@
+{
+  "subsection_title": "Heart and Pericardium",
+  "parent_section": "Q",
+  "page_ref": "Q2",
+  "pages_processed": "648-655",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "R700",
+      "description": "With hypothermia and without bypass - basic fee for cardiovascular procedures",
+      "fee": 25,
+      "units": null,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "Z759",
+      "description": "Removal of failed vascular graft without arterial reconstruction - when sole procedure",
+      "fee": 189.55,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E655",
+      "description": "Re-operation for failed vascular grafts - for repair or replacement of existing prosthesis (more than one month after original operation)",
+      "fee": 348.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E650",
+      "description": "Includes cannulating and decannulating heart or major vein, major artery, supervision of pump and pump run",
+      "fee": 371.0,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E682",
+      "description": "Graft of major vessel other than ascending aorta for the purpose of cardiopulmonary bypass or ventricular assist device, to E650",
+      "fee": 423.85,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z788",
+      "description": "Includes cannulating and decannulating, by any method, heart, vein and/or artery and repair of vessels if rendered.",
+      "fee": 366.5,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z743",
+      "description": "Open circulatory assist device",
+      "fee": 307.8,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z780",
+      "description": "Percutaneous circulatory assist device",
+      "fee": 219.8,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z744",
+      "description": "Open decannulation of circulatory assist device",
+      "fee": 123.05,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z781",
+      "description": "Percutaneous decannulation of circulatory assist device",
+      "fee": 39.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z751",
+      "description": "Open repositioning of intra-aortic balloon pump",
+      "fee": 127.95,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z782",
+      "description": "Percutaneous repositioning of intra-aortic balloon pump",
+      "fee": 82.55,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E670",
+      "description": "Re-operation involving open heart procedures following previous thoracotomy",
+      "fee": 224.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E671",
+      "description": "Re-operation involving open heart procedures following previous sternotomy",
+      "fee": 543.6,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R765",
+      "description": "Open cardiac massage",
+      "fee": 231.3,
+      "units": 13,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z433",
+      "description": "Replacement of pacemaker pack (single or multiple leads)",
+      "fee": 146.45,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z444",
+      "description": "Insertion of permanent endocardial electrode and implantation of pack, includes insertion of temporary transvenous lead at same surgical procedure by same surgeon",
+      "fee": 323.75,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z445",
+      "description": "Repositioning of permanent endocardial electrode (as separate procedure)",
+      "fee": 323.75,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z435",
+      "description": "Insertion of permanent endocardial electrode(s)",
+      "fee": 154.1,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z436",
+      "description": "Exposure of vein and implantation of pack",
+      "fee": 166.55,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R752",
+      "description": "Atrio-ventricular sequential pacemaker with permanent atrial and ventricular endocardial electrodes",
+      "fee": 454.55,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R751",
+      "description": "Implantation of epicardial electrode(s) plus implantation of pack",
+      "fee": 465.0,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z429",
+      "description": "Implantation of coronary sinus lead for biventricular pacing",
+      "fee": 299.25,
+      "units": 8,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R701",
+      "description": "Uni-ventricular ventricular assist device",
+      "fee": 721.6,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R702",
+      "description": "Bi-ventricular ventricular assist device",
+      "fee": 1334.8,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R703",
+      "description": "Paracorporeal ventricular assist device",
+      "fee": 1443.05,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R704",
+      "description": "Implantable ventricular assist device",
+      "fee": 2163.35,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R705",
+      "description": "Removal of ventricular assist device",
+      "fee": 508.55,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z412",
+      "description": "Replacement or repair of pacemaker lead",
+      "fee": 110.75,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z428",
+      "description": "Pacemaker lead extraction, including the use of extraction sheathes, with or without laser or similar technology",
+      "fee": 598.5,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E628",
+      "description": "Each additional lead extraction",
+      "fee": 194.5,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R753",
+      "description": "Implantation of cardioverter (CD) defibrillator by thoracotomy",
+      "fee": 720.3,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R761",
+      "description": "Implantation of cardioverter (CD) defibrillator by transvenous approach",
+      "fee": 587.35,
+      "units": 8,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z415",
+      "description": "Removal and/or replacement of implantable cardioverter defibrillator",
+      "fee": 339.45,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "M137",
+      "description": "Thoracotomy with or without biopsy",
+      "fee": 390.65,
+      "units": 13,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "M134",
+      "description": "Thoracotomy for post-operative haemorrhage",
+      "fee": 390.65,
+      "units": 13,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z401",
+      "description": "Aspiration of pericardium",
+      "fee": 131.7,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z414",
+      "description": "Injection of pericardial sclerosing agents",
+      "fee": 23.1,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R750",
+      "description": "Open biopsy of pericardium and drainage (transthoracic or epigastric)",
+      "fee": 317.85,
+      "units": 13,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R748",
+      "description": "Pericardiectomy one side open",
+      "fee": 635.45,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R749",
+      "description": "Pericardiectomy both sides open or sternal split",
+      "fee": 1001.4,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R712",
+      "description": "Cardiotomy with exploration",
+      "fee": 525.75,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R713",
+      "description": "Cardiotomy with removal of foreign body",
+      "fee": 635.45,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R714",
+      "description": "Cardiotomy with removal of tumour",
+      "fee": 525.75,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E660",
+      "description": "Epicardial E.P.S. mapping",
+      "fee": 185.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E661",
+      "description": "Endocardial E.P.S. mapping",
+      "fee": 185.15,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E658",
+      "description": "HIS Bundle ablation",
+      "fee": 278.1,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R711",
+      "description": "Division of accessory conduction pathway (to include cardiotomy, mapping with or without HIS bundle)",
+      "fee": 741.55,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R709",
+      "description": "Left atrial ablative procedure for surgical treatment of atrial arrhythmia (either Cox-Maze procedure or performed using an energy source)",
+      "fee": 778.65,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R706",
+      "description": "Right and left atrial ablative procedure for treatment of atrial arrhythmia - surgical procedure or performed with an energy source",
+      "fee": 1245.85,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R710",
+      "description": "Resection/ablation for ventricular tachycardia (to include cardiotomy, mapping with or without HIS bundle)",
+      "fee": 1112.15,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R920",
+      "description": "Ventricular tumour",
+      "fee": 712.15,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R746",
+      "description": "Ventricular aneurysm",
+      "fee": 864.5,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R747",
+      "description": "Aneurysm of sinus of Valsalva",
+      "fee": 783.55,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E648",
+      "description": "Excision of extensive endocardial scar, to ventriculotomy or aneurysm repair",
+      "fee": 135.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R741",
+      "description": "Coronary artery endarterectomy and/or gas endarterectomy",
+      "fee": 730.7,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E651",
+      "description": "When done in conjunction with coronary artery repair",
+      "fee": 202.05,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R740",
+      "description": "Left atrial appendage occlusion/excision by suture or device, Sole procedure",
+      "fee": 400.0,
+      "units": 7,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E521",
+      "description": "When done in conjunction with another procedure",
+      "fee": 200.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R742",
+      "description": "One coronary artery repair",
+      "fee": 895.55,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R743",
+      "description": "Two coronary artery repairs",
+      "fee": 1278.1,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E654",
+      "description": "Each additional coronary artery repair",
+      "fee": 188.85,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E645",
+      "description": "Off pump coronary artery bypass grafting, to R742 or R743",
+      "fee": 371.0,
+      "units": 40,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E652",
+      "description": "Use of internal mammary or epigastric or radial artery for construction of bypass graft, to R742 or R743",
+      "fee": 187.85,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E646",
+      "description": "Vein patch angioplasty of coronary artery",
+      "fee": 187.8,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R857",
+      "description": "Interruption of bronchial collateral arteries (one or more arteries) as sole procedure",
+      "fee": 730.7,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "E663",
+      "description": "When done in conjunction with other cardiac surgery",
+      "fee": 183.0,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R754",
+      "description": "Ligation or division patent ductus in infant or child",
+      "fee": 525.75,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R755",
+      "description": "Ligation or division patent ductus in adolescent or adult",
+      "fee": 730.7,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R757",
+      "description": "Resection coarctation in infant",
+      "fee": 785.9,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R756",
+      "description": "Resection coarctation in child",
+      "fee": 755.8,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R758",
+      "description": "Resection coarctation in adolescent or adult",
+      "fee": 984.9,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R759",
+      "description": "Congenital heart procedures - e.g. Blalock, Glenn, Potts, Waterston or Central",
+      "fee": 774.35,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R763",
+      "description": "Creation of ASD by balloon septostomy",
+      "fee": 317.85,
+      "units": 9,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R762",
+      "description": "Creation of ASD by thoracotomy or Sterling Edwards",
+      "fee": 755.8,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R715",
+      "description": "Closure of atrial septal defect secundum",
+      "fee": 755.8,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R716",
+      "description": "Closure of atrial septal defect endocardial cushion and valve defect",
+      "fee": 1124.7,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R717",
+      "description": "Closure of atrial septal defect with anomalous pulmonary venous drainage",
+      "fee": 948.75,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R718",
+      "description": "Closure of ventricular septal defect",
+      "fee": 948.75,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z465",
+      "description": "Device closure of a single defect",
+      "fee": 198.55,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z466",
+      "description": "Device closure of two or more defects",
+      "fee": 347.45,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R870",
+      "description": "Orthotopic cardiac transplantation",
+      "fee": 1443.05,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R872",
+      "description": "Donor cardiectomy",
+      "fee": 481.4,
+      "units": 8,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R874",
+      "description": "Cardiopulmonary transplantation",
+      "fee": 2565.3,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "M157",
+      "description": "Donor Heart - Lung removal",
+      "fee": 906.45,
+      "units": 8,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R720",
+      "description": "Total repair Tetralogy of Fallot - with or without previous arterial shunt",
+      "fee": 1285.0,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R722",
+      "description": "Total anomalous pulmonary venous drainage",
+      "fee": 1152.3,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R723",
+      "description": "Total correction transposition of great vessels",
+      "fee": 1152.3,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R721",
+      "description": "Arterial repair of transposition",
+      "fee": 1739.2,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R921",
+      "description": "Complete A-V canal",
+      "fee": 1480.4,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R922",
+      "description": "Single ventricle",
+      "fee": 1687.5,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R923",
+      "description": "Double outlet - right/left ventricle",
+      "fee": 1516.7,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R924",
+      "description": "Double outlet ventricle with transposition",
+      "fee": 1728.9,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R925",
+      "description": "Truncus arteriosus",
+      "fee": 1718.55,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R926",
+      "description": "Interrupted aortic arch",
+      "fee": 1516.7,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R927",
+      "description": "Aorto-pulmonary window",
+      "fee": 960.4,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R928",
+      "description": "R-V outflow tract with valve and tubular graft",
+      "fee": 1064.55,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R929",
+      "description": "Debanding arterioplasty of pulmonary artery",
+      "fee": 943.45,
+      "units": 28,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R768",
+      "description": "Pulmonary artery banding",
+      "fee": 628.95,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R769",
+      "description": "Pulmonary artery banding with pressure studies by anaesthetist, extra/hour",
+      "fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R770",
+      "description": "Correction of cor triatriatum",
+      "fee": 885.6,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "R771",
+      "description": "Vascular ring",
+      "fee": 755.8,
+      "units": 20,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

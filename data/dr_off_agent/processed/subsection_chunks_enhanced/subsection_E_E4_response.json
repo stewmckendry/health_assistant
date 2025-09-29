@@ -1,0 +1,298 @@
+{
+  "subsection_title": "Miscellaneous Procedures",
+  "parent_section": "E",
+  "page_ref": "E4",
+  "pages_processed": "376-378",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "J001",
+      "description": "Arthrogram, tenogram or bursogram",
+      "fee": 34.0,
+      "units": 7
+    },
+    {
+      "code": "J024",
+      "description": "Bronchial brushing - unilateral",
+      "fee": 89.9,
+      "units": 6
+    },
+    {
+      "code": "J044",
+      "description": "Bronchial brushing - bilateral",
+      "fee": 135.0,
+      "units": 6
+    },
+    {
+      "code": "J002",
+      "description": "Bronchogram - unilateral",
+      "fee": 27.0,
+      "units": 6
+    },
+    {
+      "code": "J043",
+      "description": "Bronchogram - bilateral",
+      "fee": 40.65,
+      "units": 6
+    },
+    {
+      "code": "J003",
+      "description": "Bronchogram with intra-tracheal catheter - unilateral",
+      "fee": 68.0,
+      "units": 6
+    },
+    {
+      "code": "J042",
+      "description": "Bronchogram with intra-tracheal catheter - bilateral",
+      "fee": 82.2,
+      "units": 6
+    },
+    {
+      "code": "J050",
+      "description": "Carotid or vertebral artery occlusion by detachable balloon - percutaneous",
+      "fee": 297.3
+    },
+    {
+      "code": "J053",
+      "description": "Cavernosography",
+      "fee": 45.35
+    },
+    {
+      "code": "J005",
+      "description": "Dacrocystogram",
+      "fee": 45.4,
+      "units": 6
+    },
+    {
+      "code": "J006",
+      "description": "Discogram - one disc",
+      "fee": 105.3,
+      "units": 7
+    },
+    {
+      "code": "J030",
+      "description": "Discogram - each additional disc",
+      "fee": 54.05
+    },
+    {
+      "code": "J049",
+      "description": "Embolization of spinal arteriovenous malformation - percutaneous",
+      "fee": 437.3,
+      "units": 6
+    },
+    {
+      "code": "J036",
+      "description": "Fistula or sinus injection",
+      "fee": 26.95
+    },
+    {
+      "code": "J068",
+      "description": "Hydrostatic/pneumatic reduction of intussusception",
+      "fee": 44.25,
+      "units": 7
+    },
+    {
+      "code": "J008",
+      "description": "Hysterosalpingogram",
+      "fee": 56.7,
+      "units": 6
+    },
+    {
+      "code": "J004",
+      "description": "Intramammary needling for localization under mammographic control",
+      "fee": 70.35
+    },
+    {
+      "code": "J009",
+      "description": "Laryngogram",
+      "fee": 33.5
+    },
+    {
+      "code": "J010",
+      "description": "Lymphangiogram - per side",
+      "fee": 105.3
+    },
+    {
+      "code": "J037",
+      "description": "Mammary ductography",
+      "fee": 70.35
+    },
+    {
+      "code": "J011",
+      "description": "Myelogram",
+      "fee": 93.4,
+      "units": 6
+    },
+    {
+      "code": "J038",
+      "description": "Myelogram - with supine views requiring removal and re-introduction of spinal needle",
+      "fee": 21.75
+    },
+    {
+      "code": "J020",
+      "description": "Myelogram - with posterior fossa views",
+      "fee": 23.85
+    },
+    {
+      "code": "J012",
+      "description": "Nephrotomogram",
+      "fee": -6
+    },
+    {
+      "code": "J060",
+      "description": "Nephrostogram",
+      "fee": 34.0
+    },
+    {
+      "code": "J045",
+      "description": "Percutaneous antegrade pyelogram",
+      "fee": 140.55,
+      "units": 6
+    },
+    {
+      "code": "J055",
+      "description": "Percutaneous gastrostomy",
+      "fee": 257.6
+    },
+    {
+      "code": "J061",
+      "description": "Percutaneous cecostomy",
+      "fee": 257.6
+    },
+    {
+      "code": "J062",
+      "description": "Percutaneous cholecystostomy",
+      "fee": 257.6
+    },
+    {
+      "code": "J063",
+      "description": "Percutaneous jejunostomy",
+      "fee": 298.8
+    },
+    {
+      "code": "J064",
+      "description": "Exchange of drainage tubes, including supervision, imaging and hard copy film interpretation if any",
+      "fee": 72.65
+    },
+    {
+      "code": "J046",
+      "description": "Percutaneous nephrostomy",
+      "fee": 257.6,
+      "units": 6
+    },
+    {
+      "code": "J041",
+      "description": "Percutaneous removal of intravascular and intraureteric foreign bodies",
+      "fee": 339.9,
+      "conditions": "IC"
+    },
+    {
+      "code": "J065",
+      "description": "Dilation of non-vascular structures",
+      "fee": 23.6,
+      "units": 6
+    },
+    {
+      "code": "J059",
+      "description": "Non-vascular stenting",
+      "fee": 116.9
+    },
+    {
+      "code": "J069",
+      "description": "Percutaneous focal thermal ablation of solid tumours using CT or ultrasound guidance",
+      "fee": 515.7,
+      "units": 6
+    },
+    {
+      "code": "J051",
+      "description": "Percutaneous spinal cord puncture for syringogram",
+      "fee": 108.9,
+      "units": 6
+    },
+    {
+      "code": "J013",
+      "description": "Percutaneous trans-hepatic cholangiogram",
+      "fee": 121.25,
+      "units": 6
+    },
+    {
+      "code": "J057",
+      "description": "Transjugular intrahepatic portosystemic shunt (TIPS)",
+      "fee": 906.45,
+      "units": 7
+    },
+    {
+      "code": "J052",
+      "description": "Positive contrast cisternogram",
+      "fee": 99.9,
+      "units": 6
+    },
+    {
+      "code": "Z597",
+      "description": "Intracavitary/intratumoural injections",
+      "fee": 103.75,
+      "units": 7
+    },
+    {
+      "code": "J039",
+      "description": "Renal cyst puncture",
+      "fee": 140.4,
+      "units": 6
+    },
+    {
+      "code": "J018",
+      "description": "Sialogram",
+      "fee": 52.25,
+      "units": 6
+    },
+    {
+      "code": "J007",
+      "description": "Tomogram",
+      "fee": -7
+    },
+    {
+      "code": "J028",
+      "description": "Urethrogram and/or urethrocystogram and/or or intestinal conduit examination, cystogram",
+      "fee": 34.0
+    },
+    {
+      "code": "J029",
+      "description": "Vasogram",
+      "fee": 69.0,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "Z562",
+      "context": "Note",
+      "description": "Biliary duct calculus manipulation etc.",
+      "source_subsection": "Miscellaneous Procedures",
+      "source_page": "E4"
+    },
+    {
+      "code": "Z540",
+      "context": "Note",
+      "description": "Intubation of small intestine",
+      "source_subsection": "Miscellaneous Procedures",
+      "source_page": "E4"
+    },
+    {
+      "code": "J069",
+      "context": "Payment rules",
+      "description": "Only eligible for payment for focal thermal ablation of solid tumours in patients meeting clinical criteria consistent with current clinical practice guidelines",
+      "source_subsection": "Miscellaneous Procedures",
+      "source_page": "E4"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

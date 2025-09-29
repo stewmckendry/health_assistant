@@ -1,0 +1,9 @@
+{
+  "tool_id": "cep_dementia_diagnosis",
+  "slug": "dementia-diagnosis",
+  "name": "Dementia Diagnosis",
+  "category": "mental_health",
+  "url": "https://tools.cep.health/tool/dementia-diagnosis/",
+  "content_hash": "f28c4728bc8dda4a4b3e088f78567ba2119d6c3c9db5a76f015c70463e5085c6",
+  "crawled_at": "2025-09-24T15:01:12.523991"
+}

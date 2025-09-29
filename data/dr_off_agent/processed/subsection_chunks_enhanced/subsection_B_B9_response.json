@@ -1,0 +1,147 @@
+{
+  "subsection_title": "Nervous System and Respiratory System",
+  "parent_section": "B",
+  "page_ref": "B9",
+  "pages_processed": "333-333",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        6,
+        "J857 - with Tc99m or I-131 HSA..................................................... 120.25 45.75"
+      ],
+      [
+        7,
+        "J885 - with In-111 ........................................................................... 308.20 45.75"
+      ],
+      [
+        8,
+        "J886 - via shunt puncture ............................................................... 88.55 44.45"
+      ],
+      [
+        9,
+        "J858 Brain scintigraphy .................................................................... 90.40 44.80"
+      ],
+      [
+        11,
+        "J859 Perfusion lung scintigraphy ..................................................... 85.90 36.05"
+      ],
+      [
+        12,
+        "J887 Ventilation lung scintigraphy .................................................... 107.70 36.05"
+      ],
+      [
+        13,
+        "J860 Perfusion and ventilation scintigraphy - same day .................. 171.85 75.90"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J857",
+      "description": "CSF circulation - with Tc99m or I-131 HSA",
+      "fee": 120.25,
+      "h_fee": 120.25,
+      "p_fee": 45.75,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J885",
+      "description": "CSF circulation - with In-111",
+      "fee": 308.2,
+      "h_fee": 308.2,
+      "p_fee": 45.75,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J886",
+      "description": "CSF circulation - via shunt puncture",
+      "fee": 88.55,
+      "h_fee": 88.55,
+      "p_fee": 44.45,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J858",
+      "description": "Brain scintigraphy",
+      "fee": 90.4,
+      "h_fee": 90.4,
+      "p_fee": 44.8,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J859",
+      "description": "Perfusion lung scintigraphy",
+      "fee": 85.9,
+      "h_fee": 85.9,
+      "p_fee": 36.05,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J887",
+      "description": "Ventilation lung scintigraphy",
+      "fee": 107.7,
+      "h_fee": 107.7,
+      "p_fee": 36.05,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "J860",
+      "description": "Perfusion and ventilation scintigraphy - same day",
+      "fee": 171.85,
+      "h_fee": 171.85,
+      "p_fee": 75.9,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

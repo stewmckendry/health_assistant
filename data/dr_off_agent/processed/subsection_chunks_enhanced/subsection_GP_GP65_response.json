@@ -1,0 +1,164 @@
+{
+  "subsection_title": "Special Visit Premiums",
+  "parent_section": "GP",
+  "page_ref": "GP65",
+  "pages_processed": "79-92",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "K960",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "max. 2 per time period"
+    },
+    {
+      "code": "K990",
+      "description": "First person seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "K991",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "U960",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "max. 2 per time period"
+    },
+    {
+      "code": "U990",
+      "description": "First person seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "U991",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "C960",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "max. 2 per time period"
+    },
+    {
+      "code": "C990",
+      "description": "First person seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "C991",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "W960",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "max. 2 per time period"
+    },
+    {
+      "code": "W990",
+      "description": "First person seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "W991",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "H960",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "max. 2 per time period"
+    },
+    {
+      "code": "H980",
+      "description": "First person seen",
+      "fee": 20.0,
+      "units": "max. 5 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "H981",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "max. 5 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "B960",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "max. 2 per time period"
+    },
+    {
+      "code": "B990",
+      "description": "First person seen",
+      "fee": 27.5,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "B991",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "max. 10 (total of first and additional person seen) per time period"
+    },
+    {
+      "code": "B966",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "no max. per time period"
+    },
+    {
+      "code": "B998",
+      "description": "First person seen",
+      "fee": 82.5,
+      "units": "no max. per time period"
+    },
+    {
+      "code": "B997",
+      "description": "Additional person(s) seen",
+      "fee": 20.0,
+      "units": "no max. per time period"
+    },
+    {
+      "code": "B986",
+      "description": "Travel Premium",
+      "fee": 36.4,
+      "units": "no max. per time period"
+    },
+    {
+      "code": "B988",
+      "description": "First person seen",
+      "fee": 82.5,
+      "units": "no max. per time period"
+    },
+    {
+      "code": "C989",
+      "description": "Obstetrical Delivery with Sacrifice of Office Hours",
+      "fee": 76.4,
+      "units": "max. 1 per time period"
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

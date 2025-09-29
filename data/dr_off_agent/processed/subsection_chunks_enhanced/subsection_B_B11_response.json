@@ -1,0 +1,39 @@
+{
+  "subsection_title": "Scintimammography",
+  "parent_section": "B",
+  "page_ref": "B11",
+  "pages_processed": "335-335",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        16,
+        "J863 - unilateral or bilateral ........................................................... 99.95 40.30"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "J863",
+      "description": "unilateral or bilateral",
+      "fee": 99.95,
+      "h_fee": 40.3,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": "Scintimammography is not eligible for payment unless at least one of the specified conditions is met.",
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}

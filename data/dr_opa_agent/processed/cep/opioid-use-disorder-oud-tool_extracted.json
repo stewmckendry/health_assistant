@@ -1,0 +1,164 @@
+{
+  "document_id": "cep_opioid_use_disorder_oud_tool",
+  "source_url": "https://tools.cep.health/tool/opioid-use-disorder-oud-tool/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "substance_use",
+  "extracted_at": "2025-09-24T15:33:04.682413",
+  "content_hash": "e0df5105cd82138ac516ccc07b9a7ff8268c99e15e873e6250f84336917cc215",
+  "title": "Opioid Use Disorder (OUD)",
+  "tool_slug": "opioid-use-disorder-oud-tool",
+  "last_updated": "November 1, 2022",
+  "navigation": [
+    {
+      "title": "Buprenorphine\u2013naloxone vs. methadone21",
+      "anchor": "#BNM",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "assessment_tools": [
+      "PHQ-9",
+      "GAD-7"
+    ],
+    "red_flags": [
+      "Do you ever use more of your medication, that is, take a higher dose, than is prescribed for you?Do you ever use your medication more often, that is, shorten the time between doses, than is prescribed"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Screening for and diagnosing OUDNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Screening for OUD",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Diagnosing OUD",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "OUD is a complex issue that can occur at any time in one\u2019s life and presents differently for everyone. If you suspect that your patient may be at risk of struggling with OUD, use the Prescription Opioid Misuse Index (POMI). The POMI is a 6-point questionnaire with strong predictive abilities for OUD.24 Do you ever use more of your medication, that is, take a higher dose, than is prescribed for you?Do you ever use your medication more often, that is, shorten the time between doses, than is pre..."
+    },
+    {
+      "heading": "Opioid agonist therapy (OAT)",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Buprenorphine\u2013naloxone vs. methadone21",
+          "anchor": "#BNM",
+          "level": 3
+        }
+      ],
+      "summary": "OAT involves taking the opioid agonists buprenorphine-naloxone or methadone in order to prevent withdrawal and reduce cravings for opioids.25 Buprenorphine-naloxone is considered first-line treatment for OUD. Buprenorphine-naloxone is a 4:1 mixture of buprenorphine to naloxone that is administered sublingually. Buprenorphine is a long-acting semi-synthetic partial opioid agonist that relieves opioid withdrawal symptoms and cravings. The inclusion of naloxone is intended to prevent diversion t..."
+    },
+    {
+      "heading": "Prescribing considerations for buprenorphine-naloxoneNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "General approach",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Any patient that is considering OAT with buprenorphine-naloxone should sign a patient agreement form with their provider to ensure that the patient is aware of all of their roles and responsibilities during treatment:Refer to the Machealth resource Buprenorphine Reference GuidePatients should be offered concurrent psychosocial treatment, support, and monitoring for at least six months while on treatment1 Patients living with chronic pain \u201cI know that you have pain and no one is questioning th..."
+    },
+    {
+      "heading": "Treatment protocolsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Office treatment",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Protocol",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Home treatment",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Protocol",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Office treatment is the preferred method of treatment to ensure that patients do not go into precipitated withdrawal.7 Plan treatment for a weekday morning, allowing for reassessment later the same day18Monday mornings are the most optimal18Refer to theMachealth resource Buprenorphine Reference Guideon how to prescribe buprenorphine-naloxoneIdentify the pharmacy to be used:Confirm that they stock buprenorphine-naloxone Rx for 6\u00d72 mg buprenorphine-naloxone tablets20and that doses will be dispe..."
+    },
+    {
+      "heading": "Follow-up visits and maintenanceNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Urine Drug Screening (UDS)",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "For patients who do not stabilize on buprenorphine-naloxone",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "After two to four weeks, stable patients can take their medication at home. Consider if your patient is stable on buprenorphine-naloxone: Patients are considered stable if they are attending appointments, getting their dose regularly, and there is no ongoing opioid use, verified by UDSTake home doses are typically increased every one to two weeks to a maximum of six for three to six months, and can then be increased to two to four weeks of take home doses at a timeTake home doses are usually ..."
+    },
+    {
+      "heading": "Tapering off buprenorphine-naloxoneNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "It is important to acknowledge that treatment failure and success does not rely on the duration of a patient being on OAT. OUD is a chronic, relapsing condition that requires a life-long dedication to its management. The end goal of every OAT is to not necessarily taper off of the medication, as every patient\u2019s journey is unique and individual to their own needs. Providers must discuss at length how long their patients should remain on treatment and how treatment should be managed. This secti..."
+    },
+    {
+      "heading": "ResourcesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Canadian Medical Association Journal (CMAJ) Management of opioid use disorders: a national clinical practice guidelineDSM-5 OUD criteriaClinical Opiate Withdrawal Scale (COWS)Subjective Opiate Withdrawal Scale (SOWS)Ontario Telemedicine Network (OTN) eConsultMETA:PHI RAAM ClinicsOntario College of Family Physicians (OCFP) Peer Connect MentorshipMachealth Buprenorphine Reference GuideOntario Pharmacists Association (OPA) OTA lineSubstance Abuse and Mental Health Services Administration (SAMHSA..."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Health Quality Ontario (HQO). Opioid Use Disorder Care for People 16 Years of Age and Older. 2018. [cited 2018 September 10].[2]McMaster University. Canadian Guideline for Safe and Effective Use of Opioids for Chronic Non-Cancer Pain. [cited 2018 August 30].[3]Centre for Effective Practice. Management of Chronic Non Cancer Pain Tool. 2017. [cited 2018 July 13].[4]McMaster University. The 2017 Canadian Guideline for Opioids for Chronic Non-Cancer Pain. 2017. [cited 2018 August 10].[5]Govern..."
+    },
+    {
+      "heading": "Acknowledgments and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "This Tool was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice in collaboration with the Ontario College of Family Physicians and the Nurse Practitioners\u2019 Association of Ontario. Clinical leadership for the development of the Tool was provided by Jennifer Wyman, MD, CCFP, FCFP, DABAM, MPH and Arun Radhakrishnan, MSc, MD, CM CCFP and was subject to external review by health care providers and other relevant stakeholders. This T..."
+    }
+  ],
+  "references": [],
+  "summary": "Opioid Use Disorder (OUD). Category: Substance Use. Features: calculator, forms, patient resources. Tools: PHQ-9, GAD-7. 9 main sections"
+}

@@ -1,0 +1,82 @@
+Subsection: Nuclear Medicine (63)
+Parent Section: A
+Page Reference: A138
+Pages: 266 to 267
+Text chunks: 1
+Total text length: 4349 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 266 ---
+CONSULTATIONS AND VISITS
+NUCLEAR MEDICINE (63)
+GENERAL LISTINGS
+A635 Consultation............................................................................ 157.00
+Comprehensive nuclear medicine consultation
+A comprehensive nuclear medicine consultation is a consultation rendered by a specialist in
+nuclear medicine who provides all the appropriate elements of a consultation and spends a
+minimum of seventy-five (75) minutes of direct contact with the patient exclusive of time spent
+rendering any other separately billable intervention to the patient.
+A835 Comprehensive nuclear medicine consultation ...................... 310.45
+Medical record requirements:
+The start and stop times must be recorded in the patient’s permanent medical record
+[Commentary:
+1.A835 must satisfy all the elements of a consultation (see page GP16).
+2.The calculation of the 75 minute minimum time for comprehensive nuclear medicine
+consultation excludes time devoted to any other service or procedure for which an amount is
+payable in addition to the consultation.]
+Diagnostic consultation
+A diagnostic nuclear medicine consultation is the service rendered:
+a. when nuclear medicine studies rendered at one institution or facility are referred to a nuclear
+medicine specialist in a different institution or facility for a written opinion. In this case, the
+specific elements are the same as the nuclear medicine professional component (see page
+B1); or
+b. when a nuclear medicine specialist is required to make a special visit at evening or night
+(17:00h to 07:00h) or on a Saturday, Sunday, or holiday to consult on the advisability of
+performing a nuclear medicine procedure, which eventually is not done. In this case, the
+specific elements are the same as for consultations (see page GP16).
+A735 Diagnostic consultation........................................................... 67.40
+Payment rules:
+A diagnostic nuclear medicine consultation is not eligible for payment when studies rendered in
+a different institution or facility are used for comparison purposes with nuclear medicine studies
+rendered in the consultant’s institution or facility.
+A636 Repeat consultation................................................................ 70.00
+A633 Specific assessment............................................................... 60.00
+A638 Partial assessment ................................................................. 40.00
+Minor assessment
+A minor assessment is the service rendered when a nuclear medicine specialist evaluates a
+patient on a non-emergent basis resulting in the cancellation or deferral of a planned diagnostic
+nuclear medicine procedure due to procedural difficulties, including lack of patient cooperation,
+if no other diagnostic nuclear medicine procedure is rendered.
+A631 Minor assessment................................................................... 17.75
+Amd 12 Draft 1 A138 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 267 ---
+CONSULTATIONS AND VISITS
+NUCLEAR MEDICINE (63)
+Minor assessment
+A minor assessment is the service rendered when a nuclear medicine specialist evaluates a
+patient on a non-emergent basis on the advisability of performing a diagnostic nuclear
+medicine procedure which eventually is not done.
+A632 Minor assessment................................................................... 17.75
+EMERGENCY OR OUT-PATIENT DEPARTMENT (OPD)
+Physician in hospital but not on duty in the Emergency Department when seeing patients in the
+Emergency or OPD - use General Listings.
+NON-EMERGENCY HOSPITAL IN-PATIENT SERVICES
+See General Preamble GP40 to GP48. For emergency calls and other special visits to in-
+patients, use General Listings and Premiums when applicable - see General Preamble GP65
+to GP78.
+C635 Consultation............................................................................ 157.00
+C835 Comprehensive nuclear medicine consultation - subject to the
+same conditions of A835 .................................................... 310.45
+C735 Diagnostic consultation - subject to the same conditions as
+A735 ................................................................................... 67.40
+C636 Repeat consultation................................................................ 70.00
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) A139 Amd 12 Draft 1

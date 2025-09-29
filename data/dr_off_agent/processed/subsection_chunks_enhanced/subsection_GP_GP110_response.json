@@ -1,0 +1,49 @@
+{
+  "subsection_title": "Emergency Department Alternative Funding Agreements",
+  "parent_section": "GP",
+  "page_ref": "GP110",
+  "pages_processed": "124-124",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": false,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": false,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "A100",
+      "description": "General/Family Physician Emergency Department Assessment",
+      "fee": 0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "ED AFA",
+      "context": "contract relating to the emergency department alternative funding agreement",
+      "description": "Emergency Department Alternative Funding Agreements",
+      "source_subsection": "Emergency Department Alternative Funding Agreements",
+      "source_page": "GP110"
+    },
+    {
+      "code": "GP Experts",
+      "context": "entitled to submit fee-for-service claims under the hospital\u2019s ED AFA GP Expert group number",
+      "description": "General practitioner experts",
+      "source_subsection": "Emergency Department Alternative Funding Agreements",
+      "source_page": "GP110"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

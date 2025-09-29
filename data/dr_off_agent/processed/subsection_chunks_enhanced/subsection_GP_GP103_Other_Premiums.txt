@@ -1,0 +1,268 @@
+Subsection: Other Premiums
+Parent Section: GP
+Page Reference: GP103
+Pages: 117 to 123
+Text chunks: 1
+Total text length: 14342 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 117 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+OTHER PREMIUMS
+INTENSIVE OR CORONARY CARE UNIT PREMIUM
+C101 For each patient seen on a visit to ICU or CCU (subject to the
+exceptions set out below) ..................................................add 9.10
+Payment rules:
+C101 is not eligible for payment with Supportive Care or with Critical Care, Ventilatory Care,
+Comprehensive Care, Acquired Brain Injury Management or Neonatal Intensive Care where
+team fees are claimed.
+[Commentary:
+C101 is also payable alone when no other separate fee is payable for the service provided in
+the ICU or CCU (e.g. post-operative care by surgeon).]
+INTERNAL MEDICINE OFFICE ASSESSMENT PREMIUM
+The Internal Medicine Office Assessment Premium is payable automatically to an eligible physician
+subject to the definitions and rules described below.
+Definitions:
+"Qualifying services" means A133, A134, A131, and A138.
+"Fiscal year" means April 1 - March 31st.
+"Qualifying year" means the fiscal year preceding the date of determination of eligibility.
+"Date of determination of eligibility" means the date upon which the General Manager determines that
+the conditions for payment in (1) or (2) below, have been met.
+Payment rules:
+For the 12 month period following the date of determination of eligibility for the premium, the
+amount payable to a physician shall be automatically increased by 12% for the qualifying
+services in the following circumstances:
+1.The physician is practicing solely as a general internist and has submitted all claims using the
+specialty designation of Internal Medicine (13) in the qualifying year.
+HOSPITALIST PREMIUM
+The Hospitalist premium is payable automatically to an eligible physician subject to the definitions and
+rules described below.
+Definitions:
+"Qualifying services" means E082, C122, C123, C124, C002, C007, C009, C132, C137, C139, C142,
+C143, A/C933, and C882/C982.
+"Fiscal year" means April 1 - March 31st.
+"Qualifying year" means the fiscal year preceding the date of determination of eligibility, except in
+cases where the physician has taken a pregnancy or parental leave during this period as confirmed by
+an application to the Pregnancy and Parental Leave Benefits Program. In such cases, "Qualifying
+year" means the most recent fiscal year not impacted by the leave.
+"Date of determination of eligibility" means the date upon which the General Manager determines that
+the conditions for payment in (1), (2), and (3) below, have been met.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP103 Amd 12 Draft 1
+
+--- PAGE 118 ---
+GENERAL PREAMBLE
+OTHER PREMIUMS
+Payment rules:
+For the 12 month period following the date of determination of eligibility for the premium, the
+amount payable to a physician shall be automatically increased by 17% for all qualifying
+services except for E082 in the following circumstances:
+1.The physician has provided at least 1500 qualifying services in the qualifying year; and
+2.The physician has provided at least one qualifying service per day on at least 110 days in the
+qualifying year; and
+3.The physician is a General and Family Practice (00) or an Internal Medicine (13) specialist.
+AFTER HOURS PROCEDURE PREMIUMS
+These premiums are payable only when the following criteria are met:
+a. the service provided is one of the following:
+Non-elective Surgical Procedures (including fractures or dislocations), Obstetrical Deliveries,
+Clinical Procedures Associated with Diagnostic Radiological Examinations, Ground Ambulance
+Transfer (K101), Air Ambulance Transfer (K111), Transport of Donor Organs (K102), Return
+Trip (K112), or one of the following Major Invasive Procedures:
+G060, G061, G062, G065, G066, G067, G068, G082, G083, G085, G090, G099, G117, G118,
+G119, G125, G176, G177, G178, G179, G211, G224, G246, G248, G249, G260, G261, G262,
+G263, G268, G269, G275, G277, G279, G280, G282, G287, G288, G290, G297, G298, G303,
+G309, G322, G323, G324, G330, G331, G336, G347, G348, G349, G356, G376, G379, G380,
+G509, J001 to J068, and X112 when required for intussusception
+and;
+b. the procedure is either (a) non-elective; or (b) an elective procedure which, because of an
+intervening surgical emergency procedure(s) was delayed and commenced between:
+Emergency Department Physician
+E412 Evenings (17:00h – 24:00h) Monday to Friday or daytime and
+evenings on Saturdays, Sundays, Holidays - increase the
+procedural fee(s) by ............................................................ 20%
+E413 Nights (00:00h – 07:00h) - increase the procedural fee(s) by . 40%
+Physician – other than an Emergency Department Physician
+E409 Evenings (17:00h – 24:00h) Monday to Friday or daytime and
+evenings on Saturdays, Sundays, Holidays - increase the
+procedural fee(s) by ........................................................... 50%
+E410 Nights (00:00h – 07:00h) - increase the procedural fee(s) by . 75%
+Payment rules:
+1. E409/E410 is not payable for a procedure rendered by an Emergency Department Physician
+2. E412/E413 is only payable for a procedure rendered by an Emergency Department Physician
+who at the time the service was rendered is required to submit claims using “H” prefix
+emergency services.
+[Commentary:
+See General Preamble GP50 for definitions and conditions for Emergency Department
+Physician.]
+Amd 12 Draft 1 GP104 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 119 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+OTHER PREMIUMS
+AFTER HOURS SPECIAL VISIT PREMIUMS FOR DIAGNOSTIC SERVICES
+All special visit premiums are subject to the maximums, limitations and conditions set out in the
+"Special Visit Premium Table" applicable in the circumstances.
+Subject to the provision set out below, these special visit premiums are eligible for payment for non-
+elective services rendered by specialists in Diagnostic Radiology, Radiation Oncology or Nuclear
+Medicine for an acute care hospital in-patient, out-patient or emergency department patient for
+services listed in the following sections of the Schedule:
+Nuclear Medicine, Radiation Oncology, Diagnostic Radiology, Clinical Procedures Associated with
+Diagnostic Radiology Examinations, Magnetic Resonance Imaging and Diagnostic Ultrasound.
+When a physician providing one or more of the foregoing non-elective services renders a special visit
+(as defined under “Special Visit” page GP65) in the hospital during the time periods set out below for
+the purpose of interpreting the results of a diagnostic service, performing a procedure, rendering a
+diagnostic radiology or nuclear medicine consultation or to conclude that a procedure is not medically
+indicated, a special visit premium is eligible for payment payable in addition to the appropriate
+diagnostic radiology or nuclear medicine consultation, interpretation, or procedural fee, or by itself if
+the decision is made not to perform the procedure.
+Payment rules:
+1.These special visit premiums are not eligible for payment for services rendered outside of a
+hospital, for example via PACS.
+2.Only one special visit person seen premium is eligible for payment per patient regardless of
+the number of eligible services rendered during the same special visit for that patient.
+3.These special visit premiums are not eligible for payment in addition to any other special visit
+premium for the same special visit.
+4.For the purpose of interpreting the results of a diagnostic service or performing a diagnostic
+service, these special visit premiums are only eligible for payment if the request for the
+interpretation relates to a patient’s condition requiring urgent interpretation that affects the
+patient’s management.
+[Commentary:
+The specific requirements for special visits are found on pages GP65 to GP78.]
+March 4, 2024 (effective April 1, 2024)
+SPECIAL VISIT PREMIUM TABLE - NON ELECTIVE DIAGNOSTIC SERVICES
+Non-elective Diagnostic Services
+Premium Evenings (17:00-
+Sat., Sun. and Holidays
+24:00) Monday Nights (00:00- 07:00)
+(07:00- 24:00)
+through Friday
+Travel $36.40 $36.40 $36.40
+Premium C102 C103 C104
+(max. 2 per time period) (max. 6 per time period) (no max. per time period)
+First person $60.00 $75.00 $100.00
+seen C109 C108 C110
+(max. 2 per time period) (max. 6 per time period) (no max. per time period)
+Additional $60.00 $75.00 $100.00
+person(s) C105 C106 C107
+seen (max. 2 per time period) (max. 6 per time period) (no max. per time period)
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP105 Amd 12 Draft 1
+
+--- PAGE 120 ---
+GENERAL PREAMBLE
+OTHER PREMIUMS
+[Commentary:
+For the purposes of non-elective diagnostic services special visit premiums, first person seen
+and additional person(s) seen mean the eligible diagnostic service(s) rendered for each
+individual patient.]
+Amd 12 Draft 1 GP106 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 121 ---
+GENERAL PREAMBLE
+March 4, 2024 (effective April 1, 2024)
+OTHER PREMIUMS
+AFTER HOURS SPECIAL VISIT PREMIUMS
+The following premiums are payable for providing management and supervision of continuous
+catheter infusions for analgesia for a hospital in-patient (G247) rendered during the time periods set
+out below:
+E402 Evenings (17:00h – 24:00h) Monday to Friday or daytime and
+evenings on Saturday, Sunday or Holidays ......... add 40%
+E403 Nights (00:00h – 07:00h) .......................................... add 50%
+[Commentary:
+For additional information, refer to the Nerve Blocks for Acute Pain Management section of the
+Schedule.]
+AFTER HOURS PREMIUMS FOR URGENT CT/MRI INTERPRETATION
+Subject to the provisions set out below, these premiums are payable in addition to the CT or MRI
+services listed in the Diagnostic Radiology and Magnetic Resonance Imaging sections of the
+Schedule for interpreting a CT and/or MRI study on an urgent basis via a picture archiving and
+communication system (PACS), using diagnostic workstations and monitors consistent with Digital
+Imaging and Communications in Medicine (DICOM) standards. The physician must be physically
+present in Ontario at a location other than the hospital where the patient receives the CT or MRI study
+and provide the interpretation via PACS, including review of any relevant prior images available
+through the PACS.
+Evenings, Weekend/Holiday and Nights
+E406 Evenings (17:00h - 24:00h) Monday to Friday........................ 60.00
+E407 Saturdays, Sundays or Holidays daytime and evenings
+(07:00h - 24:00h)................................................................ 75.00
+E408 Nights (00:00h - 07:00h)......................................................... 100.00
+Payment rules:
+1.These premiums are only eligible for payment for an urgent CT or MRI interpretation for an
+acute care hospital in-patient, emergency department or Hospital Urgent Care Clinic patient
+and only if the following requirements are satisfied:
+a.the referral for the interpretation relates to a patient’s condition that requires urgent
+interpretation of a CT or MRI study for the urgent management of the patient;
+b.the referral is from a physician or oral and maxillofacial surgeon who has privileges at the
+hospital where the service is rendered;
+c.the interpreting physician has radiology privileges at the hospital where the request for
+the service originates; and
+d.the interpretation is transmitted to the referring provider within three hours of the
+completion of the CT/MRI study.
+Note:
+If the request for interpretation occurs prior to an eligible after hours period, but the
+interpretation cannot be provided prior to that eligible after hours period due to factors beyond
+the control of the interpreting physician, these premiums remain eligible for payment if the
+payment rules are otherwise satisfied.
+2.E406, E407 and E408 are limited to a maximum of one per patient, per physician, per day,
+regardless of the number of CT and/or MRI images interpreted for that patient.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP107 Amd 12 Draft 1
+
+--- PAGE 122 ---
+GENERAL PREAMBLE
+OTHER PREMIUMS
+3.After hours premiums in excess of the maximums listed in the After Hours Premium Table are
+not eligible for payment.
+Medical record requirements:
+These premiums are only eligible for payment if the patient’s permanent medical record
+contains the following information:
+1.The time of the request and the time of the transmission of the interpretation; and
+2.A description of any factors referred to in the note above.
+Amd 12 Draft 1 GP108 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 123 ---
+GENERAL PREAMBLE
+OTHER PREMIUMS
+AFTER HOURS PREMIUM TABLE – Urgent CT/MRI Services
+Urgent CT/MRI Services
+Evenings Sat., Sun.
+(17:00- 24:00) and
+Nights (00:00-
+Monday Holidays
+07:00)
+through (07:00-
+Friday 24:00)
+$60.00 $75.00 $100.00
+E406 E407 E408
+(max. 2 per (max. 6 per (no max. per
+time period) time period) time period)
+TRAUMA PREMIUM
+Definition/Required elements of service:
+The trauma premium is payable for each of the services and units described below when:
+a. rendered either on the day of the trauma or within 24 hours of the trauma; and
+b. for trauma patients age 16 or more who have an Injury Severity Score (ISS) of greater than
+15, or for patients less than age 16 who have an Injury Severity Score of greater than 12.
+E420 Trauma premium ...................................................... add 50%
+Payment rules:
+1. The premium is applicable to the following services and units;
+a. services listed in the Consultation and Visits Section (Section A of the Schedule);
+b. services listed in the Obstetrics Section (Section K of the Schedule);
+c. services listed in the Surgical Procedures section (Section M through Z of the Schedule);
+d. the following resuscitative services: G395, G391, G521, G522 and G523.
+e. basic and time units provided by surgical assistants; or
+f. basic and time units provided by anaesthesiologists.
+2. The premium is payable only for the services for which the medical record lists the ISS score.
+Claims submission instruction:
+For claims payment purposes, the trauma premium and associated services must be submitted on the
+same claim record.
+[Commentary:
+Other special visit and after hours premiums are payable with services eligible for the trauma
+premium in accordance with the Schedule. However, the trauma premium is not applicable to
+these services.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) GP109 Amd 12 Draft 1

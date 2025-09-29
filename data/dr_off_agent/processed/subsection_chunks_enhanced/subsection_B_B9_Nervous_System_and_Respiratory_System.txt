@@ -1,0 +1,60 @@
+Subsection: Nervous System and Respiratory System
+Parent Section: B
+Page Reference: B9
+Pages: 333 to 333
+Text chunks: 1
+Total text length: 901 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": true,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": [
+    [
+      6,
+      "J857 - with Tc99m or I-131 HSA..................................................... 120.25 45.75"
+    ],
+    [
+      7,
+      "J885 - with In-111 ........................................................................... 308.20 45.75"
+    ],
+    [
+      8,
+      "J886 - via shunt puncture ............................................................... 88.55 44.45"
+    ],
+    [
+      9,
+      "J858 Brain scintigraphy .................................................................... 90.40 44.80"
+    ],
+    [
+      11,
+      "J859 Perfusion lung scintigraphy ..................................................... 85.90 36.05"
+    ],
+    [
+      12,
+      "J887 Ventilation lung scintigraphy .................................................... 107.70 36.05"
+    ],
+    [
+      13,
+      "J860 Perfusion and ventilation scintigraphy - same day .................. 171.85 75.90"
+    ]
+  ]
+}
+============================================================
+
+--- PAGE 333 ---
+NUCLEAR MEDICINE - IN VIVO
+NERVOUS SYSTEM AND RESPIRATORY SYSTEM
+H P
+NERVOUS SYSTEM
+CSF circulation
+J857 - with Tc99m or I-131 HSA..................................................... 120.25 45.75
+J885 - with In-111 ........................................................................... 308.20 45.75
+J886 - via shunt puncture ............................................................... 88.55 44.45
+J858 Brain scintigraphy .................................................................... 90.40 44.80
+RESPIRATORY SYSTEM
+J859 Perfusion lung scintigraphy ..................................................... 85.90 36.05
+J887 Ventilation lung scintigraphy .................................................... 107.70 36.05
+J860 Perfusion and ventilation scintigraphy - same day .................. 171.85 75.90
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) B9 Amd 12 Draft 1

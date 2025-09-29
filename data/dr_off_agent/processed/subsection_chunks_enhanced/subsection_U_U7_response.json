@@ -1,0 +1,106 @@
+{
+  "subsection_title": "Prostate",
+  "parent_section": "U",
+  "page_ref": "U7",
+  "pages_processed": "727-728",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z712",
+      "description": "Biopsy, needle",
+      "fee": 85.45,
+      "units": 6
+    },
+    {
+      "code": "Z713",
+      "description": "with drainage abscess",
+      "fee": 92.1,
+      "units": 6
+    },
+    {
+      "code": "S644",
+      "description": "Biopsy, perineal, open operation",
+      "fee": 215.8,
+      "units": 6
+    },
+    {
+      "code": "S645",
+      "description": "Perineal",
+      "fee": 574.6,
+      "units": 6
+    },
+    {
+      "code": "S646",
+      "description": "Perineal with vesiculectomy",
+      "fee": 875.0,
+      "units": 11
+    },
+    {
+      "code": "S647",
+      "description": "Suprapubic - with or without removal of bladder stones",
+      "fee": 643.35,
+      "units": 6
+    },
+    {
+      "code": "S650",
+      "description": "simple",
+      "fee": 643.35,
+      "units": 6
+    },
+    {
+      "code": "S651",
+      "description": "radical",
+      "fee": 1008.35,
+      "units": 10
+    },
+    {
+      "code": "S652",
+      "description": "Staging pelvic lymphadenectomy for prostatic cancer (laparoscopic or open) must include at a minimum bilateral obturator nodes",
+      "fee": 431.2,
+      "units": 10
+    },
+    {
+      "code": "S653",
+      "description": "Laparoscopic radical prostatectomy",
+      "fee": 1411.7,
+      "units": 10
+    },
+    {
+      "code": "S655",
+      "description": "and may include cystoscopy, meatotomy, dilatation of stricture, internal urethrotomy or vasectomy",
+      "fee": 450.6,
+      "units": 7
+    },
+    {
+      "code": "S654",
+      "description": "for residual or regrowth of tissue within one year of previous prostatectomy by same surgeon",
+      "fee": 411.2,
+      "units": 6
+    },
+    {
+      "code": "S656",
+      "description": "Transurethral drainage of abscess",
+      "fee": 85.3,
+      "units": 6
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E792",
+      "context": "when performed laparoscopically, to S647, S650 or S651",
+      "description": "add 25%",
+      "source_subsection": "Prostate",
+      "source_page": "U7"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

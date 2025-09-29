@@ -1,0 +1,421 @@
+Section: K - Obstetrics
+Pages: 517 to 528
+Extracted text length: 26483 characters
+============================================================
+
+--- PAGE 517 ---
+OBSTETRICS
+ObstetricsMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+In addition to the common elements, most obstetrical services have the same specific elements as
+other services listed elsewhere in the Schedule.
+Obstetrical Care includes the following kinds of services:
+a. Prenatal visits (major or minor or high risk) and postnatal care in the office are assessments
+(see General Preamble GP21).
+b. Labour-Delivery services have the specific elements of IOP Surgical Procedures identified
+with prefix # (see Surgical Preamble SP1).
+c. Anaesthetic services have the same specific elements as other services provided by an
+anaesthesiologist (see General Preamble GP92).
+d. Postnatal care in hospital/home (P007) is the initial assessment of a well patient postpartum
+with subsequent assessments of the well patient in the hospital or home until the patient’s
+first visit to the physician’s office. The specific elements for each visit are those for
+assessments (see General Preamble GP21).
+e. Attendance at labour is a service of being in constant or periodic attendance on a patient,
+during stages one and two of labour but without completion of the delivery, to provide all
+aspects of care. This includes the initial assessment, and such subsequent assessments as
+may be indicated, including ongoing monitoring of the patient’s conditions, intervening
+except where intervention is a separately billable service. The specific elements are those of
+assessments (see General Preamble GP21) except element H, but include providing
+premises, equipment, supplies and personnel for any aspects of the specific elements of the
+service that are performed outside the place in which the encounter(s) with the patient
+occurs.
+f. Attendance at delivery, specific elements as for Surgical Assistants’ Services (see General
+Preamble GP85).
+For all other procedures listed in this section the specific elements are those of IOP surgical
+procedures identified with prefix # (see Surgical Preamble SP1) except for removal of Shirodkar
+suture for which the specific elements are those for surgical IOP procedures not identified with prefix
+#.
+Fee schedule codes listed below which do not include providing all premises, equipment and
+personnel used to perform the specific elements of the service are identified with prefix #.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K1 Amd 12 Draft 1
+
+--- PAGE 518 ---
+OBSTETRICS
+PREAMBLE
+OTHER TERMS AND DEFINITIONS
+1. A prenatal major assessment includes a full history, and an examination of all parts or systems
+(and may include a detailed examination of one or more parts or systems), an appropriate
+record and advice to the patient. All other prenatal visits include the necessary history,
+examination, appropriate record and advice to the patient. All prenatal visits (major and minor
+and high risk) include pregnancy-related counselling as a form of providing advice to the patient
+or the patient’s representative.
+A prenatal general assessment is payable after another general assessment only if the reason
+for the first assessment does not pertain to the establishment of the antenatal care.
+Normal (uncomplicated) prenatal care includes a prenatal general assessment visit, then
+monthly visits to 28 weeks, followed by visits every 2nd week to 36 weeks, then weekly visits
+until delivery. However, complicated pregnancies may require additional visits. Labour, delivery
+and postpartum care are listed separately.
+2. If an uncomplicated obstetrical patient is transferred from one physician to another physician for
+obstetrical care, the appropriate assessment benefit may be claimed by the second physician,
+followed by prenatal visits. This statement does not apply to physicians substituting for each
+other or when the second physician sees the patient for the first time in labour. If the obstetrical
+patient is referred to a consultant for obstetrical care because of the complexity, obscurity or
+seriousness of the case, the consultant may claim a consultation in addition to the prenatal
+visits.
+3. Illnesses resulting from or associated with pregnancy or false labour requiring added home or
+hospital visits, shall be claimed on a per visit basis.
+4. When a pregnant patient visits her physician for a condition unrelated to her pregnancy and
+apart from her routine scheduled prenatal visits, the physician may claim the appropriate
+assessment.
+5. Fee schedule codes in this section are subject to the provisions of the Surgical Preamble where
+applicable.
+6. An assessment is payable for illness resulting from, or associated with, pregnancy or false
+labour even if the patient progresses to delivery within the next two days. This does not apply to
+patients who are assessed in the first stage of labour and admitted, or are transferred, to the
+delivery room from the antenatal floor in labour.
+7. The listings under the heading Referred Services may be claimed by the consultant physician in
+addition to the appropriate consultation or visit fee. They may not be claimed by physicians
+providing obstetrical care to their own patients.
+8. If a consultant is requested by another physician to perform a surgical induction of labour, or
+emergency removal of a Shirodkar suture (except at delivery) assuming someone else has
+inserted the suture, the consultant should claim a consultation fee for this(these) service(s).
+9. Medical induction or stimulation of labour may be claimed once per pregnancy by any one
+physician and only when carried out for a recognized obstetrical complication(s). The fee listed
+is applicable regardless of the time spent by the physician, therefore, detention may not be
+claimed.
+Amd 12 Draft 1 K2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 519 ---
+OBSTETRICS
+PREAMBLE
+10.The listings for “Attendance at labour and delivery” and for “Attendance of obstetric
+consultant(s) at delivery” may not be claimed by any physician when a patient is transferred to a
+second physician for normal obstetrical care.
+11. Ordinary immediate care of the newborn is included in the labour-delivery fee and when the
+service is rendered by the anaesthetist, it is included in the anaesthetic benefit. A life
+threatening emergency situation requiring active resuscitation of the newborn provided by any
+physician may be claimed under codes G521, G522, G523. When indicated, endotracheal
+intubation and tracheo-bronchial toilet should be billed under G211 and not as G521, G522,
+G523.
+12.When an obstetrician routinely transfers all newborns to another physician, the latter may not
+claim a consultation for these transferals. If the baby is well, the physician should claim newborn
+care in hospital plus attendance at maternal delivery (H007/H267) if this service is provided. If
+the baby is sick, the physician may claim a general assessment and attendance at maternal
+delivery (H007/H267) if this service is provided plus daily visits for as long as his/her services
+are required.
+13.If an obstetrician who normally cares for newborns him/herself or transfers the care of newborns
+to a family physician, refers a newborn to a paediatrician because of the complexity, obscurity or
+seriousness of the case, the latter may claim for this service according to the following
+guidelines:
+a. If attendance at maternal delivery is provided, C263 may be claimed in addition to H267 if a
+general assessment of the baby is carried out. A postnatal consultation of the baby, (C265)
+may not be claimed in addition to attendance at maternal delivery (H267).
+b. If attendance at maternal delivery (H267) is not provided, a postnatal consultation (C265)
+may be claimed, if rendered, whether or not a prenatal consultation has already been
+claimed.
+14.Physicians may claim for assisted breech delivery (P020) when the service includes
+spontaneous delivery to the umbilicus, with extraction of the shoulders, arms and head.
+15.See General Preamble GP104 for After Hours Premiums.
+16.If claims are being submitted in coded form, the obstetrician should add the suffix “A” to the
+listed procedural code, the assistant should add the suffix “B” to the listed procedural code, and
+the anaesthetist should add the suffix “C” to the listed procedural code.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K3 Amd 12 Draft 1
+
+--- PAGE 520 ---
+OBSTETRICS
+PRENATAL CARE
+Asst Surg Anae
+P003 General assessment (major prenatal visit) .............................. 80.35
+Antenatal preventative health assessment
+The service rendered by the most responsible physician for conducting the initial review of
+antenatal risk. The review must examine all current psychosocial, genetic and medical issues
+affecting antenatal risk and must be documented in writing in the patient’s permanent medical
+record. Maximum once per pregnancy. P005 rendered same patient same day same physician
+as any other consultation or visit except P003 and P004 is an insured service payable at nil.
+P005 Antenatal preventative health assessment.............................. 47.70
+P004 Minor prenatal assessment ..................................................... 38.15
+High risk prenatal assessment
+A high risk prenatal assessment is an assessment by a maternal-fetal medicine specialist
+requiring a minimum of 20 minutes in direct contact with the patient for the management of a
+documented significant maternal and/or fetal risk factor(s) where the mother and/or fetus are at
+significant risk for serious complications during the pregnancy.
+P002 High risk prenatal assessment ................................................ 74.70
+Medical record requirements:
+The service is eligible for payment only if start and stop times of the service are recorded in the
+patient's permanent medical record.
+Medical management of early pregnancy - initial service
+Medical management of early pregnancy - initial service when a physician renders an initial
+assessment and administration of cytotoxic medication(s) for the termination of early
+pregnancy or missed abortion. The cost of the drug(s) is not included in the fee for the service.
+A920 Medical management of early pregnancy - initial service........ 161.15
+Payment rules:
+Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service) are not eligible for payment when rendered
+the same day to the same patient by the same physician as A920.
+Medical management of ectopic pregnancy – initial service
+Medical Management of ectopic pregnancy – initial service when a physician renders an initial
+assessment and administration of cytotoxic medication(s) for the termination of an ectopic
+pregnancy. The cost of the drug(s) is not included in the fee for the service.
+A922 Medical management of ectopic pregnancy - initial service .... 207.80
+Payment rules:
+Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service) are not eligible for payment when rendered
+the same day to the same patient by the same physician as A922.
+[Commentary:
+As with all insured services, A920 and A922 must be provided in accordance with professional
+standards - such as those published by the Society of Obstetricians and Gynaecologists of
+Canada.]
+Amd 12 Draft 1 K4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 521 ---
+OBSTETRICS
+PRENATAL CARE
+Asst Surg Anae
+Medical management of early or ectopic pregnancy - follow-up visit
+Medical management of early or ectopic pregnancy - follow-up visit is for a visit that is a follow-
+up of A920 or A922, whether rendered by the same physician who rendered the A920 or A922
+service or by another physician.
+A921 Medical management of early or ectopic pregnancy - follow-up
+visit ..................................................................................... 36.85
+Payment rules:
+1.Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service) are not eligible for payment when
+rendered the same day to the same patient by the same physician as A921.
+2.A921 is limited to two per patient per pregnancy. Services in excess of this limit will be
+adjusted to another assessment fee.
+P001 Medical management of non-viable fetus or intra-uterine fetal
+demise between 14 and 20 weeks gestation ..................... 399.00
+Payment rules:
+1.P001 is only eligible for payment if the length of gestation is confirmed by ultrasound.
+2.Services described as consultations, assessments or counselling (and those procedures that
+are generally accepted components of this service, including cervical ripening and oxytocin
+infusion if rendered) are not eligible for payment when rendered the same day to the same
+patient by the same physician as P001.
+3.Z774 is eligible for payment in addition to P001 if uterine curettage is required for postpartum
+hemorrhage due to retained products.
+[Commentary:
+P001 is only payable for the active medical management of the patient. It is not payable when
+the fetus delivers spontaneously prior to initiating intervention.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K5 Amd 12 Draft 1
+
+--- PAGE 522 ---
+OBSTETRICS
+#
+LABOUR - DELIVERY
+Asst Surg Anae
+# P006 Vaginal..................................................................................... 498.70
+# P020 Operative delivery, i.e. mid-cavity extraction or assisted breech
+delivery ................................................................................ 535.60 6
+# E502 - vaginal birth after caesarean section (VBAC) whether
+successful or unsuccessful .........................................add 51.00
+[Commentary:
+P006 and P020 include the repair of a tear or episiotomy extension, first or second degree,
+when rendered.]
+# P018 Caesarean section................................................................... 6 579.80 7
+# P041 Caesarean section including tubal interruption........................ 6 609.20 7
+# P042 Caesarean section including hysterectomy ............................. 8 1004.60 8
+# E500 - for the third and each subsequent delivery, subject to the
+payment rules set out below, for each additional delivery, to
+P006, P018, P020, P041 or P042...............................add 148.60
+# E499 - for the second caesarian delivery, subject to the payment
+rules set out below, to P018, P041 or P042 ...............add 397.75
+Payment rules:
+1.For vaginal deliveries of two or more infants, P006 or P020 as appropriate is eligible for
+payment for the first delivery, in addition to 85% of P006 or P020 as appropriate for the
+second delivery, and E500 for the third and each subsequent delivery.
+2.For vaginal delivery of the first infant followed by caesarean section, one of P018, P041 or
+P042 as appropriate is eligible for payment, in addition to 85% of P006 or P020 as
+appropriate, and E500 for the third and each subsequent delivery.
+3.For multiple deliveries by caesarean section only (with or without trial of labour), one of P018,
+P041 or P042 as appropriate is eligible for payment, in addition to E499 for the second
+delivery and E500 for the third and each subsequent delivery.
+4.Despite payment rules above, for spontaneous vaginal deliveries between 20 and 23 weeks
+gestational age, only P006 is eligible for payment, regardless of the number of fetuses
+delivered.
+5.Despite payment rules above, for multiple deliveries by caesarean section only between 20
+and 23 weeks gestational age, only one of P018, P041 or P042 as appropriate is eligible for
+payment, in addition to E499 for the second delivery. E500 is not eligible for payment for the
+third or subsequent deliveries.
+6.For delivery of one or more fetuses known to be stillborn in addition to delivery of one or more
+live fetuses, only the delivery of live fetuses is eligible for payment in accordance with the
+payment rules above. If all fetuses are known to be stillborn, only one of P006, P018, P020,
+P041 or P042 as appropriate, is eligible for payment.
+Attendance at labour
+P038 - when patient transferred to another centre for delivery .... 211.20
+Attendance at labour and delivery
+Payable to a physician other than an obstetric consultant for attending labour and delivery
+when the physician either assists at vaginal delivery or surgery, gives anaesthetic at a
+caesarean section or operative delivery, or resuscitates the newborn.
+P009 Attendance at labour and delivery ........................................... 498.70
+Amd 12 Draft 1 K6 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 523 ---
+OBSTETRICS
+LABOUR - DELIVERY
+Asst Surg Anae
+Note:
+Anaesthesia or Assistant units are not eligible for payment when the same physician claims
+P009 on the same patient.
+[Commentary:
+See Obstetrics Preamble p. K1, paragragh "e" for the services included in attendance at labour.
+P009 or P038 is not payable if any of these component services of attendance at labour are not
+rendered.]
+P010 Attendance of obstetric consultant(s) at delivery..................... 211.20
+Note:
+Amount payable for attendance of a physician other than an obstetric consultant at only
+delivery is nil.
+Special visit for first obstetrical delivery with sacrifice of office hours
+Payable in addition to first obstetric delivery in calendar day. Maximum of one per physician per
+calendar day. See General Preamble GP65 for definition of special visit.
+C989 - special visit for first obstetrical delivery with sacrifice of
+office hours .................................................................add 76.40
+Sole delivery premium
+Payable in addition to labour and delivery fees P006A, P009A, E414, P018A, P020A, P038A or
+P041A if sole delivery in calendar day, to maximum of 25 sole delivery premiums per physician
+per fiscal year.
+E411 - sole delivery premium...................................... add 100%
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K7 Amd 12 Draft 1
+
+--- PAGE 524 ---
+OBSTETRICS
+LABOUR - DELIVERY
+Asst Surg Anae
+High risk obstetrical premium
+Payable in addition to labour and delivery procedures when at least one of the following
+conditions are present: fetal prematurity (<32 weeks gestational age), severe pregnancy
+induced hypertension, intrauterine growth retardation (IUGR) less than 10th percentile, or
+significant placental insufficiency as demonstrated by absent umbilical vessel flow or reverse
+systolic/diastolic (S/D) ratio.
+# E414 High risk obstetrical premium ............................................add 62.05
+# P045 Repair of third degree tear or episiotomy extension, must
+include repair of perianal sphincter and perineum .............. 82.15 6
+# P046 Repair of fourth degree tear or episiotomy extension, must
+include repair of rectal mucosa, perianal sphincter and
+perineum ............................................................................. 200.00 6
+Note:
+1.Repair of a tear or episiotomy extension that does not extend into the perianal sphincter (third
+degree) is included in the labour and delivery fee (P006 and P020) and does not constitute
+P045 or P046.
+2.Repair of the superficial transverse perineal muscle constitutes a repair of a second degree
+tear or episiotomy extension and does not constitute P045 or P046.
+Claims submission instructions:
+Claims for P046 submitted by a provider with a specialty other than Obstetrics and Gynecology
+(20) must be submitted for manual review.
+# Z774 Postpartum haemorrhage - exploration of vagina and cervix,
+uterine curettage ................................................................. 113.65 6
+P007 Postnatal care in hospital and/or home ................................... 55.15
+P008 Postnatal care in office ............................................................ 36.85
+REFERRED SERVICES - WHEN ONLY SERVICES(S) RENDERED
+Repair of laceration
+# P036 - vaginal .............................................................................. 54.40 6
+# P039 - cervical.............................................................................. 54.40 6
+# P029 Manual removal of retained placenta ...................................... 54.40 6
+Amd 12 Draft 1 K8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 525 ---
+OBSTETRICS
+OBSTETRICAL ANAESTHESIA
+Asst Surg Anae
+# P013 Obstetrical anaesthesia ........................................................... - 6
+Continuous conduction anaesthesia - see General Preamble GP95
+# P014C - introduction of catheter for labour analgesia, including the
+first dose of medication with or without any combined spinal-
+epidural injection(s) ............................................................. - 7
+# P016C - maintenance of obstetrical epidural anaesthesia (one unit for
+each ½ hour to a maximum of 12) ...................................... -
+# E100C attendance at delivery ............................................................. - 4
+Payment rules:
+1.Anaesthesia extra units listed on GP97 are not eligible for payment with P014C except for
+E010C, E022C and E017C.
+2.Z804 is not eligible for payment with P014C or P016C.
+3.Anaesthesia extra units listed on GP97 are not eligible for payment with P016C or E100C.
+4.E100C time units are payable for time spent in constant attendance at delivery, exclusive of
+time spent engaged in any separately payable services except for P016C. Start and stop
+times must be recorded in the patient’s permanent medical record.
+5.E100C time units for attendance at delivery are calculated as 4 basic units and 1 unit for
+each ¼ hour.
+[Commentary:
+Anaesthesia extra units listed on GP97 are eligible for payment with other C-suffix anaesthesia
+service rendered the same day as P014C/P016C/E100C, unless otherwise listed.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K9 Amd 12 Draft 1
+
+--- PAGE 526 ---
+OBSTETRICS
+HIGH RISK PREGNANCIES
+Asst Surg Anae
+# Z776 Fetal blood sampling ............................................................... 40.80
+# Z773 Fetoscopy (may include fetal blood sample, cell harvest or
+amniocentesis or cordocentesis)......................................... 165.40
+# Z734 Double set up examination to rule out placenta previa, or trial of
+forceps - failed leading to caesarean section (same
+physician) ............................................................................ 58.00
+# P030 Cervical ripening using topical, oral or mechanical agents,
+maximum once per pregnancy. Payable in conjunction with
+P023.................................................................................... 58.60
+Note:
+Cervical ripening rendered to same patient same day by same physician as a consultation or
+visit is an insured service payable at nil.
+# P023 Oxytocin infusion for induction or augmentation of labour....... 67.75
+Note:
+See Obstetrics preamble #9.
+Non stress test
+Payable only for high risk pregnancies - must include interpretation of trace, discussion with
+patient and providing a written report to be retained in the patient’s permanent medical record
+and may include application of the fetal monitor and data acquisition. Maximum one per patient
+per day.
+# P025 Non stress test......................................................................... 9.65
+# Z721 Pharmacological suppression of premature labour by I.V.
+therapy to be claimed once per physician after 3 hours of
+supervision in same institution ............................................ 67.75
+# Z775 Pharmacological management of P.I.H. and toxemia by I.V
+therapy to be billed once per patient, per pregnancy .......... 67.75
+# Z778 Amniocentesis - diagnostic or genetic ..................................... 102.00
+# Z779 Chorionic villus sampling ......................................................... 153.00
+# P031 Prophylactic cervical cerclage - any technique........................ 6 145.10 6
+# P032 Emergency cervical cerclage when the external os is open to 2
+cm or more and the membranes visible or prolapsed, any
+technique............................................................................. 6 250.00 6
+[Commentary:
+If the criteria for cervical cerclage listed under the definition of P032 are not met,
+submit claims using P031.]
+UVC Elective removal of Shirodkar suture....................................... visit.fee
+# P034 Uterine inversion, manual replacements ................................. 125.75 6
+# Z777 Breech presentation - external cephalic version with or without
+tocolysis - to be claimed in hospital after 35 weeks, once per
+pregnancy ........................................................................... 60.35
+Note:
+Listings for ectopic pregnancy, hysterotomy, abortion and postpartum tubal interruption are
+listed under the Female Genital System - Corpus Uteri.
+Amd 12 Draft 1 K10 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 527 ---
+OBSTETRICS
+MATERNAL - FETAL PROCEDURES
+Asst Surg Anae
+# P050 Therapeutic amnio-reduction................................................... 6 248.85 6
+# P051 Percutaneous fetal blood transfusion - into fetal hepatic vein . 8 348.40 8
+# P052 Percutaneous fetal blood sample - from umbilical cord or fetal
+hepatic vein ......................................................................... 6 199.10 6
+# P060 Percutaneous amnioinfusion ................................................... 6 248.85 6
+Fetal management
+# P053 - selective fetal reduction of one or more fetuses by bipolar or
+unipolar cautery of umbilical cord ..................................... 6 248.85 6
+# P054 - selective fetal reduction of one or more fetuses by
+intracardiac potassium chloride injection .......................... 6 248.85 6
+Insertion of fetal shunt
+# P055 - bladder to amniotic cavity ................................................. 8 398.10 8
+# P056 - chest to amniotic cavity..................................................... 8 398.10 8
+# P057 Fine needle fetal body cavity aspiration from fetal abdomen,
+chest, heart, bladder and/or renal tract ............................... 6 199.10 6
+# P058 In-utero ligation of umbilical cord vessels................................ 8 464.45 8
+# P059 In-utero placental vessel ablation by YAG laser ...................... 8 464.45 8
+Note:
+Procedures listed under Maternal - Fetal Procedures are payable in addition to J149 Ultrasonic
+Guidance and/or Z552 Diagnostic Laparoscopy, where applicable.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) K11 Amd 12 Draft 1
+
+--- PAGE 528 ---
+OBSTETRICS
+NOT ALLOCATED
+Amd 12 Draft 1 K12 February 14 , 2 025 (e ffective M arch 3, 2025)

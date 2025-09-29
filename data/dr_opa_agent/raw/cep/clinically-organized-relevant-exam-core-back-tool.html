@@ -1,0 +1,2053 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <title>
+    Clinically Organized Relevant Exam (CORE) Back Tool |     Centre for Effective Practice - Digital Tools        </title>
+  <meta charset="UTF-8" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+/* ]]> */
+</script>
+
+  <meta name="viewport" content="width=device-width" />
+  <meta name="theme-color" content="#999999" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+  <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//a.omappapi.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.5.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-G1F4BDXK7E"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '9.5.3';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/tools.cep.health\/tool\/clinically-organized-relevant-exam-core-back-tool\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-G1F4BDXK7E',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-G1F4BDXK7E', {"forceSSL":"true","link_attribution":"true","page_path":location.pathname + location.search + location.hash} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel='stylesheet' id='wp-block-library-css' href='https://tools.cep.health/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='studio123_styles-css' href='https://tools.cep.health/wp-content/themes/cep-tools/style.min.css?ver=1743561782' media='all' />
+<link rel='stylesheet' id='glossary-hint-css' href='https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/css/tooltip-classic.css?ver=2.3.5' media='all' />
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=9.5.3" id="monsterinsights-frontend-script-js" async="async" data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tools.cep.health","hash_tracking":"true","v4_id":"G-G1F4BDXK7E"};/* ]]> */
+</script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-MBGGM43" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["tools.cep.health"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MBGGM43");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://tools.cep.health/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tools.cep.health/wp-json/wp/v2/tools/36975" /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fclinically-organized-relevant-exam-core-back-tool%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tools.cep.health/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftools.cep.health%2Ftool%2Fclinically-organized-relevant-exam-core-back-tool%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.155.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-WLFDZV' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tools.cep.health/wp-content/uploads/2019/10/cropped-Frame-36-1-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.m0 {margin-top:0; margin-bottom: 0}		</style>
+		<!--- Error: No Google analytics ID found. Go to Site Options > Analytics to enter your ID. ---><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-K6HPX8H");</script>  </head>
+  <body class="wp-singular tools-template-default single single-tools postid-36975 wp-theme-cep-tools clinically-organized-relevant-exam-core-back-tool">
+
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6HPX8H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="container">
+        <div class="columns is-flex is-gapless">
+          <div class="column">
+            <a class="logo" target="_self" href="https://cep.health/tools" data-wpel-link="external" rel="external noopener noreferrer">
+              <img src="https://tools.cep.health/wp-content/themes/cep-tools/img/logo.svg" alt="Centre for Effective Practice - Digital Tools" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<main>
+  	<section class="section--impact_area">
+    <div class="container">
+        <h1>Clinically Organized Relevant Exam (CORE) Back Tool</h1>
+                <ul class="links">
+            <li>
+                <button data-search-content class="button">Search Content&nbsp;&nbsp;<i class="icon icon-search"></i></a>
+            </li>
+                    </ul>
+    </div>
+</section>
+
+		<section class="section--sections_listing" id="sections">
+
+			
+<div class="search-tool">
+    <div class="search-tool-bar">
+        <div class="search-wrapper">
+            <div class="search-input-wrapper">
+                <input data-search-tool-input type="search" autocomplete="off" placeholder="Enter search terms">
+                <i class="icon icon-search"></i>
+                <span class="search-no-results-found">No Results Found</span>
+                <span class="search-result-count"><span class="current">0</span>/<span class="total">0</span></span>
+            </div>
+            <button data-search-previous disabled class="search-previous"><i class="icon icon-chevron-up"></i></button>
+            <button data-search-next disabled class="search-next"><i class="icon icon-chevron-down"></i></button>
+        </div>
+        <button data-search-tool-close class="close"><i class="icon icon-close"></i></button>
+    </div>
+</div>
+			<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>This tool will guide the family physician and/or nurse practitioner to recognize common mechanical back pain syndromes and screen for other conditions where management may include investigations, referrals and specific medications. This is a focused examination for clinical decision-making in primary care.</p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Click on the sections below to get started:</h3>
+</div></article>			<div class="container has-text-right" style="padding: 0 0 1.5rem;">
+				<div class="expand-all">
+					<a href="#" data-expand-text="Expand All" data-collapse-text="Collapse All">Expand All</a>
+				</div>
+			</div>
+			<div id="top-of-sections"></div>
+							<section class="main-section" id="history-and-physical-examination" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								History and physical examination								
+    <span class="badge new" data-last-modified="Feb 23, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading">Review History</h3>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>A patient’s history can help identify:</p>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Back or leg dominant pain</li>
+
+
+
+<li>Intermittent or constant pain</li>
+
+
+
+<li>Associated aggravating movement</li>
+
+
+
+<li>Non-mechanical vs. mechanical pain</li>
+
+
+
+<li>Red flags and yellow flags </li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>Work through questions 1–6 to evaluate the patient’s history</p>
+</div></article>
+
+<article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/Eye.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <h6 style="text-align: left;"><a href="https://link.cep.health/lbphtml30" target="_blank" rel="noopener external noreferrer" data-wpel-link="external">View in table format</a></h6>
+          </div>
+        </div>
+
+      </div>
+</article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:60%"><article class="block--form  core-block" data-block-name="gravityforms/form"><div class="container">
+                <div class='gf_browser_unknown gform_wrapper gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital hide-submit-button_wrapper' data-form-theme='orbital' data-form-index='0' id='gform_wrapper_24' style='display:none'><style>#gform_wrapper_24[data-form-index="0"].gform-theme,[data-parent-form="24_0"]{--gf-color-primary: #204ce5;--gf-color-primary-rgb: 32, 76, 229;--gf-color-primary-contrast: #fff;--gf-color-primary-contrast-rgb: 255, 255, 255;--gf-color-primary-darker: #001AB3;--gf-color-primary-lighter: #527EFF;--gf-color-secondary: #fff;--gf-color-secondary-rgb: 255, 255, 255;--gf-color-secondary-contrast: #112337;--gf-color-secondary-contrast-rgb: 17, 35, 55;--gf-color-secondary-darker: #F5F5F5;--gf-color-secondary-lighter: #FFFFFF;--gf-color-out-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-out-ctrl-light-rgb: 17, 35, 55;--gf-color-out-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-out-ctrl-light-lighter: #F5F5F5;--gf-color-out-ctrl-dark: #585e6a;--gf-color-out-ctrl-dark-rgb: 88, 94, 106;--gf-color-out-ctrl-dark-darker: #112337;--gf-color-out-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-color-in-ctrl: #fff;--gf-color-in-ctrl-rgb: 255, 255, 255;--gf-color-in-ctrl-contrast: #112337;--gf-color-in-ctrl-contrast-rgb: 17, 35, 55;--gf-color-in-ctrl-darker: #F5F5F5;--gf-color-in-ctrl-lighter: #FFFFFF;--gf-color-in-ctrl-primary: #204ce5;--gf-color-in-ctrl-primary-rgb: 32, 76, 229;--gf-color-in-ctrl-primary-contrast: #fff;--gf-color-in-ctrl-primary-contrast-rgb: 255, 255, 255;--gf-color-in-ctrl-primary-darker: #001AB3;--gf-color-in-ctrl-primary-lighter: #527EFF;--gf-color-in-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-in-ctrl-light-rgb: 17, 35, 55;--gf-color-in-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-in-ctrl-light-lighter: #F5F5F5;--gf-color-in-ctrl-dark: #585e6a;--gf-color-in-ctrl-dark-rgb: 88, 94, 106;--gf-color-in-ctrl-dark-darker: #112337;--gf-color-in-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-radius: 3px;--gf-font-size-secondary: 14px;--gf-font-size-tertiary: 13px;--gf-icon-ctrl-number: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 0C4.26522 5.96046e-08 4.51957 0.105357 4.70711 0.292893L7.70711 3.29289C8.09763 3.68342 8.09763 4.31658 7.70711 4.70711C7.31658 5.09763 6.68342 5.09763 6.29289 4.70711L4 2.41421L1.70711 4.70711C1.31658 5.09763 0.683417 5.09763 0.292893 4.70711C-0.0976311 4.31658 -0.097631 3.68342 0.292893 3.29289L3.29289 0.292893C3.48043 0.105357 3.73478 0 4 0ZM0.292893 9.29289C0.683417 8.90237 1.31658 8.90237 1.70711 9.29289L4 11.5858L6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289C8.09763 9.68342 8.09763 10.3166 7.70711 10.7071L4.70711 13.7071C4.31658 14.0976 3.68342 14.0976 3.29289 13.7071L0.292893 10.7071C-0.0976311 10.3166 -0.0976311 9.68342 0.292893 9.29289Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-select: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-search: url("data:image/svg+xml,%3Csvg width='640' height='640' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 128c-70.692 0-128 57.308-128 128 0 70.691 57.308 128 128 128 70.691 0 128-57.309 128-128 0-70.692-57.309-128-128-128zM64 256c0-106.039 85.961-192 192-192s192 85.961 192 192c0 41.466-13.146 79.863-35.498 111.248l154.125 154.125c12.496 12.496 12.496 32.758 0 45.254s-32.758 12.496-45.254 0L367.248 412.502C335.862 434.854 297.467 448 256 448c-106.039 0-192-85.962-192-192z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-label-space-y-secondary: var(--gf-label-space-y-md-secondary);--gf-ctrl-border-color: #686e77;--gf-ctrl-size: var(--gf-ctrl-size-md);--gf-ctrl-label-color-primary: #112337;--gf-ctrl-label-color-secondary: #112337;--gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md);--gf-ctrl-checkbox-check-size: var(--gf-ctrl-checkbox-check-size-md);--gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md);--gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md);--gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md);--gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md);--gf-ctrl-btn-border-color-secondary: #686e77;--gf-ctrl-file-btn-bg-color-hover: #EBEBEB;--gf-field-img-choice-size: var(--gf-field-img-choice-size-md);--gf-field-img-choice-card-space: var(--gf-field-img-choice-card-space-md);--gf-field-img-choice-check-ind-size: var(--gf-field-img-choice-check-ind-size-md);--gf-field-img-choice-check-ind-icon-size: var(--gf-field-img-choice-check-ind-icon-size-md);--gf-field-pg-steps-number-color: rgba(17, 35, 55, 0.8);}</style>
+                        <div class='gform_heading'>
+                            <h2 class="gform_title">CORE Back Tool History</h2>
+                            <p class='gform_description'></p>
+                        </div><form method='post' enctype='multipart/form-data'  id='gform_24' class='hide-submit-button' action='/tool/clinically-organized-relevant-exam-core-back-tool/' data-formid='24' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_24' class='gform_fields top_label form_sublabel_below description_below validation_below'><fieldset id="field_24_1" class="gfield gfield--type-radio gfield--type-choice input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label' >1. Where is your pain the worst?</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_1'>
+			<div class='gchoice gchoice_24_1_0'>
+					<input class='gfield-choice-input' name='input_1' type='radio' value='Back/ Buttock Dominant'  id='choice_24_1_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_1_0' id='label_24_1_0' class='gform-field-label gform-field-label--type-inline'>Back/ Buttock Dominant</label>
+			</div>
+			<div class='gchoice gchoice_24_1_1'>
+					<input class='gfield-choice-input' name='input_1' type='radio' value='Leg Dominant'  id='choice_24_1_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_1_1' id='label_24_1_1' class='gform-field-label gform-field-label--type-inline'>Leg Dominant</label>
+			</div></div></div></fieldset><fieldset id="field_24_2" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >2. Is your pain constant or intermittent? (Back dominant)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_2'>
+			<div class='gchoice gchoice_24_2_0'>
+					<input class='gfield-choice-input' name='input_2' type='radio' value='Constant'  id='choice_24_2_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_2_0' id='label_24_2_0' class='gform-field-label gform-field-label--type-inline'>Constant</label>
+			</div>
+			<div class='gchoice gchoice_24_2_1'>
+					<input class='gfield-choice-input' name='input_2' type='radio' value='Intermittent'  id='choice_24_2_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_2_1' id='label_24_2_1' class='gform-field-label gform-field-label--type-inline'>Intermittent</label>
+			</div></div></div></fieldset><fieldset id="field_24_16" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >2. Is your pain constant or intermittent? (Leg dominant)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_16'>
+			<div class='gchoice gchoice_24_16_0'>
+					<input class='gfield-choice-input' name='input_16' type='radio' value='Constant'  id='choice_24_16_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_16_0' id='label_24_16_0' class='gform-field-label gform-field-label--type-inline'>Constant</label>
+			</div>
+			<div class='gchoice gchoice_24_16_1'>
+					<input class='gfield-choice-input' name='input_16' type='radio' value='Intermittent'  id='choice_24_16_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_16_1' id='label_24_16_1' class='gform-field-label gform-field-label--type-inline'>Intermittent</label>
+			</div></div></div></fieldset><div id="field_24_9" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><p style="color:red"><b>Rule out <a href="#redflags">Red Flags</a></b></p>
+<ul><li><b>NIFTI</b> is a mnemonic for common red flags</li>
+<li>Red flags indicate the potential presence of an underlying serious pathology</li></div><fieldset id="field_24_26" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >Red flags present?</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_26'>
+			<div class='gchoice gchoice_24_26_0'>
+					<input class='gfield-choice-input' name='input_26' type='radio' value='Yes'  id='choice_24_26_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_26_0' id='label_24_26_0' class='gform-field-label gform-field-label--type-inline'>Yes</label>
+			</div>
+			<div class='gchoice gchoice_24_26_1'>
+					<input class='gfield-choice-input' name='input_26' type='radio' value='No'  id='choice_24_26_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_26_1' id='label_24_26_1' class='gform-field-label gform-field-label--type-inline'>No</label>
+			</div></div></div></fieldset><div id="field_24_28" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><p style="color:red"><b>Consider other etiologies and investigations indicated in <a href="#redflags">Red flags</a></b></p></div><fieldset id="field_24_4" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >3. What increases your typical pain? (Constant back pain)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_4'>
+			<div class='gchoice gchoice_24_4_0'>
+					<input class='gfield-choice-input' name='input_4' type='radio' value='Flexion (possibly also Extension)'  id='choice_24_4_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_4_0' id='label_24_4_0' class='gform-field-label gform-field-label--type-inline'>Flexion (possibly also Extension)</label>
+			</div>
+			<div class='gchoice gchoice_24_4_1'>
+					<input class='gfield-choice-input' name='input_4' type='radio' value='Extension only'  id='choice_24_4_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_4_1' id='label_24_4_1' class='gform-field-label gform-field-label--type-inline'>Extension only</label>
+			</div>
+			<div class='gchoice gchoice_24_4_2'>
+					<input class='gfield-choice-input' name='input_4' type='radio' value='Non-mechanical pain'  id='choice_24_4_2' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_4_2' id='label_24_4_2' class='gform-field-label gform-field-label--type-inline'>Non-mechanical pain</label>
+			</div></div></div></fieldset><fieldset id="field_24_32" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >3. What increases your typical pain? (Intermittent back pain)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_32'>
+			<div class='gchoice gchoice_24_32_0'>
+					<input class='gfield-choice-input' name='input_32' type='radio' value='Flexion (possibly also Extension)'  id='choice_24_32_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_32_0' id='label_24_32_0' class='gform-field-label gform-field-label--type-inline'>Flexion (possibly also Extension)</label>
+			</div>
+			<div class='gchoice gchoice_24_32_1'>
+					<input class='gfield-choice-input' name='input_32' type='radio' value='Extension only'  id='choice_24_32_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_32_1' id='label_24_32_1' class='gform-field-label gform-field-label--type-inline'>Extension only</label>
+			</div>
+			<div class='gchoice gchoice_24_32_2'>
+					<input class='gfield-choice-input' name='input_32' type='radio' value='Non-mechanical pain'  id='choice_24_32_2' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_32_2' id='label_24_32_2' class='gform-field-label gform-field-label--type-inline'>Non-mechanical pain</label>
+			</div></div></div></fieldset><div id="field_24_27" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern1"> Review Pattern 1 management </a></h6></div><div id="field_24_6" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern2"> Review Pattern 2 management </a></h6></div><div id="field_24_30" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> Review <a href="#nonmech">Non-mechanical pain</a></h6></div><div id="field_24_36" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> Review <a href="#nonmech">Non-mechanical pain</a></h6></div><div id="field_24_7" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern1"> Review Pattern 1 management </a></h6></div><div id="field_24_8" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern2"> Review Pattern 2 management </a></h6></div><fieldset id="field_24_15" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >3. What increases your typical pain? (Constant leg pain)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_15'>
+			<div class='gchoice gchoice_24_15_0'>
+					<input class='gfield-choice-input' name='input_15' type='radio' value='All movements hurt'  id='choice_24_15_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_15_0' id='label_24_15_0' class='gform-field-label gform-field-label--type-inline'>All movements hurt</label>
+			</div>
+			<div class='gchoice gchoice_24_15_1'>
+					<input class='gfield-choice-input' name='input_15' type='radio' value='Walking and/or Standing'  id='choice_24_15_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_15_1' id='label_24_15_1' class='gform-field-label gform-field-label--type-inline'>Walking and/or Standing</label>
+			</div>
+			<div class='gchoice gchoice_24_15_2'>
+					<input class='gfield-choice-input' name='input_15' type='radio' value='Non-mechanical'  id='choice_24_15_2' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_15_2' id='label_24_15_2' class='gform-field-label gform-field-label--type-inline'>Non-mechanical</label>
+			</div></div></div></fieldset><fieldset id="field_24_39" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >3. What increases your typical pain? (Intermittent leg pain)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_39'>
+			<div class='gchoice gchoice_24_39_0'>
+					<input class='gfield-choice-input' name='input_39' type='radio' value='All movements hurt'  id='choice_24_39_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_39_0' id='label_24_39_0' class='gform-field-label gform-field-label--type-inline'>All movements hurt</label>
+			</div>
+			<div class='gchoice gchoice_24_39_1'>
+					<input class='gfield-choice-input' name='input_39' type='radio' value='Walking and/or Standing'  id='choice_24_39_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_39_1' id='label_24_39_1' class='gform-field-label gform-field-label--type-inline'>Walking and/or Standing</label>
+			</div>
+			<div class='gchoice gchoice_24_39_2'>
+					<input class='gfield-choice-input' name='input_39' type='radio' value='Non-mechanical'  id='choice_24_39_2' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_39_2' id='label_24_39_2' class='gform-field-label gform-field-label--type-inline'>Non-mechanical</label>
+			</div></div></div></fieldset><div id="field_24_10" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern3">Review Pattern 3 management</a></h6></div><div id="field_24_11" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern4">Review Pattern 4 management </a></h6></div><div id="field_24_38" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#nonmech"> Review Non-mechanical pain</a></h6></div><div id="field_24_12" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern3">Review Pattern 3 management</a></h6></div><div id="field_24_13" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> <a href="#pattern4">Review Pattern 4 management </a></h6></div><div id="field_24_40" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><h6> Review <a href="#nonmech">Non-mechanical pain</a></h6></div><fieldset id="field_24_17" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >4. Is there anything you can NOT do now that you could do before the onset of your low back pain?</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_17'>
+			<div class='gchoice gchoice_24_17_0'>
+					<input class='gfield-choice-input' name='input_17' type='radio' value='Yes'  id='choice_24_17_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_17_0' id='label_24_17_0' class='gform-field-label gform-field-label--type-inline'>Yes</label>
+			</div>
+			<div class='gchoice gchoice_24_17_1'>
+					<input class='gfield-choice-input' name='input_17' type='radio' value='No'  id='choice_24_17_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_17_1' id='label_24_17_1' class='gform-field-label gform-field-label--type-inline'>No</label>
+			</div></div></div></fieldset><div id="field_24_20" class="gfield gfield--type-text gfield--width-half input-type-text field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><label class='gfield_label gform-field-label' for='input_24_20'>What?</label><div class='ginput_container ginput_container_text'><input name='input_20' id='input_24_20' type='text' value='' class='small'    placeholder='Type here'  aria-invalid="false"   /></div></div><fieldset id="field_24_21" class="gfield gfield--type-radio gfield--type-choice gfield--width-half input-type-radio field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >Why?</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_21'>
+			<div class='gchoice gchoice_24_21_0'>
+					<input class='gfield-choice-input' name='input_21' type='radio' value='Back/Buttock pain'  id='choice_24_21_0' onchange='gformToggleRadioOther( this )' aria-describedby="gfield_description_24_21"   />
+					<label for='choice_24_21_0' id='label_24_21_0' class='gform-field-label gform-field-label--type-inline'>Back/Buttock pain</label>
+			</div>
+			<div class='gchoice gchoice_24_21_1'>
+					<input class='gfield-choice-input' name='input_21' type='radio' value='Leg pain'  id='choice_24_21_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_21_1' id='label_24_21_1' class='gform-field-label gform-field-label--type-inline'>Leg pain</label>
+			</div></div></div><div class='gfield_description' id='gfield_description_24_21'>Confirm this is consistent with Q1</div></fieldset><div id="field_24_19" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><p style="color:yellow"> <b> Rule out <a href="#redflags">Yellow Flags </a></b> </p>
+<ul><li>Yellow flags indicate the potential of psychosocial risk factors for developing chronic pain</li>
+<li>Yellow flags can be picked up on any visit</li>
+<li>If significant, CBT or 1:1 psychoeducation counselling may be necessary for pain management</li></div><div id="field_24_29" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><b>History complete. Please proceed to <a href="#physical">Physical examination</a> below to refute or support the pain pattern identified</b></div><div id="field_24_35" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><b>History complete. Please proceed to <a href="#physical">Physical examination</a> below to refute or support the pain pattern identified</b></div><fieldset id="field_24_22" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >5. Have you had any unexpected accidents with your bowel or bladder function since this episode of your low back pain started? (Back dominant pain)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_22'>
+			<div class='gchoice gchoice_24_22_0'>
+					<input class='gfield-choice-input' name='input_22' type='radio' value='Yes'  id='choice_24_22_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_22_0' id='label_24_22_0' class='gform-field-label gform-field-label--type-inline'>Yes</label>
+			</div>
+			<div class='gchoice gchoice_24_22_1'>
+					<input class='gfield-choice-input' name='input_22' type='radio' value='No'  id='choice_24_22_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_22_1' id='label_24_22_1' class='gform-field-label gform-field-label--type-inline'>No</label>
+			</div></div></div></fieldset><fieldset id="field_24_31" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >5. Have you had any unexpected accidents with your bowel or bladder function since this episode of your low back pain started? (Leg dominant pain)</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_31'>
+			<div class='gchoice gchoice_24_31_0'>
+					<input class='gfield-choice-input' name='input_31' type='radio' value='Yes'  id='choice_24_31_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_31_0' id='label_24_31_0' class='gform-field-label gform-field-label--type-inline'>Yes</label>
+			</div>
+			<div class='gchoice gchoice_24_31_1'>
+					<input class='gfield-choice-input' name='input_31' type='radio' value='No'  id='choice_24_31_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_31_1' id='label_24_31_1' class='gform-field-label gform-field-label--type-inline'>No</label>
+			</div></div></div></fieldset><div id="field_24_23" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><p style="color:red"> <b>Rule out Cauda Equina Syndrome  <a href="#redflags"> (Red flags) </a></b></p>
+<ul><li>Cauda Equina symptoms require urgent surgical evaluation</li></ul>
+Symptoms are:
+<ul><li>Urinary retention followed by insensible urinary overflow</li>
+<li>Unrecognized fecal incontinence</li>
+<li>Distinct loss of saddle/perineal sensation</li></div><div id="field_24_33" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><b>History complete. Please proceed to <a href="#physical">Physical examination</a> below to refute or support the pain pattern identified</b></div><fieldset id="field_24_24" class="gfield gfield--type-radio gfield--type-choice gfield--width-full input-type-radio field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><legend class='gfield_label gform-field-label' >6. If age of onset &lt; 45 years, are you experiencing morning stiffness in your back &gt; 30 minutes?</legend><div class='ginput_container ginput_container_radio'><div class='gfield_radio' id='input_24_24'>
+			<div class='gchoice gchoice_24_24_0'>
+					<input class='gfield-choice-input' name='input_24' type='radio' value='Yes'  id='choice_24_24_0' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_24_0' id='label_24_24_0' class='gform-field-label gform-field-label--type-inline'>Yes</label>
+			</div>
+			<div class='gchoice gchoice_24_24_1'>
+					<input class='gfield-choice-input' name='input_24' type='radio' value='No'  id='choice_24_24_1' onchange='gformToggleRadioOther( this )'    />
+					<label for='choice_24_24_1' id='label_24_24_1' class='gform-field-label gform-field-label--type-inline'>No</label>
+			</div></div></div></fieldset><div id="field_24_25" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><p style="color:red"><b>Review <a href="https://link.cep.health/lbphtml1" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Systemic Inflammatory Arthritis Screen  </a></b></p></div><div id="field_24_34" class="gfield gfield--type-html gfield--width-full input-type-html gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible has-conditional-logic"  data-field-class="has-conditional-logic" ><b>History complete. Please proceed to <a href="#physical">Physical examination</a> below to refute or support the pain pattern identified</b></div></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_24' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Submit'  /> 
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_24' value='postback' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_24' id='gform_theme_24' value='orbital' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_24' id='gform_style_settings_24' value='{&quot;inputPrimaryColor&quot;:&quot;#204ce5&quot;}' />
+            <input type='hidden' class='gform_hidden' name='is_submit_24' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='24' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_24' value='WyJbXSIsImY3MGY2Yzk3YmUyZGE2NGI5ZmRjODYxYjY1ZmMxN2E5Il0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_24' id='gform_target_page_number_24' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_24' id='gform_source_page_number_24' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div><script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 24, 'https://tools.cep.health/wp-content/themes/cep-tools/img/loader.svg', true );jQuery('#gform_ajax_frame_24').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_24');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_24').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){form_content.find('form').css('opacity', 0);jQuery('#gform_wrapper_24').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_24').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_24').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_24').val();gformInitSpinner( 24, 'https://tools.cep.health/wp-content/themes/cep-tools/img/loader.svg', true );jQuery(document).trigger('gform_page_loaded', [24, current_page]);window['gf_submitting_24'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_24').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [24]);window['gf_submitting_24'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_24').text());}else{jQuery('#gform_24').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "24", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_24" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_24";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_24" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 24, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%" id="redflags"><article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/red-flags.png" alt="" />
+                    <h6>Red flags</h6>
+                          <a data-modal="4Gg5rm" class="button open-modal" href="#" data-id="4Gg5rm">Click to view Red flags</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="4Gg5rm" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Red Flags</h4>
+                                      <p>The acronym <strong>NIFTI</strong> can help you remember red flags.<sup>21, 22, 42, 43</sup></p>
+<div style="width: 75%; float: left;">
+<div style="width: 55%; padding: 0 5px 0 0; float: left;">
+<h6>Indication</h6>
+<ul>
+<li><strong>Neurological</strong>: diffuse motor/sensory loss, progressive neurological deficits, cauda equina syndrome</li>
+<li><strong>I</strong><strong>nfection</strong>: fever, IV drug use, immune suppressed</li>
+<li><strong>F</strong><strong>racture</strong>: trauma, osteoporosis risk/fragility fracture</li>
+<li><strong>T</strong><strong>umour</strong>: hx of cancer, unexplained weight loss, significant unexpected night pain, severe fatigue</li>
+<li><strong>I</strong><strong>nflammation</strong>: chronic low back pain &gt; 3 months, age of onset &lt; 45, morning stiffness &gt; 30 minutes, improves with exercise, disproportionate night pain</li>
+</ul>
+</div>
+<div style="width: 40%; padding: 0 5px 0 0; float: right;">
+<h6>Investigation</h6>
+<ul>
+<li>Urgent MRI Indicated</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>X-ray and MRI</li>
+<li>X-ray and may require CT scan</li>
+<li>X-ray and MRI</li>
+</ul>
+<ul>
+<li>Rheumatology Consultation and Guidelines</li>
+</ul>
+</div>
+<div style="clear: both;"></div>
+<h6></h6>
+<h6>Acute Cauda Equina syndrome is a surgical emergency.<sup>23</sup></h6>
+<p>Symptoms are:</p>
+<ul>
+<li>Urinary retention followed by insensible urinary overflow</li>
+<li>Unrecognized fecal incontinence</li>
+<li>Distinct loss of saddle/perineal sensation</li>
+</ul>
+<p><strong>If there are no red flags, </strong><strong>continue reviewing history</strong>.</p>
+<p>&nbsp;</p>
+</div>
+<div style="width: 25%; float: right;"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Screen-Shot-2021-07-21-at-7.37.43-PM.png" alt="" /></div>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article>
+
+<article class="block--modal ">
+
+<div class="outer">
+  <div class="container">
+    <div class="inner has-text-centered">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/yellow-flags.png" alt="" />
+                    <h6>Yellow flags</h6>
+                          <a data-modal="bQ4NPD" class="button open-modal" href="#" data-id="bQ4NPD">Click to view Yellow Flags</a>
+          </div>
+  </div>
+</div>
+
+  <div data-modal="bQ4NPD" class="modal">
+    <div class="inner text">
+      <div class="close-wrapper">
+                <a href="" class="close" data-wpel-link="internal">Close</a>
+      </div>
+      <div class="container">
+                <div class="content">
+          
+                          <h4>Yellow Flags<sup>21, 22, 24</h4>
+                                      <div style="width: 75%; float: left;"><strong>Psychosocial Risk Factors for Developing Chronicity</strong><br />
+For those with low back pain &gt; 6 weeks or non-responsive to treatment, consider asking:</p>
+<div style="width: 55%; padding: 0 5px 0 0; float: left;">
+<h6><strong>Questions to ask</strong></h6>
+<ul>
+<li>“Do you think your pain will improve or become worse?”</li>
+<li>“Do you think you would benefit from activity, movement or exercise?”</li>
+<li>“How are you emotionally coping with your back pain?”</li>
+<li>“What treatments or activities do you think will help you recover?”</li>
+</ul>
+</div>
+<div style="width: 40%; padding: 0 5px 0 0; float: right;">
+<h6><strong>Look for</strong></h6>
+<ul>
+<li>Belief that back pain is harmful or potentially severely disabling.</li>
+<li>Fear and avoidance of activity or movement.</li>
+<li>Tendency to low mood and withdrawal from social interaction.</li>
+<li>Expectation of passive treatment(s) rather than a belief that active participation will help.</li>
+</ul>
+</div>
+<div style="clear: both;"></div>
+<p>A patient with a positive yellow flag will benefit from education and reassurance to reduce risk of chronicity. If yellow flags persist, consider additional resources: <a href="https://link.cep.health/lbphtml28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Keele StarT Back <sup>4</sup></a> ;<a href="https://link.cep.health/lbphtml29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"> The Patient Health Questionnaire for Depression and Anxiety (PHQ-4).</a><sup>25</sup></p>
+</div>
+<div style="width: 25%; float: right;"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Screen-Shot-2021-07-21-at-8.18.59-PM.png" alt="" /></div>
+            
+                  </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+</div></article></div>
+</div>
+
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h3 class="wp-block-heading" id="physical">Physical examination</h3>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>An examination refutes or supports the back pain pattern identified in history</li>
+
+
+
+<li>Referred leg pain will have a normal neurological exam</li>
+
+
+
+<li>Radicular (nerve) pain will have a positive straight leg raise (SLR) with reproduction of leg pain and possible abnormal neurological signs</li>
+
+
+
+<li>Interpretation of range of motion includes the pain response to flexion and extension movements</li>
+</ul>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p>NOTE: Bolded tests are the suggested minimum requirements of the exam.</p>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Gait</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Heel Walking (L4-5)</li>
+
+
+
+<li>Toe Walking (S1)</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Standing</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Movement testing in flexion</strong></li>
+
+
+
+<li><strong>Movement testing in extension</strong></li>
+
+
+
+<li>Trendelenburg test (L5)</li>
+
+
+
+<li>Repeated toe raises (S1)</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Sitting</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Patellar reflex (L3-4)</strong></li>
+
+
+
+<li>Quadriceps power (L3-4)</li>
+
+
+
+<li>Ankle dorsiflexion power (L4-5)</li>
+
+
+
+<li><strong>Great toe extension power (L5)</strong></li>
+
+
+
+<li><strong>Great toe flexion power (S1)</strong></li>
+
+
+
+<li><strong>Plantar response, upper motor test</strong></li>
+</ul>
+</div></article></div>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Kneeling</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Ankle reflex (S1)</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Lying supine</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li><strong>Passive straight leg raise (SLR)</strong></li>
+
+
+
+<li>Passive hip range of motion</li>
+</ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Lying prone</h6>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Femoral nerve stretch (L3-4)</li>
+
+
+
+<li>Gluteus maximus power (S1)</li>
+
+
+
+<li><strong>Saddle sensation testing (S2-3-4)</strong></li>
+
+
+
+<li>Passive back extension (patient uses arms to elevate upper body)</li>
+</ul>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="initial-management" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Initial Management								
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list">
+<li>Goals may include “to reduce pain” and “to increase activity”</li>
+
+
+
+<li>Frequent movement in small doses recommended</li>
+
+
+
+<li>Self management involves patient driven goals for motivating behaviour change like exercise, medication compliance or activity modification</li>
+
+
+
+<li>Remember that all recovery positions and/or exercises should be customized to the individual patient. This section offers a starting point with links to additional resources</li>
+</ul>
+</div></article>
+
+<article class="block--faq "><div class="container">
+    <div class="faq-title-wrapper">
+        <div class="faq-icon-wrapper">
+            <img decoding="async" class="faq-icon" src="https://tools.cep.health/wp-content/uploads/2020/04/info-icon.png" alt="" />
+        </div>
+        <h3 class="faq-title">Select pattern for initial managment details</h3>
+    </div>
+            <div class="questions">
+                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title"><p id ="pattern1">Pattern 1</p></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 60%; float: left;">
+<h6>Commonly called<sup>27</sup></h6>
+<ul>
+<li>Disc Pain</li>
+</ul>
+</div>
+<div style="width: 40%; float: right;"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Screen-Shot-2021-07-23-at-12.22.03-PM.png" alt="" /></div>
+<div style="width: 50%; float: left;">
+<h6>Medication<sup>5,6,7</sup></h6>
+<ul>
+<li>Acetaminophen</li>
+<li>NSAID</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Recovery positions<sup>28</sup></h6>
+<p><img loading="lazy" decoding="async" class="alignnone" src="https://tools.cep.health/wp-content/uploads/2021/07/core-man-1.jpg" alt="null" width="239" height="114" /></p>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Starter exercises<sup>29</sup></h6>
+<ul>
+<li>Repeated prone lying passive extensions (i.e. hips on ground, arms straight).</li>
+<li>10 reps, 3 x day</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Exercises</h6>
+<ul>
+<li><a href="https://link.cep.health/corelbp16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ISAEC</a> <sup>35</sup>;</li>
+<li><a href="https://link.cep.health/corelbp17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HealthLink BC</a> <sup>34</sup>;</li>
+<li><a href="https://link.cep.health/corelbp18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">SASK Pattern 1</a> <sup>30</sup></li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Functional activities<sup>36</sup></h6>
+<ul>
+<li>Encourage short frequent walking</li>
+<li>Reduce sitting activities</li>
+<li>Use extension roll for short duration sitting</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Follow-up</h6>
+<ul>
+<li><strong>2–4 weeks</strong> if referred to therapy, or prescribed medication</li>
+<li><strong>PRN</strong> if given home program and relief noted in office visit</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Self management<sup>37-40</sup></h6>
+<ul>
+<li>Once pain is reduced, engage patient for self management goals</li>
+</ul>
+</div>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title"><p id="pattern2"> Pattern 2 </p></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 60%; float: left;">
+<h6>Commonly called<sup>27</sup></h6>
+<ul>
+<li>Facet Joint Pain</li>
+</ul>
+</div>
+<div style="width: 40%; float: right;"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Screen-Shot-2021-07-23-at-12.22.03-PM.png" alt="" /></div>
+<div style="width: 50%; float: left;">
+<h6>Medication<sup>5,6,7</sup></h6>
+<ul>
+<li>Acetaminophen</li>
+<li>NSAID</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Recovery positions<sup>28</sup></h6>
+<p><img loading="lazy" decoding="async" class="alignnone" src="https://tools.cep.health/wp-content/uploads/2021/07/core-man-2.jpg" alt="null" width="130" height="139" /></p>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Starter exercises<sup>29</sup></h6>
+<ul>
+<li>Sitting in a chair, bend forward and stretch in flexion.</li>
+<li>Use hands on knees to push trunk upright.</li>
+<li>Small frequent repetitions through the day</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Exercises</h6>
+<ul>
+<li><a href="https://link.cep.health/corelbp16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ISAEC</a> <sup>35</sup>;</li>
+<li><a href="https://link.cep.health/corelbp17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HealthLink BC</a> <sup>34</sup>;</li>
+<li><a href="https://link.cep.health/corelbp19" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">SASK Pattern 2</a> <sup>31</sup></li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Functional activities<sup>36</sup></h6>
+<ul>
+<li>Encourage sitting or standing with foot stool</li>
+<li>Reduce back extension and overhead reach</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Follow-up</h6>
+<ul>
+<li><strong>2–4</strong> <strong>weeks</strong> if referred to therapy, or prescribed medication</li>
+<li><strong>PRN</strong> if given home program and relief noted in office visit</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Self management<sup>37-40</sup></h6>
+<ul>
+<li>Self management can be initiated in 1st or 2nd session with most patients</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title"><p id="pattern3"> Pattern 3 </p></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 60%; float: left;">
+<h6>Commonly called<sup>27</sup></h6>
+<ul>
+<li>Compressed Nerve Pain</li>
+</ul>
+</div>
+<div style="width: 40%; float: right;"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Screen-Shot-2021-07-23-at-12.22.34-PM.png" alt="" /></div>
+<div style="width: 50%; float: left;">
+<h6>Medication<sup>5,6,7</sup></h6>
+<ul>
+<li>May require opioids if 1st line pain meds not sufficient</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Recovery positions<sup>28</sup></h6>
+<p><img loading="lazy" decoding="async" class="alignnone" src="https://tools.cep.health/wp-content/uploads/2021/07/core-man-3.jpg" alt="null" width="229" height="118" /></p>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Starter exercises<sup>29</sup></h6>
+<ul>
+<li>“Z” lie (see image above)</li>
+<li><strong>Caution</strong>: exercise will aggravate the pain so start with pain reducing positions</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Exercises</h6>
+<ul>
+<li><a href="https://link.cep.health/corelbp16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ISAEC</a> <sup>35</sup>;</li>
+<li><a href="https://link.cep.health/corelbp17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HealthLink BC</a> <sup>34</sup>;</li>
+<li><a href="https://link.cep.health/corelbp20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">SASK Pattern 3</a> <sup>32</sup></li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Functional activities<sup>36</sup></h6>
+<ul>
+<li>Change positions frequently from sit to stand to lie to walk</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Follow-up</h6>
+<ul>
+<li><strong>2 weeks</strong> for pain management and neurological review</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Self management<sup>37-40</sup></h6>
+<ul>
+<li>Patient is not usually suitable for self management due to high pain levels and possible surgical intervention</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title"><p id="pattern3"> Pattern 4 </p></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 60%; float: left;">
+<h6>Commonly called<sup>27</sup></h6>
+<ul>
+<li>Symptomatic Spinal Stenosis (Neurogenic Claudication)</li>
+</ul>
+</div>
+<div style="width: 40%; float: right;"><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/Screen-Shot-2021-07-23-at-12.22.03-PM.png" alt="" /></div>
+<div style="width: 50%; float: left;">
+<h6>Medication<sup>5,6,7</sup></h6>
+<ul>
+<li>Acetaminophen</li>
+<li>NSAID</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Recovery positions<sup>28</sup></h6>
+<p><img loading="lazy" decoding="async" class="alignnone" src="https://tools.cep.health/wp-content/uploads/2021/07/core_man_5-01.png" alt="null" width="126" height="126" /></p>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Starter exercises<sup>29</sup></h6>
+<ul>
+<li>Rest in a seated or other flexed position to relieve the leg pain</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Exercises</h6>
+<ul>
+<li><a href="https://link.cep.health/corelbp16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">ISAEC</a> <sup>35</sup>;</li>
+<li><a href="https://link.cep.health/corelbp17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">HealthLink BC</a> <sup>34</sup>;</li>
+<li><a href="https://link.cep.health/corelbp21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">SASK Pattern 4</a> <sup>33</sup></li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Functional activities<sup>36</sup></h6>
+<ul>
+<li>Use support with walking or standing.</li>
+<li>Use frequent sitting breaks</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Follow-up</h6>
+<ul>
+<li><strong>6–12 weeks</strong> for symptom management and determination of functional impact</li>
+</ul>
+</div>
+<div style="width: 60%; float: left;">
+<h6>Self management<sup>37-40</sup></h6>
+<ul>
+<li>Self management can be initiated in 1st or 2nd session with most patients</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<div style="clear: both;"></div>
+                        </div>
+                    </div>
+                                                                                <div class="question">
+                        <button data-toggle-question class="question-title-wrapper">
+                            <h6 class="question-title"><p id="nonmech">Non-mechanical pain</p></h6>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+                        </button>
+                        <div class="question-answer">
+                            <div style="width: 100%; float: left;">
+<h6>Non-spine related pain</h6>
+<ul>
+<li>Consider other etiologies prior to pain medications</li>
+<li>Consider internal organ pain referral such as kidney, uterus, bowel, ovaries</li>
+</ul>
+</div>
+<h6>Spine pain does not fit mechanical pattern</h6>
+<ul>
+<li>Consider centralized pain medications (i.e. anti-depressants, anti-seizure, opioids)</li>
+<li>Consider pain disorder</li>
+</ul>
+                        </div>
+                    </div>
+                                    </div>
+    </div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="referral-if-required" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Referral (if required)								
+    <span class="badge new" data-last-modified="Jul 23, 2021" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-red-background"><article class="block--text-with-icon ">  <div class="container">
+    
+        <div class="columns is-flex is-gapless">
+          <div class="column is-2-mobile is-1">
+            <div class="inner">
+              <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2020/05/stop.svg" />
+            </div>
+          </div>
+          <div class="column is-10-mobile is-11">
+            <p><strong>Diagnostic imaging:</strong> Tests like X- rays, CT scans and MRIs are not helpful for recovery or management of acute or recurring low back pain unless there are signs of serious pathology. Refer to <a href="#redflags">red flags</a> for details.</p>
+          </div>
+        </div>
+
+      </div>
+</article></div>
+</div></article>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Rehabilitation referral criteria (4–12 treatments)</h4>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Absence of red flags</li><li>Pain is managed well so that patient can tolerate treatment</li><li>Pain has mechanical directional preference – varies with movement, position or activity</li><li>Patient is ready to be an active partner in goal setting and self management</li></ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Surgical referral criteria<sup>23</sup></h4>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Failure to respond to evidence based compliant conservative care of at least 12 weeks</li><li>Unbearable constant leg dominant pain</li><li>Worsening nerve irritation tests (SLR or femoral nerve stretch)</li><li>Expanding motor, sensory or reflex deficits</li><li>Recurrent disabling sciatica</li><li>Disabling neurogenic claudication</li></ul>
+</div></article></div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h4 class="wp-block-heading">Specialist referral</h4>
+</div></article>
+
+<article class="block--list  core-block" data-block-name="core/list"><div class="container">
+<ul class="wp-block-list"><li>Physiatry</li><li>Cognitive Behavioural Therapy</li><li>Pain specialist</li><li>Multidisciplinary Pain Clinic</li><li>Rheumatologist</li></ul>
+</div></article></div>
+</div>
+						</div>
+					</div>
+				</section>
+							<section class="main-section" id="supporting-material" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Supporting material								
+    <span class="badge new" data-last-modified="Feb 23, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--background  core-block" data-block-name="cep/background"><div class="container">
+<div class="wp-block-cep-background is-style-blue-background"><article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h5 class="wp-block-heading">Supporting Tools</h5>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="https://link.cep.health/corelbp40" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Patient Education Inventory</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="https://link.cep.health/lbphtml28" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">The Keele STarT Back</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading"><strong>Additional Tools for Providers</strong></h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="https://link.cep.health/lbphtml31" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Opioid Manager Switching Opioids Form</a></p>
+</div></article>
+
+<article class="block--heading  core-block" data-block-name="core/heading"><div class="container">
+<h6 class="wp-block-heading">Additional Tools for Patients</h6>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="https://link.cep.health/corelbp10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">So Your Back Hurts..</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="https://link.cep.health/lbphtml15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Imaging Tests for Lower Back Pain: When You Need Them – And When You Don’t</a></p>
+</div></article>
+
+<article class="block--paragraph  core-block" data-block-name="core/paragraph"><div class="container">
+<p><a href="https://link.cep.health/lbphtml16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Dr. Mike Evans’ Low Back Pain Patient Self-Management Video</a></p>
+</div></article></div>
+</div></article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="references" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								References								
+    <span class="badge new" data-last-modified="Feb 23, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--references ">
+<div class="container">
+
+                        <ul>
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [1]
+                    </div>
+
+                    <div class="column">
+                      <p>Centre for Effective Practice, Government of Ontario. Opioid Risk Tool [Internet]. 2013 Jan [cited 2016 Jan 6].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [2]
+                    </div>
+
+                    <div class="column">
+                      <p>Centre for Effective Practice, Government of Ontario. Patient Education Inventory [Internet]. 2013 Jan [cited 2016 Jan 6].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [3]
+                    </div>
+
+                    <div class="column">
+                      <p>Practice Support Program, Centre for Effective Practice, Government of Ontario. Personal Action Planning for Patient Self Management [Internet]. 2013 Jan [cited 2016 Jan 6].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [4]
+                    </div>
+
+                    <div class="column">
+                      <p>Keele University, Arthritis Research UK. The Keele STarT Back Screening Tool [Internet]. 2013 Jan [cited 2015 Nov 20].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [5]
+                    </div>
+
+                    <div class="column">
+                      <p>Chang B, Wang D, St. Michael’s Hospital, Department of Family and Community Medicine. Acute and subacute low back pain (LBP) – Pharmacological alternatives [Internet]. 2013 Jan [cited 2015 Nov 24].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [6]
+                    </div>
+
+                    <div class="column">
+                      <p>Chang B, Wang D, St. Michael’s Hospital, Department of Family and Community Medicine. Acute and subacute low back pain (LBP) – Topical and herbal products [Internet]. 2013 Jan [cited 2015 Nov 24].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [7]
+                    </div>
+
+                    <div class="column">
+                      <p>Physicians of Ontario Collaborating for Knowledge Exchange and Transfer (POCKET), Institute for Work &amp; Health. Evidence summary for management of non-specific chronic low back pain [Internet]. 2009 Apr [cited 2015 Nov 19].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [8]
+                    </div>
+
+                    <div class="column">
+                      <p>Toronto Rehab, University Health Network, Centre for Effective Practice, Michael G. DeGroote National Pain Centre. Opioid manager. [Internet]. [cited 2016 Jan 6]. Available from: <a href="https://link.cep.health/corelbp41" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://npc.healthsci.mcmaster.ca/for-patients/?utm_source=link.cep.health&amp;utm_medium=urlshortener&amp;utm_campaign=cncpt-</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [9]
+                    </div>
+
+                    <div class="column">
+                      <p>Bigos S, Roland M, Waddell G, Klaber Moffett J, Burton K, Main C. The Back Book [Internet]. 2002 [cited 2016 Feb 19].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [10]
+                    </div>
+
+                    <div class="column">
+                      <p>Saskatchewan Ministry of Health. General recommendations for maintaining a healthy back: Patient information [Internet]. 2010 Apr [cited 2016 Jan 6].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [11]
+                    </div>
+
+                    <div class="column">
+                      <p>Institute for Work &amp; Health. So your back hurts… [Internet]. 2010 [cited 2016 Jan 6]. Available from: <a href="https://link.cep.health/corelbp10" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.iwh.on.ca/system/files/documents/so_your_back_hurts_2010.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [12]
+                    </div>
+
+                    <div class="column">
+                      <p>Toward Optimized Practice, Institute of Health Economics. What you should know about your acute low back pain [Internet]. 2015 [cited 2016 Feb 19].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [13]
+                    </div>
+
+                    <div class="column">
+                      <p>Toward Optimized Practice, Institute of Health Economics. What you should know about your chronic low back pain [Internet]. 2015 [cited 2016 Feb 19].</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [14]
+                    </div>
+
+                    <div class="column">
+                      <p>Choosing Wisely Canada. Imaging tests for lower back pain: When you need them – and when you don’t [Internet]. 2014 Apr 2 [cited 2015 Nov 25]. Available from: <a href="https://link.cep.health/lbphtml15" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.choosingwiselycanada.org/materials/imaging-tests-for-lower-back-pain-when-you-need-them-and-when-you-dont/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [15]
+                    </div>
+
+                    <div class="column">
+                      <p>Evans M. Low back pain. 2014 Jan 24 [cited 2016 Feb 19]. Available from: <a href="https://link.cep.health/lbphtml16" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.youtube.com/watch?v=BOjTegn9RuY</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [16]
+                    </div>
+
+                    <div class="column">
+                      <p>Hall H. Effective spine triage: Patterns of Pain. Ochsner J. 2014 Spring; 14(1): 88-95.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [17]
+                    </div>
+
+                    <div class="column">
+                      <p>General Practice Services Committee. Patterns of low back pain: MSK resource [Internet]. 2013 Jan [cited 2015 Nov 24]. Available from: <a href="https://link.cep.health/lbphtml17" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.gpscbc.ca/what-we-do/professional-development/psp/modules/musculoskeletal-msk/tools-resources</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [18]
+                    </div>
+
+                    <div class="column">
+                      <p>British Columbia Ministry of Health, British Columbia Medical Association. Rheumatoid arthritis: diagnosis, management and monitoring [Internet]. 2012 Sep [cited 2016 Mar 8]. [Figure], Differentiate inflammatory from non-inflammatory arthritis; p. 2. Available from: <a href="https://link.cep.health/lbphtml18" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www2.gov.bc.ca/gov/content/health/practitioner-professional-resources/bc-guidelines/rheumatoid-arthritis</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [19]
+                    </div>
+
+                    <div class="column">
+                      <p>Hall H, Alleyne J, Rampersaud YR. Making sense of low back pain. J Current Clinical Care. 2013 Jan; Educational Suppl.: 12-23.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [20]
+                    </div>
+
+                    <div class="column">
+                      <p>MD Anderson Cancer Center. Brief Pain Inventory (Short Form) [Internet]. 1991 [cited 2015 Nov 24]. Available from: <a href="https://link.cep.health/lbphtml19" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.mdanderson.org/education-and-research/departments-programs-and-labs/departments-and-divisions/symptom-research/symptom-assessment-tools/brief-pain-inventory.html</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [21]
+                    </div>
+
+                    <div class="column">
+                      <p>Physicians of Ontario Collaborating for Knowledge Exchange and Transfer (POCKET), Institute for Work &amp; Health. POCKET Card for Red &amp; Yellow Flags [Internet]. 2006 [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml20" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">www.iwh.on.ca</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [22]
+                    </div>
+
+                    <div class="column">
+                      <p>Toward Optimized Practice. Guideline for the evidence-informed primary care management of low back pain. Edmonton, AB: Toward Optimized Practice; 2011. Appendix A: Red and Yellow Flags. Available from: <a href="https://link.cep.health/lbphtml14" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.topalbertadoctors.org/cpgs/?sid=65&amp;cpg_cats=90</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [23]
+                    </div>
+
+                    <div class="column">
+                      <p>Rampersaud YR, Alleyne J, Hall H. Managing leg dominant pain. J Current Clinical Care. 2013 Jan; Educational Suppl.: 32-39.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [24]
+                    </div>
+
+                    <div class="column">
+                      <p>New Zealand Guidelines Group. New Zealand acute low back pain guide: Incorporating the guide to assessing psychosocial yellow flags in acute low back pain [Internet]. 2004 Oct [cited 2015 Nov 25]. Available from: <a href="https://link.cep.health/lbphtml21" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.acc.co.nz/PRD_EXT_CSMP/groups/external_communications/documents/guide/prd_ctrb112930.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [25]
+                    </div>
+
+                    <div class="column">
+                      <p>Kroenke K, Spitzer RL, Williams JBW, Lowe B. An ultra-brief screening scale for anxiety and depression: the PHQ-4. Psychosomatics [Internet]. 2009 Nov-Dec [cited 2015 Nov 20]; 50(6): 613-621. Available from: <a href="https://link.cep.health/lbphtml29" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/19996233/</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [26]
+                    </div>
+
+                    <div class="column">
+                      <p>Hall H, McIntosh G, Boyle C. Effectiveness of a low back pain classification system. Spine J. 2009 Aug; 9(8): 648-657.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [27]
+                    </div>
+
+                    <div class="column">
+                      <p>CBI Health Group. Self-help guide to Back Pain [Internet]. [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml23" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">https://www.cbi.ca/web/cbi-health-group</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [28]
+                    </div>
+
+                    <div class="column">
+                      <p>Images adapted and reproduced with permission from CBI Health Group.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [29]
+                    </div>
+
+                    <div class="column">
+                      <p>Hall H, Alleyne J, Rampersaud YR. Managing back dominant pain. J Current Clinical Care. 2013 Jan; Educational Suppl.: 24-31.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [30]
+                    </div>
+
+                    <div class="column">
+                      <p>Saskatchewan Spine Pathway Working Group, Saskatchewan Ministry of Health. Pattern 1 – Patient Education [Internet]. 2010 Apr [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml6" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.sasksurgery.ca/pdf/healthy-back-exercises1.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [31]
+                    </div>
+
+                    <div class="column">
+                      <p>Saskatchewan Spine Pathway Working Group, Saskatchewan Ministry of Health. Pattern 2 – Patient Education [Internet]. 2010 Apr [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml7" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.sasksurgery.ca/pdf/healthy-back-exercises2.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [32]
+                    </div>
+
+                    <div class="column">
+                      <p>Saskatchewan Spine Pathway Working Group, Saskatchewan Ministry of Health. Pattern 3 – Patient Education [Internet]. 2010 Apr [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml8" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.sasksurgery.ca/pdf/healthy-back-exercises3.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [33]
+                    </div>
+
+                    <div class="column">
+                      <p>Saskatchewan Spine Pathway Working Group, Saskatchewan Ministry of Health. Pattern 4 – Patient Education [Internet]. 2010 Apr [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml9" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.sasksurgery.ca/pdf/healthy-back-exercises4.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [34]
+                    </div>
+
+                    <div class="column">
+                      <p>Health Link British Columbia. Low Back Pain: Exercises to Reduce Pain [Internet]. 2014 Mar [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml5" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.healthlinkbc.ca/healthtopics/content.asp?hwid=tr5948</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [35]
+                    </div>
+
+                    <div class="column">
+                      <p>Inter-professional Spine Assessment and Education Clinics (ISAEC). Positions of Relief, Stretches and Exercises [Internet]. 2015 [cited 2015 Nov 19]. Available from: <a href="https://link.cep.health/lbphtml4" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.isaec.org/positions-stretches-and-exercises.html</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [36]
+                    </div>
+
+                    <div class="column">
+                      <p>Verwoerd AJ, Luijsterburg PA, Timman R, Koes BW, Verhagen AP. A single question was as predictive of outcome as the Tampa Scale for Kinesiophobia in people with sciatica: an observational study. J Physiother. 2012; 58(4): 249-254.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [37]
+                    </div>
+
+                    <div class="column">
+                      <p>Bodenheimer T, Lorig K, Holman H, Grumbach K. Patient self-management of chronic disease in primary care. JAMA. 2002 Nov 20; 288(19): 2469-2475.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [38]
+                    </div>
+
+                    <div class="column">
+                      <p>Johnston S, Liddy C, Ives SM, Soto E. Literature review on chronic disease self-management. Champlain LHIN. 2008 Apr 15; 1-23.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [39]
+                    </div>
+
+                    <div class="column">
+                      <p>McGowan P. Self-management: a background paper. New Perspectives: International Conference on Patient Self-Management. 2005 Sep; 1-10.</p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [40]
+                    </div>
+
+                    <div class="column">
+                      <p>Reims K, Gutnick D, Davis C, Cole S. Brief action planning: A white paper [Internet]. Centre for Comprehensive Motivational Interventions. 2013 Jan [cited 2016 Jan 6]. Available from: <a href="https://link.cep.health/lbphtml24" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.centrecmi.ca</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [41]
+                    </div>
+
+                    <div class="column">
+                      <p>Health Quality Branch, Ontario Ministry of Health and Long-Term Care. Bulletin 4569: Provincial strategy for X-Ray, Computed Tomography (CT) and/or Magnetic Resonance Imaging (MRI) for low back pain [Internet]. 2012 Aug 28 [cited 2015 Nov 23]. Available from: <a href="https://link.cep.health/lbphtml25" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.health.gov.on.ca/en/pro/programs/ohip/bulletins/4000/bul4569.pdf</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [42]
+                    </div>
+
+                    <div class="column">
+                      <p>Busse J, Alexander PE, Abdul-Razzak A, Riva JJ, Alabousi M, Dufton J, et al. Appropriateness of spinal imaging use in Canada [Internet]. 2013 Apr 25 [cited 2016 Feb 19]. Available from: <a href="http://www.cihr-irsc.gc.ca/e/47175.html" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">http://www.cihr-irsc.gc.ca/e/47175.html</a></p>
+                    </div>
+                  </li>
+
+               
+                  <li class="columns is-flex is-gapless">
+                    <div class="column is-1 is-1-mobile number">
+                      [43]
+                    </div>
+
+                    <div class="column">
+                      <p>University Health Network, Health Quality Ontario, Ministry of Health and Long-Term Care. Low back pain imaging pathway. Developed as part of the Diagnostic Imaging Appropriateness (DI-APP) Tools in Primary Care. 2015.</p>
+                    </div>
+                  </li>
+
+                            </ul>
+           
+</div>
+</article>						</div>
+					</div>
+				</section>
+							<section class="main-section" id="acknowledgment-and-legal" tabindex="-1">
+					<div class="head">
+						<div class="container">
+							<h2 class="main-heading">
+								Acknowledgment and legal								
+    <span class="badge new" data-last-modified="Feb 23, 2024" data-hide-on-click>New</span>
+							</h2>
+							<div class="icon">
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http:/ /www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16 12H6V10H16V12Z" class="horizontal-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V6H12V16H10Z" class="vertical-stroke" />
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" class="outline" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="container">
+							<article class="block--legal-text ">
+<div class="container">
+  <div class="columns is-gapless">
+    <div class="column is-8 text">
+      <div class="inner">
+        <p>This Tool was developed by the Centre for Effective Practice (“CEP”) with clinical leadership from Drs. Julia Alleyne, Hamilton Hall and Y. Raja Rampersaud. In addition, this Tool was informed by advice from our Education Planning Committee, Clinical Working Group and target end-users engaged throughout the development process. The development of this Tool was originally funded by the Government of Ontario (2012) and the current 2016 revision was funded by Centre for Effective Practice.</p>
+<p>This Tool was developed for licensed health care professionals in Canada as a guide only and does not constitute medical or other professional advice. Primary care providers and other health care professionals are required to exercise their own clinical judgment in using this Tool. Neither the Centre for Effective Practice (“CEP”), the Canadian Spine Society, the Nurse Practitioners’ Association of Ontario, The College of Family Physicians of Canada, the contributors to this Tool, nor any of their respective agents, appointees, directors, officers, employees, contractors, members or volunteers: (i) are providing medical, diagnostic or treatment services through this Tool; (ii) to the extent permitted by applicable law, accept any responsibility for the use or misuse of this Tool by any individual including, but not limited to, primary care providers or entity, including for any loss, damage or injury (including death) arising from or in connection with the use of this Tool, in whole or in part; or (iii) give or make any representation, warranty or endorsement of any external sources referenced in this Tool (whether specifically named or not) that are owned or operated by third parties, including any information or advice contained therein.</p>
+<p><em>This Tool is a product of the CEP under copyright protection with all rights reserved to the Centre for Effective Practice. Permission to use, copy, and distribute this material for all non-commercial and research purposes is granted, provided the above disclaimer, this paragraph and the preceding paragraphs, and appropriate citations appear in all copies, modifications, and distributions. Use of the CORE Back Tool for commercial purposes or any modifications of the tool are subject to charge and use must be negotiated with the CEP (info@cep.health).</em></p>
+<p><em>For statistical and bibliographic purposes, please notify the CEP (info@cep.health) of any use or reprinting of the tool. Please use the below citation when referencing the tool: Reprinted with Permission from Centre for Effective Practice (March 2016). CORE Back Tool. Toronto. Centre for Effective Practice.</em></p>
+<p><img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CCLicense.svg" alt="" /></p>
+<p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="column is-4 logos">
+      <div class="inner">
+                  <div>
+            
+                <p>
+                  Developed by                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/CEP-Logo-Color.svg" />
+
+                
+            
+                <p>
+                  Endorsed by                </p>
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/CSS-Canadian-Spine-Society.png" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2019/10/NPAO-Logo.svg" />
+
+                
+                  <img decoding="async" src="https://tools.cep.health/wp-content/uploads/2021/07/College-of-family-physicians-of-canada-CFPC.png" />
+
+                
+                      </div>
+              </div>
+    </div>
+  </div>
+</div>
+</article>						</div>
+					</div>
+				</section>
+			
+		</section>
+  </main>
+
+<div class="utility-bar">
+    <button data-search-tool-open class="utility-button search-button"><i class="icon icon-search"></i></button>
+    <a href="#top-of-sections" class="utility-button back-to-top"><i class="icon icon-arrow-up"></i></a>
+</div>
+<div class="global-modal"></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/cep-tools\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: Obesity management HTML - enhance confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'hhgajtyemrlknjsvrsd5');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: RSV HTML - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'tkia37pcyyahx6opqim2');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Secure Messaging -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ngtztpck7tvpbcvakl7d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 AI LC - fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'f2bzjhvjmeyfqkxxjggz');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Social Rxing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qgchslypk4toxdtgsfsf');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML COPD -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cfontzigzdapzyxtbhg4');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'nflzw9az1mcray2ltc4m');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Type 2 DM Non-Insulin -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'edlo1w0s0lujgciyjgf9');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML ME/CFS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'ybbyul2ujyofvsznkiti');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML FM -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'doewskxay35gb860nodl');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML Role Q -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'wm0xaeyycxvhthxjz76n');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML POTS -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'iqff27bs0pszfabitkgw');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML HF -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xfup8pda84l5bd0udyje');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2024.07 HTML A&D -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'xokl1h6esysgo5wdkq9d');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2022.11 E2P Patient Resource Page -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'jaxkt0icjnuu0z43iuik');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 MAID - Measuring knowledge -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'vso3vlstnsfjgeuogzry');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.11 Fall Prevention & MGMT Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'awihu5noxqqj5s7iasv8');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 PPIs - Change prescribing -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'cdikvvptidch9oj1o56k');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Chronic Insomnia HTML - Increase Confidence -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'qeu7gqedkzjnotzskhln');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.08 Non-Medical Cannabis Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'okkbvdzprjjylm7wjkhe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2021.07 ADHD Resource - Fill knowledge gaps -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'rxekv8i4pwnmp4zvclcm');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.05 COVID-19 - Change the way you will provide care for your patients? -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'koz3ranojk5yi8c5wmpe');</script>
+<!-- / OptinMonster --><!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com :: Campaign Title: 2020.07 CNCP - change in patient care -->
+<script>(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,75076,'e6m4njfonyv93sqcttlx');</script>
+<!-- / OptinMonster -->		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFDZV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+				<script type="text/javascript">
+		var hhgajtyemrlknjsvrsd5_shortcode = true;var tkia37pcyyahx6opqim2_shortcode = true;var ngtztpck7tvpbcvakl7d_shortcode = true;var f2bzjhvjmeyfqkxxjggz_shortcode = true;var qgchslypk4toxdtgsfsf_shortcode = true;var cfontzigzdapzyxtbhg4_shortcode = true;var nflzw9az1mcray2ltc4m_shortcode = true;var edlo1w0s0lujgciyjgf9_shortcode = true;var ybbyul2ujyofvsznkiti_shortcode = true;var doewskxay35gb860nodl_shortcode = true;var wm0xaeyycxvhthxjz76n_shortcode = true;var iqff27bs0pszfabitkgw_shortcode = true;var xfup8pda84l5bd0udyje_shortcode = true;var xokl1h6esysgo5wdkq9d_shortcode = true;var jaxkt0icjnuu0z43iuik_shortcode = true;var vso3vlstnsfjgeuogzry_shortcode = true;var awihu5noxqqj5s7iasv8_shortcode = true;var cdikvvptidch9oj1o56k_shortcode = true;var qeu7gqedkzjnotzskhln_shortcode = true;var okkbvdzprjjylm7wjkhe_shortcode = true;var rxekv8i4pwnmp4zvclcm_shortcode = true;var koz3ranojk5yi8c5wmpe_shortcode = true;var e6m4njfonyv93sqcttlx_shortcode = true;		</script>
+		<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://a.omappapi.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/vendor.min.js" id="vendor-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/themes/cep-tools/js/app.min.js?ver=1674670088" id="app-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/glossary-by-codeat/assets/js/off-screen.js?ver=2.3.5" id="glossary-off-screen-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" id="wp-a11y-js-translations">
+/* <![CDATA[ */
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-07-30 21:52:12+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_CA"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://tools.cep.health/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.18" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/tools.cep.health\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"Canadian Dollar","symbol_left":"$","symbol_right":"CAD","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"CAD"},"base_url":"https:\/\/tools.cep.health\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/tools.cep.health\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"344e255594c2fd2b9abc4494dede5841","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.9.18" id="gform_gravityforms-js"></script>
+<script type="text/javascript" id="gform_conditional_logic-js-extra">
+/* <![CDATA[ */
+var gf_legacy = {"is_legacy":""};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.9.18" id="gform_conditional_logic-js"></script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.9.18" id="gform_placeholder-js"></script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=380b7a5ec0757c78876bc8a59488f2f3" id="gform_gravityforms_utils-js"></script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=21e5a4db1670166692ac5745329bfc80" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"344e255594c2fd2b9abc4494dede5841"},"ajax":{"ajaxurl":"https:\/\/tools.cep.health\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"d442579d84","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/tools.cep.health\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"dc33aad5c3"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://tools.cep.health/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=8fa5e6390c795318e567cd2b080e169b" id="gform_gravityforms_theme-js"></script>
+<script type="text/javascript" src="https://tools.cep.health/wp-content/plugins/optinmonster/assets/dist/js/helper.min.js?ver=2.16.20" id="optinmonster-wp-helper-js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 24) {gf_global["number_formats"][24] = {"1":{"price":false,"value":false},"2":{"price":false,"value":false},"16":{"price":false,"value":false},"9":{"price":false,"value":false},"26":{"price":false,"value":false},"28":{"price":false,"value":false},"4":{"price":false,"value":false},"32":{"price":false,"value":false},"27":{"price":false,"value":false},"6":{"price":false,"value":false},"30":{"price":false,"value":false},"36":{"price":false,"value":false},"7":{"price":false,"value":false},"8":{"price":false,"value":false},"15":{"price":false,"value":false},"39":{"price":false,"value":false},"10":{"price":false,"value":false},"11":{"price":false,"value":false},"38":{"price":false,"value":false},"12":{"price":false,"value":false},"13":{"price":false,"value":false},"40":{"price":false,"value":false},"17":{"price":false,"value":false},"20":{"price":false,"value":false},"21":{"price":false,"value":false},"19":{"price":false,"value":false},"29":{"price":false,"value":false},"35":{"price":false,"value":false},"22":{"price":false,"value":false},"31":{"price":false,"value":false},"23":{"price":false,"value":false},"33":{"price":false,"value":false},"24":{"price":false,"value":false},"25":{"price":false,"value":false},"34":{"price":false,"value":false}};if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][24] = { logic: { 2: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"1","operator":"is","value":"Back\/ Buttock Dominant"}]},"nextButton":null,"section":null},16: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"1","operator":"is","value":"Leg Dominant"}]},"nextButton":null,"section":null},9: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"2","operator":"is","value":"Constant"},{"fieldId":"16","operator":"is","value":"Constant"}]},"nextButton":null,"section":null},26: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"2","operator":"is","value":"Constant"},{"fieldId":"16","operator":"is","value":"Constant"}]},"nextButton":null,"section":null},28: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"26","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},4: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"isnot","value":""},{"fieldId":"16","operator":"is","value":""},{"fieldId":"26","operator":"is","value":"No"}]},"nextButton":null,"section":null},32: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"is","value":"Intermittent"}]},"nextButton":null,"section":null},27: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"4","operator":"is","value":"Flexion (possibly also Extension)"}]},"nextButton":null,"section":null},6: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"4","operator":"is","value":"Extension only"}]},"nextButton":null,"section":null},30: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"4","operator":"is","value":"Non-mechanical pain"}]},"nextButton":null,"section":null},36: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"is","value":"Intermittent"},{"fieldId":"32","operator":"is","value":"Non-mechanical pain"}]},"nextButton":null,"section":null},7: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Back\/ Buttock Dominant"},{"fieldId":"2","operator":"is","value":"Intermittent"},{"fieldId":"32","operator":"is","value":"Flexion (possibly also Extension)"}]},"nextButton":null,"section":null},8: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Back\/ Buttock Dominant"},{"fieldId":"2","operator":"is","value":"Intermittent"},{"fieldId":"32","operator":"is","value":"Extension only"}]},"nextButton":null,"section":null},15: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Leg Dominant"},{"fieldId":"2","operator":"is","value":""},{"fieldId":"16","operator":"isnot","value":""},{"fieldId":"26","operator":"is","value":"No"}]},"nextButton":null,"section":null},39: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"16","operator":"is","value":"Intermittent"}]},"nextButton":null,"section":null},10: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Leg Dominant"},{"fieldId":"16","operator":"is","value":"Constant"},{"fieldId":"15","operator":"is","value":"All movements hurt"}]},"nextButton":null,"section":null},11: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Leg Dominant"},{"fieldId":"16","operator":"is","value":"Constant"},{"fieldId":"15","operator":"is","value":"Walking and\/or Standing"}]},"nextButton":null,"section":null},38: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"15","operator":"is","value":"Non-mechanical"}]},"nextButton":null,"section":null},12: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Leg Dominant"},{"fieldId":"16","operator":"is","value":"Intermittent"},{"fieldId":"39","operator":"is","value":"All movements hurt"}]},"nextButton":null,"section":null},13: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"1","operator":"is","value":"Leg Dominant"},{"fieldId":"16","operator":"is","value":"Intermittent"},{"fieldId":"39","operator":"is","value":"Walking and\/or Standing"}]},"nextButton":null,"section":null},40: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"16","operator":"is","value":"Intermittent"},{"fieldId":"39","operator":"is","value":"Non-mechanical pain"}]},"nextButton":null,"section":null},17: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"15","operator":"is","value":"All movements hurt"},{"fieldId":"15","operator":"is","value":"Walking and\/or Standing"},{"fieldId":"4","operator":"is","value":"Flexion (possibly also Extension)"},{"fieldId":"4","operator":"is","value":"Extension only"},{"fieldId":"32","operator":"is","value":"Flexion (possibly also Extension)"},{"fieldId":"32","operator":"is","value":"Extension only"},{"fieldId":"39","operator":"is","value":"All movements hurt"},{"fieldId":"39","operator":"is","value":"Walking and\/or Standing"}]},"nextButton":null,"section":null},20: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"17","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},21: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"17","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},19: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"17","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},29: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"is","value":"Constant"},{"fieldId":"17","operator":"isnot","value":""}]},"nextButton":null,"section":null},35: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"16","operator":"is","value":"Constant"},{"fieldId":"17","operator":"isnot","value":""}]},"nextButton":null,"section":null},22: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"is","value":"Intermittent"},{"fieldId":"17","operator":"isnot","value":""}]},"nextButton":null,"section":null},31: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"16","operator":"is","value":"Intermittent"},{"fieldId":"17","operator":"isnot","value":""}]},"nextButton":null,"section":null},23: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"22","operator":"is","value":"Yes"},{"fieldId":"31","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},33: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"22","operator":"is","value":"Yes"},{"fieldId":"31","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},24: {"field":{"enabled":true,"actionType":"show","logicType":"any","rules":[{"fieldId":"22","operator":"is","value":"No"},{"fieldId":"31","operator":"is","value":"No"}]},"nextButton":null,"section":null},25: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"24","operator":"is","value":"Yes"}]},"nextButton":null,"section":null},34: {"field":{"enabled":true,"actionType":"show","logicType":"all","rules":[{"fieldId":"24","operator":"is","value":"No"}]},"nextButton":null,"section":null} }, dependents: { 2: [2],16: [16],9: [9],26: [26],28: [28],4: [4],32: [32],27: [27],6: [6],30: [30],36: [36],7: [7],8: [8],15: [15],39: [39],10: [10],11: [11],38: [38],12: [12],13: [13],40: [40],17: [17],20: [20],21: [21],19: [19],29: [29],35: [35],22: [22],31: [31],23: [23],33: [33],24: [24],25: [25],34: [34] }, animation: 0, defaults: [], fields: {"1":[2,16,7,8,15,10,11,12,13],"2":[9,26,4,32,36,7,8,15,29,22],"16":[9,26,4,15,39,10,11,12,13,40,35,31],"9":[],"26":[28,4,15],"28":[],"4":[27,6,30,17],"32":[36,7,8,17],"27":[],"6":[],"30":[],"36":[],"7":[],"8":[],"15":[10,11,38,17],"39":[12,13,40,17],"10":[],"11":[],"38":[],"12":[],"13":[],"40":[],"17":[20,21,19,29,35,22,31],"20":[],"21":[],"19":[],"29":[],"35":[],"22":[23,33,24],"31":[23,33,24],"23":[],"33":[],"24":[25,34],"25":[],"34":[]} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){gform.utils.trigger({ event: 'gform/conditionalLogic/init/start', native: false, data: { formId: 24, fields: null, isInit: true } });window['gformInitPriceFields']();gf_apply_rules(24, [2,16,9,26,28,4,32,27,6,30,36,7,8,15,39,10,11,38,12,13,40,17,20,21,19,29,35,22,31,23,33,24,25,34], true);jQuery('#gform_wrapper_24').show();jQuery('#gform_wrapper_24 form').css('opacity', '');jQuery(document).trigger('gform_post_conditional_logic', [24, null, true]);gform.utils.trigger({ event: 'gform/conditionalLogic/init/end', native: false, data: { formId: 24, fields: null, isInit: true } });} );} if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }				gform.utils.addAsyncFilter('gform/submission/pre_submission', async (data) => {
+				    const input = document.createElement('input');
+				    input.type = 'hidden';
+				    input.name = 'gf_zero_spam_key';
+				    input.value = 'eSao19U6Ru3mxtRwzSlgciWT7M2PVdhHBjeoqT5t2qW5b8rUmZoumjcIMrRTnrnU';
+				    input.setAttribute('autocomplete', 'new-password');
+				    data.form.appendChild(input);
+				
+				    return data;
+				});} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "24", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_24" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_24";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_24" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 24, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+		<script type="text/javascript">var omapi_localized = {
+			ajax: 'https://tools.cep.health/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '54d7109d0e',
+			slugs:
+			{"hhgajtyemrlknjsvrsd5":{"slug":"hhgajtyemrlknjsvrsd5","mailpoet":false},"tkia37pcyyahx6opqim2":{"slug":"tkia37pcyyahx6opqim2","mailpoet":false},"ngtztpck7tvpbcvakl7d":{"slug":"ngtztpck7tvpbcvakl7d","mailpoet":false},"f2bzjhvjmeyfqkxxjggz":{"slug":"f2bzjhvjmeyfqkxxjggz","mailpoet":false},"qgchslypk4toxdtgsfsf":{"slug":"qgchslypk4toxdtgsfsf","mailpoet":false},"cfontzigzdapzyxtbhg4":{"slug":"cfontzigzdapzyxtbhg4","mailpoet":false},"nflzw9az1mcray2ltc4m":{"slug":"nflzw9az1mcray2ltc4m","mailpoet":false},"edlo1w0s0lujgciyjgf9":{"slug":"edlo1w0s0lujgciyjgf9","mailpoet":false},"ybbyul2ujyofvsznkiti":{"slug":"ybbyul2ujyofvsznkiti","mailpoet":false},"doewskxay35gb860nodl":{"slug":"doewskxay35gb860nodl","mailpoet":false},"wm0xaeyycxvhthxjz76n":{"slug":"wm0xaeyycxvhthxjz76n","mailpoet":false},"iqff27bs0pszfabitkgw":{"slug":"iqff27bs0pszfabitkgw","mailpoet":false},"xfup8pda84l5bd0udyje":{"slug":"xfup8pda84l5bd0udyje","mailpoet":false},"xokl1h6esysgo5wdkq9d":{"slug":"xokl1h6esysgo5wdkq9d","mailpoet":false},"jaxkt0icjnuu0z43iuik":{"slug":"jaxkt0icjnuu0z43iuik","mailpoet":false},"vso3vlstnsfjgeuogzry":{"slug":"vso3vlstnsfjgeuogzry","mailpoet":false},"awihu5noxqqj5s7iasv8":{"slug":"awihu5noxqqj5s7iasv8","mailpoet":false},"cdikvvptidch9oj1o56k":{"slug":"cdikvvptidch9oj1o56k","mailpoet":false},"qeu7gqedkzjnotzskhln":{"slug":"qeu7gqedkzjnotzskhln","mailpoet":false},"okkbvdzprjjylm7wjkhe":{"slug":"okkbvdzprjjylm7wjkhe","mailpoet":false},"rxekv8i4pwnmp4zvclcm":{"slug":"rxekv8i4pwnmp4zvclcm","mailpoet":false},"koz3ranojk5yi8c5wmpe":{"slug":"koz3ranojk5yi8c5wmpe","mailpoet":false},"e6m4njfonyv93sqcttlx":{"slug":"e6m4njfonyv93sqcttlx","mailpoet":false}}		};</script>
+				<script type="text/javascript">var omapi_data = {"object_id":36975,"object_key":"tools","object_type":"post","term_ids":[],"wp_json":"https:\/\/tools.cep.health\/wp-json","wc_active":false,"edd_active":false,"nonce":"9051981ff5"};</script>
+		
+  </body>
+</html>

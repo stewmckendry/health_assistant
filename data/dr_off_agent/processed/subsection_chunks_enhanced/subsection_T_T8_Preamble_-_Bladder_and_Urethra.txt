@@ -1,0 +1,27 @@
+Subsection: Preamble - Bladder and Urethra
+Parent Section: T
+Page Reference: T8
+Pages: 714 to 714
+Text chunks: 1
+Total text length: 694 characters
+Table indicators: {
+  "multi_column": false,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": false,
+  "has_time_requirements": false,
+  "has_fee_amounts": false,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 714 ---
+UROGENITAL AND URINARY SURGICAL PROCEDURES
+PREAMBLE - BLADDER AND URETHRA
+1. No extra claim should be made for EUA when done at the time of cystoscopy.
+2. Visit fees, as applicable, to be claimed for changing a suprapubic tube.
+3. No claim should be made for pre-cystoscopy dilatation of the male urethra unless urethral
+stricture is the primary diagnosis. No claim should be made for dilatation of the female urethra
+when done at the same time as cystoscopy.
+4. “E” prefixed codes are payable in addition to any “S” or “Z” code listed under the “Bladder”
+subheading or to Z626 or Z628, unless separately noted.
+Amd 12 Draft 1 T8 February 14 , 2 025 (e ffective M arch 3, 2025)

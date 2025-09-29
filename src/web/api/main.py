@@ -46,9 +46,49 @@ from assistants.provider import ProviderAssistant
 from utils.session_logging import SessionLogger
 from langfuse import Langfuse
 
-# Import triage endpoints
-from src.web.api.triage_endpoint import register_triage_endpoint
-from src.web.api.triage_streaming_endpoint import register_streaming_endpoint
+# Import triage endpoints (conditionally)
+try:
+    from src.web.api.triage_endpoint import register_triage_endpoint
+    from src.web.api.triage_streaming_endpoint import register_streaming_endpoint
+    TRIAGE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Triage endpoints not available: {e}")
+    TRIAGE_AVAILABLE = False
+
+# Import agent streaming proxy (simple version without complex dependencies)
+from src.web.api.agents_streaming_proxy import register_agent_streaming_endpoints
+
+# Import Agent 97 endpoint (conditionally)
+try:
+    from src.web.api.agent_97_endpoint import register_agent_97_endpoint
+    AGENT_97_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Agent 97 endpoint not available: {e}")
+    AGENT_97_AVAILABLE = False
+
+# Import Dr. OPA endpoint (conditionally)
+try:
+    from src.web.api.dr_opa_endpoint import register_dr_opa_endpoint
+    DR_OPA_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Dr. OPA endpoint not available: {e}")
+    DR_OPA_AVAILABLE = False
+
+# Import Dr. OFF endpoint (conditionally)
+try:
+    from src.web.api.dr_off_endpoint import register_dr_off_endpoint
+    DR_OFF_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Dr. OFF endpoint not available: {e}")
+    DR_OFF_AVAILABLE = False
+
+# Import Clinical Intelligence Orchestrator endpoint (conditionally)
+try:
+    from src.web.api.orchestrator_endpoint import register_orchestrator_endpoint
+    ORCHESTRATOR_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Clinical Intelligence Orchestrator endpoint not available: {e}")
+    ORCHESTRATOR_AVAILABLE = False
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -122,9 +162,29 @@ sessions: Dict[str, Dict[str, Any]] = {}
 # Session settings store
 session_settings: Dict[str, Dict[str, Any]] = {}
 
-# Register triage endpoints
-register_triage_endpoint(app)
-register_streaming_endpoint(app)
+# Register triage endpoints (if available)
+if TRIAGE_AVAILABLE:
+    register_triage_endpoint(app)
+    register_streaming_endpoint(app)
+
+# Register agent streaming endpoints
+register_agent_streaming_endpoints(app)
+
+# Register Agent 97 endpoint (if available)
+if AGENT_97_AVAILABLE:
+    register_agent_97_endpoint(app)
+
+# Register Dr. OPA endpoint (if available)
+if DR_OPA_AVAILABLE:
+    register_dr_opa_endpoint(app)
+
+# Register Dr. OFF endpoint (if available)
+if DR_OFF_AVAILABLE:
+    register_dr_off_endpoint(app)
+
+# Register Clinical Intelligence Orchestrator endpoint (if available)
+if ORCHESTRATOR_AVAILABLE:
+    register_orchestrator_endpoint(app)
 
 
 # Request/Response models

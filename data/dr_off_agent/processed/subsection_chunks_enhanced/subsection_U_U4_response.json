@@ -1,0 +1,84 @@
+{
+  "subsection_title": "Scrotum",
+  "parent_section": "U",
+  "page_ref": "U4",
+  "pages_processed": "724-724",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": false,
+    "has_asst_surg_anae": true,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": []
+  },
+  "fee_codes": [
+    {
+      "code": "Z709",
+      "description": "local anaesthetic",
+      "fee": 39.6,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": null,
+      "conditions": null,
+      "special_prefix": null
+    },
+    {
+      "code": "Z768",
+      "description": "general anaesthetic",
+      "fee": 99.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S616",
+      "description": "and exploration - unilateral",
+      "fee": 99.0,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": "#"
+    },
+    {
+      "code": "S618",
+      "description": "Resection of scrotum",
+      "fee": 215.8,
+      "h_fee": null,
+      "p_fee": null,
+      "t_fee": null,
+      "asst_fee": null,
+      "surg_fee": null,
+      "anae_fee": null,
+      "units": 6,
+      "conditions": null,
+      "special_prefix": "#"
+    }
+  ],
+  "referenced_codes": [
+    {
+      "code": "E530",
+      "context": "refer to code for suture of lacerations under general anaesthesia",
+      "description": "Suture of lacerations",
+      "source_subsection": "Scrotum",
+      "source_page": "U4"
+    }
+  ],
+  "rules": [],
+  "notes": []
+}

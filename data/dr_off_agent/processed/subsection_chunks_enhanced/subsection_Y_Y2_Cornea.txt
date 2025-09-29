@@ -1,0 +1,90 @@
+Subsection: Cornea
+Parent Section: Y
+Page Reference: Y2
+Pages: 756 to 757
+Text chunks: 1
+Total text length: 4248 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 756 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+CORNEA
+Asst Surg Anae
+INCISION
+# Z851 Therapeutic paracentesis ....................................................... 70.00 6
+# E175 - therapeutic paracentesis done in conjunction with E186,
+E187 or E149............................................................. add 20.00
+# Z844 Diagnostic Paracentesis for: 1) suspected intraocular infection;
+2) intraocular inflammation / uveitis; or 3) suspected cancer
+involving the intraocular structures or fluids ....................... 100.00 6
+Payment rules:
+1.Z851 is not eligible for payment for same patient same day as E175 or Z844.
+2.Z851 and Z844 are not eligible for payment for same patient same day as E186, E187, or
+E149.
+3.Z844 is only eligible for payment if the sample obtained through paracentesis is sent for one
+or more of the following:
+a.culture
+b.cellular analysis
+c.molecular analysis
+CORNEAL CROSS-LINKING
+Corneal Cross Linking (CXL) is eligible for payment if the patient has one of the following
+medical indications:
+a. Mild to moderate progressive keratoconus;
+b. Corneal thinning or ectasia following laser photorefractive or phototherapeutic surgery;
+c. Pellucid marginal corneal degeneration; and
+d. Recurrent keratoconus after corneal transplantation.
+E202 Corneal cross-linking .............................................................. 200.00
+Payment rules:
+E202 is not eligible for payment for the same patient and performed on the same day as E117.
+Removal embedded foreign body
+- local anaesthetic
+Z847 - one foreign body .............................................................. 33.00
+Z848 - two foreign bodies............................................................ 45.00
+Z845 - three or more foreign bodies (see General Preamble
+GP12)............................................................................... I.C
+# Z852 - general anaesthetic ............................................................ 74.20 6
+Chelation of band keratopathy with EDTA
+Z849 - local anaesthetic................................................................. 153.80
+# Z863 - general anaesthetic ............................................................ 150.00 6
+# E128 Anterior chamber - open evacuation of clot............................ 6 496.00 6
+Amd 12 Draft 1 Y2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 757 ---
+OCULAR AND AURAL SURGICAL PROCEDURES
+CORNEA
+Asst Surg Anae
+EXCISION
+Pterygium
+# E206 - simple (unilateral) ............................................................... 175.00 6
+# E205 - with partial keratectomy...................................................... 6 355.00 6
+# E207 - with lamellar graft ............................................................... 6 453.00 6
+# E937 - with autogenous conjunctival transplant .................... add 100.00
+# E948 - with mucous membrane graft..................................... add 113.20
+# E117 Keratectomy or relaxing incisions post penetrating
+keratoplasty or post traumatic corneal scar (non cosmetic) 6 308.30 6
+Excision of dermoid
+# E118 - with partial keratectomy ................................................... 308.30 6
+# E119 - with lamellar graft............................................................. 6 542.00 6
+Ulcer cautery
+Including laser and/or electrocautery, epithelial debridement, cryotherapy, corneal biopsy and/
+or corneal puncture
+Z871 - local anaesthetic .............................................................. 26.60
+# Z853 - general anaesthetic.......................................................... 74.20 6
+REPLACEMENT
+Corneal transplant
+# E121 - penetrating ......................................................................... 6 740.00 7
+# E951 - with artificial prosthesis.............................................. add 52.40
+# E122 - lamellar............................................................................... 6 590.00 7
+# E124 Limbal stem cell transplant ..................................................... 6 740.00 8
+Payment rules:
+E117 is not eligible for payment with E124.
+# E123 Division of iris to cornea.......................................................... 161.75 6
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) Y3 Amd 12 Draft 1

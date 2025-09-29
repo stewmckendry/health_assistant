@@ -1,0 +1,16 @@
+{
+  "subsection_title": "Introduction",
+  "parent_section": "GP",
+  "page_ref": "GP1",
+  "fee_codes": [],
+  "rules": [
+    "The Schedule lists services insured by OHIP and includes the General Preamble which impacts all physicians.",
+    "The initial Definitions Section (GP2) begins with general definitions of key terms and phrases used in the Schedule.",
+    "The information provided in the General Information Section (GP8) is the foundation for the remainder of the General Preamble."
+  ],
+  "notes": [
+    "The General Preamble provides details about billing requirements for all physicians.",
+    "A variety of subjects are reviewed as detailed in the table of contents."
+  ],
+  "pages_processed": "15-15"
+}

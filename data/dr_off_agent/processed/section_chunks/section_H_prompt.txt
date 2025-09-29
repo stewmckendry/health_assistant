@@ -1,0 +1,184 @@
+Extract all fee codes and billing information from this OHIP Schedule section.
+
+Section: Pulmonary Function Studies
+Section Code: H
+
+IMPORTANT COLUMN MEANINGS:
+- H = Hospital (technical component fee)
+- P = Professional (physician interpretation fee)  
+- T = Technical component fee
+- Asst = Assistant surgeon fee
+- Surg = Primary surgeon fee
+- Anae = Anaesthetist fee
+
+For each fee code found, extract:
+- code: The exact fee code (e.g., A001, E400B)
+- description: Full description of the service
+- fees: Capture all fee columns present (might be single amount, H/P split, T/P split, or Asst/Surg/Anae)
+- units: Any unit/time requirements
+- conditions: Special conditions or rules
+- Special prefixes: # = special approval required, + = additional fee
+
+Return JSON with:
+{
+  "section_code": "H",
+  "section_title": "Pulmonary Function Studies",
+  "fee_codes": [
+    {
+      "code": "...",
+      "description": "...",
+      "fee": "single amount if only one column",
+      "h_fee": "if H column present",
+      "p_fee": "if P column present", 
+      "t_fee": "if T column present",
+      "asst_fee": "if Asst column present",
+      "surg_fee": "if Surg column present",
+      "anae_fee": "if Anae column present",
+      "units": "...",
+      "conditions": "...",
+      "special_prefix": "# or + if present"
+    }
+  ],
+  "rules": ["general rules for this section"],
+  "subcategories": ["list of subsections found"],
+  "notes": ["any important notes or text sections"]
+}
+
+Text:
+--- PAGE 395 ---
+PULMONARY FUNCTION STUDIES
+Pulmonary Function StudiesMarch 4, 2024 (effective April 1, 2024)
+PREAMBLE
+SPECIFIC ELEMENTS
+Pulmonary Function diagnostic procedures are divided into a professional component listed in the
+columns headed with a "P", and a technical component listed in the columns headed with an "H" or a
+"T". The technical component "H" of the procedures subject to the conditions stated under "Diagnostic
+Services Rendered at a Hospital" on page GP11, is eligible for payment only if the service is:
+a. rendered at a hospital; or
+b. rendered at an off-site premise operated by a hospital corporation that has received
+approval under section 4 of the Public Hospitals Act.
+The technical component "T" of the procedure is eligible for payment for services rendered in a
+physician's office or a hospital with the latter subject to the conditions stated under "Diagnostic
+Services Rendered at a Hospital" and “Payment for Diagnostic and Therapeutic Services Rendered at
+a Hospital” on page GP11.
+In addition to the common elements, the components of Pulmonary Function diagnostic procedures
+include the following specific elements.
+For Professional Component P
+A. Providing clinical supervision, including approving, modifying and/or intervening in the performance
+of the procedure where appropriate, and quality control of all elements of the technical component
+of the procedure.
+B. Performance of any clinical procedure associated with the diagnostic procedure which is not
+separately billable.
+C. Where appropriate, post-procedure monitoring, including intervening except where this constitutes
+a separately billable service.
+D. Interpreting the results of the diagnostic procedure.
+E. Providing premises for any aspect(s) of A and D that is(are) performed at a place other than the
+place in which the procedure is performed.
+If the physician claiming the fee for the service is personally unable to perform elements A, B and C,
+these may be delegated to another physician, who must personally perform the service.
+Element D must be personally performed by the physician who claims for the service.
+For Technical Component H and T
+A. Preparing the patient for the procedure.
+B. Performing the diagnostic procedure
+C. Making arrangements for any appropriate follow-up care.
+D. Providing records of the results of the procedure to the interpreting physician.
+E. Discussion with, and providing information and advice to, the patient or patient’s representative,
+whether by telephone or otherwise, on matters related to the service.
+F. Preparing and transmitting a written, signed and dated interpretive report of the procedure to the
+referring provider.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) H1 Amd 12 Draft 1
+
+--- PAGE 396 ---
+PULMONARY FUNCTION STUDIES
+PREAMBLE
+G. Providing premises, equipment, supplies and personnel for all specific elements of the technical
+and professional components except for the premises for any aspect(s) of A and D of the
+professional component that is(are) not performed at the place in which the procedure is
+performed.
+Amd 12 Draft 1 H2 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 397 ---
+PULMONARY FUNCTION STUDIES
+March 4, 2024 (effective April 1, 2024)
+PREAMBLE
+OTHER TERMS AND DEFINITIONS
+1. Professional and technical components are claimed separately. Claims for technical component
+H are submitted using listed fee code with suffix B. Claims for professional component P are
+submitted using listed fee code with suffix C.
+2. For services rendered outside a hospital setting (except for J301, J304, J324, and J327) the
+only fees billable under the Health Insurance Act are listed under the column P (use suffix C).
+Costs for the technical component of services rendered in an ICHSC are listed in the Schedule
+of Facility Costs.
+3. Each of the following tests designated by an individual code number is considered to be specific
+and requires individual ordering.
+4. Exercise assessment (J315, E450, E451, J316) requires a physician to be in attendance at all
+times.
+5. The technical and professional fee components for pulmonary function studies are not eligible
+for payment in the routine preoperative preparation or screening of a patient for non-thoracic
+surgery unless required for respiratory diagnosis, anesthetic decision making or optimization of
+a patient's respiratory disease prior to surgery.
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) H3 Amd 12 Draft 1
+
+--- PAGE 398 ---
+PULMONARY FUNCTION STUDIES
+March 4, 2024 (effective April 1, 2024)
+T P
+Simple spirometry
+J301 Volume versus Time Study - must include Vital capacity, FEV ,
+1
+FEV /FVC, and may include calculation of MMEFR(FEF25-
+1
+75)...................................................................................... 9.85 7.85
+J324 - repeat after bronchodilator............................................... 2.97 4.20
+Flow volume loop
+J304 Volume versus Flow Study - from which an expiratory limb, and
+inspiratory limb if indicated, are generated. A flow volume
+loop may include derivation of FEV 1 , VC, V 50 , V 25 ............ 19.60 11.55
+J327 - repeat after bronchodilator............................................... 2.97 6.90
+Payment rules:
+1.J301 or J324 are not eligible for payment same patient same day as J304 or J327.
+2.J301, J324, J304 and J327 must represent the best of three recorded test results or the study
+is not eligible for payment.
+3.J301 and J324 must be performed with a permanent record including a written interpretation
+by the physician or the study is not eligible for payment.
+4.J304 and J327 are only eligible for payment for a study that meets all of the following
+requirements:
+a.There is a permanent record that includes a written interpretation by the physician;
+b. The permanent record includes constituent graph(s), tracing(s) and measurements with a
+scale on the tracing or graph of:
+i. at least 5 mm per litre per second for flow; and
+ii. 10 mm per litre for volume.
+c.The technical component of the study complies with the CPSO Clinical Practice
+Parameters and Facility Standards for Diagnostic Spirometry and Flow Volume Loop
+Studies; and
+d.The physician claiming the professional component must be able to demonstrate
+appropriate training in pulmonary function testing interpretation.
+[Commentary:
+1.For J304 and J327, a computer or automated interpretation in the absence of a documented
+physician interpretation, are not sufficient for payment purposes.
+2.The CPSO Clinical Practice Parameters and Facility Standards for Diagnostic Spirometry and
+Flow Volume Loop Studies may be found at the following internet link: http://www.cpso.on.ca/
+uploadedFiles/policies/guidelines/facilties/Diagnostic%20Spirometry_Apr08.pdf.
+3.Physicians should be prepared to provide to the ministry documentation demonstrating their
+training on request.]
+Amd 12 Draft 1 H4 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 399 ---
+PULMONARY FUNCTION STUDIES
+H P
+Functional residual capacity
+J311 - by gas dilution method ....................................................... 16.30 18.90
+J307 - by body plethysmography .................................................. 17.50 19.20
+Note:
+J311 not to be claimed same patient same day as J307.
+J305 Lung compliance (pressure volume curve of the lung from TLC
+to FRC)............................................................................... 51.95 48.15
+J306 Airways resistance by plethysmography or estimated using
+oesophageal catheter......................................................... 16.20 17.25
+J303 Extra pulmonary airways resistance by plethysmography...... 16.20 16.05
+J340 Maximum inspiratory and expiratory pressures...................... 2.81 3.43
+J310 Carbon monoxide diffusing capacity by single breath method 21.40 19.40
+J308 Carbon dioxide ventilatory response ...................................... 19.90 14.60
+Stage I
+J315 Graded exercise to maximum tolerance (exercise must include
+continuous heart rate, oximetry and vent

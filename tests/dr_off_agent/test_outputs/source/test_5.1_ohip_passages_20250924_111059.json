@@ -1,0 +1,26 @@
+{
+  "test_name": "test_5.1_ohip_passages",
+  "timestamp": "2025-09-24T11:10:59.375444",
+  "elapsed_seconds": 0.2844,
+  "result": {
+    "passages": [
+      {
+        "chunk_id": "ohip_chunk_0",
+        "text": "[Passage ohip_chunk_0 from ohip_chunks not available - collection not initialized]",
+        "source": "ohip_chunks",
+        "page": null,
+        "section": null,
+        "highlights": []
+      },
+      {
+        "chunk_id": "ohip_chunk_1",
+        "text": "[Passage ohip_chunk_1 from ohip_chunks not available - collection not initialized]",
+        "source": "ohip_chunks",
+        "page": null,
+        "section": null,
+        "highlights": []
+      }
+    ],
+    "total_chunks": 2
+  }
+}

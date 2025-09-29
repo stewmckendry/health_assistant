@@ -1,0 +1,170 @@
+{
+  "document_id": "cep_pots",
+  "source_url": "https://tools.cep.health/tool/pots/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "neurology",
+  "extracted_at": "2025-09-24T15:32:59.499834",
+  "content_hash": "2f22a9d3bc6efb84950b9ebd0e8f6b145f2eaab7c98dee1b6f520ddbb76db51a",
+  "title": "Postural Orthostatic Tachycardia Syndrome (POTS)",
+  "tool_slug": "pots",
+  "navigation": [
+    {
+      "title": "Clinical history",
+      "anchor": "#clinicalhistory",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Physical examination1,2",
+      "anchor": "#physexam",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Differential diagnosis and comorbid conditions1,2",
+      "anchor": "#differentialdiagnosis",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Specialist referral",
+      "anchor": "#specialistreferral",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Proposed 2-step POTS management algorithm:1,2",
+      "anchor": "#2-step",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Clinical accommodation and disability support",
+      "anchor": "#accomanddissupp",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Non-pharmacological management",
+      "anchor": "#nonpharm",
+      "type": "heading_h3",
+      "level": 3
+    },
+    {
+      "title": "Pharmacological management",
+      "anchor": "#pharm",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": true,
+    "has_calculator": true,
+    "has_checklist": false,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": true,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Clinical presentation",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Presentation of POTS symptoms can vary between patients; however, symptoms of orthostatic intolerance must be dominant in the clinical presentation.1 Practice point:It is more important to understand symptom presentation and behaviour (e.g., if some symptoms are improved upon recumbency) rather than requiring a specific cluster or number of symptoms.1,2 Light-headedness/dizzinessPalpitation (\u201cheart racing\u201d)TremulousnessAtypical chest discomfort/dyspneaShortness of breathPeripheral acrocyanosi..."
+    },
+    {
+      "heading": "Assessment",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Clinical history",
+          "anchor": "#clinicalhistory",
+          "level": 3
+        },
+        {
+          "heading": "Physical examination1,2",
+          "anchor": null,
+          "level": 3
+        },
+        {
+          "heading": "Physical examination1,2",
+          "anchor": "#physexam",
+          "level": 3
+        },
+        {
+          "heading": "Differential diagnosis and comorbid conditions1,2",
+          "anchor": "#differentialdiagnosis",
+          "level": 3
+        }
+      ],
+      "summary": "Clinical historyPhysical examinationDifferential diagnosis and comorbid conditions Carry out a detailed history, a physical examination and a 12-lead ECG during the initial assessment for POTS. This approach is often sufficient to diagnose and begin treatment; however, given the heterogeneity of POTS, an individualized approach is warranted.1 Once a list of orthostatic and commonly associated symptoms has been identified, proceed with inquiring about the following:1,2"
+    },
+    {
+      "heading": "Diagnosis",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Specialist referral",
+          "anchor": "#specialistreferral",
+          "level": 3
+        }
+      ],
+      "summary": "Diagnosis of POTS is based on the presence of:1,3 >3 monthsduration of symptoms of orthostatic intolerance that are at least partially relieved byrecumbency Sustainedincrease in heart rate (30 bpm in adults 19+) from supine position to upright within 10 minutes of standing. SeeOrthostatic vital signs"
+    },
+    {
+      "heading": "Management",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Proposed 2-step POTS management algorithm:1,2",
+          "anchor": "#2-step",
+          "level": 3
+        },
+        {
+          "heading": "Clinical accommodation and disability support",
+          "anchor": "#accomanddissupp",
+          "level": 3
+        },
+        {
+          "heading": "Non-pharmacological management",
+          "anchor": "#nonpharm",
+          "level": 3
+        },
+        {
+          "heading": "Pharmacological management",
+          "anchor": "#pharm",
+          "level": 3
+        }
+      ],
+      "summary": "Proposed 2-step POTS management algorithmClinical accommodation and disability supportNon-pharmacological managementPharmacological management Practice point:There is no single treatment that has been demonstrated to be effective in all POTS patients. POTS management will often require a combination of strategies, beginning with non-pharmacological interventions either on their own or in combination with pharmacological therapies, depending on symptom severity.1 Overarching management goals:1"
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Raj SR, Guzman JC, Harvey P, Richer L,SchondorfR,SeiferC, et al. Canadian Cardiovascular Society Position Statement on Postural Orthostatic Tachycardia Syndrome (POTS) and Related Disorders of Chronic Orthostatic Intolerance. Can JCardiol. 2020;36(3):357\u201372.[2]Expert Opinion.[3]Hasan B,AlmasriJ, Marwa B,KlaasKM, Fischer PR. Treatment of Postural Orthostatic Tachycardia SyndromeWithMedication: A Systematic Review. J Child Neurol. 2020 Dec;35(14):1004\u201316.[4]AA PHARMA INS. Product monograph: ..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "ThePostural Orthostatic Tachycardia Syndrome toolwas developed using the Centre for Effective Practice\u2019s (CEP\u2019s) integrated knowledge translation approach as part of the Knowledge Translation in Primary Care (KTinPC) Initiative. This approach ensures that clinicians are engaged throughout the development processes through the application of user-centered design methodology. Clinical leadership of the resource was provided by Dr. Farah Tabassum. End users and clinical experts were also engaged..."
+    }
+  ],
+  "references": [],
+  "summary": "Postural Orthostatic Tachycardia Syndrome (POTS). Category: Neurology. Features: algorithm, calculator, forms. 6 main sections"
+}

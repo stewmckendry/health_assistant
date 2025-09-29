@@ -1,0 +1,92 @@
+Subsection: Peripheral Nerves
+Parent Section: X
+Page Reference: X12
+Pages: 752 to 754
+Text chunks: 1
+Total text length: 4706 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 752 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+PERIPHERAL NERVES
+Asst Surg Anae
+# E906 - to basic fee for neurolysis, nerve tumour excision, nerve
+suture, nerve transfer, or nerve graft when using operating
+microscope......................................................... add 40%
+# E925 - to basic fee for a repeat peripheral nerve procedure, (i.e.,
+any N-prefix surgical fee code in the Peripheral Nerves
+section), or when acute nerve injury repair by suture,
+transfer or graft is delayed for more than 4 weeks...........
+........................................................................... add 30%
+Exploration, decompression, division, excision, biopsy, neurolysis and/or transposition
+# N188 - minor nerve - including digital, cutaneous or lateral femoral
+cutaneous nerve................................................................. 6 153.70 7
+# N285 - major nerve - excluding carpal tunnel or ulnar nerve at
+elbow.................................................................................. 7 256.15 7
+# N283 Decompression, exploration for thoracic outlet syndrome
+including excision of cervical and/or first rib and to include
+scalenotomy ....................................................................... 7 389.05 7
+# N282 Brachial plexus (excluding thoracic outlet syndrome or cervical
+rib) ...................................................................................... 6 1000.00 6
+# N290 Carpal tunnel release.............................................................. 6 156.75 6
+# N190 Exploration and/or decompression and/or neurolysis of ulnar
+nerve (elbow)...................................................................... 7 215.35 7
+# N189 Ulnar nerve transposition at elbow - may include exploration,
+decompression and/or neurolysis....................................... 7 279.25 7
+# N177 Sciatic nerve in buttock........................................................... 7 430.75 7
+# N184 Decompression of posterior tibial or common peroneal nerve 6 165.20 7
+# N286 Tumour or neuroma - major nerve.......................................... 7 317.85 7
+# N295 Excision of Morton’s or subcutaneous neuroma, glomus or
+small cutaneous nerve tumour ........................................... 6 109.95 6
+# E911 - implantation of neuroma into bone or muscle, to N286 or
+N295 .................................................................. add 40%
+Nerve suture
+# N289 - minor - (sensory/cutaneous nerve)..................................... 7 250.00 7
+# N287 - major - (mixed sensory and motor nerve, or pure motor
+nerve) ................................................................................. 7 500.00 7
+Nerve transfer
+# N293 - minor – (sensory/cutaneous nerve).................................... 6 363.90 6
+# N291 - major – (mixed sensory and motor nerve, or pure motor
+nerve) ................................................................................. 6 727.80 6
+[Commentary:
+See Ocular and Aural Surgical Procedures for Facial nerve decompression, grafting fee codes
+and Neurological Surgical Procedures – Cranial for Facial nerve transfer fee codes]
+Amd 12 Draft 1 X12 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 753 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+PERIPHERAL NERVES
+Asst Surg Anae
+Nerve graft
+# N183 - minor - (sensory/cutaneous nerve)..................................... 6 471.05 6
+# N288 - major - (mixed sensory and motor nerve, or pure motor
+nerve) ................................................................................. 6 927.55 6
+# E899 - for each additional cable, to N288 ............................. add 102.45
+Payment rules:
+1.N188 or N285 when performed through the same incision as flexor tendon repairs R585 or
+E581 is an insured service payable at nil.
+2.N289, N287, N293, N291, N183 and/or N288 include exploration, decompression, division,
+excision, and/or neurolysis of the nerve(s) involved, if performed.
+3.N293 or N291 are only eligible for payment for coaptation of one or more donor nerve
+fascicles to a recipient nerve.
+4.Nerve graft fees include harvesting of the nerve(s) required for grafting.
+5.Peripheral nerve fees codes include any guidance, nerve stimulation, or nerve mapping if
+performed.
+Implantable peripheral nerve stimulators
+# Z816 Implantation of electrode for peripheral nerve stimulation...... 6 241.00 6
+# Z823 Implantation or revision of stimulation pack or leads,
+(peripheral nerve, brain) ..................................................... 8 404.30 8
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) X13 Amd 12 Draft 1
+
+--- PAGE 754 ---
+NEUROLOGICAL SURGICAL PROCEDURES
+NOT ALLOCATED
+Amd 12 Draft 1 X14 February 14 , 2 025 (e ffective M arch 3, 2025)

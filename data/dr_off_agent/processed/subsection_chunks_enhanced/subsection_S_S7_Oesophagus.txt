@@ -1,0 +1,177 @@
+Subsection: Oesophagus
+Parent Section: S
+Page Reference: S7
+Pages: 675 to 678
+Text chunks: 1
+Total text length: 9635 characters
+Table indicators: {
+  "multi_column": true,
+  "has_h_p_columns": false,
+  "has_asst_surg_anae": true,
+  "has_time_requirements": false,
+  "has_fee_amounts": true,
+  "table_sections": []
+}
+============================================================
+
+--- PAGE 675 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+OESOPHAGUS
+Asst Surg Anae
+For procedures on the oesophagus, the following basic units for assistants and
+anaesthesiologists will apply except if a basic fee is listed.
+# S073 Cervical approach.................................................................... 6 - 7
+# S074 Thoracic approach................................................................... 10 - 13
+# S075 Abdominal approach................................................................ 7 - 8
+ENDOSCOPY
+# Z515 Oesophagoscopy, with or without biopsy(ies).......................... 68.25 4
+Oesophagoscopy-gastroscopy, with or without duodenoscopy
+# Z399 - elective ................................................................................ nil 92.50 4
+# Z400 - for active bleeding ............................................................... nil 125.10 4
+# E696 - with dilatation of oesophagus......................................add 30.65
+# E702 - with multiple (3 or more) biopsies of specific lesion....add 15.10
+# E690 - with removal of foreign body(ies) ................................add 43.85
+# E795 - with brushing of oesophagus, stomach, and/or duodenum
+....................................................................................add 46.30
+# E770 - with duodenoscopy and drainage of bile after I.V. CCK
+stimulation...................................................................add 23.10
+# E692 - with laser debulking ....................................................add 69.70
+# E698 - with pneumatic or balloon dilation...............................add 69.70
+# E703 - with snare polypectomy first polyp (> 1 cm)................add 50.50
+# E799 - each additional polyp, by snare polypectomy (> 1 cm) (to a
+maximum of 2) ............................................................add 25.25
+# E695 - laser palliation of oesophageal tumour, extensive,
+complete obstruction (see General Preamble GP12) add I.C
+# E797 - management of uncomplicated upper or lower
+gastrointestinal bleeding, by any technique (e.g. laser,
+injection, diathermy, banding etc.) .............................add 46.30
+# E798 - management of complicated upper gastrointestinal
+bleeding by any technique in haemodynamically unstable
+patients with active bleeding during endoscopy......... add 69.70
+# E629 - endoscopic placement of stent in duodenum..............add 137.05
+[Commentary:
+E690 is payable for removal of a foreign body including a stent by oesophagoscopy-
+gastroscopy-duodenoscopy.]
+Note:
+Z292 rendered in association with oesophagoscopy and oesophagoscopy-gastroscopy
+services is not eligible for payment unless the laryngoscopy service is rendered for suspicion of
+disease of the larynx. Claims for Z292 in these circumstances are assessed by a medical
+consultant on a manual review basis and require the submission of a written explanation.
+[Commentary:
+Manual review is not required for Z293, Z322 and Z323 rendered in association with
+oesophagoscopy and oesophagoscopy-gastroscopy services.]
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S7 Amd 12 Draft 1
+
+--- PAGE 676 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+OESOPHAGUS
+Asst Surg Anae
+INCISION
+Oesophagostomy
+Cervical
+# S084 - other than neonatal ............................................................. 212.35
+# S085 - neonatal............................................................................... 304.20
+Intrathoracic oesophageal stent
+# S082 - via laparotomy ..................................................................... 410.55 7
+# S083 - via oesophagoscope (includes Z515).................................. 304.20 6
+# S081 Trans-oesophageal division of oesophageal varices............... 558.05
+# S080 Oesophageal-gastric devascularization (including splenectomy
+and oesophageal division/anastomosis) ............................. 898.15
+EXCISION
+# S087 Intrathoracic diverticulum......................................................... 507.00
+# S086 Cricopharyngeal myotomy, open approach ............................. 300.00
+# Z505 Cricopharyngeal myotomy, when rendered by endoscopy, or in
+association with a surgical procedure during the same
+anaesthetic.......................................................................... 6 37.20 6
+# S088 Cricopharyngeal diverticulum .................................................. 390.05
+# S089 Partial oesophageal resection and reconstruction (including
+intestinal transposition)........................................................ 1180.50 17
+# S090 Total thoracic oesophageal resection ...................................... 1912.30 13
+# E730 - with reconstruction......................................................add 740.95
+# E847 - with reconstruction of diaphragm requiring repair with
+mesh or equivalent synthetic material, to S089 or S090
+....................................................................................add 75.00
+# E644 - radical mediastinal node dissection following preoperative
+chemotherapy and/or radiotherapy, to S089 or S090 .add 400.00
+Note:
+1.S086 is not eligible for payment with S088.
+2.Z505 is not eligible for payment with S086.
+# S093 Enucleation of benign oesophageal tumour ............................ 584.15
+# E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to S087, S089, S090, S093
+……................................................................... add 35%.
+REPAIR
+# S161 Oesophageal myotomy, partial (below aortic arch).................. 584.15
+# E758 - with oesophageal hiatus hernia repair ........................add 217.35
+# S100 Total thoracic oesophageal myotomy (as sole procedure) ...... 738.90
+# E758 - with oesophageal hiatus hernia repair ........................add 217.35
+# E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to S100, S161 .................. add 35%.
+Amd 12 Draft 1 S8 February 14 , 2 025 (e ffective M arch 3, 2025)
+
+--- PAGE 677 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+March 4, 2024 (effective April 1, 2024)
+OESOPHAGUS
+Asst Surg Anae
+REPAIR
+Oesophageal hiatus hernia
+# S091 - abdominal or transthoracic approach with fundal plication. 750.00
+# S092 - recurrent ............................................................................. 1100.00
+# S079 - massive paraesophageal ................................................... 1200.00
+Payment rules:
+S079 is only eligible for payment for surgical repair of
+a.a paraesophageal hernia with >50% intrathoracic herniation of the stomach with the
+fundus lying above the gastroesophageal junction, or
+b.a paraesophageal hernia with herniation of the stomach and any other abdominal
+organ(s) through the crus.
+# E793 - laparoscopic, thoracoscopic, or laparoscopic/
+thoracoscopic assisted, to S091, S092, or S079
+........................................................................... add 25%
+# E744 - with gastroplasty, to either S091, S092, or S079 ....... add 115.80
+# E847 - with reconstruction of diaphragm requiring repair with
+mesh or equivalent synthetic material, to S091, S092, or
+S079........................................................................... add 75.00
+# E742 - when S091, S092, or S079, with or without gastroplasty, is
+done in conjunction with cholecystectomy, and/or
+vagotomy with or without drainage procedures, add E742
+to S091, S092, or S079 (with or without E744) for each
+additional procedure performed. For any other
+combination of surgical procedures with oesophageal
+hiatus hernia repair (with the exception of S161 and
+S100), see Surgical Preamble SP3 ........................... add 217.35
+# S095 Oesophageal stricture (Thal) - may include oesophageal
+hiatus hernia repair with or without gastroplasty ................ 676.05
+# S096 Ruptured oesophagus, suture and drainage .......................... 1200.00
+# S097 Oesophago-gastrostomy for bypass (as sole procedure)....... 608.30
+# E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to S095, S096, S097..........add 35%
+Oesophageal bypass, abdomen to neck
+# S098 - with stomach ...................................................................... 912.60
+# S099 - with colon or jejunum.......................................................... 1264.05
+# E683 - when performed thorascopically, by video-assisted
+thoracic surgery (VATS), by robotic-assisted surgery, or by
+uniportal approach, to S098 or S099 ................ add 35%
+SUTURE
+# S103 Closure of H-type tracheo-oesophageal fistula by cervical or
+thoracic approach............................................................... 923.05
+# S104 Repair of oesophageal atresia with or without tracheal fistula 2203.20
+Februa ry 14, 2 025 (effec tive M ar ch 3, 2025) S9 Amd 12 Draft 1
+
+--- PAGE 678 ---
+DIGESTIVE SYSTEM SURGICAL PROCEDURES
+OESOPHAGUS
+Asst Surg Anae
+DILATION OF OESOPHAGUS
+Passive (bougie)
+# Z529 - initial session...................................................................... 40.55
+# Z530 - repeat session (within three months following previous
+dilation).............................................................................. 27.35
+Pneumatic
+# Z525 - as sole procedure............................................................... 110.85
+# Z523 - with rigid dilators guided over a string or wire .................... 52.90
+# Z531 Repeat dilations during the same admission.......................... 26.40
+Amd 12 Draft 1 S10 February 14 , 2 025 (e ffective M arch 3, 2025)

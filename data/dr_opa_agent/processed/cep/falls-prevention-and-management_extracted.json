@@ -1,0 +1,108 @@
+{
+  "document_id": "cep_falls_prevention_and_management",
+  "source_url": "https://tools.cep.health/tool/falls-prevention-and-management/",
+  "source_org": "cep",
+  "document_type": "clinical_tool",
+  "tool_category": "preventive_care",
+  "extracted_at": "2025-09-24T15:33:00.010012",
+  "content_hash": "d6c899a440d9f9c2d31c0ae755d8d683361ff5f763324d8f5c8642cbe1e82b9d",
+  "title": "Fall Prevention and Management",
+  "tool_slug": "falls-prevention-and-management",
+  "last_updated": "evidence report and systematic review for the US Preventive Services Task Force. JAMA. 2018 Apr 24;319(16):1705.",
+  "navigation": [
+    {
+      "title": "Fall risk assessment and interventions2,6,7,22,23",
+      "anchor": "#riskinterventions",
+      "type": "heading_h3",
+      "level": 3
+    }
+  ],
+  "key_content": {
+    "red_flags": [
+      "Ask the patient about:Whether they live aloneRecent losses (e.g. spouse, family member)Roles or responsibilities (e.g. being a caregiver)Recent changes in living arrangementsAccess to food and housing"
+    ],
+    "has_diagnostic_criteria": true,
+    "has_treatment_guidance": true,
+    "has_referral_criteria": true
+  },
+  "features": {
+    "has_algorithm": false,
+    "has_calculator": true,
+    "has_checklist": true,
+    "has_flowchart": false,
+    "has_tables": false,
+    "has_forms": true,
+    "has_patient_resources": false,
+    "has_videos": false
+  },
+  "sections": [
+    {
+      "heading": "Initiate universal screening",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Timing of universal screening5,6",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Annually screen all patients 65 years of age and older for falls risk5Other opportunities for screening include:After a hospitalization, ER visit or medical event (e.g., stroke, fracture, delirium, etc.)After a bone mineral density test, decrease in bone density or diagnosis of osteoporosisAfter a significant change in health status (e.g., weight gain or loss, increased frailty, dementia, etc.)5After a relevant medication change or addition (e.g., CNS medications or hypotensives) After a hosp..."
+    },
+    {
+      "heading": "Falls prevention screening",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Observed by the provider, supporting staff, family members or caregiversAssessed by asking \u201cDo you feel unsteady when walking, standing or climbing the stairs? Or do you worry about falling?\u201d7Measured using theTimed Up and Go (TUG) test Discuss with the patient risks and\ninterventions related to (seeFall risk assessment and interventions):Physical ActivityNutrition and hydrationSet reminder to reassess next year Physical ActivityNutrition and hydration"
+    },
+    {
+      "heading": "Identify contributing risk factors and implement interventionsNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [
+        {
+          "heading": "Fall risk assessment and interventions2,6,7,22,23",
+          "anchor": "#riskinterventions",
+          "level": 3
+        },
+        {
+          "heading": "Click on risk factor to view how to assess and interventions",
+          "anchor": null,
+          "level": 3
+        }
+      ],
+      "summary": "Check for all risk factors outlined below.  Implement individualized multifactorial interventions tailored to each patient\u2019s risk factors. SeeIntegrate fall prevention into your practicefor tips on integrating fall prevention into practice, leveraging interprofessional teams and community supports and engaging patients and caregivers. Adults with frailty are at a higher risk of adverse health events including falls7Evaluating community-dwelling adults for frailty can play a role in preventing..."
+    },
+    {
+      "heading": "Integrate falls prevention into your practice",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Display fall prevention-related materials in the office to help start a conversation with patients.Display exercises on waiting room televisions or screens for patients to follow while waiting for their appointments.Conduct a search in your EMR to identify patients aged 65 and older.Set an annual reminder your EMR to screen for risk of falls.Observe balance, gait and home environment first-hand by rooming your patients and conducting home visits, when possible.Fit the falls risk assessment in..."
+    },
+    {
+      "heading": "Supporting resourcesNew",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Time patient while they: Stand up from a chairWalk forward 3 metresTurnWalk back to the chair at their normal paceSit down again Patients who take \u226512 seconds to complete the TUG test are at risk for falling."
+    },
+    {
+      "heading": "References",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "[1]Public Health Agency of Canada. Seniors\u2019 falls in Canada: second report [Internet]. Ottawa, ON: Public Health Agency of Canada; 2014 [cited 2021 Jul 13] p. 62. Available from: https://www.phacaspc.gc.ca/ seniors-aines/publications/public/injury-blessure/seniors_falls-chutes_aines/assets/pdf/seniors_fallschutes_aines-eng.pdf[2]World Health Organization. Integrated care for older people: guidelines on community-level interventions to manage declines in intrinsic capacity. WHO [Internet]. 201..."
+    },
+    {
+      "heading": "Acknowledgement and legal",
+      "anchor": null,
+      "level": 2,
+      "subsections": [],
+      "summary": "Falls prevention and management tool (\u2018Tool\u2019) was developed as part of the Knowledge Translation in Primary Care Initiative, led by the Centre for Effective Practice. Clinical leadership for the development of the Tool was provided by Dr. Winyan Chung and Dr. Felicia Presenza and was subject to external review by health care providers and other relevant stakeholders. This Tool was funded by the Government of Ontario as part of the Knowledge Translation in Primary Care Initiative. This Tool wa..."
+    }
+  ],
+  "references": [],
+  "summary": "Fall Prevention and Management. Category: Preventive Care. Features: calculator, checklist, forms. 7 main sections"
+}

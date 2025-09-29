@@ -1,0 +1,296 @@
+{
+  "subsection_title": "Upper Extremities",
+  "parent_section": "D",
+  "page_ref": "D7",
+  "pages_processed": "355-355",
+  "chunks_processed": 1,
+  "table_structures_detected": {
+    "multi_column": true,
+    "has_h_p_columns": true,
+    "has_asst_surg_anae": false,
+    "has_time_requirements": false,
+    "has_fee_amounts": true,
+    "table_sections": [
+      [
+        5,
+        "X045 - two views............................................................................ 14.90 6.40"
+      ],
+      [
+        6,
+        "X209 - three or more views............................................................ 22.90 8.90"
+      ],
+      [
+        8,
+        "X046 - two views............................................................................ 21.70 10.35"
+      ],
+      [
+        9,
+        "X210 - three or more views............................................................ 29.60 13.05"
+      ],
+      [
+        11,
+        "X047 - two or three views .............................................................. 17.95 7.95"
+      ],
+      [
+        12,
+        "X211 - four or more views.............................................................. 25.60 10.90"
+      ],
+      [
+        14,
+        "X048 - two views............................................................................ 17.95 7.95"
+      ],
+      [
+        15,
+        "X212 - three or more views............................................................ 25.60 10.65"
+      ],
+      [
+        17,
+        "X049 - two views............................................................................ 17.95 7.95"
+      ],
+      [
+        18,
+        "X213 - three or more views............................................................ 25.80 10.65"
+      ],
+      [
+        20,
+        "X050 - two views............................................................................ 14.90 6.40"
+      ],
+      [
+        21,
+        "X214 - three or more views............................................................ 22.75 9.30"
+      ],
+      [
+        23,
+        "X051 - two views............................................................................ 14.90 6.40"
+      ],
+      [
+        24,
+        "X215 - three or four views.............................................................. 22.90 9.05"
+      ],
+      [
+        25,
+        "X216 - five or more views .............................................................. 30.85 11.65"
+      ],
+      [
+        27,
+        "X052 - two views............................................................................ 14.90 6.40"
+      ],
+      [
+        28,
+        "X217 - three or more views............................................................ 22.90 9.05"
+      ],
+      [
+        30,
+        "X053 - two or three views .............................................................. 14.90 6.40"
+      ],
+      [
+        31,
+        "X218 - four or more views.............................................................. 22.90 9.05"
+      ],
+      [
+        33,
+        "X054 - two or three views .............................................................. 14.90 6.40"
+      ],
+      [
+        34,
+        "X219 - four or more views.............................................................. 22.90 9.05"
+      ],
+      [
+        36,
+        "X055 - two or three views .............................................................. 21.70 13.05"
+      ],
+      [
+        37,
+        "X220 - four or more views.............................................................. 27.65 15.70"
+      ],
+      [
+        39,
+        "X056 - two views............................................................................ 11.50 4.70"
+      ],
+      [
+        40,
+        "X221 - three or more views............................................................ 14.90 6.40"
+      ]
+    ]
+  },
+  "fee_codes": [
+    {
+      "code": "X045",
+      "description": "two views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    },
+    {
+      "code": "X209",
+      "description": "three or more views",
+      "fee": 22.9,
+      "h_fee": 22.9,
+      "p_fee": 8.9
+    },
+    {
+      "code": "X046",
+      "description": "two views",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 10.35
+    },
+    {
+      "code": "X210",
+      "description": "three or more views",
+      "fee": 29.6,
+      "h_fee": 29.6,
+      "p_fee": 13.05
+    },
+    {
+      "code": "X047",
+      "description": "two or three views",
+      "fee": 17.95,
+      "h_fee": 17.95,
+      "p_fee": 7.95
+    },
+    {
+      "code": "X211",
+      "description": "four or more views",
+      "fee": 25.6,
+      "h_fee": 25.6,
+      "p_fee": 10.9
+    },
+    {
+      "code": "X048",
+      "description": "two views",
+      "fee": 17.95,
+      "h_fee": 17.95,
+      "p_fee": 7.95
+    },
+    {
+      "code": "X212",
+      "description": "three or more views",
+      "fee": 25.6,
+      "h_fee": 25.6,
+      "p_fee": 10.65
+    },
+    {
+      "code": "X049",
+      "description": "two views",
+      "fee": 17.95,
+      "h_fee": 17.95,
+      "p_fee": 7.95
+    },
+    {
+      "code": "X213",
+      "description": "three or more views",
+      "fee": 25.8,
+      "h_fee": 25.8,
+      "p_fee": 10.65
+    },
+    {
+      "code": "X050",
+      "description": "two views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    },
+    {
+      "code": "X214",
+      "description": "three or more views",
+      "fee": 22.75,
+      "h_fee": 22.75,
+      "p_fee": 9.3
+    },
+    {
+      "code": "X051",
+      "description": "two views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    },
+    {
+      "code": "X215",
+      "description": "three or four views",
+      "fee": 22.9,
+      "h_fee": 22.9,
+      "p_fee": 9.05
+    },
+    {
+      "code": "X216",
+      "description": "five or more views",
+      "fee": 30.85,
+      "h_fee": 30.85,
+      "p_fee": 11.65
+    },
+    {
+      "code": "X052",
+      "description": "two views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    },
+    {
+      "code": "X217",
+      "description": "three or more views",
+      "fee": 22.9,
+      "h_fee": 22.9,
+      "p_fee": 9.05
+    },
+    {
+      "code": "X053",
+      "description": "two or three views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    },
+    {
+      "code": "X218",
+      "description": "four or more views",
+      "fee": 22.9,
+      "h_fee": 22.9,
+      "p_fee": 9.05
+    },
+    {
+      "code": "X054",
+      "description": "two or three views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    },
+    {
+      "code": "X219",
+      "description": "four or more views",
+      "fee": 22.9,
+      "h_fee": 22.9,
+      "p_fee": 9.05
+    },
+    {
+      "code": "X055",
+      "description": "two or three views",
+      "fee": 21.7,
+      "h_fee": 21.7,
+      "p_fee": 13.05
+    },
+    {
+      "code": "X220",
+      "description": "four or more views",
+      "fee": 27.65,
+      "h_fee": 27.65,
+      "p_fee": 15.7
+    },
+    {
+      "code": "X056",
+      "description": "two views",
+      "fee": 11.5,
+      "h_fee": 11.5,
+      "p_fee": 4.7
+    },
+    {
+      "code": "X221",
+      "description": "three or more views",
+      "fee": 14.9,
+      "h_fee": 14.9,
+      "p_fee": 6.4
+    }
+  ],
+  "referenced_codes": [],
+  "rules": [],
+  "notes": []
+}
