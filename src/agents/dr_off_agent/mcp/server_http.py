@@ -34,8 +34,8 @@ async def run_http_server():
         logger.info("  - odb.get: ODB drug formulary lookup")
         logger.info("  - source.passages: Retrieve exact text chunks")
         
-        # Run as Streamable HTTP server
-        await mcp.run_streamable_http_async(host=host, port=port)
+        # Run as HTTP server (using new method)
+        await mcp.run_http_async(host=host, port=port)
         
     except Exception as e:
         logger.error(f"HTTP server error: {e}")

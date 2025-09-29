@@ -12,9 +12,8 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(project_root))
 
-# Import the main server module
-# Use relative import since we're in the same package
-from .server import mcp, logger, SESSION_ID, write_session_summary
+# Import the main server module from dr_opa_mcp directory
+from ..dr_opa_mcp.server import mcp, logger, SESSION_ID, write_session_summary
 
 async def run_http_server():
     """Run the MCP server in HTTP mode for Railway deployment"""
@@ -36,8 +35,8 @@ async def run_http_server():
         logger.info("  - opa_freshness_probe: Check for guidance updates on a topic")
         logger.info("  - opa_clinical_tools: CEP clinical decision support tools lookup")
         
-        # Run as Streamable HTTP server
-        await mcp.run_streamable_http_async(host=host, port=port)
+        # Run as HTTP server (using new method)
+        await mcp.run_http_async(host=host, port=port)
         
     except Exception as e:
         logger.error(f"HTTP server error: {e}")

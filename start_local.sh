@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # =============================================================================
-# AI Health Assistant - Complete Startup Script
+# AI Health Assistant - Local Development Startup Script
 # =============================================================================
-# This script starts all services needed to run the AI Health Assistant:
-# - Python FastAPI backend with environment variables
+# This script starts all services needed for local development:
+# - Python FastAPI backend (which spawns MCP servers in stdio mode)
 # - Next.js frontend development server
 # - Proper dependency management and error handling
+# 
+# Note: MCP servers are spawned as child processes in stdio mode automatically
 # =============================================================================
 
 set -e  # Exit on any error
@@ -163,6 +165,13 @@ fi
 print_success "Environment variables loaded"
 print_status "ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:0:20}..."
 
+# Ensure we're in stdio mode for local development
+unset RAILWAY_ENVIRONMENT
+unset USE_HTTP_MCP
+export USE_HTTP_MCP=false
+
+print_status "MCP servers will run in stdio mode (spawned as child processes)"
+
 # Start backend server
 $PYTHON_CMD -m uvicorn src.web.api.main:app --reload --port 8000 &
 BACKEND_PID=$!
@@ -223,6 +232,7 @@ echo ""
 print_status "Available Agents:"
 echo "  • Dr. OPA - Ontario Practice Advice & Regulatory guidance"
 echo "  • Dr. OFF - Ontario Formulary & Funding expert"
+echo "  • Agent 97 - Medical Education Assistant"
 echo "  • The Chief - AI Orchestrator for complex queries"
 echo ""
 print_status "Application Features:"
