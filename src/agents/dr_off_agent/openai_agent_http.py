@@ -44,7 +44,9 @@ class DrOffAgentHTTP(DrOffAgent):
             logger.info("Initializing MCP server in HTTP mode for Railway")
             
             # Use HTTP mode - connect to the running HTTP MCP server
-            mcp_url = os.environ.get("MCP_DR_OFF_URL", "http://localhost:8001")
+            # On Railway, the MCP servers run on the same container at different ports
+            base_url = os.environ.get("MCP_DR_OFF_URL", "http://localhost:8001")
+            mcp_url = f"{base_url}/mcp" if not base_url.endswith("/mcp") else base_url
             
             self.mcp_server = MCPServerStreamableHttp(
                 params=MCPServerStreamableHttpParams(
