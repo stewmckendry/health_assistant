@@ -8,21 +8,8 @@ import logging
 from typing import Optional
 from pathlib import Path
 
-# Set up path before imports
-import sys
-project_root = Path(__file__).parent.parent.parent.parent
-original_path = sys.path.copy()
-project_root_str = str(project_root)
-if project_root_str in sys.path:
-    sys.path.remove(project_root_str)
-src_dir = str(project_root / "src")
-if src_dir in sys.path:
-    sys.path.remove(src_dir)
-
-try:
-    from agents.mcp.server import MCPServerStreamableHttp, MCPServerStreamableHttpParams
-finally:
-    sys.path = original_path
+# Import MCP server classes from openai-agents
+from agents.mcp.server import MCPServerStreamableHttp, MCPServerStreamableHttpParams
 
 # Import base components
 from src.agents.diagnostic_orchestrator.orchestrator_agent import DiagnosticOrchestrator
