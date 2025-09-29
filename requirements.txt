@@ -33,6 +33,9 @@ python-multipart>=0.0.6
 pandas>=2.1.0
 numpy>=1.24.0
 
+# Vector database for embeddings
+chromadb>=0.4.15
+
 # MCP SDKs (if available as packages)
 # ref-tools
 # exa-py
