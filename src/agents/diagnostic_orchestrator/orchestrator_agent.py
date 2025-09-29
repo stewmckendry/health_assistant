@@ -412,7 +412,8 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                         tool_calls.append({
                             'tool': tool_name,
                             'agent': agent_name,
-                            'arguments': tool_args
+                            'arguments': tool_args,
+                            'sub_tools': []  # Will be populated from result analysis
                         })
                         
                         # Log tool call to Langfuse (critical for trace creation)
@@ -424,6 +425,42 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                         
                         if agent_name not in agents_consulted and agent_name != 'Unknown':
                             agents_consulted.append(agent_name)
+                
+                # Extract sub-agent tool calls from the result
+                # Check if result contains structured output with tool calls
+                if hasattr(result, 'output') and result.output:
+                    try:
+                        import json
+                        output_str = str(result.output)
+                        if '{' in output_str and '}' in output_str:
+                            start = output_str.find('{')
+                            end = output_str.rfind('}') + 1
+                            json_str = output_str[start:end]
+                            output_data = json.loads(json_str)
+                            
+                            # Look for tool_calls in the output
+                            if isinstance(output_data, dict) and 'tool_calls' in output_data:
+                                sub_tools = output_data['tool_calls']
+                                if isinstance(sub_tools, list):
+                                    # Match sub-tools to their parent agents
+                                    for tc in tool_calls:
+                                        if tc['agent'] != 'Unknown':
+                                            # Add sub-tools for this agent
+                                            for sub_tool in sub_tools:
+                                                if isinstance(sub_tool, dict) and 'name' in sub_tool:
+                                                    tc['sub_tools'].append({
+                                                        'name': sub_tool['name'],
+                                                        'arguments': sub_tool.get('arguments', '')
+                                                    })
+                                                    
+                                                    # Log MCP tool to Langfuse
+                                                    if self.enable_langfuse and self.langfuse:
+                                                        self.langfuse.start_span(
+                                                            name=f"mcp_tool_{sub_tool['name']}",
+                                                            input={"arguments": sub_tool.get('arguments', '')}
+                                                        )
+                    except (json.JSONDecodeError, AttributeError):
+                        pass
                 
                 # Extract citations from the response
                 import re
@@ -680,11 +717,12 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                             
                             # Only track if we got a real tool name
                             if tool_name != 'unknown':
-                                # Track tool call
+                                # Track the top-level agent call
                                 tool_calls.append({
-                                    'tool': tool_name,
+                                    'tool': tool_name,  # This will be dr_off, dr_opa, etc.
                                     'agent': agent_name,
-                                    'arguments': tool_args
+                                    'arguments': tool_args,
+                                    'sub_tools': []  # Will be populated from tool output
                                 })
                                 
                                 # Log tool call to Langfuse (this is the critical step)
@@ -705,29 +743,124 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                                 },
                                 'trace_id': trace_id  # Include trace_id
                             }
+                        
+                        elif event.item.type == "tool_call_output_item":
+                            # Extract the sub-agent's tool calls and citations from the output
+                            if hasattr(event.item, 'output'):
+                                output_str = str(event.item.output)
+                                
+                                # Extract citations from the text output
+                                # Look for URLs in the output
+                                import re
+                                
+                                # Extract formulary.health.gov.on.ca URLs
+                                formulary_urls = re.findall(r'https?://(?:www\.)?formulary\.health\.gov\.on\.ca[^\s\)]*', output_str)
+                                for url in formulary_urls:
+                                    if url not in citations:
+                                        citations.append(url)
+                                        # Forward citation to UI
+                                        yield {
+                                            'type': 'citation',
+                                            'content': {
+                                                'url': url,
+                                                'source': 'ODB Formulary',
+                                                'domain': 'formulary.health.gov.on.ca',
+                                                'is_trusted': True,
+                                                'source_agent': agents_consulted[-1] if agents_consulted else 'Unknown'
+                                            }
+                                        }
+                                
+                                # Extract Ontario health URLs
+                                ontario_urls = re.findall(r'https?://(?:www\.)?(?:ontario\.ca|ontariohealth\.ca|cpso\.on\.ca)[^\s\)]*', output_str)
+                                for url in ontario_urls:
+                                    if url not in citations:
+                                        citations.append(url)
+                                        domain = 'cpso.on.ca' if 'cpso' in url else 'ontario.ca' if 'ontario.ca' in url else 'ontariohealth.ca'
+                                        yield {
+                                            'type': 'citation',
+                                            'content': {
+                                                'url': url,
+                                                'source': 'Ontario Health' if 'ontariohealth' in url else 'CPSO' if 'cpso' in url else 'Government of Ontario',
+                                                'domain': domain,
+                                                'is_trusted': True,
+                                                'source_agent': agents_consulted[-1] if agents_consulted else 'Unknown'
+                                            }
+                                        }
+                                
+                                # Try to parse JSON output from sub-agents
+                                try:
+                                    import json
+                                    # Look for JSON-like structure in the output
+                                    if '{' in output_str and '}' in output_str:
+                                        start = output_str.find('{')
+                                        end = output_str.rfind('}') + 1
+                                        json_str = output_str[start:end]
+                                        output_data = json.loads(json_str)
+                                        
+                                        # Check if the output contains tool_calls from sub-agent
+                                        if isinstance(output_data, dict) and 'tool_calls' in output_data:
+                                            sub_agent_tools = output_data['tool_calls']
+                                            if isinstance(sub_agent_tools, list) and tool_calls:
+                                                # Add sub-agent's tool calls to the last agent call
+                                                for sub_tool in sub_agent_tools:
+                                                    if isinstance(sub_tool, dict) and 'name' in sub_tool:
+                                                        tool_calls[-1]['sub_tools'].append({
+                                                            'name': sub_tool['name'],  # e.g., odb_get, opa_search_sections
+                                                            'arguments': sub_tool.get('arguments', '')
+                                                        })
+                                                        
+                                                        # Log sub-tool to Langfuse
+                                                        if self.enable_langfuse and self.langfuse:
+                                                            self.langfuse.start_span(
+                                                                name=f"mcp_tool_{sub_tool['name']}",
+                                                                input={"arguments": sub_tool.get('arguments', '')}
+                                                            )
+                                        
+                                        # Check if output contains citations from sub-agent
+                                        if isinstance(output_data, dict) and 'citations' in output_data:
+                                            sub_citations = output_data['citations']
+                                            if isinstance(sub_citations, list):
+                                                for cite in sub_citations:
+                                                    if isinstance(cite, dict):
+                                                        # Forward structured citation
+                                                        if cite not in citations:
+                                                            citations.append(cite)
+                                                            yield {
+                                                                'type': 'citation',
+                                                                'content': cite
+                                                            }
+                                                    elif isinstance(cite, str) and cite not in citations:
+                                                        # Forward string citation
+                                                        citations.append(cite)
+                                                        yield {
+                                                            'type': 'citation',
+                                                            'content': {
+                                                                'source': cite,
+                                                                'is_trusted': True,
+                                                                'source_agent': agents_consulted[-1] if agents_consulted else 'Unknown'
+                                                            }
+                                                        }
+                                except (json.JSONDecodeError, AttributeError):
+                                    # Not JSON or parsing failed, skip
+                                    pass
                 
-                # Extract citations from the response
+                # Extract any additional citations from the final response that weren't caught earlier
                 import re
-                citations = []
                 
-                # Look for [Source: ...] pattern
+                # Look for [Source: ...] pattern in the final accumulated text
                 source_pattern = r'\[Source: ([^\]]+)\]'
-                citations.extend(re.findall(source_pattern, accumulated_text))
+                final_sources = re.findall(source_pattern, accumulated_text)
+                for source in final_sources:
+                    if source not in citations:
+                        citations.append(source)
                 
-                # Look for formulary.health.gov.on.ca URLs (common in ODB responses)
-                url_pattern = r'https?://(?:www\.)?formulary\.health\.gov\.on\.ca[^\s\)]*'
-                citations.extend(re.findall(url_pattern, accumulated_text))
-                
-                # Look for other Ontario health URLs
-                ontario_urls = r'https?://(?:www\.)?(?:ontario\.ca|ontariohealth\.ca|cpso\.on\.ca)[^\s\)]*'
-                citations.extend(re.findall(ontario_urls, accumulated_text))
-                
-                # Remove duplicates while preserving order
+                # Deduplicate citations (keeping order)
                 seen = set()
                 unique_citations = []
                 for cite in citations:
-                    if cite not in seen:
-                        seen.add(cite)
+                    cite_key = str(cite) if isinstance(cite, dict) else cite
+                    if cite_key not in seen:
+                        seen.add(cite_key)
                         unique_citations.append(cite)
                 citations = unique_citations
                 

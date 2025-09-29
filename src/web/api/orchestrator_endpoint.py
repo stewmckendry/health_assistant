@@ -76,6 +76,8 @@ def register_orchestrator_endpoint(app: FastAPI):
                 try:
                     # Track citations to avoid duplicates
                     citations_sent = set()
+                    # Track tool IDs for agent consultations
+                    tool_ids = {}
                     
                     # Stream the orchestrated response
                     async for event in orchestrator.orchestrate_stream(
@@ -94,45 +96,133 @@ def register_orchestrator_endpoint(app: FastAPI):
                             yield f"data: {json.dumps(text_event)}\n\n"
                         
                         elif event['type'] == 'agent_consultation':
-                            # Notify about agent being consulted
-                            consultation_event = {
-                                'type': 'agent_consultation',
-                                'data': {
-                                    'agent': event['content']['agent'],
-                                    'status': event['content']['status'],
-                                    'timestamp': datetime.now().isoformat()
+                            # Safely extract content
+                            content = event.get('content', {})
+                            if isinstance(content, dict):
+                                agent_name = content.get('agent', 'Unknown')
+                                status = content.get('status', 'consulting')
+                            else:
+                                agent_name = 'Unknown'
+                                status = 'consulting'
+                            
+                            # Send tool_call_start event for UI to show the agent being called
+                            if status == 'consulting':
+                                # Generate tool ID for this agent consultation
+                                tool_id = f'tool_{uuid.uuid4().hex[:8]}'
+                                tool_ids[agent_name] = tool_id
+                                
+                                tool_call_start_event = {
+                                    'type': 'tool_call_start',
+                                    'data': {
+                                        'id': tool_id,
+                                        'name': agent_name,  # Just the agent name (Dr. OPA, Dr. OFF, Agent 97)
+                                        'arguments': {'query': request.query},
+                                        'timestamp': datetime.now().isoformat()
+                                    }
                                 }
-                            }
-                            yield f"data: {json.dumps(consultation_event)}\n\n"
+                                yield f"data: {json.dumps(tool_call_start_event)}\n\n"
+                            
+                            elif status == 'completed' and agent_name in tool_ids:
+                                # Send tool_call_complete when agent finishes
+                                tool_call_complete_event = {
+                                    'type': 'tool_call_complete',
+                                    'data': {
+                                        'id': tool_ids[agent_name],
+                                        'name': agent_name,
+                                        'status': 'completed',
+                                        'timestamp': datetime.now().isoformat()
+                                    }
+                                }
+                                yield f"data: {json.dumps(tool_call_complete_event)}\n\n"
                         
                         elif event['type'] == 'citation':
                             # Forward citations from agents
-                            citation = event['content']
-                            citation_key = f"{citation.get('url', '')}_{citation.get('title', '')}"
-                            
-                            if citation_key not in citations_sent:
-                                citations_sent.add(citation_key)
-                                citation_event = {
-                                    'type': 'citation',
-                                    'data': {
-                                        'id': citation.get('id', f'citation_{uuid.uuid4().hex[:8]}'),
-                                        'title': citation.get('title', 'Source'),
-                                        'source': citation.get('source', ''),
-                                        'url': citation.get('url', ''),
-                                        'domain': citation.get('domain', ''),
-                                        'isTrusted': citation.get('is_trusted', True),
-                                        'sourceAgent': citation.get('source_agent', 'Unknown')
+                            citation = event.get('content', {})
+                            if isinstance(citation, dict):
+                                citation_key = f"{citation.get('url', '')}_{citation.get('title', '')}_{citation.get('source', '')}"
+                                
+                                if citation_key not in citations_sent:
+                                    citations_sent.add(citation_key)
+                                    citation_event = {
+                                        'type': 'citation',
+                                        'data': {
+                                            'id': citation.get('id', f'citation_{uuid.uuid4().hex[:8]}'),
+                                            'title': citation.get('title', 'Source'),
+                                            'source': citation.get('source', ''),
+                                            'url': citation.get('url', ''),
+                                            'domain': citation.get('domain', ''),
+                                            'isTrusted': citation.get('is_trusted', True),
+                                            'sourceAgent': citation.get('source_agent', 'Unknown')
+                                        }
                                     }
-                                }
-                                yield f"data: {json.dumps(citation_event)}\n\n"
+                                    yield f"data: {json.dumps(citation_event)}\n\n"
                         
                         elif event['type'] == 'complete':
+                            # Send citations from the response (check for duplicates)
+                            for cite in event.get('citations', []):
+                                citation_key = None
+                                citation_event = None
+                                
+                                if isinstance(cite, str):
+                                    # String citation (URL or text)
+                                    citation_key = f"{cite}_Ontario Health Resource_"
+                                    
+                                    if citation_key not in citations_sent:
+                                        citations_sent.add(citation_key)
+                                        citation_event = {
+                                            'type': 'citation',
+                                            'data': {
+                                                'id': f'citation_{uuid.uuid4().hex[:8]}',
+                                                'title': 'Ontario Health Resource',
+                                                'source': cite if not cite.startswith('http') else 'Ontario Health',
+                                                'url': cite if cite.startswith('http') else '',
+                                                'domain': 'formulary.health.gov.on.ca' if 'formulary' in cite else 'ontario.ca',
+                                                'isTrusted': True,
+                                                'sourceAgent': 'Chief Orchestrator'
+                                            }
+                                        }
+                                        yield f"data: {json.dumps(citation_event)}\n\n"
+                                        
+                                elif isinstance(cite, dict):
+                                    # Dictionary citation with structured data
+                                    citation_key = f"{cite.get('url', '')}_{cite.get('title', '')}_{cite.get('source', '')}"
+                                    
+                                    if citation_key not in citations_sent:
+                                        citations_sent.add(citation_key)
+                                        citation_event = {
+                                            'type': 'citation',
+                                            'data': {
+                                                'id': cite.get('id', f'citation_{uuid.uuid4().hex[:8]}'),
+                                                'title': cite.get('title', 'Source'),
+                                                'source': cite.get('source', ''),
+                                                'url': cite.get('url', ''),
+                                                'domain': cite.get('domain', ''),
+                                                'isTrusted': cite.get('is_trusted', True),
+                                                'sourceAgent': cite.get('source_agent', 'Chief Orchestrator')
+                                            }
+                                        }
+                                        yield f"data: {json.dumps(citation_event)}\n\n"
+                            
+                            # Send tool calls summary
+                            for tc in event.get('tool_calls', []):
+                                tool_summary_event = {
+                                    'type': 'tool_summary',
+                                    'data': {
+                                        'agent': tc.get('agent', 'Unknown'),
+                                        'tool': tc.get('tool', 'unknown'),
+                                        'sub_tools': tc.get('sub_tools', [])
+                                    }
+                                }
+                                yield f"data: {json.dumps(tool_summary_event)}\n\n"
+                            
                             # Send completion event with metadata including trace_id
                             complete_event = {
                                 'type': 'response_done',
                                 'data': {
                                     'message_id': str(uuid.uuid4()),
                                     'agents_consulted': event.get('agents_consulted', []),
+                                    'tool_calls': event.get('tool_calls', []),
+                                    'citations_count': len(event.get('citations', [])),
                                     'orchestrator': event.get('orchestrator', 'Chief'),
                                     'traceId': event.get('trace_id'),  # Include traceId (camelCase for frontend)
                                     'timestamp': datetime.now().isoformat()
