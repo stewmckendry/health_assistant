@@ -60,9 +60,10 @@ if src_dir in sys.path:
 
 try:
     # Import from openai-agents package
-    from agents import Agent, Runner
+    from agents import Agent, Runner, WebSearchTool
     from agents.memory import SQLiteSession
     from agents.mcp.server import MCPServerStdio, MCPServerStdioParams
+    from agents.tool import WebSearchToolFilters
 finally:
     # Restore original sys.path
     sys.path = original_path
@@ -383,7 +384,7 @@ class DrOffAgent:
                 encoding="utf-8"
             ),
             name="dr-off-server",
-            client_session_timeout_seconds=30.0
+            client_session_timeout_seconds=60.0  # Extended timeout for web searches
         )
         
         logger.info(f"Dr. OFF Agent initialized - Session: {self.session_id}")
@@ -429,8 +430,9 @@ When answering queries, be extremely precise about what was specifically asked v
 - Be clear about what specific device qualifies vs. alternatives
 
 TOOL SELECTION STRATEGY:
-Analyze each query and select the most appropriate MCP tools:
+Analyze each query and select the most appropriate tools, prioritizing MCP tools over web search:
 
+PRIMARY TOOLS (Use First - Ontario-specific embedded knowledge):
 - **schedule_get**: For OHIP billing codes, fee schedules, service requirements
   Keywords: OHIP, billing, code, A001, fee, schedule, physician services
   Example: "What's the billing code for a comprehensive assessment?"
@@ -444,8 +446,16 @@ Analyze each query and select the most appropriate MCP tools:
   Example: "Can my patient get funding for a power wheelchair?"
   Note: Supports natural language queries
 
+FALLBACK TOOL (Use when MCP tools don't provide sufficient information):
+- **Web Search**: ONLY use as a complement or fallback when:
+  - MCP tools return insufficient or no results
+  - User specifically asks for latest updates from official websites
+  - Need to verify recent changes to OHIP codes, ODB listings, or ADP criteria
+  - Cross-reference with official Ministry of Health announcements
+  Note: Web search is restricted to trusted Ontario healthcare and government domains only
+
 RESPONSE FORMAT - COMPREHENSIVE FINANCIAL GUIDANCE:
-Provide thorough, detailed responses with complete financial and coverage information:
+Provide thorough, detailed responses with complete financial and coverage information, including source attribution:
 
 1. **EXECUTIVE SUMMARY** (3-5 sentences): 
    - Direct answer about coverage status with specific codes
@@ -531,6 +541,24 @@ IMPORTANT CONSIDERATIONS:
 - Income testing may apply for certain programs
 - Different coverage for seniors (65+) vs. general population
 
+7. **Sources & Tool Contributions**:
+   **MCP Tools Used** (Primary Sources):
+   - **schedule_get**: [If used] OHIP billing codes retrieved, fee amounts found, service requirements identified
+   - **odb_get**: [If used] Drug coverage status, DINs checked, Limited Use criteria obtained, generic alternatives found
+   - **adp_get**: [If used] Device eligibility verified, funding amounts determined, CEP requirements identified
+   
+   **Web Search** (Fallback Source):
+   - [If used] State explicitly: "Web search used as fallback because: [reason]"
+   - Government websites accessed (Ontario.ca, health.gov.on.ca, etc.)
+   - Latest bulletins or updates found
+   - How web results supplemented MCP tool data
+   
+   **Data Reconciliation**:
+   - Any discrepancies between MCP databases and web sources
+   - How conflicting information was resolved (e.g., newer web updates vs. database)
+   - Confidence level: High/Medium/Low with explanation
+   - Note if any information requires verification with official sources
+
 Remember: You have access to the comprehensive Ontario healthcare coverage databases through your MCP tools. Use them to provide specific, actionable information that helps clinicians optimize patient care while managing costs effectively."""
 
     async def initialize_mcp_tools(self):
@@ -575,11 +603,45 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
             # Use the MCP server within an async context manager
             async with self.mcp_server as server:
                 # Create agent with the connected MCP server
+                # Add WebSearchTool with Ontario healthcare/finance-specific allowed domains
+                web_search_tool = WebSearchTool(
+                    filters=WebSearchToolFilters(
+                        allowed_domains=[
+                            # Primary Ontario government sites (8)
+                            "ontario.ca",
+                            "health.gov.on.ca",
+                            "ontariohealth.ca",
+                            "publichealthontario.ca",
+                            "hqontario.ca",
+                            "cancercareontario.ca",
+                            "ehealthontario.on.ca",
+                            "wsib.ca",
+                            # Ontario regulatory colleges (4)
+                            "cpso.on.ca",
+                            "ocp.on.ca",
+                            "cno.org",
+                            "rcdso.org",
+                            # Canadian health organizations (4)
+                            "canada.ca",
+                            "hc-sc.gc.ca",
+                            "cihi.ca",
+                            "cma.ca",
+                            # Ontario medical/billing orgs (4)
+                            "oma.org",
+                            "trilliumdrugprogram.ca",
+                            "drugcoverage.ca",
+                            "ccac-ont.ca"
+                        ]
+                    ),
+                    search_context_size="medium"
+                )
+                
                 agent = Agent(
                     name="Dr. OFF",
                     instructions=self._get_system_instructions(),
-                    model="gpt-4o-mini",
-                    mcp_servers=[server]
+                    model="gpt-4o",
+                    mcp_servers=[server],
+                    tools=[web_search_tool]
                 )
                 
                 # Create Langfuse trace if enabled
@@ -773,11 +835,45 @@ Remember: You have access to the comprehensive Ontario healthcare coverage datab
             # Use the MCP server within an async context manager
             async with self.mcp_server as server:
                 # Create agent with the connected MCP server
+                # Add WebSearchTool with Ontario healthcare/finance-specific allowed domains
+                web_search_tool = WebSearchTool(
+                    filters=WebSearchToolFilters(
+                        allowed_domains=[
+                            # Primary Ontario government sites (8)
+                            "ontario.ca",
+                            "health.gov.on.ca",
+                            "ontariohealth.ca",
+                            "publichealthontario.ca",
+                            "hqontario.ca",
+                            "cancercareontario.ca",
+                            "ehealthontario.on.ca",
+                            "wsib.ca",
+                            # Ontario regulatory colleges (4)
+                            "cpso.on.ca",
+                            "ocp.on.ca",
+                            "cno.org",
+                            "rcdso.org",
+                            # Canadian health organizations (4)
+                            "canada.ca",
+                            "hc-sc.gc.ca",
+                            "cihi.ca",
+                            "cma.ca",
+                            # Ontario medical/billing orgs (4)
+                            "oma.org",
+                            "trilliumdrugprogram.ca",
+                            "drugcoverage.ca",
+                            "ccac-ont.ca"
+                        ]
+                    ),
+                    search_context_size="medium"
+                )
+                
                 agent = Agent(
                     name="Dr. OFF",
                     instructions=self._get_system_instructions(),
-                    model="gpt-4o-mini",
-                    mcp_servers=[server]
+                    model="gpt-4o",
+                    mcp_servers=[server],
+                    tools=[web_search_tool]
                 )
                 
                 # Create Langfuse trace if enabled
@@ -928,11 +1024,45 @@ Technical details: {error_message}"""
         """
         server = mcp_server if mcp_server is not None else self.mcp_server
         
+        # Create WebSearchTool with Ontario healthcare/finance-specific allowed domains
+        web_search_tool = WebSearchTool(
+            filters=WebSearchToolFilters(
+                allowed_domains=[
+                    # Primary Ontario government sites (8)
+                    "ontario.ca",
+                    "health.gov.on.ca",
+                    "ontariohealth.ca",
+                    "publichealthontario.ca",
+                    "hqontario.ca",
+                    "cancercareontario.ca",
+                    "ehealthontario.on.ca",
+                    "wsib.ca",
+                    # Ontario regulatory colleges (4)
+                    "cpso.on.ca",
+                    "ocp.on.ca",
+                    "cno.org",
+                    "rcdso.org",
+                    # Canadian health organizations (4)
+                    "canada.ca",
+                    "hc-sc.gc.ca",
+                    "cihi.ca",
+                    "cma.ca",
+                    # Ontario medical/billing orgs (4)
+                    "oma.org",
+                    "trilliumdrugprogram.ca",
+                    "drugcoverage.ca",
+                    "ccac-ont.ca"
+                ]
+            ),
+            search_context_size="medium"
+        )
+        
         return Agent(
             name="Dr. OFF",
             instructions=self._get_system_instructions(),
-            model="gpt-4o-mini",
-            mcp_servers=[server] if server else []
+            model="gpt-4o",
+            mcp_servers=[server] if server else [],
+            tools=[web_search_tool]
         )
 
 

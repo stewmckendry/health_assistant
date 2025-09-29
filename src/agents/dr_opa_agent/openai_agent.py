@@ -59,9 +59,10 @@ if src_dir in sys.path:
 
 try:
     # Import from openai-agents package
-    from agents import Agent, Runner
+    from agents import Agent, Runner, WebSearchTool
     from agents.memory import SQLiteSession
     from agents.mcp.server import MCPServerStdio, MCPServerStdioParams
+    from agents.tool import WebSearchToolFilters
 finally:
     # Restore original sys.path
     sys.path = original_path
@@ -447,8 +448,9 @@ CORE PRINCIPLES:
 6. When uncertain, recommend consulting the source documents directly
 
 TOOL SELECTION STRATEGY:
-Analyze each query and select the most appropriate MCP tools:
+Analyze each query and select the most appropriate tools, prioritizing MCP tools over web search:
 
+PRIMARY TOOLS (Use First - Ontario-specific embedded knowledge):
 - **opa_policy_check**: For CPSO regulatory questions, policy compliance, professional expectations
   Keywords: CPSO, college, expectation, must, shall, required, policy, regulation
 
@@ -469,12 +471,39 @@ Analyze each query and select the most appropriate MCP tools:
 
 - **opa_get_section**: To retrieve complete details when you need full context from a specific section
 
+FALLBACK TOOL (Use when MCP tools don't provide sufficient information):
+- **Web Search**: ONLY use as a complement or fallback when:
+  - MCP tools return insufficient or no results
+  - User specifically asks for latest web updates
+  - Need to verify very recent policy changes
+  - Cross-reference with official websites
+  Note: Web search is restricted to trusted Ontario healthcare domains only
+
 RESPONSE STRUCTURE:
 1. **Direct Answer**: Clear, actionable response to the question
 2. **Current Guidance**: Relevant policies/guidelines with proper citations
 3. **Implementation Notes**: Practical considerations for clinical practice
 4. **Related Resources**: Cross-references to additional relevant guidance
 5. **Currency Note**: When the guidance was last updated and confidence level
+6. **Sources & Tool Contributions**: 
+   **MCP Tools Used** (Primary Sources):
+   - **opa_policy_check**: [If used] CPSO policies retrieved, specific sections found
+   - **opa_program_lookup**: [If used] Ontario Health programs accessed, eligibility criteria obtained
+   - **opa_search_sections**: [If used] Number of documents searched, relevance scores
+   - **opa_ipac_guidance**: [If used] PHO guidance retrieved, specific protocols found
+   - **opa_clinical_tools**: [If used] CEP tools accessed, algorithms applied
+   - **opa_freshness_probe**: [If used] Currency verification results
+   - **opa_get_section**: [If used] Complete sections retrieved for context
+   
+   **Web Search** (Fallback Source):
+   - [If used] State explicitly: "Web search used as fallback because: [reason]"
+   - Domains searched and key findings
+   - How web results complemented or validated MCP tool data
+   
+   **Data Reconciliation**:
+   - Any discrepancies between MCP tools and web search
+   - How conflicts were resolved
+   - Confidence level: High/Medium/Low with explanation
 
 CITATION FORMAT:
 - Use markdown links: [Organization Name - Document Title](URL)
@@ -527,11 +556,43 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
             # Use the MCP server within an async context manager
             async with self.mcp_server as server:
                 # Create agent with the connected MCP server
+                # Add WebSearchTool with Ontario-specific allowed domains
+                web_search_tool = WebSearchTool(
+                    filters=WebSearchToolFilters(
+                        allowed_domains=[
+                            # Primary Ontario healthcare authorities (10)
+                            "cpso.on.ca",
+                            "ontario.ca",
+                            "health.gov.on.ca",
+                            "ontariohealth.ca",
+                            "publichealthontario.ca",
+                            "cep.health",
+                            "cno.org",
+                            "ocp.on.ca",
+                            "rcdso.org",
+                            # Key Canadian health organizations (5)
+                            "canada.ca",
+                            "cihi.ca",
+                            "cma.ca",
+                            "cfpc.ca",
+                            "royalcollege.ca",
+                            # Ontario programs and quality (5)
+                            "hqontario.ca",
+                            "cancercareontario.ca",
+                            "ices.on.ca",
+                            "choosingwiselycanada.org",
+                            "cmpa-acpm.ca"
+                        ]
+                    ),
+                    search_context_size="medium"
+                )
+                
                 agent = Agent(
                     name="Dr. OPA",
                     instructions=self._get_system_instructions(),
-                    model="gpt-4o-mini",
-                    mcp_servers=[server]
+                    model="gpt-4o",
+                    mcp_servers=[server],
+                    tools=[web_search_tool]
                 )
                 
                 # Create Langfuse trace if enabled
@@ -765,11 +826,43 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
             # Use the MCP server within an async context manager
             async with self.mcp_server as server:
                 # Create agent with the connected MCP server
+                # Add WebSearchTool with Ontario-specific allowed domains
+                web_search_tool = WebSearchTool(
+                    filters=WebSearchToolFilters(
+                        allowed_domains=[
+                            # Primary Ontario healthcare authorities (10)
+                            "cpso.on.ca",
+                            "ontario.ca",
+                            "health.gov.on.ca",
+                            "ontariohealth.ca",
+                            "publichealthontario.ca",
+                            "cep.health",
+                            "cno.org",
+                            "ocp.on.ca",
+                            "rcdso.org",
+                            # Key Canadian health organizations (5)
+                            "canada.ca",
+                            "cihi.ca",
+                            "cma.ca",
+                            "cfpc.ca",
+                            "royalcollege.ca",
+                            # Ontario programs and quality (5)
+                            "hqontario.ca",
+                            "cancercareontario.ca",
+                            "ices.on.ca",
+                            "choosingwiselycanada.org",
+                            "cmpa-acpm.ca"
+                        ]
+                    ),
+                    search_context_size="medium"
+                )
+                
                 agent = Agent(
                     name="Dr. OPA",
                     instructions=self._get_system_instructions(),
-                    model="gpt-4o-mini",
-                    mcp_servers=[server]
+                    model="gpt-4o",
+                    mcp_servers=[server],
+                    tools=[web_search_tool]
                 )
                 
                 # Create Langfuse trace if enabled
@@ -1028,11 +1121,43 @@ Technical details: {error_message}"""
         """
         server = mcp_server if mcp_server is not None else self.mcp_server
         
+        # Create WebSearchTool with Ontario-specific allowed domains
+        web_search_tool = WebSearchTool(
+            filters=WebSearchToolFilters(
+                allowed_domains=[
+                    # Primary Ontario healthcare authorities (10)
+                    "cpso.on.ca",
+                    "ontario.ca",
+                    "health.gov.on.ca",
+                    "ontariohealth.ca",
+                    "publichealthontario.ca",
+                    "cep.health",
+                    "cno.org",
+                    "ocp.on.ca",
+                    "rcdso.org",
+                    # Key Canadian health organizations (5)
+                    "canada.ca",
+                    "cihi.ca",
+                    "cma.ca",
+                    "cfpc.ca",
+                    "royalcollege.ca",
+                    # Ontario programs and quality (5)
+                    "hqontario.ca",
+                    "cancercareontario.ca",
+                    "ices.on.ca",
+                    "choosingwiselycanada.org",
+                    "cmpa-acpm.ca"
+                ]
+            ),
+            search_context_size="medium"
+        )
+        
         return Agent(
             name="Dr. OPA",
             instructions=self._get_system_instructions(),
-            model="gpt-4o-mini",
-            mcp_servers=[server] if server else []
+            model="gpt-4o",
+            mcp_servers=[server] if server else [],
+            tools=[web_search_tool]
         )
 
 
