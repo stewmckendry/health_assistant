@@ -1,19 +1,22 @@
 # Ontario Healthcare AI Agents Registry
+
+**Note: This is a demonstration project for education and experimentation, showcasing how AI agents could be used to assist with healthcare information retrieval in Ontario.**
+
 ## Executive Overview
 
-The Ontario Healthcare AI Agents Registry is a groundbreaking suite of specialized AI assistants designed to transform how healthcare professionals and patients navigate Ontario's complex healthcare ecosystem. By combining the power of advanced language models with authoritative Ontario-specific healthcare data, the registry provides instant, accurate, and actionable information for clinical, administrative, and educational needs.
+The Ontario Healthcare AI Agents Registry is a suite of specialized AI assistants designed to help healthcare professionals and patients navigate Ontario's complex healthcare ecosystem. By combining advanced language models with authoritative Ontario-specific healthcare data, the registry provides instant, accurate, and actionable information for clinical, administrative, and educational needs.
 
 ## Purpose & Vision
 
 ### The Challenge
-Healthcare professionals in Ontario spend countless hours navigating:
+Healthcare professionals in Ontario face challenges navigating:
 - Complex billing codes and coverage rules across OHIP, ODB, and ADP programs
 - Ever-changing regulatory requirements from CPSO and Ontario Health
 - Clinical guidelines scattered across dozens of organizations
 - Administrative complexity that takes time away from patient care
 
 ### The Solution
-The registry transforms hours of manual document searching into seconds of AI-assisted precision, enabling clinicians to focus on what matters most: patient care. Each agent specializes in a specific domain, while working together seamlessly to provide comprehensive answers to complex healthcare questions.
+The registry demonstrates how manual document searching could be accelerated through AI assistance, potentially enabling clinicians to focus more on patient care. Each agent specializes in a specific domain, while working together to provide comprehensive answers to complex healthcare questions.
 
 ## The Agents
 
@@ -275,9 +278,9 @@ The investment in restructuring content for AI consumption will pay dividends in
 
 ## Conclusion
 
-The Ontario Healthcare AI Agents Registry represents a paradigm shift in healthcare information management. By combining the precision of embedded Ontario-specific knowledge with the flexibility of AI-powered synthesis, it creates a powerful tool that enhances clinical decision-making, reduces administrative burden, and improves patient care.
+The Ontario Healthcare AI Agents Registry explores new approaches to healthcare information management. By combining embedded Ontario-specific knowledge with AI-powered synthesis, it demonstrates potential tools for supporting clinical decision-making and reducing administrative burden.
 
-As the registry continues to evolve, it will expand from being an intelligent information resource to becoming an active partner in healthcare delivery—automating workflows, proactively identifying opportunities, and seamlessly integrating with existing healthcare systems. The future of Ontario healthcare is one where AI agents work alongside healthcare professionals, handling the complexity so humans can focus on healing.
+This experimental platform showcases how AI agents could evolve from information resources to active partners in healthcare delivery—potentially automating workflows, identifying opportunities, and integrating with existing healthcare systems. The project envisions a future where AI agents work alongside healthcare professionals, handling complexity so humans can focus on healing.
 
 ---
-*For more information or to schedule a demonstration, please contact the Ontario Healthcare AI Agents Registry team.*
+*This demonstration project is for educational and experimental purposes. For questions or to explore the demo, please contact the project team.*
