@@ -513,35 +513,45 @@ What Ontario healthcare question can I help you with today?`;
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-16rem)] bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col h-[calc(100vh-16rem)] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col min-w-0 bg-white overflow-hidden">
-        {/* Fixed header bar */}
-        <div className="sticky top-0 z-20 bg-white border-b shadow-sm">
-          <div className="flex items-center justify-between px-6 py-3">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl" role="img" aria-label={agent.name}>
-                {agent.icon}
-              </span>
-              <div>
-                <h3 className="font-semibold text-gray-900">{agent.name}</h3>
-                <p className="text-xs text-gray-500">{agent.description}</p>
+      <div className="flex-1 flex flex-col min-w-0 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden">
+        {/* Enhanced Fixed header bar */}
+        <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
+            <div className="relative flex items-center justify-between px-6 py-4">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl shadow-sm">
+                  <span className="text-3xl block" role="img" aria-label={agent.name}>
+                    {agent.icon}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{agent.name}</h3>
+                  <p className="text-sm text-gray-500">{agent.description}</p>
+                </div>
+                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-md px-3 py-1">
+                  <span className="inline-block w-2 h-2 bg-white rounded-full mr-2 animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+                  Online
+                </Badge>
               </div>
-              <Badge className="bg-green-100 text-green-700 border-green-200">
-                <span className="inline-block w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
-                Online
-              </Badge>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={startNewConversation}
+                className="border-2 hover:bg-blue-50 hover:border-blue-300 font-semibold"
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                New Chat
+              </Button>
             </div>
-            <Button variant="ghost" size="sm" onClick={startNewConversation}>
-              <RefreshCw className="h-4 w-4 mr-2" />
-              New Chat
-            </Button>
           </div>
         </div>
 
-        {/* Messages Area */}
-        <ScrollArea className="flex-1 px-6 py-4 overflow-y-auto">
-          <div className="space-y-4 max-w-3xl mx-auto">
+        {/* Enhanced Messages Area */}
+        <ScrollArea className="flex-1 px-6 py-6 overflow-y-auto bg-gradient-to-b from-transparent to-gray-50/30">
+          <div className="space-y-6 max-w-4xl mx-auto">
             {messages.map((message) => (
               <AgentMessage
                 key={message.id}
@@ -577,23 +587,30 @@ What Ontario healthcare question can I help you with today?`;
               </div>
             )}
             
-            {/* Starter Prompts - Show only when there's just the welcome message */}
+            {/* Enhanced Starter Prompts */}
             {messages.length === 1 && messages[0].role === 'assistant' && agent.starterPrompts && !isStreaming && (
-              <div className="mt-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <MessageSquare className="h-4 w-4 text-gray-400" />
-                  <span className="text-sm font-medium text-gray-600">Suggested questions</span>
+              <div className="mt-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg">
+                    <Sparkles className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <span className="font-semibold text-gray-700">Suggested questions</span>
                 </div>
-                <div className="grid gap-2 sm:grid-cols-2">
+                <div className="grid gap-3 sm:grid-cols-2">
                   {agent.starterPrompts.map((prompt, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(prompt)}
-                      className="text-left p-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-200 group"
+                      className="text-left p-4 bg-gradient-to-br from-white to-blue-50/50 hover:from-blue-50 hover:to-cyan-50 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 group"
                     >
-                      <p className="text-sm text-gray-700 group-hover:text-gray-900 leading-relaxed">
-                        {prompt}
-                      </p>
+                      <div className="flex items-start gap-3">
+                        <div className="p-1.5 bg-blue-100 rounded-lg mt-0.5">
+                          <MessageSquare className="h-3 w-3 text-blue-600" />
+                        </div>
+                        <p className="text-sm text-gray-700 group-hover:text-gray-900 leading-relaxed font-medium">
+                          {prompt}
+                        </p>
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -604,9 +621,9 @@ What Ontario healthcare question can I help you with today?`;
           </div>
         </ScrollArea>
 
-        {/* Input Area */}
-        <div className="border-t bg-gradient-to-b from-gray-50/50 to-white px-6 py-3">
-          <div className="flex gap-2 max-w-3xl mx-auto">
+        {/* Enhanced Input Area */}
+        <div className="border-t border-gray-200 bg-white/95 backdrop-blur-sm px-6 py-4">
+          <div className="flex gap-3 max-w-4xl mx-auto">
             <div className="flex-1 relative">
               <Input
                 value={input}
@@ -616,27 +633,44 @@ What Ontario healthcare question can I help you with today?`;
                   ? `Ask about OHIP billing, ODB coverage, or ADP eligibility...`
                   : `Ask ${agent.name} anything...`}
                 disabled={isStreaming}
-                className="flex-1 pr-10 bg-white border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="flex-1 h-12 px-4 pr-12 bg-white border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all text-gray-700 placeholder:text-gray-400"
               />
               {isStreaming && (
-                <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                  <Loader2 className="h-4 w-4 animate-spin text-gray-400" />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                  <Loader2 className="h-5 w-5 animate-spin text-blue-500" />
                 </div>
               )}
             </div>
             {isStreaming ? (
-              <Button onClick={stopStreaming} variant="outline" size="icon" className="bg-white">
-                <StopCircle className="h-4 w-4" />
+              <Button 
+                onClick={stopStreaming} 
+                variant="outline" 
+                size="icon" 
+                className="h-12 w-12 border-2 hover:bg-red-50 hover:border-red-300 hover:text-red-600 transition-all"
+              >
+                <StopCircle className="h-5 w-5" />
               </Button>
             ) : (
-              <Button onClick={handleSendMessage} disabled={!input.trim()} size="icon" className="bg-blue-600 hover:bg-blue-700">
-                <Send className="h-4 w-4" />
+              <Button 
+                onClick={() => handleSendMessage()} 
+                disabled={!input.trim()} 
+                size="icon" 
+                className="h-12 w-12 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-lg hover:shadow-xl disabled:opacity-50 disabled:shadow-none transition-all"
+              >
+                <Send className="h-5 w-5" />
               </Button>
             )}
           </div>
           {isStreaming && (
-            <div className="flex items-center gap-2 mt-2 text-xs text-gray-500 max-w-3xl mx-auto">
-              {agent.name} is analyzing your question...
+            <div className="flex items-center justify-center gap-2 mt-3 max-w-4xl mx-auto">
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 rounded-full">
+                <div className="flex gap-1">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></span>
+                </div>
+                <span className="text-sm text-blue-700 font-medium">{agent.name} is thinking...</span>
+              </div>
             </div>
           )}
         </div>
