@@ -33,6 +33,14 @@ class ChromaLoadRequest(BaseModel):
 def register_admin_endpoints(app):
     """Register admin endpoints for database migration"""
     
+    # Import and register simple ChromaDB endpoints
+    try:
+        from src.web.api.simple_chroma_endpoint import create_simple_chroma_endpoint
+        create_simple_chroma_endpoint(app)
+        logger.info("Simple ChromaDB endpoints registered")
+    except Exception as e:
+        logger.warning(f"Could not register simple ChromaDB endpoints: {e}")
+    
     @app.post("/admin/load-database")
     async def load_database(request: DatabaseLoadRequest, background_tasks: BackgroundTasks):
         """Load exported SQLite data into Railway database"""
