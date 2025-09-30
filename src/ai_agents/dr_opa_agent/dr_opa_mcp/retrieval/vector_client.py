@@ -28,7 +28,7 @@ class VectorClient:
     
     def __init__(
         self,
-        persist_directory: str = "data/dr_opa_agent/chroma",
+        persist_directory: str = None,
         timeout_ms: int = 1000,
         max_workers: int = 3
     ):
@@ -36,10 +36,19 @@ class VectorClient:
         Initialize Chroma client for vector search.
         
         Args:
-            persist_directory: Path to Chroma persistence directory
+            persist_directory: Path to Chroma persistence directory (uses env var if not provided)
             timeout_ms: Search timeout in milliseconds (default 1000ms)
             max_workers: Max concurrent workers for async operations
         """
+        # Determine path based on environment
+        if persist_directory is None:
+            if os.environ.get("RAILWAY_ENVIRONMENT"):
+                # On Railway, use the migrated ChromaDB path
+                persist_directory = "/app/data/chroma"
+            else:
+                # Local development path
+                persist_directory = "data/dr_opa_agent/chroma"
+        
         self.persist_dir = Path(persist_directory)
         self.timeout_seconds = timeout_ms / 1000.0
         
