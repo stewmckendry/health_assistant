@@ -55,7 +55,7 @@ class ScheduleTool:
             timeout_ms=500
         )
         self.vector_client = vector_client or VectorClient(
-            persist_directory="data/dr_off_agent/processed/dr_off/chroma",
+            persist_directory=None,  # Will use environment-appropriate default
             timeout_ms=5000
         )
         
