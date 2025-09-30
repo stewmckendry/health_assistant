@@ -485,6 +485,12 @@ class ADPTool:
             funding_count = metadata.get("funding_count", 0)
             topics = metadata.get("topics", "[]")
             
+            # Ensure funding_count is an integer for comparison
+            try:
+                funding_count = int(funding_count) if funding_count else 0
+            except (TypeError, ValueError):
+                funding_count = 0
+            
             if funding_count > 0:
                 funding_results.append(vector_item)
             elif isinstance(topics, str):
