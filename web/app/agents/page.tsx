@@ -48,18 +48,18 @@ export default function AgentsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.2),transparent_50%)] animate-pulse"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(6,182,212,0.2),transparent_50%)] animate-pulse delay-150"></div>
         
-        <div className="relative text-center py-10 text-white">
-          <h1 className="text-2xl md:text-3xl font-bold mb-3">
+        <div className="relative text-center py-6 text-white">
+          <h1 className="text-xl md:text-2xl font-bold mb-2">
             <span className="text-white">Ontario Healthcare</span>
-            <span className="block mt-2 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">AI Registry</span>
+            <span className="block mt-1 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">AI Registry</span>
           </h1>
-          <p className="text-sm md:text-base text-white/90 max-w-2xl mx-auto font-light">
+          <p className="text-xs md:text-sm text-white/90 max-w-2xl mx-auto font-light">
             Specialized AI agents for OHIP billing, drug coverage, practice guidelines, and medical education
           </p>
         </div>
       </div>
 
-      {/* Enhanced Disclaimer Banner */}
+      {/* Disclaimer Banner - Compact */}
       <div 
         className=""
         style={{
@@ -67,45 +67,31 @@ export default function AgentsPage() {
           backgroundImage: 'linear-gradient(to right, #f59e0b, #fb923c)',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-5">
-          <div className="flex items-center justify-center gap-4">
+        <div className="max-w-7xl mx-auto px-6 py-3">
+          <div className="flex items-center justify-center gap-3">
             <div className="flex-shrink-0">
-              <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </div>
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
             </div>
-            <p className="text-white font-medium">
+            <p className="text-white text-sm font-medium">
               <span className="font-bold">Educational & Experimental Use Only</span>
-              <span className="mx-3 opacity-60">•</span>
+              <span className="mx-2 opacity-60">•</span>
               <span className="opacity-90">Not for clinical decision-making. Always consult healthcare providers and verify with official sources.</span>
             </p>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Section Header */}
-      <div className="max-w-7xl mx-auto px-6 mt-12 mb-8">
-        <div className="text-center mb-8">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+      {/* Section Header - Simplified */}
+      <div className="max-w-7xl mx-auto px-6 mt-8 mb-6">
+        <div className="text-center">
+          <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
             Choose Your <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">AI Assistant</span>
           </h2>
-          <p className="text-gray-600">
+          <p className="text-sm text-gray-600">
             Select an agent specialized in Ontario healthcare to start your conversation
           </p>
-        </div>
-        <div className="flex items-center justify-center gap-3">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-semibold shadow-lg shadow-green-500/30">
-            <span className="text-lg">✓</span>
-            {activeAgents.length} Active
-          </span>
-          {comingSoonAgents.length > 0 && (
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-400 to-gray-500 text-white rounded-full text-sm font-semibold shadow-lg shadow-gray-500/20">
-              <span className="text-lg">⏳</span>
-              {comingSoonAgents.length} Coming Soon
-            </span>
-          )}
         </div>
       </div>
 
