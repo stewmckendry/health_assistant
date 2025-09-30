@@ -396,7 +396,6 @@ async def get_section_handler(
 async def policy_check_handler(
     topic: str,
     situation: Optional[str] = None,
-    policy_level: str = "both",
     include_related: bool = True
 ) -> Dict[str, Any]:
     """
@@ -405,14 +404,13 @@ async def policy_check_handler(
     Args:
         topic: Clinical topic or practice area
         situation: Specific situation or context
-        policy_level: 'expectation', 'advice', or 'both'
         include_related: Include related policies
     
     Returns:
         Relevant policies, expectations, advice with confidence
     """
     logger.info(f"opa.policy_check called for topic: {topic}")
-    logger.debug(f"Parameters: situation={situation}, policy_level={policy_level}, include_related={include_related}")
+    logger.debug(f"Parameters: situation={situation}, include_related={include_related}")
     
     try:
         semantic_search = get_semantic_search()
@@ -435,7 +433,7 @@ async def policy_check_handler(
         search_results = await semantic_search.search(
             query=search_query,
             sources=['cpso'],
-            policy_level=policy_level if policy_level != "both" else None,
+            policy_level=None,  # Always search for both expectations and advice
             top_k=15,  # Get more for categorization
             use_reranking=True
         )
