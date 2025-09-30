@@ -404,6 +404,12 @@ class ADPTool:
             exclusion_count = metadata.get("exclusion_count", 0)
             topics = metadata.get("topics", "[]")
             
+            # Ensure exclusion_count is an integer for comparison
+            try:
+                exclusion_count = int(exclusion_count) if exclusion_count else 0
+            except (TypeError, ValueError):
+                exclusion_count = 0
+            
             # Prioritize results with exclusions
             if exclusion_count > 0:
                 exclusion_results.append(vector_item)
