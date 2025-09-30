@@ -39,6 +39,16 @@ logger = logging.getLogger(__name__)
 class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
     """Orchestrator that can use either stdio or HTTP MCP servers"""
     
+    def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True):
+        """Initialize orchestrator with session ID."""
+        # Call parent constructor first
+        super().__init__(enable_langfuse=enable_langfuse)
+        # Override session_id if provided
+        if session_id:
+            self.session_id = session_id
+        # Setup logger
+        self.session_logger = logger
+    
     async def initialize(self):
         """Initialize the orchestrator with HTTP-aware sub-agents"""
         self.session_logger.info("Initializing Clinical Intelligence Orchestrator with HTTP support")
@@ -77,6 +87,6 @@ class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
 
 async def create_orchestrator_http(session_id: Optional[str] = None) -> ClinicalIntelligenceOrchestratorHTTP:
     """Factory function to create an orchestrator with HTTP support"""
-    orchestrator = ClinicalIntelligenceOrchestratorHTTP(session_id)
+    orchestrator = ClinicalIntelligenceOrchestratorHTTP(session_id=session_id)
     await orchestrator.initialize()
     return orchestrator
