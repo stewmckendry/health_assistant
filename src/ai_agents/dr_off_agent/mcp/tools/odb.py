@@ -47,7 +47,7 @@ class ODBTool:
             timeout_ms=500
         )
         self.vector_client = vector_client or VectorClient(
-            persist_directory="data/dr_off_agent/processed/dr_off/chroma",
+            persist_directory=None,  # Will use environment-appropriate default
             timeout_ms=5000
         )
         self.confidence_scorer = ConfidenceScorer()
@@ -322,7 +322,13 @@ class ODBTool:
                 savings = 0.0
                 if primary_drug:
                     primary_price = primary_drug.get('individual_price') or 0.0  # Handle None values explicitly
-                    savings = primary_price - lowest.price
+                    # Ensure both values are floats
+                    try:
+                        primary_price = float(primary_price) if primary_price else 0.0
+                        lowest_price = float(lowest.price) if lowest.price else 0.0
+                        savings = primary_price - lowest_price
+                    except (TypeError, ValueError):
+                        savings = 0.0
                 
                 lowest_cost = LowestCostDrug(
                     din=lowest.din,

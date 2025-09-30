@@ -50,7 +50,7 @@ class ADPTool:
             vector_client: Vector client instance (creates default if None)
         """
         self.sql_client = sql_client or SQLClient(db_path="data/ohip.db", timeout_ms=500)
-        self.vector_client = vector_client or VectorClient(persist_directory="data/dr_off_agent/processed/dr_off/chroma", timeout_ms=5000)
+        self.vector_client = vector_client or VectorClient(persist_directory=None, timeout_ms=5000)  # Will use environment-appropriate default
         self.confidence_scorer = ConfidenceScorer()
         self.conflict_detector = ConflictDetector()
         

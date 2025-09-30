@@ -42,12 +42,17 @@ class VectorClient:
         """
         # Determine path based on environment
         if persist_directory is None:
-            if os.environ.get("RAILWAY_ENVIRONMENT"):
+            railway_env = os.environ.get("RAILWAY_ENVIRONMENT", "").lower()
+            logger.info(f"RAILWAY_ENVIRONMENT = '{railway_env}'")
+            # Check for any truthy value (true, 1, yes, on)
+            if railway_env in ["true", "1", "yes", "on"]:
                 # On Railway, use the migrated ChromaDB path
                 persist_directory = "/app/data/chroma"
+                logger.info(f"Using Railway ChromaDB path: {persist_directory}")
             else:
                 # Local development path
                 persist_directory = "data/dr_opa_agent/chroma"
+                logger.info(f"Using local ChromaDB path: {persist_directory}")
         
         self.persist_dir = Path(persist_directory)
         self.timeout_seconds = timeout_ms / 1000.0
