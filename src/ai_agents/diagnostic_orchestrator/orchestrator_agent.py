@@ -175,8 +175,8 @@ When consulting multiple specialists:
 5. Highlight any conflicting information with context
 6. Emphasize critical safety information and regulatory requirements
 
-RESPONSE FORMAT - COMPREHENSIVE ORCHESTRATED GUIDANCE:
-Provide comprehensive responses in flowing paragraphs with embedded citations:
+RESPONSE FORMAT - ADAPTIVE ORCHESTRATED GUIDANCE:
+Provide comprehensive responses in flowing paragraphs with embedded citations, organizing content based on what's most relevant to the specific query:
 
 **WRITING STYLE**:
 - Write in clear, professional paragraphs, NOT bullet points or lists
@@ -184,28 +184,31 @@ Provide comprehensive responses in flowing paragraphs with embedded citations:
 - Connect ideas with smooth transitions between paragraphs
 - Synthesize information into a cohesive narrative
 
-1. **CONSOLIDATED CLINICAL GUIDANCE** (write in narrative form):
-   
-   **Executive Overview** (1-2 paragraphs):
-   Begin with a comprehensive overview paragraph that addresses the clinical query directly. Include the primary clinical answer with key actionable points, integrating critical regulatory requirements from Ontario guidelines [Source: specific policy]. In the second paragraph, discuss financial implications and coverage status, weaving in important safety considerations or red flags that require immediate attention.
-   
-   **Clinical Management Framework** (2-3 paragraphs):
-   Present the complete diagnostic approach using Ontario-specific pathways in a flowing narrative. Describe how clinicians should proceed through the diagnostic workup, explaining the rationale for each step [Source: clinical pathway]. Follow this with a paragraph on treatment options, integrating coverage status for each option within the discussion rather than as a list. Explain monitoring requirements and follow-up schedules as part of the overall management strategy, referencing quality metrics and expected outcomes.
-   
-   **Regulatory & Policy Context** (1-2 paragraphs):
-   Discuss all applicable CPSO policies within the context of clinical practice, citing specific sections where relevant [Source: CPSO policy, section X]. Explain how Ontario Health clinical pathways and standards integrate with documentation requirements for medical-legal compliance. Address mandatory reporting obligations and consent requirements as part of the regulatory framework that governs this clinical scenario.
-   
-   **Financial & Coverage Considerations** (1-2 paragraphs):
-   Explain the financial aspects in a narrative that covers OHIP billing codes with their associated fees and rules [Source: OHIP Schedule]. Discuss drug coverage options, including DINs and LU codes, while explaining alternatives and their relative costs. For relevant devices, describe ADP funding availability with amounts and criteria. Integrate information about prior authorization requirements, timelines, and patient assistance programs into the discussion.
-   
-   **Evidence Base & Best Practices** (1-2 paragraphs):
-   Present current clinical evidence with strength of recommendations woven into the narrative [Source: guideline, recommendation level]. Include Ontario-specific epidemiology and population health data to provide context. Discuss practice patterns across the province and identify quality improvement opportunities relevant to this clinical scenario.
-   
-   **Implementation Approach** (1 paragraph):
-   Describe the implementation roadmap as a continuous narrative, explaining immediate actions required within 24-48 hours, followed by short-term steps over 1-2 weeks, and long-term considerations for the next 1-3 months. Include information about required forms, documentation, and key resources for support at appropriate points in the timeline.
-   
-   **Risk Management & Safety** (1 paragraph):
-   Conclude with a comprehensive paragraph on patient safety considerations and mitigation strategies
+**ADAPTIVE RESPONSE STRUCTURE**:
+Tailor your response organization to the specific clinical query. Start with what's most important and relevant, then expand into supporting details. Not all sections below are needed for every query - use your clinical judgment to determine the most helpful structure.
+
+Begin with an **Executive Overview** (1-2 paragraphs) that directly addresses the clinical query with the most critical information, key actionable points, and any urgent considerations [Source: relevant citation].
+
+Then organize the detailed response based on what's most relevant to the query:
+
+- For **clinical management questions**, focus on diagnostic approaches, treatment pathways, and monitoring strategies, integrating Ontario-specific guidelines and coverage information where relevant.
+
+- For **regulatory or policy questions**, emphasize CPSO requirements, Ontario Health standards, and documentation obligations, weaving in practical implementation guidance.
+
+- For **coverage and financial questions**, lead with eligibility criteria, billing codes, and funding details, then discuss alternatives and authorization processes.
+
+- For **complex scenarios requiring multiple perspectives**, synthesize insights from different domains in order of importance to the clinical decision at hand.
+
+Include relevant subsections as needed (examples, not prescriptive):
+- Clinical pathways and treatment algorithms
+- Policy requirements and regulatory compliance
+- Financial implications and coverage details
+- Evidence base and best practices
+- Implementation considerations
+- Risk management and safety factors
+- Resources and support systems
+
+The key is to provide comprehensive, well-cited information organized in the way that best serves the specific clinical question, rather than following a rigid template
    - Medical-legal risk factors and protective measures
    - Common errors and how to avoid them
    - Emergency protocols if applicable
