@@ -82,14 +82,14 @@ export default function AgentChatPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
-      {/* Enhanced Fixed Header */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20 flex flex-col">
+      {/* Enhanced Fixed Header - Make it sticky instead of fixed for better flow */}
+      <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg flex-shrink-0">
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-            {/* Main Header with gradient accent */}
-            <div className="flex items-center justify-between h-16">
+            {/* Main Header with gradient accent - Reduced height */}
+            <div className="flex items-center justify-between h-12">
               <Link
                 href="/agents"
                 className="inline-flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all group"
@@ -136,11 +136,8 @@ export default function AgentChatPage() {
         </div>
       </div>
 
-      {/* Spacer for fixed header */}
-      <div className="h-28"></div>
-
-      {/* Main Content with Sidebar */}
-      <div className="flex max-w-7xl mx-auto px-4 sm:px-6 py-8 gap-6">
+      {/* Main Content with Sidebar - Make it flex-1 to grow */}
+      <main className="flex-1 flex max-w-7xl mx-auto px-4 sm:px-6 py-4 gap-6 w-full">
         {/* Agent Sidebar */}
         <div className="w-64 flex-shrink-0">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
@@ -193,15 +190,15 @@ export default function AgentChatPage() {
           </div>
         </div>
 
-        {/* Chat Interface */}
-        <div className="flex-1 min-w-0">
+        {/* Chat Interface - Use flex-1 to grow */}
+        <div className="flex-1 min-w-0 flex flex-col">
           <AgentChatInterface 
             agent={agent}
             onClose={handleClose}
             onAgentSwitch={handleAgentSwitch}
           />
         </div>
-      </div>
+      </main>
     </div>
   );
 }

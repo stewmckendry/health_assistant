@@ -535,7 +535,7 @@ What Ontario healthcare question can I help you with today?`;
 
   return (
     <div 
-      className="flex flex-col h-[calc(100vh-16rem)] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+      className="flex flex-col h-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
       style={{
         /* Force white background in Chrome dark mode */
         backgroundColor: '#ffffff',
@@ -548,7 +548,7 @@ What Ontario healthcare question can I help you with today?`;
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
-            <div className="relative flex items-center justify-between px-6 py-4">
+            <div className="relative flex items-center justify-between px-6 py-3">
               <div className="flex items-center gap-4">
                 <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-md px-4 py-2">
                   <span className="inline-block w-2 h-2 bg-white rounded-full mr-2 animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
@@ -569,7 +569,7 @@ What Ontario healthcare question can I help you with today?`;
         </div>
 
         {/* Enhanced Messages Area */}
-        <ScrollArea className="flex-1 px-6 py-6 overflow-y-auto bg-gradient-to-b from-transparent to-gray-50/30">
+        <ScrollArea className="flex-1 px-6 py-4 overflow-y-auto bg-gradient-to-b from-transparent to-gray-50/30">
           <div className="space-y-6 max-w-4xl mx-auto">
             {messages.map((message) => (
               <AgentMessage
@@ -641,7 +641,7 @@ What Ontario healthcare question can I help you with today?`;
         </ScrollArea>
 
         {/* Enhanced Input Area */}
-        <div className="border-t border-gray-200 bg-white/95 backdrop-blur-sm px-6 py-4">
+        <div className="border-t border-gray-200 bg-white/95 backdrop-blur-sm px-6 py-3">
           <div className="flex gap-3 max-w-4xl mx-auto">
             <div className="flex-1 relative">
               <Input
