@@ -535,7 +535,7 @@ What Ontario healthcare question can I help you with today?`;
 
   return (
     <div 
-      className="flex flex-col h-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+      className="flex flex-col h-full bg-white rounded-lg lg:rounded-2xl shadow-lg lg:shadow-2xl overflow-hidden border border-gray-100"
       style={{
         /* Force white background in Chrome dark mode */
         backgroundColor: '#ffffff',
@@ -548,10 +548,10 @@ What Ontario healthcare question can I help you with today?`;
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
-            <div className="relative flex items-center justify-between px-6 py-3">
-              <div className="flex items-center gap-4">
-                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-md px-4 py-2">
-                  <span className="inline-block w-2 h-2 bg-white rounded-full mr-2 animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+            <div className="relative flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3">
+              <div className="flex items-center gap-2 sm:gap-4">
+                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-md px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm">
+                  <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full mr-1 sm:mr-2 animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
                   Online
                 </Badge>
               </div>
@@ -559,17 +559,18 @@ What Ontario healthcare question can I help you with today?`;
                 variant="outline" 
                 size="sm" 
                 onClick={startNewConversation}
-                className="border-2 hover:bg-blue-50 hover:border-blue-300 font-semibold"
+                className="border-2 hover:bg-blue-50 hover:border-blue-300 font-medium sm:font-semibold text-xs sm:text-sm"
               >
-                <Plus className="h-4 w-4 mr-2" />
-                New Chat
+                <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">New Chat</span>
+                <span className="sm:hidden">New</span>
               </Button>
             </div>
           </div>
         </div>
 
         {/* Enhanced Messages Area */}
-        <ScrollArea className="flex-1 px-6 py-4 overflow-y-auto bg-gradient-to-b from-transparent to-gray-50/30">
+        <ScrollArea className="flex-1 px-3 sm:px-6 py-3 sm:py-4 overflow-y-auto bg-gradient-to-b from-transparent to-gray-50/30">
           <div className="space-y-6 max-w-4xl mx-auto">
             {messages.map((message) => (
               <AgentMessage
@@ -584,43 +585,45 @@ What Ontario healthcare question can I help you with today?`;
             
             {/* Action buttons shown after the last message */}
             {messages.length > 1 && !isStreaming && messages[messages.length - 1].role === 'assistant' && (
-              <div className="flex gap-2 pt-2 pb-4">
+              <div className="flex gap-2 pt-2 pb-3 sm:pb-4">
                 <Button 
                   variant="ghost" 
                   size="sm"
                   onClick={regenerateLastMessage}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5"
                 >
-                  <RotateCcw className="h-4 w-4 mr-2" />
-                  Regenerate
+                  <RotateCcw className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                  <span className="hidden sm:inline">Regenerate</span>
+                  <span className="sm:hidden">Redo</span>
                 </Button>
                 <Button 
                   variant="ghost" 
                   size="sm"
                   onClick={startNewConversation}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5"
                 >
-                  <RefreshCw className="h-4 w-4 mr-2" />
-                  New Chat
+                  <RefreshCw className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                  <span className="hidden sm:inline">New Chat</span>
+                  <span className="sm:hidden">New</span>
                 </Button>
               </div>
             )}
             
             {/* Enhanced Starter Prompts */}
             {messages.length === 1 && messages[0].role === 'assistant' && agent.starterPrompts && !isStreaming && (
-              <div className="mt-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg">
-                    <Sparkles className="h-4 w-4 text-purple-600" />
+              <div className="mt-6 sm:mt-8">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="p-1.5 sm:p-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg">
+                    <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-purple-600" />
                   </div>
-                  <span className="font-semibold text-gray-700">Suggested questions</span>
+                  <span className="font-semibold text-gray-700 text-sm sm:text-base">Suggested questions</span>
                 </div>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
                   {agent.starterPrompts.map((prompt, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(prompt)}
-                      className="text-left p-4 bg-gradient-to-br from-white to-blue-50/50 hover:from-blue-50 hover:to-cyan-50 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 group"
+                      className="text-left p-3 sm:p-4 bg-gradient-to-br from-white to-blue-50/50 hover:from-blue-50 hover:to-cyan-50 rounded-lg sm:rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 group"
                     >
                       <div className="flex items-start gap-3">
                         <div className="p-1.5 bg-blue-100 rounded-lg mt-0.5">
@@ -640,9 +643,9 @@ What Ontario healthcare question can I help you with today?`;
           </div>
         </ScrollArea>
 
-        {/* Enhanced Input Area */}
-        <div className="border-t border-gray-200 bg-white/95 backdrop-blur-sm px-6 py-3">
-          <div className="flex gap-3 max-w-4xl mx-auto">
+        {/* Enhanced Input Area - Mobile responsive */}
+        <div className="border-t border-gray-200 bg-white/95 backdrop-blur-sm px-3 sm:px-6 py-2 sm:py-3">
+          <div className="flex gap-2 sm:gap-3 max-w-4xl mx-auto">
             <div className="flex-1 relative">
               <Input
                 value={input}
@@ -652,7 +655,7 @@ What Ontario healthcare question can I help you with today?`;
                   ? `Ask about OHIP billing, ODB coverage, or ADP eligibility...`
                   : `Ask ${agent.name} anything...`}
                 disabled={isStreaming}
-                className="flex-1 h-12 px-4 pr-12 bg-white border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all text-gray-700 placeholder:text-gray-400"
+                className="flex-1 h-10 sm:h-12 px-3 sm:px-4 pr-10 sm:pr-12 bg-white border-2 border-gray-200 rounded-lg sm:rounded-xl focus:border-blue-400 focus:ring-2 sm:focus:ring-4 focus:ring-blue-100 transition-all text-sm sm:text-base text-gray-700 placeholder:text-gray-400"
                 style={{
                   /* Force colors in Chrome dark mode */
                   backgroundColor: '#ffffff',
@@ -670,30 +673,30 @@ What Ontario healthcare question can I help you with today?`;
                 onClick={stopStreaming} 
                 variant="outline" 
                 size="icon" 
-                className="h-12 w-12 border-2 hover:bg-red-50 hover:border-red-300 hover:text-red-600 transition-all"
+                className="h-10 w-10 sm:h-12 sm:w-12 border-2 hover:bg-red-50 hover:border-red-300 hover:text-red-600 transition-all"
               >
-                <StopCircle className="h-5 w-5" />
+                <StopCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             ) : (
               <Button 
                 onClick={() => handleSendMessage()} 
                 disabled={!input.trim()} 
                 size="icon" 
-                className="h-12 w-12 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-lg hover:shadow-xl disabled:opacity-50 disabled:shadow-none transition-all"
+                className="h-10 w-10 sm:h-12 sm:w-12 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-lg hover:shadow-xl disabled:opacity-50 disabled:shadow-none transition-all"
               >
-                <Send className="h-5 w-5" />
+                <Send className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             )}
           </div>
           {isStreaming && (
-            <div className="flex items-center justify-center gap-2 mt-3 max-w-4xl mx-auto">
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 rounded-full">
-                <div className="flex gap-1">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></span>
+            <div className="flex items-center justify-center gap-2 mt-2 sm:mt-3 max-w-4xl mx-auto">
+              <div className="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 bg-blue-50 rounded-full">
+                <div className="flex gap-0.5 sm:gap-1">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce"></span>
                 </div>
-                <span className="text-sm text-blue-700 font-medium">{agent.name} is thinking...</span>
+                <span className="text-xs sm:text-sm text-blue-700 font-medium">{agent.name} is thinking...</span>
               </div>
             </div>
           )}

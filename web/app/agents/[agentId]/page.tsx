@@ -92,22 +92,23 @@ export default function AgentChatPage() {
             <div className="flex items-center justify-between h-12">
               <Link
                 href="/agents"
-                className="inline-flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all group"
+                className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all group"
               >
                 <ArrowLeft className="h-4 w-4 group-hover:-translate-x-0.5 transition-transform" />
-                <span className="font-medium">Back to Agents</span>
+                <span className="font-medium hidden sm:inline">Back to Agents</span>
+                <span className="font-medium sm:hidden text-sm">Back</span>
               </Link>
               
-              <div className="flex-1 mx-6 text-center">
-                <div className="flex items-center justify-center gap-3">
-                  <div className="p-2 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl">
-                    <span className="text-2xl block">{agent.icon}</span>
+              <div className="flex-1 mx-2 sm:mx-6 text-center">
+                <div className="flex items-center justify-center gap-2 sm:gap-3">
+                  <div className="p-1 sm:p-2 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg sm:rounded-xl">
+                    <span className="text-lg sm:text-2xl block">{agent.icon}</span>
                   </div>
                   <div>
-                    <h1 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                    <h1 className="text-sm sm:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                       {agent.name}
                     </h1>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 hidden sm:block">
                       {agent.tagline || agent.description}
                     </p>
                   </div>
@@ -137,9 +138,9 @@ export default function AgentChatPage() {
       </div>
 
       {/* Main Content with Sidebar - Make it flex-1 to grow */}
-      <main className="flex-1 flex max-w-7xl mx-auto px-4 sm:px-6 py-4 gap-6 w-full">
-        {/* Agent Sidebar */}
-        <div className="w-64 flex-shrink-0">
+      <main className="flex-1 flex flex-col lg:flex-row max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2 lg:py-4 gap-4 lg:gap-6 w-full">
+        {/* Agent Sidebar - Hidden on mobile, shown on desktop */}
+        <div className="hidden lg:block w-64 flex-shrink-0">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
             <div className="p-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-b border-gray-100">
               <h3 className="font-semibold text-gray-900 text-sm">Available Agents</h3>
