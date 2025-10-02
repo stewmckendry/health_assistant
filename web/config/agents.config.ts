@@ -129,7 +129,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'What are the CPSO requirements for virtual care documentation?',
       'Is there an Ontario screening program for colorectal cancer?',
       'What unnecessary tests should I avoid ordering for lower back pain?',
-      'What are the quality standards for diabetes care in Ontario?'
+      'What are the quality standards for diabetes in pregnancy?'
     ]
   },
   
