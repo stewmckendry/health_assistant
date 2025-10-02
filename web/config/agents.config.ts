@@ -8,10 +8,10 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
   'dr-opa': {
     id: 'dr-opa',
     name: 'Dr. OPA',
-    tagline: 'Ontario Practice Advisor - CPSO Policies, Ontario Health Programs',
-    description: 'Ontario Practice Advice - Regulatory and clinical guidance',
+    tagline: 'Ontario Practice Advisor - CPSO Policies, Ontario Health Programs, Quality Standards',
+    description: 'Ontario Practice Advice - Regulatory, clinical guidance, and quality standards',
     fullDescription: 'AI assistant providing Ontario-specific primary care and practice guidance from trusted healthcare authorities.',
-    mission: 'To provide accurate, current practice guidance from Ontario healthcare authorities including CPSO policies, Ontario Health programs, PHO infection control, and CEP clinical tools.',
+    mission: 'To provide accurate, current practice guidance from Ontario healthcare authorities including CPSO policies, Ontario Health programs and quality standards, PHO infection control, CEP clinical tools, and Choosing Wisely recommendations.',
     status: 'active',
     icon: '🩺',
     color: '#2563eb', // blue-600
@@ -46,6 +46,21 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
         name: 'opa_freshness_probe',
         description: 'Check for guideline updates',
         category: 'validation'
+      },
+      {
+        name: 'opa_clinical_tools',
+        description: 'CEP clinical decision support tools',
+        category: 'retrieval'
+      },
+      {
+        name: 'opa_quality_standards',
+        description: 'Ontario Health quality standards search',
+        category: 'search'
+      },
+      {
+        name: 'opa_choosing_wisely',
+        description: 'Choosing Wisely recommendations',
+        category: 'retrieval'
       }
     ],
     knowledgeSources: [
@@ -76,15 +91,31 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
         type: 'clinical',
         url: 'https://cep.health',
         documentCount: 57
+      },
+      {
+        name: 'Ontario Health Quality Standards',
+        organization: 'Health Quality Ontario',
+        type: 'clinical',
+        url: 'https://www.hqontario.ca',
+        documentCount: 40
+      },
+      {
+        name: 'Choosing Wisely Canada',
+        organization: 'Choosing Wisely Canada',
+        type: 'clinical',
+        url: 'https://choosingwiselycanada.org',
+        documentCount: 400
       }
     ],
     capabilities: [
       'Regulatory compliance guidance',
       'Ontario health program eligibility',
+      'Quality standards and statements',
       'Infection control protocols',
       'Clinical decision support',
       'Policy interpretation',
-      'Practice standards advice'
+      'Practice standards advice',
+      'Evidence-based care recommendations'
     ],
     limitations: [
       'Ontario-specific guidance only',
@@ -97,7 +128,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'What are the CPSO requirements for virtual care documentation?',
       'Is there an Ontario screening program for colorectal cancer?',
       'What are PHO best practices for instrument sterilization?',
-      'How do I register for ONE ID and OLIS access?'
+      'What are the quality standards for diabetes care in Ontario?'
     ]
   },
   

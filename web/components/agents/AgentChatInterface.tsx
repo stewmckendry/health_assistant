@@ -95,6 +95,12 @@ How can I assist with your coverage or billing questions today?`;
 I bring together guidance from Ontario's medical systems by coordinating three specialist agents: Dr. OPA for CPSO policies and Ontario Health programs, Dr. OFF for OHIP billing and drug coverage, and Agent 97 for medical education from trusted sources.
 
 What Ontario healthcare question can I help you with today?`;
+        } else if (agent.id === 'dr-opa') {
+          welcomeContent = `Hello! I'm Dr. OPA (Ontario Practice Advisor), your specialized AI assistant for Ontario healthcare clinicians.
+
+I provide accurate, current practice guidance from trusted Ontario healthcare authorities including CPSO regulatory policies and expectations, Ontario Health programs and quality standards, PHO infection prevention and control guidance, CEP clinical decision support tools, and Choosing Wisely Canada recommendations.
+
+How can I assist with your Ontario practice questions today?`;
         } else {
           welcomeContent = `Hello! I'm ${agent.name}. ${agent.mission} How can I assist you today?`;
         }
