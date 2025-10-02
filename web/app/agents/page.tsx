@@ -139,7 +139,7 @@ export default function AgentsPage() {
                 </div>
                 
                 {/* Enhanced Mission with better typography */}
-                <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                <p className="text-gray-600 leading-relaxed mb-6 line-clamp-4">
                   {agent.mission}
                 </p>
                 

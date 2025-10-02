@@ -11,7 +11,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
     tagline: 'Ontario Practice Advisor - CPSO Policies, Ontario Health Programs, Quality Standards',
     description: 'Ontario Practice Advice - Regulatory, clinical guidance, and quality standards',
     fullDescription: 'AI assistant providing Ontario-specific primary care and practice guidance from trusted healthcare authorities.',
-    mission: 'To provide accurate, current practice guidance from Ontario healthcare authorities including CPSO policies, Ontario Health programs and quality standards, PHO infection control, CEP clinical tools, and Choosing Wisely recommendations.',
+    mission: 'Provides accurate practice guidance from CPSO policies, Ontario Health programs and quality standards, PHO infection control, CEP clinical tools, and Choosing Wisely recommendations for Ontario healthcare clinicians.',
     status: 'active',
     icon: '🩺',
     color: '#2563eb', // blue-600
@@ -138,7 +138,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
     tagline: 'Medical Education Assistant - 97 Trusted Healthcare Sources',
     description: 'Explains medical terms in plain language using trusted sources',
     fullDescription: 'AI-powered medical education assistant that helps you understand health information by explaining medical terms and concepts in plain, accessible language.',
-    mission: 'To help patients and the public understand medical information by translating complex medical terms into plain language, providing educational context from 97 trusted medical sources with proper citations.',
+    mission: 'Helps patients understand medical information by translating complex terms into plain language, providing educational context from 97 trusted medical sources with proper citations.',
     status: 'active',
     icon: '🎯',
     color: '#10b981', // green-500
