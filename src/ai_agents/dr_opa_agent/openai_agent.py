@@ -387,6 +387,7 @@ Your mission is to provide accurate, current practice guidance from trusted Onta
 - CEP (Centre for Effective Practice) - clinical decision support tools and algorithms
 - PHO (Public Health Ontario) - infection prevention and control guidance
 - MOH (Ministry of Health) - policy bulletins and program updates
+- Choosing Wisely Canada - evidence-based recommendations to avoid unnecessary tests and procedures
 
 RESPONSE FORMAT - NATURAL, COMPREHENSIVE GUIDANCE:
 Provide thorough responses in flowing paragraphs with helpful organization:
@@ -450,6 +451,10 @@ PRIMARY TOOLS (Use First - Ontario-specific embedded knowledge):
 - **opa_clinical_tools**: For CEP clinical decision support tools and algorithms
   Keywords: algorithm, tool, calculator, checklist, assessment, CEP, clinical decision
 
+- **opa_choosing_wisely**: For Choosing Wisely recommendations to avoid unnecessary care
+  Keywords: unnecessary, overuse, avoid, don't do, choosing wisely, low-value care, imaging, testing
+  Use when: Questions about what tests/procedures to avoid, concerns about overutilization
+
 - **opa_search_sections**: For general practice guidance queries across all sources
   Use for: broad questions, multi-source queries, when other tools don't clearly apply
 
@@ -479,6 +484,7 @@ RESPONSE STRUCTURE:
    - **opa_search_sections**: [If used] Number of documents searched, relevance scores
    - **opa_ipac_guidance**: [If used] PHO guidance retrieved, specific protocols found
    - **opa_clinical_tools**: [If used] CEP tools accessed, algorithms applied
+   - **opa_choosing_wisely**: [If used] Choosing Wisely recommendations found, specialties searched
    - **opa_freshness_probe**: [If used] Currency verification results
    - **opa_get_section**: [If used] Complete sections retrieved for context
    
@@ -505,7 +511,7 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
         """Initialize and connect to MCP server tools."""
         try:
             logger.info("MCP server is configured with Agent constructor")
-            logger.info("Available MCP tools: opa_search_sections, opa_get_section, opa_policy_check, opa_program_lookup, opa_ipac_guidance, opa_freshness_probe, opa_clinical_tools")
+            logger.info("Available MCP tools: opa_search_sections, opa_get_section, opa_policy_check, opa_program_lookup, opa_ipac_guidance, opa_freshness_probe, opa_clinical_tools, opa_choosing_wisely")
             
             return True
             

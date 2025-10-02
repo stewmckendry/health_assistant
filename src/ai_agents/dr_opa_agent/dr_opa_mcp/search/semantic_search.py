@@ -129,7 +129,8 @@ class SemanticSearchEngine:
             'cpso': 'opa_cpso_corpus',
             'pho': 'opa_pho_corpus',
             'cep': 'opa_cep_corpus',
-            'quality_standards': 'opa_quality_standards_corpus'
+            'quality_standards': 'opa_quality_standards_corpus',
+            'choosing_wisely': 'opa_choosing_wisely_corpus'
         }
         
         if sources:

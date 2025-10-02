@@ -48,7 +48,7 @@ class Section(BaseModel):
     document_id: str = Field(..., description="Parent document ID")
     heading: str = Field(..., description="Section heading")
     text: str = Field(..., description="Section content (may be truncated)")
-    chunk_type: Literal["parent", "child"] = Field(..., description="Chunk hierarchy level")
+    chunk_type: Literal["parent", "child", "recommendation", "specialty_overview", "statement"] = Field(..., description="Chunk hierarchy level")
     relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query")
     metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata")
 
