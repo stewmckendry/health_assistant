@@ -49,6 +49,14 @@ def register_admin_endpoints(app):
     except Exception as e:
         logger.warning(f"Could not register pre-chunked endpoints: {e}")
     
+    # Import and register health check endpoints
+    try:
+        from src.web.api.health_check import router as health_router
+        app.include_router(health_router)
+        logger.info("Health check endpoints registered")
+    except Exception as e:
+        logger.warning(f"Could not register health check endpoints: {e}")
+    
     @app.post("/admin/load-database")
     async def load_database(request: DatabaseLoadRequest, background_tasks: BackgroundTasks):
         """Load exported SQLite data into Railway database"""
