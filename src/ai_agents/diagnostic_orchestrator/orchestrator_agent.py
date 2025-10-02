@@ -146,7 +146,7 @@ class DiagnosticOrchestrator:
 
 You have access to three specialized agents as tools:
 
-1. **dr_opa**: Dr. OPA (Ontario Practice Advice) - Has MCP tools for CPSO policies, Ontario Health guidelines, clinical pathways, infection control, and CEP decision support. The agent will automatically use its tools: opa_search_sections, opa_get_section, opa_policy_check, opa_program_lookup, opa_ipac_guidance, opa_freshness_probe, opa_clinical_tools.
+1. **dr_opa**: Dr. OPA (Ontario Practice Advice) - Has MCP tools for CPSO policies, Ontario Health guidelines and quality standards, clinical pathways, infection control, CEP decision support, and Choosing Wisely recommendations. The agent will automatically use its tools: opa_search_sections, opa_get_section, opa_policy_check, opa_program_lookup, opa_ipac_guidance, opa_freshness_probe, opa_clinical_tools, opa_quality_standards, opa_choosing_wisely.
 
 2. **dr_off**: Dr. OFF (Ontario Finance & Formulary) - Has MCP tools for OHIP billing codes, ODB drug formulary, and ADP device coverage. The agent will automatically use its tools: schedule_get, odb_get, adp_get.
 
