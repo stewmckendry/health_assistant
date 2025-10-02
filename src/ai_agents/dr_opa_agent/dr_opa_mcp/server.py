@@ -1481,11 +1481,14 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
         # 'all' or None means search both types
         
         # Search for relevant recommendations
+        # Use larger search when filtering by specialty to ensure complete coverage
+        initial_search_size = max(request.top_k * 3, 100) if mapped_specialty else request.top_k
+        
         search_results = await semantic_search.search(
             query=search_query,
             sources=sources,
             document_types=document_types,
-            top_k=request.top_k if not mapped_specialty else 50,  # Get more if filtering by specialty
+            top_k=initial_search_size,
             use_reranking=True
         )
         
@@ -1512,6 +1515,9 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
         # Track the most common specialty in results
         specialty_counts = {}
         
+        # Track recommendations by (specialty, recommendation_number) to avoid duplicates
+        seen_recommendations = {}
+        
         for result in search_results:
             metadata = result.get('metadata', {})
             chunk_type = metadata.get('chunk_type', '')
@@ -1537,9 +1543,21 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
                 specialty = metadata.get('specialty', '')
                 org = metadata.get('organization', '')
                 
+                # Create unique key for this recommendation
+                rec_key = (specialty, rec_num)
+                
                 # Count specialty occurrences
                 if specialty:
                     specialty_counts[specialty] = specialty_counts.get(specialty, 0) + 1
+                
+                # Skip if we've already processed this recommendation
+                if rec_key in seen_recommendations:
+                    # But merge text if this chunk has more content
+                    existing = seen_recommendations[rec_key]
+                    current_text = result.get('text', '')
+                    if len(current_text) > len(existing.get('text', '')):
+                        seen_recommendations[rec_key]['text'] = current_text
+                    continue
                 
                 # Parse recommendation text
                 text = result.get('text', '')
@@ -1581,6 +1599,12 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
                     organization=org,
                     references=references
                 )
+                
+                # Store in seen_recommendations and add to recommendations list
+                seen_recommendations[rec_key] = {
+                    'recommendation': recommendation,
+                    'text': text
+                }
                 recommendations.append(recommendation)
             
             # Collect citations
@@ -1601,6 +1625,13 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
         
         # Sort recommendations by number
         recommendations.sort(key=lambda r: r.recommendation_number)
+        
+        # Limit to requested top_k, but ensure we get complete recommendations by number
+        if len(recommendations) > request.top_k:
+            # Keep recommendations 1 through top_k
+            max_rec_num = request.top_k
+            recommendations = [r for r in recommendations if r.recommendation_number <= max_rec_num]
+            logger.info(f"Limited to {len(recommendations)} recommendations (numbers 1-{max_rec_num})")
         
         # Create citations list
         citations = [
