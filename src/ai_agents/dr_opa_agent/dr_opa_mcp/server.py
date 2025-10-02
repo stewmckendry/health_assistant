@@ -1195,7 +1195,7 @@ async def quality_standards_handler(request: QualityStandardsRequest) -> Dict[st
         # Step 1: Search for relevant quality standards
         search_results = await semantic_search.search(
             query=request.query,
-            sources=['quality_standards'],
+            sources=['ontario_health_quality_standards'],
             document_types=['quality_standard_overview', 'quality_statement'] if request.statement_type == 'all' 
                          else ['quality_standard_overview'] if request.statement_type == 'overview'
                          else ['quality_statement'],
@@ -1264,7 +1264,7 @@ async def quality_standards_handler(request: QualityStandardsRequest) -> Dict[st
                 # Search again specifically for this standard's statements
                 all_statements_results = await semantic_search.search(
                     query=standard_title,
-                    sources=['quality_standards'],
+                    sources=['ontario_health_quality_standards'],
                     document_types=['quality_statement'],
                     top_k=50,  # Get all statements
                     use_reranking=False  # Don't rerank when getting all

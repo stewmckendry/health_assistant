@@ -130,7 +130,9 @@ class SemanticSearchEngine:
             'pho': 'opa_pho_corpus',
             'cep': 'opa_cep_corpus',
             'quality_standards': 'opa_quality_standards_corpus',
-            'choosing_wisely': 'opa_choosing_wisely_corpus'
+            'ontario_health_quality_standards': 'opa_quality_standards_corpus',  # Alias for compatibility
+            'choosing_wisely': 'opa_choosing_wisely_corpus',
+            'choosing_wisely_canada': 'opa_choosing_wisely_corpus'  # Alias for compatibility
         }
         
         if sources:

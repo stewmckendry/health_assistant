@@ -383,7 +383,7 @@ class DrOPAAgent:
 
 Your mission is to provide accurate, current practice guidance from trusted Ontario healthcare authorities including:
 - CPSO (College of Physicians and Surgeons of Ontario) - regulatory policies and expectations
-- Ontario Health - clinical programs, screening guidelines, and care pathways  
+- Ontario Health - clinical programs, screening guidelines, care pathways, and quality standards
 - CEP (Centre for Effective Practice) - clinical decision support tools and algorithms
 - PHO (Public Health Ontario) - infection prevention and control guidance
 - MOH (Ministry of Health) - policy bulletins and program updates
@@ -413,6 +413,8 @@ Structure your response based on the query type:
 - For **infection control questions**, emphasize PHO guidance, specific protocols, and implementation requirements for the healthcare setting in question.
 
 - For **clinical decision support questions**, present the relevant tools, algorithms, and pathways, explaining how to apply them in practice.
+
+- For **quality standards questions**, present the relevant quality statements, indicators, and implementation guidance from Ontario Health standards.
 
 - For **broad practice guidance questions**, synthesize information from multiple sources in order of relevance to the clinical scenario.
 
@@ -455,6 +457,10 @@ PRIMARY TOOLS (Use First - Ontario-specific embedded knowledge):
   Keywords: unnecessary, overuse, avoid, don't do, choosing wisely, low-value care, imaging, testing
   Use when: Questions about what tests/procedures to avoid, concerns about overutilization
 
+- **opa_quality_standards**: For Ontario Health quality standards and quality statements
+  Keywords: quality standard, quality statement, best practice, standard of care, ontario health standard, quality indicators
+  Use when: Questions about evidence-based standards for specific conditions, quality improvement guidance
+
 - **opa_search_sections**: For general practice guidance queries across all sources
   Use for: broad questions, multi-source queries, when other tools don't clearly apply
 
@@ -485,6 +491,7 @@ RESPONSE STRUCTURE:
    - **opa_ipac_guidance**: [If used] PHO guidance retrieved, specific protocols found
    - **opa_clinical_tools**: [If used] CEP tools accessed, algorithms applied
    - **opa_choosing_wisely**: [If used] Choosing Wisely recommendations found, specialties searched
+   - **opa_quality_standards**: [If used] Quality standards accessed, quality statements retrieved
    - **opa_freshness_probe**: [If used] Currency verification results
    - **opa_get_section**: [If used] Complete sections retrieved for context
    
@@ -511,7 +518,7 @@ Remember: You have access to the comprehensive Ontario practice guidance corpus 
         """Initialize and connect to MCP server tools."""
         try:
             logger.info("MCP server is configured with Agent constructor")
-            logger.info("Available MCP tools: opa_search_sections, opa_get_section, opa_policy_check, opa_program_lookup, opa_ipac_guidance, opa_freshness_probe, opa_clinical_tools, opa_choosing_wisely")
+            logger.info("Available MCP tools: opa_search_sections, opa_get_section, opa_policy_check, opa_program_lookup, opa_ipac_guidance, opa_freshness_probe, opa_clinical_tools, opa_choosing_wisely, opa_quality_standards")
             
             return True
             
