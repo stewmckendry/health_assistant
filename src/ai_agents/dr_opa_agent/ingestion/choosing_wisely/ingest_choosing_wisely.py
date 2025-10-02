@@ -21,6 +21,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 import chromadb
 from chromadb.config import Settings
+from chromadb.utils import embedding_functions
 from openai import OpenAI
 
 # Configure logging to both console and file
@@ -86,6 +87,16 @@ class ChoosingWiselyIngester:
         else:
             logger.warning("No OpenAI API key provided - embeddings will not be generated")
         
+        # Initialize embedding function with EXPLICIT model (match quality standards)
+        if self.openai_client:
+            self.embedding_function = embedding_functions.OpenAIEmbeddingFunction(
+                api_key=self.openai_client.api_key,
+                model_name="text-embedding-3-small"
+            )
+            logger.info("Using embedding model: text-embedding-3-small")
+        else:
+            self.embedding_function = None
+        
         # Initialize local Chroma client
         chroma_path = chroma_path or "data/dr_opa_agent/chroma"
         Path(chroma_path).mkdir(parents=True, exist_ok=True)
@@ -95,9 +106,18 @@ class ChoosingWiselyIngester:
         )
         logger.info(f"Using local Chroma at {chroma_path}")
         
-        # Get or create collection
+        # Delete existing collection if it exists (to fix embedding function mismatch)
+        try:
+            existing = self.chroma_client.get_collection(collection_name)
+            logger.info(f"Deleting existing collection: {collection_name}")
+            self.chroma_client.delete_collection(collection_name)
+        except Exception:
+            logger.info(f"No existing collection to delete: {collection_name}")
+        
+        # Get or create collection with EXPLICIT embedding function
         self.collection = self.chroma_client.get_or_create_collection(
-            name=collection_name
+            name=collection_name,
+            embedding_function=self.embedding_function
         )
         logger.info(f"Using collection: {collection_name}")
     

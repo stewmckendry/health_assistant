@@ -54,7 +54,7 @@ export default function AgentsPage() {
             <span className="block mt-1 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">AI Registry</span>
           </h1>
           <p className="text-xs md:text-sm text-white/90 max-w-2xl mx-auto font-light">
-            Specialized AI agents for OHIP billing, drug coverage, practice guidelines, quality standards, and medical education
+            Specialized AI agents for OHIP billing, drug coverage, practice guidelines, quality standards, Choosing Wisely recommendations, and medical education
           </p>
         </div>
       </div>
@@ -237,6 +237,7 @@ export default function AgentsPage() {
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">CPSO</span>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">Ontario Health</span>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">Health Quality Ontario</span>
+              <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">Choosing Wisely Canada</span>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">PHO</span>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">CEP</span>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">MOH</span>

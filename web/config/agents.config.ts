@@ -115,7 +115,8 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'Clinical decision support',
       'Policy interpretation',
       'Practice standards advice',
-      'Evidence-based care recommendations'
+      'Evidence-based care recommendations',
+      'Choosing Wisely recommendations (unnecessary tests and procedures to avoid)'
     ],
     limitations: [
       'Ontario-specific guidance only',
@@ -127,7 +128,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
     starterPrompts: [
       'What are the CPSO requirements for virtual care documentation?',
       'Is there an Ontario screening program for colorectal cancer?',
-      'What are PHO best practices for instrument sterilization?',
+      'What unnecessary tests should I avoid ordering for lower back pain?',
       'What are the quality standards for diabetes care in Ontario?'
     ]
   },

@@ -216,10 +216,37 @@ class ChoosingWiselyPrechunkedIngester:
                 cleaned[key] = value
         return cleaned
     
+    async def delete_railway_collection(self, collection_name: str = "opa_choosing_wisely_corpus") -> bool:
+        """Delete existing collection on Railway to fix embedding function mismatch."""
+        try:
+            logger.info(f"Attempting to delete Railway collection: {collection_name}")
+            
+            # Try to delete the collection
+            async with aiohttp.ClientSession() as session:
+                delete_url = f"{self.railway_url}/admin/collections/{collection_name}"
+                async with session.delete(delete_url) as response:
+                    if response.status == 200:
+                        logger.info(f"✅ Successfully deleted Railway collection: {collection_name}")
+                        return True
+                    elif response.status == 404:
+                        logger.info(f"Collection {collection_name} does not exist on Railway (404)")
+                        return True
+                    else:
+                        text = await response.text()
+                        logger.warning(f"Failed to delete collection {collection_name}: {response.status} - {text}")
+                        return False
+        except Exception as e:
+            logger.warning(f"Error deleting Railway collection {collection_name}: {e}")
+            return False
+
     async def ingest_to_railway(self, json_dir: str = None) -> Dict[str, Any]:
         """Ingest all Choosing Wisely files to Railway using pre-chunked endpoint."""
         if not json_dir:
             json_dir = "data/dr_opa_agent/processed/choosing_wisely"
+        
+        # First, delete existing collection to fix embedding function mismatch
+        logger.info("🗑️ Deleting existing Railway collection to fix embedding function...")
+        await self.delete_railway_collection()
         
         json_path = Path(json_dir)
         json_files = sorted(json_path.glob("*.json"))
