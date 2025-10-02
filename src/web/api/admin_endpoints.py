@@ -41,6 +41,14 @@ def register_admin_endpoints(app):
     except Exception as e:
         logger.warning(f"Could not register simple ChromaDB endpoints: {e}")
     
+    # Import and register pre-chunked data ingestion endpoint
+    try:
+        from src.web.api.admin_prechunked_endpoint import router as prechunked_router
+        app.include_router(prechunked_router)
+        logger.info("Pre-chunked ingestion endpoints registered")
+    except Exception as e:
+        logger.warning(f"Could not register pre-chunked endpoints: {e}")
+    
     @app.post("/admin/load-database")
     async def load_database(request: DatabaseLoadRequest, background_tasks: BackgroundTasks):
         """Load exported SQLite data into Railway database"""
