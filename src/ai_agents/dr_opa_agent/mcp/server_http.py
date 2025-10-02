@@ -45,6 +45,8 @@ async def run_http_server():
         logger.info("  - opa_ipac_guidance: PHO infection prevention and control guidance")
         logger.info("  - opa_freshness_probe: Check for guidance updates on a topic")
         logger.info("  - opa_clinical_tools: CEP clinical decision support tools lookup")
+        logger.info("  - opa_quality_standards: Ontario Health quality standards search")
+        logger.info("  - opa_choosing_wisely: Choosing Wisely recommendations for avoiding unnecessary care")
         
         # Run as HTTP server (using new method)
         await mcp.run_http_async(host=host, port=port)

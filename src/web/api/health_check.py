@@ -22,13 +22,35 @@ async def check_mcp_tools():
         # Try to import and check Dr. OPA server
         from src.ai_agents.dr_opa_agent.dr_opa_mcp.server import mcp
         
-        # Get registered tools
-        for tool_name, tool_info in mcp._tools.items():
-            tools_status["dr_opa_tools"].append(tool_name)
-            
-            if tool_name == "opa_quality_standards":
+        # FastMCP stores tools differently
+        # Try to get tool list through the tool decorator registry
+        tool_names = []
+        
+        # Check if tools were registered via decorator
+        try:
+            # FastMCP may store tools in different ways
+            if hasattr(mcp, 'list_tools'):
+                tools_list = mcp.list_tools()
+                for tool in tools_list:
+                    tool_names.append(tool.name)
+            elif hasattr(mcp, 'tools'):
+                tool_names = list(mcp.tools.keys())
+            else:
+                # Fallback: check for decorated functions in the module
+                from src.ai_agents.dr_opa_agent.dr_opa_mcp import server
+                for attr_name in dir(server):
+                    if attr_name.startswith('opa_') or attr_name.endswith('_handler'):
+                        tool_names.append(attr_name.replace('_handler', ''))
+        except Exception as e:
+            tools_status["tools_error"] = str(e)
+        
+        tools_status["dr_opa_tools"] = tool_names
+        
+        # Check for our specific tools
+        for tool_name in tool_names:
+            if "quality_standards" in tool_name:
                 tools_status["quality_standards_available"] = True
-            elif tool_name == "opa_choosing_wisely":
+            elif "choosing_wisely" in tool_name:
                 tools_status["choosing_wisely_available"] = True
                 
     except Exception as e:
