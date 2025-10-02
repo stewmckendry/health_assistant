@@ -369,7 +369,7 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                     encoding="utf-8"
                 ),
                 name="agent-97-server",
-                client_session_timeout_seconds=30.0
+                client_session_timeout_seconds=90.0  # Extended from 30s to 90s for complex queries
             )
             
             # Use MCP servers within context managers
@@ -665,7 +665,7 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                     encoding="utf-8"
                 ),
                 name="agent-97-server",
-                client_session_timeout_seconds=30.0
+                client_session_timeout_seconds=90.0  # Extended from 30s to 90s for complex queries
             )
             
             # Use MCP servers within context managers

@@ -81,7 +81,7 @@ class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
                     encoding="utf-8"
                 ),
                 name="agent-97-server",
-                client_session_timeout_seconds=60.0
+                client_session_timeout_seconds=90.0  # Extended to 90s for complex queries
             )
             return agent_97_mcp
 
