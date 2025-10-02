@@ -1441,6 +1441,306 @@ async def quality_standards_handler(request: QualityStandardsRequest) -> Dict[st
         }
 
 
+@mcp.tool(name="opa_choosing_wisely", description="Choosing Wisely recommendations for avoiding unnecessary tests and procedures")
+async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, Any]:
+    """
+    Search Choosing Wisely recommendations for unnecessary tests and procedures.
+    
+    This tool helps identify clinical scenarios where tests, procedures, or treatments
+    may be unnecessary or overused according to Choosing Wisely Canada recommendations.
+    
+    Args:
+        request: ChoosingWiselyRequest with query and options
+    
+    Returns:
+        Choosing Wisely recommendations with specialty information and citations
+    """
+    logger.info(f"opa.choosing_wisely called - query: {request.query}")
+    logger.info(f"  specialty: {request.specialty}, type: {request.recommendation_type}")
+    
+    try:
+        # Get semantic search engine
+        semantic_search = get_semantic_search()
+        
+        # Step 1: Map specialty if provided using LLM
+        mapped_specialty = None
+        if request.specialty:
+            mapped_specialty = await _map_specialty_to_available(request.specialty, semantic_search)
+            logger.info(f"Mapped specialty '{request.specialty}' to '{mapped_specialty}'")
+        
+        # Step 2: Build search query and filters
+        search_query = request.query
+        sources = ['choosing_wisely']
+        
+        # Document type filter based on recommendation_type
+        document_types = None
+        if request.recommendation_type == 'overview':
+            document_types = ['choosing_wisely_overview']
+        elif request.recommendation_type == 'recommendation':
+            document_types = ['choosing_wisely_recommendation']
+        # 'all' or None means search both types
+        
+        # Search for relevant recommendations
+        search_results = await semantic_search.search(
+            query=search_query,
+            sources=sources,
+            document_types=document_types,
+            top_k=request.top_k if not mapped_specialty else 50,  # Get more if filtering by specialty
+            use_reranking=True
+        )
+        
+        logger.info(f"Search returned {len(search_results)} results")
+        
+        # Step 3: If specialty was mapped, filter results to that specialty
+        if mapped_specialty:
+            filtered_results = []
+            for result in search_results:
+                result_specialty = result.get('metadata', {}).get('specialty', '').lower()
+                if mapped_specialty.lower() in result_specialty or result_specialty in mapped_specialty.lower():
+                    filtered_results.append(result)
+            
+            search_results = filtered_results
+            logger.info(f"Filtered to {len(search_results)} results for specialty '{mapped_specialty}'")
+        
+        # Step 4: Process results into recommendations
+        recommendations = []
+        specialty_overview = None
+        organization = None
+        last_updated = None
+        citations_set = set()
+        
+        # Track the most common specialty in results
+        specialty_counts = {}
+        
+        for result in search_results:
+            metadata = result.get('metadata', {})
+            chunk_type = metadata.get('chunk_type', '')
+            
+            # Extract specialty-level information from overview chunks
+            if chunk_type == 'specialty_overview':
+                specialty = metadata.get('specialty', '')
+                text = result.get('text', '')
+                
+                if not specialty_overview and text:
+                    specialty_overview = text[:500] + "..." if len(text) > 500 else text
+                    organization = metadata.get('organization', '')
+                    last_updated = metadata.get('last_updated', '')
+                
+                # Count specialty occurrences
+                if specialty:
+                    specialty_counts[specialty] = specialty_counts.get(specialty, 0) + 1
+                
+            # Extract recommendation information
+            elif chunk_type == 'recommendation':
+                rec_num = metadata.get('recommendation_number', 0)
+                rec_title = metadata.get('recommendation_title', '')
+                specialty = metadata.get('specialty', '')
+                org = metadata.get('organization', '')
+                
+                # Count specialty occurrences
+                if specialty:
+                    specialty_counts[specialty] = specialty_counts.get(specialty, 0) + 1
+                
+                # Parse recommendation text
+                text = result.get('text', '')
+                
+                # Extract title and description
+                title = rec_title if rec_title else "Recommendation"
+                description = ""
+                references = []
+                
+                # Try to parse structured text
+                if "Recommendation #" in text:
+                    lines = text.split('\n')
+                    description_lines = []
+                    in_references = False
+                    
+                    for line in lines:
+                        line = line.strip()
+                        if line.startswith('Recommendation #'):
+                            # Extract title from this line
+                            if ':' in line:
+                                title = line.split(':', 1)[1].strip()
+                        elif line.startswith('References:') or line == 'References:':
+                            in_references = True
+                        elif in_references and line.startswith('-'):
+                            references.append(line[1:].strip())
+                        elif not in_references and line and not line.startswith('='):
+                            description_lines.append(line)
+                    
+                    description = '\n'.join(description_lines).strip()
+                else:
+                    # Fallback - use first 300 chars as description
+                    description = text[:300] + "..." if len(text) > 300 else text
+                
+                recommendation = ChoosingWiselyRecommendation(
+                    recommendation_number=rec_num,
+                    title=title,
+                    description=description,
+                    specialty=specialty,
+                    organization=org,
+                    references=references
+                )
+                recommendations.append(recommendation)
+            
+            # Collect citations
+            source_url = metadata.get('source_url', '')
+            if source_url:
+                citations_set.add((
+                    metadata.get('specialty', 'Choosing Wisely Canada'),
+                    source_url,
+                    'choosing_wisely_canada'
+                ))
+        
+        # Determine the primary specialty from results
+        primary_specialty = None
+        if specialty_counts:
+            primary_specialty = max(specialty_counts.items(), key=lambda x: x[1])[0]
+        elif mapped_specialty:
+            primary_specialty = mapped_specialty
+        
+        # Sort recommendations by number
+        recommendations.sort(key=lambda r: r.recommendation_number)
+        
+        # Create citations list
+        citations = [
+            Citation(
+                source=title,
+                source_org='choosing_wisely_canada',
+                loc=f"Choosing Wisely Recommendations",
+                url=url
+            )
+            for title, url, org in citations_set
+        ]
+        
+        # Calculate confidence
+        confidence = 0.9 if recommendations else 0.3
+        if mapped_specialty and primary_specialty:
+            confidence = 0.95  # High confidence when specialty matched
+        
+        # Create query interpretation
+        query_interpretation = f"Searching for unnecessary care recommendations"
+        if primary_specialty:
+            query_interpretation += f" in {primary_specialty}"
+        if mapped_specialty and mapped_specialty != primary_specialty:
+            query_interpretation += f" (mapped from '{request.specialty}')"
+        
+        # Create response
+        response = ChoosingWiselyResponse(
+            specialty_title=primary_specialty,
+            recommendations=recommendations,
+            total_recommendations=len(recommendations),
+            specialty_overview=specialty_overview,
+            organization=organization,
+            last_updated=last_updated,
+            citations=citations,
+            confidence=confidence,
+            query_interpretation=query_interpretation
+        )
+        
+        logger.info(f"Returning {len(recommendations)} Choosing Wisely recommendations")
+        
+        # Convert to dict and standardize
+        response_dict = response.model_dump()
+        return standardize_mcp_response(response_dict, "opa_choosing_wisely")
+        
+    except Exception as e:
+        logger.error(f"Choosing Wisely search failed: {e}")
+        logger.error(traceback.format_exc())
+        
+        # Return error response
+        return {
+            'error': str(e),
+            'specialty_title': None,
+            'recommendations': [],
+            'total_recommendations': 0,
+            'citations': [],
+            'confidence': 0.0
+        }
+
+
+async def _map_specialty_to_available(specialty_input: str, semantic_search) -> Optional[str]:
+    """Map user input specialty to one of our available specialties using LLM."""
+    
+    # First get list of available specialties from our data
+    AVAILABLE_SPECIALTIES = [
+        "Allergy and Clinical Immunology", "Anesthesiology", "Blood and Marrow Transplant",
+        "Burns", "Cardiology", "Critical Care", "Dermatology", "Emergency Medicine",
+        "Endocrinology and Metabolism", "Family Medicine", "Fertility and Andrology",
+        "Gastroenterology", "General Surgery", "Geriatrics", "Headache", "Hematology",
+        "Hepatology", "Hospital Dentistry", "Hospital Medicine", "Hospital Pharmacy",
+        "Infectious Disease", "Internal Medicine", "Long-term Care", "Medical Biochemistry",
+        "Medical Education: Residents", "Medical Education: Students", "Medical Genetics",
+        "Medical Laboratory Science", "Medical Microbiology", "Medical Radiation Technology",
+        "Nephrology", "Neurology", "Nuclear Medicine", "Nurse Practitioner", "Nursing",
+        "Nursing: Critical Care", "Nursing: Gerontology", "Nursing: Infection Prevention and Control",
+        "Obstetrics and Gynaecology", "Occupational Medicine", "Oncology", "Orthopaedics",
+        "Otolaryngology: Head and Neck Surgery", "Otolaryngology: Otology and Neurotology",
+        "Otolaryngology: Rhinology", "Paediatric Surgery", "Paediatrics", "Palliative Care",
+        "Pathology", "Pediatric Infectious Diseases and Medical Microbiology", "Pediatric Neurosurgery",
+        "Pediatric Otolaryngology", "Pediatric Rheumatology", "Pediatric Sport and Exercise Medicine",
+        "Pediatrics", "Perinatal Transfusion Medicine", "Pharmacist", "Physical Medicine and Rehabilitation",
+        "Psychiatry", "Public Health", "Radiology", "Respiratory Medicine", "Rheumatology",
+        "Rural Medicine", "Spine", "Sport and Exercise Medicine", "Transfusion Medicine",
+        "Trauma", "Urology", "Vascular Surgery"
+    ]
+    
+    # Quick exact match first
+    specialty_lower = specialty_input.lower()
+    for available in AVAILABLE_SPECIALTIES:
+        if specialty_lower == available.lower():
+            return available
+    
+    # Check for partial matches
+    for available in AVAILABLE_SPECIALTIES:
+        if specialty_lower in available.lower() or available.lower() in specialty_lower:
+            return available
+    
+    # Use LLM for fuzzy matching
+    try:
+        openai_client = semantic_search.openai_client
+        
+        prompt = f"""Given the user's specialty input and list of available Choosing Wisely specialties, 
+        identify the BEST matching specialty. Return ONLY the exact specialty name from the list, nothing else.
+        If no good match exists, return "None".
+        
+        User Input: {specialty_input}
+        
+        Available Specialties:
+        {chr(10).join(f"- {spec}" for spec in AVAILABLE_SPECIALTIES)}
+        
+        Return the exact specialty name that best matches the user input:"""
+        
+        response = await openai_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are a medical specialty mapping assistant that matches user input to available specialties."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.0,
+            max_tokens=50
+        )
+        
+        matched_specialty = response.choices[0].message.content.strip()
+        
+        # Verify the matched specialty is in our list
+        if matched_specialty in AVAILABLE_SPECIALTIES:
+            return matched_specialty
+        elif matched_specialty.lower() == "none":
+            return None
+        else:
+            # LLM returned something not in our list, try partial match
+            for available in AVAILABLE_SPECIALTIES:
+                if matched_specialty.lower() in available.lower():
+                    return available
+            
+            return None
+        
+    except Exception as e:
+        logger.error(f"LLM specialty mapping failed: {e}")
+        return None
+
+
 if __name__ == "__main__":
     logger.info("Starting Dr. OPA MCP server...")
     logger.info("Registered tools:")
@@ -1452,6 +1752,7 @@ if __name__ == "__main__":
     logger.info("  - opa.freshness_probe: Check for guidance updates")
     logger.info("  - opa.clinical_tools: CEP clinical decision support tools")
     logger.info("  - opa.quality_standards: Ontario Health quality standards search")
+    logger.info("  - opa.choosing_wisely: Choosing Wisely recommendations for avoiding unnecessary care")
     
     # Try to initialize clients on startup but don't fail if database is missing
     try:

@@ -10,10 +10,10 @@ from pydantic import BaseModel, Field
 class SearchSectionsRequest(BaseModel):
     """Request model for opa.search_sections tool."""
     query: str = Field(..., description="Clinical query or practice question")
-    sources: Optional[List[Literal["cpso", "ontario_health", "cep", "pho", "moh", "quality_standards"]]] = Field(
+    sources: Optional[List[Literal["cpso", "ontario_health", "cep", "pho", "moh", "quality_standards", "choosing_wisely"]]] = Field(
         None, description="Specific sources to search (default: all)"
     )
-    doc_types: Optional[List[Literal["policy", "advice", "guideline", "standard", "tool", "quality_standard", "quality_statement"]]] = Field(
+    doc_types: Optional[List[Literal["policy", "advice", "guideline", "standard", "tool", "quality_standard", "quality_statement", "choosing_wisely_overview", "choosing_wisely_recommendation"]]] = Field(
         None, description="Document types to include"
     )
     topics: Optional[List[str]] = Field(
