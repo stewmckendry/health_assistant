@@ -267,6 +267,61 @@ def register_admin_endpoints(app):
             logger.error(f"Error checking database status: {e}")
             raise HTTPException(status_code=500, detail=f"Status check failed: {str(e)}")
     
+    @app.get("/admin/chroma-stats")
+    async def chroma_stats():
+        """Get detailed Chroma collection statistics"""
+        try:
+            chroma_dir = Path("/app/data/chroma")
+            
+            if not chroma_dir.exists():
+                return {"error": "Chroma directory not found", "collections": {}}
+            
+            # Use Settings to avoid conflicts
+            settings = chromadb.config.Settings(
+                anonymized_telemetry=False,
+                allow_reset=False,
+                is_persistent=True
+            )
+            
+            client = chromadb.PersistentClient(
+                path=str(chroma_dir),
+                settings=settings
+            )
+            
+            collections = client.list_collections()
+            stats = {
+                "total_collections": len(collections),
+                "collections": {}
+            }
+            
+            for collection_info in collections:
+                try:
+                    collection = client.get_collection(collection_info.name)
+                    count = collection.count()
+                    
+                    # Get sample document to check metadata structure
+                    sample = collection.get(limit=1)
+                    sample_metadata = {}
+                    if sample and sample.get('metadatas'):
+                        sample_metadata = sample['metadatas'][0] if sample['metadatas'] else {}
+                    
+                    stats["collections"][collection_info.name] = {
+                        "document_count": count,
+                        "collection_id": str(collection_info.id),
+                        "has_source_url": "source_url" in sample_metadata,
+                        "metadata_keys": list(sample_metadata.keys())[:10]  # First 10 keys
+                    }
+                except Exception as e:
+                    stats["collections"][collection_info.name] = {
+                        "error": str(e)
+                    }
+            
+            return stats
+            
+        except Exception as e:
+            logger.error(f"Error getting Chroma stats: {e}")
+            return {"error": str(e), "collections": {}}
+    
     @app.post("/admin/ingest-json")
     async def ingest_json_data(request: Dict[str, Any], background_tasks: BackgroundTasks):
         """Ingest processed JSON data using existing ingestion pipelines"""
