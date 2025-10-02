@@ -54,7 +54,7 @@ class ChoosingWiselyIngester:
         chroma_path: Optional[str] = None,
         railway_url: Optional[str] = None,
         openai_api_key: Optional[str] = None,
-        collection_name: str = "choosing_wisely_recommendations"
+        collection_name: str = "opa_choosing_wisely_corpus"
     ):
         """Initialize Choosing Wisely ingester.
         
@@ -520,7 +520,7 @@ def main():
     )
     parser.add_argument(
         '--collection',
-        default='choosing_wisely_recommendations',
+        default='opa_choosing_wisely_corpus',
         help='Chroma collection name (local mode only)'
     )
     parser.add_argument(

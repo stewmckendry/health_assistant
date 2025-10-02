@@ -301,9 +301,9 @@ Respond with ONLY a number between 0 and 10:"""
         for doc in documents:
             metadata = doc.get('metadata', {})
             
-            # Check document type filter
+            # Check document type filter (handle both 'doc_type' and 'document_type' fields)
             if document_types:
-                doc_type = metadata.get('document_type', '')
+                doc_type = metadata.get('doc_type') or metadata.get('document_type', '')
                 if doc_type not in document_types:
                     logger.debug(f"Filtered out: wrong type ({doc_type} not in {document_types})")
                     continue
