@@ -10,10 +10,10 @@ from pydantic import BaseModel, Field
 class SearchSectionsRequest(BaseModel):
     """Request model for opa.search_sections tool."""
     query: str = Field(..., description="Clinical query or practice question")
-    sources: Optional[List[Literal["cpso", "ontario_health", "cep", "pho", "moh"]]] = Field(
+    sources: Optional[List[Literal["cpso", "ontario_health", "cep", "pho", "moh", "quality_standards"]]] = Field(
         None, description="Specific sources to search (default: all)"
     )
-    doc_types: Optional[List[Literal["policy", "advice", "guideline", "standard", "tool"]]] = Field(
+    doc_types: Optional[List[Literal["policy", "advice", "guideline", "standard", "tool", "quality_standard", "quality_statement"]]] = Field(
         None, description="Document types to include"
     )
     topics: Optional[List[str]] = Field(
@@ -96,3 +96,27 @@ class FreshnessProbeRequest(BaseModel):
     check_web: bool = Field(
         default=True, description="Check web for recent updates"
     )
+
+
+class QualityStandardsRequest(BaseModel):
+    """Request model for opa.quality_standards tool."""
+    query: str = Field(..., description="Clinical topic or condition (e.g., 'diabetes', 'hip fracture', 'depression')")
+    retrieve_all_statements: bool = Field(
+        default=False, description="Retrieve all quality statements for a specific standard"
+    )
+    statement_type: Optional[Literal["overview", "statement", "all"]] = Field(
+        default="all", description="Type of content to retrieve"
+    )
+    top_k: int = Field(default=10, ge=1, le=20, description="Number of results to return")
+
+
+class ChoosingWiselyRequest(BaseModel):
+    """Request model for opa.choosing_wisely tool."""
+    query: str = Field(..., description="Test, procedure, or clinical scenario to check for unnecessary care recommendations")
+    specialty: Optional[str] = Field(
+        None, description="Medical specialty (will be mapped to available specialties if not exact match)"
+    )
+    recommendation_type: Optional[Literal["overview", "recommendation", "all"]] = Field(
+        default="all", description="Type of content to retrieve"
+    )
+    top_k: int = Field(default=10, ge=1, le=15, description="Number of results to return")

@@ -36,7 +36,9 @@ from .models.request import (
     PolicyCheckRequest,
     ProgramLookupRequest,
     IPACGuidanceRequest,
-    FreshnessProbeRequest
+    FreshnessProbeRequest,
+    QualityStandardsRequest,
+    ChoosingWiselyRequest
 )
 
 # Add missing import
@@ -49,6 +51,10 @@ from .models.response import (
     ProgramLookupResponse,
     IPACGuidanceResponse,
     FreshnessProbeResponse,
+    QualityStandardsResponse,
+    QualityStatement,
+    ChoosingWiselyResponse,
+    ChoosingWiselyRecommendation,
     Section,
     Document,
     Citation,
@@ -1164,6 +1170,277 @@ async def clinical_tools_handler(
     return standardize_mcp_response(response, tool_name)
 
 
+@mcp.tool(name="opa_quality_standards", description="Ontario Health quality standards search")
+async def quality_standards_handler(request: QualityStandardsRequest) -> Dict[str, Any]:
+    """
+    Search Ontario Health quality standards and retrieve quality statements.
+    
+    This tool searches the Ontario Health quality standards corpus for specific
+    topics or conditions, and can retrieve all quality statements for a specific
+    standard when requested.
+    
+    Args:
+        request: QualityStandardsRequest with query and options
+    
+    Returns:
+        Quality statements, standard information, and citations
+    """
+    logger.info(f"opa.quality_standards called - query: {request.query}")
+    logger.info(f"  retrieve_all: {request.retrieve_all_statements}, type: {request.statement_type}")
+    
+    try:
+        # Get semantic search engine
+        semantic_search = get_semantic_search()
+        
+        # Step 1: Search for relevant quality standards
+        search_results = await semantic_search.search(
+            query=request.query,
+            sources=['quality_standards'],
+            document_types=['quality_standard_overview', 'quality_statement'] if request.statement_type == 'all' 
+                         else ['quality_standard_overview'] if request.statement_type == 'overview'
+                         else ['quality_statement'],
+            top_k=request.top_k if not request.retrieve_all_statements else 50,
+            use_reranking=True
+        )
+        
+        logger.info(f"Search returned {len(search_results)} results")
+        
+        # Step 2: If retrieve_all_statements, find the best matching standard using LLM
+        standard_title = None
+        if request.retrieve_all_statements and search_results:
+            # Collect all unique quality standard titles from results
+            candidate_titles = []
+            for result in search_results:
+                if result.get('metadata', {}).get('chunk_type') == 'document':
+                    title = result.get('metadata', {}).get('title', '')
+                    if title and title not in candidate_titles:
+                        candidate_titles.append(title)
+            
+            # Use LLM to match query to best standard title if we have candidates
+            if candidate_titles:
+                logger.info(f"Found {len(candidate_titles)} candidate standards: {candidate_titles[:5]}")
+                
+                # Use OpenAI to find best match
+                try:
+                    openai_client = semantic_search.openai_client
+                    
+                    prompt = f"""Given the user query and list of available Ontario Health Quality Standards, 
+                    identify the BEST matching standard. Return ONLY the exact title from the list, nothing else.
+                    
+                    User Query: {request.query}
+                    
+                    Available Quality Standards:
+                    {chr(10).join(f"- {title}" for title in candidate_titles[:10])}
+                    
+                    Return the exact title of the best matching standard:"""
+                    
+                    response = await openai_client.chat.completions.create(
+                        model="gpt-4o-mini",
+                        messages=[
+                            {"role": "system", "content": "You are a medical knowledge assistant that matches queries to quality standards."},
+                            {"role": "user", "content": prompt}
+                        ],
+                        temperature=0.0,
+                        max_tokens=100
+                    )
+                    
+                    matched_title = response.choices[0].message.content.strip()
+                    
+                    # Verify the matched title is in our list (LLM might hallucinate)
+                    if matched_title in candidate_titles:
+                        standard_title = matched_title
+                        logger.info(f"LLM matched query '{request.query}' to standard: {standard_title}")
+                    else:
+                        # Fallback to first candidate if LLM response invalid
+                        standard_title = candidate_titles[0]
+                        logger.warning(f"LLM returned invalid title '{matched_title}', using first candidate: {standard_title}")
+                        
+                except Exception as e:
+                    logger.error(f"LLM matching failed: {e}, falling back to first candidate")
+                    standard_title = candidate_titles[0]
+            
+            # If we found a standard, get ALL its statements
+            if standard_title:
+                # Search again specifically for this standard's statements
+                all_statements_results = await semantic_search.search(
+                    query=standard_title,
+                    sources=['quality_standards'],
+                    document_types=['quality_statement'],
+                    top_k=50,  # Get all statements
+                    use_reranking=False  # Don't rerank when getting all
+                )
+                
+                # Filter to only statements from this specific standard
+                filtered_results = [
+                    r for r in all_statements_results
+                    if r.get('metadata', {}).get('title', '').lower() == standard_title.lower()
+                ]
+                
+                logger.info(f"Found {len(filtered_results)} statements for {standard_title}")
+                search_results = filtered_results
+        
+        # Step 3: Process results into quality statements
+        statements = []
+        executive_summary = None
+        scope = None
+        year = None
+        citations_set = set()
+        
+        # If we didn't find a specific standard yet, try to identify from results
+        if not standard_title and search_results:
+            # Look for the most common title in results
+            title_counts = {}
+            for result in search_results:
+                title = result.get('metadata', {}).get('title', '')
+                if title:
+                    title_counts[title] = title_counts.get(title, 0) + 1
+            
+            if title_counts:
+                # Get the most common title
+                standard_title = max(title_counts.items(), key=lambda x: x[1])[0]
+                logger.info(f"Inferred standard from results: {standard_title}")
+        
+        for result in search_results:
+            metadata = result.get('metadata', {})
+            chunk_type = metadata.get('chunk_type', '')
+            
+            # Extract document-level information
+            if chunk_type == 'document':
+                text = result.get('text', '')
+                # Extract executive summary
+                if '## Executive Summary' in text:
+                    start = text.find('## Executive Summary') + len('## Executive Summary')
+                    end = text.find('\n##', start)
+                    executive_summary = text[start:end if end != -1 else None].strip()
+                
+                # Extract scope
+                if '## Scope' in text:
+                    start = text.find('## Scope') + len('## Scope')
+                    end = text.find('\n##', start)
+                    scope = text[start:end if end != -1 else None].strip()
+                
+                year = metadata.get('year')
+                
+            # Extract statement information
+            elif chunk_type == 'statement':
+                stmt_num = metadata.get('statement_number', 0)
+                stmt_title = metadata.get('statement_title', '')
+                
+                # Parse statement text
+                text = result.get('text', '')
+                brief = ""
+                full = ""
+                indicators = []
+                for_patients = ""
+                for_clinicians = ""
+                
+                # Extract brief statement
+                if '## Statement' in text:
+                    start = text.find('## Statement') + len('## Statement')
+                    end = text.find('\n##', start)
+                    brief = text[start:end if end != -1 else None].strip()
+                
+                # Extract full text (statement + background)
+                if '## Background' in text:
+                    start = text.find('## Background') + len('## Background')
+                    end = text.find('\n##', start)
+                    background = text[start:end if end != -1 else None].strip()
+                    full = f"{brief}\n\nBackground:\n{background}" if brief else background
+                else:
+                    full = brief
+                
+                # Extract indicators
+                if '## Quality Indicators' in text:
+                    start = text.find('## Quality Indicators')
+                    end = text.find('\n##', start)
+                    indicators_text = text[start:end if end != -1 else None]
+                    indicators = [line.strip('• ').strip() for line in indicators_text.split('\n') 
+                                if line.strip().startswith('•')]
+                
+                # Extract patient info
+                if '## For Patients' in text:
+                    start = text.find('## For Patients') + len('## For Patients')
+                    end = text.find('\n##', start)
+                    for_patients = text[start:end if end != -1 else None].strip()
+                
+                # Extract clinician info
+                if '## For Clinicians' in text:
+                    start = text.find('## For Clinicians') + len('## For Clinicians')
+                    end = text.find('\n##', start)
+                    for_clinicians = text[start:end if end != -1 else None].strip()
+                
+                statement = QualityStatement(
+                    statement_number=stmt_num,
+                    title=stmt_title,
+                    brief_statement=brief,
+                    full_text=full if full != brief else None,
+                    indicators=indicators,
+                    for_patients=for_patients if for_patients else None,
+                    for_clinicians=for_clinicians if for_clinicians else None
+                )
+                statements.append(statement)
+            
+            # Collect citations
+            source_url = metadata.get('source_url', '')
+            if source_url:
+                citations_set.add((
+                    metadata.get('title', 'Ontario Health Quality Standard'),
+                    source_url,
+                    'ontario_health'
+                ))
+        
+        # Sort statements by number
+        statements.sort(key=lambda s: s.statement_number)
+        
+        # Create citations list
+        citations = [
+            Citation(
+                source=title,
+                source_org='ontario_health',
+                loc=f"Quality Standard",
+                url=url
+            )
+            for title, url, org in citations_set
+        ]
+        
+        # Calculate confidence
+        confidence = 0.9 if statements else 0.3
+        if request.retrieve_all_statements and standard_title:
+            confidence = 0.95  # High confidence when we found specific standard
+        
+        # Create response
+        response = QualityStandardsResponse(
+            standard_title=standard_title,
+            statements=statements,
+            total_statements=len(statements),
+            executive_summary=executive_summary,
+            scope=scope,
+            year=year,
+            citations=citations,
+            confidence=confidence
+        )
+        
+        logger.info(f"Returning {len(statements)} quality statements")
+        
+        # Convert to dict and standardize
+        response_dict = response.model_dump()
+        return standardize_mcp_response(response_dict, "opa_quality_standards")
+        
+    except Exception as e:
+        logger.error(f"Quality standards search failed: {e}")
+        logger.error(traceback.format_exc())
+        
+        # Return error response
+        return {
+            'error': str(e),
+            'standard_title': None,
+            'statements': [],
+            'total_statements': 0,
+            'citations': [],
+            'confidence': 0.0
+        }
+
+
 if __name__ == "__main__":
     logger.info("Starting Dr. OPA MCP server...")
     logger.info("Registered tools:")
@@ -1174,6 +1451,7 @@ if __name__ == "__main__":
     logger.info("  - opa.ipac_guidance: PHO infection prevention guidance")
     logger.info("  - opa.freshness_probe: Check for guidance updates")
     logger.info("  - opa.clinical_tools: CEP clinical decision support tools")
+    logger.info("  - opa.quality_standards: Ontario Health quality standards search")
     
     # Try to initialize clients on startup but don't fail if database is missing
     try:

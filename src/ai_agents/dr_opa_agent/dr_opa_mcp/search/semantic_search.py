@@ -128,7 +128,8 @@ class SemanticSearchEngine:
         collection_map = {
             'cpso': 'opa_cpso_corpus',
             'pho': 'opa_pho_corpus',
-            'cep': 'opa_cep_corpus'
+            'cep': 'opa_cep_corpus',
+            'quality_standards': 'opa_quality_standards_corpus'
         }
         
         if sources:

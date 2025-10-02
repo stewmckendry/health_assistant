@@ -135,3 +135,49 @@ class FreshnessProbeResponse(BaseModel):
     recent_updates: List[Update] = Field(default_factory=list, description="Recent updates if found")
     recommended_action: str = Field(..., description="Recommended action (e.g., 'corpus is current')")
     web_sources_checked: List[str] = Field(default_factory=list, description="Web sources checked")
+
+
+class QualityStatement(BaseModel):
+    """Individual quality statement from Ontario Health."""
+    statement_number: int = Field(..., description="Statement number in the standard")
+    title: str = Field(..., description="Statement title")
+    brief_statement: str = Field(..., description="Brief version of the statement")
+    full_text: Optional[str] = Field(None, description="Full statement text with background")
+    indicators: List[str] = Field(default_factory=list, description="Quality indicators")
+    for_patients: Optional[str] = Field(None, description="Information for patients")
+    for_clinicians: Optional[str] = Field(None, description="Information for clinicians")
+
+
+class QualityStandardsResponse(BaseModel):
+    """Response model for opa.quality_standards tool."""
+    standard_title: Optional[str] = Field(None, description="Quality standard title if specific standard found")
+    statements: List[QualityStatement] = Field(..., description="Quality statements matching query")
+    total_statements: int = Field(..., description="Total number of statements in standard")
+    executive_summary: Optional[str] = Field(None, description="Executive summary if available")
+    scope: Optional[str] = Field(None, description="Scope of the standard")
+    year: Optional[int] = Field(None, description="Year published")
+    citations: List[Citation] = Field(..., description="Source citations")
+    confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in match")
+
+
+class ChoosingWiselyRecommendation(BaseModel):
+    """Individual Choosing Wisely recommendation."""
+    recommendation_number: int = Field(..., description="Recommendation number within specialty")
+    title: str = Field(..., description="Brief description of what not to do")
+    description: str = Field(..., description="Full explanation and rationale")
+    specialty: str = Field(..., description="Medical specialty this applies to")
+    organization: Optional[str] = Field(None, description="Organization that issued the recommendation")
+    references: List[str] = Field(default_factory=list, description="Supporting references")
+
+
+class ChoosingWiselyResponse(BaseModel):
+    """Response model for opa.choosing_wisely tool."""
+    specialty_title: Optional[str] = Field(None, description="Medical specialty if specific one found")
+    recommendations: List[ChoosingWiselyRecommendation] = Field(..., description="Choosing Wisely recommendations")
+    total_recommendations: int = Field(..., description="Total recommendations found")
+    specialty_overview: Optional[str] = Field(None, description="Overview of specialty's approach to unnecessary care")
+    organization: Optional[str] = Field(None, description="Organization that published recommendations")
+    last_updated: Optional[str] = Field(None, description="When recommendations were last updated")
+    citations: List[Citation] = Field(..., description="Source citations")
+    confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in match")
+    query_interpretation: Optional[str] = Field(None, description="How the query was interpreted")
