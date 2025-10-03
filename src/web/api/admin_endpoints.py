@@ -557,7 +557,8 @@ def register_admin_endpoints(app):
                 all_ids.extend(batch["ids"])
                 all_documents.extend(batch["documents"])
                 all_metadatas.extend(batch["metadatas"])
-                if batch.get("embeddings"):
+                # ChromaDB returns embeddings as list, check if it exists and has items
+                if batch.get("embeddings") is not None and len(batch.get("embeddings", [])) > 0:
                     all_embeddings.extend(batch["embeddings"])
 
                 offset += batch_size
