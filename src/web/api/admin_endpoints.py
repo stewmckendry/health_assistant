@@ -535,36 +535,25 @@ def register_admin_endpoints(app):
                 raise HTTPException(status_code=404, detail=f"Collection not found: {collection_name}")
 
             # Get all documents with embeddings and metadata
-            # ChromaDB has limits on batch size, so we need to paginate
             total_count = collection.count()
             logger.info(f"Collection {collection_name} has {total_count} documents")
 
-            all_ids = []
-            all_documents = []
-            all_metadatas = []
-            all_embeddings = []
-
-            batch_size = 1000
-            offset = 0
-
-            while offset < total_count:
-                batch = collection.get(
-                    include=["documents", "metadatas", "embeddings"],
-                    limit=batch_size,
-                    offset=offset
+            # Get all at once - ChromaDB .get() without limit returns everything
+            try:
+                result = collection.get(
+                    include=["documents", "metadatas", "embeddings"]
                 )
 
-                all_ids.extend(batch["ids"])
-                all_documents.extend(batch["documents"])
-                all_metadatas.extend(batch["metadatas"])
-                # ChromaDB returns embeddings as list, check if it exists and has items
-                if batch.get("embeddings") is not None and len(batch.get("embeddings", [])) > 0:
-                    all_embeddings.extend(batch["embeddings"])
+                all_ids = result.get("ids", [])
+                all_documents = result.get("documents", [])
+                all_metadatas = result.get("metadatas", [])
+                all_embeddings = result.get("embeddings", [])
 
-                offset += batch_size
-                logger.info(f"  Exported {len(all_ids)}/{total_count} documents...")
+                logger.info(f"Export complete: {len(all_ids)} documents from {collection_name}")
 
-            logger.info(f"Export complete: {len(all_ids)} documents from {collection_name}")
+            except Exception as e:
+                logger.error(f"Error during collection.get(): {type(e).__name__}: {str(e)}")
+                raise
 
             return {
                 "collection_name": collection_name,
