@@ -508,3 +508,116 @@ def register_admin_endpoints(app):
         except Exception as e:
             logger.error(f"Error during bulk ingestion: {e}")
             raise HTTPException(status_code=500, detail=f"Bulk ingestion failed: {str(e)}")
+
+    @app.get("/admin/export-chroma/{collection_name}")
+    async def export_chroma_collection(collection_name: str):
+        """Export a ChromaDB collection as JSON with all documents, embeddings, and metadata."""
+        try:
+            chroma_dir = Path("/app/data/chroma")
+
+            if not chroma_dir.exists():
+                raise HTTPException(status_code=404, detail="ChromaDB directory not found")
+
+            logger.info(f"Exporting ChromaDB collection: {collection_name}")
+
+            client = chromadb.PersistentClient(path=str(chroma_dir))
+
+            try:
+                collection = client.get_collection(collection_name)
+            except Exception as e:
+                raise HTTPException(status_code=404, detail=f"Collection not found: {collection_name}")
+
+            # Get all documents with embeddings and metadata
+            # ChromaDB has limits on batch size, so we need to paginate
+            total_count = collection.count()
+            logger.info(f"Collection {collection_name} has {total_count} documents")
+
+            all_ids = []
+            all_documents = []
+            all_metadatas = []
+            all_embeddings = []
+
+            batch_size = 1000
+            offset = 0
+
+            while offset < total_count:
+                batch = collection.get(
+                    include=["documents", "metadatas", "embeddings"],
+                    limit=batch_size,
+                    offset=offset
+                )
+
+                all_ids.extend(batch["ids"])
+                all_documents.extend(batch["documents"])
+                all_metadatas.extend(batch["metadatas"])
+                if batch.get("embeddings"):
+                    all_embeddings.extend(batch["embeddings"])
+
+                offset += batch_size
+                logger.info(f"  Exported {len(all_ids)}/{total_count} documents...")
+
+            logger.info(f"Export complete: {len(all_ids)} documents from {collection_name}")
+
+            return {
+                "collection_name": collection_name,
+                "count": len(all_ids),
+                "ids": all_ids,
+                "documents": all_documents,
+                "metadatas": all_metadatas,
+                "embeddings": all_embeddings
+            }
+
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Error exporting ChromaDB collection {collection_name}: {e}")
+            raise HTTPException(status_code=500, detail=f"Export failed: {str(e)}")
+
+    @app.get("/admin/export-database/{db_name}")
+    async def export_database(db_name: str):
+        """Export SQLite database tables as JSON."""
+        try:
+            # Security: only allow known database names
+            allowed_dbs = ["ohip.db", "opa.db"]
+            if db_name not in allowed_dbs:
+                raise HTTPException(status_code=400, detail=f"Database not allowed. Allowed: {allowed_dbs}")
+
+            db_path = Path(f"/app/data/{db_name}")
+
+            if not db_path.exists():
+                raise HTTPException(status_code=404, detail=f"Database not found: {db_name}")
+
+            logger.info(f"Exporting SQLite database: {db_name}")
+
+            conn = sqlite3.connect(str(db_path))
+            conn.row_factory = sqlite3.Row
+
+            # Get all tables
+            cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
+            tables = [row[0] for row in cursor.fetchall()]
+
+            export_data = {
+                "database": db_name,
+                "exported_at": datetime.now().isoformat(),
+                "tables": {}
+            }
+
+            total_rows = 0
+            for table in tables:
+                cursor = conn.execute(f"SELECT * FROM {table}")
+                rows = [dict(row) for row in cursor.fetchall()]
+                export_data["tables"][table] = rows
+                total_rows += len(rows)
+                logger.info(f"  Exported table {table}: {len(rows)} rows")
+
+            conn.close()
+
+            logger.info(f"Export complete: {len(tables)} tables, {total_rows} total rows from {db_name}")
+
+            return export_data
+
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Error exporting database {db_name}: {e}")
+            raise HTTPException(status_code=500, detail=f"Export failed: {str(e)}")
