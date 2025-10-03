@@ -116,7 +116,10 @@ class ChoosingWiselyRequest(BaseModel):
     specialty: Optional[str] = Field(
         None, description="Medical specialty (will be mapped to available specialties if not exact match)"
     )
+    all_specialty_recommendations: bool = Field(
+        default=False, description="If True and specialty is provided, return ALL recommendations for that specialty regardless of query match"
+    )
     recommendation_type: Optional[Literal["overview", "recommendation", "all"]] = Field(
-        default="all", description="Type of content to retrieve"
+        default="all", description="Type of content to retrieve (overview/recommendation/all)"
     )
     top_k: int = Field(default=10, ge=1, le=15, description="Number of results to return")

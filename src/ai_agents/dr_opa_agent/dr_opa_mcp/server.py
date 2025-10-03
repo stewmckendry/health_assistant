@@ -1456,7 +1456,7 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
         Choosing Wisely recommendations with specialty information and citations
     """
     logger.info(f"opa.choosing_wisely called - query: {request.query}")
-    logger.info(f"  specialty: {request.specialty}, type: {request.recommendation_type}")
+    logger.info(f"  specialty: {request.specialty}, all_specialty_recommendations: {request.all_specialty_recommendations}")
     
     try:
         # Get semantic search engine
@@ -1481,15 +1481,33 @@ async def choosing_wisely_handler(request: ChoosingWiselyRequest) -> Dict[str, A
         # 'all' or None means search both types
         
         # Search for relevant recommendations
-        # Use larger search when filtering by specialty to ensure complete coverage
-        initial_search_size = max(request.top_k * 3, 100) if mapped_specialty else request.top_k
+        # Strategy selection based on parameters
+        if mapped_specialty and request.all_specialty_recommendations:
+            # Strategy A: Get ALL recommendations for specialty (complete coverage)
+            # Most specialties have 5-7 recommendations, with chunking ~15-20 max
+            search_query = mapped_specialty  # Search by specialty name
+            initial_search_size = 50  # Sufficient for any single specialty
+            use_reranking = False  # Skip reranking for complete retrieval
+            logger.info(f"Complete specialty retrieval for '{mapped_specialty}'")
+        elif mapped_specialty:
+            # Strategy B: Semantic search within specialty  
+            search_query = request.query
+            initial_search_size = min(request.top_k * 3, 50)  # Cap at 50
+            use_reranking = True
+            logger.info(f"Targeted search within '{mapped_specialty}'")
+        else:
+            # Strategy C: General semantic search
+            search_query = request.query
+            initial_search_size = request.top_k
+            use_reranking = True
+            logger.info(f"General search across all specialties")
         
         search_results = await semantic_search.search(
             query=search_query,
             sources=sources,
             document_types=document_types,
             top_k=initial_search_size,
-            use_reranking=True
+            use_reranking=use_reranking
         )
         
         logger.info(f"Search returned {len(search_results)} results")
