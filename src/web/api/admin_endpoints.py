@@ -14,6 +14,7 @@ from typing import Dict, List, Any, Optional
 from fastapi import HTTPException, BackgroundTasks
 from pydantic import BaseModel
 import logging
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -520,7 +521,13 @@ def register_admin_endpoints(app):
 
             logger.info(f"Exporting ChromaDB collection: {collection_name}")
 
-            client = chromadb.PersistentClient(path=str(chroma_dir))
+            # Use Settings to avoid conflicts with existing clients
+            settings = chromadb.config.Settings(
+                anonymized_telemetry=False,
+                allow_reset=False,
+                is_persistent=True
+            )
+            client = chromadb.PersistentClient(path=str(chroma_dir), settings=settings)
 
             try:
                 collection = client.get_collection(collection_name)
