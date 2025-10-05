@@ -544,13 +544,24 @@ def register_admin_endpoints(app):
                 logger.error(f"Error during collection.get(): {type(e).__name__}: {str(e)}")
                 raise
 
+            # Convert embeddings to plain Python lists for JSON serialization
+            serializable_embeddings = []
+            if all_embeddings:
+                for embedding in all_embeddings:
+                    if hasattr(embedding, 'tolist'):  # numpy array
+                        serializable_embeddings.append(embedding.tolist())
+                    elif isinstance(embedding, list):
+                        serializable_embeddings.append(embedding)
+                    else:
+                        serializable_embeddings.append(list(embedding))
+
             return {
                 "collection_name": collection_name,
                 "count": len(all_ids),
                 "ids": all_ids,
                 "documents": all_documents,
                 "metadatas": all_metadatas,
-                "embeddings": all_embeddings
+                "embeddings": serializable_embeddings
             }
 
         except HTTPException:
