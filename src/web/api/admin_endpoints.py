@@ -18,6 +18,9 @@ from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
+# Import shared ChromaDB client
+from src.web.api.chroma_client import get_chroma_client
+
 class DatabaseLoadRequest(BaseModel):
     target_db: str
     tables: Dict[str, List[Dict[str, Any]]]
@@ -145,8 +148,8 @@ def register_admin_endpoints(app):
             logger.info(f"Loading ChromaDB collection: {request.collection_name}")
             logger.info(f"Documents to load: {len(request.documents)}")
             
-            # Initialize ChromaDB client
-            client = chromadb.PersistentClient(path=str(chroma_dir))
+            # Initialize ChromaDB client (use singleton)
+            client = get_chroma_client()
             
             # Try to get existing collection or create new one
             try:
@@ -257,7 +260,7 @@ def register_admin_endpoints(app):
             # Check ChromaDB collections
             if chroma_dir.exists():
                 try:
-                    client = chromadb.PersistentClient(path=str(chroma_dir))
+                    client = get_chroma_client()
                     collections = client.list_collections()
                     
                     for collection_info in collections:
@@ -285,17 +288,8 @@ def register_admin_endpoints(app):
             if not chroma_dir.exists():
                 return {"error": "Chroma directory not found", "collections": {}}
             
-            # Use Settings to avoid conflicts
-            settings = chromadb.config.Settings(
-                anonymized_telemetry=False,
-                allow_reset=False,
-                is_persistent=True
-            )
-            
-            client = chromadb.PersistentClient(
-                path=str(chroma_dir),
-                settings=settings
-            )
+            # Use shared ChromaDB client
+            client = get_chroma_client()
             
             collections = client.list_collections()
             stats = {
@@ -521,13 +515,8 @@ def register_admin_endpoints(app):
 
             logger.info(f"Exporting ChromaDB collection: {collection_name}")
 
-            # Use Settings to avoid conflicts with existing clients
-            settings = chromadb.config.Settings(
-                anonymized_telemetry=False,
-                allow_reset=False,
-                is_persistent=True
-            )
-            client = chromadb.PersistentClient(path=str(chroma_dir), settings=settings)
+            # Use shared ChromaDB client to avoid settings conflicts
+            client = get_chroma_client()
 
             try:
                 collection = client.get_collection(collection_name)

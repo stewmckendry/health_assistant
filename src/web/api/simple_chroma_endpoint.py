@@ -11,9 +11,12 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# Import shared client getter
+from src.web.api.chroma_client import get_chroma_client
+
 def create_simple_chroma_endpoint(app):
     """Register simple ChromaDB ingestion endpoint"""
-    
+
     @app.post("/admin/direct-chroma-upload")
     async def direct_chroma_upload(request: Dict[str, Any]):
         """Direct ChromaDB upload without complex imports"""
@@ -22,15 +25,12 @@ def create_simple_chroma_endpoint(app):
             documents = request.get("documents", [])
             metadatas = request.get("metadatas", [])
             ids = request.get("ids", [])
-            
+
             logger.info(f"Direct ChromaDB upload to collection: {collection_name}")
             logger.info(f"Documents to upload: {len(documents)}")
-            
-            # Initialize ChromaDB client
-            chroma_path = "/app/data/chroma"
-            os.makedirs(chroma_path, exist_ok=True)
-            
-            client = chromadb.PersistentClient(path=chroma_path)
+
+            # Use shared ChromaDB client
+            client = get_chroma_client()
             
             # Delete existing collection if it exists
             try:
@@ -118,8 +118,9 @@ def create_simple_chroma_endpoint(app):
                     "collections": [],
                     "message": "No ChromaDB directory found"
                 }
-            
-            client = chromadb.PersistentClient(path=chroma_path)
+
+            # Use shared ChromaDB client
+            client = get_chroma_client()
             collections = client.list_collections()
             
             collection_info = []
