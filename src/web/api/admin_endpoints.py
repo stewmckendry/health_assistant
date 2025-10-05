@@ -546,7 +546,7 @@ def register_admin_endpoints(app):
 
             # Convert embeddings to plain Python lists for JSON serialization
             serializable_embeddings = []
-            if all_embeddings:
+            if all_embeddings is not None and len(all_embeddings) > 0:
                 for embedding in all_embeddings:
                     if hasattr(embedding, 'tolist'):  # numpy array
                         serializable_embeddings.append(embedding.tolist())
