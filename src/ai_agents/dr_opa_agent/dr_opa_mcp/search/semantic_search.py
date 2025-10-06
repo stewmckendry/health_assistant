@@ -17,6 +17,7 @@ if TYPE_CHECKING:
 
 from ..retrieval.bm25_client import BM25Client
 from ..retrieval.rrf_fusion import RRFFusion
+from ..retrieval.cross_encoder_reranker import CrossEncoderReranker
 
 logger = logging.getLogger(__name__)
 
@@ -45,6 +46,9 @@ class SemanticSearchEngine:
         # Initialize RRF fusion
         self.rrf_fusion = RRFFusion(c=60.0)
 
+        # Initialize cross-encoder reranker
+        self.ce_reranker = None  # Lazy initialization to avoid loading model unnecessarily
+
         logger.info("SemanticSearchEngine initialized with hybrid (dense + BM25) support")
     
     async def search(
@@ -56,7 +60,8 @@ class SemanticSearchEngine:
         after_date: Optional[str] = None,
         k: Optional[int] = None,
         use_reranking: bool = True,
-        use_hybrid: bool = True,  # NEW: Enable hybrid mode
+        use_hybrid: bool = True,  # Enable hybrid mode (dense + BM25)
+        use_ce_reranking: bool = True,  # NEW: Enable cross-encoder reranking
         request: Optional['StandardToolRequest'] = None
     ) -> List[Dict[str, Any]]:
         """
@@ -73,6 +78,7 @@ class SemanticSearchEngine:
             k: Number of final results to return (or use request.k)
             use_reranking: Whether to use LLM reranking
             use_hybrid: Whether to use hybrid (dense + BM25) retrieval with RRF fusion
+            use_ce_reranking: Whether to use cross-encoder reranking (recommended for best MRR/nDCG)
             request: StandardToolRequest object (standardized interface)
 
         Returns:
@@ -150,8 +156,34 @@ class SemanticSearchEngine:
             logger.warning("No candidates found")
             return []
 
-        # Step 3: Rerank (improve precision)
-        if use_reranking and len(candidates) > 0:
+        # Step 3: Cross-Encoder Reranking (NEW - highest impact on MRR/nDCG)
+        if use_ce_reranking and len(candidates) > 0:
+            step_num = 3 if use_hybrid else 2
+            logger.info(f"Step {step_num}: Cross-Encoder Reranking - Scoring relevance...")
+
+            # Lazy initialize cross-encoder reranker
+            if self.ce_reranker is None:
+                logger.info("Initializing cross-encoder reranker (first use)...")
+                self.ce_reranker = CrossEncoderReranker()
+
+            # Log before reranking
+            before_ids = [doc.get('document_id', doc.get('id', 'unknown')) for doc in candidates[:5]]
+            logger.info(f"  Top 5 before CE reranking: {before_ids}")
+
+            # Rerank with cross-encoder
+            reranked = self.ce_reranker.rerank(
+                query=query,
+                documents=candidates,
+                top_k=min(20, len(candidates))  # Narrow to top 20
+            )
+
+            # Log after reranking
+            after_ids = [doc.get('document_id', doc.get('id', 'unknown')) for doc in reranked[:5]]
+            logger.info(f"  Top 5 after CE reranking: {after_ids}")
+            logger.info(f"  Cross-encoder reranking narrowed to {len(reranked)} documents")
+
+        # Step 3b: Optional LLM Reranking (legacy, can be used in addition to CE)
+        elif use_reranking and len(candidates) > 0:
             step_num = 3 if use_hybrid else 2
             logger.info(f"Step {step_num}: LLM Reranking - Scoring relevance...")
             reranked = await self._llm_rerank(
@@ -159,7 +191,7 @@ class SemanticSearchEngine:
                 documents=candidates,
                 k=min(20, len(candidates))  # Narrow to 20 or fewer
             )
-            logger.info(f"  Reranking narrowed to {len(reranked)} documents")
+            logger.info(f"  LLM reranking narrowed to {len(reranked)} documents")
         else:
             logger.info(f"Step {3 if use_hybrid else 2}: Skipping reranking (disabled or no candidates)")
             reranked = candidates[:20]

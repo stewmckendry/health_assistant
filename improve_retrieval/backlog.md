@@ -1,5 +1,55 @@
 # GitHub Issue Backlog
 
+## Critical Review: What Actually Works (2025-10-06)
+
+After testing Issues #2 (Hybrid Retrieval) and #3 (Cross-Encoder Reranking), **both approaches FAILED to improve performance**. Here's what we learned:
+
+### ❌ **What DOESN'T Work:**
+
+1. **Hybrid Retrieval (BM25 + Dense):**
+   - **Why it failed:** Baseline Recall@50 already at 75-80% (not 40% as initially assumed)
+   - Medical/policy queries are semantic ("hand hygiene protocols"), not keyword-based
+   - Dense embeddings already capture semantic meaning well
+   - RRF fusion **degraded ranking** (MRR dropped 32% for CPSO)
+   - **Verdict:** Skip for specialized domains with good semantic chunking
+
+2. **Cross-Encoder Reranking (General Models):**
+   - **Why it failed:** bge-reranker-v2-m3 lacks medical domain understanding
+   - Prioritizes keyword overlap over semantic intent
+   - Example: Ranked "surgical procedures" higher than "general hand hygiene" for query about procedure rooms
+   - MRR dropped 68%, nDCG@10 dropped 57%
+   - **Verdict:** General cross-encoders degrade performance in specialized domains
+
+### ✅ **What DOES Work:**
+
+1. **Dense-only retrieval with domain-specific embeddings:**
+   - text-embedding-3-small captures medical semantic relationships
+   - MRR 0.533 (baseline) vs 0.169 (cross-encoder) - **3x better**
+   - Works well for semantic queries common in medical/policy domains
+
+2. **Current baseline is actually decent for Dr. OPA:**
+   - Recall@50: 75-80% (finding most relevant docs)
+   - MRR: 0.533 (best doc at rank ~2)
+   - **Real bottleneck:** Answer synthesis quality, not retrieval
+
+### 🎯 **What to Focus On Next:**
+
+**The real problem is NOT retrieval - it's answer synthesis:**
+- Coverage: 19% → Need 85%+ (agent misses 81% of required facts)
+- Helpfulness: 25% → Need 70%+ (answers don't address user's specific question)
+- Tools return raw chunks; agent needs structured schemas per intent
+
+**Issue #5 (Answer Planner + Self-Check) is the highest ROI:**
+- Retrieval quality is decent (71% recall, MRR 0.503)
+- Problem: Agent gets raw chunks, doesn't know what info is important
+- Solution: Intent-specific schemas guide agent to extract/synthesize complete answers
+- Expected: 3-4x improvement in Coverage/Helpfulness
+
+**Issue #6 (Parent/Child Chunking) fixes critical failures:**
+- CEP Tools: 0% Recall → Need to fix chunking strategy
+- CPSO Policies: 10% Faithfulness → Better chunks reduce hallucination
+- Provides richer context for agent synthesis
+
 ---
 
 ## 1. Eval & Observability Baseline ✅ COMPLETED
@@ -69,49 +119,65 @@ Hybrid retrieval **did not help** because:
 
 ---
 
-## 3. Cross-Encoder Reranker (Open-source) **← RECOMMENDED NEXT**
+## 3. Cross-Encoder Reranker (Open-source) ❌ COMPLETED BUT FAILED
 
 **Title:** Add local cross-encoder reranker (bge-reranker-v2-m3)
-**Why:** Surface the exact clause; reduce "bookmark" answers. **MOST IMPACTFUL** based on Issue #2 findings.
-**Priority:** **P0 - IMMEDIATE** (blocking MRR/nDCG improvements)
+**Why:** Surface the exact clause; reduce "bookmark" answers. Expected to improve MRR/nDCG based on Issue #2 findings.
+**Status:** ❌ Complete (2025-10-06) - **FAILED - Performance degraded significantly, DO NOT USE**
 
-**Context from Issue #2:**
-- **Current bottleneck:** Ranking quality, not recall
-  - Dr. OPA MRR: 0.335 (best doc at rank ~3)
-  - Dr. OPA nDCG@10: 0.444 (poor top-10 ranking)
-  - Recall@50 already at 75-80% (good coverage)
-- Hybrid retrieval (Issue #2) **degraded ranking** by diluting strong dense scores
-- **Cross-encoder reranking will:**
-  - Improve ranking of already-retrieved documents (MRR 0.335 → 0.70+ target)
-  - Not change Recall@50 (documents already retrieved)
-  - Push best/most relevant chunks to top-3 positions for LLM agent
-  - Work with dense-only search (no need for hybrid complexity)
+**What Was Implemented:**
+- ✅ Implemented CrossEncoderReranker with bge-reranker-v2-m3
+- ✅ Added lazy initialization to avoid model loading overhead
+- ✅ Integrated into semantic_search.py pipeline (Step 3: CE reranking before filtering)
+- ✅ Added unit tests with mocked model for CI/CD
+- ✅ Pre-downloaded model (~1.2GB) to avoid timeout issues
 
-**Scope:**
-- Load bge-reranker-v2-m3 (HuggingFace Transformers)
-- New function: `rerank(query, items[]) -> items_sorted_by_ce_score`
-- Pipeline: **dense search → Top-50 → cross-encoder rerank → Top-10**
-- Add `use_reranking=True` toggle to MCP tools (default: True)
-- Measure latency impact on CPU/GPU
+**Evaluation Results (PHO IPAC, 5 queries):**
+- **MRR:** 0.533 → 0.169 (**-68%**) ❌ Best doc moved from rank 2 to rank 6
+- **nDCG@10:** 0.499 → 0.216 (**-57%**) ❌ Top-10 ranking quality degraded
+- **Helpfulness:** 28% → 20% (-29%) ❌
+- **Coverage:** 54.7% → 40.7% (-26%) ❌
+- **Recall@50:** 80% → 80% (unchanged, as expected)
 
-**Implementation Guidance:**
-1. Start with Dr. OPA tools (biggest MRR/nDCG gap)
-2. Rerank the 50 candidates returned by dense search
-3. Return top 10-15 reranked items
-4. Log reranking scores for debugging
-5. Compare MRR/nDCG@10 before/after reranking
+**Why It Failed - Root Cause Analysis:**
 
-**Acceptance Criteria:**
-- **MRR improves:** Dr. OPA 0.335 → 0.70+ (best doc in top-2)
-- **nDCG@10 improves:** Dr. OPA 0.444 → 0.80+ (better top-10 ranking)
-- Recall@50 unchanged (reranking doesn't drop documents)
-- Latency acceptable: <500ms rerank on 50 items (CPU), <200ms (GPU)
-- Unit tests validate reranking logic
+**Domain Mismatch:** bge-reranker-v2-m3 is a general-purpose cross-encoder trained on web/generic data. It lacks medical domain understanding:
 
-**Expected Impact:**
-- **High impact on answer quality:** LLM agent gets best context first → better synthesis
-- **No regression:** Reranking only improves order, doesn't change what's retrieved
-- **Works with current baseline:** No hybrid search complexity needed
+**Example (Query: "What are hand hygiene requirements for procedure rooms?"):**
+- **Baseline (Dense) Rank #1** ✅ CORRECT:
+  - "4 Moments for Hand Hygiene", "When to clean hands", "Ontario's Just Clean Your Hands program"
+  - Dense embeddings understood general procedure room hand hygiene guidance
+
+- **Cross-Encoder Rank #1** ❌ WRONG:
+  - "surgical hand rub", "surgical/invasive procedures", "operating rooms are cleaned"
+  - Cross-encoder focused on keyword overlap ("procedure", "surgical", "hand") but missed semantic intent
+  - **Key insight:** General model doesn't understand that "procedure rooms" ≠ "surgical/invasive procedures" in medical context
+
+**Why Dense Embeddings Outperform:**
+1. **Domain-specific training:** text-embedding-3-small captures medical semantic relationships through the corpus
+2. **General cross-encoder:** Trained on web data, prioritizes keyword overlap over domain semantics
+3. **Chunk size variability:** Chunks range 34-1,165 words; cross-encoder truncates at 512 tokens (~384 words), losing context
+
+**Per-Query Impact:**
+- Query 1 (hand hygiene): MRR 1.000 → 0.100 (perfect → rank 10)
+- Query 2 (sterilization): MRR 1.000 → 0.333 (perfect → rank 3)
+- Query 3 (mobile clinic): MRR 0.500 → 0.333 (rank 2 → rank 3)
+- Query 4 (PPE): MRR 0.167 → 0.077 (rank 6 → rank 13)
+- Query 5 (environmental cleaning): MRR 0.000 → 0.000 (both failed)
+
+**Recommendation:**
+- ❌ **DO NOT use cross-encoder reranking with general-purpose models** for specialized medical/policy domains
+- ✅ **Stick with dense-only retrieval** (baseline) - domain-specific embeddings already perform well (MRR 0.533 vs CE 0.169)
+- 🔮 **Future option:** Fine-tune a cross-encoder on medical domain data (requires labeled relevance judgments, out of current scope)
+
+**Key Learning:**
+General-purpose reranking models can **degrade performance** in specialized domains. Domain-specific dense embeddings trained on the corpus outperform generic cross-encoders for semantic matching.
+
+**Files:**
+- Implementation: `src/ai_agents/dr_opa_agent/dr_opa_mcp/retrieval/cross_encoder_reranker.py`
+- Tests: `tests/dr_opa_agent/test_cross_encoder_reranker.py`
+- Results: `eval/results/03_cross_encoder/dr_opa_pho_ipac.json`
+- Pre-download script: `scripts/download_ce_model.py`
 
 ---
 

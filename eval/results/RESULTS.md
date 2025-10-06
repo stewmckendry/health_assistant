@@ -370,14 +370,91 @@ Hybrid retrieval (Issue #2) was **not the right solution** for Dr. OPA. The hand
 
 ---
 
+### Iteration 2: Cross-Encoder Reranking (2025-10-06)
+
+**Status:** ❌ **FAILED - Performance degraded significantly**
+
+**Test Dataset:** PHO IPAC (5 queries)
+
+| Metric | Baseline | Cross-Encoder | Δ | % Change |
+|--------|----------|---------------|---|----------|
+| Recall@50 | 80% | 80% | **0%** | 0% |
+| MRR | 0.533 | 0.169 | **-0.365** | **-68%** |
+| nDCG@10 | 0.499 | 0.216 | **-0.283** | **-57%** |
+| Faithfulness | 100% | 100% | 0% | 0% |
+| Helpfulness | 28% | 20% | -8% | -29% |
+| Coverage | 54.7% | 40.7% | -14% | -26% |
+
+**Key Findings:**
+
+1. **Cross-Encoder Degraded Ranking Quality:**
+   - MRR dropped from 0.533 → 0.169 (best document moved from rank ~2 to rank ~6)
+   - nDCG@10 dropped from 0.499 → 0.216 (top-10 ranking quality degraded by 57%)
+   - Helpfulness and Coverage both decreased (fewer best documents in top positions)
+
+2. **Root Cause Analysis - Domain Mismatch:**
+
+   **Example (Query 1: "What are hand hygiene requirements for procedure rooms?"):**
+
+   - **Baseline (Dense-only) - Rank #1 (CORRECT):**
+     - Document: "4 Moments for Hand Hygiene", "When to clean hands", "Ontario's Just Clean Your Hands program"
+     - **Semantic match:** Dense embeddings understood general procedure room hand hygiene guidance
+
+   - **Cross-Encoder Rank #1 (WRONG):**
+     - Document: "surgical hand rub", "surgical/invasive procedures", "operating rooms are cleaned"
+     - **Keyword match:** bge-reranker-v2-m3 focused on overlapping keywords ("procedure", "surgical", "hand") but missed semantic intent
+     - **Domain mismatch:** General-purpose cross-encoder doesn't understand that "procedure rooms" ≠ "surgical/invasive procedures" in medical context
+
+3. **Why Dense Embeddings Outperform Cross-Encoder:**
+   - **Domain-specific embeddings (text-embedding-3-small)** capture medical semantic relationships through the corpus
+   - **General cross-encoder (bge-reranker-v2-m3)** trained on web/generic data, lacks medical domain understanding
+   - **Chunk size variability:** Chunks range from 34 to 1,165 words; cross-encoder truncates at 512 tokens (~384 words), losing context from longer chunks
+
+4. **Per-Query Results:**
+   - Query 1 (hand hygiene): MRR 1.000 → 0.100 (perfect → rank 10)
+   - Query 2 (sterilization): MRR 1.000 → 0.333 (perfect → rank 3)
+   - Query 3 (mobile clinic): MRR 0.500 → 0.333 (rank 2 → rank 3)
+   - Query 4 (PPE): MRR 0.167 → 0.077 (rank 6 → rank 13)
+   - Query 5 (environmental cleaning): MRR 0.000 → 0.000 (both failed)
+
+**Conclusion:**
+
+Cross-encoder reranking with **general-purpose models does NOT work** for specialized medical/policy domains. The bge-reranker-v2-m3 model:
+- Prioritizes keyword overlap over semantic understanding
+- Lacks domain-specific knowledge to distinguish "procedure rooms" from "surgical procedures"
+- Consistently demoted the best documents in favor of keyword-rich but semantically incorrect matches
+
+**Recommendation:**
+
+- ❌ **DO NOT use cross-encoder reranking with general models** for Dr. OPA
+- ✅ **Stick with dense-only retrieval** (baseline) - domain-specific embeddings already perform well
+- 🔮 **Future option:** Fine-tune a cross-encoder on medical domain data (requires significant effort, out of scope)
+
+**Technical Implementation (Preserved for Reference):**
+
+✅ Implemented CrossEncoderReranker with bge-reranker-v2-m3
+✅ Added lazy initialization to avoid model loading overhead
+✅ Integrated into semantic_search.py pipeline (Step 3: CE reranking before filtering)
+✅ Added unit tests with mocked model for CI/CD
+✅ Pre-downloaded model (~1.2GB) to avoid timeout issues during evaluation
+
+**Files:**
+- Implementation: `src/ai_agents/dr_opa_agent/dr_opa_mcp/retrieval/cross_encoder_reranker.py`
+- Tests: `tests/dr_opa_agent/test_cross_encoder_reranker.py`
+- Results: `eval/results/03_cross_encoder/dr_opa_pho_ipac.json`
+- Pre-download script: `scripts/download_ce_model.py`
+
+---
+
 ### Future Iterations
 
 Add new rows below after each improvement iteration:
 
 | Date | Commit | Issue | Recall@50 Δ | MRR Δ | nDCG@10 Δ | Faith. Δ | Help. Δ | Cov. Δ | Notes |
 |------|--------|-------|-------------|-------|-----------|----------|---------|--------|-------|
-| 2025-10-06 | TBD | **#2 Hybrid Retrieval** | **0%** | **-3%** | **-17%** | N/A | N/A | N/A | ⚠️ No improvement - skip for now |
-| TBD | TBD | **#3 Cross-Encoder Reranking** | TBD | TBD | TBD | TBD | TBD | TBD | **RECOMMENDED NEXT** - Improve ranking |
-| TBD | TBD | #5 Answer Planner | TBD | TBD | TBD | TBD | TBD | TBD | Intent-specific schemas |
+| 2025-10-06 | TBD | **#2 Hybrid Retrieval** | **0%** | **-3%** | **-17%** | N/A | N/A | N/A | ⚠️ No improvement - dense alone sufficient |
+| 2025-10-06 | TBD | **#3 Cross-Encoder Reranking** | **0%** | **-68%** | **-57%** | 0% | -29% | -26% | ❌ **FAILED** - Domain mismatch, do not use |
+| TBD | TBD | #5 Answer Planner + Self-Check | TBD | TBD | TBD | TBD | TBD | TBD | **RECOMMENDED NEXT** - Fix answer synthesis |
+| TBD | TBD | #6 Parent/Child Chunking | TBD | TBD | TBD | TBD | TBD | TBD | Fix CEP 0% recall, improve context |
 
 **How to use:** After each improvement, run all baselines again, compute deltas (Δ = new - baseline), and add a row above.

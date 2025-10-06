@@ -186,8 +186,9 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
             document_types=doc_types,
             after_date=date_range.get('start') if date_range else None,
             k=k,
-            use_reranking=True,
-            use_hybrid=True  # Enable hybrid (dense + BM25) retrieval
+            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
         )
         
         logger.info(f"Semantic search returned {len(search_results)} results")
@@ -472,8 +473,9 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
             sources=['cpso'],
             policy_level=search_policy_level,
             k=k * 2,  # Get more for categorization
-            use_reranking=True,
-            use_hybrid=True  # Enable hybrid (dense + BM25) retrieval
+            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
         )
         
         logger.info(f"Semantic search found {len(search_results)} CPSO documents")
@@ -868,8 +870,9 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
             sources=['pho'],  # Focus on PHO for IPAC
             document_types=['ipac-guidance', 'guideline', 'tool', 'policy'],  # Include IPAC-specific document type
             k=k * 2,  # Get more for processing
-            use_reranking=True,
-            use_hybrid=True  # Enable hybrid (dense + BM25) retrieval - critical for IPAC technical terms
+            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
         )
         
         # Format results
@@ -1161,8 +1164,9 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
             sources=['cep'],  # Focus on CEP for clinical tools
             document_types=['clinical_tool'],
             k=k * 2,  # Get more tools for processing
-            use_reranking=True,
-            use_hybrid=True  # CRITICAL: Enable hybrid for exact tool name matching (baseline 25% → 75%+ target)
+            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
         )
         
         # Format results
@@ -1299,8 +1303,9 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                          else ['quality_standard_overview'] if statement_type == 'overview'
                          else ['quality_statement'],
             k=k if not retrieve_all_statements else 50,
-            use_reranking=True,
-            use_hybrid=True  # Enable hybrid for exact standard number/term matching
+            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
         )
         
         logger.info(f"Search returned {len(search_results)} results")
@@ -1368,7 +1373,8 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                     document_types=['quality_statement'],
                     k=50,  # Get all statements
                     use_reranking=False,  # Don't rerank when getting all
-                    use_hybrid=True  # Enable hybrid for exact standard title matching
+                    use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+                    use_ce_reranking=False  # No reranking when getting all statements
                 )
                 
                 # Filter to only statements from this specific standard
@@ -1627,8 +1633,9 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             sources=sources,
             document_types=document_types,
             k=initial_search_size,
-            use_reranking=use_reranking,
-            use_hybrid=True  # Enable hybrid for Choosing Wisely recommendation matching
+            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
+            use_ce_reranking=use_reranking  # Enable CE reranking except when getting all
         )
         
         logger.info(f"Search returned {len(search_results)} results")
