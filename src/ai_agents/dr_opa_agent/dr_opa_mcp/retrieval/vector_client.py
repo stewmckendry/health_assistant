@@ -110,17 +110,17 @@ class VectorClient:
                         )
                         logger.info(f"Loaded collection: {collection_name} with OpenAI embedding")
                     except Exception as e:
-                        # If that fails, try to get or create with correct embedding
-                        logger.warning(f"Recreating collection {collection_name} with correct embedding")
+                        # If that fails, just load without embedding function to preserve existing data
+                        logger.warning(f"Failed to load {collection_name} with OpenAI embedding, loading without embedding function: {e}")
                         try:
-                            self.client.delete_collection(collection_name)
-                        except:
-                            pass
-                        self._collections[collection_name] = self.client.get_or_create_collection(
-                            name=collection_name,
-                            embedding_function=self.embedding_function
-                        )
-                        logger.info(f"Recreated collection: {collection_name}")
+                            self._collections[collection_name] = self.client.get_collection(
+                                name=collection_name
+                            )
+                            logger.info(f"Loaded collection: {collection_name} (without embedding function)")
+                        except Exception as e2:
+                            logger.error(f"Failed to load collection {collection_name}: {e2}")
+                            # Skip this collection rather than deleting it
+                            continue
                 else:
                     # Non-OPA collections
                     self._collections[collection_name] = self.client.get_collection(
