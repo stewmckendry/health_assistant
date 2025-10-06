@@ -28,7 +28,7 @@
 1. **Dr. OPA Retrieval Gap:** Missing 38% of relevant documents (62% recall) due to dense-only embedding approach
 2. **Technical Term Misses:** IPAC, PHO, Quality Standards queries miss domain-specific terminology (e.g., "semi-critical devices", "IPAC guidance", policy codes)
 3. **CPSO Hallucination:** 10% faithfulness (P0 blocker - separate from Issue #2)
-4. **CEP Tools Failure:** 0% recall (P0 blocker - separate from Issue #2)
+4. **CEP Tools Partial Fix (commit a7530d5):** Improved from 0% → 25% recall via relaxed keyword filters; 1/4 queries working, remaining 3 need hybrid retrieval approach in Issue #2
 
 **Why Issue #2 is Next Priority:**
 - **Target:** Dr. OPA Recall@50 from 62% → 80%+ (close the 38% gap)
@@ -254,11 +254,13 @@ data/processed/dr_opa/chroma/
 ├── opa_choosing_wisely_corpus (544 docs) - Need BM25 for recommendation text
 ├── opa_cpso_corpus (366 docs)            - Need BM25 for policy codes/terms
 ├── opa_pho_corpus (132 docs)             - Need BM25 for "IPAC", technical terms
-├── opa_cep_corpus (57 docs)              - Need BM25 for tool names
+├── opa_cep_corpus (57 docs)              - Need BM25 for tool names (PRIORITY - current 25% recall)
 ├── opa_quality_standards_corpus (340 docs) - Need BM25 for standard numbers/terms
 ```
 
 **Dr. OFF collections already work well** (87% recall) - don't modify them yet.
+
+**CEP Tools Note:** Small corpus (57 docs) currently at 25% recall. Hybrid retrieval expected to have significant impact here - BM25 should catch exact tool names like "CNCP toolkit", "diabetes screening algorithm", "cardiovascular risk calculator" that embeddings miss.
 
 ### 4. Don't Break What Works
 - Dr. OFF tools (schedule_get, adp_get, odb_get) already have 87% recall - **don't touch**
@@ -282,12 +284,14 @@ Your target improvements (from `eval/results/RESULTS.md`):
 | Choosing Wisely | 75% | 90%+ | +15% |
 | CPSO Policies | 80% | 90%+ | +10% |
 | PHO IPAC | 80% | 95%+ | +15% |
-| CEP Tools | 0% ⚠️ | Skip (different issue) | - |
+| CEP Tools | 25% ⚠️ | 75%+ | +50% (needs hybrid) |
 | Quality Standards | 75% | 90%+ | +15% |
 | OH Programs | N/A (web search) | N/A | - |
-| **Average (excl. CEP, OH)** | **77.5%** | **91%+** | **+13.5%** |
+| **Average (excl. OH)** | **67%** | **88%+** | **+21%** |
 
 **Overall Dr. OPA target:** 62% → 80%+ Recall@50
+
+**Note on CEP Tools:** Partially fixed in commit a7530d5 (0% → 25% via keyword filter relaxation). Remaining 3/4 queries likely need BM25 exact matching for tool names like "CNCP toolkit", "diabetes screening", "cardiovascular risk". Include CEP in Issue #2 validation.
 
 ---
 
@@ -400,8 +404,8 @@ A: Run dense + BM25 in parallel (like Dr. OFF does SQL + vector). Measure latenc
 **Q: How do I know if it's working?**
 A: Re-run choosing_wisely baseline first. If Recall@50 > 75%, you're on the right track. Full validation = all 6 Dr. OPA baselines.
 
-**Q: What about the CEP Tools 0% recall issue?**
-A: That's a separate problem (keyword filter mismatch). Skip CEP in your validation - fix it in a later issue.
+**Q: What about the CEP Tools recall issue?**
+A: Partially fixed in commit a7530d5 (0% → 25% via relaxed keyword filters). Remaining 3/4 queries (diabetes screening, depression tools, cardiovascular risk) likely need BM25 exact matching for specific tool names. Include CEP in your Issue #2 validation - hybrid retrieval should help significantly.
 
 **Q: Should I change the evaluation framework?**
 A: No - keep eval/run.py as-is. It's agent-agnostic and works for both dense-only and hybrid.
@@ -419,7 +423,8 @@ After completing Issue #2:
 - Unit tests passing
 
 ✅ **Metrics:**
-- Dr. OPA Recall@50: 62% → 80%+ (measured on 4 valid datasets: Choosing Wisely, CPSO, PHO IPAC, Quality Standards)
+- Dr. OPA Recall@50: 62% → 80%+ (measured on 5 datasets: Choosing Wisely, CPSO, PHO IPAC, Quality Standards, CEP Tools)
+- CEP Tools specifically: 25% → 75%+ (BM25 should help with exact tool name matching)
 - MRR likely improves too (better ranking from fusion)
 - Faithfulness/Helpfulness/Coverage may improve due to better context
 
