@@ -295,3 +295,29 @@ Each JSON contains:
 ---
 
 **This baseline establishes the foundation for quantifying improvements. All future changes will be measured against these metrics.**
+
+---
+
+## Iteration Tracker
+
+Track improvements across iterations by comparing to this baseline.
+
+### Baseline Summary (2025-10-06, commit 6219b44)
+
+| Agent | Recall@50 | MRR | nDCG@10 | Faithfulness | Helpfulness | Coverage |
+|-------|-----------|-----|---------|--------------|-------------|----------|
+| Dr. OFF | 87% | 0.822 | 0.963 | 97% | 33% | 24% |
+| Dr. OPA | 62% | 0.335 | 0.444 | 80% | 21% | 16% |
+| **Overall** | **71%** | **0.503** | **0.635** | **86%** | **25%** | **19%** |
+
+### Future Iterations
+
+Add new rows below after each improvement iteration:
+
+| Date | Commit | Issue | Recall@50 Δ | MRR Δ | nDCG@10 Δ | Faith. Δ | Help. Δ | Cov. Δ | Notes |
+|------|--------|-------|-------------|-------|-----------|----------|---------|--------|-------|
+| TBD | TBD | #2 Hybrid Retrieval | TBD | TBD | TBD | TBD | TBD | TBD | BM25 + RRF fusion |
+| TBD | TBD | #5 Answer Planner | TBD | TBD | TBD | TBD | TBD | TBD | Intent-specific schemas |
+| TBD | TBD | #3 Cross-Encoder | TBD | TBD | TBD | TBD | TBD | TBD | bge-reranker-v2-m3 |
+
+**How to use:** After each improvement, run all 9 baselines again, compute deltas (Δ = new - baseline), and add a row above.
