@@ -178,7 +178,7 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
             "confidence": 0.0
         }
     
-    # Use the new semantic search engine
+    # Use the new semantic search engine with hybrid mode
     try:
         search_results = await semantic_search.search(
             query=query,
@@ -186,7 +186,8 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
             document_types=doc_types,
             after_date=date_range.get('start') if date_range else None,
             k=k,
-            use_reranking=True
+            use_reranking=True,
+            use_hybrid=True  # Enable hybrid (dense + BM25) retrieval
         )
         
         logger.info(f"Semantic search returned {len(search_results)} results")
@@ -460,14 +461,15 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
     # Determine policy_level parameter for search
     search_policy_level = None if policy_level == 'both' else policy_level
 
-    # Use semantic search with CPSO filter
+    # Use semantic search with CPSO filter (hybrid mode)
     try:
         search_results = await semantic_search.search(
             query=search_query,
             sources=['cpso'],
             policy_level=search_policy_level,
             k=k * 2,  # Get more for categorization
-            use_reranking=True
+            use_reranking=True,
+            use_hybrid=True  # Enable hybrid (dense + BM25) retrieval
         )
         
         logger.info(f"Semantic search found {len(search_results)} CPSO documents")
@@ -858,7 +860,8 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
             sources=['pho'],  # Focus on PHO for IPAC
             document_types=['ipac-guidance', 'guideline', 'tool', 'policy'],  # Include IPAC-specific document type
             k=k * 2,  # Get more for processing
-            use_reranking=True
+            use_reranking=True,
+            use_hybrid=True  # Enable hybrid (dense + BM25) retrieval - critical for IPAC technical terms
         )
         
         # Format results
@@ -1150,7 +1153,8 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
             sources=['cep'],  # Focus on CEP for clinical tools
             document_types=['clinical_tool'],
             k=k * 2,  # Get more tools for processing
-            use_reranking=True
+            use_reranking=True,
+            use_hybrid=True  # CRITICAL: Enable hybrid for exact tool name matching (baseline 25% → 75%+ target)
         )
         
         # Format results
@@ -1279,7 +1283,7 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
         # Get semantic search engine
         semantic_search = get_semantic_search()
 
-        # Step 1: Search for relevant quality standards
+        # Step 1: Search for relevant quality standards with hybrid mode
         search_results = await semantic_search.search(
             query=query,
             sources=['ontario_health_quality_standards'],
@@ -1287,7 +1291,8 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                          else ['quality_standard_overview'] if statement_type == 'overview'
                          else ['quality_statement'],
             k=k if not retrieve_all_statements else 50,
-            use_reranking=True
+            use_reranking=True,
+            use_hybrid=True  # Enable hybrid for exact standard number/term matching
         )
         
         logger.info(f"Search returned {len(search_results)} results")
@@ -1348,13 +1353,14 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
             
             # If we found a standard, get ALL its statements
             if standard_title:
-                # Search again specifically for this standard's statements
+                # Search again specifically for this standard's statements (hybrid mode for exact title matching)
                 all_statements_results = await semantic_search.search(
                     query=standard_title,
                     sources=['ontario_health_quality_standards'],
                     document_types=['quality_statement'],
                     k=50,  # Get all statements
-                    use_reranking=False  # Don't rerank when getting all
+                    use_reranking=False,  # Don't rerank when getting all
+                    use_hybrid=True  # Enable hybrid for exact standard title matching
                 )
                 
                 # Filter to only statements from this specific standard
@@ -1613,7 +1619,8 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             sources=sources,
             document_types=document_types,
             k=initial_search_size,
-            use_reranking=use_reranking
+            use_reranking=use_reranking,
+            use_hybrid=True  # Enable hybrid for Choosing Wisely recommendation matching
         )
         
         logger.info(f"Search returned {len(search_results)} results")
