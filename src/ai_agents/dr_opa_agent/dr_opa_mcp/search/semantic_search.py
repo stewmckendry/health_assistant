@@ -109,10 +109,30 @@ class SemanticSearchEngine:
 
             logger.info(f"  Dense: {len(dense_results)} results, BM25: {len(sparse_results)} results")
 
+            # Log top results from each retriever
+            if dense_results:
+                top_dense = [f"{r.get('document_id', r.get('id', 'unknown'))} ({r.get('distance', r.get('similarity_score', 0)):.3f})" for r in dense_results[:3]]
+                logger.info(f"  Top 3 dense: {top_dense}")
+            if sparse_results:
+                top_sparse = [f"{r.get('document_id', r.get('id', 'unknown'))} ({r.get('bm25_score', 0):.3f})" for r in sparse_results[:3]]
+                logger.info(f"  Top 3 sparse: {top_sparse}")
+
             # Step 2: RRF Fusion
             logger.info("Step 2: RRF Fusion - Merging dense + sparse rankings...")
             fused = self.rrf_fusion.fuse(dense_results, sparse_results, k=50)
             logger.info(f"  RRF fusion produced {len(fused)} unique documents")
+
+            # Log provenance distribution
+            provenance_counts = {}
+            for doc in fused:
+                prov = doc.get('provenance', 'unknown')
+                provenance_counts[prov] = provenance_counts.get(prov, 0) + 1
+            logger.info(f"  Provenance distribution: {provenance_counts}")
+
+            # Log top fused results
+            if fused:
+                top_fused = [f"{r.get('id', 'unknown')} (rrf={r.get('rrf_score', 0):.4f}, {r.get('provenance', '?')})" for r in fused[:5]]
+                logger.info(f"  Top 5 RRF: {top_fused}")
 
             candidates = fused
 

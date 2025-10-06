@@ -210,10 +210,14 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
     
     for data in resolved_data.values():
         # Create section (Option A minimal schema)
+        raw_score = data.get('relevance_score', 0.8)
+        # Normalize LLM reranker score (0-10) to 0-1 range
+        normalized_score = raw_score / 10.0 if raw_score > 1.0 else raw_score
+
         section = Section(
-            id=data.get('section_id', data.get('chunk_id', '')),
-            text=data.get('section_text', data.get('text', ''))[:500],  # Truncate for response
-            relevance_score=data.get('similarity_score', 0.8),
+            id=data.get('document_id', ''),
+            text=data.get('text', '')[:500],  # Truncate for response
+            relevance_score=normalized_score,
             source=data.get('document_id', ''),
             metadata={
                 'chunk_type': data.get('chunk_type', 'unknown'),
@@ -500,10 +504,14 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
             chunk_type = 'policy_document'
 
         # Create Section object with all domain-specific fields in metadata
+        raw_score = policy_data.get('relevance_score', 0.8)
+        # Normalize LLM reranker score (0-10) to 0-1 range
+        normalized_score = raw_score / 10.0 if raw_score > 1.0 else raw_score
+
         section = Section(
-            id=policy_data.get('section_id', policy_data.get('chunk_id', '')),
-            text=policy_data.get('section_text', policy_data.get('text', '')),
-            relevance_score=policy_data.get('similarity_score', 0.8),
+            id=policy_data.get('document_id', ''),
+            text=policy_data.get('text', ''),
+            relevance_score=normalized_score,
             source=policy_data.get('document_id', ''),
             metadata={
                 'chunk_type': chunk_type,

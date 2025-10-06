@@ -29,36 +29,89 @@
 
 ---
 
-## 2. Hybrid Retrieval (Dense + BM25) with RRF Fusion
+## 2. Hybrid Retrieval (Dense + BM25) with RRF Fusion ⚠️ COMPLETED BUT NOT RECOMMENDED
 
-**Title:** Implement hybrid retriever and RRF fusion endpoint  
+**Title:** Implement hybrid retriever and RRF fusion endpoint
 **Why:** Improve recall on codes/terms and semantics.
+**Status:** ⚠️ Complete (2025-10-06) - **Did not improve performance, skip for now**
 
-**Scope:**
-- Add BM25 index (e.g., whoosh, elasticsearch, lunr, or tantivy binding).
-- New MCP endpoint: `search_hybrid(query, collections[], k_dense=40, k_sparse=100, k_fuse=50)`
-- Run Chroma dense + BM25 sparse in parallel.
-- Implement RRF: `score = Σ 1/(c + rank_i)` (c≈60).
-- Return Top-50 with feature columns: dense_rank, bm25_rank, rrf_score.
+**What Was Implemented:**
+- ✅ Added BM25 index using Whoosh (file-based, 1,439 documents indexed from 5 Dr. OPA collections)
+- ✅ Implemented RRF fusion with c=60.0, provenance tracking (dense/sparse/both)
+- ✅ Added `use_hybrid=True` parameter to all 6 Dr. OPA MCP tools
+- ✅ Fixed critical bug: BM25 index was using sequential IDs instead of ChromaDB's actual document IDs (caused zero overlap)
+- ✅ Added comprehensive logging for dense/sparse/RRF debugging
 
-**Acceptance Criteria:**
-- Unit tests show improved Recall@50 on gold set vs. dense-only.
+**Evaluation Results (vs Baseline):**
+- **PHO IPAC:** 80% → 80% Recall@50 (0% improvement)
+- **CPSO Policies:** 80% → 100% Recall@50 (+25%), but MRR: 0.800 → 0.545 (-32%) ⚠️ worse ranking
+- **Quality Standards:** 75% → 75% Recall@50 (0% improvement)
+- **Choosing Wisely:** 75% → 75% Recall@50 (0% improvement)
+- **CEP Tools:** 0% → 25% Recall@50 (known keyword filter bug, unrelated to hybrid)
+
+**Key Finding:**
+Hybrid retrieval **did not help** because:
+1. Baseline already had 75-80% Recall@50 (not 40% as handover suggested - baseline had empty ID bug)
+2. Dr. OPA queries are semantic (e.g., "hand hygiene protocols") - dense embeddings handle these well
+3. RRF fusion **degraded ranking quality** (MRR/nDCG) by diluting strong dense rankings
+4. BM25 keyword matching doesn't add value for semantic medical queries with good chunking
+
+**Recommendation:**
+- **Skip hybrid search** - added complexity without benefit
+- **Focus on Issue #3 (Cross-Encoder Reranking)** instead - improves ranking of already-retrieved docs
+- The bottleneck is **ranking quality (MRR: 0.335, nDCG@10: 0.444)**, not recall
+
+**Files:**
+- Implementation: `src/ai_agents/dr_opa_agent/dr_opa_mcp/retrieval/bm25_client.py`, `rrf_fusion.py`
+- Results: `eval/results/02_hybrid_search/`
+- Documentation: `improve_retrieval/HYBRID_SEARCH_TECHNICAL_EXPLANATION.md`
+- Unit tests: `tests/dr_opa_agent/test_rrf_fusion.py` (7 tests passing)
 
 ---
 
-## 3. Cross-Encoder Reranker (Open-source)
+## 3. Cross-Encoder Reranker (Open-source) **← RECOMMENDED NEXT**
 
-**Title:** Add local cross-encoder reranker (bge-reranker-v2-m3)  
-**Why:** Surface the exact clause; reduce “bookmark” answers.
+**Title:** Add local cross-encoder reranker (bge-reranker-v2-m3)
+**Why:** Surface the exact clause; reduce "bookmark" answers. **MOST IMPACTFUL** based on Issue #2 findings.
+**Priority:** **P0 - IMMEDIATE** (blocking MRR/nDCG improvements)
+
+**Context from Issue #2:**
+- **Current bottleneck:** Ranking quality, not recall
+  - Dr. OPA MRR: 0.335 (best doc at rank ~3)
+  - Dr. OPA nDCG@10: 0.444 (poor top-10 ranking)
+  - Recall@50 already at 75-80% (good coverage)
+- Hybrid retrieval (Issue #2) **degraded ranking** by diluting strong dense scores
+- **Cross-encoder reranking will:**
+  - Improve ranking of already-retrieved documents (MRR 0.335 → 0.70+ target)
+  - Not change Recall@50 (documents already retrieved)
+  - Push best/most relevant chunks to top-3 positions for LLM agent
+  - Work with dense-only search (no need for hybrid complexity)
 
 **Scope:**
-- Load bge-reranker-v2-m3 (HF).
-- New function: `rerank(query, items[]) -> items_sorted_by_ce_score`.
-- Pipeline: hybrid → Top-50 → rerank → Top-k (10–12).
+- Load bge-reranker-v2-m3 (HuggingFace Transformers)
+- New function: `rerank(query, items[]) -> items_sorted_by_ce_score`
+- Pipeline: **dense search → Top-50 → cross-encoder rerank → Top-10**
+- Add `use_reranking=True` toggle to MCP tools (default: True)
+- Measure latency impact on CPU/GPU
+
+**Implementation Guidance:**
+1. Start with Dr. OPA tools (biggest MRR/nDCG gap)
+2. Rerank the 50 candidates returned by dense search
+3. Return top 10-15 reranked items
+4. Log reranking scores for debugging
+5. Compare MRR/nDCG@10 before/after reranking
 
 **Acceptance Criteria:**
-- nDCG@10 and MRR improve vs. #2 alone.
-- Latency within target (e.g., <400ms rerank on Top-50 CPU).
+- **MRR improves:** Dr. OPA 0.335 → 0.70+ (best doc in top-2)
+- **nDCG@10 improves:** Dr. OPA 0.444 → 0.80+ (better top-10 ranking)
+- Recall@50 unchanged (reranking doesn't drop documents)
+- Latency acceptable: <500ms rerank on 50 items (CPU), <200ms (GPU)
+- Unit tests validate reranking logic
+
+**Expected Impact:**
+- **High impact on answer quality:** LLM agent gets best context first → better synthesis
+- **No regression:** Reranking only improves order, doesn't change what's retrieved
+- **Works with current baseline:** No hybrid search complexity needed
 
 ---
 

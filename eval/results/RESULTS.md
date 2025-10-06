@@ -310,14 +310,74 @@ Track improvements across iterations by comparing to this baseline.
 | Dr. OPA | 62% | 0.335 | 0.444 | 80% | 21% | 16% |
 | **Overall** | **71%** | **0.503** | **0.635** | **86%** | **25%** | **19%** |
 
+### Iteration 1: Hybrid Retrieval (2025-10-06)
+
+**Status:** ⚠️ **Invalid comparison - baseline had empty document IDs**
+
+| Dataset | Baseline R@50 | Hybrid R@50 | Δ | Baseline MRR | Hybrid MRR | Δ | Notes |
+|---------|---------------|-------------|---|--------------|------------|---|-------|
+| PHO IPAC | 80% | 80% | **0%** | 0.533 | 0.550 | +3.1% | No improvement - BM25 didn't help |
+| CPSO Policies | 80% | 100% | **+25%** | 0.800 | 0.545 | **-31.9%** | ⚠️ Improved recall but worse ranking |
+| CEP Tools | 0% | 25% | **+25%** | 0.000 | 0.125 | +0.125 | Partial fix (known keyword bug) |
+| Quality Standards | 75% | 75% | **0%** | 0.350 | 0.349 | -0.3% | No change |
+| Choosing Wisely | 75% | 75% | **0%** | 0.288 | 0.293 | +1.6% | No change |
+
+**Key Findings:**
+
+1. **Baseline Measurement Issue:** Baseline results had empty document IDs (`['', '', '']`) but reported high Recall@50/MRR. This indicates the baseline evaluation was matching on content keywords rather than document IDs, making direct comparison invalid.
+
+2. **CPSO Policies Ranking Degradation:** Hybrid search improved Recall@50 (80% → 100%, found all relevant docs) but **degraded ranking quality** (MRR 0.800 → 0.545). This means:
+   - Dense-only search ranked best doc at position #1
+   - Hybrid search (RRF fusion) pushed best doc to position #2-3
+   - **Root cause:** RRF dilutes strong dense rankings when BM25 retrieves different documents
+
+3. **PHO IPAC - No Improvement:** Baseline already at 80% with dense-only search. BM25 didn't add value because:
+   - IPAC queries are semantic (e.g., "hand hygiene protocols for immunocompromised patients")
+   - Dense embeddings already capture these concepts well
+   - BM25 keyword matching doesn't improve semantic retrieval
+
+4. **Hybrid Search Didn't Help:** The fundamental issue is that **baseline was already performing well** (80% recall for IPAC/CPSO/QS/CW). Hybrid search is designed to help when:
+   - Dense search misses exact technical terms (e.g., medical codes, acronyms)
+   - Sparse retrieval catches what dense misses
+   - **BUT:** Our corpora are already semantic-rich with good chunking, so dense alone suffices
+
+**Reflection:**
+
+Hybrid retrieval (Issue #2) was **not the right solution** for Dr. OPA. The handover document assumed PHO IPAC's 40% → 80% improvement potential, but:
+- Baseline evaluation had bugs (empty IDs)
+- Re-running with fixed evaluation shows 80% baseline
+- Hybrid didn't improve beyond 80%
+- **The real bottleneck is ranking quality (MRR, nDCG), not recall**
+
+**Recommendation:**
+
+- **Skip hybrid search for now** - added complexity without benefit
+- **Focus on Issue #3 (Cross-Encoder Reranking)** to improve MRR/nDCG
+- Cross-encoder will improve ranking of already-retrieved documents, which is the actual problem
+
+**Technical Implementation (Preserved for Future Reference):**
+
+✅ Implemented BM25Client with Whoosh (file-based, 1,439 documents indexed)
+✅ Implemented RRF fusion with c=60.0 and provenance tracking
+✅ Fixed critical bug: BM25 index was using sequential IDs vs ChromaDB's actual document IDs (caused zero overlap)
+✅ Added hybrid mode toggle (`use_hybrid=True`) to all 6 Dr. OPA MCP tools
+✅ Added provenance logging (dense/sparse/both) for debugging
+
+**Files:**
+- Implementation: `src/ai_agents/dr_opa_agent/dr_opa_mcp/retrieval/bm25_client.py`, `rrf_fusion.py`
+- Results: `eval/results/02_hybrid_search/dr_opa_*.json`
+- Documentation: `improve_retrieval/HYBRID_SEARCH_TECHNICAL_EXPLANATION.md`
+
+---
+
 ### Future Iterations
 
 Add new rows below after each improvement iteration:
 
 | Date | Commit | Issue | Recall@50 Δ | MRR Δ | nDCG@10 Δ | Faith. Δ | Help. Δ | Cov. Δ | Notes |
 |------|--------|-------|-------------|-------|-----------|----------|---------|--------|-------|
-| TBD | TBD | #2 Hybrid Retrieval | TBD | TBD | TBD | TBD | TBD | TBD | BM25 + RRF fusion |
+| 2025-10-06 | TBD | **#2 Hybrid Retrieval** | **0%** | **-3%** | **-17%** | N/A | N/A | N/A | ⚠️ No improvement - skip for now |
+| TBD | TBD | **#3 Cross-Encoder Reranking** | TBD | TBD | TBD | TBD | TBD | TBD | **RECOMMENDED NEXT** - Improve ranking |
 | TBD | TBD | #5 Answer Planner | TBD | TBD | TBD | TBD | TBD | TBD | Intent-specific schemas |
-| TBD | TBD | #3 Cross-Encoder | TBD | TBD | TBD | TBD | TBD | TBD | bge-reranker-v2-m3 |
 
-**How to use:** After each improvement, run all 9 baselines again, compute deltas (Δ = new - baseline), and add a row above.
+**How to use:** After each improvement, run all baselines again, compute deltas (Δ = new - baseline), and add a row above.

@@ -83,11 +83,16 @@ class BM25Client:
         for collection_name, collection in vector_client._collections.items():
             logger.info(f"Indexing {collection_name} for BM25...")
 
-            # Retrieve all documents from ChromaDB
+            # Retrieve all documents from ChromaDB (including their actual IDs)
             try:
+                # Use a proper function to avoid lambda closure issues
+                # Note: IDs are returned by default, don't include in 'include' parameter
+                def get_collection_docs(coll=collection):
+                    return coll.get(include=["documents", "metadatas"])
+
                 results = await asyncio.get_event_loop().run_in_executor(
                     vector_client.executor,
-                    lambda: collection.get(include=["documents", "metadatas"])
+                    get_collection_docs
                 )
             except Exception as e:
                 logger.error(f"Error retrieving documents from {collection_name}: {e}")
@@ -97,15 +102,16 @@ class BM25Client:
                 logger.warning(f"No documents found in {collection_name}")
                 continue
 
-            # Index each document
+            # Index each document using ChromaDB's actual document IDs
+            document_ids = results.get("ids", [])
             documents = results["documents"]
             metadatas = results.get("metadatas", [])
 
             for i, doc in enumerate(documents):
                 metadata = metadatas[i] if i < len(metadatas) else {}
 
-                # Create unique doc_id
-                doc_id = f"{collection_name}:{i}"
+                # Use ChromaDB's actual document ID (CRITICAL for RRF matching)
+                doc_id = document_ids[i] if i < len(document_ids) else f"{collection_name}:{i}"
 
                 writer.add_document(
                     doc_id=doc_id,
