@@ -207,8 +207,14 @@ class SemanticSearchEngine:
         )
         logger.info(f"  Filtering resulted in {len(filtered)} documents")
 
+        # Step 5: Parent Context Enrichment
+        # Enrich child chunks with parent context
+        logger.info(f"Step 5: Parent Context Enrichment - Enriching child chunks...")
+        enriched_results = await self._enrich_with_parent_context(filtered[:k])
+        logger.info(f"  Enriched {len([r for r in enriched_results if r.get('has_parent_context')])} child chunks with parent context")
+
         # Return top K results
-        final_results = filtered[:k]
+        final_results = enriched_results
         mode = "HYBRID" if use_hybrid else "DENSE"
         logger.info(f"=== {mode} SEARCH COMPLETE: Returning {len(final_results)} results ===")
 
@@ -436,26 +442,94 @@ Respond with ONLY a number between 0 and 10:"""
         logger.debug(f"Filtering: {len(documents)} → {len(filtered)} documents")
         return filtered
     
+    async def _enrich_with_parent_context(self, results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Enrich child chunks with parent chunk context for better comprehension.
+
+        For each child chunk in results, fetches the parent chunk and prepends
+        its content to provide full context. This improves AI agent understanding
+        of fragmented information.
+
+        Args:
+            results: List of search results (may include child chunks)
+
+        Returns:
+            Results with parent context added to child chunks
+        """
+        enriched_results = []
+
+        for result in results:
+            metadata = result.get('metadata', {})
+            chunk_type = metadata.get('chunk_type', '')
+
+            # Only enrich child chunks
+            if chunk_type == 'child':
+                parent_id = metadata.get('parent_id')
+                collection = result.get('collection')
+
+                if parent_id and collection:
+                    try:
+                        # Fetch parent chunk from the same collection
+                        parent_results = await self.vector_client.get_by_id(
+                            collection_name=collection,
+                            ids=[parent_id]
+                        )
+
+                        if parent_results and parent_results.get('documents'):
+                            parent_text = parent_results['documents'][0]
+                            parent_metadata = parent_results.get('metadatas', [{}])[0]
+
+                            # Prepend parent context to child text
+                            # Format: [PARENT CONTEXT]\n\n[CHILD CONTENT]
+                            enriched_text = f"[PARENT CONTEXT - {parent_metadata.get('section_title', 'Section')}]\n{parent_text}\n\n[DETAILED CONTENT]\n{result['text']}"
+
+                            # Update result with enriched text
+                            enriched_result = result.copy()
+                            enriched_result['text'] = enriched_text
+                            enriched_result['has_parent_context'] = True
+                            enriched_result['parent_chunk_id'] = parent_id
+
+                            logger.debug(f"Enriched child chunk {result.get('document_id')} with parent {parent_id}")
+                            enriched_results.append(enriched_result)
+                        else:
+                            # Parent not found, return original
+                            logger.warning(f"Parent chunk {parent_id} not found for child {result.get('document_id')}")
+                            enriched_results.append(result)
+
+                    except Exception as e:
+                        logger.error(f"Error enriching child chunk with parent context: {e}")
+                        enriched_results.append(result)
+                else:
+                    # Child chunk missing parent_id, return original
+                    enriched_results.append(result)
+            else:
+                # Not a child chunk (parent or flat), return as-is
+                enriched_results.append(result)
+
+        return enriched_results
+
     def format_results(self, results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
-        Format search results for API response.
-        
+        Format search results for API response with hierarchical citations.
+
         Args:
             results: Raw search results
-            
+
         Returns:
-            Formatted results with consistent structure
+            Formatted results with consistent structure and section_path for citations
         """
         formatted = []
         for result in results:
             metadata = result.get('metadata', {})
-            
+
             formatted_result = {
                 'document_id': result.get('document_id', ''),
                 'document_title': metadata.get('document_title', metadata.get('title', '')),
                 'source_org': metadata.get('source_org', ''),
                 'document_type': metadata.get('document_type', ''),
                 'section_heading': metadata.get('section_heading', ''),
+                'section_path': metadata.get('section_path', ''),  # Hierarchical source path
+                'section_title': metadata.get('section_title', ''),  # Current section title
                 'text': result.get('text', ''),
                 'relevance_score': result.get('relevance_score', 0.0),
                 'distance': result.get('distance', 1.0),
@@ -463,8 +537,10 @@ Respond with ONLY a number between 0 and 10:"""
                 'effective_date': metadata.get('effective_date', ''),
                 'source_url': metadata.get('source_url', ''),
                 'topics': metadata.get('topics', '').split(',') if metadata.get('topics') else [],
-                'chunk_type': metadata.get('chunk_type', 'unknown')
+                'chunk_type': metadata.get('chunk_type', 'unknown'),
+                'has_parent_context': result.get('has_parent_context', False),  # Flag if child was enriched
+                'parent_chunk_id': result.get('parent_chunk_id', '')  # Parent ID if child chunk
             }
             formatted.append(formatted_result)
-        
+
         return formatted

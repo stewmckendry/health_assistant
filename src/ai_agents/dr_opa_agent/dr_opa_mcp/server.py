@@ -23,6 +23,9 @@ from .search import SemanticSearchEngine
 # Import Ontario Health Programs tool
 from .tools.ontario_health_programs import get_client as get_ontario_health_client
 
+# Import PHO web search client
+from .tools.pho_web_search import PHOWebSearchClient
+
 # Import utilities
 from .utils import calculate_confidence, resolve_conflicts
 from .utils.confidence import OPAConfidenceScorer
@@ -827,10 +830,11 @@ def _parse_screening_program_data(program_data: Dict, program: str, patient_age:
     return standardize_mcp_response(response_dict, tool_name)
 
 
-@mcp.tool(name="opa_ipac_guidance", description="PHO infection prevention and control guidance")
+@mcp.tool(name="opa_ipac_guidance", description="PHO IPAC guidance (indexed corpus + current web search)")
 async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     PHO infection prevention and control guidance.
+    Searches BOTH indexed corpus (2013 IPAC PDF) AND current PHO website for comprehensive results.
 
     Args:
         query: IPAC topic or question
@@ -839,9 +843,10 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
             - setting: Healthcare setting ("clinic", "hospital", "community", "ltc")
             - pathogen: Specific pathogen if applicable (string)
             - include_checklists: Include practical checklists (bool)
+            - search_web: Include web search for current guidance (default True)
 
     Returns:
-        IPAC guidelines, procedures, checklists, and resources
+        IPAC guidelines, procedures, checklists, and resources from both indexed and current sources
     """
     # Handle default filters
     filters = filters or {}
@@ -849,8 +854,9 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
     setting = filters.get('setting', '')
     pathogen = filters.get('pathogen')
     include_checklists = filters.get('include_checklists', True)
+    search_web = filters.get('search_web', True)
 
-    logger.info(f"opa.ipac_guidance called for setting={setting}, topic={topic}")
+    logger.info(f"opa.ipac_guidance called for setting={setting}, topic={topic}, search_web={search_web}")
 
     # Build search query
     search_query = topic
@@ -860,29 +866,59 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
         search_query += f" {pathogen}"
 
     logger.info(f"IPAC guidance search: '{search_query}'")
-    
-    # Use semantic search for IPAC guidance
+
+    # PART 1: Search indexed corpus (2013 IPAC PDF)
     semantic_search = get_semantic_search()
+    formatted_results = []
 
     try:
         search_results = await semantic_search.search(
             query=search_query,
             sources=['pho'],  # Focus on PHO for IPAC
-            document_types=['ipac-guidance', 'guideline', 'tool', 'policy'],  # Include IPAC-specific document type
+            document_types=['ipac-guidance', 'guideline', 'tool', 'policy'],
             k=k * 2,  # Get more for processing
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
             use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
         )
-        
+
         # Format results
         formatted_results = semantic_search.format_results(search_results)
-        logger.info(f"Semantic search returned {len(formatted_results)} IPAC results")
+        logger.info(f"Indexed corpus search returned {len(formatted_results)} IPAC results")
 
     except Exception as e:
-        logger.error(f"Search failed: {e}")
+        logger.error(f"Indexed corpus search failed: {e}")
         logger.error(traceback.format_exc())
-        formatted_results = []
+
+    # PART 2: Web search for current PHO guidance
+    web_summary = None
+    web_links = []
+
+    if search_web:
+        try:
+            logger.info("Searching current PHO website for guidance...")
+            pho_client = PHOWebSearchClient()
+
+            # Prepare subtopics and setting for web search
+            subtopics = [pathogen] if pathogen else None
+
+            web_results = pho_client.search_pho_guidance(
+                topic=topic,
+                subtopics=subtopics,
+                clinical_setting=setting,
+                resource_type=None
+            )
+
+            if web_results.get('success'):
+                web_summary = web_results.get('search_summary', '')
+                web_links = web_results.get('links', [])
+                logger.info(f"Web search returned summary and {len(web_links)} PHO links")
+            else:
+                logger.warning(f"Web search failed: {web_results.get('error')}")
+
+        except Exception as e:
+            logger.error(f"Web search failed: {e}")
+            logger.error(traceback.format_exc())
 
     # Convert formatted_results to Section objects (Option A minimal schema)
     items = []
@@ -973,27 +1009,35 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
                 url=result.get('source_url')
             ))
     
-    # Additional resources
+    # Additional resources - include web search links
     resources = [
         {'title': 'PHO IPAC Best Practices', 'url': 'https://www.publichealthontario.ca/ipac'},
         {'title': 'Hand Hygiene Resources', 'url': 'https://www.publichealthontario.ca/hand-hygiene'}
     ]
-    
-    # Create response
-    response = IPACGuidanceResponse(
-        setting=setting,
-        topic=topic,
-        items=items,  # All retrieved chunks in Option A minimal schema
-        guidelines=guidelines[:5],  # Limit to top 5
-        procedures=procedures[:3],  # Limit to 3
-        checklists=checklists[:3],  # Limit to 3
-        pathogen_specific=pathogen_specific,
-        citations=citations,
-        resources=resources
-    )
-    
+
+    # Add web search links to resources
+    for idx, link in enumerate(web_links[:5]):  # Top 5 web links
+        resources.append({
+            'title': f'PHO Current Guidance {idx + 1}',
+            'url': link
+        })
+
+    # Create response with web search summary
+    response_dict = {
+        'setting': setting,
+        'topic': topic,
+        'items': items,  # All retrieved chunks in Option A minimal schema
+        'guidelines': guidelines[:5],  # Limit to top 5
+        'procedures': procedures[:3],  # Limit to 3
+        'checklists': checklists[:3],  # Limit to 3
+        'pathogen_specific': pathogen_specific,
+        'citations': citations,
+        'resources': resources,
+        'web_search_summary': web_summary if web_summary else None,
+        'sources_searched': ['indexed_corpus'] + (['pho_website'] if search_web else [])
+    }
+
     # Standardize response with top-level citations
-    response_dict = response.dict()
     tool_name = "opa_ipac_guidance"
     return standardize_mcp_response(response_dict, tool_name)
 
@@ -1935,7 +1979,7 @@ if __name__ == "__main__":
     logger.info("  - opa.get_section: Retrieve complete section by ID")
     logger.info("  - opa.policy_check: CPSO policy and advice retrieval")
     logger.info("  - opa.program_lookup: Ontario Health clinical programs (ALL programs via web search)")
-    logger.info("  - opa.ipac_guidance: PHO infection prevention guidance")
+    logger.info("  - opa.ipac_guidance: PHO IPAC guidance (indexed corpus + current web search)")
     logger.info("  - opa.freshness_probe: Check for guidance updates")
     logger.info("  - opa.clinical_tools: CEP clinical decision support tools")
     logger.info("  - opa.quality_standards: Ontario Health quality standards search")

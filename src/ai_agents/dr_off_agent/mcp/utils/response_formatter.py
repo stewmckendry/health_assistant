@@ -14,11 +14,12 @@ def create_citation(
     loc: str = "",
     url: str = "",
     snippet: str = "",
-    relevance_score: float = 0.9
+    relevance_score: float = 0.9,
+    section_path: str = ""
 ) -> Dict[str, Any]:
     """
-    Create a standardized citation object.
-    
+    Create a standardized citation object with hierarchical source path.
+
     Args:
         source: Document or source title
         source_org: Organization name (e.g., "Ontario Ministry of Health")
@@ -26,7 +27,8 @@ def create_citation(
         url: Source URL if available
         snippet: Relevant text snippet
         relevance_score: Confidence score (0-1)
-    
+        section_path: Hierarchical breadcrumb (e.g., "OHIP > Surgery > Neurosurgery (04)")
+
     Returns:
         Standardized citation dictionary
     """
@@ -35,6 +37,7 @@ def create_citation(
         "source": source,
         "source_org": source_org,
         "loc": loc,
+        "section_path": section_path,  # Hierarchical source path for structured citations
         "url": url,
         "snippet": snippet,
         "relevance_score": relevance_score,

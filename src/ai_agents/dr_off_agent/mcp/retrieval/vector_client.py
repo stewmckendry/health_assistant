@@ -104,9 +104,19 @@ class VectorClient:
             
             for name in collection_names:
                 try:
-                    # Get collection WITHOUT embedding function to avoid conflicts
-                    # The collections were created with 1536-dim embeddings
-                    collection = self.client.get_collection(name=name)
+                    # Get collection WITH OpenAI embedding function (required for query embedding)
+                    # The collections use text-embedding-3-small (1536-dim)
+                    if self.openai_client:
+                        # Use OpenAI embedding function matching the collection
+                        from chromadb.utils import embedding_functions
+                        embedding_fn = embedding_functions.OpenAIEmbeddingFunction(
+                            api_key=self.openai_client.api_key,
+                            model_name=self.embedding_model
+                        )
+                        collection = self.client.get_collection(name=name, embedding_function=embedding_fn)
+                    else:
+                        collection = self.client.get_collection(name=name)
+
                     self._collections[name] = collection
                     count = collection.count()
                     logger.info(f"Loaded collection '{name}': {count} embeddings")
@@ -233,9 +243,12 @@ class VectorClient:
                         "distance": distances[i] if i < len(distances) else None,
                         "collection": collection
                     })
-            
-            logger.debug(f"Vector search completed in {elapsed_ms:.1f}ms: {len(formatted_results)} results")
-            return formatted_results
+
+            # Enrich child chunks with parent context
+            enriched_results = await self._enrich_with_parent_context(formatted_results, collection)
+
+            logger.debug(f"Vector search completed in {elapsed_ms:.1f}ms: {len(enriched_results)} results")
+            return enriched_results
             
         except asyncio.TimeoutError:
             elapsed_ms = (time.time() - start_time) * 1000
@@ -372,11 +385,136 @@ class VectorClient:
                     })
             
             return formatted
-            
+
         except Exception as e:
             logger.error(f"Error retrieving passages: {e}")
             raise
-    
+
+    async def get_by_id(
+        self,
+        collection_name: str,
+        ids: List[str]
+    ) -> Dict[str, Any]:
+        """
+        Retrieve documents by their IDs from a collection.
+
+        Args:
+            collection_name: Name of collection
+            ids: List of document IDs to retrieve
+
+        Returns:
+            Dictionary with 'documents', 'metadatas', 'ids'
+        """
+        loop = asyncio.get_event_loop()
+        results = await loop.run_in_executor(
+            self.executor,
+            self._get_by_id,
+            collection_name,
+            ids
+        )
+        return results
+
+    def _get_by_id(
+        self,
+        collection_name: str,
+        ids: List[str]
+    ) -> Dict[str, Any]:
+        """
+        Synchronous get by ID implementation.
+
+        Args:
+            collection_name: Name of collection
+            ids: List of document IDs
+
+        Returns:
+            Retrieved documents with metadata
+        """
+        try:
+            collection = self._collections.get(collection_name)
+            if not collection:
+                logger.error(f"Collection {collection_name} not found")
+                return {'ids': [], 'documents': [], 'metadatas': []}
+
+            results = collection.get(
+                ids=ids,
+                include=['documents', 'metadatas']
+            )
+
+            return results
+
+        except Exception as e:
+            logger.error(f"Error retrieving documents by ID from {collection_name}: {e}")
+            return {'ids': [], 'documents': [], 'metadatas': []}
+
+    async def _enrich_with_parent_context(
+        self,
+        results: List[Dict[str, Any]],
+        collection_name: str
+    ) -> List[Dict[str, Any]]:
+        """
+        Enrich child chunks with parent chunk context for better comprehension.
+
+        For each child chunk in results, fetches the parent chunk and prepends
+        its content to provide full context. This improves AI agent understanding
+        of fragmented information.
+
+        Args:
+            results: List of search results (may include child chunks)
+            collection_name: Name of collection being searched
+
+        Returns:
+            Results with parent context added to child chunks
+        """
+        enriched_results = []
+
+        for result in results:
+            metadata = result.get('metadata', {})
+            chunk_type = metadata.get('chunk_type', '')
+
+            # Only enrich child chunks
+            if chunk_type == 'child':
+                parent_id = metadata.get('parent_id')
+
+                if parent_id:
+                    try:
+                        # Fetch parent chunk from the same collection
+                        parent_results = await self.get_by_id(
+                            collection_name=collection_name,
+                            ids=[parent_id]
+                        )
+
+                        if parent_results and parent_results.get('documents'):
+                            parent_text = parent_results['documents'][0]
+                            parent_metadata = parent_results.get('metadatas', [{}])[0]
+
+                            # Prepend parent context to child text
+                            enriched_text = f"[PARENT CONTEXT - {parent_metadata.get('section_title', 'Section')}]\n{parent_text}\n\n[DETAILED CONTENT]\n{result['text']}"
+
+                            # Update result with enriched text
+                            enriched_result = result.copy()
+                            enriched_result['text'] = enriched_text
+                            enriched_result['has_parent_context'] = True
+                            enriched_result['parent_chunk_id'] = parent_id
+
+                            logger.debug(f"Enriched child chunk with parent {parent_id}")
+                            enriched_results.append(enriched_result)
+                        else:
+                            # Parent not found, return original
+                            logger.warning(f"Parent chunk {parent_id} not found")
+                            enriched_results.append(result)
+
+                    except Exception as e:
+                        logger.error(f"Error enriching child chunk with parent context: {e}")
+                        enriched_results.append(result)
+                else:
+                    # Child chunk missing parent_id, return original
+                    enriched_results.append(result)
+            else:
+                # Not a child chunk (parent or flat), return as-is
+                enriched_results.append(result)
+
+        return enriched_results
+
     async def close(self):
         """Cleanup thread pool executor."""
         self.executor.shutdown(wait=True)

@@ -9,7 +9,7 @@ import uuid
 from typing import Dict, Any, List, Optional
 from datetime import datetime
 
-from ..models.request import ScheduleGetRequest
+from ..models.request import StandardToolRequest
 from ..models.response import (
     ScheduleGetResponse,
     ScheduleItem,
@@ -71,29 +71,29 @@ class ScheduleTool:
         
         logger.info("Schedule tool initialized with intelligent routing")
     
-    async def execute(self, request: ScheduleGetRequest) -> ScheduleGetResponse:
+    async def execute(self, request: Dict[str, Any]) -> ScheduleGetResponse:
         """
         Execute schedule query with intelligent routing.
-        
+
         Args:
-            request: ScheduleGetRequest with query parameters
-            
+            request: Request dictionary with query parameters
+
         Returns:
             ScheduleGetResponse with results based on optimal search strategy
         """
         # Start operation logging
         operation_id = self.search_logger.start_operation(
             tool="schedule.get",
-            query=request.q,
-            request_data=request.dict()
+            query=request.get("q"),
+            request_data=request
         )
-        
+
         try:
             # Classify query to determine strategy
             strategy, reason = self.query_classifier.classify(
-                query=request.q,
+                query=request.get("q"),
                 tool="schedule.get",
-                codes=request.codes
+                codes=request.get("codes")
             )
             
             self.search_logger.log_classification(
@@ -143,24 +143,26 @@ class ScheduleTool:
                 conflicts=[]
             )
     
-    async def _execute_sql_only(self, request: ScheduleGetRequest) -> ScheduleGetResponse:
+    async def _execute_sql_only(self, request: Dict[str, Any]) -> ScheduleGetResponse:
         """
         Execute SQL-only search for structured queries.
         Used for direct code lookups.
         """
         start_time = datetime.now()
-        
+
         # Build SQL query for codes
-        if request.codes:
-            sql_results = await self._sql_code_lookup(request.codes)
+        codes = request.get("codes")
+        query = request.get("q", "")
+        if codes:
+            sql_results = await self._sql_code_lookup(codes)
         else:
             # Single code in query
-            sql_results = await self._sql_code_lookup([request.q.strip()])
-        
+            sql_results = await self._sql_code_lookup([query.strip()])
+
         duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        
+
         self.search_logger.log_sql_search(
-            query=f"Code lookup: {request.codes or request.q}",
+            query=f"Code lookup: {codes or query}",
             results_count=len(sql_results),
             duration_ms=duration_ms,
             table="ohip_fee_codes"
@@ -177,23 +179,26 @@ class ScheduleTool:
             conflicts=[]
         )
     
-    async def _execute_vector_with_rerank(self, request: ScheduleGetRequest) -> ScheduleGetResponse:
+    async def _execute_vector_with_rerank(self, request: Dict[str, Any]) -> ScheduleGetResponse:
         """
         Execute vector search with LLM reranking.
         Used for natural language queries.
         """
         start_time = datetime.now()
-        
+
+        query = request.get("q", "")
+        top_k = request.get("top_k", 10)
+
         # Step 1: Vector search with wider net
         vector_results = await self._vector_semantic_search(
-            query=request.q,
+            query=query,
             top_k=50  # Get more candidates for reranking
         )
-        
+
         vector_duration = (datetime.now() - start_time).total_seconds() * 1000
-        
+
         self.search_logger.log_vector_search(
-            query=request.q,
+            query=query,
             results_count=len(vector_results),
             duration_ms=vector_duration,
             collection="ohip_documents",
@@ -222,9 +227,9 @@ class ScheduleTool:
         # Step 3: Rerank with LLM
         rerank_start = datetime.now()
         reranked_docs = await self.llm_reranker.rerank(
-            query=request.q,
+            query=query,
             documents=documents,
-            top_k=request.top_k,
+            top_k=top_k,
             context="OHIP Schedule of Benefits billing codes and fees"
         )
         
@@ -256,14 +261,16 @@ class ScheduleTool:
             conflicts=[]
         )
     
-    async def _execute_hybrid_smart(self, request: ScheduleGetRequest) -> ScheduleGetResponse:
+    async def _execute_hybrid_smart(self, request: Dict[str, Any]) -> ScheduleGetResponse:
         """
         Execute intelligent hybrid search.
         Combines SQL for structured data with vector for context.
         """
+        query = request.get("q", "")
+
         # Run both in parallel
         sql_task = self._sql_structured_search(request)
-        vector_task = self._vector_semantic_search(request.q, top_k=30)
+        vector_task = self._vector_semantic_search(query, top_k=30)
         
         sql_results, vector_results = await asyncio.gather(
             sql_task,
@@ -281,16 +288,16 @@ class ScheduleTool:
         
         # Log both searches
         self.search_logger.log_sql_search(
-            query=request.q,
+            query=query,
             results_count=len(sql_results) if sql_results else 0,
             duration_ms=0  # Would need timing
         )
         self.search_logger.log_vector_search(
-            query=request.q,
+            query=query,
             results_count=len(vector_results) if vector_results else 0,
             duration_ms=0  # Would need timing
         )
-        
+
         # Rerank vector results if we have them
         reranked_docs = []
         if vector_results:
@@ -299,7 +306,7 @@ class ScheduleTool:
                 for r in vector_results
             ]
             reranked_docs = await self.llm_reranker.rerank(
-                query=request.q,
+                query=query,
                 documents=documents,
                 top_k=10
             )
@@ -331,14 +338,16 @@ class ScheduleTool:
             conflicts=conflicts
         )
     
-    async def _execute_sql_primary(self, request: ScheduleGetRequest) -> ScheduleGetResponse:
+    async def _execute_sql_primary(self, request: Dict[str, Any]) -> ScheduleGetResponse:
         """
         Execute SQL-primary search with vector fallback.
         """
+        top_k = request.get("top_k", 10)
+
         # Try SQL first
         sql_results = await self._sql_structured_search(request)
-        
-        if sql_results and len(sql_results) >= request.top_k // 2:
+
+        if sql_results and len(sql_results) >= top_k // 2:
             # SQL found sufficient results
             items = [self._sql_to_item(r) for r in sql_results]
             return ScheduleGetResponse(
@@ -382,15 +391,16 @@ class ScheduleTool:
             logger.error(f"SQL code lookup error: {e}")
             return []
     
-    async def _sql_structured_search(self, request: ScheduleGetRequest) -> List[Dict[str, Any]]:
+    async def _sql_structured_search(self, request: Dict[str, Any]) -> List[Dict[str, Any]]:
         """SQL search for structured queries"""
         try:
             # Build query based on request
-            query_text = request.q.lower()
-            
+            query_text = request.get("q", "").lower()
+            top_k = request.get("top_k", 10)
+
             # Search in descriptions and codes
             query = """
-            SELECT 
+            SELECT
                 fee_code as code,
                 description,
                 amount as fee,
@@ -398,14 +408,14 @@ class ScheduleTool:
                 notes as limits,
                 null as page_num
             FROM ohip_fee_schedule
-            WHERE 
-                LOWER(description) LIKE ? 
+            WHERE
+                LOWER(description) LIKE ?
                 OR fee_code LIKE ?
             LIMIT ?
             """
-            
+
             search_pattern = f"%{query_text}%"
-            params = (search_pattern, search_pattern.upper(), request.top_k * 2)
+            params = (search_pattern, search_pattern.upper(), top_k * 2)
             
             results = await self.sql_client.query(query, params)
             return results
@@ -437,99 +447,162 @@ class ScheduleTool:
         self,
         sql_results: List[Dict[str, Any]],
         vector_results: List[Document],
-        request: ScheduleGetRequest
+        request: Dict[str, Any]
     ) -> List[ScheduleItem]:
         """Intelligently merge SQL and vector results"""
         items = []
-        
+        top_k = request.get("top_k", 10)
+
         # Add SQL results first (usually more precise for codes)
-        for result in sql_results[:request.top_k // 2]:
+        for result in sql_results[:top_k // 2]:
             item = self._sql_to_item(result)
             if item:
                 items.append(item)
-        
+
         # Add vector results (reranked)
-        for doc in vector_results[:request.top_k // 2]:
+        for doc in vector_results[:top_k // 2]:
             item = self._vector_to_item(doc)
             if item and not self._is_duplicate(item, items):
                 items.append(item)
-        
-        return items[:request.top_k]
+
+        return items[:top_k]
     
     def _sql_to_item(self, result: Dict[str, Any]) -> Optional[ScheduleItem]:
-        """Convert SQL result to ScheduleItem"""
+        """Convert SQL result to ScheduleItem using Option A minimal schema"""
         if not result:
             return None
-            
+
+        code = result.get('code', '')
+        description = result.get('description', '')
+        requirements = result.get('requirements')
+        limits = result.get('limits')
+
+        # Build combined text field
+        text_parts = []
+        if description:
+            text_parts.append(description)
+        if requirements:
+            text_parts.append(f"Requirements: {requirements}")
+        if limits:
+            text_parts.append(f"Limits: {limits}")
+
+        text = '\n'.join(text_parts) if text_parts else description or ''
+
+        # Build metadata with all domain-specific fields
+        metadata = {
+            'code': code,
+            'description': description,
+            'fee': result.get('fee'),
+            'requirements': requirements,
+            'limits': limits,
+            'page_num': result.get('page_num')
+        }
+
+        # Remove None values from metadata
+        metadata = {k: v for k, v in metadata.items() if v is not None}
+
         return ScheduleItem(
-            code=result.get('code', ''),
-            description=result.get('description', ''),
-            fee=result.get('fee'),
-            requirements=result.get('requirements'),
-            limits=result.get('limits'),
-            page_num=result.get('page_num')
+            id=code,
+            text=text,
+            relevance_score=1.0,  # SQL exact match gets perfect score
+            source='ohip_schedule:sql',
+            metadata=metadata
         )
     
     def _vector_to_item(self, doc: Document) -> Optional[ScheduleItem]:
-        """Convert vector result Document to ScheduleItem"""
+        """Convert vector result Document to ScheduleItem using Option A minimal schema"""
         if not doc:
             return None
-            
+
         # Extract from metadata and text
-        metadata = doc.metadata or {}
-        
+        doc_metadata = doc.metadata or {}
+
         # Get fee code from metadata first, then try to parse from text
-        code = metadata.get('fee_code', '')
+        code = doc_metadata.get('fee_code', '')
         if not code:
             import re
             code_match = re.search(r'([A-Z]\d{3,4})', doc.text)
             code = code_match.group(1) if code_match else ''
-        
-        # Build enriched description with metadata
-        description_parts = [doc.text[:200]]
-        
-        # Add specialty and category if available
-        if metadata.get('specialty'):
-            description_parts.append(f"Specialty: {metadata.get('specialty')}")
-        if metadata.get('category'):
-            description_parts.append(f"Category: {metadata.get('category')}")
-            
-        enriched_description = '\n'.join(description_parts)
-        
+
+        # Build enriched text with all relevant information
+        text_parts = [doc.text[:500]]  # Include more of the original text
+
+        # Add specialty and category context if available
+        if doc_metadata.get('specialty'):
+            text_parts.append(f"Specialty: {doc_metadata.get('specialty')}")
+        if doc_metadata.get('category'):
+            text_parts.append(f"Category: {doc_metadata.get('category')}")
+
         # Extract billing conditions if flagged
         requirements = None
-        if metadata.get('has_conditions') == 'true':
+        if doc_metadata.get('has_conditions') == 'true':
             # Try to extract from text
             if 'Billing Conditions:' in doc.text:
                 requirements = doc.text.split('Billing Conditions:')[1].split('\n')[0].strip()
-        
+                text_parts.append(f"Requirements: {requirements}")
+
+        # Add limits if available
+        if doc_metadata.get('limits'):
+            text_parts.append(f"Limits: {doc_metadata.get('limits')}")
+
+        combined_text = '\n'.join(text_parts)
+
+        # Build metadata dict with all domain-specific fields
+        item_metadata = {
+            'code': code,
+            'description': doc.text[:200],  # Store original description
+            'fee': doc_metadata.get('fee_amount'),
+            'requirements': requirements,
+            'limits': doc_metadata.get('limits'),
+            'page_num': doc_metadata.get('page_num'),
+            'specialty': doc_metadata.get('specialty'),
+            'category': doc_metadata.get('category'),
+            'has_conditions': doc_metadata.get('has_conditions')
+        }
+
+        # Remove None values from metadata
+        item_metadata = {k: v for k, v in item_metadata.items() if v is not None}
+
+        # Get relevance score from document or use default
+        relevance_score = doc.relevance_score if doc.relevance_score is not None else (doc.score / 10.0 if doc.score else 0.8)
+        relevance_score = min(max(relevance_score, 0.0), 1.0)  # Clamp to 0-1
+
         return ScheduleItem(
-            code=code,
-            description=enriched_description,
-            fee=metadata.get('fee_amount'),  # Correct field name
-            requirements=requirements,
-            limits=metadata.get('limits'),  # May need extraction from text
-            page_num=None  # Convert page_ref if needed
+            id=code or f"vec_{hash(doc.text[:50]) % 1000000}",  # Fallback ID if no code
+            text=combined_text,
+            relevance_score=relevance_score,
+            source='ohip_schedule:vector',
+            metadata=item_metadata
         )
     
     def _is_duplicate(self, item: ScheduleItem, items: List[ScheduleItem]) -> bool:
-        """Check if item is duplicate"""
+        """Check if item is duplicate based on ID or code in metadata"""
         for existing in items:
-            if existing.code and existing.code == item.code:
+            # Check by ID first
+            if existing.id == item.id:
+                return True
+            # Also check by code in metadata
+            existing_code = existing.metadata.get('code')
+            item_code = item.metadata.get('code')
+            if existing_code and item_code and existing_code == item_code:
                 return True
         return False
     
     def _generate_sql_citations(self, items: List[ScheduleItem]) -> List[Citation]:
-        """Generate citations for SQL results"""
+        """Generate citations for SQL results using Option A schema"""
         citations = []
         for item in items:
-            if item.code:
-                # Generate specific PDF citation with page number
-                page_text = f", page {item.page_num}" if item.page_num else ""
+            code = item.metadata.get('code')
+            if code:
+                # Generate specific PDF citation with page number and section_path
+                page_num = item.metadata.get('page_num')
+                page_text = f", page {page_num}" if page_num else ""
+                section_path = item.metadata.get('section_path', '')
                 citations.append(Citation(
                     source="OHIP Schedule of Benefits (March 2025)",
-                    loc=f"Fee code {item.code}{page_text}",
-                    page=item.page_num,
+                    loc=f"Fee code {code}{page_text}",
+                    section_path=section_path,
+                    page=page_num,
                     url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
                 ))
         return citations[:5]  # Limit citations
@@ -542,16 +615,18 @@ class ScheduleTool:
             # Generate specific PDF citation with section and page
             section = metadata.get('section', '')
             page = metadata.get('page_num')
+            section_path = metadata.get('section_path', '')
             loc_parts = []
             if section:
                 loc_parts.append(f"Section {section}")
             if page:
                 loc_parts.append(f"page {page}")
             loc = ", ".join(loc_parts) if loc_parts else "General Reference"
-            
+
             citations.append(Citation(
                 source="OHIP Schedule of Benefits (March 2025)",
                 loc=loc,
+                section_path=section_path,
                 page=page,
                 url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
@@ -569,29 +644,33 @@ class ScheduleTool:
         for result in sql_results[:3]:
             code = result.get('code', '')
             page = result.get('page_num')
+            section_path = result.get('section_path', '')
             page_text = f", page {page}" if page else ""
             citations.append(Citation(
                 source="OHIP Schedule of Benefits (March 2025)",
                 loc=f"Fee code {code}{page_text}",
+                section_path=section_path,
                 page=page,
                 url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
-        
+
         # Add vector citations with specific PDF reference
         for doc in vector_docs[:3]:
             metadata = doc.metadata or {}
             section = metadata.get('section', '')
             page = metadata.get('page_num')
+            section_path = metadata.get('section_path', '')
             loc_parts = []
             if section:
                 loc_parts.append(f"Section {section}")
             if page:
                 loc_parts.append(f"page {page}")
             loc = ", ".join(loc_parts) if loc_parts else "General Reference"
-            
+
             citations.append(Citation(
                 source="OHIP Schedule of Benefits (March 2025)",
                 loc=loc,
+                section_path=section_path,
                 page=page,
                 url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
@@ -603,21 +682,31 @@ class ScheduleTool:
 async def schedule_get(request: Dict[str, Any]) -> Dict[str, Any]:
     """
     Main entry point for schedule.get tool.
-    
+
     Args:
-        request: Request dictionary with query parameters
-        
+        request: Standardized request dict with query, k, filters
+
     Returns:
         Response dictionary with schedule items
     """
-    # Parse request
-    req = ScheduleGetRequest(**request)
-    
+    # Extract from standardized format
+    query = request.get("query", "")
+    k = request.get("k", 10)
+    filters = request.get("filters", {})
+
+    # Build internal request format
+    internal_request = {
+        "q": query,
+        "codes": filters.get("codes"),
+        "include": filters.get("include", ["codes", "fee", "limits", "documentation"]),
+        "top_k": k
+    }
+
     # Create tool instance (could cache this)
     tool = ScheduleTool()
-    
+
     # Execute
-    response = await tool.execute(req)
-    
+    response = await tool.execute(internal_request)
+
     # Return as dict
     return response.dict()

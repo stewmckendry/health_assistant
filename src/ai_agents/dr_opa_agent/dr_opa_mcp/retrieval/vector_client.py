@@ -186,13 +186,13 @@ class VectorClient:
     ) -> Dict[str, Any]:
         """
         Async wrapper for searching a specific collection.
-        
+
         Args:
             collection_name: Name of collection to search
             query: Query text
             n_results: Number of results
             where: Metadata filters
-            
+
         Returns:
             Search results from collection
         """
@@ -206,7 +206,63 @@ class VectorClient:
             where
         )
         return results
-    
+
+    async def get_by_id(
+        self,
+        collection_name: str,
+        ids: List[str]
+    ) -> Dict[str, Any]:
+        """
+        Retrieve documents by their IDs from a collection.
+
+        Args:
+            collection_name: Name of collection
+            ids: List of document IDs to retrieve
+
+        Returns:
+            Dictionary with 'documents', 'metadatas', 'ids'
+        """
+        loop = asyncio.get_event_loop()
+        results = await loop.run_in_executor(
+            self.executor,
+            self._get_by_id,
+            collection_name,
+            ids
+        )
+        return results
+
+    def _get_by_id(
+        self,
+        collection_name: str,
+        ids: List[str]
+    ) -> Dict[str, Any]:
+        """
+        Synchronous get by ID implementation.
+
+        Args:
+            collection_name: Name of collection
+            ids: List of document IDs
+
+        Returns:
+            Retrieved documents with metadata
+        """
+        try:
+            collection = self.client.get_collection(
+                name=collection_name,
+                embedding_function=self.embedding_function
+            )
+
+            results = collection.get(
+                ids=ids,
+                include=['documents', 'metadatas']
+            )
+
+            return results
+
+        except Exception as e:
+            logger.error(f"Error retrieving documents by ID from {collection_name}: {e}")
+            return {'ids': [], 'documents': [], 'metadatas': []}
+
     async def search_sections(
         self,
         query: str,
