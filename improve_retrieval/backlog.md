@@ -40,9 +40,11 @@ After testing Issues #2 (Hybrid Retrieval) and #3 (Cross-Encoder Reranking), **b
 - Automatic parent context enrichment + hierarchical citations
 - **Status:** Ready for validation testing
 
-**🔥 NEXT PRIORITY: Issue #5 (Answer Planner + Self-Check Loop)**
+**✅ COMPLETED: Issue #5 (Answer Planner + Self-Check Loop) - 2025-10-07**
 
-**Why This is the Highest ROI:**
+**Implementation Status:** ✅ Complete (Option A: Prompt-Based) - **Awaiting Evaluation**
+
+**Why This Was the Highest ROI:**
 
 1. **Current Bottleneck is Answer Synthesis, Not Retrieval:**
    - Retrieval: 71% Recall@50, 0.503 MRR (decent)
@@ -61,12 +63,51 @@ After testing Issues #2 (Hybrid Retrieval) and #3 (Cross-Encoder Reranking), **b
    - section_path enables precise citations
    - Agent now has better raw material to synthesize from
 
-**Issue #5 Components:**
-1. `plan(query, intent)` → Returns schema with required fields per intent:
-   - Billing: primary_codes[], modifiers[], conditions[], common_misses[], citations[]
-   - IPAC: requirements_mandatory, recommendations, setting_specifics, equipment_rooming, validation, citations[]
-2. `self_check(schema, context)` → Verifies slots filled; generates focused sub-queries for gaps
-3. Integration with improved retrieval (parent/child chunks + section_path)
+**What Was Implemented (Option A - Prompt-Based):**
+
+1. **4-Step Structured Workflow** added to both agent system prompts:
+   ```
+   STEP 1: PLAN → Classify intent, identify required schema fields
+   STEP 2: RETRIEVE → Call MCP tools, extract facts into schema
+   STEP 3: SELF-CHECK → Verify completeness, make sub-queries for gaps
+   STEP 4: SYNTHESIZE → Format answer only after ≥90% fields filled
+   ```
+
+2. **Intent-Specific Schemas:**
+   - **Dr. OFF (5 schemas):** Billing, Drug Coverage, Device Funding, Eligibility, Documentation
+   - **Dr. OPA (6 schemas):** CPSO Policy, IPAC Guidelines, Clinical Programs, Clinical Tools, Quality Standards, Choosing Wisely
+
+3. **Web Search Integration:** Clear guidance for when to use `web_search` as fallback when MCP tools insufficient
+
+4. **Mandatory Rules:** Enforced strict workflow compliance:
+   - ✓ ALWAYS make ≥2 tool calls per query (initial + self-check)
+   - ✓ ALWAYS fill ≥90% schema fields before synthesis
+   - ✗ NEVER skip Self-Check step
+   - ✗ NEVER hallucinate missing information
+
+5. **Prompt Streamlining:** Removed ~600 lines of redundant sections to avoid agent confusion
+
+**Why Option A (Not Option B Helper Tools):**
+- ✅ Faster to implement and iterate (2-4 hours vs 8-12 hours)
+- ✅ Leverages OpenAI Agents SDK native stateful reasoning
+- ✅ Non-intrusive - no changes to existing MCP tools
+- ✅ Easy to refine based on eval results
+- 📝 Option B can be added later if metrics not met
+
+**Files Modified:**
+- `src/ai_agents/dr_off_agent/openai_agent.py` (lines 397-559)
+- `src/ai_agents/dr_opa_agent/openai_agent.py` (lines 380-558)
+
+**Files Created:**
+- `test_issue5_implementation.py` - Quick test for ≥2 tool calls
+- `improve_retrieval/ISSUE_5_IMPLEMENTATION_SUMMARY.md` - Full documentation
+
+**Next Steps:**
+- ⏳ Run quick test: `python test_issue5_implementation.py`
+- ⏳ Run full evaluation on all 9 datasets (3 Dr. OFF + 6 Dr. OPA)
+- ⏳ Validate Coverage ≥75%, Helpfulness ≥70%, Tool calls ≥2
+- ⏳ If successful: Create completion report and move to next issue
+- ⏳ If not: Refine prompts or implement Option B helper tools
 
 **Alternative: Issue #4 (Intent Router)**
 - Lower priority - current dense-only retrieval already works well
@@ -223,10 +264,11 @@ General-purpose reranking models can **degrade performance** in specialized doma
 
 ---
 
-## 5. Answer Planner + Self-Check Loop
+## 5. Answer Planner + Self-Check Loop ✅ COMPLETED
 
 **Title:** Add planner & self-check stages with schemas per intent
 **Why:** Convert snippets into decision-ready answers.
+**Status:** ✅ Complete (2025-10-07) - **Awaiting Evaluation**
 
 **Context: How This Works with OpenAI Agents SDK**
 

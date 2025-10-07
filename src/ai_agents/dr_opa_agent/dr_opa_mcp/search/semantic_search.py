@@ -55,9 +55,6 @@ class SemanticSearchEngine:
         self,
         query: Optional[str] = None,
         sources: Optional[List[str]] = None,
-        document_types: Optional[List[str]] = None,
-        policy_level: Optional[str] = None,
-        after_date: Optional[str] = None,
         k: Optional[int] = None,
         use_reranking: bool = True,
         use_hybrid: bool = True,  # Enable hybrid mode (dense + BM25)
@@ -72,9 +69,6 @@ class SemanticSearchEngine:
         Args:
             query: Natural language search query (or use request.query)
             sources: Filter by source organizations (or use request.filters['sources'])
-            document_types: Filter by document type (or use request.filters['doc_types'])
-            policy_level: Filter by policy level (or use request.filters['policy_level'])
-            after_date: Filter for documents after this date (or use request.filters['after_date'])
             k: Number of final results to return (or use request.k)
             use_reranking: Whether to use LLM reranking
             use_hybrid: Whether to use hybrid (dense + BM25) retrieval with RRF fusion
@@ -90,9 +84,6 @@ class SemanticSearchEngine:
             k = request.k
             filters = request.filters or {}
             sources = filters.get('sources', sources)
-            document_types = filters.get('doc_types', document_types)
-            policy_level = filters.get('policy_level', policy_level)
-            after_date = filters.get('after_date', after_date)
 
         # Set defaults if not provided
         if k is None:
@@ -100,7 +91,7 @@ class SemanticSearchEngine:
 
         logger.info(f"=== SEMANTIC SEARCH START (hybrid={use_hybrid}) ===")
         logger.info(f"Query: {query}")
-        logger.info(f"Filters: sources={sources}, doc_types={document_types}, policy_level={policy_level}")
+        logger.info(f"Filters: sources={sources}")
 
         if use_hybrid:
             # === HYBRID MODE: Dense + BM25 + RRF ===
@@ -196,21 +187,11 @@ class SemanticSearchEngine:
             logger.info(f"Step {3 if use_hybrid else 2}: Skipping reranking (disabled or no candidates)")
             reranked = candidates[:20]
 
-        # Step 4: Filter (apply constraints)
-        step_num = 4 if use_hybrid else 3
-        logger.info(f"Step {step_num}: Metadata Filtering - Applying constraints...")
-        filtered = self._apply_filters(
-            documents=reranked,
-            document_types=document_types,
-            policy_level=policy_level,
-            after_date=after_date
-        )
-        logger.info(f"  Filtering resulted in {len(filtered)} documents")
-
-        # Step 5: Parent Context Enrichment
+        # Step 4: Parent Context Enrichment
         # Enrich child chunks with parent context
-        logger.info(f"Step 5: Parent Context Enrichment - Enriching child chunks...")
-        enriched_results = await self._enrich_with_parent_context(filtered[:k])
+        step_num = 4 if use_hybrid else 3
+        logger.info(f"Step {step_num}: Parent Context Enrichment - Enriching child chunks...")
+        enriched_results = await self._enrich_with_parent_context(reranked[:k])
         logger.info(f"  Enriched {len([r for r in enriched_results if r.get('has_parent_context')])} child chunks with parent context")
 
         # Return top K results
@@ -390,57 +371,6 @@ Respond with ONLY a number between 0 and 10:"""
             # Fallback to distance-based scoring
             distance = document.get('distance', 1.0)
             return max(0, 10 * (1 - distance))  # Convert distance to score
-    
-    def _apply_filters(
-        self,
-        documents: List[Dict[str, Any]],
-        document_types: Optional[List[str]] = None,
-        policy_level: Optional[str] = None,
-        after_date: Optional[str] = None
-    ) -> List[Dict[str, Any]]:
-        """
-        Step 3: Apply metadata filters to reranked documents.
-        
-        Args:
-            documents: Reranked documents
-            document_types: Filter by document type
-            policy_level: Filter by policy level
-            after_date: Filter by effective date
-            
-        Returns:
-            Filtered list of documents
-        """
-        logger.debug(f"Applying filters: types={document_types}, level={policy_level}, after={after_date}")
-        
-        filtered = []
-        for doc in documents:
-            metadata = doc.get('metadata', {})
-            
-            # Check document type filter (handle both 'doc_type' and 'document_type' fields)
-            if document_types:
-                doc_type = metadata.get('doc_type') or metadata.get('document_type', '')
-                if doc_type not in document_types:
-                    logger.debug(f"Filtered out: wrong type ({doc_type} not in {document_types})")
-                    continue
-            
-            # Check policy level filter
-            if policy_level:
-                doc_level = metadata.get('policy_level', '')
-                if doc_level != policy_level:
-                    logger.debug(f"Filtered out: wrong level ({doc_level} != {policy_level})")
-                    continue
-            
-            # Check date filter
-            if after_date:
-                doc_date = metadata.get('effective_date', '')
-                if doc_date and doc_date < after_date:
-                    logger.debug(f"Filtered out: too old ({doc_date} < {after_date})")
-                    continue
-            
-            filtered.append(doc)
-        
-        logger.debug(f"Filtering: {len(documents)} → {len(filtered)} documents")
-        return filtered
     
     async def _enrich_with_parent_context(self, results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """

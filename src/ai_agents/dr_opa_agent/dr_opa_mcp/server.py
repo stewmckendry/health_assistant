@@ -159,16 +159,12 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
     Returns:
         Matching sections with documents, highlights, and confidence
     """
-    # Handle default filters
+    # Extract sources filter only (other filters are passthrough/ignored)
     filters = filters or {}
     sources = filters.get('sources')
-    doc_types = filters.get('doc_types')
-    topics = filters.get('topics')
-    date_range = filters.get('date_range')
-    include_superseded = filters.get('include_superseded', False)
 
     logger.info(f"opa.search_sections called with query: {query[:100] if query else 'None'}...")
-    logger.debug(f"Parameters: sources={sources}, doc_types={doc_types}, topics={topics}, k={k}")
+    logger.debug(f"Parameters: sources={sources}, k={k}")
     
     try:
         semantic_search = get_semantic_search()
@@ -186,8 +182,6 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
         search_results = await semantic_search.search(
             query=query,
             sources=sources,
-            document_types=doc_types,
-            after_date=date_range.get('start') if date_range else None,
             k=k,
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
@@ -444,15 +438,14 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
     Returns:
         Relevant policies, expectations, advice with confidence
     """
-    # Handle default filters
+    # Extract sources filter only (other filters are passthrough/ignored)
     filters = filters or {}
     topic = query
-    policy_level = filters.get('policy_level', 'both')
-    include_related = filters.get('include_related', True)
+    sources = filters.get('sources', ['cpso'])  # Default to CPSO for this tool
 
     logger.info(f"opa.policy_check called for topic: {topic}")
-    logger.debug(f"Parameters: policy_level={policy_level}, include_related={include_related}, k={k}")
-    
+    logger.debug(f"Parameters: sources={sources}, k={k}")
+
     try:
         semantic_search = get_semantic_search()
     except Exception as e:
@@ -462,20 +455,16 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
             confidence=0.6,
             summary=f"CPSO Guidance for '{topic}': No specific CPSO guidance found for this topic"
         ).dict()
-    
+
     # Search for CPSO policies using semantic search
     search_query = topic
 
-    # Determine policy_level parameter for search
-    search_policy_level = None if policy_level == 'both' else policy_level
-
-    # Use semantic search with CPSO filter (hybrid mode)
+    # Use semantic search with CPSO filter
     try:
         search_results = await semantic_search.search(
             query=search_query,
-            sources=['cpso'],
-            policy_level=search_policy_level,
-            k=k * 2,  # Get more for categorization
+            sources=sources,
+            k=k,
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
             use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
@@ -875,7 +864,6 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
         search_results = await semantic_search.search(
             query=search_query,
             sources=['pho'],  # Focus on PHO for IPAC
-            document_types=['ipac-guidance', 'guideline', 'tool', 'policy'],
             k=k * 2,  # Get more for processing
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
@@ -1206,7 +1194,6 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
         search_results = await semantic_search.search(
             query=search_query,
             sources=['cep'],  # Focus on CEP for clinical tools
-            document_types=['clinical_tool'],
             k=k * 2,  # Get more tools for processing
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
@@ -1343,9 +1330,6 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
         search_results = await semantic_search.search(
             query=query,
             sources=['ontario_health_quality_standards'],
-            document_types=['quality_standard_overview', 'quality_statement'] if statement_type == 'all'
-                         else ['quality_standard_overview'] if statement_type == 'overview'
-                         else ['quality_statement'],
             k=k if not retrieve_all_statements else 50,
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
@@ -1414,7 +1398,6 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                 all_statements_results = await semantic_search.search(
                     query=standard_title,
                     sources=['ontario_health_quality_standards'],
-                    document_types=['quality_statement'],
                     k=50,  # Get all statements
                     use_reranking=False,  # Don't rerank when getting all
                     use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
@@ -1675,7 +1658,6 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
         search_results = await semantic_search.search(
             query=search_query,
             sources=sources,
-            document_types=document_types,
             k=initial_search_size,
             use_reranking=False,  # Disable LLM reranking (use CE instead)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
@@ -1711,23 +1693,32 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
         for result in search_results:
             metadata = result.get('metadata', {})
             chunk_type = metadata.get('chunk_type', '')
-            
+            doc_type = metadata.get('doc_type', '')
+
             # Extract specialty-level information from overview chunks
-            if chunk_type == 'specialty_overview':
+            # Handle both old format (chunk_type='specialty_overview') and new format (doc_type='choosing_wisely_overview')
+            is_overview = (chunk_type == 'specialty_overview' or
+                          chunk_type == 'parent' and doc_type == 'choosing_wisely_overview')
+
+            if is_overview:
                 specialty = metadata.get('specialty', '')
                 text = result.get('text', '')
-                
+
                 if not specialty_overview and text:
                     specialty_overview = text[:500] + "..." if len(text) > 500 else text
                     organization = metadata.get('organization', '')
                     last_updated = metadata.get('last_updated', '')
-                
+
                 # Count specialty occurrences
                 if specialty:
                     specialty_counts[specialty] = specialty_counts.get(specialty, 0) + 1
-                
+
             # Extract recommendation information
-            elif chunk_type == 'recommendation':
+            # Handle both old format (chunk_type='recommendation') and new format (doc_type='choosing_wisely_recommendation')
+            is_recommendation = (chunk_type == 'recommendation' or
+                                chunk_type == 'child' and doc_type == 'choosing_wisely_recommendation')
+
+            if is_recommendation:
                 rec_num = metadata.get('recommendation_number', 0)
                 rec_title = metadata.get('recommendation_title', '')
                 specialty = metadata.get('specialty', '')

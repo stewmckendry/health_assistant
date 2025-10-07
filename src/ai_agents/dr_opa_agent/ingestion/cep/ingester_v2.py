@@ -35,6 +35,13 @@ class CEPIngesterV2:
     CHILD_MIN_WORDS = 150
     CHILD_MAX_WORDS = 300
 
+    # Boilerplate sections to skip during extraction
+    BOILERPLATE_SECTIONS = [
+        'references', 'referencesnew',
+        'acknowledgment', 'acknowledgement', 'acknowledgments',
+        'legal', 'permission to use', 'permission', 'disclaimer'
+    ]
+
     def __init__(
         self,
         chroma_path: Optional[str] = None,
@@ -216,6 +223,23 @@ class CEPIngesterV2:
 
         return metadata
 
+    def _should_skip_section(self, heading: str) -> bool:
+        """Check if section is boilerplate and should be skipped.
+
+        Args:
+            heading: Section heading text
+
+        Returns:
+            True if section should be skipped
+        """
+        heading_lower = heading.lower()
+        is_boilerplate = any(kw in heading_lower for kw in self.BOILERPLATE_SECTIONS)
+
+        if is_boilerplate:
+            logger.debug(f"Skipping boilerplate section: {heading}")
+
+        return is_boilerplate
+
     def _extract_full_sections(
         self,
         soup: BeautifulSoup,
@@ -224,6 +248,7 @@ class CEPIngesterV2:
         """Extract full section content from HTML.
 
         Returns sections with FULL content, not just summaries.
+        CEP tools use Gravity Forms with gfield divs, so we need special handling.
         """
         sections = []
 
@@ -234,12 +259,17 @@ class CEPIngesterV2:
             logger.warning("No main content found, using full body")
             main_content = soup
 
-        # Extract sections by h2/h3 headings
+        # Track current section and subsection context
         current_section = None
+        current_subsection = None
 
+        # Process all elements to build section structure
         for element in main_content.descendants:
-            # Check if this is a heading
-            if element.name in ['h2', 'h3']:
+            if not hasattr(element, 'name') or not element.name:
+                continue
+
+            # H2 = Main section
+            if element.name == 'h2':
                 # Save previous section
                 if current_section and current_section.get('content_parts'):
                     current_section['content'] = '\n\n'.join(current_section['content_parts'])
@@ -247,25 +277,67 @@ class CEPIngesterV2:
 
                 # Start new section
                 heading_text = element.get_text(strip=True)
+
+                # Skip boilerplate sections
+                if self._should_skip_section(heading_text):
+                    current_section = None  # Don't track this section
+                    continue
+
                 section_id = element.get('id', '')
 
                 current_section = {
                     'heading': heading_text,
-                    'level': int(element.name[1]),  # 2 for h2, 3 for h3
+                    'level': 2,
                     'anchor': f"#{section_id}" if section_id else '',
-                    'content_parts': []
+                    'content_parts': [],
+                    'subsections': []
                 }
+                current_subsection = None
 
-            # Collect content for current section
+            # H3 = Subsection (keep in same section but note hierarchy)
+            elif element.name == 'h3' and current_section:
+                subsection_heading = element.get_text(strip=True)
+                # Add subsection marker to content
+                current_section['content_parts'].append(f"## {subsection_heading}")
+                current_subsection = subsection_heading
+                current_section['subsections'].append(subsection_heading)
+
+            # H4 = Sub-subsection (drug names, detailed topics)
+            elif element.name == 'h4' and current_section:
+                subsubsection_heading = element.get_text(strip=True)
+                # Add as inline heading in content
+                current_section['content_parts'].append(f"### {subsubsection_heading}")
+
+            # Extract content from multiple sources
             elif current_section is not None:
-                # Skip nested headings
-                if element.name in ['h2', 'h3', 'h4']:
-                    continue
+                text = None
 
-                # Collect paragraphs, lists, tables
+                # 1. Paragraphs, list items, table cells (original)
                 if element.name in ['p', 'li', 'td', 'th']:
                     text = element.get_text(strip=True)
-                    if text and len(text) > 20:  # Skip very short fragments
+
+                # 2. Span tags with substantial content
+                elif element.name == 'span':
+                    # Only get direct text, not nested
+                    direct_text = ''.join([t for t in element.stripped_strings])
+                    if len(direct_text) > 20:
+                        text = direct_text
+
+                # 3. Div tags with gfield_html class (Gravity Forms HTML blocks)
+                elif element.name == 'div':
+                    classes = ' '.join(element.get('class', []))
+                    if 'gfield_html' in classes:
+                        # Get all text from this gfield block
+                        text = element.get_text(strip=True)
+
+                # 4. Blockquotes, notes, warnings
+                elif element.name in ['blockquote', 'aside']:
+                    text = element.get_text(strip=True)
+
+                # Add text if substantial
+                if text and len(text) > 20:
+                    # Deduplicate - don't add if already added
+                    if not current_section['content_parts'] or text != current_section['content_parts'][-1]:
                         current_section['content_parts'].append(text)
 
         # Don't forget last section
@@ -273,17 +345,55 @@ class CEPIngesterV2:
             current_section['content'] = '\n\n'.join(current_section['content_parts'])
             sections.append(current_section)
 
-        # If no sections found, create one section with all content
+        # If no sections found, fallback: extract from gfield HTML blocks directly
+        if not sections or len(sections) < 2:
+            logger.warning("Few/no sections found via headings, trying gfield extraction...")
+            sections = self._extract_from_gfields(soup)
+
+        logger.info(f"Extracted {len(sections)} sections")
+
+        return sections
+
+    def _extract_from_gfields(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        """Fallback: Extract content from Gravity Forms gfield blocks.
+
+        CEP tools are built with Gravity Forms, content is in gfield divs.
+        """
+        sections = []
+
+        # Find all HTML content gfields
+        gfields = soup.find_all('div', class_=lambda x: x and 'gfield_html' in str(x))
+
+        logger.info(f"Found {len(gfields)} gfield HTML blocks")
+
+        for i, gfield in enumerate(gfields):
+            text = gfield.get_text(separator='\n', strip=True)
+
+            if len(text) > 50:  # Skip trivial content
+                # Try to find a heading near this gfield
+                heading = None
+                prev = gfield.find_previous(['h2', 'h3', 'h4'])
+                if prev:
+                    heading = prev.get_text(strip=True)
+                else:
+                    heading = f"Section {i+1}"
+
+                sections.append({
+                    'heading': heading,
+                    'level': 2,
+                    'anchor': f"#gfield_{i}",
+                    'content': text
+                })
+
+        # If still no content, extract all text
         if not sections:
-            full_text = main_content.get_text(separator='\n\n', strip=True)
+            full_text = soup.get_text(separator='\n\n', strip=True)
             sections = [{
                 'heading': 'Full Tool Content',
                 'level': 1,
                 'anchor': '',
                 'content': full_text
             }]
-
-        logger.info(f"Extracted {len(sections)} sections")
 
         return sections
 
