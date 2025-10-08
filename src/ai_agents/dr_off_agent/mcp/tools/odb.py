@@ -25,8 +25,19 @@ from .odb_query_processor import ODBQueryProcessor
 
 logger = logging.getLogger(__name__)
 
-# Feature flag for new query processor
-USE_QUERY_PROCESSOR = os.getenv("ODB_USE_QUERY_PROCESSOR", "false").lower() in ["true", "1", "yes"]
+# Feature flag for new query processor - unified toggle
+def _should_use_query_processor():
+    """Check if query processor should be enabled (global or tool-specific override)."""
+    # Check tool-specific override first
+    tool_specific = os.getenv("ODB_QUERY_PROCESSOR")
+    if tool_specific is not None:
+        return tool_specific.lower() in ["true", "1", "yes"]
+
+    # Fall back to global setting
+    global_setting = os.getenv("ENABLE_QUERY_PROCESSOR", "false")
+    return global_setting.lower() in ["true", "1", "yes"]
+
+USE_QUERY_PROCESSOR = _should_use_query_processor()
 
 
 class ODBTool:

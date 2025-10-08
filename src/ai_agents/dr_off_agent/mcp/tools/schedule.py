@@ -1,10 +1,13 @@
 """
 OHIP Schedule of Benefits retrieval tool with intelligent routing.
 Uses query classification to determine optimal search strategy.
+
+Now includes OHIPQueryProcessor for flexible natural language understanding.
 """
 
 import asyncio
 import logging
+import os
 import uuid
 from typing import Dict, Any, List, Optional
 from datetime import datetime
@@ -26,8 +29,23 @@ from ..utils import (
     LLMReranker,
     Document
 )
+from .ohip_query_processor import OHIPQueryProcessor
 
 logger = logging.getLogger(__name__)
+
+# Feature flag for new query processor - unified toggle
+def _should_use_query_processor():
+    """Check if query processor should be enabled (global or tool-specific override)."""
+    # Check tool-specific override first
+    tool_specific = os.getenv("SCHEDULE_QUERY_PROCESSOR")
+    if tool_specific is not None:
+        return tool_specific.lower() in ["true", "1", "yes"]
+
+    # Fall back to global setting
+    global_setting = os.getenv("ENABLE_QUERY_PROCESSOR", "false")
+    return global_setting.lower() in ["true", "1", "yes"]
+
+USE_QUERY_PROCESSOR = _should_use_query_processor()
 
 
 class ScheduleTool:
@@ -40,15 +58,17 @@ class ScheduleTool:
         self,
         sql_client: Optional[SQLClient] = None,
         vector_client: Optional[VectorClient] = None,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        use_query_processor: Optional[bool] = None
     ):
         """
         Initialize schedule tool with retrieval clients.
-        
+
         Args:
             sql_client: SQL client instance (creates default if None)
             vector_client: Vector client instance (creates default if None)
             session_id: Session ID for logging
+            use_query_processor: Whether to use new LLM-powered query processor (default: from env)
         """
         self.sql_client = sql_client or SQLClient(
             db_path="data/ohip.db",
@@ -58,22 +78,39 @@ class ScheduleTool:
             persist_directory=None,  # Will use environment-appropriate default
             timeout_ms=5000
         )
-        
-        # Initialize new components
+
+        # Initialize legacy components
         self.query_classifier = QueryClassifier()
         self.confidence_scorer = ConfidenceScorer()
         self.conflict_detector = ConflictDetector()
         self.llm_reranker = LLMReranker()
-        
+
         # Setup logging
         session_id = session_id or datetime.now().strftime("%Y%m%d_%H%M%S")
         self.search_logger = SearchLogger(session_id)
-        
-        logger.info("Schedule tool initialized with intelligent routing")
+
+        # Initialize query processor if enabled
+        self.use_query_processor = use_query_processor if use_query_processor is not None else USE_QUERY_PROCESSOR
+        if self.use_query_processor:
+            try:
+                self.query_processor = OHIPQueryProcessor(
+                    sql_client=self.sql_client,
+                    vector_client=self.vector_client
+                )
+                logger.info("Schedule tool initialized with LLM-powered query processor")
+            except Exception as e:
+                logger.warning(f"Failed to initialize query processor: {e}. Falling back to legacy mode.")
+                self.use_query_processor = False
+                self.query_processor = None
+        else:
+            self.query_processor = None
+            logger.info("Schedule tool initialized with intelligent routing (legacy mode)")
     
     async def execute(self, request: Dict[str, Any]) -> ScheduleGetResponse:
         """
         Execute schedule query with intelligent routing.
+
+        Routes to enhanced query processor if enabled, otherwise uses legacy path.
 
         Args:
             request: Request dictionary with query parameters
@@ -89,7 +126,12 @@ class ScheduleTool:
         )
 
         try:
-            # Classify query to determine strategy
+            # Route to query processor if enabled and this is a natural language query
+            if self.use_query_processor and 'q' in request and request.get("q"):
+                logger.info("Using enhanced query processor for natural language understanding")
+                return await self._execute_with_query_processor(request)
+
+            # Legacy path: Classify query to determine strategy
             strategy, reason = self.query_classifier.classify(
                 query=request.get("q"),
                 tool="schedule.get",
@@ -357,10 +399,175 @@ class ScheduleTool:
                 citations=self._generate_sql_citations(items),
                 conflicts=[]
             )
-        
+
         # Fall back to vector search
         return await self._execute_vector_with_rerank(request)
-    
+
+    # ========================================================================
+    # NEW: Query Processor Execution Path
+    # ========================================================================
+
+    async def _execute_with_query_processor(self, request: Dict[str, Any]) -> ScheduleGetResponse:
+        """
+        Execute query using LLM-powered query processor.
+
+        This path provides flexible natural language understanding for complex
+        billing queries like:
+        - "Can I bill C124 as MRP after 3 days?"
+        - "ER consultation as internist"
+        - "house call codes for elderly patient"
+
+        Args:
+            request: Request dictionary with query
+
+        Returns:
+            ScheduleGetResponse with enriched results
+        """
+        query = request.get("q", "")
+        top_k = request.get("top_k", 10)
+
+        try:
+            # Step 1: Understand query intent
+            intent = await self.query_processor.understand_query(query)
+            logger.info(f"Query intent: type={intent.query_type}, codes={intent.billing_codes}, terms={intent.clinical_terms}")
+
+            # Step 2: Retrieve data
+            retrieval = await self.query_processor.retrieve(intent)
+            logger.info(f"Retrieved: {len(retrieval.sql_results)} SQL, {len(retrieval.vector_results)} vector")
+
+            # Step 3: Enrich with LLM
+            enriched = await self.query_processor.enrich_with_llm(intent, retrieval)
+
+            # Step 4: Convert to ScheduleGetResponse format
+            response = await self._format_enhanced_response(enriched, top_k)
+
+            return response
+
+        except Exception as e:
+            logger.error(f"Query processor error: {e}. Falling back to legacy path.")
+            # Fallback to legacy vector search
+            return await self._execute_vector_with_rerank(request)
+
+    async def _format_enhanced_response(
+        self,
+        enriched_result,
+        top_k: int
+    ) -> ScheduleGetResponse:
+        """
+        Convert enriched query processor result to ScheduleGetResponse.
+
+        Args:
+            enriched_result: EnrichedBillingResult from query processor
+            top_k: Maximum number of items to return
+
+        Returns:
+            ScheduleGetResponse in standard format
+        """
+        items = []
+        provenance = []
+
+        # Build items from SQL results
+        for sql_result in enriched_result.retrieval.sql_results[:top_k]:
+            item = self._sql_to_item(sql_result)
+            if item:
+                items.append(item)
+                if "sql" not in provenance:
+                    provenance.append("sql")
+
+        # Add vector results if we don't have enough
+        if len(items) < top_k:
+            from ..utils import Document
+            for vec_result in enriched_result.retrieval.vector_results[:top_k - len(items)]:
+                doc = Document(
+                    text=vec_result.get('text', ''),
+                    metadata=vec_result.get('metadata', {}),
+                    score=vec_result.get('score')
+                )
+                item = self._vector_to_item(doc)
+                if item and not self._is_duplicate(item, items):
+                    items.append(item)
+                    if "vector" not in provenance:
+                        provenance.append("vector")
+
+        # Add LLM enrichment to provenance
+        if enriched_result.eligibility or enriched_result.yes_no_answer:
+            provenance.append("llm_enriched")
+
+        # Build enhanced text explanation if available
+        if enriched_result.billing_explanation and items:
+            # Add explanation to first item's text
+            items[0].text = f"{enriched_result.billing_explanation}\n\n{items[0].text}"
+
+        # Generate citations
+        citations = self._merge_citations(
+            enriched_result.retrieval.sql_results[:5],
+            [{'metadata': r.get('metadata', {}), 'text': r.get('text', '')}
+             for r in enriched_result.retrieval.vector_results[:5]]
+        )
+
+        # Calculate confidence
+        confidence = 0.85 if enriched_result.eligibility or enriched_result.yes_no_answer else 0.75
+        if enriched_result.yes_no_answer:
+            confidence = enriched_result.yes_no_answer.confidence
+
+        return ScheduleGetResponse(
+            provenance=provenance,
+            confidence=confidence,
+            items=items[:top_k],
+            citations=citations,
+            conflicts=[]
+        )
+
+    def _merge_citations(
+        self,
+        sql_results: List[Dict[str, Any]],
+        vector_results: List[Dict[str, Any]]
+    ) -> List[Citation]:
+        """
+        Merge citations from both SQL and vector results.
+
+        Args:
+            sql_results: SQL query results
+            vector_results: Vector search results (with metadata)
+
+        Returns:
+            List of citations
+        """
+        citations = []
+
+        # Add SQL citations
+        for result in sql_results[:3]:
+            code = result.get('code', '')
+            page = result.get('page_num')
+            page_text = f", page {page}" if page else ""
+            citations.append(Citation(
+                source="OHIP Schedule of Benefits (March 2025)",
+                loc=f"Fee code {code}{page_text}",
+                page=page,
+                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
+            ))
+
+        # Add vector citations
+        for result in vector_results[:3]:
+            metadata = result.get('metadata', {})
+            section = metadata.get('section', '')
+            page = metadata.get('page_num')
+            loc_parts = []
+            if section:
+                loc_parts.append(f"Section {section}")
+            if page:
+                loc_parts.append(f"page {page}")
+            loc = ", ".join(loc_parts) if loc_parts else "General Reference"
+
+            citations.append(Citation(
+                source="OHIP Schedule of Benefits (March 2025)",
+                loc=loc,
+                page=page,
+                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
+            ))
+
+        return citations
+
     # Helper methods for actual database queries
     
     async def _sql_code_lookup(self, codes: List[str]) -> List[Dict[str, Any]]:
@@ -630,51 +837,6 @@ class ScheduleTool:
                 page=page,
                 url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
-        return citations
-    
-    def _merge_citations(
-        self,
-        sql_results: List[Dict[str, Any]],
-        vector_docs: List[Document]
-    ) -> List[Citation]:
-        """Merge citations from both sources"""
-        citations = []
-        
-        # Add SQL citations with specific PDF reference
-        for result in sql_results[:3]:
-            code = result.get('code', '')
-            page = result.get('page_num')
-            section_path = result.get('section_path', '')
-            page_text = f", page {page}" if page else ""
-            citations.append(Citation(
-                source="OHIP Schedule of Benefits (March 2025)",
-                loc=f"Fee code {code}{page_text}",
-                section_path=section_path,
-                page=page,
-                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
-            ))
-
-        # Add vector citations with specific PDF reference
-        for doc in vector_docs[:3]:
-            metadata = doc.metadata or {}
-            section = metadata.get('section', '')
-            page = metadata.get('page_num')
-            section_path = metadata.get('section_path', '')
-            loc_parts = []
-            if section:
-                loc_parts.append(f"Section {section}")
-            if page:
-                loc_parts.append(f"page {page}")
-            loc = ", ".join(loc_parts) if loc_parts else "General Reference"
-
-            citations.append(Citation(
-                source="OHIP Schedule of Benefits (March 2025)",
-                loc=loc,
-                section_path=section_path,
-                page=page,
-                url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
-            ))
-        
         return citations
 
 
