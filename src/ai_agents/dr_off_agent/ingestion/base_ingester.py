@@ -65,15 +65,39 @@ class BaseIngester(ABC):
         
         # Create or get collection for this source type
         collection_name = f"{source_type}_documents"
+
+        # Check if collection exists - if so, backup and delete
         try:
-            self.collection = self.chroma_client.get_collection(collection_name)
-            logger.info(f"Using existing Chroma collection: {collection_name}")
-        except:
-            self.collection = self.chroma_client.create_collection(
-                name=collection_name,
-                metadata={"source": source_type}
-            )
-            logger.info(f"Created new Chroma collection: {collection_name}")
+            existing_collection = self.chroma_client.get_collection(collection_name)
+
+            # Backup existing collection
+            backup_dir = Path(f"data/dr_off_agent/backups/{collection_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}")
+            backup_dir.mkdir(parents=True, exist_ok=True)
+
+            # Save metadata summary
+            with open(backup_dir / 'metadata_summary.json', 'w') as f:
+                json.dump({
+                    'collection_name': collection_name,
+                    'timestamp': datetime.now().strftime('%Y%m%d_%H%M%S'),
+                    'chunk_count': existing_collection.count(),
+                    'source_type': source_type
+                }, f, indent=2)
+
+            logger.info(f"Backed up existing collection to {backup_dir}")
+
+            # Delete old collection
+            self.chroma_client.delete_collection(collection_name)
+            logger.info(f"Deleted existing collection: {collection_name}")
+
+        except Exception as e:
+            logger.info(f"No existing collection to backup: {e}")
+
+        # Create new collection
+        self.collection = self.chroma_client.create_collection(
+            name=collection_name,
+            metadata={"source": source_type}
+        )
+        logger.info(f"Created new Chroma collection: {collection_name}")
         
         # Set up OpenAI client for embeddings
         if openai_api_key:

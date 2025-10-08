@@ -102,6 +102,10 @@ class ODBIngester(BaseIngester):
                     
                     for pcg_group in gen_name_elem.findall('pcgGroup'):
                         # This is an interchangeable group
+
+                        # Extract LU criteria for this drug group
+                        lu_criteria = self._extract_lu_criteria(pcg_group)
+
                         for pcg9 in pcg_group.findall('pcg9'):
                             item_number = self._get_element_text(pcg9, 'itemNumber')
                             strength = self._get_element_text(pcg9, 'strength')
@@ -123,7 +127,8 @@ class ODBIngester(BaseIngester):
                                     dosage_form,
                                     item_number,
                                     group_id,
-                                    manufacturers
+                                    manufacturers,
+                                    lu_criteria  # Pass LU criteria to drug
                                 )
                                 drugs_in_group.append(drug)
                                 yield drug
@@ -151,10 +156,11 @@ class ODBIngester(BaseIngester):
         dosage_form: str,
         item_number: str,
         group_id: str,
-        manufacturers: Dict[str, str]
+        manufacturers: Dict[str, str],
+        lu_criteria: Optional[str] = None
     ) -> Dict[str, Any]:
         """Parse individual drug element.
-        
+
         Returns:
             Drug record dictionary
         """
@@ -184,7 +190,8 @@ class ODBIngester(BaseIngester):
             ),
             'listing_date': self._get_element_text(drug_elem, 'listingDate'),
             'notes': self._get_element_text(drug_elem, 'note'),
-            
+            'lu_criteria': lu_criteria,  # Add LU criteria
+
             # Parse attributes as boolean flags
             'is_benefit': drug_elem.get('notABenefit') != 'Y',
             'is_chronic_use': drug_elem.get('chronicUseMed') == 'Y',
@@ -311,7 +318,11 @@ Manufacturer: {drug.get('manufacturer_id', 'N/A')}"""
                 # Add notes if present
                 if drug.get('notes'):
                     drug_text += f"\nClinical Notes: {drug['notes']}"
-                
+
+                # Add LU criteria if present
+                if drug.get('lu_criteria'):
+                    drug_text += f"\nLimited Use Criteria: {drug['lu_criteria']}"
+
                 # Create chunks for this drug
                 chunks = self.chunk_text(
                     drug_text,
@@ -464,13 +475,42 @@ Item Number: {group['item_number']}"""
         
         return ''.join(text)
     
+    def _extract_lu_criteria(self, pcg_group: ET.Element) -> Optional[str]:
+        """Extract Limited Use criteria from pcgGroup element.
+
+        Args:
+            pcg_group: pcgGroup XML element
+
+        Returns:
+            Concatenated LU criteria text or None
+        """
+        lu_notes = pcg_group.findall('.//lccNote')
+        if not lu_notes:
+            return None
+
+        # Concatenate all LU criteria notes
+        criteria_parts = []
+        for note in lu_notes:
+            note_type = note.get('type')
+            rfu_id = note.get('reasonForUseId')
+            text = note.text
+
+            if text and note_type != 'R':  # Skip "LU Authorization Period" notes (type='R')
+                # Include the RFU ID for reference if present
+                if rfu_id:
+                    criteria_parts.append(f"[RFU {rfu_id}] {text.strip()}")
+                else:
+                    criteria_parts.append(text.strip())
+
+        return ' | '.join(criteria_parts) if criteria_parts else None
+
     def _get_element_text(self, parent: ET.Element, tag: str) -> Optional[str]:
         """Safely get text from XML element.
-        
+
         Args:
             parent: Parent XML element
             tag: Child tag name
-            
+
         Returns:
             Text content or None
         """

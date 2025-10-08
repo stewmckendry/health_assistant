@@ -114,21 +114,35 @@ Analyze this query and extract structured information. Return ONLY valid JSON wi
     "context": "<any condition or indication mentioned, or null>"
 }}
 
-Query type definitions:
-- "coverage": Asking if a drug is covered (e.g., "Is X covered?", "coverage for X")
-- "alternatives": Asking for alternative drugs (e.g., "alternatives to X", "generic for X")
-- "lu_criteria": Asking about Limited Use criteria (e.g., "LU requirements for X", "does X need authorization")
-- "cost": Focused on pricing (e.g., "cheapest X", "price of X")
-- "class_search": Asking about a drug class (e.g., "diabetes medications", "statins")
-- "yes_no": Expects yes/no answer (e.g., "does X need special authorization")
+Query type definitions (STRICT classification):
+- "lu_criteria": Query mentions "limited use", "LU criteria", "LU requirements", "restrictions", "authorization criteria"
+  Examples: "adalimumab LU criteria", "limited use for Humira", "semaglutide restrictions"
+  RULE: If query contains "limited use", "LU", "criteria", or "authorization" → classify as "lu_criteria"
+
+- "yes_no": Expects yes/no answer format
+  Examples: "Is X covered?", "Does ODB cover X?", "Can I get X?", "Is X on formulary?"
+  RULE: If query starts with "Is", "Does", "Can", "Will" → classify as "yes_no"
+
+- "coverage": Asking about coverage but NOT specifically LU criteria or yes/no
+  Examples: "coverage for X", "tell me about X coverage"
+
+- "alternatives": Asking for alternative drugs
+  Examples: "alternatives to X", "generic for X", "substitutes for X"
+
+- "cost": Focused on pricing
+  Examples: "cheapest X", "price of X", "lowest cost statin"
+
+- "class_search": Asking about a drug class
+  Examples: "diabetes medications", "statins", "GLP-1 agonist"
+
 - "general": Doesn't fit other categories
 
 Examples:
 - "Is Ozempic covered?" → {{"query_type": "yes_no", "drug_names": ["Ozempic"], "expects_yes_no": true}}
+- "adalimumab limited use criteria" → {{"query_type": "lu_criteria", "drug_names": ["adalimumab"]}}
 - "blood pressure medications" → {{"query_type": "class_search", "drug_classes": ["antihypertensives"]}}
 - "GLP-1 agonist" → {{"query_type": "class_search", "clinical_terms": ["GLP-1 agonist"]}}
 - "alternatives to Lipitor" → {{"query_type": "alternatives", "drug_names": ["Lipitor"]}}
-- "metformin LU criteria" → {{"query_type": "lu_criteria", "drug_names": ["metformin"]}}
 
 Return ONLY the JSON object, no other text."""
 
@@ -199,12 +213,17 @@ Return ONLY the JSON object, no other text."""
 
         for term in clinical_terms:
             try:
-                # Search ODB for drugs matching this clinical term
-                query = f"therapeutic class {term} mechanism of action drugs"
+                # Build query emphasizing mechanism for inhibitor/blocker/agonist terms
+                if any(mech_word in term.lower() for mech_word in ["inhibitor", "blocker", "agonist", "antagonist"]):
+                    # For mechanism queries, emphasize the mechanism itself
+                    query = f"{term} specific drugs examples mechanism of action"
+                else:
+                    # For general therapeutic classes
+                    query = f"therapeutic class {term} drugs medications"
 
                 results = await self.vector_client.search_odb(
                     query=query,
-                    n_results=15  # Cast wide net
+                    n_results=12  # Reduced from 15 for efficiency
                 )
 
                 # Extract candidate drugs from metadata
@@ -228,6 +247,18 @@ Return ONLY the JSON object, no other text."""
 
                 # Deduplicate
                 unique_candidates = {c['drug']: c['context'] for c in candidates}
+
+                #  Filter by target drug for biosimilar queries
+                if "biosimilar" in term.lower():
+                    # Extract the drug name from term (e.g., "adalimumab biosimilars" → "adalimumab")
+                    target_drug = term.replace("biosimilar", "").replace("biosimilars", "").strip()
+                    if target_drug:
+                        # Only keep candidates matching the target drug
+                        unique_candidates = {
+                            drug: context for drug, context in unique_candidates.items()
+                            if target_drug.lower() in drug.lower()
+                        }
+                        logger.debug(f"Filtered to {len(unique_candidates)} candidates matching '{target_drug}'")
 
                 # Validate with LLM (batch validation for efficiency)
                 if unique_candidates:
@@ -268,18 +299,25 @@ Return ONLY the JSON object, no other text."""
             for drug, context in candidates
         ])
 
-        prompt = f"""Which of these drugs are "{clinical_term}" medications?
+        prompt = f"""STRICT: Which of these drugs are EXACTLY "{clinical_term}" medications?
+
+Rules:
+- Only return drugs that match the EXACT mechanism/class specified
+- Do NOT return drugs from different mechanisms even if they treat the same condition
+- For mechanism-of-action terms (inhibitor, blocker, agonist, antagonist), validate the SPECIFIC mechanism mentioned
+- For therapeutic class terms, validate drugs belong to that EXACT class
+- Exclude drugs from related but different classes
 
 Candidates:
 {candidate_list}
 
 Return ONLY valid JSON:
 {{
-    "matches": ["list of drug names that match"],
-    "reasoning": "brief explanation"
+    "matches": ["list of drug names that EXACTLY match"],
+    "reasoning": "brief explanation of why each matches"
 }}
 
-Be strict - only include drugs that are actually {clinical_term} medications."""
+Be extremely strict - when in doubt, exclude the drug."""
 
         try:
             response = await self.llm.chat.completions.create(

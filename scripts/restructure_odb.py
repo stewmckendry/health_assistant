@@ -6,6 +6,7 @@ from pathlib import Path
 from collections import defaultdict
 import hashlib
 import json
+import time
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -266,24 +267,39 @@ def restructure_odb():
             else:
                 metadata[key] = str(value)
 
-        # Generate embedding using OpenAI API
+        # Generate embedding using OpenAI API with retry logic
         if openai_client:
-            embedding_response = openai_client.embeddings.create(
-                input=[chunk['text']],
-                model="text-embedding-3-small"
-            )
-            embedding = embedding_response.data[0].embedding
+            max_retries = 5
+            retry_delay = 1  # Start with 1 second
 
-            # Log first embedding dimension to verify
-            if i == 0:
-                print(f"✓ First embedding generated: {len(embedding)} dimensions")
+            for attempt in range(max_retries):
+                try:
+                    embedding_response = openai_client.embeddings.create(
+                        input=[chunk['text']],
+                        model="text-embedding-3-small"
+                    )
+                    embedding = embedding_response.data[0].embedding
 
-            new_collection.add(
-                ids=[chunk['id']],
-                embeddings=[embedding],
-                documents=[chunk['text']],
-                metadatas=[metadata]
-            )
+                    # Log first embedding dimension to verify
+                    if i == 0:
+                        print(f"✓ First embedding generated: {len(embedding)} dimensions")
+
+                    new_collection.add(
+                        ids=[chunk['id']],
+                        embeddings=[embedding],
+                        documents=[chunk['text']],
+                        metadatas=[metadata]
+                    )
+                    break  # Success, exit retry loop
+
+                except Exception as e:
+                    if attempt < max_retries - 1:
+                        print(f"  Rate limit hit at chunk {i+1}, retrying in {retry_delay}s...")
+                        time.sleep(retry_delay)
+                        retry_delay *= 2  # Exponential backoff
+                    else:
+                        print(f"  Failed after {max_retries} retries at chunk {i+1}")
+                        raise
         else:
             # Fallback without embeddings (will likely fail due to dimension mismatch)
             new_collection.add(
