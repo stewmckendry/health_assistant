@@ -49,13 +49,14 @@ def check_chroma_db(db_path: str, agent_name: str):
             # Try to get embedding dimension
             try:
                 sample = coll.get(limit=1, include=['embeddings'])
-                if sample['embeddings'] and len(sample['embeddings']) > 0:
-                    dim = len(sample['embeddings'][0])
+                embeddings = sample.get('embeddings', [])
+                if len(embeddings) > 0 and embeddings[0] is not None:
+                    dim = len(embeddings[0])
                     print(f"   • {coll.name:40s} {count:>6,} chunks  [{dim} dim]")
                 else:
                     print(f"   • {coll.name:40s} {count:>6,} chunks  [no embeddings]")
             except Exception as e:
-                print(f"   • {coll.name:40s} {count:>6,} chunks  [error checking dim]")
+                print(f"   • {coll.name:40s} {count:>6,} chunks  [error checking dim: {e}]")
 
         print(f"\n   Total chunks: {total_chunks:,}")
 
