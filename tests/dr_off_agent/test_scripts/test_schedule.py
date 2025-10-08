@@ -68,15 +68,20 @@ def print_detailed_result(logger: TestLogger, name: str, result: Dict[str, Any])
     
     for i, item in enumerate(items, 1):
         logger.write(f"\n  Item #{i}:")
-        logger.write(f"    Code: {item.get('code', 'N/A')}")
-        logger.write(f"    Description: {item.get('description', 'N/A')}")
-        logger.write(f"    Fee: ${item.get('fee', 0):.2f}")
-        logger.write(f"    Page: {item.get('page_num', 'N/A')}")
-        
-        if item.get('requirements'):
-            logger.write(f"    Requirements: {item.get('requirements')}")
-        if item.get('limits'):
-            logger.write(f"    Limits: {item.get('limits')}")
+        # Access metadata dict for domain-specific fields (Option A schema)
+        metadata = item.get('metadata', {})
+        logger.write(f"    ID: {item.get('id', 'N/A')}")
+        logger.write(f"    Code: {metadata.get('code', 'N/A')}")
+        logger.write(f"    Description: {metadata.get('description', 'N/A')}")
+        logger.write(f"    Fee: ${metadata.get('fee', 0):.2f}")
+        logger.write(f"    Page: {metadata.get('page_num', 'N/A')}")
+        logger.write(f"    Relevance: {item.get('relevance_score', 0):.3f}")
+        logger.write(f"    Source: {item.get('source', 'N/A')}")
+
+        if metadata.get('requirements'):
+            logger.write(f"    Requirements: {metadata.get('requirements')}")
+        if metadata.get('limits'):
+            logger.write(f"    Limits: {metadata.get('limits')}")
         if item.get('documentation'):
             logger.write(f"    Documentation: {item.get('documentation')}")
     
@@ -135,27 +140,34 @@ def evaluate_result(logger: TestLogger, name: str, result: Dict[str, Any], expec
         evaluation["issues"].append(f"Missing dual-path retrieval: {provenance}")
         evaluation["passed"] = False
     
-    # Check expected codes
+    # Check expected codes (using Option A schema)
     items = result.get('items', [])
-    found_codes = [item.get('code') for item in items]
+    found_codes = [item.get('metadata', {}).get('code') for item in items]
     logger.write(f"  Expected codes: {expected.get('codes', [])}")
     logger.write(f"  Found codes: {found_codes}")
-    
+
     for expected_code in expected.get('codes', []):
         if expected_code not in found_codes:
             evaluation["issues"].append(f"Expected code {expected_code} not found")
             evaluation["passed"] = False
-    
-    # Check data quality
+
+    # Check data quality (using Option A schema)
     logger.write("  Data Quality Checks:")
     for i, item in enumerate(items[:3], 1):
         issues = []
-        if not item.get('fee'):
+        metadata = item.get('metadata', {})
+        if not metadata.get('fee'):
             issues.append("missing fee")
-        if not item.get('description'):
+        if not metadata.get('description'):
             issues.append("missing description")
-        if not item.get('code'):
+        if not metadata.get('code'):
             issues.append("missing code")
+        if not item.get('id'):
+            issues.append("missing id")
+        if not item.get('text'):
+            issues.append("missing text")
+        if item.get('relevance_score') is None:
+            issues.append("missing relevance_score")
         
         if issues:
             logger.write(f"    Item {i}: {', '.join(issues)}")

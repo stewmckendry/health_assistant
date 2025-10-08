@@ -7,119 +7,83 @@ from typing import Optional, List, Dict, Any, Literal
 from pydantic import BaseModel, Field
 
 
-class SearchSectionsRequest(BaseModel):
-    """Request model for opa.search_sections tool."""
-    query: str = Field(..., description="Clinical query or practice question")
-    sources: Optional[List[Literal["cpso", "ontario_health", "cep", "pho", "moh", "quality_standards", "choosing_wisely"]]] = Field(
-        None, description="Specific sources to search (default: all)"
-    )
-    doc_types: Optional[List[Literal["policy", "advice", "guideline", "standard", "tool", "quality_standard", "quality_statement", "choosing_wisely_overview", "choosing_wisely_recommendation"]]] = Field(
-        None, description="Document types to include"
-    )
-    topics: Optional[List[str]] = Field(
-        None, description="Topics to filter by (e.g., 'prescribing', 'screening')"
-    )
-    date_range: Optional[Dict[str, str]] = Field(
-        None, description="Date range filter {from: 'YYYY-MM-DD', to: 'YYYY-MM-DD'}"
-    )
-    top_k: int = Field(default=10, ge=1, le=20, description="Number of results to return")
-    include_superseded: bool = Field(
-        default=False, description="Include superseded documents"
-    )
+class StandardToolRequest(BaseModel):
+    """
+    Standardized request schema for all Dr. OPA MCP tools.
+
+    This model provides a consistent interface across all tools with flexible filters.
+
+    Attributes:
+        query (str): The main search term or clinical question:
+            - Clinical question: "prescribing opioids guidance", "hand hygiene protocol"
+            - Policy topic: "telemedicine standards", "medical assistance in dying"
+            - Screening program: "cervical cancer screening", "lung cancer screening"
+            - Quality standard: "diabetes management", "hip fracture care"
+            - Choosing Wisely: "unnecessary imaging for low back pain"
+
+        k (int): Number of results to return (default: 10, range: 1-100)
+
+        filters (Optional[Dict[str, Any]]): Tool-specific filters
+
+            **opa_search_sections filters:**
+            - sources (List[str]): Sources to search: ["cpso", "pho", "cep", "ontario_health"]
+            - doc_types (List[str]): Document types: ["policy", "guideline", "tool", "standard"]
+            - topics (List[str]): Topics to filter by (e.g., ["prescribing", "screening"])
+            - date_range (Dict): Date filter: {"start": "YYYY-MM-DD", "end": "YYYY-MM-DD"}
+            - include_superseded (bool): Include superseded documents (default: false)
+
+            **opa_policy_check filters:**
+            - policy_level (str): CPSO policy level: "expectation", "advice", "both" (default: "both")
+            - include_related (bool): Include related policies (default: true)
+
+            **opa_program_lookup filters:**
+            - patient_age (int): Patient age for eligibility
+            - risk_factors (List[str]): Risk factors (e.g., ["smoking", "family_history"])
+            - info_needed (List[str]): Info types: ["eligibility", "intervals", "procedures", "followup"]
+
+            **opa_ipac_guidance filters:**
+            - setting (str): Healthcare setting: "clinic", "hospital", "community", "ltc"
+            - pathogen (str): Specific pathogen if applicable
+            - include_checklists (bool): Include practical checklists (default: true)
+
+            **opa_clinical_tools filters:**
+            - tool_type (str): Tool category (e.g., "calculator", "algorithm")
+            - feature_type (str): Clinical feature type
+            - include_sections (bool): Include section summaries (default: false)
+
+            **opa_quality_standards filters:**
+            - retrieve_all_statements (bool): Get all statements for a standard (default: false)
+            - statement_type (str): Content type: "overview", "statement", "all" (default: "all")
+
+            **opa_choosing_wisely filters:**
+            - specialty (str): Medical specialty (e.g., "Family Medicine", "Cardiology")
+            - all_specialty_recommendations (bool): Return ALL specialty recommendations (default: false)
+            - recommendation_type (str): Content type: "overview", "recommendation", "all" (default: "all")
+
+    Examples:
+        # Search for CPSO policies
+        StandardToolRequest(
+            query="prescribing opioids",
+            k=10,
+            filters={"sources": ["cpso"], "doc_types": ["policy", "advice"]}
+        )
+
+        # Quality standards for diabetes
+        StandardToolRequest(
+            query="diabetes",
+            k=15,
+            filters={"retrieve_all_statements": True, "statement_type": "all"}
+        )
+
+        # Choosing Wisely recommendations
+        StandardToolRequest(
+            query="imaging for low back pain",
+            k=5,
+            filters={"specialty": "Family Medicine"}
+        )
+    """
+    query: str = Field(..., description="The search query or identifier")
+    k: int = Field(default=10, ge=1, le=100, description="Number of results to return")
+    filters: Optional[Dict[str, Any]] = Field(default=None, description="Tool-specific filters (see class docstring)")
 
 
-class GetSectionRequest(BaseModel):
-    """Request model for opa.get_section tool."""
-    section_id: str = Field(..., description="Section ID to retrieve")
-    include_children: bool = Field(
-        default=True, description="Include child chunks for detailed content"
-    )
-    include_context: bool = Field(
-        default=True, description="Include surrounding sections for context"
-    )
-
-
-class PolicyCheckRequest(BaseModel):
-    """Request model for opa.policy_check tool."""
-    topic: str = Field(..., description="Clinical topic or practice area")
-    situation: Optional[str] = Field(
-        None, description="Specific situation or context"
-    )
-    policy_level: Optional[Literal["expectation", "advice", "both"]] = Field(
-        default="both", description="CPSO policy level to retrieve"
-    )
-    include_related: bool = Field(
-        default=True, description="Include related policies and advice"
-    )
-
-
-class ProgramLookupRequest(BaseModel):
-    """Request model for opa.program_lookup tool."""
-    program: Literal["breast", "cervical", "colorectal", "lung", "hpv"] = Field(
-        ..., description="Screening program to lookup"
-    )
-    patient_age: Optional[int] = Field(
-        None, description="Patient age for eligibility check"
-    )
-    risk_factors: Optional[List[str]] = Field(
-        None, description="Risk factors (e.g., 'family_history', 'smoking')"
-    )
-    info_needed: List[Literal["eligibility", "intervals", "procedures", "followup"]] = Field(
-        default=["eligibility", "intervals"],
-        description="Information to retrieve"
-    )
-
-
-class IPACGuidanceRequest(BaseModel):
-    """Request model for opa.ipac_guidance tool."""
-    setting: Literal["clinic", "hospital", "community", "ltc"] = Field(
-        ..., description="Healthcare setting"
-    )
-    topic: str = Field(..., description="IPAC topic (e.g., 'hand hygiene', 'PPE', 'sterilization')")
-    pathogen: Optional[str] = Field(
-        None, description="Specific pathogen if applicable"
-    )
-    include_checklists: bool = Field(
-        default=True, description="Include practical checklists"
-    )
-
-
-class FreshnessProbeRequest(BaseModel):
-    """Request model for opa.freshness_probe tool."""
-    topic: str = Field(..., description="Topic to check for updates")
-    current_date: Optional[str] = Field(
-        None, description="Reference date for checking updates (YYYY-MM-DD)"
-    )
-    sources: Optional[List[str]] = Field(
-        None, description="Specific sources to check for updates"
-    )
-    check_web: bool = Field(
-        default=True, description="Check web for recent updates"
-    )
-
-
-class QualityStandardsRequest(BaseModel):
-    """Request model for opa.quality_standards tool."""
-    query: str = Field(..., description="Clinical topic or condition (e.g., 'diabetes', 'hip fracture', 'depression')")
-    retrieve_all_statements: bool = Field(
-        default=False, description="Retrieve all quality statements for a specific standard"
-    )
-    statement_type: Optional[Literal["overview", "statement", "all"]] = Field(
-        default="all", description="Type of content to retrieve"
-    )
-    top_k: int = Field(default=10, ge=1, le=20, description="Number of results to return")
-
-
-class ChoosingWiselyRequest(BaseModel):
-    """Request model for opa.choosing_wisely tool."""
-    query: str = Field(..., description="Test, procedure, or clinical scenario to check for unnecessary care recommendations")
-    specialty: Optional[str] = Field(
-        None, description="Medical specialty (will be mapped to available specialties if not exact match)"
-    )
-    all_specialty_recommendations: bool = Field(
-        default=False, description="If True and specialty is provided, return ALL recommendations for that specialty regardless of query match"
-    )
-    recommendation_type: Optional[Literal["overview", "recommendation", "all"]] = Field(
-        default="all", description="Type of content to retrieve (overview/recommendation/all)"
-    )
-    top_k: int = Field(default=10, ge=1, le=15, description="Number of results to return")

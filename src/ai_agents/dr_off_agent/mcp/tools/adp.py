@@ -7,9 +7,10 @@ import logging
 from typing import Dict, Any, List, Optional
 from datetime import datetime
 
-from ..models.request import ADPGetRequest
+from ..models.request import StandardToolRequest
 from ..models.response import (
     ADPGetResponse,
+    RetrievedItem,
     Eligibility,
     Funding,
     CEPInfo,
@@ -64,18 +65,18 @@ class ADPTool:
             self.openai_client = None
             logger.warning("No OpenAI API key - LLM reranking disabled")
     
-    async def execute(self, request: ADPGetRequest) -> ADPGetResponse:
+    async def execute(self, request: Dict[str, Any]) -> ADPGetResponse:
         """
         Execute ADP query with dual-path retrieval.
-        
+
         Args:
-            request: ADPGetRequest with device and use case details
-            
+            request: Request dictionary with device and use case details
+
         Returns:
             ADPGetResponse with eligibility, funding, and citations
         """
         start_time = datetime.now()
-        
+
         # Always run SQL and vector in parallel
         sql_task = self._sql_query(request)
         vector_task = self._vector_search(request)
@@ -107,18 +108,20 @@ class ADPTool:
         cep = None
         citations = []
         conflicts = []
-        
-        if "eligibility" in request.check:
+
+        check_list = request.get("check", [])
+
+        if "eligibility" in check_list:
             eligibility = await self._assess_eligibility(sql_result, vector_result, request)
-        
-        if "exclusions" in request.check:
+
+        if "exclusions" in check_list:
             exclusions = await self._check_exclusions(sql_result, vector_result, request)
-        
-        if "funding" in request.check:
+
+        if "funding" in check_list:
             funding, funding_conflicts = await self._determine_funding(sql_result, vector_result, request)
             conflicts.extend(funding_conflicts)
-        
-        if "cep" in request.check:
+
+        if "cep" in check_list:
             cep = await self._check_cep(sql_result, vector_result, request)
         
         # Extract citations from vector results
@@ -148,28 +151,33 @@ class ADPTool:
             conflicts=conflicts
         )
     
-    async def _sql_query(self, request: ADPGetRequest) -> Dict[str, Any]:
+    async def _sql_query(self, request: Dict[str, Any]) -> Dict[str, Any]:
         """
         Execute SQL queries for ADP funding and exclusions.
-        
+
         Args:
             request: ADP request parameters
-            
+
         Returns:
             Dictionary with funding and exclusion results
         """
         try:
+            # Extract device info
+            device = request.get("device", {})
+            device_category = device.get("category", "")
+            device_type = device.get("type", "")
+
             # Build device search term
-            device_search = f"{request.device.category} {request.device.type}"
-            
+            device_search = f"{device_category} {device_type}"
+
             # Run funding and exclusion queries in parallel
             funding_task = self.sql_client.query_adp_funding(
-                device_category=request.device.category,
-                scenario_search=request.device.type
+                device_category=device_category,
+                scenario_search=device_type
             )
-            
+
             # Extract keywords from device type for exclusion search
-            device_keywords = self._extract_device_keywords(request.device.type)
+            device_keywords = self._extract_device_keywords(device_type)
             exclusion_task = self.sql_client.query_adp_exclusions(
                 search_term=device_keywords
             )
@@ -203,52 +211,62 @@ class ADPTool:
             logger.error(f"SQL query error: {e}")
             raise
     
-    async def _vector_search(self, request: ADPGetRequest) -> List[Dict[str, Any]]:
+    async def _vector_search(self, request: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         Execute vector search for ADP manual context.
-        
+
         Args:
             request: ADP request parameters
-            
+
         Returns:
             List of vector search results
         """
         try:
-            # Build comprehensive search query
-            query_parts = [
-                request.device.type,
-                request.device.category
-            ]
-            
+            # Extract device info
+            device = request.get("device", {})
+            device_type = device.get("type", "")
+            device_category = device.get("category", "")
+
+            # Build comprehensive search query (filter out None/empty values)
+            query_parts = []
+
+            if device_type:
+                query_parts.append(device_type)
+            if device_category:
+                query_parts.append(device_category)
+
             # Add use case context if provided
-            if request.use_case:
-                if request.use_case.daily:
+            use_case = request.get("use_case")
+            if use_case:
+                if use_case.get("daily"):
                     query_parts.append("daily use")
-                if request.use_case.location:
-                    query_parts.append(request.use_case.location)
-                if request.use_case.independent_transfer is False:
+                if use_case.get("location"):
+                    query_parts.append(use_case.get("location"))
+                if use_case.get("independent_transfer") is False:
                     query_parts.append("cannot transfer independently")
-            
+
             # Add specific check types to query
-            if "cep" in request.check:
+            check_list = request.get("check", [])
+            if "cep" in check_list:
                 query_parts.append("CEP client eligibility program")
-            if "funding" in request.check:
+            if "funding" in check_list:
                 query_parts.append("funding percentage coverage")
-            
-            search_query = " ".join(query_parts)
-            
+
+            # Join only non-empty parts
+            search_query = " ".join(filter(None, query_parts)) if query_parts else "assistive devices"
+
             # Search ADP manual chunks
             results = await self.vector_client.search_adp(
                 query=search_query,
-                device_category=request.device.category,
+                device_category=device_category,
                 n_results=12  # Get more results for reranking
             )
             
             # Apply LLM reranking for better relevance
             reranked_results = await self._rerank_vector_results(
-                query=request.device.type,
+                query=device_type,
                 vector_results=results,
-                device_category=request.device.category
+                device_category=device_category
             )
             
             # Return top results after reranking
@@ -268,17 +286,18 @@ class ADPTool:
         self,
         sql_result: Dict[str, Any],
         vector_results: List[Dict[str, Any]],
-        request: ADPGetRequest
+        request: Dict[str, Any]
     ) -> Optional[Eligibility]:
         """
         Assess device eligibility based on SQL and vector evidence.
-        
+
         Returns:
             Eligibility assessment or None
         """
         # Check exclusions first
         exclusions = sql_result.get("exclusions", [])
-        device_type = request.device.type.lower()
+        device = request.get("device", {})
+        device_type = (device.get("type") or "").lower()  # Handle None
         
         # Check if device or component is excluded
         for exclusion in exclusions:
@@ -355,8 +374,10 @@ class ADPTool:
                     criteria["ontario_resident"] = True
             
             # Special checks for car substitute concern
-            if request.use_case:
-                if request.use_case.location and "outdoor_only" in str(request.use_case.location):
+            use_case = request.get("use_case")
+            if use_case:
+                location = use_case.get("location", "")
+                if location and "outdoor_only" in str(location):
                     if "car substitute" in text:
                         criteria["car_substitute"] = False
                         criteria["basic_mobility"] = False
@@ -377,22 +398,41 @@ class ADPTool:
         self,
         sql_result: Dict[str, Any],
         vector_results: List[Dict[str, Any]],
-        request: ADPGetRequest
+        request: Dict[str, Any]
     ) -> List[str]:
         """
         Check for applicable exclusions.
-        
+
         Returns:
             List of exclusion descriptions
         """
         exclusions = []
-        device_type = request.device.type.lower()
-        
+        device = request.get("device", {})
+        device_type = (device.get("type") or "").lower()  # Handle None
+
+        # Common exclusions - check device type first for quick detection
+        COMMON_EXCLUSIONS = {
+            "batteries": "Batteries are not covered by ADP - patient must purchase separately",
+            "battery": "Batteries are not covered by ADP - patient must purchase separately",
+            "charger": "Chargers are not covered by ADP unless part of initial equipment",
+            "repair": "Repairs and maintenance are patient responsibility (not covered by ADP)",
+            "maintenance": "Maintenance services are not covered by ADP",
+            "replacement parts": "Replacement parts after initial purchase are not covered",
+            "accessories": "Device accessories may not be covered - check specific item",
+            "cushion": "Cushions may have separate coverage rules - verify with ADP",
+            "bag": "Carrying bags and cases are not covered by ADP"
+        }
+
+        # Check device type against common exclusions first
+        for keyword, exclusion_msg in COMMON_EXCLUSIONS.items():
+            if keyword in device_type:
+                exclusions.append(exclusion_msg)
+
         # Process SQL exclusions
         for exclusion in sql_result.get("exclusions", []):
             phrase = exclusion.get("phrase", "")
             applies_to = exclusion.get("applies_to", "")
-            
+
             # Check if exclusion applies to this device
             if phrase.lower() in device_type or device_type in phrase.lower():
                 exclusions.append(f"{phrase}: {applies_to}")
@@ -456,24 +496,28 @@ class ADPTool:
         self,
         sql_result: Dict[str, Any],
         vector_results: List[Dict[str, Any]],
-        request: ADPGetRequest
+        request: Dict[str, Any]
     ) -> tuple[Optional[Funding], List[Conflict]]:
         """
         Determine funding percentages from SQL and vector evidence.
-        
+
         Returns:
             Tuple of (Funding info, conflicts)
         """
         conflicts = []
-        
+
+        # Extract device info
+        device = request.get("device", {})
+        device_type = (device.get("type") or "").lower()  # Handle None
+        device_category = device.get("category") or ""  # Ensure not None
+
         # Get funding from SQL
         sql_funding = None
         for rule in sql_result.get("funding", []):
             scenario = rule.get("scenario", "").lower()
-            device_type = request.device.type.lower()
-            
+
             # Find matching funding rule
-            if device_type in scenario or request.device.category in scenario:
+            if device_type in scenario or (device_category and device_category in scenario):
                 sql_funding = {
                     "client_share": rule.get("client_share_percent", 25),
                     "adp_share": rule.get("adp_share_percent", 75)
@@ -599,21 +643,21 @@ class ADPTool:
         self,
         sql_result: Dict[str, Any],
         vector_results: List[Dict[str, Any]],
-        request: ADPGetRequest
+        request: Dict[str, Any]
     ) -> Optional[CEPInfo]:
         """
         Check CEP (Client Eligibility Program) eligibility.
-        
+
         Returns:
             CEP eligibility information or None
         """
         # Determine income threshold (use single person default)
         threshold = CEP_THRESHOLDS["single"]
-        
+
         # Check for CEP information in vector results
         for vector_item in vector_results:
             text = vector_item.get("text", "")
-            
+
             if "CEP" in text or "client eligibility program" in text.lower():
                 # Extract threshold if mentioned
                 if "$28,000" in text or "28000" in text:
@@ -621,11 +665,12 @@ class ADPTool:
                 elif "$39,000" in text or "39000" in text:
                     threshold = 39000
                 break
-        
+
         # Determine eligibility based on income if provided
         eligible = False
-        if request.patient_income is not None:
-            eligible = request.patient_income < threshold
+        patient_income = request.get("patient_income")
+        if patient_income is not None:
+            eligible = patient_income < threshold
         
         return CEPInfo(
             income_threshold=threshold,
@@ -636,12 +681,16 @@ class ADPTool:
     def _extract_device_keywords(self, device_type: str) -> str:
         """
         Extract keywords from compound device types for exclusion matching.
-        
+
         Examples:
             "scooter_batteries" -> "batteries"
             "wheelchair_cushions" -> "cushions"
             "walker_accessories" -> "accessories"
         """
+        # Handle None/empty device_type
+        if not device_type:
+            return ""
+
         # Common exclusion keywords to extract
         exclusion_keywords = [
             "batteries", "battery", "chargers", "charger",
@@ -649,20 +698,70 @@ class ADPTool:
             "accessories", "cushions", "parts", "components",
             "covers", "bags", "straps", "belts"
         ]
-        
+
         device_lower = device_type.lower()
-        
+
         # Check for exact keyword matches
         for keyword in exclusion_keywords:
             if keyword in device_lower:
                 return keyword
-        
+
         # Fallback: return the device type as-is
         return device_type
     
+    def _build_items(
+        self,
+        vector_results: List[Dict[str, Any]]
+    ) -> List[RetrievedItem]:
+        """
+        Build standardized retrieved items from vector search results.
+
+        Args:
+            vector_results: List of vector search results
+
+        Returns:
+            List of RetrievedItem objects for evaluation and observability
+        """
+        items = []
+        for result in vector_results:
+            metadata = result.get("metadata", {})
+            distance = result.get("distance", 0.0)
+
+            # Convert distance to relevance score (distance is cosine, 0=perfect match, 2=opposite)
+            # Normalize to 0-1 range where 1 is most relevant
+            relevance_score = max(0.0, min(1.0, 1.0 - (distance / 2.0)))
+
+            # Extract identifier (policy_uid is primary, fallback to section_id or chunk_id)
+            item_id = metadata.get("policy_uid") or metadata.get("section_id") or metadata.get("chunk_id", "unknown")
+
+            # Build source identifier from metadata (use adp_doc as the category)
+            adp_doc = metadata.get("adp_doc", "")
+            if adp_doc:
+                source = f"adp:{adp_doc}"
+            else:
+                source = "adp:unknown"
+
+            # Create RetrievedItem
+            items.append(RetrievedItem(
+                id=str(item_id),
+                text=result.get("text", ""),
+                relevance_score=relevance_score,
+                source=source,
+                metadata={
+                    "policy_uid": metadata.get("policy_uid"),
+                    "section_id": metadata.get("section_id"),
+                    "title": metadata.get("title"),
+                    "device_category": adp_doc,  # Use adp_doc as device_category
+                    "page_num": metadata.get("page_num"),
+                    "distance": distance
+                }
+            ))
+
+        return items
+
     def _build_context_content(
-        self, 
-        vector_results: List[Dict[str, Any]], 
+        self,
+        vector_results: List[Dict[str, Any]],
         sql_result: Dict[str, Any]
     ) -> str:
         """
@@ -893,7 +992,10 @@ class ADPTool:
                 loc_parts.append(f"page {page_num}")
             
             loc = ", ".join(loc_parts) if loc_parts else "General Reference"
-            
+
+            # Get section_path for hierarchical citation
+            section_path = metadata.get('section_path', '')
+
             # Create unique key to avoid duplicates
             key = f"{source}:{loc}:{page_num}"
             if key not in seen:
@@ -901,6 +1003,7 @@ class ADPTool:
                 citations.append(Citation(
                     source=source,
                     loc=loc,
+                    section_path=section_path,
                     page=page_num,
                     url=url
                 ))
@@ -1066,41 +1169,47 @@ async def adp_get(
 ) -> Dict[str, Any]:
     """
     MCP tool entry point for adp.get.
-    
+
     Args:
-        request: Raw request dictionary - can be either:
-            1. Natural language: {"query": "Can I get funding for a CPAP?", "patient_income": 35000}
-            2. Structured: {"device": {"category": "respiratory", "type": "CPAP"}, ...}
+        request: Raw request dictionary (StandardToolRequest format)
+            - query: Natural language question or device name
+            - k: Number of results (default 10)
+            - filters: Optional dict with device_category, check, patient_income, use_case
         sql_client: Optional SQL client (for testing)
         vector_client: Optional vector client (for testing)
-        
+
     Returns:
         Response dictionary with comprehensive context for LLM interpretation
     """
+    # Parse as StandardToolRequest
+    std_request = StandardToolRequest(**request)
+
     # Preserve original query for LLM synthesis
-    original_query_for_synthesis = None
-    
-    # Handle natural language query format
-    if "query" in request and "device" not in request:
+    original_query_for_synthesis = std_request.query
+
+    # Extract filters
+    filters = std_request.filters or {}
+
+    # Handle natural language query format or if device not in filters
+    if "device" not in filters:
         # Natural language query - extract device and parameters
         extractor = get_device_extractor()
-        query = request["query"]
-        original_query_for_synthesis = query  # Preserve original query
-        
+        query = std_request.query
+
         logger.info(f"Processing natural language query: {query}")
         extracted = extractor.extract_device_params(query)
-        
-        # Build structured request from extraction
-        request = {
+
+        # Build structured filters from extraction
+        filters = {
             "device": {
                 "category": extracted.get("device_category", "mobility"),
                 "type": extracted.get("device_type", "device")
             },
             "check": extracted.get("check_types", ["eligibility", "funding", "exclusions"]),
-            "patient_income": request.get("patient_income", extracted.get("patient_income")),
+            "patient_income": filters.get("patient_income", extracted.get("patient_income")),
             "use_case": extracted.get("use_case", {})
         }
-        logger.info(f"Converted to structured request: {request}")
+        logger.info(f"Converted to structured filters: {filters}")
     
     # Category aliases for LLM flexibility  
     CATEGORY_ALIASES = {
@@ -1159,9 +1268,9 @@ async def adp_get(
     }
     
     # Normalize category using aliases
-    if "device" in request and isinstance(request["device"], dict):
-        device_info = request["device"]
-        
+    if "device" in filters and isinstance(filters["device"], dict):
+        device_info = filters["device"]
+
         # Apply category aliasing for flexibility
         if "category" in device_info and device_info["category"]:
             original_cat = device_info["category"].lower().replace("-", "_")
@@ -1169,55 +1278,60 @@ async def adp_get(
             if normalized_cat:
                 device_info["category"] = normalized_cat
                 logger.info(f"Normalized category '{original_cat}' to '{normalized_cat}'")
-        
+
         device_type = device_info.get("type", "")
-        
+
         # If device type looks like a natural language query, extract parameters
         extractor = get_device_extractor()
         if extractor._is_natural_language(device_type):
             logger.info(f"Detected natural language query: {device_type}")
             extracted_params = extractor.extract_device_params(device_type)
-            
-            # Update request with extracted parameters
+
+            # Update filters with extracted parameters
             if extracted_params["device_type"]:
-                request["device"]["type"] = extracted_params["device_type"]
+                filters["device"]["type"] = extracted_params["device_type"]
             if extracted_params["device_category"] and not device_info.get("category"):
-                request["device"]["category"] = extracted_params["device_category"]
-            
+                filters["device"]["category"] = extracted_params["device_category"]
+
             # Add extracted use case if not provided
-            if extracted_params["use_case"] and not request.get("use_case"):
-                request["use_case"] = extracted_params["use_case"]
-            
-            # Add extracted patient income if not provided  
-            if extracted_params["patient_income"] is not None and not request.get("patient_income"):
-                request["patient_income"] = extracted_params["patient_income"]
-            
+            if extracted_params["use_case"] and not filters.get("use_case"):
+                filters["use_case"] = extracted_params["use_case"]
+
+            # Add extracted patient income if not provided
+            if extracted_params["patient_income"] is not None and not filters.get("patient_income"):
+                filters["patient_income"] = extracted_params["patient_income"]
+
             # Add extracted check types if not provided
-            if extracted_params["check_types"] and not request.get("check"):
-                request["check"] = extracted_params["check_types"]
-            
-            logger.info(f"Enhanced request with extracted params: {request}")
-    
-    # Parse request
-    parsed_request = ADPGetRequest(**request)
-    
+            if extracted_params["check_types"] and not filters.get("check"):
+                filters["check"] = extracted_params["check_types"]
+
+            logger.info(f"Enhanced filters with extracted params: {filters}")
+
+    # Build request dict from filters
+    parsed_request = {
+        "device": filters.get("device"),
+        "check": filters.get("check", ["eligibility", "funding", "exclusions"]),
+        "use_case": filters.get("use_case"),
+        "patient_income": filters.get("patient_income")
+    }
+
     # Create tool instance
     tool = ADPTool(sql_client=sql_client, vector_client=vector_client)
-    
+
     # Execute query
     response = await tool.execute(parsed_request)
-    
+
     # Add context content field like ODB tool
     response_dict = response.model_dump()
-    
-    # Build context content from the search results that were used
-    # Re-run queries to get raw results for context building
+
+    # Build items from the search results for evaluation and observability
+    # Re-run queries to get raw results for items building
     sql_result = await tool._sql_query(parsed_request)
     vector_result = await tool._vector_search(parsed_request)
-    
+
     if not isinstance(sql_result, Exception) and not isinstance(vector_result, Exception):
-        context_content = tool._build_context_content(vector_result, sql_result)
-        response_dict["context"] = context_content
+        items = tool._build_items(vector_result)
+        response_dict["items"] = [item.model_dump() for item in items]
     
     # Add LLM synthesis for natural language queries
     original_query = original_query_for_synthesis  # Use preserved original query
@@ -1241,7 +1355,7 @@ async def adp_get(
                 response=response,
                 sql_result=sql_result,
                 vector_results=vector_result,
-                patient_income=parsed_request.patient_income
+                patient_income=parsed_request.get("patient_income")
             )
             
             logger.info(f"Synthesis returned: answer={synthesized_answer is not None}, confidence={answer_confidence}")
@@ -1261,20 +1375,24 @@ async def adp_get(
     
     # Add LLM-friendly summary that directly answers common questions
     summary_parts = []
-    
+
+    # CEP eligibility gets top priority - show first if applicable
+    if response_dict.get("cep") and response_dict["cep"].get("eligible"):
+        summary_parts.insert(0, f"🎯 CEP ELIGIBLE: Patient cost ELIMINATED (income < ${response_dict['cep']['income_threshold']:.0f})")
+
     # Build funding summary
     if response_dict.get("funding"):
         funding = response_dict["funding"]
         adp_pct = funding.get("adp_contribution", 0)
         client_pct = funding.get("client_share_percent", 0)
-        
-        # Check CEP eligibility
+
+        # Check CEP eligibility for funding message
         if response_dict.get("cep") and response_dict["cep"].get("eligible"):
-            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}% with CEP eliminating patient cost (income below ${response_dict['cep']['income_threshold']:.0f})")
-        elif response_dict.get("cep") and not response_dict["cep"].get("eligible"):
-            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}%, patient pays {client_pct}% (income above CEP threshold of ${response_dict['cep']['income_threshold']:.0f})")
+            summary_parts.append(f"✅ FUNDING: ADP covers {adp_pct}%, CEP eliminates patient's {client_pct}% share")
+        elif response_dict.get("cep") and not response_dict["cep"].get("eligible") and response_dict["cep"].get("income_threshold"):
+            summary_parts.append(f"✅ FUNDING: ADP {adp_pct}%, patient {client_pct}% | 💡 CEP available if income < ${response_dict['cep']['income_threshold']:.0f}")
         else:
-            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}%, patient pays {client_pct}%")
+            summary_parts.append(f"✅ FUNDING: ADP covers {adp_pct}%, patient pays {client_pct}%")
     else:
         summary_parts.append("❓ Funding information not available")
     
@@ -1293,9 +1411,11 @@ async def adp_get(
             summary_parts.append(f"⚠️ Exclusions: {'; '.join(excl_list[:2])}")
     
     # Add device type for clarity
-    if parsed_request.device:
-        device_desc = f"{parsed_request.device.type}"
-        if hasattr(parsed_request.device, 'category'):
+    device_info = parsed_request.get("device")
+    if device_info:
+        device_desc = f"{device_info.get('type', '')}"
+        device_category = device_info.get('category')
+        if device_category:
             category_map = {
                 "mobility": "Mobility Device",
                 "comm_aids": "Communication Aid",
@@ -1307,7 +1427,7 @@ async def adp_get(
                 "prosthesis": "Prosthetic",
                 "maxillofacial": "Maxillofacial Prosthetic"
             }
-            cat_name = category_map.get(parsed_request.device.category, parsed_request.device.category)
+            cat_name = category_map.get(device_category, device_category)
             summary_parts.insert(0, f"📋 Device: {device_desc} ({cat_name})")
     
     response_dict["summary"] = " | ".join(summary_parts)

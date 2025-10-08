@@ -2,29 +2,14 @@
 Pydantic models for Dr. OFF MCP tools.
 """
 
-from .request import (
-    CoverageAnswerRequest,
-    ScheduleGetRequest,
-    ADPGetRequest,
-    ODBGetRequest,
-    SourcePassagesRequest,
-    PatientContext,
-    DeviceSpec,
-    QueryHints,
-    UseCase
-)
+from .request import StandardToolRequest
 
 from .response import (
-    CoverageAnswerResponse,
     ScheduleGetResponse,
     ADPGetResponse,
     ODBGetResponse,
-    SourcePassagesResponse,
     Citation,
-    Highlight,
     Conflict,
-    FollowUp,
-    ToolTrace,
     ScheduleItem,
     Eligibility,
     Funding,
@@ -32,31 +17,18 @@ from .response import (
     DrugCoverage,
     InterchangeableDrug,
     LowestCostDrug,
-    SourcePassage
+    RetrievedItem
 )
 
 __all__ = [
     # Request models
-    'CoverageAnswerRequest',
-    'ScheduleGetRequest',
-    'ADPGetRequest',
-    'ODBGetRequest',
-    'SourcePassagesRequest',
-    'PatientContext',
-    'DeviceSpec',
-    'QueryHints',
-    'UseCase',
+    'StandardToolRequest',
     # Response models
-    'CoverageAnswerResponse',
     'ScheduleGetResponse',
     'ADPGetResponse',
     'ODBGetResponse',
-    'SourcePassagesResponse',
     'Citation',
-    'Highlight',
     'Conflict',
-    'FollowUp',
-    'ToolTrace',
     'ScheduleItem',
     'Eligibility',
     'Funding',
@@ -64,5 +36,5 @@ __all__ = [
     'DrugCoverage',
     'InterchangeableDrug',
     'LowestCostDrug',
-    'SourcePassage'
+    'RetrievedItem'
 ]

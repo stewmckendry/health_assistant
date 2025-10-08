@@ -14,8 +14,9 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables from project root
+project_root = Path(__file__).parent.parent.parent.parent.parent
+load_dotenv(project_root / '.env')
 
 logger = logging.getLogger(__name__)
 
@@ -97,39 +98,30 @@ class VectorClient:
         try:
             # List all collections
             collections = self.client.list_collections()
-            
+
             for collection in collections:
                 collection_name = collection.name
-                # Get collection with embedding function
-                # For OPA collections, always use OpenAI embedding
+                # For OPA collections, load without embedding function
+                # We'll generate embeddings manually and pass them directly to queries
+                # This avoids conflicts with persisted embedding function configs
                 if 'opa' in collection_name.lower():
                     try:
                         self._collections[collection_name] = self.client.get_collection(
-                            name=collection_name,
-                            embedding_function=self.embedding_function
+                            name=collection_name
                         )
-                        logger.info(f"Loaded collection: {collection_name} with OpenAI embedding")
+                        logger.info(f"Loaded collection: {collection_name} (will use manual embeddings)")
                     except Exception as e:
-                        # If that fails, try to get or create with correct embedding
-                        logger.warning(f"Recreating collection {collection_name} with correct embedding")
-                        try:
-                            self.client.delete_collection(collection_name)
-                        except:
-                            pass
-                        self._collections[collection_name] = self.client.get_or_create_collection(
-                            name=collection_name,
-                            embedding_function=self.embedding_function
-                        )
-                        logger.info(f"Recreated collection: {collection_name}")
+                        logger.error(f"Failed to load collection {collection_name}: {e}")
+                        continue
                 else:
                     # Non-OPA collections
                     self._collections[collection_name] = self.client.get_collection(
                         name=collection_name
                     )
                     logger.info(f"Loaded collection: {collection_name}")
-            
+
             logger.info(f"Loaded {len(self._collections)} collections")
-            
+
         except Exception as e:
             logger.error(f"Error loading collections: {e}")
     
@@ -142,37 +134,51 @@ class VectorClient:
     ) -> Dict[str, Any]:
         """
         Search a specific collection (runs in thread).
-        
+
         Args:
             collection_name: Name of collection to search
             query: Query text
             n_results: Number of results
             where: Metadata filters
-            
+
         Returns:
             Search results from collection
         """
         if collection_name not in self._collections:
             logger.warning(f"Collection {collection_name} not found")
             return {'ids': [[]], 'documents': [[]], 'metadatas': [[]], 'distances': [[]]}
-        
+
         collection = self._collections[collection_name]
-        
+
         try:
-            # Query with timeout
-            start_time = time.time()
-            results = collection.query(
-                query_texts=[query],
-                n_results=n_results,
-                where=where
-            )
-            
+            # For OPA collections, generate embeddings manually to avoid
+            # conflicts with persisted embedding function configuration
+            if 'opa' in collection_name.lower():
+                # Generate query embedding with OpenAI
+                query_embedding = self.embedding_function([query])
+
+                # Query with timeout using query_embeddings
+                start_time = time.time()
+                results = collection.query(
+                    query_embeddings=query_embedding,
+                    n_results=n_results,
+                    where=where
+                )
+            else:
+                # Non-OPA collections use query_texts
+                start_time = time.time()
+                results = collection.query(
+                    query_texts=[query],
+                    n_results=n_results,
+                    where=where
+                )
+
             elapsed = time.time() - start_time
             if elapsed > self.timeout_seconds:
                 logger.warning(f"Query exceeded timeout: {elapsed:.2f}s > {self.timeout_seconds}s")
-            
+
             return results
-            
+
         except Exception as e:
             logger.error(f"Error querying collection {collection_name}: {e}")
             return {'ids': [[]], 'documents': [[]], 'metadatas': [[]], 'distances': [[]]}
@@ -186,13 +192,13 @@ class VectorClient:
     ) -> Dict[str, Any]:
         """
         Async wrapper for searching a specific collection.
-        
+
         Args:
             collection_name: Name of collection to search
             query: Query text
             n_results: Number of results
             where: Metadata filters
-            
+
         Returns:
             Search results from collection
         """
@@ -206,7 +212,66 @@ class VectorClient:
             where
         )
         return results
-    
+
+    async def get_by_id(
+        self,
+        collection_name: str,
+        ids: List[str]
+    ) -> Dict[str, Any]:
+        """
+        Retrieve documents by their IDs from a collection.
+
+        Args:
+            collection_name: Name of collection
+            ids: List of document IDs to retrieve
+
+        Returns:
+            Dictionary with 'documents', 'metadatas', 'ids'
+        """
+        loop = asyncio.get_event_loop()
+        results = await loop.run_in_executor(
+            self.executor,
+            self._get_by_id,
+            collection_name,
+            ids
+        )
+        return results
+
+    def _get_by_id(
+        self,
+        collection_name: str,
+        ids: List[str]
+    ) -> Dict[str, Any]:
+        """
+        Synchronous get by ID implementation.
+
+        Args:
+            collection_name: Name of collection
+            ids: List of document IDs
+
+        Returns:
+            Retrieved documents with metadata
+        """
+        try:
+            # Use cached collection reference instead of creating new one
+            # This avoids embedding function conflicts
+            if collection_name not in self._collections:
+                logger.warning(f"Collection {collection_name} not found in cache")
+                return {'ids': [], 'documents': [], 'metadatas': []}
+
+            collection = self._collections[collection_name]
+
+            results = collection.get(
+                ids=ids,
+                include=['documents', 'metadatas']
+            )
+
+            return results
+
+        except Exception as e:
+            logger.error(f"Error retrieving documents by ID from {collection_name}: {e}")
+            return {'ids': [], 'documents': [], 'metadatas': []}
+
     async def search_sections(
         self,
         query: str,

@@ -7,10 +7,23 @@ from typing import Optional, List, Dict, Any, Literal
 from pydantic import BaseModel, Field
 
 
+class RetrievedItem(BaseModel):
+    """Standardized retrieved item for evaluation and observability."""
+    id: str = Field(..., description="Unique identifier (chunk_id, policy_uid, din, code)")
+    text: str = Field(..., description="Full text content of this item")
+    relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query")
+    source: str = Field(..., description="Source identifier (e.g., 'adp:respiratory', 'odb_formulary', 'ohip_schedule')")
+    section_path: Optional[str] = Field(None, description="Hierarchical breadcrumb (e.g., 'Assistive Devices Program > Core Manual > Part 2 > Section 200')")
+    chunk_type: Optional[str] = Field(None, description="Chunk type: 'parent', 'child', or 'flat'")
+    has_parent_context: bool = Field(False, description="True if child chunk was enriched with parent context")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata (page, section, topics, etc.)")
+
+
 class Citation(BaseModel):
     """Citation reference for a piece of information."""
     source: str = Field(..., description="Source document name")
     loc: str = Field(..., description="Location reference (e.g., section, code)")
+    section_path: Optional[str] = Field(None, description="Hierarchical breadcrumb (e.g., 'OHIP Schedule of Benefits > Surgery > Neurosurgery (04)')")
     page: Optional[int] = Field(None, description="Page number if available")
     url: Optional[str] = Field(None, description="URL to the source document")
 
@@ -68,13 +81,19 @@ class CoverageAnswerResponse(BaseModel):
 
 
 class ScheduleItem(BaseModel):
-    """OHIP schedule fee item."""
-    code: str = Field(..., description="Fee code")
-    description: str = Field(..., description="Service description")
-    fee: Optional[float] = Field(None, description="Fee amount")
-    requirements: Optional[str] = Field(None, description="Billing requirements")
-    limits: Optional[str] = Field(None, description="Service limits")
-    page_num: Optional[int] = Field(None, description="Page number in schedule")
+    """OHIP schedule fee item - Option A minimal schema.
+
+    Top-level fields: id, text, relevance_score, source, metadata
+    All domain-specific fields moved to metadata dict.
+    """
+    id: str = Field(..., description="Unique identifier (fee code)")
+    text: str = Field(..., description="Combined description, requirements, and limits")
+    relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query (0-1)")
+    source: str = Field(..., description="Source identifier (e.g., 'ohip_schedule:sql', 'ohip_schedule:vector')")
+    metadata: Dict[str, Any] = Field(
+        default_factory=dict,
+        description="Domain-specific fields: code, description, fee, requirements, limits, page_num"
+    )
 
 
 class ScheduleGetResponse(BaseModel):
@@ -158,6 +177,9 @@ class ADPGetResponse(BaseModel):
     """Response model for adp.get tool."""
     provenance: List[str] = Field(..., description="Data sources used")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score")
+    items: List[RetrievedItem] = Field(
+        default_factory=list, description="Retrieved ADP policy chunks from vector search"
+    )
     answer: Optional[str] = Field(None, description="Direct LLM-generated answer to the original question")
     answer_confidence: Optional[float] = Field(None, ge=0.0, le=1.0, description="LLM's confidence in the answer")
     eligibility: Optional[Eligibility] = Field(None, description="Eligibility assessment")
@@ -205,6 +227,9 @@ class ODBGetResponse(BaseModel):
     """Response model for odb.get tool."""
     provenance: List[str] = Field(..., description="Data sources used")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score")
+    items: List[RetrievedItem] = Field(
+        default_factory=list, description="Retrieved ODB formulary chunks from vector search"
+    )
     coverage: Optional[DrugCoverage] = Field(None, description="Coverage information")
     interchangeable: List[InterchangeableDrug] = Field(
         default_factory=list, description="Interchangeable alternatives"
@@ -217,9 +242,6 @@ class ODBGetResponse(BaseModel):
     )
     conflicts: List[Conflict] = Field(
         default_factory=list, description="Conflicts if any"
-    )
-    context: Optional[List[str]] = Field(
-        None, description="Relevant text snippets from vector search"
     )
 
 

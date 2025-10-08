@@ -104,7 +104,21 @@ def extract_citations_from_response(response_data: Dict[str, Any]) -> List[Dict[
                     'url': update['url']
                 }
                 add_citation(cite)
-    
+
+    # Extract from items (used in PolicyCheckResponse, SearchSectionsResponse, GetSectionResponse)
+    if 'items' in response_data:
+        for item in response_data['items']:
+            if isinstance(item, dict) and 'metadata' in item:
+                metadata = item['metadata']
+                if 'source_url' in metadata and metadata['source_url']:
+                    cite_dict = {
+                        'source': metadata.get('document_title', item.get('source', 'Document')),
+                        'source_org': metadata.get('source_org', 'unknown'),
+                        'loc': metadata.get('section_heading', f"Section {metadata.get('section_id', '')}"),
+                        'url': metadata['source_url']
+                    }
+                    add_citation(cite_dict)
+
     return citations
 
 

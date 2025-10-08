@@ -34,7 +34,7 @@ def main():
         print("⚠️ Warning: No OPENAI_API_KEY found - embeddings will be skipped")
     
     ingester = ODBIngester(
-        db_path="data/dr_off_agent/processed/odb_processed_data.db",
+        db_path="data/ohip.db",  # Use main database with ODB tables
         chroma_path="data/dr_off_agent/processed/dr_off/chroma",
         openai_api_key=openai_key
     )

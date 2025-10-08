@@ -51,7 +51,11 @@ async def debug_schedule_tool():
     print(f"  Confidence: {response.confidence}")
     print(f"  Items: {len(response.items)}")
     for item in response.items:
-        print(f"    - {item.code}: {item.description} - ${item.fee}")
+        # Access metadata dict for domain-specific fields (Option A schema)
+        code = item.metadata.get('code', 'N/A')
+        description = item.metadata.get('description', 'N/A')
+        fee = item.metadata.get('fee', 0)
+        print(f"    - {code}: {description} - ${fee}")
     
     print("\n" + "=" * 60)
 

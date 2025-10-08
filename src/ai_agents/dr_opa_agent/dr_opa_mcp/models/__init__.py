@@ -2,14 +2,7 @@
 MCP model definitions for Dr. OPA agent.
 """
 
-from .request import (
-    SearchSectionsRequest,
-    GetSectionRequest,
-    PolicyCheckRequest,
-    ProgramLookupRequest,
-    IPACGuidanceRequest,
-    FreshnessProbeRequest
-)
+from .request import StandardToolRequest
 
 from .response import (
     SearchSectionsResponse,
@@ -28,12 +21,7 @@ from .response import (
 
 __all__ = [
     # Requests
-    'SearchSectionsRequest',
-    'GetSectionRequest',
-    'PolicyCheckRequest',
-    'ProgramLookupRequest',
-    'IPACGuidanceRequest',
-    'FreshnessProbeRequest',
+    'StandardToolRequest',
     # Responses
     'SearchSectionsResponse',
     'GetSectionResponse',

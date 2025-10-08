@@ -99,7 +99,8 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
         if isinstance(response, dict):
             text = response.get("response", "")
             citations = response.get("citations", [])
-            
+            trace_id = response.get("trace_id")  # Extract trace_id for feedback
+
             # Stream text in chunks
             words = text.split()
             for i, word in enumerate(words):
@@ -114,7 +115,7 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
                 }
                 yield f"data: {json.dumps(text_event)}\n\n"
                 await asyncio.sleep(0.02)
-            
+
             # Send citations
             for citation in citations:
                 citation_event = {
@@ -131,13 +132,14 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
                     "timestamp": datetime.utcnow().isoformat()
                 }
                 yield f"data: {json.dumps(citation_event)}\n\n"
-            
-            # Send completion
+
+            # Send completion with trace_id for feedback
             done_event = {
                 "type": "done",
                 "data": {
                     "messageId": f"msg_{uuid.uuid4().hex[:8]}",
-                    "citationIds": [c.get("id") for c in citations if c.get("id")]
+                    "citationIds": [c.get("id") for c in citations if c.get("id")],
+                    "traceId": trace_id  # Include trace_id for Langfuse feedback
                 },
                 "timestamp": datetime.utcnow().isoformat()
             }

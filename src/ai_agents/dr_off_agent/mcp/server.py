@@ -18,11 +18,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Import tool handlers
-from .tools.coverage import coverage_answer
 from .tools.schedule import schedule_get
 from .tools.adp import adp_get
 from .tools.odb import odb_get
-from .tools.source import source_passages
+from .models.request import StandardToolRequest
 
 # Create logs directory
 LOG_DIR = Path("logs/dr_off_agent")
@@ -61,11 +60,9 @@ logger = logging.getLogger(__name__)
 
 # Track request stats
 request_stats = {
-    "coverage_answer": 0,
     "schedule_get": 0,
     "adp_get": 0,
     "odb_get": 0,
-    "source_passages": 0,
     "errors": 0
 }
 
@@ -73,100 +70,38 @@ request_stats = {
 mcp = FastMCP("dr-off-server")
 
 
-# @mcp.tool(name="coverage.answer", description="Main orchestrator for clinical coverage questions")  # Hidden - needs algorithm improvements
-async def coverage_answer_handler(
-    question: str,
-    hints: Dict[str, Any] = None,
-    patient: Dict[str, Any] = None
-) -> Dict[str, Any]:
-    """
-    Main orchestrator for clinical coverage questions.
-    Routes to appropriate domain tools and synthesizes response.
-    
-    Args:
-        question: Free-text clinical question
-        hints: Optional hints (codes, device, drug)
-        patient: Optional patient context (age, setting, income)
-    
-    Returns:
-        Comprehensive answer with decision, citations, and confidence
-    """
-    start_time = datetime.now()
-    logger.info(f">>> coverage.answer called with question: {question[:100]}...")
-    
-    request = {
-        "question": question,
-        "hints": hints or {},
-        "patient": patient or {}
-    }
-    
-    logger.debug(f"Request data: {json.dumps(request, indent=2)}")
-    request_stats["coverage.answer"] += 1
-    
-    try:
-        response = await coverage_answer(request)
-        duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        
-        logger.info(f"coverage.answer completed in {duration_ms:.2f}ms")
-        logger.debug(f"Response keys: {list(response.keys())}")
-        if "confidence" in response:
-            logger.info(f"Confidence: {response['confidence']}")
-        if "decision" in response:
-            logger.info(f"Decision: {response['decision']}")
-        if "tools_used" in response:
-            logger.info(f"Tools used: {response['tools_used']}")
-        logger.debug(f"Full response: {json.dumps(response, indent=2)}")
-        
-        return response
-    except Exception as e:
-        logger.error(f"ERROR in coverage.answer: {type(e).__name__}: {str(e)}")
-        logger.exception("Full traceback:")
-        request_stats["errors"] += 1
-        return {
-            "error": str(e),
-            "tools_used": [],
-            "confidence": 0.0,
-            "evidence": [],
-            "provenance": []
-        }
-
-
 @mcp.tool(name="schedule_get", description="OHIP Schedule of Benefits lookup with dual-path retrieval")
-async def schedule_get_handler(
-    q: str,
-    codes: list = None,
-    include: list = None,
-    top_k: int = 6
-) -> Dict[str, Any]:
+async def schedule_get_handler(query: str, k: int = 6, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     OHIP Schedule of Benefits lookup with dual-path retrieval.
-    
+
     Args:
-        q: Query text for schedule search
-        codes: Specific fee codes to lookup
-        include: Fields to include in response
-        top_k: Number of results to return
-    
+        query: OHIP billing query
+        k: Number of results to return (default: 6)
+        filters: Optional dict with codes, include
+
     Returns:
         Schedule items with provenance, citations, and confidence
     """
     start_time = datetime.now()
-    logger.info(f">>> schedule.get called with query: {q}")
-    
+    logger.info(f">>> schedule.get called with query: {query}")
+
+    # Build standardized request dict (query, k, filters)
     request = {
-        "q": q,
-        "codes": codes or [],
-        "include": include or ["codes", "fee", "limits", "documentation"],
-        "top_k": top_k
+        "query": query,
+        "k": k,
+        "filters": filters or {}
     }
-    
+
     logger.debug(f"Request data: {json.dumps(request, indent=2)}")
     request_stats["schedule_get"] += 1
-    
+
     try:
+        # Call tool wrapper function with standardized request
         response = await schedule_get(request)
+
         duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        
+
         logger.info(f"schedule.get completed in {duration_ms:.2f}ms")
         if "items" in response:
             logger.info(f"Found {len(response['items'])} schedule items")
@@ -175,7 +110,7 @@ async def schedule_get_handler(
         if "confidence" in response:
             logger.info(f"Confidence: {response['confidence']}")
         logger.debug(f"Full response: {json.dumps(response, indent=2)}")
-        
+
         return response
     except Exception as e:
         logger.error(f"ERROR in schedule.get: {type(e).__name__}: {str(e)}")
@@ -190,82 +125,44 @@ async def schedule_get_handler(
         }
 
 
-@mcp.tool(
-    name="adp_get", 
-    description="""ADP (Assistive Devices Program) eligibility and funding lookup.
-
-    Accepts EITHER natural language OR structured format:
-    
-    NATURAL LANGUAGE (Recommended for LLMs):
-    {"query": "Can my patient get funding for a CPAP?", "patient_income": 35000}
-    {"query": "Is a power wheelchair covered by ADP?"}
-    
-    STRUCTURED FORMAT:
-    Device categories: mobility, comm_aids (or communication), hearing_devices (or hearing), 
-    visual_aids (or vision), respiratory, insulin_pump, glucose_monitoring, prosthesis, 
-    maxillofacial, grants
-    
-    Example structured requests:
-    1. Wheelchair: {"device": {"category": "mobility", "type": "wheelchair"}}
-    2. Hearing aid: {"device": {"category": "hearing", "type": "hearing aid"}}  
-    3. CPAP: {"device": {"category": "respiratory", "type": "CPAP"}}
-    4. With income check: {..., "patient_income": 25000, "check": ["cep"]}
-    """
-)
-async def adp_get_handler(
-    query: str = None,  # Natural language query
-    device: Dict[str, str] = None,  # Structured device spec
-    check: list = None,
-    use_case: Dict[str, Any] = None,
-    patient_income: float = None
-) -> Dict[str, Any]:
+@mcp.tool(name="adp_get", description="ADP (Assistive Devices Program) eligibility and funding lookup")
+async def adp_get_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     ADP (Assistive Devices Program) eligibility and funding lookup.
-    
+
     Args:
-        query: Natural language query (e.g., "Can I get funding for a CPAP?")
-        device: Structured device specification (alternative to query)
-        check: What to check - ["eligibility", "exclusions", "funding", "cep"]
-        use_case: Optional usage details (daily use, location, etc)
-        patient_income: Annual income in CAD for CEP eligibility check
-    
+        query: Natural language query
+        k: Number of results (default: 10)
+        filters: Optional dict with device, check, use_case, patient_income
+
     Returns:
-        Enhanced response with summary field for easy LLM interpretation
+        Enhanced response with summary field
     """
     start_time = datetime.now()
-    
-    # Build request based on input format
-    if query:
-        # Natural language format
-        logger.info(f">>> adp.get called with query: {query}")
-        request = {
-            "query": query,
-            "patient_income": patient_income
-        }
-    else:
-        # Structured format
-        logger.info(f">>> adp.get called for device: {device}")
-        request = {
-            "device": device,
-            "check": check or ["eligibility", "exclusions", "funding"],
-            "use_case": use_case or {},
-            "patient_income": patient_income
-        }
-    
+    logger.info(f">>> adp.get called with query: {query}")
+
+    # Build standardized request dict (query, k, filters)
+    request = {
+        "query": query,
+        "k": k,
+        "filters": filters or {}
+    }
+
     logger.debug(f"Request data: {json.dumps(request, indent=2)}")
     request_stats["adp_get"] += 1
-    
+
     try:
+        # Call tool wrapper function with standardized request
         response = await adp_get(request)
         duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        
+
         logger.info(f"adp.get completed in {duration_ms:.2f}ms")
         if "funding" in response and response["funding"]:
             logger.info(f"ADP funding: {response['funding'].get('adp_contribution')}% / Client: {response['funding'].get('client_share_percent')}%")
         if "cep" in response and response["cep"]:
             logger.info(f"CEP eligible: {response['cep'].get('eligible')}, Income threshold: ${response['cep'].get('income_threshold')}")
         logger.debug(f"Full response: {json.dumps(response, indent=2)}")
-        
+
         return response
     except Exception as e:
         logger.error(f"ERROR in adp.get: {type(e).__name__}: {str(e)}")
@@ -284,41 +181,36 @@ async def adp_get_handler(
 
 
 @mcp.tool(name="odb_get", description="ODB (Ontario Drug Benefit) formulary lookup")
-async def odb_get_handler(
-    drug: str,
-    check_alternatives: bool = True,
-    include_lu: bool = True,
-    top_k: int = 5
-) -> Dict[str, Any]:
+async def odb_get_handler(query: str, k: int = 5, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     ODB (Ontario Drug Benefit) formulary lookup with interchangeables.
-    
+
     Args:
-        drug: Drug name, brand, or ingredient
-        check_alternatives: Check for interchangeable alternatives
-        include_lu: Include Limited Use criteria if applicable
-        top_k: Number of alternatives to return
-    
+        query: Drug name, brand, or ingredient
+        k: Number of alternatives (default: 5)
+        filters: Optional dict with check_alternatives, include_lu, formulary_only
+
     Returns:
         Coverage status, interchangeables, lowest cost option
     """
     start_time = datetime.now()
-    logger.info(f">>> odb.get called for drug: {drug}")
-    
+    logger.info(f">>> odb.get called for drug: {query}")
+
+    # Build standardized request dict (query, k, filters)
     request = {
-        "drug": drug,
-        "check_alternatives": check_alternatives,
-        "include_lu": include_lu,
-        "top_k": top_k
+        "query": query,
+        "k": k,
+        "filters": filters or {}
     }
-    
+
     logger.debug(f"Request data: {json.dumps(request, indent=2)}")
     request_stats["odb_get"] += 1
-    
+
     try:
+        # Call tool wrapper function with standardized request
         response = await odb_get(request)
         duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        
+
         logger.info(f"odb.get completed in {duration_ms:.2f}ms")
         if "coverage" in response and response["coverage"]:
             coverage = response["coverage"]
@@ -326,7 +218,7 @@ async def odb_get_handler(
         if "interchangeable" in response:
             logger.info(f"Found {len(response['interchangeable'])} interchangeable drugs")
         logger.debug(f"Full response: {json.dumps(response, indent=2)}")
-        
+
         return response
     except Exception as e:
         logger.error(f"ERROR in odb.get: {type(e).__name__}: {str(e)}")
@@ -340,50 +232,6 @@ async def odb_get_handler(
             "lowest_cost": None,
             "citations": [],
             "conflicts": []
-        }
-
-
-# @mcp.tool(name="source.passages", description="Retrieve exact text chunks by ID")  # Hidden from MCP interface
-async def source_passages_handler(
-    chunk_ids: list,
-    highlight_terms: list = None
-) -> Dict[str, Any]:
-    """
-    Retrieve exact text passages from vector store by chunk IDs.
-    
-    Args:
-        chunk_ids: List of chunk IDs to retrieve
-        highlight_terms: Optional terms to highlight in passages
-    
-    Returns:
-        Retrieved passages with metadata
-    """
-    start_time = datetime.now()
-    logger.info(f">>> source.passages called for {len(chunk_ids)} chunks")
-    
-    request = {
-        "chunk_ids": chunk_ids,
-        "highlight_terms": highlight_terms or []
-    }
-    
-    logger.debug(f"Request data: {json.dumps(request, indent=2)}")
-    request_stats["source.passages"] += 1
-    
-    try:
-        response = await source_passages(request)
-        duration_ms = (datetime.now() - start_time).total_seconds() * 1000
-        
-        logger.info(f"source.passages completed in {duration_ms:.2f}ms")
-        logger.debug(f"Full response: {json.dumps(response, indent=2)}")
-        
-        return response
-    except Exception as e:
-        logger.error(f"ERROR in source.passages: {type(e).__name__}: {str(e)}")
-        logger.exception("Full traceback:")
-        request_stats["errors"] += 1
-        return {
-            "passages": [],
-            "errors": [str(e)]
         }
 
 

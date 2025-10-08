@@ -7,6 +7,15 @@ from typing import Optional, List, Dict, Any, Literal
 from pydantic import BaseModel, Field
 
 
+class RetrievedItem(BaseModel):
+    """Standardized retrieved item for evaluation and observability."""
+    id: str = Field(..., description="Unique identifier (section_id, statement_id, recommendation_id)")
+    text: str = Field(..., description="Full text content of this item")
+    relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query")
+    source: str = Field(..., description="Source identifier (document_id, policy_name)")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata (heading, type, org, etc.)")
+
+
 class Citation(BaseModel):
     """Citation reference for a piece of information."""
     source: str = Field(..., description="Source document name")
@@ -43,14 +52,12 @@ class Update(BaseModel):
 
 
 class Section(BaseModel):
-    """Document section with metadata."""
-    section_id: str = Field(..., description="Unique section identifier")
-    document_id: str = Field(..., description="Parent document ID")
-    heading: str = Field(..., description="Section heading")
+    """Document section with metadata - Option A minimal schema."""
+    id: str = Field(..., description="Unique section identifier")
     text: str = Field(..., description="Section content (may be truncated)")
-    chunk_type: Literal["parent", "child", "recommendation", "specialty_overview", "statement"] = Field(..., description="Chunk hierarchy level")
     relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query")
-    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata")
+    source: str = Field(..., description="Parent document ID")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="All domain-specific fields (section_id, document_id, heading, chunk_type, etc.)")
 
 
 class Document(BaseModel):
@@ -67,7 +74,7 @@ class Document(BaseModel):
 
 class SearchSectionsResponse(BaseModel):
     """Response model for opa.search_sections tool."""
-    sections: List[Section] = Field(..., description="Matching sections ranked by relevance")
+    items: List[Section] = Field(..., description="Matching sections ranked by relevance")
     documents: List[Document] = Field(..., description="Unique documents containing matches")
     provenance: List[str] = Field(..., description="Data sources used ['sql', 'vector']")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Overall confidence score")
@@ -78,25 +85,29 @@ class SearchSectionsResponse(BaseModel):
 
 class GetSectionResponse(BaseModel):
     """Response model for opa.get_section tool."""
-    section: Section = Field(..., description="Requested section with full content")
+    items: List[Section] = Field(..., description="Requested section plus children/context")
     document: Document = Field(..., description="Parent document metadata")
-    children: List[Section] = Field(default_factory=list, description="Child chunks if requested")
-    context: List[Section] = Field(default_factory=list, description="Surrounding sections if requested")
     citations: List[Citation] = Field(..., description="Citations for the section")
 
 
 class PolicyCheckResponse(BaseModel):
     """Response model for opa.policy_check tool."""
-    policies: List[Document] = Field(..., description="Relevant CPSO policies")
-    expectations: List[Highlight] = Field(default_factory=list, description="Must-meet expectations")
-    advice: List[Highlight] = Field(default_factory=list, description="Advice to profession")
-    related: List[Document] = Field(default_factory=list, description="Related documents")
+    items: List[Section] = Field(..., description="All retrieved items (use chunk_type to filter: expectation, advice, policy_document)")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in completeness")
     summary: str = Field(..., description="Executive summary of guidance")
+    suggestions: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description="Suggested alternatives when no exact match found"
+    )
+    no_exact_match: bool = Field(
+        default=False,
+        description="True if no exact matches found, suggestions provided instead"
+    )
 
 
 class ProgramLookupResponse(BaseModel):
-    """Response model for opa.program_lookup tool."""
+    """Response model for opa.program_lookup tool - Option A minimal schema."""
+    items: List[Section] = Field(default_factory=list, description="Retrieved web sources used to build response (web_search results)")
     program: str = Field(..., description="Clinical program name")
     eligibility: Dict[str, Any] = Field(..., description="Eligibility criteria")
     intervals: Dict[str, str] = Field(..., description="Screening/treatment intervals")
@@ -116,6 +127,7 @@ class IPACGuidanceResponse(BaseModel):
     """Response model for opa.ipac_guidance tool."""
     setting: str = Field(..., description="Healthcare setting")
     topic: str = Field(..., description="IPAC topic addressed")
+    items: List[Section] = Field(..., description="All retrieved guidance chunks (Option A minimal schema)")
     guidelines: List[Highlight] = Field(..., description="Key IPAC guidelines")
     procedures: List[Dict[str, Any]] = Field(default_factory=list, description="Step-by-step procedures")
     checklists: List[Dict[str, Any]] = Field(default_factory=list, description="Practical checklists")
@@ -138,42 +150,47 @@ class FreshnessProbeResponse(BaseModel):
 
 
 class QualityStatement(BaseModel):
-    """Individual quality statement from Ontario Health."""
-    statement_number: int = Field(..., description="Statement number in the standard")
-    title: str = Field(..., description="Statement title")
-    brief_statement: str = Field(..., description="Brief version of the statement")
-    full_text: Optional[str] = Field(None, description="Full statement text with background")
-    indicators: List[str] = Field(default_factory=list, description="Quality indicators")
-    for_patients: Optional[str] = Field(None, description="Information for patients")
-    for_clinicians: Optional[str] = Field(None, description="Information for clinicians")
+    """Individual quality statement from Ontario Health - Option A minimal schema."""
+    id: str = Field(..., description="Unique identifier for the statement (standard_title:statement_number)")
+    text: str = Field(..., description="Full statement text with background")
+    relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query")
+    source: str = Field(..., description="Quality standard document title")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="All domain-specific fields (statement_number, title, brief_statement, full_text, indicators, for_patients, for_clinicians)")
 
 
 class QualityStandardsResponse(BaseModel):
     """Response model for opa.quality_standards tool."""
     standard_title: Optional[str] = Field(None, description="Quality standard title if specific standard found")
-    statements: List[QualityStatement] = Field(..., description="Quality statements matching query")
+    items: List[QualityStatement] = Field(..., description="Quality statements matching query")
     total_statements: int = Field(..., description="Total number of statements in standard")
     executive_summary: Optional[str] = Field(None, description="Executive summary if available")
     scope: Optional[str] = Field(None, description="Scope of the standard")
     year: Optional[int] = Field(None, description="Year published")
     citations: List[Citation] = Field(..., description="Source citations")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in match")
+    suggestions: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description="Suggested alternatives when no exact match found"
+    )
+    no_exact_match: bool = Field(
+        default=False,
+        description="True if no exact matches found, suggestions provided instead"
+    )
 
 
 class ChoosingWiselyRecommendation(BaseModel):
-    """Individual Choosing Wisely recommendation."""
-    recommendation_number: int = Field(..., description="Recommendation number within specialty")
-    title: str = Field(..., description="Brief description of what not to do")
-    description: str = Field(..., description="Full explanation and rationale")
-    specialty: str = Field(..., description="Medical specialty this applies to")
-    organization: Optional[str] = Field(None, description="Organization that issued the recommendation")
-    references: List[str] = Field(default_factory=list, description="Supporting references")
+    """Individual Choosing Wisely recommendation - Option A minimal schema."""
+    id: str = Field(..., description="Unique identifier for the recommendation (specialty_recnum)")
+    text: str = Field(..., description="Full explanation and rationale")
+    relevance_score: float = Field(..., ge=0.0, le=1.0, description="Relevance to query")
+    source: str = Field(..., description="Medical specialty this applies to")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata (recommendation_number, title, organization, references)")
 
 
 class ChoosingWiselyResponse(BaseModel):
     """Response model for opa.choosing_wisely tool."""
     specialty_title: Optional[str] = Field(None, description="Medical specialty if specific one found")
-    recommendations: List[ChoosingWiselyRecommendation] = Field(..., description="Choosing Wisely recommendations")
+    items: List[ChoosingWiselyRecommendation] = Field(..., description="Choosing Wisely recommendations")
     total_recommendations: int = Field(..., description="Total recommendations found")
     specialty_overview: Optional[str] = Field(None, description="Overview of specialty's approach to unnecessary care")
     organization: Optional[str] = Field(None, description="Organization that published recommendations")
@@ -181,3 +198,11 @@ class ChoosingWiselyResponse(BaseModel):
     citations: List[Citation] = Field(..., description="Source citations")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in match")
     query_interpretation: Optional[str] = Field(None, description="How the query was interpreted")
+    suggestions: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description="Suggested alternatives when no exact match found"
+    )
+    no_exact_match: bool = Field(
+        default=False,
+        description="True if no exact matches found, suggestions provided instead"
+    )
