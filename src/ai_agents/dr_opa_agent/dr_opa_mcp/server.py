@@ -703,17 +703,60 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
         #         related_data = await get_sql_client().search_policies(...)
         pass
     
-    # Calculate confidence (incorporate triage confidence)
+    # RELEVANCE THRESHOLD FILTERING
+    MIN_RELEVANCE = 0.4
+    filtered_items = []
+    relevance_scores = []
+
+    for policy_data in policies_data:
+        raw_score = policy_data.get('relevance_score', 0.8)
+        # Normalize LLM reranker score (0-10) to 0-1 range
+        normalized_score = raw_score / 10.0 if raw_score > 1.0 else raw_score
+
+        if normalized_score >= MIN_RELEVANCE:
+            filtered_items.append(policy_data)
+            relevance_scores.append(normalized_score)
+        else:
+            logger.debug(f"Filtered out low-relevance result (score={normalized_score:.2f}): {policy_data.get('document_title', 'unknown')}")
+
+    # Check if filtering removed all results
+    if not filtered_items and policies_data:
+        avg_score = sum(p.get('relevance_score', 0) / 10.0 if p.get('relevance_score', 0) > 1.0 else p.get('relevance_score', 0) for p in policies_data) / len(policies_data)
+        logger.warning(f"All {len(policies_data)} results filtered out. Avg relevance: {avg_score:.2f}")
+
+        # Return "no results" with cross-tool suggestions
+        disease_keywords = ['diabetes', 'hypertension', 'copd', 'asthma', 'cancer', 'cardiac', 'kidney', 'stroke', 'mental health']
+        if any(kw in query.lower() for kw in disease_keywords):
+            return PolicyCheckResponse(
+                items=[],
+                confidence=0.3,
+                summary=f"No specific CPSO guidance found for '{query}'. For disease-specific guidance, try: opa_quality_standards, opa_clinical_tools, or opa_program_lookup",
+                no_exact_match=True,
+                suggestions=["opa_quality_standards", "opa_clinical_tools", "opa_program_lookup"]
+            ).dict()
+        else:
+            return PolicyCheckResponse(
+                items=[],
+                confidence=0.3,
+                summary=f"No relevant CPSO policies found for '{query}' (all results below relevance threshold of {MIN_RELEVANCE})",
+                no_exact_match=True
+            ).dict()
+
+    # Use filtered results
+    policies_data = filtered_items
+
+    # Calculate confidence (incorporate triage confidence AND retrieval quality)
     triage_confidence = classification.get('confidence', 0.8)
-    retrieval_confidence = OPAConfidenceScorer.calculate(
-        sql_hits=len(policies_data),
-        vector_matches=0,
-        sources=['cpso'],
-        doc_types=['policy', 'advice'],
-        has_conflict=False
-    )
-    # Weighted average: 40% triage, 60% retrieval
-    confidence = (triage_confidence * 0.4) + (retrieval_confidence * 0.6)
+
+    # Retrieval quality based on actual relevance scores
+    if relevance_scores:
+        avg_relevance = sum(relevance_scores) / len(relevance_scores)
+        retrieval_quality = avg_relevance  # Direct score from reranker
+    else:
+        retrieval_quality = 0.0
+
+    # Weighted confidence: 30% triage, 70% retrieval quality
+    confidence = (triage_confidence * 0.3) + (retrieval_quality * 0.7)
 
     # Create summary with policy context
     from .search.cpso_triage import get_policy_info
@@ -872,11 +915,12 @@ async def program_lookup_handler(query: str, k: int = 10, filters: Dict[str, Any
 
         # Convert web_search citations to Section objects (Option A minimal schema)
         items = []
+        # Get the full raw_response text once for all items
+        raw_text = program_info.get("raw_response", "")
+        # Use the raw response if available, otherwise try overview, otherwise use fallback message
+        section_text = raw_text if raw_text else program_info.get("overview", "Program information retrieved from Ontario Health")
+
         for idx, cit in enumerate(citations[:10]):  # Up to 10 web sources
-            # Get the raw_response to extract relevant text for this citation
-            raw_text = program_info.get("raw_response", "")
-            # Use overview as text if available, otherwise use first 500 chars of raw response
-            section_text = program_info.get("overview", raw_text[:500] if raw_text else "Program information retrieved from Ontario Health")
 
             section = Section(
                 id=f"web_source_{idx}_{program.replace(' ', '_')}",
@@ -1865,6 +1909,8 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
         # Extract document-level information
         if chunk_type == 'document':
             text = result.get('text', '')
+            title = metadata.get('title', '')
+
             # Extract executive summary
             if '## Executive Summary' in text:
                 start = text.find('## Executive Summary') + len('## Executive Summary')
@@ -1878,6 +1924,26 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                 scope = text[start:end if end != -1 else None].strip()
 
             year = metadata.get('year')
+
+            # For discovery mode, convert document chunks to statement items
+            if classification["intent"] == "standard_discovery":
+                # Create a QualityStatement from the document overview
+                statement = QualityStatement(
+                    id=f"{title}:overview",
+                    text=text,  # Full document overview text
+                    relevance_score=result.get('similarity_score', 0.9),
+                    source=title or 'Ontario Health Quality Standard',
+                    metadata={
+                        'statement_number': 0,  # N/A for overviews
+                        'title': title,
+                        'standard_id': metadata.get('standard_id', ''),
+                        'chunk_type': 'document',
+                        'executive_summary': executive_summary if executive_summary else None,
+                        'scope': scope if scope else None,
+                        'year': year
+                    }
+                )
+                statements.append(statement)
 
         # Extract statement information
         elif chunk_type == 'statement':
