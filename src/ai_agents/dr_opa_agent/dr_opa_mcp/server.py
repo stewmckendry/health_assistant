@@ -732,7 +732,11 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
                 confidence=0.3,
                 summary=f"No specific CPSO guidance found for '{query}'. For disease-specific guidance, try: opa_quality_standards, opa_clinical_tools, or opa_program_lookup",
                 no_exact_match=True,
-                suggestions=["opa_quality_standards", "opa_clinical_tools", "opa_program_lookup"]
+                suggestions=[
+                    {"tool": "opa_quality_standards", "reason": "Ontario Health quality standards for disease management"},
+                    {"tool": "opa_clinical_tools", "reason": "CEP clinical decision support tools"},
+                    {"tool": "opa_program_lookup", "reason": "Ontario Health disease-specific programs"}
+                ]
             ).dict()
         else:
             return PolicyCheckResponse(
