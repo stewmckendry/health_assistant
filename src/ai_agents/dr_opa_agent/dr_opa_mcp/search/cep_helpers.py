@@ -79,9 +79,9 @@ async def retrieve_tool_overviews(
             query=query,
             sources=['cep'],
             k=k * 3,  # Get more to ensure coverage across tools
-            use_reranking=False,
+            use_reranking=True,
             use_hybrid=False,
-            use_ce_reranking=True,
+            use_ce_reranking=False,
             where_filter=where_filter
         )
 
@@ -175,9 +175,9 @@ async def retrieve_detailed_chunks(
             query=query,
             sources=['cep'],
             k=k * 2,  # Get more for processing
-            use_reranking=False,
+            use_reranking=True,
             use_hybrid=False,
-            use_ce_reranking=True,
+            use_ce_reranking=False,
             where_filter=where_filter
         )
 

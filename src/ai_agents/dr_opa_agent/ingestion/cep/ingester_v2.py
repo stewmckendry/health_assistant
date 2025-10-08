@@ -69,9 +69,14 @@ class CEPIngesterV2:
             chroma_path = "data/dr_opa_agent/chroma"
         Path(chroma_path).mkdir(parents=True, exist_ok=True)
 
+        # Use consistent settings to avoid conflicts
         self.chroma_client = chromadb.PersistentClient(
             path=chroma_path,
-            settings=Settings(anonymized_telemetry=False)
+            settings=Settings(
+                anonymized_telemetry=False,
+                allow_reset=False,
+                is_persistent=True
+            )
         )
 
         # Create or get collection for OPA corpus
