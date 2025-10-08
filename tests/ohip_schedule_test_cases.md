@@ -576,20 +576,83 @@ python scripts/test_mcp_tools_direct.py --agent dr_off --tool schedule_get --que
 
 ---
 
-## Key Metrics to Track
+## Agent-Level Integration Test Results
 
-### Response Quality
-- [ ] Correct codes identified
-- [ ] Relevant fees included
-- [ ] Requirements/restrictions explained
-- [ ] Clear yes/no answers when expected
-- [ ] Citations provided
+### Test Setup
+- **Agent**: Dr. OFF (Ontario Finance & Formulary)
+- **Mode**: Full agent workflow (with planning, self-checking, synthesis)
+- **Query Processor**: Enabled (`ENABLE_QUERY_PROCESSOR=true`)
+- **Test Date**: October 8, 2025
+- **Test Framework**: `scripts/test_agents.py`
 
-### Technical Performance
-- Average response time: ___s
-- Average confidence score: ___
-- SQL+Vector vs Vector-only distribution: ___
-- LLM enrichment success rate: ___
+### Results Summary
+
+**Overall Performance:**
+- **Total Tests**: 6/6
+- **Success Rate**: 100% ✅
+- **Average Response Time**: 21.4 seconds
+- **Average Confidence**: 0.80
+- **Total Citations**: Provided in all responses
+
+**Agent-Level vs Tool-Level Comparison:**
+| Metric | Tool Direct | Agent Workflow | Delta |
+|--------|-------------|----------------|-------|
+| Avg Time | 9.81s | 21.4s | +11.6s (expected overhead) |
+| Success Rate | 100% | 100% | Same ✅ |
+| Confidence | 0.82 | 0.80 | -0.02 (marginal) |
+
+### Individual Agent Test Results
+
+| Query | Tool Pass | Agent Pass | Agent Time | Notes |
+|-------|-----------|------------|------------|-------|
+| Can I bill E082 as MRP on admission? | ✅ | ✅ | 22.3s | Correctly explained 30% premium + once per admission restriction |
+| What are the cardiology consultation codes? | ✅ | ✅ | 22.9s | Found A600 ($310.45), A603, A601, H055 with fees |
+| Do I need to document time for A710? | ✅ | ✅ | 20.6s | Correctly said "Yes" with start/stop time requirement |
+| How much does comprehensive geriatric assessment pay? | ✅ | ✅ | 24.7s | Found A283 ($82.50) |
+| Can I bill A735 if using studies from another institution? | ✅ | ✅ | 13.7s | **Perfect** - "No" with restriction explanation |
+| I'm an internal medicine specialist. If I see my patient in ICU for 90 minutes can I bill A710? | ✅ | ✅ | 24.0s | Handled multi-part query (specialty + setting + time + eligibility) |
+
+### Key Observations
+
+**✅ Strengths:**
+1. **Query Processor Integration**: Agent successfully routes OHIP queries to `schedule_get` tool with query processor
+2. **Accurate Answers**: All responses correctly identified codes, fees, and restrictions
+3. **Critical Fixes Validated**:
+   - E082 premium code correctly explained as "30% premium" (Issue 2 fix working)
+   - A735 restriction correctly stated "No" (Issue 1 fix working)
+4. **Complex Query Handling**: Multi-part eligibility questions answered comprehensively
+5. **Citation Quality**: All responses included proper OHIP Schedule citations with page numbers
+
+**⚠️ Areas for Optimization:**
+1. **Response Time**: Agent workflow adds ~11.6s overhead vs direct tool calls
+   - Acceptable tradeoff for agent's planning and synthesis capabilities
+   - Could optimize with caching for common queries
+2. **Agent Verbosity**: Some responses show internal workflow steps (STEP 3, STEP 4)
+   - Could clean up synthesis to hide internal process
+
+### Production Readiness Assessment
+
+**Ready for Production with Feature Flag:** ✅ **YES**
+
+**Recommendation:**
+- ✅ Deploy with `ENABLE_QUERY_PROCESSOR=true` in production
+- ✅ Agent integration working flawlessly
+- ✅ All critical fixes validated at both tool and agent levels
+- ⚠️ Monitor response times in production (21s avg is acceptable for complex billing queries)
+- ⚠️ Consider adding response caching for frequently asked codes
+
+### Response Quality Metrics (Agent Level)
+- ✅ Correct codes identified: 6/6 (100%)
+- ✅ Relevant fees included: 6/6 (100%)
+- ✅ Requirements/restrictions explained: 6/6 (100%)
+- ✅ Clear yes/no answers when expected: 3/3 (100%)
+- ✅ Citations provided: 6/6 (100%)
+
+### Technical Performance (Agent Level)
+- Average response time: **21.4s**
+- Average confidence score: **0.80**
+- Tool routing accuracy: **6/6 (100%)** - All queries correctly used `schedule_get`
+- LLM enrichment success rate: **100%** - All responses synthesized correctly
 
 ---
 
