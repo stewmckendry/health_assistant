@@ -20,6 +20,11 @@ from .retrieval import SQLClient, VectorClient
 # Import semantic search engine
 from .search import SemanticSearchEngine
 
+# Import triage classifiers
+from .search.cep_triage import classify_cep_query_cached, get_tool_url
+from .search.qs_triage import classify_quality_standards_query_cached
+from .search.choosing_wisely_triage import classify_choosing_wisely_query_cached
+
 # Import Ontario Health Programs tool
 from .tools.ontario_health_programs import get_client as get_ontario_health_client
 
@@ -86,6 +91,20 @@ logger.info(f"="*60)
 
 # Initialize FastMCP server
 mcp = FastMCP("dr-opa-server")
+
+# Load CEP Tool Catalog for two-tier retrieval
+CEP_TOOL_CATALOG_FILE = Path(__file__).parent / "cep_tool_catalog.json"
+CEP_TOOL_CATALOG = []
+
+try:
+    if CEP_TOOL_CATALOG_FILE.exists():
+        with open(CEP_TOOL_CATALOG_FILE, 'r') as f:
+            CEP_TOOL_CATALOG = json.load(f)
+        logger.info(f"Loaded {len(CEP_TOOL_CATALOG)} tools from CEP catalog")
+    else:
+        logger.warning(f"CEP tool catalog not found at {CEP_TOOL_CATALOG_FILE}")
+except Exception as e:
+    logger.error(f"Failed to load CEP tool catalog: {e}")
 
 # Initialize shared clients (lazy loading)
 _sql_client = None
@@ -423,28 +442,35 @@ async def get_section_handler_DISABLED(
     return standardize_mcp_response(response_dict, tool_name)
 
 
-@mcp.tool(name="opa_policy_check", description="CPSO-specific policy and advice retrieval")
+@mcp.tool(name="opa_policy_check", description="CPSO-specific policy and advice retrieval with two-tier architecture")
 async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
-    CPSO-specific policy and advice retrieval.
+    CPSO-specific policy and advice retrieval with two-tier architecture.
+
+    Tier 1: LLM classifies query and identifies relevant policies
+    Tier 2: Retrieval scoped to those policies only
 
     Args:
         query: Clinical topic or practice area
         k: Number of results to return (default 10)
         filters: Optional dict with:
+            - policy_scope: Manual policy ID override (List[str])
             - policy_level: CPSO policy level ("expectation", "advice", "both")
+            - intent: Manual intent override ("policy_discovery" | "specific_requirement")
             - include_related: Include related policies (bool)
 
     Returns:
         Relevant policies, expectations, advice with confidence
     """
-    # Extract sources filter only (other filters are passthrough/ignored)
+    # Extract filters
     filters = filters or {}
-    topic = query
-    sources = filters.get('sources', ['cpso'])  # Default to CPSO for this tool
+    policy_scope = filters.get('policy_scope')  # Manual override
+    policy_level = filters.get('policy_level')
+    intent = filters.get('intent')
+    include_related = filters.get('include_related', False)
 
-    logger.info(f"opa.policy_check called for topic: {topic}")
-    logger.debug(f"Parameters: sources={sources}, k={k}")
+    logger.info(f"opa.policy_check called for query: {query}")
+    logger.debug(f"Parameters: k={k}, policy_scope={policy_scope}, intent={intent}")
 
     try:
         semantic_search = get_semantic_search()
@@ -453,30 +479,103 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
         return PolicyCheckResponse(
             items=[],
             confidence=0.6,
-            summary=f"CPSO Guidance for '{topic}': No specific CPSO guidance found for this topic"
+            summary=f"CPSO Guidance for '{query}': No specific CPSO guidance found for this topic"
         ).dict()
 
-    # Search for CPSO policies using semantic search
-    search_query = topic
+    # STEP 1: Classify query (unless overridden)
+    if policy_scope and intent:
+        classification = {
+            "intent": intent,
+            "relevant_policies": policy_scope,
+            "policy_level_focus": policy_level or "both",
+            "confidence": 1.0,
+            "reasoning": "Manual override"
+        }
+        logger.info("Using manual policy scope override")
+    else:
+        from .search.cpso_triage import classify_cpso_query_cached
 
-    # Use semantic search with CPSO filter
+        # Get OpenAI client from semantic search
+        openai_client = semantic_search.openai_client
+
+        classification = await classify_cpso_query_cached(query, openai_client)
+        logger.info(f"Policy triage: {classification['intent']}, {len(classification.get('relevant_policies', []))} policies")
+
+    # STEP 2: Retrieve chunks scoped to relevant policies
+    from .search.cpso_helpers import (
+        retrieve_policy_overviews,
+        retrieve_detailed_chunks,
+        format_policy_response
+    )
+
     try:
-        search_results = await semantic_search.search(
-            query=search_query,
-            sources=sources,
-            k=k,
-            use_reranking=False,  # Disable LLM reranking (use CE instead)
-            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
-        )
-        
-        logger.info(f"Semantic search found {len(search_results)} CPSO documents")
-        
-        # Format results
-        policies_data = semantic_search.format_results(search_results)
-        
+        # Check for catalog/"all" queries - return catalog directly instead of retrieval
+        if classification.get("scope") == "all":
+            logger.info("Scope is 'all' - returning full policy catalog instead of retrieval")
+            from .search.cpso_triage import load_policy_catalog
+
+            catalog = load_policy_catalog()
+
+            # Convert catalog to Section objects
+            policies_data = []
+            for policy in catalog:
+                # Create a brief overview from catalog metadata
+                overview_text = f"{policy['policy_title']}\n\n"
+                overview_text += f"Policy Level: {policy['policy_level'].title()}\n"
+                overview_text += f"Practice Domain: {policy['practice_domain'].replace('_', ' ').title()}\n"
+
+                if policy.get('topics'):
+                    overview_text += f"Topics: {', '.join(policy['topics'][:5])}\n"
+
+                if policy.get('key_requirements'):
+                    overview_text += f"\nKey Requirements:\n"
+                    for req in policy['key_requirements'][:3]:
+                        overview_text += f"- {req}\n"
+
+                overview_text += f"\nSource: {policy['source_url']}"
+
+                # Create a Section-like dict
+                policies_data.append({
+                    'document_id': policy['policy_id'],
+                    'text': overview_text,
+                    'relevance_score': 0.9,  # All policies equally relevant for catalog queries
+                    'document_title': policy['policy_title'],
+                    'policy_level': policy['policy_level'],
+                    'source_url': policy['source_url'],
+                    'topics': policy.get('topics', []),
+                    'source_org': 'cpso',
+                    'document_type': 'policy',
+                    'effective_date': policy.get('effective_date'),
+                    'section_heading': 'Policy Overview',
+                    'section_id': f"{policy['policy_id']}_overview"
+                })
+
+            logger.info(f"Returning all {len(policies_data)} policies from catalog")
+
+        elif classification["intent"] == "policy_discovery":
+            # Get policy overviews
+            logger.info("Using policy discovery mode (overviews)")
+            policies_data = await retrieve_policy_overviews(
+                semantic_search=semantic_search,
+                query=query,
+                policy_ids=classification["relevant_policies"],
+                k=min(k, len(classification["relevant_policies"]) * 2)
+            )
+        else:
+            # Get detailed chunks + parent context
+            logger.info("Using specific requirement mode (detailed)")
+            policies_data = await retrieve_detailed_chunks(
+                semantic_search=semantic_search,
+                query=query,
+                policy_ids=classification["relevant_policies"],
+                policy_level=classification.get("policy_level_focus"),
+                k=k
+            )
+
+        logger.info(f"Retrieved {len(policies_data)} chunks")
+
     except Exception as e:
-        logger.error(f"Semantic search failed: {e}")
+        logger.error(f"Policy retrieval failed: {e}")
         logger.error(traceback.format_exc())
         policies_data = []
     
@@ -537,35 +636,65 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
         #         related_data = await get_sql_client().search_policies(...)
         pass
     
-    # Calculate confidence
-    confidence = OPAConfidenceScorer.calculate(
+    # Calculate confidence (incorporate triage confidence)
+    triage_confidence = classification.get('confidence', 0.8)
+    retrieval_confidence = OPAConfidenceScorer.calculate(
         sql_hits=len(policies_data),
         vector_matches=0,
         sources=['cpso'],
         doc_types=['policy', 'advice'],
         has_conflict=False
     )
-    
-    # Create summary
+    # Weighted average: 40% triage, 60% retrieval
+    confidence = (triage_confidence * 0.4) + (retrieval_confidence * 0.6)
+
+    # Create summary with policy context
+    from .search.cpso_triage import get_policy_info
+
+    policy_context = []
+    for policy_id in classification.get('relevant_policies', [])[:5]:  # Max 5
+        policy_info = get_policy_info(policy_id)
+        if policy_info:
+            policy_context.append(f"{policy_info['policy_title']}")
+
     summary_parts = []
-    if expectation_count > 0:
-        summary_parts.append(f"Found {expectation_count} mandatory expectation(s)")
-    if advice_count > 0:
-        summary_parts.append(f"Found {advice_count} professional advice item(s)")
+
+    # Add intent-specific context
+    if classification["intent"] == "policy_discovery":
+        summary_parts.append(f"Found {len(classification.get('relevant_policies', []))} relevant policies")
+        if policy_context:
+            summary_parts.append(f"Policies: {', '.join(policy_context[:3])}")
+    else:
+        if expectation_count > 0:
+            summary_parts.append(f"Found {expectation_count} mandatory expectation(s)")
+        if advice_count > 0:
+            summary_parts.append(f"Found {advice_count} professional advice item(s)")
+
     if not summary_parts:
         summary_parts.append("No specific CPSO guidance found for this topic")
 
-    summary = f"CPSO Guidance for '{topic}': " + "; ".join(summary_parts)
+    summary = f"CPSO Guidance for '{query}': " + "; ".join(summary_parts)
 
-    # Create response
+    # Create response with classification metadata
     response = PolicyCheckResponse(
         items=items,
         confidence=confidence,
         summary=summary
     )
-    
+
     # Standardize response with top-level citations
     response_dict = response.dict()
+
+    # Add two-tier classification metadata to response
+    response_dict['classification'] = {
+        'intent': classification.get('intent'),
+        'relevant_policies': classification.get('relevant_policies', []),
+        'policy_level_focus': classification.get('policy_level_focus'),
+        'triage_confidence': triage_confidence,
+        'reasoning': classification.get('reasoning')
+    }
+    response_dict['tools_searched'] = classification.get('relevant_policies', [])
+
     return standardize_mcp_response(response_dict, "opa_policy_check")
 
 
@@ -1150,16 +1279,20 @@ async def freshness_probe_handler_DISABLED(
     return standardize_mcp_response(response_dict, tool_name)
 
 
-@mcp.tool(name="opa_clinical_tools", description="CEP clinical decision support tools lookup")
+@mcp.tool(name="opa_clinical_tools", description="CEP clinical decision support tools lookup with two-tier architecture")
 async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
-    CEP clinical tools navigation and quick reference.
-    Returns tool summaries with direct links to interactive features.
+    CEP clinical tools navigation and quick reference with two-tier architecture.
+
+    Tier 1: LLM classifies query and identifies relevant clinical tools
+    Tier 2: Retrieval scoped to those tools only
 
     Args:
         query: Clinical condition, tool name, or general query
         k: Number of results to return (default 10)
         filters: Optional dict with:
+            - tool_scope: Manual tool ID override (List[str])
+            - intent: Manual intent override ("tool_discovery" | "specific_question")
             - tool_type: Specific tool category (string)
             - feature_type: Type of clinical feature ("algorithm", "calculator", "checklist")
             - include_sections: Include section summaries (bool)
@@ -1169,56 +1302,113 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
     """
     # Handle default filters
     filters = filters or {}
-    search_query = query
+    tool_scope = filters.get('tool_scope')  # Manual override
+    intent = filters.get('intent')
     tool_type = filters.get('tool_type')
     feature_type = filters.get('feature_type')
     include_sections = filters.get('include_sections', False)
 
-    logger.info(f"opa.clinical_tools called - query: {search_query}, tool_type: {tool_type}, feature_type: {feature_type}")
-
-    # Enhance search query with filters
-    search_parts = [search_query]
-    if tool_type:
-        search_parts.append(f"{tool_type} tools")
-    if feature_type:
-        search_parts.append(f"{feature_type} calculator algorithm checklist")
-
-    search_query = " ".join(search_parts)
-    
-    logger.info(f"Clinical tools semantic search: '{search_query}'")
-
-    # Use semantic search for clinical tools
-    semantic_search = get_semantic_search()
+    logger.info(f"opa.clinical_tools called for query: {query}")
+    logger.debug(f"Parameters: k={k}, tool_scope={tool_scope}, intent={intent}")
 
     try:
-        search_results = await semantic_search.search(
-            query=search_query,
-            sources=['cep'],  # Focus on CEP for clinical tools
-            k=k * 2,  # Get more tools for processing
-            use_reranking=False,  # Disable LLM reranking (use CE instead)
-            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
-        )
-        
-        # Format results
-        formatted_results = semantic_search.format_results(search_results)
-        logger.info(f"Semantic search returned {len(formatted_results)} clinical tools")
-        
+        semantic_search = get_semantic_search()
     except Exception as e:
-        logger.error(f"Search failed: {e}")
+        logger.error(f"Failed to get semantic search engine: {e}")
+        return {
+            'items': [],
+            'total_tools': 0,
+            'query_interpretation': f"Searching CEP clinical tools for: {query}",
+            'error': 'Search engine unavailable'
+        }
+
+    # STEP 1: Classify query (unless overridden)
+    if tool_scope and intent:
+        classification = {
+            "intent": intent,
+            "relevant_tools": tool_scope,
+            "scope": "single" if len(tool_scope) == 1 else "multiple",
+            "confidence": 1.0,
+            "reasoning": "Manual override"
+        }
+        logger.info("Using manual tool scope override")
+    else:
+        from .search.cep_triage import classify_cep_query_cached
+
+        # Get OpenAI client from semantic search
+        openai_client = semantic_search.openai_client
+
+        classification = await classify_cep_query_cached(query, openai_client)
+        logger.info(f"Tool triage: {classification['intent']}, {len(classification.get('relevant_tools', []))} tools")
+
+    # STEP 2: Retrieve chunks scoped to relevant tools
+    from .search.cep_helpers import (
+        retrieve_tool_overviews,
+        retrieve_detailed_chunks,
+        format_tool_response
+    )
+    from .search.cep_triage import load_tool_catalog
+
+    try:
+        # Special case: scope="all" means return entire catalog
+        if classification.get("scope") == "all":
+            logger.info("Scope is 'all' - returning full tool catalog instead of vector search")
+            catalog = load_tool_catalog()
+
+            # Format catalog entries as tool data
+            tools_data = []
+            for entry in catalog[:k]:
+                tools_data.append({
+                    'document_id': entry['tool_id'],
+                    'document_title': entry['tool_name'],
+                    'source_url': entry['source_url'],
+                    'text': f"# {entry['tool_name']}\n\n**Clinical Domain:** {entry['clinical_domain']}\n**Conditions:** {', '.join(entry['conditions'])}\n**Capabilities:** {', '.join(entry['capabilities'])}\n**Topics:** {', '.join(entry.get('topics', []))}\n**Chunk Count:** {entry['chunk_count']}",
+                    'chunk_type': 'catalog',
+                    'relevance_score': 1.0,
+                    'metadata': {
+                        'clinical_domain': entry['clinical_domain'],
+                        'conditions': entry['conditions'],
+                        'capabilities': entry['capabilities'],
+                        'chunk_count': entry['chunk_count']
+                    }
+                })
+
+        elif classification["intent"] == "tool_discovery":
+            # Get tool overviews
+            logger.info("Using tool discovery mode (overviews)")
+            tools_data = await retrieve_tool_overviews(
+                semantic_search=semantic_search,
+                query=query,
+                tool_ids=classification["relevant_tools"],
+                k=min(k, len(classification["relevant_tools"]) * 2)
+            )
+        else:
+            # Get detailed chunks
+            logger.info("Using specific question mode (detailed)")
+            tools_data = await retrieve_detailed_chunks(
+                semantic_search=semantic_search,
+                query=query,
+                tool_ids=classification["relevant_tools"],
+                k=k
+            )
+
+        logger.info(f"Retrieved {len(tools_data)} chunks")
+
+    except Exception as e:
+        logger.error(f"Tool retrieval failed: {e}")
         logger.error(traceback.format_exc())
-        formatted_results = []
-    
-    # Process results into tools
+        tools_data = []
+
+    # Process results into tools (maintain backward compatibility with existing format)
     tools = []
-    for result in formatted_results:
+    for result in tools_data:
         # Extract fields from semantic search results
         doc_id = result.get('document_id', '')
-        title = result.get('document_title', '')
+        title = result.get('document_title', result.get('title', ''))
         url = result.get('source_url', '')
         last_updated = result.get('effective_date', '')
         text = result.get('text', '')
-        
+
         # Parse metadata if available
         metadata = {}
         category = None
@@ -1234,9 +1424,10 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
             'category': category or 'general',
             'summary': text[:500] if text else '',
             'text': text,  # Full text for evaluation framework
+            'relevance_score': result.get('relevance_score', 0.8),
             'key_features': {}
         }
-        
+
         # Extract features from text/metadata
         text_lower = text.lower() if text else ''
         if 'algorithm' in text_lower or 'assessment' in text_lower:
@@ -1244,19 +1435,19 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
                 'available': True,
                 'url': f"{url}#assessment"
             }
-        
+
         if 'calculator' in text_lower or 'calculate' in text_lower:
             tool_data['key_features']['calculator'] = {
                 'available': True,
                 'url': f"{url}#calculator"
             }
-        
+
         if 'checklist' in text_lower or 'criteria' in text_lower:
             tool_data['key_features']['checklist'] = {
                 'available': True,
                 'url': f"{url}#checklist"
             }
-        
+
         # Add sections if requested
         if include_sections and text:
             # Extract section-like content from text
@@ -1269,19 +1460,32 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
                         'summary': line[:200] + '...' if len(line) > 200 else line,
                         'url': url
                     })
-        
+
         # Add quick links
         tool_data['quick_links'] = {
             'full_tool': url,
             'pdf_version': None  # CEP tools typically don't have PDFs
         }
-        
+
         tools.append(tool_data)
-    
+
+    # Calculate confidence (incorporate triage confidence)
+    triage_confidence = classification.get('confidence', 0.8)
+    retrieval_confidence = OPAConfidenceScorer.calculate(
+        sql_hits=len(tools_data),
+        vector_matches=0,
+        sources=['cep'],
+        doc_types=['clinical_tool'],
+        has_conflict=False
+    )
+    # Weighted average: 40% triage, 60% retrieval
+    confidence = (triage_confidence * 0.4) + (retrieval_confidence * 0.6)
+
     # Create response (using 'items' to match eval framework expectation)
     response = {
         'items': tools,
         'total_tools': len(tools),
+        'confidence': confidence,
         'query_interpretation': f"Searching CEP clinical tools for: {query}"
     }
 
@@ -1289,393 +1493,472 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
         response['query_interpretation'] += f" (category: {tool_type})"
     if feature_type:
         response['query_interpretation'] += f" (feature: {feature_type})"
-    
+
+    # Add two-tier classification metadata to response
+    response['classification'] = {
+        'intent': classification.get('intent'),
+        'relevant_tools': classification.get('relevant_tools', []),
+        'clinical_domain': classification.get('clinical_domain'),
+        'triage_confidence': triage_confidence,
+        'reasoning': classification.get('reasoning')
+    }
+    response['tools_searched'] = classification.get('relevant_tools', [])
+
     # Standardize response with top-level citations
     tool_name = "opa_clinical_tools"
     return standardize_mcp_response(response, tool_name)
 
 
-@mcp.tool(name="opa_quality_standards", description="Ontario Health quality standards search")
+@mcp.tool(name="opa_quality_standards", description="Ontario Health quality standards search with two-tier architecture")
 async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
-    Search Ontario Health quality standards and retrieve quality statements.
+    Search Ontario Health quality standards with two-tier architecture.
 
-    This tool searches the Ontario Health quality standards corpus for specific
-    topics or conditions, and can retrieve all quality statements for a specific
-    standard when requested.
+    Tier 1: LLM classifies query and identifies relevant standards
+    Tier 2: Retrieval scoped to those standards only
 
     Args:
         query: Clinical topic or condition (e.g., 'diabetes', 'hip fracture')
         k: Number of results to return (default 10)
         filters: Optional dict with:
-            - retrieve_all_statements: Retrieve all statements for a standard (bool)
-            - statement_type: Type of content ("overview", "statement", "all")
+            - standard_scope: Manual standard ID override (List[str])
+            - intent: Manual intent override ("standard_discovery" | "specific_indicator")
+            - query_focus: "overview" | "statements" | "indicators" | "implementation"
+            - retrieve_all_statements: Retrieve all statements for a standard (bool) [BACKWARD COMPAT]
+            - statement_type: Type of content [BACKWARD COMPAT]
 
     Returns:
         Quality statements, standard information, and citations
     """
-    # Handle default filters
+    # Extract filters
     filters = filters or {}
+    standard_scope = filters.get('standard_scope')  # Manual override
+    intent = filters.get('intent')
+    query_focus = filters.get('query_focus')
+
+    # Backward compatibility
     retrieve_all_statements = filters.get('retrieve_all_statements', False)
     statement_type = filters.get('statement_type', 'all')
 
     logger.info(f"opa.quality_standards called - query: {query}")
-    logger.info(f"  retrieve_all: {retrieve_all_statements}, type: {statement_type}, k: {k}")
+    logger.debug(f"Parameters: k={k}, standard_scope={standard_scope}, intent={intent}, query_focus={query_focus}")
 
     try:
-        # Get semantic search engine
         semantic_search = get_semantic_search()
-
-        # Step 1: Search for relevant quality standards with hybrid mode
-        search_results = await semantic_search.search(
-            query=query,
-            sources=['ontario_health_quality_standards'],
-            k=k if not retrieve_all_statements else 50,
-            use_reranking=False,  # Disable LLM reranking (use CE instead)
-            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
-        )
-        
-        logger.info(f"Search returned {len(search_results)} results")
-
-        # Step 2: If retrieve_all_statements, find the best matching standard using LLM
-        standard_title = None
-        if retrieve_all_statements and search_results:
-            # Collect all unique quality standard titles from results
-            candidate_titles = []
-            for result in search_results:
-                if result.get('metadata', {}).get('chunk_type') == 'document':
-                    title = result.get('metadata', {}).get('title', '')
-                    if title and title not in candidate_titles:
-                        candidate_titles.append(title)
-            
-            # Use LLM to match query to best standard title if we have candidates
-            if candidate_titles:
-                logger.info(f"Found {len(candidate_titles)} candidate standards: {candidate_titles[:5]}")
-                
-                # Use OpenAI to find best match
-                try:
-                    openai_client = semantic_search.openai_client
-                    
-                    prompt = f"""Given the user query and list of available Ontario Health Quality Standards,
-                    identify the BEST matching standard. Return ONLY the exact title from the list, nothing else.
-
-                    User Query: {query}
-
-                    Available Quality Standards:
-                    {chr(10).join(f"- {title}" for title in candidate_titles[:10])}
-
-                    Return the exact title of the best matching standard:"""
-                    
-                    response = await openai_client.chat.completions.create(
-                        model="gpt-4o-mini",
-                        messages=[
-                            {"role": "system", "content": "You are a medical knowledge assistant that matches queries to quality standards."},
-                            {"role": "user", "content": prompt}
-                        ],
-                        temperature=0.0,
-                        max_tokens=100
-                    )
-                    
-                    matched_title = response.choices[0].message.content.strip()
-                    
-                    # Verify the matched title is in our list (LLM might hallucinate)
-                    if matched_title in candidate_titles:
-                        standard_title = matched_title
-                        logger.info(f"LLM matched query '{query}' to standard: {standard_title}")
-                    else:
-                        # Fallback to first candidate if LLM response invalid
-                        standard_title = candidate_titles[0]
-                        logger.warning(f"LLM returned invalid title '{matched_title}', using first candidate: {standard_title}")
-                        
-                except Exception as e:
-                    logger.error(f"LLM matching failed: {e}, falling back to first candidate")
-                    standard_title = candidate_titles[0]
-            
-            # If we found a standard, get ALL its statements
-            if standard_title:
-                # Search again specifically for this standard's statements (hybrid mode for exact title matching)
-                all_statements_results = await semantic_search.search(
-                    query=standard_title,
-                    sources=['ontario_health_quality_standards'],
-                    k=50,  # Get all statements
-                    use_reranking=False,  # Don't rerank when getting all
-                    use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-                    use_ce_reranking=False  # No reranking when getting all statements
-                )
-                
-                # Filter to only statements from this specific standard
-                filtered_results = [
-                    r for r in all_statements_results
-                    if r.get('metadata', {}).get('title', '').lower() == standard_title.lower()
-                ]
-                
-                logger.info(f"Found {len(filtered_results)} statements for {standard_title}")
-                search_results = filtered_results
-        
-        # Step 3: Process results into quality statements
-        statements = []
-        executive_summary = None
-        scope = None
-        year = None
-        citations_set = set()
-        
-        # If we didn't find a specific standard yet, try to identify from results
-        if not standard_title and search_results:
-            # Look for the most common title in results
-            title_counts = {}
-            for result in search_results:
-                title = result.get('metadata', {}).get('title', '')
-                if title:
-                    title_counts[title] = title_counts.get(title, 0) + 1
-            
-            if title_counts:
-                # Get the most common title
-                standard_title = max(title_counts.items(), key=lambda x: x[1])[0]
-                logger.info(f"Inferred standard from results: {standard_title}")
-        
-        for result in search_results:
-            metadata = result.get('metadata', {})
-            chunk_type = metadata.get('chunk_type', '')
-            
-            # Extract document-level information
-            if chunk_type == 'document':
-                text = result.get('text', '')
-                # Extract executive summary
-                if '## Executive Summary' in text:
-                    start = text.find('## Executive Summary') + len('## Executive Summary')
-                    end = text.find('\n##', start)
-                    executive_summary = text[start:end if end != -1 else None].strip()
-                
-                # Extract scope
-                if '## Scope' in text:
-                    start = text.find('## Scope') + len('## Scope')
-                    end = text.find('\n##', start)
-                    scope = text[start:end if end != -1 else None].strip()
-                
-                year = metadata.get('year')
-                
-            # Extract statement information
-            elif chunk_type == 'statement':
-                stmt_num = metadata.get('statement_number', 0)
-                stmt_title = metadata.get('statement_title', '')
-                
-                # Parse statement text
-                text = result.get('text', '')
-                brief = ""
-                full = ""
-                indicators = []
-                for_patients = ""
-                for_clinicians = ""
-                
-                # Extract brief statement
-                if '## Statement' in text:
-                    start = text.find('## Statement') + len('## Statement')
-                    end = text.find('\n##', start)
-                    brief = text[start:end if end != -1 else None].strip()
-                
-                # Extract full text (statement + background)
-                if '## Background' in text:
-                    start = text.find('## Background') + len('## Background')
-                    end = text.find('\n##', start)
-                    background = text[start:end if end != -1 else None].strip()
-                    full = f"{brief}\n\nBackground:\n{background}" if brief else background
-                else:
-                    full = brief
-                
-                # Extract indicators
-                if '## Quality Indicators' in text:
-                    start = text.find('## Quality Indicators')
-                    end = text.find('\n##', start)
-                    indicators_text = text[start:end if end != -1 else None]
-                    indicators = [line.strip('• ').strip() for line in indicators_text.split('\n') 
-                                if line.strip().startswith('•')]
-                
-                # Extract patient info
-                if '## For Patients' in text:
-                    start = text.find('## For Patients') + len('## For Patients')
-                    end = text.find('\n##', start)
-                    for_patients = text[start:end if end != -1 else None].strip()
-                
-                # Extract clinician info
-                if '## For Clinicians' in text:
-                    start = text.find('## For Clinicians') + len('## For Clinicians')
-                    end = text.find('\n##', start)
-                    for_clinicians = text[start:end if end != -1 else None].strip()
-                
-                # Create QualityStatement with Option A minimal schema
-                statement = QualityStatement(
-                    id=f"{standard_title or 'unknown'}:statement_{stmt_num}",
-                    text=full if full else brief,
-                    relevance_score=result.get('similarity_score', 0.9),
-                    source=standard_title or 'Ontario Health Quality Standard',
-                    metadata={
-                        'statement_number': stmt_num,
-                        'title': stmt_title,
-                        'brief_statement': brief,
-                        'full_text': full if full != brief else None,
-                        'indicators': indicators,
-                        'for_patients': for_patients if for_patients else None,
-                        'for_clinicians': for_clinicians if for_clinicians else None,
-                        'chunk_type': 'statement'
-                    }
-                )
-                statements.append(statement)
-            
-            # Collect citations
-            source_url = metadata.get('source_url', '')
-            if source_url:
-                citations_set.add((
-                    metadata.get('title', 'Ontario Health Quality Standard'),
-                    source_url,
-                    'ontario_health'
-                ))
-        
-        # Sort statements by number
-        statements.sort(key=lambda s: s.metadata.get('statement_number', 0))
-        
-        # Create citations list
-        citations = [
-            Citation(
-                source=title,
-                source_org='ontario_health',
-                loc=f"Quality Standard",
-                url=url
-            )
-            for title, url, org in citations_set
-        ]
-        
-        # Calculate confidence
-        confidence = 0.9 if statements else 0.3
-        if retrieve_all_statements and standard_title:
-            confidence = 0.95  # High confidence when we found specific standard
-        
-        # Create response
-        response = QualityStandardsResponse(
-            standard_title=standard_title,
-            items=statements,
-            total_statements=len(statements),
-            executive_summary=executive_summary,
-            scope=scope,
-            year=year,
-            citations=citations,
-            confidence=confidence
-        )
-        
-        logger.info(f"Returning {len(statements)} quality statements")
-        
-        # Convert to dict and standardize
-        response_dict = response.model_dump()
-        return standardize_mcp_response(response_dict, "opa_quality_standards")
-        
     except Exception as e:
-        logger.error(f"Quality standards search failed: {e}")
-        logger.error(traceback.format_exc())
-        
-        # Return error response
-        return {
-            'error': str(e),
-            'standard_title': None,
-            'statements': [],
-            'total_statements': 0,
-            'citations': [],
-            'confidence': 0.0
+        logger.error(f"Failed to get semantic search engine: {e}")
+        return QualityStandardsResponse(
+            standard_title=None,
+            items=[],
+            total_statements=0,
+            citations=[],
+            confidence=0.3
+        ).model_dump()
+
+    # STEP 1: Classify query (unless overridden)
+    if standard_scope and intent:
+        classification = {
+            "intent": intent,
+            "relevant_standards": standard_scope,
+            "query_focus": query_focus or "statements",
+            "confidence": 1.0,
+            "reasoning": "Manual override"
         }
+        logger.info("Using manual standard scope override")
+    else:
+        # Get OpenAI client from semantic search
+        openai_client = semantic_search.openai_client
+
+        classification = await classify_quality_standards_query_cached(query, openai_client)
+        logger.info(f"QS triage: {classification['intent']}, {len(classification.get('relevant_standards', []))} standards")
+
+    # STEP 2: Retrieve chunks scoped to relevant standards
+    from .search.qs_helpers import (
+        retrieve_standard_overviews,
+        retrieve_detailed_statements
+    )
+    from .search.qs_triage import load_quality_standards_catalog
+
+    try:
+        # Special case: scope="all" means return entire catalog
+        if classification.get("scope") == "all":
+            logger.info("Scope is 'all' - returning full quality standards catalog instead of vector search")
+            catalog = load_quality_standards_catalog()
+
+            # Format catalog entries as search results
+            search_results = []
+            for entry in catalog:
+                # Build overview text from catalog metadata
+                overview_text = f"# {entry['standard_title']}\n\n"
+                overview_text += f"**Clinical Domain:** {entry['clinical_domain'].replace('_', ' ').title()}\n"
+                overview_text += f"**Conditions:** {', '.join(entry.get('conditions', []))}\n"
+                overview_text += f"**Care Focus:** {', '.join(entry.get('care_focus', []))}\n"
+
+                if entry.get('key_statements'):
+                    overview_text += f"\n**Key Quality Statements:**\n"
+                    for stmt in entry['key_statements'][:5]:
+                        overview_text += f"- {stmt}\n"
+
+                overview_text += f"\n**Statement Count:** {entry.get('statement_count', 0)}"
+
+                search_results.append({
+                    'text': overview_text,
+                    'metadata': {
+                        'title': entry['standard_title'],
+                        'standard_id': entry['standard_id'],
+                        'clinical_domain': entry['clinical_domain'],
+                        'conditions': entry.get('conditions', []),
+                        'care_focus': entry.get('care_focus', []),
+                        'statement_count': entry.get('statement_count', 0),
+                        'chunk_type': 'catalog_overview'
+                    },
+                    'similarity_score': 0.95  # High but not perfect for catalog browsing
+                })
+
+        elif classification["intent"] == "standard_discovery":
+            # Get standard overviews
+            logger.info("Using standard discovery mode (overviews)")
+            search_results = await retrieve_standard_overviews(
+                semantic_search=semantic_search,
+                query=query,
+                standard_ids=classification["relevant_standards"],
+                k=min(k, len(classification["relevant_standards"]) * 2)
+            )
+        else:
+            # Get detailed statement chunks
+            logger.info("Using specific indicator mode (detailed)")
+            search_results = await retrieve_detailed_statements(
+                semantic_search=semantic_search,
+                query=query,
+                standard_ids=classification["relevant_standards"],
+                query_focus=classification.get("query_focus", "statements"),
+                k=k if not retrieve_all_statements else 50
+            )
+
+        logger.info(f"Retrieved {len(search_results)} chunks")
+
+    except Exception as e:
+        logger.error(f"Quality standards retrieval failed: {e}")
+        logger.error(traceback.format_exc())
+        search_results = []
+
+    # STEP 3: Process results into quality statements
+    statements = []
+    executive_summary = None
+    scope = None
+    year = None
+    citations_set = set()
+
+    # Determine the primary standard from results
+    standard_title = None
+    if search_results:
+        # Look for the most common title in results
+        title_counts = {}
+        for result in search_results:
+            title = result.get('metadata', {}).get('title', '')
+            if title:
+                title_counts[title] = title_counts.get(title, 0) + 1
+
+        if title_counts:
+            # Get the most common title
+            standard_title = max(title_counts.items(), key=lambda x: x[1])[0]
+            logger.info(f"Primary standard from results: {standard_title}")
+
+    for result in search_results:
+        metadata = result.get('metadata', {})
+        chunk_type = metadata.get('chunk_type', '')
+
+        # Extract document-level information
+        if chunk_type == 'document':
+            text = result.get('text', '')
+            # Extract executive summary
+            if '## Executive Summary' in text:
+                start = text.find('## Executive Summary') + len('## Executive Summary')
+                end = text.find('\n##', start)
+                executive_summary = text[start:end if end != -1 else None].strip()
+
+            # Extract scope
+            if '## Scope' in text:
+                start = text.find('## Scope') + len('## Scope')
+                end = text.find('\n##', start)
+                scope = text[start:end if end != -1 else None].strip()
+
+            year = metadata.get('year')
+
+        # Extract statement information
+        elif chunk_type == 'statement':
+            stmt_num = metadata.get('statement_number', 0)
+            stmt_title = metadata.get('statement_title', '')
+
+            # Parse statement text
+            text = result.get('text', '')
+            brief = ""
+            full = ""
+            indicators = []
+            for_patients = ""
+            for_clinicians = ""
+
+            # Extract brief statement
+            if '## Statement' in text:
+                start = text.find('## Statement') + len('## Statement')
+                end = text.find('\n##', start)
+                brief = text[start:end if end != -1 else None].strip()
+
+            # Extract full text (statement + background)
+            if '## Background' in text:
+                start = text.find('## Background') + len('## Background')
+                end = text.find('\n##', start)
+                background = text[start:end if end != -1 else None].strip()
+                full = f"{brief}\n\nBackground:\n{background}" if brief else background
+            else:
+                full = brief
+
+            # Extract indicators
+            if '## Quality Indicators' in text:
+                start = text.find('## Quality Indicators')
+                end = text.find('\n##', start)
+                indicators_text = text[start:end if end != -1 else None]
+                indicators = [line.strip('• ').strip() for line in indicators_text.split('\n')
+                            if line.strip().startswith('•')]
+
+            # Extract patient info
+            if '## For Patients' in text:
+                start = text.find('## For Patients') + len('## For Patients')
+                end = text.find('\n##', start)
+                for_patients = text[start:end if end != -1 else None].strip()
+
+            # Extract clinician info
+            if '## For Clinicians' in text:
+                start = text.find('## For Clinicians') + len('## For Clinicians')
+                end = text.find('\n##', start)
+                for_clinicians = text[start:end if end != -1 else None].strip()
+
+            # Create QualityStatement
+            statement = QualityStatement(
+                id=f"{standard_title or 'unknown'}:statement_{stmt_num}",
+                text=full if full else brief,
+                relevance_score=result.get('similarity_score', 0.9),
+                source=standard_title or 'Ontario Health Quality Standard',
+                metadata={
+                    'statement_number': stmt_num,
+                    'title': stmt_title,
+                    'brief_statement': brief,
+                    'full_text': full if full != brief else None,
+                    'indicators': indicators,
+                    'for_patients': for_patients if for_patients else None,
+                    'for_clinicians': for_clinicians if for_clinicians else None,
+                    'chunk_type': 'statement'
+                }
+            )
+            statements.append(statement)
+
+        # Collect citations
+        source_url = metadata.get('source_url', '')
+        if source_url:
+            citations_set.add((
+                metadata.get('title', 'Ontario Health Quality Standard'),
+                source_url,
+                'ontario_health'
+            ))
+
+    # Sort statements by number
+    statements.sort(key=lambda s: s.metadata.get('statement_number', 0))
+
+    # Create citations list
+    citations = [
+        Citation(
+            source=title,
+            source_org='ontario_health',
+            loc=f"Quality Standard",
+            url=url
+        )
+        for title, url, org in citations_set
+    ]
+
+    # Calculate confidence (incorporate triage confidence)
+    triage_confidence = classification.get('confidence', 0.8)
+    retrieval_confidence = OPAConfidenceScorer.calculate(
+        sql_hits=len(search_results),
+        vector_matches=0,
+        sources=['ontario_health_quality_standards'],
+        doc_types=['quality_standard'],
+        has_conflict=False
+    )
+    # Weighted average: 40% triage, 60% retrieval
+    confidence = (triage_confidence * 0.4) + (retrieval_confidence * 0.6)
+
+    # Create response
+    response = QualityStandardsResponse(
+        standard_title=standard_title,
+        items=statements,
+        total_statements=len(statements),
+        executive_summary=executive_summary,
+        scope=scope,
+        year=year,
+        citations=citations,
+        confidence=confidence
+    )
+
+    logger.info(f"Returning {len(statements)} quality statements")
+
+    # Convert to dict and add classification metadata
+    response_dict = response.model_dump()
+
+    # Add two-tier classification metadata to response
+    response_dict['classification'] = {
+        'intent': classification.get('intent'),
+        'relevant_standards': classification.get('relevant_standards', []),
+        'query_focus': classification.get('query_focus'),
+        'clinical_domain': classification.get('clinical_domain'),
+        'triage_confidence': triage_confidence,
+        'reasoning': classification.get('reasoning')
+    }
+    response_dict['standards_searched'] = classification.get('relevant_standards', [])
+
+    return standardize_mcp_response(response_dict, "opa_quality_standards")
 
 
-@mcp.tool(name="opa_choosing_wisely", description="Choosing Wisely recommendations for avoiding unnecessary tests and procedures")
+@mcp.tool(name="opa_choosing_wisely", description="Choosing Wisely recommendations with two-tier specialty triage")
 async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     Search Choosing Wisely recommendations for unnecessary tests and procedures.
 
-    This tool helps identify clinical scenarios where tests, procedures, or treatments
-    may be unnecessary or overused according to Choosing Wisely Canada recommendations.
+    Uses two-tier retrieval architecture:
+    1. LLM classifies query intent and identifies relevant specialties
+    2. Retrieval is scoped to those specialties only
 
     Args:
         query: Test, procedure, or clinical scenario to check
         k: Number of results to return (default 10)
         filters: Optional dict with:
-            - specialty: Medical specialty (string, will be mapped to available)
+            - specialty_scope: Manual specialty ID override (List[str])
+            - intent: Manual intent override ("specialty_discovery" | "specific_recommendation")
             - all_specialty_recommendations: Return ALL recommendations for specialty (bool)
-            - recommendation_type: Type of content ("overview", "recommendation", "all")
 
     Returns:
-        Choosing Wisely recommendations with specialty information and citations
+        Choosing Wisely recommendations with specialty information, classification, and citations
     """
     # Use filters if provided
     filters = filters or {}
-    specialty = filters.get('specialty')
+    specialty_scope = filters.get('specialty_scope')  # Manual override (list of specialty_ids)
+    intent = filters.get('intent')  # Manual intent override
     all_specialty_recommendations = filters.get('all_specialty_recommendations', False)
-    recommendation_type = filters.get('recommendation_type', 'all')
 
     logger.info(f"opa.choosing_wisely called - query: {query}")
-    logger.info(f"  specialty: {specialty}, all_specialty_recommendations: {all_specialty_recommendations}, k: {k}")
-    
+    logger.info(f"  specialty_scope: {specialty_scope}, intent: {intent}, all_recommendations: {all_specialty_recommendations}, k: {k}")
+
     try:
         # Get semantic search engine
         semantic_search = get_semantic_search()
-        
-        # Step 1: Map specialty if provided using LLM
-        mapped_specialty = None
-        if specialty:
-            mapped_specialty = await _map_specialty_to_available(specialty, semantic_search)
-            logger.info(f"Mapped specialty '{specialty}' to '{mapped_specialty}'")
 
-        # Step 2: Build search query and filters
-        search_query = query
-        sources = ['choosing_wisely']
+        # Get OpenAI client for LLM triage
+        openai_client = get_openai_client()
 
-        # Document type filter based on recommendation_type
-        document_types = None
-        if recommendation_type == 'overview':
-            document_types = ['choosing_wisely_overview']
-        elif recommendation_type == 'recommendation':
-            document_types = ['choosing_wisely_recommendation']
-        # 'all' or None means search both types
-
-        # Search for relevant recommendations
-        # Strategy selection based on parameters
-        if mapped_specialty and all_specialty_recommendations:
-            # Strategy A: Get ALL recommendations for specialty (complete coverage)
-            # Most specialties have 5-7 recommendations, with chunking ~15-20 max
-            search_query = mapped_specialty  # Search by specialty name
-            initial_search_size = 50  # Sufficient for any single specialty
-            use_reranking = False  # Skip reranking for complete retrieval
-            logger.info(f"Complete specialty retrieval for '{mapped_specialty}'")
-        elif mapped_specialty:
-            # Strategy B: Semantic search within specialty
-            search_query = query
-            initial_search_size = min(k * 3, 50)  # Cap at 50
-            use_reranking = True
-            logger.info(f"Targeted search within '{mapped_specialty}'")
+        # TIER 1: Classify query (unless overridden)
+        if specialty_scope and intent:
+            classification = {
+                "intent": intent,
+                "relevant_specialties": specialty_scope,
+                "confidence": 1.0,
+                "reasoning": "Manual override"
+            }
+            logger.info("Using manual specialty scope and intent")
         else:
-            # Strategy C: General semantic search
-            search_query = query
-            initial_search_size = k
-            use_reranking = True
-            logger.info(f"General search across all specialties")
+            classification = await classify_choosing_wisely_query_cached(query, openai_client)
+            logger.info(f"LLM Classification: {classification}")
 
-        search_results = await semantic_search.search(
-            query=search_query,
-            sources=sources,
-            k=initial_search_size,
-            use_reranking=False,  # Disable LLM reranking (use CE instead)
-            use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-            use_ce_reranking=use_reranking  # Enable CE reranking except when getting all
+        # TIER 2: Retrieve chunks based on intent and specialty scope
+        from .search.choosing_wisely_helpers import (
+            retrieve_specialty_overviews,
+            retrieve_detailed_recommendations,
+            retrieve_complete_specialty,
+            format_choosing_wisely_response
         )
-        
-        logger.info(f"Search returned {len(search_results)} results")
-        
-        # Step 3: If specialty was mapped, filter results to that specialty
-        if mapped_specialty:
-            filtered_results = []
-            for result in search_results:
-                result_specialty = result.get('metadata', {}).get('specialty', '').lower()
-                if mapped_specialty.lower() in result_specialty or result_specialty in mapped_specialty.lower():
-                    filtered_results.append(result)
-            
-            search_results = filtered_results
-            logger.info(f"Filtered to {len(search_results)} results for specialty '{mapped_specialty}'")
+        from .search.choosing_wisely_triage import get_specialty_name
+
+        specialty_ids = classification.get('relevant_specialties', [])
+
+        # Handle three retrieval modes
+        if all_specialty_recommendations and specialty_ids:
+            # Mode 1: Complete specialty retrieval - get ALL chunks from database
+            specialty_name = get_specialty_name(specialty_ids[0])
+            if specialty_name:
+                logger.info(f"Mode 1: Complete retrieval for '{specialty_name}' - fetching ALL chunks from database")
+
+                # Use .get() with exact filter to retrieve ALL chunks for this specialty
+                # This bypasses vector search entirely and guarantees 100% recall
+                vector_client = semantic_search.vector_client
+                collection = vector_client.collection
+
+                all_chunks = collection.get(
+                    where={"specialty": {"$eq": specialty_name}},
+                    include=['documents', 'metadatas']
+                )
+
+                logger.info(f"Retrieved {len(all_chunks['ids'])} total chunks for '{specialty_name}'")
+
+                # Format chunks to match expected structure
+                search_results = []
+                for chunk_id, doc, metadata in zip(all_chunks['ids'], all_chunks['documents'], all_chunks['metadatas']):
+                    search_results.append({
+                        'text': doc,
+                        'metadata': metadata,
+                        'similarity_score': 1.0  # All chunks equally relevant for complete retrieval
+                    })
+
+                # Sort: parent chunks first, then children
+                parent_results = [r for r in search_results if r['metadata'].get('chunk_type') == 'parent']
+                child_results = [r for r in search_results if r['metadata'].get('chunk_type') == 'child']
+                search_results = parent_results + child_results
+
+                logger.info(f"Returning {len(search_results)} chunks ({len(parent_results)} parent, {len(child_results)} children)")
+            else:
+                logger.error(f"Specialty name not found for ID: {specialty_ids[0]}")
+                search_results = []
+
+        elif classification['intent'] == 'specialty_discovery' and specialty_ids:
+            # Mode 2: Specialty discovery (overview chunks)
+            logger.info(f"Mode 2: Discovery - retrieving overviews for {len(specialty_ids)} specialties")
+            formatted_chunks = await retrieve_specialty_overviews(
+                semantic_search,
+                query,
+                specialty_ids,
+                k=k
+            )
+            # Convert to search results format
+            search_results = [
+                {'text': c['text'], 'metadata': c, 'similarity_score': c.get('relevance_score', 0.8)}
+                for c in formatted_chunks
+            ]
+
+        elif specialty_ids:
+            # Mode 3: Specific recommendations (scoped semantic search)
+            logger.info(f"Mode 3: Specific - retrieving detailed recommendations from {len(specialty_ids)} specialties")
+            formatted_chunks = await retrieve_detailed_recommendations(
+                semantic_search,
+                query,
+                specialty_ids,
+                k=k
+            )
+            # Convert to search results format
+            search_results = [
+                {'text': c['text'], 'metadata': c, 'similarity_score': c.get('relevance_score', 0.8)}
+                for c in formatted_chunks
+            ]
+
+        else:
+            # Mode 4: Fallback - general semantic search (no triage)
+            logger.warning("No specialties identified - falling back to general search")
+            search_results = await semantic_search.search(
+                query=query,
+                sources=['choosing_wisely'],
+                k=k,
+                use_reranking=False,
+                use_hybrid=False,
+                use_ce_reranking=True
+            )
+
+        logger.info(f"Retrieved {len(search_results)} chunks")
         
         # Step 4: Process results into recommendations
         recommendations = []
@@ -1811,9 +2094,10 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
         primary_specialty = None
         if specialty_counts:
             primary_specialty = max(specialty_counts.items(), key=lambda x: x[1])[0]
-        elif mapped_specialty:
-            primary_specialty = mapped_specialty
-        
+        elif specialty_ids:
+            # Use first specialty from classification
+            primary_specialty = get_specialty_name(specialty_ids[0])
+
         # Sort recommendations by number
         recommendations.sort(key=lambda r: r.metadata['recommendation_number'])
 
@@ -1823,7 +2107,7 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             max_rec_num = k
             recommendations = [r for r in recommendations if r.metadata['recommendation_number'] <= max_rec_num]
             logger.info(f"Limited to {len(recommendations)} recommendations (numbers 1-{max_rec_num})")
-        
+
         # Create citations list
         citations = [
             Citation(
@@ -1834,19 +2118,19 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             )
             for title, url, org in citations_set
         ]
-        
-        # Calculate confidence
-        confidence = 0.9 if recommendations else 0.3
-        if mapped_specialty and primary_specialty:
-            confidence = 0.95  # High confidence when specialty matched
-        
-        # Create query interpretation
-        query_interpretation = f"Searching for unnecessary care recommendations"
+
+        # Calculate confidence (enhanced with classification confidence)
+        classification_confidence = classification.get('confidence', 0.5)
+        confidence = classification_confidence if recommendations else classification_confidence * 0.5
+
+        # Create query interpretation (enhanced with classification details)
+        clinical_scenario = classification.get('clinical_scenario', 'general')
+        query_interpretation = f"Intent: {classification['intent']} | Scenario: {clinical_scenario}"
         if primary_specialty:
-            query_interpretation += f" in {primary_specialty}"
-        if mapped_specialty and mapped_specialty != primary_specialty:
-            query_interpretation += f" (mapped from '{specialty}')"
-        
+            query_interpretation += f" | Specialty: {primary_specialty}"
+        if len(specialty_ids) > 1:
+            query_interpretation += f" | Searched {len(specialty_ids)} specialties"
+
         # Create response
         response = ChoosingWiselyResponse(
             specialty_title=primary_specialty,
@@ -1859,11 +2143,22 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             confidence=confidence,
             query_interpretation=query_interpretation
         )
-        
+
         logger.info(f"Returning {len(recommendations)} Choosing Wisely recommendations")
-        
-        # Convert to dict and standardize
+
+        # Convert to dict and add classification details
         response_dict = response.model_dump()
+
+        # Add two-tier classification metadata
+        response_dict['classification'] = {
+            'intent': classification.get('intent'),
+            'scope': classification.get('scope'),
+            'clinical_scenario': classification.get('clinical_scenario'),
+            'confidence': classification.get('confidence'),
+            'reasoning': classification.get('reasoning')
+        }
+        response_dict['specialties_searched'] = specialty_ids
+
         return standardize_mcp_response(response_dict, "opa_choosing_wisely")
         
     except Exception as e:

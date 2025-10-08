@@ -59,6 +59,7 @@ class SemanticSearchEngine:
         use_reranking: bool = True,
         use_hybrid: bool = True,  # Enable hybrid mode (dense + BM25)
         use_ce_reranking: bool = True,  # NEW: Enable cross-encoder reranking
+        where_filter: Optional[Dict] = None,  # NEW: Custom ChromaDB where filter
         request: Optional['StandardToolRequest'] = None
     ) -> List[Dict[str, Any]]:
         """
@@ -73,6 +74,7 @@ class SemanticSearchEngine:
             use_reranking: Whether to use LLM reranking
             use_hybrid: Whether to use hybrid (dense + BM25) retrieval with RRF fusion
             use_ce_reranking: Whether to use cross-encoder reranking (recommended for best MRR/nDCG)
+            where_filter: Custom ChromaDB where filter dict (overrides sources filter)
             request: StandardToolRequest object (standardized interface)
 
         Returns:
@@ -99,7 +101,7 @@ class SemanticSearchEngine:
             # Step 1: Parallel retrieval (dense + sparse)
             logger.info("Step 1: Hybrid Retrieval - Running dense + BM25 in parallel...")
 
-            dense_task = self._vector_search(query=query, sources=sources, n_results=50)
+            dense_task = self._vector_search(query=query, sources=sources, n_results=50, where_filter=where_filter)
             sparse_task = self.bm25_client.search(query=query, sources=sources, n_results=50)
 
             dense_results, sparse_results = await asyncio.gather(dense_task, sparse_task)
@@ -139,7 +141,8 @@ class SemanticSearchEngine:
             candidates = await self._vector_search(
                 query=query,
                 sources=sources,
-                n_results=50  # Get 5x more than needed for reranking
+                n_results=50,  # Get 5x more than needed for reranking
+                where_filter=where_filter
             )
             logger.info(f"  Vector search returned {len(candidates)} candidates")
 
@@ -205,21 +208,23 @@ class SemanticSearchEngine:
         self,
         query: str,
         sources: Optional[List[str]] = None,
-        n_results: int = 50
+        n_results: int = 50,
+        where_filter: Optional[Dict] = None
     ) -> List[Dict[str, Any]]:
         """
         Step 1: Vector search across collections.
-        
+
         Args:
             query: Search query
             sources: Source organizations to search
             n_results: Number of candidates to retrieve
-            
+            where_filter: Custom ChromaDB where filter (overrides sources filter)
+
         Returns:
             List of candidate documents with metadata
         """
-        logger.debug(f"Vector search: query='{query[:50]}...', sources={sources}, n={n_results}")
-        
+        logger.debug(f"Vector search: query='{query[:50]}...', sources={sources}, n={n_results}, where_filter={where_filter is not None}")
+
         # Determine which collections to search
         collection_map = {
             'cpso': 'opa_cpso_corpus',
@@ -246,7 +251,8 @@ class SemanticSearchEngine:
                 results = await self.vector_client.search_collection(
                     collection_name=collection_name,
                     query=query,
-                    n_results=n_results
+                    n_results=n_results,
+                    where=where_filter  # Pass where_filter as 'where' parameter
                 )
                 
                 # Format results with consistent structure

@@ -213,10 +213,10 @@ class CEPIngesterV2:
         metadata = {
             'source_url': f"https://tools.cep.health/tool/{tool_slug}/",
             'source_org': 'cep',
-            'title': title,
+            'title': title or 'Unknown',
             'document_type': 'clinical_tool',
-            'effective_date': last_updated,
-            'topics': ','.join(topics) if topics else '',  # Convert list to comma-separated string
+            'effective_date': last_updated or 'Unknown',
+            'topics': ','.join(topics) if topics else 'general',
             'content_hash': hashlib.sha256(str(soup).encode()).hexdigest(),
             'ingested_at': datetime.now().isoformat()
         }

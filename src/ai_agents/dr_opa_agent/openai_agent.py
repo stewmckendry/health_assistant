@@ -409,12 +409,14 @@ First, classify the query intent:
 Then, identify the required information fields for this intent:
 
 **CPSO Policy Intent Schema:**
-- regulatory_requirements: Mandatory requirements and expectations
+- regulatory_requirements: Mandatory requirements and expectations (from "expectation" level policies)
 - compliance_obligations: What physicians must do
+- best_practice_advice: Recommended best practices (from "advice" level policies)
 - documentation_requirements: Required documentation standards
 - sanctions_consequences: Consequences of non-compliance (if applicable)
 - implementation_guidance: How to implement in practice
-- citations: Source references with policy numbers and sections
+- related_policies: Other relevant CPSO policies for context
+- citations: Source references with policy titles, URLs, and specific sections
 
 **IPAC Guidelines Intent Schema:**
 - requirements_mandatory: Mandatory infection control measures
@@ -460,13 +462,22 @@ STEP 2: RETRIEVE - Call Tools and Extract Facts
 ───────────────────────────────────────────────────
 
 Call the appropriate MCP tools based on intent:
-- opa_policy_check: For CPSO policy questions
+- opa_policy_check: For CPSO policy questions (uses two-tier architecture - auto-classifies intent and scopes to relevant policies)
 - opa_ipac_guidance: For infection control questions
 - opa_program_lookup: For clinical programs
-- opa_clinical_tools: For decision support tools
-- opa_quality_standards: For quality standards
+- opa_clinical_tools: For CEP decision support tools (uses two-tier architecture - auto-classifies intent and scopes to relevant tools)
+- opa_quality_standards: For quality standards (uses two-tier architecture - auto-classifies intent and scopes to relevant standards)
 - opa_choosing_wisely: For avoiding unnecessary care
 - opa_search_sections: For general or multi-source queries
+
+**Two-Tier Retrieval (opa_policy_check, opa_clinical_tools, opa_quality_standards):**
+
+These tools auto-classify queries and scope retrieval:
+- **Catalog queries** ("List all CPSO policies", "What tools do you have?") → Returns complete catalog with all available resources
+- **Discovery queries** ("What policies exist for X?") → Returns overviews from 2-4 relevant resources
+- **Specific queries** ("What are the requirements for Y?") → Returns detailed chunks with parent context from 1-2 resources
+
+Just call with your natural query - the tools handle classification, scoping, and context assembly automatically.
 
 **Sources Filter (Target Specific Organizations):**
 
@@ -478,10 +489,11 @@ All tools support a `sources` filter to search specific organizations:
 - `filters={"sources": ["choosing_wisely"]}` → Choosing Wisely only
 
 **When to Use Sources Filter:**
-- User asks "What does CPSO say about X?" → Use `filters={"sources": ["cpso"]}`
-- User asks "PHO guidelines for Y" → Use `filters={"sources": ["pho"]}`
-- User asks "clinical tools for Z" → Use `filters={"sources": ["cep"]}`
+- User explicitly asks "What does CPSO say about X?" → Use `filters={"sources": ["cpso"]}`
+- User explicitly asks "PHO guidelines for Y" → Use `filters={"sources": ["pho"]}`
+- User explicitly asks "CEP tools for Z" → Use `filters={"sources": ["cep"]}`
 - User asks broad question → Omit filter (searches all sources)
+- Note: Sources filter is OPTIONAL - two-tier tools (policy_check, clinical_tools, quality_standards) auto-scope to relevant resources
 
 As you review the tool responses, actively extract facts into the schema fields:
 - Read each retrieved chunk carefully
