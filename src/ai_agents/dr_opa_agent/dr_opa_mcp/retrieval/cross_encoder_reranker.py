@@ -6,11 +6,26 @@ This improves MRR and nDCG@10 by scoring query-document pairs directly.
 """
 
 import logging
+import os
 from typing import List, Dict, Any
-import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+try:
+    import torch
+    from transformers import AutoTokenizer, AutoModelForSequenceClassification
+    TORCH_AVAILABLE = True
+except ImportError:
+    TORCH_AVAILABLE = False
+    torch = None
+    AutoTokenizer = None
+    AutoModelForSequenceClassification = None
 
 logger = logging.getLogger(__name__)
+
+# Configure HuggingFace cache to use Railway persistent volume
+if TORCH_AVAILABLE and os.environ.get("RAILWAY_ENVIRONMENT"):
+    os.environ["HF_HOME"] = "/app/data/huggingface_cache"
+    os.environ["TRANSFORMERS_CACHE"] = "/app/data/huggingface_cache"
+    logger.info("Railway environment detected - using persistent volume for HuggingFace cache")
 
 
 class CrossEncoderReranker:
@@ -31,6 +46,9 @@ class CrossEncoderReranker:
             model_name: HuggingFace model name (default: bge-reranker-v2-m3)
             device: Device to run model on ('cpu', 'cuda', 'mps', or None for auto)
         """
+        if not TORCH_AVAILABLE:
+            raise ImportError("torch and transformers are required for CrossEncoderReranker. Install with: pip install torch transformers")
+
         logger.info(f"Initializing CrossEncoderReranker with model: {model_name}")
 
         # Auto-detect device if not specified

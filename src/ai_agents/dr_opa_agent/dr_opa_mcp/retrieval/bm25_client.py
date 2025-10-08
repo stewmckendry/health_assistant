@@ -2,9 +2,19 @@
 BM25 sparse retrieval client using Whoosh for exact term matching.
 Complements dense vector search for hybrid retrieval.
 """
-from whoosh.index import create_in, open_dir, exists_in
-from whoosh.fields import Schema, TEXT, ID, STORED
-from whoosh.qparser import QueryParser, OrGroup
+try:
+    from whoosh.index import create_in, open_dir, exists_in
+    from whoosh.fields import Schema, TEXT, ID, STORED
+    from whoosh.qparser import QueryParser, OrGroup
+    WHOOSH_AVAILABLE = True
+except ImportError:
+    WHOOSH_AVAILABLE = False
+    # Provide dummy values for when whoosh is not available
+    Schema = None
+    TEXT = ID = STORED = None
+    QueryParser = OrGroup = None
+    create_in = open_dir = exists_in = None
+
 from pathlib import Path
 import logging
 from typing import List, Dict, Any, Optional
@@ -24,6 +34,9 @@ class BM25Client:
         Args:
             index_dir: Path to Whoosh index directory (default: data/dr_opa_agent/bm25_index)
         """
+        if not WHOOSH_AVAILABLE:
+            raise ImportError("Whoosh is required for BM25Client. Install with: pip install whoosh")
+
         if index_dir is None:
             # Default path based on environment (matches VectorClient structure)
             railway_env = os.environ.get("RAILWAY_ENVIRONMENT", "").lower()

@@ -36,6 +36,15 @@ numpy>=1.24.0
 # Vector database for embeddings
 chromadb>=0.4.15
 
+# Optional: Cross-encoder reranking (two-tier retrieval) - DISABLED BY DEFAULT
+# Uncomment if you want to enable cross-encoder reranking
+# torch>=2.0.0
+# transformers>=4.30.0
+
+# Optional: BM25 sparse retrieval (hybrid search) - DISABLED BY DEFAULT
+# Uncomment if you want to enable hybrid search
+# whoosh>=2.7.4
+
 # MCP SDKs (if available as packages)
 # ref-tools
 # exa-py

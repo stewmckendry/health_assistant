@@ -15,9 +15,28 @@ import os
 if TYPE_CHECKING:
     from ..models.request import StandardToolRequest
 
-from ..retrieval.bm25_client import BM25Client
-from ..retrieval.rrf_fusion import RRFFusion
-from ..retrieval.cross_encoder_reranker import CrossEncoderReranker
+# Optional imports for BM25 and cross-encoder (graceful fallback if not installed)
+try:
+    from ..retrieval.bm25_client import BM25Client
+    BM25_AVAILABLE = True
+except ImportError:
+    BM25_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("BM25Client not available - hybrid search disabled (whoosh not installed)")
+
+try:
+    from ..retrieval.rrf_fusion import RRFFusion
+    RRF_AVAILABLE = True
+except ImportError:
+    RRF_AVAILABLE = False
+
+try:
+    from ..retrieval.cross_encoder_reranker import CrossEncoderReranker
+    CROSS_ENCODER_AVAILABLE = True
+except ImportError:
+    CROSS_ENCODER_AVAILABLE = False
+    if not BM25_AVAILABLE:
+        logger.warning("CrossEncoderReranker not available - reranking disabled (torch/transformers not installed)")
 
 logger = logging.getLogger(__name__)
 
@@ -40,16 +59,24 @@ class SemanticSearchEngine:
             api_key=openai_api_key or os.getenv('OPENAI_API_KEY')
         )
 
-        # Initialize BM25 client for sparse retrieval
-        self.bm25_client = BM25Client()
+        # Initialize BM25 client for sparse retrieval (optional)
+        if BM25_AVAILABLE:
+            self.bm25_client = BM25Client()
+            logger.info("BM25Client initialized")
+        else:
+            self.bm25_client = None
+            logger.info("BM25Client not available - hybrid search will be disabled")
 
-        # Initialize RRF fusion
-        self.rrf_fusion = RRFFusion(c=60.0)
+        # Initialize RRF fusion (optional)
+        if RRF_AVAILABLE:
+            self.rrf_fusion = RRFFusion(c=60.0)
+        else:
+            self.rrf_fusion = None
 
-        # Initialize cross-encoder reranker
+        # Initialize cross-encoder reranker (optional, lazy initialization)
         self.ce_reranker = None  # Lazy initialization to avoid loading model unnecessarily
 
-        logger.info("SemanticSearchEngine initialized with hybrid (dense + BM25) support")
+        logger.info(f"SemanticSearchEngine initialized (BM25: {BM25_AVAILABLE}, CrossEncoder: {CROSS_ENCODER_AVAILABLE})")
     
     async def search(
         self,
@@ -57,8 +84,8 @@ class SemanticSearchEngine:
         sources: Optional[List[str]] = None,
         k: Optional[int] = None,
         use_reranking: bool = True,
-        use_hybrid: bool = True,  # Enable hybrid mode (dense + BM25)
-        use_ce_reranking: bool = True,  # NEW: Enable cross-encoder reranking
+        use_hybrid: bool = False,  # Disable hybrid mode (Issue #2 showed no improvement)
+        use_ce_reranking: bool = False,  # NEW: Enable cross-encoder reranking (DISABLED - using LLM reranking)
         where_filter: Optional[Dict] = None,  # NEW: Custom ChromaDB where filter
         request: Optional['StandardToolRequest'] = None
     ) -> List[Dict[str, Any]]:
@@ -98,44 +125,49 @@ class SemanticSearchEngine:
         if use_hybrid:
             # === HYBRID MODE: Dense + BM25 + RRF ===
 
-            # Step 1: Parallel retrieval (dense + sparse)
-            logger.info("Step 1: Hybrid Retrieval - Running dense + BM25 in parallel...")
+            # Check if hybrid dependencies are available
+            if not BM25_AVAILABLE or not RRF_AVAILABLE:
+                logger.warning("Hybrid mode requested but dependencies not available - falling back to dense-only search")
+                use_hybrid = False
+            else:
+                # Step 1: Parallel retrieval (dense + sparse)
+                logger.info("Step 1: Hybrid Retrieval - Running dense + BM25 in parallel...")
 
-            dense_task = self._vector_search(query=query, sources=sources, n_results=50, where_filter=where_filter)
-            sparse_task = self.bm25_client.search(query=query, sources=sources, n_results=50)
+                dense_task = self._vector_search(query=query, sources=sources, n_results=50, where_filter=where_filter)
+                sparse_task = self.bm25_client.search(query=query, sources=sources, n_results=50)
 
-            dense_results, sparse_results = await asyncio.gather(dense_task, sparse_task)
+                dense_results, sparse_results = await asyncio.gather(dense_task, sparse_task)
 
-            logger.info(f"  Dense: {len(dense_results)} results, BM25: {len(sparse_results)} results")
+                logger.info(f"  Dense: {len(dense_results)} results, BM25: {len(sparse_results)} results")
 
-            # Log top results from each retriever
-            if dense_results:
-                top_dense = [f"{r.get('document_id', r.get('id', 'unknown'))} ({r.get('distance', r.get('similarity_score', 0)):.3f})" for r in dense_results[:3]]
-                logger.info(f"  Top 3 dense: {top_dense}")
-            if sparse_results:
-                top_sparse = [f"{r.get('document_id', r.get('id', 'unknown'))} ({r.get('bm25_score', 0):.3f})" for r in sparse_results[:3]]
-                logger.info(f"  Top 3 sparse: {top_sparse}")
+                # Log top results from each retriever
+                if dense_results:
+                    top_dense = [f"{r.get('document_id', r.get('id', 'unknown'))} ({r.get('distance', r.get('similarity_score', 0)):.3f})" for r in dense_results[:3]]
+                    logger.info(f"  Top 3 dense: {top_dense}")
+                if sparse_results:
+                    top_sparse = [f"{r.get('document_id', r.get('id', 'unknown'))} ({r.get('bm25_score', 0):.3f})" for r in sparse_results[:3]]
+                    logger.info(f"  Top 3 sparse: {top_sparse}")
 
-            # Step 2: RRF Fusion
-            logger.info("Step 2: RRF Fusion - Merging dense + sparse rankings...")
-            fused = self.rrf_fusion.fuse(dense_results, sparse_results, k=50)
-            logger.info(f"  RRF fusion produced {len(fused)} unique documents")
+                # Step 2: RRF Fusion
+                logger.info("Step 2: RRF Fusion - Merging dense + sparse rankings...")
+                fused = self.rrf_fusion.fuse(dense_results, sparse_results, k=50)
+                logger.info(f"  RRF fusion produced {len(fused)} unique documents")
 
-            # Log provenance distribution
-            provenance_counts = {}
-            for doc in fused:
-                prov = doc.get('provenance', 'unknown')
-                provenance_counts[prov] = provenance_counts.get(prov, 0) + 1
-            logger.info(f"  Provenance distribution: {provenance_counts}")
+                # Log provenance distribution
+                provenance_counts = {}
+                for doc in fused:
+                    prov = doc.get('provenance', 'unknown')
+                    provenance_counts[prov] = provenance_counts.get(prov, 0) + 1
+                logger.info(f"  Provenance distribution: {provenance_counts}")
 
-            # Log top fused results
-            if fused:
-                top_fused = [f"{r.get('id', 'unknown')} (rrf={r.get('rrf_score', 0):.4f}, {r.get('provenance', '?')})" for r in fused[:5]]
-                logger.info(f"  Top 5 RRF: {top_fused}")
+                # Log top fused results
+                if fused:
+                    top_fused = [f"{r.get('id', 'unknown')} (rrf={r.get('rrf_score', 0):.4f}, {r.get('provenance', '?')})" for r in fused[:5]]
+                    logger.info(f"  Top 5 RRF: {top_fused}")
 
-            candidates = fused
+                candidates = fused
 
-        else:
+        if not use_hybrid:
             # === DENSE-ONLY MODE (backward compatibility) ===
             logger.info("Step 1: Vector Search (dense-only) - Retrieving candidates...")
             candidates = await self._vector_search(
@@ -152,29 +184,32 @@ class SemanticSearchEngine:
 
         # Step 3: Cross-Encoder Reranking (NEW - highest impact on MRR/nDCG)
         if use_ce_reranking and len(candidates) > 0:
-            step_num = 3 if use_hybrid else 2
-            logger.info(f"Step {step_num}: Cross-Encoder Reranking - Scoring relevance...")
+            if not CROSS_ENCODER_AVAILABLE:
+                logger.warning("Cross-encoder reranking requested but not available (torch/transformers not installed) - skipping")
+            else:
+                step_num = 3 if use_hybrid else 2
+                logger.info(f"Step {step_num}: Cross-Encoder Reranking - Scoring relevance...")
 
-            # Lazy initialize cross-encoder reranker
-            if self.ce_reranker is None:
-                logger.info("Initializing cross-encoder reranker (first use)...")
-                self.ce_reranker = CrossEncoderReranker()
+                # Lazy initialize cross-encoder reranker
+                if self.ce_reranker is None:
+                    logger.info("Initializing cross-encoder reranker (first use)...")
+                    self.ce_reranker = CrossEncoderReranker()
 
-            # Log before reranking
-            before_ids = [doc.get('document_id', doc.get('id', 'unknown')) for doc in candidates[:5]]
-            logger.info(f"  Top 5 before CE reranking: {before_ids}")
+                # Log before reranking
+                before_ids = [doc.get('document_id', doc.get('id', 'unknown')) for doc in candidates[:5]]
+                logger.info(f"  Top 5 before CE reranking: {before_ids}")
 
-            # Rerank with cross-encoder
-            reranked = self.ce_reranker.rerank(
-                query=query,
-                documents=candidates,
-                top_k=min(20, len(candidates))  # Narrow to top 20
-            )
+                # Rerank with cross-encoder
+                reranked = self.ce_reranker.rerank(
+                    query=query,
+                    documents=candidates,
+                    top_k=min(20, len(candidates))  # Narrow to top 20
+                )
 
-            # Log after reranking
-            after_ids = [doc.get('document_id', doc.get('id', 'unknown')) for doc in reranked[:5]]
-            logger.info(f"  Top 5 after CE reranking: {after_ids}")
-            logger.info(f"  Cross-encoder reranking narrowed to {len(reranked)} documents")
+                # Log after reranking
+                after_ids = [doc.get('document_id', doc.get('id', 'unknown')) for doc in reranked[:5]]
+                logger.info(f"  Top 5 after CE reranking: {after_ids}")
+                logger.info(f"  Cross-encoder reranking narrowed to {len(reranked)} documents")
 
         # Step 3b: Optional LLM Reranking (legacy, can be used in addition to CE)
         elif use_reranking and len(candidates) > 0:
