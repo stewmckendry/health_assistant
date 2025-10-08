@@ -1,9 +1,12 @@
 """
 ODB (Ontario Drug Benefit) dual-path retrieval tool.
 Always runs SQL and vector search in parallel, merges results.
+
+Now includes ODBQueryProcessor for flexible natural language understanding.
 """
 import asyncio
 import logging
+import os
 from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime
 from ..models.response import (
@@ -18,8 +21,12 @@ from ..models.response import (
 from ..retrieval import SQLClient, VectorClient
 from ..utils import ConfidenceScorer, ConflictDetector
 from .odb_drug_extractor import get_drug_extractor
+from .odb_query_processor import ODBQueryProcessor
 
 logger = logging.getLogger(__name__)
+
+# Feature flag for new query processor
+USE_QUERY_PROCESSOR = os.getenv("ODB_USE_QUERY_PROCESSOR", "false").lower() in ["true", "1", "yes"]
 
 
 class ODBTool:
@@ -31,14 +38,16 @@ class ODBTool:
     def __init__(
         self,
         sql_client: Optional[SQLClient] = None,
-        vector_client: Optional[VectorClient] = None
+        vector_client: Optional[VectorClient] = None,
+        use_query_processor: Optional[bool] = None
     ):
         """
         Initialize ODB tool with retrieval clients.
-        
+
         Args:
             sql_client: SQL client instance (creates default if None)
             vector_client: Vector client instance (creates default if None)
+            use_query_processor: Whether to use new LLM-powered query processor (default: from env)
         """
         # Use the correct database path with ODB tables
         self.sql_client = sql_client or SQLClient(
@@ -52,12 +61,29 @@ class ODBTool:
         self.confidence_scorer = ConfidenceScorer()
         self.conflict_detector = ConflictDetector()
         self.drug_extractor = get_drug_extractor()
-        
-        logger.info("ODB tool initialized with dual-path retrieval")
+
+        # Initialize query processor if enabled
+        self.use_query_processor = use_query_processor if use_query_processor is not None else USE_QUERY_PROCESSOR
+        if self.use_query_processor:
+            try:
+                self.query_processor = ODBQueryProcessor(
+                    sql_client=self.sql_client,
+                    vector_client=self.vector_client
+                )
+                logger.info("ODB tool initialized with LLM-powered query processor")
+            except Exception as e:
+                logger.warning(f"Failed to initialize query processor: {e}. Falling back to legacy mode.")
+                self.use_query_processor = False
+                self.query_processor = None
+        else:
+            self.query_processor = None
+            logger.info("ODB tool initialized with dual-path retrieval (legacy mode)")
     
     async def execute(self, request: Dict[str, Any]) -> ODBGetResponse:
         """
         Execute ODB query with dual-path retrieval.
+
+        Routes to enhanced query processor if enabled, otherwise uses legacy path.
 
         Args:
             request: Request dictionary with query parameters
@@ -66,6 +92,15 @@ class ODBTool:
             ODBGetResponse with merged SQL + vector results
         """
         start_time = datetime.now()
+
+        # Route to query processor if enabled and this is a natural language query
+        if self.use_query_processor and 'q' in request:
+            logger.info("Using enhanced query processor for natural language understanding")
+            try:
+                return await self._execute_with_query_processor(request)
+            except Exception as e:
+                logger.error(f"Query processor failed: {e}. Falling back to legacy path.")
+                # Fall through to legacy execution
         
         # Always run SQL and vector in parallel
         sql_task = self._sql_query(request)
@@ -80,13 +115,15 @@ class ODBTool:
         # Track which sources succeeded
         provenance = []
         if not isinstance(sql_result, Exception):
-            provenance.append("sql")
+            if sql_result:  # Only add if we got results
+                provenance.append("sql")
         else:
             logger.warning(f"SQL query failed: {sql_result}")
             sql_result = []
-            
+
         if not isinstance(vector_result, Exception):
-            provenance.append("vector")
+            if vector_result:  # Only add if we got results
+                provenance.append("vector")
         else:
             logger.warning(f"Vector search failed: {vector_result}")
             # Log more details about the error
@@ -150,7 +187,137 @@ class ODBTool:
             citations=citations,
             conflicts=conflicts
         )
-    
+
+    async def _execute_with_query_processor(self, request: Dict[str, Any]) -> ODBGetResponse:
+        """
+        Execute query using enhanced LLM-powered query processor.
+
+        This provides flexible natural language understanding and structured extraction.
+
+        Args:
+            request: Request dictionary with 'q' field containing natural language query
+
+        Returns:
+            ODBGetResponse with enhanced understanding and extraction
+        """
+        start_time = datetime.now()
+        raw_query = request.get('q', '')
+
+        # Step 1: Understand the query
+        intent = await self.query_processor.understand_query(raw_query)
+        logger.info(f"Query intent: {intent.query_type}, drugs: {intent.drug_names}")
+
+        # Step 2: Retrieve data
+        retrieval = await self.query_processor.retrieve(intent)
+
+        # Step 3: Enrich with LLM extraction
+        enriched = await self.query_processor.enrich_with_llm(intent, retrieval)
+
+        # Step 4: Convert to ODBGetResponse format
+        response = await self._format_enhanced_response(enriched, start_time)
+
+        return response
+
+    async def _format_enhanced_response(
+        self,
+        enriched,  # EnrichedResult
+        start_time: datetime
+    ) -> ODBGetResponse:
+        """
+        Format EnrichedResult into standard ODBGetResponse.
+
+        This bridges the new query processor with the existing response format.
+        """
+        provenance = []
+        if enriched.retrieval.sql_results:
+            provenance.append("sql")
+        if enriched.retrieval.vector_results:
+            provenance.append("vector")
+
+        # Build coverage from SQL if available
+        coverage = None
+        interchangeable = []
+        lowest_cost = None
+
+        if enriched.retrieval.sql_results:
+            # Use existing merge logic
+            coverage, interchangeable, lowest_cost, citations, conflicts = await self._merge_results(
+                enriched.retrieval.sql_results,
+                enriched.retrieval.vector_results,
+                {'q': enriched.intent.original_query}
+            )
+        else:
+            # Vector-only results - use drug class handling
+            citations = []
+            conflicts = []
+            if enriched.retrieval.vector_results:
+                coverage, interchangeable, lowest_cost, citations, conflicts = await self._merge_results(
+                    [],
+                    enriched.retrieval.vector_results,
+                    {'q': enriched.intent.original_query}
+                )
+
+        # Enrich coverage with LU criteria if extracted
+        if enriched.lu_criteria and coverage:
+            coverage.lu_required = enriched.lu_criteria.lu_required
+            coverage.lu_criteria = enriched.lu_criteria.criteria
+
+        # Add therapeutic alternatives to interchangeable list
+        for alt in enriched.therapeutic_alternatives:
+            # Check if already in list
+            if not any(d.brand == alt.drug_name for d in interchangeable):
+                interchangeable.append(InterchangeableDrug(
+                    din=alt.din or '',
+                    brand=f"{alt.drug_name} ({', '.join(alt.brand_names)})" if alt.brand_names else alt.drug_name,
+                    price=alt.price or 0.0,
+                    lowest_cost=False
+                ))
+
+        # Build items from vector results
+        items = self._build_items(enriched.retrieval.vector_results)
+
+        # Calculate confidence
+        sql_hits = (1 if coverage else 0) + len(interchangeable) if enriched.retrieval.sql_success else 0
+        vector_hits = len(enriched.retrieval.vector_results) if enriched.retrieval.vector_success else 0
+
+        confidence = self.confidence_scorer.calculate(
+            sql_hits=sql_hits,
+            vector_matches=vector_hits,
+            has_conflict=len(conflicts) > 0 if 'conflicts' in locals() else False
+        )
+
+        # Boost confidence for successful LLM extraction
+        if enriched.enrichment_method == "llm_extraction":
+            confidence = min(1.0, confidence + 0.1)
+
+        # Ensure we always have citations
+        if not citations:
+            citations = [Citation(
+                source="Ontario Drug Benefit Formulary (Edition 43)",
+                loc="General Reference",
+                section_path=None,
+                page=None,
+                url="https://www.ontario.ca/files/2025-09/moh-formulary-edition-43-en-2025-09-17.pdf"
+            )]
+
+        elapsed_ms = (datetime.now() - start_time).total_seconds() * 1000
+        logger.info(
+            f"Enhanced ODB query completed in {elapsed_ms:.1f}ms: "
+            f"query_type={enriched.intent.query_type}, "
+            f"confidence={confidence:.2f}"
+        )
+
+        return ODBGetResponse(
+            provenance=provenance,
+            confidence=confidence,
+            items=items,
+            coverage=coverage,
+            interchangeable=interchangeable,
+            lowest_cost=lowest_cost,
+            citations=citations,
+            conflicts=conflicts if 'conflicts' in locals() else []
+        )
+
     async def _sql_query(self, request: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         Execute SQL query for ODB drug data.
@@ -166,6 +333,14 @@ class ODBTool:
             din = request.get('din')
             raw_drug = request.get('drug')
             ingredient = request.get('ingredient')
+
+            # Detect drug class queries - skip SQL for these as they work better with vector search
+            if raw_drug and not din and not ingredient:
+                drug_class_keywords = ['medications', 'drugs', 'medicines', 'class', 'agents', 'therapies']
+                query_lower = raw_drug.lower()
+                if any(keyword in query_lower for keyword in drug_class_keywords):
+                    logger.info(f"Detected drug class query: '{raw_drug}' - skipping SQL, using vector-only")
+                    return []
 
             # If we have a drug query that looks like natural language, extract the drug name
             if raw_drug and not ingredient:
@@ -307,13 +482,13 @@ class ODBTool:
             if primary_drug:
                 # Extract LU requirements from vector if available
                 lu_info = self._extract_lu_criteria(vector_results, primary_drug)
-                
+
                 coverage = DrugCoverage(
                     covered=True,  # If in database, it's covered
-                    din=primary_drug.get('din', ''),
-                    brand_name=primary_drug.get('name', ''),  # SQL returns 'name' not 'brand'
-                    generic_name=primary_drug.get('generic_name', ''),  # SQL returns 'generic_name' not 'ingredient'
-                    strength=primary_drug.get('strength', ''),
+                    din=primary_drug.get('din') or '',
+                    brand_name=primary_drug.get('name') or '',  # SQL returns 'name' not 'brand'
+                    generic_name=primary_drug.get('generic_name') or '',  # SQL returns 'generic_name' not 'ingredient'
+                    strength=primary_drug.get('strength') or '',  # Ensure string, not None
                     lu_required=lu_info.get('required', False),
                     lu_criteria=lu_info.get('criteria')
                 )
@@ -394,7 +569,8 @@ class ODBTool:
                 conflicts.append(conflict)
         
         # Handle case where drug is not in SQL but mentioned in vector
-        if not coverage and vector_results:
+        # Only try this if we have sql_results (meaning we tried to query a specific drug)
+        if not coverage and vector_results and sql_results:
             coverage_info = self._extract_coverage_from_vector(vector_results, request)
             if coverage_info:
                 coverage = coverage_info
@@ -410,6 +586,49 @@ class ODBTool:
                     price=0.0,  # Unknown from vector
                     lowest_cost=False
                 ))
+
+        # Handle drug class queries - when SQL returns empty but vector has results
+        # This happens for queries like "glycemic control medications" that are drug classes
+        if not coverage and not sql_results and vector_results:
+            logger.info(f"No SQL results but {len(vector_results)} vector results - treating as drug class query")
+            for result in vector_results[:10]:  # Top 10 drugs from vector search
+                metadata = result.get('metadata', {})
+                text = result.get('text', '')
+
+                if metadata.get('din'):
+                    # Extract price from text (format: "Price: $X.XX per unit" or "Price: $X")
+                    price = 0.0
+                    if 'Price:' in text:
+                        try:
+                            # Find price line
+                            import re
+                            price_match = re.search(r'Price:\s*\$?([\d.]+)', text)
+                            if price_match:
+                                price = float(price_match.group(1))
+                        except (ValueError, AttributeError):
+                            price = 0.0
+
+                    brand = metadata.get('brand_name', '')
+                    generic = metadata.get('generic_name', '')
+
+                    interchangeable.append(InterchangeableDrug(
+                        din=metadata.get('din', ''),
+                        brand=f"{brand} ({generic})" if brand and generic else (brand or generic),
+                        price=price,
+                        lowest_cost=False
+                    ))
+
+            # Find lowest cost option if we have prices
+            if interchangeable:
+                priced_drugs = [d for d in interchangeable if d.price > 0]
+                if priced_drugs:
+                    lowest = min(priced_drugs, key=lambda x: x.price)
+                    lowest_cost = LowestCostDrug(
+                        din=lowest.din,
+                        brand=lowest.brand,
+                        price=lowest.price,
+                        savings=0.0
+                    )
         
         # Always include at least one citation to the ODB Formulary
         # This ensures users know the source of the information, even for negative results
