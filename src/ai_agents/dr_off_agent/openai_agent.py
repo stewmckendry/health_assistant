@@ -480,6 +480,7 @@ Call the appropriate MCP tools based on intent:
 - `ingredient`: str - Active ingredient name
 - `drug_class`: str - Therapeutic class
 - Use when: You know specific DIN or ingredient name
+- **Tip:** For drug class queries (e.g., "GLP-1 agonists"), query a specific drug name from that class instead
 
 **adp_get filters:**
 - `device_category`: str - Device type (e.g., "wheelchair", "walker")
