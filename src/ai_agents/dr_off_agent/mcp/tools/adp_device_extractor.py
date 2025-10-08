@@ -120,10 +120,19 @@ class ADPDeviceExtractor:
             result["check_types"].append("funding")
         if "exclusion" in query_lower or "not covered" in query_lower:
             result["check_types"].append("exclusions")
-        
-        # Default check types if none detected
+
+        # Auto-add exclusions check for commonly excluded items
+        common_exclusions_keywords = [
+            "batteries", "battery", "charger", "repair", "maintenance",
+            "accessories", "cushion", "bag", "replacement parts"
+        ]
+        if any(keyword in query_lower for keyword in common_exclusions_keywords):
+            if "exclusions" not in result["check_types"]:
+                result["check_types"].append("exclusions")
+
+        # Default check types if none detected - include exclusions by default
         if not result["check_types"]:
-            result["check_types"] = ["funding", "eligibility"]
+            result["check_types"] = ["funding", "eligibility", "exclusions"]
         
         return result
     
@@ -132,16 +141,54 @@ class ADPDeviceExtractor:
         # Remove articles and common words
         device = re.sub(r"\b(a|an|the|my|for)\b", "", device).strip()
         
-        # Common normalizations
+        # Common normalizations - clinical terms to device names
         normalizations = {
+            # Wheelchair variations
             "wheel chair": "wheelchair",
             "power chair": "power wheelchair",
             "electric wheelchair": "power wheelchair",
-            "mobility scooter": "scooter",
+            "motorized wheelchair": "power wheelchair",
+            "manual wheelchair": "wheelchair",
+            "standard wheelchair": "wheelchair",
+
+            # Walker/mobility aid variations
             "walking aid": "walker",
+            "gait aid": "walker",
+            "ambulation aid": "walker",
+            "mobility aid": "walker",
+            "assistive device": "walker",
+
+            # Scooter variations
+            "mobility scooter": "scooter",
+            "power scooter": "scooter",
+            "electric scooter": "scooter",
+
+            # Positioning devices
+            "positioning cushion": "cushion",
+            "seating system": "positioning device",
+            "wheelchair cushion": "cushion",
+
+            # Respiratory variations
+            "continuous positive airway pressure": "cpap",
+            "bilevel positive airway pressure": "bipap",
+            "cpap machine": "cpap",
+            "bipap machine": "bipap",
+
+            # Communication aids
             "communication device": "communication aid",
             "speech device": "communication aid",
+            "speech generating device": "communication aid",
+            "augmentative communication": "communication aid",
+            "aac device": "communication aid",
+
+            # Hearing devices
             "hearing aid": "hearing device",
+            "hearing amplifier": "hearing device",
+
+            # Vision aids
+            "low vision aid": "visual aid",
+            "reading aid": "visual aid",
+            "electronic magnifier": "visual aid",
         }
         
         device_lower = device.lower()
@@ -195,6 +242,9 @@ class ADPDeviceExtractor:
     
     def _is_natural_language(self, query: str) -> bool:
         """Check if query appears to be natural language."""
+        if not query:
+            return False
+
         nl_indicators = [
             'can ', 'is ', 'does ', 'what', 'covered', 'funding',
             'for ', 'get ', 'qualify', 'eligible', 'patient', '?',

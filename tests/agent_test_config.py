@@ -267,32 +267,130 @@ MCP_TOOL_CONFIGS = {
             "import_path": "src.ai_agents.dr_off_agent.mcp.tools.adp",
             "function_name": "adp_get",
             "test_requests": [
+                # Category 1: Basic Device Queries
                 {
-                    "query": "power wheelchair",
+                    "query": "What funding is available for power wheelchair?",
                     "k": 5,
-                    "filters": {
-                        "device": {
-                            "category": "mobility",
-                            "type": "power wheelchair"
-                        },
-                        "check": ["eligibility", "funding", "cep"]
-                    }
+                    "filters": {},
+                    "description": "Basic power wheelchair funding query"
                 },
                 {
-                    "query": "hearing aid",
+                    "query": "Is a walker covered by ADP?",
                     "k": 5,
-                    "filters": {
-                        "device": {
-                            "category": "hearing_devices",
-                            "type": "hearing aid"
-                        },
-                        "check": ["eligibility", "funding"]
-                    }
+                    "filters": {},
+                    "description": "Walker coverage yes/no"
                 },
                 {
-                    "query": "Does my patient qualify for ADP funding for a scooter? Income is $19,000",
+                    "query": "CPAP machine funding",
                     "k": 5,
-                    "filters": {}
+                    "filters": {},
+                    "description": "Respiratory device funding"
+                },
+
+                # Category 2: CEP Eligibility (CRITICAL)
+                {
+                    "query": "My patient needs power wheelchair, income is $19,000. Does she qualify for CEP?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "CEP eligibility - low income (CRITICAL TEST)"
+                },
+                {
+                    "query": "Patient income $35,000, needs walker. CEP eligible?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "CEP eligibility - above threshold"
+                },
+                {
+                    "query": "Family income $32,000, scooter for spouse. CEP?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "CEP family income threshold"
+                },
+
+                # Category 3: Exclusions (CRITICAL)
+                {
+                    "query": "Does ADP cover wheelchair batteries?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Batteries exclusion (CRITICAL TEST)"
+                },
+                {
+                    "query": "Scooter needs repair, is this covered by ADP?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Repairs exclusion"
+                },
+                {
+                    "query": "Does ADP cover walker accessories like bags?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Accessories exclusion"
+                },
+
+                # Category 4: Clinical Terminology (Synonym Mapping)
+                {
+                    "query": "Patient needs ambulation aid for home use",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Clinical synonym: ambulation aid → walker"
+                },
+                {
+                    "query": "gait aid funding",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Clinical synonym: gait aid → walker"
+                },
+                {
+                    "query": "speech generating device for ALS patient",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Clinical synonym: speech generating device"
+                },
+                {
+                    "query": "continuous positive airway pressure machine coverage",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Clinical synonym: CPAP full name"
+                },
+
+                # Category 5: Complex Scenarios
+                {
+                    "query": "Patient with MS, income $21,000, needs power wheelchair for daily outdoor use. Eligible? What's the cost?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Complex multi-part question"
+                },
+                {
+                    "query": "Scooter or power wheelchair - which does ADP prefer?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Device comparison"
+                },
+                {
+                    "query": "Patient already has wheelchair, needs replacement cushion. Covered?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Replacement vs initial coverage"
+                },
+
+                # Category 6: Edge Cases
+                {
+                    "query": "mobility device",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Vague query"
+                },
+                {
+                    "query": "Does ADP cover Hoveround scooter?",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Brand name query"
+                },
+                {
+                    "query": "Patient needs walker AND wheelchair",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Multiple devices"
                 }
             ]
         }

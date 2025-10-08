@@ -227,11 +227,13 @@ class ADPTool:
             device_type = device.get("type", "")
             device_category = device.get("category", "")
 
-            # Build comprehensive search query
-            query_parts = [
-                device_type,
-                device_category
-            ]
+            # Build comprehensive search query (filter out None/empty values)
+            query_parts = []
+
+            if device_type:
+                query_parts.append(device_type)
+            if device_category:
+                query_parts.append(device_category)
 
             # Add use case context if provided
             use_case = request.get("use_case")
@@ -250,7 +252,8 @@ class ADPTool:
             if "funding" in check_list:
                 query_parts.append("funding percentage coverage")
 
-            search_query = " ".join(query_parts)
+            # Join only non-empty parts
+            search_query = " ".join(filter(None, query_parts)) if query_parts else "assistive devices"
 
             # Search ADP manual chunks
             results = await self.vector_client.search_adp(
@@ -294,7 +297,7 @@ class ADPTool:
         # Check exclusions first
         exclusions = sql_result.get("exclusions", [])
         device = request.get("device", {})
-        device_type = device.get("type", "").lower()
+        device_type = (device.get("type") or "").lower()  # Handle None
         
         # Check if device or component is excluded
         for exclusion in exclusions:
@@ -405,13 +408,31 @@ class ADPTool:
         """
         exclusions = []
         device = request.get("device", {})
-        device_type = device.get("type", "").lower()
-        
+        device_type = (device.get("type") or "").lower()  # Handle None
+
+        # Common exclusions - check device type first for quick detection
+        COMMON_EXCLUSIONS = {
+            "batteries": "Batteries are not covered by ADP - patient must purchase separately",
+            "battery": "Batteries are not covered by ADP - patient must purchase separately",
+            "charger": "Chargers are not covered by ADP unless part of initial equipment",
+            "repair": "Repairs and maintenance are patient responsibility (not covered by ADP)",
+            "maintenance": "Maintenance services are not covered by ADP",
+            "replacement parts": "Replacement parts after initial purchase are not covered",
+            "accessories": "Device accessories may not be covered - check specific item",
+            "cushion": "Cushions may have separate coverage rules - verify with ADP",
+            "bag": "Carrying bags and cases are not covered by ADP"
+        }
+
+        # Check device type against common exclusions first
+        for keyword, exclusion_msg in COMMON_EXCLUSIONS.items():
+            if keyword in device_type:
+                exclusions.append(exclusion_msg)
+
         # Process SQL exclusions
         for exclusion in sql_result.get("exclusions", []):
             phrase = exclusion.get("phrase", "")
             applies_to = exclusion.get("applies_to", "")
-            
+
             # Check if exclusion applies to this device
             if phrase.lower() in device_type or device_type in phrase.lower():
                 exclusions.append(f"{phrase}: {applies_to}")
@@ -487,8 +508,8 @@ class ADPTool:
 
         # Extract device info
         device = request.get("device", {})
-        device_type = device.get("type", "").lower()
-        device_category = device.get("category", "")
+        device_type = (device.get("type") or "").lower()  # Handle None
+        device_category = device.get("category") or ""  # Ensure not None
 
         # Get funding from SQL
         sql_funding = None
@@ -496,7 +517,7 @@ class ADPTool:
             scenario = rule.get("scenario", "").lower()
 
             # Find matching funding rule
-            if device_type in scenario or device_category in scenario:
+            if device_type in scenario or (device_category and device_category in scenario):
                 sql_funding = {
                     "client_share": rule.get("client_share_percent", 25),
                     "adp_share": rule.get("adp_share_percent", 75)
@@ -660,12 +681,16 @@ class ADPTool:
     def _extract_device_keywords(self, device_type: str) -> str:
         """
         Extract keywords from compound device types for exclusion matching.
-        
+
         Examples:
             "scooter_batteries" -> "batteries"
             "wheelchair_cushions" -> "cushions"
             "walker_accessories" -> "accessories"
         """
+        # Handle None/empty device_type
+        if not device_type:
+            return ""
+
         # Common exclusion keywords to extract
         exclusion_keywords = [
             "batteries", "battery", "chargers", "charger",
@@ -673,14 +698,14 @@ class ADPTool:
             "accessories", "cushions", "parts", "components",
             "covers", "bags", "straps", "belts"
         ]
-        
+
         device_lower = device_type.lower()
-        
+
         # Check for exact keyword matches
         for keyword in exclusion_keywords:
             if keyword in device_lower:
                 return keyword
-        
+
         # Fallback: return the device type as-is
         return device_type
     
@@ -1350,20 +1375,24 @@ async def adp_get(
     
     # Add LLM-friendly summary that directly answers common questions
     summary_parts = []
-    
+
+    # CEP eligibility gets top priority - show first if applicable
+    if response_dict.get("cep") and response_dict["cep"].get("eligible"):
+        summary_parts.insert(0, f"🎯 CEP ELIGIBLE: Patient cost ELIMINATED (income < ${response_dict['cep']['income_threshold']:.0f})")
+
     # Build funding summary
     if response_dict.get("funding"):
         funding = response_dict["funding"]
         adp_pct = funding.get("adp_contribution", 0)
         client_pct = funding.get("client_share_percent", 0)
-        
-        # Check CEP eligibility
+
+        # Check CEP eligibility for funding message
         if response_dict.get("cep") and response_dict["cep"].get("eligible"):
-            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}% with CEP eliminating patient cost (income below ${response_dict['cep']['income_threshold']:.0f})")
-        elif response_dict.get("cep") and not response_dict["cep"].get("eligible"):
-            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}%, patient pays {client_pct}% (income above CEP threshold of ${response_dict['cep']['income_threshold']:.0f})")
+            summary_parts.append(f"✅ FUNDING: ADP covers {adp_pct}%, CEP eliminates patient's {client_pct}% share")
+        elif response_dict.get("cep") and not response_dict["cep"].get("eligible") and response_dict["cep"].get("income_threshold"):
+            summary_parts.append(f"✅ FUNDING: ADP {adp_pct}%, patient {client_pct}% | 💡 CEP available if income < ${response_dict['cep']['income_threshold']:.0f}")
         else:
-            summary_parts.append(f"✅ ELIGIBLE for funding: ADP covers {adp_pct}%, patient pays {client_pct}%")
+            summary_parts.append(f"✅ FUNDING: ADP covers {adp_pct}%, patient pays {client_pct}%")
     else:
         summary_parts.append("❓ Funding information not available")
     
