@@ -95,6 +95,14 @@ class PolicyCheckResponse(BaseModel):
     items: List[Section] = Field(..., description="All retrieved items (use chunk_type to filter: expectation, advice, policy_document)")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in completeness")
     summary: str = Field(..., description="Executive summary of guidance")
+    suggestions: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description="Suggested alternatives when no exact match found"
+    )
+    no_exact_match: bool = Field(
+        default=False,
+        description="True if no exact matches found, suggestions provided instead"
+    )
 
 
 class ProgramLookupResponse(BaseModel):
@@ -160,6 +168,14 @@ class QualityStandardsResponse(BaseModel):
     year: Optional[int] = Field(None, description="Year published")
     citations: List[Citation] = Field(..., description="Source citations")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in match")
+    suggestions: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description="Suggested alternatives when no exact match found"
+    )
+    no_exact_match: bool = Field(
+        default=False,
+        description="True if no exact matches found, suggestions provided instead"
+    )
 
 
 class ChoosingWiselyRecommendation(BaseModel):
@@ -182,3 +198,11 @@ class ChoosingWiselyResponse(BaseModel):
     citations: List[Citation] = Field(..., description="Source citations")
     confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence in match")
     query_interpretation: Optional[str] = Field(None, description="How the query was interpreted")
+    suggestions: Optional[List[Dict[str, Any]]] = Field(
+        None,
+        description="Suggested alternatives when no exact match found"
+    )
+    no_exact_match: bool = Field(
+        default=False,
+        description="True if no exact matches found, suggestions provided instead"
+    )

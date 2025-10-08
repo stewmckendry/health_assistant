@@ -42,6 +42,7 @@ from .models.request import StandardToolRequest
 
 # Add missing import
 import sqlite3
+from openai import AsyncOpenAI
 
 from .models.response import (
     SearchSectionsResponse,
@@ -110,6 +111,7 @@ except Exception as e:
 _sql_client = None
 _vector_client = None
 _semantic_search = None
+_openai_client = None
 
 
 # SQL client removed - all tools use semantic search only
@@ -159,6 +161,18 @@ def get_semantic_search() -> SemanticSearchEngine:
     return _semantic_search
 
 
+def get_openai_client() -> AsyncOpenAI:
+    """Get or create OpenAI client singleton."""
+    global _openai_client
+    if _openai_client is None:
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable not set")
+        _openai_client = AsyncOpenAI(api_key=api_key)
+        logger.info("OpenAI client initialized")
+    return _openai_client
+
+
 @mcp.tool(name="opa_search_sections", description="Hybrid search across OPA knowledge corpus")
 async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, Any] = None) -> Dict[str, Any]:
     """
@@ -181,6 +195,7 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
     # Extract sources filter only (other filters are passthrough/ignored)
     filters = filters or {}
     sources = filters.get('sources')
+    doc_types = filters.get('doc_types', [])
 
     logger.info(f"opa.search_sections called with query: {query[:100] if query else 'None'}...")
     logger.debug(f"Parameters: sources={sources}, k={k}")
@@ -202,9 +217,9 @@ async def search_sections_handler(query: str, k: int = 10, filters: Dict[str, An
             query=query,
             sources=sources,
             k=k,
-            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_reranking=True,  # Enable LLM reranking (CE disabled)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
+            use_ce_reranking=False  # Disable cross-encoder, use LLM reranking instead
         )
         
         logger.info(f"Semantic search returned {len(search_results)} results")
@@ -500,6 +515,58 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
 
         classification = await classify_cpso_query_cached(query, openai_client)
         logger.info(f"Policy triage: {classification['intent']}, {len(classification.get('relevant_policies', []))} policies")
+
+    # STEP 1.5: Check if no relevant policies found - compute fallback suggestions
+    if not classification.get("relevant_policies") or len(classification.get("relevant_policies", [])) == 0:
+        logger.info("No exact policy matches found, computing semantic fallback suggestions")
+
+        from .search.cpso_triage import load_policy_catalog
+        from .utils.catalog_fallback import (
+            compute_catalog_similarity,
+            format_suggestions_response
+        )
+
+        try:
+            catalog = load_policy_catalog()
+
+            suggestions = await compute_catalog_similarity(
+                query=query,
+                catalog=catalog,
+                openai_client=openai_client,
+                catalog_type="cpso_policies",
+                top_k=3,
+                min_similarity=0.40
+            )
+
+            if suggestions:
+                suggestion_text = format_suggestions_response(
+                    query=query,
+                    suggestions=suggestions,
+                    catalog_type="cpso_policies"
+                )
+
+                return PolicyCheckResponse(
+                    items=[],
+                    confidence=0.5,
+                    summary=suggestion_text,
+                    suggestions=suggestions,
+                    no_exact_match=True
+                ).dict()
+            else:
+                return PolicyCheckResponse(
+                    items=[],
+                    confidence=0.3,
+                    summary=f"No CPSO policies found for: {query}",
+                    no_exact_match=True
+                ).dict()
+        except Exception as e:
+            logger.error(f"Fallback computation failed: {e}", exc_info=True)
+            return PolicyCheckResponse(
+                items=[],
+                confidence=0.3,
+                summary=f"No CPSO policies found for: {query}",
+                no_exact_match=True
+            ).dict()
 
     # STEP 2: Retrieve chunks scoped to relevant policies
     from .search.cpso_helpers import (
@@ -994,9 +1061,9 @@ async def ipac_guidance_handler(query: str, k: int = 10, filters: Dict[str, Any]
             query=search_query,
             sources=['pho'],  # Focus on PHO for IPAC
             k=k * 2,  # Get more for processing
-            use_reranking=False,  # Disable LLM reranking (use CE instead)
+            use_reranking=True,  # Enable LLM reranking (CE disabled)
             use_hybrid=False,  # Disable hybrid (Issue #2 showed no improvement)
-            use_ce_reranking=True  # Enable cross-encoder reranking (Issue #3)
+            use_ce_reranking=False  # Disable cross-encoder, use LLM reranking instead
         )
 
         # Format results
@@ -1341,6 +1408,75 @@ async def clinical_tools_handler(query: str, k: int = 10, filters: Dict[str, Any
         classification = await classify_cep_query_cached(query, openai_client)
         logger.info(f"Tool triage: {classification['intent']}, {len(classification.get('relevant_tools', []))} tools")
 
+    # STEP 1.5: Check if no relevant tools found - compute fallback suggestions
+    if not classification.get("relevant_tools") or len(classification.get("relevant_tools", [])) == 0:
+        logger.info("No exact matches found, computing semantic fallback suggestions")
+
+        from .search.cep_triage import load_tool_catalog
+        from .utils.catalog_fallback import (
+            compute_catalog_similarity,
+            format_suggestions_response
+        )
+
+        try:
+            catalog = load_tool_catalog()
+
+            suggestions = await compute_catalog_similarity(
+                query=query,
+                catalog=catalog,
+                openai_client=openai_client,
+                catalog_type="cep_tools",
+                top_k=3,
+                min_similarity=0.40
+            )
+
+            if suggestions:
+                suggestion_text = format_suggestions_response(
+                    query=query,
+                    suggestions=suggestions,
+                    catalog_type="cep_tools"
+                )
+
+                return {
+                    'items': [],
+                    'suggestions': suggestions,
+                    'total_tools': 0,
+                    'confidence': 0.5,
+                    'query_interpretation': suggestion_text,
+                    'no_exact_match': True,
+                    'classification': {
+                        'intent': classification.get('intent'),
+                        'relevant_tools': [],
+                        'clinical_domain': classification.get('clinical_domain'),
+                        'triage_confidence': classification.get('confidence', 0.3),
+                        'reasoning': classification.get('reasoning')
+                    }
+                }
+            else:
+                return {
+                    'items': [],
+                    'total_tools': 0,
+                    'confidence': 0.3,
+                    'query_interpretation': f"No CEP clinical tools found for: {query}",
+                    'no_exact_match': True,
+                    'classification': {
+                        'intent': classification.get('intent'),
+                        'relevant_tools': [],
+                        'clinical_domain': classification.get('clinical_domain'),
+                        'triage_confidence': classification.get('confidence', 0.3),
+                        'reasoning': classification.get('reasoning')
+                    }
+                }
+        except Exception as e:
+            logger.error(f"Fallback computation failed: {e}", exc_info=True)
+            return {
+                'items': [],
+                'total_tools': 0,
+                'confidence': 0.3,
+                'query_interpretation': f"No CEP clinical tools found for: {query}",
+                'no_exact_match': True
+            }
+
     # STEP 2: Retrieve chunks scoped to relevant tools
     from .search.cep_helpers import (
         retrieve_tool_overviews,
@@ -1571,6 +1707,64 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
 
         classification = await classify_quality_standards_query_cached(query, openai_client)
         logger.info(f"QS triage: {classification['intent']}, {len(classification.get('relevant_standards', []))} standards")
+
+    # STEP 1.5: Check if no relevant standards found - compute fallback suggestions
+    if not classification.get("relevant_standards") or len(classification.get("relevant_standards", [])) == 0:
+        logger.info("No exact quality standards matches found, computing semantic fallback suggestions")
+
+        from .search.qs_triage import load_quality_standards_catalog
+        from .utils.catalog_fallback import (
+            compute_catalog_similarity,
+            format_suggestions_response
+        )
+
+        try:
+            catalog = load_quality_standards_catalog()
+
+            suggestions = await compute_catalog_similarity(
+                query=query,
+                catalog=catalog,
+                openai_client=openai_client,
+                catalog_type="quality_standards",
+                top_k=3,
+                min_similarity=0.40
+            )
+
+            if suggestions:
+                suggestion_text = format_suggestions_response(
+                    query=query,
+                    suggestions=suggestions,
+                    catalog_type="quality_standards"
+                )
+
+                return QualityStandardsResponse(
+                    standard_title=None,
+                    items=[],
+                    total_statements=0,
+                    citations=[],
+                    confidence=0.5,
+                    suggestions=suggestions,
+                    no_exact_match=True
+                ).model_dump()
+            else:
+                return QualityStandardsResponse(
+                    standard_title=None,
+                    items=[],
+                    total_statements=0,
+                    citations=[],
+                    confidence=0.3,
+                    no_exact_match=True
+                ).model_dump()
+        except Exception as e:
+            logger.error(f"Fallback computation failed: {e}", exc_info=True)
+            return QualityStandardsResponse(
+                standard_title=None,
+                items=[],
+                total_statements=0,
+                citations=[],
+                confidence=0.3,
+                no_exact_match=True
+            ).model_dump()
 
     # STEP 2: Retrieve chunks scoped to relevant standards
     from .search.qs_helpers import (
@@ -1867,6 +2061,69 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             classification = await classify_choosing_wisely_query_cached(query, openai_client)
             logger.info(f"LLM Classification: {classification}")
 
+        specialty_ids = classification.get('relevant_specialties', [])
+
+        # TIER 1.5: Check if no relevant specialties found - compute fallback suggestions
+        if not specialty_ids or len(specialty_ids) == 0:
+            logger.info("No exact Choosing Wisely specialty matches found, computing semantic fallback suggestions")
+
+            from .search.choosing_wisely_triage import load_specialty_catalog
+            from .utils.catalog_fallback import (
+                compute_catalog_similarity,
+                format_suggestions_response
+            )
+
+            try:
+                catalog = load_specialty_catalog()
+
+                suggestions = await compute_catalog_similarity(
+                    query=query,
+                    catalog=catalog,
+                    openai_client=openai_client,
+                    catalog_type="choosing_wisely",
+                    top_k=3,
+                    min_similarity=0.40
+                )
+
+                if suggestions:
+                    suggestion_text = format_suggestions_response(
+                        query=query,
+                        suggestions=suggestions,
+                        catalog_type="choosing_wisely"
+                    )
+
+                    return ChoosingWiselyResponse(
+                        specialty_title=None,
+                        items=[],
+                        total_recommendations=0,
+                        citations=[],
+                        confidence=0.5,
+                        query_interpretation=suggestion_text,
+                        suggestions=suggestions,
+                        no_exact_match=True
+                    ).model_dump()
+                else:
+                    return ChoosingWiselyResponse(
+                        specialty_title=None,
+                        items=[],
+                        total_recommendations=0,
+                        citations=[],
+                        confidence=0.3,
+                        query_interpretation=f"No Choosing Wisely recommendations found for: {query}",
+                        no_exact_match=True
+                    ).model_dump()
+            except Exception as e:
+                logger.error(f"Fallback computation failed: {e}", exc_info=True)
+                return ChoosingWiselyResponse(
+                    specialty_title=None,
+                    items=[],
+                    total_recommendations=0,
+                    citations=[],
+                    confidence=0.3,
+                    query_interpretation=f"No Choosing Wisely recommendations found for: {query}",
+                    no_exact_match=True
+                ).model_dump()
+
         # TIER 2: Retrieve chunks based on intent and specialty scope
         from .search.choosing_wisely_helpers import (
             retrieve_specialty_overviews,
@@ -1875,8 +2132,6 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             format_choosing_wisely_response
         )
         from .search.choosing_wisely_triage import get_specialty_name
-
-        specialty_ids = classification.get('relevant_specialties', [])
 
         # Handle three retrieval modes
         if all_specialty_recommendations and specialty_ids:
@@ -1953,9 +2208,9 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
                 query=query,
                 sources=['choosing_wisely'],
                 k=k,
-                use_reranking=False,
+                use_reranking=True,
                 use_hybrid=False,
-                use_ce_reranking=True
+                use_ce_reranking=False
             )
 
         logger.info(f"Retrieved {len(search_results)} chunks")
