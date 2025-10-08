@@ -6,11 +6,13 @@ Helper functions for two-tier Choosing Wisely retrieval:
 - Detailed recommendation retrieval (for specific queries)
 - Complete specialty retrieval (for "all recommendations" mode)
 - Parent-child context assembly
+- Decisional synthesis (binary recommendations)
 
 Author: AI Assistant
 Date: 2025-10-07
 """
 
+import json
 import logging
 from typing import Dict, List, Optional
 from collections import defaultdict
@@ -78,9 +80,9 @@ async def retrieve_specialty_overviews(
             query=query,
             sources=['choosing_wisely'],
             k=k * 2,  # Get more to ensure coverage
-            use_reranking=False,
+            use_reranking=True,
             use_hybrid=False,
-            use_ce_reranking=True,
+            use_ce_reranking=False,
             where_filter=where_filter  # Custom filter
         )
 
@@ -171,9 +173,9 @@ async def retrieve_detailed_recommendations(
             query=query,
             sources=['choosing_wisely'],
             k=k * 2,  # Get more for processing
-            use_reranking=False,
+            use_reranking=True,
             use_hybrid=False,
-            use_ce_reranking=True,
+            use_ce_reranking=False,
             where_filter=where_filter
         )
 
@@ -440,3 +442,99 @@ def deduplicate_by_specialty(chunks: List[Dict], max_per_specialty: int = 1) -> 
     deduplicated.sort(key=lambda x: x.get('relevance_score', 0), reverse=True)
 
     return deduplicated
+
+
+async def synthesize_binary_recommendation(
+    query: str,
+    classification: Dict,
+    retrieved_chunks: List[Dict],
+    llm_client
+) -> Dict:
+    """
+    Provide binary recommendation (avoid/consider/recommended) based on Choosing Wisely guidelines.
+
+    Args:
+        query: User's clinical scenario or test/procedure question
+        classification: Triage classification results
+        retrieved_chunks: Retrieved Choosing Wisely recommendation chunks
+        llm_client: OpenAI client for LLM synthesis
+
+    Returns:
+        {
+            "recommendation": "avoid" | "consider" | "recommended" | "insufficient_info",
+            "reasoning": "Explanation citing Choosing Wisely recommendations",
+            "supporting_recommendations": ["CW recommendations that apply"],
+            "red_flags": ["Scenarios where recommendation would change"],
+            "alternative_approaches": ["What to do instead if avoiding test/treatment"],
+            "relevant_specialties": [{"specialty": "...", "recommendation": "..."}],
+            "confidence": 0.0-1.0
+        }
+    """
+    logger.info("Synthesizing binary recommendation for decisional query")
+
+    # Build context from Choosing Wisely recommendations (top 8 most relevant)
+    cw_context = []
+    for chunk in retrieved_chunks[:8]:
+        metadata = chunk.get('metadata', {}) if 'metadata' in chunk else chunk
+        cw_context.append({
+            'specialty': metadata.get('specialty', chunk.get('specialty', 'Unknown')),
+            'organization': metadata.get('organization', chunk.get('organization', '')),
+            'recommendation': chunk.get('text', '')[:800]
+        })
+
+    prompt = f"""You are a Choosing Wisely advisor. Evaluate whether this test/treatment/procedure is appropriate.
+
+Clinical Scenario:
+{query}
+
+Relevant Choosing Wisely Recommendations:
+{json.dumps(cw_context, indent=2)}
+
+Provide recommendation in JSON:
+{{
+    "recommendation": "avoid" | "consider" | "recommended" | "insufficient_info",
+    "reasoning": "<1-3 sentence explanation citing Choosing Wisely recommendations>",
+    "supporting_recommendations": ["<CW recommendations that apply to this scenario>"],
+    "red_flags": ["<clinical scenarios where recommendation would change - be specific>"],
+    "alternative_approaches": ["<what to do instead if avoiding the test/treatment>"],
+    "relevant_specialties": [
+        {{"specialty": "<specialty>", "recommendation_summary": "<brief summary>"}}
+    ],
+    "confidence": <0.0-1.0>
+}}
+
+Guidelines:
+- "avoid" = Choosing Wisely explicitly recommends against in this scenario
+- "consider" = May be appropriate depending on additional factors not specified
+- "recommended" = Scenario falls outside Choosing Wisely "avoid" categories (appropriate to order)
+- "insufficient_info" = Choosing Wisely doesn't address this specific scenario
+
+Remember: Choosing Wisely identifies tests/treatments to AVOID. If scenario doesn't match avoidance criteria, it may be appropriate.
+Be specific about red flags - name the actual clinical findings that would change the recommendation."""
+
+    try:
+        response = await llm_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.1,
+            response_format={"type": "json_object"}
+        )
+
+        result = json.loads(response.choices[0].message.content)
+
+        logger.info(f"Binary recommendation result: {result.get('recommendation', 'unknown')}")
+        logger.info(f"  Confidence: {result.get('confidence', 0.0)}")
+
+        return result
+
+    except Exception as e:
+        logger.error(f"Binary recommendation synthesis error: {e}")
+        return {
+            "recommendation": "insufficient_info",
+            "reasoning": "Error during recommendation analysis",
+            "supporting_recommendations": [],
+            "red_flags": [],
+            "alternative_approaches": ["Please consult Choosing Wisely recommendations directly"],
+            "relevant_specialties": [],
+            "confidence": 0.0
+        }

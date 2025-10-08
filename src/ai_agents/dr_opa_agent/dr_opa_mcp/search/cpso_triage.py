@@ -11,6 +11,7 @@ Date: 2025-10-07
 
 import json
 import logging
+import re
 from pathlib import Path
 from typing import Dict, List, Optional
 from functools import lru_cache
@@ -72,6 +73,58 @@ def get_policy_url(policy_id: str) -> Optional[str]:
     """
     policy = get_policy_info(policy_id)
     return policy['source_url'] if policy else None
+
+
+def detect_decisional_intent(query: str) -> bool:
+    """
+    Detect if query expects a decisional answer (compliance check) vs informational lookup.
+
+    Decisional queries ask for binary answers or compliance validation:
+    - "Can I...?"
+    - "Does this comply...?"
+    - "Should I...?"
+    - Multi-line scenario descriptions
+
+    Args:
+        query: User query
+
+    Returns:
+        True if decisional, False if informational
+    """
+    # Decisional keyword patterns
+    decisional_patterns = [
+        r'\bshould\s+i\b',           # "should I order"
+        r'\bcan\s+i\b',              # "can I prescribe"
+        r'\bmay\s+i\b',              # "may I perform"
+        r'\bdo\s+i\s+need\b',        # "do I need to"
+        r'\bam\s+i\s+required\b',    # "am I required"
+        r'\bam\s+i\s+allowed\b',     # "am I allowed"
+        r'\bis\s+this\s+allowed\b',  # "is this allowed"
+        r'\bis\s+it\s+okay\b',       # "is it okay to"
+        r'\bdoes\s+this\s+comply\b', # "does this comply"
+        r'\bis\s+this\s+compliant\b',# "is this compliant"
+        r'\bmust\s+i\b',             # "must I"
+    ]
+
+    query_lower = query.lower()
+
+    # Check for decisional keyword patterns
+    for pattern in decisional_patterns:
+        if re.search(pattern, query_lower):
+            logger.debug(f"Decisional pattern matched: {pattern}")
+            return True
+
+    # Check for multi-line scenario descriptions (clinical cases)
+    if "\n" in query and len(query.split("\n")) > 2:
+        logger.debug("Multi-line scenario detected")
+        return True
+
+    # Check for bulleted/numbered lists (often compliance scenarios)
+    if re.search(r'[-•*]\s+', query) or re.search(r'\d+[.)]\s+', query):
+        logger.debug("List format detected (likely scenario)")
+        return True
+
+    return False
 
 
 async def classify_cpso_query(query: str, openai_client) -> Dict:
@@ -208,8 +261,18 @@ Now classify the user's query:"""
         if not isinstance(classification.get('relevant_policies'), list):
             classification['relevant_policies'] = []
 
+        # Add decisional intent detection
+        classification['is_decisional'] = detect_decisional_intent(query)
+
+        # Set query_type based on decisional flag
+        if classification['is_decisional']:
+            classification['query_type'] = 'compliance_check'
+        else:
+            classification['query_type'] = 'policy_lookup'
+
         # Log classification
         logger.info(f"Query classified as: {classification['intent']}")
+        logger.info(f"  Query type: {classification['query_type']} (decisional={classification['is_decisional']})")
         logger.info(f"  Relevant policies: {classification['relevant_policies']}")
         logger.info(f"  Confidence: {classification['confidence']}")
 

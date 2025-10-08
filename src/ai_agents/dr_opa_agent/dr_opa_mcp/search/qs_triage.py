@@ -11,6 +11,7 @@ Date: 2025-10-07
 
 import json
 import logging
+import re
 from pathlib import Path
 from typing import Dict, List, Optional
 from functools import lru_cache
@@ -71,6 +72,57 @@ def get_standard_title(standard_id: str) -> Optional[str]:
     """
     standard = get_standard_info(standard_id)
     return standard['standard_title'] if standard else None
+
+
+def detect_decisional_intent(query: str) -> bool:
+    """
+    Detect if query expects practice validation vs informational lookup.
+
+    Decisional queries ask for practice validation:
+    - "Is this aligned...?"
+    - "Is this appropriate...?"
+    - "Does this meet...?"
+    - Treatment/practice descriptions
+
+    Args:
+        query: User query
+
+    Returns:
+        True if decisional, False if informational
+    """
+    # Decisional keyword patterns for Quality Standards
+    decisional_patterns = [
+        r'\bis\s+this\s+aligned\b',
+        r'\bis\s+this\s+appropriate\b',
+        r'\bdoes\s+this\s+meet\b',
+        r'\bshould\s+i\b',
+        r'\bis\s+this\s+recommended\b',
+        r'\bdoes\s+this\s+follow\b',
+        r'\bis\s+.*\s+appropriate\b'
+    ]
+
+    query_lower = query.lower()
+
+    # Check for decisional keyword patterns
+    for pattern in decisional_patterns:
+        if re.search(pattern, query_lower):
+            logger.debug(f"Decisional pattern matched: {pattern}")
+            return True
+
+    # Check for patient/treatment scenario descriptions
+    practice_indicators = ['patient', 'treatment', 'considering', 'plan', 'management']
+    if any(indicator in query_lower for indicator in practice_indicators):
+        # Check if asking about appropriateness/alignment
+        if any(word in query_lower for word in ['appropriate', 'aligned', 'meet', 'follow', 'standard']):
+            logger.debug("Practice scenario with validation query detected")
+            return True
+
+    # Check for multi-line scenario descriptions
+    if "\n" in query and len(query.split("\n")) > 2:
+        logger.debug("Multi-line practice scenario detected")
+        return True
+
+    return False
 
 
 async def classify_quality_standards_query(query: str, openai_client) -> Dict:
@@ -221,8 +273,18 @@ Now classify the user's query:"""
         if not isinstance(classification.get('relevant_standards'), list):
             classification['relevant_standards'] = []
 
+        # Add decisional intent detection
+        classification['is_decisional'] = detect_decisional_intent(query)
+
+        # Set query_type based on decisional flag
+        if classification['is_decisional']:
+            classification['query_type'] = 'practice_validation'
+        else:
+            classification['query_type'] = 'standard_lookup'
+
         # Log classification
         logger.info(f"Query classified as: {classification['intent']}")
+        logger.info(f"  Query type: {classification['query_type']} (decisional={classification['is_decisional']})")
         logger.info(f"  Relevant standards: {classification['relevant_standards']}")
         logger.info(f"  Query focus: {classification['query_focus']}")
         logger.info(f"  Confidence: {classification['confidence']}")

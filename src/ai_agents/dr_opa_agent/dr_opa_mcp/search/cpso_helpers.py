@@ -5,11 +5,13 @@ Helper functions for two-tier CPSO policy retrieval:
 - Policy overview retrieval (for discovery queries)
 - Detailed chunk retrieval (for specific queries)
 - Parent-child context assembly
+- Decisional synthesis (compliance checking)
 
 Author: AI Assistant
 Date: 2025-10-07
 """
 
+import json
 import logging
 from typing import Dict, List, Optional
 from collections import defaultdict
@@ -77,9 +79,9 @@ async def retrieve_policy_overviews(
             query=query,
             sources=['cpso'],
             k=k * 3,  # Get more to ensure coverage
-            use_reranking=False,
+            use_reranking=True,
             use_hybrid=False,
-            use_ce_reranking=True,
+            use_ce_reranking=False,
             where_filter=where_filter  # Custom filter
         )
 
@@ -185,9 +187,9 @@ async def retrieve_detailed_chunks(
             query=query,
             sources=['cpso'],
             k=k * 2,  # Get more for processing
-            use_reranking=False,
+            use_reranking=True,
             use_hybrid=False,
-            use_ce_reranking=True,
+            use_ce_reranking=False,
             where_filter=where_filter
         )
 
@@ -381,3 +383,103 @@ def deduplicate_by_policy(chunks: List[Dict], max_per_policy: int = 2) -> List[D
     deduplicated.sort(key=lambda x: x.get('relevance_score', 0), reverse=True)
 
     return deduplicated
+
+
+async def synthesize_compliance_answer(
+    query: str,
+    classification: Dict,
+    retrieved_chunks: List[Dict],
+    llm_client
+) -> Dict:
+    """
+    Synthesize compliance answer from multiple policy chunks.
+
+    Analyzes clinical practice scenario against CPSO policies to determine compliance.
+
+    Args:
+        query: User's compliance question or scenario
+        classification: Triage classification results
+        retrieved_chunks: Retrieved policy chunks
+        llm_client: OpenAI client for LLM synthesis
+
+    Returns:
+        {
+            "compliant": "yes" | "no" | "partial" | "unclear",
+            "reasoning": "Brief explanation referencing specific policies",
+            "requirements": ["List of requirements that must be met"],
+            "non_compliance_risks": ["List of areas where practice may not comply"],
+            "recommendations": ["Suggested actions to ensure compliance"],
+            "relevant_policies": [{"policy": "Virtual Care", "section": "3.2", ...}],
+            "confidence": 0.0-1.0
+        }
+    """
+    logger.info("Synthesizing compliance answer for decisional query")
+
+    # Build context from retrieved chunks (top 10 most relevant)
+    policy_context = []
+    for chunk in retrieved_chunks[:10]:
+        metadata = chunk.get('metadata', {}) if 'metadata' in chunk else chunk
+        policy_context.append({
+            'policy': metadata.get('document_title', chunk.get('document_title', 'Unknown')),
+            'policy_level': metadata.get('policy_level', chunk.get('policy_level', 'unknown')),
+            'section': metadata.get('section_heading', chunk.get('section_heading', '')),
+            'text': chunk.get('text', '')[:1000]  # Limit context per chunk
+        })
+
+    prompt = f"""You are a CPSO policy compliance advisor. Analyze this clinical practice scenario for CPSO compliance.
+
+Scenario/Question:
+{query}
+
+Relevant CPSO Policy Excerpts:
+{json.dumps(policy_context, indent=2)}
+
+Analyze compliance and respond with JSON:
+{{
+    "compliant": "yes" | "no" | "partial" | "unclear",
+    "reasoning": "<1-3 sentence explanation citing specific policy requirements>",
+    "requirements": ["<list ALL requirements from policies that apply to this scenario>"],
+    "non_compliance_risks": ["<areas where scenario may not comply>"],
+    "recommendations": ["<specific actions to ensure compliance>"],
+    "relevant_policies": [
+        {{"policy": "<policy name>", "section": "<section ref>", "requirement_level": "expectation|advice"}}
+    ],
+    "confidence": <0.0-1.0>
+}}
+
+Guidelines:
+- "yes" = practice clearly complies with all applicable policies
+- "no" = practice clearly violates at least one expectation-level policy
+- "partial" = complies with some requirements but not others
+- "unclear" = insufficient information in policies or scenario to determine
+
+Be conservative - if unclear, say so. Cite specific policy requirements in reasoning.
+Focus on expectation-level policies (mandatory) over advice-level (guidance).
+If scenario lacks critical details, note this in non_compliance_risks."""
+
+    try:
+        response = await llm_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.1,
+            response_format={"type": "json_object"}
+        )
+
+        result = json.loads(response.choices[0].message.content)
+
+        logger.info(f"Compliance synthesis result: {result.get('compliant', 'unknown')}")
+        logger.info(f"  Confidence: {result.get('confidence', 0.0)}")
+
+        return result
+
+    except Exception as e:
+        logger.error(f"Compliance synthesis error: {e}")
+        return {
+            "compliant": "unclear",
+            "reasoning": "Error during compliance analysis",
+            "requirements": [],
+            "non_compliance_risks": ["Unable to complete analysis due to technical error"],
+            "recommendations": ["Please consult CPSO policies directly", "Consider seeking legal or regulatory advice"],
+            "relevant_policies": [],
+            "confidence": 0.0
+        }

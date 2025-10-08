@@ -789,7 +789,48 @@ async def policy_check_handler(query: str, k: int = 10, filters: Dict[str, Any] 
 
     summary = f"CPSO Guidance for '{query}': " + "; ".join(summary_parts)
 
-    # Create response with classification metadata
+    # STEP 3: CONDITIONAL DECISIONAL SYNTHESIS (NEW)
+    if classification.get('is_decisional', False):
+        logger.info("Decisional query detected - synthesizing compliance answer")
+
+        from .search.cpso_helpers import synthesize_compliance_answer
+
+        try:
+            decisional_answer = await synthesize_compliance_answer(
+                query=query,
+                classification=classification,
+                retrieved_chunks=policies_data,
+                llm_client=semantic_search.openai_client
+            )
+
+            # Return decisional format with structured answer + supporting evidence
+            return {
+                'decisional_answer': decisional_answer,
+                'supporting_evidence': items,  # Full Section objects for transparency
+                'classification': {
+                    'intent': classification['intent'],
+                    'query_type': classification.get('query_type', 'compliance_check'),
+                    'relevant_policies': classification.get('relevant_policies', []),
+                    'is_decisional': True,
+                    'confidence': classification.get('confidence', 0.8)
+                },
+                'response_type': 'decisional',
+                'query_interpretation': f"Compliance check for: {query}",
+                'summary': summary,
+                # Add top-level fields for test framework compatibility
+                'confidence': decisional_answer.get('confidence', 0.8),
+                'citations': [{'source_url': item.metadata.get('source_url', ''),
+                               'title': item.metadata.get('document_title', '')}
+                              for item in items if item.metadata.get('source_url')],
+                'items': items  # Include for backwards compatibility
+            }
+
+        except Exception as e:
+            logger.error(f"Decisional synthesis failed: {e}", exc_info=True)
+            # Fall through to standard informational response
+            logger.info("Falling back to informational response due to synthesis error")
+
+    # Create response with classification metadata (informational query path)
     response = PolicyCheckResponse(
         items=items,
         confidence=confidence,
@@ -2051,7 +2092,47 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
     # Weighted average: 40% triage, 60% retrieval
     confidence = (triage_confidence * 0.4) + (retrieval_confidence * 0.6)
 
-    # Create response
+    # DECISIONAL SYNTHESIS (NEW)
+    if classification.get('is_decisional', False):
+        logger.info("Decisional query detected - synthesizing practice validation")
+
+        from .search.qs_helpers import synthesize_validation_answer
+
+        try:
+            decisional_answer = await synthesize_validation_answer(
+                query=query,
+                classification=classification,
+                retrieved_chunks=standards_data,
+                llm_client=openai_client
+            )
+
+            # Return decisional format with structured answer + supporting evidence
+            return {
+                'decisional_answer': decisional_answer,
+                'supporting_evidence': statements,  # Full statement objects
+                'classification': {
+                    'intent': classification['intent'],
+                    'query_type': classification.get('query_type', 'practice_validation'),
+                    'relevant_standards': classification.get('relevant_standards', []),
+                    'query_focus': classification.get('query_focus'),
+                    'is_decisional': True,
+                    'confidence': classification.get('confidence', 0.8)
+                },
+                'response_type': 'decisional',
+                'query_interpretation': f"Practice validation for: {query}",
+                'standards_searched': classification.get('relevant_standards', []),
+                # Add top-level fields for test framework compatibility
+                'confidence': decisional_answer.get('confidence', 0.8),
+                'citations': citations,
+                'items': statements  # Include for backwards compatibility
+            }
+
+        except Exception as e:
+            logger.error(f"Decisional synthesis failed: {e}", exc_info=True)
+            # Fall through to standard informational response
+            logger.info("Falling back to informational response due to synthesis error")
+
+    # Create response (informational query path)
     response = QualityStandardsResponse(
         standard_title=standard_title,
         items=statements,
@@ -2456,7 +2537,47 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
         if len(specialty_ids) > 1:
             query_interpretation += f" | Searched {len(specialty_ids)} specialties"
 
-        # Create response
+        # DECISIONAL SYNTHESIS (NEW)
+        if classification.get('is_decisional', False):
+            logger.info("Decisional query detected - synthesizing binary recommendation")
+
+            from .search.choosing_wisely_helpers import synthesize_binary_recommendation
+
+            try:
+                decisional_answer = await synthesize_binary_recommendation(
+                    query=query,
+                    classification=classification,
+                    retrieved_chunks=search_results,
+                    llm_client=openai_client
+                )
+
+                # Return decisional format with structured answer + supporting evidence
+                return {
+                    'decisional_answer': decisional_answer,
+                    'supporting_evidence': recommendations,  # Full recommendation objects
+                    'classification': {
+                        'intent': classification['intent'],
+                        'query_type': classification.get('query_type', 'binary_recommendation'),
+                        'relevant_specialties': specialty_ids,
+                        'clinical_scenario': classification.get('clinical_scenario'),
+                        'is_decisional': True,
+                        'confidence': classification.get('confidence', 0.8)
+                    },
+                    'response_type': 'decisional',
+                    'query_interpretation': query_interpretation,
+                    'specialties_searched': specialty_ids,
+                    # Add top-level fields for test framework compatibility
+                    'confidence': decisional_answer.get('confidence', 0.8),
+                    'citations': citations,
+                    'items': recommendations  # Include for backwards compatibility
+                }
+
+            except Exception as e:
+                logger.error(f"Decisional synthesis failed: {e}", exc_info=True)
+                # Fall through to standard informational response
+                logger.info("Falling back to informational response due to synthesis error")
+
+        # Create response (informational query path)
         response = ChoosingWiselyResponse(
             specialty_title=primary_specialty,
             items=recommendations,
