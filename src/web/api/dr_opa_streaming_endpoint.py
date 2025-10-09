@@ -68,7 +68,20 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
         ):
             event_type = event.get('type')
 
-            if event_type == 'text':
+            if event_type == 'progress':
+                # Stream progress update
+                progress_event = {
+                    "type": "progress",
+                    "message": event.get('message', ''),
+                    "event_type": event.get('event_type', ''),
+                    "agent_name": event.get('agent_name', ''),
+                    "tool_name": event.get('tool_name'),
+                    "details": event.get('details'),
+                    "timestamp": datetime.utcnow().isoformat()
+                }
+                yield f"data: {json.dumps(progress_event)}\n\n"
+
+            elif event_type == 'text':
                 # Stream text delta
                 yield f"data: {json.dumps({'type': 'text', 'data': {'delta': event['content']}, 'timestamp': datetime.utcnow().isoformat()})}\n\n"
 
