@@ -190,10 +190,34 @@ def extract_citations_from_tool_result(tool_name: str, tool_result: Any, trusted
                         'relevance_score': 0.8
                     }
                     citations.append(citation)
-    
+
+        # Extract from items (used in PolicyCheckResponse and other responses)
+        if 'items' in result_data and isinstance(result_data['items'], list):
+            logger.debug(f"Found {len(result_data['items'])} items in tool result")
+            for item in result_data['items']:
+                if isinstance(item, dict) and 'metadata' in item:
+                    metadata = item['metadata']
+                    if 'source_url' in metadata and metadata['source_url']:
+                        citation = {
+                            'id': f"item_{uuid.uuid4().hex[:8]}",
+                            'title': metadata.get('document_title', item.get('source', 'Document')),
+                            'source': metadata.get('source_org', 'Unknown'),
+                            'source_type': 'policy',
+                            'url': metadata['source_url'],
+                            'domain': extract_domain(metadata['source_url']),
+                            'is_trusted': extract_domain(metadata['source_url']) in trusted_domains,
+                            'access_date': datetime.now().isoformat(),
+                            'relevance_score': item.get('relevance_score', 0.8),
+                            'snippet': metadata.get('section_heading', '')
+                        }
+                        citations.append(citation)
+                        logger.debug(f"Extracted citation from item: {citation['title']} - {citation['url']}")
+
     except Exception as e:
         logger.warning(f"Error extracting citations from {tool_name}: {e}")
-    
+        import traceback
+        logger.warning(traceback.format_exc())
+
     return citations
 
 
