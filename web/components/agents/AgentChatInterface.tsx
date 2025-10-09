@@ -41,7 +41,8 @@ export function AgentChatInterface({ agent, onClose, onAgentSwitch }: AgentChatI
   const [isStreaming, setIsStreaming] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [streamingContent, setStreamingContent] = useState<string>('');
-  
+  const [progressMessage, setProgressMessage] = useState<string>('');
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -289,6 +290,13 @@ How can I assist with your Ontario practice questions today?`;
         );
         break;
         
+      case 'progress':
+        // Handle progress events - display prominently
+        const progressMsg = event.message || event.content || '';
+        setProgressMessage(progressMsg);
+        console.log('Progress:', progressMsg, event);
+        break;
+
       case 'citation':
         const citationData = event.data || event.content || {};
         const citation: Citation = {
@@ -296,7 +304,7 @@ How can I assist with your Ontario practice questions today?`;
           id: citationData.id || `citation_${Date.now()}_${Math.random()}`,
           accessDate: citationData.accessDate || new Date().toISOString()
         };
-        
+
         // Update the message with citations (deduped by URL)
         setMessages(prev =>
           prev.map(msg => {
@@ -315,6 +323,9 @@ How can I assist with your Ontario practice questions today?`;
       case 'response_done':
       case 'done':
       case 'complete':
+        // Clear progress message when done
+        setProgressMessage('');
+
         // Extract trace ID from event if present
         const traceId = event.data?.traceId || event.metadata?.trace_id || null;
         
@@ -696,13 +707,15 @@ How can I assist with your Ontario practice questions today?`;
           </div>
           {isStreaming && (
             <div className="flex items-center justify-center gap-2 mt-2 sm:mt-3 max-w-4xl mx-auto">
-              <div className="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 bg-blue-50 rounded-full">
+              <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg sm:rounded-xl border border-blue-200 shadow-sm">
                 <div className="flex gap-0.5 sm:gap-1">
                   <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
                   <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
                   <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce"></span>
                 </div>
-                <span className="text-xs sm:text-sm text-blue-700 font-medium">{agent.name} is thinking...</span>
+                <span className="text-xs sm:text-sm text-blue-700 font-medium">
+                  {progressMessage || `${agent.name} is thinking...`}
+                </span>
               </div>
             </div>
           )}
