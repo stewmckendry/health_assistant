@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 
 # Optional imports for BM25 and cross-encoder (graceful fallback if not installed)
 try:
-    from ..retrieval.bm25_client import BM25Client
-    BM25_AVAILABLE = True
+    from ..retrieval.bm25_client import BM25Client, WHOOSH_AVAILABLE
+    BM25_AVAILABLE = WHOOSH_AVAILABLE  # Use the actual whoosh availability, not just import success
 except ImportError:
     BM25_AVAILABLE = False
     logger = logging.getLogger(__name__)
