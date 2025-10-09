@@ -20,7 +20,7 @@ import {
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { FeedbackButtons } from '@/components/chat/FeedbackButtons';
 
 interface AgentMessageProps {
@@ -29,6 +29,29 @@ interface AgentMessageProps {
   agentIcon?: string;
   isStreaming?: boolean;
   onFeedback?: (feedback: any) => void;
+}
+
+// Process inline citations in message content
+function processInlineCitations(content: string, citations: Citation[]): string {
+  if (!citations || citations.length === 0) return content;
+
+  // Create a map of citation IDs to indices
+  const citationMap = new Map<string, number>();
+  citations.forEach((citation, index) => {
+    if (citation.id) {
+      citationMap.set(citation.id, index + 1);
+    }
+  });
+
+  // Replace cite{id} with [n] where n is the citation number
+  let processedContent = content;
+  citationMap.forEach((num, id) => {
+    // Match cite{id} format (case insensitive)
+    const regex = new RegExp(`cite${id}`, 'gi');
+    processedContent = processedContent.replace(regex, `[${num}]`);
+  });
+
+  return processedContent;
 }
 
 // Inline citations component with better styling
@@ -159,6 +182,14 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFee
   const isUser = message.role === 'user';
   const isError = message.error;
 
+  // Process inline citations in content
+  const processedContent = useMemo(() => {
+    return processInlineCitations(message.content, message.citations || []);
+  }, [message.content, message.citations]);
+
+  const hasToolCalls = message.toolCalls && message.toolCalls.length > 0;
+  const hasCitations = message.citations && message.citations.length > 0;
+
   return (
     <div
       className={cn(
@@ -256,7 +287,7 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFee
                   hr: () => <hr className="my-4 border-border" />,
                 }}
               >
-                {message.content}
+                {processedContent}
               </ReactMarkdown>
             )}
           </div>
