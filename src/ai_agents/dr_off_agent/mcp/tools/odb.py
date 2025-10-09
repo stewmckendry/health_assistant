@@ -373,7 +373,7 @@ class ODBTool:
             exclude_lu = request.get('exclude_lu', False)
 
             # Use specialized ODB query method
-            top_k = request.get('top_k', 5)
+            top_k = request.get('top_k', 30)  # Increased from 5 to 30
             results = await self.sql_client.query_odb_drugs(
                 din=din,
                 ingredient=ingredient,
@@ -443,7 +443,7 @@ class ODBTool:
             search_query = " ".join(query_parts)
 
             # Search ODB policy documents
-            top_k = request.get('top_k', 5)
+            top_k = request.get('top_k', 30)  # Increased from 5 to 30
             drug_class = request.get('drug_class')
             results = await self.vector_client.search_odb(
                 query=search_query,
@@ -504,17 +504,29 @@ class ODBTool:
                     lu_criteria=lu_info.get('criteria')
                 )
             
-            # Find interchangeable drugs
+            # Find interchangeable drugs (deduplicate by DIN)
             group_id = primary_drug.get('interchangeable_group_id') if primary_drug else None  # Fixed field name
+            seen_dins = set()
             if group_id:
-                for drug in sql_results:
-                    if drug.get('interchangeable_group_id') == group_id:  # Fixed field name
-                        interchangeable.append(InterchangeableDrug(
-                            din=drug.get('din', ''),
-                            brand=drug.get('name', ''),  # SQL returns 'name' not 'brand'
-                            price=drug.get('individual_price') or 0.0,  # Handle None values explicitly
-                            lowest_cost=drug.get('is_lowest_cost', False)  # SQL returns 'is_lowest_cost' not 'lowest_cost'
-                        ))
+                # Query ALL drugs in the interchangeable group (not just sql_results)
+                group_drugs = await self.sql_client.query_odb_drugs(
+                    interchangeable_group=group_id,
+                    limit=100  # Get all drugs in group
+                )
+
+                for drug in group_drugs:
+                    din = drug.get('din', '')
+                    # Skip if we've already seen this DIN
+                    if din in seen_dins:
+                        continue
+                    seen_dins.add(din)
+
+                    interchangeable.append(InterchangeableDrug(
+                        din=din,
+                        brand=drug.get('name', ''),  # SQL returns 'name' not 'brand'
+                        price=drug.get('individual_price') or 0.0,  # Handle None values explicitly
+                        lowest_cost=drug.get('is_lowest_cost', False)  # SQL returns 'is_lowest_cost' not 'lowest_cost'
+                    ))
             
             # Find lowest cost option
             if interchangeable:
@@ -892,7 +904,7 @@ async def odb_get(
     """
     # Extract from standardized format
     query = request.get("query", "")
-    k = request.get("k", 5)
+    k = request.get("k", 30)  # Increased from 5 to 30 to capture all generic alternatives
     filters = request.get("filters", {})
 
     # Build internal request format

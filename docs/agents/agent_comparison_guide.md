@@ -151,21 +151,81 @@ This guide helps you understand when to use each AI agent in the health assistan
 ## Technical Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        The Chief                            │
-│                (Clinical Intelligence Orchestrator)          │
-│                                                             │
-│  Analyzes query → Routes to specialists → Synthesizes       │
-└──────────────┬──────────────┬──────────────┬───────────────┘
-               │              │              │
-       ┌───────▼──────┐ ┌────▼─────┐ ┌──────▼────────┐
-       │   Dr. OPA    │ │ Dr. OFF  │ │   Agent 97    │
-       │  (Practice)  │ │(Finance) │ │  (Education)  │
-       └──────┬───────┘ └────┬─────┘ └───────┬───────┘
-              │              │                │
-         MCP Tools      MCP Tools        MCP Tools
-         (CPSO, CEP,    (OHIP, ODB,     (web_search,
-          PHO, OH)       ADP)            web_fetch)
+┌──────────────────────────────────────────────────────────────────────────┐
+│                           The Chief                                      │
+│                   (Clinical Intelligence Orchestrator)                   │
+│                          Model: GPT-4o                                   │
+│                                                                          │
+│         Analyzes query → Routes to specialists → Synthesizes            │
+└────────────────┬───────────────┬───────────────┬─────────────────────────┘
+                 │               │               │
+      ┌──────────▼─────────┐ ┌──▼──────────┐ ┌─▼────────────────────┐
+      │      Dr. OPA       │ │   Dr. OFF   │ │      Agent 97        │
+      │    (Practice)      │ │  (Finance)  │ │    (Education)       │
+      │  Model: GPT-4o-mini│ │GPT-4o-mini │ │ Model: Claude 3.5    │
+      └──────────┬─────────┘ └──┬──────────┘ └─┬────────────────────┘
+                 │               │               │
+           MCP Tools       MCP Tools       MCP Tools
+                 │               │               │
+      ┌──────────▼─────────┐    │        ┌──────▼──────────┐
+      │ opa_search_sections│    │        │  web_search     │
+      │ opa_policy_check   │    │        │  web_fetch      │
+      │ opa_program_lookup │    │        │                 │
+      │ opa_ipac_guidance  │    │        └─────────────────┘
+      │ opa_clinical_tools │    │
+      │ opa_quality_stds   │    │
+      │ opa_choosing_wisely│    │
+      └──────────┬─────────┘    │
+                 │               │
+      ┌──────────▼──────────────▼───────────┐
+      │       ChromaDB Collections          │
+      ├─────────────────────────────────────┤
+      │ • opa_cpso_corpus (366 embeddings)  │
+      │ • opa_cep_corpus (57 embeddings)    │
+      │ • opa_pho_corpus (132 embeddings)   │
+      │ • opa_quality_standards_corpus      │
+      │   (340 embeddings)                  │
+      │ • opa_choosing_wisely_corpus        │
+      │   (544 embeddings)                  │
+      └─────────────────────────────────────┘
+
+                               ┌──────────────────────┐
+                               │    MCP Tools         │
+                               ├──────────────────────┤
+                               │ • schedule_get       │
+                               │ • odb_get            │
+                               │ • adp_get            │
+                               └──────────┬───────────┘
+                                          │
+                    ┌─────────────────────┴─────────────────────┐
+                    │                                           │
+         ┌──────────▼─────────────┐            ┌───────────────▼────────────┐
+         │  SQLite Database       │            │   ChromaDB Collections     │
+         │     (ohip.db)          │            │                            │
+         ├────────────────────────┤            ├────────────────────────────┤
+         │ Tables:                │            │ • ohip_documents           │
+         │ • ohip_fee_schedule    │            │   (6,983 embeddings)       │
+         │   (4,166 records)      │            │ • odb_documents            │
+         │ • odb_drugs            │            │   (10,815 embeddings)      │
+         │   (8,401 records)      │            │ • adp_documents            │
+         │ • odb_interchangeable_ │            │   (610 embeddings)         │
+         │   groups (2,369)       │            │                            │
+         │ • adp_funding_rule     │            │ Embedding Model:           │
+         │   (735 records)        │            │ text-embedding-3-small     │
+         │ • adp_exclusion        │            │ (1536 dimensions)          │
+         │   (1,101 records)      │            │                            │
+         │ • act_eligibility_rule │            └────────────────────────────┘
+         │   (64 records)         │
+         │ • document_chunks      │
+         │   (191 records)        │
+         │ • chunk_fee_codes      │
+         │   (8,392 records)      │
+         └────────────────────────┘
+
+Legend:
+━━━ Agent routing and orchestration
+─── MCP tool invocation
+──▶ Database queries (SQL + Vector search)
 ```
 
 ---
