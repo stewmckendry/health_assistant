@@ -61,12 +61,34 @@ git clone https://github.com/stewmckendry/health_assistant.git
 cd health_assistant
 ```
 
-### Step 2: Activate Python Environment
+### Step 2: Set Up Python Environment
 ```bash
-source ~/spacy_env/bin/activate
+# Create a virtual environment
+python3 -m venv venv
+
+# Activate it
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-### Step 3: Test with Your Own Queries
+### Step 3: Set Up Environment Variables
+You'll need API keys. Create a `.env` file in the project root:
+```bash
+# Create .env file
+touch .env
+```
+
+Add these lines to `.env` (I'll provide the actual keys separately):
+```
+ANTHROPIC_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
+LANGFUSE_SECRET_KEY=your_key_here
+LANGFUSE_PUBLIC_KEY=your_key_here
+```
+
+### Step 4: Test with Your Own Queries
 
 **Test The Chief (Diagnostic Decision Support):**
 ```bash
