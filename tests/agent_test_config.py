@@ -208,6 +208,43 @@ MCP_TOOL_CONFIGS = {
                     "query": "complete physical examination",
                     "k": 5,
                     "filters": {}
+                },
+                # Medical condition + service type tests (query processor extraction)
+                {
+                    "query": "diabetes follow-up",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Medical condition extraction test - should find K046, K045, Q040"
+                },
+                {
+                    "query": "asthma management",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Medical condition extraction test"
+                },
+                {
+                    "query": "hypertension assessment",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Medical condition extraction test"
+                },
+                {
+                    "query": "COPD consultation",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Medical condition extraction test"
+                },
+                {
+                    "query": "prenatal care",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Medical condition extraction test - should find P005, A920"
+                },
+                {
+                    "query": "palliative care visit",
+                    "k": 5,
+                    "filters": {},
+                    "description": "Medical condition extraction test"
                 }
             ]
         },
