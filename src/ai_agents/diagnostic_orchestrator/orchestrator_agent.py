@@ -334,6 +334,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
     
     def _create_agent_97(self, mcp_server) -> Agent:
         """Create Agent 97 with its MCP server."""
+        from agents import ModelSettings
         return Agent(
             name="Agent 97",
             instructions="""You are Agent 97, providing comprehensive medical education from 97 trusted medical sources with safety guardrails.
@@ -356,7 +357,8 @@ When using the agent_97_query tool, pass the clinical query directly and it will
 2. Search 97 trusted medical sources
 3. Apply output guardrails to ensure response safety
 4. Return educational content with appropriate disclaimers""",
-            model="gpt-4o-mini",
+            model="o4-mini",
+            model_settings=ModelSettings(reasoning={"summary": "auto"}),
             mcp_servers=[mcp_server]
         )
     
@@ -450,8 +452,11 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                 orchestrator = Agent(
                     name="The Chief",
                     instructions=self.system_instructions,
-                    model="gpt-4o",  # Use more powerful model for orchestration
-                    model_settings=ModelSettings(parallel_tool_calls=True),  # Enable parallel calls for speed
+                    model="o4-mini",  # Use reasoning-enabled model for orchestration
+                    model_settings=ModelSettings(
+                        parallel_tool_calls=True,  # Enable parallel calls for speed
+                        reasoning={"summary": "auto"}  # Enable reasoning display
+                    ),
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
                 

@@ -715,10 +715,12 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                     search_context_size="medium"
                 )
                 
+                from agents import ModelSettings
                 agent = Agent(
                     name="Dr. OPA",
                     instructions=self._get_system_instructions(),
-                    model="gpt-4o",
+                    model="o4-mini",
+                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
                 )
@@ -1005,10 +1007,12 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                     search_context_size="medium"
                 )
                 
+                from agents import ModelSettings
                 agent = Agent(
                     name="Dr. OPA",
                     instructions=self._get_system_instructions(),
-                    model="gpt-4o",
+                    model="o4-mini",
+                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
                 )
@@ -1300,10 +1304,12 @@ Technical details: {error_message}"""
             search_context_size="medium"
         )
         
+        from agents import ModelSettings
         return Agent(
             name="Dr. OPA",
             instructions=self._get_system_instructions(),
-            model="gpt-4o",
+            model="o4-mini",
+            model_settings=ModelSettings(reasoning={"summary": "auto"}),
             mcp_servers=[server] if server else [],
             tools=[web_search_tool]
         )
