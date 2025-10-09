@@ -446,10 +446,12 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                 )
                 
                 # Create the orchestrator agent with sub-agents as tools
+                from agents import ModelSettings
                 orchestrator = Agent(
                     name="The Chief",
                     instructions=self.system_instructions,
                     model="gpt-4o",  # Use more powerful model for orchestration
+                    model_settings=ModelSettings(parallel_tool_calls=True),  # Enable parallel calls for speed
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
                 
@@ -741,10 +743,12 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                 )
                 
                 # Create orchestrator
+                from agents import ModelSettings
                 orchestrator = Agent(
                     name="The Chief",
                     instructions=self.system_instructions,
                     model="gpt-4o",
+                    model_settings=ModelSettings(parallel_tool_calls=True),  # Enable parallel calls for speed
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
                 
