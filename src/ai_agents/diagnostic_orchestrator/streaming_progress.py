@@ -220,35 +220,40 @@ class StreamingProgressTracker:
                         details={"result_count": result_count} if result_count else None
                     )
 
-                # Reasoning output (o1/o3 models or agents using reasoning)
+                # Reasoning output (o1/o3/o4 models or agents using reasoning)
                 elif event.name == "reasoning_item_created":
                     if hasattr(event.item, 'raw_item'):
                         reasoning_item = event.item.raw_item
+
                         # Try to extract summary text
                         reasoning_text = None
+
+                        # Check if summary exists and has content
                         if hasattr(reasoning_item, 'summary') and reasoning_item.summary:
-                            # summary is a list of Summary objects
+                            # summary is a list of Summary objects with text attribute
                             summaries = []
                             for summary in reasoning_item.summary:
-                                if hasattr(summary, 'text'):
+                                if hasattr(summary, 'text') and summary.text:
                                     summaries.append(summary.text)
                             if summaries:
                                 reasoning_text = " ".join(summaries)
 
+                        # Skip empty reasoning items (status='in_progress' with no summary yet)
+                        # Only emit progress when we have actual reasoning content
+                        if not reasoning_text:
+                            continue  # Skip this event, don't yield anything
+
                         emoji = "🤔"
-                        if reasoning_text:
-                            # Truncate long reasoning
-                            if len(reasoning_text) > 100:
-                                reasoning_text = reasoning_text[:97] + "..."
-                            message = f"{emoji} {self.current_agent} reasoning: {reasoning_text}"
-                        else:
-                            message = f"{emoji} {self.current_agent} is thinking..."
+                        # Truncate long reasoning
+                        if len(reasoning_text) > 100:
+                            reasoning_text = reasoning_text[:97] + "..."
+                        message = f"{emoji} {self.current_agent} reasoning: {reasoning_text}"
 
                         yield ProgressUpdate(
                             message=message,
                             event_type="reasoning",
                             agent_name=self.current_agent,
-                            details={"reasoning": reasoning_text} if reasoning_text else None
+                            details={"reasoning": reasoning_text}
                         )
 
                 # Message being generated (final synthesis)
