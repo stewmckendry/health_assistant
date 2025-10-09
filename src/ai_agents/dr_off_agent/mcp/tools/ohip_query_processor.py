@@ -104,7 +104,7 @@ Analyze this billing query and extract structured information. Return ONLY valid
     "query_type": "<code_lookup|service_discovery|eligibility_check|fee_inquiry|specialty_search|premium_modifier|yes_no|general>",
     "billing_codes": ["list of OHIP codes mentioned like 'C124', 'K013', 'A007'"],
     "service_types": ["types of services mentioned like 'consultation', 'house call', 'discharge', 'assessment'"],
-    "clinical_terms": ["billing/clinical terms like 'MRP', 'comprehensive geriatric assessment', 'surgical assist'"],
+    "clinical_terms": ["billing/clinical terms AND medical conditions like 'MRP', 'diabetes', 'hypertension', 'asthma', 'comprehensive geriatric assessment', 'surgical assist'"],
     "specialty": "<medical specialty like 'internist', 'family practice', 'surgery', or null>",
     "location": "<care location like 'ER', 'emergency', 'LTC', 'long-term care', 'office', 'hospital', or null>",
     "modifiers": {{
@@ -141,6 +141,8 @@ Examples:
 - "house call codes" → {{"query_type": "service_discovery", "service_types": ["house call"]}}
 - "ER consultation as internist" → {{"query_type": "specialty_search", "service_types": ["consultation"], "specialty": "internal medicine", "location": "emergency"}}
 - "discharge codes for 3-day admission" → {{"query_type": "service_discovery", "service_types": ["discharge"], "patient_context": {{"admission_days": 3}}}}
+- "diabetes follow-up" → {{"query_type": "service_discovery", "service_types": ["follow-up"], "clinical_terms": ["diabetes"]}}
+- "asthma management codes" → {{"query_type": "service_discovery", "service_types": ["management"], "clinical_terms": ["asthma"]}}
 
 Return ONLY the JSON object, no other text."""
 

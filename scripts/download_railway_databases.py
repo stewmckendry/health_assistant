@@ -107,22 +107,18 @@ async def download_chroma_collection(
         except:
             pass
 
-        # Create collection with OpenAI embedding function for OPA collections
-        if 'opa' in collection_name.lower():
-            from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
-            import os
-            embedding_function = OpenAIEmbeddingFunction(
-                api_key=os.getenv("OPENAI_API_KEY"),
-                model_name="text-embedding-3-small"
-            )
-            collection = client.create_collection(
-                name=collection_name,
-                embedding_function=embedding_function
-            )
-            logger.info(f"  Created collection with OpenAI embedding function")
-        else:
-            collection = client.create_collection(name=collection_name)
-            logger.info(f"  Created collection with default embedding function")
+        # Create collection with OpenAI embedding function (all collections use text-embedding-3-small)
+        from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
+        import os
+        embedding_function = OpenAIEmbeddingFunction(
+            api_key=os.getenv("OPENAI_API_KEY"),
+            model_name="text-embedding-3-small"
+        )
+        collection = client.create_collection(
+            name=collection_name,
+            embedding_function=embedding_function
+        )
+        logger.info(f"  Created collection with OpenAI embedding function (text-embedding-3-small)")
 
         # Add documents in batches
         batch_size = 100
