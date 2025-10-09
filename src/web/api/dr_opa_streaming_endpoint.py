@@ -59,65 +59,27 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
         
         # Initialize agent
         agent = DrOPAAgent()
-        
-        # Send initial tool call event
-        tool_event = {
-            "type": "tool_call_start",
-            "data": {
-                "id": f"tool_{uuid.uuid4().hex[:8]}",
-                "name": "opa_search_sections",
-                "arguments": {"query": request.query[:100]},
-                "status": "executing",
-                "startTime": datetime.utcnow().isoformat()
-            },
-            "timestamp": datetime.utcnow().isoformat()
-        }
-        yield f"data: {json.dumps(tool_event)}\n\n"
-        await asyncio.sleep(0.1)
-        
-        # Query the agent
-        response = agent.query(
-            query=request.query,
+
+        # Use the agent's native streaming method
+        async for event in agent.query_stream(
+            user_input=request.query,
             session_id=request.sessionId,
-            message_history=request.messageHistory
-        )
-        
-        # Send tool completion
-        tool_complete = {
-            "type": "tool_call_end",
-            "data": {
-                **tool_event["data"],
-                "status": "completed",
-                "endTime": datetime.utcnow().isoformat(),
-                "result": "Retrieved Ontario practice guidance"
-            },
-            "timestamp": datetime.utcnow().isoformat()
-        }
-        yield f"data: {json.dumps(tool_complete)}\n\n"
-        
-        # Handle response
-        if isinstance(response, dict):
-            text = response.get("response", "")
-            citations = response.get("citations", [])
-            trace_id = response.get("trace_id")  # Extract trace_id for feedback
+            user_id=None
+        ):
+            event_type = event.get('type')
 
-            # Stream text in chunks
-            words = text.split()
-            for i, word in enumerate(words):
-                chunk = " ".join(words[:i+1])
-                text_event = {
-                    "type": "text",
-                    "data": {
-                        "content": chunk,
-                        "delta": word + (" " if i < len(words)-1 else "")
-                    },
-                    "timestamp": datetime.utcnow().isoformat()
-                }
-                yield f"data: {json.dumps(text_event)}\n\n"
-                await asyncio.sleep(0.02)
+            if event_type == 'text':
+                # Stream text delta
+                yield f"data: {json.dumps({'type': 'text', 'data': {'delta': event['content']}, 'timestamp': datetime.utcnow().isoformat()})}\n\n"
 
-            # Send citations
-            for citation in citations:
+            elif event_type == 'tool_call':
+                # Stream tool call
+                tool_data = event['content']
+                yield f"data: {json.dumps({'type': 'tool_call_start', 'data': tool_data, 'timestamp': datetime.utcnow().isoformat()})}\n\n"
+
+            elif event_type == 'citation':
+                # Stream citation
+                citation = event['content']
                 citation_event = {
                     "type": "citation",
                     "data": {
@@ -133,32 +95,27 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
                 }
                 yield f"data: {json.dumps(citation_event)}\n\n"
 
-            # Send completion with trace_id for feedback
-            done_event = {
-                "type": "done",
-                "data": {
-                    "messageId": f"msg_{uuid.uuid4().hex[:8]}",
-                    "citationIds": [c.get("id") for c in citations if c.get("id")],
-                    "traceId": trace_id  # Include trace_id for Langfuse feedback
-                },
-                "timestamp": datetime.utcnow().isoformat()
-            }
-            yield f"data: {json.dumps(done_event)}\n\n"
-        else:
-            # Handle string response
-            text_event = {
-                "type": "text",
-                "data": {"content": str(response), "delta": str(response)},
-                "timestamp": datetime.utcnow().isoformat()
-            }
-            yield f"data: {json.dumps(text_event)}\n\n"
-            
-            done_event = {
-                "type": "done",
-                "data": {"messageId": f"msg_{uuid.uuid4().hex[:8]}"},
-                "timestamp": datetime.utcnow().isoformat()
-            }
-            yield f"data: {json.dumps(done_event)}\n\n"
+            elif event_type == 'complete':
+                # Send final completion event
+                done_event = {
+                    "type": "done",
+                    "data": {
+                        "messageId": f"msg_{uuid.uuid4().hex[:8]}",
+                        "citationIds": [c.get("id") for c in event.get('citations', [])],
+                        "traceId": event.get('metadata', {}).get('trace_id')
+                    },
+                    "timestamp": datetime.utcnow().isoformat()
+                }
+                yield f"data: {json.dumps(done_event)}\n\n"
+
+            elif event_type == 'error':
+                # Stream error
+                error_event = {
+                    "type": "error",
+                    "data": {"error": event['content']},
+                    "timestamp": datetime.utcnow().isoformat()
+                }
+                yield f"data: {json.dumps(error_event)}\n\n"
             
     except Exception as e:
         logger.error(f"Dr. OPA streaming error: {e}")
