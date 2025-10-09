@@ -28,12 +28,8 @@ def load_specialty_catalog() -> List[Dict]:
     Returns:
         List of specialty catalog entries with metadata
     """
-    # Support both local and Railway paths
-    railway_env = os.environ.get("RAILWAY_ENVIRONMENT", "").lower()
-    if railway_env in ["true", "1", "yes", "on"]:
-        catalog_path = Path("/app/data/dr_opa_agent/choosing_wisely_specialty_catalog.json")
-    else:
-        catalog_path = Path("data/dr_opa_agent/choosing_wisely_specialty_catalog.json")
+    # Use code-relative path (works on both local and Railway)
+    catalog_path = Path(__file__).parent.parent / "choosing_wisely_specialty_catalog.json"
 
     if not catalog_path.exists():
         logger.error(f"Specialty catalog not found at {catalog_path}")
