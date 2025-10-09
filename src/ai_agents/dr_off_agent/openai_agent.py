@@ -315,14 +315,15 @@ class DrOffAgent:
         else:
             return 'https://www.ontario.ca/'
     
-    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True):
+    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True, session_id: str = None):
         """Initialize the Dr. OFF Agent with MCP server connection and optional Langfuse tracing.
-        
+
         Args:
             mcp_server_command: Command to start the MCP server
             enable_langfuse: Whether to enable Langfuse tracing (default: True)
+            session_id: Optional session ID for logging
         """
-        self.session_id = session_id
+        self.session_id = session_id or datetime.now().strftime("%Y%m%d_%H%M%S")
         self.project_root = project_root
         self.trusted_domains = load_trusted_domains()
         self.enable_langfuse = enable_langfuse and LANGFUSE_AVAILABLE

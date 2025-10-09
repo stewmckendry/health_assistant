@@ -34,8 +34,8 @@ AGENT_CONFIGS = {
     "chief": {
         "name": "Chief",
         "description": "Diagnostic orchestrator",
-        "import_path": "src.ai_agents.diagnostic_orchestrator.orchestrator_agent_http",
-        "create_function": "create_chief_agent"
+        "import_path": "src.ai_agents.diagnostic_orchestrator.create_orchestrator_http",
+        "create_function": "create_orchestrator_http"
     }
 }
 

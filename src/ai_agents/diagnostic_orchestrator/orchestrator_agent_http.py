@@ -52,15 +52,19 @@ class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
     async def initialize(self):
         """Initialize the orchestrator with HTTP-aware sub-agents"""
         self.session_logger.info("Initializing Clinical Intelligence Orchestrator with HTTP support")
-        
+
         # Initialize sub-agents with HTTP support
         self.dr_opa_wrapper = DrOpaAgent(session_id=self.session_id)
         self.dr_off_wrapper = DrOffAgent(session_id=self.session_id)
-        
+
         # Agent 97 doesn't need MCP servers directly
         # It uses the patient assistant which has its own web search
-        
+
         self.session_logger.info("Sub-agents initialized with HTTP MCP support")
+
+    async def query(self, clinical_query: str, session_id: str = None, user_id: str = None):
+        """Wrapper for orchestrate method to match test interface"""
+        return await self.orchestrate(clinical_query, session_id=session_id, user_id=user_id)
     
     def _create_agent_97_mcp(self):
         """Create MCP server for Agent 97 based on environment"""

@@ -8,8 +8,11 @@ for Ontario healthcare providers. Named "The Chief" after chief roles in medicin
 """
 
 from .orchestrator_agent import DiagnosticOrchestrator, create_diagnostic_orchestrator
+from .orchestrator_agent_http import ClinicalIntelligenceOrchestratorHTTP, create_orchestrator_http
 
 __all__ = [
     'DiagnosticOrchestrator',
-    'create_diagnostic_orchestrator'
+    'create_diagnostic_orchestrator',
+    'ClinicalIntelligenceOrchestratorHTTP',
+    'create_orchestrator_http'
 ]
