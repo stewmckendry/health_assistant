@@ -29,9 +29,13 @@ def register_agent_97_endpoint(app: FastAPI):
         """
         try:
             async def generate() -> AsyncGenerator[str, None]:
-                # Initialize the assistant
-                assistant = PatientAssistant()
-                
+                # Initialize assistant with guardrails disabled for agent 97
+                session_settings = {
+                    'enable_input_guardrails': False,
+                    'enable_output_guardrails': False
+                }
+                assistant = PatientAssistant(session_settings=session_settings)
+
                 # Send initial event
                 yield f"data: {json.dumps({'type': 'response_start', 'data': {}})}\n\n"
                 
@@ -117,15 +121,20 @@ def register_agent_97_endpoint(app: FastAPI):
         Non-streaming query endpoint for Agent 97
         """
         try:
-            assistant = PatientAssistant()
-            response = assistant.query(request.query)
-            
+            # Initialize assistant with guardrails disabled for agent 97
+            session_settings = {
+                'enable_input_guardrails': False,
+                'enable_output_guardrails': False
+            }
+            assistant = PatientAssistant(session_settings=session_settings)
+            response = assistant.query(request.query, session_id=request.sessionId)
+
             return {
                 "response": response,
                 "tool_calls": [],
                 "tools_used": [],
                 "sessionId": request.sessionId
             }
-            
+
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
