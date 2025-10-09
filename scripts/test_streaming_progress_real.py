@@ -15,27 +15,28 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from src.ai_agents.diagnostic_orchestrator.streaming_progress import StreamingProgressTracker
-from src.ai_agents.dr_opa_agent.openai_agent import DrOPAAgent
+from src.ai_agents.dr_off_agent.openai_agent import DrOffAgent
 from agents import Runner
+from agents.stream_events import RunItemStreamEvent, AgentUpdatedStreamEvent
 
 
 async def test_streaming_progress_with_real_agent():
-    """Test StreamingProgressTracker with Dr. OPA agent"""
+    """Test StreamingProgressTracker with Dr. OFF agent"""
 
     print("="*80)
-    print("Testing Streaming Progress Tracker with Real Agent (Dr. OPA)")
+    print("Testing Streaming Progress Tracker with Real Agent (Dr. OFF)")
     print("="*80)
     print()
 
-    # Initialize Dr. OPA agent
-    print("Initializing Dr. OPA agent...")
-    dr_opa = DrOPAAgent(enable_langfuse=False)
-    await dr_opa.initialize_mcp_tools()
-    print("✓ Dr. OPA initialized")
+    # Initialize Dr. OFF agent
+    print("Initializing Dr. OFF agent...")
+    dr_off = DrOffAgent(enable_langfuse=False)
+    await dr_off.initialize_mcp_tools()
+    print("✓ Dr. OFF initialized")
     print()
 
-    # Simple test query
-    query = "What are the CPSO policies on obtaining informed consent?"
+    # Test query for OHIP billing codes
+    query = "What are the OHIP billing codes for virtual care visits?"
 
     print(f"Query: {query}")
     print()
@@ -43,8 +44,8 @@ async def test_streaming_progress_with_real_agent():
     print("-"*80)
 
     # Get the agent instance
-    async with dr_opa.mcp_server as mcp:
-        agent = dr_opa.get_agent(mcp)
+    async with dr_off.mcp_server as mcp:
+        agent = dr_off.get_agent(mcp)
 
         # Run with streaming
         result = Runner.run_streamed(
@@ -52,31 +53,23 @@ async def test_streaming_progress_with_real_agent():
             input=query
         )
 
-        # Create progress tracker
+        # Create progress tracker and test
         tracker = StreamingProgressTracker()
 
-        # Stream progress updates
-        final_output = None
+        print("PROGRESS EVENTS:")
+        print("="*80)
+        progress_count = 0
         async for progress in tracker.stream_progress(result.stream_events()):
-            print(f"  {progress.message}")
+            progress_count += 1
+            print(f"[{progress_count}] {progress.event_type}: {progress.message}")
             if progress.details:
                 print(f"    └─ Details: {progress.details}")
 
-        print("-"*80)
-        print()
-        print("✅ Test complete!")
-        print()
+        print("\n" + "="*80)
+        print(f"Total progress events: {progress_count}")
+        print("="*80)
 
-        # Get final response (already consumed by streaming)
-        final_output = result.final_output_as(str)
-        if final_output:
-            print(f"Final response preview: {str(final_output)[:200]}...")
-        else:
-            print("(Final output consumed during streaming)")
-        print()
-        print("="*80)
-        print("SUCCESS: StreamingProgressTracker works with real agents!")
-        print("="*80)
+        print("\n✅ Progress tracking test complete!")
 
 
 if __name__ == "__main__":

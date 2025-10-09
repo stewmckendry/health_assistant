@@ -712,7 +712,7 @@ Remember: You have access to comprehensive Ontario healthcare coverage databases
                 agent = Agent(
                     name="Dr. OFF",
                     instructions=self._get_system_instructions(),
-                    model="o4-mini",
+                    model="gpt-5-mini",
                     model_settings=ModelSettings(reasoning={"summary": "auto"}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
@@ -751,9 +751,119 @@ Remember: You have access to comprehensive Ontario healthcare coverage databases
                 accumulated_text = ""
                 tool_calls = []
                 all_citations = []
-                
-                # Stream events
+
+                # Import StreamingProgressTracker for user-friendly progress
+                from src.ai_agents.diagnostic_orchestrator.streaming_progress import StreamingProgressTracker
+                from agents.stream_events import AgentUpdatedStreamEvent, RunItemStreamEvent
+                tracker = StreamingProgressTracker()
+
+                # Emit initial progress message
+                yield {
+                    'type': 'progress',
+                    'message': "🔍 Analyzing your query...",
+                    'event_type': "analysis_started",
+                    'agent_name': "Dr. OFF"
+                }
+
+                # Stream events - process each event for BOTH progress and data
                 async for event in result.stream_events():
+                    # First, emit user-friendly progress update for this event
+                    if isinstance(event, AgentUpdatedStreamEvent):
+                        agent_name = event.new_agent.name
+                        tracker.current_agent = agent_name
+                        emoji = tracker.get_agent_emoji(agent_name)
+                        message = f"{emoji} {agent_name} activated..."
+
+                        yield {
+                            'type': 'progress',
+                            'message': message,
+                            'event_type': 'agent_switched',
+                            'agent_name': agent_name
+                        }
+
+                    elif isinstance(event, RunItemStreamEvent):
+                        if event.name == "tool_called":
+                            if hasattr(event.item, 'raw_item') and hasattr(event.item.raw_item, 'name'):
+                                tool_name = event.item.raw_item.name
+                                tool_desc = tracker.get_tool_description(tool_name)
+                                emoji = tracker.get_agent_emoji(tracker.current_agent)
+
+                                query = None
+                                if hasattr(event.item.raw_item, 'arguments'):
+                                    query = tracker.get_query_from_arguments(event.item.raw_item.arguments)
+
+                                if query:
+                                    message = f"{emoji} Dr. OFF is {tool_desc} for: \"{query}\""
+                                else:
+                                    message = f"{emoji} Dr. OFF is {tool_desc}..."
+
+                                yield {
+                                    'type': 'progress',
+                                    'message': message,
+                                    'event_type': 'tool_called',
+                                    'agent_name': tracker.current_agent,
+                                    'tool_name': tool_name,
+                                    'details': {'query': query} if query else None
+                                }
+
+                        elif event.name == "tool_output":
+                            result_count = None
+                            if hasattr(event.item, 'output'):
+                                output = event.item.output
+                                if isinstance(output, dict):
+                                    if 'items' in output and isinstance(output['items'], list):
+                                        result_count = len(output['items'])
+                                    elif 'results' in output and isinstance(output['results'], list):
+                                        result_count = len(output['results'])
+
+                            if result_count is not None:
+                                message = f"✅ Dr. OFF retrieved {result_count} results"
+                            else:
+                                message = f"✅ Dr. OFF completed search"
+
+                            yield {
+                                'type': 'progress',
+                                'message': message,
+                                'event_type': 'tool_output',
+                                'agent_name': tracker.current_agent,
+                                'details': {'result_count': result_count} if result_count else None
+                            }
+
+                        elif event.name == "reasoning_item_created":
+                            if hasattr(event.item, 'raw_item'):
+                                reasoning_item = event.item.raw_item
+                                reasoning_text = None
+
+                                if hasattr(reasoning_item, 'summary') and reasoning_item.summary:
+                                    summaries = []
+                                    for summary in reasoning_item.summary:
+                                        if hasattr(summary, 'text') and summary.text:
+                                            summaries.append(summary.text)
+                                    if summaries:
+                                        reasoning_text = " ".join(summaries)
+
+                                if reasoning_text:
+                                    if len(reasoning_text) > 100:
+                                        reasoning_text = reasoning_text[:97] + "..."
+                                    message = f"🤔 Dr. OFF reasoning: {reasoning_text}"
+
+                                    yield {
+                                        'type': 'progress',
+                                        'message': message,
+                                        'event_type': 'reasoning',
+                                        'agent_name': tracker.current_agent,
+                                        'details': {'reasoning': reasoning_text}
+                                    }
+
+                        elif event.name == "message_output_created":
+                            yield {
+                                'type': 'progress',
+                                'message': "✍️ Dr. OFF is synthesizing response...",
+                                'event_type': 'synthesis_started',
+                                'agent_name': "Dr. OFF"
+                            }
+
+                    # Then, process the same event for existing data extraction logic
                     if event.type == "raw_response_event":
                         # Stream text deltas
                         if isinstance(event.data, ResponseTextDeltaEvent):
@@ -967,7 +1077,7 @@ Remember: You have access to comprehensive Ontario healthcare coverage databases
                 agent = Agent(
                     name="Dr. OFF",
                     instructions=self._get_system_instructions(),
-                    model="o4-mini",
+                    model="gpt-5-mini",
                     model_settings=ModelSettings(reasoning={"summary": "auto"}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
@@ -1158,7 +1268,7 @@ Technical details: {error_message}"""
         return Agent(
             name="Dr. OFF",
             instructions=self._get_system_instructions(),
-            model="o4-mini",
+            model="gpt-5-mini",
             model_settings=ModelSettings(reasoning={"summary": "auto"}),
             mcp_servers=[server] if server else [],
             tools=[web_search_tool]
