@@ -341,10 +341,10 @@ class SemanticSearchEngine:
         # Execute reranking in parallel
         scores = await asyncio.gather(*reranking_tasks)
         
-        # Attach scores to documents
+        # Attach scores to documents (normalize 0-10 scale to 0-1)
         for doc, score in zip(documents[:30], scores):
-            doc['relevance_score'] = score
-            logger.debug(f"Document {doc.get('metadata', {}).get('document_title', 'Unknown')[:30]}: score={score}")
+            doc['relevance_score'] = score / 10.0  # Normalize to 0-1
+            logger.debug(f"Document {doc.get('metadata', {}).get('document_title', 'Unknown')[:30]}: score={score}/10 (normalized: {score/10.0:.2f})")
         
         # Add minimal scores to remaining documents
         for doc in documents[30:]:
@@ -493,6 +493,7 @@ Respond with ONLY a number between 0 and 10:"""
         for result in results:
             metadata = result.get('metadata', {})
 
+            # Start with common fields
             formatted_result = {
                 'document_id': result.get('document_id', ''),
                 'document_title': metadata.get('document_title', metadata.get('title', '')),
@@ -510,8 +511,13 @@ Respond with ONLY a number between 0 and 10:"""
                 'topics': metadata.get('topics', '').split(',') if metadata.get('topics') else [],
                 'chunk_type': metadata.get('chunk_type', 'unknown'),
                 'has_parent_context': result.get('has_parent_context', False),  # Flag if child was enriched
-                'parent_chunk_id': result.get('parent_chunk_id', '')  # Parent ID if child chunk
+                'parent_chunk_id': result.get('parent_chunk_id', ''),  # Parent ID if child chunk
             }
+
+            # CRITICAL FIX: Preserve ALL original metadata by nesting it
+            # This ensures domain-specific fields (recommendation_number, specialty, etc.) are available
+            formatted_result['metadata'] = metadata
+
             formatted.append(formatted_result)
 
         return formatted

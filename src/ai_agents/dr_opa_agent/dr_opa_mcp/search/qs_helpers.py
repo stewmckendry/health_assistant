@@ -62,17 +62,26 @@ async def retrieve_standard_overviews(
     # Search for document chunks only
     try:
         # Build metadata filter for ChromaDB
-        where_filter = {
-            "$and": [
-                {
-                    "$or": [
-                        {"title": {"$eq": title}}
-                        for title in standard_titles
-                    ]
-                },
-                {"chunk_type": "document"}  # Only document chunks (overviews)
-            ]
-        }
+        # Handle single vs multiple titles
+        if len(standard_titles) == 1:
+            where_filter = {
+                "$and": [
+                    {"title": {"$eq": standard_titles[0]}},
+                    {"chunk_type": "document"}  # Only document chunks (overviews)
+                ]
+            }
+        else:
+            where_filter = {
+                "$and": [
+                    {
+                        "$or": [
+                            {"title": {"$eq": title}}
+                            for title in standard_titles
+                        ]
+                    },
+                    {"chunk_type": "document"}  # Only document chunks (overviews)
+                ]
+            }
 
         logger.info(f"Searching for document chunks from standards: {standard_titles[:3]}...")
 
@@ -239,12 +248,12 @@ def deduplicate_by_standard(chunks: List[Dict]) -> List[Dict]:
         title = chunk.get('metadata', {}).get('title', 'Unknown')
         by_standard[title].append(chunk)
 
-    # Keep best chunk per standard (highest similarity score)
+    # Keep best chunk per standard (highest relevance score)
     deduplicated = []
     for title, standard_chunks in by_standard.items():
-        # Sort by similarity score (descending)
+        # Sort by relevance score (descending)
         standard_chunks.sort(
-            key=lambda x: x.get('similarity_score', 0),
+            key=lambda x: x.get('relevance_score', 0),
             reverse=True
         )
         # Keep the top chunk
@@ -252,7 +261,7 @@ def deduplicate_by_standard(chunks: List[Dict]) -> List[Dict]:
 
     # Sort deduplicated results by relevance
     deduplicated.sort(
-        key=lambda x: x.get('similarity_score', 0),
+        key=lambda x: x.get('relevance_score', 0),
         reverse=True
     )
 

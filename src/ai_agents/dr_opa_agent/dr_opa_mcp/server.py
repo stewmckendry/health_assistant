@@ -1895,7 +1895,7 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                         'statement_count': entry.get('statement_count', 0),
                         'chunk_type': 'catalog_overview'
                     },
-                    'similarity_score': 0.95  # High but not perfect for catalog browsing
+                    'relevance_score': 0.95  # High but not perfect for catalog browsing
                 })
 
         elif classification["intent"] == "standard_discovery":
@@ -1976,7 +1976,7 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
                 statement = QualityStatement(
                     id=f"{title}:overview",
                     text=text,  # Full document overview text
-                    relevance_score=result.get('similarity_score', 0.9),
+                    relevance_score=result.get('relevance_score', 0.9),
                     source=title or 'Ontario Health Quality Standard',
                     metadata={
                         'statement_number': 0,  # N/A for overviews
@@ -2042,7 +2042,7 @@ async def quality_standards_handler(query: str, k: int = 10, filters: Dict[str, 
             statement = QualityStatement(
                 id=f"{standard_title or 'unknown'}:statement_{stmt_num}",
                 text=full if full else brief,
-                relevance_score=result.get('similarity_score', 0.9),
+                relevance_score=result.get('relevance_score', 0.9),
                 source=standard_title or 'Ontario Health Quality Standard',
                 metadata={
                     'statement_number': stmt_num,
@@ -2309,7 +2309,7 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
                     search_results.append({
                         'text': doc,
                         'metadata': metadata,
-                        'similarity_score': 1.0  # All chunks equally relevant for complete retrieval
+                        'relevance_score': 1.0  # All chunks equally relevant for complete retrieval
                     })
 
                 # Sort: parent chunks first, then children
@@ -2333,7 +2333,7 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             )
             # Convert to search results format
             search_results = [
-                {'text': c['text'], 'metadata': c, 'similarity_score': c.get('relevance_score', 0.8)}
+                {'text': c['text'], 'metadata': c, 'relevance_score': c.get('relevance_score', 0.8)}
                 for c in formatted_chunks
             ]
 
@@ -2348,7 +2348,7 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             )
             # Convert to search results format
             search_results = [
-                {'text': c['text'], 'metadata': c, 'similarity_score': c.get('relevance_score', 0.8)}
+                {'text': c['text'], 'metadata': c, 'relevance_score': c.get('relevance_score', 0.8)}
                 for c in formatted_chunks
             ]
 
@@ -2465,7 +2465,7 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
                 rec_id = f"{specialty.lower().replace(' ', '_')}_{rec_num}"
 
                 # Get relevance score from search result
-                relevance_score = result.get('similarity_score', 0.8)
+                relevance_score = result.get('relevance_score', 0.8)
 
                 recommendation = ChoosingWiselyRecommendation(
                     id=rec_id,
