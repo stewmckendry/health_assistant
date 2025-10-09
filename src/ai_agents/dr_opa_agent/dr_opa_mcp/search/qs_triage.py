@@ -11,6 +11,7 @@ Date: 2025-10-07
 
 import json
 import logging
+import os
 import re
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -27,7 +28,12 @@ def load_quality_standards_catalog() -> List[Dict]:
     Returns:
         List of quality standard catalog entries with metadata
     """
-    catalog_path = Path("data/dr_opa_agent/qs_catalog.json")
+    # Support both local and Railway paths
+    railway_env = os.environ.get("RAILWAY_ENVIRONMENT", "").lower()
+    if railway_env in ["true", "1", "yes", "on"]:
+        catalog_path = Path("/app/data/dr_opa_agent/qs_catalog.json")
+    else:
+        catalog_path = Path("data/dr_opa_agent/qs_catalog.json")
 
     if not catalog_path.exists():
         logger.error(f"Quality standards catalog not found at {catalog_path}")

@@ -28,7 +28,12 @@ def load_policy_catalog() -> List[Dict]:
     Returns:
         List of policy catalog entries with metadata
     """
-    catalog_path = Path("data/dr_opa_agent/cpso_policy_catalog.json")
+    # Support both local and Railway paths
+    railway_env = os.environ.get("RAILWAY_ENVIRONMENT", "").lower()
+    if railway_env in ["true", "1", "yes", "on"]:
+        catalog_path = Path("/app/data/dr_opa_agent/cpso_policy_catalog.json")
+    else:
+        catalog_path = Path("data/dr_opa_agent/cpso_policy_catalog.json")
 
     if not catalog_path.exists():
         logger.error(f"Policy catalog not found at {catalog_path}")

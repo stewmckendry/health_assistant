@@ -1,0 +1,993 @@
+[
+  {
+    "tool_id": "management_of_chronic_non_cancer_pain",
+    "tool_name": "Management of Chronic Non-Cancer Pain",
+    "aliases": [
+      "Management of Chronic Non-Cancer Pain"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "pharmacotherapy",
+      "treatment"
+    ],
+    "chunk_count": 47,
+    "source_url": "https://tools.cep.health/tool/management-of-chronic-non-cancer-pain/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "pain_msk",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "type_2_diabetes_insulin_therapy",
+    "tool_name": "Type 2 diabetes: insulin therapy",
+    "aliases": [
+      "Type 2 diabetes: insulin therapy"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "diabetes"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 42,
+    "source_url": "https://tools.cep.health/tool/type-2-diabetes-insulin-therapy/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "chronic_disease",
+      "screening",
+      "pain_management"
+    ]
+  },
+  {
+    "tool_id": "anxiety_and_depression",
+    "tool_name": "Anxiety and Depression",
+    "aliases": [
+      "Anxiety and Depression"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "depression",
+      "anxiety"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 41,
+    "source_url": "https://tools.cep.health/tool/anxiety-and-depression/",
+    "topics": [
+      "mental_health",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "preconception_health",
+    "tool_name": "Preconception Health Care Tool",
+    "aliases": [
+      "Preconception Health Care Tool"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 34,
+    "source_url": "https://tools.cep.health/tool/preconception-health-care-tool/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "substance_use",
+      "womens_health"
+    ]
+  },
+  {
+    "tool_id": "youth_mental_health_anxiety_and_depression",
+    "tool_name": "Youth Mental Health Anxiety and Depression",
+    "aliases": [
+      "Youth Mental Health Anxiety and Depression"
+    ],
+    "clinical_domain": "substance_use",
+    "conditions": [
+      "depression",
+      "anxiety"
+    ],
+    "capabilities": [
+      "assessment"
+    ],
+    "chunk_count": 34,
+    "source_url": "https://tools.cep.health/tool/youth-mental-health-anxiety-and-depression/",
+    "topics": [
+      "substance_use",
+      "cardiovascular",
+      "mental_health",
+      "screening"
+    ]
+  },
+  {
+    "tool_id": "type_2_diabetes_non_insulin_pharmacotherapy_2",
+    "tool_name": "Type 2 diabetes: non-insulin pharmacotherapy",
+    "aliases": [
+      "Type 2 diabetes: non-insulin pharmacotherapy"
+    ],
+    "clinical_domain": "infectious_disease",
+    "conditions": [
+      "diabetes"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 30,
+    "source_url": "https://tools.cep.health/tool/type-2-diabetes-non-insulin-pharmacotherapy-2/",
+    "topics": [
+      "infectious_disease",
+      "cardiovascular",
+      "chronic_disease",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "opioid_use_disorder_oud_tool",
+    "tool_name": "Opioid Use Disorder (OUD)",
+    "aliases": [
+      "Opioid Use Disorder (OUD)"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "opioid use"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 26,
+    "source_url": "https://tools.cep.health/tool/opioid-use-disorder/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "respiratory",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "menopause",
+    "tool_name": "Menopause Management",
+    "aliases": [
+      "Menopause Management"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "menopause"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 20,
+    "source_url": "https://tools.cep.health/tool/menopause-management/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "womens_health"
+    ]
+  },
+  {
+    "tool_id": "medical_assistance_in_dying_maid_in_ontario_track_one_natural_death_is_reasonably_foreseeable",
+    "tool_name": "Medical Assistance in Dying (MAID) in Ontario Track One: Natural Death is Reasonably Foreseeable",
+    "aliases": [
+      "Medical Assistance in Dying (MAID) in Ontario Track One: Natural Death is Reasonably Foreseeable"
+    ],
+    "clinical_domain": "substance_use",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment"
+    ],
+    "chunk_count": 19,
+    "source_url": "https://tools.cep.health/tool/medical-assistance-in-dying-maid-in-ontario-track-one-natural-death-is-reasonably-foreseeable/",
+    "topics": [
+      "substance_use",
+      "pain_management",
+      "end_of_life",
+      "mental_health"
+    ]
+  },
+  {
+    "tool_id": "medical_assistance_in_dying_maid_in_ontario_track_two_natural_death_is_not_reasonably_foreseeable_2",
+    "tool_name": "Medical Assistance in Dying (MAID) in Ontario Track Two: Natural Death is NOT Reasonably Foreseeable",
+    "aliases": [
+      "Medical Assistance in Dying (MAID) in Ontario Track Two: Natural Death is NOT Reasonably Foreseeable"
+    ],
+    "clinical_domain": "substance_use",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment"
+    ],
+    "chunk_count": 19,
+    "source_url": "https://tools.cep.health/tool/medical-assistance-in-dying-maid-in-ontario-track-two-natural-death-is-not-reasonably-foreseeable-2/",
+    "topics": [
+      "substance_use",
+      "pain_management",
+      "end_of_life",
+      "mental_health"
+    ]
+  },
+  {
+    "tool_id": "alcohol_use_disorder_aud_tool",
+    "tool_name": "Alcohol Use Disorder (AUD)",
+    "aliases": [
+      "Alcohol Use Disorder (AUD)"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment"
+    ],
+    "chunk_count": 18,
+    "source_url": "https://tools.cep.health/tool/alcohol-use-disorder/",
+    "topics": [
+      "mental_health",
+      "screening",
+      "cardiovascular",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "maid_forms",
+    "tool_name": "MAID Forms Staging*",
+    "aliases": [
+      "MAID Forms Staging*"
+    ],
+    "clinical_domain": "substance_use",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "pharmacotherapy",
+      "assessment",
+      "algorithms",
+      "treatment"
+    ],
+    "chunk_count": 17,
+    "source_url": "https://tools.cep.health/tool/maid-forms/",
+    "topics": [
+      "substance_use",
+      "operational",
+      "cardiovascular",
+      "mental_health"
+    ]
+  },
+  {
+    "tool_id": "core_neck_and_headache_navigator",
+    "tool_name": "CORE Neck and Headache Navigator",
+    "aliases": [
+      "CORE Neck and Headache Navigator"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "neck pain",
+      "headache"
+    ],
+    "capabilities": [
+      "pharmacotherapy",
+      "referral_guidance",
+      "treatment"
+    ],
+    "chunk_count": 16,
+    "source_url": "https://tools.cep.health/tool/core-neck-and-headache-navigator/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "neurology"
+    ]
+  },
+  {
+    "tool_id": "dementia_diagnosis",
+    "tool_name": "Dementia Diagnosis",
+    "aliases": [
+      "Dementia Diagnosis"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "dementia"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 16,
+    "source_url": "https://tools.cep.health/tool/dementia-diagnosis/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "behavioural_andpsychological_symptoms_of_dementia_bpsd",
+    "tool_name": "Behavioural and Psychological Symptoms of Dementia (BPSD)",
+    "aliases": [
+      "Behavioural and Psychological Symptoms of Dementia (BPSD)"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "dementia"
+    ],
+    "capabilities": [
+      "assessment"
+    ],
+    "chunk_count": 15,
+    "source_url": "https://tools.cep.health/tool/behavioural-andpsychological-symptoms-of-dementia-bpsd/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "managing_benzodiazepine_use_in_older_adults",
+    "tool_name": "Benzodiazepine Use in Older Adults",
+    "aliases": [
+      "Benzodiazepine Use in Older Adults"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 15,
+    "source_url": "https://tools.cep.health/tool/managing-benzodiazepine-use-in-older-adults/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "artificial_intelligence_ai_learning_centre",
+    "tool_name": "Artificial Intelligence (AI) Learning Centre",
+    "aliases": [
+      "Artificial Intelligence (AI) Learning Centre"
+    ],
+    "clinical_domain": "infectious_disease",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 14,
+    "source_url": "https://tools.cep.health/tool/artificial-intelligence-ai-learning-centre/",
+    "topics": [
+      "infectious_disease",
+      "digital_health",
+      "cardiovascular"
+    ]
+  },
+  {
+    "tool_id": "covid_19",
+    "tool_name": "COVID-19 in 2024: Care and Operations Guidance",
+    "aliases": [
+      "COVID-19 in 2024: Care and Operations Guidance"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "treatment"
+    ],
+    "chunk_count": 13,
+    "source_url": "https://tools.cep.health/tool/covid-19/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "managing_patients_with_heart_failure_in_primary_care",
+    "tool_name": "Managing Heart Failure in Primary Care",
+    "aliases": [
+      "Managing Heart Failure in Primary Care"
+    ],
+    "clinical_domain": "respiratory",
+    "conditions": [
+      "heart failure"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 13,
+    "source_url": "https://tools.cep.health/tool/managing-patients-with-heart-failure-in-primary-care/",
+    "topics": [
+      "respiratory",
+      "cardiovascular",
+      "chronic_disease",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "managing_urinary_incontinence_in_women",
+    "tool_name": "Urinary Incontinence in Women",
+    "aliases": [
+      "Urinary Incontinence in Women"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "pharmacotherapy",
+      "treatment"
+    ],
+    "chunk_count": 13,
+    "source_url": "https://tools.cep.health/tool/managing-urinary-incontinence-in-women/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "womens_health"
+    ]
+  },
+  {
+    "tool_id": "a_guide_to_primary_care_management_of_mental_health_and_addictions_related_risks_and_functional_impairments",
+    "tool_name": "Keeping Your Patients Safe: A Guide to Primary Care Management of Mental Health and Addictions-related Risks and Functional Impairments",
+    "aliases": [
+      "Keeping Your Patients Safe: A Guide to Primary Care Management of Mental Health and Addictions-related Risks and Functional Impairments"
+    ],
+    "clinical_domain": "substance_use",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 12,
+    "source_url": "https://tools.cep.health/tool/a-guide-to-primary-care-management-of-mental-health-and-addictions-related-risks-and-functional-impairments/",
+    "topics": [
+      "substance_use",
+      "screening",
+      "social_care",
+      "mental_health"
+    ]
+  },
+  {
+    "tool_id": "management_of_chronic_insomnia",
+    "tool_name": "Management of Chronic Insomnia",
+    "aliases": [
+      "Management of Chronic Insomnia"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "insomnia"
+    ],
+    "capabilities": [
+      "pharmacotherapy",
+      "treatment"
+    ],
+    "chunk_count": 12,
+    "source_url": "https://tools.cep.health/tool/management-of-chronic-insomnia/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "falls_prevention_and_management",
+    "tool_name": "Fall Prevention and Management",
+    "aliases": [
+      "Fall Prevention and Management"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment"
+    ],
+    "chunk_count": 11,
+    "source_url": "https://tools.cep.health/tool/falls-prevention-and-management/",
+    "topics": [
+      "mental_health",
+      "cardiovascular",
+      "screening",
+      "preventive_care",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "myalgic_encephalomyelitis_chronic_fatigue_syndrome_me_cfs",
+    "tool_name": "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS)",
+    "aliases": [
+      "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS)"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 11,
+    "source_url": "https://tools.cep.health/tool/myalgic-encephalomyelitis-chronic-fatigue-syndrome-me-cfs/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "pain_msk"
+    ]
+  },
+  {
+    "tool_id": "chronic_obstructive_pulmonary_disease_copd",
+    "tool_name": "Chronic obstructive pulmonary disease (COPD)",
+    "aliases": [
+      "Chronic obstructive pulmonary disease (COPD)"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "pharmacotherapy",
+      "treatment"
+    ],
+    "chunk_count": 10,
+    "source_url": "https://tools.cep.health/tool/chronic-obstructive-pulmonary-disease-copd/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "chronic_disease",
+      "screening",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "opioid_tapering",
+    "tool_name": "Opioid Tapering Template",
+    "aliases": [
+      "Opioid Tapering Template"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "opioid use"
+    ],
+    "capabilities": [
+      "treatment"
+    ],
+    "chunk_count": 10,
+    "source_url": "https://tools.cep.health/tool/opioid-tapering/",
+    "topics": [
+      "mental_health",
+      "screening",
+      "cardiovascular",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "sp_drafting",
+    "tool_name": "SP drafting",
+    "aliases": [
+      "SP drafting"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "treatment"
+    ],
+    "chunk_count": 10,
+    "source_url": "https://tools.cep.health/tool/sp-drafting/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "operational"
+    ]
+  },
+  {
+    "tool_id": "managing_proton_pump_inhibitor_use_in_older_adults",
+    "tool_name": "Managing Proton Pump Inhibitor Use in Older Adults",
+    "aliases": [
+      "Managing Proton Pump Inhibitor Use in Older Adults"
+    ],
+    "clinical_domain": "infectious_disease",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 9,
+    "source_url": "https://tools.cep.health/tool/managing-proton-pump-inhibitor-use-in-older-adults/",
+    "topics": [
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "preventive_care",
+      "pain_management",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "seasonal_preparedness_guide_for_primary_care",
+    "tool_name": "Seasonal Preparedness Guide",
+    "aliases": [
+      "Seasonal Preparedness Guide"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 9,
+    "source_url": "https://tools.cep.health/tool/seasonal-preparedness-guide-for-primary-care/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "respiratory",
+      "cardiovascular",
+      "screening",
+      "operational"
+    ]
+  },
+  {
+    "tool_id": "social_prescribing",
+    "tool_name": "Social Prescribing: a Resource for Health Professionals",
+    "aliases": [
+      "Social Prescribing: a Resource for Health Professionals"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 9,
+    "source_url": "https://tools.cep.health/tool/social-prescribing/",
+    "topics": [
+      "mental_health",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "social_care"
+    ]
+  },
+  {
+    "tool_id": "access_study_clinical_education_tool_supporting_anal_cancer_screening_in_primary_care_for_people_living_with_hiv",
+    "tool_name": "Supporting Anal Cancer Screening in Primary Care for People Living with HIV",
+    "aliases": [
+      "Supporting Anal Cancer Screening in Primary Care for People Living with HIV"
+    ],
+    "clinical_domain": "infectious_disease",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "referral_guidance"
+    ],
+    "chunk_count": 9,
+    "source_url": "https://tools.cep.health/tool/access-study-clinical-education-tool-supporting-anal-cancer-screening-in-primary-care-for-people-living-with-hiv/",
+    "topics": [
+      "infectious_disease",
+      "pain_management",
+      "screening"
+    ]
+  },
+  {
+    "tool_id": "adaptive_mentoring_to_build_primary_care_capacity_caring_for_canadians_living_with_mental_illness_chronic_pain_and_addictions_implementation_toolkit",
+    "tool_name": "Adaptive Mentoring to Build Primary Care Capacity: Caring for Canadians Living with Mental Illness, Chronic Pain and Addictions\u00a0Implementation Toolkit",
+    "aliases": [
+      "Adaptive Mentoring to Build Primary Care Capacity: Caring for Canadians Living with Mental Illness, Chronic Pain and Addictions\u00a0Implementation Toolkit"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "chronic pain"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 8,
+    "source_url": "https://tools.cep.health/tool/adaptive-mentoring-to-build-primary-care-capacity-caring-for-canadians-living-with-mental-illness-chronic-pain-and-addictions-implementation-toolkit/",
+    "topics": [
+      "mental_health",
+      "cardiovascular",
+      "pain_management",
+      "substance_use",
+      "social_care"
+    ]
+  },
+  {
+    "tool_id": "attention_deficit_hyperactivity_disorder_in_adults",
+    "tool_name": "Attention Deficit Hyperactivity Disorder (ADHD) in Adults",
+    "aliases": [
+      "Attention Deficit Hyperactivity Disorder (ADHD) in Adults"
+    ],
+    "clinical_domain": "substance_use",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "pharmacotherapy",
+      "treatment"
+    ],
+    "chunk_count": 8,
+    "source_url": "https://tools.cep.health/tool/attention-deficit-hyperactivity-disorder-in-adults/",
+    "topics": [
+      "substance_use",
+      "cardiovascular",
+      "mental_health",
+      "screening"
+    ]
+  },
+  {
+    "tool_id": "manual_therapy_as_an_evidence_based_referral_for_musculoskeletal_pain",
+    "tool_name": "Manual Therapy as an Evidence-Based Referral for Musculoskeletal Pain",
+    "aliases": [
+      "Manual Therapy as an Evidence-Based Referral for Musculoskeletal Pain"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "treatment"
+    ],
+    "chunk_count": 8,
+    "source_url": "https://tools.cep.health/tool/manual-therapy-as-an-evidence-based-referral-for-musculoskeletal-pain/",
+    "topics": [
+      "mental_health",
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "pain_msk",
+      "substance_use"
+    ]
+  },
+  {
+    "tool_id": "pots",
+    "tool_name": "Postural Orthostatic Tachycardia Syndrome (POTS)",
+    "aliases": [
+      "Postural Orthostatic Tachycardia Syndrome (POTS)"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 8,
+    "source_url": "https://tools.cep.health/tool/pots/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "cardiovascular",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "neurology"
+    ]
+  },
+  {
+    "tool_id": "rsv_prevention_program_for_infants",
+    "tool_name": "2025-2026 RSV Prevention Program for infants\u00a0in Ontario",
+    "aliases": [
+      "2025-2026 RSV Prevention Program for infants\u00a0in Ontario"
+    ],
+    "clinical_domain": "respiratory",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 7,
+    "source_url": "https://tools.cep.health/tool/rsv-prevention-program-for-infants/",
+    "topics": [
+      "respiratory",
+      "infectious_disease",
+      "cardiovascular",
+      "screening"
+    ]
+  },
+  {
+    "tool_id": "clinically_organized_relevant_exam_core_back_tool",
+    "tool_name": "Clinically Organized Relevant Exam (CORE) Back Tool",
+    "aliases": [
+      "Clinically Organized Relevant Exam (CORE) Back Tool"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "referral_guidance",
+      "treatment"
+    ],
+    "chunk_count": 6,
+    "source_url": "https://tools.cep.health/tool/clinically-organized-relevant-exam-core-back-tool/",
+    "topics": [
+      "mental_health",
+      "infectious_disease",
+      "screening",
+      "pain_management",
+      "substance_use",
+      "pain_msk"
+    ]
+  },
+  {
+    "tool_id": "pharmacotherapy_obesity_management",
+    "tool_name": "Pharmacotherapy for Obesity Management",
+    "aliases": [
+      "Pharmacotherapy for Obesity Management"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "obesity"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 6,
+    "source_url": "https://tools.cep.health/tool/pharmacotherapy-obesity-management/",
+    "topics": [
+      "mental_health",
+      "screening",
+      "cardiovascular",
+      "pain_management",
+      "metabolic"
+    ]
+  },
+  {
+    "tool_id": "secure_messaging_content",
+    "tool_name": "Secure Messaging",
+    "aliases": [
+      "Secure Messaging"
+    ],
+    "clinical_domain": "general",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 6,
+    "source_url": "https://tools.cep.health/tool/secure-messaging-content/",
+    "topics": [
+      "digital_health",
+      "cardiovascular",
+      "mental_health"
+    ]
+  },
+  {
+    "tool_id": "fibromyalgia",
+    "tool_name": "Fibromyalgia (FM)",
+    "aliases": [
+      "Fibromyalgia (FM)"
+    ],
+    "clinical_domain": "pain_management",
+    "conditions": [
+      "general"
+    ],
+    "capabilities": [
+      "assessment",
+      "treatment"
+    ],
+    "chunk_count": 4,
+    "source_url": "https://tools.cep.health/tool/fibromyalgia/",
+    "topics": [
+      "pain_management",
+      "pain_msk",
+      "mental_health"
+    ]
+  },
+  {
+    "tool_id": "preventing_childhood_obesity",
+    "tool_name": "Preventing Childhood Obesity",
+    "aliases": [
+      "Preventing Childhood Obesity"
+    ],
+    "clinical_domain": "general",
+    "conditions": [
+      "obesity"
+    ],
+    "capabilities": [
+      "clinical_guidance"
+    ],
+    "chunk_count": 4,
+    "source_url": "https://tools.cep.health/tool/preventing-childhood-obesity/",
+    "topics": [
+      "preventive_care",
+      "cardiovascular",
+      "mental_health",
+      "screening"
+    ]
+  }
+]

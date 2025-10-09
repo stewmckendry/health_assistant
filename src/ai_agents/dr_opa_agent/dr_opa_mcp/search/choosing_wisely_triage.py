@@ -28,7 +28,12 @@ def load_specialty_catalog() -> List[Dict]:
     Returns:
         List of specialty catalog entries with metadata
     """
-    catalog_path = Path("data/dr_opa_agent/choosing_wisely_specialty_catalog.json")
+    # Support both local and Railway paths
+    railway_env = os.environ.get("RAILWAY_ENVIRONMENT", "").lower()
+    if railway_env in ["true", "1", "yes", "on"]:
+        catalog_path = Path("/app/data/dr_opa_agent/choosing_wisely_specialty_catalog.json")
+    else:
+        catalog_path = Path("data/dr_opa_agent/choosing_wisely_specialty_catalog.json")
 
     if not catalog_path.exists():
         logger.error(f"Specialty catalog not found at {catalog_path}")

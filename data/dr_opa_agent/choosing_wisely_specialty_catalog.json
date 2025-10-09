@@ -1,0 +1,1837 @@
+[
+  {
+    "specialty_id": "allergy_&_clinical_immunology",
+    "specialty_name": "Allergy & Clinical Immunology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society of Allergy and Clinical Immunology",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t diagnose or manage current or chronic or persistent asthma in patients >6 years of age without objective testing such as s...",
+      "Recommendation #5: Don\u2019t prescribe antibiotics for uncomplicated acute rhinosinusitis"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/allergy-&-clinical-immunology",
+    "chunk_ids": {
+      "parent": [
+        "cw_1ff93fa20aa6_parent"
+      ],
+      "children": [
+        "cw_1ff93fa20aa6_child_0",
+        "cw_1ff93fa20aa6_child_1",
+        "cw_1ff93fa20aa6_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "anesthesiology",
+    "specialty_name": "Anesthesiology",
+    "aliases": [
+      "anesthesia",
+      "anaesthesiology"
+    ],
+    "clinical_domain": "general",
+    "organization": "Canadian Anesthesiologists\u2019 Society",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t perform cardiac stress testing for asymptomatic patients undergoing low to intermediate risk non-cardiac surgery"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/anesthesiology",
+    "chunk_ids": {
+      "parent": [
+        "cw_c6ec7ea233f9_parent"
+      ],
+      "children": [
+        "cw_c6ec7ea233f9_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "blood_and_marrow_transplant",
+    "specialty_name": "Blood and Marrow Transplant",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "American Society for Transplantation and Cellular Therapy, Cell Therapy Transplant Canada",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/blood-and-marrow-transplant",
+    "chunk_ids": {
+      "parent": [
+        "cw_be0254eb6d91_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "burns",
+    "specialty_name": "Burns",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Burns Canada",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #5: Do not administer opioid analgesics to patients with burn injuries without considering the co-administration of adjunctive agent...",
+      "Recommendation #6: Do not administer analgesia and sedation (e"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/burns",
+    "chunk_ids": {
+      "parent": [
+        "cw_590f62b35d43_parent"
+      ],
+      "children": [
+        "cw_590f62b35d43_child_0",
+        "cw_590f62b35d43_child_1",
+        "cw_590f62b35d43_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "cardiology",
+    "specialty_name": "Cardiology",
+    "aliases": [
+      "heart",
+      "cardiovascular",
+      "cardiac"
+    ],
+    "clinical_domain": "cardiovascular",
+    "organization": "Canadian Cardiovascular Society",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #6: Don\u2019t offer therapies on the basis of survival benefit without establishing your patient\u2019s prognosis, preferences, and goals of ..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/cardiology",
+    "chunk_ids": {
+      "parent": [
+        "cw_fd711c6171bc_parent"
+      ],
+      "children": [
+        "cw_fd711c6171bc_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "critical_care",
+    "specialty_name": "Critical Care",
+    "aliases": [
+      "intensive care",
+      "ICU"
+    ],
+    "clinical_domain": "critical_care",
+    "organization": "Canadian Critical Care Society, Canadian Association of Critical Care Nurses, Canadian Society of Respiratory Therapists",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/critical-care",
+    "chunk_ids": {
+      "parent": [
+        "cw_415d7e09f393_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "dermatology",
+    "specialty_name": "Dermatology",
+    "aliases": [
+      "skin"
+    ],
+    "clinical_domain": "general",
+    "organization": "Canadian Dermatology Association",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t use oral antibiotics for acne vulgaris for more than 3 months without assessing efficacy"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/dermatology",
+    "chunk_ids": {
+      "parent": [
+        "cw_6d595fba7fe4_parent"
+      ],
+      "children": [
+        "cw_6d595fba7fe4_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "emergency_medicine",
+    "specialty_name": "Emergency Medicine",
+    "aliases": [
+      "ER",
+      "emergency",
+      "emergency department"
+    ],
+    "clinical_domain": "emergency",
+    "organization": "Canadian Association of Emergency Physicians",
+    "common_scenarios": [],
+    "recommendation_count": 14,
+    "sample_recommendations": [
+      "Recommendation #2: Don\u2019t prescribe antibiotics in adults with bronchitis/asthma and children with bronchiolitis",
+      "Recommendation #3: Don\u2019t order lumbosacral (low back) spinal imaging in patients with non-traumatic low back pain who have no red flags/pathologic ..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/emergency-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_5d373e7c47f1_parent"
+      ],
+      "children": [
+        "cw_5d373e7c47f1_child_0",
+        "cw_5d373e7c47f1_child_1",
+        "cw_5d373e7c47f1_child_2",
+        "cw_5d373e7c47f1_child_3",
+        "cw_5d373e7c47f1_child_4",
+        "cw_5d373e7c47f1_child_5",
+        "cw_5d373e7c47f1_child_6",
+        "cw_5d373e7c47f1_child_7",
+        "cw_5d373e7c47f1_child_8",
+        "cw_5d373e7c47f1_child_9"
+      ]
+    },
+    "total_chunks": 11
+  },
+  {
+    "specialty_id": "endocrinology_and_metabolism",
+    "specialty_name": "Endocrinology and Metabolism",
+    "aliases": [
+      "thyroid",
+      "diabetes",
+      "hormones"
+    ],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Society of Endocrinology and Metabolism",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t use Free T4 or T3 to screen for hypothyroidism or to monitor and adjust levothyroxine (T4) dose in patients with known pri...",
+      "Recommendation #4: Don\u2019t prescribe testosterone therapy unless there is biochemical evidence of testosterone deficiency"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/endocrinology-and-metabolism",
+    "chunk_ids": {
+      "parent": [
+        "cw_142822fb8591_parent"
+      ],
+      "children": [
+        "cw_142822fb8591_child_0",
+        "cw_142822fb8591_child_1",
+        "cw_142822fb8591_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "family_medicine",
+    "specialty_name": "Family Medicine",
+    "aliases": [
+      "primary care",
+      "general practice",
+      "family practice",
+      "GP"
+    ],
+    "clinical_domain": "primary_care",
+    "organization": "College of Family Physicians of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 13,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t order screening chest X-rays and ECGs for asymptomatic or low risk outpatients",
+      "Recommendation #4: Don\u2019t screen with Pap smears if under 21 years of age or over 69 years of age"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/family-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_15ae96247a8c_parent"
+      ],
+      "children": [
+        "cw_15ae96247a8c_child_0",
+        "cw_15ae96247a8c_child_1",
+        "cw_15ae96247a8c_child_2",
+        "cw_15ae96247a8c_child_3",
+        "cw_15ae96247a8c_child_4",
+        "cw_15ae96247a8c_child_5",
+        "cw_15ae96247a8c_child_6",
+        "cw_15ae96247a8c_child_7",
+        "cw_15ae96247a8c_child_8",
+        "cw_15ae96247a8c_child_9"
+      ]
+    },
+    "total_chunks": 11
+  },
+  {
+    "specialty_id": "fertility_and_andrology",
+    "specialty_name": "Fertility and Andrology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Fertility and Andrology Society",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/fertility-and-andrology",
+    "chunk_ids": {
+      "parent": [
+        "cw_e07664c9dd24_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "gastroenterology",
+    "specialty_name": "Gastroenterology",
+    "aliases": [
+      "GI",
+      "digestive"
+    ],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Association of Gastroenterology",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #3: Avoid performing an endoscopy for dyspepsia without alarm symptoms for patients under the age of 60 years",
+      "Recommendation #4: Avoid performing a colonoscopy for constipation in those under the age of 50 years without family history of colon cancer or ala..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/gastroenterology",
+    "chunk_ids": {
+      "parent": [
+        "cw_9f93d5c34778_parent"
+      ],
+      "children": [
+        "cw_9f93d5c34778_child_0",
+        "cw_9f93d5c34778_child_1",
+        "cw_9f93d5c34778_child_2",
+        "cw_9f93d5c34778_child_3",
+        "cw_9f93d5c34778_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "general_surgery",
+    "specialty_name": "General Surgery",
+    "aliases": [],
+    "clinical_domain": "surgical",
+    "organization": "Canadian Association of General Surgeons",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #4: Routine preoperative chest x-rays and baseline laboratory studies should not be obtained in patients undergoing low-risk surgery",
+      "Recommendation #5: Avoid colorectal cancer screening tests in asymptomatic patients with a life expectancy of less than 10 years"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/general-surgery",
+    "chunk_ids": {
+      "parent": [
+        "cw_18a55df2a88d_parent"
+      ],
+      "children": [
+        "cw_18a55df2a88d_child_0",
+        "cw_18a55df2a88d_child_1",
+        "cw_18a55df2a88d_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "geriatrics",
+    "specialty_name": "Geriatrics",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Geriatrics Society",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t use antipsychotics as first choice to treat behavioural and psychological symptoms of dementia",
+      "Recommendation #5: Avoid using medications known to cause hypoglycemia to achieve hemoglobin A1c <7"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/geriatrics",
+    "chunk_ids": {
+      "parent": [
+        "cw_4c13c0b0467a_parent"
+      ],
+      "children": [
+        "cw_4c13c0b0467a_child_0",
+        "cw_4c13c0b0467a_child_1",
+        "cw_4c13c0b0467a_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "headache",
+    "specialty_name": "Headache",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Headache Society",
+    "common_scenarios": [],
+    "recommendation_count": 4,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/headache",
+    "chunk_ids": {
+      "parent": [
+        "cw_f5234ff6082f_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "hematology",
+    "specialty_name": "Hematology",
+    "aliases": [
+      "blood"
+    ],
+    "clinical_domain": "oncology",
+    "organization": "Canadian Hematology Society",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t order thrombophilia testing in women with early pregnancy loss",
+      "Recommendation #4: Don\u2019t request a fine-needle aspirate (FNA) for the evaluation of suspected lymphoma"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/hematology",
+    "chunk_ids": {
+      "parent": [
+        "cw_0eb49b173d15_parent"
+      ],
+      "children": [
+        "cw_0eb49b173d15_child_0",
+        "cw_0eb49b173d15_child_1",
+        "cw_0eb49b173d15_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "hepatology",
+    "specialty_name": "Hepatology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Association for the Study of Liver Disease",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t repeat hepatitis C viral load testing in an individual who has established chronic infection, outside of antiviral treatment"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/hepatology",
+    "chunk_ids": {
+      "parent": [
+        "cw_8d382922dec1_parent"
+      ],
+      "children": [
+        "cw_8d382922dec1_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "hospital_dentistry",
+    "specialty_name": "Hospital Dentistry",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Association of Hospital Dentists",
+    "common_scenarios": [],
+    "recommendation_count": 9,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t give prophylactic antibiotics prior to dental procedures to patients with total joint replacement or nonvalvular cardiac a...",
+      "Recommendation #4: Don\u2019t prescribe dental x-rays or other diagnostic imaging without indication"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/hospital-dentistry",
+    "chunk_ids": {
+      "parent": [
+        "cw_e8bbbb757f73_parent"
+      ],
+      "children": [
+        "cw_e8bbbb757f73_child_0",
+        "cw_e8bbbb757f73_child_1",
+        "cw_e8bbbb757f73_child_2",
+        "cw_e8bbbb757f73_child_3",
+        "cw_e8bbbb757f73_child_4",
+        "cw_e8bbbb757f73_child_5"
+      ]
+    },
+    "total_chunks": 7
+  },
+  {
+    "specialty_id": "hospital_medicine",
+    "specialty_name": "Hospital Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Society for Hospital Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t routinely obtain head computed tomography (CT) scans, in hospitalized patients with delirium in the absence of risk factors"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/hospital-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_083b1e86bca1_parent"
+      ],
+      "children": [
+        "cw_083b1e86bca1_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "hospital_pharmacy",
+    "specialty_name": "Hospital Pharmacy",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society of Hospital Pharmacists",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #2: Don\u2019t use a medication for long-term risk reduction if life expectancy is shorter than the time to benefit of the medication",
+      "Recommendation #3: Don\u2019t continue a proton pump inhibitor at discharge unless there is a compelling reason to continue therapy"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/hospital-pharmacy",
+    "chunk_ids": {
+      "parent": [
+        "cw_699936782e34_parent"
+      ],
+      "children": [
+        "cw_699936782e34_child_0",
+        "cw_699936782e34_child_1",
+        "cw_699936782e34_child_2",
+        "cw_699936782e34_child_3",
+        "cw_699936782e34_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "infectious_disease",
+    "specialty_name": "Infectious Disease",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Association of Medical Microbiology and Infectious Disease",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t routinely repeat radiologic imaging in patients with osteomyelitis demonstrating clinical improvement following adequate a...",
+      "Recommendation #5: Don\u2019t prescribe aminoglycosides for synergy to patients with bacteremia or native valve infective endocarditis caused by Staphyl..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/infectious-disease",
+    "chunk_ids": {
+      "parent": [
+        "cw_7fd0292cef5d_parent"
+      ],
+      "children": [
+        "cw_7fd0292cef5d_child_0",
+        "cw_7fd0292cef5d_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "internal_medicine",
+    "specialty_name": "Internal Medicine",
+    "aliases": [
+      "hospitalist",
+      "general medicine"
+    ],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Society of Internal Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t transfuse red blood cells for arbitrary hemoglobin or hematocrit thresholds",
+      "Recommendation #4: In the inpatient setting, don\u2019t order repeated CBC and chemistry testing in the face of clinical and lab stability"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/internal-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_71e69af872ba_parent"
+      ],
+      "children": [
+        "cw_71e69af872ba_child_0",
+        "cw_71e69af872ba_child_1",
+        "cw_71e69af872ba_child_2",
+        "cw_71e69af872ba_child_3",
+        "cw_71e69af872ba_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "long_term_care",
+    "specialty_name": "Long Term Care",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society for Long Term Care Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 9,
+    "sample_recommendations": [
+      "Recommendation #2: Don\u2019t use antipsychotics as first choice to treat behavioural and psychological symptoms of dementia",
+      "Recommendation #3: Don\u2019t do a urine dip or urine culture unless there are clear signs and symptoms of a urinary tract infection (UTI)"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/long-term-care",
+    "chunk_ids": {
+      "parent": [
+        "cw_757270269d86_parent"
+      ],
+      "children": [
+        "cw_757270269d86_child_0",
+        "cw_757270269d86_child_1",
+        "cw_757270269d86_child_2",
+        "cw_757270269d86_child_3",
+        "cw_757270269d86_child_4",
+        "cw_757270269d86_child_5",
+        "cw_757270269d86_child_6"
+      ]
+    },
+    "total_chunks": 8
+  },
+  {
+    "specialty_id": "medical_biochemistry",
+    "specialty_name": "Medical Biochemistry",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Association of Medical Biochemists",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t request a serum protein electrophoresis in asymptomatic patients",
+      "Recommendation #5: Don\u2019t request uric acid as part of the routine evaluation of cardiovascular risk"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-biochemistry",
+    "chunk_ids": {
+      "parent": [
+        "cw_3af5c2895701_parent"
+      ],
+      "children": [
+        "cw_3af5c2895701_child_0",
+        "cw_3af5c2895701_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "medical_education:_residents",
+    "specialty_name": "Medical Education: Residents",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Resident Doctors of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t order intravenous (IV) when an oral (PO) option is appropriate and tolerated",
+      "Recommendation #4: Don\u2019t order non-urgent investigations or procedures that will delay discharge of hospital inpatients"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-education:-residents",
+    "chunk_ids": {
+      "parent": [
+        "cw_f3039d64d68d_parent"
+      ],
+      "children": [
+        "cw_f3039d64d68d_child_0",
+        "cw_f3039d64d68d_child_1",
+        "cw_f3039d64d68d_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "medical_education:_students",
+    "specialty_name": "Medical Education: Students",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Federation of Medical Students, F\u00e9d\u00e9ration m\u00e9dicale \u00e9tudiante du Qu\u00e9bec",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t miss the opportunity to initiate conversations with patients about whether a test, treatment or procedure is necessary",
+      "Recommendation #4: Don\u2019t hesitate to ask for clarification on tests, treatments, or procedures that you believe are unnecessary"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-education:-students",
+    "chunk_ids": {
+      "parent": [
+        "cw_8a77ade4c732_parent"
+      ],
+      "children": [
+        "cw_8a77ade4c732_child_0",
+        "cw_8a77ade4c732_child_1",
+        "cw_8a77ade4c732_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "medical_genetics",
+    "specialty_name": "Medical Genetics",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian College of Medical Geneticists",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "even when performed on the same individual",
+      "Recommendation #3: Don\u2019t order a chromosome analysis by doing a karyotype for individuals with intellectual disability/developmental delay of unkno..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-genetics",
+    "chunk_ids": {
+      "parent": [
+        "cw_dfce71c8f262_parent"
+      ],
+      "children": [
+        "cw_dfce71c8f262_child_0",
+        "cw_dfce71c8f262_child_1",
+        "cw_dfce71c8f262_child_2",
+        "cw_dfce71c8f262_child_3"
+      ]
+    },
+    "total_chunks": 5
+  },
+  {
+    "specialty_id": "medical_laboratory_science",
+    "specialty_name": "Medical Laboratory Science",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society for Medical Laboratory Science",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t support repeat test ordering (re-testing) at a frequency that is not backed by evidence",
+      "Recommendation #5: Don\u2019t routinely repeat critical results for most common analytes before reporting"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-laboratory-science",
+    "chunk_ids": {
+      "parent": [
+        "cw_fcb0feaabb24_parent"
+      ],
+      "children": [
+        "cw_fcb0feaabb24_child_0",
+        "cw_fcb0feaabb24_child_1",
+        "cw_fcb0feaabb24_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "medical_microbiology",
+    "specialty_name": "Medical Microbiology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Association of Medical Microbiology and Infectious Diseases Canada",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t routinely order nucleic acid amplification testing on cerebrospinal fluid in patients without a compatible clinical syndrome",
+      "Recommendation #5: Don\u2019t routinely obtain swabs during surgical procedures when fluid and/or tissue samples can be collected"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-microbiology",
+    "chunk_ids": {
+      "parent": [
+        "cw_08ba1bccc4e1_parent"
+      ],
+      "children": [
+        "cw_08ba1bccc4e1_child_0",
+        "cw_08ba1bccc4e1_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "medical_radiation_technology",
+    "specialty_name": "Medical Radiation Technology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Association of Medical Radiation Technologists",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/medical-radiation-technology",
+    "chunk_ids": {
+      "parent": [
+        "cw_29d6c71fb44a_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "nephrology",
+    "specialty_name": "Nephrology",
+    "aliases": [
+      "renal",
+      "kidney"
+    ],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Society of Nephrology",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t initiate chronic dialysis without ensuring a shared decision-making process between patients, their families, and their ne...",
+      "rocess includes eliciting individual patient goals and preferences and providing information on prognosis and expected benefits and harms of dialys..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nephrology",
+    "chunk_ids": {
+      "parent": [
+        "cw_e83bf386cebd_parent"
+      ],
+      "children": [
+        "cw_e83bf386cebd_child_0",
+        "cw_e83bf386cebd_child_1",
+        "cw_e83bf386cebd_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "neurology",
+    "specialty_name": "Neurology",
+    "aliases": [
+      "brain",
+      "nervous system",
+      "neurological"
+    ],
+    "clinical_domain": "general",
+    "organization": "Canadian Neurological Society",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t order neuroimaging or EEG in asymptomatic patients in the emergency department with syncope and a normal neurological eval...",
+      "Recommendation #5: Don\u2019t order CT head scans in adults and children who have suffered minor head injuries (unless positive for a validated head inj..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/neurology",
+    "chunk_ids": {
+      "parent": [
+        "cw_3505fe5b23f5_parent"
+      ],
+      "children": [
+        "cw_3505fe5b23f5_child_0",
+        "cw_3505fe5b23f5_child_1",
+        "cw_3505fe5b23f5_child_2",
+        "cw_3505fe5b23f5_child_3",
+        "cw_3505fe5b23f5_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "nuclear_medicine",
+    "specialty_name": "Nuclear Medicine",
+    "aliases": [],
+    "clinical_domain": "imaging",
+    "organization": "Canadian Association of Nuclear Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t do routine bone scans in men with low-risk prostate cancer",
+      "Recommendation #5: Don\u2019t repeat DEXA scans more often than every two years in the absence of high risk or new risk factors"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nuclear-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_821b3d012750_parent"
+      ],
+      "children": [
+        "cw_821b3d012750_child_0",
+        "cw_821b3d012750_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "nurse_practitioner",
+    "specialty_name": "Nurse Practitioner",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Nurse Practitioner Association of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 13,
+    "sample_recommendations": [
+      "in B12 injection, improve efficiency and decrease costs without compromising patient care",
+      "Recommendation #3: Don\u2019t routinely measure Vitamin D levels in low risk adults"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nurse-practitioner",
+    "chunk_ids": {
+      "parent": [
+        "cw_0d6b9b3b7cf5_parent"
+      ],
+      "children": [
+        "cw_0d6b9b3b7cf5_child_0",
+        "cw_0d6b9b3b7cf5_child_1",
+        "cw_0d6b9b3b7cf5_child_2",
+        "cw_0d6b9b3b7cf5_child_3",
+        "cw_0d6b9b3b7cf5_child_4",
+        "cw_0d6b9b3b7cf5_child_5",
+        "cw_0d6b9b3b7cf5_child_6",
+        "cw_0d6b9b3b7cf5_child_7",
+        "cw_0d6b9b3b7cf5_child_8",
+        "cw_0d6b9b3b7cf5_child_9"
+      ]
+    },
+    "total_chunks": 11
+  },
+  {
+    "specialty_id": "nursing",
+    "specialty_name": "Nursing",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Nurses Association",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t use oxygen therapy to treat non-hypoxic dyspnea",
+      "Recommendation #5: Don\u2019t routinely use incontinence containment products (including briefs or pads) for older adults"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nursing",
+    "chunk_ids": {
+      "parent": [
+        "cw_c1311fa34477_parent"
+      ],
+      "children": [
+        "cw_c1311fa34477_child_0",
+        "cw_c1311fa34477_child_1",
+        "cw_c1311fa34477_child_2",
+        "cw_c1311fa34477_child_3"
+      ]
+    },
+    "total_chunks": 5
+  },
+  {
+    "specialty_id": "nursing:_critical_care",
+    "specialty_name": "Nursing: Critical Care",
+    "aliases": [
+      "intensive care",
+      "ICU"
+    ],
+    "clinical_domain": "critical_care",
+    "organization": "Canadian Nurses Association, Canadian Association of Critical Care Nurses",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nursing:-critical-care",
+    "chunk_ids": {
+      "parent": [
+        "cw_94159b6e8257_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "nursing:_gerontology",
+    "specialty_name": "Nursing: Gerontology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Nurses Association, Canadian Gerontological Nursing Association",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t encourage bed rest for older persons during a hospital stay unless medically indicated",
+      "Recommendation #5: Don\u2019t use restraints with older persons unless all other alternatives have been explored"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nursing:-gerontology",
+    "chunk_ids": {
+      "parent": [
+        "cw_28b3985b7469_parent"
+      ],
+      "children": [
+        "cw_28b3985b7469_child_0",
+        "cw_28b3985b7469_child_1",
+        "cw_28b3985b7469_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "nursing:_infection_prevention_and_control",
+    "specialty_name": "Nursing: Infection Prevention and Control",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Nurses Association, Infection Prevention and Control Canada",
+    "common_scenarios": [],
+    "recommendation_count": 9,
+    "sample_recommendations": [
+      "Recommendation #2: Don\u2019t recommend antibiotics for infections that are likely viral in origin, such as an influenza-like illness",
+      "Recommendation #3: Don\u2019t overuse gloves"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/nursing:-infection-prevention-and-control",
+    "chunk_ids": {
+      "parent": [
+        "cw_ec2db8c70d2c_parent"
+      ],
+      "children": [
+        "cw_ec2db8c70d2c_child_0",
+        "cw_ec2db8c70d2c_child_1",
+        "cw_ec2db8c70d2c_child_2",
+        "cw_ec2db8c70d2c_child_3",
+        "cw_ec2db8c70d2c_child_4",
+        "cw_ec2db8c70d2c_child_5",
+        "cw_ec2db8c70d2c_child_6"
+      ]
+    },
+    "total_chunks": 8
+  },
+  {
+    "specialty_id": "obstetrics_and_gynaecology",
+    "specialty_name": "Obstetrics and Gynaecology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Society of Obstetricians and Gynaecologists of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 9,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t perform routine urinalysis (protein, glucose) at every antenatal visit (in low risk normotensive women)",
+      "Recommendation #4: Don\u2019t perform umbilical artery Doppler studies as a routine screening test in uncomplicated pregnancies with normal fetal growth"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/obstetrics-and-gynaecology",
+    "chunk_ids": {
+      "parent": [
+        "cw_5e8a0874f04b_parent"
+      ],
+      "children": [
+        "cw_5e8a0874f04b_child_0",
+        "cw_5e8a0874f04b_child_1",
+        "cw_5e8a0874f04b_child_2",
+        "cw_5e8a0874f04b_child_3",
+        "cw_5e8a0874f04b_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "occupational_medicine",
+    "specialty_name": "Occupational Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Occupational Medicine Specialists of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 10,
+    "sample_recommendations": [
+      "Recommendation #2: Don\u2019t prescribe opiates for the treatment of acute or chronic non-cancer pain without first assessing side effects, work status,...",
+      "ur or infection (fever, weight loss, history of cancer), steroid use, etc"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/occupational-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_eafc7742fe1a_parent"
+      ],
+      "children": [
+        "cw_eafc7742fe1a_child_0",
+        "cw_eafc7742fe1a_child_1",
+        "cw_eafc7742fe1a_child_2",
+        "cw_eafc7742fe1a_child_3",
+        "cw_eafc7742fe1a_child_4",
+        "cw_eafc7742fe1a_child_5",
+        "cw_eafc7742fe1a_child_6",
+        "cw_eafc7742fe1a_child_7"
+      ]
+    },
+    "total_chunks": 9
+  },
+  {
+    "specialty_id": "oncology",
+    "specialty_name": "Oncology",
+    "aliases": [
+      "cancer"
+    ],
+    "clinical_domain": "oncology",
+    "organization": "Canadian Association of Medical Oncologists, Canadian Association of Radiation Oncology, Canadian Partnership Against Cancer, Canadian Society for Surgical Oncology",
+    "common_scenarios": [],
+    "recommendation_count": 12,
+    "sample_recommendations": [
+      "Recommendation #1: Don\u2019t order tests to detect recurrent cancer in asymptomatic patients if there is not a realistic expectation that early detecti...",
+      "Recommendation #2: Don\u2019t perform routine cancer screening, or surveillance for a new primary cancer, in the majority of patients with metastatic di..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/oncology",
+    "chunk_ids": {
+      "parent": [
+        "cw_50b74a83c01a_parent"
+      ],
+      "children": [
+        "cw_50b74a83c01a_child_0",
+        "cw_50b74a83c01a_child_1",
+        "cw_50b74a83c01a_child_2",
+        "cw_50b74a83c01a_child_3",
+        "cw_50b74a83c01a_child_4",
+        "cw_50b74a83c01a_child_5",
+        "cw_50b74a83c01a_child_6",
+        "cw_50b74a83c01a_child_7",
+        "cw_50b74a83c01a_child_8",
+        "cw_50b74a83c01a_child_9",
+        "cw_50b74a83c01a_child_10",
+        "cw_50b74a83c01a_child_11"
+      ]
+    },
+    "total_chunks": 13
+  },
+  {
+    "specialty_id": "orthopaedics",
+    "specialty_name": "Orthopaedics",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "The Canadian Orthopaedic Association",
+    "common_scenarios": [],
+    "recommendation_count": 10,
+    "sample_recommendations": [
+      "Recommendation #6: Avoid performing routine post-operative deep vein thrombosis ultrasonography screening in patients who undergo elective hip or k...",
+      "Recommendation #7: Don\u2019t use needle lavage to treat patients with symptomatic osteoarthritis of the knee for long-term relief"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/orthopaedics",
+    "chunk_ids": {
+      "parent": [
+        "cw_25bd481cd8d1_parent"
+      ],
+      "children": [
+        "cw_25bd481cd8d1_child_0",
+        "cw_25bd481cd8d1_child_1",
+        "cw_25bd481cd8d1_child_2",
+        "cw_25bd481cd8d1_child_3",
+        "cw_25bd481cd8d1_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "otolaryngology:_head_and_neck_surgery",
+    "specialty_name": "Otolaryngology: Head and Neck Surgery",
+    "aliases": [],
+    "clinical_domain": "surgical",
+    "organization": "Canadian Society of Otolaryngology - Head & Neck Surgery, Canadian Association of Head and Neck Surgical Oncologists",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "r entities such as benign thyroid nodules, rather than confirming a diagnosis that explains the patient\u2019s symptoms and can lead to a cascade of oth..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/otolaryngology:-head-and-neck-surgery",
+    "chunk_ids": {
+      "parent": [
+        "cw_9df1fb9b8f20_parent"
+      ],
+      "children": [
+        "cw_9df1fb9b8f20_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "otolaryngology:_otology_and_neurotology",
+    "specialty_name": "Otolaryngology: Otology and Neurotology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society of Otolaryngology - Otology & Neurotology Subspecialty Group",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t use oral antibiotics as a first line treatment for patients with painless ear drainage associated with a tympanic membrane...",
+      "Recommendation #5: Don\u2019t perform particle repositioning maneuvers (Epley or Semont) without a clinical diagnosis of posterior semicircular canal be..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/otolaryngology:-otology-and-neurotology",
+    "chunk_ids": {
+      "parent": [
+        "cw_5e4c48eae3bf_parent"
+      ],
+      "children": [
+        "cw_5e4c48eae3bf_child_0",
+        "cw_5e4c48eae3bf_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "otolaryngology:_rhinology",
+    "specialty_name": "Otolaryngology: Rhinology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society of Otolaryngology - Head & Neck Surgery",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t order a plain film X-ray in the evaluation of nasal fractures\n\nPlain film x-rays should not be ordered as part of the mana..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/otolaryngology:-rhinology",
+    "chunk_ids": {
+      "parent": [
+        "cw_7c21fe528b4d_parent"
+      ],
+      "children": [
+        "cw_7c21fe528b4d_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "paediatric_surgery",
+    "specialty_name": "Paediatric Surgery",
+    "aliases": [],
+    "clinical_domain": "surgical",
+    "organization": "Canadian Association of Paediatric Surgeons",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #6: Don\u2019t delay testing for total and conjugated (direct) bilirubin in any newborn with persistent jaundice beyond 2 weeks of age"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/paediatric-surgery",
+    "chunk_ids": {
+      "parent": [
+        "cw_b18b33da8fa8_parent"
+      ],
+      "children": [
+        "cw_b18b33da8fa8_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "palliative_care",
+    "specialty_name": "Palliative Care",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Society of Palliative Care Physicians",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t use stool softeners alone to prevent opioid induced constipation",
+      "Recommendation #5: Don\u2019t transfuse red blood cells for arbitrary hemoglobin or hematocrit thresholds in the absence of symptoms, or if no benefit w..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/palliative-care",
+    "chunk_ids": {
+      "parent": [
+        "cw_b7230d6798b4_parent"
+      ],
+      "children": [
+        "cw_b7230d6798b4_child_0",
+        "cw_b7230d6798b4_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "pathology",
+    "specialty_name": "Pathology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Association of Pathologists",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t send urine specimens for culture on asymptomatic patients including the elderly, diabetics, or as a follow up to confirm e..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pathology",
+    "chunk_ids": {
+      "parent": [
+        "cw_90462ed7342e_parent"
+      ],
+      "children": [
+        "cw_90462ed7342e_child_0"
+      ]
+    },
+    "total_chunks": 2
+  },
+  {
+    "specialty_id": "pediatric_infectious_diseases_and_medical_microbiology",
+    "specialty_name": "Pediatric Infectious Diseases and Medical Microbiology",
+    "aliases": [
+      "paediatrics",
+      "pediatrics",
+      "children"
+    ],
+    "clinical_domain": "pediatrics",
+    "organization": "Association of Medical Microbiology and Infectious Disease Canada",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t routinely treat uncomplicated acute hematogenous osteomyelitis with prolonged intravenous therapy",
+      "complicated disease (significant bone destruction; resistant or unusual pathogen; immunocompromised patient; sepsis or septic shock; venous thrombo..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pediatric-infectious-diseases-and-medical-microbiology",
+    "chunk_ids": {
+      "parent": [
+        "cw_316fe672461e_parent"
+      ],
+      "children": [
+        "cw_316fe672461e_child_0",
+        "cw_316fe672461e_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "pediatric_neurosurgery",
+    "specialty_name": "Pediatric Neurosurgery",
+    "aliases": [
+      "paediatrics",
+      "pediatrics",
+      "children"
+    ],
+    "clinical_domain": "surgical",
+    "organization": "Canadian Pediatric Neurosurgery Study Group",
+    "common_scenarios": [],
+    "recommendation_count": 9,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t use CT scans for routine imaging of children with hydrocephalus",
+      "Recommendation #4: Don\u2019t recommend helmets for mild to severe positional flattening"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pediatric-neurosurgery",
+    "chunk_ids": {
+      "parent": [
+        "cw_5e4a8dcd5d81_parent"
+      ],
+      "children": [
+        "cw_5e4a8dcd5d81_child_0",
+        "cw_5e4a8dcd5d81_child_1",
+        "cw_5e4a8dcd5d81_child_2",
+        "cw_5e4a8dcd5d81_child_3",
+        "cw_5e4a8dcd5d81_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "pediatric_otolaryngology",
+    "specialty_name": "Pediatric Otolaryngology",
+    "aliases": [
+      "paediatrics",
+      "pediatrics",
+      "children"
+    ],
+    "clinical_domain": "pediatrics",
+    "organization": "Canadian Society of Otolaryngology \u2013 Head & Neck Surgery",
+    "common_scenarios": [],
+    "recommendation_count": 9,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t place tympanostomy tubes in most children for a single episode of uncomplicated otitis media with effusion of less than 3 ...",
+      "Recommendation #4: Don\u2019t routinely prescribe intranasal/systemic steroids, antihistamines or decongestants for children with uncomplicated otitis m..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pediatric-otolaryngology",
+    "chunk_ids": {
+      "parent": [
+        "cw_30d6ff3a19b4_parent"
+      ],
+      "children": [
+        "cw_30d6ff3a19b4_child_0",
+        "cw_30d6ff3a19b4_child_1",
+        "cw_30d6ff3a19b4_child_2",
+        "cw_30d6ff3a19b4_child_3",
+        "cw_30d6ff3a19b4_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "pediatric_rheumatology",
+    "specialty_name": "Pediatric Rheumatology",
+    "aliases": [
+      "paediatrics",
+      "pediatrics",
+      "children"
+    ],
+    "clinical_domain": "pediatrics",
+    "organization": "Canadian Rheumatology Association",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #3: Do not order HLA-B27 unless spondyloarthropathy is suspected based on clinical signs or symptoms",
+      "Recommendation #5: Do not order Lyme disease serology as an explanation for musculoskeletal symptoms without an exposure history and exam findings"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pediatric-rheumatology",
+    "chunk_ids": {
+      "parent": [
+        "cw_d48821521ffd_parent"
+      ],
+      "children": [
+        "cw_d48821521ffd_child_0",
+        "cw_d48821521ffd_child_1",
+        "cw_d48821521ffd_child_2",
+        "cw_d48821521ffd_child_3",
+        "cw_d48821521ffd_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "pediatric_sport_&_exercise_medicine",
+    "specialty_name": "Pediatric Sport & Exercise Medicine",
+    "aliases": [
+      "paediatrics",
+      "pediatrics",
+      "children"
+    ],
+    "clinical_domain": "pediatrics",
+    "organization": "Canadian Academy of Sport and Exercise Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t order scoliosis radiographic series for back pain",
+      "Recommendation #4: Don\u2019t order thoracic spine radiographs if there is clinical concern about scoliosis"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pediatric-sport-&-exercise-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_9563ae475429_parent"
+      ],
+      "children": [
+        "cw_9563ae475429_child_0",
+        "cw_9563ae475429_child_1",
+        "cw_9563ae475429_child_2",
+        "cw_9563ae475429_child_3",
+        "cw_9563ae475429_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "pediatrics",
+    "specialty_name": "Pediatrics",
+    "aliases": [
+      "paediatrics",
+      "pediatrics",
+      "children"
+    ],
+    "clinical_domain": "pediatrics",
+    "organization": "Canadian Paediatric Society",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "the skin, ocular, respiratory, gastrointestinal and cardiovascular symptoms of anaphylaxis that occur within minutes to hours of eating the specifi...",
+      "Recommendation #3: Don\u2019t administer psychostimulant medications to preschool children with Attention Deficit Disorder (ADD), but offer parent-admin..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pediatrics",
+    "chunk_ids": {
+      "parent": [
+        "cw_69646afe7eb4_parent"
+      ],
+      "children": [
+        "cw_69646afe7eb4_child_0",
+        "cw_69646afe7eb4_child_1",
+        "cw_69646afe7eb4_child_2",
+        "cw_69646afe7eb4_child_3"
+      ]
+    },
+    "total_chunks": 5
+  },
+  {
+    "specialty_id": "perinatal_transfusion_medicine",
+    "specialty_name": "Perinatal Transfusion Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Obstetrical and Pediatric Transfusion Network",
+    "common_scenarios": [],
+    "recommendation_count": 4,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/perinatal-transfusion-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_363dd8a8d9a0_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "pharmacist",
+    "specialty_name": "Pharmacist",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Pharmacists Association",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t renew long-term proton pump inhibitor (PPI) therapy for gastrointestinal symptoms without an attempt to stop or reduce (ta...",
+      "associated with long-term use of PPIs include increased risk of fracture, Clostridium difficile infection and diarrhea, community-acquired pneumoni..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/pharmacist",
+    "chunk_ids": {
+      "parent": [
+        "cw_7f85ffeaa605_parent"
+      ],
+      "children": [
+        "cw_7f85ffeaa605_child_0",
+        "cw_7f85ffeaa605_child_1",
+        "cw_7f85ffeaa605_child_2",
+        "cw_7f85ffeaa605_child_3",
+        "cw_7f85ffeaa605_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "physical_medicine_and_rehabilitation",
+    "specialty_name": "Physical Medicine and Rehabilitation",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Association of Physical Medicine and Rehabilitation",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #4: Don\u2019t order CT scans for low back pain unless red flags are present",
+      "Recommendation #5: Don\u2019t use benzodiazepines for the treatment of agitation in the acute phase of traumatic brain injury after initial stabilization"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/physical-medicine-and-rehabilitation",
+    "chunk_ids": {
+      "parent": [
+        "cw_8f9a2d88b4ef_parent"
+      ],
+      "children": [
+        "cw_8f9a2d88b4ef_child_0",
+        "cw_8f9a2d88b4ef_child_1",
+        "cw_8f9a2d88b4ef_child_2",
+        "cw_8f9a2d88b4ef_child_3"
+      ]
+    },
+    "total_chunks": 5
+  },
+  {
+    "specialty_id": "psychiatry",
+    "specialty_name": "Psychiatry",
+    "aliases": [
+      "mental health",
+      "psychiatric"
+    ],
+    "clinical_domain": "mental_health",
+    "organization": "Canadian Academy of Child and Adolescent Psychiatry, Canadian Academy of Geriatric Psychiatry, Canadian Psychiatric Association",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #2: Don\u2019t use SSRIs as the first-line intervention for mild to moderately depressed teens",
+      "Recommendation #3: Don\u2019t use atypical antipsychotics as a first-line intervention for Attention Deficit Hyperactivity Disorder (ADHD) with disrupti..."
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/psychiatry",
+    "chunk_ids": {
+      "parent": [
+        "cw_840ee5a470f3_parent"
+      ],
+      "children": [
+        "cw_840ee5a470f3_child_0",
+        "cw_840ee5a470f3_child_1",
+        "cw_840ee5a470f3_child_2",
+        "cw_840ee5a470f3_child_3",
+        "cw_840ee5a470f3_child_4"
+      ]
+    },
+    "total_chunks": 6
+  },
+  {
+    "specialty_id": "public_health",
+    "specialty_name": "Public Health",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Public Health Physicians of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/public-health",
+    "chunk_ids": {
+      "parent": [
+        "cw_49e776b6be7a_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "radiology",
+    "specialty_name": "Radiology",
+    "aliases": [
+      "diagnostic imaging",
+      "imaging"
+    ],
+    "clinical_domain": "imaging",
+    "organization": "Canadian Association of Radiologists",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "Recommendation #5: Don\u2019t do computed tomography (CT) for the evaluation of suspected appendicitis in children until after ultrasound has been consi...",
+      "Recommendation #6: Don\u2019t do an ankle X-ray series in adults for minor injuries"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/radiology",
+    "chunk_ids": {
+      "parent": [
+        "cw_e4fb50dd0d1c_parent"
+      ],
+      "children": [
+        "cw_e4fb50dd0d1c_child_0",
+        "cw_e4fb50dd0d1c_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "respiratory_medicine",
+    "specialty_name": "Respiratory Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Thoracic Society",
+    "common_scenarios": [],
+    "recommendation_count": 11,
+    "sample_recommendations": [
+      "Recommendation #1: Don\u2019t initiate long-term maintenance inhalers in stable patients with suspected COPD if they have not had confirmation of post-b...",
+      "Recommendation #2: Don\u2019t perform CT screening for lung cancer among patients at low risk for lung cancer"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/respiratory-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_20052a5142e7_parent"
+      ],
+      "children": [
+        "cw_20052a5142e7_child_0",
+        "cw_20052a5142e7_child_1",
+        "cw_20052a5142e7_child_2",
+        "cw_20052a5142e7_child_3",
+        "cw_20052a5142e7_child_4",
+        "cw_20052a5142e7_child_5",
+        "cw_20052a5142e7_child_6",
+        "cw_20052a5142e7_child_7",
+        "cw_20052a5142e7_child_8"
+      ]
+    },
+    "total_chunks": 10
+  },
+  {
+    "specialty_id": "rheumatology",
+    "specialty_name": "Rheumatology",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Rheumatology Association",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t repeat dual energy X-ray absorptiometry (DEXA) scans more often than every 2 years",
+      "Recommendation #4: Don\u2019t prescribe bisphosphonates for patients at low risk of fracture"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/rheumatology",
+    "chunk_ids": {
+      "parent": [
+        "cw_c0e1a1026e78_parent"
+      ],
+      "children": [
+        "cw_c0e1a1026e78_child_0",
+        "cw_c0e1a1026e78_child_1",
+        "cw_c0e1a1026e78_child_2",
+        "cw_c0e1a1026e78_child_3"
+      ]
+    },
+    "total_chunks": 5
+  },
+  {
+    "specialty_id": "rural_medicine",
+    "specialty_name": "Rural Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Society of Rural Physicians of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #3: Don\u2019t transfer a palliative patient to a facility far from their friends and family without considering if their goals of care c...",
+      "Recommendation #4: Don\u2019t call in staff for an investigation at off-service hours unless it is likely to change management"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/rural-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_e33c3ee85f0a_parent"
+      ],
+      "children": [
+        "cw_e33c3ee85f0a_child_0",
+        "cw_e33c3ee85f0a_child_1",
+        "cw_e33c3ee85f0a_child_2"
+      ]
+    },
+    "total_chunks": 4
+  },
+  {
+    "specialty_id": "spine",
+    "specialty_name": "Spine",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Spine Society",
+    "common_scenarios": [],
+    "recommendation_count": 8,
+    "sample_recommendations": [
+      "Recommendation #7: Don\u2019t treat post-operative back pain with opioid analgesic medication unless it is functionally directed and strictly time limited",
+      "Recommendation #8: Don\u2019t use opioid analgesic medication in the ongoing treatment of chronic, non-malignant back pain"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/spine",
+    "chunk_ids": {
+      "parent": [
+        "cw_299a20601891_parent"
+      ],
+      "children": [
+        "cw_299a20601891_child_0",
+        "cw_299a20601891_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "sport_and_exercise_medicine",
+    "specialty_name": "Sport and Exercise Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Academy of Sport and Exercise Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 6,
+    "sample_recommendations": [
+      "ve management fail to relieve pain and restore function of the shoulder, consider plain radiographs to rule out bony or joint pathology, and ultras...",
+      "Recommendation #5: Don\u2019t immobilize ankle inversion sprains with no evidence of bony or syndesmotic injury"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/sport-and-exercise-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_6ee0912abdd9_parent"
+      ],
+      "children": [
+        "cw_6ee0912abdd9_child_0",
+        "cw_6ee0912abdd9_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "transfusion_medicine",
+    "specialty_name": "Transfusion Medicine",
+    "aliases": [],
+    "clinical_domain": "internal_medicine",
+    "organization": "Canadian Society for Transfusion Medicine",
+    "common_scenarios": [],
+    "recommendation_count": 7,
+    "sample_recommendations": [
+      "Recommendation #6: Don\u2019t use immunoglobulin therapy for recurrent infections unless impaired antibody responses to vaccines are demonstrated",
+      "Recommendation #7: Don\u2019t order unnecessary pre-transfusion testing (type and screen) for all pre-operative patients"
+    ],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/transfusion-medicine",
+    "chunk_ids": {
+      "parent": [
+        "cw_e1fce3512ca0_parent"
+      ],
+      "children": [
+        "cw_e1fce3512ca0_child_0",
+        "cw_e1fce3512ca0_child_1"
+      ]
+    },
+    "total_chunks": 3
+  },
+  {
+    "specialty_id": "trauma",
+    "specialty_name": "Trauma",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Trauma Association of Canada",
+    "common_scenarios": [],
+    "recommendation_count": 3,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/trauma",
+    "chunk_ids": {
+      "parent": [
+        "cw_053264bdcdf7_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "urology",
+    "specialty_name": "Urology",
+    "aliases": [],
+    "clinical_domain": "general",
+    "organization": "Canadian Urological Association",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/urology",
+    "chunk_ids": {
+      "parent": [
+        "cw_c14b71055429_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  },
+  {
+    "specialty_id": "vascular_surgery",
+    "specialty_name": "Vascular Surgery",
+    "aliases": [],
+    "clinical_domain": "surgical",
+    "organization": "Canadian Society for Vascular Surgery",
+    "common_scenarios": [],
+    "recommendation_count": 5,
+    "sample_recommendations": [],
+    "has_methodology": true,
+    "source_url": "https://choosingwiselycanada.org/vascular-surgery",
+    "chunk_ids": {
+      "parent": [
+        "cw_392fa944acc0_parent"
+      ],
+      "children": []
+    },
+    "total_chunks": 1
+  }
+]

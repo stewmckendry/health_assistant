@@ -1,0 +1,2070 @@
+[
+  {
+    "policy_id": "advice_to_the_profession_physicians_relationships",
+    "policy_title": "ADVICE TO THE PROFESSION: CONFLICTS OF INTEREST AND INDUSTRY RELATIONSHIPS",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "advertising",
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "It is important to remember that any conflict must be resolved in the best interests of the patient and that you must be able to demonstrate that t..."
+    ],
+    "related_policies": [
+      "virtual_care",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_human_rights"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 2,
+    "child_chunks": 4,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physicians-Relationships-with-Industry-Practice/Advice-to-the-Profession-Physicians-Relationships"
+  },
+  {
+    "policy_id": "advice_to_the_profession_reporting_requirements",
+    "policy_title": "ADVICE TO THE PROFESSION: REPORTING REQUIREMENTS",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "* It is important to explain anything the patient might find helpful, including: - where a report is required by law, that the report must or had t...",
+      "For example, a physician might notify a patient after making a report if the physician only realizes they must make a report after the patient leav...",
+      "^4 While there are no restrictions in *PHIPA* on the types of persons to whom the information may be disclosed, the disclosure must be made to some...",
+      ", a public hospital) that treats a person for a gunshot wound must report to the police"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_end_of_life_care",
+      "advice_to_the_profession_maintaining_appropriate_b",
+      "physician_treatment_of_self_family_members_or"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 4,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Reporting-Requirements/Advice-to-the-Profession-Reporting-Requirements"
+  },
+  {
+    "policy_id": "accepting_new_patients",
+    "policy_title": "Accepting New Patients",
+    "aliases": [
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "prescribing_treatment",
+    "topics": [
+      "medical_records",
+      "prescribing",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "prescribing_drugs",
+      "advice_to_the_profession_end_of_life_care",
+      "advice_to_the_profession_maintaining_appropriate_b"
+    ],
+    "chunk_count": 3,
+    "parent_chunks": 3,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Accepting-New-Patients"
+  },
+  {
+    "policy_id": "advertising",
+    "policy_title": "Advertising",
+    "aliases": [
+      "patient authorization",
+      "promotion",
+      "marketing",
+      "confidentiality",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "advertising",
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "social_media"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "physicians_relationships_with_industry_practice",
+      "advice_to_the_profession_physicians_relationships",
+      "advice_to_the_profession_virtual_care"
+    ],
+    "chunk_count": 8,
+    "parent_chunks": 3,
+    "child_chunks": 5,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Advertising"
+  },
+  {
+    "policy_id": "advice_to_the_profession_accepting_new_patients",
+    "policy_title": "Advice to the Profession: Accepting New Patients",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "online consultations"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advice_to_the_profession_virtual_care"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Accepting-New-Patients/Advice-to-the-Profession-Accepting-New-Patients"
+  },
+  {
+    "policy_id": "advice_to_the_profession_advertising",
+    "policy_title": "Advice to the Profession: Advertising",
+    "aliases": [
+      "promotion",
+      "marketing",
+      "medication orders"
+    ],
+    "practice_domain": "professional_conduct",
+    "topics": [
+      "advertising",
+      "billing",
+      "continuity_of_care",
+      "ending_relationship",
+      "prescribing",
+      "social_media"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advertising",
+      "physicians_relationships_with_industry_practice",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Advertising/Advice-to-the-Profession-Advertising"
+  },
+  {
+    "policy_id": "advice_to_the_profession_changing_scope_of_practic",
+    "policy_title": "Advice to the Profession: Changing Scope of Practice and/or  Re-entering Practice",
+    "aliases": [
+      "patient authorization",
+      "medication orders"
+    ],
+    "practice_domain": "prescribing_treatment",
+    "topics": [
+      "consent",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "## Re-entering Clinical Practice Physicians must report to the College when they wish to re-enter clinical practice after an absence of two consecu..."
+    ],
+    "related_policies": [
+      "prescribing_drugs",
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 6,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ensuring-Competence/Advice-to-the-Profession-Changing-Scope-of-Practic"
+  },
+  {
+    "policy_id": "advice_to_the_profession_complementary_and_alterna",
+    "policy_title": "Advice to the Profession: Complementary and Alternative Medicine",
+    "aliases": [
+      "patient authorization",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advertising"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Complementary-Alternative-Medicine/Advice-to-the-Profession-Complementary-and-Alterna"
+  },
+  {
+    "policy_id": "advice_to_the_profession_consent_to_treatment",
+    "policy_title": "Advice to the Profession: Consent to Treatment",
+    "aliases": [
+      "patient authorization",
+      "capacity assessment",
+      "informed consent",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "You must also have consent to share the patient\u2019s personal health information with any interpreter, regardless of whether the interpreter is a fami...",
+      "^3 \u00a0In all other cases, consent must be provided by an SDM identified by the hierarchy set out in the *HCCA*^4*\u00a0*prior to providing treatment"
+    ],
+    "related_policies": [
+      "medical_records_management",
+      "advice_to_the_profession_human_rights",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 5,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Consent-to-Treatment/Advice-to-the-Profession-Consent-to-Treatment"
+  },
+  {
+    "policy_id": "advice_to_the_profession_continuity_of_care",
+    "policy_title": "Advice to the Profession: Continuity of Care",
+    "aliases": [
+      "patient authorization",
+      "medication orders",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "pdf)\u00a0sets out the criteria for how labs define a critical lab result and the necessary steps labs must take in response"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advice_to_the_profession_virtual_care"
+    ],
+    "chunk_count": 4,
+    "parent_chunks": 4,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Continuity-of-Care/Advice-to-the-Profession-Continuity-of-Care"
+  },
+  {
+    "policy_id": "advice_to_the_profession_delegation_of_controlled",
+    "policy_title": "Advice to the Profession: Delegation of Controlled Acts",
+    "aliases": [
+      "patient authorization",
+      "patient charts",
+      "controlled acts",
+      "supervised acts",
+      "medication orders"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "Physicians are ultimately responsible for the acts they delegate and must be satisfied that the individual to whom they are delegating has the requ...",
+      "In particular, physicians cannot rely exclusively on credentials or licences obtained in other jurisdictions to ascertain whether an IMG has the re...",
+      "This means that physicians must only delegate acts that are within the limits of their knowledge, skill and judgment and any terms, limits and cond...",
+      "As the policy states, delegation must occur within the context of a physician-patient relationship, unless a patient's best interest dictates other...",
+      "Risks vary depending on the specific acts being performed and the circumstances under which they are performed and thus must be considered prior to..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_virtual_care",
+      "prescribing_drugs",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 12,
+    "parent_chunks": 12,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Delegation-of-Controlled-Acts/Advice-to-the-Profession-Delegation-of-Controlled"
+  },
+  {
+    "policy_id": "advice_to_the_profession_disclosure_of_harm",
+    "policy_title": "Advice to the Profession: Disclosure of Harm",
+    "aliases": [
+      "patient authorization",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_physicians_relationships",
+      "advice_to_the_profession_dispensing_drugs"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Disclosure-of-Harm/Advice-to-the-Profession-Disclosure-of-Harm"
+  },
+  {
+    "policy_id": "advice_to_the_profession_dispensing_drugs",
+    "policy_title": "Advice to the Profession: Dispensing Drugs",
+    "aliases": [
+      "patient authorization",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "In line with this policy, you must consider the patient\u2019s ability to pay when charging for uninsured services",
+      "ca/laws/statute/90h04) sets out the information which must be recorded on the container of the dispensed drug, including, not limited to, the ident...",
+      "* Physicians must use proper methods of procurement and keep documentation of each sale or product transaction (e",
+      "For controlled substances, physicians must keep purchase/receiving records that contains information about the name and quantity of the substance r..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advice_to_the_profession_medical_records_documenta"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Dispensing-Drugs/Advice-to-the-Profession-Dispensing-Drugs"
+  },
+  {
+    "policy_id": "advice_to_the_profession_end_of_life_care",
+    "policy_title": "Advice to the Profession: End-of-Life Care",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "Advance Care Planning - Conversations to confirm a person's substitute decision-maker (SDM) and prepare that SDM for future decision-making - Focus...",
+      "The certificate must state the cause of death according to the [International Statistical Classification of Diseases and Related Health Problems](h...",
+      "The certificate must state the cause of death according to the [International Statistical Classification of Diseases and Related Health Problems](h..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_maintaining_appropriate_b",
+      "advice_to_the_profession_reporting_requirements",
+      "physician_treatment_of_self_family_members_or"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 4,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Decision-Making-for-End-of-Life-Care/Advice-to-the-Profession-End-of-Life-Care"
+  },
+  {
+    "policy_id": "advice_to_the_profession_ending_the_physician_pati",
+    "policy_title": "Advice to the Profession: Ending the Physician-Patient Relationship",
+    "aliases": [
+      "patient authorization",
+      "terminating",
+      "discontinuing care",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_virtual_care",
+      "social_media",
+      "advice_to_the_profession_physician_treatment_of_se"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ending-the-Physician-Patient-Relationship/Advice-to-the-Profession-Ending-the-Physician-Pati"
+  },
+  {
+    "policy_id": "advice_to_the_profession_human_rights",
+    "policy_title": "Advice to the Profession: Human Rights in the Provision of Health Services",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_assistance_dying",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "*The policy says that physicians must not promote their own spiritual, secular, or religious beliefs when interacting with patients or impose these...",
+      "The *AODA* sets general accessibility standards that organizations must meet in different areas, such as information and communication standards an...",
+      "Physicians must comply with the *Human Rights Code *and *AODA *standards that are applicable to their office^3 and any policies developed in accord...",
+      "If a physician determines that it would be unsafe to care for a patient and decides to end the physician-patient relationship, they must comply wit...",
+      "^11 This freedom must also be balanced against patients\u2019 right to access health services"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "human_rights_in_the_provision_of_health_services"
+    ],
+    "chunk_count": 11,
+    "parent_chunks": 5,
+    "child_chunks": 6,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Human-Rights-in-the-Provision-of-Health-Services/Advice-to-the-Profession-Human-Rights"
+  },
+  {
+    "policy_id": "advice_to_the_profession_infection_prevention_and",
+    "policy_title": "Advice to the Profession: Infection Prevention and Control",
+    "aliases": [
+      "medication orders"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "ending_relationship",
+      "prescribing",
+      "social_media"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_advertising",
+      "advertising"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Infection-Prevention-and-Control-for-Clinical-Offi/Advice-to-the-Profession-Infection-Prevention-and"
+  },
+  {
+    "policy_id": "advice_to_the_profession_maintaining_appropriate_b",
+    "policy_title": "Advice to the Profession: Maintaining Appropriate Boundaries",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct",
+      "social_media"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "As such, a physician must only act in the patient\u2019s best interests and must take responsibility for establishing and maintaining boundaries within ...",
+      " The policy states a physician must use their professional judgment to determine when to use touch for comforting purposes",
+      " As stated in the *Boundary Violations* policy, physicians must provide privacy when a patient undresses and dresses",
+      "A physician who is considering having sexual relations with a former patient must use their professional judgment, acting cautiously as they consid..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_end_of_life_care",
+      "advice_to_the_profession_reporting_requirements"
+    ],
+    "chunk_count": 9,
+    "parent_chunks": 9,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Boundary-Violations/Advice-to-the-Profession-Maintaining-Appropriate-B"
+  },
+  {
+    "policy_id": "advice_to_the_profession_medical_records_documenta",
+    "policy_title": "Advice to the Profession: Medical Records Documentation",
+    "aliases": [
+      "health records",
+      "patient authorization",
+      "documentation",
+      "charting",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "As required by the *Medical Records Documentation* policy, documentation in a medical record must always support the treatment or procedure that ta...",
+      "The CPP is a tool that serves to facilitate quality patient care and for this to be achieved, individuals that rely on this information must be abl..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advice_to_the_profession_continuity_of_care"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 5,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Documentation/Advice-to-the-Profession-Medical-Records-Documenta"
+  },
+  {
+    "policy_id": "advice_to_the_profession_medical_records_managemen",
+    "policy_title": "Advice to the Profession: Medical Records Management",
+    "aliases": [
+      "health records",
+      "patient authorization",
+      "documentation",
+      "charting",
+      "confidentiality"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "Physicians who do not currently have written agreements that explicitly addresses custodianship must establish them as soon as possible",
+      "As required by the\u00a0*Medical Records Management*\u00a0policy, physicians must do everything reasonably within their control to prevent disputes about rec...",
+      ", obligations related to privacy, security, and access) and physicians must only engage with service providers who are willing and able to comply w...",
+      "In keeping with the requirements in the\u00a0*Medical Records Management*\u00a0policy, if charging for a review of records prior to transfer, fees must be re...",
+      "In some cases, the cost of preparing the materials might be quite low and in these cases fees must reflect that"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "third_party_medical_reports",
+      "virtual_care"
+    ],
+    "chunk_count": 10,
+    "parent_chunks": 8,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Management/Advice-to-the-Profession-Medical-Records-Managemen"
+  },
+  {
+    "policy_id": "advice_to_the_profession_prescribing_drugs",
+    "policy_title": "Advice to the Profession: Prescribing Drugs",
+    "aliases": [
+      "patient authorization",
+      "drug therapy",
+      "medication management",
+      "prescription",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "prescribing"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advice_to_the_profession_medical_records_documenta"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 1,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Prescribing-Drugs/Advice-to-the-Profession-Prescribing-Drugs"
+  },
+  {
+    "policy_id": "advice_to_the_profession_professional_behaviour",
+    "policy_title": "Advice to the Profession: Professional Behaviour",
+    "aliases": [
+      "patient authorization",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "social_media"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_ending_the_physician_pati",
+      "advice_to_the_profession_virtual_care",
+      "social_media"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Behaviour-in-the-Professional-Environmen/Advice-to-the-Profession-Professional-Behaviour"
+  },
+  {
+    "policy_id": "advice_to_the_profession_professional_responsibili",
+    "policy_title": "Advice to the Profession: Professional Responsibilities in Medical Education",
+    "aliases": [
+      "patient authorization",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "delegation",
+      "ending_relationship",
+      "medical_records"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_third_party_medical_repor",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_delegation_of_controlled"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 2,
+    "child_chunks": 3,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Professional-Responsibilities-in-Medical-Education/Advice-to-the-Profession-Professional-Responsibili"
+  },
+  {
+    "policy_id": "advice_to_the_profession_protecting_personal_healt",
+    "policy_title": "Advice to the Profession: Protecting Personal Health Information",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "In all cases, you must obtain consent directly from the child patient where they have capacity to make the decision, even if they are accompanied b...",
+      "Where you determine that it is reasonable to use unencrypted e-communication, you must obtain and document the patient\u2019s express consent, which req..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_ending_the_physician_pati",
+      "advice_to_the_profession_virtual_care",
+      "social_media"
+    ],
+    "chunk_count": 10,
+    "parent_chunks": 5,
+    "child_chunks": 5,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Protecting-Personal-Health-Information/Advice-to-the-Profession-Protecting-Personal-Healt"
+  },
+  {
+    "policy_id": "advice_to_the_profession_providing_physician_servi",
+    "policy_title": "Advice to the Profession: Providing Physician Services During Job Actions",
+    "aliases": [],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "ending_relationship"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_physicians_relationships",
+      "advice_to_the_profession_advertising"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Providing-Physician-Services-During-Job-Actions/Advice-to-the-Profession-Providing-Physician-Servi"
+  },
+  {
+    "policy_id": "advice_to_the_profession_public_health_emergencies",
+    "policy_title": "Advice to the Profession: Public Health Emergencies",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "third_party_medical_reports",
+      "transitions_in_care"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Public-Health-Emergencies/Advice-to-the-Profession-Public-Health-Emergencies"
+  },
+  {
+    "policy_id": "advice_to_the_profession_social_media",
+    "policy_title": "Advice to the Profession: Social Media",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "online consultations"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "professional_misconduct",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "If a patient or a person closely associated with them requests to connect on social media, you must consider the potential impact on the physician-...",
+      "Physicians must also comply with the expectations in the [*Boundary Violations*](https://www",
+      "Physicians must obtain and document consent before publishing patient information where there is any doubt that the patient can be kept anonymous (...",
+      "*Why must I refrain from seeking out patient health information if it is publicly available"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_human_rights"
+    ],
+    "chunk_count": 8,
+    "parent_chunks": 5,
+    "child_chunks": 3,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Social-Media/Advice-to-the-Profession-Social-Media"
+  },
+  {
+    "policy_id": "advice_to_the_profession_third_party_medical_repor",
+    "policy_title": "Advice to the Profession: Third Party Medical Reports",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "* Physicians must only accept a request to conduct an IME if they meet the requirements set out in provision 5 in the policy",
+      "1 Physicians who have not been engaged in practice2 for a period of two consecutive years must comply with the reporting and re-entry process in th...",
+      "ca/Physicians/Policies-Guidance/Policies/Uninsured-Services-Billing-and-Block-Fees) policy, physicians must consider the patient\u2019s ability to pay w...",
+      "14 If the examination is not court-ordered, the physician must obtain consent to have an observer present from all parties involved",
+      "* If the subject is a patient, physicians must comply with the retention requirements set out in the College\u2019s [*Medical Records Management*](https..."
+    ],
+    "related_policies": [
+      "prescribing_drugs",
+      "professional_responsibilities_in_medical_education",
+      "third_party_medical_reports"
+    ],
+    "chunk_count": 12,
+    "parent_chunks": 9,
+    "child_chunks": 3,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Third-Party-Medical-Reports/Advice-to-the-Profession-Third-Party-Medical-Repor"
+  },
+  {
+    "policy_id": "advice_to_the_profession_physician_treatment_of_se",
+    "policy_title": "Advice to the Profession: Treatment of Self, Family Members, and Others Close to You",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "online consultations"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "professional_misconduct",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_social_media",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_human_rights"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Treatment-of-Self-Family-Members-or/Advice-to-the-Profession-Physician-Treatment-of-Se"
+  },
+  {
+    "policy_id": "advice_to_the_profession_uninsured_services",
+    "policy_title": "Advice to the Profession: Uninsured Services",
+    "aliases": [
+      "confidentiality",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_human_rights",
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Uninsured-Services-Billing-and-Block-Fees/Advice-to-the-Profession-Uninsured-Services"
+  },
+  {
+    "policy_id": "advice_to_the_profession_virtual_care",
+    "policy_title": "Advice to the Profession: Virtual Care",
+    "aliases": [
+      "patient authorization",
+      "telemedicine",
+      "confidentiality",
+      "remote care",
+      "telehealth"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "advice",
+    "key_requirements": [
+      "* When practising virtually, you must continue to meet the same legal and professional obligations that apply to care that is provided in-person, i...",
+      "ca/Physicians/Policies-Guidance/Policies/Prescribing-Drugs) policy also contains expectations specific to prescriptions for narcotic and other cont..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "physician_treatment_of_self_family_members_or"
+    ],
+    "chunk_count": 7,
+    "parent_chunks": 6,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Virtual-Care/Advice-to-the-Profession-Virtual-Care"
+  },
+  {
+    "policy_id": "availability_and_coverage",
+    "policy_title": "Availability and Coverage",
+    "aliases": [
+      "confidentiality",
+      "medication orders",
+      "online consultations"
+    ],
+    "practice_domain": "service_delivery",
+    "topics": [
+      "continuity_of_care",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "All communication must comply with privacy legislation, including, the *Personal Health Information Protection Act, 2004* S",
+      "Otherwise, the policy is not prescriptive about how physicians must inform patients and allows for flexibility",
+      "Otherwise, the policy is not prescriptive about how physicians must inform patients and allows for flexibility",
+      "All communication must comply with privacy legislation, including, the *Personal Health Information Protection Act, 2004* S",
+      "Otherwise, the policy is not prescriptive about how physicians must inform patients and allows for flexibility"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care",
+      "advice_to_the_profession_accepting_new_patients"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Availability-and-Coverage"
+  },
+  {
+    "policy_id": "boundary_violations",
+    "policy_title": "Boundary Violations",
+    "aliases": [
+      "patient authorization",
+      "sexual misconduct",
+      "professional boundaries",
+      "confidentiality",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Patient: In general, a factual inquiry must be made to determine whether a physician-patient relationship exists, and when it ends"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_end_of_life_care",
+      "advice_to_the_profession_maintaining_appropriate_b"
+    ],
+    "chunk_count": 9,
+    "parent_chunks": 3,
+    "child_chunks": 6,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Boundary-Violations"
+  },
+  {
+    "policy_id": "physicians_relationships_with_industry_practice",
+    "policy_title": "CONFLICTS OF INTEREST AND INDUSTRY RELATIONSHIPS",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "advertising",
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "prescribing",
+      "privacy",
+      "social_media"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Patients rely on and must be confident that the physician has put the needs of the patient first",
+      "Patients rely on and must be confident that the physician has put the needs of the patient first"
+    ],
+    "related_policies": [
+      "advertising",
+      "advice_to_the_profession_physicians_relationships",
+      "advice_to_the_profession_virtual_care"
+    ],
+    "chunk_count": 3,
+    "parent_chunks": 2,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physicians-Relationships-with-Industry-Practice"
+  },
+  {
+    "policy_id": "closing_a_medical_practice",
+    "policy_title": "Closing a Medical Practice",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "have resigned, been revoked or suspended) must not engage in the practice of medicine including performing any controlled acts",
+      "The *Personal Health Information Protection Act, 2004* states that where it is not reasonably possible to notify patients in advance of a transfer ...",
+      "have resigned, been revoked or suspended) must not engage in the practice of medicine including performing any controlled acts",
+      "The *Personal Health Information Protection Act, 2004* states that where it is not reasonably possible to notify patients in advance of a transfer ..."
+    ],
+    "related_policies": [
+      "physician_treatment_of_self_family_members_or",
+      "advice_to_the_profession_virtual_care",
+      "prescribing_drugs"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 3,
+    "child_chunks": 3,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Closing-a-Medical-Practice"
+  },
+  {
+    "policy_id": "complementary_alternative_medicine",
+    "policy_title": "Complementary and Alternative Medicine",
+    "aliases": [
+      "patient authorization",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "professional_conduct",
+    "topics": [
+      "advertising",
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "professional_misconduct",
+      "social_media"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "For example, currently stem cell therapies must be authorized by Health Canada to ensure that they are safe and effective before they can be offere...",
+      "For example, currently stem cell therapies must be authorized by Health Canada to ensure that they are safe and effective before they can be offere..."
+    ],
+    "related_policies": [
+      "social_media",
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 3,
+    "child_chunks": 3,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Complementary-Alternative-Medicine"
+  },
+  {
+    "policy_id": "consent_to_treatment",
+    "policy_title": "Consent to Treatment",
+    "aliases": [
+      "patient charts",
+      "patient authorization",
+      "capacity assessment",
+      "informed consent"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "medical_records",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "prescribing_drugs",
+      "professional_responsibilities_in_medical_education",
+      "third_party_medical_reports"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 3,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Consent-to-Treatment"
+  },
+  {
+    "policy_id": "decision_making_for_end_of_life_care",
+    "policy_title": "Decision-Making for End-of-Life Care",
+    "aliases": [
+      "patient authorization",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "do) (hereinafter\u00a0*Rasouli*) that consent must be obtained prior to withdrawing life-sustaining treatment",
+      "In\u00a0*Rasouli,\u00a0*the Supreme Court of Canada determined that when SDMs refuse to provide consent to withdraw life-support that, in the physician\u2019s opi...",
+      "do) (hereinafter\u00a0*Rasouli*) that consent must be obtained prior to withdrawing life-sustaining treatment",
+      "In\u00a0*Rasouli,\u00a0*the Supreme Court of Canada determined that when SDMs refuse to provide consent to withdraw life-support that, in the physician\u2019s opi..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "transitions_in_care",
+      "virtual_care"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Decision-Making-for-End-of-Life-Care"
+  },
+  {
+    "policy_id": "delegation_of_controlled_acts",
+    "policy_title": "Delegation of Controlled Acts",
+    "aliases": [
+      "patient authorization",
+      "patient charts",
+      "controlled acts",
+      "supervised acts",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "prescribing"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "physician_treatment_of_self_family_members_or",
+      "advice_to_the_profession_virtual_care",
+      "closing_a_medical_practice"
+    ],
+    "chunk_count": 9,
+    "parent_chunks": 4,
+    "child_chunks": 5,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Delegation-of-Controlled-Acts"
+  },
+  {
+    "policy_id": "disclosure_of_harm",
+    "policy_title": "Disclosure of Harm",
+    "aliases": [
+      "patient authorization",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "medical_records"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "prescribing_drugs",
+      "professional_responsibilities_in_medical_education",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Disclosure-of-Harm"
+  },
+  {
+    "policy_id": "dispensing_drugs",
+    "policy_title": "Dispensing Drugs",
+    "aliases": [
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "medical_records",
+      "prescribing",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "prescribing_drugs",
+      "ending_the_physician_patient_relationship",
+      "advice_to_the_profession_human_rights"
+    ],
+    "chunk_count": 4,
+    "parent_chunks": 3,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Dispensing-Drugs"
+  },
+  {
+    "policy_id": "ending_the_physician_patient_relationship",
+    "policy_title": "Ending the Physician-Patient Relationship",
+    "aliases": [
+      "terminating",
+      "discontinuing care",
+      "confidentiality",
+      "patient charts",
+      "medication orders"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "If the patient has restricted the physician from providing personal health information, the physician must notify the health care provider who has ..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_human_rights",
+      "prescribing_drugs",
+      "advice_to_the_profession_physician_treatment_of_se"
+    ],
+    "chunk_count": 6,
+    "parent_chunks": 2,
+    "child_chunks": 4,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ending-the-Physician-Patient-Relationship"
+  },
+  {
+    "policy_id": "ensuring_competence",
+    "policy_title": "Ensuring Competence: Changing Scope of Practice and/or Re-entering Practice",
+    "aliases": [
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "advertising",
+      "billing",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "^3\u00a0Additional information regarding whether a change is significant and must be reported to the College is set out in the companion advice document",
+      "Decisions about the specific stages that must be undertaken will be determined on an individual basis",
+      "Physicians must not practise in a new scope of practice or re-enter practice unless the College has approved their change in scope of practice and/...",
+      "Physicians are reminded that when they work in areas of medicine that are different from their area of primary certification they must comply with ...",
+      "Physicians are reminded that when they work in areas of medicine that are different from their area of primary certification they must comply with ..."
+    ],
+    "related_policies": [
+      "social_media",
+      "advice_to_the_profession_physicians_relationships",
+      "third_party_medical_reports"
+    ],
+    "chunk_count": 11,
+    "parent_chunks": 4,
+    "child_chunks": 7,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Ensuring-Competence"
+  },
+  {
+    "policy_id": "female_genital_cutting_(mutilation)",
+    "policy_title": "Female Genital Cutting (Mutilation)",
+    "aliases": [],
+    "practice_domain": "professional_conduct",
+    "topics": [
+      "professional_misconduct"
+    ],
+    "policy_level": "general",
+    "key_requirements": [],
+    "related_policies": [
+      "prescribing_drugs",
+      "advice_to_the_profession_physician_treatment_of_se",
+      "accepting_new_patients"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Statements-Positions/Female-Genital-Cutting-(Mutilation)"
+  },
+  {
+    "policy_id": "human_rights_in_the_provision_of_health_services",
+    "policy_title": "Human Rights in the Provision of Health Services",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_assistance_dying",
+      "medical_records",
+      "privacy",
+      "professional_misconduct",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "\u201cAvailable and accessible\u201d means that the health-care professional must be operating and/or accepting patients at the time the effective referral i...",
+      "See the [*Ending the Physician-Patient Relationship* ](/en/Physicians/Policies-Guidance/Policies/Ending-the-Physician-Patient-Relationship)policy f...",
+      "In order for consent to be valid, it must be related to the treatment, informed, given voluntarily, and not obtained through misrepresentation or f...",
+      "\u201cAvailable and accessible\u201d means that the health-care professional must be operating and/or accepting patients at the time the effective referral i..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_human_rights",
+      "physician_treatment_of_self_family_members_or",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 4,
+    "parent_chunks": 2,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Human-Rights-in-the-Provision-of-Health-Services"
+  },
+  {
+    "policy_id": "infection_prevention_and_control_for_clinical_offi",
+    "policy_title": "Infection Prevention and Control for Clinical Office Practice",
+    "aliases": [
+      "medication orders"
+    ],
+    "practice_domain": "prescribing_treatment",
+    "topics": [
+      "prescribing"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "prescribing_drugs",
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_changing_scope_of_practic"
+    ],
+    "chunk_count": 3,
+    "parent_chunks": 2,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Infection-Prevention-and-Control-for-Clinical-Offi"
+  },
+  {
+    "policy_id": "interprofessional_collaboration",
+    "policy_title": "Interprofessional Collaboration: Working Together to Provide Quality Care",
+    "aliases": [],
+    "practice_domain": "general",
+    "topics": [],
+    "policy_level": "general",
+    "key_requirements": [],
+    "related_policies": [],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Statements-Positions/Interprofessional-Collaboration"
+  },
+  {
+    "policy_id": "managing_tests",
+    "policy_title": "Managing Tests",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "privacy"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "When delegating a controlled act, physicians must comply with the College\u2019s [*Delegation of Controlled Acts*\u00a0](/en/Physicians/Policies-Guidance/Pol...",
+      "When delegating a controlled act, physicians must comply with the College\u2019s [*Delegation of Controlled Acts*\u00a0](/en/Physicians/Policies-Guidance/Pol..."
+    ],
+    "related_policies": [
+      "physician_treatment_of_self_family_members_or",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Managing-Tests"
+  },
+  {
+    "policy_id": "medical_assistance_in_dying",
+    "policy_title": "Medical Assistance in Dying",
+    "aliases": [
+      "patient authorization",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_assistance_dying",
+      "medical_records",
+      "prescribing"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Postgraduate medical trainees can participate in the MAID process, but must only do so within the terms, conditions, and limitations of their certi...",
+      "Postgraduate medical trainees can participate in the MAID process, but must only do so within the terms, conditions, and limitations of their certi..."
+    ],
+    "related_policies": [
+      "transitions_in_care",
+      "advice_to_the_profession_human_rights",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 3,
+    "parent_chunks": 3,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Assistance-in-Dying"
+  },
+  {
+    "policy_id": "medical_records_documentation",
+    "policy_title": "Medical Records Documentation",
+    "aliases": [
+      "health records",
+      "patient authorization",
+      "documentation",
+      "charting",
+      "confidentiality"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "For additional guidance regarding information that must be contained in a referral note and consultation report, please refer to the College\u2019s* [Tr..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "transitions_in_care",
+      "virtual_care"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 3,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Documentation"
+  },
+  {
+    "policy_id": "medical_records_management",
+    "policy_title": "Medical Records Management",
+    "aliases": [
+      "health records",
+      "patient authorization",
+      "documentation",
+      "charting",
+      "confidentiality"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Whether in paper or electronic format, physicians must comply with all relevant legislation^1\u00a0and regulatory requirements related to medical record...",
+      "When access is refused on certain grounds, there are exceptions to the type of information that must be provided to patients",
+      "The OMA Guide is typically updated annually, and so physicians must ensure they have reviewed the most recent edition"
+    ],
+    "related_policies": [
+      "advice_to_the_profession_consent_to_treatment",
+      "advice_to_the_profession_human_rights",
+      "advice_to_the_profession_physicians_relationships"
+    ],
+    "chunk_count": 9,
+    "parent_chunks": 2,
+    "child_chunks": 7,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Medical-Records-Management"
+  },
+  {
+    "policy_id": "prescribing_drugs",
+    "policy_title": "Prescribing Drugs",
+    "aliases": [
+      "patient authorization",
+      "drug therapy",
+      "medication management",
+      "confidentiality",
+      "prescription"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "delegation",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Signatures must be authentic and unaltered"
+    ],
+    "related_policies": [
+      "physician_treatment_of_self_family_members_or",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_human_rights"
+    ],
+    "chunk_count": 21,
+    "parent_chunks": 2,
+    "child_chunks": 19,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Prescribing-Drugs"
+  },
+  {
+    "policy_id": "physician_behaviour_in_the_professional_environmen",
+    "policy_title": "Professional Behaviour",
+    "aliases": [
+      "patient authorization",
+      "online consultations"
+    ],
+    "practice_domain": "professional_conduct",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "professional_misconduct",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "social_media",
+      "advice_to_the_profession_social_media"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Behaviour-in-the-Professional-Environmen"
+  },
+  {
+    "policy_id": "professional_responsibilities_in_medical_education",
+    "policy_title": "Professional Responsibilities in Medical Education",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "consent",
+      "delegation",
+      "medical_records",
+      "privacy",
+      "professional_misconduct",
+      "social_media"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Prescriptions, telephone or other transmitted orders may be transcribed by the medical student but must be countersigned",
+      "Prescriptions, telephone or other transmitted orders may be transcribed by the medical student but must be countersigned"
+    ],
+    "related_policies": [
+      "prescribing_drugs",
+      "advice_to_the_profession_third_party_medical_repor",
+      "advice_to_the_profession_virtual_care"
+    ],
+    "chunk_count": 3,
+    "parent_chunks": 2,
+    "child_chunks": 1,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Professional-Responsibilities-in-Medical-Education"
+  },
+  {
+    "policy_id": "protecting_personal_health_information",
+    "policy_title": "Protecting Personal Health Information",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "professional_conduct",
+    "topics": [
+      "advertising",
+      "consent",
+      "medical_records",
+      "privacy",
+      "professional_misconduct",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "social_media",
+      "prescribing_drugs",
+      "advice_to_the_profession_physician_treatment_of_se"
+    ],
+    "chunk_count": 10,
+    "parent_chunks": 3,
+    "child_chunks": 7,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Protecting-Personal-Health-Information"
+  },
+  {
+    "policy_id": "providing_physician_services_during_job_actions",
+    "policy_title": "Providing Physician Services During Job Actions",
+    "aliases": [],
+    "practice_domain": "general",
+    "topics": [],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [],
+    "chunk_count": 3,
+    "parent_chunks": 3,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Providing-Physician-Services-During-Job-Actions"
+  },
+  {
+    "policy_id": "public_health_emergencies",
+    "policy_title": "Public Health Emergencies",
+    "aliases": [],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "ending_relationship"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "A physician must practice only in the areas of medicine in which the physician is educated and experienced and must comply with the College\u2019s [*Ens...",
+      "A physician must practice only in the areas of medicine in which the physician is educated and experienced and must comply with the College\u2019s [*Ens..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_physicians_relationships",
+      "availability_and_coverage"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Public-Health-Emergencies"
+  },
+  {
+    "policy_id": "reporting_requirements",
+    "policy_title": "REPORTING REQUIREMENTS",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "For more information on the details that must be captured in the patient record see the [*Advice to the Profession: Reporting Requirements*](/en/Ph...",
+      "For more information on the details that must be captured in the patient record see the [*Advice to the Profession: Reporting Requirements*](/en/Ph..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "third_party_medical_reports",
+      "transitions_in_care"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 2,
+    "child_chunks": 3,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Reporting-Requirements"
+  },
+  {
+    "policy_id": "social_media",
+    "policy_title": "Social Media",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "professional_conduct",
+    "topics": [
+      "advertising",
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct",
+      "social_media",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Physicians must continue to meet the standard of care, which can include performing a comprehensive assessment, considering risks and benefits of t...",
+      "If relying on consent, physicians must only post a patient\u2019s personal health information, to the best of their knowledge, for a lawful purpose (in ...",
+      "For content posted for the purposes of advertising, physicians must comply with the General Regulation under the *Medicine Act, 1991*, S",
+      "Physicians must continue to meet the standard of care, which can include performing a comprehensive assessment, considering risks and benefits of t..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_physician_treatment_of_se",
+      "advice_to_the_profession_physicians_relationships",
+      "advice_to_the_profession_ending_the_physician_pati"
+    ],
+    "chunk_count": 5,
+    "parent_chunks": 3,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Social-Media"
+  },
+  {
+    "policy_id": "third_party_medical_reports",
+    "policy_title": "Third Party Medical Reports",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Even the fact that the physician has or had a treating relationship with a patient is considered personal health information and therefore any disc..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_third_party_medical_repor",
+      "medical_records_management",
+      "advice_to_the_profession_consent_to_treatment"
+    ],
+    "chunk_count": 10,
+    "parent_chunks": 3,
+    "child_chunks": 7,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Third-Party-Medical-Reports"
+  },
+  {
+    "policy_id": "transitions_in_care",
+    "policy_title": "Transitions in Care",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "medication orders",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_assistance_dying",
+      "medical_records",
+      "prescribing",
+      "privacy"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [
+      "Physicians are reminded that they must complete the discharge summary within 48 hours of discharge in order to bill the Ontario Health Insurance Pl...",
+      "Physicians are reminded that they must complete the discharge summary within 48 hours of discharge in order to bill the Ontario Health Insurance Pl..."
+    ],
+    "related_policies": [
+      "advice_to_the_profession_human_rights",
+      "advice_to_the_profession_physicians_relationships",
+      "virtual_care"
+    ],
+    "chunk_count": 1,
+    "parent_chunks": 1,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Transitions-in-Care"
+  },
+  {
+    "policy_id": "physician_treatment_of_self_family_members_or",
+    "policy_title": "Treatment of Self, Family Members, and Others Close to you",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts",
+      "online consultations",
+      "medication orders"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "delegation",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "professional_misconduct",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_human_rights",
+      "prescribing_drugs"
+    ],
+    "chunk_count": 2,
+    "parent_chunks": 2,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Physician-Treatment-of-Self-Family-Members-or"
+  },
+  {
+    "policy_id": "uninsured_services_billing_and_block_fees",
+    "policy_title": "Uninsured Services: Billing and Block Fees",
+    "aliases": [
+      "confidentiality",
+      "patient charts",
+      "online consultations"
+    ],
+    "practice_domain": "administrative",
+    "topics": [
+      "billing",
+      "ending_relationship",
+      "medical_records",
+      "privacy",
+      "professional_misconduct",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_uninsured_services",
+      "advice_to_the_profession_human_rights",
+      "social_media"
+    ],
+    "chunk_count": 12,
+    "parent_chunks": 3,
+    "child_chunks": 9,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Uninsured-Services-Billing-and-Block-Fees"
+  },
+  {
+    "policy_id": "virtual_care",
+    "policy_title": "Virtual Care",
+    "aliases": [
+      "patient authorization",
+      "telemedicine",
+      "confidentiality",
+      "remote care",
+      "telehealth"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "billing",
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "prescribing",
+      "privacy",
+      "virtual_care"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "advice_to_the_profession_virtual_care",
+      "advice_to_the_profession_human_rights"
+    ],
+    "chunk_count": 4,
+    "parent_chunks": 2,
+    "child_chunks": 2,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Virtual-Care"
+  },
+  {
+    "policy_id": "walk_in_clinics",
+    "policy_title": "Walk-in Clinics",
+    "aliases": [
+      "patient authorization",
+      "confidentiality",
+      "patient charts"
+    ],
+    "practice_domain": "patient_interaction",
+    "topics": [
+      "consent",
+      "continuity_of_care",
+      "ending_relationship",
+      "medical_records",
+      "privacy"
+    ],
+    "policy_level": "expectation",
+    "key_requirements": [],
+    "related_policies": [
+      "advice_to_the_profession_physicians_relationships",
+      "transitions_in_care",
+      "virtual_care"
+    ],
+    "chunk_count": 3,
+    "parent_chunks": 3,
+    "child_chunks": 0,
+    "effective_date": null,
+    "source_url": "https://www.cpso.on.ca/en/Physicians/Policies-Guidance/Policies/Walk-in-Clinics"
+  }
+]

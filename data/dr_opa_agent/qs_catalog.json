@@ -1,0 +1,1164 @@
+[
+  {
+    "standard_id": "alcohol_use_disorder",
+    "standard_title": "Alcohol Use Disorder",
+    "aliases": [],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Alcohol Use Disorder"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Screening",
+      "Brief Intervention",
+      "Comprehensive Assessment",
+      "Care Plan",
+      "Treatment of Alcohol Withdrawal Symptoms"
+    ],
+    "statement_count": 9,
+    "chunk_count": 10,
+    "doc_chunks": 1,
+    "statement_chunks": 9,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-alcohol-use-disorder-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-alcohol-use-disorder-quality-standard-en.pdf",
+    "related_standards": [
+      "anxiety_disorders",
+      "eating_disorders",
+      "insomnia_disorder"
+    ]
+  },
+  {
+    "standard_id": "anxiety_disorders",
+    "standard_title": "Anxiety",
+    "aliases": [
+      "GAD",
+      "generalized anxiety",
+      "anxiety disorder"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Anxiety"
+    ],
+    "care_focus": [
+      "management",
+      "prevention",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Identification",
+      "Comprehensive Assessment",
+      "Support for Family",
+      "Stepped-Care Approach",
+      "Self-Help"
+    ],
+    "statement_count": 12,
+    "chunk_count": 13,
+    "doc_chunks": 1,
+    "statement_chunks": 12,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-anxiety-disorders-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-anxiety-disorders-quality-standard-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "eating_disorders",
+      "insomnia_disorder"
+    ]
+  },
+  {
+    "standard_id": "asthma_in_adults",
+    "standard_title": "Asthma",
+    "aliases": [
+      "bronchial asthma",
+      "reactive airway"
+    ],
+    "clinical_domain": "respiratory",
+    "conditions": [
+      "Asthma"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Diagnosis",
+      "Asthma Control and Risk of Exacerbations",
+      "Asthma Medication",
+      "Self-Management Education and Asthma Action Plan",
+      "Referral to Specialized Asthma Care"
+    ],
+    "statement_count": 6,
+    "chunk_count": 7,
+    "doc_chunks": 1,
+    "statement_chunks": 6,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-asthma-in-adults-quality-standard-2025-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-asthma-in-adults-quality-standard-2025-en.pdf",
+    "related_standards": [
+      "copd"
+    ]
+  },
+  {
+    "standard_id": "dementia_behavioural",
+    "standard_title": "Behavioural Symptoms Of Dementia 2024",
+    "aliases": [
+      "memory disorder",
+      "cognitive impairment",
+      "alzheimer"
+    ],
+    "clinical_domain": "neurology_cognitive",
+    "conditions": [
+      "Behavioural Symptoms Of Dementia 2024"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment",
+      "Individualized Care Plan",
+      "Individualized Nonpharmacological Interventions",
+      "Indications for Psychotropic Medications",
+      "Titrating and Monitoring Psychotropic Medications"
+    ],
+    "statement_count": 14,
+    "chunk_count": 15,
+    "doc_chunks": 1,
+    "statement_chunks": 14,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-behavioural-symptoms-of-dementia-quality-standard-2024-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-behavioural-symptoms-of-dementia-quality-standard-2024-en.pdf",
+    "related_standards": [
+      "delirium"
+    ]
+  },
+  {
+    "standard_id": "copd",
+    "standard_title": "Chronic Obstructive Pulmonary Disease",
+    "aliases": [],
+    "clinical_domain": "respiratory",
+    "conditions": [
+      "Chronic Obstructive Pulmonary Disease"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "palliative",
+      "rehabilitation",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Diagnosis Confirmed With Spirometry",
+      "Comprehensive Assessment",
+      "Goals of Care and Individualized Care Planning",
+      "Education and Self-Management",
+      "Promoting Smoking Cessation"
+    ],
+    "statement_count": 13,
+    "chunk_count": 14,
+    "doc_chunks": 1,
+    "statement_chunks": 13,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-chronic-obstructive-pulmonary-disease-quality-standard-2023-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-chronic-obstructive-pulmonary-disease-quality-standard-2023-en.pdf",
+    "related_standards": [
+      "asthma_in_adults"
+    ]
+  },
+  {
+    "standard_id": "chronic_pain",
+    "standard_title": "Chronic Pain",
+    "aliases": [],
+    "clinical_domain": "transitions_care",
+    "conditions": [
+      "Chronic Pain"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "rehabilitation",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment",
+      "Setting Goals for Pain Management and Function",
+      "Supported Self-Management and Education",
+      "Supported Self-Management and Education",
+      "Physically Based Interventions"
+    ],
+    "statement_count": 11,
+    "chunk_count": 12,
+    "doc_chunks": 1,
+    "statement_chunks": 11,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-chronic-pain-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-chronic-pain-quality-standard-en.pdf",
+    "related_standards": [
+      "transitions_between_hospital_and_home",
+      "transitions_from_youth_to_adult_health_care_services"
+    ]
+  },
+  {
+    "standard_id": "delirium",
+    "standard_title": "Delirium",
+    "aliases": [],
+    "clinical_domain": "neurology_cognitive",
+    "conditions": [
+      "Delirium"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Identification of Risk Factors for Delirium",
+      "Early Screening for Delirium",
+      "Education for People With Delirium",
+      "Family",
+      "and Caregivers"
+    ],
+    "statement_count": 6,
+    "chunk_count": 7,
+    "doc_chunks": 1,
+    "statement_chunks": 6,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-delirium-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-delirium-quality-standard-en.pdf",
+    "related_standards": [
+      "dementia_behavioural"
+    ]
+  },
+  {
+    "standard_id": "major_depression",
+    "standard_title": "Depression",
+    "aliases": [
+      "depressive illness",
+      "major depressive disorder",
+      "MDD"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Depression"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment",
+      "Suicide Risk Assessment and Intervention",
+      "Shared Decision - Making",
+      "Treatment After Initial Diagnosis",
+      "Adjunct Therapies and Self-Management"
+    ],
+    "statement_count": 11,
+    "chunk_count": 12,
+    "doc_chunks": 1,
+    "statement_chunks": 11,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-major-depression-quality-standard-en-2024.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-major-depression-quality-standard-en-2024.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "eating_disorders"
+    ]
+  },
+  {
+    "standard_id": "diabetes_in_pregnancy",
+    "standard_title": "Diabetes",
+    "aliases": [
+      "T2DM",
+      "glycemic control",
+      "type 2 diabetes",
+      "prediabetes"
+    ],
+    "clinical_domain": "endocrine_metabolic",
+    "conditions": [
+      "Diabetes"
+    ],
+    "care_focus": [
+      "education",
+      "management"
+    ],
+    "key_statements": [
+      "Preconception Care for People With Diabetes",
+      "Coordinated Interprofessional Care",
+      "Self-Management Education and Support",
+      "Lifestyle Management During Pregnancy",
+      "Fetal Monitoring and Timing of Delivery"
+    ],
+    "statement_count": 5,
+    "chunk_count": 6,
+    "doc_chunks": 1,
+    "statement_chunks": 5,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-diabetes-in-pregnancy-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-diabetes-in-pregnancy-quality-standard-en.pdf",
+    "related_standards": [
+      "diabetes"
+    ]
+  },
+  {
+    "standard_id": "diabetic_foot_ulcers_clinical_guide",
+    "standard_title": "Diabetic Foot Ulcers Clinical Guide",
+    "aliases": [],
+    "clinical_domain": "dermatology",
+    "conditions": [
+      "Diabetic Foot Ulcers Clinical Guide"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening"
+    ],
+    "key_statements": [
+      "Risk Assessment",
+      "Patient Education and Self-Management",
+      "Referral to an Interprofessional Team",
+      "Comprehensive Assessment",
+      "Individualized Care Plan"
+    ],
+    "statement_count": 10,
+    "chunk_count": 11,
+    "doc_chunks": 1,
+    "statement_chunks": 10,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-diabetic-foot-ulcers-clinical-guide-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-diabetic-foot-ulcers-clinical-guide-en.pdf",
+    "related_standards": [
+      "pressure_injuries_clinical_guide",
+      "venous_leg_ulcers_clinical_guide"
+    ]
+  },
+  {
+    "standard_id": "early_pregnancy_complications_and_loss",
+    "standard_title": "Early Pregnancy Complications And Loss",
+    "aliases": [],
+    "clinical_domain": "womens_health",
+    "conditions": [
+      "Early Pregnancy Complications And Loss"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "management",
+      "screening"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment",
+      "Early Pregnancy Assessment Services",
+      "Pregnancy of Unknown Location",
+      "Diagnosis of Intrauterine Early Pregnancy Loss",
+      "Management Options for Intrauterine Early Pregnancy Loss"
+    ],
+    "statement_count": 8,
+    "chunk_count": 9,
+    "doc_chunks": 1,
+    "statement_chunks": 8,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-early-pregnancy-complications-and-loss-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-early-pregnancy-complications-and-loss-quality-standard-en.pdf",
+    "related_standards": [
+      "hmb",
+      "vaginal_birth_after_caesarean"
+    ]
+  },
+  {
+    "standard_id": "eating_disorders",
+    "standard_title": "Eating Disorders",
+    "aliases": [],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Eating Disorders"
+    ],
+    "care_focus": [
+      "management",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment",
+      "Level of Care",
+      "Transition From Youth to Adult Health Care Services",
+      "Psychotherapy",
+      "Monitoring and Medical Stabilization"
+    ],
+    "statement_count": 9,
+    "chunk_count": 10,
+    "doc_chunks": 1,
+    "statement_chunks": 9,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-eating-disorders-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-eating-disorders-quality-standard-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "insomnia_disorder"
+    ]
+  },
+  {
+    "standard_id": "gender_affirming_care_adults",
+    "standard_title": "Gender Affirming Care Adults",
+    "aliases": [],
+    "clinical_domain": "general",
+    "conditions": [
+      "Gender Affirming Care Adults"
+    ],
+    "care_focus": [
+      "education",
+      "treatment"
+    ],
+    "key_statements": [
+      "Gender-Affirming Education and Training for Health Care Teams",
+      "Gender-Affirming Primary Care",
+      "Gender -Affirming Hormone Therapy",
+      "Gender-Affirming Mental Health Care",
+      "Gender-Affirming Health Care Environments"
+    ],
+    "statement_count": 5,
+    "chunk_count": 6,
+    "doc_chunks": 1,
+    "statement_chunks": 5,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-gender-affirming-care-adults-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-gender-affirming-care-adults-en.pdf",
+    "related_standards": [
+      "glaucoma_qs",
+      "medication_safety",
+      "surgical_site_infections"
+    ]
+  },
+  {
+    "standard_id": "glaucoma_qs",
+    "standard_title": "Glaucoma",
+    "aliases": [],
+    "clinical_domain": "general",
+    "conditions": [
+      "Glaucoma"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "treatment"
+    ],
+    "key_statements": [
+      "Monitoring",
+      "Information",
+      "Referral and Timely Access to an Ophthalmologist",
+      "Medications and Laser Therapy",
+      "Incisional Surgery"
+    ],
+    "statement_count": 5,
+    "chunk_count": 6,
+    "doc_chunks": 1,
+    "statement_chunks": 5,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-glaucoma-qs-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-glaucoma-qs-en.pdf",
+    "related_standards": [
+      "gender_affirming_care_adults",
+      "medication_safety",
+      "surgical_site_infections"
+    ]
+  },
+  {
+    "standard_id": "heart_failure",
+    "standard_title": "Heart Failure",
+    "aliases": [
+      "cardiac failure",
+      "CHF",
+      "congestive heart failure"
+    ],
+    "clinical_domain": "cardiovascular",
+    "conditions": [
+      "Heart Failure"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "management",
+      "palliative",
+      "rehabilitation",
+      "transitions"
+    ],
+    "key_statements": [
+      "Diagnosing Heart Failure",
+      "Physical Activity and Exercise",
+      "Worsening Symptoms of Heart Failure",
+      "Management of Non-cardiac Comorbidities",
+      "Specialized Multidisciplinary Care"
+    ],
+    "statement_count": 7,
+    "chunk_count": 8,
+    "doc_chunks": 1,
+    "statement_chunks": 7,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-heart-failure-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-heart-failure-quality-standard-en.pdf",
+    "related_standards": [
+      "hypertension"
+    ]
+  },
+  {
+    "standard_id": "hmb",
+    "standard_title": "Heavy Menstrual Bleeding 2024",
+    "aliases": [],
+    "clinical_domain": "womens_health",
+    "conditions": [
+      "Heavy Menstrual Bleeding 2024"
+    ],
+    "care_focus": [
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Initial Assessment",
+      "Shared Decision-Making",
+      "Pharmacological Treatments",
+      "Endometrial Biopsy",
+      "Imaging"
+    ],
+    "statement_count": 14,
+    "chunk_count": 15,
+    "doc_chunks": 1,
+    "statement_chunks": 14,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-heavy-menstrual-bleeding-2024-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-heavy-menstrual-bleeding-2024-en.pdf",
+    "related_standards": [
+      "early_pregnancy_complications_and_loss",
+      "vaginal_birth_after_caesarean"
+    ]
+  },
+  {
+    "standard_id": "hip_fracture",
+    "standard_title": "Hip Fracture 2024",
+    "aliases": [
+      "hip break",
+      "femoral fracture"
+    ],
+    "clinical_domain": "musculoskeletal",
+    "conditions": [
+      "Hip Fracture 2024"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "rehabilitation",
+      "screening",
+      "transitions"
+    ],
+    "key_statements": [
+      "Emergency Department Management",
+      "Surgery Within",
+      "Multimodal Analgesia",
+      "Surgery for Stable Intertrochanteric Fractures",
+      "Surgery for Subtrochanteric or Unstable Intertrochanteric Fractures"
+    ],
+    "statement_count": 15,
+    "chunk_count": 16,
+    "doc_chunks": 1,
+    "statement_chunks": 15,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-hip-fracture-2024-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-hip-fracture-2024-en.pdf",
+    "related_standards": [
+      "lbp",
+      "osteoarthritis"
+    ]
+  },
+  {
+    "standard_id": "hypertension",
+    "standard_title": "Hypertension",
+    "aliases": [
+      "HTN",
+      "high blood pressure"
+    ],
+    "clinical_domain": "cardiovascular",
+    "conditions": [
+      "Hypertension"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Culturally Responsive Care",
+      "Accurate Measurement of Blood Pressure",
+      "Out-of-Office Assessment to Confirm a Diagnosis",
+      "Health Behaviour Changes",
+      "Care Planning and Self-Management"
+    ],
+    "statement_count": 7,
+    "chunk_count": 8,
+    "doc_chunks": 1,
+    "statement_chunks": 7,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-hypertension-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-hypertension-en.pdf",
+    "related_standards": [
+      "heart_failure"
+    ]
+  },
+  {
+    "standard_id": "insomnia_disorder",
+    "standard_title": "Insomnia Disorder",
+    "aliases": [],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Insomnia Disorder"
+    ],
+    "care_focus": [
+      "management",
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment",
+      "Individualized",
+      "Person-Centred",
+      "Comprehensive Care Plan",
+      "Management of Insomnia Disorder in People With Comorbidities"
+    ],
+    "statement_count": 5,
+    "chunk_count": 6,
+    "doc_chunks": 1,
+    "statement_chunks": 5,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-insomnia-disorder-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-insomnia-disorder-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "eating_disorders"
+    ]
+  },
+  {
+    "standard_id": "lbp",
+    "standard_title": "Low Back Pain 2025",
+    "aliases": [
+      "lumbar pain",
+      "back pain",
+      "LBP"
+    ],
+    "clinical_domain": "musculoskeletal",
+    "conditions": [
+      "Low Back Pain 2025"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Clinical Assessment",
+      "Diagnostic Imaging",
+      "Patient Education and Self-Management",
+      "Maintaining Usual Activity",
+      "Psychosocial Information and Support"
+    ],
+    "statement_count": 7,
+    "chunk_count": 8,
+    "doc_chunks": 1,
+    "statement_chunks": 7,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-low-back-pain-quality-standard-2025-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-low-back-pain-quality-standard-2025-en.pdf",
+    "related_standards": [
+      "hip_fracture",
+      "osteoarthritis"
+    ]
+  },
+  {
+    "standard_id": "medication_safety",
+    "standard_title": "Medication Safety",
+    "aliases": [],
+    "clinical_domain": "general",
+    "conditions": [
+      "Medication Safety"
+    ],
+    "care_focus": [
+      "treatment"
+    ],
+    "key_statements": [
+      "Involvement in Decisions About Medication",
+      "Prescribing Practices",
+      "Accurate and Up-to-Date Medication List",
+      "Structured Medication Review",
+      "Medication -Related Patient Safety Incidents"
+    ],
+    "statement_count": 5,
+    "chunk_count": 6,
+    "doc_chunks": 1,
+    "statement_chunks": 5,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-medication-safety-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-medication-safety-quality-standard-en.pdf",
+    "related_standards": [
+      "gender_affirming_care_adults",
+      "glaucoma_qs",
+      "surgical_site_infections"
+    ]
+  },
+  {
+    "standard_id": "ocd",
+    "standard_title": "Obsessive Compulsive Disorder",
+    "aliases": [],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Obsessive Compulsive Disorder"
+    ],
+    "care_focus": [
+      "management",
+      "prevention",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Identification",
+      "Comprehensive Assessment",
+      "Support for Family",
+      "Stepped-Care Approach for OCD",
+      "Self-Help"
+    ],
+    "statement_count": 12,
+    "chunk_count": 13,
+    "doc_chunks": 1,
+    "statement_chunks": 12,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-obsessive-compulsive-disorder-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-obsessive-compulsive-disorder-quality-standard-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "eating_disorders"
+    ]
+  },
+  {
+    "standard_id": "opioid_use_disorder_clinician_guide",
+    "standard_title": "Opioid",
+    "aliases": [
+      "OUD",
+      "opioid use disorder",
+      "opioid addiction"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Opioid"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Identifying and Diagnosing Opioid Use Disorder",
+      "Comprehensive Assessment and Collaborative Care Plan",
+      "Information to Participate in Care",
+      "Opioid Agonist Therapy as First-Line Treatment",
+      "Access to Opioid Agonist Therapy"
+    ],
+    "statement_count": 10,
+    "chunk_count": 11,
+    "doc_chunks": 1,
+    "statement_chunks": 10,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-opioid-use-disorder-clinician-guide-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-opioid-use-disorder-clinician-guide-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "eating_disorders"
+    ]
+  },
+  {
+    "standard_id": "osteoarthritis",
+    "standard_title": "Osteoarthritis 2024",
+    "aliases": [
+      "arthritis",
+      "OA",
+      "degenerative joint disease"
+    ],
+    "clinical_domain": "musculoskeletal",
+    "conditions": [
+      "Osteoarthritis 2024"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "rehabilitation",
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Clinical Assessment for Diagnosis",
+      "Comprehensive Assessment to Inform the Care Plan",
+      "Patient Education",
+      "Patient Self-Management Plan",
+      "Therapeutic Exercise"
+    ],
+    "statement_count": 10,
+    "chunk_count": 11,
+    "doc_chunks": 1,
+    "statement_chunks": 10,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-osteoarthritis-quality-standard-2024-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-osteoarthritis-quality-standard-2024-en.pdf",
+    "related_standards": [
+      "hip_fracture",
+      "lbp"
+    ]
+  },
+  {
+    "standard_id": "dementia_community",
+    "standard_title": "Palliative Care",
+    "aliases": [
+      "end of life",
+      "EOL",
+      "comfort care"
+    ],
+    "clinical_domain": "palliative_care",
+    "conditions": [
+      "Palliative Care"
+    ],
+    "care_focus": [
+      "diagnosis",
+      "education",
+      "management",
+      "screening"
+    ],
+    "key_statements": [
+      "Comprehensive Assessment and Diagnosis",
+      "Interprofessional Care Team",
+      "Individualized Care Plan",
+      "Named Point of Contact",
+      "Education and Training for People With Dementia and Their Care Partners"
+    ],
+    "statement_count": 10,
+    "chunk_count": 14,
+    "doc_chunks": 1,
+    "statement_chunks": 13,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-dementia-community-quality-standard-2024-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-dementia-community-quality-standard-2024-en.pdf",
+    "related_standards": []
+  },
+  {
+    "standard_id": "diabetes",
+    "standard_title": "Prediabetes And Type 2 Diabetes",
+    "aliases": [
+      "T2DM",
+      "glycemic control",
+      "type 2 diabetes",
+      "prediabetes"
+    ],
+    "clinical_domain": "endocrine_metabolic",
+    "conditions": [
+      "Prediabetes And Type 2 Diabetes"
+    ],
+    "care_focus": [
+      "clinical_care"
+    ],
+    "key_statements": [
+      "Reducing the Risk of Type 2 Diabetes"
+    ],
+    "statement_count": 1,
+    "chunk_count": 2,
+    "doc_chunks": 1,
+    "statement_chunks": 1,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-prediabetes-and-type-2-diabetes-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-prediabetes-and-type-2-diabetes-quality-standard-en.pdf",
+    "related_standards": [
+      "diabetes_in_pregnancy"
+    ]
+  },
+  {
+    "standard_id": "pressure_injuries_clinical_guide",
+    "standard_title": "Pressure Injuries Clinical Guide",
+    "aliases": [],
+    "clinical_domain": "dermatology",
+    "conditions": [
+      "Pressure Injuries Clinical Guide"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening"
+    ],
+    "key_statements": [
+      "Risk and Skin Assessment",
+      "Patient Education and Self-Management",
+      "Comprehensive Assessment",
+      "Individualized Care Plan",
+      "Individualized Care Plan"
+    ],
+    "statement_count": 10,
+    "chunk_count": 10,
+    "doc_chunks": 1,
+    "statement_chunks": 9,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-pressure-injuries-clinical-guide-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-pressure-injuries-clinical-guide-en.pdf",
+    "related_standards": [
+      "diabetic_foot_ulcers_clinical_guide",
+      "venous_leg_ulcers_clinical_guide"
+    ]
+  },
+  {
+    "standard_id": "schizophrenia_care_in_hospitals",
+    "standard_title": "Schizophrenia",
+    "aliases": [
+      "psychotic disorder",
+      "psychosis"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "Schizophrenia"
+    ],
+    "care_focus": [
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Comprehensive Interprofessional Assessment",
+      "Screening for Substance Use",
+      "Physical Health Assessment",
+      "Promoting Physical Activity and Healthy Eating",
+      "Promoting Smoking Cessation"
+    ],
+    "statement_count": 12,
+    "chunk_count": 13,
+    "doc_chunks": 1,
+    "statement_chunks": 12,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-schizophrenia-care-in-hospitals-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-schizophrenia-care-in-hospitals-quality-standard-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "eating_disorders"
+    ]
+  },
+  {
+    "standard_id": "sickle_cell_disease",
+    "standard_title": "Sickle Cell Disease",
+    "aliases": [],
+    "clinical_domain": "hematology",
+    "conditions": [
+      "Sickle Cell Disease"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening",
+      "transitions"
+    ],
+    "key_statements": [
+      "Racism and Anti-Black Racism",
+      "Comprehensive Health Assessment and Care Plan",
+      "Vaso-occlusive Acute Pain Episodes",
+      "Life-Threatening Acute Complications",
+      "Chronic Complications"
+    ],
+    "statement_count": 8,
+    "chunk_count": 9,
+    "doc_chunks": 1,
+    "statement_chunks": 8,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-sickle-cell-disease-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-sickle-cell-disease-quality-standard-en.pdf",
+    "related_standards": []
+  },
+  {
+    "standard_id": "transitions_between_hospital_and_home",
+    "standard_title": "Transitions Between Hospital And Home",
+    "aliases": [],
+    "clinical_domain": "transitions_care",
+    "conditions": [
+      "Transitions Between Hospital And Home"
+    ],
+    "care_focus": [
+      "education",
+      "screening",
+      "transitions",
+      "treatment"
+    ],
+    "key_statements": [
+      "Information-Sharing on Admission",
+      "Comprehensive Assessment",
+      "Transition Plans",
+      "Coordinated Transitions",
+      "Medication Review and Support"
+    ],
+    "statement_count": 7,
+    "chunk_count": 8,
+    "doc_chunks": 1,
+    "statement_chunks": 7,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-transitions-between-hospital-and-home-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-transitions-between-hospital-and-home-quality-standard-en.pdf",
+    "related_standards": [
+      "chronic_pain",
+      "transitions_from_youth_to_adult_health_care_services"
+    ]
+  },
+  {
+    "standard_id": "transitions_from_youth_to_adult_health_care_services",
+    "standard_title": "Transitions From Youth To Adult Health Care Services",
+    "aliases": [],
+    "clinical_domain": "transitions_care",
+    "conditions": [
+      "Transitions From Youth To Adult Health Care Services"
+    ],
+    "care_focus": [
+      "education",
+      "transitions"
+    ],
+    "key_statements": [
+      "Information -Sharing and Support",
+      "Transition Plan",
+      "Coordinated Transition",
+      "Introduction to Adult Services",
+      "Transfer Completion"
+    ],
+    "statement_count": 5,
+    "chunk_count": 6,
+    "doc_chunks": 1,
+    "statement_chunks": 5,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-transitions-from-youth-to-adult-health-care-services-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-transitions-from-youth-to-adult-health-care-services-quality-standard-en.pdf",
+    "related_standards": [
+      "chronic_pain",
+      "transitions_between_hospital_and_home"
+    ]
+  },
+  {
+    "standard_id": "vaginal_birth_after_caesarean",
+    "standard_title": "Vaginal Birth After Caesarean 2024",
+    "aliases": [],
+    "clinical_domain": "womens_health",
+    "conditions": [
+      "Vaginal Birth After Caesarean 2024"
+    ],
+    "care_focus": [
+      "clinical_care"
+    ],
+    "key_statements": [
+      "Access to Vaginal Birth After Caesarean",
+      "Discussion After Caesarean Birth",
+      "Shared Decision-Making",
+      "Previous Vaginal Birth",
+      "Operative Reports and Incision Type"
+    ],
+    "statement_count": 9,
+    "chunk_count": 10,
+    "doc_chunks": 1,
+    "statement_chunks": 9,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-vaginal-birth-after-caesarean-quality-standard-2024-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-vaginal-birth-after-caesarean-quality-standard-2024-en.pdf",
+    "related_standards": [
+      "early_pregnancy_complications_and_loss",
+      "hmb"
+    ]
+  },
+  {
+    "standard_id": "venous_leg_ulcers_clinical_guide",
+    "standard_title": "Venous Leg Ulcers Clinical Guide",
+    "aliases": [],
+    "clinical_domain": "dermatology",
+    "conditions": [
+      "Venous Leg Ulcers Clinical Guide"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Screening for Peripheral Arterial Disease",
+      "Patient Education and Self-Management",
+      "Comprehensive Assessment",
+      "Individualized Care Plan",
+      "Compression Therapy"
+    ],
+    "statement_count": 10,
+    "chunk_count": 11,
+    "doc_chunks": 1,
+    "statement_chunks": 10,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-venous-leg-ulcers-clinical-guide-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-venous-leg-ulcers-clinical-guide-en.pdf",
+    "related_standards": [
+      "diabetic_foot_ulcers_clinical_guide",
+      "pressure_injuries_clinical_guide"
+    ]
+  },
+  {
+    "standard_id": "schizophrenia_care_in_the_community",
+    "standard_title": "qs-schizophrenia-care-in-the-community-quality-standard-en",
+    "aliases": [
+      "psychotic disorder",
+      "psychosis"
+    ],
+    "clinical_domain": "mental_health",
+    "conditions": [
+      "qs-schizophrenia-care-in-the-community-quality-standard-en"
+    ],
+    "care_focus": [
+      "education",
+      "management",
+      "screening",
+      "treatment"
+    ],
+    "key_statements": [
+      "Care Plan and Comprehensive Assessment",
+      "Physical Health Assessment",
+      "Self-Management",
+      "Family Education",
+      "Support"
+    ],
+    "statement_count": 15,
+    "chunk_count": 16,
+    "doc_chunks": 1,
+    "statement_chunks": 15,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-schizophrenia-care-in-the-community-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-schizophrenia-care-in-the-community-quality-standard-en.pdf",
+    "related_standards": [
+      "alcohol_use_disorder",
+      "anxiety_disorders",
+      "eating_disorders"
+    ]
+  },
+  {
+    "standard_id": "surgical_site_infections",
+    "standard_title": "qs-surgical-site-infections-quality-standard-en",
+    "aliases": [],
+    "clinical_domain": "general",
+    "conditions": [
+      "qs-surgical-site-infections-quality-standard-en"
+    ],
+    "care_focus": [
+      "clinical_care"
+    ],
+    "key_statements": [],
+    "statement_count": 0,
+    "chunk_count": 1,
+    "doc_chunks": 1,
+    "statement_chunks": 0,
+    "source_url": "https://www.hqontario.ca/Portals/0/documents/evidence/quality-standards/data/dr_opa_agent/raw/oh_quality_std/qs-surgical-site-infections-quality-standard-en.pdf",
+    "source_file": "data/dr_opa_agent/raw/oh_quality_std/qs-surgical-site-infections-quality-standard-en.pdf",
+    "related_standards": [
+      "gender_affirming_care_adults",
+      "glaucoma_qs",
+      "medication_safety"
+    ]
+  }
+]
