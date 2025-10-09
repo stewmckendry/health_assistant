@@ -295,12 +295,16 @@ async def assemble_parent_child_context(
             # Parent chunk - include as-is
             assembled.append(chunk)
 
+        elif chunk_type == 'recommendation' or chunk_type == 'specialty_overview':
+            # Old format (flat structure) - include as-is
+            assembled.append(chunk)
+
         elif chunk_type == 'child':
-            # Child chunk - need to fetch parent
+            # New format (parent/child structure) - need to fetch parent
             parent_id = chunk.get('parent_id')
 
             if not parent_id:
-                # No parent ID - include child as-is
+                # No parent ID - include child as-is (fallback)
                 logger.warning(f"Child chunk has no parent_id: {chunk.get('chunk_id')}")
                 assembled.append(chunk)
                 continue
