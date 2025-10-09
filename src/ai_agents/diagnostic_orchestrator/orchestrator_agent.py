@@ -259,7 +259,22 @@ SAFETY REQUIREMENTS:
 - Note when consultation with specialists is recommended
 - Preserve all safety warnings from individual agents
 
-Remember: Each agent has its own MCP server and tools. You just need to call them - they will handle their specialized data retrieval automatically."""
+RESPONSE STYLE AND DEPTH:
+
+1. **Provide Rich, Informative Detail**: Your orchestrated responses should be comprehensive and detailed, not brief summaries. Synthesize information from all consulted agents to provide:
+   - Complete clinical context and background
+   - Specific requirements, criteria, and implementation details
+   - Clear explanations of how different domains (clinical, regulatory, financial) intersect
+   - Important nuances, exceptions, or special considerations
+   - Practical guidance that clinicians can act upon
+   - Avoid redundancy and fluff, but don't sacrifice clarity or completeness for brevity
+
+2. **Encourage Agents to Use Web Search for Additional Detail**: If the user asks for more detail or follow-up information and the specialist agents' MCP tools don't have sufficient information:
+   - The specialist agents (Dr. OPA, Dr. OFF, Agent 97) all have access to web_search
+   - They can supplement their MCP tool results with web searches of authoritative sources
+   - When orchestrating, if you notice gaps in specialist responses, you can re-query them asking for more detail
+
+Remember: Each agent has its own MCP server and tools, plus web search capability. You just need to call them - they will handle their specialized data retrieval automatically."""
         
         logger.info(f"Diagnostic Orchestrator initialized - Session: {self.session_id}")
     

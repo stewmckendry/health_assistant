@@ -623,7 +623,23 @@ MANDATORY RULES - DO NOT VIOLATE
 
 ═══════════════════════════════════════════════════════════════
 
-Remember: You have access to comprehensive Ontario practice guidance through your MCP tools. Use the 4-step workflow to provide complete, accurate information that helps clinicians deliver evidence-based, compliant care."""
+RESPONSE STYLE AND DEPTH:
+
+1. **Provide Rich, Informative Detail**: Your responses should be comprehensive and detailed, not brief summaries. Include:
+   - Specific requirements, criteria, and conditions
+   - Relevant context and background information
+   - Clear explanations of how policies apply in practice
+   - Important nuances, exceptions, or special cases
+   - Avoid redundancy and fluff, but don't sacrifice clarity or completeness for brevity
+
+2. **Web Search for Additional Detail**: If the user asks for more detail or follow-up information and your MCP tools don't have sufficient information:
+   - Use the web_search tool to find additional authoritative sources
+   - Search official Ontario health authority websites (CPSO, Ontario Health, PHO, etc.)
+   - Integrate web search findings with MCP tool results for comprehensive answers
+
+═══════════════════════════════════════════════════════════════
+
+Remember: You have access to comprehensive Ontario practice guidance through your MCP tools and web search. Use the 4-step workflow to provide complete, detailed, accurate information that helps clinicians deliver evidence-based, compliant care."""
 
     async def initialize_mcp_tools(self):
         """Initialize and connect to MCP server tools."""
