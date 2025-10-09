@@ -792,9 +792,144 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                 agents_consulted = []
                 tool_calls = []  # Track all tool calls
                 citations = []  # Track citations from responses
-                
-                # Stream events
+
+                # Import StreamingProgressTracker for user-friendly progress
+                from src.ai_agents.diagnostic_orchestrator.streaming_progress import StreamingProgressTracker, ProgressUpdate
+                from agents.stream_events import AgentUpdatedStreamEvent, RunItemStreamEvent
+                tracker = StreamingProgressTracker()
+
+                # Emit initial progress message
+                yield {
+                    'type': 'progress',
+                    'message': "🔍 Analyzing your clinical query...",
+                    'event_type': "analysis_started",
+                    'agent_name': "The Chief",
+                    'tool_name': None,
+                    'details': None,
+                    'trace_id': trace_id
+                }
+
+                # Stream events - process each event for BOTH progress and custom events
                 async for event in result.stream_events():
+                    # First, emit user-friendly progress update for this event
+                    # Process event directly to avoid re-emitting initial message
+                    if isinstance(event, AgentUpdatedStreamEvent):
+                        agent_name = event.new_agent.name
+                        tracker.current_agent = agent_name
+                        emoji = tracker.get_agent_emoji(agent_name)
+
+                        if agent_name == "Agent 97":
+                            message = f"{emoji} Consulting Agent 97 for evidence-based medical guidance..."
+                        elif agent_name == "Dr. OPA":
+                            message = f"{emoji} Consulting Dr. OPA for Ontario clinical pathways and quality standards..."
+                        elif agent_name == "Dr. OFF":
+                            message = f"{emoji} Consulting Dr. OFF for coverage and billing information..."
+                        else:
+                            message = f"{emoji} Switched to {agent_name}..."
+
+                        yield {
+                            'type': 'progress',
+                            'message': message,
+                            'event_type': 'agent_switched',
+                            'agent_name': agent_name,
+                            'tool_name': None,
+                            'details': None,
+                            'trace_id': trace_id
+                        }
+
+                    elif isinstance(event, RunItemStreamEvent):
+                        if event.name == "tool_called":
+                            if hasattr(event.item, 'raw_item') and hasattr(event.item.raw_item, 'name'):
+                                tool_name = event.item.raw_item.name
+                                tool_desc = tracker.get_tool_description(tool_name)
+                                emoji = tracker.get_agent_emoji(tracker.current_agent)
+
+                                query = None
+                                if hasattr(event.item.raw_item, 'arguments'):
+                                    query = tracker.get_query_from_arguments(event.item.raw_item.arguments)
+
+                                if query:
+                                    message = f"{emoji} {tracker.current_agent} is {tool_desc} for: \"{query}\""
+                                else:
+                                    message = f"{emoji} {tracker.current_agent} is {tool_desc}..."
+
+                                yield {
+                                    'type': 'progress',
+                                    'message': message,
+                                    'event_type': 'tool_called',
+                                    'agent_name': tracker.current_agent,
+                                    'tool_name': tool_name,
+                                    'details': {'query': query} if query else None,
+                                    'trace_id': trace_id
+                                }
+
+                        elif event.name == "tool_output":
+                            emoji = "✅"
+                            result_count = None
+                            if hasattr(event.item, 'output'):
+                                output = event.item.output
+                                if isinstance(output, dict):
+                                    if 'items' in output and isinstance(output['items'], list):
+                                        result_count = len(output['items'])
+                                    elif 'results' in output and isinstance(output['results'], list):
+                                        result_count = len(output['results'])
+
+                            if result_count is not None:
+                                message = f"{emoji} {tracker.current_agent} retrieved {result_count} results"
+                            else:
+                                message = f"{emoji} {tracker.current_agent} completed search"
+
+                            yield {
+                                'type': 'progress',
+                                'message': message,
+                                'event_type': 'tool_output',
+                                'agent_name': tracker.current_agent,
+                                'tool_name': None,
+                                'details': {'result_count': result_count} if result_count else None,
+                                'trace_id': trace_id
+                            }
+
+                        elif event.name == "reasoning_item_created":
+                            if hasattr(event.item, 'raw_item'):
+                                reasoning_item = event.item.raw_item
+                                reasoning_text = None
+
+                                if hasattr(reasoning_item, 'summary') and reasoning_item.summary:
+                                    summaries = []
+                                    for summary in reasoning_item.summary:
+                                        if hasattr(summary, 'text') and summary.text:
+                                            summaries.append(summary.text)
+                                    if summaries:
+                                        reasoning_text = " ".join(summaries)
+
+                                if reasoning_text:  # Only emit if we have actual reasoning content
+                                    emoji = "🤔"
+                                    if len(reasoning_text) > 100:
+                                        reasoning_text = reasoning_text[:97] + "..."
+                                    message = f"{emoji} {tracker.current_agent} reasoning: {reasoning_text}"
+
+                                    yield {
+                                        'type': 'progress',
+                                        'message': message,
+                                        'event_type': 'reasoning',
+                                        'agent_name': tracker.current_agent,
+                                        'tool_name': None,
+                                        'details': {'reasoning': reasoning_text},
+                                        'trace_id': trace_id
+                                    }
+
+                        elif event.name == "message_output_created":
+                            yield {
+                                'type': 'progress',
+                                'message': "✍️ The Chief is synthesizing insights from all specialists...",
+                                'event_type': 'synthesis_started',
+                                'agent_name': "The Chief",
+                                'tool_name': None,
+                                'details': None,
+                                'trace_id': trace_id
+                            }
+
+                    # Then, process the same event for existing custom logic
                     if event.type == "raw_response_event":
                         # Stream text deltas
                         if isinstance(event.data, ResponseTextDeltaEvent):
