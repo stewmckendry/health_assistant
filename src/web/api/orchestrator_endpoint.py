@@ -1,9 +1,9 @@
 """
-The Chief - Ontario Healthcare Coordinator Streaming Endpoint for FastAPI
+Chief Resident - Ontario Healthcare Coordinator Streaming Endpoint for FastAPI
 
-Provides intelligent orchestration between Dr. OPA (Ontario regulations), 
-Dr. OFF (Ontario coverage), and Agent 97 (medical education) for 
-comprehensive Ontario-specific healthcare guidance.
+Provides intelligent orchestration between Dr. OPA (Ontario regulations),
+Dr. OFF (Ontario coverage), and Agent 97 (clinical evidence) for
+comprehensive Ontario-specific clinical decision support.
 """
 
 import asyncio
@@ -51,24 +51,24 @@ async def get_orchestrator() -> DiagnosticOrchestrator:
     """Get or create the orchestrator instance."""
     global _orchestrator_instance
     if _orchestrator_instance is None:
-        logger.info("Creating new Chief orchestrator instance...")
+        logger.info("Creating new Chief Resident orchestrator instance...")
         _orchestrator_instance = await create_diagnostic_orchestrator()
-        logger.info("The Chief orchestrator initialized")
+        logger.info("Chief Resident orchestrator initialized")
     return _orchestrator_instance
 
 
 def register_orchestrator_endpoint(app: FastAPI):
-    """Register The Chief orchestrator endpoints with the FastAPI app."""
-    
+    """Register Chief Resident orchestrator endpoints with the FastAPI app."""
+
     @app.post("/agents/orchestrator/stream")
     async def stream_orchestrator_response(request: OrchestratorStreamRequest):
         """
-        Stream responses from The Chief - Ontario Healthcare Coordinator.
-        
-        The Chief intelligently routes queries to:
+        Stream responses from Chief Resident - Ontario Healthcare Coordinator.
+
+        Chief Resident intelligently routes queries to:
         - Dr. OPA for Ontario regulations (CPSO, Ontario Health, PHO)
         - Dr. OFF for Ontario coverage (OHIP, ODB, ADP)
-        - Agent 97 for medical education from 97 trusted sources
+        - Agent 97 for clinical evidence from 97 trusted sources
         """
         try:
             async def generate() -> AsyncGenerator[str, None]:
@@ -295,8 +295,8 @@ def register_orchestrator_endpoint(app: FastAPI):
     @app.post("/agents/orchestrator/query")
     async def query_orchestrator(request: OrchestratorQueryRequest):
         """
-        Non-streaming query endpoint for The Chief - Ontario Healthcare Coordinator.
-        
+        Non-streaming query endpoint for Chief Resident - Ontario Healthcare Coordinator.
+
         Returns a unified response synthesizing guidance from Ontario-specific sources.
         """
         try:
@@ -330,17 +330,17 @@ def register_orchestrator_endpoint(app: FastAPI):
     @app.get("/agents/orchestrator/status")
     async def get_orchestrator_status():
         """
-        Get the status of The Chief - Ontario Healthcare Coordinator.
-        
+        Get the status of Chief Resident - Ontario Healthcare Coordinator.
+
         Returns information about available Ontario healthcare agents and system health.
         """
         try:
             # Check if orchestrator is initialized
             is_initialized = _orchestrator_instance is not None
-            
+
             status = {
-                "orchestrator": "The Chief - Ontario Healthcare Coordinator",
-                "description": "Coordinates Ontario-specific guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (medical education)",
+                "orchestrator": "Chief Resident - Ontario Healthcare Coordinator",
+                "description": "Coordinates Ontario-specific guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (clinical evidence)",
                 "status": "ready" if is_initialized else "not_initialized",
                 "initialized": is_initialized,
                 "available_agents": [
@@ -376,7 +376,7 @@ def register_orchestrator_endpoint(app: FastAPI):
         except Exception as e:
             logger.error(f"Error getting orchestrator status: {e}")
             return {
-                "orchestrator": "The Chief - Ontario Healthcare Coordinator",
+                "orchestrator": "Chief Resident - Ontario Healthcare Coordinator",
                 "status": "error",
                 "error": str(e),
                 "timestamp": datetime.now().isoformat()

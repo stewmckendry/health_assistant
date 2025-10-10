@@ -1,10 +1,9 @@
 """
-The Chief - Clinical Intelligence Orchestrator
+Chief Resident - Clinical Intelligence Orchestrator
 
 A medical diagnostic orchestrator inspired by Microsoft's MAI-DxO that coordinates
-between Dr. OPA, Dr. OFF, and Agent 97 to provide comprehensive clinical guidance
-for Ontario healthcare providers. Named "The Chief" after chief roles in medicine
-(Chief Medical Officer, Chief of Staff).
+between Dr. OPA, Dr. OFF, and Agent 97 to provide comprehensive clinical decision support
+for Ontario healthcare providers.
 """
 
 from .orchestrator_agent import DiagnosticOrchestrator, create_diagnostic_orchestrator

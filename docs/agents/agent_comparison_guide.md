@@ -74,10 +74,10 @@ This guide helps you understand when to use each AI agent in the health assistan
 
 ---
 
-### **The Chief** (Clinical Intelligence Orchestrator)
-**Use when:** A **clinician** has a **complex clinical question** that requires insights from multiple domains (practice guidance + coverage + medical evidence)
+### **Chief Resident** (Clinical Intelligence Orchestrator)
+**Use when:** A **clinician** has a **complex clinical scenario** that requires insights from multiple domains (practice guidance + coverage + medical evidence)
 
-**Purpose:** Intelligent orchestrator inspired by Microsoft's MAI-DxO that coordinates between Dr. OPA, Dr. OFF, and Agent 97 to provide comprehensive multi-domain clinical guidance
+**Purpose:** Intelligent orchestrator inspired by Microsoft's MAI-DxO that coordinates between Dr. OPA, Dr. OFF, and Agent 97 to provide comprehensive multi-domain clinical decision support
 
 **Key features:**
 - **Automatically routes queries** to appropriate specialist agents
@@ -87,16 +87,17 @@ This guide helps you understand when to use each AI agent in the health assistan
 - **Emphasizes critical safety** and regulatory information
 - Uses **GPT-4o** for sophisticated orchestration
 
-**Example queries (complex scenarios requiring multiple perspectives):**
+**Example queries (complex clinical scenarios requiring multiple perspectives):**
 - "72-year-old with newly diagnosed type 2 diabetes, BMI 32, limited income. What are CPSO documentation requirements, ODB coverage for metformin and newer drugs, and evidence-based management?"
 - "55-year-old with acute chest pain. Need Ontario cardiac pathway, OHIP billing codes for ECG/troponins, and current ACS guidelines."
 - "Young adult with suicidal ideation. What are mandatory reporting requirements, OHIP billing codes for psych assessment, and crisis intervention protocols?"
+- "Complex polypharmacy case requiring medication review, drug interactions, coverage alternatives, and deprescribing guidance"
 
-**The Chief consults:**
+**Chief Resident consults:**
 - **Dr. OPA** → for regulatory/policy questions
 - **Dr. OFF** → for cost/coverage questions
-- **Agent 97** → for general medical knowledge
-- Then **synthesizes all responses** into comprehensive guidance
+- **Agent 97** → for clinical evidence and medical knowledge
+- Then **synthesizes all responses** into comprehensive clinical guidance
 
 **NOT for:** Simple single-domain questions (use the individual agents directly instead)
 
@@ -109,16 +110,16 @@ This guide helps you understand when to use each AI agent in the health assistan
 | **Patient** | Health education and information | **Agent 97** |
 | **Clinician** | OHIP billing / ODB coverage / ADP funding | **Dr. OFF** |
 | **Clinician** | Clinical practice guidance / CPSO policies / screening programs | **Dr. OPA** |
-| **Clinician** | Complex scenario requiring practice guidance + coverage + medical evidence | **The Chief** |
+| **Clinician** | Complex clinical scenario requiring practice guidance + coverage + clinical evidence | **Chief Resident** |
 
 ---
 
 ## Detailed Comparison Table
 
-| Feature | Agent 97 | Dr. OFF | Dr. OPA | The Chief |
+| Feature | Agent 97 | Dr. OFF | Dr. OPA | Chief Resident |
 |---------|----------|---------|---------|-----------|
 | **Target User** | Patients | Clinicians | Clinicians | Clinicians |
-| **Primary Focus** | Patient education | Healthcare financing | Clinical practice guidance | Multi-domain orchestration |
+| **Primary Focus** | Patient education | Healthcare financing | Clinical practice guidance | Clinical decision support |
 | **Data Sources** | 97 trusted medical sources | OHIP, ODB, ADP databases | CPSO, Ontario Health, CEP, PHO, Choosing Wisely | All specialist agents |
 | **Model** | Claude 3.5 Sonnet | GPT-4o-mini | GPT-4o-mini | GPT-4o |
 | **Safety Guardrails** | Yes (input/output) | No (financial data) | No (professional use) | Yes (inherited from Agent 97) |
@@ -139,12 +140,12 @@ This guide helps you understand when to use each AI agent in the health assistan
 - Patient education → **Agent 97**
 
 ### For Complex Clinical Scenarios
-**Use The Chief when you need:**
-- Insights from multiple domains (clinical + regulatory + financial)
+**Use Chief Resident when you need:**
+- Clinical decision support requiring multiple perspectives (clinical + regulatory + financial)
 - Comprehensive guidance synthesized from all sources
 - Coordination between practice guidelines, coverage policies, and evidence
 
-**Example:** Instead of calling Dr. OPA for CPSO requirements, then Dr. OFF for billing codes, then Agent 97 for treatment evidence, ask **The Chief** one comprehensive question and get all perspectives synthesized.
+**Example:** Instead of calling Dr. OPA for CPSO requirements, then Dr. OFF for billing codes, then Agent 97 for treatment evidence, ask **Chief Resident** one comprehensive question and get all perspectives synthesized for clinical decision-making.
 
 ---
 
@@ -152,7 +153,7 @@ This guide helps you understand when to use each AI agent in the health assistan
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
-│                           The Chief                                      │
+│                         Chief Resident                                   │
 │                   (Clinical Intelligence Orchestrator)                   │
 │                          Model: GPT-4o                                   │
 │                                                                          │
@@ -235,7 +236,7 @@ Legend:
 - [Agent 97 Documentation](./agent_97_documentation.md)
 - [Dr. OFF Documentation](./dr_off_agent/dr_off_agent.md)
 - [Dr. OPA Documentation](./dr_opa_agent/dr_opa_agent.md)
-- [The Chief Implementation](../../src/ai_agents/diagnostic_orchestrator/orchestrator_agent.py)
+- [Chief Resident Implementation](../../src/ai_agents/diagnostic_orchestrator/orchestrator_agent.py)
 
 ---
 

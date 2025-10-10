@@ -1,8 +1,8 @@
 """
-Streaming Progress Tracker for The Chief
+Streaming Progress Tracker for Chief Resident
 
 Converts OpenAI Agents SDK streaming events into user-friendly progress updates
-that can be displayed in the UI to show what's happening during the 80+ second wait.
+that can be displayed in the UI to show what's happening during orchestration.
 
 Example output:
 - "🔍 Analyzing your clinical query..."
@@ -45,7 +45,7 @@ class StreamingProgressTracker:
 
     # Agent name mappings
     AGENT_DISPLAY_NAMES = {
-        "The Chief": "The Chief (Clinical Intelligence Orchestrator)",
+        "Chief Resident": "Chief Resident (Clinical Intelligence Orchestrator)",
         "Dr. OPA": "Dr. OPA",
         "Dr. OFF": "Dr. OFF",
         "Agent 97": "Agent 97",
@@ -53,7 +53,7 @@ class StreamingProgressTracker:
 
     # Agent emojis for visual distinction
     AGENT_EMOJIS = {
-        "The Chief": "🎯",
+        "Chief Resident": "🎯",
         "Dr. OPA": "🏥",
         "Dr. OFF": "💰",
         "Agent 97": "👨‍⚕️",
@@ -89,13 +89,16 @@ class StreamingProgressTracker:
 
     # Tool descriptions for Chief's agent consultations
     ORCHESTRATOR_TOOL_DESCRIPTIONS = {
-        "Dr. OPA": "calling Dr. OPA",
-        "Dr. OFF": "calling Dr. OFF",
-        "Agent 97": "calling Agent 97",
+        "dr_opa": "consulting Dr. OPA",
+        "dr_off": "consulting Dr. OFF",
+        "agent_97": "consulting Agent 97",
+        "Dr. OPA": "consulting Dr. OPA",
+        "Dr. OFF": "consulting Dr. OFF",
+        "Agent 97": "consulting Agent 97",
     }
 
     def __init__(self):
-        self.current_agent = "The Chief"
+        self.current_agent = "Chief Resident"
         self.tool_call_count = 0
 
     def get_agent_emoji(self, agent_name: str) -> str:
@@ -146,7 +149,7 @@ class StreamingProgressTracker:
         yield ProgressUpdate(
             message="🔍 Analyzing your clinical query...",
             event_type="analysis_started",
-            agent_name="The Chief"
+            agent_name="Chief Resident"
         )
 
         async for event in stream_events:
@@ -163,6 +166,8 @@ class StreamingProgressTracker:
                     message = f"{emoji} Consulting Dr. OPA for Ontario clinical pathways and quality standards..."
                 elif agent_name == "Dr. OFF":
                     message = f"{emoji} Consulting Dr. OFF for coverage and billing information..."
+                elif agent_name == "Chief Resident":
+                    message = f"{emoji} Chief Resident is coordinating specialist consultations..."
                 else:
                     message = f"{emoji} Switched to {agent_name}..."
 
@@ -268,7 +273,7 @@ class StreamingProgressTracker:
                 # Message being generated (final synthesis)
                 elif event.name == "message_output_created":
                     yield ProgressUpdate(
-                        message="✍️ The Chief is synthesizing insights from all specialists...",
+                        message="✍️ Chief Resident is synthesizing insights from all specialists...",
                         event_type="synthesis_started",
-                        agent_name="The Chief"
+                        agent_name="Chief Resident"
                     )

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-The Chief - Clinical Intelligence Orchestrator
+Chief Resident - Clinical Intelligence Orchestrator
 
 An intelligent medical orchestrator inspired by Microsoft's MAI-DxO that coordinates
-between the existing Dr. OPA, Dr. OFF, and Agent 97 implementations using the 
+between the existing Dr. OPA, Dr. OFF, and Agent 97 implementations using the
 OpenAI Agents SDK's as_tool() pattern. Includes comprehensive Langfuse tracing.
 """
 
@@ -79,16 +79,16 @@ logger = logging.getLogger(__name__)
 
 class DiagnosticOrchestrator:
     """
-    The Chief - Clinical Intelligence Orchestrator inspired by Microsoft's MAI-DxO.
-    
+    Chief Resident - Clinical Intelligence Orchestrator inspired by Microsoft's MAI-DxO.
+
     Coordinates between the existing Dr. OPA, Dr. OFF, and Agent 97 implementations
-    to provide comprehensive clinical guidance for Ontario healthcare providers.
+    to provide comprehensive clinical decision support for Ontario healthcare providers.
     Includes Langfuse tracing for observability and user feedback.
     """
-    
+
     def __init__(self, enable_langfuse: bool = True):
-        """Initialize The Chief orchestrator with optional Langfuse tracing.
-        
+        """Initialize Chief Resident orchestrator with optional Langfuse tracing.
+
         Args:
             enable_langfuse: Whether to enable Langfuse tracing (default: True)
         """
@@ -143,7 +143,7 @@ class DiagnosticOrchestrator:
                 logger.info("Langfuse not available - install langfuse and pydantic-ai[logfire] for tracing")
         
         # System instructions for the orchestrator
-        self.system_instructions = """You are "The Chief" - the Chief Clinical Intelligence Orchestrator, an advanced medical coordination system inspired by Microsoft's MAI-DxO approach and named after the chief roles in medicine (Chief Medical Officer, Chief of Staff). You intelligently route queries to multiple specialist AI agents to provide comprehensive guidance for Ontario healthcare providers.
+        self.system_instructions = """You are "Chief Resident" - the Chief Resident Clinical Intelligence Orchestrator, an advanced medical coordination system inspired by Microsoft's MAI-DxO approach. Like a Chief Resident consulting multiple specialists for complex cases, you intelligently route queries to specialist AI agents to provide comprehensive clinical decision support for Ontario healthcare providers.
 
 You have access to three specialized agents as tools:
 
@@ -208,16 +208,22 @@ When consulting multiple specialists:
 6. Emphasize critical safety information and regulatory requirements
 
 RESPONSE FORMAT - NATURAL, COMPREHENSIVE ORCHESTRATED GUIDANCE:
-Provide well-organized responses in flowing paragraphs with embedded citations:
+Provide well-organized responses using proper markdown formatting for readability:
+
+**CRITICAL FORMATTING REQUIREMENTS - USE PROPER MARKDOWN**:
+1. **Use blank lines between ALL sections** - Add TWO newlines (\n\n) between each section and between paragraphs
+2. **Use proper markdown headers** - Use ## for main sections, ### for subsections
+3. **Use bullet lists properly** - Each bullet point starts with - or * followed by a space, with blank lines before and after lists
+4. **Separate paragraphs** - Add blank line between paragraphs within sections
+5. **Format bold text** - Use **text** for bold, *text* for italic
+6. **Format inline citations** - Use [Source Name](URL) for inline citations
 
 **WRITING STYLE**:
 - Write naturally in professional paragraphs
 - Use markdown formatting: **bold** for emphasis, *italics* for terms, [text](url) for links
-- Embed citations naturally within sentences [Source: title, page/section]
-- Use section headings (##) to organize longer responses, but keep them conversational
+- Embed citations naturally within sentences [Source: [CPSO Policy](https://cpso.on.ca/...)]
+- Use section headings (##) to organize longer responses
 - Synthesize information from multiple agents into a cohesive narrative
-- **CRITICAL**: Add blank lines (\n\n) between all sections and paragraphs for proper markdown rendering
-- **CRITICAL**: Ensure headers have blank lines before and after them
 
 **RESPONSE APPROACH**:
 Start directly with the answer - no formal "Executive Overview" label. Begin with 1-2 comprehensive paragraphs that directly address the clinical query, synthesizing the most critical information from relevant agents with embedded citations.
@@ -417,7 +423,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                 # Create the orchestrator agent with sub-agents as tools
                 from agents import ModelSettings
                 orchestrator = Agent(
-                    name="The Chief",
+                    name="Chief Resident",
                     instructions=self.system_instructions,
                     model="o4-mini",  # Use reasoning-enabled model for orchestration
                     model_settings=ModelSettings(
@@ -705,7 +711,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                 # Create orchestrator
                 from agents import ModelSettings
                 orchestrator = Agent(
-                    name="The Chief",
+                    name="Chief Resident",
                     instructions=self.system_instructions,
                     model="gpt-5-mini",
                     model_settings=ModelSettings(reasoning={"summary": "auto"}, parallel_tool_calls=True),
@@ -758,7 +764,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                     'type': 'progress',
                     'message': "🔍 Analyzing your clinical query...",
                     'event_type': "analysis_started",
-                    'agent_name': "The Chief",
+                    'agent_name': "Chief Resident",
                     'tool_name': None,
                     'details': None,
                     'trace_id': trace_id
@@ -876,9 +882,9 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                         elif event.name == "message_output_created":
                             yield {
                                 'type': 'progress',
-                                'message': "✍️ The Chief is synthesizing insights from all specialists...",
+                                'message': "✍️ Chief Resident is synthesizing insights from all specialists...",
                                 'event_type': 'synthesis_started',
-                                'agent_name': "The Chief",
+                                'agent_name': "Chief Resident",
                                 'tool_name': None,
                                 'details': None,
                                 'trace_id': trace_id

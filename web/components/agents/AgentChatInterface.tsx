@@ -92,11 +92,19 @@ I can help you with OHIP billing codes and fee schedules, Ontario Drug Benefit (
 
 How can I assist with your coverage or billing questions today?`;
         } else if (agent.id === 'orchestrator') {
-          welcomeContent = `Hello! I'm The Chief, your Ontario healthcare coordinator.
+          welcomeContent = `Hello! I'm Chief Resident, your clinical decision support coordinator.
 
-I bring together guidance from Ontario's medical systems by coordinating three specialist agents: Dr. OPA for CPSO policies and Ontario Health programs, Dr. OFF for OHIP billing and drug coverage, and Agent 97 for evidence-based clinical guidance.
+I provide comprehensive multi-perspective guidance for complex clinical scenarios by orchestrating three specialist agents:
 
-What Ontario healthcare question can I help you with today?`;
+**Dr. OPA** - Ontario clinical pathways, CPSO policies, and quality standards
+
+**Dr. OFF** - OHIP billing codes and ODB drug coverage
+
+**Agent 97** - Evidence-based clinical guidance from trusted medical sources
+
+I'm designed for complex cases requiring multiple perspectives - whether you're managing a challenging patient presentation, navigating polypharmacy, or need coordinated guidance across clinical evidence, regulatory requirements, and coverage considerations.
+
+What complex clinical scenario can I help you navigate today?`;
         } else if (agent.id === 'dr-opa') {
           welcomeContent = `Hello! I'm Dr. OPA (Ontario Practice Advisor), your specialized AI assistant for Ontario healthcare clinicians.
 

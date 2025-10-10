@@ -299,11 +299,11 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
 
   'orchestrator': {
     id: 'orchestrator',
-    name: 'The Chief',
-    tagline: 'Ontario Healthcare Coordinator - Unified Clinical & Administrative Guidance',
-    description: 'Ontario Medical Coordinator - Connects you to the right Ontario healthcare guidance',
-    fullDescription: 'Like a Chief Medical Officer directing cases to appropriate specialists, The Chief coordinates Ontario-specific medical guidance by intelligently routing queries to Dr. OPA (Ontario regulations), Dr. OFF (Ontario coverage), and Agent 97 (clinical evidence search) for complete clinical answers.',
-    mission: 'To help Ontario clinicians get complete answers quickly by orchestrating Dr. OPA, Dr. OFF, and Agent 97 - connecting you to billing codes, drug coverage, practice policies, and evidence-based clinical guidelines all in one place.',
+    name: 'Chief Resident',
+    tagline: 'Clinical Decision Support - Multi-Perspective Ontario Healthcare Guidance',
+    description: 'Ontario Medical Coordinator - Multi-agent clinical decision support for complex scenarios',
+    fullDescription: 'Like a Chief Resident consulting multiple specialists for complex cases, Chief Resident coordinates Ontario-specific medical guidance by intelligently routing queries to Dr. OPA (Ontario regulations), Dr. OFF (Ontario coverage), and Agent 97 (clinical evidence search) for comprehensive clinical decision support.',
+    mission: 'To provide comprehensive clinical decision support for Ontario clinicians facing complex scenarios requiring multiple perspectives - synthesizing practice guidance, coverage considerations, and evidence-based medicine all in one coordinated response.',
     status: 'active',
     icon: '🧠',
     color: '#f59e0b', // amber-500
@@ -361,13 +361,13 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'Not for emergency medical decisions',
       'Requires verification with official sources'
     ],
-    disclaimer: 'The Chief coordinates Ontario healthcare guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (clinical evidence). Information is for educational purposes only. Always verify with official Ontario sources and use clinical judgment.',
+    disclaimer: 'Chief Resident coordinates Ontario healthcare guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (clinical evidence). Information is for educational purposes only. Always verify with official Ontario sources and use clinical judgment.',
     launchDate: '2025-02',
     starterPrompts: [
-      'Can I prescribe medical cannabis and how is it covered in Ontario?',
-      'What are the billing codes and clinical guidelines for managing hypertension?',
-      'How do I set up virtual care and what can I bill for it?',
-      'What diabetes medications are covered and what are the prescribing guidelines?'
+      '72-year-old with new T2DM, BMI 32, limited income - help with CPSO documentation, ODB coverage, and evidence-based management',
+      '55-year-old with acute chest pain - need Ontario cardiac pathway, billing codes, and ACS guidelines',
+      'Complex polypharmacy case requiring medication review, drug interactions, coverage alternatives, and deprescribing guidance',
+      'Young adult with suicidal ideation - mandatory reporting, billing codes, and crisis intervention protocols'
     ]
   }
 };
