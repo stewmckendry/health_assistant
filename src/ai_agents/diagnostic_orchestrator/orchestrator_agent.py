@@ -864,7 +864,6 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                             }
 
                         elif event.name == "reasoning_item_created":
-                            logger.info(f"🧠 REASONING EVENT DETECTED for {tracker.current_agent}")
                             if hasattr(event.item, 'raw_item'):
                                 reasoning_item = event.item.raw_item
                                 reasoning_text = None
@@ -876,15 +875,11 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                                             summaries.append(summary.text)
                                     if summaries:
                                         reasoning_text = " ".join(summaries)
-                                        logger.info(f"🧠 REASONING TEXT: {reasoning_text[:100]}...")
 
                                 if reasoning_text:  # Only emit if we have actual reasoning content
                                     emoji = "🤔"
-                                    if len(reasoning_text) > 100:
-                                        reasoning_text = reasoning_text[:97] + "..."
+                                    # Don't truncate reasoning - let the UI handle it
                                     message = f"{emoji} {tracker.current_agent} reasoning: {reasoning_text}"
-
-                                    logger.info(f"🚀 EMITTING REASONING PROGRESS EVENT")
 
                                     yield {
                                         'type': 'progress',
@@ -896,8 +891,6 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                                         'trace_id': trace_id,
                                         'timestamp': datetime.utcnow().isoformat()
                                     }
-                                else:
-                                    logger.warning(f"⚠️ REASONING EVENT but no text extracted")
 
                         elif event.name == "message_output_created":
                             yield {
