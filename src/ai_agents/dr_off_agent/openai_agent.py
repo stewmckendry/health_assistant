@@ -855,8 +855,6 @@ Remember: You have access to comprehensive Ontario healthcare coverage databases
                                         reasoning_text = " ".join(summaries)
 
                                 if reasoning_text:
-                                    if len(reasoning_text) > 100:
-                                        reasoning_text = reasoning_text[:97] + "..."
                                     message = f"🤔 Dr. OFF reasoning: {reasoning_text}"
 
                                     yield {

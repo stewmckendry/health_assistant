@@ -258,9 +258,6 @@ class StreamingProgressTracker:
                             continue  # Skip this event, don't yield anything
 
                         emoji = "🤔"
-                        # Truncate long reasoning
-                        if len(reasoning_text) > 100:
-                            reasoning_text = reasoning_text[:97] + "..."
                         message = f"{emoji} {self.current_agent} reasoning: {reasoning_text}"
 
                         yield ProgressUpdate(

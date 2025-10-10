@@ -41,6 +41,8 @@ function processInlineCitations(content: string, citations: Citation[]): string 
   processedContent = processedContent.replace(/turn\d+search\d+/gi, '');
 
   // Remove stacked line characters (≣ or similar) that appear around citations
+  // Handle patterns like: ≡cite≡web_source_0≡web_source_1≡
+  processedContent = processedContent.replace(/≡cite≡[^≡]*≡/g, '');
   processedContent = processedContent.replace(/[≣≡]/g, '');
 
   if (!citations || citations.length === 0) {

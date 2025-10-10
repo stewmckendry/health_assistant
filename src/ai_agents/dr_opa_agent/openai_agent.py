@@ -867,8 +867,6 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                                         reasoning_text = " ".join(summaries)
 
                                 if reasoning_text:
-                                    if len(reasoning_text) > 100:
-                                        reasoning_text = reasoning_text[:97] + "..."
                                     message = f"🤔 Dr. OPA reasoning: {reasoning_text}"
 
                                     yield {

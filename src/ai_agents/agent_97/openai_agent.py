@@ -645,8 +645,6 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
 
                                 if reasoning_text:
                                     emoji = "🤔"
-                                    if len(reasoning_text) > 100:
-                                        reasoning_text = reasoning_text[:97] + "..."
                                     message = f"{emoji} Agent 97 reasoning: {reasoning_text}"
 
                                     yield {
