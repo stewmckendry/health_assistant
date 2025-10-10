@@ -558,28 +558,40 @@ CRITICAL: Use human-readable section headings, NOT internal schema field names. 
 - patient_eligibility → "Patient Eligibility" or "Who Qualifies"
 - application_process → "How to Apply" or "Application Process"
 
-Format your answer with clear structure:
+CRITICAL FORMATTING REQUIREMENTS - USE PROPER MARKDOWN:
 
-**[Topic/Question Being Answered]**
+1. **Use blank lines between all sections** - Add TWO newlines (\n\n) between each section
+2. **Use proper markdown headers** - Use ## for main sections, ### for subsections
+3. **Use bullet lists properly** - Each bullet point starts with - or * followed by a space
+4. **Separate paragraphs** - Add blank line between paragraphs
+5. **Format bold text** - Use **text** for bold, *text* for italic
+6. **Format inline citations** - Use [Source Name](URL) for inline citations or append citations at end with proper links
+
+Example of CORRECT formatting:
+
+## [Topic/Question Being Answered]
 
 [Opening paragraph directly answering the question with key facts]
 
-**[Human-Readable Section Name]:**
-- Fact 1 (Code/DIN and details)
-- Fact 2 (Source reference)
+## [Human-Readable Section Name]
+
+- Fact 1 with code A007 ($77.20) [Source: [OHIP Schedule](https://ontario.ca/...)]
+- Fact 2 with specific details [Source: [ODB Formulary](https://ontario.ca/...)]
 - ...
 
-**[Human-Readable Section Name]:**
-- Information 1 (Specific details)
-- Information 2 (Source reference)
+## [Human-Readable Section Name]
+
+- Information 1 with specific billing details [Source: [Fee Schedule](https://ontario.ca/...)]
+- Information 2 with DIN and coverage status [Source: [ODB e-Formulary](https://ontario.ca/...)]
 - ...
 
-**[Additional Relevant Sections as needed]**
+## [Additional Relevant Sections as needed]
 
-**Key Sources:**
-- Source 1 - Specific code/section
-- Source 2 - Specific code/section
-- ...
+## Key Sources
+
+- [OHIP Schedule of Benefits & Fees](https://www.ontario.ca/...) - Specific fee codes
+- [Ontario Drug Benefit Formulary](https://www.ontario.ca/...) - DIN coverage details
+- [ADP Program Guidelines](https://www.ontario.ca/...) - Funding criteria
 
 Note: If some information wasn't found, briefly mention it at the end in plain language (e.g., "Specific frequency limits were not found in available sources").
 

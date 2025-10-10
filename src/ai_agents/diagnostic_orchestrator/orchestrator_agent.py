@@ -211,10 +211,12 @@ Provide well-organized responses in flowing paragraphs with embedded citations:
 
 **WRITING STYLE**:
 - Write naturally in professional paragraphs
-- Use markdown formatting: **bold** for emphasis, *italics* for terms, [text](url) for links  
+- Use markdown formatting: **bold** for emphasis, *italics* for terms, [text](url) for links
 - Embed citations naturally within sentences [Source: title, page/section]
 - Use section headings (##) to organize longer responses, but keep them conversational
 - Synthesize information from multiple agents into a cohesive narrative
+- **CRITICAL**: Add blank lines (\n\n) between all sections and paragraphs for proper markdown rendering
+- **CRITICAL**: Ensure headers have blank lines before and after them
 
 **RESPONSE APPROACH**:
 Start directly with the answer - no formal "Executive Overview" label. Begin with 1-2 comprehensive paragraphs that directly address the clinical query, synthesizing the most critical information from relevant agents with embedded citations.

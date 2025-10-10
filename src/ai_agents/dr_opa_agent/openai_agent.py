@@ -580,28 +580,40 @@ CRITICAL: Use human-readable section headings, NOT internal schema field names. 
 - implementation_guidance → "Implementation Guidance" or "How to Apply This"
 - related_policies → "Related Policies" or "See Also"
 
-Format your answer with clear structure:
+CRITICAL FORMATTING REQUIREMENTS - USE PROPER MARKDOWN:
 
-**[Topic/Question Being Answered]**
+1. **Use blank lines between all sections** - Add TWO newlines (\n\n) between each section
+2. **Use proper markdown headers** - Use ## for main sections, ### for subsections
+3. **Use bullet lists properly** - Each bullet point starts with - or * followed by a space
+4. **Separate paragraphs** - Add blank line between paragraphs
+5. **Format bold text** - Use **text** for bold, *text* for italic
+6. **Format inline citations** - Use [Source Name](URL) for inline citations or append citations at end with proper links
+
+Example of CORRECT formatting:
+
+## [Topic/Question Being Answered]
 
 [Opening paragraph directly answering the question with key facts]
 
-**[Human-Readable Section Name]:**
-- Requirement/guideline 1 (Source reference)
-- Requirement/guideline 2 (Source reference)
+## [Human-Readable Section Name]
+
+- Requirement/guideline 1 [Source: [CPSO Policy](https://cpso.on.ca/...)]
+- Requirement/guideline 2 [Source: [Ontario Health](https://ontariohealth.ca/...)]
 - ...
 
-**[Human-Readable Section Name]:**
-- Information 1 (Source reference)
-- Information 2 (Source reference)
+## [Human-Readable Section Name]
+
+- Information 1 with inline citation [Source: [PHO Guidelines](https://publichealthontario.ca/...)]
+- Information 2 with reference [Source: [OHIP Schedule](https://ontario.ca/...)]
 - ...
 
-**[Additional Relevant Sections as needed]**
+## [Additional Relevant Sections as needed]
 
-**Key Sources:**
-- Source 1 - Document title, section
-- Source 2 - Document title, section
-- ...
+## Key Sources
+
+- [CPSO Medical Records Documentation](https://www.cpso.on.ca/...) - Specific section
+- [Ontario Health Hypertension Quality Standard](https://www.hqontario.ca/...) - Specific section
+- [OHIP Schedule of Benefits](https://www.ontario.ca/...) - Fee codes
 
 Note: If some information wasn't found, briefly mention it at the end in plain language (e.g., "Specific enforcement penalties were not found in available sources").
 
