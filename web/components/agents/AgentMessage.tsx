@@ -35,9 +35,17 @@ interface AgentMessageProps {
 
 // Process inline citations in message content
 function processInlineCitations(content: string, citations: Citation[]): string {
+  let processedContent = content;
+
+  // Remove common LLM citation artifacts (turn1search0, turn2search1, etc.)
+  processedContent = processedContent.replace(/turn\d+search\d+/gi, '');
+
+  // Remove stacked line characters (≣ or similar) that appear around citations
+  processedContent = processedContent.replace(/[≣≡]/g, '');
+
   if (!citations || citations.length === 0) {
     // Even without citations array, remove any cite{...} patterns
-    return content.replace(/cite[a-zA-Z0-9_:]+/gi, '');
+    return processedContent.replace(/cite[a-zA-Z0-9_:]+/gi, '');
   }
 
   // Create a map of citation IDs to indices
@@ -49,7 +57,6 @@ function processInlineCitations(content: string, citations: Citation[]): string 
   });
 
   // Replace cite{id} with [n] where n is the citation number
-  let processedContent = content;
   citationMap.forEach((num, id) => {
     // Match cite{id} format (case insensitive) - escape special regex chars
     const escapedId = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
