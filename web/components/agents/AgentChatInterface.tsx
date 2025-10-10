@@ -604,6 +604,7 @@ How can I assist with your Ontario practice questions today?`;
                 agentName={agent.name}
                 agentIcon={agent.icon}
                 isStreaming={message.streaming}
+                progressMessage={message.streaming ? progressMessage : undefined}
                 onFeedback={handleFeedback}
               />
             ))}
@@ -713,20 +714,6 @@ How can I assist with your Ontario practice questions today?`;
               </Button>
             )}
           </div>
-          {isStreaming && (
-            <div className="flex items-center justify-center gap-2 mt-2 sm:mt-3 max-w-4xl mx-auto">
-              <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg sm:rounded-xl border border-blue-200 shadow-sm">
-                <div className="flex gap-0.5 sm:gap-1">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce"></span>
-                </div>
-                <span className="text-xs sm:text-sm text-blue-700 font-medium">
-                  {progressMessage || `${agent.name} is thinking...`}
-                </span>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

@@ -803,11 +803,11 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                                     query = tracker.get_query_from_arguments(event.item.raw_item.arguments)
 
                                 if query:
-                                    message = f"{emoji} Dr. OPA is {tool_desc} for: \"{query}\""
+                                    message = f"{emoji} Dr. OPA is {tool_desc} for: \"{query}\""  # No truncation
                                 else:
                                     message = f"{emoji} Dr. OPA is {tool_desc}..."
 
-                                yield {
+                                progress_event = {
                                     'type': 'progress',
                                     'message': message,
                                     'event_type': 'tool_called',
@@ -815,6 +815,8 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                                     'tool_name': tool_name,
                                     'details': {'query': query} if query else None
                                 }
+                                logger.info(f"🔥 YIELDING PROGRESS EVENT: {progress_event}")
+                                yield progress_event
 
                         elif event.name == "tool_output":
                             result_count = None

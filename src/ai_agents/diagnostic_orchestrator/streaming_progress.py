@@ -82,6 +82,13 @@ class StreamingProgressTracker:
         "agent_97_query": "searching 97 trusted medical sources",
     }
 
+    # Tool descriptions for Chief's agent consultations
+    ORCHESTRATOR_TOOL_DESCRIPTIONS = {
+        "Dr. OPA": "calling Dr. OPA",
+        "Dr. OFF": "calling Dr. OFF",
+        "Agent 97": "calling Agent 97",
+    }
+
     def __init__(self):
         self.current_agent = "The Chief"
         self.tool_call_count = 0
@@ -96,7 +103,8 @@ class StreamingProgressTracker:
         for tool_dict in [
             self.OPA_TOOL_DESCRIPTIONS,
             self.OFF_TOOL_DESCRIPTIONS,
-            self.AGENT_97_TOOL_DESCRIPTIONS
+            self.AGENT_97_TOOL_DESCRIPTIONS,
+            self.ORCHESTRATOR_TOOL_DESCRIPTIONS
         ]:
             if tool_name in tool_dict:
                 return tool_dict[tool_name]
@@ -111,11 +119,7 @@ class StreamingProgressTracker:
             # Common query parameter names
             for key in ['query', 'clinical_query', 'question', 'input']:
                 if key in args:
-                    query = args[key]
-                    # Truncate long queries
-                    if len(query) > 80:
-                        return query[:77] + "..."
-                    return query
+                    return args[key]  # No truncation
         except:
             pass
         return None

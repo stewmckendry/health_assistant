@@ -28,6 +28,7 @@ interface AgentMessageProps {
   agentName?: string;
   agentIcon?: string;
   isStreaming?: boolean;
+  progressMessage?: string;
   onFeedback?: (feedback: any) => void;
 }
 
@@ -178,7 +179,7 @@ function InlineToolCalls({ toolCalls }: { toolCalls: ToolCall[] }) {
   );
 }
 
-export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFeedback }: AgentMessageProps) {
+export function AgentMessage({ message, agentName, agentIcon, isStreaming, progressMessage, onFeedback }: AgentMessageProps) {
   const isUser = message.role === 'user';
   const isError = message.error;
 
@@ -189,6 +190,7 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFee
 
   const hasToolCalls = message.toolCalls && message.toolCalls.length > 0;
   const hasCitations = message.citations && message.citations.length > 0;
+  const showProgress = isStreaming && progressMessage && !message.content;
 
   return (
     <div
@@ -240,6 +242,20 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, onFee
           {!isUser && agentName && (
             <div className="text-xs font-medium text-muted-foreground mb-2">
               {agentName}
+            </div>
+          )}
+
+          {/* Progress display - shown while streaming before content appears */}
+          {showProgress && (
+            <div className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-200 mb-3">
+              <div className="flex gap-1">
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></span>
+              </div>
+              <span className="text-sm text-blue-700 font-medium">
+                {progressMessage}
+              </span>
             </div>
           )}
 
