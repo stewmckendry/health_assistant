@@ -42,6 +42,7 @@ export function AgentChatInterface({ agent, onClose, onAgentSwitch }: AgentChatI
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [streamingContent, setStreamingContent] = useState<string>('');
   const [progressMessage, setProgressMessage] = useState<string>('');
+  const [progressHistory, setProgressHistory] = useState<Array<{message: string, completed: boolean}>>([]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -230,14 +231,20 @@ How can I assist with your Ontario practice questions today?`;
   const handleStreamEvent = (event: any, messageId: string) => {
     switch (event.type) {
       case 'text':
-        // Handle both formats: 
+        // Handle both formats:
         // - Agent format: {type: "text", data: {delta: "..."}}
         // - Backend format: {type: "text", content: "..."}
         const newContent = event.data?.delta || event.data?.content || event.content || '';
+
+        // Mark all progress items as completed when response text starts
+        if (newContent && progressHistory.length > 0) {
+          setProgressHistory(prev => prev.map(p => ({ ...p, completed: true })));
+        }
+
         setStreamingContent(prev => prev + newContent);
-        setMessages(prev => 
-          prev.map(msg => 
-            msg.id === messageId 
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === messageId
               ? { ...msg, content: msg.content + newContent, streaming: true }
               : msg
           )
@@ -292,14 +299,19 @@ How can I assist with your Ontario practice questions today?`;
         break;
         
       case 'progress':
-        // Handle progress events - display prominently
+        // Handle progress events - add to history and set current
         const progressMsg = event.message || event.data?.message || event.content || '';
         console.log('🔍 Progress event received:', {
           type: event.type,
           message: event.message,
-          dataMessage: event.data?.message,
-          content: event.content,
+          event_type: event.event_type,
           fullEvent: event
+        });
+
+        // Mark previous progress as completed and add new one as in-progress
+        setProgressHistory(prev => {
+          const updated = prev.map(p => ({ ...p, completed: true }));
+          return [...updated, { message: progressMsg, completed: false }];
         });
         setProgressMessage(progressMsg);
         break;
@@ -416,6 +428,7 @@ How can I assist with your Ontario practice questions today?`;
       abortControllerRef.current.abort();
     }
     setIsStreaming(false);
+    setProgressHistory([]);
   };
 
   const handleFeedback = async (feedback: {
@@ -605,6 +618,7 @@ How can I assist with your Ontario practice questions today?`;
                 agentIcon={agent.icon}
                 isStreaming={message.streaming}
                 progressMessage={message.streaming ? progressMessage : undefined}
+                progressHistory={message.streaming ? progressHistory : undefined}
                 onFeedback={handleFeedback}
               />
             ))}
