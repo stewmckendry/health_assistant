@@ -203,6 +203,7 @@ How can I assist with your Ontario practice questions today?`;
             }
             try {
               const event = JSON.parse(data);
+              console.log('📥 SSE Event:', event.type, event);
               handleStreamEvent(event, assistantMessage.id);
             } catch (e) {
               console.error('Failed to parse event:', e);
@@ -292,9 +293,15 @@ How can I assist with your Ontario practice questions today?`;
         
       case 'progress':
         // Handle progress events - display prominently
-        const progressMsg = event.message || event.content || '';
+        const progressMsg = event.message || event.data?.message || event.content || '';
+        console.log('🔍 Progress event received:', {
+          type: event.type,
+          message: event.message,
+          dataMessage: event.data?.message,
+          content: event.content,
+          fullEvent: event
+        });
         setProgressMessage(progressMsg);
-        console.log('Progress:', progressMsg, event);
         break;
 
       case 'citation':
@@ -520,6 +527,7 @@ How can I assist with your Ontario practice questions today?`;
             }
             try {
               const event = JSON.parse(data);
+              console.log('📥 SSE Event:', event.type, event);
               handleStreamEvent(event, assistantMessage.id);
             } catch (e) {
               console.error('Failed to parse event:', e);
