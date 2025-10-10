@@ -460,13 +460,17 @@ How can I assist with your Ontario practice questions today?`;
   
   const regenerateLastMessage = async () => {
     if (messages.length < 2 || isStreaming) return;
-    
+
     // Find the last user message
     const lastUserMessageIndex = messages.findLastIndex(msg => msg.role === 'user');
     if (lastUserMessageIndex === -1) return;
-    
+
     const lastUserMessage = messages[lastUserMessageIndex];
-    
+
+    // Clear progress history before regenerating
+    setProgressHistory([]);
+    setProgressMessage('');
+
     // Remove all messages after the last user message
     setMessages(prev => prev.slice(0, lastUserMessageIndex + 1));
     
@@ -610,7 +614,7 @@ How can I assist with your Ontario practice questions today?`;
         {/* Enhanced Messages Area */}
         <ScrollArea className="flex-1 px-3 sm:px-6 py-3 sm:py-4 overflow-y-auto bg-gradient-to-b from-transparent to-gray-50/30">
           <div className="space-y-6 max-w-4xl mx-auto">
-            {messages.map((message) => (
+            {messages.map((message, index) => (
               <AgentMessage
                 key={message.id}
                 message={message}
@@ -618,7 +622,7 @@ How can I assist with your Ontario practice questions today?`;
                 agentIcon={agent.icon}
                 isStreaming={message.streaming}
                 progressMessage={message.streaming ? progressMessage : undefined}
-                progressHistory={message.streaming ? progressHistory : undefined}
+                progressHistory={index === messages.length - 1 ? progressHistory : undefined}
                 onFeedback={handleFeedback}
               />
             ))}

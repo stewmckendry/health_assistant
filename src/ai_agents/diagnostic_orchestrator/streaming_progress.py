@@ -68,6 +68,7 @@ class StreamingProgressTracker:
         "opa_clinical_tools": "finding clinical decision support tools",
         "opa_quality_standards": "reviewing Ontario Health quality standards",
         "opa_choosing_wisely": "checking Choosing Wisely recommendations",
+        "web_search": "searching trusted Ontario healthcare websites",
     }
 
     # Tool descriptions for Dr. OFF
@@ -75,11 +76,13 @@ class StreamingProgressTracker:
         "schedule_get": "searching OHIP billing codes",
         "odb_get": "checking ODB drug formulary coverage",
         "adp_get": "reviewing Assistive Devices Program funding",
+        "web_search": "searching trusted Ontario healthcare websites",
     }
 
     # Tool descriptions for Agent 97
     AGENT_97_TOOL_DESCRIPTIONS = {
         "agent_97_query": "searching 97 trusted medical sources",
+        "web_search": "searching trusted medical sources",
     }
 
     # Tool descriptions for Chief's agent consultations
@@ -116,8 +119,8 @@ class StreamingProgressTracker:
         """Extract the query from tool call arguments"""
         try:
             args = json.loads(arguments_str)
-            # Common query parameter names
-            for key in ['query', 'clinical_query', 'question', 'input']:
+            # Common query parameter names (including 'q' for web_search)
+            for key in ['query', 'q', 'clinical_query', 'question', 'input']:
                 if key in args:
                     return args[key]  # No truncation
         except:
