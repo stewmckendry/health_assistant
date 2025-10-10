@@ -62,7 +62,20 @@ def register_dr_off_endpoint(app: FastAPI):
                         trace_id = None  # Will be set from complete event
                         
                         async for event in agent.query_stream(request.query, session_id=request.sessionId, user_id=request.userId):
-                            if event['type'] == 'text':
+                            if event['type'] == 'progress':
+                                # Stream progress update
+                                progress_event = {
+                                    "type": "progress",
+                                    "message": event.get('message', ''),
+                                    "event_type": event.get('event_type', ''),
+                                    "agent_name": event.get('agent_name', ''),
+                                    "tool_name": event.get('tool_name'),
+                                    "details": event.get('details'),
+                                    "timestamp": event.get('timestamp', '')
+                                }
+                                yield f"data: {json.dumps(progress_event)}\n\n"
+
+                            elif event['type'] == 'text':
                                 # Stream text deltas
                                 text_event = {
                                     'type': 'text',
@@ -71,7 +84,7 @@ def register_dr_off_endpoint(app: FastAPI):
                                     }
                                 }
                                 yield f"data: {json.dumps(text_event)}\n\n"
-                            
+
                             elif event['type'] == 'tool_call':
                                 # Send tool call event
                                 tool_id = f'tool_{uuid.uuid4().hex[:8]}'
