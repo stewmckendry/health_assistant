@@ -6,9 +6,9 @@ that can be displayed in the UI to show what's happening during the 80+ second w
 
 Example output:
 - "🔍 Analyzing your clinical query..."
-- "👨‍⚕️ Consulting Agent 97 for evidence-based medical guidance..."
-- "📊 Agent 97 is searching 97 trusted medical sources..."
-- "✅ Agent 97 found 15 relevant medical sources"
+- "👨‍⚕️ Consulting Agent 97 for evidence-based clinical guidance from trusted medical sources..."
+- "📊 Agent 97 is searching 97 trusted medical sources for clinical evidence..."
+- "✅ Agent 97 retrieved 15 results"
 - "🏥 Consulting Dr. OPA for Ontario clinical pathways and quality standards..."
 - "🔧 Dr. OPA is looking up clinical decision tools..."
 - etc.
@@ -81,7 +81,9 @@ class StreamingProgressTracker:
 
     # Tool descriptions for Agent 97
     AGENT_97_TOOL_DESCRIPTIONS = {
-        "agent_97_query": "searching 97 trusted medical sources",
+        "clinician_search": "searching 97 trusted medical sources for clinical evidence",
+        "clinician_search_get_domains": "retrieving list of trusted medical domains",
+        "clinician_search_health_check": "checking clinical search service health",
         "web_search": "searching trusted medical sources",
     }
 
@@ -156,7 +158,7 @@ class StreamingProgressTracker:
 
                 # Create user-friendly message based on agent
                 if agent_name == "Agent 97":
-                    message = f"{emoji} Consulting Agent 97 for evidence-based medical guidance..."
+                    message = f"{emoji} Consulting Agent 97 for evidence-based clinical guidance from trusted medical sources..."
                 elif agent_name == "Dr. OPA":
                     message = f"{emoji} Consulting Dr. OPA for Ontario clinical pathways and quality standards..."
                 elif agent_name == "Dr. OFF":

@@ -27,7 +27,7 @@ AGENT_CONFIGS = {
     },
     "agent_97": {
         "name": "Agent 97",
-        "description": "General medical knowledge agent",
+        "description": "Clinical evidence search - 97 trusted medical sources for clinicians",
         "import_path": "src.ai_agents.agent_97.openai_agent",
         "create_function": "create_agent_97"
     },
@@ -101,16 +101,24 @@ DEFAULT_TEST_QUERIES = {
 
     "agent_97": [
         {
-            "query": "What are the diagnostic criteria for type 2 diabetes?",
-            "expected_tools": None
+            "query": "What are the current evidence-based guidelines for managing hypertension in adults?",
+            "expected_tools": ["clinician_search"]
         },
         {
-            "query": "Explain the mechanism of action of ACE inhibitors",
-            "expected_tools": None
+            "query": "Latest evidence on SGLT2 inhibitors for heart failure with preserved ejection fraction?",
+            "expected_tools": ["clinician_search"]
         },
         {
-            "query": "What are the common side effects of metformin?",
-            "expected_tools": None
+            "query": "Recommended diagnostic workup for suspected pulmonary embolism in low-risk patients?",
+            "expected_tools": ["clinician_search"]
+        },
+        {
+            "query": "What are the latest guidelines for managing atrial fibrillation?",
+            "expected_tools": ["clinician_search"]
+        },
+        {
+            "query": "Evidence for GLP-1 agonists in cardiovascular risk reduction?",
+            "expected_tools": ["clinician_search"]
         }
     ],
 
@@ -428,6 +436,68 @@ MCP_TOOL_CONFIGS = {
                     "k": 5,
                     "filters": {},
                     "description": "Multiple devices"
+                }
+            ]
+        }
+    },
+
+    "agent_97": {
+        "clinician_search": {
+            "import_path": "src.ai_agents.agent_97.mcp.clinician_search_server",
+            "function_name": "clinician_search_handler",
+            "test_requests": [
+                {
+                    "query": "What are the current evidence-based guidelines for managing hypertension in adults?",
+                    "max_web_search_uses": 2,
+                    "max_web_fetch_uses": 5,
+                    "description": "Hypertension guidelines search"
+                },
+                {
+                    "query": "Latest evidence on SGLT2 inhibitors for heart failure with preserved ejection fraction?",
+                    "max_web_search_uses": 2,
+                    "max_web_fetch_uses": 5,
+                    "description": "SGLT2 inhibitor evidence"
+                },
+                {
+                    "query": "Recommended diagnostic workup for suspected pulmonary embolism in low-risk patients?",
+                    "max_web_search_uses": 2,
+                    "max_web_fetch_uses": 5,
+                    "description": "PE diagnostic workup"
+                },
+                {
+                    "query": "Evidence for GLP-1 agonists in cardiovascular risk reduction?",
+                    "max_web_search_uses": 2,
+                    "max_web_fetch_uses": 5,
+                    "description": "GLP-1 cardiovascular evidence"
+                },
+                {
+                    "query": "Current atrial fibrillation management guidelines?",
+                    "max_web_search_uses": 2,
+                    "max_web_fetch_uses": 3,
+                    "description": "AFib management - fewer fetches"
+                }
+            ]
+        },
+        "clinician_search_get_domains": {
+            "import_path": "src.ai_agents.agent_97.mcp.clinician_search_server",
+            "function_name": "clinician_search_get_domains_handler",
+            "test_requests": [
+                {
+                    "include_categories": False,
+                    "description": "Get domains without categories"
+                },
+                {
+                    "include_categories": True,
+                    "description": "Get domains with categories"
+                }
+            ]
+        },
+        "clinician_search_health_check": {
+            "import_path": "src.ai_agents.agent_97.mcp.clinician_search_server",
+            "function_name": "clinician_search_health_check_handler",
+            "test_requests": [
+                {
+                    "description": "Basic health check"
                 }
             ]
         }

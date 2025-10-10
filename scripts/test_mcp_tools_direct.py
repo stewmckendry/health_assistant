@@ -88,6 +88,53 @@ async def test_dr_opa_tool(tool_name: str, request: Dict[str, Any]):
     return await handler(query=query, k=k, filters=filters)
 
 
+async def test_agent_97_tool(tool_name: str, request: Dict[str, Any]):
+    """Test Agent 97 MCP tool."""
+    # Import the server module dynamically to get handler functions
+    from src.ai_agents.agent_97.mcp import clinician_search_server as server
+
+    # Map tool names to handler function names
+    tool_handler_names = {
+        "clinician_search": "clinician_search_handler",
+        "clinician_search_get_domains": "clinician_search_get_domains_handler",
+        "clinician_search_health_check": "clinician_search_health_check_handler"
+    }
+
+    handler_name = tool_handler_names.get(tool_name)
+    if not handler_name:
+        raise ValueError(f"Unknown Agent 97 tool: {tool_name}")
+
+    # Get the actual handler function from the module
+    handler = getattr(server, handler_name)
+
+    # If it's a FunctionTool (from @mcp.tool decorator), get the wrapped function
+    if hasattr(handler, 'fn'):
+        handler = handler.fn
+    elif not callable(handler):
+        raise ValueError(f"Handler {handler_name} is not callable and has no 'fn' attribute")
+
+    # Call the handler with parameters based on tool
+    if tool_name == "clinician_search":
+        query = request.get("query", "")
+        session_id = request.get("session_id")
+        user_id = request.get("user_id")
+        max_web_search_uses = request.get("max_web_search_uses", 2)
+        max_web_fetch_uses = request.get("max_web_fetch_uses", 5)
+
+        return await handler(
+            query=query,
+            session_id=session_id,
+            user_id=user_id,
+            max_web_search_uses=max_web_search_uses,
+            max_web_fetch_uses=max_web_fetch_uses
+        )
+    elif tool_name == "clinician_search_get_domains":
+        include_categories = request.get("include_categories", False)
+        return await handler(include_categories=include_categories)
+    elif tool_name == "clinician_search_health_check":
+        return await handler()
+
+
 async def main():
     parser = argparse.ArgumentParser(
         description="Direct MCP tool testing",
@@ -98,14 +145,14 @@ async def main():
     parser.add_argument(
         "--agent",
         required=True,
-        choices=["dr_off", "dr_opa"],
+        choices=["dr_off", "dr_opa", "agent_97"],
         help="Agent to test"
     )
 
     parser.add_argument(
         "--tool",
         required=True,
-        help="Tool name (e.g., odb_get, adp_get, schedule_get, opa_policy_check)"
+        help="Tool name (e.g., odb_get, adp_get, schedule_get, opa_policy_check, clinician_search)"
     )
 
     parser.add_argument(
@@ -201,6 +248,8 @@ async def main():
                     result = await test_dr_off_tool(args.tool, request)
                 elif args.agent == "dr_opa":
                     result = await test_dr_opa_tool(args.tool, request)
+                elif args.agent == "agent_97":
+                    result = await test_agent_97_tool(args.tool, request)
 
                 elapsed = (datetime.now() - start_time).total_seconds()
 
@@ -305,14 +354,21 @@ async def main():
                 result = await test_dr_off_tool(args.tool, request)
             elif args.agent == "dr_opa":
                 result = await test_dr_opa_tool(args.tool, request)
+            elif args.agent == "agent_97":
+                result = await test_agent_97_tool(args.tool, request)
 
             elapsed = (datetime.now() - start_time).total_seconds()
 
             print(f"\n✓ Success")
             print(f"⏱️  Time: {elapsed:.2f}s")
-            print(f"📊 Provenance: {result.get('provenance', [])}")
-            print(f"🎯 Confidence: {result.get('confidence', 0.0):.2f}")
-            print(f"📚 Citations: {len(result.get('citations', []))}")
+
+            # Only show provenance/confidence for tools that return them
+            if 'provenance' in result:
+                print(f"📊 Provenance: {result.get('provenance', [])}")
+            if 'confidence' in result:
+                print(f"🎯 Confidence: {result.get('confidence', 0.0):.2f}")
+            if 'citations' in result:
+                print(f"📚 Citations: {len(result.get('citations', []))}")
 
             if args.verbose or True:  # Always show full response for single tests
                 print(f"\n📄 Full Response:")

@@ -2,63 +2,67 @@
 
 ## Overview
 
-**Agent 97** is an AI-powered medical education assistant that provides reliable health information from 97 carefully vetted medical sources. It combines the OpenAI Agents SDK with a robust health assistant backend powered by Claude, delivering comprehensive medical education with strict safety guardrails.
+**Agent 97** is an AI-powered clinical evidence search assistant that provides healthcare clinicians with evidence-based guidance from 97 carefully vetted medical sources. It combines the OpenAI Agents SDK with Claude's web search capabilities, delivering comprehensive clinical information without the domain limitations of OpenAI's WebSearchTool.
 
 ## Purpose
 
-Agent 97 answers health education questions for patients and the public:
+Agent 97 answers clinical questions for healthcare professionals:
 
-- **General Health Education**: "What are the symptoms of diabetes?"
-- **Medication Information**: "What are the common side effects of metformin?"
-- **Preventive Care**: "What health screenings should I get at age 50?"
-- **Emergency Detection**: Automatically identifies and redirects emergency situations
-- **Mental Health Support**: Provides crisis resources when needed
+- **Evidence-Based Clinical Guidance**: "What are the current hypertension guidelines?"
+- **Latest Research**: "What's the evidence on SGLT2 inhibitors for HFpEF?"
+- **Diagnostic Workup**: "Recommended diagnostic approach for suspected PE?"
+- **Treatment Protocols**: "Latest guidelines for managing atrial fibrillation?"
+- **Pharmacotherapy**: "Evidence for GLP-1 agonists in cardiovascular risk reduction?"
 
 ## Key Features
 
 ### 1. 97 Trusted Medical Sources
-- **Canadian Healthcare**: Ontario Health, CPSO, Health Canada, major hospitals
-- **US Medical Centers**: Mayo Clinic, Johns Hopkins, Cleveland Clinic, Stanford
-- **Medical Journals**: NEJM, Lancet, JAMA, BMJ, Nature Medicine
-- **Global Authorities**: WHO, CDC, NIH, NHS
-- **Disease Organizations**: Heart & Stroke, Cancer societies, Diabetes associations
-- **Evidence-Based**: UpToDate, Cochrane, Clinical Trials
+- **Medical Journals**: NEJM, Lancet, JAMA, BMJ, Nature Medicine, Circulation
+- **Clinical Guidelines**: NICE, AHA, ACC, ADA, ESC, CCS, Medical Societies
+- **Academic Medical Centers**: Mayo Clinic, Johns Hopkins, Cleveland Clinic, Harvard, Stanford
+- **Health Authorities**: WHO, CDC, NIH, Health Canada, FDA
+- **Canadian Healthcare**: Ontario Health, CPSO, Canadian Medical Associations
+- **Evidence-Based Resources**: UpToDate, Cochrane, Clinical Trials, Specialty Societies
 
-### 2. Comprehensive Safety Guardrails
-- **Input Checking**: Detects emergencies and crisis situations before processing
-- **Output Validation**: Ensures no diagnosis or prescription language
-- **Hybrid Approach**: Combines LLM understanding with pattern matching
-- **Automatic Disclaimers**: Adds appropriate medical education disclaimers
+### 2. Clinician-Focused Design
+- **No Patient Guardrails**: Designed for healthcare professionals who exercise clinical judgment
+- **Professional Language**: Direct, evidence-based clinical terminology
+- **No Domain Limits**: Claude's web_search supports all 97 domains (vs OpenAI's 20 max)
+- **Configurable Search**: Adjustable web_search (default: 2) and web_fetch (default: 5) limits
 
 ### 3. Advanced Citation System
-- Automatic extraction from web searches
-- Deduplication of sources
-- Prioritization of authoritative sources
-- Direct links to trusted medical websites
+- Automatic extraction from Claude web searches
+- Direct links to medical literature and guidelines
+- Evidence quality notation when relevant
+- Citations from trusted clinical sources only
 
 ### 4. Multi-Agent Architecture
-- OpenAI Agent for orchestration
-- MCP server for tool management
-- Claude for medical information retrieval
-- Modular design for easy updates
+- OpenAI Agent SDK for orchestration and conversation management
+- MCP server with clinician search tool
+- Claude API with web_search and web_fetch (no domain limits)
+- Streaming support for real-time responses
 
 ## Architecture Components
 
-### Agent Layer
+### Agent Layer (`openai_agent.py`)
 - OpenAI Agents SDK for conversation management
-- System instructions for medical education focus
+- Clinician-focused system instructions
 - Tool routing and response formatting
+- Streaming support with progress events
+- Langfuse tracing integration
 
-### MCP Server Layer
+### MCP Server Layer (`clinician_search_server.py`)
 - FastMCP server with STDIO transport
-- Five specialized tools for different query types
+- `clinician_search` tool for evidence retrieval
+- Claude API integration with web_search/web_fetch
+- All 97 trusted domains (no OpenAI WebSearchTool limit)
 - Session logging and error handling
 
-### Health Assistant Layer
-- PatientAssistant class with guardrails
-- Anthropic Claude API integration
-- Web search and fetch tools
-- Citation management
+### Claude Web Search Layer
+- `web_search_20250305`: Search across all 97 domains (configurable max_uses: 2)
+- `web_fetch_20250910`: Fetch detailed content (configurable max_uses: 5)
+- Citations enabled for source tracking
+- No patient safety guardrails (clinician audience)
 
 ## Quick Start
 
@@ -71,7 +75,7 @@ cd health_assistant
 
 # Install dependencies
 pip install -r requirements.txt
-pip install agents fastmcp
+pip install agents fastmcp anthropic pyyaml
 
 # Set environment variables
 export OPENAI_API_KEY="your-openai-key"
@@ -82,7 +86,7 @@ export ANTHROPIC_API_KEY="your-anthropic-key"
 
 ```bash
 # Start the MCP server (in one terminal)
-python -m src.ai_agents.agent_97.mcp.server
+python -m src.ai_agents.agent_97.mcp.clinician_search_server
 
 # Run the agent (in another terminal)
 python -m src.ai_agents.agent_97.openai_agent
@@ -96,330 +100,198 @@ from src.ai_agents.agent_97.openai_agent import create_agent_97
 # Create agent instance
 agent = await create_agent_97()
 
-# Ask a medical question
-response = await agent.query("What are the symptoms of diabetes?")
+# Ask a clinical question
+response = await agent.query(
+    "What are the current evidence-based guidelines for managing hypertension in adults?"
+)
 
 print(response['response'])
-# Output includes educational content with citations and disclaimers
+print(f"Citations: {len(response['citations'])}")
 ```
 
-## MCP Tools
+### Streaming Support
 
-### agent_97_query
-Primary tool for processing medical education queries
 ```python
-result = await mcp.call_tool(
-    "agent_97_query",
-    arguments={
-        "query": "What is hypertension?",
-        "session_id": "user_123",
-        "guardrail_mode": "hybrid"
-    }
-)
+# Stream responses with real-time progress
+async for event in agent.query_stream(
+    "Latest evidence on SGLT2 inhibitors for heart failure with preserved ejection fraction?",
+    session_id="session_123"
+):
+    if event['type'] == 'progress':
+        print(f"Progress: {event['message']}")
+    elif event['type'] == 'text':
+        print(event['content'], end='', flush=True)
+    elif event['type'] == 'citation':
+        print(f"\nCitation: {event['content']['url']}")
+    elif event['type'] == 'complete':
+        print(f"\n\nTotal citations: {len(event['citations'])}")
 ```
 
-### agent_97_get_trusted_domains
-Retrieve the list of 97 trusted medical sources
-```python
-result = await mcp.call_tool(
-    "agent_97_get_trusted_domains",
-    arguments={"include_categories": True}
-)
-```
+## Tools Available
 
-### agent_97_health_check
-Verify system component health
-```python
-result = await mcp.call_tool("agent_97_health_check")
-```
+### 1. `clinician_search`
+Primary tool for searching 97 trusted medical sources.
 
-### agent_97_get_disclaimers
-Get medical disclaimers and emergency resources
-```python
-result = await mcp.call_tool("agent_97_get_disclaimers")
-```
+**Parameters**:
+- `query` (str): The clinical question to research
+- `session_id` (str, optional): Session identifier
+- `user_id` (str, optional): User identifier
+- `max_web_search_uses` (int, default=2): Number of web searches
+- `max_web_fetch_uses` (int, default=5): Number of fetches
 
-### agent_97_query_stream
-Stream responses for real-time display (Note: Requires WebSocket/SSE transport)
-```python
-result = await mcp.call_tool(
-    "agent_97_query_stream",
-    arguments={"query": "Explain how vaccines work"}
-)
-```
+**Returns**:
+- Clinical guidance with citations from trusted sources
+- Evidence quality indicators
+- Direct links to medical literature
 
-## Usage Examples
+### 2. `clinician_search_get_domains`
+Retrieve the list of 97 trusted medical domains.
 
-### Example 1: Health Education Query
+**Parameters**:
+- `include_categories` (bool, default=False): Include domain categorization
 
-**Input:**
-```python
-response = await agent.query("What are the early warning signs of a heart attack?")
-```
+**Returns**:
+- List of all 97 trusted medical domains
+- Optional categorization by source type
 
-**Output:**
-```
-Early warning signs of a heart attack include:
+### 3. `clinician_search_health_check`
+Check the health status of the clinician search service.
 
-**Common Symptoms:**
-- Chest discomfort or pressure
-- Pain radiating to arms, neck, or jaw
-- Shortness of breath
-- Cold sweat, nausea, or lightheadedness
-
-**When to Seek Help:**
-Call 911 immediately if you experience these symptoms...
-
-**Sources:**
-1. [American Heart Association - Heart Attack Warning Signs](https://www.heart.org/...)
-2. [Mayo Clinic - Heart Attack Symptoms](https://www.mayoclinic.org/...)
-
----
-*This information is for educational purposes only...*
-```
-
-### Example 2: Emergency Detection
-
-**Input:**
-```python
-response = await agent.query("I'm having severe chest pain and can't breathe")
-```
-
-**Output:**
-```
-🚨 **MEDICAL EMERGENCY - CALL 911 IMMEDIATELY** 🚨
-
-Your symptoms require immediate medical attention.
-
-1. Call 911 now or have someone call for you
-2. If prescribed, take nitroglycerin as directed
-3. Chew an aspirin if not allergic
-4. Stay calm and wait for emergency services
-
-Do not drive yourself to the hospital.
-```
-
-### Example 3: Medication Information
-
-**Input:**
-```python
-response = await agent.query("What should I know about taking ibuprofen?")
-```
-
-**Output:**
-```
-Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) commonly used for pain relief...
-
-**Common Uses:**
-- Pain relief
-- Fever reduction
-- Inflammation reduction
-
-**Important Considerations:**
-- Take with food to reduce stomach upset
-- Typical adult dose is 200-400mg every 4-6 hours
-- Maximum daily dose is 1200mg without medical supervision
-
-**Sources:**
-1. [FDA - Ibuprofen Information](https://www.fda.gov/...)
-2. [MedlinePlus - Ibuprofen](https://medlineplus.gov/...)
-
----
-*Always follow your healthcare provider's instructions...*
-```
+**Returns**:
+- Service health status
+- Component availability
+- Configuration verification
 
 ## Configuration
 
-### Environment Variables
+### Trusted Domains
+Agent 97 uses the same 97 trusted domains from `src/config/domains.yaml` that are used by the patient assistant, but without safety guardrails.
 
-```bash
-# Required
-OPENAI_API_KEY=sk-...           # OpenAI API key
-ANTHROPIC_API_KEY=sk-ant-...    # Anthropic API key
+### Search Limits
+Configurable in the MCP server:
+- `max_web_search_uses`: Default 2 (Claude uses web_search more than web_fetch)
+- `max_web_fetch_uses`: Default 5
 
-# Optional
-LOG_LEVEL=INFO                  # Logging verbosity
-GUARDRAIL_MODE=hybrid           # Guardrail mode: llm, regex, or hybrid
-MAX_TOKENS=2000                 # Maximum response length
-TEMPERATURE=0.3                 # Response creativity (0-1)
+### Model Configuration
+- Primary model: `gpt-5-mini` (reasoning-enabled)
+- Temperature: 0.3 (lower for factual clinical information)
+- Max tokens: 3000 (higher for detailed clinical guidance)
+
+## Integration with Orchestrator
+
+Agent 97 is integrated into "The Chief" orchestrator for coordinated Ontario healthcare guidance:
+
+```python
+# The orchestrator uses Agent 97 for evidence-based clinical guidance
+# alongside Dr. OPA (regulations) and Dr. OFF (coverage)
+
+from src.ai_agents.diagnostic_orchestrator.orchestrator_agent import create_diagnostic_orchestrator
+
+orchestrator = await create_diagnostic_orchestrator()
+
+response = await orchestrator.orchestrate(
+    "What are the evidence-based treatment options for atrial fibrillation, and how are they covered in Ontario?"
+)
+
+# The orchestrator will:
+# 1. Call Agent 97 for evidence-based AFib management guidelines
+# 2. Call Dr. OPA for Ontario clinical pathways and quality standards
+# 3. Call Dr. OFF for OHIP billing and ODB drug coverage
+# 4. Synthesize into comprehensive Ontario-contextualized guidance
 ```
 
-### Trusted Domains Configuration
+## Web API Endpoint
 
-Edit `src/config/domains.yaml` to modify trusted sources:
+Agent 97 is available via the web API at `/api/agents/agent-97/stream`:
 
-```yaml
-trusted_domains:
-  - mayoclinic.org
-  - cdc.gov
-  - who.int
-  # ... 94 more domains
+```typescript
+// Frontend usage
+const response = await fetch('/api/agents/agent-97/stream', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    message: 'Current guidelines for managing type 2 diabetes?',
+    sessionId: 'session_123'
+  })
+});
+
+const reader = response.body.getReader();
+// Process streaming events...
 ```
 
-## Safety Features
+## Differences from Patient Assistant
 
-### Input Guardrails
-- **Emergency Detection**: Identifies urgent medical situations
-- **Crisis Intervention**: Detects mental health emergencies
-- **Inappropriate Requests**: Blocks diagnosis/prescription attempts
+| Feature | Agent 97 (Clinicians) | Patient Assistant (Patients) |
+|---------|----------------------|------------------------------|
+| **Audience** | Healthcare clinicians | Patients and public |
+| **Language** | Professional clinical | Plain language |
+| **Safety Guardrails** | None (clinical judgment) | Input + output guardrails |
+| **Disclaimers** | Professional only | Patient education disclaimers |
+| **System Instructions** | Evidence-based guidance | Educational information |
+| **Web Search Implementation** | Claude (no domain limit) | Claude (97 domains) |
+| **MCP Tool** | `clinician_search` | `agent_97_query` |
 
-### Output Guardrails
-- **No Diagnosis**: Prevents "You have..." statements
-- **No Prescriptions**: Blocks specific dosage recommendations
-- **Educational Focus**: Ensures informational tone
-- **Disclaimer Enforcement**: Adds necessary warnings
+## Limitations
 
-### Guardrail Modes
-- **LLM Mode**: Context-aware AI checking
-- **Regex Mode**: Fast pattern matching
-- **Hybrid Mode** (Recommended): Best of both approaches
-
-## Development
-
-### Running Tests
-
-```bash
-# Unit tests
-pytest tests/agent_97/
-
-# Integration tests
-pytest tests/agent_97/test_integration.py
-
-# Test with sample queries
-python scripts/agent_97/test_queries.py
-```
-
-### Adding New Features
-
-1. **New Tool**: Add to `mcp/server.py`
-2. **New Domain**: Update `config/domains.yaml`
-3. **New Guardrail**: Modify `utils/guardrails.py`
-4. **New Test**: Add to `tests/agent_97/`
-
-### Debugging
-
-Check logs in:
-- `logs/agent_97/` - Agent session logs
-- `logs/agent_97/mcp_session_*.log` - MCP server logs
-- `logs/sessions/` - Health assistant logs
+- **Evidence-based guidance only**: Not for emergency medical decisions
+- **Requires clinical judgment**: Information must be interpreted by healthcare professionals
+- **Should verify with primary literature**: Always check source documents for critical decisions
+- **Not diagnostic**: Provides clinical guidance, not patient-specific diagnoses
 
 ## Troubleshooting
 
-### Common Issues
-
-**Issue**: "Agent not responding"
+### MCP Server Won't Start
 ```bash
-# Check MCP server is running
-ps aux | grep "agent_97.mcp.server"
-
-# Verify API keys
-echo $OPENAI_API_KEY
+# Check if ANTHROPIC_API_KEY is set
 echo $ANTHROPIC_API_KEY
+
+# Verify domains.yaml exists
+ls src/config/domains.yaml
+
+# Check logs
+tail -f logs/agent_97/clinician_search_session_*.log
 ```
 
-**Issue**: "No citations in responses"
+### No Citations Returned
+- Verify trusted domains are configured in `domains.yaml`
+- Check that web_search and web_fetch tools are enabled
+- Review MCP server logs for API errors
+
+### Slow Responses
+- Reduce `max_web_fetch_uses` in clinician_search call
+- Check network connectivity to medical sources
+- Review Claude API rate limits
+
+## Logging
+
+Agent 97 maintains comprehensive logs:
+
 ```bash
-# Verify Anthropic web tools are enabled
-# Check that trusted_domains are configured
-cat src/config/domains.yaml | head -20
+# MCP server logs
+logs/agent_97/clinician_search_session_YYYYMMDD_HHMMSS_XXXX.log
+
+# OpenAI agent logs
+logs/agent_97/openai_agent_session_YYYYMMDD_HHMMSS.log
 ```
 
-**Issue**: "Guardrails blocking valid queries"
-```python
-# Try different guardrail mode
-agent = PatientAssistant(guardrail_mode="regex")
-```
+Logs include:
+- All search queries and tool calls
+- Citations retrieved
+- Processing times
+- API errors and warnings
 
-**Issue**: "Slow responses"
-```python
-# Check API latency
-# Review logs for timeout issues
-# Consider reducing max_tokens
-```
+## Future Enhancements
 
-## Performance
-
-### Response Times
-- Simple queries: 2-3 seconds
-- Complex with citations: 3-5 seconds
-- Emergency detection: <1 second
-- First query (cold start): 5-7 seconds
-
-### Resource Usage
-- Memory: ~500MB
-- CPU: Minimal (API-based)
-- Network: 10-50KB per query
-- Storage: <100MB for logs
-
-## Monitoring
-
-### Key Metrics
-- Query volume and patterns
-- Guardrail activation rate (~5%)
-- Citation coverage (>90%)
-- Error rate (<1%)
-- Response time (p95 < 5s)
-
-### Health Checks
-```bash
-# Check system health
-curl -X POST http://localhost:8000/health
-
-# View metrics
-tail -f logs/agent_97/metrics.log
-```
-
-## Security
-
-### API Key Management
-- Store in environment variables
-- Never commit to version control
-- Rotate regularly
-- Use different keys for dev/prod
-
-### Data Privacy
-- No PHI storage
-- Session IDs are anonymized
-- Logs auto-rotate after 30 days
-- No cross-session tracking
+- [ ] Add specialty-specific search filters
+- [ ] Implement evidence grading (Level I, II, III)
+- [ ] Support for clinical calculator integration
+- [ ] Enhanced reasoning with chain-of-thought for complex queries
+- [ ] Integration with institutional clinical guidelines
 
 ## Support
 
-### Getting Help
-- Review documentation in `docs/agents/agent_97/`
-- Check example queries in `scripts/agent_97/examples.py`
-- Review test cases in `tests/agent_97/`
-
-### Reporting Issues
-- Include session ID from logs
-- Provide example query
-- Note guardrail mode used
-- Include error messages
-
-## License
-
-This agent is part of the Ontario Health AI Assistant suite. See main project LICENSE file.
-
-## Acknowledgments
-
-Agent 97 integrates several excellent technologies:
-- OpenAI Agents SDK for orchestration
-- Anthropic Claude for medical information
-- FastMCP for tool management
-- 97 trusted medical organizations for content
-
-## Version History
-
-### v1.0.0 (Current)
-- Initial release
-- 97 trusted medical sources
-- 5 MCP tools
-- Hybrid guardrails
-- Full citation support
-
-### Planned Features
-- Multilingual support (French)
-- Voice interface
-- Mobile optimization
-- Visual medical content
-- Personalization options
+For issues or questions about Agent 97:
+- Check logs in `logs/agent_97/`
+- Review trusted domains in `src/config/domains.yaml`
+- Test MCP health check: `clinician_search_health_check`
+- See main project documentation in `docs/`

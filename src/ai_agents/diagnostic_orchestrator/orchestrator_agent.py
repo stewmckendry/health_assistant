@@ -99,6 +99,7 @@ class DiagnosticOrchestrator:
         # These will hold the agent instances
         self.dr_opa_wrapper = None
         self.dr_off_wrapper = None
+        self.agent_97_wrapper = None
         
         # Initialize Langfuse tracing if enabled
         if self.enable_langfuse:
@@ -150,7 +151,7 @@ You have access to three specialized agents as tools:
 
 2. **dr_off**: Dr. OFF (Ontario Finance & Formulary) - Has MCP tools for OHIP billing codes, ODB drug formulary, and ADP device coverage. The agent will automatically use its tools: schedule_get, odb_get, adp_get.
 
-3. **agent_97**: Agent 97 - Has MCP tool for querying 97 trusted medical sources with comprehensive safety guardrails. The agent will automatically use its tool: agent_97_query.
+3. **agent_97**: Agent 97 - Has MCP tool for searching 97 trusted medical sources for evidence-based clinical guidance. Designed for healthcare clinicians. The agent will automatically use its tool: clinician_search.
 
 ORCHESTRATION STRATEGY - YOU MUST CALL AGENTS FOR EVERY QUERY:
 
@@ -314,55 +315,32 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
     async def initialize(self):
         """Initialize the existing agent wrappers."""
         logger.info("Initializing existing agent wrappers...")
-        
+
         try:
             # Initialize Dr. OPA wrapper - disable Langfuse to avoid conflicts
             from src.ai_agents.dr_opa_agent.openai_agent import DrOPAAgent
             self.dr_opa_wrapper = DrOPAAgent(enable_langfuse=False)
             await self.dr_opa_wrapper.initialize_mcp_tools()
             logger.info("Dr. OPA wrapper initialized (Langfuse disabled for sub-agent)")
-            
+
             # Initialize Dr. OFF wrapper - disable Langfuse to avoid conflicts
             from src.ai_agents.dr_off_agent.openai_agent import DrOffAgent
             self.dr_off_wrapper = DrOffAgent(enable_langfuse=False)
             await self.dr_off_wrapper.initialize_mcp_tools()
             logger.info("Dr. OFF wrapper initialized (Langfuse disabled for sub-agent)")
-            
+
+            # Initialize Agent 97 wrapper - disable Langfuse to avoid conflicts
+            from src.ai_agents.agent_97.openai_agent import Agent97Agent
+            self.agent_97_wrapper = Agent97Agent(enable_langfuse=False)
+            await self.agent_97_wrapper.initialize_mcp_tools()
+            logger.info("Agent 97 wrapper initialized (Langfuse disabled for sub-agent)")
+
             logger.info("All agent wrappers initialized successfully")
-            
+
         except Exception as e:
             logger.error(f"Error initializing agent wrappers: {e}")
             raise
     
-    def _create_agent_97(self, mcp_server) -> Agent:
-        """Create Agent 97 with its MCP server."""
-        from agents import ModelSettings
-        return Agent(
-            name="Agent 97",
-            instructions="""You are Agent 97, providing comprehensive medical education from 97 trusted medical sources with safety guardrails.
-
-Use your MCP tool (agent_97_query) to access medical education information focusing on:
-- Evidence-based clinical information about conditions
-- Differential diagnosis considerations
-- Treatment principles and management approaches
-- Patient education materials
-- Safety considerations and red flags
-
-IMPORTANT:
-- Always provide educational information only, NOT medical diagnosis
-- Include appropriate medical disclaimers
-- The MCP tool will automatically apply safety guardrails
-- Citations from trusted sources will be included in the response
-
-When using the agent_97_query tool, pass the clinical query directly and it will:
-1. Apply input guardrails to ensure query safety
-2. Search 97 trusted medical sources
-3. Apply output guardrails to ensure response safety
-4. Return educational content with appropriate disclaimers""",
-            model="gpt-5-mini",
-            model_settings=ModelSettings(reasoning={"summary": "auto"}),
-            mcp_servers=[mcp_server]
-        )
     
     async def orchestrate(self, clinical_query: str, session_id: str = None, user_id: str = None) -> Dict[str, Any]:
         """
@@ -406,32 +384,19 @@ When using the agent_97_query tool, pass the clinical query directly and it will
         
         try:
             # Ensure agents are initialized
-            if not self.dr_opa_wrapper or not self.dr_off_wrapper:
+            if not self.dr_opa_wrapper or not self.dr_off_wrapper or not self.agent_97_wrapper:
                 await self.initialize()
-            
-            # Create MCP server for Agent 97
-            agent_97_mcp = MCPServerStdio(
-                params=MCPServerStdioParams(
-                    command="python",
-                    args=["-m", "src.ai_agents.agent_97.mcp.server"],
-                    env=dict(os.environ),
-                    cwd=str(self.project_root),
-                    encoding="utf-8"
-                ),
-                name="agent-97-server",
-                client_session_timeout_seconds=90.0  # Extended from 30s to 90s for complex queries
-            )
-            
+
             # Use MCP servers within context managers
-            # Dr. OPA and Dr. OFF have their own MCP servers managed internally
+            # All agents have their own MCP servers managed internally
             async with self.dr_opa_wrapper.mcp_server as opa_server, \
                        self.dr_off_wrapper.mcp_server as off_server, \
-                       agent_97_mcp as a97_server:
-                
+                       self.agent_97_wrapper.mcp_server as a97_server:
+
                 # Get Agent instances from the existing wrappers
                 dr_opa_agent = self.dr_opa_wrapper.get_agent(opa_server)
                 dr_off_agent = self.dr_off_wrapper.get_agent(off_server)
-                agent_97_agent = self._create_agent_97(a97_server)
+                agent_97_agent = self.agent_97_wrapper.get_agent(a97_server)
                 
                 # Convert agents to tools using as_tool()
                 dr_opa_tool = dr_opa_agent.as_tool(
@@ -446,7 +411,7 @@ When using the agent_97_query tool, pass the clinical query directly and it will
                 
                 agent_97_tool = agent_97_agent.as_tool(
                     tool_name="agent_97",
-                    tool_description="Consult Agent 97 for comprehensive medical education from trusted sources. Has access to MCP tool for retrieving evidence-based clinical information with safety guardrails."
+                    tool_description="Consult Agent 97 for evidence-based clinical guidance from 97 trusted medical sources. Has access to MCP tool for searching medical literature, guidelines, and authoritative clinical resources for healthcare professionals."
                 )
                 
                 # Create the orchestrator agent with sub-agents as tools
@@ -707,46 +672,34 @@ When using the agent_97_query tool, pass the clinical query directly and it will
             from openai.types.responses import ResponseTextDeltaEvent
             
             # Ensure agents are initialized
-            if not self.dr_opa_wrapper or not self.dr_off_wrapper:
+            if not self.dr_opa_wrapper or not self.dr_off_wrapper or not self.agent_97_wrapper:
                 await self.initialize()
-            
-            # Create MCP server for Agent 97
-            agent_97_mcp = MCPServerStdio(
-                params=MCPServerStdioParams(
-                    command="python",
-                    args=["-m", "src.ai_agents.agent_97.mcp.server"],
-                    env=dict(os.environ),
-                    cwd=str(self.project_root),
-                    encoding="utf-8"
-                ),
-                name="agent-97-server",
-                client_session_timeout_seconds=90.0  # Extended from 30s to 90s for complex queries
-            )
-            
+
             # Use MCP servers within context managers
+            # All agents have their own MCP servers managed internally
             async with self.dr_opa_wrapper.mcp_server as opa_server, \
                        self.dr_off_wrapper.mcp_server as off_server, \
-                       agent_97_mcp as a97_server:
-                
+                       self.agent_97_wrapper.mcp_server as a97_server:
+
                 # Get Agent instances from the existing wrappers
                 dr_opa_agent = self.dr_opa_wrapper.get_agent(opa_server)
                 dr_off_agent = self.dr_off_wrapper.get_agent(off_server)
-                agent_97_agent = self._create_agent_97(a97_server)
-                
+                agent_97_agent = self.agent_97_wrapper.get_agent(a97_server)
+
                 # Convert agents to tools
                 dr_opa_tool = dr_opa_agent.as_tool(
                     tool_name="dr_opa",
                     tool_description="Consult Dr. OPA for Ontario practice guidance and regulatory requirements."
                 )
-                
+
                 dr_off_tool = dr_off_agent.as_tool(
                     tool_name="dr_off",
                     tool_description="Consult Dr. OFF for Ontario healthcare financing and coverage."
                 )
-                
+
                 agent_97_tool = agent_97_agent.as_tool(
                     tool_name="agent_97",
-                    tool_description="Consult Agent 97 for medical education from trusted sources."
+                    tool_description="Consult Agent 97 for evidence-based clinical guidance from 97 trusted medical sources."
                 )
                 
                 # Create orchestrator

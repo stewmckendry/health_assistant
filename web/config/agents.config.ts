@@ -136,95 +136,85 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
   'agent-97': {
     id: 'agent-97',
     name: 'Agent 97',
-    tagline: 'Medical Education Assistant - 97 Trusted Healthcare Sources',
-    description: 'Explains medical terms in plain language using trusted sources',
-    fullDescription: 'AI-powered medical education assistant that helps you understand health information by explaining medical terms and concepts in plain, accessible language.',
-    mission: 'Helps patients understand medical information by translating complex terms into plain language, providing educational context from 97 trusted medical sources with proper citations.',
+    tagline: 'Clinical Evidence Search - 97 Trusted Medical Sources',
+    description: 'Evidence-based clinical guidance from trusted medical literature',
+    fullDescription: 'AI-powered clinical evidence search assistant that provides healthcare clinicians with evidence-based guidance from 97 trusted medical sources including journals, guidelines, and academic medical centers.',
+    mission: 'Provides healthcare clinicians with evidence-based clinical guidance by searching 97 trusted medical sources including medical journals (NEJM, Lancet, JAMA), clinical guidelines, academic medical centers, and health authorities.',
     status: 'active',
     icon: '🎯',
     color: '#10b981', // green-500
     endpoint: '/api/agents/agent-97',
     tools: [
       {
-        name: 'agent_97_query',
-        description: 'Process medical education queries with guardrails',
-        category: 'analysis'
+        name: 'clinician_search',
+        description: 'Search 97 trusted medical sources for clinical evidence',
+        category: 'search'
       },
       {
-        name: 'agent_97_get_trusted_domains',
+        name: 'clinician_search_get_domains',
         description: 'Retrieve list of 97 trusted medical sources',
         category: 'retrieval'
       },
       {
-        name: 'agent_97_health_check',
+        name: 'clinician_search_health_check',
         description: 'Verify system component status',
         category: 'validation'
-      },
-      {
-        name: 'agent_97_get_disclaimers',
-        description: 'Get medical disclaimers and emergency resources',
-        category: 'retrieval'
-      },
-      {
-        name: 'agent_97_query_stream',
-        description: 'Stream responses in real-time',
-        category: 'analysis'
       }
     ],
     knowledgeSources: [
       {
-        name: 'Canadian Healthcare',
-        organization: 'Multiple Canadian Authorities',
-        type: 'educational',
-        documentCount: 24
-      },
-      {
-        name: 'US Medical Centers',
-        organization: 'Mayo, Johns Hopkins, Cleveland Clinic',
-        type: 'educational',
-        documentCount: 18
-      },
-      {
         name: 'Medical Journals',
-        organization: 'NEJM, Lancet, JAMA, BMJ',
+        organization: 'NEJM, Lancet, JAMA, BMJ, Nature Medicine',
         type: 'research',
         documentCount: 15
       },
       {
-        name: 'Global Health Organizations',
-        organization: 'WHO, CDC, NIH',
-        type: 'educational',
+        name: 'Clinical Guidelines',
+        organization: 'NICE, AHA, ACC, ADA, Medical Societies',
+        type: 'clinical',
+        documentCount: 20
+      },
+      {
+        name: 'Academic Medical Centers',
+        organization: 'Mayo Clinic, Johns Hopkins, Cleveland Clinic, Harvard',
+        type: 'clinical',
+        documentCount: 24
+      },
+      {
+        name: 'Health Authorities',
+        organization: 'WHO, CDC, NIH, Health Canada',
+        type: 'clinical',
         documentCount: 12
       },
       {
-        name: 'Disease Organizations',
-        organization: 'Various specialized foundations',
-        type: 'educational',
-        documentCount: 28
+        name: 'Canadian Healthcare',
+        organization: 'Ontario Health, CPSO, Canadian Medical Associations',
+        type: 'clinical',
+        documentCount: 26
       }
     ],
     capabilities: [
-      'General health education',
-      'Medication information',
-      'Symptom education (not diagnosis)',
-      'Preventive care guidance',
-      'Emergency detection and redirection',
-      'Mental health resources',
-      'Evidence-based information'
+      'Evidence-based clinical guidance',
+      'Latest medical research and guidelines',
+      'Diagnostic approach recommendations',
+      'Treatment protocol information',
+      'Pharmacotherapy evidence',
+      'Systematic review synthesis',
+      'Clinical decision support',
+      'Differential diagnosis considerations'
     ],
     limitations: [
-      'No medical diagnosis',
-      'No treatment prescriptions',
-      'Educational purposes only',
-      'Not for emergencies',
-      'Requires professional consultation'
+      'Evidence-based guidance only',
+      'Not for emergency medical decisions',
+      'Requires clinical judgment',
+      'Should verify with primary literature'
     ],
-    disclaimer: 'This information is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider.',
+    disclaimer: 'Agent 97 provides evidence-based clinical guidance from trusted medical sources for healthcare professionals. Information is for educational purposes only and should be used in conjunction with clinical judgment.',
     starterPrompts: [
-      'What are the symptoms of Type 2 diabetes?',
-      'Explain how blood pressure medications work',
-      'What lifestyle changes help with high cholesterol?',
-      'What should I know about COVID-19 vaccines?'
+      'What are the current hypertension treatment guidelines?',
+      'Latest evidence on SGLT2 inhibitors for heart failure?',
+      'Recommended diagnostic workup for suspected PE?',
+      'What are the latest guidelines for managing atrial fibrillation?'
     ]
   },
   
@@ -312,8 +302,8 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
     name: 'The Chief',
     tagline: 'Ontario Healthcare Coordinator - Unified Clinical & Administrative Guidance',
     description: 'Ontario Medical Coordinator - Connects you to the right Ontario healthcare guidance',
-    fullDescription: 'Like a Chief Medical Officer directing cases to appropriate specialists, The Chief coordinates Ontario-specific medical guidance by intelligently routing queries to Dr. OPA (Ontario regulations), Dr. OFF (Ontario coverage), and Agent 97 (trusted medical education) for complete clinical answers.',
-    mission: 'To help Ontario clinicians get complete answers quickly by orchestrating Dr. OPA, Dr. OFF, and Agent 97 - connecting you to billing codes, drug coverage, practice policies, and clinical guidelines all in one place.',
+    fullDescription: 'Like a Chief Medical Officer directing cases to appropriate specialists, The Chief coordinates Ontario-specific medical guidance by intelligently routing queries to Dr. OPA (Ontario regulations), Dr. OFF (Ontario coverage), and Agent 97 (clinical evidence search) for complete clinical answers.',
+    mission: 'To help Ontario clinicians get complete answers quickly by orchestrating Dr. OPA, Dr. OFF, and Agent 97 - connecting you to billing codes, drug coverage, practice policies, and evidence-based clinical guidelines all in one place.',
     status: 'active',
     icon: '🧠',
     color: '#f59e0b', // amber-500
@@ -331,7 +321,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       },
       {
         name: 'agent_97',
-        description: 'Consult Agent 97 for medical education',
+        description: 'Consult Agent 97 for evidence-based clinical guidance',
         category: 'orchestration'
       }
     ],
@@ -351,7 +341,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       {
         name: 'Agent 97 Knowledge Base',
         organization: '97 Trusted Medical Sources',
-        type: 'educational',
+        type: 'clinical',
         description: 'Access to all Agent 97 sources'
       }
     ],
@@ -371,7 +361,7 @@ export const AGENTS_CONFIG: Record<string, AgentInfo> = {
       'Not for emergency medical decisions',
       'Requires verification with official sources'
     ],
-    disclaimer: 'The Chief coordinates Ontario healthcare guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (medical education). Information is for educational purposes only. Always verify with official Ontario sources and use clinical judgment.',
+    disclaimer: 'The Chief coordinates Ontario healthcare guidance from Dr. OPA (regulations), Dr. OFF (coverage), and Agent 97 (clinical evidence). Information is for educational purposes only. Always verify with official Ontario sources and use clinical judgment.',
     launchDate: '2025-02',
     starterPrompts: [
       'Can I prescribe medical cannabis and how is it covered in Ontario?',

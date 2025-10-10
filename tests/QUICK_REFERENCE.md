@@ -17,8 +17,9 @@ Then run any test command. The .env is loaded automatically!
 
 ### Test Single Agent
 ```bash
-./scripts/quick_test.sh dr_opa    # Dr. OPA
-./scripts/quick_test.sh dr_off    # Dr. OFF
+./scripts/quick_test.sh dr_opa     # Dr. OPA
+./scripts/quick_test.sh dr_off     # Dr. OFF
+./scripts/quick_test.sh agent_97   # Agent 97
 ```
 
 ### Test Single Tool (Fast Debugging)
@@ -34,6 +35,9 @@ python scripts/test_mcp_tools_direct.py --agent dr_off --tool schedule_get --que
 
 # Dr. OPA - Policy
 python scripts/test_mcp_tools_direct.py --agent dr_opa --tool opa_policy_check --query "virtual care"
+
+# Agent 97 - Clinician Search
+python scripts/test_mcp_tools_direct.py --agent agent_97 --tool clinician_search --query "hypertension guidelines"
 ```
 
 ### Run All Tool Tests
@@ -41,6 +45,9 @@ python scripts/test_mcp_tools_direct.py --agent dr_opa --tool opa_policy_check -
 ./scripts/quick_test.sh dr_off odb    # All ODB tests
 ./scripts/quick_test.sh dr_off adp    # All ADP tests
 ./scripts/quick_test.sh tools         # All MCP tools
+
+# Run all Agent 97 tool tests
+python scripts/test_mcp_tools_direct.py --agent agent_97 --tool clinician_search --run-all-tests
 ```
 
 ## 📋 Test Modes
@@ -97,6 +104,34 @@ python scripts/test_mcp_tools_direct.py --agent dr_opa --tool opa_policy_check -
 ### Clinical Tools
 ```bash
 --agent dr_opa --tool opa_clinical_tools --query "hypertension management"
+```
+
+## 🎯 Agent 97 Tools
+
+### Clinician Search
+```bash
+# Basic search
+--agent agent_97 --tool clinician_search --query "hypertension guidelines"
+
+# With custom limits
+python scripts/test_mcp_tools_direct.py --agent agent_97 --tool clinician_search \
+  --query "SGLT2 inhibitors heart failure evidence" \
+  --max-web-search-uses 2 --max-web-fetch-uses 3
+```
+
+### Get Trusted Domains
+```bash
+# List all 97 domains
+python scripts/test_mcp_tools_direct.py --agent agent_97 --tool clinician_search_get_domains
+
+# With categories
+python scripts/test_mcp_tools_direct.py --agent agent_97 --tool clinician_search_get_domains \
+  --include-categories
+```
+
+### Health Check
+```bash
+python scripts/test_mcp_tools_direct.py --agent agent_97 --tool clinician_search_health_check
 ```
 
 ### Quality Standards
