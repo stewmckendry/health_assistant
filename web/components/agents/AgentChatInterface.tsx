@@ -78,13 +78,13 @@ export function AgentChatInterface({ agent, onClose, onAgentSwitch }: AgentChatI
         // Add welcome message based on agent
         let welcomeContent = '';
         if (agent.id === 'agent-97') {
-          welcomeContent = `Hello! I'm here to help explain medical terms and health topics in plain language. 
+          welcomeContent = `Hello! I'm Agent 97, your clinical evidence search assistant.
 
-I can provide educational information about conditions, symptoms, treatments, and wellness - all from trusted medical sources. 
+I provide evidence-based clinical guidance from 97 trusted medical sources including medical journals (NEJM, Lancet, JAMA), clinical guidelines (NICE, AHA, ACC), academic medical centers, and health authorities.
 
-Please remember: This is for learning only. I cannot diagnose, prescribe, or replace professional medical advice.
+I can help you find the latest evidence on diagnostic approaches, treatment protocols, pharmacotherapy guidelines, and clinical decision support.
 
-What would you like to understand better today?`;
+What clinical question can I help you research today?`;
         } else if (agent.id === 'dr-off') {
           welcomeContent = `Hello! I'm Dr. OFF (Ontario Finance & Formulary), your assistant for Ontario healthcare financing and coverage.
 
@@ -94,7 +94,7 @@ How can I assist with your coverage or billing questions today?`;
         } else if (agent.id === 'orchestrator') {
           welcomeContent = `Hello! I'm The Chief, your Ontario healthcare coordinator.
 
-I bring together guidance from Ontario's medical systems by coordinating three specialist agents: Dr. OPA for CPSO policies and Ontario Health programs, Dr. OFF for OHIP billing and drug coverage, and Agent 97 for medical education from trusted sources.
+I bring together guidance from Ontario's medical systems by coordinating three specialist agents: Dr. OPA for CPSO policies and Ontario Health programs, Dr. OFF for OHIP billing and drug coverage, and Agent 97 for evidence-based clinical guidance.
 
 What Ontario healthcare question can I help you with today?`;
         } else if (agent.id === 'dr-opa') {
