@@ -35,7 +35,10 @@ interface AgentMessageProps {
 
 // Process inline citations in message content
 function processInlineCitations(content: string, citations: Citation[]): string {
-  if (!citations || citations.length === 0) return content;
+  if (!citations || citations.length === 0) {
+    // Even without citations array, remove any cite{...} patterns
+    return content.replace(/cite[a-zA-Z0-9_:]+/gi, '');
+  }
 
   // Create a map of citation IDs to indices
   const citationMap = new Map<string, number>();
@@ -48,10 +51,14 @@ function processInlineCitations(content: string, citations: Citation[]): string 
   // Replace cite{id} with [n] where n is the citation number
   let processedContent = content;
   citationMap.forEach((num, id) => {
-    // Match cite{id} format (case insensitive)
-    const regex = new RegExp(`cite${id}`, 'gi');
+    // Match cite{id} format (case insensitive) - escape special regex chars
+    const escapedId = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`cite${escapedId}`, 'gi');
     processedContent = processedContent.replace(regex, `[${num}]`);
   });
+
+  // Remove any remaining unmatched cite{...} patterns
+  processedContent = processedContent.replace(/cite[a-zA-Z0-9_:]+/gi, '');
 
   return processedContent;
 }
@@ -128,24 +135,11 @@ function InlineCitations({ citations }: { citations: Citation[] }) {
   );
 }
 
-// Inline tool calls component
-function InlineToolCalls({ toolCalls }: { toolCalls: ToolCall[] }) {
+// Agent Trace component - collapsed by default
+function AgentTrace({ progressHistory }: { progressHistory: Array<{message: string, completed: boolean}> }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  if (!toolCalls || toolCalls.length === 0) return null;
 
-  const getStatusIcon = (status: ToolCall['status']) => {
-    switch (status) {
-      case 'completed':
-        return <CheckCircle className="h-3 w-3 text-green-500" />;
-      case 'failed':
-        return <XCircle className="h-3 w-3 text-red-500" />;
-      case 'executing':
-        return <Loader2 className="h-3 w-3 text-blue-500 animate-spin" />;
-      default:
-        return <Clock className="h-3 w-3 text-gray-400" />;
-    }
-  };
+  if (!progressHistory || progressHistory.length === 0) return null;
 
   return (
     <div className="mt-4 pt-4 border-t border-border/50">
@@ -156,22 +150,19 @@ function InlineToolCalls({ toolCalls }: { toolCalls: ToolCall[] }) {
         className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
       >
         <Wrench className="h-3 w-3 mr-1" />
-        {toolCalls.length} tool{toolCalls.length !== 1 ? 's' : ''} used
+        Agent Trace ({progressHistory.length} steps)
         {isExpanded ? <ChevronUp className="h-3 w-3 ml-1" /> : <ChevronDown className="h-3 w-3 ml-1" />}
       </Button>
-      
+
       {isExpanded && (
-        <div className="mt-2 space-y-1">
-          {toolCalls.map((tool) => (
-            <div 
-              key={tool.id} 
-              className="flex items-center gap-2 text-xs text-muted-foreground pl-4"
+        <div className="mt-2 space-y-1 pl-4">
+          {progressHistory.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-2 text-xs text-muted-foreground"
             >
-              {getStatusIcon(tool.status)}
-              <span className="font-mono">{tool.name}</span>
-              {tool.status === 'executing' && (
-                <span className="text-blue-500">Running...</span>
-              )}
+              <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0 mt-0.5" />
+              <span>{item.message}</span>
             </div>
           ))}
         </div>
@@ -189,9 +180,9 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, progr
     return processInlineCitations(message.content, message.citations || []);
   }, [message.content, message.citations]);
 
-  const hasToolCalls = message.toolCalls && message.toolCalls.length > 0;
   const hasCitations = message.citations && message.citations.length > 0;
-  const showProgress = isStreaming && (progressHistory && progressHistory.length > 0) && !message.content;
+  const showProgressInline = isStreaming && (progressHistory && progressHistory.length > 0) && !message.content;
+  const showProgressCollapsed = !isStreaming && (progressHistory && progressHistory.length > 0);
 
   return (
     <div
@@ -246,8 +237,8 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, progr
             </div>
           )}
 
-          {/* Progress display - shown while streaming before content appears */}
-          {showProgress && progressHistory && (
+          {/* Progress display - shown inline while streaming before content appears */}
+          {showProgressInline && progressHistory && (
             <div className="px-4 py-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-200 mb-3">
               <div className="space-y-2">
                 {progressHistory.map((item, index) => (
@@ -322,9 +313,9 @@ export function AgentMessage({ message, agentName, agentIcon, isStreaming, progr
             </div>
           )}
 
-          {/* Tool calls for assistant messages */}
-          {!isUser && message.toolCalls && message.toolCalls.length > 0 && (
-            <InlineToolCalls toolCalls={message.toolCalls} />
+          {/* Agent Trace - collapsed by default, shown after streaming completes */}
+          {!isUser && showProgressCollapsed && (
+            <AgentTrace progressHistory={progressHistory} />
           )}
 
           {/* Citations for assistant messages */}
