@@ -389,7 +389,7 @@ class DrOffAgent:
                     encoding="utf-8"
                 ),
                 name="dr-off-server",
-                client_session_timeout_seconds=60.0  # Extended timeout for web searches
+                client_session_timeout_seconds=180.0  # Extended timeout for web searches and complex queries
             )
         
         logger.info(f"Dr. OFF Agent initialized - Session: {self.session_id}")

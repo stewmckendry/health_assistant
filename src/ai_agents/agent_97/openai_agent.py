@@ -292,7 +292,7 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
                     encoding="utf-8"
                 ),
                 name="agent-97-clinician-search",
-                client_session_timeout_seconds=90.0  # Extended timeout for complex searches
+                client_session_timeout_seconds=180.0  # Extended timeout for complex searches and comprehensive queries
             )
 
             logger.info("Agent 97 MCP server initialized successfully")

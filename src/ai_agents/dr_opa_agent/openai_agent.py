@@ -396,7 +396,7 @@ class DrOPAAgent:
                     encoding="utf-8"
                 ),
                 name="dr-opa-server",
-                client_session_timeout_seconds=60.0  # Extended timeout for opa_program_lookup web searches
+                client_session_timeout_seconds=180.0  # Extended timeout for opa_program_lookup web searches and complex queries
             )
         
         logger.info(f"Dr. OPA Agent initialized - Session: {self.session_id}")

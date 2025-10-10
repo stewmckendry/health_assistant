@@ -436,7 +436,8 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                     model="o4-mini",  # Use reasoning-enabled model for orchestration
                     model_settings=ModelSettings(
                         parallel_tool_calls=True,  # Enable parallel calls for speed
-                        reasoning={"summary": "auto"}  # Enable reasoning display
+                        reasoning={"summary": "auto"},  # Enable reasoning display
+                        timeout=300.0  # 5 minute timeout for orchestrator (must wait for all sub-agents)
                     ),
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
@@ -722,7 +723,11 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                     name="Chief Resident",
                     instructions=self.system_instructions,
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning={"summary": "auto"}, parallel_tool_calls=True),
+                    model_settings=ModelSettings(
+                        reasoning={"summary": "auto"},
+                        parallel_tool_calls=True,
+                        timeout=300.0  # 5 minute timeout for orchestrator (must wait for all sub-agents)
+                    ),
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
                 
@@ -859,6 +864,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                             }
 
                         elif event.name == "reasoning_item_created":
+                            logger.info(f"🧠 REASONING EVENT DETECTED for {tracker.current_agent}")
                             if hasattr(event.item, 'raw_item'):
                                 reasoning_item = event.item.raw_item
                                 reasoning_text = None
@@ -870,12 +876,15 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                                             summaries.append(summary.text)
                                     if summaries:
                                         reasoning_text = " ".join(summaries)
+                                        logger.info(f"🧠 REASONING TEXT: {reasoning_text[:100]}...")
 
                                 if reasoning_text:  # Only emit if we have actual reasoning content
                                     emoji = "🤔"
                                     if len(reasoning_text) > 100:
                                         reasoning_text = reasoning_text[:97] + "..."
                                     message = f"{emoji} {tracker.current_agent} reasoning: {reasoning_text}"
+
+                                    logger.info(f"🚀 EMITTING REASONING PROGRESS EVENT")
 
                                     yield {
                                         'type': 'progress',
@@ -884,8 +893,11 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                                         'agent_name': tracker.current_agent,
                                         'tool_name': None,
                                         'details': {'reasoning': reasoning_text},
-                                        'trace_id': trace_id
+                                        'trace_id': trace_id,
+                                        'timestamp': datetime.utcnow().isoformat()
                                     }
+                                else:
+                                    logger.warning(f"⚠️ REASONING EVENT but no text extracted")
 
                         elif event.name == "message_output_created":
                             yield {
