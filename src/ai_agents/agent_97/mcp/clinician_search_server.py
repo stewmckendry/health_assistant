@@ -73,8 +73,13 @@ def get_anthropic_client() -> Anthropic:
         api_key = os.getenv("ANTHROPIC_API_KEY")
         if not api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable must be set")
-        anthropic_client = Anthropic(api_key=api_key)
-        logger.info("Anthropic client initialized successfully")
+        anthropic_client = Anthropic(
+            api_key=api_key,
+            default_headers={
+                "anthropic-beta": "web-search-2025-03-05,web-fetch-2025-09-10"
+            }
+        )
+        logger.info("Anthropic client initialized successfully with web tools beta headers")
     return anthropic_client
 
 
@@ -191,8 +196,7 @@ async def clinician_search_handler(
             messages=[
                 {"role": "user", "content": query}
             ],
-            tools=tools,
-            betas=["web-search-2025-03-05", "web-fetch-2025-09-10"]  # Enable web tools
+            tools=tools
         )
 
         # Extract response text

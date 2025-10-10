@@ -44,15 +44,10 @@ export async function GET(
 
     console.log(`Starting stream for agent ${agentId}, session ${sessionId}`);
 
-    // For Agent 97, use the working /chat/stream endpoint since it's just PatientAssistant
+    // Route all agents to their respective streaming endpoints
     const apiUrl = getApiUrl();
-    const endpoint = agentId === 'agent-97' 
-      ? `${apiUrl}/chat/stream`
-      : `${apiUrl}/agents/${agentId}/stream`;
-    
-    const requestBody = agentId === 'agent-97'
-      ? { query, sessionId, mode: 'patient' }
-      : { sessionId, query, stream: true };
+    const endpoint = `${apiUrl}/agents/${agentId}/stream`;
+    const requestBody = { sessionId, query, stream: true };
 
     // Call the Python backend directly and pass through the response
     const response = await fetch(endpoint, {
@@ -132,12 +127,12 @@ export async function POST(
 
     console.log(`Starting stream for agent ${agentId}, session ${sessionId}, user ${userId}`);
 
-    // For Agent 97, use the working /chat/stream endpoint since it's just PatientAssistant
+    // Route all agents to their respective streaming endpoints
     const apiUrl = getApiUrl();
-    const endpoint = agentId === 'agent-97' 
-      ? `${apiUrl}/chat/stream`
-      : `${apiUrl}/agents/${agentId}/stream`;
-    
+    const endpoint = `${apiUrl}/agents/${agentId}/stream`;
+
+    console.log(`🔗 Proxying to backend: ${endpoint}`);
+
     // Stream to backend Python API with userId
     const response = await fetch(endpoint, {
       method: 'POST',
