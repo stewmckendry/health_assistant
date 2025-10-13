@@ -53,14 +53,28 @@ class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
         """Initialize the orchestrator with HTTP-aware sub-agents"""
         self.session_logger.info("Initializing Clinical Intelligence Orchestrator with HTTP support")
 
-        # Initialize sub-agents with HTTP support
-        self.dr_opa_wrapper = DrOpaAgent(session_id=self.session_id)
-        self.dr_off_wrapper = DrOffAgent(session_id=self.session_id)
+        try:
+            # Initialize Dr. OPA wrapper with HTTP support - disable Langfuse to avoid conflicts
+            self.dr_opa_wrapper = DrOpaAgent(session_id=self.session_id, enable_langfuse=False)
+            await self.dr_opa_wrapper.initialize_mcp_tools()
+            self.session_logger.info("Dr. OPA wrapper initialized with HTTP MCP (Langfuse disabled for sub-agent)")
 
-        # Agent 97 doesn't need MCP servers directly
-        # It uses the patient assistant which has its own web search
+            # Initialize Dr. OFF wrapper with HTTP support - disable Langfuse to avoid conflicts
+            self.dr_off_wrapper = DrOffAgent(session_id=self.session_id, enable_langfuse=False)
+            await self.dr_off_wrapper.initialize_mcp_tools()
+            self.session_logger.info("Dr. OFF wrapper initialized with HTTP MCP (Langfuse disabled for sub-agent)")
 
-        self.session_logger.info("Sub-agents initialized with HTTP MCP support")
+            # Initialize Agent 97 wrapper - disable Langfuse to avoid conflicts
+            from src.ai_agents.agent_97.openai_agent import Agent97Agent
+            self.agent_97_wrapper = Agent97Agent(enable_langfuse=False)
+            await self.agent_97_wrapper.initialize_mcp_tools()
+            self.session_logger.info("Agent 97 wrapper initialized (Langfuse disabled for sub-agent)")
+
+            self.session_logger.info("All agent wrappers initialized successfully with HTTP MCP support")
+
+        except Exception as e:
+            self.session_logger.error(f"Error initializing agent wrappers: {e}")
+            raise
 
     async def query(self, clinical_query: str, session_id: str = None, user_id: str = None):
         """Wrapper for orchestrate method to match test interface"""
