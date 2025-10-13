@@ -433,7 +433,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                 orchestrator = Agent(
                     name="Chief Resident",
                     instructions=self.system_instructions,
-                    model="o4-mini",  # Use reasoning-enabled model for orchestration
+                    model="gpt-5-mini",  # Match streaming endpoint model
                     model_settings=ModelSettings(
                         parallel_tool_calls=True,  # Enable parallel calls for speed
                         reasoning={"summary": "auto"},  # Enable reasoning display
