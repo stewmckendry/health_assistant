@@ -62,7 +62,7 @@ The orchestrator doesn't have its own knowledge base—it **routes queries to sp
 4. **Output:** Comprehensive treatment plan with clinical approach, coverage details, and documentation requirements—with 8-20 mixed citations
 
 **[📹 Demo Video Placeholder 1]**
-*Suggested demo: "Patient presenting with chest pain and dyspnea. Need diagnostic workup recommendations, Ontario cardiac pathway, OHIP billing codes for ECG and troponins, and current ACS management guidelines."*
+*Suggested demo: "55-year-old with fatigue and low hemoglobin. What's the diagnostic workup for anemia, OHIP codes for iron studies and B12, and when to refer to hematology based on current evidence?"*
 
 ---
 
