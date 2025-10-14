@@ -80,6 +80,24 @@ async def upload_collection(collection_name: str, source_path: str):
                 logger.error(f"  Error: {error_text[:500]}")
                 return False
 
+async def upload_single_collection(collection_name: str, source_path: str):
+    """Upload a single specific collection to Railway."""
+    logger.info("🚂 Uploading Single Collection to Railway")
+    logger.info(f"Railway URL: {RAILWAY_URL}")
+    logger.info(f"Collection: {collection_name}")
+    logger.info(f"Source: {source_path}\n")
+
+    success = await upload_collection(collection_name, source_path)
+
+    logger.info(f"\n{'='*80}")
+    if success:
+        logger.info(f"✅ Upload successful!")
+    else:
+        logger.info(f"❌ Upload failed!")
+    logger.info(f"{'='*80}")
+
+    return success
+
 async def main():
     logger.info("🚂 Uploading Collections to Railway")
     logger.info(f"Railway URL: {RAILWAY_URL}\n")
@@ -136,4 +154,25 @@ async def main():
     logger.info(f"\n✨ Upload complete!")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    import sys
+
+    # Check if single collection mode
+    if len(sys.argv) == 3 and sys.argv[1] == "--single":
+        # Usage: python upload_collections_to_railway.py --single opa_cep_corpus
+        collection_name = sys.argv[2]
+
+        # Determine source path based on collection name
+        if collection_name.startswith('opa_'):
+            source_path = 'data/dr_opa_agent/chroma'
+        elif collection_name in ['ohip_documents', 'adp_documents', 'odb_documents']:
+            source_path = 'data/dr_off_agent/processed/dr_off/chroma'
+        else:
+            print(f"Error: Unknown collection '{collection_name}'")
+            print("Dr. OPA collections: opa_cep_corpus, opa_quality_standards_corpus, opa_choosing_wisely_corpus, opa_cpso_corpus, opa_pho_corpus")
+            print("Dr. OFF collections: ohip_documents, adp_documents, odb_documents")
+            sys.exit(1)
+
+        asyncio.run(upload_single_collection(collection_name, source_path))
+    else:
+        # Upload all collections
+        asyncio.run(main())
