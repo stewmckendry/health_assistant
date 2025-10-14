@@ -30,25 +30,25 @@ logger = logging.getLogger(__name__)
 
 class DrOpaAgentHTTP(DrOPAAgent):
     """Dr. OPA Agent that can use either stdio or HTTP MCP servers"""
-    
-    def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True):
+
+    def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True, reasoning_effort: str = "low"):
         """Initialize agent with appropriate MCP server based on environment"""
         # Check if we're on Railway or should use HTTP mode
         is_railway = os.environ.get("RAILWAY_ENVIRONMENT")
         use_http = os.environ.get("USE_HTTP_MCP")
-        
+
         logger.info(f"DrOpaAgentHTTP init - RAILWAY_ENVIRONMENT: {is_railway}, USE_HTTP_MCP: {use_http}")
-        
+
         if is_railway or use_http:
             logger.info("Using HTTP MCP mode for Dr. OPA Agent")
             # Pass "skip" to prevent parent from creating stdio server
-            super().__init__(mcp_server_command="skip", enable_langfuse=enable_langfuse)
+            super().__init__(mcp_server_command="skip", enable_langfuse=enable_langfuse, reasoning_effort=reasoning_effort)
             # Now initialize the HTTP MCP server
             self._initialize_http_mcp_server()
         else:
             logger.info("Using stdio MCP mode for Dr. OPA Agent")
             # Use default stdio initialization
-            super().__init__(enable_langfuse=enable_langfuse)
+            super().__init__(enable_langfuse=enable_langfuse, reasoning_effort=reasoning_effort)
         
     def _initialize_http_mcp_server(self):
         """Initialize HTTP MCP server for Railway deployment"""

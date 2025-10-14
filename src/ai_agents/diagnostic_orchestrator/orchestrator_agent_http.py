@@ -38,11 +38,11 @@ logger = logging.getLogger(__name__)
 
 class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
     """Orchestrator that can use either stdio or HTTP MCP servers"""
-    
-    def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True):
-        """Initialize orchestrator with session ID."""
-        # Call parent constructor first
-        super().__init__(enable_langfuse=enable_langfuse)
+
+    def __init__(self, session_id: Optional[str] = None, enable_langfuse: bool = True, reasoning_effort: str = "low"):
+        """Initialize orchestrator with session ID and reasoning effort."""
+        # Call parent constructor first with reasoning_effort
+        super().__init__(enable_langfuse=enable_langfuse, reasoning_effort=reasoning_effort)
         # Override session_id if provided
         if session_id:
             self.session_id = session_id
@@ -55,18 +55,18 @@ class ClinicalIntelligenceOrchestratorHTTP(DiagnosticOrchestrator):
 
         try:
             # Initialize Dr. OPA wrapper with HTTP support - disable Langfuse to avoid conflicts
-            self.dr_opa_wrapper = DrOpaAgent(session_id=self.session_id, enable_langfuse=False)
+            self.dr_opa_wrapper = DrOpaAgent(session_id=self.session_id, enable_langfuse=False, reasoning_effort=self.reasoning_effort)
             await self.dr_opa_wrapper.initialize_mcp_tools()
             self.session_logger.info("Dr. OPA wrapper initialized with HTTP MCP (Langfuse disabled for sub-agent)")
 
             # Initialize Dr. OFF wrapper with HTTP support - disable Langfuse to avoid conflicts
-            self.dr_off_wrapper = DrOffAgent(session_id=self.session_id, enable_langfuse=False)
+            self.dr_off_wrapper = DrOffAgent(session_id=self.session_id, enable_langfuse=False, reasoning_effort=self.reasoning_effort)
             await self.dr_off_wrapper.initialize_mcp_tools()
             self.session_logger.info("Dr. OFF wrapper initialized with HTTP MCP (Langfuse disabled for sub-agent)")
 
             # Initialize Agent 97 wrapper - disable Langfuse to avoid conflicts
             from src.ai_agents.agent_97.openai_agent import Agent97Agent
-            self.agent_97_wrapper = Agent97Agent(enable_langfuse=False)
+            self.agent_97_wrapper = Agent97Agent(enable_langfuse=False, reasoning_effort=self.reasoning_effort)
             await self.agent_97_wrapper.initialize_mcp_tools()
             self.session_logger.info("Agent 97 wrapper initialized (Langfuse disabled for sub-agent)")
 
