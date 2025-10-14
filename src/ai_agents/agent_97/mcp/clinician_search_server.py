@@ -129,7 +129,7 @@ async def clinician_search_handler(
     query: str,
     session_id: Optional[str] = None,
     user_id: Optional[str] = None,
-    max_web_search_uses: int = 2,
+    max_web_search_uses: int = 1,
     max_web_fetch_uses: int = 5
 ) -> Dict[str, Any]:
     """
@@ -173,7 +173,7 @@ async def clinician_search_handler(
             {
                 "type": "web_search_20250305",
                 "name": "web_search",
-                "max_uses": max_web_search_uses,  # Default 2 (Claude uses web_search more than web_fetch)
+                "max_uses": max_web_search_uses,  # Default 1 (reduced from 2 to control costs)
                 "allowed_domains": TRUSTED_DOMAINS  # All 97 domains
             },
             {
@@ -185,12 +185,13 @@ async def clinician_search_handler(
             }
         ]
 
-        logger.info(f"[{request_id}] Configured tools with {len(TRUSTED_DOMAINS)} trusted domains")
+        logger.info(f"[{request_id}] Configured tools: web_search (max {max_web_search_uses}), web_fetch (max {max_web_fetch_uses})")
+        logger.info(f"[{request_id}] Using {len(TRUSTED_DOMAINS)} trusted domains")
 
         # Call Claude API with web tools
         response = client.messages.create(
-            model=settings.primary_model,  # Use configured model (e.g., claude-3-5-sonnet-latest)
-            max_tokens=3000,  # Higher limit for clinical detail
+            model="claude-3-7-sonnet-20250219",  # Use Claude 3.7 Sonnet for better cost/performance
+            max_tokens=2000,  # Reduced from 3000 to control costs
             temperature=0.3,  # Lower for factual clinical information
             system=get_clinician_system_prompt(),
             messages=[

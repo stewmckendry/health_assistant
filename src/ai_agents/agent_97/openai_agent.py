@@ -148,16 +148,19 @@ class Agent97Agent:
     for healthcare clinicians (NOT patients).
     """
 
-    def __init__(self, enable_langfuse: bool = True):
+    def __init__(self, enable_langfuse: bool = True, reasoning_effort: str = "low"):
         """
         Initialize Agent 97.
 
         Args:
             enable_langfuse: Whether to enable Langfuse tracing (default: True)
+            reasoning_effort: Reasoning effort level - "auto", "low", "medium", "high", or "off" (default: "auto")
         """
         self.session_id = session_id
         self.project_root = Path(__file__).parent.parent.parent.parent
         self.enable_langfuse = enable_langfuse and LANGFUSE_AVAILABLE
+        self.reasoning_effort = reasoning_effort
+        logger.info(f"Reasoning effort set to: {reasoning_effort}")
 
         # Initialize Langfuse tracing if enabled
         if self.enable_langfuse:
@@ -224,6 +227,7 @@ WHEN TO USE YOUR TOOL:
 - The tool uses Claude API with web_search and web_fetch to retrieve information
 - Results include citations from trusted medical sources
 - The tool handles all the complexity of searching and filtering trusted sources
+- IMPORTANT: Limit tool calls to 2-3 attempts maximum. If the tool returns results, use them even if not perfect
 
 RESPONSE STYLE:
 - Direct, professional clinical language
@@ -292,7 +296,7 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
                     encoding="utf-8"
                 ),
                 name="agent-97-clinician-search",
-                client_session_timeout_seconds=180.0  # Extended timeout for complex searches and comprehensive queries
+                client_session_timeout_seconds=300.0  # Increased from 180s to 300s (5 min) to reduce timeout-induced retries
             )
 
             logger.info("Agent 97 MCP server initialized successfully")
@@ -317,7 +321,7 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
             name="Agent 97",
             instructions=self.system_instructions,
             model="gpt-5-mini",  # Use reasoning model
-            model_settings=ModelSettings(reasoning={"summary": "auto"}),
+            model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
             mcp_servers=[mcp_server]
         )
 
@@ -514,7 +518,7 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
                     name="Agent 97",
                     instructions=self.system_instructions,
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
+                    model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
                     mcp_servers=[server]
                 )
 
@@ -778,9 +782,9 @@ Agent 97 was unable to search the 97 trusted medical sources. Please try:
 Technical details: {error_message}"""
 
 
-async def create_agent_97() -> Agent97Agent:
+async def create_agent_97(reasoning_effort: str = "auto") -> Agent97Agent:
     """Factory function to create and initialize Agent 97."""
-    agent = Agent97Agent()
+    agent = Agent97Agent(reasoning_effort=reasoning_effort)
     await agent.initialize_mcp_tools()
     return agent
 

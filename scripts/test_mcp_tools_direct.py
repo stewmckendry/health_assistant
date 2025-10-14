@@ -118,7 +118,7 @@ async def test_agent_97_tool(tool_name: str, request: Dict[str, Any]):
         query = request.get("query", "")
         session_id = request.get("session_id")
         user_id = request.get("user_id")
-        max_web_search_uses = request.get("max_web_search_uses", 2)
+        max_web_search_uses = request.get("max_web_search_uses", 1)  # Updated default from 2 to 1 for cost control
         max_web_fetch_uses = request.get("max_web_fetch_uses", 5)
 
         return await handler(
