@@ -172,8 +172,13 @@ Available Medical Specialties ({len(catalog_summary)} total):
 Classify this query:
 
 1. **Intent**:
-   - "specialty_discovery": User wants to know WHAT specialties have recommendations (broad question)
-   - "specific_recommendation": User has a specific clinical scenario question (deep question)
+   - "specialty_discovery": User wants to know WHAT specialties have recommendations (ONLY if query is "What recommendations exist for X specialty?")
+   - "specific_recommendation": User has a clinical scenario, condition, test, or procedure in mind (DEFAULT - use this for most queries)
+
+   **Critical Rules**:
+   - If query mentions ANY clinical condition, disease, test, procedure, or patient scenario → "specific_recommendation"
+   - If query asks about "recommendations FOR/ABOUT X" (where X is a condition/test) → "specific_recommendation"
+   - ONLY use "specialty_discovery" if query is literally "What does X specialty recommend?" with NO clinical context
 
 2. **Relevant Specialties**: Which specialty/specialties (1-5 max) from the catalog are most relevant?
    - Use specialty_id field

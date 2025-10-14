@@ -61,6 +61,7 @@ async def retrieve_tool_overviews(
 
     # Build metadata filter for overview chunks
     # Prioritize is_overview=True, but also include parent chunks
+    # NOTE: CEP collection stores metadata at top level (not nested)
     where_filter = {
         "$and": [
             {"chunk_type": "parent"},  # Only parent chunks
@@ -153,6 +154,7 @@ async def retrieve_detailed_chunks(
         url = get_tool_url(tool_id)
         if url:
             tool_urls.append(url)
+            logger.info(f"Tool {tool_id} -> URL: {url}")
         else:
             logger.warning(f"No URL found for tool_id: {tool_id}")
 
@@ -160,14 +162,21 @@ async def retrieve_detailed_chunks(
         logger.warning("No valid tool URLs found")
         return []
 
+    logger.info(f"Tool URLs for filter: {tool_urls}")
+
     # Build metadata filter for tool scope
     # Include both parent and child chunks
-    where_filter = {
-        "$or": [
-            {"source_url": url}
-            for url in tool_urls
-        ]
-    }
+    # NOTE: CEP collection stores metadata at top level (not nested)
+    # ChromaDB requires at least 2 items in $or - use direct filter for single URL
+    if len(tool_urls) == 1:
+        where_filter = {"source_url": tool_urls[0]}
+    else:
+        where_filter = {
+            "$or": [
+                {"source_url": url}
+                for url in tool_urls
+            ]
+        }
 
     # Search with filter
     try:

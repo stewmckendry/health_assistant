@@ -2381,8 +2381,19 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
         
         for result in search_results:
             metadata = result.get('metadata', {})
-            chunk_type = metadata.get('chunk_type', '')
-            doc_type = metadata.get('doc_type', '')
+
+            # ChromaDB nests metadata in a 'metadata' field - extract it
+            nested_metadata = metadata.get('metadata', {})
+            if nested_metadata:
+                # Use nested metadata if present (ChromaDB format)
+                chunk_type = nested_metadata.get('chunk_type', metadata.get('chunk_type', ''))
+                doc_type = nested_metadata.get('doc_type', metadata.get('doc_type', ''))
+                # Merge nested metadata into top-level for easier access
+                metadata = {**metadata, **nested_metadata}
+            else:
+                # Fallback to top-level metadata
+                chunk_type = metadata.get('chunk_type', '')
+                doc_type = metadata.get('doc_type', '')
 
             # Extract specialty-level information from overview chunks
             # Handle both old format (chunk_type='specialty_overview') and new format (doc_type='choosing_wisely_overview')
@@ -2504,15 +2515,13 @@ async def choosing_wisely_handler(query: str, k: int = 10, filters: Dict[str, An
             # Use first specialty from classification
             primary_specialty = get_specialty_name(specialty_ids[0])
 
-        # Sort recommendations by number
-        recommendations.sort(key=lambda r: r.metadata['recommendation_number'])
+        # Sort recommendations by relevance score first, then by number
+        recommendations.sort(key=lambda r: (-r.relevance_score, r.metadata['recommendation_number']))
 
-        # Limit to requested k, but ensure we get complete recommendations by number
+        # Limit to requested k
         if len(recommendations) > k:
-            # Keep recommendations 1 through k
-            max_rec_num = k
-            recommendations = [r for r in recommendations if r.metadata['recommendation_number'] <= max_rec_num]
-            logger.info(f"Limited to {len(recommendations)} recommendations (numbers 1-{max_rec_num})")
+            recommendations = recommendations[:k]
+            logger.info(f"Limited to {len(recommendations)} recommendations (from {len(recommendations)} total)")
 
         # Create citations list
         citations = [

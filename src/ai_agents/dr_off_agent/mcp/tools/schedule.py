@@ -521,14 +521,14 @@ class ScheduleTool:
     def _merge_citations(
         self,
         sql_results: List[Dict[str, Any]],
-        vector_results: List[Dict[str, Any]]
+        vector_results  # Can be List[Dict] or List[Document]
     ) -> List[Citation]:
         """
         Merge citations from both SQL and vector results.
 
         Args:
             sql_results: SQL query results
-            vector_results: Vector search results (with metadata)
+            vector_results: Vector search results (with metadata) - can be dicts or Document objects
 
         Returns:
             List of citations
@@ -547,9 +547,14 @@ class ScheduleTool:
                 url="https://www.ontario.ca/files/2025-03/moh-schedule-benefit-2024-03-04.pdf"
             ))
 
-        # Add vector citations
+        # Add vector citations - handle both dict and Document objects
         for result in vector_results[:3]:
-            metadata = result.get('metadata', {})
+            # Handle Document objects or dicts
+            if isinstance(result, Document):
+                metadata = result.metadata or {}
+            else:
+                metadata = result.get('metadata', {})
+
             section = metadata.get('section', '')
             page = metadata.get('page_num')
             loc_parts = []

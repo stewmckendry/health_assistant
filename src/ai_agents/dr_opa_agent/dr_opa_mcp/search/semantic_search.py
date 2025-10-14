@@ -493,6 +493,12 @@ Respond with ONLY a number between 0 and 10:"""
         for result in results:
             metadata = result.get('metadata', {})
 
+            # ChromaDB nests metadata in a 'metadata' field - flatten it
+            nested_metadata = metadata.get('metadata', {})
+            if nested_metadata:
+                # Merge nested metadata into top-level for easier access
+                metadata = {**metadata, **nested_metadata}
+
             # Start with common fields
             formatted_result = {
                 'document_id': result.get('document_id', ''),
