@@ -86,15 +86,18 @@ class DiagnosticOrchestrator:
     Includes Langfuse tracing for observability and user feedback.
     """
 
-    def __init__(self, enable_langfuse: bool = True):
+    def __init__(self, enable_langfuse: bool = True, reasoning_effort: str = "low"):
         """Initialize Chief Resident orchestrator with optional Langfuse tracing.
 
         Args:
             enable_langfuse: Whether to enable Langfuse tracing (default: True)
+            reasoning_effort: Reasoning effort level - "auto", "low", "medium", "high", or "off" (default: "low")
         """
         self.session_id = session_id
         self.project_root = Path(__file__).parent.parent.parent.parent
         self.enable_langfuse = enable_langfuse and LANGFUSE_AVAILABLE
+        self.reasoning_effort = reasoning_effort
+        logger.info(f"Reasoning effort set to: {reasoning_effort}")
         
         # These will hold the agent instances
         self.dr_opa_wrapper = None
@@ -333,19 +336,19 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
         try:
             # Initialize Dr. OPA wrapper - disable Langfuse to avoid conflicts
             from src.ai_agents.dr_opa_agent.openai_agent import DrOPAAgent
-            self.dr_opa_wrapper = DrOPAAgent(enable_langfuse=False)
+            self.dr_opa_wrapper = DrOPAAgent(enable_langfuse=False, reasoning_effort=self.reasoning_effort)
             await self.dr_opa_wrapper.initialize_mcp_tools()
             logger.info("Dr. OPA wrapper initialized (Langfuse disabled for sub-agent)")
 
             # Initialize Dr. OFF wrapper - disable Langfuse to avoid conflicts
             from src.ai_agents.dr_off_agent.openai_agent import DrOffAgent
-            self.dr_off_wrapper = DrOffAgent(enable_langfuse=False)
+            self.dr_off_wrapper = DrOffAgent(enable_langfuse=False, reasoning_effort=self.reasoning_effort)
             await self.dr_off_wrapper.initialize_mcp_tools()
             logger.info("Dr. OFF wrapper initialized (Langfuse disabled for sub-agent)")
 
             # Initialize Agent 97 wrapper - disable Langfuse to avoid conflicts
             from src.ai_agents.agent_97.openai_agent import Agent97Agent
-            self.agent_97_wrapper = Agent97Agent(enable_langfuse=False)
+            self.agent_97_wrapper = Agent97Agent(enable_langfuse=False, reasoning_effort=self.reasoning_effort)
             await self.agent_97_wrapper.initialize_mcp_tools()
             logger.info("Agent 97 wrapper initialized (Langfuse disabled for sub-agent)")
 
@@ -430,13 +433,19 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                 
                 # Create the orchestrator agent with sub-agents as tools
                 from agents import ModelSettings
+                # Build reasoning config based on effort level
+                # Map "auto" or "off" to None (use SDK default), otherwise set effort level
+                if self.reasoning_effort in ["off", "auto"]:
+                    reasoning_config = None
+                else:
+                    reasoning_config = {"effort": self.reasoning_effort}
                 orchestrator = Agent(
                     name="Chief Resident",
                     instructions=self.system_instructions,
                     model="gpt-5-mini",  # Match streaming endpoint model
                     model_settings=ModelSettings(
                         parallel_tool_calls=True,  # Enable parallel calls for speed
-                        reasoning={"summary": "auto"},  # Enable reasoning display
+                        reasoning=reasoning_config,  # Configure reasoning based on effort level
                         timeout=300.0  # 5 minute timeout for orchestrator (must wait for all sub-agents)
                     ),
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
@@ -719,12 +728,18 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                 
                 # Create orchestrator
                 from agents import ModelSettings
+                # Build reasoning config based on effort level
+                # Map "auto" or "off" to None (use SDK default), otherwise set effort level
+                if self.reasoning_effort in ["off", "auto"]:
+                    reasoning_config = None
+                else:
+                    reasoning_config = {"effort": self.reasoning_effort}
                 orchestrator = Agent(
                     name="Chief Resident",
                     instructions=self.system_instructions,
                     model="gpt-5-mini",
                     model_settings=ModelSettings(
-                        reasoning={"summary": "auto"},
+                        reasoning=reasoning_config,  # Configure reasoning based on effort level
                         parallel_tool_calls=True,
                         timeout=300.0  # 5 minute timeout for orchestrator (must wait for all sub-agents)
                     ),

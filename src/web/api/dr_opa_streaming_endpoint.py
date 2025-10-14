@@ -79,6 +79,7 @@ async def process_dr_opa_stream(request: StreamingDrOPARequest):
                     "details": event.get('details'),
                     "timestamp": datetime.utcnow().isoformat()
                 }
+                logger.info(f"🚀 ENDPOINT SENDING PROGRESS: {progress_event}")
                 yield f"data: {json.dumps(progress_event)}\n\n"
 
             elif event_type == 'text':

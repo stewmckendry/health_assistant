@@ -38,6 +38,7 @@ class OrchestratorStreamRequest(BaseModel):
     query: str
     stream: bool = True
     userId: Optional[str] = None
+    reasoningEffort: Optional[str] = "auto"  # "auto", "concise", "detailed", or "off"
 
 
 class OrchestratorQueryRequest(BaseModel):
@@ -45,16 +46,25 @@ class OrchestratorQueryRequest(BaseModel):
     sessionId: str
     query: str
     userId: Optional[str] = None
+    reasoningEffort: Optional[str] = "auto"  # "auto", "concise", "detailed", or "off"
 
 
-async def get_orchestrator() -> DiagnosticOrchestrator:
-    """Get or create the orchestrator instance."""
+async def get_orchestrator(reasoning_effort: str = "auto") -> DiagnosticOrchestrator:
+    """
+    Get or create the orchestrator instance with specified reasoning effort.
+
+    Note: Currently creates a new instance for each request if reasoning effort differs.
+    This ensures the correct reasoning setting is used for each query.
+    """
     global _orchestrator_instance
-    if _orchestrator_instance is None:
-        logger.info("Creating new Chief Resident orchestrator instance...")
-        _orchestrator_instance = await create_diagnostic_orchestrator()
-        logger.info("Chief Resident orchestrator initialized")
-    return _orchestrator_instance
+
+    # For simplicity, create a new instance each time with the specified reasoning effort
+    # In production, you might want to cache per reasoning_effort or make it query-level
+    logger.info(f"Creating Chief Resident orchestrator with reasoning_effort={reasoning_effort}...")
+    orchestrator = DiagnosticOrchestrator(reasoning_effort=reasoning_effort)
+    await orchestrator.initialize()
+    logger.info("Chief Resident orchestrator initialized")
+    return orchestrator
 
 
 def register_orchestrator_endpoint(app: FastAPI):
@@ -72,8 +82,8 @@ def register_orchestrator_endpoint(app: FastAPI):
         """
         try:
             async def generate() -> AsyncGenerator[str, None]:
-                # Get orchestrator instance
-                orchestrator = await get_orchestrator()
+                # Get orchestrator instance with specified reasoning effort
+                orchestrator = await get_orchestrator(reasoning_effort=request.reasoningEffort)
                 
                 # Track event ID for this stream
                 stream_id = str(uuid.uuid4())
@@ -300,9 +310,9 @@ def register_orchestrator_endpoint(app: FastAPI):
         Returns a unified response synthesizing guidance from Ontario-specific sources.
         """
         try:
-            # Get orchestrator instance
-            orchestrator = await get_orchestrator()
-            
+            # Get orchestrator instance with specified reasoning effort
+            orchestrator = await get_orchestrator(reasoning_effort=request.reasoningEffort)
+
             # Process the query
             result = await orchestrator.orchestrate(
                 clinical_query=request.query,

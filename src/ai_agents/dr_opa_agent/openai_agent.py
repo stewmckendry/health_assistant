@@ -321,19 +321,22 @@ def extract_highlights_from_tool_results(tool_results: List[Dict], citations: Li
 class DrOPAAgent:
     """Dr. OPA OpenAI Agent with MCP integration and Langfuse tracing."""
     
-    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True, session_id: str = None):
+    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True, session_id: str = None, reasoning_effort: str = "low"):
         """Initialize the Dr. OPA Agent with MCP server connection and optional Langfuse tracing.
 
         Args:
             mcp_server_command: Command to start the MCP server
             enable_langfuse: Whether to enable Langfuse tracing (default: True)
             session_id: Optional session ID for logging
+            reasoning_effort: Reasoning effort level - "auto", "low", "medium", "high", or "off" (default: "auto")
         """
         self.session_id = session_id or datetime.now().strftime("%Y%m%d_%H%M%S")
         self.project_root = project_root
         self.trusted_domains = load_trusted_domains()
         self.enable_langfuse = enable_langfuse and LANGFUSE_AVAILABLE
+        self.reasoning_effort = reasoning_effort
         logger.info(f"Loaded {len(self.trusted_domains)} trusted domains for citation validation")
+        logger.info(f"Reasoning effort set to: {reasoning_effort}")
         
         # Initialize Langfuse tracing if enabled
         if self.enable_langfuse:
@@ -436,54 +439,56 @@ First, classify the query intent:
 Then, identify the required information fields for this intent:
 
 **CPSO Policy Intent Schema:**
-- regulatory_requirements: Mandatory requirements and expectations (from "expectation" level policies)
-- compliance_obligations: What physicians must do
-- best_practice_advice: Recommended best practices (from "advice" level policies)
-- documentation_requirements: Required documentation standards
-- sanctions_consequences: Consequences of non-compliance (if applicable)
-- implementation_guidance: How to implement in practice
-- related_policies: Other relevant CPSO policies for context
-- citations: Source references with policy titles, URLs, and specific sections
+- regulatory_requirements: [REQUIRED] Mandatory requirements and expectations (from "expectation" level policies)
+- compliance_obligations: [REQUIRED] What physicians must do
+- best_practice_advice: [optional] Recommended best practices (from "advice" level policies)
+- documentation_requirements: [optional] Required documentation standards
+- sanctions_consequences: [optional] Consequences of non-compliance (if applicable)
+- implementation_guidance: [optional] How to implement in practice
+- related_policies: [optional] Other relevant CPSO policies for context
+- citations: [REQUIRED] Source references with policy titles, URLs, and specific sections
 
 **IPAC Guidelines Intent Schema:**
-- requirements_mandatory: Mandatory infection control measures
-- recommendations_best_practice: Recommended best practices
-- setting_specifics: Requirements for specific healthcare settings (hospital, clinic, LTC)
-- equipment_procedures: Required equipment and procedures
-- validation_monitoring: How to validate compliance
-- citations: Source references with PHO document sections
+- requirements_mandatory: [REQUIRED] Mandatory infection control measures
+- recommendations_best_practice: [optional] Recommended best practices
+- setting_specifics: [optional] Requirements for specific healthcare settings
+- equipment_procedures: [optional] Required equipment and procedures
+- validation_monitoring: [optional] How to validate compliance
+- citations: [REQUIRED] Source references with PHO document sections
 
 **Clinical Programs Intent Schema:**
-- program_eligibility: Who qualifies for the program
-- referral_pathways: How to refer patients
-- coverage_criteria: What services/tests are covered
-- access_procedures: How patients access the program
-- program_updates: Recent changes or transitions
-- citations: Source references with program names and dates
+- program_eligibility: [REQUIRED] Who qualifies for the program
+- referral_pathways: [optional] How to refer patients
+- coverage_criteria: [optional] What services/tests are covered
+- access_procedures: [optional] How patients access the program
+- program_updates: [optional] Recent changes or transitions
+- citations: [REQUIRED] Source references with program names and dates
 
 **Clinical Tools Intent Schema:**
-- tool_description: What the tool is and its purpose
-- clinical_application: When and how to use it
-- interpretation_guidance: How to interpret results
-- limitations_caveats: Important limitations or considerations
-- access_information: How to access the tool
-- citations: Source references with tool names and versions
+- tool_description: [REQUIRED] What the tool is and its purpose
+- clinical_application: [REQUIRED] When and how to use it
+- interpretation_guidance: [optional] How to interpret results
+- limitations_caveats: [optional] Important limitations or considerations
+- access_information: [optional] How to access the tool
+- citations: [REQUIRED] Source references with tool names and versions
 
 **Quality Standards Intent Schema:**
-- quality_statements: Key quality statements for the condition
-- quality_indicators: Measurable indicators of quality care
-- implementation_guidance: How to implement in practice
-- evidence_base: Supporting evidence for recommendations
-- measurement_tools: How to measure adherence
-- citations: Source references with standard numbers and dates
+- quality_statements: [REQUIRED] Key quality statements for the condition
+- quality_indicators: [optional] Measurable indicators of quality care
+- implementation_guidance: [optional] How to implement in practice
+- evidence_base: [optional] Supporting evidence for recommendations
+- measurement_tools: [optional] How to measure adherence
+- citations: [REQUIRED] Source references with standard numbers and dates
 
 **Choosing Wisely Intent Schema:**
-- recommendations: Specific "don't do" recommendations
-- evidence_rationale: Why these practices should be avoided
-- specialty_specific: Which specialty issued the recommendation
-- alternative_approaches: What to do instead
-- patient_communication: How to discuss with patients
-- citations: Source references with recommendation numbers
+- recommendations: [REQUIRED] Specific "don't do" recommendations
+- evidence_rationale: [optional] Why these practices should be avoided
+- specialty_specific: [optional] Which specialty issued the recommendation
+- alternative_approaches: [optional] What to do instead
+- patient_communication: [optional] How to discuss with patients
+- citations: [REQUIRED] Source references with recommendation numbers
+
+**NOTE:** Only [REQUIRED] fields must be filled. All [optional] fields are "nice to have" - don't waste time searching if not found in initial retrieval.
 
 STEP 2: RETRIEVE - Call Tools and Extract Facts
 ───────────────────────────────────────────────────
@@ -528,46 +533,43 @@ As you review the tool responses, actively extract facts into the schema fields:
 - Note which fields are filled and which are EMPTY
 - Keep track of missing information
 
-STEP 3: SELF-CHECK - Verify Completeness and Fill Gaps
-───────────────────────────────────────────────────────
+STEP 3: SELF-CHECK - Verify Completeness and Fill Gaps (LIGHTWEIGHT APPROACH)
+────────────────────────────────────────────────────────────────────────────
 
 Review your extracted information against the schema:
 - Which required fields are empty or have insufficient information?
 - Which fields have partial information that could be expanded?
 
-For EACH missing or incomplete field:
-1. Generate a focused sub-query targeting that specific field
-   Example: If missing "documentation_requirements" for virtual care:
-   Sub-query: "What documentation is required by CPSO for virtual care?"
+**IMPORTANT: Distinguish between "no data found" vs "incomplete retrieval":**
+- If MCP tools return confidence >0.5 with empty items → Data doesn't exist in knowledge base (this is OK)
+- If MCP tools return confidence <0.3 → Query may need refinement
 
-2. Call the appropriate tool with the focused sub-query:
-   - First, try the same MCP tool again with the refined sub-query
-   - If MCP tool returns insufficient or no results, use web_search as fallback
-
-3. Extract the information and fill the field
+**Limited Follow-up Policy:**
+- Make at most 1 focused follow-up query if initial results are truly incomplete
+- Do NOT make follow-up queries if initial tools returned empty results with confidence >0.5
+- Example: If opa_choosing_wisely returns 0 items with confidence 0.6 → Accept that no Choosing Wisely recommendations exist for this topic
 
 **When to Use web_search Tool:**
-- MCP tools return insufficient or no results for required fields
-- Need to verify very recent policy changes or updates
+- ONLY use web_search if MCP tool confidence is <0.5 AND the missing information is critical to answering the query
 - User specifically asks for "latest" or "current" guidance
-- Cross-reference information from official Ontario healthcare websites
+- Maximum 3 web searches per query to prevent loops
 - Note: web_search is restricted to trusted Ontario healthcare domains only
 
 **Tool Priority:**
 1. Primary: MCP tools (opa_policy_check, opa_ipac_guidance, etc.) - structured, embedded knowledge
-2. Fallback: web_search - when MCP tools don't have the information
+2. Fallback: web_search - ONLY when MCP confidence <0.5 AND information is critical
 
 CRITICAL RULES FOR SELF-CHECK:
-- Make at least 2 tool calls per query (initial retrieval + ≥1 self-check sub-query)
-- Repeat until ≥90% of required fields are filled OR 3 retrieval attempts made
-- Try MCP tools first, then web_search if needed
-- If all tools return "no results" for a field, mark it as "Not found in available sources"
-- NEVER proceed to synthesis with <50% field completeness
+- Maximum 2 retrieval rounds total (initial + at most 1 follow-up)
+- Maximum 3 web searches per query
+- Accept partial answers - it's OK to say "Not available in current knowledge bases"
+- If initial MCP tools return empty results with confidence >0.5, proceed directly to synthesis
+- NEVER loop more than twice trying to fill the same field
 
 STEP 4: SYNTHESIZE - Format Complete Answer (OUTPUT THIS TO USER)
 ───────────────────────────────────────────────────────────────
 
-Only proceed to synthesis AFTER self-check passes (≥90% fields filled OR 3 attempts made).
+Proceed to synthesis after completing retrieval (maximum 2 rounds). Partial answers are acceptable.
 
 THIS IS THE ONLY STEP YOU SHOW TO THE USER. Present a professional, well-structured answer WITHOUT revealing your internal workflow steps.
 
@@ -732,7 +734,7 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                     name="Dr. OPA",
                     instructions=self._get_system_instructions(),
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
+                    model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
                 )
@@ -1137,7 +1139,7 @@ Remember: You have access to comprehensive Ontario practice guidance through you
                     name="Dr. OPA",
                     instructions=self._get_system_instructions(),
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
+                    model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
                 )
@@ -1430,10 +1432,19 @@ Technical details: {error_message}"""
         )
         
         from agents import ModelSettings
+        # Build reasoning config based on effort level
+        # Map "auto" to "medium", or use None if "off"
+        if self.reasoning_effort == "off":
+            reasoning_config = None
+        elif self.reasoning_effort == "auto":
+            reasoning_config = None  # Let SDK use its default
+        else:
+            reasoning_config = {"effort": self.reasoning_effort}
         return Agent(
             name="Dr. OPA",
             instructions=self._get_system_instructions(),
             model="gpt-5-mini",
+            model_settings=ModelSettings(reasoning=reasoning_config),
             mcp_servers=[server] if server else [],
             tools=[web_search_tool]
         )

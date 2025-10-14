@@ -315,19 +315,22 @@ class DrOffAgent:
         else:
             return 'https://www.ontario.ca/'
     
-    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True, session_id: str = None):
+    def __init__(self, mcp_server_command: str = None, enable_langfuse: bool = True, session_id: str = None, reasoning_effort: str = "low"):
         """Initialize the Dr. OFF Agent with MCP server connection and optional Langfuse tracing.
 
         Args:
             mcp_server_command: Command to start the MCP server
             enable_langfuse: Whether to enable Langfuse tracing (default: True)
             session_id: Optional session ID for logging
+            reasoning_effort: Reasoning effort level - "auto", "low", "medium", "high", or "off" (default: "auto")
         """
         self.session_id = session_id or datetime.now().strftime("%Y%m%d_%H%M%S")
         self.project_root = project_root
         self.trusted_domains = load_trusted_domains()
         self.enable_langfuse = enable_langfuse and LANGFUSE_AVAILABLE
+        self.reasoning_effort = reasoning_effort
         logger.info(f"Loaded {len(self.trusted_domains)} trusted domains for citation validation")
+        logger.info(f"Reasoning effort set to: {reasoning_effort}")
         
         # Initialize Langfuse tracing if enabled
         if self.enable_langfuse:
@@ -427,42 +430,44 @@ First, classify the query intent:
 Then, identify the required information fields for this intent:
 
 **Billing Intent Schema:**
-- primary_codes: List of OHIP codes with descriptions and fees
-- modifiers: List of applicable modifiers (if any)
-- billing_conditions: When these codes apply
-- frequency_limits: Maximum billing frequency (if any)
-- common_errors: Common billing mistakes to avoid (if available)
-- citations: Source references with specific codes
+- primary_codes: [REQUIRED] List of OHIP codes with descriptions and fees
+- modifiers: [optional] List of applicable modifiers (if any)
+- billing_conditions: [optional] When these codes apply
+- frequency_limits: [optional] Maximum billing frequency (if any)
+- common_errors: [optional] Common billing mistakes to avoid (if available)
+- citations: [REQUIRED] Source references with specific codes
 
 **Drug Coverage Intent Schema:**
-- formulary_status: Whether drug is covered (yes/no/limited use)
-- din_numbers: Specific DIN numbers for covered formulations
-- limited_use_criteria: LU code and eligibility requirements (if applicable)
-- generic_alternatives: List of interchangeable or therapeutic alternatives
-- cost_comparison: Pricing differences between options
-- citations: Source references with DIN numbers
+- formulary_status: [REQUIRED] Whether drug is covered (yes/no/limited use)
+- din_numbers: [REQUIRED] Specific DIN numbers for covered formulations
+- limited_use_criteria: [optional] LU code and eligibility requirements (if applicable)
+- generic_alternatives: [optional] List of interchangeable or therapeutic alternatives
+- cost_comparison: [optional] Pricing differences between options
+- citations: [REQUIRED] Source references with DIN numbers
 
 **Device Funding Intent Schema:**
-- device_eligibility: Which device types/models are covered
-- funding_amount: ADP funding percentage or dollar amount
-- patient_eligibility: Who qualifies (age, medical criteria)
-- application_process: How to apply and required documentation
-- vendor_requirements: Approved vendors or suppliers
-- citations: Source references with device categories
+- device_eligibility: [REQUIRED] Which device types/models are covered
+- funding_amount: [REQUIRED] ADP funding percentage or dollar amount
+- patient_eligibility: [optional] Who qualifies (age, medical criteria)
+- application_process: [optional] How to apply and required documentation
+- vendor_requirements: [optional] Approved vendors or suppliers
+- citations: [REQUIRED] Source references with device categories
 
 **Eligibility Intent Schema:**
-- patient_criteria: Age, diagnosis, or other requirements
-- exclusion_criteria: When NOT eligible
-- income_thresholds: Financial eligibility limits (if applicable)
-- special_programs: Trillium, ODSP, Ontario Works considerations
-- citations: Source references with eligibility rules
+- patient_criteria: [REQUIRED] Age, diagnosis, or other requirements
+- exclusion_criteria: [optional] When NOT eligible
+- income_thresholds: [optional] Financial eligibility limits (if applicable)
+- special_programs: [optional] Trillium, ODSP, Ontario Works considerations
+- citations: [REQUIRED] Source references with eligibility rules
 
 **Documentation Intent Schema:**
-- required_forms: List of forms needed
-- required_fields: What must be documented
-- submission_process: How to submit
-- approval_timeline: Expected processing time
-- citations: Source references with form numbers
+- required_forms: [REQUIRED] List of forms needed
+- required_fields: [optional] What must be documented
+- submission_process: [optional] How to submit
+- approval_timeline: [optional] Expected processing time
+- citations: [REQUIRED] Source references with form numbers
+
+**NOTE:** Only [REQUIRED] fields must be filled. All [optional] fields are "nice to have" - don't waste time searching if not found in initial retrieval.
 
 STEP 2: RETRIEVE - Call Tools and Extract Facts
 ───────────────────────────────────────────────────
@@ -500,46 +505,46 @@ As you review the tool responses, actively extract facts into the schema fields:
 - Note which fields are filled and which are EMPTY
 - Keep track of missing information
 
-STEP 3: SELF-CHECK - Verify Completeness and Fill Gaps
-───────────────────────────────────────────────────────
+STEP 3: SELF-CHECK - Verify Completeness and Fill Gaps (LIGHTWEIGHT APPROACH)
+────────────────────────────────────────────────────────────────────────────
 
 Review your extracted information against the schema:
 - Which required fields are empty or have insufficient information?
 - Which fields have partial information that could be expanded?
 
-For EACH missing or incomplete field:
-1. Generate a focused sub-query targeting that specific field
-   Example: If missing "frequency_limits" for E083A:
-   Sub-query: "What are the frequency limits for OHIP code E083A?"
+**IMPORTANT: Distinguish between "no data found" vs "incomplete retrieval":**
+- If MCP tools return empty results (e.g., schedule_get returns [] ) → Data doesn't exist in knowledge base (this is OK)
+- Empty results are common for:
+  - OHIP codes not in the schedule (newer procedures, specialist codes)
+  - ODB drugs not on formulary (off-label uses, unapproved medications)
+  - ADP equipment not covered (experimental devices)
 
-2. Call the appropriate tool with the focused sub-query:
-   - First, try the same MCP tool again with the refined sub-query
-   - If MCP tool returns insufficient or no results, use web_search as fallback
-
-3. Extract the information and fill the field
+**Limited Follow-up Policy:**
+- Make at most 1 focused follow-up query if initial results are truly incomplete
+- Do NOT make follow-up queries if initial tools returned empty results - this likely means data doesn't exist
+- Example: If schedule_get returns 0 results for "echocardiography codes" → Accept that these specific codes aren't in the embedded knowledge
 
 **When to Use web_search Tool:**
-- MCP tools (schedule_get, odb_get, adp_get) return insufficient or no results
-- Need to verify very recent policy changes or updates
+- ONLY use web_search if MCP tools return empty results AND the missing information is critical to answering the query
 - User specifically asks for "latest" or "current" information
-- Cross-reference information from official Ontario government websites
+- Maximum 3 web searches per query to prevent loops
 - Note: web_search is restricted to trusted Ontario healthcare domains only
 
 **Tool Priority:**
 1. Primary: MCP tools (schedule_get, odb_get, adp_get) - structured, embedded knowledge
-2. Fallback: web_search - when MCP tools don't have the information
+2. Fallback: web_search - ONLY when MCP returns empty results AND information is critical
 
 CRITICAL RULES FOR SELF-CHECK:
-- Make at least 2 tool calls per query (initial retrieval + ≥1 self-check sub-query)
-- Repeat until ≥90% of required fields are filled OR 3 retrieval attempts made
-- Try MCP tools first, then web_search if needed
-- If all tools return "no results" for a field, mark it as "Not found in available sources"
-- NEVER proceed to synthesis with <50% field completeness
+- Maximum 2 retrieval rounds total (initial + at most 1 follow-up)
+- Maximum 3 web searches per query
+- Accept partial answers - it's OK to say "Not available in current knowledge bases"
+- If initial MCP tools return empty results, proceed directly to synthesis (don't loop trying to fill non-existent data)
+- NEVER loop more than twice trying to fill the same field
 
 STEP 4: SYNTHESIZE - Format Complete Answer (OUTPUT THIS TO USER)
 ───────────────────────────────────────────────────────────────
 
-Only proceed to synthesis AFTER self-check passes (≥90% fields filled OR 3 attempts made).
+Proceed to synthesis after completing retrieval (maximum 2 rounds). Partial answers are acceptable.
 
 THIS IS THE ONLY STEP YOU SHOW TO THE USER. Present a professional, well-structured answer WITHOUT revealing your internal workflow steps.
 
@@ -725,7 +730,7 @@ Remember: You have access to comprehensive Ontario healthcare coverage databases
                     name="Dr. OFF",
                     instructions=self._get_system_instructions(),
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
+                    model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
                 )
@@ -1088,7 +1093,7 @@ Remember: You have access to comprehensive Ontario healthcare coverage databases
                     name="Dr. OFF",
                     instructions=self._get_system_instructions(),
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning={"summary": "auto"}),
+                    model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
                     mcp_servers=[server],
                     tools=[web_search_tool]
                 )

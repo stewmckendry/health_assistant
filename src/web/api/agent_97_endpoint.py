@@ -18,6 +18,7 @@ class Agent97StreamRequest(BaseModel):
     query: str
     userId: str = None  # Add user ID for Langfuse tracing
     stream: bool = True
+    reasoningEffort: str = "auto"  # "auto", "low", "medium", "high", or "off"
 
 
 def register_agent_97_endpoint(app: FastAPI):
@@ -37,8 +38,8 @@ def register_agent_97_endpoint(app: FastAPI):
                 logger = logging.getLogger(__name__)
                 logger.info(f"Creating Agent 97 for session {request.sessionId}")
 
-                # Create the Agent 97 instance
-                agent = await create_agent_97()
+                # Create the Agent 97 instance with reasoning effort
+                agent = await create_agent_97(reasoning_effort=request.reasoningEffort)
 
                 logger.info(f"Agent 97 created successfully, type: {type(agent)}")
 
@@ -182,8 +183,8 @@ def register_agent_97_endpoint(app: FastAPI):
         Non-streaming query endpoint for Agent 97
         """
         try:
-            # Create the Agent 97 instance
-            agent = await create_agent_97()
+            # Create the Agent 97 instance with reasoning effort
+            agent = await create_agent_97(reasoning_effort=request.reasoningEffort)
 
             # Process query with session
             result = await agent.query(request.query, session_id=request.sessionId, user_id=request.userId)
