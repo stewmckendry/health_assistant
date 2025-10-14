@@ -5,6 +5,7 @@ Provides access to all Ontario Health clinical programs via LLM-powered web sear
 
 import os
 import logging
+import asyncio
 from typing import Dict, Any, List, Optional
 from anthropic import Anthropic
 import json
@@ -16,75 +17,93 @@ ONTARIO_HEALTH_DOMAINS = [
     # Core Ontario Health domains
     "ontariohealth.ca",
     "health811.ontario.ca",
-    
+
     # Cancer Care
     "cancercareontario.ca",
     "ccohealth.ca",
     "mycanceriq.ca",
-    
+
     # Renal/Kidney
     "ontariorenalnetwork.ca",
     "renalnetwork.on.ca",
-    
+
     # Critical Care
     "criticalcareontario.ca",
-    
+
     # Cardiac/Stroke/Vascular
     "corhealthontario.ca",  # CorHealth Ontario
     "strokenetworkontario.ca",
-    
+
     # Quality and Standards
     "hqontario.ca",
     "qualitystandards.hqontario.ca",
-    
+
     # Palliative Care
     "ontariopalliativecarenetwork.ca",
-    
+
     # Mental Health and Addictions
     "mentalhealthandaddictions.ca",
     "connex.ontariohealth.ca",  # ConnexOntario
-    
+
     # Maternal and Child Health
     "pcmch.on.ca",  # Provincial Council for Maternal and Child Health
     "bornontario.ca",  # Better Outcomes Registry & Network
-    
+
     # Health Technology
     "ohtac.ca",  # Ontario Health Technology Advisory Committee
-    
+
     # Other Programs
     "thehealthline.ca",
     "health.gov.on.ca",  # Ministry of Health
     "ontariohealthprofiles.ca",
     "tobaccowise.com",  # Tobacco cessation
     "ontario.ca/health",  # Ontario government health portal
-    
+
     # Regional programs
     "ccpnr.ca",  # Champlain Cardiovascular Disease Prevention Network
     "organtissuedonation.on.ca",  # Trillium Gift of Life
-    
+
     # Public Health
     "publichealthontario.ca",  # Public Health Ontario
-    "health.gov.on.ca/en/common/system/services/phu/locations.aspx"  # Public Health Units
+    "health.gov.on.ca/en/common/system/services/phu/locations.aspx",  # Public Health Units
+
+    # National/Federal health resources (applicable to Ontario)
+    "canada.ca",  # Health Canada
+    "phac-aspc.gc.ca",  # Public Health Agency of Canada
+
+    # Major health charities and organizations
+    "cmha.ca",  # Canadian Mental Health Association
+    "diabetes.ca",  # Diabetes Canada
+    "heartandstroke.ca",  # Heart & Stroke Foundation
+    "cancer.ca",  # Canadian Cancer Society
+    "alzheimer.ca",  # Alzheimer Society
+    "arthritis.ca",  # Arthritis Society
+    "copd.ca",  # COPD Canada
+    "kidney.ca",  # Kidney Foundation of Canada
+    "osteoporosis.ca",  # Osteoporosis Canada
+    "parkinson.ca",  # Parkinson Canada
 ]
 
 
 class OntarioHealthProgramsClient:
     """Client for Ontario Health Clinical Programs using Claude with web_search."""
-    
+
     def __init__(self):
         """Initialize the Ontario Health Programs client."""
         # Get API key from environment
         api_key = os.getenv("ANTHROPIC_API_KEY")
         if not api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable must be set")
-        
+
         self.client = Anthropic(api_key=api_key)
         self.model = "claude-3-5-haiku-latest"
         self.max_tokens = 2000
-        
+        self.timeout = 60.0  # 60 second timeout
+        self.max_retries = 2  # Retry once on failure
+
         logger.info(f"Ontario Health Programs client initialized with {len(ONTARIO_HEALTH_DOMAINS)} domains")
     
-    def search_program(
+    async def search_program(
         self,
         program: str,
         patient_age: Optional[int] = None,
@@ -147,71 +166,96 @@ Focus on the most current and relevant information from official Ontario Health 
         
         if risk_factors:
             user_prompt += f"\n\nPatient has these risk factors: {', '.join(risk_factors)}"
-        
-        try:
-            # Make the API call with web_search tool
-            response = self.client.messages.create(
-                model=self.model,
-                max_tokens=self.max_tokens,
-                temperature=0.3,  # Lower temperature for factual information
-                system=system_prompt,
-                messages=[{"role": "user", "content": user_prompt}],
-                tools=[
-                    {
-                        "type": "web_search_20250305",
-                        "name": "web_search",
-                        "max_uses": 3,  # Allow multiple searches
-                        "allowed_domains": ONTARIO_HEALTH_DOMAINS
-                    },
-                    {
-                        "type": "web_fetch_20250910",
-                        "name": "web_fetch",
-                        "allowed_domains": ONTARIO_HEALTH_DOMAINS,
-                        "max_uses": 5,
-                        "citations": {"enabled": True}
-                    }
-                ],
-                extra_headers={
-                    "anthropic-beta": "web-search-2025-03-05,web-fetch-2025-09-10"
-                }
-            )
+
+        # Retry logic with timeout handling
+        last_error = None
+        for attempt in range(self.max_retries):
+            try:
+                # Make the API call with web_search tool (with timeout)
+                response = await asyncio.wait_for(
+                    asyncio.to_thread(
+                        self.client.messages.create,
+                        model=self.model,
+                        max_tokens=self.max_tokens,
+                        temperature=0.3,  # Lower temperature for factual information
+                        system=system_prompt,
+                        messages=[{"role": "user", "content": user_prompt}],
+                        tools=[
+                            {
+                                "type": "web_search_20250305",
+                                "name": "web_search",
+                                "max_uses": 1,  # Single search to avoid hangs
+                                "allowed_domains": ONTARIO_HEALTH_DOMAINS
+                            }
+                        ],
+                        extra_headers={
+                            "anthropic-beta": "web-search-2025-03-05"
+                        }
+                    ),
+                    timeout=self.timeout
+                )
             
-            # Extract the response content
-            content = ""
-            citations = []
-            
-            for block in response.content:
-                if hasattr(block, 'text'):
-                    content += block.text
-                if hasattr(block, 'citations') and block.citations:
-                    for citation in block.citations:
-                        if isinstance(citation, dict):
-                            citations.append({
-                                "url": citation.get("url", ""),
-                                "title": citation.get("title", "Source")
-                            })
-                        elif hasattr(citation, 'url'):
-                            citations.append({
-                                "url": getattr(citation, 'url', ''),
-                                "title": getattr(citation, 'title', 'Source')
-                            })
-            
-            # Parse the structured response
-            result = self._parse_program_response(content, program)
-            result["citations"] = citations
-            result["raw_response"] = content
-            
-            logger.info(f"Successfully retrieved {program} program information with {len(citations)} citations")
-            
-            return result
-            
-        except Exception as e:
-            logger.error(f"Error searching for {program} program: {e}")
-            return {
-                "error": str(e),
-                "program": program,
-                "message": "Failed to retrieve program information"
-            }
+                # Extract the response content
+                content = ""
+                citations = []
+
+                for block in response.content:
+                    if hasattr(block, 'text'):
+                        content += block.text
+                    if hasattr(block, 'citations') and block.citations:
+                        for citation in block.citations:
+                            if isinstance(citation, dict):
+                                citations.append({
+                                    "url": citation.get("url", ""),
+                                    "title": citation.get("title", "Source")
+                                })
+                            elif hasattr(citation, 'url'):
+                                citations.append({
+                                    "url": getattr(citation, 'url', ''),
+                                    "title": getattr(citation, 'title', 'Source')
+                                })
+
+                # Check if we got meaningful results
+                if not content.strip():
+                    raise ValueError("Empty response from web search")
+
+                # Parse the structured response
+                result = self._parse_program_response(content, program)
+                result["citations"] = citations
+                result["raw_response"] = content
+
+                logger.info(f"Successfully retrieved {program} program information with {len(citations)} citations (attempt {attempt + 1})")
+
+                return result
+
+            except asyncio.TimeoutError:
+                last_error = f"Web search timed out after {self.timeout} seconds"
+                logger.warning(f"Attempt {attempt + 1}/{self.max_retries}: {last_error} for program: {program}")
+                if attempt < self.max_retries - 1:
+                    await asyncio.sleep(2)  # Wait 2 seconds before retry
+                continue
+
+            except Exception as e:
+                last_error = str(e)
+                logger.warning(f"Attempt {attempt + 1}/{self.max_retries}: Error searching for {program} program: {e}")
+                if attempt < self.max_retries - 1:
+                    await asyncio.sleep(2)  # Wait 2 seconds before retry
+                continue
+
+        # All retries failed
+        logger.error(f"Failed to retrieve {program} program information after {self.max_retries} attempts. Last error: {last_error}")
+        return {
+            "error": last_error,
+            "program": program,
+            "message": f"Failed to retrieve program information after {self.max_retries} attempts",
+            "items": [],
+            "citations": [],
+            "eligibility": {},
+            "access": {},
+            "services": [],
+            "locations": [],
+            "resources": []
+        }
     
     def _parse_program_response(self, content: str, program: str) -> Dict[str, Any]:
         """

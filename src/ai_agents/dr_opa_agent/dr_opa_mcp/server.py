@@ -884,9 +884,9 @@ async def program_lookup_handler(query: str, k: int = 10, filters: Dict[str, Any
     try:
         # Use the Ontario Health Programs client with Claude + web_search
         ontario_client = get_ontario_health_client()
-        
+
         # Search for program information using Claude with restricted domain search
-        program_info = ontario_client.search_program(
+        program_info = await ontario_client.search_program(
             program=program,
             patient_age=patient_age,
             risk_factors=risk_factors,
