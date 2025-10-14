@@ -328,7 +328,7 @@ def register_orchestrator_endpoint(app: FastAPI):
                 "confidence": result.get('confidence', 0.0),
                 "orchestrator": result.get('orchestrator', 'Chief'),
                 "trace_id": result.get('trace_id'),  # Include trace_id for feedback
-                "model": result.get('model', 'gpt-4o'),
+                "model": result.get('model', 'gpt-5-mini'),
                 "sessionId": request.sessionId,
                 "timestamp": datetime.now().isoformat()
             }
@@ -377,7 +377,7 @@ def register_orchestrator_endpoint(app: FastAPI):
                     "Real-time streaming responses",
                     "Citation aggregation and deduplication"
                 ],
-                "model": "gpt-4o",
+                "model": "gpt-5-mini",
                 "timestamp": datetime.now().isoformat()
             }
             
