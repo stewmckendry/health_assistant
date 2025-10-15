@@ -63,8 +63,10 @@ The orchestrator doesn't have its own knowledge base—it **routes queries to sp
 3. **Synthesis:** Combines global evidence with Ontario-specific coverage and regulatory context
 4. **Output:** Comprehensive treatment plan with clinical approach, coverage details, and documentation requirements—with 8-20 mixed citations
 
-**[📹 Demo Video Placeholder 1]**
-*Suggested demo: "55-year-old with fatigue and low hemoglobin. What's the diagnostic workup for anemia, OHIP codes for iron studies and B12, and when to refer to hematology based on current evidence?"*
+**[📹 Demo Video 1: Chief Resident in Action]**
+Watch the orchestrator coordinate all three specialists to answer a complex anemia workup question—from agent registry to live trace to synthesized response.
+
+*Query: "55-year-old with fatigue and low hemoglobin. What's the diagnostic workup for anemia, OHIP codes for iron studies and B12, and when to refer to hematology based on current evidence?"*
 
 ---
 
@@ -85,8 +87,10 @@ The orchestrator doesn't have its own knowledge base—it **routes queries to sp
 
 **Clinical Use Case:** When prescribing medications or ordering diagnostics, Dr. OFF helps you understand coverage constraints upfront—preventing delays and helping patients access needed treatments.
 
-**[📹 Demo Video Placeholder 2]**
-*Suggested demo: "Compare ODB coverage for rosuvastatin vs atorvastatin for a patient with diabetes and high LDL—show me brand vs generic options with costs."*
+**[📹 Demo Video 2: Dr. OFF Coverage Comparison]**
+See Dr. OFF search the ODB formulary in real-time to compare statin coverage, Limited Use criteria, and costs.
+
+*Query: "Compare ODB coverage for rosuvastatin vs atorvastatin for a patient with diabetes and high LDL—show me brand vs generic options with costs."*
 
 ---
 
@@ -109,8 +113,10 @@ The orchestrator doesn't have its own knowledge base—it **routes queries to sp
 
 **Clinical Use Case:** When developing treatment plans, Dr. OPA ensures you're following provincial quality standards, using evidence-based clinical tools, and avoiding unnecessary interventions flagged by Choosing Wisely.
 
-**[📹 Demo Video Placeholder 3]**
-*Suggested demo: "Patient with suspected COPD. What are the Ontario diagnostic criteria, quality standards for management, and CEP tools available?"*
+**[📹 Demo Video 3: Dr. OPA Quality Standards & Clinical Tools]**
+Watch Dr. OPA retrieve Ontario Health quality standards, CEP diagnostic tools, and Choosing Wisely guidance for COPD management.
+
+*Query: "Patient with suspected COPD. What are the Ontario diagnostic criteria, quality standards for management, and CEP tools available?"*
 
 ---
 
@@ -135,8 +141,10 @@ The orchestrator doesn't have its own knowledge base—it **routes queries to sp
 
 **Clinical Use Case:** When facing diagnostic uncertainty or treatment decisions, Agent 97 retrieves current evidence from authoritative sources—helping you apply the latest guidelines to your patient's specific presentation.
 
-**[📹 Demo Video Placeholder 4]**
-*Suggested demo: "What are current best practices for diagnosing and managing mild cognitive impairment? When should I refer to neurology?"*
+**[📹 Demo Video 4: Agent 97 Evidence Search]**
+See Agent 97 search across 97 medical sources in real-time—from query to cited evidence to OpenAI trace.
+
+*Query: "What are current best practices for diagnosing and managing mild cognitive impairment? When should I refer to neurology?"*
 
 ---
 
