@@ -1,5 +1,7 @@
 # Coaching the Machine, Part 2: Building Ontario's Clinical AI Agent Registry
 
+**By Stewart McKendry, Will Falk, and Dr. Keith Thompson**
+
 ---
 
 ## From Patient Assistant to Clinical Team
