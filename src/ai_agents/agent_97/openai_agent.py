@@ -296,7 +296,7 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
                     encoding="utf-8"
                 ),
                 name="agent-97-clinician-search",
-                client_session_timeout_seconds=300.0  # Increased from 180s to 300s (5 min) to reduce timeout-induced retries
+                client_session_timeout_seconds=600.0  # Increased to 600s (10 min) to handle complex searches
             )
 
             logger.info("Agent 97 MCP server initialized successfully")
@@ -321,7 +321,10 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
             name="Agent 97",
             instructions=self.system_instructions,
             model="gpt-5-mini",  # Use reasoning model
-            model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
+            model_settings=ModelSettings(
+                reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort},
+                timeout=600.0  # 10 minute timeout for complex medical searches
+            ),
             mcp_servers=[mcp_server]
         )
 
@@ -518,7 +521,10 @@ Always use your clinician_search tool to retrieve current, evidence-based clinic
                     name="Agent 97",
                     instructions=self.system_instructions,
                     model="gpt-5-mini",
-                    model_settings=ModelSettings(reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort}),
+                    model_settings=ModelSettings(
+                        reasoning=None if self.reasoning_effort in ["off", "auto"] else {"effort": self.reasoning_effort},
+                        timeout=600.0  # 10 minute timeout for complex medical searches
+                    ),
                     mcp_servers=[server]
                 )
 
