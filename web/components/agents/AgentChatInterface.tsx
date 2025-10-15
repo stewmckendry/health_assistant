@@ -238,6 +238,11 @@ How can I assist with your Ontario practice questions today?`;
 
   const handleStreamEvent = (event: any, messageId: string) => {
     switch (event.type) {
+      case 'heartbeat':
+        // Heartbeat to keep connection alive - no UI update needed
+        console.log('⏳ Heartbeat received:', event.message);
+        break;
+
       case 'text':
         // Handle both formats:
         // - Agent format: {type: "text", data: {delta: "..."}}

@@ -446,7 +446,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                     model_settings=ModelSettings(
                         parallel_tool_calls=True,  # Enable parallel calls for speed
                         reasoning=reasoning_config,  # Configure reasoning based on effort level
-                        timeout=300.0  # 5 minute timeout for orchestrator (must wait for all sub-agents)
+                        timeout=600.0  # 10 minute timeout for orchestrator (must wait for all sub-agents)
                     ),
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
@@ -741,7 +741,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                     model_settings=ModelSettings(
                         reasoning=reasoning_config,  # Configure reasoning based on effort level
                         parallel_tool_calls=True,
-                        timeout=300.0  # 5 minute timeout for orchestrator (must wait for all sub-agents)
+                        timeout=600.0  # 10 minute timeout for orchestrator (must wait for all sub-agents)
                     ),
                     tools=[dr_opa_tool, dr_off_tool, agent_97_tool]
                 )
@@ -781,6 +781,7 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
                 agents_consulted = []
                 tool_calls = []  # Track all tool calls
                 citations = []  # Track citations from responses
+                last_heartbeat = asyncio.get_event_loop().time()
 
                 # Import StreamingProgressTracker for user-friendly progress
                 from src.ai_agents.diagnostic_orchestrator.streaming_progress import StreamingProgressTracker, ProgressUpdate
@@ -800,6 +801,16 @@ Remember: Each agent has its own MCP server and tools, plus web search capabilit
 
                 # Stream events - process each event for BOTH progress and custom events
                 async for event in result.stream_events():
+                    # Send heartbeat every 30 seconds to keep connection alive
+                    current_time = asyncio.get_event_loop().time()
+                    if current_time - last_heartbeat > 30:
+                        yield {
+                            'type': 'heartbeat',
+                            'message': "⏳ Processing...",
+                            'timestamp': current_time,
+                            'trace_id': trace_id
+                        }
+                        last_heartbeat = current_time
                     # First, emit user-friendly progress update for this event
                     # Process event directly to avoid re-emitting initial message
                     if isinstance(event, AgentUpdatedStreamEvent):
