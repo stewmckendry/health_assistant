@@ -134,7 +134,7 @@ The orchestrator doesn't have its own knowledge base—it **routes queries to sp
 **Clinical Use Case:** When facing diagnostic uncertainty or treatment decisions, Agent 97 retrieves current evidence from authoritative sources—helping you apply the latest guidelines to your patient's specific presentation.
 
 **[📹 Demo Video Placeholder 4]**
-*Suggested demo: "What's the latest evidence on using GLP-1 agonists for heart failure? Compare efficacy and safety profiles."*
+*Suggested demo: "What are current best practices for diagnosing and managing mild cognitive impairment? When should I refer to neurology?"*
 
 ---
 
