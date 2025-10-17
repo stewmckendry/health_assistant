@@ -229,7 +229,7 @@ export default function AgentsPage() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
             <p className="text-white font-semibold mb-6 text-lg">
-              Powered by Ontario healthcare knowledge bases and 97 trusted medical sources
+              Grounded in Ontario healthcare knowledge bases and 97 trusted medical sources
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap text-sm">
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">OHIP</span>
