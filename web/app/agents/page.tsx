@@ -50,8 +50,8 @@ export default function AgentsPage() {
         
         <div className="relative text-center py-6 text-white">
           <h1 className="text-xl md:text-2xl font-bold mb-2">
-            <span className="text-white">Ontario Healthcare</span>
-            <span className="block mt-1 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">AI Registry</span>
+            <span className="text-white">Clinical AI Agents Prototype</span>
+            <span className="block mt-1 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Adapted for Ontario</span>
           </h1>
           <p className="text-xs md:text-sm text-white/90 max-w-2xl mx-auto font-light">
             Specialized AI agents for OHIP billing, drug coverage, practice guidelines, quality standards, Choosing Wisely recommendations, and medical education
@@ -243,7 +243,7 @@ export default function AgentsPage() {
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-white/90 font-medium">MOH</span>
             </div>
             <div className="mt-6 text-white/60 text-sm">
-              Plus Mayo Clinic, Johns Hopkins, WHO, CDC, and 90+ more trusted sources
+              Plus search of Mayo Clinic, Johns Hopkins, WHO, CDC, and 90+ more trusted sources
             </div>
           </div>
         </div>
